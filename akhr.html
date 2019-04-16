@@ -15,7 +15,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-138420636-1');
     </script>
 </head>
@@ -23,7 +22,8 @@
 <div class="container">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">明日方舟工具箱</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -56,9 +56,9 @@
             <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">标签</th>
+                <th scope="col" style="width:16.67%">标签</th>
                 <th scope="col">可能出现</th>
-                <th scope="col">评分</th>
+                <th scope="col">$~</th>
             </tr>
             </thead>
             <tbody id="tbody-recommend">
@@ -181,13 +181,13 @@
                     chars = reduced_chars;
                 }
                 comb.possible = chars;
-                if(chars.length===0) return;
-                let s=0;
-                $.each(chars, (_, char)=>{
-                   s+=char.level;
+                if (chars.length === 0) return;
+                let s = 0;
+                $.each(chars, (_, char) => {
+                    s += char.level;
                 });
-                s=s/chars.length;
-                comb.score = tags.length+s;
+                s = s / chars.length;
+                comb.score = tags.length + s;
             });
             combs.sort(function (a, b) {
                 return a.score > b.score ? -1 : (a.score < b.score ? 1 : 0);
@@ -207,7 +207,7 @@
                     tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" + tag + "</button>\n")
                 });
                 $("#tbody-recommend").append(
-                    "<tr><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + Math.floor(comb.score * 100) / 100+ "</td></tr>"
+                    "<tr><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
                 );
             });
         });
