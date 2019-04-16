@@ -98,6 +98,7 @@
             $.each(data, function (_, char) {
                 if (char.hidden) return;
                 char.tags.push(char.type);
+                char.tags.push(char.sex+"性干员");
                 $.each(char.tags, function (_, tag) {
                     if (tag in tags_aval) {
                         tags_aval[tag].push({"name": char.name, "level": char.level, "type": char.type});
