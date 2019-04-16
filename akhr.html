@@ -12,6 +12,28 @@
 </head>
 <body>
 <div class="container">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">明日方舟工具箱</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="akhr.html">公开招募计算器</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">--</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">--</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">--</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="col-12 alert alert-dark" role="alert" id="box-tags">
     </div>
     <div class="row col-12">
@@ -150,11 +172,18 @@
                     chars = reduced_chars;
                 }
                 comb.possible = chars;
-                comb.score = tags.length;
+                if(chars.length===0) return;
+                let s=0;
+                $.each(chars, (_, char)=>{
+                   s+=char.level;
+                });
+                s=s/chars.length;
+                comb.score = tags.length+s;
             });
             combs.sort(function (a, b) {
-                return a.score > b.score ? -1 : (a.score < b.score   ? 1 : 0)
+                return a.score > b.score ? -1 : (a.score < b.score ? 1 : 0);
             });
+            let no = 1;
             $.each(combs, function (_, comb) {
                 if (comb.possible.length === 0) return;
                 let chars = comb.possible;
@@ -169,8 +198,8 @@
                     tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" + tag + "</button>\n")
                 });
                 $("#tbody-recommend").append(
-                    "<tr><td>#</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + comb.score + "</td></tr>"
-                )
+                    "<tr><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + Math.floor(comb.score * 100) / 100+ "</td></tr>"
+                );
             });
         });
     });
