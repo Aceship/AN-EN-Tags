@@ -118,7 +118,7 @@
                 }
                 combs.push({"tags": ts, "score": 0.0, "possible": []});
             }
-            console.log(combs);
+            // console.log(combs);
             $("#tbody-recommend").html("");
             $.each(combs, function (_, comb) {
                 let tags = comb.tags;
@@ -127,8 +127,8 @@
                 for (let i = 1; i < tags.length; i++) {
                     let reduced_chars = [];
                     $.each(chars, function (_, char) {
-                        console.log(tags_aval[tags[i]]);
-                        console.log(char);
+                        // console.log(tags_aval[tags[i]]);
+                        // console.log(char);
                         $.each(tags_aval[tags[i]],function (_, tgch) {
                             if(char.name===tgch.name){
                                 reduced_chars.push(char);
@@ -141,7 +141,7 @@
 
                 if (chars.length === 0) return;
                 if (!tags.includes("资深干员") && !tags.includes("高级资深干员")) {
-                    console.log(tags.join(",") + " 不含(高级)资深干员");
+                    // console.log(tags.join(",") + " 不含(高级)资深干员");
                     let reduced_chars = [];
                     $.each(chars, function (_, char) {
                         if (char.level !== 6) {
