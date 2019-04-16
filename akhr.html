@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row col-12">
+        <div class="alert alert-dark" role="alert" id="box-tags">
+        </div>
+    </div>
+    <div class="row col-12">
+        <div class="col-2"></div>
+        <button class="btn btn-success col-8 align-self-center" id="btn-calculate">计算</button>
+        <div class="col-2"></div>
+    </div>
+
+    <div class="row col-12 mt-3">
+        <table class="table" id="table-recommend">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">标签</th>
+                <th scope="col">可能出现</th>
+                <th scope="col">评分</th>
+            </tr>
+            </thead>
+            <tbody id="tbody-recommend">
+            </tbody>
+        </table>
+    </div>
+
+    <!--<div class="row col-12 mt-3">-->
+    <!--<table class="table" id="table-allchar">-->
+    <!--<thead>-->
+    <!--<tr>-->
+    <!--<th scope="col">name</th>-->
+    <!--<th scope="col">camp</th>-->
+    <!--<th scope="col">type</th>-->
+    <!--<th scope="col">level</th>-->
+    <!--<th scope="col">tags</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody id="tbody-allchar">-->
+    <!--</tbody>-->
+    <!--</table>-->
+    <!--</div>-->
+</div>
+<script>
+    $(function () {
+        let tags_aval = {};
+        $.getJSON("akhr.json", function (data) {
+            // console.log(data);
+            $.each(data, function (_, char) {
+                if (char.hidden) return;
+                char.tags.push(char.type);
+                $.each(char.tags, function (_, tag) {
+                    if (tag in tags_aval) {
+                        tags_aval[tag].push({"name": char.name, "level": char.level, "type": char.type});
+                    } else {
+                        tags_aval[tag] = [{"name": char.name, "level": char.level, "type": char.type}];
+                    }
+                });
+            });
+            $.each(tags_aval, function (key, _) {
+                $("#box-tags").append(
+                    "<button type=\"button\" class=\"btn btn-secondary btn-tag m-1\">" + key + "</button>\n"
+                );
+            });
+        });
+
+        let checkedTags = [];
+        $(document).on("click", ".btn-tag", function () {
+            let checked = $(this).hasClass("btn-primary");
+            let tag = $(this).text();
+            if (checked) {
+                checkedTags = checkedTags.filter(function (v, _, __) {
+                    return v !== tag;
+                });
+            } else {
+                if (checkedTags.length >= 5) {
+                    alert("无法选择更多标签：最多5个。");
+                    return;
+                } else {
+                    checkedTags.push(tag);
+                }
+            }
+            $(this).toggleClass("btn-primary btn-secondary");
+            // console.log(checkedTags);
+            // console.log(tag)
+        });
+        $(document).on("click", "#btn-calculate", function () {
+            let len = checkedTags.length;
+            let count = Math.pow(2, checkedTags.length);
+            let combs = [];
+            for (let i = 0; i < count; i++) {
+                let ts = [];
+                for (let j = 0, mask = 1; j < len; j++) {
+                    if ((i & mask) !== 0) {
+                        ts.push(checkedTags[j]);
+                        // console.log(checkedTags[j]);
+                    }
+                    mask = mask * 2;
+                }
+                combs.push({"tags": ts, "score": 0.0, "possible": []});
+            }
+            console.log(combs);
+            $("#tbody-recommend").html("");
+            $.each(combs, function (_, comb) {
+                let tags = comb.tags;
+                if (tags.length === 0) return;
+                let chars = [...tags_aval[tags[0]]];
+                for (let i = 1; i < tags.length; i++) {
+                    let reduced_chars = [];
+                    $.each(chars, function (_, char) {
+                        console.log(tags_aval[tags[i]]);
+                        console.log(char);
+                        $.each(tags_aval[tags[i]],function (_, tgch) {
+                            if(char.name===tgch.name){
+                                reduced_chars.push(char);
+                                return false;
+                            }
+                        });
+                    });
+                    chars = reduced_chars;
+                }
+
+                if (chars.length === 0) return;
+                if (!tags.includes("资深干员") && !tags.includes("高级资深干员")) {
+                    console.log(tags.join(",") + " 不含(高级)资深干员");
+                    let reduced_chars = [];
+                    $.each(chars, function (_, char) {
+                        if (char.level !== 6) {
+                            reduced_chars.push(char);
+                        }
+                    });
+                    chars = reduced_chars;
+                }
+
+                // comb.possible = chars;
+                let chars_html = [];
+                let colors={1: "dark", 3:"success", 4:"info",5:"warning",6:"danger"};
+                $.each(chars, function (_, char) {
+                    chars_html.push("<button type=\"button\" class=\"btn btn-"+colors[char.level]+" btn-char m-1\">" + char.name + "(" + char.level + ")" + "</button>\n")
+                });
+                let tags_html = [];
+                $.each(tags, function (_, tag) {
+                    tags_html.push("<button type=\"button\" class=\"btn btn-secondary btn-char m-1\">" + tag + "</button>\n")
+                });
+                $("#tbody-recommend").append(
+                    "<tr><td>#</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + comb.score + "</td></tr>"
+                )
+            });
+        });
+    });
+</script>
+</body>
+</html>
