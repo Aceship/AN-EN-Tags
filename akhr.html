@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>明日方舟公开招募计算器 - 一只灰猫</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery-3.4.0.min.js"></script>
@@ -11,9 +12,7 @@
 </head>
 <body>
 <div class="container">
-    <div class="row col-12">
-        <div class="alert alert-dark" role="alert" id="box-tags">
-        </div>
+    <div class="col-12 alert alert-dark" role="alert" id="box-tags">
     </div>
     <div class="row col-12">
         <div class="col-2"></div>
@@ -21,7 +20,7 @@
         <div class="col-2"></div>
     </div>
 
-    <div class="row col-12 mt-3">
+    <div class="col-md-12 col-sm-12 my-3">
         <table class="table table-striped table-hover" id="table-recommend">
             <thead class="thead-dark">
             <tr>
@@ -55,7 +54,7 @@
 <hr/>
 <div class="row col-12 page-footer">
     <div class="col-12 text-center">
-        <p>数据来源：<a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a> </p>
+        <p>数据来源：<a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a></p>
         <p>Powered by 一只灰猫。</p>
 
     </div>
@@ -78,7 +77,7 @@
             });
             $.each(tags_aval, function (key, _) {
                 $("#box-tags").append(
-                    "<button type=\"button\" class=\"btn btn-secondary btn-tag m-1\">" + key + "</button>\n"
+                    "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
                 );
             });
         });
@@ -129,8 +128,8 @@
                     $.each(chars, function (_, char) {
                         // console.log(tags_aval[tags[i]]);
                         // console.log(char);
-                        $.each(tags_aval[tags[i]],function (_, tgch) {
-                            if(char.name===tgch.name){
+                        $.each(tags_aval[tags[i]], function (_, tgch) {
+                            if (char.name === tgch.name) {
                                 reduced_chars.push(char);
                                 return false;
                             }
@@ -150,16 +149,24 @@
                     });
                     chars = reduced_chars;
                 }
-
-                // comb.possible = chars;
+                comb.possible = chars;
+                comb.score = tags.length;
+            });
+            combs.sort(function (a, b) {
+                return a.score > b.score ? -1 : (a.score < b.score   ? 1 : 0)
+            });
+            $.each(combs, function (_, comb) {
+                if (comb.possible.length === 0) return;
+                let chars = comb.possible;
+                let tags = comb.tags;
                 let chars_html = [];
-                let colors={1: "dark", 3:"success", 4:"info",5:"warning",6:"danger"};
+                let colors = {1: "dark", 3: "success", 4: "info", 5: "warning", 6: "danger"};
                 $.each(chars, function (_, char) {
-                    chars_html.push("<button type=\"button\" class=\"btn btn-"+colors[char.level]+" btn-char m-1\">" + char.name + "(" + char.level + ")" + "</button>\n")
+                    chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\">" + char.name + "</button>\n")
                 });
                 let tags_html = [];
                 $.each(tags, function (_, tag) {
-                    tags_html.push("<button type=\"button\" class=\"btn btn-secondary btn-char m-1\">" + tag + "</button>\n")
+                    tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" + tag + "</button>\n")
                 });
                 $("#tbody-recommend").append(
                     "<tr><td>#</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + comb.score + "</td></tr>"
