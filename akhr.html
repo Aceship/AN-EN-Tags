@@ -13,7 +13,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
         gtag('config', 'UA-138420636-1');
     </script>
@@ -98,7 +102,7 @@
             $.each(data, function (_, char) {
                 if (char.hidden) return;
                 char.tags.push(char.type);
-                char.tags.push(char.sex+"性干员");
+                char.tags.push(char.sex + "性干员");
                 $.each(char.tags, function (_, tag) {
                     if (tag in tags_aval) {
                         tags_aval[tag].push({"name": char.name, "level": char.level, "type": char.type});
@@ -188,10 +192,11 @@
                     s += char.level;
                 });
                 s = s / chars.length;
-                comb.score = tags.length + s;
+                comb.score = s - tags.length / 5;
             });
             combs.sort(function (a, b) {
-                return a.score > b.score ? -1 : (a.score < b.score ? 1 : 0);
+                return a.score > b.score ? -1 : (a.score < b.score ? 1 :
+                    (a.tags.length > b.tags.length ? 1 : (a.tags.length < b.tags.length ? -1 : 0)));
             });
             let no = 1;
             $.each(combs, function (_, comb) {
@@ -199,7 +204,10 @@
                 let chars = comb.possible;
                 let tags = comb.tags;
                 let chars_html = [];
-                let colors = {1: "dark", 3: "success", 4: "info", 5: "warning", 6: "danger"};
+                let colors = {1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger"};
+                comb.possible.sort(function (a, b) {
+                    return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
+                });
                 $.each(chars, function (_, char) {
                     chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\">" + char.name + "</button>\n")
                 });
