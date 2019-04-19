@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>明日方舟公开招募计算器 - 一只灰猫</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -13,17 +13,12 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'UA-138420636-1');
     </script>
 </head>
 <body>
-<div class="container">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#">明日方舟工具箱</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -36,191 +31,172 @@
                     <a class="nav-link" href="akhr.html">公开招募计算器</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">--</a>
+                    <a class="nav-link" href="#">施工中…</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">--</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">--</a>
+                    <a class="nav-link disabled" href="#">施工中…</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="col-12 alert alert-dark" role="alert" id="box-tags">
+    <div class="container">
+        <div class="col-12 alert alert-dark" role="alert" id="box-tags">
+        </div>
+        <div class="row col-12">
+            <div class="col-2"></div>
+            <button class="btn btn-success col-8 align-self-center" id="btn-calculate">计算</button>
+            <div class="col-2"></div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 my-3">
+            <table class="table table-striped table-hover" id="table-recommend">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" style="width:16.67%">Tags</th>
+                        <th scope="col">可能出现</th>
+                        <th scope="col">$~</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-recommend"></tbody>
+            </table>
+        </div>
     </div>
-    <div class="row col-12">
-        <div class="col-2"></div>
-        <button class="btn btn-success col-8 align-self-center" id="btn-calculate">计算</button>
-        <div class="col-2"></div>
+    <hr />
+    <div class="row col-12 page-footer">
+        <div class="col-12 text-center">
+            <p>数据来源：<a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a></p>
+            <p>Powered by 一只灰猫。</p>
+
+        </div>
     </div>
-
-    <div class="col-md-12 col-sm-12 my-3">
-        <table class="table table-striped table-hover" id="table-recommend">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col" style="width:16.67%">Tags</th>
-                <th scope="col">可能出现</th>
-                <th scope="col">$~</th>
-            </tr>
-            </thead>
-            <tbody id="tbody-recommend">
-            </tbody>
-        </table>
-    </div>
-
-    <!--<div class="row col-12 mt-3">-->
-    <!--<table class="table" id="table-allchar">-->
-    <!--<thead>-->
-    <!--<tr>-->
-    <!--<th scope="col">name</th>-->
-    <!--<th scope="col">camp</th>-->
-    <!--<th scope="col">type</th>-->
-    <!--<th scope="col">level</th>-->
-    <!--<th scope="col">tags</th>-->
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--<tbody id="tbody-allchar">-->
-    <!--</tbody>-->
-    <!--</table>-->
-    <!--</div>-->
-</div>
-<hr/>
-<div class="row col-12 page-footer">
-    <div class="col-12 text-center">
-        <p>数据来源：<a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a></p>
-        <p>Powered by 一只灰猫。</p>
-
-    </div>
-</div>
-<script>
-    $(function () {
-        let tags_aval = {};
-        $.getJSON("akhr.json", function (data) {
-            // console.log(data);
-            $.each(data, function (_, char) {
-                if (char.hidden) return;
-                char.tags.push(char.type);
-                char.tags.push(char.sex + "性干员");
-                $.each(char.tags, function (_, tag) {
-                    if (tag in tags_aval) {
-                        tags_aval[tag].push({"name": char.name, "level": char.level, "type": char.type});
-                    } else {
-                        tags_aval[tag] = [{"name": char.name, "level": char.level, "type": char.type}];
-                    }
-                });
-            });
-            $.each(tags_aval, function (key, _) {
-                $("#box-tags").append(
-                    "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
-                );
-            });
-        });
-
-        let checkedTags = [];
-        $(document).on("click", ".btn-tag", function () {
-            let checked = $(this).hasClass("btn-primary");
-            let tag = $(this).text();
-            if (checked) {
-                checkedTags = checkedTags.filter(function (v, _, __) {
-                    return v !== tag;
-                });
-            } else {
-                if (checkedTags.length >= 5) {
-                    alert("无法选择更多标签：最多5个。");
-                    return;
-                } else {
-                    checkedTags.push(tag);
-                }
-            }
-            $(this).toggleClass("btn-primary btn-secondary");
-            // console.log(checkedTags);
-            // console.log(tag)
-        });
-        $(document).on("click", "#btn-calculate", function () {
-            let len = checkedTags.length;
-            let count = Math.pow(2, checkedTags.length);
-            let combs = [];
-            for (let i = 0; i < count; i++) {
-                let ts = [];
-                for (let j = 0, mask = 1; j < len; j++) {
-                    if ((i & mask) !== 0) {
-                        ts.push(checkedTags[j]);
-                        // console.log(checkedTags[j]);
-                    }
-                    mask = mask * 2;
-                }
-                combs.push({"tags": ts, "score": 0.0, "possible": []});
-            }
-            // console.log(combs);
-            $("#tbody-recommend").html("");
-            $.each(combs, function (_, comb) {
-                let tags = comb.tags;
-                if (tags.length === 0) return;
-                let chars = [...tags_aval[tags[0]]];
-                for (let i = 1; i < tags.length; i++) {
-                    let reduced_chars = [];
-                    $.each(chars, function (_, char) {
-                        // console.log(tags_aval[tags[i]]);
-                        // console.log(char);
-                        $.each(tags_aval[tags[i]], function (_, tgch) {
-                            if (char.name === tgch.name) {
-                                reduced_chars.push(char);
-                                return false;
-                            }
-                        });
-                    });
-                    chars = reduced_chars;
-                }
-
-                if (chars.length === 0) return;
-                if (!tags.includes("资深干员") && !tags.includes("高级资深干员")) {
-                    // console.log(tags.join(",") + " 不含(高级)资深干员");
-                    let reduced_chars = [];
-                    $.each(chars, function (_, char) {
-                        if (char.level !== 6) {
-                            reduced_chars.push(char);
+    <script>
+        $(function () {
+            let tags_aval = {};
+            $.getJSON("akhr.json", function (data) {
+                // console.log(data);
+                $.each(data, function (_, char) {
+                    if (char.hidden) return;
+                    char.tags.push(char.type);
+                    char.tags.push(char.sex + "性干员");
+                    $.each(char.tags, function (_, tag) {
+                        if (tag in tags_aval) {
+                            tags_aval[tag].push({ "name": char.name, "level": char.level, "type": char.type });
+                        } else {
+                            tags_aval[tag] = [{ "name": char.name, "level": char.level, "type": char.type }];
                         }
                     });
-                    chars = reduced_chars;
+                });
+                $.each(tags_aval, function (key, _) {
+                    $("#box-tags").append(
+                        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
+                    );
+                });
+            });
+
+            let checkedTags = [];
+            $(document).on("click", ".btn-tag", function () {
+                let checked = $(this).hasClass("btn-primary");
+                let tag = $(this).text();
+                if (checked) {
+                    checkedTags = checkedTags.filter(function (v, _, __) {
+                        return v !== tag;
+                    });
+                } else {
+                    if (checkedTags.length >= 5) {
+                        alert("无法选择更多标签：最多5个。");
+                        return;
+                    } else {
+                        checkedTags.push(tag);
+                    }
                 }
-                comb.possible = chars;
-                if (chars.length === 0) return;
-                let s = 0;
-                $.each(chars, (_, char) => {
-                    s += char.level;
-                });
-                s = s / chars.length;
-                comb.score = s - tags.length / 5;
+                $(this).toggleClass("btn-primary btn-secondary");
+                // console.log(checkedTags);
+                // console.log(tag)
             });
-            combs.sort(function (a, b) {
-                return a.score > b.score ? -1 : (a.score < b.score ? 1 :
-                    (a.tags.length > b.tags.length ? 1 : (a.tags.length < b.tags.length ? -1 : 0)));
-            });
-            let no = 1;
-            $.each(combs, function (_, comb) {
-                if (comb.possible.length === 0) return;
-                let chars = comb.possible;
-                let tags = comb.tags;
-                let chars_html = [];
-                let colors = {1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger"};
-                comb.possible.sort(function (a, b) {
-                    return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
+            $(document).on("click", "#btn-calculate", function () {
+                let len = checkedTags.length;
+                let count = Math.pow(2, checkedTags.length);
+                let combs = [];
+                for (let i = 0; i < count; i++) {
+                    let ts = [];
+                    for (let j = 0, mask = 1; j < len; j++) {
+                        if ((i & mask) !== 0) {
+                            ts.push(checkedTags[j]);
+                            // console.log(checkedTags[j]);
+                        }
+                        mask = mask * 2;
+                    }
+                    combs.push({ "tags": ts, "score": 0.0, "possible": [] });
+                }
+                // console.log(combs);
+                $("#tbody-recommend").html("");
+                $.each(combs, function (_, comb) {
+                    let tags = comb.tags;
+                    if (tags.length === 0) return;
+                    let chars = [...tags_aval[tags[0]]];
+                    for (let i = 1; i < tags.length; i++) {
+                        let reduced_chars = [];
+                        $.each(chars, function (_, char) {
+                            // console.log(tags_aval[tags[i]]);
+                            // console.log(char);
+                            $.each(tags_aval[tags[i]], function (_, tgch) {
+                                if (char.name === tgch.name) {
+                                    reduced_chars.push(char);
+                                    return false;
+                                }
+                            });
+                        });
+                        chars = reduced_chars;
+                    }
+
+                    if (chars.length === 0) return;
+                    if (!tags.includes("资深干员") && !tags.includes("高级资深干员")) {
+                        // console.log(tags.join(",") + " 不含(高级)资深干员");
+                        let reduced_chars = [];
+                        $.each(chars, function (_, char) {
+                            if (char.level !== 6) {
+                                reduced_chars.push(char);
+                            }
+                        });
+                        chars = reduced_chars;
+                    }
+                    comb.possible = chars;
+                    if (chars.length === 0) return;
+                    let s = 0;
+                    $.each(chars, (_, char) => {
+                        s += char.level;
+                    });
+                    s = s / chars.length;
+                    comb.score = s - tags.length / 5;
                 });
-                $.each(chars, function (_, char) {
-                    chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\">" + char.name + "</button>\n")
+                combs.sort(function (a, b) {
+                    return a.score > b.score ? -1 : (a.score < b.score ? 1 :
+                        (a.tags.length > b.tags.length ? 1 : (a.tags.length < b.tags.length ? -1 : 0)));
                 });
-                let tags_html = [];
-                $.each(tags, function (_, tag) {
-                    tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" + tag + "</button>\n")
+                let no = 1;
+                $.each(combs, function (_, comb) {
+                    if (comb.possible.length === 0) return;
+                    let chars = comb.possible;
+                    let tags = comb.tags;
+                    let chars_html = [];
+                    let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
+                    comb.possible.sort(function (a, b) {
+                        return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
+                    });
+                    $.each(chars, function (_, char) {
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\">" + char.name + "</button>\n")
+                    });
+                    let tags_html = [];
+                    $.each(tags, function (_, tag) {
+                        tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" + tag + "</button>\n")
+                    });
+                    $("#tbody-recommend").append(
+                        "<tr><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
+                    );
                 });
-                $("#tbody-recommend").append(
-                    "<tr><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
-                );
             });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
