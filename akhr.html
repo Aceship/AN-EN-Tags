@@ -40,7 +40,16 @@
         </div>
     </nav>
     <div class="container">
-        <div class="col-12 alert alert-dark" role="alert" id="box-tags">
+        <div class="col-12 alert alert-dark mt-3" role="alert" id="box-tags">
+        </div>
+        <div class="col-12 alert alert-dark" role="alert" id="box-options">
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button>
         </div>
         <div class="row col-12">
             <div class="col-2"></div>
@@ -63,9 +72,23 @@
         </div>
     </div>
     <hr />
+    <div class="row col-12 tutorial">
+        <div class="col-12 text-left">
+            <p>使用说明：</p>
+            <p>1. 勾选需要查询的Tag，最多五个；</p>
+            <p>2. 勾选需要查询的星级，默认全部；</p>
+            <p>3. 点击“计算”；</p>
+            <p>4. 可以点击推荐表格中的干员或标签进行精准查询，再点击任意干员或标签返回。</p>
+        </div>
+    </div>
+    <hr />
     <div class="row col-12 page-footer">
         <div class="col-12 text-center">
-            <p>数据来源：<a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a></p>
+            <p>最近更新：2018/04/20，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
+            <p>
+                数据来源：
+                <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a>
+            </p>
             <p>Powered by 一只灰猫。</p>
 
         </div>
@@ -114,6 +137,26 @@
                 // console.log(checkedTags);
                 // console.log(tag)
             });
+            $(document).on("click", ".btn-opt", function () {
+                $(this).toggleClass("btn-primary btn-secondary");
+                let checked = $(this).hasClass("btn-primary");
+                if ($(this).attr("id") === "opt-all") {
+                    $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
+                        checked ? "btn-primary" : "btn-secondary"
+                    );
+                } else {
+                    if ($("#opt-all").hasClass("btn-primary")) {
+                        $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    } else {
+                        let checkedCount = 0;
+                        $(".btn-opt").each(function (_, __) {
+                            if ($(this).attr("id") === "opt-all") return;
+                            if ($(this).hasClass("btn-primary")) checkedCount++;
+                        });
+                        if (checkedCount === 6) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    }
+                }
+            });
             $(document).on("click", "#btn-calculate", function () {
                 let len = checkedTags.length;
                 let count = Math.pow(2, checkedTags.length);
@@ -130,6 +173,12 @@
                     combs.push({ "tags": ts, "score": 0.0, "possible": [] });
                 }
                 // console.log(combs);
+                let optStars = [];
+                $(".btn-opt").each(function (_, __) {
+                    if ($(this).attr("opt-id") === "all" || $(this).hasClass("btn-secondary")) return;
+                    optStars.push($(this).attr("opt-id"));
+                });
+                console.log(optStars);
                 $("#tbody-recommend").html("");
                 $.each(combs, function (_, comb) {
                     let tags = comb.tags;
@@ -153,14 +202,23 @@
                     if (chars.length === 0) return;
                     if (!tags.includes("资深干员") && !tags.includes("高级资深干员")) {
                         // console.log(tags.join(",") + " 不含(高级)资深干员");
-                        let reduced_chars = [];
+                        let reduce6 = [];
                         $.each(chars, function (_, char) {
                             if (char.level !== 6) {
-                                reduced_chars.push(char);
+                                reduce6.push(char);
                             }
                         });
-                        chars = reduced_chars;
+                        chars = reduce6;
                     }
+                    let filtered_chars = [];
+                    $.each(chars, function (_, char) {
+                        console.log(char.level);
+                        if (optStars.includes(char.level.toString())) {
+                            filtered_chars.push(char);
+                        }
+                    });
+                    chars = filtered_chars;
+
                     comb.possible = chars;
                     if (chars.length === 0) return;
                     let s = 0;
@@ -185,16 +243,28 @@
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
                     $.each(chars, function (_, char) {
-                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\">" + char.name + "</button>\n")
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
+                            " btn-char my-1\">" + char.name + "</button>\n")
                     });
                     let tags_html = [];
                     $.each(tags, function (_, tag) {
-                        tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" + tag + "</button>\n")
+                        tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" +
+                            tag + "</button>\n")
                     });
                     $("#tbody-recommend").append(
-                        "<tr><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") + "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
+                        "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") +
+                        "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
                     );
                 });
+            });
+            let hasHidden = false;
+            $(document).on("click", ".btn-char", function () {
+                if (!hasHidden) {
+                    $(".tr-recommd:not(:contains('" + $(this).text() + "'))").hide();
+                } else {
+                    $(".tr-recommd").show();
+                }
+                hasHidden = !hasHidden;
             });
         });
     </script>
