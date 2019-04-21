@@ -40,20 +40,23 @@
         </div>
     </nav>
     <div class="container">
-        <div class="col-12 alert alert-dark mt-3" role="alert" id="box-tags">
-        </div>
-        <div class="col-12 alert alert-dark" role="alert" id="box-options">
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button>
+        <div class="col-12 alert alert-dark mt-3" role="alert">
+            <div id="box-tags">
+            </div>
+            <hr/>
+            <div id="box-options">
+                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
+                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
+                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
+                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
+                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
+                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
+                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button>
+            </div>
         </div>
         <div class="row col-12">
             <div class="col-2"></div>
-            <button class="btn btn-success col-8 align-self-center" id="btn-calculate">计算</button>
+            <button class="btn btn-success col-8 align-self-center text-center" id="btn-calculate">计算</button>
             <div class="col-2"></div>
         </div>
 
@@ -74,7 +77,7 @@
         <div class="row col-12 tutorial">
             <div class="col-12 text-left">
                 <p>使用说明：</p>
-                <p>1. 勾选需要查询的Tag，最多五个；</p>
+                <p>1. 勾选需要查询的Tag，最多6个；</p>
                 <p>2. 勾选需要查询的星级，默认全部；</p>
                 <p>3. 点击“计算”；</p>
                 <p>4. 可以点击推荐表格中的干员或标签进行精准查询，再点击任意干员或标签返回。</p>
@@ -85,7 +88,7 @@
     <hr />
     <div class="row col-12 page-footer">
         <div class="col-12 text-center">
-            <p>最近更新：2018/04/20，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
+            <p>最近更新：2018/04/21，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
             <p>
                 数据来源：
                 <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a>
@@ -97,7 +100,10 @@
     <script>
         $(function () {
             let tags_aval = {};
+            let avg_char_tag = 0;
             $.getJSON("akhr.json", function (data) {
+                let tag_count = 0;
+                let char_tag_sum = 0;
                 // console.log(data);
                 $.each(data, function (_, char) {
                     if (char.hidden) return;
@@ -109,13 +115,17 @@
                         } else {
                             tags_aval[tag] = [{ "name": char.name, "level": char.level, "type": char.type }];
                         }
+                        char_tag_sum++;
                     });
                 });
                 $.each(tags_aval, function (key, _) {
                     $("#box-tags").append(
                         "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
                     );
+                    tag_count++;
                 });
+                //console.log(avg_char_tag);
+                avg_char_tag = char_tag_sum / tag_count;
             });
 
             let checkedTags = [];
@@ -127,8 +137,8 @@
                         return v !== tag;
                     });
                 } else {
-                    if (checkedTags.length >= 5) {
-                        alert("无法选择更多标签：最多5个。");
+                    if (checkedTags.length >= 6) {
+                        alert("无法选择更多标签：最多6个。");
                         return;
                     } else {
                         checkedTags.push(tag);
@@ -179,11 +189,11 @@
                     if ($(this).attr("opt-id") === "all" || $(this).hasClass("btn-secondary")) return;
                     optStars.push($(this).attr("opt-id"));
                 });
-                console.log(optStars);
+                //console.log(optStars);
                 $("#tbody-recommend").html("");
                 $.each(combs, function (_, comb) {
                     let tags = comb.tags;
-                    if (tags.length === 0) return;
+                    if (tags.length === 0 || tags.length > 3) return;
                     let chars = [...tags_aval[tags[0]]];
                     for (let i = 1; i < tags.length; i++) {
                         let reduced_chars = [];
@@ -213,7 +223,7 @@
                     }
                     let filtered_chars = [];
                     $.each(chars, function (_, char) {
-                        console.log(char.level);
+                        //console.log(char.level);
                         if (optStars.includes(char.level.toString())) {
                             filtered_chars.push(char);
                         }
@@ -227,7 +237,7 @@
                         s += char.level;
                     });
                     s = s / chars.length;
-                    comb.score = s - tags.length / 5;
+                    comb.score = s - tags.length / 10 - chars.length / avg_char_tag;
                 });
                 combs.sort(function (a, b) {
                     return a.score > b.score ? -1 : (a.score < b.score ? 1 :
