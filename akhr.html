@@ -31,7 +31,7 @@
                     <a class="nav-link" href="akhr.html">公开招募计算器</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">施工中…</a>
+                    <a class="nav-link" href="akhrchars.html">干员表</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">施工中…</a>
@@ -93,24 +93,24 @@
             </div>
         </div>
         <div class="row col-12">
-            <div class="col-2"></div>
-            <button class="btn btn-success col-8 align-self-center text-center" id="btn-calculate">计算</button>
-            <div class="col-2"></div>
+            <div class="col-8">
+                <button class="btn btn-success col-12 align-self-center text-center" id="btn-calculate">计算</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-danger col-12 align-self-center text-center" id="btn-clear">清空</button>
+            </div>
         </div>
-
-        <div class="col-md-12 col-sm-12 my-3">
-            <table class="table table-striped table-hover" id="table-recommend">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col" style="width:16.67%">Tags</th>
-                        <th scope="col">可能出现</th>
-                        <th scope="col">$~</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody-recommend"></tbody>
-            </table>
-        </div>
+        <table class="table table-striped table-hover my-3" id="table-recommend">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" style="width:16.67%">Tags</th>
+                    <th scope="col">可能出现</th>
+                    <th scope="col">$~</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-recommend"></tbody>
+        </table>
         <hr />
         <div class="row col-12 tutorial">
             <div class="col-12 text-left">
@@ -333,6 +333,11 @@
                     $(".tr-chartag").remove();
                 }
                 hasHidden = !hasHidden;
+            });
+
+            $(document).on('click', '#btn-clear', function () {
+                $('.btn-tag').removeClass('btn-primary').addClass('btn-secondary');
+                $("#tbody-recommend").hide();
             });
         });
     </script>
