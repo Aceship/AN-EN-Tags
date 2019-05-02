@@ -337,7 +337,8 @@
 
             $(document).on('click', '#btn-clear', function () {
                 $('.btn-tag').removeClass('btn-primary').addClass('btn-secondary');
-                $("#tbody-recommend").hide();
+                $("#tbody-recommend").html("");
+                checkedTags = [];
             });
         });
     </script>
