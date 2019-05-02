@@ -42,8 +42,46 @@
     <div class="container">
         <div class="col-12 alert alert-dark mt-3" role="alert">
             <div id="box-tags">
+                <button type="button" class="btn btn-sm btn-info my-1" disabled>资质</button> |
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">新手</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">资深干员</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">高级资深干员</button>
+                <br />
+                <button type="button" class="btn btn-sm btn-info my-1" disabled>位置</button> |
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">远程位</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">近战位</button>
+                <br />
+                <button type="button" class="btn btn-sm btn-info my-1" disabled>性别</button> |
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">男性干员</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">女性干员</button>
+                <br />
+                <button type="button" class="btn btn-sm btn-info my-1" disabled>种类</button> |
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">先锋</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">狙击</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">医疗</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">术师</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">近卫</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">重装</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">辅助</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">特种</button>
+                <br />
+                <button type="button" class="btn btn-sm btn-info my-1" disabled>词缀</button> |
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">治疗</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">支援</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">输出</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">群攻</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">减速</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">生存</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">防护</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">削弱</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">位移</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">控场</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">爆发</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">召唤</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">快速复活</button>
+                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">费用回复</button>
             </div>
-            <hr class="my-1"/>
+            <hr class="my-1" />
             <div id="box-options">
                 <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
                 <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
@@ -88,7 +126,7 @@
     <hr />
     <div class="row col-12 page-footer">
         <div class="col-12 text-center">
-            <p>最近更新：2019/04/21，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
+            <p>最近更新：2019/05/02，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
             <p>
                 数据来源：
                 <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a>
@@ -100,6 +138,7 @@
     <script>
         $(function () {
             let tags_aval = {};
+            let all_chars = {};
             let avg_char_tag = 0;
             $.getJSON("akhr.json", function (data) {
                 let tag_count = 0;
@@ -117,13 +156,14 @@
                         }
                         char_tag_sum++;
                     });
+                    all_chars[char.name] = { 'level': char.level, 'tags': char.tags };
                 });
-                $.each(tags_aval, function (key, _) {
-                    $("#box-tags").append(
-                        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
-                    );
-                    tag_count++;
-                });
+                //$.each(tags_aval, function (key, _) {
+                //    $("#box-tags").append(
+                //        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
+                //    );
+                //    tag_count++;
+                //});
                 //console.log(avg_char_tag);
                 avg_char_tag = char_tag_sum / tag_count;
             });
@@ -272,8 +312,25 @@
             $(document).on("click", ".btn-char", function () {
                 if (!hasHidden) {
                     $(".tr-recommd:not(:contains('" + $(this).text() + "'))").hide();
+                    let char_name = $(this).text();
+                    let char = all_chars[char_name];
+                    let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
+
+                    let tags_html = [];
+                    $.each(char.tags, function (_, tag) {
+                        tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" +
+                            tag + "</button>\n")
+                    });
+                    $("#tbody-recommend").append(
+                        "<tr class=\"tr-chartag\"><td>#</td><td>" +
+                        "<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
+                        " btn-char my-1\">" + char_name + "</button>\n" +
+                        "</td><td>" + tags_html.join("") +
+                        "</td><td>#</td></tr>"
+                    );
                 } else {
                     $(".tr-recommd").show();
+                    $(".tr-chartag").remove();
                 }
                 hasHidden = !hasHidden;
             });
