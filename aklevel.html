@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -126,16 +126,7 @@
                         <th scope="col" width="50%">需求</th>
                     </tr>
                 </thead>
-                <tbody id="tbody-result">
-                    <tr><th scope="row" class="text-right">经验总量</th><td></td></tr>
-                    <tr><th scope="row" class="text-right">LS场数</th><td></td></tr>
-                    <tr><th scope="row" class="text-right">金币总量</th><td></td></tr>
-                    <tr><th scope="row" class="text-right">CE场数</th><td></td></tr>
-                    <tr><th scope="row" class="text-right">升级金币</th><td></td></tr>
-                    <tr><th scope="row" class="text-right">CE场数</th><td></td></tr>
-                    <tr><th scope="row" class="text-right">精英化金币</th><td></td></tr>
-                    <tr><th scope="row" class="text-right">CE场数</th><td></td></tr>
-                </tbody>
+                <tbody id="tbody-result"></tbody>
             </table>
         </div>
         <hr />
@@ -247,12 +238,17 @@
                 $.each([
                     ['经验总量', expaccu],
                     ['LS场数', (expaccu / 7400).toFixed(1)],
-                    ['金币总量', (costaccu + evolveaccu).toFixed(1)],
-                    ['CE场数', ((costaccu + evolveaccu) / 7500).toFixed(1)],
+                    ['LS体力', Math.ceil((expaccu / 7400).toFixed(1)) * 30],
                     ['升级金币', costaccu.toFixed(1)],
                     ['CE场数', (costaccu / 7500).toFixed(1)],
+                    ['CE体力', Math.ceil((costaccu / 7500).toFixed(1)) * 30],
+                    ['-','-'],
                     ['精英化金币', evolveaccu],
                     ['CE场数', (evolveaccu / 7500).toFixed(1)],
+                    ['CE体力', Math.ceil((evolveaccu / 7500).toFixed(1)) * 30],
+                    ['金币总量', (costaccu + evolveaccu).toFixed(1)],
+                    ['CE场数', ((costaccu + evolveaccu) / 7500).toFixed(1)],
+                    ['CE体力', Math.ceil(((costaccu + evolveaccu) / 7500).toFixed(1)) * 30],
                 ], function (_, v) {
                     $("#tbody-result").append('<tr><th scope="row" class="text-right">' + v[0] + '</th><td>' + v[1] + '</td></tr>');
                 });
