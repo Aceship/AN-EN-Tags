@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>明日方舟等级消耗计算器</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-138420636-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">明日方舟工具箱</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="akhr.html">公开招募计算器</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="akhrchars.html">干员表</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="aklevel.html">升级计算</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">施工中…</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="form-group mt-3">
+            <div class="form-row">
+                <div class="form-group col-12 col-md-2">
+                    <label for="star">星级★</label>
+                    <select id="star" class="form-control">
+                        <option selected>6</option>
+                        <option>5</option>
+                        <option>4</option>
+                        <option>3</option>
+                        <option>2</option>
+                        <option>1</option>
+                    </select>
+                </div>
+                <div class="form-group col-6 col-md-5">
+                    <label for="lslevel">经验本</label>
+                    <select id="lslevel" class="form-control">
+                        <option selected>LS-5</option>
+                        <!--<option>LS-4</option>
+                        <option>LS-3</option>
+                        <option>LS-2</option>
+                        <option>LS-1</option>-->
+                    </select>
+                </div>
+                <div class="form-group col-6 col-md-5">
+                    <label for="lslevel">金币本</label>
+                    <select id="lslevel" class="form-control">
+                        <option selected>CE-5</option>
+                        <!--<option>CE-4</option>
+                        <option>CE-3</option>
+                        <option>CE-2</option>
+                        <option>CE-1</option>-->
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-4">
+                    <label for="current-evolve">当前精英化</label>
+                    <select id="current-evolve" class="form-control">
+                        <option>0</option>
+                        <option>1</option>
+                        <option selected>2</option>
+                    </select>
+                </div>
+                <div class="form-group col-4">
+                    <label for="current-level">当前等级</label>
+                    <input type="text" class="form-control" id="current-level" value="1">
+                </div>
+                <div class="form-group col-4">
+                    <label for="current-exp">当前经验</label>
+                    <input type="text" class="form-control" id="current-exp" value="0">
+                </div>
+                <div class="form-group col-6">
+                    <label for="target-evolve">目标精英化</label>
+                    <select id="target-evolve" class="form-control">
+                        <option>0</option>
+                        <option>1</option>
+                        <option selected>2</option>
+                    </select>
+                </div>
+                <div class="form-group col-6">
+                    <label for="target-level">目标等级</label>
+                    <input type="text" class="form-control" id="target-level" value="30">
+                </div>
+            </div>
+        </div>
+        <div class="row col-12">
+            <div class="col-12">
+                <button class="btn btn-success col-12 align-self-center text-center" id="btn-calculate">计算</button>
+            </div>
+        </div>
+        <div class="col-12 alert alert-danger mt-3" id="error-info" role="alert" style="display:none">
+
+        </div>
+        <div class="row">
+
+            <table class="table table-striped table-bordered my-3 col-12 col-md-10 col-lg-8" style="margin:auto;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col" width="50%" class="text-right">资源</th>
+                        <th scope="col" width="50%">需求</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-result">
+                    <tr><th scope="row" class="text-right">经验总量</th><td></td></tr>
+                    <tr><th scope="row" class="text-right">LS场数</th><td></td></tr>
+                    <tr><th scope="row" class="text-right">金币总量</th><td></td></tr>
+                    <tr><th scope="row" class="text-right">CE场数</th><td></td></tr>
+                    <tr><th scope="row" class="text-right">升级金币</th><td></td></tr>
+                    <tr><th scope="row" class="text-right">CE场数</th><td></td></tr>
+                    <tr><th scope="row" class="text-right">精英化金币</th><td></td></tr>
+                    <tr><th scope="row" class="text-right">CE场数</th><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <div class="row col-12 tutorial">
+            <div class="col-12 text-left">
+                <p>各星级最大等级说明：</p>
+                <p>1★：30</p>
+                <p>2★：30</p>
+                <p>3★：40/55</p>
+                <p>4★：45/60/70</p>
+                <p>5★：50/70/80</p>
+                <p>6★：50/80/90</p>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="row col-12 page-footer">
+        <div class="col-12 text-center">
+            <p>最近更新：2019/05/04，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
+            <p>
+                数据来源：
+                <a href="https://ak.hypergryph.com">『明日方舟』</a>
+            </p>
+            <p>Powered by 一只灰猫。</p>
+
+        </div>
+    </div>
+    <script>
+        $(function () {
+            let maxLevel = [];
+            let charExpMap = [];
+            let charUpCostMap = [];
+            let evolveGoldCost = [];
+            $.getJSON("aklevel.json", function (data) {
+                maxLevel = data['maxLevel'];
+                charExpMap = data['characterExpMap'];
+                charUpCostMap = data['characterUpgradeCostMap'];
+                evolveGoldCost = data['evolveGoldCost'];
+            });
+            $("#star").change(function () {
+                let star = $(this).val();
+                let maxEvolve = maxLevel[star - 1].length;
+                $("#current-evolve").html("");
+                $("#target-evolve").html("");
+                for (let i = 0; i < maxEvolve; i++) {
+                    $("#current-evolve").append("<option>" + i + "</option>");
+                    $("#target-evolve").append("<option>" + i + "</option>");
+                }
+                $("#current-evolve").val(0);
+                $("#target-evolve").val(0);
+            });
+            $(document).on('click', '#btn-calculate', function () {
+                $("#error-info").hide();
+                $("#tbody-result").html("");
+                let star = parseInt($("#star").val());
+                let currentEvolve = parseInt($("#current-evolve").val());
+                let currentLevel = parseInt($("#current-level").val());
+                let currentExp = parseInt($("#current-exp").val());
+                let targetEvolve = parseInt($("#target-evolve").val());
+                let targetLevel = parseInt($("#target-level").val());
+                if (isNaN(currentLevel) || isNaN(targetLevel)) {
+                    $("#error-info").html("等级必须为1~90的数字。");
+                    $("#error-info").show();
+                    return;
+                }
+                if (targetEvolve < currentEvolve || (targetEvolve === currentEvolve && targetLevel <= currentLevel)) {
+                    $("#error-info").html("目标等级不能低于或等于当前等级。");
+                    $("#error-info").show();
+                    return;
+                }
+                if (currentLevel > maxLevel[star - 1][currentEvolve] || targetLevel > maxLevel[star - 1][targetEvolve]) {
+                    $("#error-info").html("等级超出精英化阶段范围。");
+                    $("#error-info").show();
+                    return;
+                }
+                if (isNaN(currentExp) || currentExp < 0) {
+                    $("#error-info").html("当前经验必须为正整数");
+                    $("#error-info").show();
+                    return;
+                } else if (currentExp >= charExpMap[currentEvolve][currentLevel - 1]) {
+                    $("#error-info").html("当前经验超出可能的范围，请检查输入。");
+                    $("#error-info").show();
+                    return;
+                }
+                let expaccu = charExpMap[currentEvolve][currentLevel - 1] - currentExp;
+                let costaccu = charUpCostMap[currentEvolve][currentLevel - 1] * expaccu / (charExpMap[currentEvolve][currentLevel - 1]);
+                currentLevel++;
+                for (let i = currentEvolve, j = currentLevel; i <= targetEvolve; i++) {
+                    while (i < targetEvolve && j < maxLevel[star - 1][i]) {
+                        expaccu += charExpMap[i][j - 1];
+                        costaccu += charUpCostMap[i][j - 1];
+                        j++;
+                    }
+                    while (i === targetEvolve && j < targetLevel) {
+                        expaccu += charExpMap[i][j - 1];
+                        costaccu += charUpCostMap[i][j - 1];
+                        j++;
+                    }
+                    j = 1;
+                }
+                let evolveaccu = 0;
+                for (let i = currentEvolve; i < targetEvolve; i++) {
+                    console.log(star - 1);
+                    console.log(currentEvolve);
+                    console.log(evolveGoldCost[star - 1][i]);
+                    evolveaccu += evolveGoldCost[star - 1][i];
+                }
+                $.each([
+                    ['经验总量', expaccu],
+                    ['LS场数', (expaccu / 7400).toFixed(1)],
+                    ['金币总量', (costaccu + evolveaccu).toFixed(1)],
+                    ['CE场数', ((costaccu + evolveaccu) / 7500).toFixed(1)],
+                    ['升级金币', costaccu.toFixed(1)],
+                    ['CE场数', (costaccu / 7500).toFixed(1)],
+                    ['精英化金币', evolveaccu],
+                    ['CE场数', (evolveaccu / 7500).toFixed(1)],
+                ], function (_, v) {
+                    $("#tbody-result").append('<tr><th scope="row" class="text-right">' + v[0] + '</th><td>' + v[1] + '</td></tr>');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
