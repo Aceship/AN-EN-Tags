@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>明日方舟公开招募计算器</title>
+    <title>Arknights Recruitment Calculator</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -20,7 +20,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">明日方舟工具箱</a>
+        <a class="navbar-brand" href="#">Arknights Toolbox</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
             <span class="navbar-toggler-icon"></span>
@@ -28,16 +28,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="akhr.html">公开招募计算器</a>
+                    <a class="nav-link" href="akhr.html">Recruitment Calculator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="akhrchars.html">干员表</a>
+                    <a class="nav-link" href="akhrchars.html">Operators Table</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="aklevel.html">升级计算</a>
+                    <a class="nav-link" href="aklevel.html">Upgrades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">施工中…</a>
+                    <a class="nav-link disabled" href="#">WIP</a>
                 </li>
             </ul>
         </div>
@@ -50,51 +50,53 @@
                     <tr>
                         <td> <button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Qualification</button></td>
                         <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>资质</button> |</td>
-                        <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">新手</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">资深干员</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">高级资深干员</button></td>
+                        <td>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Newbie">新手</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Senior">资深干员</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Advanced Senior">高级资深干员</button>
+                        </td>
                     </tr>
                     <tr>
                         <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Position</button></td>
                         <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>位置</button> |</td>
-                        <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">远程位</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">近战位</button></td>
+                        <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Ranged">远程位</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Melee">近战位</button></td>
                     </tr>
                     <tr>
                         <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Gender</button></td>
                         <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>性别</button> |</td>
-                        <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">男性干员</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">女性干员</button></td>
+                        <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Male">男性干员</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Female">女性干员</button></td>
                     </tr>
                     <tr>
                         <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Class</button></td>
                         <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>种类</button> |</td>
-                        <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">先锋</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">狙击</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">医疗</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">术师</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">近卫</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">重装</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">辅助</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">特种</button></td>
+                        <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Vanguard">先锋</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Sniper">狙击</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Medic">医疗</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Caster">术师</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Guard">近卫</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Defender">重装</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Support">辅助</button>
+                            <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Specialist">特种</button></td>
                     </tr>
                     <tr>
                             <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Affix</button></td>
                             <td><button type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>词缀</button> |</td>
-                            <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">治疗</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">支援</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">输出</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">群攻</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">减速</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">生存</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">防护</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">削弱</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">位移</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">控场</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">爆发</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">召唤</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">快速复活</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1">费用回复</button></td>
+                            <td><button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Healing">治疗</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Support">支援</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="DPS">输出</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Splash">群攻</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Slow">减速</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Survival">生存</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Protection">防护</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Debuffer">削弱</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Displacement">位移</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Crowd Control">控场</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Burst">爆发</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Summoner">召唤</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Quick Resurrection">快速复活</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Cost Recovery">费用回复</button></td>
                     </tr>
                     <tr></tr>
                 </table>
@@ -163,6 +165,7 @@
     </div>
     <script>
         $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
             let tags_aval = {};
             let all_chars = {};
             let avg_char_tag = 0;
@@ -195,12 +198,17 @@
             });
 
             let checkedTags = [];
+            let checkedTagsTL = [];
             $(document).on("click", ".btn-tag", function () {
                 let checked = $(this).hasClass("btn-primary");
                 let tag = $(this).text();
+                let tagTL = $(this).attr('data-original-title');
                 if (checked) {
                     checkedTags = checkedTags.filter(function (v, _, __) {
                         return v !== tag;
+                    });
+                    checkedTagsTL = checkedTagsTL.filter(function (v, _, __) {
+                        return v !== tagTL;
                     });
                 } else {
                     if (checkedTags.length >= 6) {
@@ -208,10 +216,12 @@
                         return;
                     } else {
                         checkedTags.push(tag);
+                        checkedTagsTL.push(tagTL);
                     }
                 }
                 $(this).toggleClass("btn-primary btn-secondary");
                 // console.log(checkedTags);
+                // console.log(checkedTagsTL);
                 // console.log(tag)
             });
             $(document).on("click", ".btn-opt", function () {
@@ -240,14 +250,16 @@
                 let combs = [];
                 for (let i = 0; i < count; i++) {
                     let ts = [];
+                    let tstl = [];
                     for (let j = 0, mask = 1; j < len; j++) {
                         if ((i & mask) !== 0) {
                             ts.push(checkedTags[j]);
+                            tstl.push(checkedTagsTL[j]);
                             // console.log(checkedTags[j]);
                         }
                         mask = mask * 2;
                     }
-                    combs.push({ "tags": ts, "score": 0.0, "possible": [] });
+                    combs.push({ "tags": ts, "tagsTL": tstl, "score": 0.0, "possible": [] });
                 }
                 // console.log(combs);
                 let optStars = [];
@@ -314,6 +326,7 @@
                     if (comb.possible.length === 0) return;
                     let chars = comb.possible;
                     let tags = comb.tags;
+                    let tagsTL = comb.tagsTL
                     let chars_html = [];
                     let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
                     comb.possible.sort(function (a, b) {
@@ -328,10 +341,18 @@
                         tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" +
                             tag + "</button>\n")
                     });
+                    let tagsTL_html = [];
+                    $.each(tagsTL, function (i, tagTL) {
+                        tagsTL_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ tags[i] +"\">" +
+                            tagTL + "</button>\n")
+                    });
+                    console.log(tags);
+                    console.log(tagsTL);
                     $("#tbody-recommend").append(
-                        "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") +
+                        "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
                         "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
                     );
+                    $('[data-toggle="tooltip"]').tooltip();
                 });
             });
             let hasHidden = false;
