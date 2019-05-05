@@ -95,7 +95,7 @@
                     <label for="current-exp">当前经验</label>
                     <input type="text" class="form-control" id="current-exp" value="0">
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col-4">
                     <label for="target-evolve">目标精英化</label>
                     <select id="target-evolve" class="form-control">
                         <option selected>0</option>
@@ -103,9 +103,29 @@
                         <option>2</option>
                     </select>
                 </div>
-                <div class="form-group col-6">
+                <div class="form-group col-4">
                     <label for="target-level">目标等级</label>
-                    <input type="text" class="form-control" id="target-level" value="30">
+                    <input type="text" class="form-control" id="target-level" value="1">
+                </div>
+                <div class="form-group col-4">
+                    <label for="gold-asset">已有金币</label>
+                    <input type="text" class="form-control" id="gold-asset" value="0">
+                </div>
+                <div class="form-group col-3">
+                    <label for="book-basic">基础经验</label>
+                    <input type="text" class="form-control" id="book-basic" value="0">
+                </div>
+                <div class="form-group col-3">
+                    <label for="book-primary">初级经验</label>
+                    <input type="text" class="form-control" id="book-primary" value="0">
+                </div>
+                <div class="form-group col-3">
+                    <label for="book-middle">中级经验</label>
+                    <input type="text" class="form-control" id="book-middle" value="0">
+                </div>
+                <div class="form-group col-3">
+                    <label for="book-advanced">高级经验</label>
+                    <input type="text" class="form-control" id="book-advanced" value="0">
                 </div>
             </div>
         </div>
@@ -122,8 +142,8 @@
             <table class="table table-striped table-bordered my-3 col-12 col-md-10 col-lg-8" style="margin:auto;">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col" width="50%" class="text-right">资源</th>
-                        <th scope="col" width="50%">需求</th>
+                        <th scope="col" width="40%" class="text-right">资源</th>
+                        <th scope="col" width="60%">需求</th>
                     </tr>
                 </thead>
                 <tbody id="tbody-result"></tbody>
@@ -131,14 +151,21 @@
         </div>
         <hr />
         <div class="row col-12 tutorial">
-            <div class="col-12 text-left">
-                <p>各星级最大等级说明：</p>
+            <div class="col-12 col-sm-6 text-left">
+                <p><b>各星级最大等级说明</b></p>
                 <p>1★：30</p>
                 <p>2★：30</p>
                 <p>3★：40/55</p>
                 <p>4★：45/60/70</p>
                 <p>5★：50/70/80</p>
                 <p>6★：50/80/90</p>
+            </div>
+            <div class="col-12 col-sm-6 text-left">
+                <p><b>各等级经验书说明：</b></p>
+                <p>基础：200</p>
+                <p>初级：400</p>
+                <p>中级：1000</p>
+                <p>高级：2000</p>
             </div>
         </div>
     </div>
@@ -183,72 +210,84 @@
                 $("#error-info").hide();
                 $("#tbody-result").html("");
                 let star = parseInt($("#star").val());
-                let currentEvolve = parseInt($("#current-evolve").val());
-                let currentLevel = parseInt($("#current-level").val());
-                let currentExp = parseInt($("#current-exp").val());
-                let targetEvolve = parseInt($("#target-evolve").val());
-                let targetLevel = parseInt($("#target-level").val());
-                if (isNaN(currentLevel) || isNaN(targetLevel)) {
+                let cev = parseInt($("#current-evolve").val());
+                let cl = parseInt($("#current-level").val());
+                let ce = parseInt($("#current-exp").val());
+                let te = parseInt($("#target-evolve").val());
+                let tl = parseInt($("#target-level").val());
+                let ga = parseInt($("#gold-asset").val());
+                let bb = parseInt($("#book-basic").val());
+                let bp = parseInt($("#book-primary").val());
+                let bm = parseInt($("#book-middle").val());
+                let ba = parseInt($("#book-advanced").val());
+                if (isNaN(cl) || isNaN(tl)) {
                     $("#error-info").html("等级必须为1~90的数字。");
                     $("#error-info").show();
                     return;
                 }
-                if (targetEvolve < currentEvolve || (targetEvolve === currentEvolve && targetLevel <= currentLevel)) {
+                if (isNaN(ga) || isNaN(bb) || isNaN(bp) || isNaN(bm) || isNaN(ba)) {
+                    $("#error-info").html("已有金币/经验书数量只能为数字。");
+                    $("#error-info").show();
+                    return;
+
+                }
+                if (te < cev || (te === cev && tl <= cl)) {
                     $("#error-info").html("目标等级不能低于或等于当前等级。");
                     $("#error-info").show();
                     return;
                 }
-                if (currentLevel > maxLevel[star - 1][currentEvolve] || targetLevel > maxLevel[star - 1][targetEvolve]) {
+                if (cl > maxLevel[star - 1][cev] || tl > maxLevel[star - 1][te]) {
                     $("#error-info").html("等级超出精英化阶段范围。");
                     $("#error-info").show();
                     return;
                 }
-                if (isNaN(currentExp) || currentExp < 0) {
+                if (isNaN(ce) || ce < 0) {
                     $("#error-info").html("当前经验必须为正整数");
                     $("#error-info").show();
                     return;
-                } else if (currentExp >= charExpMap[currentEvolve][currentLevel - 1]) {
+                } else if ((cl === maxLevel[star - 1][cev] && ce !== 0) || ((cl !== maxLevel[star - 1][cev] && ce >= charExpMap[cev][cl - 1]))) {
                     $("#error-info").html("当前经验超出可能的范围，请检查输入。");
                     $("#error-info").show();
                     return;
                 }
-                let expaccu = charExpMap[currentEvolve][currentLevel - 1] - currentExp;
-                let costaccu = charUpCostMap[currentEvolve][currentLevel - 1] * expaccu / (charExpMap[currentEvolve][currentLevel - 1]);
-                currentLevel++;
-                for (let i = currentEvolve, j = currentLevel; i <= targetEvolve; i++) {
-                    while (i < targetEvolve && j < maxLevel[star - 1][i]) {
-                        expaccu += charExpMap[i][j - 1];
-                        costaccu += charUpCostMap[i][j - 1];
+                let es = cl === maxLevel[star - 1][cev] ? 0 : charExpMap[cev][cl - 1] - ce;
+                let cs = cl === maxLevel[star - 1][cev] ? 0 : charUpCostMap[cev][cl - 1] * es / (charExpMap[cev][cl - 1]);
+                cl++;
+                for (let i = cev, j = cl; i <= te; i++) {
+                    while (i < te && j < maxLevel[star - 1][i]) {
+                        es += charExpMap[i][j - 1];
+                        cs += charUpCostMap[i][j - 1];
                         j++;
                     }
-                    while (i === targetEvolve && j < targetLevel) {
-                        expaccu += charExpMap[i][j - 1];
-                        costaccu += charUpCostMap[i][j - 1];
+                    while (i === te && j < tl) {
+                        es += charExpMap[i][j - 1];
+                        cs += charUpCostMap[i][j - 1];
                         j++;
                     }
                     j = 1;
                 }
                 let evolveaccu = 0;
-                for (let i = currentEvolve; i < targetEvolve; i++) {
-                    console.log(star - 1);
-                    console.log(currentEvolve);
+                for (let i = cev; i < te; i++) {
+                    //console.log(star - 1);
+                    //console.log(cev);
                     console.log(evolveGoldCost[star - 1][i]);
                     evolveaccu += evolveGoldCost[star - 1][i];
                 }
+                let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
+                let eb = es - bs;
+                if (eb < 0) eb = 0;
+                let gs = (cs + evolveaccu).toFixed(1);
+                let gn = gs - ga;
+                if (gn < 0) gn = 0;
                 $.each([
-                    ['经验总量', expaccu],
-                    ['LS场数', (expaccu / 7400).toFixed(1)],
-                    ['LS体力', Math.ceil((expaccu / 7400).toFixed(1)) * 30],
-                    ['升级金币', costaccu.toFixed(1)],
-                    ['CE场数', (costaccu / 7500).toFixed(1)],
-                    ['CE体力', Math.ceil((costaccu / 7500).toFixed(1)) * 30],
-                    ['-','-'],
+                    ['需求经验', "<b>"+eb+"</b> <sub>= "+es+" - "+bs+"</sub>"],
+                    ['LS场数 <sub>体力</sub>', "<b>" + Math.ceil((eb / 7400).toFixed(1)) + "</b> <sub>" + Math.ceil((eb / 7400).toFixed(1)) * 30 + "</sub>"],
+                    ['需求金币', "<b>"+gn+"</b> <sub>= "+gs+" - "+ga+"</sub>"],
+                    ['CE场数 <sub>体力</sub>', "<b>" + Math.ceil((gn / 7500).toFixed(1)) + "</b> <sub>" + Math.ceil((gn / 7500).toFixed(1)) * 30 + "</sub>"],
+                    ['升级金币', cs.toFixed(1)],
+                    //['CE场数 (体力)', "" + (cs / 7500).toFixed(1) + " (" + Math.ceil((cs / 7500).toFixed(1)) * 30 + ")"],
                     ['精英化金币', evolveaccu],
-                    ['CE场数', (evolveaccu / 7500).toFixed(1)],
-                    ['CE体力', Math.ceil((evolveaccu / 7500).toFixed(1)) * 30],
-                    ['金币总量', (costaccu + evolveaccu).toFixed(1)],
-                    ['CE场数', ((costaccu + evolveaccu) / 7500).toFixed(1)],
-                    ['CE体力', Math.ceil(((costaccu + evolveaccu) / 7500).toFixed(1)) * 30],
+                    //['CE场数 (体力)', "" + (evolveaccu / 7500).toFixed(1) + " (" + Math.ceil((evolveaccu / 7500).toFixed(1)) * 30 + ")"],
                 ], function (_, v) {
                     $("#tbody-result").append('<tr><th scope="row" class="text-right">' + v[0] + '</th><td>' + v[1] + '</td></tr>');
                 });
