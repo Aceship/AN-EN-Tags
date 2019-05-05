@@ -117,6 +117,12 @@
                             <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
                             <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button></td>
                     </tr>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                            <td colspan=2><button style="width:100%" type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
+                            <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                            <td><button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-name" opt-id="showName">Name</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-image" opt-id="showImage">Image</button></td>
+                        </tr>
                 </table>
             </div>
             <div id="box-options">  
@@ -199,9 +205,16 @@
                 //console.log(avg_char_tag);
                 avg_char_tag = char_tag_sum / tag_count;
             });
-
+            let showImage = true;
+            let showName = true;
             let checkedTags = [];
             let checkedTagsTL = [];
+            $(document).on("click", ".btn-name", function () {
+                showName= !showName;
+            })
+            $(document).on("click", ".btn-image", function () {
+                showImage= !showImage;
+            })
             $(document).on("click", ".btn-tag", function () {
                 let checked = $(this).hasClass("btn-primary");
                 let tag = $(this).text();
@@ -336,8 +349,12 @@
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
                     $.each(chars, function (_, char) {
-                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
-                            " btn-char my-1\" style=\"border-radius: 6px;padding: 0px 0px;padding-right: 8px;\" title=\""+ char.name +"\">"+"<img style=\"border-radius: 8px;background-color: #AAA;border-radius: 4px;\"height=\"40\" width=\"40\" src=\"./img/chara/"+ char.name +".png\">   " + char.name + "</button>\n")
+                        let padding = showName ? "padding-right: 8px" : "padding-right: 0px"
+                        let style = showImage ? "style=\"border-radius: 6px;padding: 0px 0px;" + padding + ";\" " : ""
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " +style+"title=\""+ char.name +"\">")
+                        if(showImage)chars_html.push("<img style=\"border-radius: 8px;background-color: #AAA;border-radius: 4px;\"height=\"40\" width=\"40\" src=\"./img/chara/"+ char.name +".png\">   " )
+                        if(showName)chars_html.push(char.name)
+                        chars_html.push("</button>\n")
                     });
                     let tags_html = [];
                     $.each(tags, function (_, tag) {
@@ -360,6 +377,8 @@
             });
             let hasHidden = false;
             let lastChar = "";
+            
+                
             $(document).on("click", ".btn-char", function () {
                 let char_name = $(this).attr('title');
                 $(".tr-recommd").show();
