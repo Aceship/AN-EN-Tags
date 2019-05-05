@@ -337,7 +337,7 @@
                     });
                     $.each(chars, function (_, char) {
                         chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
-                            " btn-char my-1\">" + char.name + "</button>\n")
+                            " btn-char my-1\" style=\"border-radius: 6px;padding: 0px 0px;padding-right: 8px;\">"+"<img style=\"border-radius: 8px;background-color: #AAA;border-radius: 4px;\"height=\"40\" width=\"40\" src=\"./img/chara/"+ char.name +".png\">   " + char.name + "</button>\n")
                     });
                     let tags_html = [];
                     $.each(tags, function (_, tag) {
@@ -362,7 +362,7 @@
             $(document).on("click", ".btn-char", function () {
                 if (!hasHidden) {
                     $(".tr-recommd:not(:contains('" + $(this).text() + "'))").hide();
-                    let char_name = $(this).text();
+                    let char_name = $(this).name;
                     let char = all_chars[char_name];
                     let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
 
