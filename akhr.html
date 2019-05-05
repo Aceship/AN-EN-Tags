@@ -337,7 +337,7 @@
                     });
                     $.each(chars, function (_, char) {
                         chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
-                            " btn-char my-1\" style=\"border-radius: 6px;padding: 0px 0px;padding-right: 8px;\">"+"<img style=\"border-radius: 8px;background-color: #AAA;border-radius: 4px;\"height=\"40\" width=\"40\" src=\"./img/chara/"+ char.name +".png\">   " + char.name + "</button>\n")
+                            " btn-char my-1\" style=\"border-radius: 6px;padding: 0px 0px;padding-right: 8px;\" title=\""+ char.name +"\">"+"<img style=\"border-radius: 8px;background-color: #AAA;border-radius: 4px;\"height=\"40\" width=\"40\" src=\"./img/chara/"+ char.name +".png\">   " + char.name + "</button>\n")
                     });
                     let tags_html = [];
                     $.each(tags, function (_, tag) {
@@ -359,18 +359,22 @@
                 });
             });
             let hasHidden = false;
+            let lastChar = "";
             $(document).on("click", ".btn-char", function () {
-                if (!hasHidden) {
+                let char_name = $(this).attr('title');
+                $(".tr-recommd").show();
+                $(".tr-chartag").remove();
+                if (lastChar!=char_name) {
                     $(".tr-recommd:not(:contains('" + $(this).text() + "'))").hide();
-                    let char_name = $(this).name;
                     let char = all_chars[char_name];
                     let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
-
+                    console.log($(this).attr('title'))
                     let tags_html = [];
                     $.each(char.tags, function (_, tag) {
                         tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" +
                             tag + "</button>\n")
                     });
+                    
                     $("#tbody-recommend").append(
                         "<tr class=\"tr-chartag\"><td>#</td><td>" +
                         "<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
@@ -378,11 +382,11 @@
                         "</td><td>" + tags_html.join("") +
                         "</td><td>#</td></tr>"
                     );
-                } else {
-                    $(".tr-recommd").show();
-                    $(".tr-chartag").remove();
+                    lastChar = char_name
+                }else{
+                    lastChar =""
                 }
-                hasHidden = !hasHidden;
+                
             });
 
             $(document).on('click', '#btn-clear', function () {
