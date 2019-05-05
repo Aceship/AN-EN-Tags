@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Arknights Recruitment Calculator</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -116,18 +117,15 @@
                             <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
                             <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button></td>
                     </tr>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                            <td colspan=2><button style="width:100%" type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
+                            <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                            <td><button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-name" opt-id="showName">Name</button>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-image" opt-id="showImage">Image</button></td>
+                        </tr>
                 </table>
-                
-                
-                
-                
-                
-                
             </div>
-            
-            <div id="box-options">
-
-                
+            <div id="box-options">  
             </div>
         </div>
         <div class="row col-12">
@@ -207,9 +205,16 @@
                 //console.log(avg_char_tag);
                 avg_char_tag = char_tag_sum / tag_count;
             });
-
+            let showImage = true;
+            let showName = true;
             let checkedTags = [];
             let checkedTagsTL = [];
+            $(document).on("click", ".btn-name", function () {
+                showName= !showName;
+            })
+            $(document).on("click", ".btn-image", function () {
+                showImage= !showImage;
+            })
             $(document).on("click", ".btn-tag", function () {
                 let checked = $(this).hasClass("btn-primary");
                 let tag = $(this).text();
@@ -344,8 +349,12 @@
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
                     $.each(chars, function (_, char) {
-                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
-                            " btn-char my-1\">" + char.name + "</button>\n")
+                        let padding = showName ? "padding-right: 8px" : "padding-right: 0px"
+                        let style = showImage ? "style=\"border-radius: 6px;padding: 0px 0px;" + padding + ";\" " : ""
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " +style+"title=\""+ char.name +"\">")
+                        if(showImage)chars_html.push("<img style=\"border-radius: 8px;background-color: #AAA;border-radius: 4px;\"height=\"40\" width=\"40\" src=\"./img/chara/"+ char.name +".png\">   " )
+                        if(showName)chars_html.push(char.name)
+                        chars_html.push("</button>\n")
                     });
                     let tags_html = [];
                     $.each(tags, function (_, tag) {
@@ -367,18 +376,24 @@
                 });
             });
             let hasHidden = false;
+            let lastChar = "";
+            
+                
             $(document).on("click", ".btn-char", function () {
-                if (!hasHidden) {
+                let char_name = $(this).attr('title');
+                $(".tr-recommd").show();
+                $(".tr-chartag").remove();
+                if (lastChar!=char_name) {
                     $(".tr-recommd:not(:contains('" + $(this).text() + "'))").hide();
-                    let char_name = $(this).text();
                     let char = all_chars[char_name];
                     let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
-
+                    console.log($(this).attr('title'))
                     let tags_html = [];
                     $.each(char.tags, function (_, tag) {
                         tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" +
                             tag + "</button>\n")
                     });
+                    
                     $("#tbody-recommend").append(
                         "<tr class=\"tr-chartag\"><td>#</td><td>" +
                         "<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
@@ -386,17 +401,18 @@
                         "</td><td>" + tags_html.join("") +
                         "</td><td>#</td></tr>"
                     );
-                } else {
-                    $(".tr-recommd").show();
-                    $(".tr-chartag").remove();
+                    lastChar = char_name
+                }else{
+                    lastChar =""
                 }
-                hasHidden = !hasHidden;
+                
             });
 
             $(document).on('click', '#btn-clear', function () {
                 $('.btn-tag').removeClass('btn-primary').addClass('btn-secondary');
                 $("#tbody-recommend").html("");
                 checkedTags = [];
+                checkedTagsTL = [];
             });
         });
     </script>
