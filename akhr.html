@@ -18,6 +18,23 @@
         gtag('js', new Date());
         gtag('config', 'UA-138420636-1');
     </script>
+    <style>
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+            .dropdown:hover .dropdown-content {
+              display: block;
+            }
+            </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -36,6 +53,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="aklevel.html">Leveling Calculator</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="akguide.html">Guide</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">WIP</a>
@@ -121,7 +141,20 @@
                             <td colspan=2><button style="width:100%" type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
                             <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
                             <td><button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-name" opt-id="showName">Name</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-image" opt-id="showImage">Image</button></td>
+                                <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-image" opt-id="showImage">Image</button>
+                                <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Image Size
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="20">20</button>
+                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="32">32</button>
+                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="40">40</button>
+                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="64">64</button>
+                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="80">80</button>
+                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="128">128</button>
+                                </div>
+                                </div>
+                            </td>
                         </tr>
                 </table>
             </div>
@@ -174,6 +207,7 @@
     </div>
     <script>
         $(function () {
+            $('.dropdown-trigger').dropdown();
             $('[data-toggle="tooltip"]').tooltip();
             let tags_aval = {};
             let all_chars = {};
@@ -207,6 +241,7 @@
             });
             let showImage = true;
             let showName = true;
+            let size = 40;
             let checkedTags = [];
             let checkedTagsTL = [];
             $(document).on("click", ".btn-name", function () {
@@ -214,6 +249,9 @@
             })
             $(document).on("click", ".btn-image", function () {
                 showImage= !showImage;
+            })
+            $(document).on("click", ".btn-size", function () {
+                size = parseInt($(this).attr('title'));
             })
             $(document).on("click", ".btn-tag", function () {
                 let checked = $(this).hasClass("btn-primary");
@@ -349,11 +387,14 @@
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
                     $.each(chars, function (_, char) {
-                        let padding = showName ? "padding-right: 8px" : "padding-right: 0px"
-                        let style = showImage ? "style=\"border-radius: 6px;padding: 0px 0px;" + padding + ";\" " : ""
+                        let padding = showName &&size <60? "padding-right: 8px" : "padding-right: 1px"
+                        let style = showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : ""
+                        let buttonstyle = size >25? "background-color: #AAA;border-radius: 4px;": "background-color: transparent;border-radius: 4px;"
                         chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " +style+"title=\""+ char.name +"\">")
-                        if(showImage)chars_html.push("<img style=\"border-radius: 8px;background-color: #AAA;border-radius: 4px;\"height=\"40\" width=\"40\" src=\"./img/chara/"+ char.name +".png\">   " )
+                        if(showImage)chars_html.push("<img style=\""+buttonstyle+"\"height=\""+size+"\" width=\""+size+"\" src=\"./img/chara/"+ char.name +".png\">   " )
+                        if(size>60)chars_html.push("<div>")
                         if(showName)chars_html.push(char.name)
+                        if(size>60)chars_html.push("</div>")
                         chars_html.push("</button>\n")
                     });
                     let tags_html = [];
