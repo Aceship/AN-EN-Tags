@@ -129,15 +129,11 @@
                 </div>
             </div>
         </div>
-        <div class="row col-12">
-            <div class="col-12">
-                <button class="btn btn-success col-12 align-self-center text-center" id="btn-calculate">计算</button>
-            </div>
+        <div class="row">
+            <button class="btn btn-success col-10 text-center" id="btn-calculate" style="margin:auto;">计算</button>
         </div>
-        <div class="col-12 alert alert-danger mt-3" id="error-info" role="alert" style="display:none">
-
-        </div>
-        <div class="row rounded">
+        <div class="col-12 alert alert-danger mt-3" id="error-info" role="alert" style="display:none"></div>
+        <div class="row">
             <table class="table table-striped my-3">
                 <thead class="thead-dark">
                     <tr>
@@ -267,9 +263,6 @@
                 }
                 let ea = 0;
                 for (let i = cev; i < te; i++) {
-                    //console.log(star - 1);
-                    //console.log(cev);
-                    console.log(evolveGoldCost[star - 1][i]);
                     ea += evolveGoldCost[star - 1][i];
                 }
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
