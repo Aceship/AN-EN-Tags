@@ -42,12 +42,12 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <div class="form-group mt-3">
+    <div class="container col-12 col-sm-10 col-md-8 col-lg-6" style="margin:auto;">
+        <div class="alert alert-dark mt-3 px-3 px-sm-4 form-control-sm">
             <div class="form-row">
-                <div class="form-group col-12 col-md-2">
+                <div class="form-group col-12 col-sm-2">
                     <label for="star">星级★</label>
-                    <select id="star" class="form-control">
+                    <select id="star" class="form-control form-control-sm">
                         <option selected>6</option>
                         <option>5</option>
                         <option>4</option>
@@ -56,9 +56,9 @@
                         <option>1</option>
                     </select>
                 </div>
-                <div class="form-group col-6 col-md-5">
+                <div class="form-group col-6 col-sm-5">
                     <label for="lslevel">经验本</label>
-                    <select id="lslevel" class="form-control">
+                    <select id="lslevel" class="form-control form-control-sm">
                         <option selected>LS-5</option>
                         <!--<option>LS-4</option>
                         <option>LS-3</option>
@@ -66,9 +66,9 @@
                         <option>LS-1</option>-->
                     </select>
                 </div>
-                <div class="form-group col-6 col-md-5">
+                <div class="form-group col-6 col-sm-5">
                     <label for="lslevel">金币本</label>
-                    <select id="lslevel" class="form-control">
+                    <select id="lslevel" class="form-control form-control-sm">
                         <option selected>CE-5</option>
                         <!--<option>CE-4</option>
                         <option>CE-3</option>
@@ -81,7 +81,7 @@
             <div class="form-row">
                 <div class="form-group col-4">
                     <label for="current-evolve">当前精英化</label>
-                    <select id="current-evolve" class="form-control">
+                    <select id="current-evolve" class="form-control form-control-sm">
                         <option selected>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -89,15 +89,15 @@
                 </div>
                 <div class="form-group col-4">
                     <label for="current-level">当前等级</label>
-                    <input type="text" class="form-control" id="current-level" value="1">
+                    <input type="text" class="form-control form-control-sm" id="current-level" value="1">
                 </div>
                 <div class="form-group col-4">
                     <label for="current-exp">当前经验</label>
-                    <input type="text" class="form-control" id="current-exp" value="0">
+                    <input type="text" class="form-control form-control-sm" id="current-exp" value="0">
                 </div>
                 <div class="form-group col-4">
                     <label for="target-evolve">目标精英化</label>
-                    <select id="target-evolve" class="form-control">
+                    <select id="target-evolve" class="form-control form-control-sm">
                         <option selected>0</option>
                         <option>1</option>
                         <option>2</option>
@@ -105,27 +105,27 @@
                 </div>
                 <div class="form-group col-4">
                     <label for="target-level">目标等级</label>
-                    <input type="text" class="form-control" id="target-level" value="1">
+                    <input type="text" class="form-control form-control-sm" id="target-level" value="1">
                 </div>
                 <div class="form-group col-4">
                     <label for="gold-asset">已有金币</label>
-                    <input type="text" class="form-control" id="gold-asset" value="0">
+                    <input type="text" class="form-control form-control-sm" id="gold-asset" value="0">
                 </div>
                 <div class="form-group col-3">
                     <label for="book-basic">基础经验</label>
-                    <input type="text" class="form-control" id="book-basic" value="0">
+                    <input type="text" class="form-control form-control-sm" id="book-basic" value="0">
                 </div>
                 <div class="form-group col-3">
                     <label for="book-primary">初级经验</label>
-                    <input type="text" class="form-control" id="book-primary" value="0">
+                    <input type="text" class="form-control form-control-sm" id="book-primary" value="0">
                 </div>
                 <div class="form-group col-3">
                     <label for="book-middle">中级经验</label>
-                    <input type="text" class="form-control" id="book-middle" value="0">
+                    <input type="text" class="form-control form-control-sm" id="book-middle" value="0">
                 </div>
                 <div class="form-group col-3">
                     <label for="book-advanced">高级经验</label>
-                    <input type="text" class="form-control" id="book-advanced" value="0">
+                    <input type="text" class="form-control form-control-sm" id="book-advanced" value="0">
                 </div>
             </div>
         </div>
@@ -137,9 +137,8 @@
         <div class="col-12 alert alert-danger mt-3" id="error-info" role="alert" style="display:none">
 
         </div>
-        <div class="row">
-
-            <table class="table table-striped table-bordered my-3 col-12 col-md-10 col-lg-8" style="margin:auto;">
+        <div class="row rounded">
+            <table class="table table-striped my-3">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col" width="40%" class="text-right">资源</th>
@@ -266,28 +265,29 @@
                     }
                     j = 1;
                 }
-                let evolveaccu = 0;
+                let ea = 0;
                 for (let i = cev; i < te; i++) {
                     //console.log(star - 1);
                     //console.log(cev);
                     console.log(evolveGoldCost[star - 1][i]);
-                    evolveaccu += evolveGoldCost[star - 1][i];
+                    ea += evolveGoldCost[star - 1][i];
                 }
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
                 let eb = es - bs;
                 if (eb < 0) eb = 0;
-                let gs = (cs + evolveaccu).toFixed(1);
+                let gs = (cs + ea).toFixed(1);
                 let gn = gs - ga;
                 if (gn < 0) gn = 0;
+                let lsn = Math.ceil((eb / 7500).toFixed(1));
+                let cen = Math.ceil((gn / 7500).toFixed(1));
                 $.each([
-                    ['需求经验', "<b>"+eb+"</b> <sub>= "+es+" - "+bs+"</sub>"],
-                    ['LS体力 <sub>场数</sub>', "<b>" + Math.ceil((eb / 7400).toFixed(1)) * 30 + "</b> <sub>= 30 * " + Math.ceil((eb / 7400).toFixed(1)) + "</sub>"],
-                    ['需求金币', "<b>"+gn+"</b> <sub>= "+gs+" - "+ga+"</sub>"],
-                    ['CE体力 <sub>场数</sub>', "<b>" + Math.ceil((gn / 7500).toFixed(1)) * 30 + "</b> <sub>= 30 * " + Math.ceil((gn / 7500).toFixed(1)) + "</sub>"],
+                    ['体力总计', "<b>" + (lsn + cen) * 30 + "</b> <sub>= " + lsn * 30 + " + " + cen * 30 + "</sub>"],
+                    ['经验', "<b>" + eb + "</b> <sub>= " + es + " - " + bs + "</sub>"],
+                    ['LS体力 <sub>场数</sub>', "<b>" + lsn * 30 + "</b> <sub>= 30 * " + lsn + "</sub>"],
+                    ['金币', "<b>" + gn + "</b> <sub>= " + gs + " - " + ga + "</sub>"],
+                    ['CE体力 <sub>场数</sub>', "<b>" + cen * 30 + "</b> <sub>= 30 * " + cen + "</sub>"],
                     ['升级金币', cs.toFixed(1)],
-                    //['CE场数 (体力)', "" + (cs / 7500).toFixed(1) + " (" + Math.ceil((cs / 7500).toFixed(1)) * 30 + ")"],
-                    ['精英化金币', evolveaccu],
-                    //['CE场数 (体力)', "" + (evolveaccu / 7500).toFixed(1) + " (" + Math.ceil((evolveaccu / 7500).toFixed(1)) * 30 + ")"],
+                    ['精英化金币', ea],
                 ], function (_, v) {
                     $("#tbody-result").append('<tr><th scope="row" class="text-right">' + v[0] + '</th><td>' + v[1] + '</td></tr>');
                 });
