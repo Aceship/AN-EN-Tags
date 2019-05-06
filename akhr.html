@@ -79,18 +79,22 @@
                             <span class="cn">图片</span>
                             <span class="en">Image</span>
                         </button>
-                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="cn">图片大小</span>
-                            <span class="en">Image Size</span>
+                        <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-imgsize btn-imgsizedefault" sizeval="27">
+                            <span class="cn">小</span>
+                            <span class="en">Small</span>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button class="dropdown-item btn-imgsize" type="button" sizeval="20">20</button>
-                            <button class="dropdown-item btn-imgsize" type="button" sizeval="32">32</button>
-                            <button class="dropdown-item btn-imgsize" type="button" sizeval="40">40</button>
-                            <button class="dropdown-item btn-imgsize" type="button" sizeval="64">64</button>
-                            <button class="dropdown-item btn-imgsize" type="button" sizeval="80">80</button>
-                            <button class="dropdown-item btn-imgsize" type="button" sizeval="128">128</button>
-                        </div>
+                        <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="45">
+                            <span class="cn">中</span>
+                            <span class="en">Middle</span>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="80">
+                            <span class="cn">大</span>
+                            <span class="en">Large</span>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="128">
+                            <span class="cn">特大</span>
+                            <span class="en">Ex-large</span>
+                        </button>
                     </td>
                 </tr>
                 <tr>
@@ -208,7 +212,7 @@
 
             let showImage = true;
             let showName = true;
-            let imageSize = 40;
+            let imageSize = 27;
             $(document).on("click", ".btn-name", function () {
                 $(this).toggleClass("btn-primary btn-secondary");
                 showName = !showName;
@@ -216,11 +220,16 @@
             });
             $(document).on("click", ".btn-image", function () {
                 $(this).toggleClass("btn-primary btn-secondary");
+                $(".btn-imgsize").removeClass("btn-primary btn-secondary").addClass("btn-secondary");
+                if ($(this).hasClass("btn-primary"))
+                    $(".btn-imgsize[sizeval=" + imageSize + "]").toggleClass("btn-primary btn-secondary");
                 showImage = !showImage;
                 calc();
             });
             $(document).on("click", ".btn-imgsize", function () {
                 imageSize = parseInt($(this).attr("sizeval"));
+                $(".btn-imgsize").removeClass("btn-primary btn-secondary").addClass("btn-secondary");
+                $(this).toggleClass("btn-primary btn-secondary");
                 calc();
             });
 
@@ -341,7 +350,7 @@
                         let style = showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : "";
                         let buttonstyle = imageSize > 25 ? "background-color: #AAA;border-radius: 4px;" : "background-color: transparent;border-radius: 4px;";
                         chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " + style + "title=\"" + char.name + "\">");
-                        if (showImage) chars_html.push("<img style=\"" + buttonstyle + "\"height=\"" + imageSize + "\" width=\"" + imageSize + "\" src=\"./img/chara/" + char.img + ".png\">   ");
+                        if (showImage) chars_html.push("<img style=\"" + buttonstyle + "\"height=\"" + imageSize + "\" width=\"" + imageSize + "\" src=\"img/chara/" + char.img + ".png\">   ");
                         if (imageSize > 60) chars_html.push("<div>");
                         if (showName) chars_html.push(char.name);
                         if (imageSize > 60) chars_html.push("</div>");
@@ -356,7 +365,6 @@
                             tags_html.push('<button type="button" class="btn btn-sm btn-secondary btn-char my-1' +
                                 ' btn-char my-1" data-toggle="tooltip" data-placement="top" title="' + tagsTL[i] + '">' +
                                 tags[i] + "</button>\n");
-                            console.log(tagsTL);
                         }
                     }
                     $("#tbody-recommend").append(
@@ -401,7 +409,6 @@
                 let checked = $(this).hasClass("btn-primary");
                 let tag = $(this).text();
                 let tagTL = $(this).attr("data-original-title");
-                console.log(tagTL);
                 if (checked) {
                     checkedTags = checkedTags.filter(function (v, _, __) {
                         return v !== tag;
