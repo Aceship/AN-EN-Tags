@@ -246,10 +246,14 @@
                 }
             }
 
-            if(localStorage.gameRegion === null){
-                localStorage.setItem("gameRegion", $("#selReg").val());
-                localStorage.setItem("webLang", $("#selLang").val());
+            if(typeof localStorage.gameRegion === "undefined"){
+                console.log("game region undefined");
+                localStorage.setItem("gameRegion", 'cn');
+                localStorage.setItem("webLang", 'en');
+                $("#selReg").val('cn');
+                $("#selLang").val('en');
             } else {
+                console.log(localStorage.gameRegion);
                 $("#selReg").val(localStorage.gameRegion);
                 $("#selLang").val(localStorage.webLang);
             }
