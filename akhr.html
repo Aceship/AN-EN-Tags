@@ -513,7 +513,7 @@
                     });
                     $.each(chars, function (_, char) {
                         let padding = localStorage.showName && localStorage.size <60? "padding-right: 8px" : "padding-right: 1px"
-                        let style = localStorage.showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : ""
+                        let style = localStorage.showImage=='true' ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : ""
                         let buttonstyle = localStorage.size >25? "background-color: #AAA;border-radius: 4px;": "background-color: transparent;border-radius: 4px;"
                         chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " +style+" title=\""+ char.name +"\">");
                         if(localStorage.showImage == 'true')chars_html.push("<img style=\""+buttonstyle+"\"height=\""+localStorage.size+"\" width=\""+localStorage.size+"\" src=\"./img/chara/"+ char.name_en +".png\">   " )
