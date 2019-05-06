@@ -18,9 +18,9 @@
 ## Arknights Toolbox
 
 #### Functions
-1. [Recruitment Recommender](https://graueneko.github.io/akhr.html)
-2. [Characters Table](https://graueneko.github.io/akhrchars.html)
-3. [Levelup Costs Calculator](https://graueneko.github.io/aklevel.html)
+1. [Recruitment Recommender](https://graueneko.github.io/akhr.html?lang=en)
+2. [Characters Table](https://graueneko.github.io/akhrchars.html?lang=en)
+3. [Levelup Costs Calculator](https://graueneko.github.io/aklevel.html?lang=en)
 
 #### Description
 You can open an issue if have any function requirements.
