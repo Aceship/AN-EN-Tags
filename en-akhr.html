@@ -1,0 +1,484 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Arknights Recruitment Calculator</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-138420636-1');
+    </script>
+    <style>
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Arknights Toolbox</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="akhr.html">Recruitment Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="akhrchars.html">Operators Table</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aklevel.html">Leveling Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="akguide.html">Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">WIP</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="switchLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="akhr.html">中文</a>
+                        <a class="dropdown-item" href="en-akhr.html">English</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="col-12 alert alert-dark mt-3" role="alert">
+            <center><button type="button" class="btn btn-success col-12 align-self-center text-center" disabled>Select the tags :</button></center>
+            <div id="box-tags">
+                <table>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                        <td> <button style="width:100%" type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Qualification</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>资质</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                        <td width=100%>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Newbie">新手</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Senior">资深干员</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Advanced Senior">高级资深干员</button>
+                        </td>
+                    </tr>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                        <td><button style="width:100%" type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Position</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>位置</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                        <td>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Ranged">远程位</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Melee">近战位</button>
+                        </td>
+                    </tr>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                        <td><button style="width:100%" type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Gender</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>性别</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                        <td>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Male">男性干员</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Female">女性干员</button>
+                        </td>
+                    </tr>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                        <td><button style="width:100%" type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Class</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>种类</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                        <td>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Vanguard">先锋</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Sniper">狙击</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Medic">医疗</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Caster">术师</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Guard">近卫</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Defender">重装</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Support">辅助</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Specialist">特种</button>
+                        </td>
+                    </tr>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                        <td><button style="width:100%" type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Affix</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>词缀</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                        <td>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Healing">治疗</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Support">支援</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="DPS">输出</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Splash">群攻</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Slow">减速</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Survival">生存</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Protection">防护</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Debuffer">削弱</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Displacement">位移</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Crowd Control">控场</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Burst">爆发</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Summoner">召唤</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Quick Resurrection">快速复活</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" data-toggle="tooltip" data-placement="top" title="Cost Recovery">费用回复</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan=4><hr class="my-1" /></td>
+                    </tr>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                        <td colspan=2><button style="width:100%" type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Filter Rarity</button></td>
+                        <td><button type="button" id="btn-calculate" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                        <td>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button>
+                        </td>
+                    </tr>
+                    <tr style="text-align:left;vertical-align:top;padding:0">
+                        <td colspan=2><button style="width:100%" type="button" id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
+                        <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                        <td>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-name" opt-id="showName">Name</button>
+                            <button type="button" id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-image" opt-id="showImage">Image</button>
+                            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Image Size
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="20">20</button>
+                                <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="32">32</button>
+                                <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="40">40</button>
+                                <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="64">64</button>
+                                <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="80">80</button>
+                                <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="128">128</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="box-options">
+        </div>
+    </div>
+    <div class="row col-12">
+        <div class="col-12">
+            <button class="btn btn-danger col-12 align-self-center text-center" id="btn-clear">Clear</button>
+        </div>
+    </div>
+    <table class="table table-striped table-hover my-3" id="table-recommend">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col" style="width:16.67%">Tags</th>
+                <th scope="col">Character Possibility</th>
+                <th scope="col">$~</th>
+            </tr>
+        </thead>
+        <tbody id="tbody-recommend"></tbody>
+    </table>
+    <hr />
+    <div class="row col-12 tutorial">
+        <div class="col-12 text-left">
+            <p>How To Use ：</p>
+            <p>1. Click on tags, up to 6 tags</p>
+            <p>2. Check the star you want to filter</p>
+            <p>3. Click on calculate (currently automatically calculated on pressing tags)</p>
+            <p>4. You can click on the clerk or label in the recommendation form to make an accurate query, then click on any clerk or label to return.</p>
+        </div>
+    </div>
+
+    <hr />
+    <div class="row col-12 page-footer">
+        <div class="col-12 text-center">
+            <p>Forked from <a href="https://graueneko.github.io/akhr.html">grauneko web</a></p>
+            <p>最近更新：2019/05/02，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
+            <p>
+                数据来源：
+                <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a>
+            </p>
+            <p>Powered by 一只灰猫。</p>
+
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('.dropdown-trigger').dropdown();
+            $('[data-toggle="tooltip"]').tooltip();
+            let tags_aval = {};
+            let all_chars = {};
+            let avg_char_tag = 0;
+            $.getJSON("en-akhr2.json", function (data) {
+                let tag_count = 0;
+                let char_tag_sum = 0;
+                // console.log(data);
+                $.each(data, function (_, char) {
+                    if (char.hidden) return;
+                    char.tags.push(char.type);
+                    char.tags.push(char.sex + "性干员");
+                    $.each(char.tags, function (_, tag) {
+                        if (tag in tags_aval) {
+                            tags_aval[tag].push({ "name": char.name, "level": char.level, "type": char.type });
+                        } else {
+                            tags_aval[tag] = [{ "name": char.name, "level": char.level, "type": char.type }];
+                        }
+                        char_tag_sum++;
+                    });
+                    all_chars[char.name] = { 'level': char.level, 'tags': char.tags };
+                });
+                //$.each(tags_aval, function (key, _) {
+                //    $("#box-tags").append(
+                //        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
+                //    );
+                //    tag_count++;
+                //});
+                //console.log(avg_char_tag);
+                avg_char_tag = char_tag_sum / tag_count;
+            });
+            let showImage = true;
+            let showName = true;
+            let size = 40;
+            let checkedTags = [];
+            let checkedTagsTL = [];
+            $(document).on("click", ".btn-name", function () {
+                showName = !showName;
+            })
+            $(document).on("click", ".btn-image", function () {
+                showImage = !showImage;
+            })
+            $(document).on("click", ".btn-size", function () {
+                size = parseInt($(this).attr('title'));
+            })
+            $(document).on("click", ".btn-tag", function () {
+                let checked = $(this).hasClass("btn-primary");
+                let tag = $(this).text();
+                let tagTL = $(this).attr('data-original-title');
+                if (checked) {
+                    checkedTags = checkedTags.filter(function (v, _, __) {
+                        return v !== tag;
+                    });
+                    checkedTagsTL = checkedTagsTL.filter(function (v, _, __) {
+                        return v !== tagTL;
+                    });
+                } else {
+                    if (checkedTags.length >= 6) {
+                        alert("Only 6 tags max");
+                        return;
+                    } else {
+                        checkedTags.push(tag);
+                        checkedTagsTL.push(tagTL);
+                    }
+                }
+                $(this).toggleClass("btn-primary btn-secondary");
+                // console.log(checkedTags);
+                // console.log(checkedTagsTL);
+                // console.log(tag)
+            });
+            $(document).on("click", ".btn-opt", function () {
+                $(this).toggleClass("btn-primary btn-secondary");
+                let checked = $(this).hasClass("btn-primary");
+                if ($(this).attr("id") === "opt-all") {
+                    $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
+                        checked ? "btn-primary" : "btn-secondary"
+                    );
+                } else {
+                    if ($("#opt-all").hasClass("btn-primary")) {
+                        $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    } else {
+                        let checkedCount = 0;
+                        $(".btn-opt").each(function (_, __) {
+                            if ($(this).attr("id") === "opt-all") return;
+                            if ($(this).hasClass("btn-primary")) checkedCount++;
+                        });
+                        if (checkedCount === 6) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    }
+                }
+            });
+            $(document).on("click", "#btn-calculate", function () {
+                let len = checkedTags.length;
+                let count = Math.pow(2, checkedTags.length);
+                let combs = [];
+                for (let i = 0; i < count; i++) {
+                    let ts = [];
+                    let tstl = [];
+                    for (let j = 0, mask = 1; j < len; j++) {
+                        if ((i & mask) !== 0) {
+                            ts.push(checkedTags[j]);
+                            tstl.push(checkedTagsTL[j]);
+                            // console.log(checkedTags[j]);
+                        }
+                        mask = mask * 2;
+                    }
+                    combs.push({ "tags": ts, "tagsTL": tstl, "score": 0.0, "possible": [] });
+                }
+                // console.log(combs);
+                let optStars = [];
+                $(".btn-opt").each(function (_, __) {
+                    if ($(this).attr("opt-id") === "all" || $(this).hasClass("btn-secondary")) return;
+                    optStars.push($(this).attr("opt-id"));
+                });
+                //console.log(optStars);
+                $("#tbody-recommend").html("");
+                $.each(combs, function (_, comb) {
+                    let tags = comb.tags;
+                    if (tags.length === 0 || tags.length > 3) return;
+                    let chars = [...tags_aval[tags[0]]];
+                    for (let i = 1; i < tags.length; i++) {
+                        let reduced_chars = [];
+                        $.each(chars, function (_, char) {
+                            // console.log(tags_aval[tags[i]]);
+                            // console.log(char);
+                            $.each(tags_aval[tags[i]], function (_, tgch) {
+                                if (char.name === tgch.name) {
+                                    reduced_chars.push(char);
+                                    return false;
+                                }
+                            });
+                        });
+                        chars = reduced_chars;
+                    }
+
+                    if (chars.length === 0) return;
+                    if (!tags.includes("资深干员") && !tags.includes("高级资深干员")) {
+                        // console.log(tags.join(",") + " 不含(高级)资深干员");
+                        let reduce6 = [];
+                        $.each(chars, function (_, char) {
+                            if (char.level !== 6) {
+                                reduce6.push(char);
+                            }
+                        });
+                        chars = reduce6;
+                    }
+                    let filtered_chars = [];
+                    $.each(chars, function (_, char) {
+                        //console.log(char.level);
+                        if (optStars.includes(char.level.toString())) {
+                            filtered_chars.push(char);
+                        }
+                    });
+                    chars = filtered_chars;
+
+                    comb.possible = chars;
+                    if (chars.length === 0) return;
+                    let s = 0;
+                    $.each(chars, (_, char) => {
+                        s += char.level;
+                    });
+                    s = s / chars.length;
+                    comb.score = s - tags.length / 10 - chars.length / avg_char_tag;
+                });
+                combs.sort(function (a, b) {
+                    return a.score > b.score ? -1 : (a.score < b.score ? 1 :
+                        (a.tags.length > b.tags.length ? 1 : (a.tags.length < b.tags.length ? -1 : 0)));
+                });
+                let no = 1;
+                $.each(combs, function (_, comb) {
+                    if (comb.possible.length === 0) return;
+                    let chars = comb.possible;
+                    let tags = comb.tags;
+                    let tagsTL = comb.tagsTL
+                    let chars_html = [];
+                    let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
+                    comb.possible.sort(function (a, b) {
+                        return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
+                    });
+                    $.each(chars, function (_, char) {
+                        let padding = showName && size < 60 ? "padding-right: 8px" : "padding-right: 1px"
+                        let style = showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : ""
+                        let buttonstyle = size > 25 ? "background-color: #AAA;border-radius: 4px;" : "background-color: transparent;border-radius: 4px;"
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " + style + "title=\"" + char.name + "\">")
+                        if (showImage) chars_html.push("<img style=\"" + buttonstyle + "\"height=\"" + size + "\" width=\"" + size + "\" src=\"./img/chara/" + char.name + ".png\">   ")
+                        if (size > 60) chars_html.push("<div>")
+                        if (showName) chars_html.push(char.name)
+                        if (size > 60) chars_html.push("</div>")
+                        chars_html.push("</button>\n")
+                    });
+                    let tags_html = [];
+                    $.each(tags, function (_, tag) {
+                        tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" +
+                            tag + "</button>\n")
+                    });
+                    let tagsTL_html = [];
+                    $.each(tagsTL, function (i, tagTL) {
+                        tagsTL_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\"" + tags[i] + "\">" +
+                            tagTL + "</button>\n")
+                    });
+                    console.log(tags);
+                    console.log(tagsTL);
+                    $("#tbody-recommend").append(
+                        "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
+                        "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
+                    );
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+            });
+            let hasHidden = false;
+            let lastChar = "";
+
+
+            $(document).on("click", ".btn-char", function () {
+                let char_name = $(this).attr('title');
+                $(".tr-recommd").show();
+                $(".tr-chartag").remove();
+                if (lastChar != char_name) {
+                    $(".tr-recommd:not(:contains('" + $(this).text() + "'))").hide();
+                    let char = all_chars[char_name];
+                    let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
+                    console.log(char)
+                    let tags_html = [];
+                    $.each(char.tags, function (_, tag) {
+                        tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" +
+                            tag + "</button>\n")
+                    });
+
+                    $("#tbody-recommend").append(
+                        "<tr class=\"tr-chartag\"><td>#</td><td>" +
+                        "<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
+                        " btn-char my-1\" title=\"" + char_name + "\">" + char_name + "</button>\n" +
+                        "</td><td>" + tags_html.join("") +
+                        "</td><td>#</td></tr>"
+                    );
+                    lastChar = char_name
+                } else {
+                    lastChar = ""
+                }
+
+            });
+
+            $(document).on('click', '#btn-clear', function () {
+                $('.btn-tag').removeClass('btn-primary').addClass('btn-secondary');
+                $("#tbody-recommend").html("");
+                checkedTags = [];
+                checkedTagsTL = [];
+                lastChar = ""
+            });
+        });
+    </script>
+</body>
+</html>
