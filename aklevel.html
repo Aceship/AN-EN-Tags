@@ -42,107 +42,111 @@
             </ul>
         </div>
     </nav>
-    <div class="container col-12 col-sm-10 col-md-8 col-lg-6" style="margin:auto;">
-        <div class="alert alert-dark mt-3 px-3 px-sm-4 form-control-sm">
-            <div class="form-row">
-                <div class="form-group col-12 col-sm-2">
-                    <label for="star">星级★</label>
-                    <select id="star" class="form-control form-control-sm">
-                        <option selected>6</option>
-                        <option>5</option>
-                        <option>4</option>
-                        <option>3</option>
-                        <option>2</option>
-                        <option>1</option>
-                    </select>
-                </div>
-                <div class="form-group col-6 col-sm-5">
-                    <label for="lslevel">经验本</label>
-                    <select id="lslevel" class="form-control form-control-sm">
-                        <option selected>LS-5</option>
-                        <!--<option>LS-4</option>
-                        <option>LS-3</option>
-                        <option>LS-2</option>
-                        <option>LS-1</option>-->
-                    </select>
-                </div>
-                <div class="form-group col-6 col-sm-5">
-                    <label for="lslevel">金币本</label>
-                    <select id="lslevel" class="form-control form-control-sm">
-                        <option selected>CE-5</option>
-                        <!--<option>CE-4</option>
-                        <option>CE-3</option>
-                        <option>CE-2</option>
-                        <option>CE-1</option>-->
-                    </select>
-                </div>
-            </div>
+    <div class="container col-12" style="margin:auto;max-width:1000px;">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="alert alert-dark mt-3 px-2 px-sm-4 form-control-sm">
+                    <div class="form-row">
+                        <div class="form-group col-12 col-sm-2">
+                            <label for="star">星级★</label>
+                            <select id="star" class="form-control form-control-sm">
+                                <option selected>6</option>
+                                <option>5</option>
+                                <option>4</option>
+                                <option>3</option>
+                                <option>2</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-6 col-sm-5">
+                            <label for="lslevel">经验本</label>
+                            <select id="lslevel" class="form-control form-control-sm">
+                                <option selected>LS-5</option>
+                                <!--<option>LS-4</option>
+                                <option>LS-3</option>
+                                <option>LS-2</option>
+                                <option>LS-1</option>-->
+                            </select>
+                        </div>
+                        <div class="form-group col-6 col-sm-5">
+                            <label for="lslevel">金币本</label>
+                            <select id="lslevel" class="form-control form-control-sm">
+                                <option selected>CE-5</option>
+                                <!--<option>CE-4</option>
+                                <option>CE-3</option>
+                                <option>CE-2</option>
+                                <option>CE-1</option>-->
+                            </select>
+                        </div>
+                    </div>
 
-            <div class="form-row">
-                <div class="form-group col-4">
-                    <label for="current-evolve">当前精英化</label>
-                    <select id="current-evolve" class="form-control form-control-sm">
-                        <option selected>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                    </select>
+                    <div class="form-row">
+                        <div class="form-group col-4">
+                            <label for="current-evolve">当前精英化</label>
+                            <select id="current-evolve" class="form-control form-control-sm">
+                                <option selected>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="current-level">当前等级</label>
+                            <input type="text" class="form-control form-control-sm" id="current-level" value="1">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="current-exp">当前经验</label>
+                            <input type="text" class="form-control form-control-sm" id="current-exp" value="0">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="target-evolve">目标精英化</label>
+                            <select id="target-evolve" class="form-control form-control-sm">
+                                <option selected>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="target-level">目标等级</label>
+                            <input type="text" class="form-control form-control-sm" id="target-level" value="1">
+                        </div>
+                        <div class="form-group col-4">
+                            <label for="gold-asset">已有金币</label>
+                            <input type="text" class="form-control form-control-sm" id="gold-asset" value="0">
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="book-basic">基础经验</label>
+                            <input type="text" class="form-control form-control-sm" id="book-basic" value="0">
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="book-primary">初级经验</label>
+                            <input type="text" class="form-control form-control-sm" id="book-primary" value="0">
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="book-middle">中级经验</label>
+                            <input type="text" class="form-control form-control-sm" id="book-middle" value="0">
+                        </div>
+                        <div class="form-group col-3">
+                            <label for="book-advanced">高级经验</label>
+                            <input type="text" class="form-control form-control-sm" id="book-advanced" value="0">
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group col-4">
-                    <label for="current-level">当前等级</label>
-                    <input type="text" class="form-control form-control-sm" id="current-level" value="1">
+                <div class="row">
+                    <button class="btn btn-success col-10 text-center" id="btn-calculate" style="margin:auto;">计算</button>
                 </div>
-                <div class="form-group col-4">
-                    <label for="current-exp">当前经验</label>
-                    <input type="text" class="form-control form-control-sm" id="current-exp" value="0">
-                </div>
-                <div class="form-group col-4">
-                    <label for="target-evolve">目标精英化</label>
-                    <select id="target-evolve" class="form-control form-control-sm">
-                        <option selected>0</option>
-                        <option>1</option>
-                        <option>2</option>
-                    </select>
-                </div>
-                <div class="form-group col-4">
-                    <label for="target-level">目标等级</label>
-                    <input type="text" class="form-control form-control-sm" id="target-level" value="1">
-                </div>
-                <div class="form-group col-4">
-                    <label for="gold-asset">已有金币</label>
-                    <input type="text" class="form-control form-control-sm" id="gold-asset" value="0">
-                </div>
-                <div class="form-group col-3">
-                    <label for="book-basic">基础经验</label>
-                    <input type="text" class="form-control form-control-sm" id="book-basic" value="0">
-                </div>
-                <div class="form-group col-3">
-                    <label for="book-primary">初级经验</label>
-                    <input type="text" class="form-control form-control-sm" id="book-primary" value="0">
-                </div>
-                <div class="form-group col-3">
-                    <label for="book-middle">中级经验</label>
-                    <input type="text" class="form-control form-control-sm" id="book-middle" value="0">
-                </div>
-                <div class="form-group col-3">
-                    <label for="book-advanced">高级经验</label>
-                    <input type="text" class="form-control form-control-sm" id="book-advanced" value="0">
-                </div>
+                <div class="col-12 alert alert-danger mt-3" id="error-info" role="alert" style="display:none"></div>
             </div>
-        </div>
-        <div class="row">
-            <button class="btn btn-success col-10 text-center" id="btn-calculate" style="margin:auto;">计算</button>
-        </div>
-        <div class="col-12 alert alert-danger mt-3" id="error-info" role="alert" style="display:none"></div>
-        <div class="row">
-            <table class="table table-striped my-3">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col" width="40%" class="text-right">资源</th>
-                        <th scope="col" width="60%">需求</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody-result"></tbody>
-            </table>
+            <div class="col-12 col-md-6">
+                <table class="table table-striped my-3">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col" width="40%" class="text-right">资源</th>
+                            <th scope="col" width="60%">需求</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-result"></tbody>
+                </table>
+            </div>
         </div>
         <hr />
         <div class="row col-12 tutorial">

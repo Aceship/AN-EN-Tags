@@ -53,7 +53,7 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
+    <div class="container" style="margin:auto;max-width:1000px;">
         <div class="col-12 alert alert-dark mt-3" role="alert">
             <div id="box-tags">
                 <button type="button" class="btn btn-sm btn-info my-1" disabled>资质</button> |
@@ -105,14 +105,8 @@
                 <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
                 <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button>
             </div>
-        </div>
-        <div class="row col-12">
-            <div class="col-8">
-                <button class="btn btn-success col-12 align-self-center text-center" id="btn-calculate">计算</button>
-            </div>
-            <div class="col-4">
-                <button class="btn btn-danger col-12 align-self-center text-center" id="btn-clear">清空</button>
-            </div>
+            <hr class="my-1" />
+            <button type="button" class="btn btn-sm btn-danger my-1" id="btn-clear">清空</button>
         </div>
         <table class="table table-striped table-hover my-3" id="table-recommend">
             <thead class="thead-dark">
@@ -143,7 +137,7 @@
     <hr />
     <div class="row col-12 page-footer">
         <div class="col-12 text-center">
-            <p>最近更新：2019/05/04，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
+            <p>最近更新：2019/05/05，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
             <p>
                 数据来源：
                 <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a>
@@ -175,57 +169,10 @@
                     });
                     all_chars[char.name] = { 'level': char.level, 'tags': char.tags };
                 });
-                //$.each(tags_aval, function (key, _) {
-                //    $("#box-tags").append(
-                //        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
-                //    );
-                //    tag_count++;
-                //});
-                //console.log(avg_char_tag);
                 avg_char_tag = char_tag_sum / tag_count;
             });
 
-            let checkedTags = [];
-            $(document).on("click", ".btn-tag", function () {
-                let checked = $(this).hasClass("btn-primary");
-                let tag = $(this).text();
-                if (checked) {
-                    checkedTags = checkedTags.filter(function (v, _, __) {
-                        return v !== tag;
-                    });
-                } else {
-                    if (checkedTags.length >= 6) {
-                        alert("无法选择更多标签：最多6个。");
-                        return;
-                    } else {
-                        checkedTags.push(tag);
-                    }
-                }
-                $(this).toggleClass("btn-primary btn-secondary");
-                // console.log(checkedTags);
-                // console.log(tag)
-            });
-            $(document).on("click", ".btn-opt", function () {
-                $(this).toggleClass("btn-primary btn-secondary");
-                let checked = $(this).hasClass("btn-primary");
-                if ($(this).attr("id") === "opt-all") {
-                    $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
-                        checked ? "btn-primary" : "btn-secondary"
-                    );
-                } else {
-                    if ($("#opt-all").hasClass("btn-primary")) {
-                        $("#opt-all").toggleClass("btn-primary btn-secondary");
-                    } else {
-                        let checkedCount = 0;
-                        $(".btn-opt").each(function (_, __) {
-                            if ($(this).attr("id") === "opt-all") return;
-                            if ($(this).hasClass("btn-primary")) checkedCount++;
-                        });
-                        if (checkedCount === 6) $("#opt-all").toggleClass("btn-primary btn-secondary");
-                    }
-                }
-            });
-            $(document).on("click", "#btn-calculate", function () {
+            function calc() {
                 let len = checkedTags.length;
                 let count = Math.pow(2, checkedTags.length);
                 let combs = [];
@@ -324,7 +271,8 @@
                         "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
                     );
                 });
-            });
+            }
+
             let hasHidden = false;
             $(document).on("click", ".btn-char", function () {
                 if (!hasHidden) {
@@ -350,6 +298,47 @@
                     $(".tr-chartag").remove();
                 }
                 hasHidden = !hasHidden;
+            });
+
+            let checkedTags = [];
+            $(document).on("click", ".btn-tag", function () {
+                let checked = $(this).hasClass("btn-primary");
+                let tag = $(this).text();
+                if (checked) {
+                    checkedTags = checkedTags.filter(function (v, _, __) {
+                        return v !== tag;
+                    });
+                } else {
+                    if (checkedTags.length >= 6) {
+                        alert("无法选择更多标签：最多6个。");
+                        return;
+                    } else {
+                        checkedTags.push(tag);
+                    }
+                }
+                $(this).toggleClass("btn-primary btn-secondary");
+                calc();
+            });
+            $(document).on("click", ".btn-opt", function () {
+                $(this).toggleClass("btn-primary btn-secondary");
+                let checked = $(this).hasClass("btn-primary");
+                if ($(this).attr("id") === "opt-all") {
+                    $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
+                        checked ? "btn-primary" : "btn-secondary"
+                    );
+                } else {
+                    if ($("#opt-all").hasClass("btn-primary")) {
+                        $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    } else {
+                        let checkedCount = 0;
+                        $(".btn-opt").each(function (_, __) {
+                            if ($(this).attr("id") === "opt-all") return;
+                            if ($(this).hasClass("btn-primary")) checkedCount++;
+                        });
+                        if (checkedCount === 6) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    }
+                }
+                calc();
             });
 
             $(document).on('click', '#btn-clear', function () {
