@@ -153,13 +153,13 @@
                         <td colspan=2><button style="width:100%" type="button" class="btn btn-sm btn-info my-1" disabled>Filter Rarity</button></td>
                         <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
                         <td>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
-                            <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button></td>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button></td>
                     </tr>
                     <tr style="text-align:left;vertical-align:top;padding:0">
                             <td colspan=2><button style="width:100%" type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
@@ -260,28 +260,6 @@
             $(document).on("click", ".btn-size", function () {
                 sessionStorage.size = parseInt($(this).attr('title'));
             });
-
-            $(document).on("click", ".btn-opt", function () {
-                $(this).toggleClass("btn-primary btn-secondary");
-                let checked = $(this).hasClass("btn-primary");
-                if ($(this).attr("id") === "opt-all") {
-                    $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
-                        checked ? "btn-primary" : "btn-secondary"
-                    );
-                } else {
-                    if ($("#opt-all").hasClass("btn-primary")) {
-                        $("#opt-all").toggleClass("btn-primary btn-secondary");
-                    } else {
-                        let checkedCount = 0;
-                        $(".btn-opt").each(function (_, __) {
-                            if ($(this).attr("id") === "opt-all") return;
-                            if ($(this).hasClass("btn-primary")) checkedCount++;
-                        });
-                        if (checkedCount === 6) $("#opt-all").toggleClass("btn-primary btn-secondary");
-                    }
-                }
-            });
-            
                 
             $(document).on("click", ".btn-char", function () {
                 let char_name = $(this).attr('cn-text');
@@ -324,6 +302,7 @@
             
         var checkedTags = [];
         var checkedTagsTL = [];
+        var globalOptStars = [];
         
         function clickBtnClear(){
             $('.btn-tag').removeClass('btn-primary').addClass('btn-secondary');
@@ -331,6 +310,36 @@
             checkedTags = [];
             checkedTagsTL = [];
             sessionStorage.lastChar = ""
+        }
+
+        function clickBtnOpt(el){
+            $(el).toggleClass("btn-primary btn-secondary");
+            let checked = $(el).hasClass("btn-primary");
+            if ($(el).attr("id") === "opt-all") {
+                $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
+                    checked ? "btn-primary" : "btn-secondary"
+                );
+            } else {
+                if ($("#opt-all").hasClass("btn-primary")) {
+                    $("#opt-all").toggleClass("btn-primary btn-secondary");
+                } else {
+                    let checkedCount = 0;
+                    $(".btn-opt").each(function (_, __) {
+                        if ($(el).attr("id") === "opt-all") return;
+                        if ($(el).hasClass("btn-primary")) checkedCount++;
+                    });
+                    if (checkedCount === 6) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                }
+            }
+            globalOptStars = [];
+            $(".btn-opt").each(function (_, __) {
+                if ($(this).attr("opt-id") === "all" || $(this).hasClass("btn-secondary")) return;
+                globalOptStars.push($(this).attr("opt-id"));
+            });
+            console.log("opstars:")
+            console.log(globalOptStars);
+
+            calculate();
         }
 
         function clickBtnTag(el){
@@ -382,12 +391,6 @@
                     combs.push({ "tags": ts, "tagsTL": tstl, "score": 0.0, "possible": [] });
                 }
                 // console.log(combs);
-                let optStars = [];
-                $(".btn-opt").each(function (_, __) {
-                    if ($(this).attr("opt-id") === "all" || $(this).hasClass("btn-secondary")) return;
-                    optStars.push($(this).attr("opt-id"));
-                });
-                //console.log(optStars);
                 $("#tbody-recommend").html("");
                 $.each(combs, function (_, comb) {
                     let tags = comb.tags;
@@ -409,6 +412,14 @@
                             });
                         });
                         chars = reduced_chars;
+                    }
+
+                    let optStars = globalOptStars;
+                    if(optStars.length == 0 ){
+                        $(".btn-opt").each(function (_, __) {
+                            if ($(this).attr("opt-id") === "all" || $(this).hasClass("btn-secondary")) return;
+                            optStars.push($(this).attr("opt-id"));
+                        });
                     }
 
                     if (chars.length === 0) return;
