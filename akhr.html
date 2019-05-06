@@ -170,7 +170,7 @@
                             <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: absolute; margin-left: 5px; margin-top: 4px; z-index: 1;">
                             Image Size
                             </button>
-                            <button type="button" class="btn btn-sm btn-primary my-1 btn-image"  style="background-color: white; color: black; border-color: darkgrey; width: fit-content; position: absolute; margin-left: 100px;" disabled>Selected: <span id="selectedImageSize"></span></button>
+                            <button type="button" class="btn btn-sm btn-primary my-1 btn-image"  style="background-color: white; color: black; border-color: darkgrey; width: fit-content; position: absolute; margin-left: 100px; padding-left: 10px;" disabled>Selected: <span id="selectedImageSize"></span></button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="20">20</button>
                                 <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="32">32</button>
@@ -180,15 +180,13 @@
                                 <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="128">128</button>
                             </div>
                         </td>
+                        <td>
+                            <button class="btn btn-danger col-12 align-self-center text-center" id="btn-clear" onclick="clickBtnClear()">Clear</button>
+                        </td>
                     </tr>
                 </table>
             </div>
             <div id="box-options">  
-            </div>
-        </div>
-        <div class="row col-12">
-            <div class="col-12">
-                <button class="btn btn-danger col-12 align-self-center text-center" id="btn-clear" onclick="clickBtnClear()">Clear</button>
             </div>
         </div>
         <table class="table table-striped table-hover my-3" id="table-recommend">
@@ -206,10 +204,12 @@
         <div class="row col-12 tutorial">
             <div class="col-12 text-left">
                 <p>How To Use ：</p>
-                <p>1. Click on tags, up to 6 tags</p>
-                <p>2. Check the star you want to filter</p>
-                <p>3. Click on calculate (currently automatically calculated on pressing tags)</p>
-                <p>4. You can click on the clerk or label in the recommendation form to make an accurate query, then click on any clerk or label to return.</p>
+                <p>1. Change the 'Game Server' drop down on the top right according to your AK client region.</p>
+                <p>2. Change the language of the user interface to your preference.</p>
+                <p>3. Click on the tags, up to 6 tags.</p>
+                <p>4. You can hover on the tags to see the translation.</p>
+                <p>5. You can also hide or show the name and/or the image of the operators.</p>
+                <p>6. Click 'clear' to reset all the tag selections.</p>
             </div>
         </div>
     </div>
@@ -493,6 +493,10 @@
                     });
                     s = s / chars.length;
                     comb.score = s - tags.length / 10 - chars.length / avg_char_tag;
+                    //console.log("tags length = "+tags.length);
+                    //console.log("chars length = "+chars.length);
+                    console.log("avg char tag = "+avg_char_tag);
+                    //console.log("score = "+comb.score);
                 });
                 combs.sort(function (a, b) {
                     return a.score > b.score ? -1 : (a.score < b.score ? 1 :
@@ -585,12 +589,14 @@
                 //    tag_count++;
                 //});
                 //console.log(avg_char_tag);
+                tag_count = Object.keys(tags_aval).length;
                 avg_char_tag = char_tag_sum / tag_count;
+
+                data[0] = tags_aval;
+                data[1] = all_chars;
+                data[2] = avg_char_tag;
+                JsonDATA = data;
             });
-            data[0] = tags_aval;
-            data[1] = all_chars;
-            data[2] = avg_char_tag;
-            JsonDATA = data;
         }
 
         function changeUILanguage(){
