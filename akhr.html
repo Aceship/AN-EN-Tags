@@ -9,6 +9,8 @@
     <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/multilingual.js"></script>
+    <link rel="stylesheet" href="css/multilingual.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>
     <script>
@@ -20,7 +22,10 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">明日方舟工具箱</a>
+        <a class="navbar-brand cn" href="#">
+            <span class="cn">明日方舟工具箱</span>
+            <span class="en">Arknights Toolbox</span>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
             <span class="navbar-toggler-icon"></span>
@@ -28,16 +33,20 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="akhr.html">公开招募计算器</a>
+                    <a class="nav-link cn" href="akhr.html">公开招募计算器</a>
+                    <a class="nav-link en" href="akhr.html?lang=en">Recuitment Recommender</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="akhrchars.html">干员表</a>
+                    <a class="nav-link cn" href="akhrchars.html">干员表</a>
+                    <a class="nav-link en" href="akhrchars.html?lang=en">Operators Table</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="aklevel.html">升级计算</a>
+                    <a class="nav-link cn" href="aklevel.html">升级计算</a>
+                    <a class="nav-link en" href="aklevel.html?lang=en">Levelup Calculator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">施工中…</a>
+                    <a class="nav-link disabled cn" href="#">施工中…</a>
+                    <a class="nav-link disabled en" href="#">WIP</a>
                 </li>
             </ul>
             <ul class="navbar-nav">
@@ -46,74 +55,68 @@
                         Language
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="akhr.html">中文</a>
-                        <a class="dropdown-item" href="en-akhr.html">English</a>
+                        <a class="dropdown-item" href="?lang=cn">中文</a>
+                        <a class="dropdown-item" href="?lang=en">English</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="container" style="margin:auto;max-width:1000px;">
-        <div class="col-12 alert alert-dark mt-3" role="alert">
-            <div id="box-tags">
-                <button type="button" class="btn btn-sm btn-info my-1" disabled>资质</button> |
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">新手</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">资深干员</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">高级资深干员</button>
-                <br />
-                <button type="button" class="btn btn-sm btn-info my-1" disabled>位置</button> |
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">远程位</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">近战位</button>
-                <br />
-                <button type="button" class="btn btn-sm btn-info my-1" disabled>性别</button> |
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">男性干员</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">女性干员</button>
-                <br />
-                <button type="button" class="btn btn-sm btn-info my-1" disabled>种类</button> |
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">先锋</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">狙击</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">医疗</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">术师</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">近卫</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">重装</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">辅助</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">特种</button>
-                <br />
-                <button type="button" class="btn btn-sm btn-info my-1" disabled>词缀</button> |
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">治疗</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">支援</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">输出</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">群攻</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">减速</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">生存</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">防护</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">削弱</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">位移</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">控场</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">爆发</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">召唤</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">快速复活</button>
-                <button type="button" class="btn btn-sm btn-secondary btn-tag my-1">费用回复</button>
-            </div>
-            <hr class="my-1" />
-            <div id="box-options">
-                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
-                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
-                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
-                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
-                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
-                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
-                <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button>
-            </div>
-            <hr class="my-1" />
-            <button type="button" class="btn btn-sm btn-danger my-1" id="btn-clear">清空</button>
+        <div class="col-12 alert alert-dark mt-3 p-1 p-sm-2" role="alert">
+            <table class="table table-sm m-0 mx-sm-1" id="box-options">
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-danger my-1" id="btn-clear">
+                            <span class="cn">清空</span>
+                            <span class="en">Clear</span>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-name" opt-id="showName">
+                            <span class="cn">名称</span>
+                            <span class="en">Name</span>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-image" opt-id="showImage">
+                            <span class="cn">图片</span>
+                            <span class="en">Image</span>
+                        </button>
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="cn">图片大小</span>
+                            <span class="en">Image Size</span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <button class="dropdown-item btn-imgsize" type="button" sizeval="20">20</button>
+                            <button class="dropdown-item btn-imgsize" type="button" sizeval="32">32</button>
+                            <button class="dropdown-item btn-imgsize" type="button" sizeval="40">40</button>
+                            <button class="dropdown-item btn-imgsize" type="button" sizeval="64">64</button>
+                            <button class="dropdown-item btn-imgsize" type="button" sizeval="80">80</button>
+                            <button class="dropdown-item btn-imgsize" type="button" sizeval="128">128</button>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
+                        <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
+                        <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
+                        <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
+                        <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
+                        <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
+                        <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button>
+
+                    </td>
+                </tr>
+            </table>
+            <table class="table table-sm m-0 mx-sm-1" id="box-tags"></table>
         </div>
         <table class="table table-striped table-hover my-3" id="table-recommend">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col" style="width:16.67%">Tags</th>
-                    <th scope="col">可能出现</th>
+                    <th scope="col">
+                        <span class="cn">可能出现</span>
+                        <span class="en">Possible Operators</span>
+                    </th>
                     <th scope="col">$~</th>
                 </tr>
             </thead>
@@ -121,33 +124,106 @@
         </table>
         <hr />
         <div class="row col-12 tutorial">
-            <div class="col-6 text-left">
+            <div class="col-12 text-left cn">
                 <p>使用说明：</p>
                 <p>1. 勾选需要查询的Tag，最多6个；</p>
                 <p>2. 勾选需要查询的星级，默认全部；</p>
                 <p>3. 现在点击标签即可开始计算，可点击“清空”重新开始；</p>
                 <p>4. 可以点击推荐表格中的干员或标签进行精准查询，再点击任意干员或标签返回。</p>
             </div>
+            <div class="col-12 text-left en">
+                <p>How To Use:</p>
+                <p>1. Click on tags, up to 6 tags</p>
+                <p>2. Check the star you want to filter</p>
+                <p>3. Click on calculate (currently automatically calculated on pressing tags)</p>
+                <p>4. You can click on the clerk or label in the recommendation form to make an accurate query, then click on any clerk or label to return.</p>
+            </div>
         </div>
-        <div class="col-12 alert alert-success mt-1" role="alert">
+        <div class="col-12 alert alert-success mt-1 cn" role="alert">
             19/05/04 升级消耗计算器上线，可在导航栏切换使用。
         </div>
     </div>
 
     <hr />
     <div class="row col-12 page-footer">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center cn">
             <p>最近更新：2019/05/06，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
             <p>
                 数据来源：
                 <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">明日方舟Wiki</a>
             </p>
             <p>Powered by 一只灰猫。</p>
-
+        </div>
+        <div class="col-12 text-center en">
+            <p>Last update: 05/06/2019, <a href="https://github.com/graueneko/graueneko.github.io/issues">Contact</a></p>
+            <p>
+                Data source:
+                <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">Arknights Wiki (CN)</a>
+            </p>
+            <p>Powered by GraueNeko, Aceship</p>
         </div>
     </div>
     <script>
         $(function () {
+            let lang = getLang();
+            showCurrentLang();
+            document.title = {
+                "cn": "明日方舟公开招募计算器",
+                "en": "Arknights Recruitment Recommender"
+            }[lang];
+            let tags = [
+                {
+                    "cn": "资质", "cntags": ["新手", "资深干员", "高级资深干员"],
+                    "en": "Qualification", "entags": ["Newbie", "Senior", "Advanced Senior"]
+                },
+                {
+                    "cn": "位置", "cntags": ["远程位", "近战位"],
+                    "en": "Position", "entags": ["Ranged", "Melee"]
+                },
+                {
+                    "cn": "性别", "cntags": ["男性干员", "女性干员"],
+                    "en": "Gender", "entags": ["Male", "Female"]
+                },
+                {
+                    "cn": "种类", "cntags": ["先锋干员", "狙击干员", "医疗干员", "术师干员", "近卫干员", "重装干员", "辅助干员", "特种干员"],
+                    "en": "Class", "entags": ["Vanguard", "Sniper", "Medic", "Caster", "Guard", "Defender", "Support", "Specialist"]
+                },
+                {
+                    "cn": "词缀", "cntags": ["治疗", "支援", "输出", "群攻", "减速", "生存", "防护", "削弱", "位移", "控场", "爆发", "召唤", "快速复活", "费用回复"],
+                    "en": "Affix", "entags": ["Healing", "Support", "DPS", "Splash", "Slow", "Survival", "Protection", "Debuffer", "Displacement", "Crowd Control", "Burst", "Summoner", "Quick Resurrection", "Cost Recovery"]
+                }
+            ];
+            $.each(tags, (_, v) => {
+                let row = '<tr><td><button class="btn btn-sm btn-info my-1" disabled>' + v[lang] + '</button></td><td>';
+                let tags_btn = []
+                for (let i = 0; i < v['cntags'].length; i++) {
+                    tags_btn.push('<button class="btn btn-sm btn-secondary btn-tag m-1" ' +
+                        (lang === 'cn' ? '' : ('data-toggle="tooltip" data-placement="top" title="' + v[lang + 'tags'][i] + '"'))
+                        + '>' + v['cntags'][i] + "</button>");
+                }
+                row += tags_btn.join("") + "</td></tr>";
+                $("#box-tags").append(row);
+            });
+            if (lang !== 'cn') $('[data-toggle="tooltip"]').tooltip();
+
+            let showImage = true;
+            let showName = true;
+            let imageSize = 40;
+            $(document).on("click", ".btn-name", function () {
+                $(this).toggleClass("btn-primary btn-secondary");
+                showName = !showName;
+                calc();
+            });
+            $(document).on("click", ".btn-image", function () {
+                $(this).toggleClass("btn-primary btn-secondary");
+                showImage = !showImage;
+                calc();
+            });
+            $(document).on("click", ".btn-imgsize", function () {
+                imageSize = parseInt($(this).attr("sizeval"));
+                calc();
+            });
+
             let tags_aval = {};
             let all_chars = {};
             let avg_char_tag = 0;
@@ -157,17 +233,18 @@
                 // console.log(data);
                 $.each(data, function (_, char) {
                     if (char.hidden) return;
-                    char.tags.push(char.type);
+                    char.tags.push(char.type + "干员");
                     char.tags.push(char.sex + "性干员");
+                    let name = lang === 'cn' ? char.name : char["name-" + lang];
                     $.each(char.tags, function (_, tag) {
                         if (tag in tags_aval) {
-                            tags_aval[tag].push({ "name": char.name, "level": char.level, "type": char.type });
+                            tags_aval[tag].push({ "name": name, "img": char["name-en"], "level": char.level, "type": char.type });
                         } else {
-                            tags_aval[tag] = [{ "name": char.name, "level": char.level, "type": char.type }];
+                            tags_aval[tag] = [{ "name": name, "img": char["name-en"], "level": char.level, "type": char.type }];
                         }
                         char_tag_sum++;
                     });
-                    all_chars[char.name] = { 'level': char.level, 'tags': char.tags };
+                    all_chars[name] = { 'level': char.level, 'tags': char.tags };
                 });
                 avg_char_tag = char_tag_sum / tag_count;
             });
@@ -177,15 +254,16 @@
                 let count = Math.pow(2, checkedTags.length);
                 let combs = [];
                 for (let i = 0; i < count; i++) {
-                    let ts = [];
+                    let ts = [], tsTL = [];
                     for (let j = 0, mask = 1; j < len; j++) {
                         if ((i & mask) !== 0) {
                             ts.push(checkedTags[j]);
+                            tsTL.push(checkedTagsTL[j]);
                             // console.log(checkedTags[j]);
                         }
                         mask = mask * 2;
                     }
-                    combs.push({ "tags": ts, "score": 0.0, "possible": [] });
+                    combs.push({ "tags": ts, "tagsTL": tsTL, "score": 0.0, "possible": [] });
                 }
                 // console.log(combs);
                 let optStars = [];
@@ -241,7 +319,7 @@
                         s += char.level;
                     });
                     s = s / chars.length;
-                    comb.score = s - tags.length / 10 - chars.length / avg_char_tag;
+                    comb.score = s + tags.length / 10 - chars.length / avg_char_tag;
                 });
                 combs.sort(function (a, b) {
                     return a.score > b.score ? -1 : (a.score < b.score ? 1 :
@@ -252,32 +330,49 @@
                     if (comb.possible.length === 0) return;
                     let chars = comb.possible;
                     let tags = comb.tags;
+                    let tagsTL = comb.tagsTL;
                     let chars_html = [];
                     let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
                     comb.possible.sort(function (a, b) {
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
                     $.each(chars, function (_, char) {
-                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
-                            " btn-char my-1\">" + char.name + "</button>\n")
+                        let padding = showName && imageSize < 60 ? "padding-right: 4px" : "padding-right: 1px";
+                        let style = showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : "";
+                        let buttonstyle = imageSize > 25 ? "background-color: #AAA;border-radius: 4px;" : "background-color: transparent;border-radius: 4px;";
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " + style + "title=\"" + char.name + "\">");
+                        if (showImage) chars_html.push("<img style=\"" + buttonstyle + "\"height=\"" + imageSize + "\" width=\"" + imageSize + "\" src=\"./img/chara/" + char.img + ".png\">   ");
+                        if (imageSize > 60) chars_html.push("<div>");
+                        if (showName) chars_html.push(char.name);
+                        if (imageSize > 60) chars_html.push("</div>");
+                        chars_html.push("</button>\n");
                     });
                     let tags_html = [];
-                    $.each(tags, function (_, tag) {
-                        tags_html.push("<button type=\"button\" class=\"btn btn-sm btn-secondary btn-char my-1\">" +
-                            tag + "</button>\n")
-                    });
+                    for (let i = 0; i < tags.length; i++) {
+                        if (lang === 'cn') {
+                            tags_html.push('<button type="button" class="btn btn-sm btn-secondary btn-char my-1">' +
+                                tags[i] + "</button>\n");
+                        } else {
+                            tags_html.push('<button type="button" class="btn btn-sm btn-secondary btn-char my-1' +
+                                ' btn-char my-1" data-toggle="tooltip" data-placement="top" title="' + tagsTL[i] + '">' +
+                                tags[i] + "</button>\n");
+                            console.log(tagsTL);
+                        }
+                    }
                     $("#tbody-recommend").append(
                         "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") +
                         "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
                     );
+
                 });
+                if (lang !== 'cn') $('[data-toggle="tooltip"]').tooltip();
             }
 
             let hasHidden = false;
             $(document).on("click", ".btn-char", function () {
                 if (!hasHidden) {
-                    $(".tr-recommd:not(:contains('" + $(this).text() + "'))").hide();
-                    let char_name = $(this).text();
+                    let char_name = $(this).attr("title");
+                    $(".tr-recommd:not(:contains('" + char_name + "'))").hide();
                     let char = all_chars[char_name];
                     let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
 
@@ -301,19 +396,26 @@
             });
 
             let checkedTags = [];
+            let checkedTagsTL = [];
             $(document).on("click", ".btn-tag", function () {
                 let checked = $(this).hasClass("btn-primary");
                 let tag = $(this).text();
+                let tagTL = $(this).attr("data-original-title");
+                console.log(tagTL);
                 if (checked) {
                     checkedTags = checkedTags.filter(function (v, _, __) {
                         return v !== tag;
                     });
+                    checkedTagsTL = checkedTagsTL.filter(function (v, _, __) {
+                        return v !== tagTL;
+                    });
                 } else {
                     if (checkedTags.length >= 6) {
-                        alert("无法选择更多标签：最多6个。");
+                        alert({ "cn": "无法选择更多标签：最多6个。", "en": "No more tags: max 6." }[lang]);
                         return;
                     } else {
                         checkedTags.push(tag);
+                        checkedTagsTL.push(tagTL);
                     }
                 }
                 $(this).toggleClass("btn-primary btn-secondary");
