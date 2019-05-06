@@ -259,9 +259,7 @@
             console.log("Show Image: ");
             console.log(localStorage.showImage);
 
-            if(localStorage.getItem('lastChar') === null){
-                localStorage.setItem("lastChar", "");
-            }
+            let lastChar = ""
 
             $(".imagesizeselect").each(function(){
                 let size = localStorage.size;
@@ -297,7 +295,7 @@
         //var global = this;
 
         var JsonDATA = [];
-        loadJson();
+        
             
         var checkedTags = [];
         var checkedTagsTL = [];
@@ -374,7 +372,7 @@
             $("#tbody-recommend").html("");
             checkedTags = [];
             checkedTagsTL = [];
-            localStorage.lastChar = ""
+            lastChar = ""
         }
 
         function changeImageSize(el){
@@ -557,9 +555,13 @@
                     });
                     $.each(chars, function (_, char) {
                         let padding = localStorage.showName && localStorage.size <60? "padding-right: 8px" : "padding-right: 1px"
-                        let style = localStorage.showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : ""
+                        let style = localStorage.showImage=='true' ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : ""
                         let buttonstyle = localStorage.size >25? "background-color: #AAA;border-radius: 4px;": "background-color: transparent;border-radius: 4px;"
+<<<<<<< HEAD
                         chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"bottom\" onclick=\"showChar(this)\" " +style+"title=\""+ char.name +"\">");
+=======
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " +style+" title=\""+ char.name +"\">");
+>>>>>>> 93bef7df2668986bdcd7cbf4daf5071a3df33703
                         if(localStorage.showImage == 'true')chars_html.push("<img style=\""+buttonstyle+"\"height=\""+localStorage.size+"\" width=\""+localStorage.size+"\" src=\"./img/chara/"+ char.name_en +".png\">   " )
                         if(localStorage.size>60)chars_html.push("<div>")
                         if(localStorage.showName == 'true')chars_html.push(char.name_tl)
