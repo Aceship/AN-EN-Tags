@@ -71,30 +71,32 @@
                             <span class="cn">清空</span>
                             <span class="en">Clear</span>
                         </button>
-                        <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-name" opt-id="showName">
-                            <span class="cn">名称</span>
-                            <span class="en">Name</span>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-image" opt-id="showImage">
-                            <span class="cn">图片</span>
-                            <span class="en">Image</span>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-imgsize btn-imgsizedefault" sizeval="27">
-                            <span class="cn">小</span>
-                            <span class="en">Small</span>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="45">
-                            <span class="cn">中</span>
-                            <span class="en">Middle</span>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="80">
-                            <span class="cn">大</span>
-                            <span class="en">Large</span>
-                        </button>
-                        <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="128">
-                            <span class="cn">特大</span>
-                            <span class="en">Ex-large</span>
-                        </button>
+                        <span class="d-none d-sm-inline">
+                            <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-name" opt-id="showName">
+                                <span class="cn">名称</span>
+                                <span class="en">Name</span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-image" opt-id="showImage">
+                                <span class="cn">图片</span>
+                                <span class="en">Image</span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-primary btn-showopt my-1 btn-imgsize btn-imgsizedefault" sizeval="27">
+                                <span class="cn">小</span>
+                                <span class="en">Small</span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="45">
+                                <span class="cn">中</span>
+                                <span class="en">Middle</span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="80">
+                                <span class="cn">大</span>
+                                <span class="en">Large</span>
+                            </button>
+                            <button type="button" class="btn btn-sm btn-secondary btn-showopt my-1 btn-imgsize" sizeval="128">
+                                <span class="cn">特大</span>
+                                <span class="en">Ex-large</span>
+                            </button>
+                        </span>
                     </td>
                 </tr>
                 <tr>
@@ -115,13 +117,13 @@
         <table class="table table-striped table-hover my-3" id="table-recommend">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col" class="d-none d-sm-table-cell">#</th>
                     <th scope="col" style="width:16.67%">Tags</th>
                     <th scope="col">
                         <span class="cn">可能出现</span>
                         <span class="en">Possible Operators</span>
                     </th>
-                    <th scope="col">$~</th>
+                    <th scope="col" class="d-none d-sm-table-cell">$~</th>
                 </tr>
             </thead>
             <tbody id="tbody-recommend"></tbody>
@@ -349,12 +351,13 @@
                         let padding = showName && imageSize < 60 ? "padding-right: 4px" : "padding-right: 1px";
                         let style = showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : "";
                         let buttonstyle = imageSize > 25 ? "background-color: #AAA;border-radius: 4px;" : "background-color: transparent;border-radius: 4px;";
-                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " + style + "title=\"" + char.name + "\">");
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1 d-none d-sm-inline\" " + style + "title=\"" + char.name + "\">");
                         if (showImage) chars_html.push("<img style=\"" + buttonstyle + "\"height=\"" + imageSize + "\" width=\"" + imageSize + "\" src=\"img/chara/" + char.img + ".png\">   ");
                         if (imageSize > 60) chars_html.push("<div>");
                         if (showName) chars_html.push(char.name);
                         if (imageSize > 60) chars_html.push("</div>");
                         chars_html.push("</button>\n");
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1 d-inline d-sm-none\" " + "title=\"" + char.name + "\">" + char.name + "</button>\n");
                     });
                     let tags_html = [];
                     for (let i = 0; i < tags.length; i++) {
@@ -368,9 +371,12 @@
                         }
                     }
                     $("#tbody-recommend").append(
-                        "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tags_html.join("") + "</td><td>" + chars_html.join("") +
-                        "</td><td>" + Math.floor(comb.score * 100) / 100 + "</td></tr>"
-                    );
+                        "<tr class=\"tr-recommd\">" +
+                        "<td class=\"d-none d-sm-table-cell\">" + no++ + "</td>" +
+                        "<td>" + tags_html.join("") + "</td><td>" + chars_html.join("") +
+                        "</td>" + 
+                        "<td class=\"d-none d-sm-table-cell\">" + Math.floor(comb.score * 100) / 100 + "</td>" +
+                        "</tr>");
 
                 });
                 if (lang !== 'cn') $('[data-toggle="tooltip"]').tooltip();
@@ -390,12 +396,12 @@
                             tag + "</button>\n")
                     });
                     $("#tbody-recommend").append(
-                        "<tr class=\"tr-chartag\"><td>#</td><td>" +
-                        "<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
+                        "<tr class=\"tr-chartag\">"+ 
+                        "<td class=\"d-none d-sm-table-cell\">#</td>" + 
+                        "<td><button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
                         " btn-char my-1\">" + char_name + "</button>\n" +
                         "</td><td>" + tags_html.join("") +
-                        "</td><td>#</td></tr>"
-                    );
+                        "</td><td class=\"d-none d-sm-table-cell\">#</td></tr>");
                 } else {
                     $(".tr-recommd").show();
                     $(".tr-chartag").remove();
