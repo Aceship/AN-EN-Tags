@@ -328,7 +328,9 @@
                         if ($(el).attr("id") === "opt-all") return;
                         if ($(el).hasClass("btn-primary")) checkedCount++;
                     });
-                    if (checkedCount === 6) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    console.log("checked count:");
+                    console.log(checkedCount);
+                    if (checkedCount === 9) $("#opt-all").toggleClass("btn-primary btn-secondary");
                 }
             }
             globalOptStars = [];
