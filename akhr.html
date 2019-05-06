@@ -75,10 +75,10 @@
                     </select>
                 </div>
                 <div class="form-group" style="margin: unset; padding-top: 17px; float: right;">
-                    <label for="selReg">Game Region: </label>
+                    <label for="selReg">Game Server: </label>
                     <select style="width: fit-content; display: inline-block; height: 30px; padding-top: 0px;" class="form-control" id="selReg" onchange="changeUILanguage()">
-                        <option value="cn">Chinese</option>
-                        <option value="jp">Japanese</option>
+                        <option value="cn">CN</option>
+                        <option value="jp">JP</option>
                     </select>
                 </div>
             </div>
@@ -162,24 +162,25 @@
                             <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button></td>
                     </tr>
                     <tr style="text-align:left;vertical-align:top;padding:0">
-                            <td colspan=2><button style="width:100%" type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
-                            <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
-                            <td><button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-name" opt-id="showName">Name</button>
-                                <button type="button"id="btn-calculate" class="btn btn-sm btn-primary btn-opt my-1 btn-image" opt-id="showImage">Image</button>
-                                <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Image Size
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="20">20</button>
-                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="32">32</button>
-                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="40">40</button>
-                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="64">64</button>
-                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="80">80</button>
-                                    <button class="dropdown-item btn-size" id="btn-calculate" type="button" title="128">128</button>
-                                </div>
-                                </div>
-                            </td>
-                        </tr>
+                        <td colspan=2><button style="width:100%" type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
+                        <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td>
+                        <td>
+                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-name" id="showName" opt-id="showName">Name</button>
+                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-image" id="showImage" opt-id="showImage">Image</button>
+                            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: absolute; margin-left: 5px; margin-top: 4px; z-index: 1;">
+                            Image Size
+                            </button>
+                            <button type="button" class="btn btn-sm btn-primary my-1 btn-image"  style="background-color: white; color: black; border-color: darkgrey; width: fit-content; position: absolute; margin-left: 100px;" disabled>Selected: <span id="selectedImageSize"></span></button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="20">20</button>
+                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="32">32</button>
+                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="40">40</button>
+                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="64">64</button>
+                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="80">80</button>
+                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="128">128</button>
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
             <div id="box-options">  
@@ -232,40 +233,63 @@
             $('[data-toggle="tooltip"]').tooltip();
 
 
-            if(sessionStorage.getItem('showImage') === null){
-                sessionStorage.setItem("showImage", "true");
-                sessionStorage.setItem("showName", "true");
-                sessionStorage.setItem("size", 40);
-            }
-
-            if(sessionStorage.getItem('lastChar') === null){
-                sessionStorage.setItem("lastChar", "");
-            }
-
-            $(document).on("click", ".btn-name", function () {
-                if(sessionStorage.showName == false){
-                    sessionStorage.showName = true;
-                } else {
-                    sessionStorage.showName = false;
+            if(localStorage.getItem('showImage') === null){
+                localStorage.setItem("showImage", "true");
+                localStorage.setItem("showName", "true");
+                localStorage.setItem("size", 40);
+            } else {
+                if(localStorage.showName == 'false'){
+                    $("#showName").toggleClass("btn-primary btn-secondary");
                 }
-            })
-            $(document).on("click", ".btn-image", function () {
-                if(sessionStorage.showImage == false){
-                    sessionStorage.showImage = true;
+                if(localStorage.showImage == 'false'){
+                    $("#showImage").toggleClass("btn-primary btn-secondary");
+                }
+            }
+
+            console.log("Show Name: ");
+            console.log(localStorage.showName);
+            console.log("Show Image: ");
+            console.log(localStorage.showImage);
+
+            if(localStorage.getItem('lastChar') === null){
+                localStorage.setItem("lastChar", "");
+            }
+
+            $(".imagesizeselect").each(function(){
+                let size = localStorage.size;
+                $("#selectedImageSize").html(size);
+                if($(this).attr("title") == size){
+                    console.log("40");
+                    $("<span> <<</span>").appendTo(this);
                 } else {
-                    sessionStorage.showImage = false;
+                    $(this).html($(this).attr("title"));
                 }
             });
 
-            $(document).on("click", ".btn-size", function () {
-                sessionStorage.size = parseInt($(this).attr('title'));
+            $(document).on("click", ".btn-name", function () {
+                if(localStorage.getItem('showName') == 'false'){
+                    localStorage.setItem('showName','true');
+                } else {
+                    localStorage.setItem('showName','false');
+                }
+                console.log("Show Name: ");
+                console.log(localStorage.getItem('showName'));
+            })
+            $(document).on("click", ".btn-image", function () {
+                if(localStorage.getItem('showImage') == 'false'){
+                    localStorage.showImage = 'true';
+                } else {
+                    localStorage.showImage = 'false';
+                }
+                console.log("Show Image: ");
+                console.log(localStorage.getItem('showImage'));
             });
                 
             $(document).on("click", ".btn-char", function () {
                 let char_name = $(this).attr('cn-text');
                 $(".tr-recommd").show();
                 $(".tr-chartag").remove();
-                if (sessionStorage.lastChar != char_name) {
+                if (localStorage.lastChar != char_name) {
                     $(".tr-recommd:not(:contains('" + $(this).text() + "'))").hide();
                     let char = all_chars[char_name];
                     let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
@@ -283,9 +307,9 @@
                         "</td><td>" + tags_html.join("") +
                         "</td><td>#</td></tr>"
                     );
-                    sessionStorage.lastChar = char_name
+                    localStorage.lastChar = char_name
                 }else{
-                    sessionStorage.lastChar = ""
+                    localStorage.lastChar = ""
                 }
                 
             });
@@ -309,7 +333,22 @@
             $("#tbody-recommend").html("");
             checkedTags = [];
             checkedTagsTL = [];
-            sessionStorage.lastChar = ""
+            localStorage.lastChar = ""
+        }
+
+        function changeImageSize(el){
+            localStorage.size = parseInt($(el).attr('title'));
+            console.log("image size = "+localStorage.size);
+            $("#selectedImageSize").html(localStorage.size);
+            $(".imagesizeselect").each(function(){
+                let size = localStorage.size;
+                if($(this).attr("title") == size){
+                    $("<span> <<</span>").appendTo(this);
+                } else {
+                    $(this).html($(this).attr("title"));
+                }
+            });
+            refresh();
         }
 
         function clickBtnOpt(el){
@@ -330,7 +369,7 @@
                     });
                     console.log("checked count:");
                     console.log(checkedCount);
-                    if (checkedCount === 9) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    if (checkedCount === 7) $("#opt-all").toggleClass("btn-primary btn-secondary");
                 }
             }
             globalOptStars = [];
@@ -341,7 +380,12 @@
             console.log("opstars:")
             console.log(globalOptStars);
 
-            calculate();
+            refresh();
+        }
+
+        function clickBtnOpt2(el){
+            $(el).toggleClass("btn-primary btn-secondary");
+            refresh();
         }
 
         function clickBtnTag(el){
@@ -368,7 +412,7 @@
             // console.log(checkedTags);
             // console.log(checkedTagsTL);
             // console.log(tag)
-            calculate();
+            refresh();
         }
 
         function calculate(){
@@ -397,9 +441,6 @@
                 $.each(combs, function (_, comb) {
                     let tags = comb.tags;
                     if (tags.length === 0 || tags.length > 3) return;
-                    console.log(tags[0]);
-                    console.log(tags_aval);
-                    console.log(tags_aval[tags[0]]);
                     let chars = [...tags_aval[tags[0]]];
                     for (let i = 1; i < tags.length; i++) {
                         let reduced_chars = [];
@@ -469,14 +510,14 @@
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
                     $.each(chars, function (_, char) {
-                        let padding = sessionStorage.showName && sessionStorage.size <60? "padding-right: 8px" : "padding-right: 1px"
-                        let style = sessionStorage.showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : ""
-                        let buttonstyle = sessionStorage.size >25? "background-color: #AAA;border-radius: 4px;": "background-color: transparent;border-radius: 4px;"
-                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " +style+"title=\""+ char.name +"\">")
-                        if(sessionStorage.showImage)chars_html.push("<img style=\""+buttonstyle+"\"height=\""+sessionStorage.size+"\" width=\""+sessionStorage.size+"\" src=\"./img/chara/"+ char.name_en +".png\">   " )
-                        if(sessionStorage.size>60)chars_html.push("<div>")
-                        if(sessionStorage.showName)chars_html.push(char.name_tl)
-                        if(sessionStorage.size>60)chars_html.push("</div>")
+                        let padding = localStorage.showName && localStorage.size <60? "padding-right: 8px" : "padding-right: 1px"
+                        let style = localStorage.showImage ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : ""
+                        let buttonstyle = localStorage.size >25? "background-color: #AAA;border-radius: 4px;": "background-color: transparent;border-radius: 4px;"
+                        chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" " +style+"title=\""+ char.name +"\">");
+                        if(localStorage.showImage == 'true')chars_html.push("<img style=\""+buttonstyle+"\"height=\""+localStorage.size+"\" width=\""+localStorage.size+"\" src=\"./img/chara/"+ char.name_en +".png\">   " )
+                        if(localStorage.size>60)chars_html.push("<div>")
+                        if(localStorage.showName == 'true')chars_html.push(char.name_tl)
+                        if(localStorage.size>60)chars_html.push("</div>")
                         chars_html.push("</button>\n")
                     });
                     let tags_html = [];
@@ -603,7 +644,7 @@
             });
             checkedTags = [];
             checkedTagsTL = [];
-            loadJson();
+            //refresh();
             $(".btn-tag.btn-primary").each(function(_,el){
                 doubleclick(el);
             });
@@ -624,6 +665,16 @@
                 $(el).click();
             }, 200);
             $(el).click();
+        }
+
+        function refresh(){
+            setTimeout(function(){
+                setTimeout(function(){
+                    calculate();
+                }, 200);
+                calculate();
+            }, 200);
+            loadJson();
         }
     </script>
 </body>
