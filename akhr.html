@@ -46,9 +46,29 @@
             max-width: 100%;
             overflow-x: hidden;
         }
+        #to-tag {
+            background-color: #444444;
+            border-color:#222;
+            border-radius: 35px;
+            font-size: 19px;
+            width: 50px;
+            height: 50px;
+            display: none;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease
+        }
+        #to-tag:hover {
+            background-color: #333;
+            border-color:#222;
+        }
+
     </style>
 </head>
 <body>
+    <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 15px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -211,10 +231,11 @@
                     </div>
             </div>
             <div class="row">
-                    <button class="btn btn-danger col-12 align-self-center text-center" style="padding:1px;border-radius:0px 0px 4px 4px" id="btn-clear" onclick="clickBtnClear()" translate-id="selector-clear">Clear</button>
+                    <button class="btn btn-danger col-12 align-self-center  text-center" style="padding:1px;border-radius:0px 0px 4px 4px" onclick="clickBtnClear()" translate-id="selector-clear">Clear</button>
             </div>
         <div id="box-options">  
         </div>
+        
     </div>
         <table class="table table-striped table-hover my-3" id="table-recommend">
             <thead class="thead-dark">
@@ -240,7 +261,6 @@
             </div>
         </div>
     </div>
-
     <hr />
     <div class="row col-12 page-footer">
         <div class="col-12 text-center">
@@ -255,6 +275,18 @@
         </div>
     </div>
     <script>
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                $('#to-tag').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#to-tag').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#to-tag').click(function() {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop : 0                       // Scroll to top of body
+            }, 500);
+        });
         $(function () {
             $('.dropdown-trigger').dropdown();
             $('[data-toggle="tooltip"]').tooltip();
