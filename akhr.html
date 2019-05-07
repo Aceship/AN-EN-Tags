@@ -313,8 +313,8 @@
             console.log(localStorage.showImage);
 
             let lastChar = ""
-            $(document).on("click", ".btn-tag", function () {
-                
+            $(document).on("click", ".button-tag", function () {
+                lastChar = ""
             });
 
             $(document).on("click", ".btn-name", function () {
@@ -397,7 +397,7 @@
                 $("#tbody-recommend").append(
                     "<tr class=\"tr-chartag\"><td>#</td><td>" +
                     "<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] +
-                    " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ eval("char.name_"+reg) +"\">" + eval("char.name_"+lang) + "</button>\n" +
+                    " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ eval("char.name_"+reg) +"\" onclick=\"showChar(this)\">" + eval("char.name_"+lang) + "</button>\n" +
                     "</td><td>" + tags_html.join("") +
                     "</td><td>#</td></tr>"
                 );
@@ -418,7 +418,7 @@
             $("#tbody-recommend").html("");
             checkedTags = [];
             checkedTagsTL = [];
-            lastChar = ""
+            localStorage.lastChar = ""
         }
 
         function changeImageSize(el){
@@ -470,6 +470,7 @@
 
         function clickBtnOpt2(el){
             $(el).toggleClass("btn-primary btn-secondary");
+            localStorage.lastChar = ""
             refresh();
         }
 
@@ -494,7 +495,7 @@
                 }
             }
             $(el).toggleClass("btn-primary btn-secondary");
-            lastChar = ""
+            localStorage.lastChar = ""
             // console.log(checkedTags);
             // console.log(checkedTagsTL);
             // console.log(tag)
