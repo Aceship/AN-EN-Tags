@@ -19,22 +19,30 @@
         gtag('config', 'UA-138420636-1');
     </script>
     <style>
-            .dropdown {
-              position: relative;
-              display: inline-block;
-            }
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f9f9f9;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
-            .dropdown:hover .dropdown-content {
-              display: block;
-            }
-            </style>
+        .nopadding {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .tagMod{
+            width: fit-content;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -63,10 +71,10 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <div class="row">
+    <div class="col-md-12 col-sm-12">
+        <div class="row"style="padding:0">
             <div class="col-12">
-                <div class="form-group" style="margin: unset; padding-top: 17px; float: right; padding-left: 10px;">
+                <div class="form-group col-xs-6" style="margin: unset; padding-top: 17px; float: right; padding-left: 10px;">
                     <label for="selLang">Translate to: </label>
                     <select style="width: fit-content; display: inline-block; height: 30px; padding-top: 0px;" class="form-control" id="selLang" onchange="changeUILanguage()">
                         <option value="en">English</option>
@@ -74,7 +82,7 @@
                         <option value="jp">Japanese</option>
                     </select>
                 </div>
-                <div class="form-group" style="margin: unset; padding-top: 17px; float: right;">
+                <div class="form-group col-xs-6" style="margin: unset; padding-top: 17px; float: right;">
                     <label for="selReg">Game Server: </label>
                     <select style="width: fit-content; display: inline-block; height: 30px; padding-top: 0px;" class="form-control" id="selReg" onchange="changeUILanguage()">
                         <option value="cn">CN</option>
@@ -84,87 +92,90 @@
             </div>
         </div>
         <div class="col-12 alert alert-dark mt-3" role="alert">
-            <center><button type="button" class="btn btn-success col-12 align-self-center text-center" disabled>Select the tags :</button></center>
-            <div id="box-tags">
-                <table >
-                    <tr style="text-align:left;vertical-align:top;padding:0">
-                        <td> <button style="width:100%"  type="button" class="btn btn-sm btn-info my-1" disabled>Qualification</button></td>
-                        <td><button type="button" class="btn btn-sm btn-info my-1" disabled>资质</button></td>
-                        <!-- <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td> -->
-                        <td width = 100%>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-qualifications" data-toggle="tooltip" data-placement="top" title="Newbie" cn-text="新手">新手</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-qualifications" data-toggle="tooltip" data-placement="top" title="Senior" cn-text="资深干员">资深干员</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-qualifications" data-toggle="tooltip" data-placement="top" title="Advanced Senior" cn-text="高级资深干员">高级资深干员</button></td>
-                    </tr>
-                    <tr style="text-align:left;vertical-align:top;padding:0">
-                        <td><button style="width:100%" type="button" class="btn btn-sm btn-info my-1" disabled>Position</button></td>
-                        <td><button type="button" class="btn btn-sm btn-info my-1" disabled>位置</button></td>
-                        <!-- <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td> -->
-                        <td>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-position" data-toggle="tooltip" data-placement="top" title="Melee" cn-text="近战位">近战位</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-position" data-toggle="tooltip" data-placement="top" title="Ranged" cn-text="远程位">远程位</button></td>
-                    </tr>
-                    <tr style="text-align:left;vertical-align:top;padding:0">
-                        <td><button style="width:100%" type="button" class="btn btn-sm btn-info my-1" disabled>Gender</button></td>
-                        <td><button type="button" class="btn btn-sm btn-info my-1" disabled>性别</button></td>
-                        <!-- <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td> -->
-                        <td>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-gender" data-toggle="tooltip" data-placement="top" title="Female" cn-text="女性干员">女性干员</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-gender" data-toggle="tooltip" data-placement="top" title="Male" cn-text="男性干员">男性干员</button></td>
-                    </tr>
-                    <tr style="text-align:left;vertical-align:top;padding:0">
-                        <td><button style="width:100%" type="button" class="btn btn-sm btn-info my-1" disabled>Class</button></td>
-                        <td><button type="button" class="btn btn-sm btn-info my-1" disabled>种类</button></td>
-                        <!-- <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td> -->
-                        <td>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class" data-toggle="tooltip" data-placement="top" title="Guard" cn-text="近卫">近卫</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class" data-toggle="tooltip" data-placement="top" title="Medic" cn-text="医疗">医疗</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class" data-toggle="tooltip" data-placement="top" title="Vanguard" cn-text="先锋">先锋</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class" data-toggle="tooltip" data-placement="top" title="Caster" cn-text="术师">术师</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class" data-toggle="tooltip" data-placement="top" title="Sniper" cn-text="狙击">狙击</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class" data-toggle="tooltip" data-placement="top" title="Defender" cn-text="重装">重装</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class" data-toggle="tooltip" data-placement="top" title="Support" cn-text="辅助">辅助</button>
-                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class" data-toggle="tooltip" data-placement="top" title="Specialist" cn-text="特种">特种</button></td>
-                    </tr>
-                    <tr style="text-align:left;vertical-align:top;padding:0">
-                            <td><button style="width:100%" type="button" class="btn btn-sm btn-info my-1" disabled>Affix</button></td>
-                            <td><button type="button" class="btn btn-sm btn-info my-1" disabled>词缀</button></td>
-                            <!-- <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td> -->
-                            <td>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Healing" cn-text="治疗">治疗</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Support" cn-text="支援">支援</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="DPS" cn-text="输出">输出</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Splash" cn-text="群攻">群攻</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Slow" cn-text="减速">减速</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Survival" cn-text="生存">生存</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Protection" cn-text="防护">防护</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Debuffer" cn-text="削弱">削弱</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Displacement" cn-text="位移">位移</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Crowd Control" cn-text="控场">控场</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Burst" cn-text="爆发">爆发</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Summoner" cn-text="召唤">召唤</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Quick Resurrection" cn-text="快速复活">快速复活</button>
-                                <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix" data-toggle="tooltip" data-placement="top" title="Cost Recovery" cn-text="费用回复">费用回复</button></td>
-                    </tr>
-                    <tr>
-                        <td colspan=4><hr class="my-1" /></td>
-                    </tr>
-                    <tr style="text-align:left;vertical-align:top;padding:0">
-                        <td colspan=2><button style="width:100%" type="button" class="btn btn-sm btn-info my-1" disabled>Filter Rarity</button></td>
-                        <!-- <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td> -->
-                        <td>
-                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
-                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
-                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
-                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
-                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
-                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
-                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button></td>
-                    </tr>
-                    <tr style="text-align:left;vertical-align:top;padding:0">
-                        <td colspan=2><button style="width:100%" type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
-                        <!-- <td><button type="button" class="btn btn-sm btn-secondary btn-tag my-1" disabled>-</button></td> -->
-                        <td>
+            <!-- <div class="row">
+                    <div class="col-12 btn btn-sm btn-success  disabled ">Select the tags :</div>
+            </div> -->
+            <div class="row">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled "style="padding-right:0">Qualification 资质 </div>
+                <div class= "col-md-10 col-sm-12">
+                        <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-qualifications button-tag" data-toggle="tooltip" data-placement="top" title="Newbie" cn-text="新手">新手</button>
+                        <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-qualifications button-tag" data-toggle="tooltip" data-placement="top" title="Senior" cn-text="资深干员">资深干员</button>
+                        <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-qualifications button-tag" data-toggle="tooltip" data-placement="top" title="Advanced Senior" cn-text="高级资深干员">高级资深干员</button>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled "style="padding-right:0">
+                            Position 位置
+                    </div>
+                    <div class= "col-md-10 col-sm-12">
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-position button-tag" data-toggle="tooltip" data-placement="top" title="Melee" cn-text="近战位">近战位</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-position button-tag" data-toggle="tooltip" data-placement="top" title="Ranged" cn-text="远程位">远程位</button>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled ">
+                            Gender 位置
+                    </div>
+                    <div class= "col-md-10 col-sm-12 span">
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-gender button-tag" data-toggle="tooltip" data-placement="top" title="Female" cn-text="女性干员">女性干员</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-gender button-tag" data-toggle="tooltip" data-placement="top" title="Male" cn-text="男性干员">男性干员</button>
+                        </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled ">
+                            Class 种类
+                    </div>
+                    <div class= "col-md-10 col-sm-12 span">
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class button-tag" data-toggle="tooltip" data-placement="top" title="Guard" cn-text="近卫">近卫</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class button-tag" data-toggle="tooltip" data-placement="top" title="Medic" cn-text="医疗">医疗</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class button-tag" data-toggle="tooltip" data-placement="top" title="Vanguard" cn-text="先锋">先锋</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class button-tag" data-toggle="tooltip" data-placement="top" title="Caster" cn-text="术师">术师</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class button-tag" data-toggle="tooltip" data-placement="top" title="Sniper" cn-text="狙击">狙击</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class button-tag" data-toggle="tooltip" data-placement="top" title="Defender" cn-text="重装">重装</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class button-tag" data-toggle="tooltip" data-placement="top" title="Support" cn-text="辅助">辅助</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-class button-tag" data-toggle="tooltip" data-placement="top" title="Specialist" cn-text="特种">特种</button>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled">
+                            Affix 词缀
+                    </div>
+                    <div class= "col-md-10 col-sm-12 span">
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Healing" cn-text="治疗">治疗</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Support" cn-text="支援">支援</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="DPS" cn-text="输出">输出</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Splash" cn-text="群攻">群攻</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Slow" cn-text="减速">减速</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Survival" cn-text="生存">生存</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Protection" cn-text="防护">防护</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Debuffer" cn-text="削弱">削弱</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Displacement" cn-text="位移">位移</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Crowd Control" cn-text="控场">控场</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Burst" cn-text="爆发">爆发</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Summoner" cn-text="召唤">召唤</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Quick Resurrection" cn-text="快速复活">快速复活</button>
+                            <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-affix button-tag" data-toggle="tooltip" data-placement="top" title="Cost Recovery" cn-text="费用回复">费用回复</button>        
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled">
+                            Filter Rarity
+                    </div>
+                    <div class= "col-md-10 col-sm-12 span">
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-id="all" id="opt-all">ALL</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-id="6">6★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-id="5">5★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-id="4">4★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-id="3">3★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-id="2">2★</button>
+                            <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-id="1">1★</button>
+                    </div>
+            </div>
+            <div class="row">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled">
+                            Filter Rarity
+                    </div>
+                    <div class= "col-md-10 col-sm-12 span">
                             <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-name" id="showName" opt-id="showName">Name</button>
                             <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-image" id="showImage" opt-id="showImage">Image</button>
                             <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: absolute; margin-left: 5px; margin-top: 4px; z-index: 1;">
@@ -179,16 +190,53 @@
                                 <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="80">80</button>
                                 <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="128">128</button>
                             </div>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger col-12 align-self-center text-center" id="btn-clear" onclick="clickBtnClear()">Clear</button>
-                        </td>
-                    </tr>
-                </table>
+                    </div>
             </div>
-            <div id="box-options">  
+            <div class="row">
+                    <button class="btn btn-danger col-12 align-self-center text-center" style="padding:1px" id="btn-clear" onclick="clickBtnClear()">Clear</button>
             </div>
+            <!-- <table >
+                <tr>
+                    <td colspan=4><hr class="my-1" /></td>
+                </tr>
+                <tr style="text-align:left;vertical-align:top;padding:0">
+                    <td colspan=2><button style="width:100%" type="button" class="btn btn-sm btn-info my-1" disabled>Filter Rarity</button></td>
+                    <td>
+                        <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
+                        <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="6">6★</button>
+                        <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
+                        <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
+                        <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
+                        <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
+                        <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button></td>
+                </tr>
+                <tr style="text-align:left;vertical-align:top;padding:0">
+                    <td colspan=2><button style="width:100%" type="button"id="btn-calculate" class="btn btn-sm btn-info my-1" disabled>Show</button></td>
+                    <td>
+                        <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-name" id="showName" opt-id="showName">Name</button>
+                        <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-image" id="showImage" opt-id="showImage">Image</button>
+                        <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: absolute; margin-left: 5px; margin-top: 4px; z-index: 1;">
+                        Image Size
+                        </button>
+                        <button type="button" class="btn btn-sm btn-primary my-1 btn-image"  style="background-color: white; color: black; border-color: darkgrey; width: fit-content; position: absolute; margin-left: 100px; padding-left: 10px;" disabled>Selected: <span id="selectedImageSize"></span></button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="20">20</button>
+                            <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="32">32</button>
+                            <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="40">40</button>
+                            <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="64">64</button>
+                            <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="80">80</button>
+                            <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="128">128</button>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger col-12 align-self-center text-center" id="btn-clear" onclick="clickBtnClear()">Clear</button>
+                    </td>
+                </tr>
+            </table> -->
+        <!-- </div> -->
+        <div id="box-options">  
         </div>
+    </div>
         <table class="table table-striped table-hover my-3" id="table-recommend">
             <thead class="thead-dark">
                 <tr>
@@ -265,16 +313,8 @@
             console.log(localStorage.showImage);
 
             let lastChar = ""
-
-            $(".imagesizeselect").each(function(){
-                let size = localStorage.size;
-                $("#selectedImageSize").html(size);
-                if($(this).attr("title") == size){
-                    console.log("40");
-                    $("<span> <<</span>").appendTo(this);
-                } else {
-                    $(this).html($(this).attr("title"));
-                }
+            $(document).on("click", ".btn-tag", function () {
+                
             });
 
             $(document).on("click", ".btn-name", function () {
