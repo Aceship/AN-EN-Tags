@@ -47,18 +47,21 @@
             overflow-x: hidden;
         }
         #to-tag {
-            background-color: #444444;
-            border-color:#222;
-            border-radius: 35px;
+            background-color: #333;
+            opacity: 0.95;
+            -webkit-box-shadow: 2px 4px 3px 2px rgba(0,0,0,0.5);
+            -moz-box-shadow: 2px 4px 3px 2px rgba(0,0,0,0.5);
+            box-shadow: 2px 4px 3px 2px rgba(0,0,0,0.5);
+            border-width: 0px;
+            border-radius: 0px;
             font-size: 19px;
-            width: 50px;
+            width: 80px;
             height: 50px;
-            display: none;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            -ms-transition: all 0.3s ease;
-            -o-transition: all 0.3s ease;
-            transition: all 0.3s ease
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            transition: all 1s ease
         }
         #to-tag:hover {
             background-color: #333;
@@ -68,7 +71,7 @@
     </style>
 </head>
 <body>
-    <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 15px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
+    <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -275,13 +278,7 @@
         </div>
     </div>
     <script>
-        $(window).scroll(function() {
-            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-                $('#to-tag').fadeIn(200);    // Fade in the arrow
-            } else {
-                $('#to-tag').fadeOut(200);   // Else fade out the arrow
-            }
-        });
+
         $('#to-tag').click(function() {      // When arrow is clicked
             $('body,html').animate({
                 scrollTop : 0                       // Scroll to top of body
