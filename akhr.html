@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Arknights Recruitment Calculator</title>
+    <title translate-id="web-title">Arknights Recruitment Calculator</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="js/jquery-3.4.0.min.js"></script>
@@ -46,7 +46,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Arknights Toolbox</a>
+        <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
             <span class="navbar-toggler-icon"></span>
@@ -54,19 +54,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="akhr.html">Recruitment Calculator</a>
+                    <a class="nav-link" href="akhr.html" translate-id="topbar-2">Recruitment Calculator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="akhrchars.html">Operators Table</a>
+                    <a class="nav-link" href="akhrchars.html" translate-id="topbar-3">Operators Table</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="aklevel.html">Leveling Calculator</a>
+                    <a class="nav-link" href="aklevel.html" translate-id="topbar-4">Leveling Calculator</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="akguide.html">Guide</a>
+                        <a class="nav-link" href="akguide.html" translate-id="topbar-5">Guide</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">WIP</a>
+                    <a class="nav-link disabled" href="#" translate-id="topbar-6">WIP</a>
                 </li>
             </ul>
         </div>
@@ -75,7 +75,7 @@
         <div class="row"style="padding:0">
             <div class="col-12">
                 <div class="form-group col-xs-6" style="margin: unset; padding-top: 17px; float: right; padding-left: 10px;">
-                    <label for="selLang">Translate to: </label>
+                    <label for="selLang" translate-id="language-2">Translate to: </label>
                     <select style="width: fit-content; display: inline-block; height: 30px; padding-top: 0px;" class="form-control" id="selLang" onchange="changeUILanguage()">
                         <option value="en">English</option>
                         <option value="cn">Chinese</option>
@@ -83,7 +83,7 @@
                     </select>
                 </div>
                 <div class="form-group col-xs-6" style="margin: unset; padding-top: 17px; float: right;">
-                    <label for="selReg">Game Server: </label>
+                    <label for="selReg" translate-id="language-1">Game Server: </label>
                     <select style="width: fit-content; display: inline-block; height: 30px; padding-top: 0px;" class="form-control" id="selReg" onchange="changeUILanguage()">
                         <option value="cn">CN</option>
                         <!--<option value="jp">JP</option>-->
@@ -93,10 +93,10 @@
         </div>
         <div class="col-12 alert alert-dark mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:5px" role="alert">
             <div class="row" style="padding:0">
-                    <div class="col-12 btn btn-sm  disabled "style="color:#FFFFFF;background: #444444;D6;padding:0">Select the tags :</div>
+                    <div class="col-12 btn btn-sm  disabled " style="color:#FFFFFF;background: #444444;D6;padding:0" translate-id="selector-title">Select the tags :</div>
             </div>
             <div class="row"style="padding:0">
-                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled "style="padding-right:0">Qualification 资质 </div>
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled " style="padding-right:0" translate-id="selector-categories-1">Qualification 资质 </div>
                 <div class= "col-md-10 col-sm-12" style="padding-left:1px;padding-right: 1px">
                         <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-qualifications button-tag" data-toggle="tooltip" data-placement="top" title="Newbie" cn-text="新手">新手</button>
                         <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-qualifications button-tag" data-toggle="tooltip" data-placement="top" title="Senior" cn-text="资深干员">资深干员</button>
@@ -104,17 +104,17 @@
                 </div>
             </div>
             <div class="row" >
-                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled "style="padding-right:0">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled " style="padding-right:0" translate-id="selector-categories-2">
                             Position 位置
                     </div>
-                    <div class= "col-md-10 col-sm-12"style="padding-left:1px;padding-right: 1px">
+                    <div class= "col-md-10 col-sm-12" style="padding-left:1px;padding-right: 1px">
                             <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-position button-tag" data-toggle="tooltip" data-placement="top" title="Melee" cn-text="近战位">近战位</button>
                             <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-position button-tag" data-toggle="tooltip" data-placement="top" title="Ranged" cn-text="远程位">远程位</button>
                     </div>
             </div>
             <div class="row">
-                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled ">
-                            Gender 位置
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled " translate-id="selector-categories-3">
+                            Gender 性别
                     </div>
                     <div class= "col-md-10 col-sm-12 span"style="padding-left:1px;padding-right: 1px">
                             <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary btn-tag my-1 tags-gender button-tag" data-toggle="tooltip" data-placement="top" title="Female" cn-text="女性干员">女性干员</button>
@@ -122,7 +122,7 @@
                         </div>
             </div>
             <div class="row">
-                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled ">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled " translate-id="selector-categories-4">
                             Class 种类
                     </div>
                     <div class= "col-md-10 col-sm-12 span"style="padding-left:1px;padding-right: 1px">
@@ -137,7 +137,7 @@
                     </div>
             </div>
             <div class="row">
-                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled" translate-id="selector-categories-5">
                             Affix 词缀
                     </div>
                     <div class= "col-md-10 col-sm-12 span"style="padding-left:1px;padding-right: 1px">
@@ -158,7 +158,7 @@
                     </div>
             </div>
             <div class="row">
-                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled" translate-id="selector-categories-6">
                             Filter Rarity
                     </div>
                     <div class= "col-md-10 col-sm-12 span"style="padding-left:1px;padding-right: 1px">
@@ -172,16 +172,16 @@
                     </div>
             </div>
             <div class="row">
-                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled">
+                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled" translate-id="selector-categories-7">
                             Show
                     </div>
                     <div class= "col-md-10 col-sm-12 span"style="padding-left:1px;padding-right: 1px">
-                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-name" id="showName" opt-id="showName">Name</button>
-                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-image" id="showImage" opt-id="showImage">Image</button>
-                            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: absolute; margin-left: 5px; margin-top: 4px; z-index: 1;">
+                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-name" id="showName" opt-id="showName" translate-id="selector-name">Name</button>
+                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-image" id="showImage" opt-id="showImage" translate-id="selector-image">Image</button>
+                            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: absolute; margin-left: 5px; margin-top: 4px; z-index: 1;" translate-id="selector-size">
                             Image Size
                             </button>
-                            <button type="button" class="btn btn-sm btn-primary my-1 btn-image"  style="background-color: white; color: black; border-color: darkgrey; width: fit-content; position: absolute; margin-left: 100px; padding-left: 10px;" disabled>Selected: <span id="selectedImageSize"></span></button>
+                            <button type="button" class="btn btn-sm btn-primary my-1 btn-image"  style="background-color: white; color: black; border-color: darkgrey; width: fit-content; position: absolute; margin-left: 100px; padding-left: 10px;" disabled><span translate-id="selector-selectedsize"></span><span id="selectedImageSize"></span></button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="20">20</button>
                                 <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="32">32</button>
@@ -193,7 +193,7 @@
                     </div>
             </div>
             <div class="row">
-                    <button class="btn btn-danger col-12 align-self-center text-center" style="padding:1px" id="btn-clear" onclick="clickBtnClear()">Clear</button>
+                    <button class="btn btn-danger col-12 align-self-center text-center" style="padding:1px" id="btn-clear" onclick="clickBtnClear()" translate-id="selector-clear">Clear</button>
             </div>
             <!-- <table >
                 <tr>
@@ -241,8 +241,8 @@
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col" style="width:16.67%">Tags</th>
-                    <th scope="col">Character Possibility</th>
+                    <th scope="col" style="width:16.67%" translate-id="result-tags">Tags</th>
+                    <th scope="col" translate-id="result-characters">Character Possibility</th>
                     
                 </tr>
             </thead>
@@ -251,13 +251,13 @@
         <hr />
         <div class="row col-12 tutorial">
             <div class="col-12 text-left">
-                <p>How To Use ：</p>
-                <p>1. Change the 'Game Server' drop down on the top right according to your AK client region.</p>
-                <p>2. Change the language of the user interface to your preference.</p>
-                <p>3. Click on the tags, up to 6 tags.</p>
-                <p>4. You can hover on the tags to see the translation.</p>
-                <p>5. You can also hide or show the name and/or the image of the operators.</p>
-                <p>6. Click 'clear' to reset all the tag selections.</p>
+                <p translate-id="footer-instructions-1">How To Use ：</p>
+                <p translate-id="footer-instructions-2">1. Change the 'Game Server' drop down on the top right according to your AK client region.</p>
+                <p translate-id="footer-instructions-3">2. Change the language of the user interface to your preference.</p>
+                <p translate-id="footer-instructions-4">3. Click on the tags, up to 6 tags.</p>
+                <p translate-id="footer-instructions-5">4. You can hover on the tags to see the translation.</p>
+                <p translate-id="footer-instructions-6">5. You can also hide or show the name and/or the image of the operators.</p>
+                <p translate-id="footer-instructions-7">6. Click 'clear' to reset all the tag selections.</p>
             </div>
         </div>
     </div>
@@ -315,6 +315,16 @@
             let lastChar = ""
             $(document).on("click", ".button-tag", function () {
                 lastChar = ""
+            });
+
+            $(".imagesizeselect").each(function(_,el){
+                let size = localStorage.size;
+                $("#selectedImageSize").html(localStorage.size);
+                if($(el).attr("title") == size){
+                    $("<span> <<</span>").appendTo(el);
+                } else {
+                    $(el).html($(el).attr("title"));
+                }
             });
 
             $(document).on("click", ".btn-name", function () {
@@ -592,7 +602,6 @@
                         (a.tags.length > b.tags.length ? 1 : (a.tags.length < b.tags.length ? -1 : 0)));
                 });
                 let no = 1;
-                console.log(combs);
                 $.each(combs, function (_, comb) {
                     if (comb.possible.length === 0) return;
                     let chars = comb.possible;
@@ -742,11 +751,20 @@
             });
             $(".tags-class").each(function(i,el){
                 getJSONdata("type",function(data){
+                    console.log(data);
                     if(data.length != 0){
                         $(el).html(eval("data[i].type_"+reg));
                         $(el).attr("data-original-title", eval("data[i].type_"+lang));
                     }
                 });
+            });
+            getJSONdata("ui",function(data){
+                let lang = $("#selLang").val();
+                if(data.length != 0){
+                    $.each(data, function(i,text){
+                        $("[translate-id="+text.id).html(eval('text.ui_'+lang));
+                    });
+                }
             });
             checkedTags = [];
             checkedTagsTL = [];
@@ -760,9 +778,13 @@
             var x = 0;
             var req = $.getJSON("json/tl-"+type+".json");
             req.done(function(response){
+                console.log("type: "+type+" done");
                 callback(response);
             });
-            
+            req.fail(function(response){
+                console.log("type: "+type+" fail: ");
+                console.log(response);
+            });
         }
 
         function doubleclick(el){
