@@ -72,7 +72,8 @@
 </head>
 <body>
     <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );">
+            <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
         <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
@@ -96,8 +97,30 @@
                     <a class="nav-link disabled" href="#" translate-id="topbar-6">WIP</a>
                 </li>
             </ul>
+            <!-- <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" translate-id="language-1">
+                                Server
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" onclick="changeUILanguage()" value="cn">Chinese</a>
+                        </div>
+                    </li>
+                <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" translate-id="language-2">
+                            Language
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" onclick="changeUILanguage()" value="en">English</a>
+                        <a class="dropdown-item" onclick="changeUILanguage()" value="cn">Chinese</a>
+                        <a class="dropdown-item" onclick="changeUILanguage()" value="jp">Japanese</a>
+                    </div>
+                </li>
+            </ul> -->
         </div>
     </nav>
+    <div style="padding-bottom:50px"></div>
     <div class="col-md-12 col-sm-12" style="margin:auto;max-width:1000px;padding:0">
         <div class="row"style="padding:0">
             <div class="col-12">
@@ -320,10 +343,6 @@
             console.log("Show Image: ");
             console.log(localStorage.showImage);
 
-            let lastChar = ""
-            $(document).on("click", ".button-tag", function () {
-                lastChar = ""
-            });
 
             $(".imagesizeselect").each(function(_,el){
                 let size = localStorage.size;
@@ -433,6 +452,7 @@
         }
         
         function clickBtnClear(){
+            
             $('.btn-tag').removeClass('btn-primary').addClass('btn-secondary');
             $("#tbody-recommend").html("");
             checkedTags = [];
