@@ -93,7 +93,7 @@
         </div>
         <div class="col-12 alert alert-dark mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:5px" role="alert">
             <div class="row" style="padding:0">
-                    <div class="col-12 btn btn-sm  disabled " style="color:#FFFFFF;background: #444444;D6;padding:0" translate-id="selector-title">Select the tags :</div>
+                    <div class="col-12 btn btn-sm  disabled " style="color:#FFFFFF;background: #444444;border-radius:4px 4px 0px 0px;padding:0" translate-id="selector-title">Select the tags :</div>
             </div>
             <div class="row"style="padding:0">
                     <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled " style="padding-right:0" translate-id="selector-categories-1">Qualification 资质 </div>
@@ -171,29 +171,43 @@
                             <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-id="1">1★</button>
                     </div>
             </div>
-            <div class="row">
-                    <div class="col-md-2 col-sm-12 btn btn-sm btn-info my-1 disabled" translate-id="selector-categories-7">
-                            Show
-                    </div>
-                    <div class= "col-md-10 col-sm-12 span"style="padding-left:1px;padding-right: 1px">
+            <div class="row" style="background-color:#ccc">
+                    
+                    <div class= " col-xs-10 span"style="padding-left:1px;padding-right: 1px">
+                            <div class=" col-xs-2 btn btn-sm btn-info my-1 disabled" translate-id="selector-categories-7">
+                                    Show
+                            </div>
                             <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-name" id="showName" opt-id="showName" translate-id="selector-name">Name</button>
                             <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-image" id="showImage" opt-id="showImage" translate-id="selector-image">Image</button>
-                            <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="position: absolute; margin-left: 5px; margin-top: 4px; z-index: 1;" translate-id="selector-size">
-                            Image Size
-                            </button>
-                            <button type="button" class="btn btn-sm btn-primary my-1 btn-image"  style="background-color: white; color: black; border-color: darkgrey; width: fit-content; position: absolute; margin-left: 100px; padding-left: 10px;" disabled><span translate-id="selector-selectedsize"></span><span id="selectedImageSize"></span></button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="20">20</button>
-                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="32">32</button>
-                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="40">40</button>
-                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="64">64</button>
-                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="80">80</button>
-                                <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="128">128</button>
+                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary my-1 btn-score" id="showScore" opt-id="showScore" translate-id="selector-score">Score</button>
+                            <!-- <div style="display:inline-block;">
+                                <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="z-index: 1; float:unset;border-radius: 5px 0px 0px 5px" translate-id="selector-sort">
+                                    Sort</button>
+                                <div  class="btn btn-sm btn-primary my-1 btn-sort"  style="background-color: white; color: black; border-color: darkgrey;margin-left: -6px;border-radius: 0px 5px 5px 0px"><span id="selectedSort">Score</span> </div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item btn-sort sortselect" onclick="changeSort(this)" id="btn-calculate" type="button" title="20">By Score</button>
+                                        <button class="dropdown-item btn-sort sortselect" onclick="changeSort(this)" id="btn-calculate" type="button" title="32">Tags</button>
+
+                                </div> 
+                            </div> -->
+                            <div style="display:inline-block;">
+                                <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="z-index: 1; float:unset;border-radius: 5px 0px 0px 5px" translate-id="selector-size">
+                                    Image Size</button>
+                                <div  class="btn btn-sm btn-primary my-1 btn-image disabled"  style="background-color: white; color: black; border-color: darkgrey;margin-left: -6px;border-radius: 0px 5px 5px 0px" disabled><span id="selectedImageSize"></span></div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="20">20</button>
+                                        <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="32">32</button>
+                                        <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="40">40</button>
+                                        <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="64">64</button>
+                                        <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="80">80</button>
+                                        <button class="dropdown-item btn-size imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="128">128</button>
+                                </div> 
                             </div>
+                            
                     </div>
             </div>
             <div class="row">
-                    <button class="btn btn-danger col-12 align-self-center text-center" style="padding:1px" id="btn-clear" onclick="clickBtnClear()" translate-id="selector-clear">Clear</button>
+                    <button class="btn btn-danger col-12 align-self-center text-center" style="padding:1px;border-radius:0px 0px 4px 4px" id="btn-clear" onclick="clickBtnClear()" translate-id="selector-clear">Clear</button>
             </div>
         <div id="box-options">  
         </div>
