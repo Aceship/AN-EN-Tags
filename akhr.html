@@ -365,10 +365,11 @@
                 $('[data-toggle="tooltip"]').tooltip();
                 localStorage.lastChar = char_name
             }else{
+                $(".tr-chartag").remove();
                 localStorage.lastChar = ""
-                setTimeout(function(){
-                    showChar(el);
-                }, 200);
+                // setTimeout(function(){
+                //     showChar(el);
+                // }, 200);
             }
         }
         
@@ -453,6 +454,7 @@
                 }
             }
             $(el).toggleClass("btn-primary btn-secondary");
+            lastChar = ""
             // console.log(checkedTags);
             // console.log(checkedTagsTL);
             // console.log(tag)
@@ -559,7 +561,7 @@
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
                     $.each(chars, function (_, char) {
-                        let padding = localStorage.showName && localStorage.size <60? "padding-right: 8px" : "padding-right: 1px";
+                        let padding = localStorage.showName=='true' && localStorage.size <60? "padding-right: 8px" : "padding-right: 1px";
                         let style = localStorage.showImage=='true' ? "style=\"border-radius: 5px;padding: 1px 1px;" + padding + ";\" " : "";
                         let buttonstyle = localStorage.size >25? "background-color: #AAA;border-radius: 4px;": "background-color: transparent;border-radius: 4px;";
                         chars_html.push("<button type=\"button\" class=\"btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"bottom\" onclick=\"showChar(this)\" " +style+"title=\""+ char.name +"\">");
