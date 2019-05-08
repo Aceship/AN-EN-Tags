@@ -53,46 +53,32 @@
             <ul class="navbar-nav ml-auto">
 
                 <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" translate-id="language-1">
-                                Server
+                        <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                <div class="ak-subtitle ak-disable" translate-id="language-1">Server</div>
+                                <div class="ak-disable" id="display-reg">CN</div>
                         </a>
+                        
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" onclick="changeUILanguage()" value="cn">Chinese</a>
+                            <a class="dropdown-item reg unselectable" onclick="changeUILanguage()" value="cn">Chinese</a>
                         </div>
                     </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" translate-id="language-2">
-                            Language
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px"href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="ak-subtitle ak-disable" translate-id="language-2">Language</div>
+                            <div class="ak-disable" id="display-lang">English</div>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" onclick="changeUILanguage()" value="en">English</a>
-                        <a class="dropdown-item" onclick="changeUILanguage()" value="cn">Chinese</a>
-                        <a class="dropdown-item" onclick="changeUILanguage()" value="jp">Japanese</a>
+                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="en">English</a>
+                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="cn">Chinese</a>
+                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="jp">Japanese</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-    <div style="padding-bottom:50px"></div>
+    <div style="padding-bottom:20px"></div>
+    <!-- <div class="warning-sign"style="position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center">aaaaaaaaaaaaaaaaaaaaa</div> -->
     <div class="col-md-12 col-sm-12 " style="margin:auto;max-width:1000px;padding:0" >
-        <div class="row"style="padding:0">
-            <div class="col-12">
-                <div class="form-group col-xs-6" style="color:white;margin: unset; padding-top: 17px; float: right; padding-left: 10px;">
-                    <label for="selLang" translate-id="language-2">Translate to: </label>
-                    <select style="width: fit-content; display: inline-block; height: 30px; padding-top: 0px;" class="form-control" id="selLang" onchange="changeUILanguage()">
-                        <option value="en">English</option>
-                        <option value="cn">Chinese</option>
-                        <option value="jp">Japanese</option>
-                    </select>
-                </div>
-                <div class="form-group col-xs-6" style="color:white;margin: unset; padding-top: 17px; float: right;">
-                    <label for="selReg" translate-id="language-1">Game Server: </label>
-                    <select style="width: fit-content; display: inline-block; height: 30px; padding-top: 0px;" class="form-control" id="selReg" onchange="changeUILanguage()">
-                        <option value="cn">CN</option>
-                    </select>
-                </div>
-            </div>
-        </div>
         <div class="col-12 ak-mid ak-shadow mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px" role="alert">
             <div class="row" style="padding:0;padding-bottom: 4px">
                     <div class="col-12 btn btn-sm ak-btn ak-c-black ak-shadow-small ak-disable" style="padding:0" translate-id="selector-title">Select the tags :</div>
@@ -178,7 +164,7 @@
                     <div class= " col-xs-10 span"style="padding-left:4px;padding-right: 4px;margin:auto">
                             <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary ak-btn my-1 btn-name" id="showName" opt-id="showName" translate-id="selector-name">Name</button>
                             <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary ak-btn my-1 btn-image" id="showImage" opt-id="showImage" translate-id="selector-image">Image</button>
-                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary ak-btn my-1 btn-score" id="showScore" opt-id="showScore" translate-id="selector-score">Score</button>
+                            <!-- <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary ak-btn my-1 btn-score" id="showScore" opt-id="showScore" translate-id="selector-score">Score</button> -->
                             <!-- <div style="display:inline-block;">
                                 <button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="z-index: 1; float:unset;border-radius: 5px 0px 0px 5px" translate-id="selector-sort">
                                     Sort</button>
@@ -247,7 +233,6 @@
         </div>
     </div>
     <script>
-
         $('#to-tag').click(function() {      // When arrow is clicked
             $('body,html').animate({
                 scrollTop : 0                       // Scroll to top of body
@@ -271,17 +256,34 @@
                 }
             }
 
-            if(typeof localStorage.gameRegion === "undefined"){
+            if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
                 console.log("game region undefined");
                 localStorage.setItem("gameRegion", 'cn');
                 localStorage.setItem("webLang", 'en');
-                $("#selReg").val('cn');
-                $("#selLang").val('en');
+                reg = "cn";
+                lang = "en";
             } else {
                 console.log(localStorage.gameRegion);
-                $("#selReg").val(localStorage.gameRegion);
-                $("#selLang").val(localStorage.webLang);
+                reg = localStorage.gameRegion;
+                lang = localStorage.webLang;
             }
+            
+            // init dropdown
+            $('.reg[value='+reg+']').addClass('selected');
+            $('.lang[value='+lang+']').addClass('selected');
+
+            $(".dropdown-item.reg").on("click", function(){
+                $(".dropdown-item.reg").removeClass("selected");
+                $(this).addClass("selected");   
+                changeUILanguage();
+            });
+                        
+            $(".dropdown-item.lang").on("click", function(){
+                $(".dropdown-item.lang").removeClass("selected");
+                $(this).addClass("selected");
+                changeUILanguage();
+            });     
+
             changeUILanguage();
 
             console.log("Show Name: ");
@@ -330,8 +332,8 @@
         var globalOptStars = [];
 
         function showChar(el){
-            var reg = $("#selReg").val();
-            var lang = $("#selLang").val();
+            let reg = $('.reg.selected').attr("value");
+            let lang =$('.lang.selected').attr("value");
             let all_chars = JsonDATA[1];
             let all_tags = JsonDATA[3];
             let all_types = JsonDATA[4];
@@ -474,7 +476,8 @@
                 });
             } else {
                 if (checkedTags.length >= 6) {
-                    alert("Only 6 tags max");
+                    // alert("Only 6 tags max");
+
                     return;
                 } else {
                     checkedTags.push(tag);
@@ -498,7 +501,7 @@
                 let avg_char_tag = JsonDATA[2];
                 let len = checkedTags.length;
                 let count = Math.pow(2, checkedTags.length);
-                $("#count-tag").html(checkedTags.length>=1 ? checkedTags.length : "")
+                $("#count-tag").html(checkedTags.length>=1 ? checkedTags.length==6 ? "6 [MAX]": checkedTags.length: "")
                 
                 let combs = [];
                 for (let i = 0; i < count; i++) {
@@ -626,16 +629,16 @@
             let tags_aval = {};
             let all_chars = {};
             let avg_char_tag = 0;
+            let reg = $('.reg.selected').attr("value");
+            let lang =$('.lang.selected').attr("value");
             $.getJSON("json/tl-akhr.json", function (data) {
                 let tag_count = 0;
                 let char_tag_sum = 0;
                 // console.log(data);
                 $.each(data, function (_, char) {
-                    var reg = $("#selReg").val();
-                    var lang = $("#selLang").val();
                     if (char.hidden) return;
                     char.tags.push(char.type);
-                    if($("#selReg").val() == 'cn'){
+                    if(reg == 'cn'){
                         char.tags.push(char.sex + "性干员");
                     } else {
                         char.tags.push(char.sex);
@@ -690,13 +693,23 @@
                     }
                 }
             });
+            
         }
 
         function changeUILanguage(){
-            localStorage.setItem("gameRegion", $("#selReg").val());
-            localStorage.setItem("webLang", $("#selLang").val());
-            let reg = $("#selReg").val();
-            let lang = $("#selLang").val();
+            let reg = $('.reg.selected').attr("value");
+            let lang =$('.lang.selected').attr("value");
+            $('#display-reg').text(reg.toUpperCase())
+            
+            switch (lang) {
+                case "en":$('#display-lang').text("English");break;
+                case "cn":$('#display-lang').text("Chinese");break;
+                case "jp":$('#display-lang').text("Japanese");break;
+
+            }
+            console.log($('#display-reg'))
+            localStorage.setItem("gameRegion", reg);
+            localStorage.setItem("webLang", lang);
             let types = ["qualifications","position","affix"];
             for (let m = 0; m < types.length; m++) {
                 $(".tags-"+types[m]).each(function(j,el){
@@ -739,13 +752,13 @@
                 });
             });
             getJSONdata("ui",function(data){
-                let lang = $("#selLang").val();
                 if(data.length != 0){
                     $.each(data, function(i,text){
                         $("[translate-id="+text.id).html(eval('text.ui_'+lang));
                     });
                 }
             });
+            console.log("done");
             checkedTags = [];
             checkedTagsTL = [];
             //refresh();
