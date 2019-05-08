@@ -90,7 +90,7 @@ html, body {
 .ak-c-black{
     color: #fff;
     background-color: #2f2f2f;
-    border-color: #111111;
+    border-color: #2f2f2f;
 }
 .ak-shadow-in{
     box-shadow: inset 0px 0px 4px 3px #55555588 , inset 2px -2px 4px 3px #55555522
@@ -107,13 +107,46 @@ html, body {
 .ak-disable{
     pointer-events: none
 }
+.ak-btn-header{
+    font-size: 12px;
+    font-weight:700;
+    vertical-align: text-bottom;
+    padding:0px;
+    /* margin:auto; */
+    padding-top:5px;
+    padding-bottom:5px;
+    color:#FFFFFFff;
+    text-align: center;
+    background: #11111199;
+    border-radius: 0px;
+    text-shadow: 2px 2px 2px #00000022,0px 0px 5px #00000077;
+    /* box-shadow: 0 0px 0px 2px rgba(0, 0, 0, 0.4); */
+}
 .ak-small-row{
     padding:0px;
     margin:-20;
+    /* margin: auto; */
+    /* max-height: 36px; */
     /* transform:scale(1,0.92  ); */
-    background:#DDDDDDFF
+    background:#DDDDDD00;
 }
-
+.ak-shadow-smallbox{
+    box-shadow: 0 -4px 8px -20px rgba(0, 0, 0, 0.4), 0 -6px 20px 0 rgba(0, 0, 0, 0.3);
+    background: #11111155
+}
+@media screen and (max-width:768px) {
+    .ak-small-row{
+        text-align: center;
+    }
+    .ak-small-row div{
+        margin: auto;
+    }
+    .ak-btn-header-span{
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.4), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+        padding-top:1px;
+        padding-bottom:1px;
+    }
+}
 .ak-footer{
     color:#fff;
     padding-top:5px;
@@ -121,4 +154,7 @@ html, body {
     box-shadow: 0 -4px 8px 0 rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: rgb(42, 42, 42);
     width:100%
+}
+.tooltip{
+    pointer-events: none;
 }
