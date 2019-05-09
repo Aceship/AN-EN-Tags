@@ -19,8 +19,32 @@
     </script>
 </head>
 <body>
-    <div id="nav-placeholder"></div>
-    <div style="padding:10px"></div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Arknights Toolbox</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="akhr.html">Recruitment Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="akhrchars.html">Operators Table</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="aklevel.html">Leveling Calculator</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="akguide.html">Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">WIP</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container col-12" style="margin:auto; max-width: 1200px;">
     	<div class="row">
     		<div class="col-md-6 col-sm-12">
@@ -111,12 +135,12 @@
 		                </div>
 		            </div>
 		        </div>
-		        <div class="row" >
+		        <div class="row">
 		            <button class="btn btn-success col-10 text-center" id="btn-calculate" style="margin:auto;">Calculate</button>
 
 		        </div>
 	        </div>
-	        <div class="col-md-6 col-sm-12" style="background-color: aliceblue;border-radius:4px">
+	        <div class="col-md-6 col-sm-12">
 	        	<table class="table table-striped my-3">
 	                <thead class="thead-dark">
 	                    <tr>
@@ -133,7 +157,7 @@
             
         </div>
         <hr />
-        <div class="row col-12 tutorial"style="background-color: aliceblue;border-radius:4px">
+        <div class="row col-12 tutorial">
             <div class="col-12 col-sm-6 text-left">
                 <p><b>Maximum level of each star</b></p>
                 <p>1★：30</p>
@@ -165,11 +189,6 @@
 
         </div>
     </div>
-    <script>
-            $(function(){
-              $("#nav-placeholder").load("nav.html");
-            });
-     </script>
     <script>
         $(function () {
             let maxLevel = [];
