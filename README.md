@@ -5,6 +5,7 @@
 1. [公开招募计算器](https://graueneko.github.io/akhr.html)
 2. [干员表](https://graueneko.github.io/akhrchars.html)
 3. [升级消耗计算器](https://graueneko.github.io/aklevel.html)
+4. [精英材料计算器](https://graueneko.github.io/akevolve.html)
 
 #### 说明
 如有希望实现的功能，可以在issue中发起请求。
@@ -21,6 +22,7 @@
 1. [Recruitment Recommender](https://graueneko.github.io/akhr.html?lang=en)
 2. [Characters Table](https://graueneko.github.io/akhrchars.html?lang=en)
 3. [Levelup Costs Calculator](https://graueneko.github.io/aklevel.html?lang=en)
+4. [Evolve Materials Calculator](https://graueneko.github.io/akevolve.html?lang=en)
 
 #### Description
 You can open an issue if have any function requirements.
