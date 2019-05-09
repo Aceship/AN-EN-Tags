@@ -71,12 +71,12 @@
                 <span class="cn">过滤</span>
                 <span class="en">Filter</span>
             </button>
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
+            <button type="button" class="btn btn-sm btn-secondary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
             <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
             <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
             <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
             <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
-            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="1">1★</button>
+            <button type="button" class="btn btn-sm btn-secondary btn-opt my-1" opt-id="1">1★</button>
             <button type="button" class="btn btn-sm btn-danger my-1" id="btn-reset">
                 <span class="cn">重置</span>
                 <span class="en">Reset</span>
@@ -86,8 +86,8 @@
                 <span class="en">Load saved data</span>
             </button>
             <hr class="my-1" />
-            <p class="cn my-0"><small><a class="save" href="?n&h">右键或长按复制我，保存输入信息</a></small></p>
-            <p class="en my-0"><small><a class="save" href="?n&h">Copy me with right click or long press, to save your input</a></small></p>
+            <p class="cn my-0"><small><a class="save" href="?n&h&o">右键或长按复制我，保存输入信息</a></small></p>
+            <p class="en my-0"><small><a class="save" href="?n&h&o">Copy me with right click or long press, to save your input</a></small></p>
         </div>
         <div class="col-12 mt-3 p-1 p-sm-2">
             <div class="d-flex flex-wrap" id="row-m">
@@ -145,6 +145,8 @@
                     ms[v['name']] = v;
                     mByLvl[v['level'] - 1].push(v['name']);
                 });
+                let minShowLevel = 2;
+                let colors = ['dark', 'success', 'info', 'danger', 'warning']
                 for (let i = 5; i > 0; i--) {
                     $.each(mByLvl[i - 1], (_, n) => {
                         let srcHtml = [];
@@ -152,11 +154,12 @@
                         $.each(ms[n].source, (k, v) => { srcHtml.push("<small>" + k + " (" + v + ")</small>") });
                         if (!ismobile)
                             $("#row-m").append('<div class="card-group m-1 lvl-' + ms[n]['level']
-                                + '"><div class="card p-0" style="max-width:102px"><img class="card-img-top" style="max-width:100px;margin:auto;" src="img/material/'
+                                + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
+                                + '><div class="card p-0' + ' border-' + colors[i - 1] + '" style="max-width:102px"><img class="card-img-top" style="max-width:100px;margin:auto;" src="img/material/'
                                 + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
                                 + n + '<br />'
                                 + srcHtml.join("<br />")
-                                + '</div></div><div class="card p-0" style="max-width:72px"><div class="card-body p-1 p-md-2">'
+                                + '</div></div><div class="card p-0' + ' border-' + colors[i - 1] + '" style="max-width:72px"><div class="card-body p-1 p-md-2">'
                                 + '<form><div class="form-group mb-0">'
                                 + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
                                 + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
@@ -164,8 +167,9 @@
                                 + '</div></form>'
                                 + '</div></div>');
                         else
-                            $("#row-m").append('<div class="card col-4 my-1 p-0 lvl-' + ms[n]['level']
-                                + '"><img class="card-img-top" style="max-width:70px;margin:auto;" src="img/material/'
+                            $("#row-m").append('<div class="card col-4 my-1 p-0 lvl-' + ms[n]['level'] + ' border-' + colors[i - 1]
+                                + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
+                                + '><img class="card-img-top" style="max-width:70px;margin:auto;" src="img/material/'
                                 + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
                                 + n + '<br />'
                                 + srcHtml.join("<br />")
@@ -176,9 +180,18 @@
                                 + '</div></form>'
                                 + '</div></div>');
                     });
-                    //$("#row-m").append('<div class="w-100" />');
+                    $("#row-m").append('<div class="w-100 my-1" />');
                 }
             });
+
+            let allns = []; let allhs = []; let allos = [];
+            function genUrl() {
+                allos = [];
+                for (let i = 1; i <= 5; i++) {
+                    if ($(".btn-opt[opt-id='" + i + "']").hasClass("btn-primary")) allos.push(i);
+                }
+                $(".save").attr("href", "?n=" + allns.join("+") + "&h=" + allhs.join("+") + "&o=" + allos.join("+"));
+            }
             function calc() {
                 let counts = {};
                 $.each(ms, (n, m) => {
@@ -226,15 +239,15 @@
                         }
                     });
                 }
+                allns = []; allhs = [];
                 $.each(ms, (n, m) => {
                     $("#lack-" + m['id']).val(counts[n]['lack']);
                 })
-                let allns = []; let allhs = [];
                 $.each(ms, (_, m) => {
                     allns.push(counts[m.name].need);
                     allhs.push(counts[m.name].have);
                 });
-                $(".save").attr("href", "?n=" + allns.join("+") + "&h=" + allhs.join("+"));
+                genUrl();
             }
             $(document).on('change input paste', '.in-mc', calc);
             $(document).on("click", ".btn-opt", function () {
@@ -262,6 +275,7 @@
                         if (checkedCount === 5) $("#opt-all").toggleClass("btn-primary btn-secondary");
                     }
                 }
+                genUrl();
             });
             $(document).on("click", "#btn-filter", () => {
                 if (ismobile)
@@ -285,12 +299,13 @@
             })
             let savedNeed = urlParam("n", "");
             let savedHave = urlParam("h", "");
-
-            if (!(savedHave === "" || savedNeed === "")) {
+            let savedOption = urlParam("o", "").split("+");
+            if (!(savedHave === "" || savedNeed === "" || savedOption === "")) {
                 $("#btn-load").show();
             } else {
                 $("#btn-load").hide();
             }
+
             $(document).on("click", "#btn-load", () => {
                 let needs = savedNeed.split("+");
                 let haves = savedHave.split("+");
@@ -300,8 +315,20 @@
                 for (let i = 0; i < haves.length; i++) {
                     $("#have-" + i).val(haves[i]);
                 }
+                $(".btn-opt").removeClass("btn-primary btn-secondary");
+                for (let i = 1; i <= 5; i++) {
+                    if (savedOption.includes(i.toString())) {
+                        $(".btn-opt[opt-id='" + i + "']").addClass("btn-primary");
+                        $(".lvl-" + i).show();
+                    } else {
+                        $(".btn-opt[opt-id='" + i + "']").addClass("btn-secondary");
+                        $(".lvl-" + i).hide();
+                    }
+                }
+                $("#opt-all").addClass(savedOption.length === 5 ? "btn-primary" : "btn-secondary");
                 calc();
             });
+
         });
     </script>
 </body>
