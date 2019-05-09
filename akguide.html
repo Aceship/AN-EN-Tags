@@ -20,35 +20,15 @@
     </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Arknights Toolbox</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="akhr.html">Recruitment Calculator</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="akhrchars.html">Operators Table</a>
-                </li>
-                <li class="nav-item">
-                        <a class="nav-link" href="aklevel.html">Leveling Calculator</a>
-                </li>
-                <li class="nav-item active">
-                        <a class="nav-link" href="akguide.html">Guide</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">WIP</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-        <div style="background:url('./img/chara/Croissant.png') center center no-repeat;"><iframe style="position: absolute; width:99.99% ;height: 90%; border: none" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSpeB-jafTJtiJuVaOk7IA0-w0U9kXTZ5LAAxBU43u09RdpHIyXPpWeXGMa8rIrpENHospk9jljfe_p/pubhtml?widget=true&amp"></iframe></div>
+        <div id="nav-placeholder"></div>
+        <div style="padding:15px"></div>
+        <div style="background:url('./img/chara/Croissant.png') center center no-repeat;"><iframe style="position: absolute; width:99.99% ;height: 91%;max-height: 100%; border: none" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSpeB-jafTJtiJuVaOk7IA0-w0U9kXTZ5LAAxBU43u09RdpHIyXPpWeXGMa8rIrpENHospk9jljfe_p/pubhtml?widget=true&amp"></iframe></div>
         Loading...
     </table>
-    
+    <script>
+            $(function(){
+              $("#nav-placeholder").load("nav.html");
+            });
+     </script>
 </body>
 </html>
