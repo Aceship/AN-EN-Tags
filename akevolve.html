@@ -81,6 +81,13 @@
                 <span class="cn">重置</span>
                 <span class="en">Reset</span>
             </button>
+            <button type="button" class="btn btn-sm btn-warning my-1" id="btn-load">
+                <span class="cn">加载已保存数据</span>
+                <span class="en">Load saved data</span>
+            </button>
+            <hr class="my-1" />
+            <p class="cn my-0"><small><a class="save" href="?n&h">右键或长按复制我，保存输入信息</a></small></p>
+            <p class="en my-0"><small><a class="save" href="?n&h">Copy me with right click or long press, to save your input</a></small></p>
         </div>
         <div class="col-12 mt-3 p-1 p-sm-2">
             <div class="d-flex flex-wrap" id="row-m">
@@ -125,6 +132,7 @@
         </div>
     </div>
     <script>
+
         $(function () {
             showCurrentLang();
             let lang = getLang();
@@ -171,7 +179,7 @@
                     //$("#row-m").append('<div class="w-100" />');
                 }
             });
-            $(document).on('change input paste', '.in-mc', () => {
+            function calc() {
                 let counts = {};
                 $.each(ms, (n, m) => {
                     let need = parseInt($("#need-" + m['id']).val());
@@ -221,7 +229,14 @@
                 $.each(ms, (n, m) => {
                     $("#lack-" + m['id']).val(counts[n]['lack']);
                 })
-            });
+                let allns = []; let allhs = [];
+                $.each(ms, (_, m) => {
+                    allns.push(counts[m.name].need);
+                    allhs.push(counts[m.name].have);
+                });
+                $(".save").attr("href", "?n=" + allns.join("+") + "&h=" + allhs.join("+"));
+            }
+            $(document).on('change input paste', '.in-mc', calc);
             $(document).on("click", ".btn-opt", function () {
                 $(this).toggleClass("btn-primary btn-secondary");
                 let checked = $(this).hasClass("btn-primary");
@@ -268,6 +283,25 @@
                 else
                     $(".card-group").show();
             })
+            let savedNeed = urlParam("n", "");
+            let savedHave = urlParam("h", "");
+
+            if (!(savedHave === "" || savedNeed === "")) {
+                $("#btn-load").show();
+            } else {
+                $("#btn-load").hide();
+            }
+            $(document).on("click", "#btn-load", () => {
+                let needs = savedNeed.split("+");
+                let haves = savedHave.split("+");
+                for (let i = 0; i < needs.length; i++) {
+                    $("#need-" + i).val(needs[i]);
+                }
+                for (let i = 0; i < haves.length; i++) {
+                    $("#have-" + i).val(haves[i]);
+                }
+                calc();
+            });
         });
     </script>
 </body>
