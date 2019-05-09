@@ -137,13 +137,17 @@
         var done = makeCounter(alldata.length, function (stuff) {
         // all done!
             isDone= true;
+
             missionGroups =actData.mission_table.missionGroups
             missions = actData.mission_table.missions
+            periodicalRewards = actData.mission_table.periodicalRewards
             guideTitle = Object.keys(missionGroups).filter(search=>search.includes("guide_"))
             dailyTitle = Object.keys(missionGroups).filter(search=>search.includes("daily_"))
+            rewardTitle = Object.keys(periodicalRewards).filter(search=>search.includes("daily_"))
+            console.log(actData.mission_table)
             // console.log(missions)
             // missions = 
-            console.log(missionGroups)
+            // console.log(missionGroups)
             // for(i=0;i<2;i++){
             //     // guideTitle.length
             //     // console.log(actData.mission_table.missionGroups[guideTitle[i]].missionIds)
@@ -155,16 +159,51 @@
             //     });
             // }
             
+            var htmlappend = [] 
+            for(i=0;i<2;i++){
+                // guideTitle.length
+                // console.log(actData.mission_table.missionGroups[dailyTitle[i]])
+                var currentMiss = actData.mission_table.missionGroups[dailyTitle[i]]
+                // for(j=0;j) [missions[element].param.length-1]
+                
+                htmlappend.push('<div style="background-color:#aaa col-6">'+currentMiss.period.join(" "))
+                htmlappend.push('<div class="col-3>"')
+                rewardTitle.forEach(element => {
+                    if(periodicalRewards[element]){
+                        
+                        if(periodicalRewards[element].period.join(" ")==currentMiss.period.join(" ")){
+                            console.log(periodicalRewards[element])
+                            
+                            htmlappend.push('<div> Cost : '+periodicalRewards[element].periodicalPointCost    +'')
+
+                            periodicalRewards[element].rewards.forEach(element2 => {
+                                htmlappend.push(`<div> Rewards : ${actData.item_table.items[element2.id].iconId} + ${element2.count}</div> `)
+                            });
+                            htmlappend.push('</div>')
+                        }
+                    }
+                    
+                })
+                htmlappend.push('</div><div class="col-8>"')
+                        currentMiss.missionIds.forEach(element => {
+                            htmlappend.push('<div class="btn btn-sm" style="padding:2px;margin:2px;background:#666"> '+missions[element].template +" "+ missions[element].param.join(" / ") +' <a style="font-size:40px">'+ missions[element].periodicalPoint + "x</a>"+'</div>')
+                    
+                    // console.log(missions[element])
+                });
+                htmlappend.push('</div>')
+                htmlappend.push("</div>")
+            }
+            $("#main-table").append(htmlappend)
             // var htmlappend = [] 
             // for(i=0;i<2;i++){
             //     // guideTitle.length
-            //     console.log(actData.mission_table.missionGroups[dailyTitle[i]])
-            //     var currentMiss = actData.mission_table.missionGroups[dailyTitle[i]]
+            //     console.log(actData.mission_table.missionGroups[guideTitle[i]])
+            //     var currentMiss = actData.mission_table.missionGroups[guideTitle[i]]
             //     // for(j=0;j)
                 
-            //     htmlappend.push('<div style="background-color:#aaa col-6">'+currentMiss.period.join(" "))
+            //     htmlappend.push('<div style="background-color:#aaa col-6">')
             //             currentMiss.missionIds.forEach(element => {
-            //                 htmlappend.push('<div class="btn btn-small btn-primary">'+missions[element].template + )
+            //                 htmlappend.push('<div class="btn btn-small btn-primary">'+missions[element].template )
                     
             //         console.log(missions[element])
             //     });
@@ -172,23 +211,6 @@
             //     htmlappend.push("</div>")
             // }
             // $("#main-table").append(htmlappend)
-            var htmlappend = [] 
-            for(i=0;i<2;i++){
-                // guideTitle.length
-                console.log(actData.mission_table.missionGroups[guideTitle[i]])
-                var currentMiss = actData.mission_table.missionGroups[guideTitle[i]]
-                // for(j=0;j)
-                
-                htmlappend.push('<div style="background-color:#aaa col-6">')
-                        currentMiss.missionIds.forEach(element => {
-                            htmlappend.push('<div class="btn btn-small btn-primary">'+missions[element].template )
-                    
-                    console.log(missions[element])
-                });
-
-                htmlappend.push("</div>")
-            }
-            $("#main-table").append(htmlappend)
         });
         alldata.forEach(element => {
             $.getJSON(fileDir+element+".json").done(function(file){
