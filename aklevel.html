@@ -43,6 +43,10 @@
                     <a class="nav-link en" href="aklevel.html?lang=en">Levelup Calculator</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link cn" href="akevolve.html">精英材料计算</a>
+                    <a class="nav-link en" href="akevolve.html?lang=en">Evolve Calculator</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link disabled cn" href="#">施工中…</a>
                     <a class="nav-link disabled en" href="#">WIP</a>
                 </li>
@@ -360,10 +364,10 @@
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
                 let eb = es - bs;
                 if (eb < 0) eb = 0;
-                let gs = (cs + ea).toFixed(1);
-                let gn = gs - ga;
-                if (gn < 0) gn = 0;
                 let lsn = Math.ceil((eb / 7500).toFixed(1));
+                let gs = (cs + ea).toFixed(1);
+                let gn = gs - ga - lsn * 360;
+                if (gn < 0) gn = 0;
                 let cen = Math.ceil((gn / 7500).toFixed(1));
                 $.each([
                     [{ 'cn': '体力总计', 'en': 'Total Sanity Cost' }[lang], "<b>" + (lsn + cen) * 30 + "</b> <sub>= " + lsn * 30 + " + " + cen * 30 + "</sub>"],
