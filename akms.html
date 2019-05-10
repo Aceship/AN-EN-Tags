@@ -84,13 +84,42 @@
     </nav>
     <div style="padding-bottom:30px"></div>
     <!-- <div class="warning-sign"style="position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center">aaaaaaaaaaaaaaaaaaaaa</div> -->
-    <div class="col-md-12 col-sm-12 " style="margin:auto;max-width:1000px;padding:0" >
-        <div class="row ak-mid" style=""> 
+    <div class="container col-md-12 col-sm-12  no-gutter" style="margin:auto;max-width:1000px" >
+        <div class="row ak-mid  no-gutter"> 
             <div class="col-6"><button class=" col-12 btn btn-sm btn-secondary ak-btn btn-tag"> Daily/Weekly </button>  </div>
             <div class="col-6"> <button class=" col-12 btn btn-sm btn-secondary ak-btn btn-tag"> Mission</button> </div>
         </div>
-        <div class="row ak-bg"  style="color:aliceblue;margin:auto;max-width:1000px;padding:0">
-                <div id="main-table"></div>
+        <div class="row no-gutter ak-bg"  style="color:aliceblue;margin:auto;max-width:1000px;padding:0">
+                <div class="row col-12 ak-back" >
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-4">
+                                wat
+                            </div>
+                            <div class="row">
+                                <div class="col-8"> 2x</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                wat
+                            </div>
+                            <div class="row">
+                                <div class="col-8"> 2x</div>
+                                <div class="col-8"> 2x</div>
+                            </div>
+                        </div>
+                        <div class="row"><div class="col-4">wat</div></div>
+                    </div>
+                    <div class="col-6">
+                            <div class="">kolom</div>
+                            <div class="">kolom</div>
+                            <div class="">kolom</div>
+                            <div class="">kolom</div>
+                            <div class="">kolom</div>
+                    </div>
+                </div>
+                <div class="row no-gutter col-12"id="main-table"></div>
     </div>
         <div class="col-12 tutorial">
             <div class="col-12 text-left ak-mid ak-shadow" style="padding:10px" >
@@ -166,34 +195,45 @@
                 var currentMiss = actData.mission_table.missionGroups[dailyTitle[i]]
                 // for(j=0;j) [missions[element].param.length-1]
                 
-                htmlappend.push('<div style="background-color:#aaa col-6">'+currentMiss.period.join(" "))
-                htmlappend.push('<div class="col-3>"')
+                htmlappend.push('<div class="row col-12 ak-back" >'+currentMiss.period.join(" "))
+                htmlappend.push('<div class="row no-gutter col-4">')
                 rewardTitle.forEach(element => {
                     if(periodicalRewards[element]){
                         
                         if(periodicalRewards[element].period.join(" ")==currentMiss.period.join(" ")){
                             console.log(periodicalRewards[element])
                             
-                            htmlappend.push('<div> Cost : '+periodicalRewards[element].periodicalPointCost    +'')
+                            htmlappend.push('<div class="col-4">Cost : '+periodicalRewards[element].periodicalPointCost +'</div><div class="col-8">Rewards : ')
 
                             periodicalRewards[element].rewards.forEach(element2 => {
-                                htmlappend.push(`<div> Rewards : ${actData.item_table.items[element2.id].iconId} + ${element2.count}</div> `)
+                                htmlappend.push(`<div class="row "> <div class="col">${actData.item_table.items[element2.id].iconId} + ${element2.count} </div></div>`)
                             });
+
                             htmlappend.push('</div>')
                         }
                     }
                     
                 })
-                htmlappend.push('</div><div class="col-8>"')
+                // <div class="col-6">
+                htmlappend.push('</div>')
                         currentMiss.missionIds.forEach(element => {
                             htmlappend.push('<div class="btn btn-sm" style="padding:2px;margin:2px;background:#666"> '+missions[element].template +" "+ missions[element].param.join(" / ") +' <a style="font-size:40px">'+ missions[element].periodicalPoint + "x</a>"+'</div>')
                     
                     // console.log(missions[element])
                 });
-                htmlappend.push('</div>')
+                // htmlappend.push('</div>')
                 htmlappend.push("</div>")
             }
             $("#main-table").append(htmlappend)
+
+            // <div class="row col-12 ak-back" >
+            //     <div class="col-4">
+
+            //     </div>
+            //     <div class="col-6">
+            //     </div>
+            // </div>
+
             // var htmlappend = [] 
             // for(i=0;i<2;i++){
             //     // guideTitle.length
