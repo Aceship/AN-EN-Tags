@@ -173,7 +173,7 @@
                                 case "Rare"     : stageCol = "#930";break;
                                 case "Very Rare": stageCol = "#900";break;
                             }
-                            srcHtml.push('<small> <span class="ak-sm ak-back"style="background:'+stageCol+';color:#000"></span>' + k + '<span class="ak-sm ak-back">'+v+'</span>'+"</small>") 
+                            srcHtml.push('<small class="ak-sm-text"> <span class="ak-sm ak-back"style="background:'+stageCol+';color:#000"></span>' + k + '<span class="ak-sm ak-back">'+v+'</span>'+"</small>") 
                         });
 
                         let isOnStage = "";
@@ -192,11 +192,11 @@
                         }
                         $("#row-m").append(
                                  '<div class="ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
-                                +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="width:120px;border:transparent;padding:0px;z-index:1;">'
+                                +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="border:transparent;padding:0px;z-index:1;">'
                                 +     '<div class="ak-title ak-shadow-small" style="z-index:5;display:inline-block;white-space: nowrap;">'+(ms[n].name_en ? n : n)+'</div>'  
-                                +         '<img class="card-img-top" style="width:120px;margin-left:0px;margin-top:0px;z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
-                                +         '<div style="width:130px;height:130px;vertical-align:middle;padding-left:0px;padding-top:12px;margin:0px">'  
-                                +             '<img class="card-img-top col-12" style="z-index:4;display: block;object-fit: scale-down;margin:auto;margin-top:auto;height:100px;margin-left:-5px" src="img/material/'+ ms[n]['id'] + '.png">'
+                                +         '<img class="card-img-bg" style=";z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
+                                +         '<div class="ak-img-container" style="vertical-align:middle;padding-left:0px;margin:0px">'  
+                                +             '<img class="card-img-top col-12" style="z-index:4;display: block;" src="img/material/'+ ms[n]['id'] + '.png">'
                                 +         '</div>'       
                                 + isOnStage
                                 +   '</div>'
@@ -211,7 +211,8 @@
                                 +               '</div>'
                                 +           '</form>'
                                 +       '</div>'
-                                +   '</div>');
+                                +   '</div>'
+                                );
                         // if (!ismobile)
                            
                         // else
@@ -300,7 +301,7 @@
                 if($(this).val() >= 1){
 
                     console.log("wei")
-                        $(this).css('background-color','#200');
+                        $(this).css('background-color','#300');
                     }else{
                         $(this).css('background-color','#222');
                     }
