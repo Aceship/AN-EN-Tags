@@ -59,7 +59,7 @@
                         </a>
                         
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item reg unselectable" onclick="changeUILanguage()" value="cn">Chinese</a>
+                            <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="cn">Chinese</a>
                         </div>
                     </li>
                 <li class="nav-item dropdown">
@@ -68,9 +68,9 @@
                             <div class="ak-disable" id="display-lang">English</div>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="en">English</a>
-                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="cn">Chinese</a>
-                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="jp">Japanese</a>
+                        <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="en">English</a>
+                        <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="cn">Chinese</a>
+                        <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="jp">Japanese</a>
                     </div>
                 </li>
             </ul>
@@ -145,100 +145,143 @@
             <p>Powered by GraueNeko, Aceship, Faryzal2020</p>
         </div>
     </div>
-    <script>
-
-        $(function () {
+    <script> 
             
             showCurrentLang();
-            let lang = getLang();
+            //let lang = getLang();
+            let lang;
+            let reg;
+            if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+                console.log("game region undefined");
+                localStorage.setItem("gameRegion", 'cn');
+                localStorage.setItem("webLang", 'en');
+                reg = "cn";
+                lang = "en";
+            } else {
+                reg = localStorage.gameRegion;
+                lang = localStorage.webLang;
+            }
+            $('.reg[value='+reg+']').addClass('selected');
+            $('.lang[value='+lang+']').addClass('selected');
+
+            $('#display-reg').text(reg.toUpperCase())
+            
+            switch (lang) {
+                case "en":$('#display-lang').text("English");break;
+                case "cn":$('#display-lang').text("Chinese");break;
+                case "jp":$('#display-lang').text("Japanese");break;
+            }
+
+            function regDropdown(el){
+                localStorage.gameRegion = el.attr("value");
+                $(".dropdown-item.reg").removeClass("selected");
+                el.addClass("selected");   
+                changeUILanguage();
+            }
+                        
+            function langDropdown(el){
+                localStorage.webLang = el.attr("value");
+                $(".dropdown-item.lang").removeClass("selected");
+                el.addClass("selected");
+                changeUILanguage();
+            }
             document.title = { 'cn': '明日方舟精英化材料计算器', 'en': 'Arknights Evolve Cost Calculator' }[lang];
             let ms = {};
             let mByLvl = [[], [], [], [], []];
             let ismobile = $('#mobile-only-visible').is(':visible');
-            $.getJSON("akmaterial.json", (data) => {
-                $.each(data, (_, v) => {
-                    console.log(v);
-                    ms[v['name_cn']] = v;
-                    mByLvl[v['level'] - 1].push(v['name_cn']);
-                });
-                console.log(ms);
-                let minShowLevel = 2;
-                let colors = ['1', '2', '3', '4', '5']
-                for (let i = 5; i > 0; i--) {
-                    $.each(mByLvl[i - 1], (_, n) => {
-                        let srcHtml = [];
-                        let cardid = ms[n]['id'];
-                        
-                        
-                        $.each(ms[n].source, (k, v) => { 
-                            let stageCol = "#555";
-                            switch (v) {
-                                case "Always"   : stageCol = "#090" ;break;
-                                case "Common"   : stageCol = "#990";break;
-                                case "Medium"   : stageCol = "#950";break;
-                                case "Rare"     : stageCol = "#930";break;
-                                case "Very Rare": stageCol = "#900";break;
-                            }
-                            srcHtml.push('<small class="ak-sm-text"> <span class="ak-sm ak-back"style="background:'+stageCol+';color:#000"></span>' + k + '<span class="ak-sm ak-back">'+v+'</span>'+"</small>") 
-                        });
+            loadMaterials();
+            
+            function refresh(){
+                ms = {};
+                mByLvl = [[], [], [], [], []];
+                $("#row-m").html("");
+            }
 
-                        let isOnStage = "";
-                        if(srcHtml!=""){
-                            isOnStage = ""
-                            +     '<div class="card-body p-1 ak-c-black" style="padding:0px">'  
-                            +         '<a class="ak-subtitle2">Drop location :</a>'                  
-                            +         srcHtml.join("<br />")
-                            +     '</div>'
-                        }else{
-                            isOnStage = ""
-                            +     '<div class="card-body p-1 ak-c-black" style="padding:0px">'  
-                            +         '<a class="ak-subtitle2">Only Craftable</a>'                  
-                            +         srcHtml.join("<br />")
-                            +     '</div>'
-                        }
-                        console.log(ms[n].name_en);
-                        $("#row-m").append(
-                                 '<div class="ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
-                                +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="border:transparent;padding:0px;z-index:1;">'
-                                +     '<div class="ak-title ak-shadow-small" style="z-index:5;display:inline-block;white-space: nowrap;">'+(ms[n].name_en ? n : n)+'</div>'  
-                                +         '<img class="card-img-bg" style=";z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
-                                +         '<div class="ak-img-container" style="vertical-align:middle;padding-left:0px;margin:0px">'  
-                                +             '<img class="card-img-top col-12" style="z-index:4;display: block;" src="img/material/'+ ms[n]['id'] + '.png">'
-                                +         '</div>'       
-                                + isOnStage
-                                +   '</div>'
-                                +   '<div class="ak-rare-' + colors[i - 1] +'" style="width:2px;margin:0px;padding:0;z-index:0"></div>'
-                                +       '<div class="card p-0 ak-back ak-btn" style="max-width:72px;margin:0px">'
-                                +           '<div class="card-body p-1  style="padding:0px;margin:0px">'
-                                +           '<form style="">'
-                                +               '<div class="form-group mb-0">'
-                                +                   '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
-                                +                   '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
-                                +                   '<input type="text" class="form-control form-control-sm mt-1 in-lack ak-mid" style="padding:0;text-align:center;background:#222;border:transparent;color:#fff" placeholder=" ' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
-                                +               '</div>'
-                                +           '</form>'
-                                +       '</div>'
-                                +   '</div>'
-                                );
-                        // if (!ismobile)
-                           
-                        // else
-                        //     $("#row-m").append('<div class="card col-4 my-1 p-0 lvl-' + ms[n]['level'] + ' border-' + colors[i - 1]
-                        //         + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
-                        //         + '><img class="card-img-top" style="max-width:70px;margin:auto;" src="img/material/'
-                        //         + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
-                        //         + n + '<br />'
-                        //         + srcHtml.join("<br />")
-                        //         + '<form><div class="form-group mb-0">'
-                        //         + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
-                        //         + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
-                        //         + '<input type="text" class="form-control form-control-sm mt-1 in-lack" placeholder="' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
-                        //         + '</div></form>'
-                        //         + '</div></div>');
+            function loadMaterials(){
+                refresh();
+                $.getJSON("akmaterial.json", (data) => {
+                    $.each(data, (_, v) => {
+                        ms[v['name_cn']] = v;
+                        mByLvl[v['level'] - 1].push(v['name_cn']);
                     });
-                    $("#row-m").append('<div class="w-100 my-1" />');
-                }
-            });
+                    let minShowLevel = 2;
+                    let colors = ['1', '2', '3', '4', '5']
+                    for (let i = 5; i > 0; i--) {
+                        $.each(mByLvl[i - 1], (_, n) => {
+                            let srcHtml = [];
+                            let cardid = ms[n]['id'];
+                            
+                            
+                            $.each(ms[n].source, (k, v) => { 
+                                let stageCol = "#555";
+                                switch (v) {
+                                    case "Always"   : stageCol = "#090" ;break;
+                                    case "Common"   : stageCol = "#990";break;
+                                    case "Medium"   : stageCol = "#950";break;
+                                    case "Rare"     : stageCol = "#930";break;
+                                    case "Very Rare": stageCol = "#900";break;
+                                }
+                                srcHtml.push('<small class="ak-sm-text"> <span class="ak-sm ak-back"style="background:'+stageCol+';color:#000"></span>' + k + '<span class="ak-sm ak-back">'+v+'</span>'+"</small>") 
+                            });
+
+                            let isOnStage = "";
+                            if(srcHtml!=""){
+                                isOnStage = ""
+                                +     '<div class="card-body p-1 ak-c-black" style="padding:0px">'  
+                                +         '<a class="ak-subtitle2">Drop location :</a>'                  
+                                +         srcHtml.join("<br />")
+                                +     '</div>'
+                            }else{
+                                isOnStage = ""
+                                +     '<div class="card-body p-1 ak-c-black" style="padding:0px">'  
+                                +         '<a class="ak-subtitle2">Only Craftable</a>'                  
+                                +         srcHtml.join("<br />")
+                                +     '</div>'
+                            }
+                            console.log("lang: "+lang);
+                            $("#row-m").append(
+                                     '<div class="ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
+                                    +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="border:transparent;padding:0px;z-index:1;">'
+                                    +     '<div class="ak-title ak-shadow-small" style="z-index:5;display:inline-block;white-space: nowrap;">'+eval('ms[n].name_'+lang)+'</div>'  
+                                    +         '<img class="card-img-bg" style=";z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
+                                    +         '<div class="ak-img-container" style="vertical-align:middle;padding-left:0px;margin:0px">'  
+                                    +             '<img class="card-img-top col-12" style="z-index:4;display: block;" src="img/material/'+ ms[n]['id'] + '.png">'
+                                    +         '</div>'       
+                                    + isOnStage
+                                    +   '</div>'
+                                    +   '<div class="ak-rare-' + colors[i - 1] +'" style="width:2px;margin:0px;padding:0;z-index:0"></div>'
+                                    +       '<div class="card p-0 ak-back ak-btn" style="max-width:72px;margin:0px">'
+                                    +           '<div class="card-body p-1  style="padding:0px;margin:0px">'
+                                    +           '<form style="">'
+                                    +               '<div class="form-group mb-0">'
+                                    +                   '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
+                                    +                   '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
+                                    +                   '<input type="text" class="form-control form-control-sm mt-1 in-lack ak-mid" style="padding:0;text-align:center;background:#222;border:transparent;color:#fff" placeholder=" ' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
+                                    +               '</div>'
+                                    +           '</form>'
+                                    +       '</div>'
+                                    +   '</div>'
+                                    );
+                            // if (!ismobile)
+                               
+                            // else
+                            //     $("#row-m").append('<div class="card col-4 my-1 p-0 lvl-' + ms[n]['level'] + ' border-' + colors[i - 1]
+                            //         + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
+                            //         + '><img class="card-img-top" style="max-width:70px;margin:auto;" src="img/material/'
+                            //         + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
+                            //         + n + '<br />'
+                            //         + srcHtml.join("<br />")
+                            //         + '<form><div class="form-group mb-0">'
+                            //         + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
+                            //         + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
+                            //         + '<input type="text" class="form-control form-control-sm mt-1 in-lack" placeholder="' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
+                            //         + '</div></form>'
+                            //         + '</div></div>');
+                        });
+                        $("#row-m").append('<div class="w-100 my-1" />');
+                    }
+                });
+            }
 
             let allns = []; let allhs = []; let allos = [];
             function genUrl() {
@@ -248,6 +291,22 @@
                 }
                 $(".save").attr("href", "?n=" + allns.join("+") + "&h=" + allhs.join("+") + "&o=" + allos.join("+"));
             }
+
+            function changeUILanguage(){
+                reg = $('.reg.selected').attr("value");
+                lang =$('.lang.selected').attr("value");
+                console.log("reg: "+reg);
+                console.log("lang: "+lang);
+                $('#display-reg').text(reg.toUpperCase())
+                
+                switch (lang) {
+                    case "en":$('#display-lang').text("English");break;
+                    case "cn":$('#display-lang').text("Chinese");break;
+                    case "jp":$('#display-lang').text("Japanese");break;
+                }
+                loadMaterials();
+            }
+
             function calc() {
                 
                 let counts = {};
@@ -405,8 +464,6 @@
                 $("#opt-all").addClass(savedOption.length === 5 ? "btn-primary" : "btn-secondary");
                 calc();
             });
-
-        });
     </script>
 </body>
 </html>
