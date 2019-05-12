@@ -29,10 +29,36 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
 }
+.ak-ontop-button{
+    color:#ddd;
+    background-color: #333;
+    opacity: 0.95;
+    -webkit-box-shadow: -2px 4px 3px 2px rgba(0,0,0,0.5);
+    -moz-box-shadow: -2px 4px 3px 2px rgba(0,0,0,0.5);
+    box-shadow: -2px 4px 3px 2px rgba(0,0,0,0.5);
+    border-width: 0px;
+    border-radius: 0px;
+    font-size: 12px;
+    width: 40px;
+    height: 30px;
+    /* -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease */
+}
+.ak-ontop-button:hover {
+    background-color: #333;
+    border-color:#222;
+}
+.ak-ontop-button:focus {
+    background-color: #000;
+    box-shadow: 2px 4px 3px 2px rgba(100,100,100,0.5);
+}
 #to-tag {
     background-color: #333;
     opacity: 0.95;
-    -webkit-box-shadow: 2px 4px 3px 2px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 2px 4px 3px 2px rgba(0, 34, 49, 0.5);
     -moz-box-shadow: 2px 4px 3px 2px rgba(0,0,0,0.5);
     box-shadow: 2px 4px 3px 2px rgba(0,0,0,0.5);
     border-width: 0px;
@@ -256,19 +282,19 @@ html, body {
 
 @media screen and (max-width:768px) {
     .ak-card-group{ 
-        width:160px;
+        width:180px;
     }
     .ak-card-group .card-img-top{
         object-fit: scale-down;
         margin:auto;
         margin-top:auto;
-        margin-left:-5px;
+        margin-left:10px;
         height:90px;
         width:90px;
 
     }
     .ak-card-group .ak-card-container{
-        width: 80px;
+        width: 120px;
     }
     .ak-card-group .ak-img-container{
         width: 90px;
@@ -277,11 +303,16 @@ html, body {
         
     }
     .ak-card-group .card-img-bg{
+        margin-left:15px;
+        margin-top:3px;
         width: 80px;
 
     }
     .ak-sm-text{
-        font-size: 9px
+        /* font-size: 9px */
+
+        margin:0px;
+        padding:0px
     }
 }
 /* .ak-card-group>.card{

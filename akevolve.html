@@ -24,7 +24,7 @@
     </script>
 </head>
 <body>
-    <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
+    <!-- <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button> -->
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );">
             <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
         <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
@@ -77,6 +77,10 @@
         </div>
     </nav>
     <div style="padding-bottom:50px"></div>
+
+    <button class="btn btn-sm ak-ontop-button" style="position:fixed;bottom:60px ;right: 0px;size:70px 70px;padding: 4px;z-index: 10000" id="btn-filter" type="button">Filter </button>
+    <button class="btn btn-sm ak-ontop-button" style="position:fixed;bottom:20px ;right: 0px;size:70px 70px;padding: 4px;z-index: 10000" id="btn-reset" type="button">Reset </button>
+    <!-- <button class="btn btn-sm btn-primary ak-ontop-button" style="position:fixed;bottom:100px ;right: 0px;size:70px 70px;padding: 2px;z-index: 10000" id="btn-load" type="button">Filter </button> -->
     <div class="container " style="margin:auto;max-width:1000px;padding:0">
         <div class="d-inline d-sm-none " id="mobile-only-visible"></div>
         <div class="col-12 alert alert-dark mt-3 p-1 p-sm-2 ak-c-black" role="alert">
@@ -299,8 +303,6 @@
                 });
                 $(".in-lack").each(function() {
                 if($(this).val() >= 1){
-
-                    console.log("wei")
                         $(this).css('background-color','#300');
                     }else{
                         $(this).css('background-color','#222');
@@ -351,6 +353,9 @@
             $(document).on("click", "#btn-reset", () => {
                 $(".btn-option").removeClass("btn-primary btn-secondary").addClass("btn-primary");
                 $(".in-mc, .in-lack").val("");
+                $(".in-lack").each(function() {
+                        $(this).css('background-color','#222');
+                })
                 // if (ismobile)
                 //     $(".card").show();
                 // else
