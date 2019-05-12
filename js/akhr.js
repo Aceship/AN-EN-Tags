@@ -1,90 +1,92 @@
-$('#to-tag').click(function() {      // When arrow is clicked
+        $('#to-tag').click(function() {      // When arrow is clicked
             $('body,html').animate({
                 scrollTop : 0                       // Scroll to top of body
             }, 500);
         });
-        $(function () {
-            $('.dropdown-trigger').dropdown();
-            $('[data-toggle="tooltip"]').tooltip();
+        let lang;
+        let reg;
+
+        $('.dropdown-trigger').dropdown();
+        $('[data-toggle="tooltip"]').tooltip();
 
 
-            if(localStorage.getItem('showImage') === null){
-                localStorage.setItem("showImage", "true");
-                localStorage.setItem("showName", "true");
-                localStorage.setItem("size", 40);
-            } else {
-                if(localStorage.showName == 'false'){
-                    $("#showName").toggleClass("btn-primary btn-secondary");
-                }
-                if(localStorage.showImage == 'false'){
-                    $("#showImage").toggleClass("btn-primary btn-secondary");
-                }
+        if(localStorage.getItem('showImage') === null){
+            localStorage.setItem("showImage", "true");
+            localStorage.setItem("showName", "true");
+            localStorage.setItem("size", 40);
+        } else {
+            if(localStorage.showName == 'false'){
+                $("#showName").toggleClass("btn-primary btn-secondary");
             }
-
-            if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
-                console.log("game region undefined");
-                localStorage.setItem("gameRegion", 'cn');
-                localStorage.setItem("webLang", 'en');
-                reg = "cn";
-                lang = "en";
-            } else {
-                console.log(localStorage.gameRegion);
-                reg = localStorage.gameRegion;
-                lang = localStorage.webLang;
+            if(localStorage.showImage == 'false'){
+                $("#showImage").toggleClass("btn-primary btn-secondary");
             }
-            
-            // init dropdown
-            $('.reg[value='+reg+']').addClass('selected');
-            $('.lang[value='+lang+']').addClass('selected');
+        }
 
-            $(".dropdown-item.reg").on("click", function(){
-                $(".dropdown-item.reg").removeClass("selected");
-                $(this).addClass("selected");   
-                changeUILanguage();
-            });
-                        
-            $(".dropdown-item.lang").on("click", function(){
-                $(".dropdown-item.lang").removeClass("selected");
-                $(this).addClass("selected");
-                changeUILanguage();
-            });     
+        if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+            console.log("game region undefined");
+            localStorage.setItem("gameRegion", 'cn');
+            localStorage.setItem("webLang", 'en');
+            reg = "cn";
+            lang = "en";
+        } else {
+            console.log(localStorage.webLang);
+            reg = localStorage.gameRegion;
+            lang = localStorage.webLang;
+        }
+        $('.reg[value='+reg+']').addClass('selected');
+        $('.lang[value='+lang+']').addClass('selected');
+        changeUILanguage();
 
+        function regDropdown(el){
+            localStorage.gameRegion = el.attr("value");
+            $(".dropdown-item.reg").removeClass("selected");
+            el.addClass("selected");   
             changeUILanguage();
+        }
+                    
+        function langDropdown(el){
+            localStorage.webLang = el.attr("value");
+            console.log(localStorage.webLang)
+            $(".dropdown-item.lang").removeClass("selected");
+            el.addClass("selected");
+            changeUILanguage();
+        }   
 
+
+        console.log("Show Name: ");
+        console.log(localStorage.showName);
+        console.log("Show Image: ");
+        console.log(localStorage.showImage);
+
+
+        $(".imagesizeselect").each(function(_,el){
+            let size = localStorage.size;
+            $("#selectedImageSize").html(localStorage.size);
+            if($(el).attr("title") == size){
+                $("<span> <<</span>").appendTo(el);
+            } else {
+                $(el).html($(el).attr("title"));
+            }
+        });
+
+        $(document).on("click", ".btn-name", function () {
+            if(localStorage.getItem('showName') == 'false'){
+                localStorage.setItem('showName','true');
+            } else {
+                localStorage.setItem('showName','false');
+            }
             console.log("Show Name: ");
-            console.log(localStorage.showName);
+            console.log(localStorage.getItem('showName'));
+        })
+        $(document).on("click", ".btn-image", function () {
+            if(localStorage.getItem('showImage') == 'false'){
+                localStorage.showImage = 'true';
+            } else {
+                localStorage.showImage = 'false';
+            }
             console.log("Show Image: ");
-            console.log(localStorage.showImage);
-
-
-            $(".imagesizeselect").each(function(_,el){
-                let size = localStorage.size;
-                $("#selectedImageSize").html(localStorage.size);
-                if($(el).attr("title") == size){
-                    $("<span> <<</span>").appendTo(el);
-                } else {
-                    $(el).html($(el).attr("title"));
-                }
-            });
-
-            $(document).on("click", ".btn-name", function () {
-                if(localStorage.getItem('showName') == 'false'){
-                    localStorage.setItem('showName','true');
-                } else {
-                    localStorage.setItem('showName','false');
-                }
-                console.log("Show Name: ");
-                console.log(localStorage.getItem('showName'));
-            })
-            $(document).on("click", ".btn-image", function () {
-                if(localStorage.getItem('showImage') == 'false'){
-                    localStorage.showImage = 'true';
-                } else {
-                    localStorage.showImage = 'false';
-                }
-                console.log("Show Image: ");
-                console.log(localStorage.getItem('showImage'));
-            });
+            console.log(localStorage.getItem('showImage'));
         });
 
         //var global = this;
@@ -481,16 +483,17 @@ $('#to-tag').click(function() {      // When arrow is clicked
         }
 
         function changeUILanguage(){
-            let reg = $('.reg.selected').attr("value");
-            let lang =$('.lang.selected').attr("value");
+            reg = localStorage.gameRegion;
+            lang = localStorage.webLang;
+            
             $('#display-reg').text(reg.toUpperCase())
             
             switch (lang) {
                 case "en":$('#display-lang').text("English");break;
                 case "cn":$('#display-lang').text("Chinese");break;
                 case "jp":$('#display-lang').text("Japanese");break;
-
             }
+            
             console.log($('#display-reg'))
             localStorage.setItem("gameRegion", reg);
             localStorage.setItem("webLang", lang);
@@ -528,7 +531,6 @@ $('#to-tag').click(function() {      // When arrow is clicked
             });
             $(".tags-class").each(function(i,el){
                 getJSONdata("type",function(data){
-                    console.log(data);
                     if(data.length != 0){
                         $(el).html(eval("data[i].type_"+reg));
                         $(el).attr("data-original-title", eval("data[i].type_"+lang));
@@ -555,7 +557,6 @@ $('#to-tag').click(function() {      // When arrow is clicked
             var x = 0;
             var req = $.getJSON("json/tl-"+type+".json");
             req.done(function(response){
-                console.log("type: "+type+" done");
                 callback(response);
             });
             req.fail(function(response){
@@ -572,6 +573,7 @@ $('#to-tag').click(function() {      // When arrow is clicked
         }
 
         function refresh(){
+            JsonDATA = [];
             setTimeout(function(){
                 setTimeout(function(){
                     calculate();
