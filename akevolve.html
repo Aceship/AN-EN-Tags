@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>明日方舟精英化材料计算器</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/multilingual.css">
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/multilingual.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-138420636-1');
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand cn" href="#">明日方舟工具箱</a>
+        <a class="navbar-brand en" href="#">Arknights Toolbox</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link cn" href="akhr.html">公开招募计算器</a>
+                    <a class="nav-link en" href="akhr.html?lang=en">Recuitment Recommender</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cn" href="aklevel.html">升级计算</a>
+                    <a class="nav-link en" href="aklevel.html?lang=en">Levelup Calculator</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link cn" href="akevolve.html">精英材料计算</a>
+                    <a class="nav-link en" href="akevolve.html?lang=en">Evolve Calculator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link cn" href="akhrchars.html">干员表</a>
+                    <a class="nav-link en" href="akhrchars.html?lang=en">Operators Table</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled cn" href="#">施工中…</a>
+                    <a class="nav-link disabled en" href="#">WIP</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="switchLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="?lang=cn">中文</a>
+                        <a class="dropdown-item" href="?lang=en">English</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" style="margin:auto;max-width:1000px;">
+        <div class="d-inline d-sm-none" id="mobile-only-visible"></div>
+        <div class="col-12 alert alert-dark mt-3 p-1 p-sm-2" role="alert">
+            <button type="button" class="btn btn-sm btn-success my-1" id="btn-filter">
+                <span class="cn">过滤</span>
+                <span class="en">Filter</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-secondary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="5">5★</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="4">4★</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="3">3★</button>
+            <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
+            <button type="button" class="btn btn-sm btn-secondary btn-opt my-1" opt-id="1">1★</button>
+            <button type="button" class="btn btn-sm btn-danger my-1" id="btn-reset">
+                <span class="cn">重置</span>
+                <span class="en">Reset</span>
+            </button>
+            <button type="button" class="btn btn-sm btn-warning my-1" id="btn-load">
+                <span class="cn">加载已保存数据</span>
+                <span class="en">Load saved data</span>
+            </button>
+            <hr class="my-1" />
+            <p class="cn my-0"><small><a class="save" href="?n&h&o">右键或长按复制我，保存输入信息</a></small></p>
+            <p class="en my-0"><small><a class="save" href="?n&h&o">Copy me with right click or long press, to save your input</a></small></p>
+        </div>
+        <div class="col-12 mt-3 p-1 p-sm-2">
+            <div class="d-flex flex-wrap" id="row-m">
+            </div>
+        </div>
+        <hr />
+        <div class="row col-12 tutorial">
+            <div class="col-12 text-left cn">
+                <p><b>使用说明</b></p>
+                <p>1. 输入需要的材料数量；</p>
+                <p>2. 点击“过滤”掉与合成无关的材料；</p>
+                <p>3. 输入已有的材料数量；</p>
+                <p>4. 再次“过滤”掉不需要刷的材料。</p>
+            </div>
+            <div class="col-12 text-left en">
+                <p><b>Usage</b></p>
+                <p>1. Input the needed number of materials.</p>
+                <p>2. "Filter" out irrelevant materials.</p>
+                <p>3. Input material numbers you have.</p>
+                <p>4. "Filter" out materials you don't need to work for.</p>
+            </div>
+        </div>
+        <div class="col-12 alert alert-success mt-1 cn" role="alert">
+            如需Excel版，可以使用<a href="https://bbs.nga.cn/read.php?tid=17155811">材料合成计算器</a>。
+        </div>
+    </div>
+
+    <hr />
+    <div class="row col-12 page-footer">
+        <div class="col-12 text-center cn">
+            <p>最近更新：2019/05/09，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
+            <p>
+                数据来源：
+                <a href="https://ak.hypergryph.com">『明日方舟』</a>
+            </p>
+            <p>Powered by 一只灰猫。</p>
+        </div>
+        <div class="col-12 text-center en">
+            <p>Last update: 05/09/2019, <a href="https://github.com/graueneko/graueneko.github.io/issues">Contact</a></p>
+            <p>
+                Data source:
+                <a href="https://ak.hypergryph.com">Arknights</a>
+            </p>
+            <p>Powered by GraueNeko, Aceship</p>
+        </div>
+    </div>
+    <script>
+
+        $(function () {
+            showCurrentLang();
+            let lang = getLang();
+            document.title = { 'cn': '明日方舟精英化材料计算器', 'en': 'Arknights Evolve Cost Calculator' }[lang];
+            let ms = {};
+            let mByLvl = [[], [], [], [], []];
+            let ismobile = $('#mobile-only-visible').is(':visible');
+            $.getJSON("akmaterial.json", (data) => {
+                $.each(data, (_, v) => {
+                    ms[v['name']] = v;
+                    mByLvl[v['level'] - 1].push(v['name']);
+                });
+                let minShowLevel = 2;
+                let colors = ['dark', 'success', 'info', 'danger', 'warning']
+                for (let i = 5; i > 0; i--) {
+                    $.each(mByLvl[i - 1], (_, n) => {
+                        let srcHtml = [];
+                        let cardid = ms[n]['id'];
+                        $.each(ms[n].source, (k, v) => { srcHtml.push("<small>" + k + " (" + v + ")</small>") });
+                        if (!ismobile)
+                            $("#row-m").append('<div class="card-group m-1 lvl-' + ms[n]['level']
+                                + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
+                                + '><div class="card p-0' + ' border-' + colors[i - 1] + '" style="max-width:102px"><img class="card-img-top" style="max-width:100px;margin:auto;" src="img/material/'
+                                + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
+                                + n + '<br />'
+                                + srcHtml.join("<br />")
+                                + '</div></div><div class="card p-0' + ' border-' + colors[i - 1] + '" style="max-width:72px"><div class="card-body p-1 p-md-2">'
+                                + '<form><div class="form-group mb-0">'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-lack" placeholder="' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
+                                + '</div></form>'
+                                + '</div></div>');
+                        else
+                            $("#row-m").append('<div class="card col-4 my-1 p-0 lvl-' + ms[n]['level'] + ' border-' + colors[i - 1]
+                                + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
+                                + '><img class="card-img-top" style="max-width:70px;margin:auto;" src="img/material/'
+                                + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
+                                + n + '<br />'
+                                + srcHtml.join("<br />")
+                                + '<form><div class="form-group mb-0">'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-lack" placeholder="' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
+                                + '</div></form>'
+                                + '</div></div>');
+                    });
+                    $("#row-m").append('<div class="w-100 my-1" />');
+                }
+            });
+
+            let allns = []; let allhs = []; let allos = [];
+            function genUrl() {
+                allos = [];
+                for (let i = 1; i <= 5; i++) {
+                    if ($(".btn-opt[opt-id='" + i + "']").hasClass("btn-primary")) allos.push(i);
+                }
+                $(".save").attr("href", "?n=" + allns.join("+") + "&h=" + allhs.join("+") + "&o=" + allos.join("+"));
+            }
+            function calc() {
+                let counts = {};
+                $.each(ms, (n, m) => {
+                    let need = parseInt($("#need-" + m['id']).val());
+                    if (isNaN(need)) need = 0;
+                    let have = parseInt($("#have-" + m['id']).val());
+                    if (isNaN(have)) have = 0;
+                    let diff = need - have;
+                    counts[n] = {
+                        'need': need,
+                        'have': have,
+                        'upper': 0,
+                        'compose': 0,
+                        'lack': diff > 0 ? diff : 0
+                    }
+                });
+                for (let i = 4; i >= 0; i--) {
+                    $.each(mByLvl[i], (_, n) => {
+                        $.each(ms[n].madeof, (mon, moc) => {
+                            counts[mon].upper += moc * counts[n].lack;
+                            let diff = counts[mon].need + counts[mon].upper - counts[mon].have;
+                            counts[mon].lack = diff > 0 ? diff : 0;
+                        });
+                    });
+                }
+                for (let i = 1; i < 5; i++) {
+                    $.each(mByLvl[i], (_, n) => {
+                        let m = ms[n];
+                        if (counts[n].lack === 0) return;
+                        let maxCompose = $.isEmptyObject(m['madeof']) ? 0 : Number.MAX_SAFE_INTEGER;
+                        $.each(m['madeof'], (man, mac) => {
+                            let cm = counts[man];
+                            if (cm.have / mac < maxCompose) {
+                                maxCompose = cm.have / mac;
+                            }
+                        });
+                        maxCompose = Math.floor(maxCompose > counts[n].lack ? counts[n].lack : maxCompose);
+                        if (maxCompose > 0) {
+                            $.each(m['madeof'], (man, mac) => {
+                                counts[man].have -= maxCompose * mac;
+                            });
+                            console.log(n + maxCompose);
+                            counts[n].have += maxCompose;
+                            counts[n].lack = counts[n].need + counts[n].upper > counts[n].have ? counts[n].need + counts[n].upper - counts[n].have : 0;
+                        }
+                    });
+                }
+                allns = []; allhs = [];
+                $.each(ms, (n, m) => {
+                    $("#lack-" + m['id']).val(counts[n]['lack']);
+                })
+                $.each(ms, (_, m) => {
+                    allns.push(counts[m.name].need);
+                    allhs.push(counts[m.name].have);
+                });
+                genUrl();
+            }
+            $(document).on('change input paste', '.in-mc', calc);
+            $(document).on("click", ".btn-opt", function () {
+                $(this).toggleClass("btn-primary btn-secondary");
+                let checked = $(this).hasClass("btn-primary");
+                if (checked) $(".lvl-" + $(this).attr("opt-id")).show();
+                else $(".lvl-" + $(this).attr("opt-id")).hide();
+                if ($(this).attr("id") === "opt-all") {
+                    $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
+                        checked ? "btn-primary" : "btn-secondary"
+                    );
+                    for (let i = 1; i <= 5; i++) {
+                        if (checked) $(".lvl-" + i).show();
+                        else $(".lvl-" + i).hide();
+                    }
+                } else {
+                    if ($("#opt-all").hasClass("btn-primary")) {
+                        $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    } else {
+                        let checkedCount = 0;
+                        $(".btn-opt").each(function (_, __) {
+                            if ($(this).attr("id") === "opt-all") return;
+                            if ($(this).hasClass("btn-primary")) checkedCount++;
+                        });
+                        if (checkedCount === 5) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    }
+                }
+                genUrl();
+            });
+            $(document).on("click", "#btn-filter", () => {
+                if (ismobile)
+                    $(".card").each((_, e) => {
+                        let v = parseInt($(e).find(".in-lack").val());
+                        if (isNaN(v) || v === 0) $(e).hide();
+                    });
+                else
+                    $(".card-group").each((_, e) => {
+                        let v = parseInt($(e).find(".in-lack").val());
+                        if (isNaN(v) || v === 0) $(e).hide();
+                    });
+            });
+            $(document).on("click", "#btn-reset", () => {
+                $(".btn-option").removeClass("btn-primary btn-secondary").addClass("btn-primary");
+                $(".in-mc, .in-lack").val("");
+                if (ismobile)
+                    $(".card").show();
+                else
+                    $(".card-group").show();
+            })
+            let savedNeed = urlParam("n", "");
+            let savedHave = urlParam("h", "");
+            let savedOption = urlParam("o", "").split("+");
+            if (!(savedHave === "" || savedNeed === "" || savedOption === "")) {
+                $("#btn-load").show();
+            } else {
+                $("#btn-load").hide();
+            }
+
+            $(document).on("click", "#btn-load", () => {
+                let needs = savedNeed.split("+");
+                let haves = savedHave.split("+");
+                for (let i = 0; i < needs.length; i++) {
+                    $("#need-" + i).val(needs[i]);
+                }
+                for (let i = 0; i < haves.length; i++) {
+                    $("#have-" + i).val(haves[i]);
+                }
+                $(".btn-opt").removeClass("btn-primary btn-secondary");
+                for (let i = 1; i <= 5; i++) {
+                    if (savedOption.includes(i.toString())) {
+                        $(".btn-opt[opt-id='" + i + "']").addClass("btn-primary");
+                        $(".lvl-" + i).show();
+                    } else {
+                        $(".btn-opt[opt-id='" + i + "']").addClass("btn-secondary");
+                        $(".lvl-" + i).hide();
+                    }
+                }
+                $("#opt-all").addClass(savedOption.length === 5 ? "btn-primary" : "btn-secondary");
+                calc();
+            });
+
+        });
+    </script>
+</body>
+</html>
