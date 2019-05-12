@@ -140,7 +140,7 @@ $('#to-tag').click(function() {      // When arrow is clicked
                     }
                     if(found){
                         tags_html.push("<button type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
-                        tagTL + "</button>\n")
+                        (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button>\n")
                     }
                 });
                 
@@ -379,7 +379,7 @@ $('#to-tag').click(function() {      // When arrow is clicked
                     let tagsTL_html = [];
                     $.each(tagsTL, function (i, tagTL) {
                         tagsTL_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ tags[i] +"\">" +
-                            tagTL + "</button>\n")
+                        (tags[i] == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+tags[i]+'</a>') +  tagTL + "</button>\n")
                     });
                     $("#tbody-recommend").append(
                         "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
