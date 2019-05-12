@@ -338,6 +338,8 @@
                 }
                 genUrl();
             });
+
+            let togglefilter = false ;
             $(document).on("click", "#btn-filter", () => {
                 // if (ismobile)
                 //     $(".card").each((_, e) => {
@@ -345,10 +347,18 @@
                 //         if (isNaN(v) || v === 0) $(e).hide();
                 //     });
                 // else
+                togglefilter = !togglefilter;
+                if(togglefilter){
                     $(".ak-card-group").each((_, e) => {
                         let v = parseInt($(e).find(".in-lack").val());
                         if (isNaN(v) || v === 0) $(e).hide();
                     });
+                }else{
+                    $(".ak-card-group").each((_, e) => {
+                        let v = parseInt($(e).find(".in-lack").val());
+                        if (isNaN(v) || v === 0) $(e).show();
+                    });
+                }
             });
             $(document).on("click", "#btn-reset", () => {
                 $(".btn-option").removeClass("btn-primary btn-secondary").addClass("btn-primary");
