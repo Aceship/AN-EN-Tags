@@ -360,10 +360,11 @@
                     $("#lack-" + m['id']).val(counts[n]['lack']);
                 })
                 $.each(ms, (_, m) => {
-                    allns.push(counts[m.name].need);
-                    allhs.push(counts[m.name].have);
+                    allns.push(counts[m.name_cn].need);
+                    allhs.push(counts[m.name_cn].have);
                 });
                 $(".in-lack").each(function() {
+                    // console.log("wei")
                 if($(this).val() >= 1){
                         $(this).css('background-color','#300');
                     }else{
