@@ -102,6 +102,7 @@ $('#to-tag').click(function() {      // When arrow is clicked
             let all_chars = JsonDATA[1];
             let all_tags = JsonDATA[3];
             let all_types = JsonDATA[4];
+            let all_genders = JsonDATA[5];
             let char_name = $(el).attr('data-original-title');
             //console.log(all_tags);
             //console.log(all_chars);
@@ -115,12 +116,9 @@ $('#to-tag').click(function() {      // When arrow is clicked
                 //console.log(char)
                 let tags_html = [];
                 $.each(char.tags, function (_, tag) {
-                    var tagReg;
-                    var tagTL;
+                    console.log(tag);
                     var found = false;
                     $.each(all_tags, function(_, alltag){
-                        console.log(alltag);
-                        console.log(tag);
                         if(alltag.tag_cn == tag){
                             tagReg = eval('alltag.tag_'+reg);
                             tagTL = eval('alltag.tag_'+lang);
@@ -137,6 +135,23 @@ $('#to-tag').click(function() {      // When arrow is clicked
                                 return false;
                             }
                         })
+                        if(!found){
+                            $.each(all_genders, function(_, allgenders){
+                                console.log(allgenders);
+                                if(allgenders.sex_cn+'性干员' == tag){
+                                    tagReg = eval('allgenders.sex_'+reg);
+                                    tagTL = eval('allgenders.sex_'+lang);
+                                    if(reg=='cn'){
+                                        tagReg = tagReg+'性干员';
+                                    }
+                                    if(lang=='cn'){
+                                        tagTL = tagTL+'性干员';
+                                    }
+                                    found = true;
+                                    return false;
+                                }
+                            })
+                        }
                     }
                     if(found){
                         tags_html.push("<button type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
@@ -442,19 +457,23 @@ $('#to-tag').click(function() {      // When arrow is clicked
                 JsonDATA[1] = all_chars;
                 JsonDATA[2] = avg_char_tag;
             });
-            var data1, data2;
+            var data1, data2, data3;
             $.when(
                 $.getJSON("json/tl-tags.json", function (data){
                     data1 = data;
                 }),
                 $.getJSON("json/tl-type.json", function (data){
                     data2 = data;
+                }),
+                $.getJSON("json/tl-gender.json", function (data){
+                    data3 = data;
                 })
             ).then(function(){
                 if(data1){
                     if(data2){
                         JsonDATA[3] = data1;
                         JsonDATA[4] = data2;
+                        JsonDATA[5] = data3;
                     }
                 }
             });
