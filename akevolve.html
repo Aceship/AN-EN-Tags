@@ -77,7 +77,7 @@
         </div>
     </nav>
     <div style="padding-bottom:50px"></div>
-    <div class="container " style="margin:auto;max-width:1000px;">
+    <div class="container " style="margin:auto;max-width:1000px;padding:0">
         <div class="d-inline d-sm-none " id="mobile-only-visible"></div>
         <div class="col-12 alert alert-dark mt-3 p-1 p-sm-2 ak-c-black" role="alert">
             <button type="button" class="btn btn-sm btn-success my-1" id="btn-filter">
@@ -175,36 +175,43 @@
                             }
                             srcHtml.push('<small> <span class="ak-sm ak-back"style="background:'+stageCol+';color:#000"></span>' + k + '<span class="ak-sm ak-back">'+v+'</span>'+"</small>") 
                         });
-                        $("#row-m").append('<div class="card-group m-1 lvl-' + ms[n]['level']
-                                + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
-                                + '>'
-                                // +'<div class="ak-c-black col-12"style="padding:5px;margin-bottom:-2px;background:#222222FF;z-index:1;width:0px">'+n+'</div>'
-                                // 
-                                // + '<div class="col-12" style="z-index:55;background:#555;text-align:center;">'+n+'</div>' 
-                                +''
-                                
-                                +'<div class="card ak-shadow-small ak-rare-bg' + '" style="width:130px;border:transparent;padding:0px;z-index:1">'
-                                
-                                +'<div style="width:130px;height:130px;vertical-align:middle;padding-left:0px;padding-top:12px;margin:0px">'
-                                    
-                                +'<img class="card-img-top col-12" style="z-index:4;display: block;object-fit: scale-down;margin:auto;margin-top:auto;height:100px;margin-left:-5px" src="img/material/'
-                                + ms[n]['id'] + '.png">'
-                                +'</div>'
-                                + '<div class="ak-title ak-shadow-small" style="z-index:5">'+n+ '</div>'  
-                                +'<img class="card-img-top" style="width:120px;margin-left:0px;margin-top:0px;z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
-                                +'<div class="card-body p-1 p-md-2 ak-c-black" style="padding:0px">'            
-                                + '<a class="ak-subtitle2">Drop location :</a>'                  
-                                    
-                                + srcHtml.join("<br />")
-                                + '</div></div><div class="ak-rare-' + colors[i - 1] +'" style="width:2px;z-index:0"></div><div class="card p-0 ak-back ak-btn' + '" style="max-width:72px"><div class="card-body p-1 p-md-2">'
-                                + '<form><div class="form-group mb-0">'
-                                // + '<div></div>'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-lack ak-mid" style="padding:0;text-align:center;background:#222;border:transparent;color:#fff" placeholder=" ' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
-                                // + '<div class="sm mt-1 in-mc   ak-mid in-lack">-</div>'
-                                + '</div></form>'
-                                + '</div></div>');
+
+                        let isOnStage = "";
+                        if(srcHtml!=""){
+                            isOnStage = ""
+                            +     '<div class="card-body p-1 ak-c-black" style="padding:0px">'  
+                            +         '<a class="ak-subtitle2">Drop location :</a>'                  
+                            +         srcHtml.join("<br />")
+                            +     '</div>'
+                        }else{
+                            isOnStage = ""
+                            +     '<div class="card-body p-1 ak-c-black" style="padding:0px">'  
+                            +         '<a class="ak-subtitle2">Only Craftable</a>'                  
+                            +         srcHtml.join("<br />")
+                            +     '</div>'
+                        }
+                        $("#row-m").append(
+                                 '<div class="ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
+                                +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="width:120px;border:transparent;padding:0px;z-index:1;">'
+                                +     '<div class="ak-title ak-shadow-small" style="z-index:5;display:inline-block;white-space: nowrap;">'+(ms[n].name_en ? n : n)+'</div>'  
+                                +         '<img class="card-img-top" style="width:120px;margin-left:0px;margin-top:0px;z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
+                                +         '<div style="width:130px;height:130px;vertical-align:middle;padding-left:0px;padding-top:12px;margin:0px">'  
+                                +             '<img class="card-img-top col-12" style="z-index:4;display: block;object-fit: scale-down;margin:auto;margin-top:auto;height:100px;margin-left:-5px" src="img/material/'+ ms[n]['id'] + '.png">'
+                                +         '</div>'       
+                                + isOnStage
+                                +   '</div>'
+                                +   '<div class="ak-rare-' + colors[i - 1] +'" style="width:2px;margin:0px;padding:0;z-index:0"></div>'
+                                +       '<div class="card p-0 ak-back ak-btn" style="max-width:72px;margin:0px">'
+                                +           '<div class="card-body p-1  style="padding:0px;margin:0px">'
+                                +           '<form style="">'
+                                +               '<div class="form-group mb-0">'
+                                +                   '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
+                                +                   '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
+                                +                   '<input type="text" class="form-control form-control-sm mt-1 in-lack ak-mid" style="padding:0;text-align:center;background:#222;border:transparent;color:#fff" placeholder=" ' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
+                                +               '</div>'
+                                +           '</form>'
+                                +       '</div>'
+                                +   '</div>');
                         // if (!ismobile)
                            
                         // else
@@ -329,13 +336,13 @@
                 genUrl();
             });
             $(document).on("click", "#btn-filter", () => {
-                if (ismobile)
-                    $(".card").each((_, e) => {
-                        let v = parseInt($(e).find(".in-lack").val());
-                        if (isNaN(v) || v === 0) $(e).hide();
-                    });
-                else
-                    $(".card-group").each((_, e) => {
+                // if (ismobile)
+                //     $(".card").each((_, e) => {
+                //         let v = parseInt($(e).find(".in-lack").val());
+                //         if (isNaN(v) || v === 0) $(e).hide();
+                //     });
+                // else
+                    $(".ak-card-group").each((_, e) => {
                         let v = parseInt($(e).find(".in-lack").val());
                         if (isNaN(v) || v === 0) $(e).hide();
                     });
@@ -343,10 +350,10 @@
             $(document).on("click", "#btn-reset", () => {
                 $(".btn-option").removeClass("btn-primary btn-secondary").addClass("btn-primary");
                 $(".in-mc, .in-lack").val("");
-                if (ismobile)
-                    $(".card").show();
-                else
-                    $(".card-group").show();
+                // if (ismobile)
+                //     $(".card").show();
+                // else
+                    $(".ak-card-group").show();
             })
             let savedNeed = urlParam("n", "");
             let savedHave = urlParam("h", "");
