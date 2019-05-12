@@ -157,9 +157,11 @@
             let ismobile = $('#mobile-only-visible').is(':visible');
             $.getJSON("akmaterial.json", (data) => {
                 $.each(data, (_, v) => {
-                    ms[v['name']] = v;
-                    mByLvl[v['level'] - 1].push(v['name']);
+                    console.log(v);
+                    ms[v['name_cn']] = v;
+                    mByLvl[v['level'] - 1].push(v['name_cn']);
                 });
+                console.log(ms);
                 let minShowLevel = 2;
                 let colors = ['1', '2', '3', '4', '5']
                 for (let i = 5; i > 0; i--) {
@@ -194,6 +196,7 @@
                             +         srcHtml.join("<br />")
                             +     '</div>'
                         }
+                        console.log(ms[n].name_en);
                         $("#row-m").append(
                                  '<div class="ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
                                 +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="border:transparent;padding:0px;z-index:1;">'
