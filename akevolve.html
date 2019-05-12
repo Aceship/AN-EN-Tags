@@ -4,13 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>明日方舟精英化材料计算器</title>
+    <meta name="theme-color" content="#222222ff">
+    <title translate-id="web-title">Arknights Recruitment Calculator</title>
+    <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/multilingual.css">
+    <link rel="stylesheet" href="css/ak.css">
+    <script src="js/multilingual.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/multilingual.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>
     <script>
@@ -21,9 +24,10 @@
     </script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a class="navbar-brand cn" href="#">明日方舟工具箱</a>
-        <a class="navbar-brand en" href="#">Arknights Toolbox</a>
+    <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );">
+            <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
             <span class="navbar-toggler-icon"></span>
@@ -31,44 +35,53 @@
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link cn" href="akhr.html">公开招募计算器</a>
-                    <a class="nav-link en" href="akhr.html?lang=en">Recuitment Recommender</a>
+                    <a class="nav-link" href="akhr.html" translate-id="topbar-2">Recruitment Calculator</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link cn" href="aklevel.html">升级计算</a>
-                    <a class="nav-link en" href="aklevel.html?lang=en">Levelup Calculator</a>
+                    <a class="nav-link" href="akhrchars.html" translate-id="topbar-3">Operators Table</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aklevel.html" translate-id="topbar-4">Leveling Calculator</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="akguide.html" translate-id="topbar-5">Guide</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link cn" href="akevolve.html">精英材料计算</a>
-                    <a class="nav-link en" href="akevolve.html?lang=en">Evolve Calculator</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link cn" href="akhrchars.html">干员表</a>
-                    <a class="nav-link en" href="akhrchars.html?lang=en">Operators Table</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled cn" href="#">施工中…</a>
-                    <a class="nav-link disabled en" href="#">WIP</a>
+                    <a class="nav-link" href="akevolve.html" translate-id="topbar-6">Material Calculator</a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ml-auto">
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="switchLang" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Language
+                        <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+                                <div class="ak-subtitle ak-disable" translate-id="language-1">Server</div>
+                                <div class="ak-disable" id="display-reg">CN</div>
+                        </a>
+                        
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item reg unselectable" onclick="changeUILanguage()" value="cn">Chinese</a>
+                        </div>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px"href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <div class="ak-subtitle ak-disable" translate-id="language-2">Language</div>
+                            <div class="ak-disable" id="display-lang">English</div>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="?lang=cn">中文</a>
-                        <a class="dropdown-item" href="?lang=en">English</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="en">English</a>
+                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="cn">Chinese</a>
+                        <a class="dropdown-item lang unselectable" onclick="changeUILanguage()" value="jp">Japanese</a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="container" style="margin:auto;max-width:1000px;">
-        <div class="d-inline d-sm-none" id="mobile-only-visible"></div>
-        <div class="col-12 alert alert-dark mt-3 p-1 p-sm-2" role="alert">
+    <div style="padding-bottom:50px"></div>
+    <div class="container " style="margin:auto;max-width:1000px;">
+        <div class="d-inline d-sm-none " id="mobile-only-visible"></div>
+        <div class="col-12 alert alert-dark mt-3 p-1 p-sm-2 ak-c-black" role="alert">
             <button type="button" class="btn btn-sm btn-success my-1" id="btn-filter">
-                <span class="cn">过滤</span>
+                <!-- <span class="cn">过滤</span> -->
                 <span class="en">Filter</span>
             </button>
             <button type="button" class="btn btn-sm btn-secondary btn-opt my-1" opt-id="all" id="opt-all">ALL</button>
@@ -78,15 +91,15 @@
             <button type="button" class="btn btn-sm btn-primary btn-opt my-1" opt-id="2">2★</button>
             <button type="button" class="btn btn-sm btn-secondary btn-opt my-1" opt-id="1">1★</button>
             <button type="button" class="btn btn-sm btn-danger my-1" id="btn-reset">
-                <span class="cn">重置</span>
+                <!-- <span class="cn">重置</span> -->
                 <span class="en">Reset</span>
             </button>
             <button type="button" class="btn btn-sm btn-warning my-1" id="btn-load">
-                <span class="cn">加载已保存数据</span>
+                <!-- <span class="cn">加载已保存数据</span> -->
                 <span class="en">Load saved data</span>
             </button>
             <hr class="my-1" />
-            <p class="cn my-0"><small><a class="save" href="?n&h&o">右键或长按复制我，保存输入信息</a></small></p>
+            <!-- <p class="cn my-0"><small><a class="save" href="?n&h&o">右键或长按复制我，保存输入信息</a></small></p> -->
             <p class="en my-0"><small><a class="save" href="?n&h&o">Copy me with right click or long press, to save your input</a></small></p>
         </div>
         <div class="col-12 mt-3 p-1 p-sm-2">
@@ -94,14 +107,14 @@
             </div>
         </div>
         <hr />
-        <div class="row col-12 tutorial">
-            <div class="col-12 text-left cn">
+        <div class="row col-12 ak-mid ak-shadow">
+            <!-- <div class="col-12 text-left cn">
                 <p><b>使用说明</b></p>
                 <p>1. 输入需要的材料数量；</p>
                 <p>2. 点击“过滤”掉与合成无关的材料；</p>
                 <p>3. 输入已有的材料数量；</p>
                 <p>4. 再次“过滤”掉不需要刷的材料。</p>
-            </div>
+            </div> -->
             <div class="col-12 text-left en">
                 <p><b>Usage</b></p>
                 <p>1. Input the needed number of materials.</p>
@@ -110,33 +123,28 @@
                 <p>4. "Filter" out materials you don't need to work for.</p>
             </div>
         </div>
-        <div class="col-12 alert alert-success mt-1 cn" role="alert">
+        <!-- <div class="col-12 alert alert-success mt-1 cn" role="alert">
             如需Excel版，可以使用<a href="https://bbs.nga.cn/read.php?tid=17155811">材料合成计算器</a>。
-        </div>
+        </div> -->
     </div>
 
     <hr />
-    <div class="row col-12 page-footer">
-        <div class="col-12 text-center cn">
-            <p>最近更新：2019/05/09，<a href="https://bbs.nga.cn/read.php?tid=16971344">联系作者</a></p>
-            <p>
-                数据来源：
-                <a href="https://ak.hypergryph.com">『明日方舟』</a>
-            </p>
-            <p>Powered by 一只灰猫。</p>
-        </div>
-        <div class="col-12 text-center en">
-            <p>Last update: 05/09/2019, <a href="https://github.com/graueneko/graueneko.github.io/issues">Contact</a></p>
+    <div class="row col-12 ak-footer">
+        <div class="col-12 text-center">
+            <p>Forked from <a href = "https://graueneko.github.io/akhr.html">grauneko web</a></p>
+        <div class="col-12 text-center"></div>
+            <p>Last update: 12 May 2019, <a href="https://github.com/Aceship/AN-EN-Tags/issues">Contact</a></p>
             <p>
                 Data source:
-                <a href="https://ak.hypergryph.com">Arknights</a>
+                <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">Arknights Wiki (CN)</a>
             </p>
-            <p>Powered by GraueNeko, Aceship</p>
+            <p>Powered by GraueNeko, Aceship, Faryzal2020</p>
         </div>
     </div>
     <script>
 
         $(function () {
+            
             showCurrentLang();
             let lang = getLang();
             document.title = { 'cn': '明日方舟精英化材料计算器', 'en': 'Arknights Evolve Cost Calculator' }[lang];
@@ -149,39 +157,69 @@
                     mByLvl[v['level'] - 1].push(v['name']);
                 });
                 let minShowLevel = 2;
-                let colors = ['dark', 'success', 'info', 'danger', 'warning']
+                let colors = ['1', '2', '3', '4', '5']
                 for (let i = 5; i > 0; i--) {
                     $.each(mByLvl[i - 1], (_, n) => {
                         let srcHtml = [];
                         let cardid = ms[n]['id'];
-                        $.each(ms[n].source, (k, v) => { srcHtml.push("<small>" + k + " (" + v + ")</small>") });
-                        if (!ismobile)
-                            $("#row-m").append('<div class="card-group m-1 lvl-' + ms[n]['level']
+                        
+                        
+                        $.each(ms[n].source, (k, v) => { 
+                            let stageCol = "#555";
+                            switch (v) {
+                                case "Always"   : stageCol = "#090" ;break;
+                                case "Common"   : stageCol = "#990";break;
+                                case "Medium"   : stageCol = "#950";break;
+                                case "Rare"     : stageCol = "#930";break;
+                                case "Very Rare": stageCol = "#900";break;
+                            }
+                            srcHtml.push('<small> <span class="ak-sm ak-back"style="background:'+stageCol+';color:#000"></span>' + k + '<span class="ak-sm ak-back">'+v+'</span>'+"</small>") 
+                        });
+                        $("#row-m").append('<div class="card-group m-1 lvl-' + ms[n]['level']
                                 + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
-                                + '><div class="card p-0' + ' border-' + colors[i - 1] + '" style="max-width:102px"><img class="card-img-top" style="max-width:100px;margin:auto;" src="img/material/'
-                                + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
-                                + n + '<br />'
+                                + '>'
+                                // +'<div class="ak-c-black col-12"style="padding:5px;margin-bottom:-2px;background:#222222FF;z-index:1;width:0px">'+n+'</div>'
+                                // 
+                                // + '<div class="col-12" style="z-index:55;background:#555;text-align:center;">'+n+'</div>' 
+                                +''
+                                
+                                +'<div class="card ak-shadow-small ak-rare-bg' + '" style="width:130px;border:transparent;padding:0px;z-index:1">'
+                                
+                                +'<div style="width:130px;height:130px;vertical-align:middle;padding-left:0px;padding-top:12px;margin:0px">'
+                                    
+                                +'<img class="card-img-top col-12" style="z-index:4;display: block;object-fit: scale-down;margin:auto;margin-top:auto;height:100px;margin-left:-5px" src="img/material/'
+                                + ms[n]['id'] + '.png">'
+                                +'</div>'
+                                + '<div class="ak-title ak-shadow-small" style="z-index:5">'+n+ '</div>'  
+                                +'<img class="card-img-top" style="width:120px;margin-left:0px;margin-top:0px;z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
+                                +'<div class="card-body p-1 p-md-2 ak-c-black" style="padding:0px">'            
+                                + '<a class="ak-subtitle2">Drop location :</a>'                  
+                                    
                                 + srcHtml.join("<br />")
-                                + '</div></div><div class="card p-0' + ' border-' + colors[i - 1] + '" style="max-width:72px"><div class="card-body p-1 p-md-2">'
+                                + '</div></div><div class="ak-rare-' + colors[i - 1] +'" style="width:2px;z-index:0"></div><div class="card p-0 ak-back ak-btn' + '" style="max-width:72px"><div class="card-body p-1 p-md-2">'
                                 + '<form><div class="form-group mb-0">'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-lack" placeholder="' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
+                                // + '<div></div>'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="padding:0;text-align:center" placeholder=" ' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
+                                + '<input type="text" class="form-control form-control-sm mt-1 in-lack ak-mid" style="padding:0;text-align:center;background:#222;border:transparent;color:#fff" placeholder=" ' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
+                                // + '<div class="sm mt-1 in-mc   ak-mid in-lack">-</div>'
                                 + '</div></form>'
                                 + '</div></div>');
-                        else
-                            $("#row-m").append('<div class="card col-4 my-1 p-0 lvl-' + ms[n]['level'] + ' border-' + colors[i - 1]
-                                + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
-                                + '><img class="card-img-top" style="max-width:70px;margin:auto;" src="img/material/'
-                                + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
-                                + n + '<br />'
-                                + srcHtml.join("<br />")
-                                + '<form><div class="form-group mb-0">'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
-                                + '<input type="text" class="form-control form-control-sm mt-1 in-lack" placeholder="' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
-                                + '</div></form>'
-                                + '</div></div>');
+                        // if (!ismobile)
+                           
+                        // else
+                        //     $("#row-m").append('<div class="card col-4 my-1 p-0 lvl-' + ms[n]['level'] + ' border-' + colors[i - 1]
+                        //         + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
+                        //         + '><img class="card-img-top" style="max-width:70px;margin:auto;" src="img/material/'
+                        //         + ms[n]['id'] + '.png"><div class="card-body p-1 p-md-2">'
+                        //         + n + '<br />'
+                        //         + srcHtml.join("<br />")
+                        //         + '<form><div class="form-group mb-0">'
+                        //         + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '需要', 'en': 'Need' }[lang] + '" id="need-' + cardid + '"/>'
+                        //         + '<input type="text" class="form-control form-control-sm mt-1 in-mc" placeholder="' + { 'cn': '已有', 'en': 'Have' }[lang] + '" id="have-' + cardid + '"/>'
+                        //         + '<input type="text" class="form-control form-control-sm mt-1 in-lack" placeholder="' + { 'cn': '仍需', 'en': 'Lack' }[lang] + '" id="lack-' + cardid + '" disabled/>'
+                        //         + '</div></form>'
+                        //         + '</div></div>');
                     });
                     $("#row-m").append('<div class="w-100 my-1" />');
                 }
@@ -196,6 +234,7 @@
                 $(".save").attr("href", "?n=" + allns.join("+") + "&h=" + allhs.join("+") + "&o=" + allos.join("+"));
             }
             function calc() {
+                
                 let counts = {};
                 $.each(ms, (n, m) => {
                     let need = parseInt($("#need-" + m['id']).val());
@@ -250,6 +289,15 @@
                     allns.push(counts[m.name].need);
                     allhs.push(counts[m.name].have);
                 });
+                $(".in-lack").each(function() {
+                if($(this).val() >= 1){
+
+                    console.log("wei")
+                        $(this).css('background-color','#200');
+                    }else{
+                        $(this).css('background-color','#222');
+                    }
+                })
                 genUrl();
             }
             $(document).on('change input paste', '.in-mc', calc);
