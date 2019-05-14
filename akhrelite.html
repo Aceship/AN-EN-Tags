@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#222222ff">
+    <title translate-id="web-title">Arknights Recruitment Calculator</title>
+    <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/ak.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>/
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-138420636-1');
+        
+    </script>
+    <script>
+            $(function(){
+              $("#nav-placeholder").load("nav.html");
+            });
+     </script>
+</head>
+<body  >
+    <!-- style=" background-image: url(./img/extra/bg1.png)" -->
+    <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );">
+            <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
+        <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="akhr.html" translate-id="topbar-2">Recruitment Calculator</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="akhrelite.html" translate-id="topbar-3">Elite Materials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="aklevel.html" translate-id="topbar-4">Leveling Calculator</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="akguide.html" translate-id="topbar-5">Guide</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="akevolve.html" translate-id="topbar-6">Material Calculator</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+                                <div class="ak-subtitle ak-disable" translate-id="language-1">Server</div>
+                                <div class="ak-disable" id="display-reg">CN</div>
+                        </a>
+                        
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="cn">Chinese</a>
+                        </div>
+                    </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px"href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <div class="ak-subtitle ak-disable" translate-id="language-2">Language</div>
+                            <div class="ak-disable" id="display-lang">English</div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="en">English</a>
+                        <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="cn">Chinese</a>
+                        <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="jp">Japanese</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div style="padding-bottom:20px"></div>
+    <!-- <div class="warning-sign"style="position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center">aaaaaaaaaaaaaaaaaaaaa</div> -->
+    <div class="col-md-12 col-sm-12 " style="margin:auto;max-width:1000px;padding:0" >
+        <div class="col-12 ak-mid ak-shadow mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px" role="alert">
+            <div class="row" style="padding:0;padding-bottom: 4px">
+                    <div class="col-12 btn btn-sm ak-btn ak-c-black ak-shadow-small ak-disable" style="padding:0" translate-id="operator-select">Select an operator :</div>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <input style="margin-top: 10px;" type="text" autocomplete="off" class="form-control" name="opname" id="opname" onkeyup="populateOperators(this)" placeholder="Type in operator name . .">
+                    <div style="position: relative;"><ul id="operatorsResult" style="display:none; position: absolute; z-index: 1; list-style-type: none; background-color: white; border: 1px solid lightgrey; padding: 5px;"><li style="cursor: pointer"></li></ul></div>
+                    <div class="op-statcard" style="background-color: white; margin-top: 10px; margin-bottom: 10px; border: 1px solid lightgrey; border-radius: 5px;">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6" style="padding: 10px;">
+                                <img style="display: block; margin: 0 auto; width: 150px;" src="img/chara/empty.png" id="opImage">
+                                <img style="display: block; margin: 0 auto; margin-top: 10px; width: 150px;" src="img/chara/empty.png" id="opClassImage">
+                            </div>
+                            <div class="col-sm-6 col-md-6" style="padding: 10px;">
+                                <b><p id="op-nametl"></p></b>
+                                <p id="op-rarity"></p>
+                                <p id="op-name"></p>
+                                <div style="width: 130px;" id="op-tags"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    <button class="btn btn-danger col-12 align-self-center ak-btn text-center" style="padding:1px ; z-index: 0;font-weight: 550" onclick="clickBtnClear()" ><span translate-id="selector-clear">Clear</span> <span id="count-tag"></a> </button>
+            </div>
+    </div>
+        <table class="table ak-table ak-table-striped table-hover my-3 ak-shadow" id="table-recommend">
+            <thead class="ak-thead ">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" style="width:16.67%" translate-id="result-tags">Tags</th>
+                    <th scope="col" translate-id="result-characters">Character Possibility</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="tbody-recommend"></tbody>
+        </table>
+        <div class="col-12 tutorial">
+            <div class="col-12 text-left ak-mid ak-shadow" style="padding:10px" >
+                <p translate-id="footer-instructions-1">How To Use ：</p>
+                <p translate-id="footer-instructions-2">1. Change the 'Game Server' drop down on the top right according to your AK client region.</p>
+                <p translate-id="footer-instructions-3">2. Change the language of the user interface to your preference.</p>
+                <p translate-id="footer-instructions-4">3. Click on the tags, up to 6 tags.</p>
+                <p translate-id="footer-instructions-5">4. You can hover on the tags to see the translation.</p>
+                <p translate-id="footer-instructions-6">5. You can also hide or show the name and/or the image of the operators.</p>
+                <p translate-id="footer-instructions-7">6. Click 'clear' to reset all the tag selections.</p>
+            </div>
+        </div>
+        <!-- <div class="col-12 alert alert-success mt-1 cn" role="alert">
+            19/05/04 升级消耗计算器上线，可在导航栏切换使用。<br />
+            19/05/09 精英材料计算器上线，可在导航栏切换使用。
+        </div> -->
+        <div class="ak-div"></div>
+    </div>
+    <div class="row col-12 ak-footer">
+        <div class="col-12 text-center">
+            <p>Forked from <a href = "https://graueneko.github.io/akhr.html">grauneko web</a></p>
+        <div class="col-12 text-center"></div>
+            <p>Last update: 12 May 2019, <a href="https://github.com/Aceship/AN-EN-Tags/issues">Contact</a></p>
+            <p>
+                Data source:
+                <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">Arknights Wiki (CN)</a>
+            </p>
+            <p>Powered by GraueNeko, Aceship, Faryzal2020</p>
+        </div>
+    </div>
+    <script src="./js/jsondbsystem.js"></script>
+    <script src="./js/akhrelite.js"></script>
+</body>
+</html>

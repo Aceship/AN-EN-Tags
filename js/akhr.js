@@ -440,6 +440,7 @@
                                 "name_tl": eval('char.name_'+lang),
                                 "level": char.level, 
                                 "type": char.type }];
+                                tag_count++;
                         }
                         char_tag_sum++;
                     });
@@ -452,7 +453,6 @@
                 //    tag_count++;
                 //});
                 //console.log(avg_char_tag);
-                tag_count = Object.keys(tags_aval).length;
                 avg_char_tag = char_tag_sum / tag_count;
 
                 JsonDATA[0] = tags_aval;
@@ -485,7 +485,7 @@
         function changeUILanguage(){
             reg = localStorage.gameRegion;
             lang = localStorage.webLang;
-            
+
             $('#display-reg').text(reg.toUpperCase())
             
             switch (lang) {
