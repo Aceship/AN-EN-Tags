@@ -96,6 +96,22 @@
 
     
     function clickBtnClear(){
+        $("#opname").val("");
+        $('#operatorsResult').html("");
+        $('#operatorsResult').hide();
+        localStorage.selectedOP = "";
+        selectedOP = localStorage.selectedOP;
+        $("#reqmats-container").html("");
+        $("#tbody-materials").html("");
+        $("#eliteReqMats").hide();
+        $("#opClassImage").attr('src','');
+            console.log(lang);
+        $("#op-nametl").html("");
+        $("#op-name").html("");
+        $("#op-rarity").html("");
+        $("#op-tags").html("");
+        $("#opImage").attr('src','img/chara/empty.png');
+        $("#opID").val("");
     }
 
 
@@ -140,49 +156,51 @@
     }
 
     function selectOperator(opname){
-        console.log("SELECT OPERATOR");
-        console.log(opname);
-        $("#opname").val("");
-        $('#operatorsResult').html("");
-        $('#operatorsResult').hide();
-        var opdata = query(db.chars2,"name_cn",opname);
-        var opclass = query(db.classes,"type_cn",opdata.type);
-        console.log(opdata);
-        var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
-        console.log(opdata2);
-        $.each(opdata2,function(key,v){
-            $("#opImage").attr('src','img/portraits/'+key+'_1.png');
-            // $("#opGlow").attr('src','img/ui/chara/glow-'+(opdata2[key].rarity+1)+'.png');
-            $("#opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
-            $("#opBg").attr('src','img/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
-            // $("#opBanner").attr('src','img/ui/chara/banner-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
-            $("#opID").val(key);
-            localStorage.selectedOP = key;
-            return false
-        });
-        $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
-        console.log(lang);
-        $("#op-nametl").html(eval('opdata.name_'+lang));
-        $("#op-name").html(eval('opdata.name_'+reg));
-        var rarity = "";
-        for (var i = 0; i < opdata.level; i++) {
-            rarity = rarity + " ★";
-        }
-        $("#op-rarity").html(rarity);
-        var tags_html = [];
-        $.each(opdata.tags,function(_,v){
-            var tag = query(db.tags,"tag_cn",v);
-            if(tag){
-                var tagReg = eval('tag.tag_'+reg);
-                var tagTL = eval('tag.tag_'+lang);
-                tags_html.push("<li style=\"list-style-type:none; padding-bottom: 10px;\"><button readonly type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
-                        (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
+        if(opname != ""){
+            console.log("SELECT OPERATOR");
+            console.log(opname);
+            $("#opname").val("");
+            $('#operatorsResult').html("");
+            $('#operatorsResult').hide();
+            var opdata = query(db.chars2,"name_cn",opname);
+            var opclass = query(db.classes,"type_cn",opdata.type);
+            console.log(opdata);
+            var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
+            console.log(opdata2);
+            $.each(opdata2,function(key,v){
+                $("#opImage").attr('src','img/portraits/'+key+'_1.png');
+                // $("#opGlow").attr('src','img/ui/chara/glow-'+(opdata2[key].rarity+1)+'.png');
+                $("#opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
+                $("#opBg").attr('src','img/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
+                // $("#opBanner").attr('src','img/ui/chara/banner-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
+                $("#opID").val(key);
+                localStorage.selectedOP = key;
+                return false
+            });
+            $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
+            console.log(lang);
+            $("#op-nametl").html(eval('opdata.name_'+lang));
+            $("#op-name").html(eval('opdata.name_'+reg));
+            var rarity = "";
+            for (var i = 0; i < opdata.level; i++) {
+                rarity = rarity + " ★";
             }
-        });
-        $("#op-tags").html(tags_html.join(""));
+            $("#op-rarity").html(rarity);
+            var tags_html = [];
+            $.each(opdata.tags,function(_,v){
+                var tag = query(db.tags,"tag_cn",v);
+                if(tag){
+                    var tagReg = eval('tag.tag_'+reg);
+                    var tagTL = eval('tag.tag_'+lang);
+                    tags_html.push("<li style=\"list-style-type:none; padding-bottom: 10px;\"><button readonly type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
+                            (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
+                }
+            });
+            $("#op-tags").html(tags_html.join(""));
 
-        $("#eliteReqMats").show();
-        selectElite(1);
+            $("#eliteReqMats").show();
+            selectElite(1);
+        }
     }
 
     function selectElite(num){
@@ -191,73 +209,131 @@
         $("#eliteDropBtn").html("Elite "+num);
         reqmats = db.chars[$("#opID").val()].phases[num] ? db.chars[$("#opID").val()].phases[num].evolveCost : undefined;
         var html = [];
-        if(reqmats){
-            
-            $.each(reqmats,function(_,v){
-                var itemdata = db.items[v.id];
-                var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
-                html.push("<li>"
-                        +       "<div style=\"position: relative;\">"
-                        +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
-                        +           "<div class=\"item-image\">"
-                        +               "<span></span>"
-                        +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
-                        +           "</div>"
-                        +           "<img id=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\" width=\"150\">"
-                        +           "<div class=\"item-amount\">"+v.count+"x</div>"
-                        +       "</div>"
-                        +   "</li>");
+        $.each(reqmats,function(_,v){
+            var itemdata = db.items[v.id];
+            var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
+            html.push("<li>"
+                    +       "<div class=\"internal-container\" style=\"position: relative;\">"
+                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
+                    +           "<div class=\"item-image\">"
+                    +               "<span></span>"
+                    +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
+                    +           "</div>"
+                    +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
+                    +           "<div class=\"item-amount\">"+v.count+"x</div>"
+                    +       "</div>"
+                    +   "</li>");
 
-                var tr = $("<tr></tr>");
-                var td = $("<td></td>");
-                var L1 = $("<div class=\"reqmats-container\"><li>"
-                        +       "<div style=\"position: relative;\">"
-                        +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
-                        +           "<div class=\"item-image\">"
-                        +               "<span></span>"
-                        +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
-                        +           "</div>"
-                        +           "<img id=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\" width=\"150\">"
-                        +           "<div class=\"item-amount\">"+v.count+"x</div>"
-                        +       "</div>"
-                        +   "</li></div>");
-                td.append(L1);
-                tr.append(td);
+            var tr = $("<tr></tr>");
+            var td = $("<td style=\"vertical-align:middle; text-align: center; width: 180px; padding-left: 30px;\"></td>");
+            var L1 = $("<div class=\"reqmats-container smallcontainer\"><li>"
+                    +       "<div class=\"internal-container\" style=\"position: relative;\">"
+                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
+                    +           "<div class=\"item-image\">"
+                    +               "<span></span>"
+                    +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
+                    +           "</div>"
+                    +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
+                    +           "<div class=\"item-amount\">"+v.count+"x</div>"
+                    +       "</div>"
+                    +   "</li></div>");
+            td.append(L1);
+            tr.append(td);
 
-                if(itemdata.buildingProductList.length>0){
-                    var parentcount = v.count;
-                    var formulaId = itemdata.buildingProductList[0].formulaId;
-                    if(itemdata.buildingProductList[0].roomType == "MANUFACTURE"){
-                        var formula = db.manufactformulas[formulaId];
-                    } else {
-                        var formula = db.workshopformulas[formulaId];
+            if(itemdata.buildingProductList.length>0){
+                var parentcount = v.count;
+                var formulaId = itemdata.buildingProductList[0].formulaId;
+                var skip = false;
+                if(itemdata.buildingProductList[0].roomType == "MANUFACTURE"){
+                    var formula = db.manufactformulas[formulaId];
+                } else {
+                    var formula = db.workshopformulas[formulaId];
+                    var check = db.items[formula.costs[0].id];
+                    console.log(itemdata.rarity);
+                    console.log(check.rarity);
+                    if(itemdata.rarity == check.rarity){
+                        if(itemdata.iconId.search("MTL_ASC") != -1 && check.iconId.search("MTL_ASC") != -1){
+                            skip = true;
+                        }
                     }
-                    var td = $("<td style=\"vertical-align:middle;\"></td>");
-                    td.append("<div style=\"font-size:3em; font-weight: bold;\"><span><---</span></div>");
+                }
+                if(!skip){
+                    var td = $("<td style=\"vertical-align:middle; text-align: center; padding-bottom: 30px; border-right: 5px solid darkgrey; margin-bottom: 20px;\"></td>");
+                    td.append("<div style=\"font-size:2em; font-weight: bold;\"><span><---</span></div>");
                     tr.append(td);
-                    td = $("<td></td>");
+                    var td2 = $("<td></td>");
                     $.each(formula.costs,function(_,v){
+                        console.log(td2);
+
+                        var row1 = $("<div class=\"row\"></div>");
+                        var col1 = $("<div class=\"col-md-3\"></div>");
                         let itemdata = db.items[v.id];
                         let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
-                        let li = $("<div class=\"reqmats-container\"><li>"
-                        +       "<div style=\"position: relative;\">"
+                        let li = $("<div class=\"reqmats-container smallcontainer\"><li>"
+                        +       "<div class=\"internal-container\" style=\"position: relative;\">"
                         +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
                         +           "<div class=\"item-image\">"
                         +               "<span></span>"
                         +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
                         +           "</div>"
-                        +           "<img id=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\" width=\"150\">"
+                        +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
                         +           "<div class=\"item-amount\">"+(v.count*parentcount)+"x</div>"
                         +       "</div>"
                         +   "</li></div>");
-                        td.append(li);
+                        col1.append(li);
+                        row1.append(col1);
+
+
+                        if(itemdata.buildingProductList.length>0){
+                            var parentcount2 = v.count*parentcount;
+                            var formulaId = itemdata.buildingProductList[0].formulaId;
+                            var skip = false;
+                            console.log(itemdata.iconId);
+                            console.log(itemdata.buildingProductList[0].roomType)
+                            if(itemdata.buildingProductList[0].roomType == "MANUFACTURE"){
+                                var formula = db.manufactformulas[formulaId];
+                            } else {
+                                var formula = db.workshopformulas[formulaId];
+                                var check = db.items[formula.costs[0].id];
+                                console.log(itemdata.rarity);
+                                console.log(check.rarity);
+                                if(itemdata.rarity == check.rarity){
+                                    if(itemdata.iconId.search("MTL_ASC") != -1 && check.iconId.search("MTL_ASC") != -1){
+                                        skip = true;
+                                    }
+                                }
+                            }
+                            if(!skip){
+                                var col2 = $("<div class=\"col-md-2\" style=\"border-right: 5px solid darkgrey; margin-bottom: 20px;\"></div>");
+                                col2.append("<div style=\"margin-top: 50%; font-size:2em; font-weight: bold; min-width: 80px; max-width: 80px;\"><span><---</span></div>");
+                                row1.append(col2)
+                                var col3 = $("<div class=\"col-md-3\"></div>");
+                                $.each(formula.costs,function(_,v2){
+                                    let itemdata = db.items[v2.id];
+                                    let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
+                                    let li = $("<div class=\"reqmats-container smallcontainer\"><li>"
+                                    +       "<div class=\"internal-container\" style=\"position: relative;\">"
+                                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
+                                    +           "<div class=\"item-image\">"
+                                    +               "<span></span>"
+                                    +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
+                                    +           "</div>"
+                                    +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
+                                    +           "<div class=\"item-amount\">"+(v2.count*parentcount2)+"x</div>"
+                                    +       "</div>"
+                                    +   "</li></div>");
+                                    col3.append(li);
+                                });
+                            }
+                            row1.append(col3);
+                        }
+                        td2.append(row1);
                     });
-                    tr.append(td);
-                    $("#tbody-materials").append(tr);
+                    tr.append(td2);
                 }
-            });
-            
-        }
+                $("#tbody-materials").append(tr);
+            }
+        });
         $("#reqmats-container").html(html.join(""));
     }
 

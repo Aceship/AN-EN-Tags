@@ -15,6 +15,7 @@
     margin-right: 5px;
     margin-top: 10px;
     margin-bottom: 15px;
+    border-top-left-radius: 0px;
 }
 
 .reqmats-container .item-name {
@@ -24,7 +25,17 @@
     padding: 0 7px;
     background-color: white;
     border-radius: 5px;
-    max-width: 150px;
+    max-width: 140px;
+    font-size: 0.85em;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.reqmats-container.smallcontainer .item-name {
+    top: -22px;
+    max-width: 130px;
+    font-size: 0.8em;
+    padding-bottom: 10px;
 }
 
 .reqmats-container .item-amount {
@@ -38,11 +49,16 @@
     font-size: 1.4em;
 }
 
+.reqmats-container.smallcontainer .item-amount {
+    font-size: 1.2em;
+}
+
 .reqmats-container .item-image {
     position: absolute; 
     width: 100%; 
     height: 100%;
     text-align: center;
+    z-index: 1;
 }
 
 .reqmats-container .item-image span {
@@ -51,8 +67,33 @@
 
 .reqmats-container .item-image > img {
     vertical-align: middle; 
-    max-width: 110px;
-    max-height: 150px;
+    max-width: 120px;
+    max-height: 140px;
     width: auto;
     height: auto;
+}
+
+.reqmats-container.smallcontainer .item-image > img {
+    max-width: 110px;
+    max-height: 130px;
+}
+
+.reqmats-container li .item-rarity {
+    width: 140px;
+    left: 0;
+    position: absolute;
+}
+
+.reqmats-container.smallcontainer .item-rarity {
+    width: 130px;
+}
+
+.reqmats-container .internal-container {
+    height: 140px;
+    width: 140px;
+}
+
+.reqmats-container.smallcontainer .internal-container {
+    height: 130px;
+    width: 130px;
 }
