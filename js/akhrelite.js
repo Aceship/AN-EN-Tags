@@ -114,6 +114,10 @@
         $("#op-rarity").html("");
         $("#op-tags").html("");
         $("#opImage").attr('src','img/chara/empty.png');
+        $("#opHeader").attr('src','');
+        $("#opBg").attr('src','');
+        $("#opGlow").attr('src','');
+        $("#opBanner").attr('src','');
         $("#opID").val("");
     }
 
