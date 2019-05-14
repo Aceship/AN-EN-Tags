@@ -334,7 +334,7 @@
                                     let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
                                     let li = $("<div class=\"reqmats-container smallcontainer\"><li>"
                                     +       "<div class=\"internal-container\" style=\"position: relative;\">"
-                                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"aaaaaaaaaaaaaa</div>"
+                                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
                                     +           "<div class=\"item-image\">"
                                     +               "<span></span>"
                                     +               "<img class=\" ak-mat-img\" id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
