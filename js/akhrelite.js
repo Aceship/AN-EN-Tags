@@ -1,7 +1,10 @@
     $.holdReady(true);
     var db = {};
+    var d0 = $.getJSON("json/excel/building_data.json",function(data){
+            db["manufactformulas"] = data.manufactFormulas;
+        });
     var d1 = $.getJSON("json/excel/building_data.json",function(data){
-            db["formulas"] = data.manufactFormulas;
+            db["workshopformulas"] = data.workshopFormulas;
         });
     var d2 = $.getJSON("json/excel/character_table.json",function(data){
             db["chars"] = data;
@@ -21,13 +24,14 @@
     var d7 = $.getJSON("akmaterial.json",function(data){
             db["itemstl"] = data;
         });
-    $.when(d1,d2,d3,d4,d5,d6,d7).then(function(){
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7).then(function(){
         $.holdReady(false);
     });
 
     var lang;
     var reg;
     var reqmats = [];
+    var selectedOP;
 
     $(document).ready(function(){
         $('#to-tag').click(function() {      // When arrow is clicked
@@ -49,6 +53,14 @@
 
         $('.dropdown-trigger').dropdown();
         $('[data-toggle="tooltip"]').tooltip();
+
+        if(typeof localStorage.selectedOP === "undefined" || localStorage.selectedOP == ""){
+            localStorage.setItem("selectedOP","");
+        } else {
+            selectedOP = localStorage.selectedOP;
+            var opname = db.chars[selectedOP].name;
+            selectOperator(opname);
+        }
 
 
         if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
@@ -134,6 +146,7 @@
         $.each(opdata2,function(key,v){
             $("#opImage").attr('src','img/portraits/'+key+'_1.png');
             $("#opID").val(key);
+            localStorage.selectedOP = key;
             return false
         });
         $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
@@ -161,6 +174,8 @@
     }
 
     function selectElite(num){
+        console.log("SELECT ELITE");
+        $("#tbody-materials").html("");
         $("#eliteDropBtn").html("Elite "+num);
         reqmats = db.chars[$("#opID").val()].phases[num].evolveCost;
         var html = [];
@@ -174,10 +189,60 @@
                     +               "<span></span>"
                     +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
                     +           "</div>"
-                    +           "<img id=\"item-rarity\" src=\"img/material/bg/item-"+itemdata.rarity+".png\" width=\"150\">"
+                    +           "<img id=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\" width=\"150\">"
                     +           "<div class=\"item-amount\">"+v.count+"x</div>"
                     +       "</div>"
                     +   "</li>");
+
+            var tr = $("<tr></tr>");
+            var td = $("<td></td>");
+            var L1 = $("<div class=\"reqmats-container\"><li>"
+                    +       "<div style=\"position: relative;\">"
+                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
+                    +           "<div class=\"item-image\">"
+                    +               "<span></span>"
+                    +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
+                    +           "</div>"
+                    +           "<img id=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\" width=\"150\">"
+                    +           "<div class=\"item-amount\">"+v.count+"x</div>"
+                    +       "</div>"
+                    +   "</li></div>");
+            td.append(L1);
+            tr.append(td);
+
+            if(itemdata.buildingProductList.length>0){
+                console.log(itemdata.buildingProductList);
+                var parentcount = v.count;
+                var formulaId = itemdata.buildingProductList[0].formulaId;
+                if(itemdata.buildingProductList[0].roomType == "MANUFACTURE"){
+                    var formula = db.manufactformulas[formulaId];
+                } else {
+                    var formula = db.workshopformulas[formulaId];
+                }
+                console.log(formula);
+                var td = $("<td style=\"vertical-align:middle;\"></td>");
+                td.append("<div style=\"font-size:3em; font-weight: bold;\"><span><---</span></div>");
+                tr.append(td);
+                td = $("<td></td>");
+                $.each(formula.costs,function(_,v){
+                    let itemdata = db.items[v.id];
+                    let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
+                    let li = $("<div class=\"reqmats-container\"><li>"
+                    +       "<div style=\"position: relative;\">"
+                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
+                    +           "<div class=\"item-image\">"
+                    +               "<span></span>"
+                    +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
+                    +           "</div>"
+                    +           "<img id=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\" width=\"150\">"
+                    +           "<div class=\"item-amount\">"+(v.count*parentcount)+"x</div>"
+                    +       "</div>"
+                    +   "</li></div>");
+                    td.append(li);
+                });
+                tr.append(td);
+                $("#tbody-materials").append(tr);
+            }
         });
         $("#reqmats-container").html(html.join(""));
     }
