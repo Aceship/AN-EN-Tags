@@ -9,6 +9,7 @@
     <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/ak.css">
+    <link rel="stylesheet" href="css/akelite.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -91,13 +92,16 @@
             </div>
             <div class="row">
                 <div class="col-md-5">
+                    <input readonly type="text" name="opID" id="opID" style="display: none;">
                     <input style="margin-top: 10px;" type="text" autocomplete="off" class="form-control" name="opname" id="opname" onkeyup="populateOperators(this)" placeholder="Type in operator name . .">
                     <div style="position: relative;"><ul id="operatorsResult" style="display:none; position: absolute; z-index: 1; list-style-type: none; background-color: white; border: 1px solid lightgrey; padding: 5px;"><li style="cursor: pointer"></li></ul></div>
                     <div class="op-statcard" style="background-color: white; margin-top: 10px; margin-bottom: 10px; border: 1px solid lightgrey; border-radius: 5px;">
                         <div class="row">
                             <div class="col-sm-6 col-md-6" style="padding: 10px;">
-                                <img style="display: block; margin: 0 auto; width: 150px;" src="img/chara/empty.png" id="opImage">
-                                <img style="display: block; margin: 0 auto; margin-top: 10px; width: 150px;" src="img/chara/empty.png" id="opClassImage">
+                                <div style="position: relative; display: block; margin: 0 auto; width: 150px;">
+                                    <img src="img/chara/empty.png" width="150" id="opImage">
+                                    <img style="display: block; position: absolute; left: 4px; top: 4px; margin: 0 auto; width: 35px;" src="" id="opClassImage">
+                                </div>
                             </div>
                             <div class="col-sm-6 col-md-6" style="padding: 10px;">
                                 <b><p id="op-nametl"></p></b>
@@ -106,6 +110,41 @@
                                 <div style="width: 130px;" id="op-tags"></div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-md-7" id="eliteReqMats" style="display:none;">
+                    <div class="dropdown" style="margin-top: 10px;">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" id="eliteDropBtn">
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" onclick="selectElite(1)">Elite 1</a>
+                            <a class="dropdown-item" onclick="selectElite(2)">Elite 2</a>
+                        </div>
+                    </div>
+                    <p style="margin-top: 10px;"><b>Requirement Materials: </b></p>
+                    <div class="reqmats-container" id="reqmats-container">
+                        <li>
+                            <div style="position: relative;">
+                                <div class="item-name">Test</div>
+                                <div class="item-image">
+                                    <span></span>
+                                    <img id="item-image" src="img/items/MTL_ASC_CST3.png">
+                                </div>
+                                <img id="item-rarity" src="img/material/bg/item-5.png" width="150">
+                                <div class="item-amount">3x</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div style="position: relative;">
+                                <div class="item-name">Test</div>
+                                <div class="item-image">
+                                    <span></span>
+                                    <img id="item-image" src="img/items/MTL_ASC_CST3.png">
+                                </div>
+                                <img id="item-rarity" src="img/material/bg/item-5.png" width="150">
+                                <div class="item-amount">3x</div>
+                            </div>
+                        </li>
                     </div>
                 </div>
             </div>

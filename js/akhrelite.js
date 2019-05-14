@@ -18,12 +18,16 @@
     var d6 = $.getJSON("json/tl-tags.json",function(data){
             db["tags"] = data;
         });
-    $.when(d1,d2,d3,d4,d5,d6).then(function(){
+    var d7 = $.getJSON("akmaterial.json",function(data){
+            db["itemstl"] = data;
+        });
+    $.when(d1,d2,d3,d4,d5,d6,d7).then(function(){
         $.holdReady(false);
     });
 
     var lang;
     var reg;
+    var reqmats = [];
 
     $(document).ready(function(){
         $('#to-tag').click(function() {      // When arrow is clicked
@@ -128,7 +132,9 @@
         var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
         console.log(opdata2);
         $.each(opdata2,function(key,v){
-            $("#opImage").attr('src','img/potraits/'+key+'_1.png');
+            $("#opImage").attr('src','img/portraits/'+key+'_1.png');
+            $("#opID").val(key);
+            return false
         });
         $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
         $("#op-nametl").html(eval('opdata.name_'+lang));
@@ -149,6 +155,31 @@
             }
         });
         $("#op-tags").html(tags_html.join(""));
+
+        $("#eliteReqMats").show();
+        selectElite(1);
+    }
+
+    function selectElite(num){
+        $("#eliteDropBtn").html("Elite "+num);
+        reqmats = db.chars[$("#opID").val()].phases[num].evolveCost;
+        var html = [];
+        $.each(reqmats,function(_,v){
+            var itemdata = db.items[v.id];
+            var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
+            html.push("<li>"
+                    +       "<div style=\"position: relative;\">"
+                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
+                    +           "<div class=\"item-image\">"
+                    +               "<span></span>"
+                    +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
+                    +           "</div>"
+                    +           "<img id=\"item-rarity\" src=\"img/material/bg/item-"+itemdata.rarity+".png\" width=\"150\">"
+                    +           "<div class=\"item-amount\">"+v.count+"x</div>"
+                    +       "</div>"
+                    +   "</li>");
+        });
+        $("#reqmats-container").html(html.join(""));
     }
 
     function query(db,key,val,single=true,returnKey=false){
