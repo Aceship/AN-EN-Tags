@@ -287,7 +287,7 @@
                         console.log(td2);
 
                         var row1 = $("<div class=\"row\"></div>");
-                        var col1 = $("<div class=\"col-md-3\"></div>");
+                        var col1 = $("<div class=\"col-3\"></div>");
                         let itemdata = db.items[v.id];
                         let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
                         let li = $("<div class=\"reqmats-container smallcontainer\"><li>"
@@ -325,10 +325,10 @@
                                 }
                             }
                             if(!skip){
-                                var col2 = $("<div class=\"col-md-2\" style=\"border-right: 5px solid darkgrey; margin-bottom: 20px;\"></div>");
-                                col2.append("<div style=\"margin-top: 50%; font-size:2em; font-weight: bold; min-width: 80px; max-width: 80px;\"><span><img class=\"ak-btn ak-c-black ak-shadow-small\" src=\"./img/ui/Arrow.png\"></span></div>");
+                                var col2 = $("<div class=\"col-2\" style=\"border-right: 5px solid darkgrey; margin-bottom: 20px;\"></div>");
+                                col2.append("<div style=\"margin-top: 50%; font-size:2em; font-weight: bold; min-width: 80px; max-width: 80px;\"><span><img class=\"ak-btn ak-c-black ak-shadow-small\" style =\" width:100%\"src=\"./img/ui/Arrow.png\"></span></div>");
                                 row1.append(col2)
-                                var col3 = $("<div class=\"col-md-3\"></div>");
+                                var col3 = $("<div class=\"col-3\"></div>");
                                 $.each(formula.costs,function(_,v2){
                                     let itemdata = db.items[v2.id];
                                     let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
@@ -339,7 +339,7 @@
                                     +               "<span></span>"
                                     +               "<img class=\" ak-mat-img\" id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
                                     +           "</div>"
-                                    +           "<img class=\"item-rarity ak-mat-img\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
+                                    +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
                                     +           "<div class=\"item-amount\">"+(v2.count*parentcount2)+"x</div>"
                                     +       "</div>"
                                     +   "</li></div>");
