@@ -54,14 +54,6 @@
         $('.dropdown-trigger').dropdown();
         $('[data-toggle="tooltip"]').tooltip();
 
-        if(typeof localStorage.selectedOP === "undefined" || localStorage.selectedOP == ""){
-            localStorage.setItem("selectedOP","");
-        } else {
-            selectedOP = localStorage.selectedOP;
-            var opname = db.chars[selectedOP].name;
-            selectOperator(opname);
-        }
-
 
         if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
             console.log("game region undefined");
@@ -73,6 +65,14 @@
             console.log(localStorage.webLang);
             reg = localStorage.gameRegion;
             lang = localStorage.webLang;
+        }
+
+        if(typeof localStorage.selectedOP === "undefined" || localStorage.selectedOP == ""){
+            localStorage.setItem("selectedOP","");
+        } else {
+            selectedOP = localStorage.selectedOP;
+            var opname = db.chars[selectedOP].name;
+            selectOperator(opname);
         }
         $('.reg[value='+reg+']').addClass('selected');
         $('.lang[value='+lang+']').addClass('selected');
@@ -135,6 +135,8 @@
     }
 
     function selectOperator(opname){
+        console.log("SELECT OPERATOR");
+        console.log(opname);
         $("#opname").val("");
         $('#operatorsResult').html("");
         $('#operatorsResult').hide();
@@ -150,6 +152,7 @@
             return false
         });
         $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
+        console.log(lang);
         $("#op-nametl").html(eval('opdata.name_'+lang));
         $("#op-name").html(eval('opdata.name_'+reg));
         var rarity = "";
@@ -211,7 +214,6 @@
             tr.append(td);
 
             if(itemdata.buildingProductList.length>0){
-                console.log(itemdata.buildingProductList);
                 var parentcount = v.count;
                 var formulaId = itemdata.buildingProductList[0].formulaId;
                 if(itemdata.buildingProductList[0].roomType == "MANUFACTURE"){
@@ -219,7 +221,6 @@
                 } else {
                     var formula = db.workshopformulas[formulaId];
                 }
-                console.log(formula);
                 var td = $("<td style=\"vertical-align:middle;\"></td>");
                 td.append("<div style=\"font-size:3em; font-weight: bold;\"><span><---</span></div>");
                 tr.append(td);
@@ -294,7 +295,6 @@
             case "jp":$('#display-lang').text("Japanese");break;
         }
         
-        console.log($('#display-reg'))
         localStorage.setItem("gameRegion", reg);
         localStorage.setItem("webLang", lang);
         getJSONdata("ui",function(data){
