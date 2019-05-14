@@ -220,7 +220,7 @@
             if(curChara.phases[num]){
                 // console.log(curChara.rarity+1)
                 // console.log(db.dataconst["evolveGoldCost"][curChara.rarity][num-1])
-                reqmats=([{"count":db.dataconst["evolveGoldCost"][curChara.rarity][num-1] 
+                reqmats=([{"count":(db.dataconst["evolveGoldCost"][curChara.rarity][num-1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
                             , "id" :4001
                             ,"type":"GOLD" }])
             }

@@ -114,7 +114,7 @@
             if (localStorage.lastChar != char_name) {
                 $(".tr-recommd:not(:contains('" + $(el).text() + "'))").hide();
                 let char = all_chars[char_name];
-                let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
+                let colors = { 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6" };
                 //console.log(char)
                 let tags_html = [];
                 $.each(char.tags, function (_, tag) {
@@ -163,7 +163,7 @@
                 
                 $("#tbody-recommend").append(
                     "<tr class=\"tr-chartag \"><td>#</td><td>" +
-                    "<button type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small btn-" + colors[char.level] +
+                    "<button type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small ak-rare-" + colors[char.level] +
                     " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ eval("char.name_"+reg) +"\" onclick=\"showChar(this)\">" + eval("char.name_"+lang) + "</button>\n" +
                     "</td><td>" + tags_html.join("") +""
                     // "</td><td>#</td>" 
@@ -373,7 +373,7 @@
                     let tags = comb.tags;
                     let tagsTL = comb.tagsTL
                     let chars_html = [];
-                    let colors = { 1: "dark", 2: "light", 3: "success", 4: "info", 5: "warning", 6: "danger" };
+                    let colors = { 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6" };
                     comb.possible.sort(function (a, b) {
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
@@ -381,7 +381,7 @@
                         let padding = localStorage.showName=='true' && localStorage.size <60? "padding-right: 8px" : "padding-right: 1px";
                         let style = localStorage.showImage=='true' ? "style=\"padding: 1px 1px;" + padding + ";\" " : "";
                         let buttonstyle = localStorage.size >25? "background-color: #AAA": "background-color: transparent";
-                        chars_html.push("<button type=\"button\" class=\" ak-shadow-small ak-btn btn btn-sm btn-" + colors[char.level] + " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"bottom\" onclick=\"showChar(this)\" " +style+"title=\""+ char.name +"\">");
+                        chars_html.push("<button type=\"button\" class=\" ak-shadow-small ak-btn btn btn-sm ak-rare-" + colors[char.level] + " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"bottom\" onclick=\"showChar(this)\" " +style+"title=\""+ char.name +"\">");
                         if(localStorage.showImage == 'true')chars_html.push("<img style=\""+buttonstyle+"\"height=\""+localStorage.size+"\" width=\""+localStorage.size+"\" src=\"./img/chara/"+ char.name_en +".png\">   " )
                         if(localStorage.size>60)chars_html.push("<div>")
                         if(localStorage.showName == 'true')chars_html.push(char.name_tl)

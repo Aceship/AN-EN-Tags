@@ -86,18 +86,18 @@
     <div style="padding-bottom:20px"></div>
     <!-- <div class="warning-sign"style="position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center">aaaaaaaaaaaaaaaaaaaaa</div> -->
     <div class="col-md-12 col-sm-12 " style="margin:auto;max-width:1000px;padding:0" >
-        <div class="col-12 ak-mid ak-shadow mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px" role="alert">
+        <div class="col-12 ak-bg ak-shadow mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px" role="alert">
             <div class="row" style="padding:0;padding-bottom: 4px">
                     <div class="col-12 btn btn-sm ak-btn ak-c-black ak-shadow-small ak-disable" style="padding:0" translate-id="operator-select">Select an operator :</div>
             </div>
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-5 ">
                     <input readonly type="text" name="opID" id="opID" style="display: none;">
                     <input style="margin-top: 10px;" type="text" autocomplete="off" class="form-control" name="opname" id="opname" onkeyup="populateOperators(this)" placeholder="Type in operator name . .">
-                    <div style="position: relative;"><ul class="ak-rare-bg" id="operatorsResult" style="display:none; position: absolute; z-index: 1; list-style-type: none; border: 1px solid lightgrey; padding: 5px;"><li style="cursor: pointer"></li></ul></div>
-                    <div class="col-12 op-statcard" style="background-color: white; margin-top: 10px; margin-bottom: 10px; border: 1px solid lightgrey; border-radius: 5px;padding: 0px">
+                    <div classstyle="position: relative;"><ul class="ak-c-black" id="operatorsResult" style="display:none; position: absolute; z-index: 1; list-style-type: none; padding: 5px;color:#222"><li style="cursor: pointer"></li></ul></div>
+                    <div class="col-12 op-statcard ak-c-black ak-rare-bg" style=" margin-top: 10px; margin-bottom: 10px; border-radius: 3px;padding: 0px">
                         <div class="row">
-                            <div class="col-6 col-sm-6" style="padding: 20px;margin: auto">
+                            <div class="col-6 col-sm-6 " style="padding: 20px;margin: auto;">
                                 <div style="position: relative;display: block; margin: 0 auto; width: 150px;z-index: 0;min-height:280px;margin:auto;background: #55555511">
                                     <div class="ak-shadow"style="display:flex;align-items:flex-end;;min-height:280px">
                                         <img style ="position:relative;z-index:1;"src="img/chara/empty.png" width="150" id="opImage">
@@ -119,10 +119,10 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-7" id="eliteReqMats" style="display:none;">
-                    <div class="dropdown" class="col-12"style="margin-top: 10px;">
-                        <div type="button" class="col-12 btn ak-c-black ak-dropdown-toggle " style="" data-toggle="dropdown" id="eliteDropBtn">
+                    <div class="dropdown col-12"style="margin-top: 10px;">
+                        <div type="button" class="col-12 btn ak-rare-bg ak-c-black ak-dropdown-toggle " style="" data-toggle="dropdown" id="eliteDropBtn">
                         </div>
-                        <div class="dropdown-menu col-12">
+                        <div class="dropdown-menu col-11">
                             <a class="dropdown-item" onclick="selectElite(1)">Elite 1</a>
                             <a class="dropdown-item" onclick="selectElite(2)">Elite 2</a>
                         </div>
