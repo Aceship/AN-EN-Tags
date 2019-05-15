@@ -324,6 +324,7 @@
                         var col1 = $("<div class=\"col-3\"></div>");
                         let itemdata = db.items[v.id];
                         let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
+                        console.log(itemdataTL.name_en);
                         let li = $("<div class=\"reqmats-container smallcontainer\"><li>"
                         +       "<div class=\"internal-container\" style=\"position: relative;\">"
                         +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
@@ -344,14 +345,11 @@
                             var formulaId = itemdata.buildingProductList[0].formulaId;
                             var skip = false;
                             console.log(itemdata.iconId);
-                            console.log(itemdata.buildingProductList[0].roomType)
                             if(itemdata.buildingProductList[0].roomType == "MANUFACTURE"){
                                 var formula = db.manufactformulas[formulaId];
                             } else {
                                 var formula = db.workshopformulas[formulaId];
                                 var check = db.items[formula.costs[0].id];
-                                console.log(itemdata.rarity);
-                                console.log(check.rarity);
                                 if(itemdata.rarity == check.rarity){
                                     if(itemdata.iconId.search("MTL_ASC") != -1 && check.iconId.search("MTL_ASC") != -1){
                                         skip = true;
