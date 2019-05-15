@@ -93,8 +93,11 @@
             <div class="row">
                 <div class="col-md-5 ">
                     <input readonly type="text" name="opID" id="opID" style="display: none;">
-                    <input style="margin-top: 10px;" type="text" autocomplete="off" class="form-control" name="opname" id="opname" onkeyup="populateOperators(this)" placeholder="Type in operator name . .">
-                    <div classstyle="position: relative;"><ul class="ak-c-black" id="operatorsResult" style="display:none; position: absolute; z-index: 1; list-style-type: none; padding: 5px;color:#222"><li style="cursor: pointer"></li></ul></div>
+                    <div class="row">
+                            <input style="margin-left: 15px;margin-top:5px" type="text" autocomplete="off" class="form-control col-8" name="opname" id="opname" onkeyup="populateOperators(this)" placeholder="Type in operator name . .">
+                            <div class="col-3 btn btn-sm ak-btn ak-rare-bg browse-btn" style="margin:auto;margin-right: 15px;margin-top:10px" onclick='populateOperators("Browse")' type="button">Browse</div>
+                    </div>
+                    <div style="position: relative;"><ul class="ak-c-black ak-browse" id="operatorsResult" style="display:none; position: absolute; z-index: 10; list-style-type: none; padding: 5px;color:#222"><li style="cursor: pointer"></li></ul></div>
                     <div class="col-12 op-statcard ak-c-black ak-rare-bg" style=" margin-top: 10px; margin-bottom: 10px; border-radius: 3px;padding: 0px">
                         <div class="row">
                             <div class="col-6 col-sm-6 " style="padding: 20px;margin: auto;">

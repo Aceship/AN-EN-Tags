@@ -44,9 +44,16 @@
         });
 
         $(window).click(function() {
-            $('#operatorsResult').html("");
-            $('#operatorsResult').hide();
+            // $('#operatorsResult').html("");
+            // $('#operatorsResult').hide();
         });
+        // $('.browse-btn').click(function(event){
+        //     console.log($('#operatorsResult').css("display") == "none")
+        //     if($('#operatorsResult').css("display") == "none"){
+        //         // console.log($('#operatorsResult'))
+        //         $('#operatorsResult').hide();
+        //     }
+        // });
         $('#operatorsResult').click(function(event){
             event.stopPropagation();
         });
@@ -122,40 +129,63 @@
     }
 
 
+
     function populateOperators(el){
-        if(el.value != ""){
+        // console.log(el)
+        if(($('#operatorsResult').css("display") == "block") &&el=="Browse"){
+            // console.log($('#operatorsResult').css("display") == "none" )
+            $('#operatorsResult').hide();
+            return;
+        }
+        if(el.value != ""||el=="Browse"){
             var result = [];
             $.each(db.chars2,function(_,char){
                 var languages = ['cn','en','jp','kr'];
                 var found = false;
-                for (var i = 0; i < languages.length; i++) {
-                    var charname = eval('char.name_'+languages[i]).toUpperCase();
-                    var input = el.value.toUpperCase();
-                    var search = charname.search(input);
-                    if(search != -1){
-                        found = true;
-                        break;
-                    };
+                if(el=="Browse"){
+                    
+                    found=true;
+                }else{
+                    for (var i = 0; i < languages.length; i++) {
+                        var charname = eval('char.name_'+languages[i]).toUpperCase();
+                        var input = el.value.toUpperCase();
+                        var search = charname.search(input);
+                        if(search != -1){
+                            found = true;
+                            break;
+                        };
+                    }
                 }
                 if(found){
+                    // console.log(char)
                     var name_cn = char.name_cn;
                     var name = eval('char.name_'+reg);
                     var nameTL = eval('char.name_'+lang);
                     var img_name = query(db.chars,"name",char.name_cn,true,true); 
-                    var rarity = img_name[Object.keys(img_name)].rarity + 1
+                    // console.log(Object.keys(img_name))
+                    var rarity = img_name[Object.keys(img_name)] ? img_name[Object.keys(img_name)].rarity + 1 : 0;
                     // console.log(rarity);
+                    if(rarity!=0)
                     result.push({'name':name,'name_cn':name_cn,'nameTL':nameTL,'img_name':Object.keys(img_name),rarity});
                 }
             });
+            console.log(result)
+            result.sort((a,b)=> b.rarity-a.rarity)
             if(result.length > 0){
                 $('#operatorsResult').html("");
                 $('#operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
-                    console.log(image)
-                    $("#operatorsResult").append("<li class=\"ak-shadow-small ak-mid ak-rare-"+result[i].rarity+"\"style=\"width:100%;cursor: pointer;margin-bottom:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"+image+result[i].nameTL+" ("+result[i].name+")"+"</li>");
+                    // console.log(image)
+                    if(el=="Browse"){
+                        $("#operatorsResult").append("<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;margin:0px;margin-bottom:2px;padding:0\" onclick=\"selectOperator('"+result[i].name_cn+"')\"><div style=\"white-space: nowrap;padding:0px;text-align:center \">"+image+"</div><div style=\"white-space: nowrap;padding:0px;text-align:center \">"+result[i].nameTL+"</div>"+"</li>");
+                    }else{
+                        $("#operatorsResult").append("<li class=\" ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"width:100%;cursor: pointer;margin-bottom:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"+image+result[i].nameTL+" ("+result[i].name+")"+"</li>");
+                    }
                 }
             }
+            console.log( $("#operatorsResult")  )
+            // $('#operatorsResult').show();
         } else {
             $('#operatorsResult').html("");
             $('#operatorsResult').hide();
