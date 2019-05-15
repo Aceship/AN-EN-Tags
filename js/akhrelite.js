@@ -178,7 +178,11 @@
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
                     // console.log(image)
                     if(el=="Browse"){
-                        $("#operatorsResult").append("<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;margin:0px;margin-bottom:2px;padding:0\" onclick=\"selectOperator('"+result[i].name_cn+"')\"><div style=\"white-space: nowrap;padding:0px;text-align:center \">"+image+"</div><div style=\"white-space: nowrap;padding:0px;text-align:center \">"+result[i].nameTL+"</div>"+"</li>");
+                        $("#operatorsResult").append(
+                            "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
+                            +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
+                            +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+result[i].nameTL+"</div>"
+                            +"</li>");
                     }else{
                         $("#operatorsResult").append("<li class=\" ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"width:100%;cursor: pointer;margin-bottom:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"+image+result[i].nameTL+" ("+result[i].name+")"+"</li>");
                     }
