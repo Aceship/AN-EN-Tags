@@ -9,6 +9,8 @@
     <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ak.css">
+    <link rel="stylesheet" href="css/akchardetail.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -86,11 +88,29 @@
     <!-- <div class="warning-sign"style="position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center">aaaaaaaaaaaaaaaaaaaaa</div> -->
     <div class="col-md-12 col-sm-12 " style="margin:auto;max-width:1000px;padding:0" >
         <div class="col-12 ak-back ak-shadow mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px" role="alert">
-            <div class="chara-detail-container ak-back">
+
+            <script src="js/chara-detail.js"></script>
+            <div class="chara-detail-container">
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-md-12 absolute">
+                        <div class="elite-sidenav"></div>
+                        <div class="chara-imagescontainer">
+                            <img class="chara-image" src="img/characters/char_102_texas_2.png">
+                        </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12 absolute">
+                        <div class="right-menu-container">
+                            <div class="elite-1 small-container ak-shadow">
+                                <p>Elite 1</p>
+                                <span>Required materials</span>
+                                <img src="img/ui/elite/1.png" width="100" style="float: right; margin-top: -45px;">
+                                <button class="btn btn-default" data-toggle="collapse" data-target="#elite1collapsible"><i class="fa fa-sort-down"></i></button>
+
+                                <div id="elite1collapsible" class="collapse">
+                                    Lorem ipsum dolor text....
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
