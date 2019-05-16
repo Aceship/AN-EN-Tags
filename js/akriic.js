@@ -89,8 +89,8 @@
                 if(element2.buffData){
                     element2.buffData.forEach(element3 => {
                         if(element3.buffId){
-                            // console.log(element3.buffId)
-                            charaBuff[element].push(element3.buffId)
+                            console.log(element3.buffId)
+                            charaBuff[element].push({"buffId":element3.buffId,"cond":element3.cond})
                         }
                     });
                     // console.log(buffId)
@@ -167,7 +167,7 @@
         Object.keys(charaBuff).forEach(element => {
             // charaFilter.push()
             let currChara=charaBuff[element]
-            if(currChara.find(search=> search.includes(type)))
+            if(currChara.find(search=> search.buffId.includes(type)))
             charaFilter.push({"name":element,"buff": currChara})
         });
         // console.log(charaFilter)
@@ -187,28 +187,29 @@
                             <div class="col-8 col-sm-10" style="margin:auto;padding:2px"> ` )
 
             for(i=0;i<charaRiic.length;i++){
-                console.log(element.buff[i])
+                // console.log(element.buff[i])
+                // console.log(building_chars[element].buffChar[i] )
                 extraInfo = ``
-                if(element.buff[i].includes("control")){
+                if(element.buff[i].buffId.includes("control")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-control" style="height:25px;margin:auto;padding:1px"> HQ </div>`
-                }else if(element.buff[i].includes("power")){
+                }else if(element.buff[i].buffId.includes("power")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-power" style="height:25px;margin:auto;padding:1px"> Power </div>`
-                }else if(element.buff[i].includes("manu")){
+                }else if(element.buff[i].buffId.includes("manu")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-manu" style="height:25px;margin:auto;padding:1px"> Manufacture </div>`
-                }else if(element.buff[i].includes("trade")){
+                }else if(element.buff[i].buffId.includes("trade")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-trade" style="height:25px;margin:auto;padding:1px"> Trading </div>`
-                }else if(element.buff[i].includes("workshop")){
+                }else if(element.buff[i].buffId.includes("workshop")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-workshop" style="height:25px;margin:auto;padding:1px"> Workshop </div>`
-                }else if(element.buff[i].includes("train")){
+                }else if(element.buff[i].buffId.includes("train")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-train" style="height:25px;margin:auto;padding:1px"> Training </div>`
-                }else if(element.buff[i].includes("dorm")){
+                }else if(element.buff[i].buffId.includes("dorm")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-dorm" style="height:25px;margin:auto;padding:1px"> Dorm </div>`
-                }else if(element.buff[i].includes("hire")){
+                }else if(element.buff[i].buffId.includes("hire")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-hire" style="height:25px;margin:auto;padding:1px"> Hiring </div>`
-                }else if(element.buff[i].includes("meet")){
+                }else if(element.buff[i].buffId.includes("meet")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px"> Meeting </div>`
-                    if(element.buff[i].includes("meet_spd&team")){
-                        let currbuff = (element.buff[i].match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
+                    if(element.buff[i].buffId.includes("meet_spd&team")){
+                        let currbuff = (element.buff[i].buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
                         // console.log(element.buff[i])
                         // console.log(currbuff[0])
                         if(currbuff[0]>0){
@@ -217,7 +218,19 @@
                         }
                     }
                 }
-                currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto"><div style="padding:5px;background:#222">${extraInfo}  ${charaRiic[i].name}</div><div style="padding-left:20px">${charaRiic[i].desc}</div></div>` )
+                let req =``
+                // console.log(`Lv.${element.buff[i].cond.level}/ Elite ${element.buff[i].cond.phase}`)
+                if(element.buff[i].cond.level>1){
+                    req = `Lv.${element.buff[i].cond.level}`
+                }
+                if(element.buff[i].cond.phase>0){
+                    req = req + ` Elite ${element.buff[i].cond.phase}`
+                }
+                if(req!=""){
+                    req = `<div class="btn btn-sm ak-disable ak-btn" style="height:25px;margin:auto;padding:1px;background:#0078BC;">Req: ${req}</div>`
+                }
+                console.log(req)
+                currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto"><div style="padding:5px;background:#222">${extraInfo}  ${charaRiic[i].name} ${req}</div><div style="padding-left:20px">${charaRiic[i].desc}</div></div>` )
             }
             currHtml.push(`</div></div> `)
         });
