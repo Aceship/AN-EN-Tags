@@ -30,7 +30,10 @@
     var d9 = $.getJSON("json/excel/skin_table.json",function(data){
             db["skintable"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9).then(function(){
+    var d10 = $.getJSON("json/tl-gender.json",function(data){
+            db["gender"] = data;
+        });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10).then(function(){
         $.holdReady(false);
     });
 
@@ -44,6 +47,9 @@
                 scrollTop : 0                       // Scroll to top of body
             }, 500);
         });
+
+        var vars = getUrlVars();
+        console.log(vars);
 
         $(window).click(function() {
             $('#operatorsResult').html("");
@@ -74,8 +80,24 @@
         if(typeof localStorage.selectedOPDetails === "undefined" || localStorage.selectedOPDetails == ""){
             localStorage.setItem("selectedOP","");
         } else {
-            selectedOP = localStorage.selectedOPDetails;
-            var opname = db.chars[selectedOP].name;
+            var curpath = window.location.search.split("?");
+            if(typeof curpath[1] != "undefined"){
+                var variables = curpath[1].split("?");
+                var char = {};
+                $.each(variables,function(_,v){
+                    var subvar = v.split("=");
+                    if(subvar[0] == "opname"){
+                        char = query(db.chars,"appellation",subvar[1],true,true);
+                    }
+                });
+                var opname;
+                $.each(char,function(key,v){
+                    opname = v.name;
+                })
+            } else {
+                selectedOP = localStorage.selectedOPDetails;
+                var opname = db.chars[selectedOP].name;
+            }
             selectOperator(opname);
         }
         $('.reg[value='+reg+']').addClass('selected');
@@ -147,7 +169,7 @@
     function selectOperator(opname){
         if(opname != ""){
             console.log("SELECT OPERATOR");
-            console.log(opname);
+            console.log(opname);   
             $("#opname").val("");
             $('#operatorsResult').html("");
             $('#operatorsResult').hide();
@@ -162,8 +184,12 @@
                 localStorage.selectedOPDetails = key;
                 return false
             });
+            var curpath = window.location.pathname.split("?");
+            history.pushState(null, '', curpath+'?opname='+opdataFull.appellation); 
+
+
             // use opdata to get the operator data based on tl-akhr.json
-            // use opdataFULL to get the operator data based on character_table.json
+            // use opdataFull to get the operator data based on character_table.json
 
             // Get operator elite skins
             var skinList = db.skintable.buildinEvolveMap[opdataFull.id];
@@ -178,6 +204,7 @@
             $("#tabs-opCG").html("");
             $("#elite-topnav").html("");
             $("#tabs-opData").html("");
+            $("#op-taglist").html("");
 
             for (var i = 0; i < opdataFull.phases.length; i++) {
                 var l = opdataFull.phases.length;
@@ -202,13 +229,11 @@
                 }
 
                 var skindata;
-                console.log(i)
                 if(!(skinList[i] in db.skintable.charSkins)){
                     skindata = db.skintable.charSkins[skinList[i-1]];
                 } else {
                     skindata = db.skintable.charSkins[skinList[i]];
                 }
-                console.log(skindata);
 
                 if(i == 0){
                     tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
@@ -229,13 +254,27 @@
                 $("#tabs-opData").html(tabcontent2);
             }
 
-            var rarity = "";
+            $("#op-nameTL").html(eval("opdata.name_"+lang));
+            $("#op-nameREG").html("["+eval("opdata.name_"+reg)+"]");
+
+            var gender = query(db.gender,"sex_cn",opdata.sex);
+            $("#op-gender").html(eval("gender.sex_"+lang));
+
+            var position = query(db.tags,"tag_cn",opdataFull.position);
+            $("#op-position").html(eval("position.tag_"+lang));
+
+            var type = query(db.classes,"type_cn",opdata.type);
+            $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
+
+
+            $("#op-rarity").html("");
+            $("#op-rarity").attr("class","op-rarity-"+opdata.level)
             for (var i = 0; i < opdata.level; i++) {
-                rarity = rarity + " ★";
+                $("#op-rarity").append("<i class='fa fa-star'></i>");
             }
 
             var tags_html = [];
-            $.each(opdata.tags,function(_,v){
+            $.each(opdataFull.tagList,function(_,v){
                 var tag = query(db.tags,"tag_cn",v);
                 if(tag){
                     var tagReg = eval('tag.tag_'+reg);
@@ -244,6 +283,7 @@
                             (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
                 }
             });
+            $("#op-taglist").append(tags_html);
         }
     }
 
@@ -266,7 +306,7 @@
                         +   "<p>Elite "+i+"</p>"
                         +   "<span>Required materials</span>"
                         +   "<img class='topright' src='img/ui/elite/"+i+".png' width='100'>"
-                        +   "<button class='btn btn-default' data-toggle='collapse' data-target='#elite"+i+"collapsible'><i class='fa fa-sort-down'></i></button>"
+                        +   "<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"collapsible'><i class='fa fa-sort-down'></i></button>"
                         +   "<div id='elite"+i+"collapsible' class='collapse'>"
                         +       "Lorem ipsum dolor text...."
                         +   "</div></div>");
@@ -346,4 +386,12 @@
             console.log("type: "+type+" fail: ");
             console.log(response);
         });
+    }
+
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+        });
+        return vars;
     }

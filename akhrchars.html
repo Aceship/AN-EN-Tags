@@ -117,13 +117,6 @@
                 <div class='col-md-12 absolute' style='overflow: hidden;'>
                     <img class='background' src='img/ui/chara/bg.png'>
                     <div class='chara-imagescontainer tab-content' id='tabs-opCG'>
-                        <div class='tab-pane container active' id='opCG_0_tab'>
-                            <img class='chara-image' src='img/characters/char_102_texas_2.png'>
-                        </div>
-                        <div class='tab-pane container fade' id='opCG_1_tab'>
-                        </div>
-                        <div class='tab-pane container fade' id='opCG_2_tab'>
-                        </div>
                     </div>
                 </div>
                 <div class='col-md-12 absolute'>
@@ -131,36 +124,44 @@
                         <div class='col-md-7 col-sm-12 left-col-menu'>
                             <div class='elite-sidenav'>
                             <ul class='nav nav-pills' id='elite-sidenav'>
-                                <li class='nav-item'>
-                                    <button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_2_tab'>
-                                        <img src='img/ui/elite/2-s.png'>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_1_tab'>
-                                        <img src='img/ui/elite/1-s.png'>
-                                    </button>
-                                </li>
-                                <li>
-                                    <button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_0_tab'>
-                                        <img src='img/ui/elite/0-s.png'>
-                                    </button>
-                                </li>
                             </ul>
                             </div>
                         </div>
                         <div class='col-md-5 col-sm-12 right-col-menu'>
                             <div class='right-menu-container'>
+                                <div style="position: relative;">
+                                    <div class="general-stats-container small-container ak-shadow">
+                                        <div id="op-rarity" style="padding: 10px 15px;"></div>
+                                        <span class="op-name">
+                                            <span id="op-nameTL" class="text-shadow"></span>
+                                            <span id="op-nameREG" class="text-shadow"></span>
+                                        </span>
+                                        <div class="general-statcard">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <p>Position: <span id="op-position"></span></p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p>Gender: <span id="op-gender"></span></p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <p>Tags:</p>
+                                                </div>
+                                                <div class="col-10">
+                                                    <div id="op-taglist"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="topright">
+                                            <div style="padding: 15px;">
+                                                <img id="op-classImage" class="ak-shadow" src="" style="width: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <ul class='nav nav-pills' style='padding-bottom: 30px;' id='elite-topnav'>
-                                    <li class='nav-item'>
-                                        <a class='btn tabbing-btns horiz tabbing-btns-left nav-link active' data-toggle='pill' href='#elite_0_tab'>Elite 0</a>
-                                    </li>
-                                    <li class='nav-item'>
-                                        <a class='btn tabbing-btns horiz tabbing-btns-middle nav-link' data-toggle='pill' href='#elite_1_tab'>Elite 1</a>
-                                    </li>
-                                    <li class='nav-item'>
-                                        <a class='btn tabbing-btns horiz tabbing-btns-right nav-link' data-toggle='pill' href='#elite_2_tab'>Elite 2</a>
-                                    </li>
                                 </ul>
                                 <div class='tab-content' id='tabs-opData'>
                                     <div class='tab-pane container active' id='elite_0_tab'>
@@ -180,7 +181,7 @@
                                             <p>Elite 1</p>
                                             <span>Required materials</span>
                                             <img class='topright' src='img/ui/elite/1.png' width='100'>
-                                            <button class='btn btn-default' data-toggle='collapse' data-target='#elite1collapsible'><i class='fa fa-sort-down'></i></button>
+                                            <button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite1collapsible'><i class='fa fa-sort-down'></i></button>
 
                                             <div id='elite1collapsible' class='collapse'>
                                                 Lorem ipsum dolor text....
