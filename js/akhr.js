@@ -165,7 +165,7 @@
                     "<tr class=\"tr-chartag \"><td>#</td><td>" +
                     "<button type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small ak-rare-" + colors[char.level] +
                     " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ eval("char.name_"+reg) +"\" onclick=\"showChar(this)\">" + eval("char.name_"+lang) + "</button>\n" +
-                    "</td><td>" + tags_html.join("") +""
+                    "<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small my-1\" style=\"background:#444\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+char.name_en.replace(/ /g,"_")   +"\" \">Detail</button></td><td>" + tags_html.join("") +""
                     // "</td><td>#</td>" 
                     +"</tr>"
                 );

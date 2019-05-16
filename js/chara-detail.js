@@ -100,7 +100,7 @@
                 $.each(variables,function(_,v){
                     var subvar = v.split("=");
                     if(subvar[0] == "opname"){
-                        char = query(db.chars,"appellation",subvar[1],true,true);
+                        char = query(db.chars,"appellation",subvar[1].replace(/_/g," "),true,true);
                     }
                 });
                 var opname;
@@ -215,7 +215,7 @@
                 return false
             });
             var curpath = window.location.pathname.split("?");
-            history.pushState(null, '', curpath+'?opname='+opdataFull.appellation); 
+            history.pushState(null, '', curpath+'?opname='+opdataFull.appellation.replace(/ /g,"_")); 
 
 
             // use opdata to get the operator data based on tl-akhr.json
