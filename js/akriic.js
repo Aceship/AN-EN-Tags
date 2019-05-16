@@ -190,9 +190,9 @@
             for(i=0;i<charaRiic.length;i++){
                 
                 if(type =="meet"){
-                    if(element.buff[i].includes("meet")){
+                    if(element.buff[i].includes("meet_spd&team")){
                         let currbuff = (element.buff[i].match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
-                        // console.log(element.buff[i])
+                        console.log(element.buff[i])
                         console.log(currbuff[0])
                         if(currbuff[0]>0){
                             extraInfo = `<div class="btn btn-sm ak-disable" style="height:25px;margin:auto;padding:1px;background:#F30"> Clue ${currbuff[0]}</div>`
