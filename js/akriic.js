@@ -168,39 +168,42 @@
             // charaFilter.push()
             let currChara=charaBuff[element]
             if(currChara.find(search=> search.includes(type)))
-            charaFilter.push(element)
+            charaFilter.push({"name":element,"buff": currChara})
         });
         // console.log(charaFilter)
         let currHtml = []
         $("#tbody-list").html("")
         charaFilter.forEach(element => {
-            let chara = db.chars[element]
-            let charaRiic = db.riic[element]
-            console.log(element)
-
-            // <div class="row">
-            //     <div class="col-4">
-            //             <div>waaa</div>
-            //             <div><img src="img/portraits/waaa_1.png" style="height:120px"></div>
-            //     </div>
-            //     <div class="col-8" style="margin:auto">
-            //             <div> Clue Collection·β</div>
-            //             <div> When stationed at Reception, clue collection speed +20%</div>
-            //     </div>
-            // </div>
+            let chara = db.chars[element.name]
+            let charaRiic = db.riic[element.name]
+            let extraInfo =""
+            console.log(element.name)
+            
             currHtml.push(`<div class="row" style="padding:5px;margin:5px;background:#333333">
                             <div class="col-4 col-sm-2" style="text-align:center;background:#111;padding:3px">
                                 
-                                <div style="padding-top:3px"><img src="img/avatars/${element}_1.png" style="height:120px"></div>
+                                <div style="padding-top:3px"><img src="img/avatars/${element.name}_1.png" style="height:120px"></div>
                                 <div style="margin:auto">${chara.appellation}</div>
                             </div>
-                            <div class="col-8 col-sm-10" style="margin:auto"> ` )
-            charaRiic.forEach(element2 => {
-                currHtml.push(`<div class="ak-c-black" style="padding:5px"><div style="background:#222">${element2.name}</div><div style="padding-left:20px">${element2.desc}</div></div>` )
-            });
+                            <div class="col-8 col-sm-10" style="margin:auto;padding:2px"> ` )
+
+            for(i=0;i<charaRiic.length;i++){
+                
+                if(type =="meet"){
+                    if(element.buff[i].includes("meet")){
+                        let currbuff = (element.buff[i].match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
+                        // console.log(element.buff[i])
+                        console.log(currbuff[0])
+                        if(currbuff[0]>0){
+                            extraInfo = `<div class="btn btn-sm ak-disable" style="height:25px;margin:auto;padding:1px;background:#F30"> Clue ${currbuff[0]}</div>`
+                        }
+                    }
+                }
+                currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto"><div style="padding:5px;background:#222">${charaRiic[i].name}  ${extraInfo} </div><div style="padding-left:20px">${charaRiic[i].desc}</div></div>` )
+            }
             currHtml.push(`</div></div> `)
         });
-        console.log(currHtml)
+        // console.log(currHtml)
         $("#tbody-list").html(currHtml.join().replace(/,/g,""))
     }
     function clickBtnClear(){
