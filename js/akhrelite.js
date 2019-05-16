@@ -169,7 +169,7 @@
                     result.push({'name':name,'name_cn':name_cn,'nameTL':nameTL,'img_name':Object.keys(img_name),rarity});
                 }
             });
-            console.log(result)
+            // console.log(result)
             result.sort((a,b)=> b.rarity-a.rarity)
             if(result.length > 0){
                 $('#operatorsResult').html("");
@@ -260,13 +260,15 @@
             }
         }
         reqmats = curChara.phases[num] ? reqmats.concat(curChara.phases[num].evolveCost) : undefined;
-        
-        console.log(reqmats)
+        // console.log(reqmats)
+        // console.log(reqmats)
         var html = [];
         $.each(reqmats,function(_,v){
             var itemdata = db.items[v.id];
-            console.log(itemdata)
+            
             var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
+            
+            // console.log(itemdataTL)
             html.push("<li>"
                     +       "<div class=\"internal-container\" style=\"position: relative;\">"
                     +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
@@ -304,8 +306,8 @@
                 } else {
                     var formula = db.workshopformulas[formulaId];
                     var check = db.items[formula.costs[0].id];
-                    console.log(itemdata.rarity);
-                    console.log(check.rarity);
+                    // console.log(itemdata.rarity);
+                    // console.log(check.rarity);
                     if(itemdata.rarity == check.rarity){
                         if(itemdata.iconId.search("MTL_ASC") != -1 && check.iconId.search("MTL_ASC") != -1){
                             skip = true;
@@ -318,13 +320,16 @@
                     tr.append(td);
                     var td2 = $("<td></td>");
                     $.each(formula.costs,function(_,v){
-                        console.log(td2);
+                        // console.log(td2);
 
                         var row1 = $("<div class=\"row\"></div>");
                         var col1 = $("<div class=\"col-3\"></div>");
                         let itemdata = db.items[v.id];
                         let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
-                        console.log(itemdataTL.name_en);
+                        if(!itemdataTL.name_en)console.log(itemdata.name)
+                        // console.log(itemdataTL.name_en);
+                        // console.log(itemdata.name)
+                        // console.log(itemdataTL)
                         let li = $("<div class=\"reqmats-container smallcontainer\"><li>"
                         +       "<div class=\"internal-container\" style=\"position: relative;\">"
                         +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
@@ -344,7 +349,7 @@
                             var parentcount2 = v.count*parentcount;
                             var formulaId = itemdata.buildingProductList[0].formulaId;
                             var skip = false;
-                            console.log(itemdata.iconId);
+                            // console.log(itemdata.iconId);
                             if(itemdata.buildingProductList[0].roomType == "MANUFACTURE"){
                                 var formula = db.manufactformulas[formulaId];
                             } else {
