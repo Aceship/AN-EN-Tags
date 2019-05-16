@@ -21,7 +21,7 @@
     var d6 = $.getJSON("json/tl-tags.json",function(data){
             db["tags"] = data;
         });
-    var d7 = $.getJSON("akmaterial.json",function(data){
+    var d7 = $.getJSON("json/akmaterial.json",function(data){
             db["itemstl"] = data;
         });
     var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){

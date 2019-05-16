@@ -7,6 +7,7 @@
     <title>Arknights Recruitment Calculator</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/multilingual.css">
+    <link rel="stylesheet" href="css/ak.css">
     <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -173,7 +174,7 @@
 		        </div>
 	        </div>
 	        <div class="col-md-6 col-sm-12">
-	        	<table class="table table-striped my-3">
+	        	<table class="table ak-table table-striped my-3">
 	                <thead class="thead-dark">
 	                    <tr>
 	                        <th scope="col" width="40%" class="text-right">Resource</th>
@@ -189,7 +190,7 @@
             
         </div>
         <hr />
-        <div class="row col-12 tutorial">
+        <div class="row col-12 tutorial ak-mid" style="margin:auto">
             <div class="col-12 col-sm-6 text-left">
                 <p><b>Maximum level of each star</b></p>
                 <p>1★：30</p>
@@ -229,7 +230,7 @@
             let charExpMap = [];
             let charUpCostMap = [];
             let evolveGoldCost = [];
-            $.getJSON("aklevel.json", function (data) {
+            $.getJSON("./json/aklevel.json", function (data) {
                 maxLevel = data['maxLevel'];
                 charExpMap = data['characterExpMap'];
                 charUpCostMap = data['characterUpgradeCostMap'];

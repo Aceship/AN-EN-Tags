@@ -199,7 +199,7 @@
 
             function loadMaterials(){
                 refresh();
-                $.getJSON("akmaterial.json", (data) => {
+                $.getJSON("./json/akmaterial.json", (data) => {
                     $.each(data, (_, v) => {
                         ms[v['name_cn']] = v;
                         mByLvl[v['level'] - 1].push(v['name_cn']);
