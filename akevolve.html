@@ -325,13 +325,20 @@
                         'compose': 0,
                         'lack': diff > 0 ? diff : 0
                     }
+                    // console.log(n)
+                    // console.log(counts[n])
                 });
                 for (let i = 4; i >= 0; i--) {
                     $.each(mByLvl[i], (_, n) => {
                         $.each(ms[n].madeof, (mon, moc) => {
-                            counts[mon].upper += moc * counts[n].lack;
-                            let diff = counts[mon].need + counts[mon].upper - counts[mon].have;
-                            counts[mon].lack = diff > 0 ? diff : 0;
+                            if(counts[mon]){
+                                counts[mon].upper += moc * counts[n].lack;
+                                let diff = counts[mon].need + counts[mon].upper - counts[mon].have;
+                                counts[mon].lack = diff > 0 ? diff : 0;
+                            }else{
+                                console.log(n + " error")
+                            }
+                            
                         });
                     });
                 }
