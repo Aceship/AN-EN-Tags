@@ -119,6 +119,20 @@
         $('.lang[value='+lang+']').addClass('selected');
     });
 
+    function clickBtnClear(){
+        $("#chara-detail-container").hide();
+        $("#elite-sidenav").html("");
+        $("#tabs-opCG").html("");
+        $("#elite-topnav").html("");
+        $("#tabs-opData").html("");
+        $("#op-taglist").html("");
+        $("#opname").val("");
+        $('#operatorsResult').html("");
+        $('#operatorsResult').hide();
+        localStorage.selectedOPDetails = "";
+        history.pushState(null, '', window.location.pathname); 
+    }
+
     function populateOperators(el){
         // console.log(el)
         if(($('#operatorsResult').css("display") == "block") && el=="Browse"){
@@ -228,11 +242,11 @@
                     if(l == 1){
                         tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns active'>"
                             + "<img src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
-                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz nav-link active' data-toggle='pill' href='#elite_0_tab'>Elite 0</a></li>");
+                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz nav-link active' data-toggle='pill' href='#elite_0_tab'>Non-Elite</a></li>");
                     } else {
                         tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_"+i+"_tab'>"
                                             + "<img src='img/ui/elite/0-s.png'></button></li>");
-                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz tabbing-btns-left nav-link active' data-toggle='pill' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
+                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz tabbing-btns-left nav-link active' data-toggle='pill' href='#elite_"+i+"_tab'>Non-Elite</a></li>");
                     }
                 } else if( i == l-1 ){
                     tabbtn[0] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_"+i+"_tab'>"
@@ -315,21 +329,65 @@
                         +       "<div class='ring'>"
                         +           "<div class='back ak-shadow'></div>"
                         +           "<div class='back-centre'></div>"
-                        +       "</div></div></div>");
+                        +       "</div>"
+                        +   "</div>"
+                        +"<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
+                        +"</div>");
+
+        var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse eliteStatsContainer ak-shadow'></div>");
+
+        var navPills = $("<ul class='nav nav-pills'></ul>");
+        var navTabs = $("<div class='tab-content'>");
+        $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
+            console.log(j);
+            var keyframe = opdataFull.phases[i].attributesKeyFrames[j];
+            console.log(keyframe)
+            var navItems = $("<li class='nav-item'>"
+                            +   "<a class='btn tabbing-btns horiz nav-link "+(j!=0 ? '' : 'active')+"' data-toggle='pill' href='#elite"+i+"Stats"+j+"'>lv "+keyframe.level+"</a>"
+                            +"</li>");
+            if(keyframe.data["respawnTime"] >= 100){
+                var deploy = "Slow";
+            } else if(keyframe.data["respawnTime"] < 100 && keyframe.data["respawnTime"] >= 30){
+                var deploy = "Medium";
+            } else {
+                var deploy = "Fast";
+            }
+            var tabStats = $("<div class='tab-pane container "+(j!=0 ? 'fade' : 'active')+"' id='elite"+i+"Stats"+j+"'>"
+                            +   "<table id='elite"+i+"Stats"+j+"Table'>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>MaxHP :</td><td class='stats-r'>"+keyframe.data["maxHp"]+"</td>"
+                            +           "<td class='stats-l'>Deploy :</td><td class='stats-r'>"+deploy+"</td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>Atk :</td><td class='stats-r'>"+keyframe.data["atk"]+"</td><td class='stats-l'>Cost :</td><td class='stats-r'>"+keyframe.data["cost"]+"</td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>Def :</td><td class='stats-r'>"+keyframe.data["def"]+"</td><td class='stats-l'>Block :</td><td class='stats-r'>"+keyframe.data["blockCnt"]+"</td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td><td class='stats-l'>AtkSp :</td><td class='stats-r'>"+keyframe.data["attackSpeed"]+"</td>"
+                            +       "</tr>"
+                            +   "</table></div>");
+            navPills.append(navItems);
+            navTabs.append(tabStats);
+        });
+        statsCollapsible.append(navPills);
+        statsCollapsible.append(navTabs);
 
         if(i > 0){
             var mats = $("<div class='small-container ak-shadow'>"
                         +   "<p>Elite "+i+"</p>"
                         +   "<span>Required materials</span>"
                         +   "<img class='topright' src='img/ui/elite/"+i+".png' width='100'>"
-                        +   "<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"collapsible'><i class='fa fa-sort-down'></i></button>"
-                        +   "<div id='elite"+i+"collapsible' class='collapse'>"
+                        +   "<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"MatsCollapsible'><i class='fa fa-sort-down'></i></button>"
+                        +   "<div id='elite"+i+"MatsCollapsible' class='collapse'>"
                         +       "Lorem ipsum dolor text...."
                         +   "</div></div>");
         } else {
             var mats = $("");
         }
         container.append(stats);
+        container.append(statsCollapsible);
         container.append(mats);
         return container;
     }
