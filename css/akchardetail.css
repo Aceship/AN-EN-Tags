@@ -1,15 +1,37 @@
+body {
+    overflow: unset;
+}
+
+
+
 .chara-detail-container {
     width: 100%; 
-    height: 500px;
+    height: 100vw;
+    max-height: 700px;
     background-color: lightgrey;
+    margin-top: 20px;
+}
+
+.chara-detail-container .background {
+    height: 100%;
+    max-height: 700px;
+    margin: 0 auto;
+    display: block;
+    position: absolute;
 }
 
 .chara-detail-container .absolute {
     position: absolute;
+    height: 100%;
+    padding: unset;
+    left: 0;
 }
 
 .chara-detail-container .chara-image {
-    max-height: 600px;
+    height: auto;
+    width: auto;
+    max-height: 700px;
+    max-width: 100vw;
     margin: 0 auto;
     display: block;
 
@@ -17,9 +39,8 @@
 
 .chara-detail-container .chara-imagescontainer {
     overflow: hidden;
-    max-height: 500px;
-    width: 100%;
-    left: -13%;
+    width: 120%;
+    left: -25%;
     position: absolute;
 }
 
@@ -37,12 +58,13 @@
     background-color: #4f4f4f;
     color: #999999;
     position: relative;
+    margin-top: 33px;
 }
 .chara-detail-container .small-container p {
     position: absolute;
     color: #636363;
     font-size: 4em;
-    top: -0.1em;
+    top: -0.3em;
     font-family: 'Novecentosanswide Normal', Arial, sans-serif;
 }
 .chara-detail-container .small-container span {
@@ -51,6 +73,55 @@
     font-size: 1.2em;
     position: absolute;
     color: white;
+}
+
+.chara-detail-container .small-container .topright {
+    float: right; 
+    margin-top: -50px;
+    width: 110px;
+    position: relative;
+}
+
+.chara-detail-container .small-container .maxlevel > .ring {
+    width: 110px;
+    height: 110px;
+    position: relative;
+}
+
+.chara-detail-container .small-container .maxlevel > .ring .back {
+    position: absolute;
+    background-color: #636363;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+}
+
+.chara-detail-container .small-container .maxlevel > .ring .back-centre {
+    position: absolute;
+    background-color: #4f4f4f;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    top: 20px;
+    left: 20px;
+    border-radius: 50%;
+}
+
+.chara-detail-container .small-container .maxlevel > .maxleveltext {
+    z-index: 1;
+    position: absolute;
+    font-size: 0.8em;
+    left: -76px;
+    top: 33px;
+}
+
+.chara-detail-container .small-container .maxlevel > .leveltext {
+    z-index: 1;
+    font-size: 4.4em;
+    padding: 15px;
+    line-height: 70px;
+    font-family: 'Novecentosanswide Normal', Arial, sans-serif;
 }
 
 .chara-detail-container .small-container button {
@@ -80,4 +151,89 @@
     background-color: #666666;
     width: 100%;
     padding-top: 10px;
+}
+
+.chara-detail-container .elite-sidenav {
+    max-width: 80px;
+    margin-top: 70px;
+    margin-left: 20px;
+    display: inline-block;
+    height: 100%;
+}
+
+.chara-detail-container .tabbing-btns {
+    height: 100px;
+    width: 50px;
+    padding: 10px 0px;
+    border: 1px solid #262626;
+    color: white;
+    background-color: #2f2f2f;
+}
+
+.chara-detail-container .tabbing-btns.horiz {
+    height: 50px;
+    width: 100px;
+}
+
+.chara-detail-container .tabbing-btns.active {
+    background-color: #4f4f4f;
+    border: 1px solid #3a3a3a; 
+}
+
+.chara-detail-container .tabbing-btns:hover {
+    background-color: #666666;
+}
+
+.chara-detail-container .tabbing-btns:hover:focus {
+    background-color: #4f4f4f;
+}
+
+.chara-detail-container .tabbing-btns-top {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.chara-detail-container .tabbing-btns-left {
+    border-radius: 5px 0px 0px 5px;
+}
+
+.chara-detail-container .tabbing-btns-middle {
+    border-radius: 0px;
+}
+
+.chara-detail-container .tabbing-btns-right {
+    border-radius: 0px 5px 5px 0px;
+}
+
+.chara-detail-container .tabbing-btns-bottom {
+    border-radius: 0px 0px 5px 5px;
+}
+
+.chara-detail-container .tab-pane {
+    padding: unset;
+}
+
+@media (max-width: 1220px ){
+    .chara-detail-container {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px ){
+    .chara-detail-container .left-col-menu {
+        height: 100vw;
+    }
+    .chara-detail-container .right-col-menu {
+
+    }
+
+    .chara-detail-container .right-menu-container {
+        max-width: 100vw;
+    }
+
+    .chara-detail-container .chara-imagescontainer {
+        overflow: hidden;
+        width: 120%;
+        left: -17%;
+        position: absolute;
+    }
 }
