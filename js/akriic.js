@@ -203,8 +203,8 @@
             }
             currHtml.push(`</div></div> `)
         });
-        // console.log(currHtml)
-        $("#tbody-list").html(currHtml.join().replace(/,/g,""))
+        console.log(currHtml)
+        $("#tbody-list").html(currHtml.join(""))
     }
     function clickBtnClear(){
         $("#opname").val("");
