@@ -222,6 +222,7 @@
             console.log(lang);
             $("#op-nametl").html(eval('opdata.name_'+lang));
             $("#op-name").html(eval('opdata.name_'+reg));
+            $("#detail").html("<a type=\"button\" class=\"btn btn-sm ak-btn my-1\" style=\"font-weight:500;background:#00000077\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+opdata.name_en.replace(/ /g,"_")   +"\" \">Detail</button>")
             var rarity = "";
             for (var i = 0; i < opdata.level; i++) {
                 rarity = rarity + " ★";
