@@ -48,9 +48,6 @@
             }, 500);
         });
 
-        var vars = getUrlVars();
-        console.log(vars);
-
         $(window).click(function() {
             $('#operatorsResult').html("");
             $('#operatorsResult').hide();
@@ -71,15 +68,31 @@
             localStorage.setItem("webLang", 'en');
             reg = "cn";
             lang = "en";
+
+            var vars = getUrlVars();
+            if(typeof vars.opname != "undefined"){
+                console.log("TEST1")
+            }
         } else {
             console.log(localStorage.webLang);
             reg = localStorage.gameRegion;
             lang = localStorage.webLang;
         }
-
         if(typeof localStorage.selectedOPDetails === "undefined" || localStorage.selectedOPDetails == ""){
-            localStorage.setItem("selectedOP","");
+            console.log("selected OP undefined");
+            var vars = getUrlVars();
+            if(typeof vars.opname != "undefined"){
+                var char = query(db.chars,"appellation",vars.opname,true,true);
+                var opname;
+                $.each(char,function(key,v){
+                    opname = v.name;
+                });
+                selectOperator(opname);
+            } else {
+                localStorage.setItem("selectedOP","");
+            }
         } else {
+            console.log("selected OP defined");
             var curpath = window.location.search.split("?");
             if(typeof curpath[1] != "undefined"){
                 var variables = curpath[1].split("?");
@@ -100,6 +113,8 @@
             }
             selectOperator(opname);
         }
+
+        console.log("TEST")
         $('.reg[value='+reg+']').addClass('selected');
         $('.lang[value='+lang+']').addClass('selected');
     });
@@ -168,6 +183,7 @@
 
     function selectOperator(opname){
         if(opname != ""){
+            $("#chara-detail-container").show();
             console.log("SELECT OPERATOR");
             console.log(opname);   
             $("#opname").val("");
