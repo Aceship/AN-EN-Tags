@@ -113,8 +113,11 @@
                             
                     </div>
                     <div class="row">
-
-                            <div class="col-12" style="text-align:center;padding:10px"><a style="padding:10px" href="https://search.bilibili.com/video?keyword=明日方舟" id="link">https://search.bilibili.com/video?keyword=明日方舟</a></div>
+                            <div class="col-12" style="text-align:center;padding-top:10px">Link :</div>
+                            <div class="col-12" style="text-align:center"><a style="padding:10px" href="https://search.bilibili.com/video?keyword=明日方舟" id="link">https://search.bilibili.com/video?keyword=明日方舟</a></div>
+                            
+                            <div class="col-12" style="text-align:center;padding-top:10px">Mobile Link :</div>
+                            <div class="col-12" style="text-align:center"><a style="padding:10px" href="https://m.bilibili.com/search.html ?keyword=明日方舟" id="mlink">https://m.bilibili.com/search.html ?keyword=明日方舟</a></div>
                     </div>
                 </div>
             </div>
@@ -146,10 +149,13 @@
     <script src="./js/jsondbsystem.js"></script>
     <script>
     let link="https://search.bilibili.com/video?keyword=明日方舟"
+    let mlink = "https://m.bilibili.com/search.html?keyword=明日方舟"
     function populateOperators(el){
         console.log(el.value)
         $('#link').html(link+el.value);
         $('#link').attr("href",link+el.value)
+        $('#link').html(mlink+el.value);
+        $('#link').attr("href",mlink+el.value)
         // $("#link").value = link+el.value
         // $(el)
     }
