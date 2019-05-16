@@ -208,13 +208,32 @@
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-hire" style="height:25px;margin:auto;padding:1px"> Hiring </div>`
                 }else if(element.buff[i].buffId.includes("meet")){
                     extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px"> Meeting </div>`
+
                     if(element.buff[i].buffId.includes("meet_spd&team")){
-                        let currbuff = (element.buff[i].buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
-                        // console.log(element.buff[i])
-                        // console.log(currbuff[0])
-                        if(currbuff[0]>0){
+                        let currbuff = db.building_buff[element.buff[i].buffId].description
+                        // (element.buff[i].buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
+                        
+                        
+                        // console.log(currbuff.indexOf("<@cc.kw>"))
+                        
+                        console.log(currbuff.indexOf("<@cc.kw>"))
+                        if(currbuff.indexOf("<@cc.kw>")>0){
+                            let clue = ''
+                            currbuff = currbuff.slice(currbuff.indexOf("<@cc.kw>")+8,currbuff.length)
+                            currbuff = currbuff.slice(0,currbuff.indexOf("</>"))
+                            // console.log(db.building_buff[element.buff[i].buffId].description)
+                            console.log()
+                            switch (currbuff) {
+                                case "莱茵生命": clue = 1;break;
+                                case "企鹅物流": clue = 2;break;
+                                case "黑钢国际": clue = 3;break;
+                                case "乌萨斯学生自治团": clue = 4;break;
+                                case "格拉斯哥帮": clue = 5;break;
+                                case "喀兰贸易": clue = 6;break;
+                                case "罗德岛制药": clue = 7;break;
+                            }
                             extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px"> Meeting </div>
-                                         <div class="btn btn-sm ak-disable ak-btn ak-riic-meet-clue" style="height:25px;margin:auto">${currbuff[0]}</div>`
+                                         <div class="btn btn-sm ak-disable ak-btn ak-riic-meet-clue" style="height:25px;margin:auto">${clue}</div>`
                         }
                     }
                 }
