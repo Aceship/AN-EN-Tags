@@ -180,8 +180,7 @@
             console.log(element.name)
             
             currHtml.push(`<div class="row" style="padding:5px;margin:5px;background:#333333">
-                            <div class="col-4 col-sm-2" style="text-align:center;background:#111;padding:3px">
-                                
+                            <div class="col-4 col-sm-2" style="text-align:center;padding:3px;margin:auto">
                                 <div style="padding-top:3px"><img src="img/avatars/${element.name}_1.png" style="height:120px"></div>
                                 <div style="margin:auto">${chara.appellation}</div>
                             </div>
@@ -214,7 +213,7 @@
                         // console.log(currbuff[0])
                         if(currbuff[0]>0){
                             extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px"> Meeting </div>
-                                         <div class="btn btn-sm ak-disable ak-btn ak-back" style="height:25px;margin:auto;padding:1px">${currbuff[0]}</div>`
+                                         <div class="btn btn-sm ak-disable ak-btn ak-riic-meet-clue" style="height:25px;margin:auto">${currbuff[0]}</div>`
                         }
                     }
                 }
