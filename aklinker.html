@@ -53,7 +53,7 @@
                             <a class="dropdown-item" href="akevolve.html" translate-id="topbar-6">Material</a>
                         </div>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="akhrelite.html" translate-id="topbar-3">Elite Materials</a>
                     </li>
                     <li class="nav-item">
@@ -62,13 +62,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="akhrchars.html" translate-id="topbar-7">Operator Details</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown active">
                             <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
                                     <div class="ak-subtitle ak-disable">Extra</div>
                                     <div class="ak-disable">Menu</div>
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="aklinker.html">bilibili Linker</a>
+                                <a class="dropdown-item" href="aklinker.html" >bilibili Linker</a>
                             </div>
                     </li>
                 </ul>
@@ -103,98 +103,26 @@
     <div class="col-md-12 col-sm-12 " style="margin:auto;max-width:1000px;padding:0" >
         <div class="col-12 ak-bg ak-shadow mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px" role="alert">
             <div class="row" style="padding:0;padding-bottom: 4px">
-                    <div class="col-12 btn btn-sm ak-btn ak-c-black ak-shadow-small ak-disable" style="padding:0" translate-id="operator-select">Select an operator :</div>
+                    <div class="col-12 btn btn-sm ak-btn ak-c-black ak-shadow-small ak-disable" style="padding:0" translate-id="operator-select">Fast Linker To guide :</div>
             </div>
             <div class="row">
-                <div class="col-md-5 ">
+                <div class="col-12 ">
                     <input readonly type="text" name="opID" id="opID" style="display: none;">
                     <div class="row">
-                            <input style="margin-left: 15px;margin-top:5px" type="text" autocomplete="off" class="form-control col-8" name="opname" id="opname" onkeyup="populateOperators(this)" placeholder="Type in operator name . .">
-                            <div class="col-3 btn btn-sm ak-btn ak-rare-bg browse-btn" style="margin:auto;margin-right: 15px;margin-top:10px" onclick='populateOperators("Browse")' type="button">Browse</div>
+                            <input style="margin-left: 15px;margin-right: 15px;margin-top:5px;text-align: center" type="text" autocomplete="off" class="form-control" name="opname" id="opname" onkeyup="populateOperators(this)" placeholder="Type Stage Number (ex: LS-1 , 3-8)">
+                            
                     </div>
-                    <div style="position: relative;"><ul class="ak-c-black ak-browse" id="operatorsResult" style="display:none; position: absolute; z-index: 10; list-style-type: none; padding: 5px;color:#222"><li style="cursor: pointer"></li></ul></div>
-                    <div class="col-12 op-statcard ak-c-black ak-rare-bg" style=" margin-top: 10px; margin-bottom: 10px; border-radius: 3px;padding: 0px">
-                        <div class="row">
-                            <div class="col-6 col-sm-6 " style="padding: 20px;margin: auto;">
-                                <div style="position: relative;display: block; margin: 0 auto; width: 150px;z-index: 0;min-height:280px;margin:auto;background: #55555511">
-                                    <div class="ak-shadow"style="display:flex;align-items:flex-end;;min-height:280px">
-                                        <img style ="position:relative;z-index:1;"src="img/chara/empty.png" width="150" id="opImage">
-                                        <img  style ="position:absolute;left: 0px; top: 0px;z-index:0" src="" width="150" id="opHeader">
-                                        <img  style ="position:absolute;left: 0px; bottom: 0px;z-index:0" src="" width="150" id="opBg">
-                                        <img  style ="position:absolute;left: 0px; bottom: 40px;z-index:2" src="" width="150" id="opGlow">
-                                        <img  style ="position:absolute;left: -2px; bottom:-5px;z-index:3" src="" width="158" id="opBanner">
-                                    </div> 
-                                    <img class="ak-shadow-small" style="display: block; z-index:3;position: absolute; left: 4px; top: 4px; margin: 0 auto; width: 35px;" src="" id="opClassImage">
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6" style="padding: 5px;margin: auto">
-                                <b><p id="op-nametl"></p></b>
-                                <p id="op-rarity"></p>
-                                <p id="op-name"></p>
-                                <div style="" id="op-tags"></div>
-                            </div>
-                        </div>
+                    <div class="row">
+
+                            <div class="col-12" style="text-align:center;padding:10px"><a style="padding:10px" href="https://search.bilibili.com/video?keyword=明日方舟" id="link">https://search.bilibili.com/video?keyword=明日方舟</a></div>
                     </div>
                 </div>
-                <div class="col-12 col-md-7" id="eliteReqMats" style="display:none;">
-                    <div class="dropdown col-12"style="margin-top: 10px;">
-                        <div type="button" class="col-12 btn ak-rare-bg ak-c-black ak-dropdown-toggle " style="" data-toggle="dropdown" id="eliteDropBtn">
-                        </div>
-                        <div class="dropdown-menu col-11">
-                            <a class="dropdown-item" onclick="selectElite(1)">Elite 1</a>
-                            <a class="dropdown-item" onclick="selectElite(2)">Elite 2</a>
-                        </div>
-                    </div>
-                    <p style="margin-top: 10px;"><b>Requirement Materials: </b></p>
-                    <div class="reqmats-container" id="reqmats-container">
-                        <li>
-                            <div style="position: relative;">
-                                <div class="item-name">Test</div>
-                                <div class="item-image">
-                                    <span></span>
-                                    <img id="item-image" src="img/items/MTL_ASC_CST3.png">
-                                </div>
-                                <img id="item-rarity" src="img/material/bg/item-5.png" width="150">
-                                <div class="item-amount">3x</div>
-                            </div>
-                        </li>
-                        <li>
-                            <div style="position: relative;">
-                                <div class="item-name">Test</div>
-                                <div class="item-image">
-                                    <span></span>
-                                    <img id="item-image" src="img/items/MTL_ASC_CST3.png">
-                                </div>
-                                <img id="item-rarity" src="img/material/bg/item-5.png" width="150">
-                                <div class="item-amount">3x</div>
-                            </div>
-                        </li>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                    <button class="btn btn-danger col-12 align-self-center ak-btn text-center" style="padding:1px ; z-index: 0;font-weight: 550" onclick="clickBtnClear()" ><span translate-id="selector-clear">Clear</span> <span id="count-tag"></a> </button>
             </div>
     </div>
-        <table class="table ak-table ak-table-striped table-hover my-3 ak-shadow" id="table-recommend">
-            <thead class="ak-thead">
-                <tr>
-                    <th scope="col" colspan="10" style="text-align: center;">Detailed Breakdown</th>
-                    
-                </tr>
-            </thead>
-            <tbody id="tbody-materials"style="position: relative;z-index:0;">
-            </tbody>
-        </table>
+       
         <div class="col-12 tutorial">
             <div class="col-12 text-left ak-mid ak-shadow" style="padding:10px" >
-                <p translate-id="footer-instructions-1">How To Use ：</p>
-                <p translate-id="footer-instructions-2">1. Change the 'Game Server' drop down on the top right according to your AK client region.</p>
-                <p translate-id="footer-instructions-3">2. Change the language of the user interface to your preference.</p>
-                <p translate-id="footer-instructions-4">3. Click on the tags, up to 6 tags.</p>
-                <p translate-id="footer-instructions-5">4. You can hover on the tags to see the translation.</p>
-                <p translate-id="footer-instructions-6">5. You can also hide or show the name and/or the image of the operators.</p>
-                <p translate-id="footer-instructions-7">6. Click 'clear' to reset all the tag selections.</p>
+                <p >Easily search guide from this</p>
             </div>
         </div>
         <!-- <div class="col-12 alert alert-success mt-1 cn" role="alert">
@@ -216,6 +144,15 @@
         </div>
     </div>
     <script src="./js/jsondbsystem.js"></script>
-    <script src="./js/akhrelite.js"></script>
+    <script>
+    let link="https://search.bilibili.com/video?keyword=明日方舟"
+    function populateOperators(el){
+        console.log(el.value)
+        $('#link').html(link+el.value);
+        $('#link').attr("href",link+el.value)
+        // $("#link").value = link+el.value
+        // $(el)
+    }
+    </script>
 </body>
 </html>
