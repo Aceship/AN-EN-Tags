@@ -181,7 +181,6 @@
 
             for (var i = 0; i < opdataFull.phases.length; i++) {
                 var l = opdataFull.phases.length;
-                console.log("i="+i+" l="+l);
                 if(i == 0){
                     if(l == 1){
                         tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns active'>"
