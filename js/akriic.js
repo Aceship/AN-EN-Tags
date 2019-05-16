@@ -190,24 +190,25 @@
                 // console.log(element.buff[i])
                 // console.log(building_chars[element].buffChar[i] )
                 extraInfo = ``
+
                 if(element.buff[i].buffId.includes("control")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-control" style="height:25px;margin:auto;padding:1px"> HQ </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-control" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px">HQ </div>`
                 }else if(element.buff[i].buffId.includes("power")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-power" style="height:25px;margin:auto;padding:1px"> Power </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-power" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px">Power </div>`
                 }else if(element.buff[i].buffId.includes("manu")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-manu" style="height:25px;margin:auto;padding:1px"> Manufacture </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-manu" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
                 }else if(element.buff[i].buffId.includes("trade")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-trade" style="height:25px;margin:auto;padding:1px"> Trading </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-trade" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px">Trading </div>`
                 }else if(element.buff[i].buffId.includes("workshop")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-workshop" style="height:25px;margin:auto;padding:1px"> Workshop </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-workshop" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px">Workshop </div>`
                 }else if(element.buff[i].buffId.includes("train")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-train" style="height:25px;margin:auto;padding:1px"> Training </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-train" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px">Training </div>`
                 }else if(element.buff[i].buffId.includes("dorm")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-dorm" style="height:25px;margin:auto;padding:1px"> Dorm </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-dorm" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px">Dorm </div>`
                 }else if(element.buff[i].buffId.includes("hire")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-hire" style="height:25px;margin:auto;padding:1px"> Hiring </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-hire" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px">Hiring </div>`
                 }else if(element.buff[i].buffId.includes("meet")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px"> Meeting </div>`
+                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>`
 
                     if(element.buff[i].buffId.includes("meet_spd&team")){
                         let currbuff = db.building_buff[element.buff[i].buffId].description
@@ -232,7 +233,7 @@
                                 case "喀兰贸易": clue = 6;break;
                                 case "罗德岛制药": clue = 7;break;
                             }
-                            extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px"> Meeting </div>
+                            extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
                                          <div class="btn btn-sm ak-disable ak-btn ak-riic-meet-clue" style="height:25px;margin:auto">${clue}</div>`
                         }
                     }
