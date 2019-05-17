@@ -170,15 +170,9 @@
                     }
                 }
                 if(found){
-                    // console.log(char)
                     var id = enemy.enemyId;
                     var name = enemy.name;
                     var sortId = enemy.sortId;
-                    // var name = eval('char.name_'+reg);
-                    // var nameTL = eval('char.name_'+lang);
-                    // console.log(Object.keys(img_name))
-                    // console.log(rarity);
-                    // if(rarity!=0)
                     result.push({'id':id,'name':name,'sortId':sortId});
                 }
             });
@@ -191,22 +185,16 @@
                 for (var i = 0; i < result.length; i++) {
                     let currEnemy = query(db.enemy,"enemyId",result[i].id)
                     let image = `<img style="height:80px;padding:1px" src="./img/enemy/${result[i].id}.png">  `
-                    console.log(currEnemy)
+                    // console.log(currEnemy)
 
                     if(el=="Browse"){
-                        currHtml.push(`<li class="ak-btn ak-enemy" style="display:inline-block;cursor: pointer;width:90px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px"> 
+                        currHtml.push(`<li class="ak-btn ak-enemy" style="display:inline-block;cursor: pointer;width:90px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px" onclick="selectEnemy('${result[i].id}')"> 
                         <div class="col-12"style="white-space: nowrap;padding:0px;text-align:center;margin:0px ">
                             <div style="position:absolute;top:-2px;left:2px;white-space: nowrap;padding:3px;padding-top:1px;padding-bottom:0px;margin:0px;background:#222">${currEnemy.enemyIndex}</div>
                             ${image}
                         </div>
                         
                         </li>`)
-                        // $("#enemyResult").append();
-                        // $("#enemyResult").append(
-                        //     "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
-                        //     +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
-                        //     +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+result[i].nameTL+"</div>"
-                        //     +"</li>");
                     }else{
                         // $("#operatorsResult").append("<li class=\" ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"width:100%;cursor: pointer;margin-bottom:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"+image+result[i].nameTL+" ("+result[i].name+")"+"</li>");
                     }
@@ -214,11 +202,15 @@
             }
             $("#enemyResult").append(currHtml.join(""));
             // console.log( $("#operatorsResult")  )
-            // $('#operatorsResult').show();
+            $('#operatorsResult').show();
         } else {
             $('#enemyResult').html("");
             $('#enemyResult').hide();
         }
+    }
+    function selectEnemy(){
+        $('#enemyResult').html("");
+        $('#enemyResult').hide();
     }
     // function 
 
