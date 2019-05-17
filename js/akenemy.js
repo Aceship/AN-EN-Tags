@@ -30,6 +30,9 @@
     var d9 = $.getJSON("json/excel/enemy_handbook_table.json",function(data){
             db["enemy"] = data;
         });
+    var d10 = $.getJSON("json/tl-enemy.json",function(data){
+            db["enemytl"] = data;
+        });
 
     $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9).then(function(){
         $.holdReady(false);
@@ -213,9 +216,14 @@
         $('#enemyResult').hide();
         let currEnemy = query(db.enemy,"enemyId",el)
         let currHtml = []
+        // console.log(currEnemy.name)
+        
+        // console.log(query(db.enemytl,"name_cn",currEnemy.name).name_en)
+        let tlname = query(db.enemytl,"name_cn",currEnemy.name).name_en 
         currHtml.push(`
         <div class="ak-c-black col">
-            <div>${currEnemy.name}  ${currEnemy.enemyIndex}</div>
+            
+            <div>${tlname?tlname:""} [${currEnemy.name}] ${currEnemy.enemyIndex}</div>
             
             <div><img style="height:80px;padding:1px" src="./img/enemy/${currEnemy.enemyId}.png"> </div>
             
