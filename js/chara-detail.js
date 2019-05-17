@@ -350,6 +350,12 @@
                     if(i2+1 ==  maxSkillLevel){ return false }
                 })
 
+                if(skillData.iconId == null){
+                    var skillIcon = skillId;
+                } else {
+                    var skillIcon = skillData.iconId;
+                }
+
                 var tabItem = $("<li class='nav-item'>"
                                 +    "<button class='btn tabbing-btns horiz-small nav-link "+(i!=0 ? '' : 'active')+"' data-toggle='pill' href='#skill"+i+"'><p>Skill "+(i+1)+"</p></button>"
                                 +"</li>");
@@ -359,7 +365,7 @@
                                         +        "<span class='skillname'>"+skillname+"</span>"
                                         +        "<div class='topright'>"
                                         +            "<div style='padding: 15px;'>"
-                                        +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/"+skillId+".png' style='width: 100%;'>"
+                                        +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/"+skillIcon+".png' style='width: 100%;'>"
                                         +            "</div>"
                                         +        "</div>"
                                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
