@@ -124,23 +124,23 @@
                     <button class='btn btn-danger col-12 align-self-center ak-btn text-center' style='padding:1px; margin-top: 10px; z-index: 0; font-weight: 550' onclick='clickBtnClear()' ><span translate-id='selector-clear'>Clear</span> <span id='count-tag'></a> </button>
             </div>
         </div>
-        <div class='chara-detail-container ak-shadow' id="chara-detail-container" style="display:none;">
+        <div class='chara-detail-container' id="chara-detail-container" style="display:none;">
             <div class='row'>
-                <div class='col-md-12 absolute' style='overflow: hidden;'>
+                <div class='col-md-12 absolute bottom-layer ak-shadow' style='overflow: hidden;'>
                     <img class='background' src='img/ui/chara/bg.png'>
                     <div class='chara-imagescontainer tab-content' id='tabs-opCG'>
                     </div>
                 </div>
-                <div class='col-md-12 absolute'>
-                    <div class='row'>
+                <div class='col-md-12 absolute top-layer'>
+                    <div class='row max-height'>
                         <div class='col-md-7 col-sm-12 left-col-menu'>
                             <div class='elite-sidenav'>
                             <ul class='nav nav-pills' id='elite-sidenav'>
                             </ul>
                             </div>
                         </div>
-                        <div class='col-md-5 col-sm-12 right-col-menu'>
-                            <div class='right-menu-container'>
+                        <div class='col-md-5 col-sm-12 right-col-menu max-height'>
+                            <div class='right-menu-container max-height'>
                                 <div style="position: relative;">
                                     <div class="general-stats-container small-container ak-shadow">
                                         <div id="op-rarity" style="padding: 10px 15px;"></div>
@@ -173,61 +173,112 @@
                                         </div>
                                     </div>
                                 </div>
-                                <ul class='nav nav-pills' style='padding-bottom: 30px;' id='elite-topnav'>
-                                </ul>
-                                <div class='tab-content' id='tabs-opData'>
-                                    <div class='tab-pane container active' id='elite_0_tab'>
-                                        <div class='elite-1 small-container ak-shadow'>
-                                            <p>Base</p>
-                                            <span>Stats</span>
-                                            <div class='topright maxlevel'>
-                                                <span class='maxleveltext'>Max Level</span>
-                                                <span class='leveltext'>50</span>
-                                                <div class='ring'>
-                                                    <div class='back ak-shadow'></div>
-                                                    <div class='back-centre'></div>
+                                <div class="skillsection-container" style="position: relative; margin-bottom: 80px">
+                                    <ul class='nav nav-pills' id='skill-tabs'>
+                                        <li class='nav-item'>
+                                            <button class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#skill1'><p>Skill 1</p></button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="skill-contents">
+                                        <div class='tab-pane container clickthrough active' id='skill1'>
+                                            <div class='small-container ak-shadow' style='margin-top: 50px;'>
+                                                <p>Skill 1</p>
+                                                <span class="skillname">Skill name asdasdsdasdasdasdsad</span>
+                                                <div class='topright'>
+                                                    <div style='padding: 15px;'>
+                                                        <img class='ak-shadow skill-image' id='skill1image' src='img/skills/skchr_amgoat_1.png' style='width: 100%;'>
+                                                    </div>
                                                 </div>
+                                                <button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill2StatsCollapsible'><i class='fa fa-sort-down'></i></button>
                                             </div>
-                                            <button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite1StatsCollapsible'><i class='fa fa-sort-down'></i></button>
-                                        </div>
-                                        <div id='elite1StatsCollapsible' class='collapse eliteStatsContainer'>
-                                            <ul class='nav nav-pills'>
-                                                <li class='nav-item'>
-                                                    <a class='btn tabbing-btns horiz tabbing-btns-left nav-link active' data-toggle='pill' href='#elite1Stats1'></a>
-                                                </li>
-                                            </ul>
-                                            <div class='tab-content'>
-                                                <div class='tab-pane container active' id='#elite1Stats1'>
-                                                    <table id='elite1Stats1Table'>
-                                                        <tr>
-                                                            <td class='stats-l'>MaxHP :</td><td class='stats-r'>xxx</td><td class='stats-l'>Deploy :</td><td class='stats-r'>xxx</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class='stats-l'>Atk :</td><td class='stats-r'>xxx</td><td class='stats-l'>Cost :</td><td class='stats-r'>xxx</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class='stats-l'>Def :</td><td class='stats-r'>xxx</td><td class='stats-l'>Block :</td><td class='stats-r'>xxx</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td class='stats-l'>MRes :</td><td class='stats-r'>xxx</td><td class='stats-l'>AtkSp :</td><td class='stats-r'>xxx</td>
-                                                        </tr>
-                                                    </table>
-                                                </div>
+                                            <div id='skill2StatsCollapsible' class='collapse collapsible notclickthrough'>
+                                                <input type="range" min="1" max="10" name="skillLevel" id="skill1Level" onchange="changeSkillLevel(this)" class="form-control skillLevelInput">
+                                                <div class="skillleveldisplaycontainer">lv <span id="skill1LevelDisplay">1</span></div>
+                                                <table>
+                                                    <tr>
+                                                        <td colspan='4' class='skilldesc'>Desc</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class='stats-l'>SP Cost :</td>
+                                                        <td class='stats-r'>xxx</td>
+                                                        <td class='stats-l'>Duration :</td>
+                                                        <td class='stats-r'>xxx</td>
+                                                    </tr>
+                                                </table>
                                             </div>
                                         </div>
-                                        <div class='elite-1 small-container ak-shadow'>
-                                            <p>Elite 1</p>
-                                            <span>Required materials</span>
-                                            <img class='topright' src='img/ui/elite/1.png' width='100'>
-                                            <button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#eliteMatsCollapsible'><i class='fa fa-sort-down'></i></button>
 
-                                            <div id='eliteMatsCollapsible' class='collapse'>
-                                                Lorem ipsum dolor text....
+                                        <div class="tab-pane container clickthrough" id="skill2">
+                                            <div class='small-container ak-shadow' style="margin-top: 50px;">
+                                                <p>Skill 2</p>
+                                                <span>Skill name</span>
+                                                <div class="topright">
+                                                    <div style="padding: 15px;">
+                                                        <img class="ak-shadow skill-image" id="skill1image" src="img/skills/skchr_amgoat_2.png" style="width: 100%;">
+                                                    </div>
+                                                </div>
+                                                <button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill1StatsCollapsible'><i class='fa fa-sort-down'></i></button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class='tab-pane container fade' id='elite_1_tab'>...</div>
-                                    <div class='tab-pane container fade' id='elite_2_tab'>...</div>
+                                </div>
+                                <div class="elitesection-container" style="position: relative;">
+                                    <ul class='nav nav-pills' id='elite-topnav'>
+                                    </ul>
+                                    <div class='tab-content' id='tabs-opData'>
+                                        <div class='tab-pane container active' id='elite_0_tab'>
+                                            <div class='elite-1 small-container ak-shadow'>
+                                                <p>Base</p>
+                                                <span>Stats</span>
+                                                <div class='topright maxlevel'>
+                                                    <span class='maxleveltext'>Max Level</span>
+                                                    <span class='leveltext'>50</span>
+                                                    <div class='ring'>
+                                                        <div class='back ak-shadow'></div>
+                                                        <div class='back-centre'></div>
+                                                    </div>
+                                                </div>
+                                                <button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite1StatsCollapsible'><i class='fa fa-sort-down'></i></button>
+                                            </div>
+                                            <div id='elite1StatsCollapsible' class='collapse eliteStatsContainer'>
+                                                <ul class='nav nav-pills'>
+                                                    <li class='nav-item'>
+                                                        <a class='btn tabbing-btns horiz tabbing-btns-left nav-link active' data-toggle='pill' href='#elite1Stats1'></a>
+                                                    </li>
+                                                </ul>
+                                                <div class='tab-content'>
+                                                    <div class='tab-pane container active' id='#elite1Stats1'>
+                                                        <table id='elite1Stats1Table'>
+                                                            <tr>
+                                                                <td class='stats-l'>MaxHP :</td><td class='stats-r'>xxx</td><td class='stats-l'>Deploy :</td><td class='stats-r'>xxx</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class='stats-l'>Atk :</td><td class='stats-r'>xxx</td><td class='stats-l'>Cost :</td><td class='stats-r'>xxx</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class='stats-l'>Def :</td><td class='stats-r'>xxx</td><td class='stats-l'>Block :</td><td class='stats-r'>xxx</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class='stats-l'>MRes :</td><td class='stats-r'>xxx</td><td class='stats-l'>AtkSp :</td><td class='stats-r'>xxx</td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='elite-1 small-container ak-shadow'>
+                                                <p>Elite 1</p>
+                                                <span>Required materials</span>
+                                                <img class='topright' src='img/ui/elite/1.png' width='100'>
+                                                <button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#eliteMatsCollapsible'><i class='fa fa-sort-down'></i></button>
+
+                                                <div id='eliteMatsCollapsible' class='collapse'>
+                                                    Lorem ipsum dolor text....
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='tab-pane container fade' id='elite_1_tab'>...</div>
+                                        <div class='tab-pane container fade' id='elite_2_tab'>...</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

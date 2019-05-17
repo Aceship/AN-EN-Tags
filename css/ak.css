@@ -47,6 +47,26 @@ body>nav .navbar-nav, #navbarNav {
     height: 100%;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 a:link,a:visited{
     color: #DDD
 }
@@ -92,7 +112,13 @@ body>nav .navbar-nav .active {
 .btn.focus, 
 .btn.focus:active, 
 .btn:active:focus, 
-.btn:focus {
+.btn:focus,
+input[type='range'].active.focus, 
+input[type='range'].active:focus, 
+input[type='range'].focus, 
+input[type='range'].focus:active, 
+input[type='range']:active:focus, 
+input[type='range']:focus {
     outline: thin dotted;
     outline-offset: -2px;
     background-image: none;

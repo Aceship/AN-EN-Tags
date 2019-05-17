@@ -124,7 +124,7 @@
         $('.reg[value='+reg+']').addClass('selected');
         $('.lang[value='+lang+']').addClass('selected');
 
-        getSkillDesc('skchr_amiya_2',0);
+        //getSkillDesc('skchr_amiya_2',0);
     });
 
     function clickBtnClear(){
@@ -250,20 +250,20 @@
                     if(l == 1){
                         tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns active'>"
                             + "<img src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
-                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz nav-link active' data-toggle='pill' href='#elite_0_tab'>Non-Elite</a></li>");
+                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#elite_0_tab'>Non-Elite</a></li>");
                     } else {
                         tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_"+i+"_tab'>"
                                             + "<img src='img/ui/elite/0-s.png'></button></li>");
-                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz tabbing-btns-left nav-link active' data-toggle='pill' href='#elite_"+i+"_tab'>Non-Elite</a></li>");
+                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#elite_"+i+"_tab'>Non-Elite</a></li>");
                     }
                 } else if( i == l-1 ){
                     tabbtn[0] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_"+i+"_tab'>"
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
-                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz tabbing-btns-right nav-link' data-toggle='pill' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
+                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 } else {
                     tabbtn[l-i] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_"+i+"_tab'>"
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
-                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz tabbing-btns-middle nav-link' data-toggle='pill' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
+                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 }
 
                 var skindata;
@@ -322,13 +322,64 @@
                 }
             });
             $("#op-taglist").append(tags_html);
+
+            ///////////////////////////////////////////////// SKILLS SECTION //////////////////////////////////////////////////
+
+            $("#skill-tabs").html("");
+            $("#skill-contents").html("");
+            $.each(opdataFull.skills,function(i,v){
+                var maxSkillLevel = opdataFull.skills[i].levelUpCostCond.length;
+                var skillId = opdataFull.skills[i].skillId;
+                var skillData = db.skills[skillId];
+                var skillname = db.skillsTL[skillId].name;
+                var tables = "";
+                $.each(skillData.levels,function(i2,v2){
+                    console.log(v2['spData'].spCost);
+                    var skilldesc = getSkillDesc(skillId,i2);
+                    tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
+                            +            "<tr>"
+                            +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
+                            +            "</tr>"
+                            +            "<tr>"
+                            +                "<td class='stats-l'>SP Cost :</td>"
+                            +                "<td class='stats-r'>"+v2['spData'].spCost+"</td>"
+                            +                "<td class='stats-l'>Duration :</td>"
+                            +                "<td class='stats-r'>"+v2.duration+"</td>"
+                            +            "</tr>"
+                            +        "</table>";
+                    if(i2+1 ==  maxSkillLevel){ return false }
+                })
+
+                var tabItem = $("<li class='nav-item'>"
+                                +    "<button class='btn tabbing-btns horiz-small nav-link "+(i!=0 ? '' : 'active')+"' data-toggle='pill' href='#skill"+i+"'><p>Skill "+(i+1)+"</p></button>"
+                                +"</li>");
+                var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? 'fade' : 'active')+"' id='skill"+i+"'>"
+                                        +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
+                                        +        "<p>Skill "+(i+1)+"</p>"
+                                        +        "<span class='skillname'>"+skillname+"</span>"
+                                        +        "<div class='topright'>"
+                                        +            "<div style='padding: 15px;'>"
+                                        +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/"+skillId+".png' style='width: 100%;'>"
+                                        +            "</div>"
+                                        +        "</div>"
+                                        +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
+                                        +    "</div>"
+                                        +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow'>"
+                                        +       "<input type='range' value='1' min='1' max="+maxSkillLevel+" name='skillLevel' id='skill"+i+"Level' onclick='changeSkillLevel(this,"+i+")' class='form-control skillLevelInput'>"
+                                        +        "<div class='skillleveldisplaycontainer'>lv <span id='skill"+i+"LevelDisplay'>1</span></div>"
+                                        +        tables
+                                        +    "</div>"
+                                        +"</div>");
+                $("#skill-tabs").append(tabItem);
+                $("#skill-contents").append(tabContents);
+            });
         }
     }
 
     function getEliteHTML(i, opdataFull){
         var container = $("<div class='tab-pane container "+(i!=0 ? 'fade' : 'active')+"' id='elite_"+i+"_tab'></div>");
 
-        var stats = $("<div class='small-container ak-shadow'>"
+        var stats = $("<div class='small-container ak-shadow clickthrough'>"
                         +   "<p>Base</p>"
                         +   "<span>Stats</span>"
                         +   "<div class='topright maxlevel'>"
@@ -339,10 +390,10 @@
                         +           "<div class='back-centre'></div>"
                         +       "</div>"
                         +   "</div>"
-                        +"<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
+                        +"<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#elite"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                         +"</div>");
 
-        var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse eliteStatsContainer ak-shadow'></div>");
+        var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow'></div>");
 
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
@@ -386,8 +437,8 @@
                         +   "<span>Required materials</span>"
                         +   "<img class='topright' src='img/ui/elite/"+i+".png' width='100'>"
                         +   "<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"MatsCollapsible'><i class='fa fa-sort-down'></i></button>"
-                        +   "<div id='elite"+i+"MatsCollapsible' class='collapse'>"
-                        +       "Lorem ipsum dolor text...."
+                        +   "<div id='elite"+i+"MatsCollapsible' class='collapse collapsible'>"
+                        +       "WIP"
                         +   "</div></div>");
         } else {
             var mats = $("");
@@ -396,6 +447,17 @@
         container.append(statsCollapsible);
         container.append(mats);
         return container;
+    }
+
+    function getSkillHTML(i, opdataFull){
+
+    }
+
+    function changeSkillLevel(el,skill_no){
+        var value = $(el).val();
+        $("#skill"+skill_no+"StatsCollapsible").children("table").removeClass("active");
+        $("#skill"+skill_no+"level"+(value-1)+"stats").addClass("active");
+        $("#skill"+skill_no+"LevelDisplay").html(value);
     }
 
     function getSkillDesc(skillId,level){

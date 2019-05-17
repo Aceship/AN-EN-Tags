@@ -2,11 +2,27 @@ body {
     overflow: unset;
 }
 
+.clickthrough {
+    pointer-events: none;
+}
+
+.notclickthrough {
+    pointer-events: all;
+}
+
+.max-height {
+    height: 100%;
+}
+
+.collapsible, .collapsing {
+    padding-top: 20px;
+}
+
 .chara-detail-container {
     width: 100%; 
     height: 100vw;
     max-height: 700px;
-    background-color: lightgrey;
+    background-color: rgb(54, 54, 54);
     margin-top: 20px;
 }
 
@@ -23,6 +39,7 @@ body {
     height: 100%;
     padding: unset;
     left: 0;
+    max-height: 700px;
 }
 
 .chara-detail-container .chara-image {
@@ -45,11 +62,16 @@ body {
 .chara-detail-container .right-menu-container {
     padding: 15px;
     float: right;
-    max-width: 370px;
+    max-width: 380px;
     width: 100%;
+    overflow-y: scroll;
 }
 
-#tabs-opData .collapse, #tabs-opData .collapsing {
+.right-menu-container .elitesection-container {
+    margin-bottom: 50px;
+}
+
+.right-menu-container .collapse, .right-menu-container .collapsing {
     margin-top: 20px;
     margin-bottom: -20px;
 }
@@ -61,16 +83,16 @@ body {
     background-color: #4f4f4f;
     color: #999999;
     position: relative;
-    margin-top: 40px;
+    margin-top: 55px;
 }
-.chara-detail-container .tab-content .small-container p {
+.chara-detail-container .tab-content .small-container p, #skill-contents p {
     position: absolute;
     color: #636363;
     font-size: 4em;
     top: -0.3em;
     font-family: 'Novecentosanswide Normal', Arial, sans-serif;
 }
-.chara-detail-container .tab-content .small-container span {
+.chara-detail-container .tab-content .small-container span, #skill-contents span {
     display: inline-block;
     padding: 14px;
     font-size: 1.2em;
@@ -78,7 +100,7 @@ body {
     color: white;
 }
 
-.chara-detail-container .small-container .topright {
+.chara-detail-container .small-container .topright, #skill-contents .topright {
     float: right; 
     margin-top: -50px;
     width: 110px;
@@ -173,9 +195,28 @@ body {
     background-color: #2f2f2f;
 }
 
+#skill-tabs .skillname {
+    line-height: 22px;
+    padding: 10px;
+    max-width: 255px;
+}
+
+#skill-tabs, #elite-topnav {
+    position: absolute;
+    top: -30px;
+}
+
 .chara-detail-container .tabbing-btns.horiz {
     height: 50px;
     width: 100px;
+}
+
+.chara-detail-container .tabbing-btns.horiz-small {
+    height: 30px;
+    width: 80px;
+    padding-top: 2px;
+    border-radius: 5px 5px 0px 0px;
+    display: inline-block;
 }
 
 .chara-detail-container .tabbing-btns.active {
@@ -252,33 +293,61 @@ body {
     font-size: 0.9em;
 }
 
-.eliteStatsContainer {
+#skill-contents .skillstats {
+    display: none;
+}
+#skill-contents .skillstats.active {
+    display: block;
+}
+
+.skillsection-container .collapsible {
+    padding: 20px 5px 5px 10px;
+}
+
+.collapsible {
     background-color: #4f4f4f;
     color: white;
-    padding-top: 20px;
     margin-top: 0px!important;
 }
 
-.eliteStatsContainer .tabbing-btns {
+.collapsible .skillLevelInput {
+    width: 80%;
+    display: inline-block;
+    line-height: 0px;
+    height: 30px;
+    margin: 5px 10px;
+}
+
+.skillleveldisplaycontainer {
+    display: inline-block;
+    vertical-align: super;
+}
+
+.skillleveldisplaycontainer span {
+    position: initial!important;
+    padding: 0px!important;
+}
+
+.collapsible .tabbing-btns {
     padding: 5px 0px;
     height: 35px!important;
     margin: 8px;
 }
 
-.eliteStatsContainer .tab-pane {
+.collapsible .tab-pane {
     padding-bottom: 10px;
 }
 
-.eliteStatsContainer table {
+.collapsible table {
     margin: 10px;
     width: 90%;
 }
 
-.eliteStatsContainer .stats-l {
+.collapsible .stats-l {
     text-align: right;
 }
 
-.eliteStatsContainer .stats-r {
+.collapsible .stats-r {
     text-align: center;
 }
 
