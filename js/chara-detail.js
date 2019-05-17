@@ -33,7 +33,13 @@
     var d10 = $.getJSON("json/tl-gender.json",function(data){
             db["gender"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10).then(function(){
+    var d11 = $.getJSON("json/excel/skill_table.json",function(data){
+            db["skills"] = data;
+        });
+    var d12 = $.getJSON("json/dragonjet/skills.json",function(data){
+            db["skillsTL"] = data;
+        });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12).then(function(){
         $.holdReady(false);
     });
 
@@ -117,6 +123,8 @@
         console.log("TEST")
         $('.reg[value='+reg+']').addClass('selected');
         $('.lang[value='+lang+']').addClass('selected');
+
+        getSkillDesc('skchr_amiya_2',0);
     });
 
     function clickBtnClear(){
@@ -339,9 +347,7 @@
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
         $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
-            console.log(j);
             var keyframe = opdataFull.phases[i].attributesKeyFrames[j];
-            console.log(keyframe)
             var navItems = $("<li class='nav-item'>"
                             +   "<a class='btn tabbing-btns horiz nav-link "+(j!=0 ? '' : 'active')+"' data-toggle='pill' href='#elite"+i+"Stats"+j+"'>lv "+keyframe.level+"</a>"
                             +"</li>");
@@ -390,6 +396,34 @@
         container.append(statsCollapsible);
         container.append(mats);
         return container;
+    }
+
+    function getSkillDesc(skillId,level){
+        var skill = db.skills[skillId].levels[level];
+        var skillTL = db.skillsTL[skillId];
+        console.log(skill);
+        console.log(skillTL);
+
+        var desc = skillTL.desc;
+
+        var matches = skillTL.desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
+        $.each(matches,function(i,v){
+            var submatches = v.match(/[^{}:.0 ]+/gm);
+            var value;
+            for (var i = 0; i < skill.blackboard.length; i++) {
+                if(skill.blackboard[i].key == submatches[0]){
+                    value = skill.blackboard[i].value;
+                }
+            }
+            if(value){
+                if(submatches[1] == "%"){
+                    value = (value * 100) + "%";
+                }
+                desc = desc.replace(v,value);
+            }
+        });
+        console.log(desc);
+        return desc;
     }
 
     function query(db,key,val,single=true,returnKey=false){
@@ -444,7 +478,7 @@
         getJSONdata("ui",function(data){
             if(data.length != 0){
                 $.each(data, function(i,text){
-                    $("[translate-id="+text.id).html(eval('text.ui_'+lang));
+                    $("[translate-id="+text.id).html(text['ui_'+lang]);
                 });
             }
         });
