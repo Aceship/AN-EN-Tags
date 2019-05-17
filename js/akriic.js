@@ -177,7 +177,7 @@
             let chara = db.chars[element.name]
             let charaRiic = db.riic[element.name]
             let extraInfo =""
-            console.log(element.name)
+            // console.log(element.name)
             
             currHtml.push(`<div class="row" style="padding:5px;margin:5px;background:#333333">
                             <div class="col-4 col-sm-2" style="text-align:center;padding:3px;margin:auto">
@@ -217,13 +217,11 @@
                         
                         // console.log(currbuff.indexOf("<@cc.kw>"))
                         
-                        console.log(currbuff.indexOf("<@cc.kw>"))
+                        // console.log(currbuff.indexOf("<@cc.kw>"))
                         if(currbuff.indexOf("<@cc.kw>")>0){
                             let clue = ''
-                            currbuff = currbuff.slice(currbuff.indexOf("<@cc.kw>")+8,currbuff.length)
-                            currbuff = currbuff.slice(0,currbuff.indexOf("</>"))
-                            // console.log(db.building_buff[element.buff[i].buffId].description)
-                            console.log()
+                            let muhRegex = /<@cc\.kw>(.*?)<\/>/g
+                            currbuff = muhRegex.exec(currbuff)[1]
                             switch (currbuff) {
                                 case "莱茵生命": clue = 1;break;
                                 case "企鹅物流": clue = 2;break;
@@ -249,7 +247,7 @@
                 if(req!=""){
                     req = `<div class="btn btn-sm ak-disable ak-btn" style="height:25px;margin:auto;padding:1px;background:#0078BC;">Req: ${req}</div>`
                 }
-                console.log(req)
+                // console.log(req)     
                 currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto"><div style="padding:5px;background:#222">${extraInfo}  ${charaRiic[i].name} ${req}</div><div style="padding-left:20px">${charaRiic[i].desc}</div></div>` )
             }
             currHtml.push(`</div></div> `)
