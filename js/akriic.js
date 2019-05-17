@@ -256,16 +256,7 @@
         $("#tbody-list").html(currHtml.join(""))
     }
     function clickBtnClear(){
-        $("#opname").val("");
-        $('#operatorsResult').html("");
-        $('#operatorsResult').hide();
-        localStorage.selectedOP = "";
-        selectedOP = localStorage.selectedOP;
-        $("#reqmats-container").html("");
-        $("#tbody-materials").html("");
-        $("#eliteReqMats").hide();
-        $("#opClassImage").attr('src','');
-            console.log(lang);
+        console.log(lang);
         $("#tbody-list").html("")
     }
     
