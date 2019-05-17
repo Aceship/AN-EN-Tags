@@ -208,9 +208,32 @@
             $('#enemyResult').hide();
         }
     }
-    function selectEnemy(){
+    function selectEnemy(el){
         $('#enemyResult').html("");
         $('#enemyResult').hide();
+        let currEnemy = query(db.enemy,"enemyId",el)
+        let currHtml = []
+        currHtml.push(`
+        <div class="ak-c-black col">
+            <div>${currEnemy.name}  ${currEnemy.enemyIndex}</div>
+            
+            <div><img style="height:80px;padding:1px" src="./img/enemy/${currEnemy.enemyId}.png"> </div>
+            
+            <div>Enemy Type : ${currEnemy.enemyLevel.charAt(0) + currEnemy.enemyLevel.slice(1).toLowerCase()}</div>
+            <div>${currEnemy.enemyRace?`Enemy Race : ${currEnemy.enemyRace}`:""}</div>
+            <div>Attack type : ${currEnemy.attackType}</div>
+            <div>Attack : ${currEnemy.attack}</div>
+            <div>Defense : ${currEnemy.defence}</div>
+            <div>Endure : ${currEnemy.endure}</div>
+            <div>resistance : ${currEnemy.resistance}</div>
+            <div>${currEnemy.ability ?`Ability : ${currEnemy.ability}`:""}</div>
+            <div>Description : ${currEnemy.description}</div>
+        </div>
+        
+        
+        `)
+        $('#enemyDetail').html(currHtml)
+        // console.log(el)
     }
     // function 
 
