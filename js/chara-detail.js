@@ -365,7 +365,7 @@
                                         +        "<span class='skillname'>"+skillname+"</span>"
                                         +        "<div class='topright'>"
                                         +            "<div style='padding: 15px;'>"
-                                        +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/"+skillIcon+".png' style='width: 100%;'>"
+                                        +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/skill_icon_"+skillIcon+".png' style='width: 100%;'>"
                                         +            "</div>"
                                         +        "</div>"
                                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
