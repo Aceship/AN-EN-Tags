@@ -1,39 +1,41 @@
     $.holdReady(true);
     var db = {};
     var d0 = $.getJSON("json/excel/building_data.json",function(data){
-            db["manufactformulas"] = data.manufactFormulas;
-        });
+        db["manufactformulas"] = data.manufactFormulas;
+    });
     var d1 = $.getJSON("json/excel/building_data.json",function(data){
-            db["workshopformulas"] = data.workshopFormulas;
-        });
+        db["workshopformulas"] = data.workshopFormulas;
+    });
     var d2 = $.getJSON("json/excel/character_table.json",function(data){
-            db["chars"] = data;
-        });
+        db["chars"] = data;
+    });
     var d3 = $.getJSON("json/excel/item_table.json",function(data){
-            db["items"] = data.items;
-        });
+        db["items"] = data.items;
+    });
     var d4 = $.getJSON("json/tl-akhr.json",function(data){
-            db["chars2"] = data;
-        });
+        db["chars2"] = data;
+    });
     var d5 = $.getJSON("json/tl-type.json",function(data){
-            db["classes"] = data;
-        });
+        db["classes"] = data;
+    });
     var d6 = $.getJSON("json/tl-tags.json",function(data){
-            db["tags"] = data;
-        });
+        db["tags"] = data;
+    });
     var d7 = $.getJSON("json/akmaterial.json",function(data){
-            db["itemstl"] = data;
-        });
+        db["itemstl"] = data;
+    });
     var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){
-            db["dataconst"] = data;
-        });
+        db["dataconst"] = data;
+    });
     var d9 = $.getJSON("json/excel/enemy_handbook_table.json",function(data){
-            db["enemy"] = data;
-        });
+        db["enemy"] = data;
+    });
     var d10 = $.getJSON("json/tl-enemy.json",function(data){
-            db["enemytl"] = data;
-        });
-
+        db["enemytl"] = data;
+    });
+    var d11 = $.getJSON("json/levels/enemydata/enemy_database.json",function(data){
+        db["enemyDetail"] = data.enemies;
+    });
     $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9).then(function(){
         $.holdReady(false);
     });
@@ -41,6 +43,7 @@
     var lang;
     var reg;
     var selectedEnemy;
+    var selectedLevel=0;
 
     $(document).ready(function(){
         // console.log(db.building_buff)
@@ -215,8 +218,9 @@
         $('#enemyResult').html("");
         $('#enemyResult').hide();
         let currEnemy = query(db.enemy,"enemyId",el)
+        let currEnemyDetail = db.enemyDetail.find(search=>search.Key == el)
         let currHtml = []
-        // console.log(currEnemy.name)
+        console.log(currEnemyDetail)
         
         // console.log(query(db.enemytl,"name_cn",currEnemy.name).name_en)
         let tlname = query(db.enemytl,"name_cn",currEnemy.name).name_en 
@@ -236,13 +240,49 @@
             <div>resistance : ${currEnemy.resistance}</div>
             <div>${currEnemy.ability ?`Ability : ${currEnemy.ability}`:""}</div>
             <div>Description : ${currEnemy.description}</div>
-        </div>
+        </div>`)
         
+        if(currEnemyDetail){
+            currHtml.push(`<div class="ak-c-black" style="text-align:center;margin-top:5px"> Detail </div> <div class="ak-c-black">`)
+            currEnemyDetail.Value.forEach(element => {
+                // console.log(element)
+                currHtml.push(`<div class="btn btn-sm ak-btn ak-mid"style="display:inline;" onclick='enemyDetail(\"${el}\",${element.level})'> Level ${element.level}</div>`)
+            });
+            enemyDetail(el,0)
+        }else{
+            $('#enemyDetail2').hide();
+        }
+        currHtml.push(`</div>`)
         
-        `)
         $('#enemyDetail').html(currHtml)
+        
         // console.log(el)
     }
+
+    function enemyDetail(el,level){
+        $('#enemyDetail2').html("");
+        $('#enemyDetail2').hide();
+        let currEnemy = query(db.enemy,"enemyId",el)
+        let currEnemyDetail = db.enemyDetail.find(search=>search.Key == el)
+        let currEnemyData = currEnemyDetail.Value[level].enemyData
+        let currHtml = []
+        console.log(currEnemyDetail)
+        
+        // console.log(query(db.enemytl,"name_cn",currEnemy.name).name_en)
+        let tlname = query(db.enemytl,"name_cn",currEnemy.name).name_en 
+        currHtml.push(`
+        <div class="ak-c-black col">    
+            <div>Attack Damage : ${currEnemyData.attributes.atk.m_value}</div>
+            <div>Attack Speed : ${currEnemyData.attributes.attackSpeed.m_value}</div>
+            <div>Health : ${currEnemyData.attributes.maxHp.m_value}</div>
+            <div>Defense : ${currEnemyData.attributes.def.m_value}</div>
+            <div>Magic Resistance : ${currEnemyData.attributes.magicResistance.m_value}</div>
+            <div>Range : ${currEnemyData.rangeRadius.m_value} Tile</div>
+            <div>Move Speed : ${currEnemyData.attributes.moveSpeed.m_value}</div>
+        </div>`)
+        $('#enemyDetail2').html(currHtml)
+        $('#enemyDetail2').show();
+    }    
     // function 
 
     function query(db,key,val,single=true,returnKey=false){
