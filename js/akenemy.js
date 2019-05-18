@@ -219,9 +219,7 @@
         $('#enemyResult').hide();
         let currEnemy = query(db.enemy,"enemyId",el)
         let currEnemyDetail = db.enemyDetail.find(search=>search.Key == el)
-        let currHtml = []
-        console.log(currEnemyDetail)
-        
+        let currHtml = []    
         // console.log(query(db.enemytl,"name_cn",currEnemy.name).name_en)
         let tlname = query(db.enemytl,"name_cn",currEnemy.name).name_en 
         currHtml.push(`
@@ -274,11 +272,16 @@
         <div class="ak-c-black col">    
             <div>Attack Damage : ${currEnemyData.attributes.atk.m_value}</div>
             <div>Attack Speed : ${currEnemyData.attributes.attackSpeed.m_value}</div>
+            <div>Attack Time : ${currEnemyData.attributes.baseAttackTime.m_value} Second</div>
             <div>Health : ${currEnemyData.attributes.maxHp.m_value}</div>
+            <div>Health Recovery : ${currEnemyData.attributes.hpRecoveryPerSec.m_value} /Second</div>
             <div>Defense : ${currEnemyData.attributes.def.m_value}</div>
             <div>Magic Resistance : ${currEnemyData.attributes.magicResistance.m_value}</div>
-            <div>Range : ${currEnemyData.rangeRadius.m_value} Tile</div>
+            <div>Weight : ${currEnemyData.attributes.massLevel.m_value}</div>
             <div>Move Speed : ${currEnemyData.attributes.moveSpeed.m_value}</div>
+            <div>Range : ${currEnemyData.rangeRadius.m_value} Tile</div>
+            <div>Stun Immune : ${currEnemyData.attributes.stunImmune.m_value}</div>
+            <div>Silence Immune : ${currEnemyData.attributes.silenceImmune.m_value}</div>
         </div>`)
         $('#enemyDetail2').html(currHtml)
         $('#enemyDetail2').show();
