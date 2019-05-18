@@ -241,10 +241,10 @@
         </div>`)
         
         if(currEnemyDetail){
-            currHtml.push(`<div class="ak-c-black" style="text-align:center;margin-top:5px"> Detail </div> <div class="ak-c-black">`)
+            currHtml.push(`<div class="ak-c-black" style="text-align:center;margin-top:5px;background:#222"> Detail </div> <div class="ak-c-black" style="background:#222">`)
             currEnemyDetail.Value.forEach(element => {
                 // console.log(element)
-                currHtml.push(`<div class="btn btn-sm ak-btn ak-mid"style="display:inline;" onclick='enemyDetail(\"${el}\",${element.level})'> Level ${element.level}</div>`)
+                currHtml.push(`<div class="btn btn-sm ak-btn ak-mid"style="display:inline;border: 1px #222;background:#111" onclick='enemyDetail(\"${el}\",${element.level})'> Level ${element.level}</div>`)
             });
             enemyDetail(el,0)
         }else{
@@ -252,7 +252,7 @@
         }
         currHtml.push(`</div>`)
         
-        $('#enemyDetail').html(currHtml)
+        $('#enemyDetail').html(currHtml.join(""))
         
         // console.log(el)
     }
@@ -282,8 +282,17 @@
             <div>Range : ${currEnemyData.rangeRadius.m_value} Tile</div>
             <div>Stun Immune : ${currEnemyData.attributes.stunImmune.m_value}</div>
             <div>Silence Immune : ${currEnemyData.attributes.silenceImmune.m_value}</div>
-        </div>`)
-        $('#enemyDetail2').html(currHtml)
+        `)
+
+        if(currEnemyData.talentBlackboard){
+            currHtml.push(`<div>Abilities`)
+            currEnemyData.talentBlackboard.forEach(element=>{
+                currHtml.push(`<div>${element.key} : ${element.value}</div>`)
+            })
+            currHtml.push(`</div>`)
+        }
+        currHtml.push(`</div>`)
+        $('#enemyDetail2').html(currHtml.join(""))
         $('#enemyDetail2').show();
     }    
     // function 

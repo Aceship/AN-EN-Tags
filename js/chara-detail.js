@@ -39,7 +39,10 @@
     var d12 = $.getJSON("json/dragonjet/skills.json",function(data){
             db["skillsTL"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12).then(function(){
+    var d13 = $.getJSON("json/excel/range_table.json",function(data){
+            db["range"] = data;
+        });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13).then(function(){
         $.holdReady(false);
     });
 
@@ -77,7 +80,7 @@
 
             var vars = getUrlVars();
             if(typeof vars.opname != "undefined"){
-                console.log("TEST1")
+                // console.log("TEST1")
             }
         } else {
             console.log(localStorage.webLang);
@@ -120,7 +123,7 @@
             selectOperator(opname);
         }
 
-        console.log("TEST")
+        // console.log("TEST")
         $('.reg[value='+reg+']').addClass('selected');
         $('.lang[value='+lang+']').addClass('selected');
 
@@ -217,7 +220,7 @@
             var opdataFull = {};
             $.each(opdata2,function(key,v){
                 v['id'] = key;
-                console.log(v);
+                // console.log(v);
                 opdataFull = v;
                 localStorage.selectedOPDetails = key;
                 return false
@@ -231,7 +234,7 @@
 
             // Get operator elite skins
             var skinList = db.skintable.buildinEvolveMap[opdataFull.id];
-            console.log(skinList);
+            // console.log(skinList);
 
             var tabbtn = [];
             var tabbtn2 = [];
@@ -333,9 +336,17 @@
                 var skillData = db.skills[skillId];
                 var skillname = db.skillsTL[skillId].name;
                 var tables = "";
+                var grid = ""
+                // console.log(skillData)
                 $.each(skillData.levels,function(i2,v2){
-                    console.log(v2['spData'].spCost);
+                    // console.log(v2['spData'].spCost);
                     var skilldesc = getSkillDesc(skillId,i2);
+                    
+                    // console.log(v2)
+                    if(v2.rangeId){
+                        grid = rangeMaker(v2.rangeId)
+                    }
+                    // console.log(grid)
                     tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
                             +            "<tr>"
                             +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
@@ -374,6 +385,7 @@
                                         +       "<input type='range' value='1' min='1' max="+maxSkillLevel+" name='skillLevel' id='skill"+i+"Level' onclick='changeSkillLevel(this,"+i+")' class='form-control skillLevelInput'>"
                                         +        "<div class='skillleveldisplaycontainer'>lv <span id='skill"+i+"LevelDisplay'>1</span></div>"
                                         +        tables
+                                        +        "<tr>"+(grid?grid:"")+"</tr>"
                                         +    "</div>"
                                         +"</div>");
                 $("#skill-tabs").append(tabItem);
@@ -400,7 +412,7 @@
                         +"</div>");
 
         var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
-
+        console.log(opdataFull.phases[i])
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
         $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
@@ -430,6 +442,7 @@
                             +       "<tr>"
                             +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td><td class='stats-l'>AtkTime :</td><td class='stats-r'>"+keyframe.data["baseAttackTime"]+" Sec</td>"
                             +       "</tr>"
+                            +       "<tr><th colspan=2>"+rangeMaker(opdataFull.phases[i].rangeId)+"</th>"+"</tr>"
                             +   "</table></div>");
             navPills.append(navItems);
             navTabs.append(tabStats);
@@ -459,6 +472,52 @@
 
     }
 
+    function rangeMaker(rangeId){
+        let rangeData = db.range[rangeId]
+        if(rangeData){
+            let minRow = 0
+            let minCol = 0
+            let maxRow = 0
+            let maxCol = 0
+            let table = []
+            let grids = []
+            // console.log(rangeData.grids)
+            if(rangeData){
+                rangeData.grids.forEach(element => {
+                    maxRow = Math.max(maxRow,element.row)
+                    maxCol = Math.max(maxCol,element.col)
+                    minRow = Math.min(minRow,element.row)
+                    minCol = Math.min(minCol,element.col)
+                });
+            }
+            table.push(`<table style="background:#444;border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:${(maxCol-minCol+1)*21}px">`)
+            
+            for(r=0;r+minRow<maxRow+1;r++){
+                table.push(`<tr style="height:19px">`)
+                // console.log(r+minRow)
+                for(c=0;c+minCol<maxCol+1;c++){
+                    table.push(`<td style=";width:10px`)
+                    if(r+minRow==0&&c+minCol==0){
+                        table.push(";background:#DDD")
+                    }else{
+                        rangeData.grids.forEach(element => {
+                            if(element.row==r+minRow&&element.col==c+minCol){
+                                table.push(";border: 2px solid #DDDDDD88;")
+                            }
+                        });
+                    }
+                    
+                    table.push(`"></td>`)
+                }
+            }
+            table.push(`<tr><td colspan=${(maxCol-minCol+1)} style="text-align:center">Range</td></tr></table>`)
+            return table.join("")
+        }else{
+            return undefined
+        }
+        
+    }
+
     function changeSkillLevel(el,skill_no){
         var value = $(el).val();
         $("#skill"+skill_no+"StatsCollapsible").children("table").removeClass("active");
@@ -469,8 +528,8 @@
     function getSkillDesc(skillId,level){
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
-        console.log(skill);
-        console.log(skillTL);
+        // console.log(skill);
+        // console.log(skillTL);
 
         var desc = skillTL.desc;
 
@@ -490,7 +549,7 @@
                 desc = desc.replace(v,value);
             }
         });
-        console.log(desc);
+        // console.log(desc);
         return desc;
     }
 
