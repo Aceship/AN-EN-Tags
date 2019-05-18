@@ -370,7 +370,7 @@
                                         +        "</div>"
                                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                                         +    "</div>"
-                                        +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow'>"
+                                        +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show'>"
                                         +       "<input type='range' value='1' min='1' max="+maxSkillLevel+" name='skillLevel' id='skill"+i+"Level' onclick='changeSkillLevel(this,"+i+")' class='form-control skillLevelInput'>"
                                         +        "<div class='skillleveldisplaycontainer'>lv <span id='skill"+i+"LevelDisplay'>1</span></div>"
                                         +        tables
@@ -399,7 +399,7 @@
                         +"<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#elite"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                         +"</div>");
 
-        var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow'></div>");
+        var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
 
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
