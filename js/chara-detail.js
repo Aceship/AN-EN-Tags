@@ -428,7 +428,7 @@
                             +           "<td class='stats-l'>Def :</td><td class='stats-r'>"+keyframe.data["def"]+"</td><td class='stats-l'>Block :</td><td class='stats-r'>"+keyframe.data["blockCnt"]+"</td>"
                             +       "</tr>"
                             +       "<tr>"
-                            +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td><td class='stats-l'>AtkSp :</td><td class='stats-r'>"+keyframe.data["attackSpeed"]+"</td>"
+                            +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td><td class='stats-l'>AtkTime :</td><td class='stats-r'>"+keyframe.data["baseAttackTime"]+" Sec</td>"
                             +       "</tr>"
                             +   "</table></div>");
             navPills.append(navItems);
