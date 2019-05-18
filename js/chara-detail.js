@@ -91,6 +91,8 @@
             console.log("selected OP undefined");
             var vars = getUrlVars();
             if(typeof vars.opname != "undefined"){
+                vars.opname = decodeURIComponent(vars.opname);
+                console.log(vars.opname);
                 var char = query(db.chars,"appellation",vars.opname,true,true);
                 var opname;
                 $.each(char,function(key,v){
@@ -103,13 +105,15 @@
         } else {
             console.log("selected OP defined");
             var curpath = window.location.search.split("?");
+            console.log(curpath)
             if(typeof curpath[1] != "undefined"){
                 var variables = curpath[1].split("?");
                 var char = {};
                 $.each(variables,function(_,v){
                     var subvar = v.split("=");
                     if(subvar[0] == "opname"){
-                        char = query(db.chars,"appellation",subvar[1].replace(/_/g," "),true,true);
+                        var opname = decodeURIComponent(subvar[1]);
+                        char = query(db.chars,"appellation",opname.replace(/_/g," "),true,true);
                     }
                 });
                 var opname;
@@ -191,11 +195,18 @@
                 for (var i = 0; i < result.length; i++) {
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
                     // console.log(image)
-                    $("#operatorsResult").append(
-                            "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
-                            +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
-                            +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+result[i].nameTL+"</div>"
-                            +"</li>");
+                    if(el=="Browse"){
+                        image = `<img style="height:70px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
+                        $("#operatorsResult").css("max-width","100vw");
+                        $("#operatorsResult").append(
+                                "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
+                                +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
+                                +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+result[i].nameTL+"</div>"
+                                +"</li>");
+                    }else{
+                        $("#operatorsResult").css("max-width","290px");
+                        $("#operatorsResult").append("<li class=\" ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"width:100%;cursor: pointer;margin-bottom:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"+image+result[i].nameTL+" ("+result[i].name+")"+"</li>");
+                    }
                 }
             }
             console.log( $("#operatorsResult")  )
@@ -339,6 +350,7 @@
                 var grid = ""
                 // console.log(skillData)
                 $.each(skillData.levels,function(i2,v2){
+                    console.log(skillData.levels)
                     // console.log(v2['spData'].spCost);
                     var skilldesc = getSkillDesc(skillId,i2);
                     
@@ -347,18 +359,35 @@
                         grid = rangeMaker(v2.rangeId)
                     }
                     // console.log(grid)
-                    tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
-                            +            "<tr>"
-                            +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
-                            +            "</tr>"
-                            +            "<tr>"
-                            +                "<td class='stats-l'>SP Cost :</td>"
-                            +                "<td class='stats-r'>"+v2['spData'].spCost+"</td>"
-                            +                "<td class='stats-l'>Duration :</td>"
-                            +                "<td class='stats-r'>"+v2.duration+"</td>"
-                            +            "</tr>"
-                            +        "</table>";
-                    if(i2+1 ==  maxSkillLevel){ return false }
+                    if(grid){
+                        tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
+                                +            "<tr>"
+                                +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
+                                +            "</tr>"
+                                +            "<tr>"
+                                +               "<td colspan=2 rowspan=3>"+(grid?grid:"")+"</td>"
+                                +                "<td class='stats-l'>SP Cost :</td>"
+                                +                "<td class='stats-r'>"+v2['spData'].spCost+"</td>"
+                                +            "</tr>"
+                                +            "<tr>"
+                                +                "<td class='stats-l'>Duration :</td>"
+                                +                "<td class='stats-r'>"+v2.duration+"</td>"
+                                +            "</tr>"
+                                +            "<tr><td></td></tr>"
+                                +        "</table>";   
+                    } else {
+                        tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
+                                +            "<tr>"
+                                +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
+                                +            "</tr>"
+                                +            "<tr>"
+                                +                "<td class='stats-l'>SP Cost :</td>"
+                                +                "<td class='stats-r'>"+v2['spData'].spCost+"</td>"
+                                +                "<td class='stats-l'>Duration :</td>"
+                                +                "<td class='stats-r'>"+v2.duration+"</td>"
+                                +            "</tr>"
+                                +        "</table>";
+                    }
                 })
 
                 if(skillData.iconId == null){
@@ -382,10 +411,9 @@
                                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                                         +    "</div>"
                                         +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show'>"
-                                        +       "<input type='range' value='1' min='1' max="+maxSkillLevel+" name='skillLevel' id='skill"+i+"Level' onclick='changeSkillLevel(this,"+i+")' class='form-control skillLevelInput'>"
+                                        +       "<input type='range' value='1' min='1' max="+skillData.levels.length+" name='skillLevel' id='skill"+i+"Level' oninput='changeSkillLevel(this,"+i+")' class='form-control skillLevelInput'>"
                                         +        "<div class='skillleveldisplaycontainer'>lv <span id='skill"+i+"LevelDisplay'>1</span></div>"
                                         +        tables
-                                        +        "<tr>"+(grid?grid:"")+"</tr>"
                                         +    "</div>"
                                         +"</div>");
                 $("#skill-tabs").append(tabItem);
@@ -431,18 +459,28 @@
                             +   "<table id='elite"+i+"Stats"+j+"Table'>"
                             +       "<tr>"
                             +           "<td class='stats-l'>MaxHP :</td><td class='stats-r'>"+keyframe.data["maxHp"]+"</td>"
+                            +           "<td class='stats-l'>Def :</td><td class='stats-r'>"+keyframe.data["def"]+"</td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>Atk :</td><td class='stats-r'>"+keyframe.data["atk"]+"</td>"
+                            +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td colspan=2 rowspan=5>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
                             +           "<td class='stats-l'>Deploy :</td><td class='stats-r'>"+deploy+"</td>"
                             +       "</tr>"
                             +       "<tr>"
-                            +           "<td class='stats-l'>Atk :</td><td class='stats-r'>"+keyframe.data["atk"]+"</td><td class='stats-l'>Cost :</td><td class='stats-r'>"+keyframe.data["cost"]+"</td>"
+                            +           "<td class='stats-l'>Cost :</td><td class='stats-r'>"+keyframe.data["cost"]+"</td>"
                             +       "</tr>"
                             +       "<tr>"
-                            +           "<td class='stats-l'>Def :</td><td class='stats-r'>"+keyframe.data["def"]+"</td><td class='stats-l'>Block :</td><td class='stats-r'>"+keyframe.data["blockCnt"]+"</td>"
+                            +           "<td class='stats-l'>Block :</td><td class='stats-r'>"+keyframe.data["blockCnt"]+"</td>"
                             +       "</tr>"
                             +       "<tr>"
-                            +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td><td class='stats-l'>AtkTime :</td><td class='stats-r'>"+keyframe.data["baseAttackTime"]+" Sec</td>"
+                            +           "<td class='stats-l'>AtkTime :</td><td class='stats-r'>"+keyframe.data["baseAttackTime"]+" Sec</td>"
                             +       "</tr>"
-                            +       "<tr><th colspan=2>"+rangeMaker(opdataFull.phases[i].rangeId)+"</th>"+"</tr>"
+                            +       "<tr>"
+                            +           "<td></td>"
+                            +       "</tr>"
                             +   "</table></div>");
             navPills.append(navItems);
             navTabs.append(tabStats);
@@ -490,13 +528,13 @@
                     minCol = Math.min(minCol,element.col)
                 });
             }
-            table.push(`<table style="background:#444;border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:${(maxCol-minCol+1)*21}px">`)
+            table.push(`<div class="rangeTableContainer"><table class='rangeTable' style="border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:fit-content;">`)
             
             for(r=0;r+minRow<maxRow+1;r++){
-                table.push(`<tr style="height:19px">`)
+                table.push(`<tr style="height:17px">`)
                 // console.log(r+minRow)
                 for(c=0;c+minCol<maxCol+1;c++){
-                    table.push(`<td style=";width:10px`)
+                    table.push(`<td style=";width:18px`)
                     if(r+minRow==0&&c+minCol==0){
                         table.push(";background:#DDD")
                     }else{
@@ -510,7 +548,8 @@
                     table.push(`"></td>`)
                 }
             }
-            table.push(`<tr><td colspan=${(maxCol-minCol+1)} style="text-align:center">Range</td></tr></table>`)
+            table.push(`</table>`);
+            table.push(`<div><span style="all:inherit;">Range</span></div>`);
             return table.join("")
         }else{
             return undefined
@@ -534,17 +573,26 @@
         var desc = skillTL.desc;
 
         var matches = skillTL.desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
+        console.log(matches)
         $.each(matches,function(i,v){
-            var submatches = v.match(/[^{}:.0 ]+/gm);
+            var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
+            if(!submatches[1]){
+                submatches = v.match(/(?:(?!\{).(?!$))+/gm);
+            }
+            console.log(submatches)
             var value;
             for (var i = 0; i < skill.blackboard.length; i++) {
                 if(skill.blackboard[i].key == submatches[0]){
                     value = skill.blackboard[i].value;
+                    console.log(value)
                 }
             }
             if(value){
-                if(submatches[1] == "%"){
-                    value = (value * 100) + "%";
+                if(typeof submatches[1] != "undefined"){
+                    console.log(submatches[1])
+                    if(submatches[1].includes("%")){
+                        value = Math.round((value * 100)) + "%";
+                    }
                 }
                 desc = desc.replace(v,value);
             }
