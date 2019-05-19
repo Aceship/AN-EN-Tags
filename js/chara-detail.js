@@ -313,31 +313,21 @@
 
             $("#op-nameTL").html(eval("opdata.name_"+lang));
             $("#op-nameREG").html("["+eval("opdata.name_"+reg)+"]");
-
             var gender = query(db.gender,"sex_cn",opdata.sex);
-            $("#op-gender").html(`
-            <div class=\"btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" >
-            <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Gender</a>${eval("gender.sex_"+lang)}</div>`
-            );
 
+            $("#op-gender").html(titledMaker(eval("gender.sex_"+lang),`Gender`))
             var position = query(db.tags,"tag_cn",opdataFull.position);
-            $("#op-position").html(`
-            <div class=\"btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" >
-            <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Position</a>${eval("position.tag_"+lang)}</div>`
-            );
+            $("#op-position").html(titledMaker(eval("position.tag_"+lang),`Position`))
 
             var type = query(db.classes,"type_cn",opdata.type);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
 
             var attackType = getSpeciality(opdataFull.description)
             var attackTypeTl =  query(db.attacktype,"type_cn",attackType);
-            console.log(attackType)
-            console.log(attackTypeTl)
-            $("#op-atktype").html(`
-            <div class=\"btn-sm ak-shadow-small ak-btn ak-trait-${(eval("attackTypeTl.type_detail"))}\" data-toggle=\"tooltip\" data-placement=\"top\" >
-            <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Traits</a>${(eval("attackTypeTl.type_"+lang)?eval("attackTypeTl.type_"+lang):attackType)}</div>`
-            );
+            // console.log(attackType)
+            // console.log(attackTypeTl)
             
+            $("#op-atktype").html(titledMaker((eval("attackTypeTl.type_"+lang)?eval("attackTypeTl.type_"+lang):attackType),`Traits`,`ak-trait-${(eval("attackTypeTl.type_detail"))}`))
 
             $("#op-rarity").html("");
             $("#op-rarity").attr("class","op-rarity-"+opdata.level)
@@ -388,32 +378,29 @@
                     if(grid){
                         tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
                                 +            "<tr>"
-                                +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
+                                +                "<td colspan='3' class='skilldesc'>"+skilldesc+"</td>"
+                                +            "</tr>"
+                                +            "<tr style=\"height:20px\"></tr>"
+                                +            "<tr>"
+                                +               "<td rowspan=3>"+(grid?grid:"")+"</td>"
+                                +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
                                 +            "</tr>"
                                 +            "<tr>"
-                                +               "<td colspan=2 rowspan=3>"+(grid?grid:"")+"</td>"
-                                +                "<td class='stats-l'>SP Cost :</td>"
-                                +                "<td class='stats-r'>"+v2['spData'].spCost+"</td>"
+                                +                `<td>${titledMaker(v2.duration+" Second","Duration")}</td>`
                                 +            "</tr>"
-                                +            "<tr>"
-                                +                "<td class='stats-l'>Duration :</td>"
-                                +                "<td class='stats-r'>"+v2.duration+"</td>"
-                                +            "</tr>"
-                                +             (force!=undefined?"<tr><td class='stats-l'>Force :</td><td class='stats-r'>"+force+"</td></tr>": "")
-                                +            "<tr><td></td></tr>"
+                                +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
                                 +        "</table>";   
                     } else {
                         tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
                                 +            "<tr>"
                                 +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
                                 +            "</tr>"
+                                +            "<tr style=\"height:20px\"></tr>"
                                 +            "<tr>"
-                                +                "<td class='stats-l'>SP Cost :</td>"
-                                +                "<td class='stats-r'>"+v2['spData'].spCost+"</td>"
-                                +                "<td class='stats-l'>Duration :</td>"
-                                +                "<td class='stats-r'>"+v2.duration+"</td>"
+                                +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
+                                +                `<td>${titledMaker(v2.duration+" Second","Duration")}</td>`
                                 +            "</tr>"
-                                +             (force!=undefined?"<tr><td class='stats-l'>Force :</td><td class='stats-r'>"+force+"</td></tr>": "")
+                                +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
                                 +        "</table>";
                     }
                 })
@@ -550,10 +537,12 @@
         }
     }
 
-    function titledMaker (content,title,extraClass){
+    function titledMaker (content,title,extraClass=""){
         let titledbutton = `
-        <div class=\"btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" >
-        <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Position</a>${eval("position.tag_"+lang)}</div>`
+        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char my-1 ${extraClass}\" style="" data-toggle=\"tooltip\" data-placement=\"top\" >
+        <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>${content}</div>`
+
+        return titledbutton
     }
     function rangeMaker(rangeId){
         let rangeData = db.range[rangeId]
