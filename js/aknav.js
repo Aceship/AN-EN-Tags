@@ -30,45 +30,31 @@ $(document).ready(function(){
             name:"Infrastucture Skill"
         }]
     })
-        // <li class="nav-item dropdown">
-        //                 <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
-        //                         <div class="ak-subtitle ak-disable">Calculator</div>
-        //                         <div class="ak-disable">Menu</div>
-        //                 </a>
-        //                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        //                     <a class="dropdown-item" href="akhr.html" translate-id="topbar-2">Recruitment</a>
-        //                     <a class="dropdown-item" href="aklevel.html" translate-id="topbar-4">Leveling</a>
-        //                     <a class="dropdown-item" href="akevolve.html" translate-id="topbar-6">Material</a>
-        //                 </div>
-        //             </li>
-        //             <li class="nav-item dropdown">
-        //                 <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
-        //                         <div class="ak-subtitle ak-disable">Information</div>
-        //                         <div class="ak-disable">Menu</div>
-        //                 </a>
-        //                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        //                     <a class="dropdown-item" href="akhrchars.html" translate-id="topbar-2">Operator</a>
-        //                     <a class="dropdown-item" href="akenemy.html" translate-id="topbar-4">Enemy</a>
-        //                     <a class="dropdown-item" href="akriic.html" translate-id="topbar-4">Infrastucture Skill</a>
-        //                 </div>
-        //             </li>
+    console.log(window.location.href.split("/")[window.location.href.split("/").length-1])
+    let currentHtml= window.location.href.split("/")[window.location.href.split("/").length-1];
     let navDropdown = []
-
-    console.log(dropdown)
     dropdown.forEach(drop => {
         navDropdown.push(`
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
                 <div class="ak-subtitle ak-disable">${drop.name}</div>
-                <div class="ak-disable">Menu</div>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         `)
+        let isCurrent =undefined
+        drop.content.forEach(dropelement => {
+            if(currentHtml.includes(dropelement.href)) isCurrent=dropelement.name;
+        })
+        isCurrent = isCurrent?isCurrent:"Menu"
+        console.log(isCurrent)
+        navDropdown.push(`
+                <div class="ak-disable">${isCurrent}</div>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        `)
+        console.log(navDropdown)
         drop.content.forEach(dropelement => {
             navDropdown.push(`
             <a class="dropdown-item" href="${dropelement.href}" >${dropelement.name}</a>
             `)
-            console.log(dropelement)
         });
         navDropdown.push(`</div>`)
     })
