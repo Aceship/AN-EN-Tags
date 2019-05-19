@@ -378,7 +378,7 @@
                     if(grid){
                         tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
                                 +            "<tr>"
-                                +                "<td colspan='3' class='skilldesc'>"+skilldesc+"</td>"
+                                +                "<td colspan='3'  class='skilldesc'>"+skilldesc+"</td>"
                                 +            "</tr>"
                                 +            "<tr style=\"height:20px\"></tr>"
                                 +            "<tr>"
