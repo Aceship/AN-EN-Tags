@@ -42,7 +42,10 @@
     var d13 = $.getJSON("json/excel/range_table.json",function(data){
             db["range"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13).then(function(){
+    var d14 = $.getJSON("json/tl-attacktype.json",function(data){
+            db["attacktype"] = data;
+        });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14).then(function(){
         $.holdReady(false);
     });
 
@@ -229,6 +232,7 @@
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
             var opdataFull = {};
+
             $.each(opdata2,function(key,v){
                 v['id'] = key;
                 // console.log(v);
@@ -236,6 +240,7 @@
                 localStorage.selectedOPDetails = key;
                 return false
             });
+            
             var curpath = window.location.pathname.split("?");
             history.pushState(null, '', curpath+'?opname='+opdataFull.appellation.replace(/ /g,"_")); 
 
@@ -310,14 +315,29 @@
             $("#op-nameREG").html("["+eval("opdata.name_"+reg)+"]");
 
             var gender = query(db.gender,"sex_cn",opdata.sex);
-            $("#op-gender").html(eval("gender.sex_"+lang));
+            $("#op-gender").html(`
+            <div class=\"btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" >
+            <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Gender</a>${eval("gender.sex_"+lang)}</div>`
+            );
 
             var position = query(db.tags,"tag_cn",opdataFull.position);
-            $("#op-position").html(eval("position.tag_"+lang));
+            $("#op-position").html(`
+            <div class=\"btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" >
+            <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Position</a>${eval("position.tag_"+lang)}</div>`
+            );
 
             var type = query(db.classes,"type_cn",opdata.type);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
 
+            var attackType = getSpeciality(opdataFull.description)
+            var attackTypeTl =  query(db.attacktype,"type_cn",attackType);
+            console.log(attackType)
+            console.log(attackTypeTl)
+            $("#op-atktype").html(`
+            <div class=\"btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" >
+            <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Traits</a>${(eval("attackTypeTl.type_"+lang)?eval("attackTypeTl.type_"+lang):attackType)}</div>`
+            );
+            
 
             $("#op-rarity").html("");
             $("#op-rarity").attr("class","op-rarity-"+opdata.level)
@@ -467,7 +487,7 @@
                             +       "</tr>"
                             +       "<tr>"
                             +           "<td colspan=2 rowspan=5>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
-                            +           "<td class='stats-l'>Deploy :</td><td class='stats-r'>"+deploy+"</td>"
+                            +           "<td class='stats-l'>Redeploy :</td><td class='stats-r'>"+keyframe.data["respawnTime"]+" Sec</td>"
                             +       "</tr>"
                             +       "<tr>"
                             +           "<td class='stats-l'>Cost :</td><td class='stats-r'>"+keyframe.data["cost"]+"</td>"
@@ -508,6 +528,18 @@
 
     function getSkillHTML(i, opdataFull){
 
+    }
+
+    function getSpeciality(description){
+        console.log(description)
+        if(description.indexOf("<@ba.kw>")>0){
+        let muhRegex = /<@ba\.kw>(.*?)<\/>/g
+        let currSpeciality = muhRegex.exec(description)[1]
+        console.log(currSpeciality)
+        return currSpeciality
+        }else{
+            return "None"
+        }
     }
 
     function rangeMaker(rangeId){

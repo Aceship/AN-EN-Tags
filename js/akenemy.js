@@ -46,36 +46,7 @@
     var selectedLevel=0;
 
     $(document).ready(function(){
-        // console.log(db.building_buff)
-        // console.log(db.riic)
-        // Object.keys(db.enemy).forEach(element => {
-        //     // let currdb = [element]
-        //     console.log(element)
-        // });
-        // console.log()
-
-        
-        // Object.keys(db.building_chars).forEach(element => {
-        //     let currChara = db.building_chars[element]
-        //     charaBuff[element]= []
-        //     // console.log(element)
-        //     currChara.buffChar.forEach(element2 => {
-        //         // console.log(element2)
-        //         if(element2.buffData){
-        //             element2.buffData.forEach(element3 => {
-        //                 if(element3.buffId){
-        //                     console.log(element3.buffId)
-        //                     charaBuff[element].push({"buffId":element3.buffId,"cond":element3.cond})
-        //                 }
-        //             });
-        //             // console.log(buffId)
-        //         }
-        //     });
-        //     // console.log(currChara.buffs)
-        // });
         FilterType("BOSS")
-
-        
         $('#to-tag').click(function() {      // When arrow is clicked
             $('body,html').animate({
                 scrollTop : 0                       // Scroll to top of body
@@ -127,17 +98,6 @@
 
     function FilterType(type){
         charaFilter=[]
-        // let currEnemy = query(db.enemy,"enemyLevel",type,false)
-        // console.log(currEnemy)
-        // Object.keys(charaBuff).forEach(element => {
-            // charaFilter.push()
-            
-            // let currChara=charaBuff[element]
-            // if(currChara.find(search=> search.buffId.includes(type)))
-            // charaFilter.push({"name":element,"buff": currChara})
-        // });
-        // Object.keys()
-        // console.log(charaFilter)
         let currHtml = []
         $("#tbody-list").html("")
         
