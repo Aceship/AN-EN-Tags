@@ -528,13 +528,13 @@
                     minCol = Math.min(minCol,element.col)
                 });
             }
-            table.push(`<div class="rangeTableContainer"><table class='rangeTable' style="border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:fit-content;">`)
+            table.push(`<div class="rangeTableContainer"><table class='rangeTable' style="table-layout: fixed;border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:${(maxCol+minCol+1)*17}px;">`)
             
             for(r=0;r+minRow<maxRow+1;r++){
                 table.push(`<tr style="height:17px">`)
                 // console.log(r+minRow)
                 for(c=0;c+minCol<maxCol+1;c++){
-                    table.push(`<td style=";width:18px`)
+                    table.push(`<td style=";width:17px`)
                     if(r+minRow==0&&c+minCol==0){
                         table.push(";background:#DDD")
                     }else{
