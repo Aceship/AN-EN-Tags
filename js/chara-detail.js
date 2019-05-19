@@ -370,15 +370,21 @@
                 var grid = ""
                 // console.log(skillData)
                 $.each(skillData.levels,function(i2,v2){
-                    console.log(skillData.levels)
+                    console.log(skillData.levels[i2])
                     // console.log(v2['spData'].spCost);
                     var skilldesc = getSkillDesc(skillId,i2);
-                    
+                    var force
                     // console.log(v2)
                     if(v2.rangeId){
                         grid = rangeMaker(v2.rangeId)
                     }
                     // console.log(grid)
+
+                    skillData.levels[i2].blackboard.forEach(skillinfo => {
+                        if(skillinfo.key=="force"){
+                            force= skillinfo.value
+                        }
+                    });
                     if(grid){
                         tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
                                 +            "<tr>"
@@ -393,6 +399,7 @@
                                 +                "<td class='stats-l'>Duration :</td>"
                                 +                "<td class='stats-r'>"+v2.duration+"</td>"
                                 +            "</tr>"
+                                +             (force!=undefined?"<tr><td class='stats-l'>Force :</td><td class='stats-r'>"+force+"</td></tr>": "")
                                 +            "<tr><td></td></tr>"
                                 +        "</table>";   
                     } else {
@@ -406,6 +413,7 @@
                                 +                "<td class='stats-l'>Duration :</td>"
                                 +                "<td class='stats-r'>"+v2.duration+"</td>"
                                 +            "</tr>"
+                                +             (force!=undefined?"<tr><td class='stats-l'>Force :</td><td class='stats-r'>"+force+"</td></tr>": "")
                                 +        "</table>";
                     }
                 })
@@ -460,7 +468,7 @@
                         +"</div>");
 
         var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
-        console.log(opdataFull.phases[i])
+        // console.log(opdataFull.phases[i])
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
         $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
@@ -542,6 +550,11 @@
         }
     }
 
+    function titledMaker (content,title,extraClass){
+        let titledbutton = `
+        <div class=\"btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" >
+        <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Position</a>${eval("position.tag_"+lang)}</div>`
+    }
     function rangeMaker(rangeId){
         let rangeData = db.range[rangeId]
         if(rangeData){
@@ -605,23 +618,23 @@
         var desc = skillTL.desc;
 
         var matches = skillTL.desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
-        console.log(matches)
+        // console.log(matches)
         $.each(matches,function(i,v){
             var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
             if(!submatches[1]){
                 submatches = v.match(/(?:(?!\{).(?!$))+/gm);
             }
-            console.log(submatches)
+            // console.log(submatches)
             var value;
             for (var i = 0; i < skill.blackboard.length; i++) {
                 if(skill.blackboard[i].key == submatches[0]){
                     value = skill.blackboard[i].value;
-                    console.log(value)
+                    // console.log(value)
                 }
             }
             if(value){
                 if(typeof submatches[1] != "undefined"){
-                    console.log(submatches[1])
+                    // console.log(submatches[1])
                     if(submatches[1].includes("%")){
                         value = Math.round((value * 100)) + "%";
                     }
