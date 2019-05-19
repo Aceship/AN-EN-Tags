@@ -227,11 +227,12 @@
         console.log(currEnemyDetail)
         
         // console.log(query(db.enemytl,"name_cn",currEnemy.name).name_en)
+        // <div>Attack Speed : ${currEnemyData.attributes.attackSpeed.m_value}</div>
         let tlname = query(db.enemytl,"name_cn",currEnemy.name).name_en 
         currHtml.push(`
         <div class="ak-c-black col">    
             <div>Attack Damage : ${currEnemyData.attributes.atk.m_value}</div>
-            <div>Attack Speed : ${currEnemyData.attributes.attackSpeed.m_value}</div>
+
             <div>Attack Time : ${currEnemyData.attributes.baseAttackTime.m_value} Second</div>
             <div>Health : ${currEnemyData.attributes.maxHp.m_value}</div>
             <div>Health Recovery : ${currEnemyData.attributes.hpRecoveryPerSec.m_value} /Second</div>
@@ -243,15 +244,15 @@
             <div>Stun Immune : ${currEnemyData.attributes.stunImmune.m_value}</div>
             <div>Silence Immune : ${currEnemyData.attributes.silenceImmune.m_value}</div>
         `)
-
+        currHtml.push(`</div>`)
         if(currEnemyData.talentBlackboard){
-            currHtml.push(`<div>Abilities`)
+            currHtml.push(`<div class="ak-c-black" style="text-align:center;margin-top:5px;background:#222"> Abilities<div class="ak-c-black" style="text-align:left">`)
             currEnemyData.talentBlackboard.forEach(element=>{
                 currHtml.push(`<div>${element.key} : ${element.value}</div>`)
             })
-            currHtml.push(`</div>`)
+            currHtml.push(`</div></div> `)
         }
-        currHtml.push(`</div>`)
+        
         $('#enemyDetail2').html(currHtml.join(""))
         $('#enemyDetail2').show();
     }    

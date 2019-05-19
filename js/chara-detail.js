@@ -334,7 +334,7 @@
             console.log(attackType)
             console.log(attackTypeTl)
             $("#op-atktype").html(`
-            <div class=\"btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" >
+            <div class=\"btn-sm ak-shadow-small ak-btn ak-trait-${(eval("attackTypeTl.type_detail"))}\" data-toggle=\"tooltip\" data-placement=\"top\" >
             <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">Traits</a>${(eval("attackTypeTl.type_"+lang)?eval("attackTypeTl.type_"+lang):attackType)}</div>`
             );
             
