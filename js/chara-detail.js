@@ -427,7 +427,7 @@
                                         +    "</div>"
                                         +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
                                         +       "<input type='range' value='1' min='1' max="+skillData.levels.length+" name='skillLevel' id='skill"+i+"Level' oninput='changeSkillLevel(this,"+i+")'style=\"margin-top:20px\" class='skillLevelInput'>"
-                                        +        `<div class='skillleveldisplaycontainer'><span class="ak-btn btn btn-sm ak-c-black" style="width:35px"id='skill${i}LevelDisplay'>1</span></div>`
+                                        +        `<div class='skillleveldisplaycontainer'><span class="ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
                                         // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
                                         +        tables
                                         +    "</div>"
@@ -596,7 +596,24 @@
         var value = $(el).val();
         $("#skill"+skill_no+"StatsCollapsible").children("table").removeClass("active");
         $("#skill"+skill_no+"level"+(value-1)+"stats").addClass("active");
-        $("#skill"+skill_no+"LevelDisplay").html(value);
+        $("#skill"+skill_no+"LevelDisplay").html(SkillRankDisplay(value));
+    }
+
+    function SkillRankDisplay(skill_no){
+        let img = "./img/ui/rank/"
+        let html =""
+        if(skill_no>0&&skill_no<7){
+            img += skill_no+".png"
+            html = `<img src="${img}" style="width:30px">`
+        }else if(skill_no>=7){
+            let imgM = img +"m-"+ (skill_no-7)+".png"
+            img += "7.png"
+             
+            html = `<img src="${img}" style="width:30px"><img src="${imgM}" style="width:30px">`
+        }
+        
+        console.log(html)
+        return html
     }
 
     function getSkillDesc(skillId,level){
