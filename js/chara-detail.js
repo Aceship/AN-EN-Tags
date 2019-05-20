@@ -425,9 +425,10 @@
                                         +        "</div>"
                                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                                         +    "</div>"
-                                        +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show'>"
-                                        +       "<input type='range' value='1' min='1' max="+skillData.levels.length+" name='skillLevel' id='skill"+i+"Level' oninput='changeSkillLevel(this,"+i+")' class='form-control skillLevelInput'>"
-                                        +        "<div class='skillleveldisplaycontainer'>lv <span id='skill"+i+"LevelDisplay'>1</span></div>"
+                                        +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
+                                        +       "<input type='range' value='1' min='1' max="+skillData.levels.length+" name='skillLevel' id='skill"+i+"Level' oninput='changeSkillLevel(this,"+i+")'style=\"margin-top:20px\" class='skillLevelInput'>"
+                                        +        `<div class='skillleveldisplaycontainer'><span class="ak-btn btn btn-sm ak-c-black" style="width:35px"id='skill${i}LevelDisplay'>1</span></div>`
+                                        // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
                                         +        tables
                                         +    "</div>"
                                         +"</div>");
@@ -537,9 +538,9 @@
         }
     }
 
-    function titledMaker (content,title,extraClass=""){
+    function titledMaker (content,title,extraClass="",extraId=""){
         let titledbutton = `
-        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char my-1 ${extraClass}\" style="" data-toggle=\"tooltip\" data-placement=\"top\" >
+        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char my-1 ${extraClass}\" style="" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
         <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>${content}</div>`
 
         return titledbutton
