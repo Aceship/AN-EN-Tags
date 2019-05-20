@@ -27,7 +27,7 @@ $(document).ready(function(){
             name:"Enemy"
         },{
             href:"akriic.html",
-            name:"infrastructure Skill"
+            name:"Infrastructure Skill"
         }]
     })
     console.log(window.location.href.split("/")[window.location.href.split("/").length-1])
