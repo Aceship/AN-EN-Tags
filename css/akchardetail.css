@@ -346,30 +346,35 @@ body {
     height: 10px;
     margin: 10px ;
     margin-bottom : 10px;
-    -webkit-margin-bottom:10px;
+    -webkit-margin-bottom:10px; 
     opacity: 0.7; 
     -webkit-transition: .2s; 
     transition: opacity .2s;
     background: #eee;
 }
 .skillLevelInput[type="range"]{
-    padding-top: 5px;
     -webkit-appearance: none;  /* Override default CSS styles */
+    padding-top: 5px;
+
     appearance: none;
     height:5px;
     vertical-align: super;
+    /* -moz-vertical-align:bottom !important; */
 }
 .skillLevelInput:hover {
     opacity: 1; /* Fully shown on mouse-over */
   }
 
 .skillLevelInput::-moz-range-thumb {
-    width: 30px;
-    height: 38px;
-    border-radius: 0px;
+    width: 20px;
+    height: 30px;
+    margin-bottom: 10px;
+    /* padding-bottom:20px; */
+    border: 1px solid darkgrey;
+    border-radius: 5px;
     background: #2f2f2f;
-    border:2px solid #eee;
     cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .skillLevelInput::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
@@ -377,6 +382,7 @@ body {
     width: 20px;
     height: 30px;
     margin-bottom: 10px;
+
     border: 1px solid darkgrey;
     border-radius: 5px;
     background: #2f2f2f;
