@@ -251,6 +251,7 @@
             // Get operator elite skins
             var skinList = db.skintable.buildinEvolveMap[opdataFull.id];
             // console.log(skinList);
+            $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo+".png");
 
             var tabbtn = [];
             var tabbtn2 = [];
@@ -360,7 +361,6 @@
                 var grid = ""
                 // console.log(skillData)
                 $.each(skillData.levels,function(i2,v2){
-                    console.log(skillData.levels[i2])
                     // console.log(v2['spData'].spCost);
                     var skilldesc = getSkillDesc(skillId,i2);
                     var force
