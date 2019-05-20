@@ -604,15 +604,13 @@
         let html =""
         if(skill_no>0&&skill_no<7){
             img += skill_no+".png"
-            html = `<img src="${img}" style="width:30px">`
+            html = `<img src="${img}" style="width:40px">`
         }else if(skill_no>=7){
             let imgM = img +"m-"+ (skill_no-7)+".png"
             img += "7.png"
              
-            html = `<img src="${img}" style="width:30px"><img src="${imgM}" style="width:30px">`
+            html = `<img src="${img}" style="width:40px"><img src="${imgM}" style="width:40px">`
         }
-        
-        console.log(html)
         return html
     }
 
