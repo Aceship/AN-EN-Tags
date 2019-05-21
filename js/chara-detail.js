@@ -411,13 +411,16 @@
                         case 8:spTypeHtml = "Always On";break;
                         default:spTypeHtml = spType;break;
                     }
-                    var spDuration= (v2.duration==0?"Instant Use":v2.duration + " Seconds")
-                    var spDurationName = "Duration"
+                    var spDuration= (v2.duration==0?"Instant Attack":v2.duration + " Seconds")
+                    var spDurationName = (v2.duration==0?"":"Duration")
 
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
                         if(skillinfo.key=="force") force= skillinfo.value
                         if(v2.duration==-1){
-                            // spDuration =
+                            if(skillinfo.key =="duration"){
+                                spDuration = skillinfo.value;
+                                spDurationName = "Target Effect Duration"
+                            }
                         }
                     });
                     // console.log(currSkill)
@@ -439,39 +442,28 @@
                              <tr >
                                 <td colspan='${grid?5:4}'>${spTypeHtml}${skillType}${titledMaker(spDuration,spDurationName)}</td>
                             </tr>
-                            
-                            `
-                    
-                    
+                            <tr style="height:10px"></tr>
+                            <tr>
+                                <td colspan='${grid?3:2}' class='skilldesc'>${skilldesc}</td>
+                            </tr>
+                            <tr style="height:10px"></tr>
+                            `       
                     if(grid){
                         tables +=            "<tr>"
-                                +                "<td colspan='3' class='skilldesc'>"+skilldesc+"</td>"
-                                +            "</tr>"
-                                +            "<tr style=\"height:20px\"></tr>"
-                                +            "<tr>"
                                 +               "<td rowspan=2>"+(grid?grid:"")+"</td>"
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
                                 +                `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
-                                
                                 +            "</tr>"
-                                // +            "<tr>"
-                                // +                `<td></td>`
-                                // +            "</tr>"
                                 +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
-                                + "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
+                                +               "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
                                 +        "</table>";   
                     } else {
-                        tables +=            "<tr>"
-                                +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
-                                +            "</tr>"
-                                +            "<tr style=\"height:20px\"></tr>"
+                        tables +=           "<tr style=\"height:10px\"></tr>"
                                 +            "<tr>"
                                 +                `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
-                                
                                 +            "</tr>"
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
-                                // +                `<td>${titledMaker(spDuration,spDurationName)}</td>`
                                 + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
                                 +        "</table>";
                     }
@@ -679,8 +671,10 @@
 
     function titledMaker (content,title,extraClass="",extraId=""){
         let titledbutton = `
-        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
-        <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>${content}</div>`
+        <div style="padding-top:5px;display:inline-block">
+        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
+        ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
+        </div>`
 
         return titledbutton
     }
