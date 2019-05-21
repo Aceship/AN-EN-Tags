@@ -30,7 +30,7 @@ $(document).ready(function(){
             name:"Infrastructure Skill"
         }]
     })
-    console.log(window.location.href.split("/")[window.location.href.split("/").length-1])
+    // console.log(window.location.href.split("/")[window.location.href.split("/").length-1])
     let currentHtml= window.location.href.split("/")[window.location.href.split("/").length-1];
     let navDropdown = []
     dropdown.forEach(drop => {
@@ -44,13 +44,13 @@ $(document).ready(function(){
             if(currentHtml.includes(dropelement.href)) isCurrent=dropelement.name;
         })
         isCurrent = isCurrent?isCurrent:"Menu"
-        console.log(isCurrent)
+        // console.log(isCurrent)
         navDropdown.push(`
                 <div class="ak-disable">${isCurrent}</div>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         `)
-        console.log(navDropdown)
+        // console.log(navDropdown)
         drop.content.forEach(dropelement => {
             navDropdown.push(`
             <a class="dropdown-item" href="${dropelement.href}" >${dropelement.name}</a>

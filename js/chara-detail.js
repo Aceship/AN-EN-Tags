@@ -108,7 +108,7 @@
         } else {
             console.log("selected OP defined");
             var curpath = window.location.search.split("?");
-            console.log(curpath)
+            // console.log(curpath)
             if(typeof curpath[1] != "undefined"){
                 var variables = curpath[1].split("?");
                 var char = {};
@@ -190,7 +190,7 @@
                     result.push({'name':name,'name_cn':name_cn,'nameTL':nameTL,'img_name':Object.keys(img_name),rarity});
                 }
             });
-            console.log(result)
+            // console.log(result)
             result.sort((a,b)=> b.rarity-a.rarity)
             if(result.length > 0){
                 $('#operatorsResult').html("");
@@ -386,7 +386,7 @@
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
                                 +            "</tr>"
                                 +            "<tr>"
-                                +                `<td>${titledMaker(v2.duration+" Second","Duration")}</td>`
+                                +                `<td>${titledMaker((v2.duration==0?"Instant Use":v2.duration+" Second"),"Duration")}</td>`
                                 +            "</tr>"
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
                                 +        "</table>";   
@@ -398,7 +398,7 @@
                                 +            "<tr style=\"height:20px\"></tr>"
                                 +            "<tr>"
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
-                                +                `<td>${titledMaker(v2.duration+" Second","Duration")}</td>`
+                                +                `<td>${titledMaker((v2.duration==0?"Instant Use":v2.duration+" Second"),"Duration")}</td>`
                                 +            "</tr>"
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
                                 +        "</table>";
@@ -456,11 +456,20 @@
                         +"</div>");
 
         var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
-        // console.log(opdataFull.phases[i])
+        var eliteCost = GetEliteCost(i,opdataFull)
+        var materialist = []
+        if(eliteCost){
+            eliteCost.forEach(materials => {
+                materialist.push(CreateMaterial(materials.id,materials.count))
+            });
+            console.log(materialist)
+        }
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
+
         $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
             var keyframe = opdataFull.phases[i].attributesKeyFrames[j];
+            // console.log(keyframe)
             var navItems = $("<li class='nav-item'>"
                             +   "<a class='btn tabbing-btns horiz nav-link "+(j!=0 ? '' : 'active')+"' data-toggle='pill' href='#elite"+i+"Stats"+j+"'>lv "+keyframe.level+"</a>"
                             +"</li>");
@@ -482,7 +491,7 @@
                             +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td>"
                             +       "</tr>"
                             +       "<tr>"
-                            +           "<td colspan=2 rowspan=5>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
+                            +           "<td colspan=2 rowspan=4>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
                             +           "<td class='stats-l'>Redeploy :</td><td class='stats-r'>"+keyframe.data["respawnTime"]+" Sec</td>"
                             +       "</tr>"
                             +       "<tr>"
@@ -494,8 +503,12 @@
                             +       "<tr>"
                             +           "<td class='stats-l'>AtkTime :</td><td class='stats-r'>"+keyframe.data["baseAttackTime"]+" Sec</td>"
                             +       "</tr>"
+                            // +       "<tr></tr>"
                             +       "<tr>"
-                            +           "<td></td>"
+                            +           (materialist.length==0?"":`<td colspan=4 class="ak-btn ak-rare-bg"style="margin:0px;text-align:center"><a href="akhrelite.html?opname=${opdataFull.appellation}">Required Materials</a></td>`)
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           `<td colspan=4 >${materialist.join("")}</td>`
                             +       "</tr>"
                             +   "</table></div>");
             navPills.append(navItems);
@@ -511,27 +524,64 @@
                         +   "<img class='topright' src='img/ui/elite/"+i+".png' width='100'>"
                         +   "<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"MatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                         +   "<div id='elite"+i+"MatsCollapsible' class='collapse collapsible'>"
-                        +       "WIP"
+                        +    materialist.join("")
                         +   "</div></div>");
         } else {
             var mats = $("");
         }
         container.append(stats);
         container.append(statsCollapsible);
-        container.append(mats);
+        // container.append(mats);
         return container;
     }
 
     function getSkillHTML(i, opdataFull){
 
     }
+    function GetEliteCost(i,opdataFull){
+        if(i>0){
+            console.log(opdataFull)
+            let reqmats = [];
+            // console.log(db.dataconst["evolveGoldCost"][opdataFull.rarity])
+            // console.log(i)
+            if(reqmats){
+                if(opdataFull.phases[i]){
+                    // console.log(curChara.rarity+1)
+                    // console.log(db.dataconst["evolveGoldCost"][curChara.rarity][num-1])
+                    reqmats=([{"count":(db.dataconst["evolveGoldCost"][opdataFull.rarity][i-1]).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+                                , "id" :4001
+                                ,"type":"GOLD" }])
+                }
+            }
+            reqmats = opdataFull.phases[i] ? reqmats.concat(opdataFull.phases[i].evolveCost) : undefined;
+            console.log(reqmats)
+            return reqmats
+        }else{
+            return undefined
+        }
+    }
+    function CreateMaterial(id,count){
+        var itemdata = db.items[id];
+        var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
+        var material = 
+        ("<div class=\"akmat-container\" style=\"position: relative;\">"
+        +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
+        +           "<div class=\"item-image\">"
+        +               "<span></span>"
+        +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
+        +           "</div>"
+        +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
+        +           "<div class=\"item-amount\">"+count+"x</div>"
+        +       "</div>");
 
+        return material
+    }
     function getSpeciality(description){
-        console.log(description)
+        // console.log(description)
         if(description.indexOf("<@ba.kw>")>0){
         let muhRegex = /<@ba\.kw>(.*?)<\/>/g
         let currSpeciality = muhRegex.exec(description)[1]
-        console.log(currSpeciality)
+        // console.log(currSpeciality)
         return currSpeciality
         }else{
             return "None"
@@ -613,7 +663,8 @@
         }
         return html
     }
-
+    
+      
     function getSkillDesc(skillId,level){
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
