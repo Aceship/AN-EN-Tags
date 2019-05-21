@@ -371,26 +371,30 @@
                         materialist.push(CreateMaterial(mat.id,mat.count))
                     });
                     var materialHtml =``
-                    if(materialist.length>0){
-                        if(i2>=7){
-                            var time = opdataFull.skills[i].levelUpCostCond[i2-7].lvlUpTime
-                            var cond = opdataFull.skills[i].levelUpCostCond[i2-7].unlockCond
-                            materialHtml = `
-                            <div style="text-align:center;background:#222">Rank Up Requirements</div>
-                            <div style="margin-top:15px">
-                            ${titledMaker((cond.phase>0?"Elite "+cond.phase+" ":"")+(cond.level>0?"Level "+cond.level:""),"Level Required")}
-                            ${titledMaker(time/60/60+" Hour","Time Required")}
-                            </div>
-                            `+materialist.join("")
-                        }else{
-                            var cond = opdataFull.allSkillLvlup[i2-1].unlockCond
-                            materialHtml = `
-                            <div style="text-align:center;background:#222">Rank Up Requirements</div>
-                            <div style="margin-top:15px">
-                            ${titledMaker((cond.phase>0?"Elite "+cond.phase+" ":"")+(cond.level>0?"Level "+cond.level:""),"Level Required")}
-                            </div>
-                            `+materialist.join("")
-                        }
+                    if(i2>=7){
+                        var time = opdataFull.skills[i].levelUpCostCond[i2-7].lvlUpTime
+                        var condLeveling = opdataFull.skills[i].levelUpCostCond[i2-7].unlockCond
+                        var condUnlocking = opdataFull.skills[i].unlockCond
+                        var phase = Math.max(condLeveling.phase,condUnlocking.phase)
+                        var level = Math.max(condLeveling.level,condUnlocking.level)
+                        materialHtml = `
+                        <div style="text-align:center;background:#222">${(i2==0?"Unlock":"Rank Up")} Requirements</div>
+                        <div style="margin-top:15px">
+                        ${titledMaker((phase>0?"Elite "+phase+" ":"")+(level>0?"Level "+level:""),"Level Required")}
+                        ${titledMaker(time/60/60+" Hour","Time Required")}
+                        </div>
+                        `+(materialist.length>0?materialist.join(""):"")
+                    }else{
+                        var condLeveling = (opdataFull.allSkillLvlup[i2-1]?opdataFull.allSkillLvlup[i2-1].unlockCond:{phase:0,level:0})
+                        var condUnlocking = opdataFull.skills[i].unlockCond
+                        var phase = Math.max(condLeveling.phase,condUnlocking.phase)
+                        var level = Math.max(condLeveling.level,condUnlocking.level)
+                        materialHtml = `
+                        <div style="text-align:center;background:#222">${(i2==0?"Unlock":"Rank Up")} Requirements</div>
+                        <div style="margin-top:15px">
+                        ${titledMaker((phase>0?"Elite "+phase+" ":"")+(level>0?"Level "+level:""),"Level Required")}
+                        </div>
+                        `+(materialist.length>0?materialist.join(""):"")
                     }
                     
                     if(v2.rangeId)grid = rangeMaker(v2.rangeId)
@@ -652,14 +656,13 @@
     }
     function getSpeciality(description){
         // console.log(description)
-        if(description.indexOf("<@ba.kw>")>0){
         let muhRegex = /<@ba\.kw>(.*?)<\/>/g
-        let currSpeciality = muhRegex.exec(description)[1]
-        // console.log(currSpeciality)
-        return currSpeciality
-        }else{
-            return "None"
-        }
+        let currSpeciality = muhRegex.exec(description)
+        console.log(currSpeciality)
+        if(currSpeciality)
+        return currSpeciality[1]
+        else
+        return "None"
     }
 
     function titledMaker (content,title,extraClass="",extraId=""){
