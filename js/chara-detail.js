@@ -418,7 +418,7 @@
                         }
                     });
                     
-                    var extraInfoHtml =``
+                    var extraPre =``
                     // console.log(materialList2)
                     // console.log(parseInt(v2.duration)>0)
                     //skilltype 
@@ -642,16 +642,14 @@
         var itemdata = db.items[id];
         var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
         var material = 
-        ("<div class=\"akmat-container\" style=\"position: relative;\">"
-        +           "<div class=\"item-name\">"+(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)+"</div>"
-        +           "<div class=\"item-image\">"
-        +               "<span></span>"
-        +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
-        +           "</div>"
-        +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
-        +           "<div class=\"item-amount\">"+count+"x</div>"
-        +       "</div>");
-
+        (`<div class="akmat-container" style="position:relative">
+            <div class="item-name">${(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)}</div>
+            <div class="item-image">
+                <img id="item-image" src="img/items/${itemdata.iconId}.png">
+            </div>
+            <img class="item-rarity" src="img/material/bg/item-${itemdata.rarity+1}.png">
+            <div class="item-amount">${count}x</div>
+        </div>`)
         return material
     }
     function getSpeciality(description){
@@ -716,7 +714,6 @@
         }else{
             return undefined
         }
-        
     }
 
     function changeSkillLevel(el,skill_no){
