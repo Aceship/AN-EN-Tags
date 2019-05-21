@@ -21,7 +21,7 @@
     var d6 = $.getJSON("json/tl-tags.json",function(data){
             db["tags"] = data;
         });
-    var d7 = $.getJSON("json/akmaterial.json",function(data){
+    var d7 = $.getJSON("json/tl-item.json",function(data){
             db["itemstl"] = data;
         });
     var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){
@@ -212,7 +212,7 @@
                     }
                 }
             }
-            console.log( $("#operatorsResult")  )
+            // console.log( $("#operatorsResult")  )
             // $('#operatorsResult').show();
         } else {
             $('#operatorsResult').html("");
@@ -359,22 +359,49 @@
                 var skillname = db.skillsTL[skillId].name;
                 var tables = "";
                 var grid = ""
-                // console.log(skillData)
+                // var materialList2 = []
                 $.each(skillData.levels,function(i2,v2){
                     // console.log(v2['spData'].spCost);
                     var skilldesc = getSkillDesc(skillId,i2);
+                    var skillMat = GetSkillCost(i2,i,opdataFull)
                     var force
-                    // console.log(v2)
+                    var materialist = []
+                    skillMat.forEach(mat => {
+                        materialist.push(CreateMaterial(mat.id,mat.count))
+                    });
+                    var materialHtml =``
+                    if(materialist.length>0){
+                        if(i2>=7){
+                            var time = opdataFull.skills[i].levelUpCostCond[i2-7].lvlUpTime
+                            var cond = opdataFull.skills[i].levelUpCostCond[i2-7].unlockCond
+                            materialHtml = `
+                            <div style="text-align:center;background:#222">Rank Up Requirements</div>
+                            <div style="margin-top:15px">
+                            ${titledMaker((cond.phase>0?"Elite "+cond.phase+" ":"")+(cond.level>0?"Level "+cond.level:""),"Level Required")}
+                            ${titledMaker(time/60/60+" Hour","Time Required")}
+                            </div>
+                            `+materialist.join("")
+                        }else{
+                            var cond = opdataFull.allSkillLvlup[i2-1].unlockCond
+                            materialHtml = `
+                            <div style="text-align:center;background:#222">Rank Up Requirements</div>
+                            <div style="margin-top:15px">
+                            ${titledMaker((cond.phase>0?"Elite "+cond.phase+" ":"")+(cond.level>0?"Level "+cond.level:""),"Level Required")}
+                            </div>
+                            `+materialist.join("")
+                        }
+                    }
+                    
                     if(v2.rangeId){
                         grid = rangeMaker(v2.rangeId)
                     }
-                    // console.log(grid)
-
+                    
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
                         if(skillinfo.key=="force"){
                             force= skillinfo.value
                         }
                     });
+                    // console.log(materialList2)
                     if(grid){
                         tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
                                 +            "<tr>"
@@ -388,7 +415,8 @@
                                 +            "<tr>"
                                 +                `<td>${titledMaker((v2.duration==0?"Instant Use":v2.duration+" Second"),"Duration")}</td>`
                                 +            "</tr>"
-                                +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
+                                +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
+                                + "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
                                 +        "</table>";   
                     } else {
                         tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
@@ -401,6 +429,7 @@
                                 +                `<td>${titledMaker((v2.duration==0?"Instant Use":v2.duration+" Second"),"Duration")}</td>`
                                 +            "</tr>"
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
+                                + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
                                 +        "</table>";
                     }
                 })
@@ -458,11 +487,18 @@
         var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
         var eliteCost = GetEliteCost(i,opdataFull)
         var materialist = []
+        
         if(eliteCost){
             eliteCost.forEach(materials => {
                 materialist.push(CreateMaterial(materials.id,materials.count))
             });
-            console.log(materialist)
+            // console.log(materialist)
+        }
+        var materialHtml =''
+        if(materialist.length>0){
+            materialHtml=`
+            <div style="text-align:center;background:#222">Elite Requirements</div>
+            `+materialist.join("")
         }
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
@@ -504,12 +540,9 @@
                             +           "<td class='stats-l'>AtkTime :</td><td class='stats-r'>"+keyframe.data["baseAttackTime"]+" Sec</td>"
                             +       "</tr>"
                             // +       "<tr></tr>"
-                            +       "<tr>"
-                            +           (materialist.length==0?"":`<td colspan=4 class="ak-btn ak-rare-bg"style="margin:0px;text-align:center"><a href="akhrelite.html?opname=${opdataFull.appellation}">Required Materials</a></td>`)
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           `<td colspan=4 >${materialist.join("")}</td>`
-                            +       "</tr>"
+                            +       "<tr><td colspan=4>"
+                            +       materialHtml
+                            +       "</td></tr>"
                             +   "</table></div>");
             navPills.append(navItems);
             navTabs.append(tabStats);
@@ -535,8 +568,24 @@
         return container;
     }
 
-    function getSkillHTML(i, opdataFull){
-
+    function GetSkillCost(i2,i, opdataFull){
+        let reqmats=[]
+        // console.log("==============="  )
+        // console.log("Skill Number :" + (i+1)  )
+        // console.log("Skill Level :" + (i2+1)  )
+        // console.log("Skill mastery :" + (i2-7+1)  )
+        
+        if(i2!=0&&i2<7){
+            // console.log(opdataFull.allSkillLvlup[i2])
+            reqmats = opdataFull.allSkillLvlup[i2-1].lvlUpCost
+        
+        }else if(i2>=7){
+            // console.log(opdataFull.skills[i])
+            reqmats = opdataFull.skills[i].levelUpCostCond[i2-7].levelUpCost
+        }
+        // console.log(i2 + " wa " + i)
+        // console.log(reqmats)
+        return reqmats
     }
     function GetEliteCost(i,opdataFull){
         if(i>0){
@@ -554,7 +603,7 @@
                 }
             }
             reqmats = opdataFull.phases[i] ? reqmats.concat(opdataFull.phases[i].evolveCost) : undefined;
-            console.log(reqmats)
+            // console.log(reqmats)
             return reqmats
         }else{
             return undefined
@@ -565,7 +614,7 @@
         var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
         var material = 
         ("<div class=\"akmat-container\" style=\"position: relative;\">"
-        +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
+        +           "<div class=\"item-name\">"+(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)+"</div>"
         +           "<div class=\"item-image\">"
         +               "<span></span>"
         +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
