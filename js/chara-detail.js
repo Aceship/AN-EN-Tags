@@ -777,7 +777,7 @@
                         value = Math.round((value * 100)) + "%";
                     }
                 }
-                desc = desc.replace(v,value);
+                desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
             }
         });
         // console.log(desc);
