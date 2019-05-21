@@ -484,7 +484,7 @@
                                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                                         +    "</div>"
                                         +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
-                                        +       "<input type='range' value='1' min='1' max="+skillData.levels.length+" name='skillLevel' id='skill"+i+"Level' oninput='changeSkillLevel(this,"+i+")'style=\"margin-top:20px\" class='skillLevelInput'>"
+                                        +       "<input type='range' value='1' min='1' max="+skillData.levels.length+" name='skillLevel' id='skill"+i+"Level' oninput='changeSkillLevel(this,"+i+")'style=\"margin-top:20px;\" class='skillLevelInput'>"
                                         +        `<div class='skillleveldisplaycontainer'><span class="ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
                                         // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
                                         +        tables
@@ -736,7 +736,7 @@
             let imgM = img +"m-"+ (skill_no-7)+".png"
             img += "7.png"
              
-            html = `<img src="${img}" style="width:40px"><img src="${imgM}" style="width:40px">`
+            html = `<img src="${img}" style="width:40px"><div class="akrankmastery"><img src="${imgM}" style="width:40px"></div>`
         }
         return html
     }

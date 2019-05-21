@@ -347,29 +347,27 @@ body {
     margin-top: 0px!important;
 }
 
-.collapsible .skillLevelInput {
+
+.skillLevelInput[type="range"]{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 65%;
+    display: inline-block;
+    line-height: 0px;
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 65%;
     display: inline-block;
     line-height: 0px;
     
-    height: 10px;
-    margin: 10px ;
-    margin-bottom : 10px;
-    -webkit-margin-bottom:10px; 
+    height: 25px;
+    margin-left: 10px ;
+    /* margin-top:55px !important; */
     opacity: 0.7; 
     -webkit-transition: .2s; 
     transition: opacity .2s;
-    background: #eee;
-}
-.skillLevelInput[type="range"]{
-    -webkit-appearance: none;  /* Override default CSS styles */
-    padding-top: 5px;
-
-    appearance: none;
-    height:5px;
-    vertical-align: super;
+    background: #bbb;
+    /* vertical-align: super; */
     /* -moz-vertical-align:bottom !important; */
 }
 .skillLevelInput:hover {
@@ -378,40 +376,43 @@ body {
 
 .skillLevelInput::-moz-range-thumb {
     width: 20px;
-    height: 30px;
+    height: 20px;
     margin-bottom: 10px;
     /* padding-bottom:20px; */
-    border: 1px solid darkgrey;
-    border-radius: 5px;
+    border: 2px solid #bbb;
+    border-radius: 0px;
     background: #2f2f2f;
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .skillLevelInput::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
     width: 20px;
-    height: 30px;
+    height: 20px;
     margin-bottom: 10px;
-
-    border: 1px solid darkgrey;
-    border-radius: 5px;
+    /* padding-bottom:20px; */
+    border: 2px solid #bbb;
+    border-radius: 0px;
     background: #2f2f2f;
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
 .skillleveldisplaycontainer {
     /* padding:0px;  */
-    min-height:45px;
-    padding-top: 10px !important;
+    /* min-height:45px; */
+    /* height:75px; */
+    /* margin-top:-30px !important; */
+    /* padding-top: 10px !important; */
     display: inline-block;
-    vertical-align: super;
+    
+    /* vertical-align: middle; */
+}
+.akrankmastery{
+    display:inline-block;
 }
 
 .skillleveldisplaycontainer span {
     position: initial!important;
     padding-top:10px !important;
+    margin-top:-17px;
     padding: 0px!important;
     min-height:45px;
 }
@@ -521,5 +522,30 @@ body {
 
     #operatorsResult img {
         height: 70px!important;
+    }
+    .collapsible .skillLevelInput {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        position: absolute;
+        right: -40px !important;
+        top:200px;
+        width: 120px;
+        display: inline-block;
+        line-height: 0px;
+        z-index:2;
+        opacity: 0.7; 
+        -webkit-transition: .2s; 
+        transition: opacity .2s;
+        background: #eee;
+        transform: rotate(-90deg)
+    }
+    .skillleveldisplaycontainer{
+        position: absolute;
+        vertical-align: top;
+        top:100px;
+        right: 0px !important;
+    }
+    .akrankmastery{
+        display:block
     }
 }
