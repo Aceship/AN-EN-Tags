@@ -359,6 +359,7 @@
                 var skillname = db.skillsTL[skillId].name;
                 var tables = "";
                 var grid = ""
+                console.log(skillData)
                 // var materialList2 = []
                 $.each(skillData.levels,function(i2,v2){
                     // console.log(v2['spData'].spCost);
@@ -392,16 +393,34 @@
                         }
                     }
                     
-                    if(v2.rangeId){
-                        grid = rangeMaker(v2.rangeId)
+                    if(v2.rangeId)grid = rangeMaker(v2.rangeId)
+                    var spType = (v2.spData.spType)
+                    console.log(spType)
+                    var spTypeHtml = ""
+                    switch (spType){
+                        case 1:spTypeHtml = "Per second";break;
+                        case 2:spTypeHtml = "Attacking Enemy";break;
+                        case 4:spTypeHtml = "Getting Hit";break;
+                        case 8:spTypeHtml = "Always On";break;
+                        default:spTypeHtml = spType;break;
                     }
-                    
+                    var spDuration= (v2.duration==0?"Instant Use":v2.duration)
+                    var spDurationName = "Duration"
+
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
-                        if(skillinfo.key=="force"){
-                            force= skillinfo.value
+                        if(skillinfo.key=="force") force= skillinfo.value
+                        if(v2.duration==-1){
+                            // spDuration =
                         }
                     });
+                    
+                    var extraInfoHtml =``
                     // console.log(materialList2)
+                    // console.log(parseInt(v2.duration)>0)
+                    //skilltype 
+                    //0 = on deploy
+                    //1 = manual 
+                    //2 = auto
                     if(grid){
                         tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
                                 +            "<tr>"
@@ -411,9 +430,12 @@
                                 +            "<tr>"
                                 +               "<td rowspan=3>"+(grid?grid:"")+"</td>"
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
+                                +                `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
+                                
                                 +            "</tr>"
                                 +            "<tr>"
-                                +                `<td>${titledMaker((v2.duration==0?"Instant Use":v2.duration+" Second"),"Duration")}</td>`
+                                +                `<td>${titledMaker(spDuration,spDurationName)}</td>`
+                                +                `<td>${titledMaker(spTypeHtml,"SP Charge Type")}</td>`
                                 +            "</tr>"
                                 +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
                                 + "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
@@ -425,10 +447,13 @@
                                 +            "</tr>"
                                 +            "<tr style=\"height:20px\"></tr>"
                                 +            "<tr>"
+                                +                `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
-                                +                `<td>${titledMaker((v2.duration==0?"Instant Use":v2.duration+" Second"),"Duration")}</td>`
+                                
                                 +            "</tr>"
+                                +                `<td>${titledMaker(spTypeHtml,"SP Charge Type")}</td>`
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
+                                +                `<td>${titledMaker(spDuration,spDurationName)}</td>`
                                 + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
                                 +        "</table>";
                     }
