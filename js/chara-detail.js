@@ -45,7 +45,10 @@
     var d14 = $.getJSON("json/tl-attacktype.json",function(data){
             db["attacktype"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14).then(function(){
+    var d15 = $.getJSON("json/tl-unreadablename.json",function(data){
+            db["unreadNameTL"] = data;
+        });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15).then(function(){
         $.holdReady(false);
     });
 
@@ -164,7 +167,6 @@
                 var languages = ['cn','en','jp','kr'];
                 var found = false;
                 if(el=="Browse"){
-                    
                     found=true;
                 }else{
                     for (var i = 0; i < languages.length; i++) {
@@ -363,6 +365,7 @@
                 // var materialList2 = []
                 $.each(skillData.levels,function(i2,v2){
                     // console.log(v2['spData'].spCost);
+                    var currSkill = skillData.levels[i2]
                     var skilldesc = getSkillDesc(skillId,i2);
                     var skillMat = GetSkillCost(i2,i,opdataFull)
                     var force
@@ -408,7 +411,7 @@
                         case 8:spTypeHtml = "Always On";break;
                         default:spTypeHtml = spType;break;
                     }
-                    var spDuration= (v2.duration==0?"Instant Use":v2.duration)
+                    var spDuration= (v2.duration==0?"Instant Use":v2.duration + " Seconds")
                     var spDurationName = "Duration"
 
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
@@ -417,36 +420,48 @@
                             // spDuration =
                         }
                     });
-                    
-                    var extraPre =``
+                    // console.log(currSkill)
+                    var skillType = ""
+                    switch(currSkill.skillType){
+                        case 0 : skillType = "Passive" ;break;
+                        case 1 : skillType = "Manual Trigger" ;break;
+                        case 2 : skillType = "Auto Trigger" ;break;
+                    }
+                    var skillType = titledMaker(skillType,"Skill Activation")
+                    var spTypeHtml = (currSkill.skillType==0?"":titledMaker(spTypeHtml,"SP Charge Type",`spType-${spType}`))
                     // console.log(materialList2)
                     // console.log(parseInt(v2.duration)>0)
                     //skilltype 
                     //0 = on deploy
                     //1 = manual 
                     //2 = auto
+                    tables +=`<table id='skill${i}level${i2}stats' class='skillstats ${(i2!=0 ? '' : 'active')}'>
+                             <tr >
+                                <td colspan='${grid?5:4}'>${spTypeHtml}${skillType}${titledMaker(spDuration,spDurationName)}</td>
+                            </tr>
+                            
+                            `
+                    
+                    
                     if(grid){
-                        tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
-                                +            "<tr>"
-                                +                "<td colspan='3'  class='skilldesc'>"+skilldesc+"</td>"
+                        tables +=            "<tr>"
+                                +                "<td colspan='3' class='skilldesc'>"+skilldesc+"</td>"
                                 +            "</tr>"
                                 +            "<tr style=\"height:20px\"></tr>"
                                 +            "<tr>"
-                                +               "<td rowspan=3>"+(grid?grid:"")+"</td>"
+                                +               "<td rowspan=2>"+(grid?grid:"")+"</td>"
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
                                 +                `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 
                                 +            "</tr>"
-                                +            "<tr>"
-                                +                `<td>${titledMaker(spDuration,spDurationName)}</td>`
-                                +                `<td>${titledMaker(spTypeHtml,"SP Charge Type")}</td>`
-                                +            "</tr>"
+                                // +            "<tr>"
+                                // +                `<td></td>`
+                                // +            "</tr>"
                                 +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
                                 + "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
                                 +        "</table>";   
                     } else {
-                        tables += "<table id='skill"+i+"level"+i2+"stats' class='skillstats "+(i2!=0 ? '' : 'active')+"'>"
-                                +            "<tr>"
+                        tables +=            "<tr>"
                                 +                "<td colspan='4' class='skilldesc'>"+skilldesc+"</td>"
                                 +            "</tr>"
                                 +            "<tr style=\"height:20px\"></tr>"
@@ -455,9 +470,8 @@
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
                                 
                                 +            "</tr>"
-                                +                `<td>${titledMaker(spTypeHtml,"SP Charge Type")}</td>`
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
-                                +                `<td>${titledMaker(spDuration,spDurationName)}</td>`
+                                // +                `<td>${titledMaker(spDuration,spDurationName)}</td>`
                                 + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
                                 +        "</table>";
                     }
@@ -665,7 +679,7 @@
 
     function titledMaker (content,title,extraClass="",extraId=""){
         let titledbutton = `
-        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char my-1 ${extraClass}\" style="" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
+        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
         <a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>${content}</div>`
 
         return titledbutton
