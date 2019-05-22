@@ -396,7 +396,7 @@
                 var maxSkillLevel = opdataFull.skills[i].levelUpCostCond.length;
                 var skillId = opdataFull.skills[i].skillId;
                 var skillData = db.skills[skillId];
-                var skillname = db.skillsTL[skillId].name;
+                var skillname
                 var tables = "";
                 var grid = ""
                 console.log(skillData)
@@ -404,6 +404,7 @@
                 $.each(skillData.levels,function(i2,v2){
                     // console.log(v2['spData'].spCost);
                     var currSkill = skillData.levels[i2]
+                    skillname = db.skillsTL[skillId]?db.skillsTL[skillId].name:currSkill.name;
                     var skilldesc = getSkillDesc(skillId,i2);
                     var skillMat = GetSkillCost(i2,i,opdataFull)
                     var force
@@ -661,6 +662,7 @@
         var combTalents = []
         for(i=0;i<opdataFull.talents.length;i++){
             var currTalent = opdataFull.talents[i]
+            if(!db.talentsTL[id])break;
             var currTalentTL = db.talentsTL[id][i]
             var talentGroup = []
             for(j=0;j<currTalent.candidates.length;j++){
@@ -820,36 +822,63 @@
     function getSkillDesc(skillId,level){
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
-        // console.log(skill);
-        // console.log(skillTL);
-
-        var desc = skillTL.desc;
-
-        var matches = skillTL.desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
-        // console.log(matches)
-        $.each(matches,function(i,v){
-            var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
-            if(!submatches[1]){
-                submatches = v.match(/(?:(?!\{).(?!$))+/gm);
+        var desc = skillTL?skillTL.desc:skill.description;
+        console.log(skill);
+        console.log(skillTL);
+        if(!skillTL){
+            let muhRegex = /<@ba\.vup>(.*?)<\/>/
+            let desc2 = muhRegex.exec(desc)[1]
+            // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
+            let muhRegex2 = /({)(.*?)(\:.*?)(})/
+            let desc3 = muhRegex2.exec(desc2)
+            desc3[2] = `{${desc3[2]}}`
+            desc3[3] = desc3[3].replace(":",":.")
+            let desc4 = []
+            console.log(desc3)
+            for(i=1;i<desc3.length;i++){
+                desc4.push(desc3[i])
             }
-            // console.log(submatches)
-            var value;
-            for (var i = 0; i < skill.blackboard.length; i++) {
-                if(skill.blackboard[i].key == submatches[0]){
-                    value = skill.blackboard[i].value;
-                    // console.log(value)
+            console.log(desc4)
+            desc = desc.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join(""))
+            console.log(desc)
+            // let regex2 = /({)(.*?)(\:.*?)(})/
+            // submatches = regex2.exec(v)
+        }
+
+        // if(skillTL){
+
+            var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
+            // console.log(matches)
+            $.each(matches,function(i,v){
+                var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
+                
+                if(!submatches[1]){
+                    submatches = v.match(/(?:(?!\{).(?!$))+/gm);
                 }
-            }
-            if(value){
-                if(typeof submatches[1] != "undefined"){
-                    // console.log(submatches[1])
-                    if(submatches[1].includes("%")){
-                        value = Math.round((value * 100)) + "%";
+                console.log(submatches)
+                var value;
+                for (var i = 0; i < skill.blackboard.length; i++) {
+                    // console.log("WAAAAAAAAAAAAAAssssssuuuuuuuuuu")
+                    console.log(skill.blackboard)
+                    if(skill.blackboard[i].key == submatches[0]){
+                        value = skill.blackboard[i].value;
+                        console.log("WAAAAAAAAAAAAAA")
+                        console.log(value)
                     }
                 }
-                desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
-            }
-        });
+                if(value){
+                    if(typeof submatches[1] != "undefined"){
+                        console.log(submatches[1])
+                        if(submatches[1].includes("%")){
+                            value = Math.round((value * 100)) + "%";
+                        }
+                    }
+                    desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
+                }
+            });
+        // }else{
+
+        // }
         // console.log(desc);
         return desc;
     }
