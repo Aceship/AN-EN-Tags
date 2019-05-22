@@ -22,6 +22,7 @@
                 $("#showImage").toggleClass("btn-primary btn-secondary");
             }
         }
+        if(!localStorage.getItem('showClass'))localStorage.setItem("showClass","false")
 
         if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
             console.log("game region undefined");
@@ -58,7 +59,8 @@
         console.log(localStorage.showName);
         console.log("Show Image: ");
         console.log(localStorage.showImage);
-
+        console.log("Show Class: ");
+        console.log(localStorage.showClass);
 
         $(".imagesizeselect").each(function(_,el){
             let size = localStorage.size;
@@ -78,6 +80,15 @@
             }
             console.log("Show Name: ");
             console.log(localStorage.getItem('showName'));
+        })
+        $(document).on("click", ".btn-class", function () {
+            if(localStorage.getItem('showClass') == 'false'){
+                localStorage.setItem('showClass','true');
+            } else {
+                localStorage.setItem('showClass','false');
+            }
+            console.log("Show Class: ");
+            console.log(localStorage.getItem('showClass'));
         })
         $(document).on("click", ".btn-image", function () {
             if(localStorage.getItem('showImage') == 'false'){
@@ -131,7 +142,7 @@
                     if(!found){
                         $.each(all_types, function(_, alltypes){
                             if(alltypes.type_cn == tag){
-                                tagReg = eval('alltypes.type_'+reg);
+                                tagReg = eval('alltypes.type_'+reg)+(localStorage.showClass=="true"?"干员":"");
                                 tagTL = eval('alltypes.type_'+lang);
                                 found = true;
                                 return false;
@@ -396,7 +407,7 @@
                     let tagsTL_html = [];
                     $.each(tagsTL, function (i, tagTL) {
                         tagsTL_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ tags[i] +"\">" +
-                        (tags[i] == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+tags[i]+'</a>') +  tagTL + "</button>\n")
+                        (tags[i] == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+tags[i]+(localStorage.showClass=="true"?"干员":"")+'</a>') +  tagTL + "</button>\n")
                     });
                     $("#tbody-recommend").append(
                         "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
@@ -532,7 +543,7 @@
             $(".tags-class").each(function(i,el){
                 getJSONdata("type",function(data){
                     if(data.length != 0){
-                        $(el).html(eval("data[i].type_"+reg));
+                        $(el).html(eval("data[i].type_"+reg)+(localStorage.showClass=="true"?"干员":""));
                         $(el).attr("data-original-title", eval("data[i].type_"+lang));
                     }
                 });
