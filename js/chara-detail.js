@@ -51,7 +51,10 @@
     var d16 = $.getJSON("json/tl-potential.json",function(data){
             db["potentialTL"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16).then(function(){
+    var d17 = $.getJSON("json/dragonjet/talents-gameformat.json",function(data){
+            db["talentsTL"] = data;
+        });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17).then(function(){
         $.holdReady(false);
     });
 
@@ -258,11 +261,12 @@
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
             var opdataFull = {};
-
+            var opKey =""
             $.each(opdata2,function(key,v){
                 v['id'] = key;
                 // console.log(v);
                 opdataFull = v;
+                opKey = key;
                 localStorage.selectedOPDetails = key;
                 return false
             });
@@ -350,6 +354,7 @@
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
 
             GetPotential(opdataFull);
+            GetTalent(opKey,opdataFull);
             var attackType = getSpeciality(opdataFull.description)
             var attackTypeTl =  query(db.attacktype,"type_cn",attackType);
             // console.log(attackType)
@@ -643,6 +648,31 @@
             console.log(tlDesc)
         });
     }
+
+    function GetTalent(id,opdataFull){
+        var combTalents = []
+        for(i=0;i<opdataFull.talents.length;i++){
+            var currTalent = opdataFull.talents[i]
+            var currTalentTL = db.talentsTL[id][i]
+            var talentGroup = []
+            for(j=0;j<currTalent.candidates.length;j++){
+                var currCandidate = currTalent.candidates[j] 
+                var currCandidateTL = currTalentTL[j]
+                talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
+            }
+            combTalents.push(talentGroup)
+        }
+        return TalentParse(combTalents)
+    }
+
+    function TalentParse(combTalents){
+        console.log(combTalents)
+        var talent = []
+        combTalents.forEach(element => {
+            
+        });
+    }
+
     function GetSkillCost(i2,i, opdataFull){
         let reqmats=[]
         if(i2!=0&&i2<7){
