@@ -284,7 +284,7 @@
             // Get operator elite skins
             var skinList = db.skintable.buildinEvolveMap[opdataFull.id];
             // console.log(skinList);
-            $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo+".png");
+            $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo.toLowerCase()+".png");
 
             var tabbtn = [];
             var tabbtn2 = [];
