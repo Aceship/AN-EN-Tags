@@ -175,7 +175,8 @@
         $("#tbody-list").html("")
         charaFilter.forEach(element => {
             let chara = db.chars[element.name]
-            let charaRiic = db.riic[element.name]
+            let charaRiic = db.building_chars[element.name]
+            let charaRiicTL = db.riic[element.name]
             let extraInfo =""
             // console.log(element.name)
             
@@ -185,71 +186,76 @@
                                 <div style="margin:auto">${chara.appellation}</div>
                             </div>
                             <div class="col-8 col-sm-10" style="margin:auto;padding:2px"> ` )
-
-            for(i=0;i<charaRiic.length;i++){
-                // console.log(element.buff[i])
-                // console.log(building_chars[element].buffChar[i] )
-                extraInfo = ``
-
-                if(element.buff[i].buffId.includes("control")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-control" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px">HQ </div>`
-                }else if(element.buff[i].buffId.includes("power")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-power" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px">Power </div>`
-                }else if(element.buff[i].buffId.includes("manu")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-manu" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
-                }else if(element.buff[i].buffId.includes("trade")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-trade" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px">Trading </div>`
-                }else if(element.buff[i].buffId.includes("workshop")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-workshop" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px">Workshop </div>`
-                }else if(element.buff[i].buffId.includes("train")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-train" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px">Training </div>`
-                }else if(element.buff[i].buffId.includes("dorm")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-dorm" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px">Dorm </div>`
-                }else if(element.buff[i].buffId.includes("hire")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-hire" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px">Hiring </div>`
-                }else if(element.buff[i].buffId.includes("meet")){
-                    extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>`
-
-                    if(element.buff[i].buffId.includes("meet_spd&team")){
-                        let currbuff = db.building_buff[element.buff[i].buffId].description
-                        // (element.buff[i].buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
-                        
-                        
-                        // console.log(currbuff.indexOf("<@cc.kw>"))
-                        
-                        // console.log(currbuff.indexOf("<@cc.kw>"))
-                        if(currbuff.indexOf("<@cc.kw>")>0){
-                            let clue = ''
-                            let muhRegex = /<@cc\.kw>(.*?)<\/>/g
-                            currbuff = muhRegex.exec(currbuff)[1]
-                            switch (currbuff) {
-                                case "莱茵生命": clue = 1;break;
-                                case "企鹅物流": clue = 2;break;
-                                case "黑钢国际": clue = 3;break;
-                                case "乌萨斯学生自治团": clue = 4;break;
-                                case "格拉斯哥帮": clue = 5;break;
-                                case "喀兰贸易": clue = 6;break;
-                                case "罗德岛制药": clue = 7;break;
+            // console.log(charaRiic)
+            // console.log(charaRiicTL)
+            // if (charaRiicTL){
+                for(i=0;i<charaRiic.buffChar.length;i++){
+                    // console.log(element.buff[i])
+                    // console.log(building_chars[element].buffChar[i] )
+                    let currBuff2 = db.building_buff[element.buff[i].buffId]
+                    console.log(currBuff2)
+                    extraInfo = ``
+                    
+                    if(element.buff[i].buffId.includes("control")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-control" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px">HQ </div>`
+                    }else if(element.buff[i].buffId.includes("power")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-power" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px">Power </div>`
+                    }else if(element.buff[i].buffId.includes("manu")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-manu" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
+                    }else if(element.buff[i].buffId.includes("trade")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-trade" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px">Trading </div>`
+                    }else if(element.buff[i].buffId.includes("workshop")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-workshop" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px">Workshop </div>`
+                    }else if(element.buff[i].buffId.includes("train")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-train" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px">Training </div>`
+                    }else if(element.buff[i].buffId.includes("dorm")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-dorm" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px">Dorm </div>`
+                    }else if(element.buff[i].buffId.includes("hire")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-hire" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px">Hiring </div>`
+                    }else if(element.buff[i].buffId.includes("meet")){
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>`
+    
+                        if(element.buff[i].buffId.includes("meet_spd&team")){
+                            let currbuff = db.building_buff[element.buff[i].buffId].description
+                            // (element.buff[i].buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
+                            
+                            
+                            // console.log(currbuff.indexOf("<@cc.kw>"))
+                            
+                            // console.log(currbuff.indexOf("<@cc.kw>"))
+                            if(currbuff.indexOf("<@cc.kw>")>0){
+                                let clue = ''
+                                let muhRegex = /<@cc\.kw>(.*?)<\/>/g
+                                currbuff = muhRegex.exec(currbuff)[1]
+                                switch (currbuff) {
+                                    case "莱茵生命": clue = 1;break;
+                                    case "企鹅物流": clue = 2;break;
+                                    case "黑钢国际": clue = 3;break;
+                                    case "乌萨斯学生自治团": clue = 4;break;
+                                    case "格拉斯哥帮": clue = 5;break;
+                                    case "喀兰贸易": clue = 6;break;
+                                    case "罗德岛制药": clue = 7;break;
+                                }
+                                extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
+                                             <div class="btn btn-sm ak-disable ak-btn ak-riic-meet-clue" style="height:25px;margin:auto">${clue}</div>`
                             }
-                            extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
-                                         <div class="btn btn-sm ak-disable ak-btn ak-riic-meet-clue" style="height:25px;margin:auto">${clue}</div>`
                         }
                     }
+                    let req =``
+                    // console.log(`Lv.${element.buff[i].cond.level}/ Elite ${element.buff[i].cond.phase}`)
+                    if(element.buff[i].cond.level>1){
+                        req = `Lv.${element.buff[i].cond.level}`
+                    }
+                    if(element.buff[i].cond.phase>0){
+                        req = req + ` Elite ${element.buff[i].cond.phase}`
+                    }
+                    if(req!=""){
+                        req = `<div class="btn btn-sm ak-disable ak-btn" style="height:25px;margin:auto;padding:1px;background:#0078BC;">Req: ${req}</div>`
+                    }
+                    // console.log(req)     
+                    currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto"><div style="padding:5px;background:#222">${extraInfo}  ${charaRiicTL?charaRiicTL[i].name: currBuff2.buffName} ${req}</div><div style="padding-left:20px">${charaRiicTL?charaRiicTL[i].desc:currBuff2.description}</div></div>` )
                 }
-                let req =``
-                // console.log(`Lv.${element.buff[i].cond.level}/ Elite ${element.buff[i].cond.phase}`)
-                if(element.buff[i].cond.level>1){
-                    req = `Lv.${element.buff[i].cond.level}`
-                }
-                if(element.buff[i].cond.phase>0){
-                    req = req + ` Elite ${element.buff[i].cond.phase}`
-                }
-                if(req!=""){
-                    req = `<div class="btn btn-sm ak-disable ak-btn" style="height:25px;margin:auto;padding:1px;background:#0078BC;">Req: ${req}</div>`
-                }
-                // console.log(req)     
-                currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto"><div style="padding:5px;background:#222">${extraInfo}  ${charaRiic[i].name} ${req}</div><div style="padding-left:20px">${charaRiic[i].desc}</div></div>` )
-            }
+            // }
             currHtml.push(`</div></div> `)
         });
         // console.log(currHtml)
