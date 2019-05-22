@@ -21,6 +21,9 @@
             if(localStorage.showImage == 'false'){
                 $("#showImage").toggleClass("btn-primary btn-secondary");
             }
+            if(localStorage.showClass == 'false'){
+                $("#showClass").toggleClass("btn-primary btn-secondary");
+            }
         }
         if(!localStorage.getItem('showClass'))localStorage.setItem("showClass","false")
 
@@ -254,6 +257,11 @@
             $(el).toggleClass("btn-primary btn-secondary");
             localStorage.lastChar = ""
             refresh();
+        }
+        function clickBtnOpt3(el){
+            $(el).toggleClass("btn-primary btn-secondary");
+            localStorage.lastChar = ""
+            changeUILanguage(el);
         }
 
         function clickBtnTag(el){
