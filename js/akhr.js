@@ -323,6 +323,18 @@
                 
                 $.each(combs, function (_, comb) {
                     let tags = comb.tags;
+                    
+                    // let anotag = tags.map(tagextra => {
+                    //     let currtag = tagextra
+                    //    if(JsonDATA[4].find(search=>search.type_cn==tagextra)){
+                    //        console.log(tagextra)
+                    //        currtag = tagextra+(localStorage.showClass=="true"?"干员":"")
+                    //    }
+                    //    return currtag
+                    // });
+
+                    // tags = anotag
+                    // console.log(anotag)
                     if (tags.length === 0 || tags.length > 3) return;
                     let chars = [...tags_aval[tags[0]]];
                     for (let i = 1; i < tags.length; i++) {
@@ -367,12 +379,12 @@
                         }
                     });
                     chars = filtered_chars;
-
                     comb.possible = chars;
                     if (chars.length === 0) return;
                     let s = 0;
                     $.each(chars, (_, char) => {
                         s += char.level;
+                        // console.log(char)
                     });
                     s = s / chars.length;
                     comb.score = s - tags.length / 10 - chars.length / avg_char_tag;
@@ -391,6 +403,15 @@
                     let chars = comb.possible;
                     let tags = comb.tags;
                     let tagsTL = comb.tagsTL
+                    let anotag = tags.map(tagextra => {
+                        let currtag = tagextra
+                       if(JsonDATA[4].find(search=>search.type_cn==tagextra)){
+                           
+                           currtag = tagextra+(localStorage.showClass=="true"?"干员":"")
+                       }
+                       return currtag
+                    });
+                    tags = anotag
                     let chars_html = [];
                     let colors = { 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6" };
                     comb.possible.sort(function (a, b) {
@@ -415,7 +436,7 @@
                     let tagsTL_html = [];
                     $.each(tagsTL, function (i, tagTL) {
                         tagsTL_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ tags[i] +"\">" +
-                        (tags[i] == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+tags[i]+(localStorage.showClass=="true"?"干员":"")+'</a>') +  tagTL + "</button>\n")
+                        (tags[i] == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+tags[i]+'</a>') +  tagTL + "</button>\n")
                     });
                     $("#tbody-recommend").append(
                         "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
