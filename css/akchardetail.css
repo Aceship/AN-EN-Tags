@@ -13,7 +13,9 @@ body {
 .max-height {
     height: 100%;
 }
-
+#lefthandtoggle{
+    display: none;
+}
 .rangeTableContainer {
     background:#444;
     padding: 3px;
@@ -527,7 +529,9 @@ body {
     .chara-detail-container .right-col-menu {
         padding:0px
     } */
-
+    #lefthandtoggle{
+        display:unset;
+    }
     .chara-detail-container .right-menu-container {
         padding-top:50px;
         max-width: 100vw;
@@ -540,6 +544,34 @@ body {
         left: 0px;
         position: absolute;
     }
+    .left-hand{
+        margin-left:40px !important;
+    }
+
+    .lefthandskillleveldisplaycontainer{
+        position: absolute;
+        vertical-align: top;
+        top:100px;
+        left: 0px !important;
+    }
+
+    .collapsible .lefthandskillLevelInput {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        position: absolute;
+        left: -74px !important;
+        top:220px;
+        width: 170px;
+        display: inline-block;
+        line-height: 0px;
+        z-index:2;
+        opacity: 0.7; 
+        -webkit-transition: .2s; 
+        transition: opacity .2s;
+        background: #eee;
+        transform: rotate(-90deg)
+    }
+
 
     #operatorsResult img {
         height: 70px!important;

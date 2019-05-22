@@ -48,13 +48,17 @@
     var d15 = $.getJSON("json/tl-unreadablename.json",function(data){
             db["unreadNameTL"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15).then(function(){
+    var d16 = $.getJSON("json/tl-potential.json",function(data){
+            db["potentialTL"] = data;
+        });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16).then(function(){
         $.holdReady(false);
     });
 
     var lang;
     var reg;
     var selectedOP;
+    var lefthand;
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -76,7 +80,28 @@
         $('#opname').click(function(event){
             event.stopPropagation();
         });
+        $('#lefthandtoggle').click(function(event){
+            if(lefthand=="true")
+                lefthand = "false"
+            else 
+                lefthand = "true"
+            localStorage.setItem("lefthand",lefthand)
+            console.log(lefthand)
+            location.reload()
+        })
+        if(typeof localStorage.lefthand ==="undefined"){
+            localStorage.setItem("leftHand","false")
+            lefthand = "false"
 
+        }else{
+            lefthand = localStorage.lefthand
+        }
+        if(lefthand=="true")
+        $('#lefthandtoggle').css("background-color","#0077AA")
+        else 
+        $('#lefthandtoggle').css("background-color","#222")
+
+        
         if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
             console.log("game region undefined");
             localStorage.setItem("gameRegion", 'cn');
@@ -221,7 +246,6 @@
             $('#operatorsResult').hide();
         }
     }
-
     function selectOperator(opname){
         if(opname != ""){
             $("#chara-detail-container").show();
@@ -245,7 +269,7 @@
             
             var curpath = window.location.pathname.split("?");
             history.pushState(null, '', curpath+'?opname='+opdataFull.appellation.replace(/ /g,"_")); 
-
+            
 
             // use opdata to get the operator data based on tl-akhr.json
             // use opdataFull to get the operator data based on character_table.json
@@ -325,6 +349,7 @@
             var type = query(db.classes,"type_cn",opdata.type);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
 
+            GetPotential(opdataFull);
             var attackType = getSpeciality(opdataFull.description)
             var attackTypeTl =  query(db.attacktype,"type_cn",attackType);
             // console.log(attackType)
@@ -438,7 +463,7 @@
                     //0 = on deploy
                     //1 = manual 
                     //2 = auto
-                    tables +=`<table id='skill${i}level${i2}stats' class='skillstats ${(i2!=0 ? '' : 'active')}'>
+                    tables +=`<table id='skill${i}level${i2}stats' class='${lefthand=="true"?"left-hand":""} skillstats ${(i2!=0 ? '' : 'active')}'>
                              <tr >
                                 <td colspan='${grid?5:4}'>${spTypeHtml}${skillType}${titledMaker(spDuration,spDurationName)}</td>
                             </tr>
@@ -490,8 +515,8 @@
                                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                                         +    "</div>"
                                         +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
-                                        +       "<input type='range' value='1' min='1' max="+skillData.levels.length+" name='skillLevel' id='skill"+i+"Level' oninput='changeSkillLevel(this,"+i+")'style=\"margin-top:20px;\" class='skillLevelInput'>"
-                                        +        `<div class='skillleveldisplaycontainer'><span class="ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
+                                        +       `<input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>`
+                                        +        `<div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
                                         // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
                                         +        tables
                                         +    "</div>"
@@ -602,14 +627,24 @@
         // container.append(mats);
         return container;
     }
-
+    function GetPotential(opdataFull){
+        var potentials = opdataFull.potentialRanks
+        // console.log(potentials)
+        var potRegex = /(.*?)([-]|[+])(\d*)(.*)|(.*)/
+        potentials.forEach(element => {
+            let regexDesc = potRegex.exec(element.description)
+            // console.log(regexDesc)
+            let currDesc = (regexDesc[1]?regexDesc[1]:regexDesc[5])
+            let tlDesc = query(db.potentialTL,"skill_cn",currDesc).skill_en
+            tlDesc = tlDesc?tlDesc:currDesc
+            if(regexDesc[1]){
+                tlDesc += " "+regexDesc[2] + regexDesc[3]
+            }
+            console.log(tlDesc)
+        });
+    }
     function GetSkillCost(i2,i, opdataFull){
         let reqmats=[]
-        // console.log("==============="  )
-        // console.log("Skill Number :" + (i+1)  )
-        // console.log("Skill Level :" + (i2+1)  )
-        // console.log("Skill mastery :" + (i2-7+1)  )
-        
         if(i2!=0&&i2<7){
             // console.log(opdataFull.allSkillLvlup[i2])
             reqmats = opdataFull.allSkillLvlup[i2-1].lvlUpCost
@@ -618,8 +653,6 @@
             // console.log(opdataFull.skills[i])
             reqmats = opdataFull.skills[i].levelUpCostCond[i2-7].levelUpCost
         }
-        // console.log(i2 + " wa " + i)
-        // console.log(reqmats)
         return reqmats
     }
     function GetEliteCost(i,opdataFull){
@@ -745,7 +778,6 @@
         }
         return html
     }
-    
       
     function getSkillDesc(skillId,level){
         var skill = db.skills[skillId].levels[level];

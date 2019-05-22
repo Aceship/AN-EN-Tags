@@ -51,7 +51,9 @@
                     <div class='col-12 btn btn-sm ak-btn ak-c-black ak-shadow-small ak-disable' style='padding:0' translate-id='operator-select'>Select an operator :</div>
             </div>
             <div class='row'>
+                <div id='lefthandtoggle' style='position:absolute;top:-15px;left:20px;background:#222;padding:4px;cursor: pointer;border-radius: 3px'>Left Hand</div>
                 <div class='col-md-5 '>
+                    
                     <input readonly type='text' name='opID' id='opID' style='display: none;'>
                     <div class='row'>
                             <input style='margin-left: 15px;margin-top:5px' type='text' autocomplete='off' class='form-control col-8' name='opname' id='opname' onkeyup='populateOperators(this)' placeholder='Type in operator name . .'>
@@ -74,6 +76,7 @@
                 </div>
                 <div class='col-md-12 absolute top-layer'>
                     <div class='row max-height'>
+                        
                         <div class='col-md-7 col-sm-12 left-col-menu'>
                             <div class='elite-sidenav'>
                             <ul class='nav nav-pills' id='elite-sidenav'>
@@ -117,6 +120,42 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- <div class="potential-container" style="position: relative; margin-bottom: 20px">
+                                    <ul class='nav nav-pills' id='potential-tabs'>
+                                        <li class='nav-item'>
+                                            <button class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#potential'><p>Potential</p></button>
+                                            <button class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' href='#talent'><p>Talent</p></button>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content" id="potential-contents">
+                                        <div class='tab-pane container clickthrough active' id='potential1'>
+                                            <div class='small-container ak-shadow' style='margin-top:0px;'>
+                                                <p>Potentials</p>
+                                                <div class='topright'>
+                                                    <div style='padding: 15px;'>
+                                                        <img class='' id='potentialImage' src='img/ui/potential/1.png' style='width: 100%;'>
+                                                    </div>
+                                                </div>
+                                                <button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill2StatsCollapsible'><i class='fa fa-sort-down'></i></button>
+                                            </div>
+                                            <div id='poitential1StatsCollapsible' class='collapsible notclickthrough'style="margin:20px">
+                                                <input type='range' min='1' max='10' name='skillLevel' id='skill1Level' onchange='changeSkillLevel(this)' class='skillLevelInput'>
+                                                <div class='potentialdisplaycontainer'>lv <span id='potential1LevelDisplay'>1</span></div>
+                                                <table>
+                                                    <tr>
+                                                        <td colspan='4' class='potentialdesc'>Desc</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class='stats-l'>SP Cost :</td>
+                                                        <td class='stats-r'>xxx</td>
+                                                        <td class='stats-l'>Duration :</td>
+                                                        <td class='stats-r'>xxx</td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
                                 <div class="skillsection-container" style="position: relative; margin-bottom: 80px">
                                     <ul class='nav nav-pills' id='skill-tabs'>
                                         <li class='nav-item'>
@@ -135,22 +174,6 @@
                                                 </div>
                                                 <button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill2StatsCollapsible'><i class='fa fa-sort-down'></i></button>
                                             </div>
-                                            <div id='skill2StatsCollapsible' class='collapse collapsible notclickthrough'style="margin:20px">
-                                                <input type='range' min='1' max='10' name='skillLevel' id='skill1Level' onchange='changeSkillLevel(this)' class='skillLevelInput'>
-                                                <div class='skillleveldisplaycontainer'>lv <span id='skill1LevelDisplay'>1</span></div>
-                                                <table>
-                                                    <tr>
-                                                        <td colspan='4' class='skilldesc'>Desc</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class='stats-l'>SP Cost :</td>
-                                                        <td class='stats-r'>xxx</td>
-                                                        <td class='stats-l'>Duration :</td>
-                                                        <td class='stats-r'>xxx</td>
-                                                    </tr>
-                                                </table>
-                                            </div>
-                                        </div>
 
                                         <div class="tab-pane container clickthrough" id="skill2">
                                             <div class='small-container ak-shadow' style="margin-top: 50px;">
