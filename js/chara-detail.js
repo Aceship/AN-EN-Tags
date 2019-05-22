@@ -199,8 +199,9 @@
                 }else{
                     for (var i = 0; i < languages.length; i++) {
                         var charname = eval('char.name_'+languages[i]).toUpperCase();
+                        var unreadable = query(db.unreadNameTL,"name",char.name_en)
                         var input = el.value.toUpperCase();
-                        var search = charname.search(input);
+                        var search = (unreadable?unreadable.name_en.toUpperCase().search(input):charname.search(input));
                         if(search != -1){
                             found = true;
                             break;
@@ -211,13 +212,15 @@
                     // console.log(char)
                     var name_cn = char.name_cn;
                     var name = eval('char.name_'+reg);
+                    var unreadable = query(db.unreadNameTL,"name",char.name_en).name_en
+                    console.log(unreadable)
                     var nameTL = eval('char.name_'+lang);
                     var img_name = query(db.chars,"name",char.name_cn,true,true); 
                     // console.log(Object.keys(img_name))
                     var rarity = img_name[Object.keys(img_name)] ? img_name[Object.keys(img_name)].rarity + 1 : 0;
                     // console.log(rarity);
                     if(rarity!=0)
-                    result.push({'name':name,'name_cn':name_cn,'nameTL':nameTL,'img_name':Object.keys(img_name),rarity});
+                    result.push({'name':name,'name_cn':name_cn,'name_readable':unreadable,'nameTL':nameTL,'img_name':Object.keys(img_name),rarity});
                 }
             });
             // console.log(result)
@@ -234,11 +237,11 @@
                         $("#operatorsResult").append(
                                 "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
                                 +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
-                                +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+result[i].nameTL+"</div>"
+                                +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+`${result[i].name_readable?`[${result[i].name_readable}]`:""}`+result[i].nameTL+"</div>"
                                 +"</li>");
                     }else{
                         $("#operatorsResult").css("max-width","290px");
-                        $("#operatorsResult").append("<li class=\" ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"width:100%;cursor: pointer;margin-bottom:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"+image+result[i].nameTL+" ("+result[i].name+")"+"</li>");
+                        $("#operatorsResult").append(`<li class=" ak-shadow-small ak-rare-${result[i].rarity}"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="selectOperator('${result[i].name_cn}')">${image} ${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL} (${result[i].name})</li>`);
                     }
                 }
             }
@@ -341,9 +344,14 @@
                 $("#elite-topnav").html(tabbtn2);
                 $("#tabs-opData").html(tabcontent2);
             }
-
+            var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
             $("#op-nameTL").html(eval("opdata.name_"+lang));
             $("#op-nameREG").html("["+eval("opdata.name_"+reg)+"]");
+            if(unreadable){
+                $("#op-nameRead").html(`[ ${unreadable} ]`);
+            }else{
+                $("#op-nameRead").html("")
+            }
             var gender = query(db.gender,"sex_cn",opdata.sex);
 
             $("#op-gender").html(titledMaker(eval("gender.sex_"+lang),`Gender`))
