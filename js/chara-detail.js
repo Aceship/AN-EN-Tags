@@ -698,15 +698,36 @@
         combTalents.forEach(combcandidate => {
             let talentlist = []
             combcandidate.forEach(eachtalent => {
-                if(eachtalent.talentTL){
-                    talentlist.push(`<div>${titledMaker(eachtalent.talentTL.desc,eachtalent.talentTL.name)}</div>`)
-                }
-            });
-            talent.push(`${titledMaker(talentlist.join(""),"Talent Group")}`)
-        });
-        // return titledMaker(talent,"Talent List")
-    }
+                var imagereq = []
+                if(eachtalent.talent.unlockCondition.level >0)
+                imagereq.push(`Lv.${eachtalent.talent.unlockCondition.level}`)
+                if(eachtalent.talent.unlockCondition.phase >0)
+                imagereq.push(`<img src="./img/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px">`)
+                if(eachtalent.talent.requiredPotentialRank >0)
+                imagereq.push(`<img src="./img/ui/potential/${eachtalent.talent.requiredPotentialRank}.png" style="width:20px">`)
 
+
+                var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
+                var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
+                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+                talentlist.push(`
+                <div style="margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px">
+                    <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
+                    <div style="font-size:11px;">${currTalentDesc}</div>
+                </div>`)
+            });
+            talent.push(`
+                <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
+                    ${talentlist.join("")}
+                </div>`)
+        });
+        return `
+            <div style="padding-top:10px">
+            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div>
+                ${talent.join("")}
+            </div>`
+    }
+    // ${titledMaker(,eachtalent.talentTL.name,"","","font-size:10px;background:#444;color:#ddd")}
     function GetSkillCost(i2,i, opdataFull){
         let reqmats=[]
         if(i2!=0&&i2<7){
@@ -902,9 +923,6 @@
             }
             // console.log(desc4)
             desc = desc.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join(""))
-            // console.log(desc)
-            // let regex2 = /({)(.*?)(\:.*?)(})/
-            // submatches = regex2.exec(v)
         }
 
         // if(skillTL){
@@ -920,11 +938,9 @@
                 // console.log(submatches)
                 var value;
                 for (var i = 0; i < skill.blackboard.length; i++) {
-                    // console.log("WAAAAAAAAAAAAAAssssssuuuuuuuuuu")
                     // console.log(skill.blackboard)
                     if(skill.blackboard[i].key == submatches[0]){
                         value = skill.blackboard[i].value;
-                        // console.log("WAAAAAAAAAAAAAA")
                         // console.log(value)
                     }
                 }
