@@ -365,8 +365,8 @@
             GetTalent(opKey,opdataFull);
             var attackType = getSpeciality(opdataFull.description)
             var attackTypeTl =  query(db.attacktype,"type_cn",attackType);
-            // console.log(attackType)
-            // console.log(attackTypeTl)
+            console.log(attackType)
+            console.log(attackTypeTl)
             
             $("#op-atktype").html(titledMaker((eval("attackTypeTl.type_"+lang)?eval("attackTypeTl.type_"+lang):attackType),`Traits`,`ak-trait-${(eval("attackTypeTl.type_detail"))}`))
 
@@ -750,14 +750,32 @@
         return material
     }
     function getSpeciality(description){
-        // console.log(description)
+        console.log("=====================")
+        console.log(description)
         let muhRegex = /<@ba\.kw>(.*?)<\/>/g
         let currSpeciality = muhRegex.exec(description)
-        // console.log(currSpeciality)
+        console.log(currSpeciality)
+        let filterDesc
+        if(currSpeciality){
+            filterDesc = description.replace(currSpeciality[0],"")
+            
+        }else{
+            filterDesc = db.attacktype.find(search=>{
+                if(search.type_detail=="common"){
+                    console.log(search)
+                    return search.type_cn==description
+                }
+            })
+            
+        }
+        console.log(currSpeciality)
+        console.log("===========================")
         if(currSpeciality)
         return currSpeciality[1]
+        else if (filterDesc)
+        return filterDesc.type_en
         else
-        return "None"
+        return description
     }
 
     function titledMaker (content,title,extraClass="",extraId=""){
