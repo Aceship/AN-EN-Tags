@@ -364,11 +364,8 @@
             
             GetTalent(opKey,opdataFull);
             var attackType = getSpeciality(opdataFull.description)
-            var attackTypeTl =  query(db.attacktype,"type_cn",attackType);
-            console.log(attackType)
-            console.log(attackTypeTl)
             
-            $("#op-atktype").html(titledMaker((eval("attackTypeTl.type_"+lang)?eval("attackTypeTl.type_"+lang):attackType),`Traits`,`ak-trait-${(eval("attackTypeTl.type_detail"))}`))
+            $("#op-atktype").html(attackType)
 
             $("#op-rarity").html("");
             $("#op-rarity").attr("class","op-rarity-"+opdata.level)
@@ -750,32 +747,57 @@
         return material
     }
     function getSpeciality(description){
+
+        //gonna need to split on "," and "\n" and repeat it
+        let descriptions = description.split(/[，(\\n)]/)
+        let splitdesc = []
         console.log("=====================")
-        console.log(description)
-        let muhRegex = /<@ba\.kw>(.*?)<\/>/g
-        let currSpeciality = muhRegex.exec(description)
-        console.log(currSpeciality)
-        let filterDesc
-        if(currSpeciality){
-            filterDesc = description.replace(currSpeciality[0],"")
-            
-        }else{
-            filterDesc = db.attacktype.find(search=>{
-                if(search.type_detail=="common"){
-                    console.log(search)
-                    return search.type_cn==description
+        console.log(descriptions)
+        descriptions.forEach(element => {
+            if(element){
+                let muhRegex = /<@ba\.kw>(.*?)<\/>/g
+                let currSpeciality = muhRegex.exec(element)
+                // console.log(currSpeciality)
+                let filterDesc
+                if(currSpeciality){
+                    splitdesc.push([element.replace(currSpeciality[0],""),currSpeciality[1]])
+                }else{
+                    splitdesc.push([element])
                 }
-            })
-            
-        }
-        console.log(currSpeciality)
+            }
+        });
+        console.log(splitdesc)
         console.log("===========================")
-        if(currSpeciality)
-        return currSpeciality[1]
-        else if (filterDesc)
-        return filterDesc.type_en
-        else
-        return description
+        
+        // if(currSpeciality)
+        // return currSpeciality[1]
+        // else if (filterDesc)
+        // return filterDesc.type_cn
+        // else
+        return SpecialityHtml(splitdesc)
+    }
+    function SpecialityHtml(splitdesc){
+        let splitdescTL = []
+        let color = ""
+        splitdesc.forEach(element => {
+            if(element.length>1){
+                let typetl = db.attacktype.find(search=>search.type_cn==element[1])
+                if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
+                splitdescTL.push(typetl?typetl.type_en:element[1])
+            }else{
+                let typetl = db.attacktype.find(search=>{
+                    if(search.type_detail=="common")
+                    return search.type_cn==element[0]
+                })
+                if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
+                splitdescTL.push(typetl?typetl.type_en:element[0])
+            }
+        });
+        console.log(splitdescTL)
+        console.log(color)
+
+        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`)
+        // splitdescTL
     }
 
     function titledMaker (content,title,extraClass="",extraId=""){
