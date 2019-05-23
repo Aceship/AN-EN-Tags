@@ -376,13 +376,16 @@
             for(i=0;i<potentials.length;i++){
                 potentialist.push(`<div style="font-size:13px;padding:1px;margin-left:-6px;color:#DDD;vertical-align:bottom"><img src="./img/ui/potential/${i+2}.png" style="margin-top:-4px;width:20px;background:#222;border-radius:25%;padding:2px"> ${potentials[i]}</div>`)
             }
-            // console.log(potentials)
+            console.log(potentials)
             $("#op-talentlist").html(GetTalent(opKey,opdataFull))
-            $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
+            if(potentials.length>0){
+                $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
+            }else{
+                $("#op-potentialist").html("")
+            }
             for (var i = 0; i < opdata.level; i++) {
                 $("#op-rarity").append("<i class='fa fa-star'></i>");
             }
-
             var tags_html = [];
             $.each(opdataFull.tagList,function(_,v){
                 var tag = query(db.tags,"tag_cn",v);
@@ -806,9 +809,12 @@
         let color = ""
         splitdesc.forEach(element => {
             if(element.length>1){
-                let typetl = db.attacktype.find(search=>search.type_cn==element[1])
+                let typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
+                // if(!typetl) typetl = db.attacktype.find(search=>search.type_cn==element[1])
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
-                splitdescTL.push(typetl?typetl.type_en:element[1])
+
+                console.log(element)
+                splitdescTL.push(typetl?typetl.type_en:element.join(""))
             }else{
                 let typetl = db.attacktype.find(search=>{
                     if(search.type_detail=="common")
@@ -818,7 +824,7 @@
                 splitdescTL.push(typetl?typetl.type_en:element[0])
             }
         });
-        // console.log(splitdescTL)
+        console.log(splitdescTL)
         // console.log(color)
 
         return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`)
