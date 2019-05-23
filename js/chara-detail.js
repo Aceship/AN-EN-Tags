@@ -361,7 +361,7 @@
             var type = query(db.classes,"type_cn",opdata.type);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
 
-            GetPotential(opdataFull);
+            
             GetTalent(opKey,opdataFull);
             var attackType = getSpeciality(opdataFull.description)
             var attackTypeTl =  query(db.attacktype,"type_cn",attackType);
@@ -372,6 +372,14 @@
 
             $("#op-rarity").html("");
             $("#op-rarity").attr("class","op-rarity-"+opdata.level)
+
+            var potentials = GetPotential(opdataFull)
+            var potentialist = []
+            for(i=0;i<potentials.length;i++){
+                potentialist.push(`<div style="padding:2px;color:#DDD;vertical-align:bottom"><img src="./img/ui/potential/${i+2}.png" style="margin-top:-3px;width:20px;background:#222;border-radius:25%;padding:2px">${potentials[i]}</div>`)
+            }
+            console.log(potentials)
+            $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
             for (var i = 0; i < opdata.level; i++) {
                 $("#op-rarity").append("<i class='fa fa-star'></i>");
             }
@@ -386,6 +394,7 @@
                             (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
                 }
             });
+            
             $("#op-taglist").append(tags_html);
 
             ///////////////////////////////////////////////// SKILLS SECTION //////////////////////////////////////////////////
@@ -399,7 +408,7 @@
                 var skillname
                 var tables = "";
                 var grid = ""
-                console.log(skillData)
+                // console.log(skillData)
                 // var materialList2 = []
                 $.each(skillData.levels,function(i2,v2){
                     // console.log(v2['spData'].spCost);
@@ -441,7 +450,7 @@
                     
                     if(v2.rangeId)grid = rangeMaker(v2.rangeId)
                     var spType = (v2.spData.spType)
-                    console.log(spType)
+                    // console.log(spType)
                     var spTypeHtml = ""
                     switch (spType){
                         case 1:spTypeHtml = "Per second";break;
@@ -649,7 +658,8 @@
     }
     function GetPotential(opdataFull){
         var potentials = opdataFull.potentialRanks
-        // console.log(potentials)
+        var potentialsTL = []
+        console.log(potentials)
         var potRegex = /(.*?)([-]|[+])(\d*)(.*)|(.*)/
         potentials.forEach(element => {
             let regexDesc = potRegex.exec(element.description)
@@ -660,8 +670,10 @@
             if(regexDesc[1]){
                 tlDesc += " "+regexDesc[2] + regexDesc[3]
             }
-            console.log(tlDesc)
+            // console.log(tlDesc)
+            potentialsTL.push(tlDesc)
         });
+        return potentialsTL
     }
 
     function GetTalent(id,opdataFull){
@@ -682,7 +694,7 @@
     }
 
     function TalentParse(combTalents){
-        console.log(combTalents)
+        // console.log(combTalents)
         var talent = []
         combTalents.forEach(element => {
             
@@ -741,7 +753,7 @@
         // console.log(description)
         let muhRegex = /<@ba\.kw>(.*?)<\/>/g
         let currSpeciality = muhRegex.exec(description)
-        console.log(currSpeciality)
+        // console.log(currSpeciality)
         if(currSpeciality)
         return currSpeciality[1]
         else
@@ -829,8 +841,8 @@
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc:skill.description;
-        console.log(skill);
-        console.log(skillTL);
+        // console.log(skill);
+        // console.log(skillTL);
         if(!skillTL){
             let muhRegex = /<@ba\.vup>(.*?)<\/>/
             let desc2 = muhRegex.exec(desc)[1]
@@ -840,13 +852,13 @@
             desc3[2] = `{${desc3[2]}}`
             desc3[3] = desc3[3].replace(":",":.")
             let desc4 = []
-            console.log(desc3)
+            // console.log(desc3)
             for(i=1;i<desc3.length;i++){
                 desc4.push(desc3[i])
             }
-            console.log(desc4)
+            // console.log(desc4)
             desc = desc.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join(""))
-            console.log(desc)
+            // console.log(desc)
             // let regex2 = /({)(.*?)(\:.*?)(})/
             // submatches = regex2.exec(v)
         }
@@ -861,20 +873,20 @@
                 if(!submatches[1]){
                     submatches = v.match(/(?:(?!\{).(?!$))+/gm);
                 }
-                console.log(submatches)
+                // console.log(submatches)
                 var value;
                 for (var i = 0; i < skill.blackboard.length; i++) {
                     // console.log("WAAAAAAAAAAAAAAssssssuuuuuuuuuu")
-                    console.log(skill.blackboard)
+                    // console.log(skill.blackboard)
                     if(skill.blackboard[i].key == submatches[0]){
                         value = skill.blackboard[i].value;
-                        console.log("WAAAAAAAAAAAAAA")
-                        console.log(value)
+                        // console.log("WAAAAAAAAAAAAAA")
+                        // console.log(value)
                     }
                 }
                 if(value){
                     if(typeof submatches[1] != "undefined"){
-                        console.log(submatches[1])
+                        // console.log(submatches[1])
                         if(submatches[1].includes("%")){
                             value = Math.round((value * 100)) + "%";
                         }
