@@ -372,8 +372,9 @@
 
             var potentials = GetPotential(opdataFull)
             var potentialist = []
+            potentialist.push(`<div style="height:4px"></div>`)
             for(i=0;i<potentials.length;i++){
-                potentialist.push(`<div style="padding:2px;color:#DDD;vertical-align:bottom"><img src="./img/ui/potential/${i+2}.png" style="margin-top:-3px;width:20px;background:#222;border-radius:25%;padding:2px">${potentials[i]}</div>`)
+                potentialist.push(`<div style="font-size:13px;padding:1px;margin-left:-6px;color:#DDD;vertical-align:bottom"><img src="./img/ui/potential/${i+2}.png" style="margin-top:-4px;width:20px;background:#222;border-radius:25%;padding:2px"> ${potentials[i]}</div>`)
             }
             console.log(potentials)
             $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
@@ -751,8 +752,8 @@
         //gonna need to split on "," and "\n" and repeat it
         let descriptions = description.split(/[，(\\n)]/)
         let splitdesc = []
-        console.log("=====================")
-        console.log(descriptions)
+        // console.log("=====================")
+        // console.log(descriptions)
         descriptions.forEach(element => {
             if(element){
                 let muhRegex = /<@ba\.kw>(.*?)<\/>/g
@@ -766,14 +767,9 @@
                 }
             }
         });
-        console.log(splitdesc)
-        console.log("===========================")
+        // console.log(splitdesc)
+        // console.log("===========================")
         
-        // if(currSpeciality)
-        // return currSpeciality[1]
-        // else if (filterDesc)
-        // return filterDesc.type_cn
-        // else
         return SpecialityHtml(splitdesc)
     }
     function SpecialityHtml(splitdesc){
@@ -793,17 +789,17 @@
                 splitdescTL.push(typetl?typetl.type_en:element[0])
             }
         });
-        console.log(splitdescTL)
-        console.log(color)
+        // console.log(splitdescTL)
+        // console.log(color)
 
         return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`)
         // splitdescTL
     }
 
-    function titledMaker (content,title,extraClass="",extraId=""){
+    function titledMaker (content,title,extraClass="",extraId="",extraStyle=""){
         let titledbutton = `
         <div style="padding-top:5px;display:inline-block">
-        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
+        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
         ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
         </div>`
 
