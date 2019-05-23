@@ -462,6 +462,12 @@
                             }
                         }
                     });
+                    switch (force) {
+                        case 0: force = "Small [0]";break;
+                        case 1: force = "Medium [1]";break;
+                        case 2: force = "Large [2]";break;
+                        case 3: force = "Huge [3]";break;
+                    }
                     // console.log(currSkill)
                     var skillType = ""
                     switch(currSkill.skillType){
