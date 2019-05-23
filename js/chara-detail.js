@@ -362,7 +362,7 @@
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
 
             
-            GetTalent(opKey,opdataFull);
+            
             var attackType = getSpeciality(opdataFull.description)
             
             $("#op-atktype").html(attackType)
@@ -376,7 +376,8 @@
             for(i=0;i<potentials.length;i++){
                 potentialist.push(`<div style="font-size:13px;padding:1px;margin-left:-6px;color:#DDD;vertical-align:bottom"><img src="./img/ui/potential/${i+2}.png" style="margin-top:-4px;width:20px;background:#222;border-radius:25%;padding:2px"> ${potentials[i]}</div>`)
             }
-            console.log(potentials)
+            // console.log(potentials)
+            $("#op-talentlist").html(GetTalent(opKey,opdataFull))
             $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
             for (var i = 0; i < opdata.level; i++) {
                 $("#op-rarity").append("<i class='fa fa-star'></i>");
@@ -657,7 +658,7 @@
     function GetPotential(opdataFull){
         var potentials = opdataFull.potentialRanks
         var potentialsTL = []
-        console.log(potentials)
+        // console.log(potentials)
         var potRegex = /(.*?)([-]|[+])(\d*)(.*)|(.*)/
         potentials.forEach(element => {
             let regexDesc = potRegex.exec(element.description)
@@ -678,12 +679,12 @@
         var combTalents = []
         for(i=0;i<opdataFull.talents.length;i++){
             var currTalent = opdataFull.talents[i]
-            if(!db.talentsTL[id])break;
-            var currTalentTL = db.talentsTL[id][i]
+            // if(!db.talentsTL[id])break;
+            var currTalentTL = db.talentsTL[id]?db.talentsTL[id][i]:undefined
             var talentGroup = []
             for(j=0;j<currTalent.candidates.length;j++){
                 var currCandidate = currTalent.candidates[j] 
-                var currCandidateTL = currTalentTL[j]
+                var currCandidateTL = currTalentTL?currTalentTL[j]:undefined
                 talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
             }
             combTalents.push(talentGroup)
@@ -692,11 +693,18 @@
     }
 
     function TalentParse(combTalents){
-        // console.log(combTalents)
+        console.log(combTalents)
         var talent = []
-        combTalents.forEach(element => {
-            
+        combTalents.forEach(combcandidate => {
+            let talentlist = []
+            combcandidate.forEach(eachtalent => {
+                if(eachtalent.talentTL){
+                    talentlist.push(`<div>${titledMaker(eachtalent.talentTL.desc,eachtalent.talentTL.name)}</div>`)
+                }
+            });
+            talent.push(`${titledMaker(talentlist.join(""),"Talent Group")}`)
         });
+        // return titledMaker(talent,"Talent List")
     }
 
     function GetSkillCost(i2,i, opdataFull){
