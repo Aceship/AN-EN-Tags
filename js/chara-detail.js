@@ -366,9 +366,10 @@
             var attackType = getSpeciality(opdataFull.description)
             
             $("#op-atktype").html(attackType)
-
             $("#op-rarity").html("");
             $("#op-rarity").attr("class","op-rarity-"+opdata.level)
+            
+            $("#op-trust").html(GetTrust(opdataFull))
 
             var potentials = GetPotential(opdataFull)
             var potentialist = []
@@ -803,6 +804,45 @@
         // console.log("===========================")
         
         return SpecialityHtml(splitdesc)
+    }
+    function GetTrust(opdataFull){
+        // console.log()
+        let mintrust = opdataFull.favorKeyFrames[0].data
+        let maxtrust = opdataFull.favorKeyFrames[1].data
+        let differences = {}
+        console.log(mintrust)
+        Object.keys(mintrust).forEach(key => {
+            console.log(key)
+            if(mintrust[key]!=maxtrust[key])
+            differences[key]=maxtrust[key]-mintrust[key]
+        });
+        console.log(differences)
+
+        return TrustParse(differences)
+    }
+    function TrustParse(differences) {
+        let readable = []
+        Object.keys(differences).forEach(key => {
+            let currInfo
+            switch (key){
+                case "maxHp": currInfo="Maximum HP" ;break;
+                case "atk": currInfo="Attack" ;break;
+                case "def": currInfo="Defense" ;break;
+                case "magicResistance": currInfo="Magic Resist" ;break;
+                case "cost": currInfo="Cost" ;break;
+                case "blockCnt": currInfo="Block Count" ;break;
+                case "moveSpeed": currInfo="Move Speed" ;break;
+                case "attackSpeed": currInfo="Attack Speed" ;break;
+                case "baseAttackTime": currInfo="Attack time" ;break;
+                case "respawnTime": currInfo="Redeploy time" ;break;
+                case "hpRecoveryPerSec": currInfo="HP recovery" ;break;
+                case "spRecoveryPerSec": currInfo="SP recovery" ;break;
+                default: currInfo = key ; break;
+            }
+
+            readable.push(`${currInfo} +${differences[key]}`)
+        });
+        return titledMaker(readable.join("</br>"),"Trust extra status","","","color:#ddd;min-width:120px")
     }
     function SpecialityHtml(splitdesc){
         let splitdescTL = []
