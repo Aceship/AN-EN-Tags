@@ -771,7 +771,7 @@
         var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
         var material = 
         (`<div class="akmat-container" style="position:relative">
-            <div class="item-name">${(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)}</div>
+            <div class="item-name" title="${itemdata.name}">${(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)}</div>
             <div class="item-image">
                 <img id="item-image" src="img/items/${itemdata.iconId}.png">
             </div>
