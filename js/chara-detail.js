@@ -715,12 +715,12 @@
                 var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
                 var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
                 talentlist.push(`
-                <div>
-                <div style="margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;vertical-align:top;${eachtalent.talent.rangeId?`width:71%;display:inline-block;padding-right:0px;margin-right:-8px;height:100%`:""}">
+                <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
+                <div style="vertical-align:top;${eachtalent.talent.rangeId?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
                     <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
                     <div style="font-size:11px;">${currTalentDesc}</div>
                 </div>
-                    ${eachtalent.talent.rangeId?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId)}</div>`:""}
+                    ${eachtalent.talent.rangeId?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
                 </div>
                 `)
             });
@@ -884,7 +884,7 @@
 
         return titledbutton
     }
-    function rangeMaker(rangeId){
+    function rangeMaker(rangeId,withText=true){
         let rangeData = db.range[rangeId]
         if(rangeData){
             let minRow = 0
@@ -923,7 +923,7 @@
                 }
             }
             table.push(`</table>`);
-            table.push(`<div><span style="all:inherit;">Range</span></div></div>`);
+            table.push(`${withText?`<div><span style="all:inherit;">Range</span></div>`:""}</div>`);
             return table.join("")
         }else{
             return undefined
