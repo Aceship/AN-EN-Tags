@@ -715,10 +715,14 @@
                 var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
                 var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
                 talentlist.push(`
-                <div style="margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px">
+                <div>
+                <div style="margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;vertical-align:top;${eachtalent.talent.rangeId?`width:71%;display:inline-block;padding-right:0px;margin-right:-8px;height:100%`:""}">
                     <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
                     <div style="font-size:11px;">${currTalentDesc}</div>
-                </div>`)
+                </div>
+                    ${eachtalent.talent.rangeId?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId)}</div>`:""}
+                </div>
+                `)
             });
             talent.push(`
                 <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
@@ -919,7 +923,7 @@
                 }
             }
             table.push(`</table>`);
-            table.push(`<div><span style="all:inherit;">Range</span></div>`);
+            table.push(`<div><span style="all:inherit;">Range</span></div></div>`);
             return table.join("")
         }else{
             return undefined
