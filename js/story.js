@@ -160,9 +160,7 @@
 
         for(i=1;i<currstory.total;i++){
             let image=`<img src='./img/story/${currstory.folder}/${('0'+i).slice(-2)}.png'>`
-            $('#story').append(`<div style="width:100%;text-align:center">${image}</div>`)
-            
-            
+            $('#story').append(`<div class="storyimagecontainer">${image}</div>`)
         }
         console.log(currstory)
     }
