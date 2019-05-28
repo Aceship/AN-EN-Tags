@@ -51,7 +51,7 @@
     var d16 = $.getJSON("json/tl-potential.json",function(data){
             db["potentialTL"] = data;
         });
-    var d17 = $.getJSON("json/dragonjet/talents-gameformat.json",function(data){
+    var d17 = $.getJSON("json/ace/tl-talents.json",function(data){
             db["talentsTL"] = data;
         });
     $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17).then(function(){
@@ -681,6 +681,7 @@
 
     function GetTalent(id,opdataFull){
         var combTalents = []
+        console.log(opdataFull.talents)
         for(i=0;i<opdataFull.talents.length;i++){
             var currTalent = opdataFull.talents[i]
             // if(!db.talentsTL[id])break;
