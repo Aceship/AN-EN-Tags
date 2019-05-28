@@ -36,7 +36,7 @@
     var d11 = $.getJSON("json/excel/skill_table.json",function(data){
             db["skills"] = data;
         });
-    var d12 = $.getJSON("json/dragonjet/skills.json",function(data){
+    var d12 = $.getJSON("json/ace/tl-skills.json",function(data){
             db["skillsTL"] = data;
         });
     var d13 = $.getJSON("json/excel/range_table.json",function(data){
@@ -955,7 +955,7 @@
     function getSkillDesc(skillId,level){
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
-        var desc = skillTL?skillTL.desc:skill.description;
+        var desc = skillTL?skillTL.desc[level]:skill.description;
         // console.log(skill);
         // console.log(skillTL);
         if(!skillTL){
