@@ -30,33 +30,65 @@ $(document).ready(function(){
             name:"Infrastructure Skill"
         }]
     })
+    dropdown.push({name:"Elite Materials",content:"akhrelite.html"})
+    dropdown.push({name:"Guide",content:"akguide.html"})
+    dropdown.push({name:"Mission Story",content:"akstory.html"})
+    dropdown.push({
+        name:"Extra",
+        content:[
+        {
+            href:"aklinker.html",
+            name:"bilibili Linker"
+        }]
+    })
     // console.log(window.location.href.split("/")[window.location.href.split("/").length-1])
     let currentHtml= window.location.href.split("/")[window.location.href.split("/").length-1];
     let navDropdown = []
     dropdown.forEach(drop => {
-        navDropdown.push(`
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
-                <div class="ak-subtitle ak-disable">${drop.name}</div>
-        `)
-        let isCurrent =undefined
-        drop.content.forEach(dropelement => {
-            if(currentHtml.includes(dropelement.href)) isCurrent=dropelement.name;
-        })
-        isCurrent = isCurrent?isCurrent:"Menu"
-        // console.log(isCurrent)
-        navDropdown.push(`
-                <div class="ak-disable">${isCurrent}</div>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        `)
-        // console.log(navDropdown)
-        drop.content.forEach(dropelement => {
+
+        let isCurrent = undefined
+        let isGroup = undefined
+        
+        console.log(typeof drop.content)
+        if(typeof drop.content == "string"){
+            if(currentHtml.includes(drop.content)) {
+                isGroup = true;
+            }
             navDropdown.push(`
-            <a class="dropdown-item" href="${dropelement.href}" >${dropelement.name}</a>
+            <li class="nav-item ${isGroup?"active":""}">
+                <a class="nav-link " href="${drop.content}">${drop.name}</a>
+            </li> 
             `)
-        });
-        navDropdown.push(`</div>`)
+        }else{
+            drop.content.forEach(dropelement => {
+                if(currentHtml.includes(dropelement.href)) {
+                    isCurrent=dropelement.name;
+                    isGroup = true;
+                }
+                
+            })
+            isCurrent = isCurrent?isCurrent:"Menu"
+            navDropdown.push(`
+            <li class="nav-item dropdown ${isCurrent!="menu"&&isGroup?"active":""}">
+            <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+                    <div class="ak-subtitle ak-disable">${drop.name}</div>
+            `)
+            
+            
+            // console.log(isCurrent)
+            navDropdown.push(`
+                    <div class="ak-disable ">${isCurrent}</div>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            `)
+            // console.log(navDropdown)
+            drop.content.forEach(dropelement => {
+                navDropdown.push(`
+                <a class="dropdown-item" href="${dropelement.href}" >${dropelement.name}</a>
+                `)
+            });
+            navDropdown.push(`</div>`)
+        }
     })
     let html = `
     <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
@@ -68,21 +100,8 @@ $(document).ready(function(){
         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
                     ${navDropdown.join("")}
-                    <li class="nav-item">
-                        <a class="nav-link" href="akhrelite.html" translate-id="topbar-3">Elite Materials</a>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link" href="akguide.html" translate-id="topbar-5">Guide</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
-                                    <div class="ak-subtitle ak-disable">Extra</div>
-                                    <div class="ak-disable">Menu</div>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="aklinker.html">bilibili Linker</a>
-                            </div>
-                    </li>
+                    
+                    
                 </ul>
             <ul class="navbar-nav ml-auto">
 
