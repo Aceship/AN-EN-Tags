@@ -143,7 +143,7 @@
                 for(var i=0;i<result.length;i++){
                     // console.log(result[i])
                     $("#searchResult").css("max-width","290px");
-                    $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="SelectStory('${result[i].name}')">${result[i].name}</li>`);
+                    $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black"style="background:#444;font-size:17px;padding:4px;text-align:center;width:100%;cursor: pointer;margin-bottom:2px" onclick="SelectStory('${result[i].name}')">${result[i].name}</li>`);
                 }
             } 
         } else {
