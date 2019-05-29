@@ -83,9 +83,6 @@
         $('#opname').click(function(event){
             event.stopPropagation();
         });
-        $('#regionDropdown').click(function(event){
-            event.stopPropagation();
-        });
         $('#lefthandtoggle').click(function(event){
             if(lefthand=="true")
                 lefthand = "false"
