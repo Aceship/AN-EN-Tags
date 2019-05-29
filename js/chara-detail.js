@@ -956,6 +956,9 @@
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc[level]:skill.description;
         console.log(`Skill|${skillId}|${skill.name} `);
+        console.log(skill.blackboard)
+        console.log(desc)
+        
         // console.log(skillTL);
         if(!skillTL){
             let muhRegex = /<@ba\.vup>(.*?)<\/>/
@@ -963,7 +966,7 @@
             // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
             let muhRegex2 = /({)(.*?)(\:.*?)(})/
             let desc3 = muhRegex2.exec(desc2)
-            console.log(desc2)
+            
             if(desc3){
                 desc3[2] = `{${desc3[2]}}`
                 desc3[3] = desc3[3].replace(":",":.")
