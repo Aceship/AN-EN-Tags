@@ -83,6 +83,9 @@
         $('#opname').click(function(event){
             event.stopPropagation();
         });
+        $('#regionDropdown').click(function(event){
+            event.stopPropagation();
+        });
         $('#lefthandtoggle').click(function(event){
             if(lefthand=="true")
                 lefthand = "false"
@@ -283,6 +286,18 @@
 
             // Get operator elite skins
             var skinList = db.skintable.buildinEvolveMap[opdataFull.id];
+            var extraSkin = []
+            Object.keys(db.skintable.charSkins).forEach(element => {
+                // console.log(element)
+                // console.log()
+                if(element.startsWith(opdataFull.id)){
+                    if(db.skintable.charSkins[element].displaySkin.skinName){
+                        extraSkin.push(db.skintable.charSkins[element])
+                    }
+                    
+                }
+            });
+            console.log(extraSkin)
             // console.log(skinList);
             $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo.toLowerCase()+".png");
 
@@ -339,11 +354,33 @@
                 var elitehtml = getEliteHTML(i,opdataFull);
                 tabcontent2.push(elitehtml);
 
-                $("#elite-sidenav").html(tabbtn);
-                $("#tabs-opCG").html(tabcontent);
-                $("#elite-topnav").html(tabbtn2);
-                $("#tabs-opData").html(tabcontent2);
+                
             }
+
+            if(extraSkin.length>0){
+                let dropdowntab = []
+                
+                for(var i=0;i<extraSkin.length;i++){
+                    tabcontent.push($(`
+                    <div class='tab-pane container fade' id='opCG_S${i}_tab'>
+                    <img class='chara-image' src='img/characters/${encodeURIComponent(extraSkin[i].portraitId)}.png'>
+                    </div>
+                    `))
+                    dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns" data-toggle='pill' href='#opCG_S${i}_tab'>S${i+1}</a></li>`)
+                }
+                
+                tabbtn.push(`
+         
+                    ${dropdowntab.join("")}
+                    
+                `)
+                
+            }
+
+            $("#elite-sidenav").html(tabbtn);
+            $("#tabs-opCG").html(tabcontent);
+            $("#elite-topnav").html(tabbtn2);
+            $("#tabs-opData").html(tabcontent2);
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
             $("#op-nameTL").html(eval("opdata.name_"+lang));
             $("#op-nameREG").html("["+eval("opdata.name_"+reg)+"]");
