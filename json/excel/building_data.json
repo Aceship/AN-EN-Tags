@@ -3302,6 +3302,34 @@
         }
       ]
     },
+    "char_283_midn": {
+      "charId": "char_283_midn",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "trade_ord_spd&cost[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "manu_formula_spd[200]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
     "char_109_fmout": {
       "charId": "char_109_fmout",
       "maxManpower": 8640000,
@@ -3489,6 +3517,34 @@
           "buffData": [
             {
               "buffId": "train_spd[000]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_137_brownb": {
+      "charId": "char_137_brownb",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "train_spd&profession[020]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "workshop_formula_probability[300]",
               "cond": {
                 "phase": 1,
                 "level": 1
@@ -4438,6 +4494,34 @@
         }
       ]
     },
+    "char_164_nightm": {
+      "charId": "char_164_nightm",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "train_spd&profession[050]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "hire_spd[020]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
     "char_166_skfire": {
       "charId": "char_166_skfire",
       "maxManpower": 8640000,
@@ -4672,6 +4756,33 @@
             },
             {
               "buffId": "workshop_formula_probability[131]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": []
+        }
+      ]
+    },
+    "char_220_grani": {
+      "charId": "char_220_grani",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "train_spd&profession[010]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "train_spd&profession[011]",
               "cond": {
                 "phase": 2,
                 "level": 1
@@ -5011,6 +5122,33 @@
         }
       ]
     },
+    "char_263_skadi": {
+      "charId": "char_263_skadi",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_oneself[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "dorm_rec_oneself[020]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": []
+        }
+      ]
+    },
     "char_291_aglina": {
       "charId": "char_291_aglina",
       "maxManpower": 8640000,
@@ -5289,6 +5427,16 @@
       "buffCategory": "OUTPUT",
       "roomType": "MANUFACTURE",
       "description": "进驻制造站时，<@cc.kw>贵金属</>类配方的生产力<@cc.vup>+35%</>"
+    },
+    "manu_formula_spd[200]": {
+      "buffId": "manu_formula_spd[200]",
+      "buffName": "源石工艺·α",
+      "buffIcon": "manufacture",
+      "buffColor": "#ffd800",
+      "textColor": "#333333",
+      "buffCategory": "OUTPUT",
+      "roomType": "MANUFACTURE",
+      "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+30%</>"
     },
     "manu_formula_spd[201]": {
       "buffId": "manu_formula_spd[201]",
@@ -5829,6 +5977,16 @@
       "buffCategory": "RECOVERY",
       "roomType": "DORMITORY",
       "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.85</>"
+    },
+    "dorm_rec_oneself[020]": {
+      "buffId": "dorm_rec_oneself[020]",
+      "buffName": "悲歌",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+1</>"
     },
     "dorm_rec_single[000]": {
       "buffId": "dorm_rec_single[000]",
@@ -9133,6 +9291,446 @@
         "processedByProductGroup": [],
         "canBeDestroy": true
       },
+      "furni_pizza_priceList_01": {
+        "id": "furni_pizza_priceList_01",
+        "name": "披萨价目表",
+        "iconId": "furni_pizza_priceList_01",
+        "type": "CEILING",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 10,
+        "depth": 3,
+        "height": 4,
+        "comfort": 185,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的价目表。偶尔会调整价格。",
+        "obtainApproach": "骑兵与猎人GT-EX-3首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_cashierDesk_01": {
+        "id": "furni_pizza_cashierDesk_01",
+        "name": "披萨店用黑色收银台",
+        "iconId": "furni_pizza_cashierDesk_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 10,
+        "depth": 2,
+        "height": 3,
+        "comfort": 280,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的收银台。先付款再取用食物。",
+        "obtainApproach": "骑兵与猎人活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_brazier_01": {
+        "id": "furni_pizza_brazier_01",
+        "name": "披萨烤炉",
+        "iconId": "furni_pizza_brazier_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 4,
+        "height": 10,
+        "comfort": 375,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店必备的烤炉。香气弥漫。",
+        "obtainApproach": "骑兵与猎人活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_cupboard_01": {
+        "id": "furni_pizza_cupboard_01",
+        "name": "披萨店用餐盘柜",
+        "iconId": "furni_pizza_cupboard_01",
+        "type": "CABINET",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 6,
+        "comfort": 175,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的餐盘柜。经过严格的消毒清理后才能放入。",
+        "obtainApproach": "骑兵与猎人GT-HX-1首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_shelf_01": {
+        "id": "furni_pizza_shelf_01",
+        "name": "披萨店用餐盘架",
+        "iconId": "furni_pizza_shelf_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 2,
+        "height": 1,
+        "comfort": 80,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的餐盘架。从柜子中取出后，等待着被使用。",
+        "obtainApproach": "骑兵与猎人GT-HX-2首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_brickWallSticker_01": {
+        "id": "furni_pizza_brickWallSticker_01",
+        "name": "披萨店用砌砖型墙纸",
+        "iconId": "furni_pizza_brickWallSticker_01",
+        "type": "WALLDECO",
+        "location": "POSTER",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 1,
+        "height": 10,
+        "comfort": 50,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的墙纸。给人一种纯手工制作的感觉。",
+        "obtainApproach": "骑兵与猎人GT-2首次通关掉落，活动商店兑换",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_ceilingLights_01": {
+        "id": "furni_pizza_ceilingLights_01",
+        "name": "披萨店用柔光吊灯",
+        "iconId": "furni_pizza_ceilingLights_01",
+        "type": "CEILINGLAMP",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 2,
+        "height": 4,
+        "comfort": 80,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的吊灯。不刺眼的亮度配合极简风格让食客感到轻松。",
+        "obtainApproach": "骑兵与猎人GT-HX-3首次通关掉落，活动商店兑换",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_noticeWall_01": {
+        "id": "furni_pizza_noticeWall_01",
+        "name": "黑色隔断墙",
+        "iconId": "furni_pizza_noticeWall_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 6,
+        "height": 10,
+        "comfort": 340,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "黑色的隔断墙。能够创造更好的就餐环境。",
+        "obtainApproach": "骑兵与猎人活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_column_01": {
+        "id": "furni_pizza_column_01",
+        "name": "披萨店用海报柱",
+        "iconId": "furni_pizza_column_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 3,
+        "height": 10,
+        "comfort": 265,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "黑色的海报柱。物尽其用。",
+        "obtainApproach": "骑兵与猎人活动商店兑换",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_banner_01": {
+        "id": "furni_pizza_banner_01",
+        "name": "披萨店用落地海报架",
+        "iconId": "furni_pizza_banner_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 4,
+        "height": 7,
+        "comfort": 300,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的海报架。有很多优惠消息。",
+        "obtainApproach": "骑兵与猎人活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_barTable_01": {
+        "id": "furni_pizza_barTable_01",
+        "name": "披萨店用快餐吧台",
+        "iconId": "furni_pizza_barTable_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 12,
+        "depth": 3,
+        "height": 2,
+        "comfort": 195,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的吧台。拥挤但美味。",
+        "obtainApproach": "骑兵与猎人活动商店兑换",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_barStool_01": {
+        "id": "furni_pizza_barStool_01",
+        "name": "披萨店用高脚凳",
+        "iconId": "furni_pizza_barStool_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 3,
+        "comfort": 100,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "吧台配套的高脚凳。可以旋转。但不准在上面玩耍。",
+        "obtainApproach": "骑兵与猎人GT-4、GT-HX-3首次通关掉落，活动商店兑换",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_exitIndicator_01": {
+        "id": "furni_pizza_exitIndicator_01",
+        "name": "披萨店用出口指示灯",
+        "iconId": "furni_pizza_exitIndicator_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 1,
+        "height": 1,
+        "comfort": 40,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的出口指示灯。请遵循指示牌的方向行动。",
+        "obtainApproach": "骑兵与猎人GT-1首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_abstractArt_01": {
+        "id": "furni_pizza_abstractArt_01",
+        "name": "披萨店用装饰画",
+        "iconId": "furni_pizza_abstractArt_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 10,
+        "depth": 1,
+        "height": 4,
+        "comfort": 170,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的装饰画。单纯的装饰作用。听说作者很喜欢拼装模型。",
+        "obtainApproach": "骑兵与猎人GT-EX-1首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_diningTable_01": {
+        "id": "furni_pizza_diningTable_01",
+        "name": "披萨店用活动餐桌",
+        "iconId": "furni_pizza_diningTable_01",
+        "type": "TABLE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 6,
+        "height": 3,
+        "comfort": 250,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的餐桌。能供好几个人同时使用。",
+        "obtainApproach": "骑兵与猎人活动商店兑换",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_chair_L_01": {
+        "id": "furni_pizza_chair_L_01",
+        "name": "披萨店用靠背单椅（左）",
+        "iconId": "furni_pizza_chair_L_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 3,
+        "comfort": 130,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的椅子。薄饼底。",
+        "obtainApproach": "骑兵与猎人GT-5首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_chair_R_01": {
+        "id": "furni_pizza_chair_R_01",
+        "name": "披萨店用靠背单椅（右）",
+        "iconId": "furni_pizza_chair_R_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 3,
+        "comfort": 130,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的椅子。手拍底。",
+        "obtainApproach": "骑兵与猎人GT-6首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_chair_F_01": {
+        "id": "furni_pizza_chair_F_01",
+        "name": "披萨店用靠背单椅",
+        "iconId": "furni_pizza_chair_F_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 3,
+        "height": 3,
+        "comfort": 160,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常用的椅子。厚饼底。",
+        "obtainApproach": "骑兵与猎人GT-EX-2首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_wallpaper_01": {
+        "id": "furni_pizza_wallpaper_01",
+        "name": "披萨店用黑色墙纸",
+        "iconId": "furni_pizza_wallpaper_01",
+        "type": "WALLPAPER",
+        "location": "NONE",
+        "category": "WALL",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 1,
+        "height": 10,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "有些披萨店偶尔会选用的墙纸。看上去更贵一些。",
+        "obtainApproach": "骑兵与猎人活动商店兑换",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_pizza_floor_01": {
+        "id": "furni_pizza_floor_01",
+        "name": "披萨店用瓷砖地板",
+        "iconId": "furni_pizza_floor_01",
+        "type": "FLOOR",
+        "location": "NONE",
+        "category": "FLOOR",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 10,
+        "height": 1,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "披萨店常见的瓷砖地板。掉在地上的杂物会被干净的地面反衬的一清二楚。",
+        "obtainApproach": "骑兵与猎人活动商店兑换",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
       "furni_dropS001_theLittleMermaid_01": {
         "id": "furni_dropS001_theLittleMermaid_01",
         "name": "饰牌《泡沫》",
@@ -9413,6 +10011,28 @@
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "不知从哪里搜集来的饰牌。三而存有。",
         "obtainApproach": "4-10突袭模式首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_dropS002_abbeyRoad_01": {
+        "id": "furni_dropS002_abbeyRoad_01",
+        "name": "饰牌《日落》",
+        "iconId": "furni_dropS002_abbeyRoad_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“时间和传奇一同流逝，旋律却依旧徘徊在城市，默默抚慰着所有失意的人。”",
+        "obtainApproach": "骑兵与猎人活动任务奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -10207,7 +10827,7 @@
           {
             "furnitureId": "furni_warehouse_laptop_01",
             "pos0": 24,
-            "pos1": 1
+            "pos1": 0
           },
           {
             "furnitureId": "furni_warehouse_trolley_01",
@@ -10875,6 +11495,153 @@
           }
         ]
       },
+      "furni_set_pizza": {
+        "id": "furni_set_pizza",
+        "name": "快捷连锁披萨店",
+        "desc": "时兴的连锁披萨店。",
+        "quickSetup": [
+          {
+            "furnitureId": "furni_pizza_priceList_01",
+            "pos0": 0,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_pizza_cashierDesk_01",
+            "pos0": 0,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_pizza_brazier_01",
+            "pos0": 6,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_cupboard_01",
+            "pos0": 0,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_pizza_shelf_01",
+            "pos0": 0,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_pizza_brickWallSticker_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_brickWallSticker_01",
+            "pos0": 2,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_brickWallSticker_01",
+            "pos0": 4,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_brickWallSticker_01",
+            "pos0": 6,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_brickWallSticker_01",
+            "pos0": 8,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_ceilingLights_01",
+            "pos0": 2,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_pizza_ceilingLights_01",
+            "pos0": 15,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_pizza_ceilingLights_01",
+            "pos0": 26,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_pizza_noticeWall_01",
+            "pos0": 10,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_column_01",
+            "pos0": 31,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_banner_01",
+            "pos0": 12,
+            "pos1": 5
+          },
+          {
+            "furnitureId": "furni_pizza_barTable_01",
+            "pos0": 12,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_pizza_barStool_01",
+            "pos0": 13,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_pizza_barStool_01",
+            "pos0": 17,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_pizza_barStool_01",
+            "pos0": 21,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_pizza_exitIndicator_01",
+            "pos0": 19,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_pizza_abstractArt_01",
+            "pos0": 17,
+            "pos1": 5
+          },
+          {
+            "furnitureId": "furni_pizza_diningTable_01",
+            "pos0": 28,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_chair_L_01",
+            "pos0": 26,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_pizza_chair_R_01",
+            "pos0": 31,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_pizza_chair_F_01",
+            "pos0": 26,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_wallpaper_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_pizza_floor_01",
+            "pos0": 0,
+            "pos1": 0
+          }
+        ]
+      },
       "furni_set_wooden": {
         "id": "furni_set_wooden",
         "name": "萨米乡野别墅",
@@ -11396,6 +12163,71 @@
           "furni_s2_walllamp_02"
         ]
       },
+      "furni_set_pizza_1": {
+        "id": "furni_set_pizza_1",
+        "name": "商铺经营设施",
+        "themeId": "furni_set_pizza",
+        "comfort": 280,
+        "count": 5,
+        "furniture": [
+          "furni_pizza_priceList_01",
+          "furni_pizza_cashierDesk_01",
+          "furni_pizza_brazier_01",
+          "furni_pizza_cupboard_01",
+          "furni_pizza_shelf_01"
+        ]
+      },
+      "furni_set_pizza_2": {
+        "id": "furni_set_pizza_2",
+        "name": "商铺宣传设施",
+        "themeId": "furni_set_pizza",
+        "comfort": 250,
+        "count": 3,
+        "furniture": [
+          "furni_pizza_noticeWall_01",
+          "furni_pizza_banner_01",
+          "furni_pizza_column_01"
+        ]
+      },
+      "furni_set_pizza_3": {
+        "id": "furni_set_pizza_3",
+        "name": "单人就餐设施",
+        "themeId": "furni_set_pizza",
+        "comfort": 130,
+        "count": 3,
+        "furniture": [
+          "furni_pizza_barTable_01",
+          "furni_pizza_barStool_01",
+          "furni_pizza_exitIndicator_01"
+        ]
+      },
+      "furni_set_pizza_4": {
+        "id": "furni_set_pizza_4",
+        "name": "多人聚餐设施",
+        "themeId": "furni_set_pizza",
+        "comfort": 150,
+        "count": 4,
+        "furniture": [
+          "furni_pizza_diningTable_01",
+          "furni_pizza_chair_L_01",
+          "furni_pizza_chair_R_01",
+          "furni_pizza_chair_F_01"
+        ]
+      },
+      "furni_set_pizza_5": {
+        "id": "furni_set_pizza_5",
+        "name": "现下流行的披萨店设计",
+        "themeId": "furni_set_pizza",
+        "comfort": 250,
+        "count": 5,
+        "furniture": [
+          "furni_pizza_wallpaper_01",
+          "furni_pizza_floor_01",
+          "furni_pizza_abstractArt_01",
+          "furni_pizza_ceilingLights_01",
+          "furni_pizza_brickWallSticker_01"
+        ]
+      },
       "furni_set_wooden_1": {
         "id": "furni_set_wooden_1",
         "name": "原木家私套组",
@@ -11540,7 +12372,7 @@
         {
           "furnitureId": "furni_warehouse_laptop_01",
           "xOffset": 24,
-          "yOffset": 1,
+          "yOffset": 0,
           "defaultPrefabId": "room_dormitory_6x2"
         },
         {

@@ -360,8 +360,6 @@
 
             var type = query(db.classes,"type_cn",opdata.type);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
-
-            
             
             var attackType = getSpeciality(opdataFull.description)
             
@@ -965,15 +963,18 @@
             // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
             let muhRegex2 = /({)(.*?)(\:.*?)(})/
             let desc3 = muhRegex2.exec(desc2)
-            desc3[2] = `{${desc3[2]}}`
-            desc3[3] = desc3[3].replace(":",":.")
-            let desc4 = []
-            // console.log(desc3)
-            for(i=1;i<desc3.length;i++){
-                desc4.push(desc3[i])
+            console.log(desc2)
+            if(desc3){
+                desc3[2] = `{${desc3[2]}}`
+                desc3[3] = desc3[3].replace(":",":.")
+                let desc4 = []
+                // console.log(desc3)
+                for(i=1;i<desc3.length;i++){
+                    desc4.push(desc3[i])
+                }
+                // console.log(desc4)
+                desc = desc.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join(""))
             }
-            // console.log(desc4)
-            desc = desc.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join(""))
         }
 
         // if(skillTL){
