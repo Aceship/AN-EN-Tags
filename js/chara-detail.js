@@ -112,6 +112,16 @@
         else 
         $('#lefthandtoggle').css("background-color","#222")
 
+        $('#opname').bind("enterKey",function(e){
+            // console.log()
+            populateOperators($('#opname').val(),true)
+         });
+         $('#opname').keyup(function(e){
+             if(e.keyCode == 13)
+             {
+                 $(this).trigger("enterKey");
+             }
+         });
         
         if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
             console.log("game region undefined");
@@ -190,14 +200,19 @@
         history.pushState(null, '', window.location.pathname); 
     }
 
-    function populateOperators(el){
+    function populateOperators(el,isenter = false){
         // console.log(el)
+        let inputs
+        if(isenter)
+            inputs = el
+        else
+            inputs = el.value
         if(($('#operatorsResult').css("display") == "block") && el=="Browse"){
             // console.log($('#operatorsResult').css("display") == "none" )
             $('#operatorsResult').hide();
             return;
         }
-        if(el.value != ""||el=="Browse"){
+        if(el.value != ""||el=="Browse"||isenter&&el){
             var result = [];
             $.each(db.chars2,function(_,char){
                 var languages = ['cn','en','jp','kr'];
@@ -208,7 +223,7 @@
                     for (var i = 0; i < languages.length; i++) {
                         var charname = eval('char.name_'+languages[i]).toUpperCase();
                         var unreadable = query(db.unreadNameTL,"name",char.name_en)
-                        var input = el.value.toUpperCase();
+                        var input = inputs.toUpperCase();
                         var search = (unreadable?unreadable.name_en.toUpperCase().search(input):charname.search(input));
                         if(search != -1){
                             found = true;
@@ -233,7 +248,13 @@
             });
             // console.log(result)
             result.sort((a,b)=> b.rarity-a.rarity)
+            
             if(result.length > 0){
+                if(isenter){
+                    $('#operatorsResult').hide();
+                    selectOperator(result[0].name_cn)
+                    return
+                }
                 $('#operatorsResult').html("");
                 $('#operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
