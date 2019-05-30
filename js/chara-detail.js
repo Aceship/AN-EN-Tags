@@ -707,9 +707,9 @@
     function GetStory (opdataFull){
         // console.log(opdataFull)
         let currStory = db.handbookInfo.handbookDict[opdataFull.id]
-        console.log(currStory)
-        console.log(currStory.drawName)
-        console.log(db.vaTL[currStory.infoName])
+        // console.log(currStory)
+        // console.log(currStory.drawName)
+        // console.log(db.vaTL[currStory.infoName])
         let puretext = []
         puretext.push(opdataFull.appellation)
         puretext.push("")
@@ -740,7 +740,7 @@
             });
         }
 
-        console.log(puretext.join("\n"))
+        // console.log(puretext.join("\n"))
     }
     function GetPotential(opdataFull){
         var potentials = opdataFull.potentialRanks
@@ -1040,9 +1040,9 @@
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc[level]:skill.description;
-        // console.log(`Skill|${skillId}|${skill.name} `);
-        // console.log(skill.blackboard)
-        // console.log(desc)
+        console.log(`Skill|${skillId}|${skill.name} `);
+        console.log(skill.blackboard)
+        console.log(desc)
         
         // console.log(skillTL);
         if(!skillTL){
