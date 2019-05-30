@@ -740,7 +740,7 @@
             });
         }
 
-        // console.log(puretext.join("\n"))
+        console.log(puretext.join("\n"))
     }
     function GetPotential(opdataFull){
         var potentials = opdataFull.potentialRanks
@@ -1040,8 +1040,8 @@
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc[level]:skill.description;
-        // console.log(`Skill|${skillId}|${skill.name} `);
-        // console.log(skill.blackboard)
+        console.log(`Skill|${skillId}|${skill.name} `);
+        console.log(skill.blackboard)
         // console.log(desc)
         
         // console.log(skillTL);
