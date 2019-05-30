@@ -28,10 +28,19 @@
         $('#opBrowseButton').click(function(event){
             event.stopPropagation();
         });
-        $('#opname').click(function(event){
+        $('#searchResult').click(function(event){
             event.stopPropagation();
         });
-
+        $('#opname').bind("enterKey",function(e){
+            // console.log()
+            populateSearch($('#opname').val(),true)
+         });
+         $('#opname').keyup(function(e){
+             if(e.keyCode == 13)
+             {
+                 $(this).trigger("enterKey");
+             }
+         });
         
         if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
             console.log("game region undefined");
@@ -110,14 +119,19 @@
         history.pushState(null, '', window.location.pathname); 
     }
 
-    function populateSearch(el){
+    function populateSearch(el,isenter=false){
         // console.log(el)
+        let inputs
+        if(isenter)
+            inputs = el
+        else
+            inputs = el.value
         if(($('#searchResult').css("display") == "block") && el=="Browse"){
             // console.log($('#searchResult').css("display") == "none" )
             $('#searchResult').hide();
             return;
         }
-        if(el.value!=""||el=="Browse"){
+        if(el.value!=""||el=="Browse"||isenter){
             var result=[];
             $.each(db.storylist,function(_,story){
                 var found = false;
@@ -125,7 +139,7 @@
                 else{
                     var storyname = story.name.toUpperCase()    
                     // console.log(storyname)
-                    var search = storyname.search(el.value.toUpperCase())
+                    var search = storyname.search(inputs.toUpperCase())
                     // console.log(search)
                     if(search !=-1){
                         found = true;
@@ -138,6 +152,11 @@
                 }
             })
             if(result.length>0){
+                if(isenter){
+                    $('#searchResult').hide();
+                    SelectStory(result[0].name)
+                    return
+                }
                 $('#searchResult').html("");
                 $('#searchResult').show();
                 for(var i=0;i<result.length;i++){
