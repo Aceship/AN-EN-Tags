@@ -49,7 +49,7 @@ $(document).ready(function(){
         let isCurrent = undefined
         let isGroup = undefined
         
-        console.log(typeof drop.content)
+        // console.log(typeof drop.content)
         if(typeof drop.content == "string"){
             if(currentHtml.includes(drop.content)) {
                 isGroup = true;

@@ -54,7 +54,15 @@
     var d17 = $.getJSON("json/ace/tl-talents.json",function(data){
             db["talentsTL"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17).then(function(){
+    var d18 = $.getJSON("json/excel/handbook_info_table.json",function(data){
+            db["handbookInfo"] = data;
+        });
+    var d19 = $.getJSON("json/tl-va.json",function(data){
+        db["vaTL"] = data;
+    });
+
+        
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19).then(function(){
         $.holdReady(false);
     });
 
@@ -433,7 +441,9 @@
             });
             
             $("#op-taglist").append(tags_html);
+            //Story
 
+            GetStory(opdataFull)
             ///////////////////////////////////////////////// SKILLS SECTION //////////////////////////////////////////////////
 
             $("#skill-tabs").html("");
@@ -692,6 +702,45 @@
         container.append(statsCollapsible);
         // container.append(mats);
         return container;
+    }
+
+    function GetStory (opdataFull){
+        // console.log(opdataFull)
+        let currStory = db.handbookInfo.handbookDict[opdataFull.id]
+        console.log(currStory)
+        console.log(currStory.drawName)
+        console.log(db.vaTL[currStory.infoName])
+        let puretext = []
+        puretext.push(opdataFull.appellation)
+        puretext.push("")
+        if(currStory.storyTextAudio){
+            currStory.storyTextAudio.forEach(storySection => {
+                puretext.push(`---------${storySection.storyTitle}-----------`)
+                puretext.push(storySection.stories[0].storyText)
+                puretext.push("")
+                switch(storySection.storyTitle){
+                    // case "基础档案":
+                    //     let basicInfo = storySection.stories[0].storyText.split("\n")
+                    //     let basicInfoTL = []
+                    //     console.log(basicInfo)
+                    //     basicInfo.forEach(info => {
+                    //         let check = /(【)(.*)(】)(.*)/
+                    //         let infoTitle = check.exec(info)
+                    //         if(infoTitle){
+                    //             console.log(infoTitle[2])
+                    //             console.log(infoTitle[4])
+                    //         }
+                    //     });
+                    // ;break;
+                    default:
+                    // console.log(`---------${storySection.storyTitle}-----------`)
+                    // console.log(storySection.stories[0].storyText)
+                    
+                }
+            });
+        }
+
+        console.log(puretext.join("\n"))
     }
     function GetPotential(opdataFull){
         var potentials = opdataFull.potentialRanks
@@ -991,9 +1040,9 @@
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc[level]:skill.description;
-        console.log(`Skill|${skillId}|${skill.name} `);
-        console.log(skill.blackboard)
-        console.log(desc)
+        // console.log(`Skill|${skillId}|${skill.name} `);
+        // console.log(skill.blackboard)
+        // console.log(desc)
         
         // console.log(skillTL);
         if(!skillTL){
