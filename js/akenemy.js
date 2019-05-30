@@ -182,22 +182,59 @@
         let currHtml = []    
         // console.log(query(db.enemytl,"name_cn",currEnemy.name).name_en)
         let tlname = query(db.enemytl,"name_cn",currEnemy.name).name_en 
+        //Attack type
+        let atktype =[]
+        currEnemy.attackType.split(" ").forEach(element => {
+            switch (element) {
+                case "近战": atktype.push("Melee") ;break;
+                case "远程": atktype.push("Ranged") ;break;
+                case "法术": atktype.push("Spell") ;break;
+                case "不攻击": atktype.push("No Attack") ;break;
+                default: atktype.push(element) ;break;
+            }
+        });
+        
         currHtml.push(`
         <div class="ak-c-black col">
-            
-            <div>${tlname?tlname:""} [${currEnemy.name}] ${currEnemy.enemyIndex}</div>
-            
-            <div><img style="height:80px;padding:1px" src="./img/enemy/${currEnemy.enemyId}.png"> </div>
+            <div style="padding-top:5px">
+                <div style="display:inline-block"><img style="height:80px;padding:1px" src="./img/enemy/${currEnemy.enemyId}.png"> </div>
+                <div style="display:inline-block">
+                    <div style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:50px;width:50px;display:inline-block;font-size:30px">${currEnemy.enemyIndex}</div>
+                    <div style="display:inline-block;vertical-align:top">   
+                    <div>${tlname?tlname:""} [${currEnemy.name}] </div>
+                    <div>${currEnemy.enemyRace?`${currEnemy.enemyRace}`:""}</div>
+                    </div>
+                </div>
+            </div>
             
             <div>Enemy Type : ${currEnemy.enemyLevel.charAt(0) + currEnemy.enemyLevel.slice(1).toLowerCase()}</div>
-            <div>${currEnemy.enemyRace?`Enemy Race : ${currEnemy.enemyRace}`:""}</div>
-            <div>Attack type : ${currEnemy.attackType}</div>
-            <div>Attack : ${currEnemy.attack}</div>
-            <div>Defense : ${currEnemy.defence}</div>
-            <div>Endure : ${currEnemy.endure}</div>
-            <div>resistance : ${currEnemy.resistance}</div>
+            
+            <div>Attack type : ${atktype.join(" ")}</div>
+            <div style="max-width:100%" >
+                <div class="col-4" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
+                <div style="padding:0px;font-size:12px">
+                    <img src="./img/ui/enemy/hp.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+                    Health</div><div style="font-size:40px;margin-top:-8px">${currEnemy.endure}</div>
+                </div>
+                <div class="col-4" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
+                
+                <div style="padding:0px;font-size:12px">
+                    <img src="./img/ui/enemy/atk.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+                    Attack</div><div style="font-size:40px;margin-top:-8px">${currEnemy.attack}</div>
+                </div>
+                <div class="col-4" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
+                <div style="padding:0px;font-size:12px">
+                    <img src="./img/ui/enemy/defense.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+                    Defense</div><div style="font-size:40px;margin-top:-8px">${currEnemy.defence}</div>
+                </div>
+                <div class="col-4" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
+                <div style="padding:0px;font-size:12px;text-align:right;margin-right:5px">
+                    <img src="./img/ui/enemy/resistance.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+                    Spell Resist</div><div style="font-size:40px;margin-top:-8px">${currEnemy.resistance}</div>
+                </div>
+            </div>
             <div>${currEnemy.ability ?`Ability : ${currEnemy.ability}`:""}</div>
-            <div>Description : ${currEnemy.description}</div>
+            <div>${currEnemy.description}</div>
         </div>`)
         
         if(currEnemyDetail){
