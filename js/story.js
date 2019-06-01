@@ -58,45 +58,6 @@
             reg = localStorage.gameRegion;
             lang = localStorage.webLang;
         }
-        if(typeof localStorage.selectedOPDetails === "undefined" || localStorage.selectedOPDetails == ""){
-            console.log("selected OP undefined");
-            var vars = getUrlVars();
-            if(typeof vars.opname != "undefined"){
-                vars.opname = decodeURIComponent(vars.opname);
-                console.log(vars.opname);
-                var char = query(db.chars,"appellation",vars.opname,true,true);
-                var opname;
-                $.each(char,function(key,v){
-                    opname = v.name;
-                });
-                selectOperator(opname);
-            } else {
-                localStorage.setItem("selectedOP","");
-            }
-        } else {
-            console.log("selected OP defined");
-            var curpath = window.location.search.split("?");
-            // console.log(curpath)
-            if(typeof curpath[1] != "undefined"){
-                var variables = curpath[1].split("?");
-                var char = {};
-                $.each(variables,function(_,v){
-                    var subvar = v.split("=");
-                    if(subvar[0] == "opname"){
-                        var opname = decodeURIComponent(subvar[1]);
-                        char = query(db.chars,"appellation",opname.replace(/_/g," "),true,true);
-                    }
-                });
-                var opname;
-                $.each(char,function(key,v){
-                    opname = v.name;
-                })
-            } else {
-                selectedOP = localStorage.selectedOPDetails;
-                var opname = db.chars[selectedOP].name;
-            }
-            selectOperator(opname);
-        }
 
         // console.log("TEST")
         $('.reg[value='+reg+']').addClass('selected');
@@ -119,6 +80,27 @@
         history.pushState(null, '', window.location.pathname); 
     }
 
+    function browseSearch(groups,value = "",value2 =""){
+        $('#searchResult').html("");
+        $('#searchResult').show();
+        // console.log(groups)
+        // console.log(value)
+        if(groups =="story"){
+            // console.log(db.storylist[value][value2].content)
+            db.storylist[value][value2].content.forEach(list => {
+                // console.log(db.storylist[groups][list])
+                // console.log(list)
+                $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black"style="background:#444;font-size:17px;padding:4px;text-align:center;width:100%;cursor: pointer;margin-bottom:2px" 
+                onclick="SelectStory('${list}')">${list}</li>`);
+            });
+        }else{
+            Object.keys(db.storylist[groups]).forEach(list => {
+                // console.log(db.storylist[groups][list])
+                $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black"style="background:#444;font-size:17px;padding:4px;text-align:center;width:100%;cursor: pointer;margin-bottom:2px" 
+                onclick="browseSearch('${db.storylist[groups][list].group}','${groups}','${db.storylist[groups][list].name}')">${db.storylist[groups][list].name}</li>`);
+            });
+        }
+    }
     function populateSearch(el,isenter=false){
         // console.log(el)
         let inputs
@@ -133,7 +115,7 @@
         }
         if(el.value!=""||el=="Browse"||isenter){
             var result=[];
-            $.each(db.storylist,function(_,story){
+            $.each(db.storylist.story,function(_,story){
                 var found = false;
                 if(el=="Browse") found=true
                 else{
@@ -161,7 +143,7 @@
                 $('#searchResult').show();
                 for(var i=0;i<result.length;i++){
                     // console.log(result[i])
-                    $("#searchResult").css("max-width","290px");
+                    $("#searchResult").css("max-width","320px");
                     $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black"style="background:#444;font-size:17px;padding:4px;text-align:center;width:100%;cursor: pointer;margin-bottom:2px" onclick="SelectStory('${result[i].name}')">${result[i].name}</li>`);
                 }
             } 
@@ -175,7 +157,7 @@
         $('#searchResult').hide();
         $('#story').html("")
         $('#story').show()
-        let currstory = query(db.storylist,"name",storyname)
+        let currstory = query(db.storylist.story,"name",storyname)
 
         for(i=1;i<=currstory.total;i++){
             let image=`<img src='./img/story/${currstory.folder}/${('0'+i).slice(-2)}.png'>`
