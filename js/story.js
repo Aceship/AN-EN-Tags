@@ -177,7 +177,7 @@
         $('#story').show()
         let currstory = query(db.storylist,"name",storyname)
 
-        for(i=1;i<currstory.total;i++){
+        for(i=1;i<=currstory.total;i++){
             let image=`<img src='./img/story/${currstory.folder}/${('0'+i).slice(-2)}.png'>`
             $('#story').append(`<div class="storyimagecontainer">${image}</div>`)
         }
