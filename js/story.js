@@ -85,6 +85,7 @@
         $('#searchResult').show();
         // console.log(groups)
         // console.log(value)
+        $("#searchResult").css("max-width","400px");
         if(groups =="story"){
             // console.log(db.storylist[value][value2].content)
             db.storylist[value][value2].content.forEach(list => {
