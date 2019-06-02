@@ -86,18 +86,28 @@
         // console.log(groups)
         // console.log(value)
         $("#searchResult").css("max-width","400px");
-        if(groups =="story"){
+        if(groups =="story" ){
+            $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storyheader">Choose Story :</li>`);
             // console.log(db.storylist[value][value2].content)
+            // console.log(`${value}  +  ${value2}`)
             db.storylist[value][value2].content.forEach(list => {
                 // console.log(db.storylist[groups][list])
                 // console.log(list)
-                $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black"style="background:#444;font-size:17px;padding:4px;text-align:center;width:100%;cursor: pointer;margin-bottom:2px" 
+                $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storybutton"
                 onclick="SelectStory('${list}')">${list}</li>`);
             });
+        }else if(groups =="storygroups"){
+                $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storyheader">Choose Story Arc :</li>`);
+                db.storylist[value][value2].content.forEach(list => {
+                    $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storybutton" 
+                    onclick="browseSearch('story','${groups}','${db.storylist[groups][list].name}')">
+                        ${db.storylist[groups][list].name}  ▶
+                    </li>`);
+                });
         }else{
+            $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storyheader">Choose Story Arc :</li>`);
             Object.keys(db.storylist[groups]).forEach(list => {
-                // console.log(db.storylist[groups][list])
-                $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black"style="background:#444;font-size:17px;padding:4px;text-align:center;width:100%;cursor: pointer;margin-bottom:2px" 
+                $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storybutton" 
                 onclick="browseSearch('${db.storylist[groups][list].group}','${groups}','${db.storylist[groups][list].name}')">
                     ${db.storylist[groups][list].name}  ▶
                 </li>`);
