@@ -200,6 +200,20 @@
         history.pushState(null, '', window.location.pathname); 
     }
 
+    // function populateOperators(el,isenter = false){
+    //     let inputs
+    //     if(isenter)
+    //         inputs = el
+    //     else
+    //         inputs = el.value
+
+    //     $.each(db.chars,function(_,char){
+    //         var unreadable = query(db.unreadNameTL,"name",char.appellation)
+    //         console.log(char.appellation)
+    //         console.log(unreadable)
+    //     })
+        
+    // }
     function populateOperators(el,isenter = false){
         // console.log(el)
         let inputs
@@ -412,6 +426,7 @@
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
             $("#op-nameTL").html(eval("opdata.name_"+lang));
             $("#op-nameREG").html("["+eval("opdata.name_"+reg)+"]");
+            $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]}`)
             if(unreadable){
                 $("#op-nameRead").html(`[ ${unreadable} ]`);
             }else{
