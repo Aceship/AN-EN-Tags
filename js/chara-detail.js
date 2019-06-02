@@ -589,19 +589,20 @@
                         tables +=            "<tr>"
                                 +               "<td rowspan=2>"+(grid?grid:"")+"</td>"
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
-                                +                `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 +            "</tr>"
+                                +             "<tr>"
+                                +                   `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
+                                +               "</tr>"
                                 +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
                                 +               "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
                                 +        "</table>";   
                     } else {
                         tables +=           "<tr style=\"height:10px\"></tr>"
                                 +            "<tr>"
-                                +                `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
-                                +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
+                                +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 +            "</tr>"
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
-                                + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
+                                + "<tr><td colspan=4><div style='height:10px'></div>"+ materialHtml + "</td><tr>"
                                 +        "</table>";
                     }
                 })
