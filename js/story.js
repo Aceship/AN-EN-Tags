@@ -98,7 +98,9 @@
             Object.keys(db.storylist[groups]).forEach(list => {
                 // console.log(db.storylist[groups][list])
                 $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black"style="background:#444;font-size:17px;padding:4px;text-align:center;width:100%;cursor: pointer;margin-bottom:2px" 
-                onclick="browseSearch('${db.storylist[groups][list].group}','${groups}','${db.storylist[groups][list].name}')">${db.storylist[groups][list].name}</li>`);
+                onclick="browseSearch('${db.storylist[groups][list].group}','${groups}','${db.storylist[groups][list].name}')">
+                    ${db.storylist[groups][list].name}  ▶
+                </li>`);
             });
         }
     }
