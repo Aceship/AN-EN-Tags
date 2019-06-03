@@ -403,7 +403,7 @@
                 } else {
                     skindata = db.skintable.charSkins[skinList[i]];
                 }
-                zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
+                zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
                 if(i == 0){
                     $("#charazoom").attr("src","img/characters/"+skindata.portraitId+".png");
                     $('#charazoom').modal('handleUpdate')
@@ -427,8 +427,8 @@
                 let dropdowntab = []
                 
                 for(var i=0;i<extraSkin.length;i++){
-                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
-                    <img style="height:40px;width:40px" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
+                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
+                    <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
                     </button>`))
 
                     tabcontent.push($(`
@@ -437,7 +437,8 @@
                     </div>
                     `))
                     dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns" data-toggle='pill' href='#opCG_S${i}_tab'>
-                    <img class='skinimage' style="max-width:30px;max-height:30px" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
+                    <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
+                    <img class='skinimage' style="max-width: 40px;max-height: 40px;margin-left:-5px;" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
                     </a></li>`)
                 }
                 
