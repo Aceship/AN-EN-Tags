@@ -295,8 +295,17 @@
             $('#operatorsResult').hide();
         }
     }
-    function ChangeZoomChara(skinName){
-        $("#charazoom").attr("src","img/characters/"+skinName+".png");
+    function openOPZOOMmodal(){
+        $('#opzoom').modal();
+        var image = $('#tabs-opCG').children('.active').children('img').attr('src');
+        ChangeZoomChara('',image);
+    }
+    function ChangeZoomChara(skinName, src=''){
+        if(skinName != ''){
+            $("#charazoom").attr("src","img/characters/"+skinName+".png");
+        } else {
+            $("#charazoom").attr("src",src);
+        }
         $('#charazoom').modal('handleUpdate')
     }
     function selectOperator(opname){
@@ -439,7 +448,7 @@
                 `)
                 
             }
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn " style="width:40px;height:40px;margin:5px"data-toggle="modal" data-target="#opzoom"><img style="width:30px;margin-top:-12px" src='img/ui/zoom.png'></button>`))
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
 
             $("#charazoom-button").html(zoombtn)
             $("#elite-sidenav").html(tabbtn);
