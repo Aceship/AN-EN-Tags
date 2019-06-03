@@ -394,7 +394,7 @@
                 } else {
                     skindata = db.skintable.charSkins[skinList[i]];
                 }
-                zoombtn.push($(`<button class="btn ak-c-black" style="margin:2px;padding:2px" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
+                zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
                 if(i == 0){
                     $("#charazoom").attr("src","img/characters/"+skindata.portraitId+".png");
                     $('#charazoom').modal('handleUpdate')
@@ -418,7 +418,7 @@
                 let dropdowntab = []
                 
                 for(var i=0;i<extraSkin.length;i++){
-                    zoombtn.push($(`<button class="btn ak-c-black" style="margin:2px;padding:2px" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
+                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
                     <img style="height:40px;width:40px" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
                     </button>`))
 
@@ -439,7 +439,7 @@
                 `)
                 
             }
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:40px;height:40px;margin:5px"data-toggle="modal" data-target="#opzoom"><img style="width:30px;margin-top:-12px" src='img/ui/zoom.png'></button>`))
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn " style="width:40px;height:40px;margin:5px"data-toggle="modal" data-target="#opzoom"><img style="width:30px;margin-top:-12px" src='img/ui/zoom.png'></button>`))
 
             $("#charazoom-button").html(zoombtn)
             $("#elite-sidenav").html(tabbtn);
