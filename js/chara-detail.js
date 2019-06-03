@@ -438,9 +438,9 @@
             var position = query(db.tags,"tag_cn",opdataFull.position);
             $("#op-position").html(titledMaker(eval("position.tag_"+lang),`Position`))
 
-            var type = query(db.classes,"type_cn",opdata.type);
+            var type = query(db.classes,"type_data",opdataFull.profession);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
-            
+            $("#op-className").html(eval("type.type_"+lang))
             var attackType = getSpeciality(opdataFull.description)
             
             $("#op-atktype").html(attackType)
