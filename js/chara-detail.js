@@ -295,7 +295,12 @@
             $('#operatorsResult').hide();
         }
     }
+    function ChangeZoomChara(skinName){
+        $("#charazoom").attr("src","img/characters/"+skinName+".png");
+        $('#charazoom').modal('handleUpdate')
+    }
     function selectOperator(opname){
+        
         if(opname != ""){
             $("#chara-detail-container").show();
             console.log("SELECT OPERATOR");
@@ -306,6 +311,14 @@
             var opdata = query(db.chars2,"name_cn",opname);
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
+            
+            //test
+            // var charalist = []
+            // $.each(db.chars,(key,chara) => {
+            //     charalist.push(`${chara.appellation},${chara.displayLogo},${key.split("_")[1]},${key}_1`)
+            // });
+            // console.log(charalist.join("\n"))
+            //
             var opdataFull = {};
             var opKey =""
             $.each(opdata2,function(key,v){
@@ -345,6 +358,7 @@
             var tabbtn2 = [];
             var tabcontent = [];
             var tabcontent2 = [];
+            var zoombtn = [];
             
             $("#elite-sidenav").html("");
             $("#tabs-opCG").html("");
@@ -373,15 +387,18 @@
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
                     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 }
-
+                
                 var skindata;
                 if(!(skinList[i] in db.skintable.charSkins)){
                     skindata = db.skintable.charSkins[skinList[i-1]];
                 } else {
                     skindata = db.skintable.charSkins[skinList[i]];
                 }
-
+                zoombtn.push($(`<button class="btn ak-c-black" style="margin:2px;padding:2px" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
                 if(i == 0){
+                    $("#charazoom").attr("src","img/characters/"+skindata.portraitId+".png");
+                    $('#charazoom').modal('handleUpdate')
+                    
                     tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
                         +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
                         +"</div>"));
@@ -390,7 +407,7 @@
                         +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
                         +"</div>"));
                 }
-
+                
                 var elitehtml = getEliteHTML(i,opdataFull);
                 tabcontent2.push(elitehtml);
 
@@ -401,6 +418,10 @@
                 let dropdowntab = []
                 
                 for(var i=0;i<extraSkin.length;i++){
+                    zoombtn.push($(`<button class="btn ak-c-black" style="margin:2px;padding:2px" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
+                    <img style="height:40px;width:40px" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
+                    </button>`))
+
                     tabcontent.push($(`
                     <div class='tab-pane container fade' id='opCG_S${i}_tab'>
                     <img class='chara-image' src='img/characters/${encodeURIComponent(extraSkin[i].portraitId)}.png'>
@@ -418,7 +439,9 @@
                 `)
                 
             }
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:40px;height:40px;margin:5px"data-toggle="modal" data-target="#opzoom"><img style="width:30px;margin-top:-12px" src='img/ui/zoom.png'></button>`))
 
+            $("#charazoom-button").html(zoombtn)
             $("#elite-sidenav").html(tabbtn);
             $("#tabs-opCG").html(tabcontent);
             $("#elite-topnav").html(tabbtn2);

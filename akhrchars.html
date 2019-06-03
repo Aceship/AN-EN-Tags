@@ -44,6 +44,30 @@
     </nav>
     <div style='padding-bottom:40px;'></div>
     <!-- <div class='warning-sign'style='position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center'>aaaaaaaaaaaaaaaaaaaaa</div> -->
+    <div class="modal fade" id="opzoom">
+            <div class="modal-dialog modal-dialog-centered modal-lg" >
+              <div class="modal-content" style="background:#444">
+          
+                <!-- Modal Header -->
+                <!-- <div class="modal-header">
+                  <h4 class="modal-title"></h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+           -->
+                <!-- Modal body -->
+                <div class="modal-body" style="padding:0px;margin:0px">
+                    <img id="charazoom" style="max-width:100%;max-height:100%">
+                </div>
+          
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div id="charazoom-button"></div>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+          
+              </div>
+            </div>
+          </div>
     <div class='col-md-12 col-sm-12 ' style='margin:auto;max-width:1000px;padding:0' >
         <div class='row'>
             <div class='col-12 ak-bg ak-shadow mt-3' style='padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px' role='alert'>
@@ -66,6 +90,7 @@
                     <button class='btn btn-danger col-12 align-self-center ak-btn text-center' style='padding:1px; margin-top: 10px; z-index: 0; font-weight: 550' onclick='clickBtnClear()' ><span translate-id='selector-clear'>Clear</span> <span id='count-tag'></a> </button>
             </div>
         </div>
+        
         <div class='chara-detail-container' id="chara-detail-container" style="display:none;">
             <div class='row'>
                 <div class='col-md-12 absolute bottom-layer ak-shadow' style='overflow: hidden;'>
@@ -128,7 +153,7 @@
                                         </div>
                                         <div class="topright">
                                             <div style="padding: 15px;">
-                                               
+                                                
                                                 <img id="op-classImage" class="ak-shadow" src="" style="width: 100%;">
                                                 <div id="op-className"  class="ak-shadow" style="color:#ddd;text-align:center;margin:-4px;margin-top:0px;background:#222;padding:2px;font-size:12px;border-radius:2px"></div>
                                             </div>
