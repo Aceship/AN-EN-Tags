@@ -822,10 +822,17 @@
                                             else
                                                 end = db.storytextTL[eachnum]
                                         });
+                                        if(num% 1 != 0){
+                                            if(num<1){
+                                                num = "Half a"
+                                            }else{
+                                                num = Math.floor(num) +" and a half"
+                                            }
+                                        }
                                         content = `${num} ${end}`
                                     };break;
                                     case "生日":content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:BirthdayText(content);break;
-                                    default: content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content;
+                                    default: content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content.replace("约","Approximately ");
                                 }
                                 basicInfoTL.push(`[${title}] ${content}`)
                                 if(content==""){
