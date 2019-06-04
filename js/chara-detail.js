@@ -452,6 +452,7 @@
                 
             }
             tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" data-toggle="modal" data-target="#opstory">Story</button>`))
 
             $("#charazoom-button").html(zoombtn)
             $("#elite-sidenav").html(tabbtn);
@@ -787,6 +788,7 @@
         $('#info-illustrator').html(`<div class="btn-infoleft">Illustrator</div><div class="btn-inforight"><a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a></div>`)
         $('#info-voiceactor').html(`<div class="btn-infoleft">Voice Actor</div><div class="btn-inforight"><a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a></div>`)
         let puretext = []
+        let textTL = []
         puretext.push(opdataFull.appellation)
         puretext.push("")
         if(currStory.storyTextAudio){
@@ -798,6 +800,7 @@
                     case "基础档案":
                         var basicInfo = storySection.stories[0].storyText.split("\n")
                         var basicInfoTL = []
+                        var webTL = []
                         // console.log(basicInfo)
                         basicInfo.forEach(info => {
                             var check = /(【)(.*)(】)(.*)/
@@ -824,16 +827,23 @@
                                     default: content = db.storytextTL[content]?db.storytextTL[content]:content;
                                 }
                                 basicInfoTL.push(`[${title}] ${content}`)
-                                
+                                if(content==""){
+                                webTL.push(`<tr><td colspan="2" style="border-top: 1px solid #555;">${title}</td></tr>`)
+                                }else
+                                webTL.push(`<tr><td>${title}</td><td>${content}</td></tr>`)
                             }else{
                                 basicInfoTL.push(info)
+                                webTL.push(`<tr><td colspan=2>${info}</td> </tr>`)
                             }
                         });
+                        textTL.push(`<table class="story-table"><th colspan=2>Basic File</th>${webTL.join("")}</table>`)
+                        // textTL.push(basicInfoTL.join("</br>"))
                         console.log(basicInfoTL.join("\n"))
                     ;break;
                 case "综合体检测试" :
                     var basicInfo = storySection.stories[0].storyText.split("\n")
                     var basicInfoTL = []
+                    var webTL = []
                     basicInfo.forEach(info => {
                         var check = /(【)(.*)(】)(.*)/
                         var infoTitle = check.exec(info)
@@ -845,18 +855,27 @@
                                 default: content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content;
                             }
                             basicInfoTL.push(`[${title}] ${content}`)
+                            webTL.push(`<tr><td>${title}</td> <td>${content}</td></tr>`)
                         }
                     })
+                    // textTL.push(`<h2>Comprehensive test</h2>${basicInfoTL.join("</br>")}`)
+                    textTL.push(`<table class="story-table"><th colspan=2>Comprehensive Test</th>${webTL.join("")}</table>`)
                     console.log(basicInfoTL.join("\n"))
                     ;break;
                     default:
+                    textTL.push(`<table class="story-table"><th colspan=2>${storySection.storyTitle}</th>
+                    <tr><td>${(storySection.stories[0].storyText).split("\n").join("</br>")}</td></tr></table>`)
+                    // textTL.push(`<h2>${storySection.storyTitle}</h2>`) 
+                    // textTL.push(`</br>`) 
+                    // textTL.push()
                     // console.log(`---------${storySection.storyTitle}-----------`)
                     // console.log(storySection.stories[0].storyText)
                     
                 }
             });
         }
-
+        $("#opstorycontent").html(textTL.join("</br>"))
+        console.log(textTL)
         console.log(puretext.join("\n"))
     }
 
