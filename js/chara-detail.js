@@ -836,9 +836,11 @@
                                 webTL.push(`<tr><td colspan=2>${info}</td> </tr>`)
                             }
                         });
-                        textTL.push(`<table class="story-table"><th colspan=2>Basic File</th>${webTL.join("")}</table>`)
+                        textTL.push(`<div class="col-12 col-sm-6 top-buffer">
+                        <table class="story-table"><th colspan=2>Basic File</th>${webTL.join("")}</table>
+                        </div>`)
                         // textTL.push(basicInfoTL.join("</br>"))
-                        console.log(basicInfoTL.join("\n"))
+                        // console.log(basicInfoTL.join("\n"))
                     ;break;
                 case "综合体检测试" :
                     var basicInfo = storySection.stories[0].storyText.split("\n")
@@ -859,12 +861,17 @@
                         }
                     })
                     // textTL.push(`<h2>Comprehensive test</h2>${basicInfoTL.join("</br>")}`)
-                    textTL.push(`<table class="story-table"><th colspan=2>Comprehensive Test</th>${webTL.join("")}</table>`)
-                    console.log(basicInfoTL.join("\n"))
+                    textTL.push(`<div class="col-12 col-sm-6 top-buffer">
+                    <table class="story-table"><th colspan=2>Comprehensive Test</th>${webTL.join("")}</table>
+                    </div>`)
+                    // console.log(basicInfoTL.join("\n"))
                     ;break;
                     default:
-                    textTL.push(`<table class="story-table"><th colspan=2>${storySection.storyTitle}</th>
-                    <tr><td>${(storySection.stories[0].storyText).split("\n").join("</br>")}</td></tr></table>`)
+                    textTL.push(`
+                    <div class="col-12 top-buffer">
+                    <table class="story-table "><th colspan=2>${storySection.storyTitle}</th>
+                    <tr><td>${(storySection.stories[0].storyText).split("\n").join("</br>")}</td></tr></table>
+                    </div>`)
                     // textTL.push(`<h2>${storySection.storyTitle}</h2>`) 
                     // textTL.push(`</br>`) 
                     // textTL.push()
@@ -874,8 +881,8 @@
                 }
             });
         }
-        $("#opstorycontent").html(textTL.join("</br>"))
-        console.log(textTL)
+        $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
+        // console.log(textTL)
         console.log(puretext.join("\n"))
     }
 
