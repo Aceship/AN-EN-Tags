@@ -824,7 +824,7 @@
                                         });
                                         content = `${num} ${end}`
                                     };break;
-                                    case "生日":content = BirthdayText(content);break;
+                                    case "生日":content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:BirthdayText(content);break;
                                     default: content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content;
                                 }
                                 basicInfoTL.push(`[${title}] ${content}`)
