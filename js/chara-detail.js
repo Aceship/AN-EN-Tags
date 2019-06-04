@@ -801,7 +801,7 @@
                         var basicInfo = storySection.stories[0].storyText.split("\n")
                         var basicInfoTL = []
                         var webTL = []
-                        // console.log(basicInfo)
+                        console.log(basicInfo)
                         basicInfo.forEach(info => {
                             var check = /(【)(.*)(】)(.*)/
                             var infoTitle = check.exec(info)
@@ -812,9 +812,10 @@
                                     case "代号": content = opdataFull.appellation;break;
                                     case "战斗经验": content= db.storytextTL[content]
                                     if (!content){
-                                        var splitnum = infoTitle[4].split("")
+                                        var splitnum = infoTitle[4].trim().split("")
                                         var num = 0
                                         var end = ""
+                                        console.log(splitnum)
                                         splitnum.forEach(eachnum => {
                                             if(typeof db.storytextTL[eachnum] == "number" )
                                                 num += db.storytextTL[eachnum]
@@ -824,7 +825,7 @@
                                         content = `${num} ${end}`
                                     };break;
                                     case "生日":content = BirthdayText(content);break;
-                                    default: content = db.storytextTL[content]?db.storytextTL[content]:content;
+                                    default: content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content;
                                 }
                                 basicInfoTL.push(`[${title}] ${content}`)
                                 if(content==""){
