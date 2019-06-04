@@ -60,9 +60,11 @@
     var d19 = $.getJSON("json/tl-va.json",function(data){
         db["vaTL"] = data;
     });
-
+    var d20 = $.getJSON("json/tl-storytext.json",function(data){
+        db["storytextTL"] = data;
+    });
         
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19).then(function(){
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20).then(function(){
         $.holdReady(false);
     });
 
@@ -789,19 +791,60 @@
                 puretext.push(storySection.stories[0].storyText)
                 puretext.push("")
                 switch(storySection.storyTitle){
-                    // case "基础档案":
-                    //     let basicInfo = storySection.stories[0].storyText.split("\n")
-                    //     let basicInfoTL = []
-                    //     console.log(basicInfo)
-                    //     basicInfo.forEach(info => {
-                    //         let check = /(【)(.*)(】)(.*)/
-                    //         let infoTitle = check.exec(info)
-                    //         if(infoTitle){
-                    //             console.log(infoTitle[2])
-                    //             console.log(infoTitle[4])
-                    //         }
-                    //     });
-                    // ;break;
+                    case "基础档案":
+                        var basicInfo = storySection.stories[0].storyText.split("\n")
+                        var basicInfoTL = []
+                        // console.log(basicInfo)
+                        basicInfo.forEach(info => {
+                            var check = /(【)(.*)(】)(.*)/
+                            var infoTitle = check.exec(info)
+                            if(infoTitle){
+                                var title = db.storytextTL[infoTitle[2]]?db.storytextTL[infoTitle[2]]:infoTitle[2]
+                                var content = infoTitle[4]
+                                switch (infoTitle[2]) {
+                                    case "代号": content = opdataFull.appellation;break;
+                                    case "战斗经验": content= db.storytextTL[content]
+                                    if (!content){
+                                        var splitnum = infoTitle[4].split("")
+                                        var num = 0
+                                        var end = ""
+                                        splitnum.forEach(eachnum => {
+                                            if(typeof db.storytextTL[eachnum] == "number" )
+                                                num += db.storytextTL[eachnum]
+                                            else
+                                                end = db.storytextTL[eachnum]
+                                        });
+                                        content = `${num} ${end}`
+                                    };break;
+                                    case "生日":content = BirthdayText(content);break;
+                                    default: content = db.storytextTL[content]?db.storytextTL[content]:content;
+                                }
+                                basicInfoTL.push(`[${title}] ${content}`)
+                                
+                            }else{
+                                basicInfoTL.push(info)
+                            }
+                        });
+                        console.log(basicInfoTL.join("\n"))
+                    ;break;
+                case "综合体检测试" :
+                    var basicInfo = storySection.stories[0].storyText.split("\n")
+                    var basicInfoTL = []
+                    basicInfo.forEach(info => {
+                        var check = /(【)(.*)(】)(.*)/
+                        var infoTitle = check.exec(info)
+                        if(infoTitle){
+                            var title = db.storytextTL[infoTitle[2]]?db.storytextTL[infoTitle[2]]:infoTitle[2]
+                            var content = infoTitle[4]
+                            switch (infoTitle[2]) {
+                                case "代号": content = opdataFull.appellation;break;
+                                default: content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content;
+                            }
+                            basicInfoTL.push(`[${title}] ${content}`)
+                        }
+                    })
+                    console.log(basicInfoTL.join("\n"))
+                    ;break;
                     default:
                     // console.log(`---------${storySection.storyTitle}-----------`)
                     // console.log(storySection.stories[0].storyText)
@@ -812,6 +855,31 @@
 
         console.log(puretext.join("\n"))
     }
+
+    function BirthdayText(date) {
+        var check = date.split("月")
+        var check2 = check[1].split("日")
+        var check = `${check[0]}/${check2[0]}`
+        var date = check.split("/")
+        // console.log(date)
+        if (date.length >=2)
+        {
+            // console.log(date[1])
+            const currmonth = date[0]
+            const currday = date[1]
+            const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+            ];
+            // console.log(`${monthNames[currmonth-1]} ${currday}`)
+            // console.log(monthNames[currmonth-1])
+            if (monthNames[currmonth-1] == undefined){
+                return date
+            }
+            return  monthNames[currmonth-1] + " " + currday
+        }
+
+    }
+
     function GetPotential(opdataFull){
         var potentials = opdataFull.potentialRanks
         var potentialsTL = []
