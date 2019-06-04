@@ -781,7 +781,11 @@
         let currStory = db.handbookInfo.handbookDict[opdataFull.id]
         console.log(currStory)
         console.log(currStory.drawName)
-        console.log(db.vaTL[currStory.infoName])
+        console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
+        let illustrator = currStory.drawName
+        let voiceActor = db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName
+        $('#info-illustrator').html(`<div class="btn-infoleft">Illustrator</div><div class="btn-inforight"><a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a></div>`)
+        $('#info-voiceactor').html(`<div class="btn-infoleft">Voice Actor</div><div class="btn-inforight"><a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a></div>`)
         let puretext = []
         puretext.push(opdataFull.appellation)
         puretext.push("")
