@@ -63,8 +63,10 @@
     var d20 = $.getJSON("json/tl-storytext.json",function(data){
         db["storytextTL"] = data;
     });
-        
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20).then(function(){
+    var d21 = $.getJSON("json/tl-charastory.json",function(data){
+        db["charastoryTL"] = data;
+    });    
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21).then(function(){
         $.holdReady(false);
     });
 
@@ -885,11 +887,17 @@
                     // console.log(basicInfoTL.join("\n"))
                     ;break;
                 default:
+                    var currstory 
+                    console.log(storySection.storyTitle)
+                    console.log(db.charastoryTL[opdataFull.id])
+                    if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id][storySection.storyTitle]) currStory = db.charastoryTL[opdataFull.id][storySection.storyTitle].split("\n").join("</br>")
+                    else currStory = (storySection.stories[0].storyText.replace(/■/g,"■ ")).split("\n").join("</br>")
+                    console.log(currstory)
                     textTL.push(`
                     <div class="col-12 top-buffer">
                     <table class="story-table ">
                     <th colspan=2>${db.storytextTL[storySection.storyTitle]?db.storytextTL[storySection.storyTitle]:storySection.storyTitle}</th>
-                    <tr><td>${(storySection.stories[0].storyText.replace(/■/g,"■ ")).split("\n").join("</br>")}</td></tr></table>
+                    <tr><td>${currStory}</td></tr></table>
                     </div>`)
                     // textTL.push(`<h2>${storySection.storyTitle}</h2>`) 
                     // textTL.push(`</br>`) 
@@ -900,6 +908,7 @@
                 }
             });
         }
+        if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id]["credit"]) $("#opstorycredits").html(`<div class="btn-infoleft">Trust Translation</div><div class="btn-inforight">${db.charastoryTL[opdataFull.id]["credit"]}</div>`)
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
         console.log(puretext.join("\n"))
