@@ -452,7 +452,12 @@
                 
             }
             tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" data-toggle="modal" data-target="#opstory">Story</button>`))
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" data-toggle="modal" data-target="#opstory">
+            <div>
+                <img src="./img/ui/story/profile.png" style="max-width:40px;max-height:40px">
+                <div class="btn-story-header">Profile</div>
+            </div>
+            </button>`))
 
             $("#charazoom-button").html(zoombtn)
             $("#elite-sidenav").html(tabbtn);
