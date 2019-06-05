@@ -889,10 +889,10 @@
                 default:
                     var currstory 
                     console.log(storySection.storyTitle)
-                    console.log(db.charastoryTL[opdataFull.id])
+                    // console.log(db.charastoryTL[opdataFull.id])
                     if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id][storySection.storyTitle]) currStory = db.charastoryTL[opdataFull.id][storySection.storyTitle].split("\n").join("</br>")
                     else currStory = (storySection.stories[0].storyText.replace(/■/g,"■ ")).split("\n").join("</br>")
-                    console.log(currstory)
+                    // console.log(currstory)
                     textTL.push(`
                     <div class="col-12 top-buffer">
                     <table class="story-table ">
