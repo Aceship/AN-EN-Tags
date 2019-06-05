@@ -851,6 +851,13 @@
                                     if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id]["originiumInfection"]&&content){
                                         
                                         content = db.charastoryTL[opdataFull.id]["originiumInfection"]
+                                    }else if(content){
+                                        var datasplit = content.split("，")
+                                        var arraycontent = []
+                                        datasplit.forEach(originiumdesc => {
+                                            arraycontent.push(db.storytextTL[originiumdesc]?db.storytextTL[originiumdesc]:originiumdesc)
+                                        });
+                                        content = arraycontent.join(", ")
                                     }else {
                                         
                                         content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content.replace("约","Approximately ");
