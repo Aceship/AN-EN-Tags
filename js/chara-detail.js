@@ -870,10 +870,18 @@
                                 }else
                                 webTL.push(`<tr><td>${title}</td><td>${content}</td></tr>`)
                             }else{
+                                console.log(info.split("，"))
                                 if(titlebefore =="Originium Infection"&& db.charastoryTL[opdataFull.id] && db.charastoryTL[opdataFull.id]["originiumInfection"]){
                                     content = db.charastoryTL[opdataFull.id]["originiumInfection"]
                                     titlebefore=""
                                     webTL.push(`<tr><td colspan=2>${content}</td> </tr>`)
+                                }else if(titlebefore =="Originium Infection"){
+                                    var datasplit = info.split("，")
+                                    var content = []
+                                    datasplit.forEach(originiumdesc => {
+                                        content.push(db.storytextTL[originiumdesc]?db.storytextTL[originiumdesc]:originiumdesc)
+                                    });
+                                    webTL.push(`<tr><td colspan=2>${content.join(", ")}</td> </tr>`)
                                 }
                                 else{
                                     basicInfoTL.push(info)
