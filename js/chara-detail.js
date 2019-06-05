@@ -810,6 +810,7 @@
                                 var content = infoTitle[4]
                                 switch (infoTitle[2]) {
                                     case "代号": content = opdataFull.appellation;break;
+                                    case "出厂时间":
                                     case "战斗经验": content= db.storytextTL[content]
                                     if (!content){
                                         var splitnum = infoTitle[4].trim().split("")
@@ -831,6 +832,7 @@
                                         }
                                         content = `${num} ${end}`
                                     };break;
+                                    case "出厂日":
                                     case "生日":content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:BirthdayText(content);break;
                                     default: content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content.replace("约","Approximately ");
                                 }
@@ -850,6 +852,7 @@
                         // textTL.push(basicInfoTL.join("</br>"))
                         // console.log(basicInfoTL.join("\n"))
                     ;break;
+                case "综合性能检测结果" :
                 case "综合体检测试" :
                     var basicInfo = storySection.stories[0].storyText.split("\n")
                     var basicInfoTL = []
@@ -870,14 +873,17 @@
                     })
                     // textTL.push(`<h2>Comprehensive test</h2>${basicInfoTL.join("</br>")}`)
                     textTL.push(`<div class="col-12 col-sm-6 top-buffer">
-                    <table class="story-table"><th colspan=2>Comprehensive Test</th>${webTL.join("")}</table>
+                    <table class="story-table">
+                    <th colspan=2>${db.storytextTL[storySection.storyTitle]?db.storytextTL[storySection.storyTitle]:storySection.storyTitle}</th>
+                    ${webTL.join("")}</table>
                     </div>`)
                     // console.log(basicInfoTL.join("\n"))
                     ;break;
-                    default:
+                default:
                     textTL.push(`
                     <div class="col-12 top-buffer">
-                    <table class="story-table "><th colspan=2>${storySection.storyTitle}</th>
+                    <table class="story-table ">
+                    <th colspan=2>${db.storytextTL[storySection.storyTitle]?db.storytextTL[storySection.storyTitle]:storySection.storyTitle}</th>
                     <tr><td>${(storySection.stories[0].storyText).split("\n").join("</br>")}</td></tr></table>
                     </div>`)
                     // textTL.push(`<h2>${storySection.storyTitle}</h2>`) 
