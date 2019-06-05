@@ -889,7 +889,7 @@
                     <div class="col-12 top-buffer">
                     <table class="story-table ">
                     <th colspan=2>${db.storytextTL[storySection.storyTitle]?db.storytextTL[storySection.storyTitle]:storySection.storyTitle}</th>
-                    <tr><td>${(storySection.stories[0].storyText).split("\n").join("</br>")}</td></tr></table>
+                    <tr><td>${(storySection.stories[0].storyText.replace(/■/g,"■ ")).split("\n").join("</br>")}</td></tr></table>
                     </div>`)
                     // textTL.push(`<h2>${storySection.storyTitle}</h2>`) 
                     // textTL.push(`</br>`) 
