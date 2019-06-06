@@ -725,37 +725,74 @@
             keyframes[j] = v;
         });
         console.log(keyframes);
-        var statsLevelHeader = $(`<span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>`)
-        var statsLevelSlider = $(`<input type='range' value='1' min='1' max='${keyframes[1].level}' name='levelStats' id='elite${i}LevelSlider' oninput='changeEliteLevel(this,${i},${keyframes[1].level})' style='margin-top:20px;width:60%;' class='statlevelInput ${lefthand=="true"?"lefthand-statlevelInput":"righthand-statlevelInput"}'></input>`);
-        var statsLevelDisplay = $(`<div class='form-group stat-input ${lefthand=="true"?"lefthand-stat-input":"righthand-stat-input"}' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite${i}LevelDisplay' onchange='changeEliteLevel(this,${i},${keyframes[1].level})' style='line-height:1.1' type='number' value='1' min='1' max='${keyframes[1].level}'></div>`)
-        var statsTable = $(`<div id='elite${i}Stats' class='${lefthand=="true"?"left-hand":""} statlevelcontainer'>`
-                            +   "<table id='elite"+i+"StatsTable'>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>MaxHP :</td><td class='stats-r' id='elite"+i+"maxHp'></td>"
-                            +           "<td class='stats-l'>Def :</td><td class='stats-r' id='elite"+i+"def'></td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Atk :</td><td class='stats-r' id='elite"+i+"atk'></td>"
-                            +           "<td class='stats-l'>MRes :</td><td class='stats-r' id='elite"+i+"magicResistance'></td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td colspan=2 rowspan=4>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
-                            +           "<td class='stats-l'>Redeploy :</td><td class='stats-r' id='elite"+i+"respawnTime'> Sec</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Cost :</td><td class='stats-r' id='elite"+i+"cost'></td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Block :</td><td class='stats-r' id='elite"+i+"blockCnt'></td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>AtkTime :</td><td class='stats-r' id='elite"+i+"baseAttackTime'> Sec</td>"
-                            +       "</tr>"
-                            +       "<tr><td colspan=4 style='padding:10px 0px;'><td></tr>"
-                            +       "<tr><td colspan=4>"
-                            +       materialHtml
-                            +       "</td></tr>"
-                            +   "</table></div>");
+        // var statsLevelHeader = $(`<span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>`)
+        // var statsLevelSlider = $(`<input type='range' value='1' min='1' max='${keyframes[1].level}' name='levelStats' id='elite${i}LevelSlider' oninput='changeEliteLevel(this,${i},${keyframes[1].level})' style='margin-top:20px;width:60%;' class='statlevelInput ${lefthand=="true"?"lefthand-statlevelInput":"righthand-statlevelInput"}'></input>`);
+        // var statsLevelDisplay = $(`<div class='form-group stat-input ${lefthand=="true"?"lefthand-stat-input":"righthand-stat-input"}' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite${i}LevelDisplay' onchange='changeEliteLevel(this,${i},${keyframes[1].level})' style='line-height:1.1' type='number' value='1' min='1' max='${keyframes[1].level}'></div>`)
+        
+        var statsLevelAll = $(`
+        <div style='text-align:center'>
+        <span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>
+        <input type='range' value='1' min='1' max='${keyframes[1].level}' name='levelStats' id='elite${i}LevelSlider' oninput='changeEliteLevel(this,${i},${keyframes[1].level})' style='margin-top:20px;width:60%;' class='statlevelInput ${lefthand=="true"?"lefthand-statlevelInput":"righthand-statlevelInput"}'></input>
+        <div class='form-group stat-input ${lefthand=="true"?"lefthand-stat-input":"righthand-stat-input"}' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite${i}LevelDisplay' onchange='changeEliteLevel(this,${i},${keyframes[1].level})' style='line-height:1.1' type='number' value='1' min='1' max='${keyframes[1].level}'></div>
+        </div>
+        `)
+        
+        var statsTable = $(`
+        <div id='elite${i}Stats' class='${lefthand=="true"?"left-hand":""} statlevelcontainer'>
+            <table id='elite${i}StatsTable'>
+                <tr><td>
+                    <div class='stats-l'>Maximum HP</div><div class='stats-r' id='elite${i}maxHp'></div>
+                    <div class='stats-l'>Defense</div><div class='stats-r' id='elite${i}def'></div>
+
+                    <div class='stats-l'>Block</div><div class='stats-r' id='elite${i}blockCnt'></div>
+                    <div class='stats-l'>Magic Resistance</div><div class='stats-r' id='elite${i}magicResistance'></div>
+
+                    <div class='stats-l'>Attack Power</div><div class='stats-r' id='elite${i}atk'></div>
+                    <div class='stats-l'>Attack Time</div><div class='stats-r' id='elite${i}baseAttackTime'></div>
+                    
+                    <div class='stats-l'>Redeploy Time</div><div class='stats-r' id='elite${i}respawnTime'></div>
+                    <div class='stats-l'>Cost</div><div class='stats-r' id='elite${i}cost'></div>
+
+                    
+                    
+                </tr><td>
+                </table>
+                ${rangeMaker(opdataFull.phases[i].rangeId)}
+                <div style="margin:12px">
+                ${materialHtml}
+                </div>
+                </div>
+        `)
+
+        // var statsTable = $(`<div id='elite${i}Stats' class='${lefthand=="true"?"left-hand":""} statlevelcontainer'>`
+        //                     +   "<table id='elite"+i+"StatsTable'>"
+        //                     +       "<tr>"
+        //                     +           "<td><div class='stats-l'>Maximum HP</div><div class='stats-r' id='elite"+i+"maxHp'></div></td>"
+        //                     +           "<td class='stats-l'>Defense</td><td class='stats-r' id='elite"+i+"def'></td>"
+        //                     +       "</tr>"
+        //                     +       "<tr>"
+        //                     +           "<td class='stats-l'>Attack Power</td><td class='stats-r' id='elite"+i+"atk'></td>"
+        //                     +           "<td class='stats-l'>Magic Resistance</td><td class='stats-r' id='elite"+i+"magicResistance'></td>"
+        //                     +       "</tr>"
+        //                     +       "<tr>"
+                            
+        //                     +           "<td class='stats-l'>Redeploy Time</td><td class='stats-r' id='elite"+i+"respawnTime'> Sec</td>"
+        //                     +       "</tr>"
+        //                     +       "<tr>"
+        //                     +           "<td class='stats-l'>Cost</td><td class='stats-r' id='elite"+i+"cost'></td>"
+        //                     +       "</tr>"
+        //                     +       "<tr>"
+        //                     +           "<td class='stats-l'>Block</td><td class='stats-r' id='elite"+i+"blockCnt'></td>"
+        //                     +       "</tr>"
+        //                     +       "<tr>"
+        //                     +           "<td class='stats-l'>Attack Time    </td><td class='stats-r' id='elite"+i+"baseAttackTime'> Sec</td>"
+        //                     +       "</tr>"
+        //                     +       "<tr><td colspan=4 style='padding:10px 0px;'><td></tr>"
+        //                     +       "<tr><td colspan=4>"
+        //                     +       materialHtml
+        //                     +       "</td></tr>"
+        //                     +   "</table>"  
+        //                     +           "<td colspan=2 rowspan=4>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td></div>");
 
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
@@ -804,9 +841,12 @@
             navPills.append(navItems);
             navTabs.append(tabStats);
         });
-        statsCollapsible.append(statsLevelHeader);
-        statsCollapsible.append(statsLevelSlider);
-        statsCollapsible.append(statsLevelDisplay);
+        // statsCollapsible.append(``);
+        statsCollapsible.append(statsLevelAll);
+        // statsCollapsible.append(statsLevelHeader);
+        // statsCollapsible.append(statsLevelSlider);
+        // statsCollapsible.append(statsLevelDisplay);
+        // statsCollapsible.append(`</div>`);
         statsCollapsible.append(statsTable);
         //statsCollapsible.append(navPills);
         //statsCollapsible.append(navTabs);
