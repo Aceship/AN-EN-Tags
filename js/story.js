@@ -90,11 +90,14 @@
             $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storyheader">Choose Story :</li>`);
             // console.log(db.storylist[value][value2].content)
             // console.log(`${value}  +  ${value2}`)
-            db.storylist[value][value2].content.forEach(list => {
+            var wholeList = db.storylist[value][value2].content
+            db.storylist[value][value2].content.forEach((list,n) => {
                 // console.log(db.storylist[groups][list])
                 // console.log(list)
+                
+                // console.log(wholeList)
                 $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storybutton"
-                onclick="SelectStory('${list}')">${list}</li>`);
+                onclick="SelectStory('${list}','${value2}')">${list}</li>`);
             });
         }else if(groups =="storygroups"){
                 $("#searchResult").append(`<li class=" ak-shadow-small ak-c-black storyheader">Choose Story Arc :</li>`);
@@ -166,16 +169,43 @@
         }
     }
 
-    function SelectStory(storyname){
+    function SelectStory(storyname,storygroups = ""){
         $('#searchResult').hide();
         $('#story').html("")
         $('#story').show()
         let currstory = query(db.storylist.story,"name",storyname)
-
+        // console.log(list)
         for(i=1;i<=currstory.total;i++){
             let image=`<img src='./img/story/${currstory.folder}/${('0'+i).slice(-2)}.png'>`
             $('#story').append(`<div class="storyimagecontainer">${image}</div>`)
         }
+        console.log()
+        if(db.storylist.storygroups[storygroups]){
+            var currcontentlist = db.storylist.storygroups[storygroups].content
+            var prev
+            var next 
+            for(i=0;i<currcontentlist.length;i++){
+                if(storyname==currcontentlist[i]){
+                    // console.log("YEAH")
+                    prev = currcontentlist[i-1]
+                    next = currcontentlist[i+1]
+                }else{
+                    // console.log("NO")
+                }
+            }
+            console.log(prev)
+            console.log(next)
+            $('#story').append(`
+            <div>
+                ${prev?`<div class=" ak-shadow-small ak-c-black storybutton storyfootbutton footleft" onclick="SelectStory('${prev}','${storygroups}')">${prev}</div>`:""}
+                ${next?`<div class=" ak-shadow-small ak-c-black storybutton storyfootbutton footright" onclick="SelectStory('${next}','${storygroups}')">${next}</div>`:""}
+            </div>
+            `)
+        }
+        // db.storylist[storygroup].content.forEach(element => {
+        //     console.log(element)
+        // });
+        // $('#story').append(`<div class="storyimagecontainer">${image}</div>`)
         console.log(currstory)
     }
     function titledMaker (content,title,extraClass="",extraId="",extraStyle=""){
