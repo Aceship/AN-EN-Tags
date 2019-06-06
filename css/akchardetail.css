@@ -618,6 +618,82 @@ body {
     background:#222222dd;
     border-radius:0px 0px 4px 4px
 }
+
+.stat-input{
+    max-width: 60px;
+}
+.stat-input input{
+    margin-left:2px;
+    margin-top:-2px;
+    padding:7px 2px 6px 2px;
+    border-radius:0px;
+    background: #666;
+    color:#ddd;
+    text-align: center;
+    border:0px solid #444;
+}
+.stat-input input:focus,input:active{
+    background: #444;
+    color:#ddd;
+}
+.stat-level-header{
+    color:#ddd;
+    background: #222;
+    font-size:18px;
+    vertical-align:super;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:3px;
+    padding-bottom:3px;
+    margin-left:5px;
+    margin-bottom: -3px;
+}
+
+.statlevelInput[type="range"]{
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 65%;
+    max-width : 180px;
+    display: inline-block;
+    line-height: 0px;
+    
+    height: 25px;
+    margin-left: 2px ;
+    opacity: 0.7; 
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+    background: #bbb;
+    touch-action: none;
+}
+
+
+.statlevelInput::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    
+    /* margin-bottom: 10px; */
+    /* padding-bottom:20px; */
+    border: 2px solid #bbb;
+    border-radius: 0px;
+    background: #2f2f2f;
+    cursor: pointer;
+    touch-action: none;
+}
+.statlevelInput::-webkit-slider-thumb {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    /* margin-bottom: 10px; */
+    /* padding-bottom:20px; */
+    border: 2px solid #bbb;
+    border-radius: 0px;
+    background: #2f2f2f;
+    cursor: pointer;
+    touch-action: none;
+  }
+
+
 .top-buffer { margin-top:20px; }
 @media (max-width: 700px ){
     .addinfo-nav {
@@ -715,6 +791,71 @@ body {
 
     #operatorsResult img {
         height: 70px!important;
+    }
+    .righthand-stat-level-header{
+        position: absolute;
+        right:55px;
+        top:80px;
+        font-size: 15px;
+    }
+    .lefthand-stat-level-header{
+        position: absolute;
+        left:55px;
+        top:80px;
+        font-size: 15px;
+    }
+
+    .lefthand-stat-input input{
+        position: absolute;
+        left:0px;
+        top:80px;
+        max-width: 55px;
+    }
+    .righthand-stat-input input{
+        position: absolute;
+        right:0px;
+        top:80px;
+        max-width: 55px;
+
+    }
+
+    .statlevelcontainer{
+        margin-right: 10px;
+        min-height: 200px;
+    }
+    
+    .righthand-statlevelInput {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        position: absolute;
+        right: -70px !important;
+        top:170px;
+        width: 170px;
+        display: inline-block;
+        line-height: 0px;
+        z-index:2;
+        opacity: 0.7; 
+        -webkit-transition: .2s; 
+        transition: opacity .2s;
+        background: #eee;
+        transform: rotate(-90deg)
+    }
+
+    .lefthand-statlevelInput {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        position: absolute;
+        left: -70px !important;
+        top:170px;
+        width: 170px;
+        display: inline-block;
+        line-height: 0px;
+        z-index:2;
+        opacity: 0.7; 
+        -webkit-transition: .2s; 
+        transition: opacity .2s;
+        background: #eee;
+        transform: rotate(-90deg)
     }
     .collapsible .skillLevelInput {
         -webkit-appearance: none;  /* Override default CSS styles */

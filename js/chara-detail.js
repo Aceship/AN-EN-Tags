@@ -725,9 +725,10 @@
             keyframes[j] = v;
         });
         console.log(keyframes);
-        var statsLevelSlider = $("<span style='font-size:1.2em;vertical-align:super;padding-left:10px;'>Level: </span><input type='range' value='1' min='1' max='"+keyframes[1].level+"' name='levelStats' id='elite"+i+"LevelSlider' oninput='changeEliteLevel(this,"+i+")' style='margin-top:20px;width:60%;' class='skillLevelInput'></input>");
-        var statsLevelDisplay = $("<div class='form-group' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite"+i+"LevelDisplay' onchange='changeEliteLevel(this,"+i+")' style='line-height:1.1' type='number' value='1' min='1' max='"+keyframes[1].level+"'></div>")
-        var statsTable = $("<div id='elite"+i+"Stats'>"
+        var statsLevelHeader = $(`<span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>`)
+        var statsLevelSlider = $(`<input type='range' value='1' min='1' max='${keyframes[1].level}' name='levelStats' id='elite${i}LevelSlider' oninput='changeEliteLevel(this,${i})' style='margin-top:20px;width:60%;' class='statlevelInput ${lefthand=="true"?"lefthand-statlevelInput":"righthand-statlevelInput"}'></input>`);
+        var statsLevelDisplay = $(`<div class='form-group stat-input ${lefthand=="true"?"lefthand-stat-input":"righthand-stat-input"}' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite${i}LevelDisplay' onchange='changeEliteLevel(this,${i})' style='line-height:1.1' type='number' value='1' min='1' max='${keyframes[1].level}'></div>`)
+        var statsTable = $(`<div id='elite${i}Stats' class='${lefthand=="true"?"left-hand":""} statlevelcontainer'>`
                             +   "<table id='elite"+i+"StatsTable'>"
                             +       "<tr>"
                             +           "<td class='stats-l'>MaxHP :</td><td class='stats-r' id='elite"+i+"maxHp'></td>"
@@ -803,6 +804,7 @@
             navPills.append(navItems);
             navTabs.append(tabStats);
         });
+        statsCollapsible.append(statsLevelHeader);
         statsCollapsible.append(statsLevelSlider);
         statsCollapsible.append(statsLevelDisplay);
         statsCollapsible.append(statsTable);
