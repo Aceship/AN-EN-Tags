@@ -180,6 +180,15 @@
             $('#story').append(`<div class="storyimagecontainer">${image}</div>`)
         }
         console.log()
+        if(storygroups==""){
+            Object.keys(db.storylist.storygroups).forEach(element => {
+                db.storylist.storygroups[element].content.forEach(content =>{
+                    if(content==storyname){
+                        storygroups = element
+                    }
+                })
+            });
+        }
         if(db.storylist.storygroups[storygroups]){
             var currcontentlist = db.storylist.storygroups[storygroups].content
             var prev
@@ -197,8 +206,12 @@
             console.log(next)
             $('#story').append(`
             <div>
-                ${prev?`<div class=" ak-shadow-small ak-c-black storybutton storyfootbutton footleft" onclick="SelectStory('${prev}','${storygroups}')">${prev}</div>`:""}
-                ${next?`<div class=" ak-shadow-small ak-c-black storybutton storyfootbutton footright" onclick="SelectStory('${next}','${storygroups}')">${next}</div>`:""}
+                ${prev?`<div class=" ak-shadow-small ak-c-black storybutton storyfootbutton footleft" onclick="SelectStory('${prev}','${storygroups}')">
+                Previous
+                </br>${prev}</div>`:""}
+                ${next?`<div class=" ak-shadow-small ak-c-black storybutton storyfootbutton footright" onclick="SelectStory('${next}','${storygroups}')">
+                Next
+                </br>${next}</div>`:""}
             </div>
             `)
         }
