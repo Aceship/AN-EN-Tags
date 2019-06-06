@@ -144,14 +144,14 @@
                         </div>
                         <div class='col-md-5 col-sm-12 right-col-menu max-height'>
                             <div class='right-menu-container max-height'>
-                                <div class='side-menu-tabbings' style="margin-bottom: 70px;">
+                                <!--<div class='side-menu-tabbings' style="margin-bottom: 70px;">
                                     <ul class="nav nav-pills nav-justified">
                                         <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#sidemenutab-details" style="border-top-right-radius: 0px; border-bottom-right-radius: 0px;">Chara</a></li>
                                         <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#sidemenutab-talents" style="border-radius: unset;">Talents</a></li>
                                         <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#sidemenutab-skills" style="border-radius: unset;">Skills</a></li>
                                         <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#sidemenutab-elite" style="border-top-left-radius: 0px; border-bottom-left-radius: 0px;">Elite</a></li>
                                     </ul>
-                                </div>
+                                </div>-->
                                 <!-- <div class="potential-container" style="position: relative; margin-bottom: 20px">
                                     <ul class='nav nav-pills' id='potential-tabs'>
                                         <li class='nav-item'>
@@ -188,8 +188,7 @@
                                         </div>
                                     </div>
                                 </div> -->
-                                <div class="tab-content">
-                                    <div class="tab-pane container active" id="sidemenutab-details" style="position: relative;">
+                                    <div id="sidemenutab-details" style="position: relative;">
                                         <div class="general-stats-container small-container ak-shadow">
                                             <div id="op-rarity" style="padding: 10px 15px;"></div>
                                             <span class="op-name ak-c-black" style="height:55px;border-radius: 4px 4px 0px 0px;padding-top:5px">
@@ -224,6 +223,12 @@
                                                         <div id="op-trust" style="display:inline-block;vertical-align: top;margin-top: 17px;"></div>
                                                     </div>
                                                 </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <p style="margin-top: 20px; margin-bottom: 0px;">Talents:</p>
+                                                        <div id="op-talentlist"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="topright">
                                                 <div style="padding: 15px;">
@@ -234,21 +239,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane container fade talents-container" id="sidemenutab-talents" style="position: relative;">
-                                        <div class="general-stats-container small-container ak-shadow" style="margin-top: -60px; border-top-left-radius: 5px;">
-                                            <div>
-                                                <p class="large-text">Talents</p>
-                                            </div>
-                                            <div class="general-statcard" style="padding-top: 55px;">
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <div id="op-talentlist"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="talents-container" id="sidemenutab-talents" style="position: relative;">
+                                        
                                     </div>
-                                    <div class="tab-pane container fade skillsection-container" id="sidemenutab-skills" style="position: relative; margin-top: -30px;">
+                                    <div class="skillsection-container" id="sidemenutab-skills" style="position: relative; margin-top: 0px;">
                                         <ul class='nav nav-pills' id='skill-tabs'>
                                             <li class='nav-item'>
                                                 <button class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#skill1'><p>Skill 1</p></button>
@@ -281,7 +275,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane container fade elitesection-container" id="sidemenutab-elite" style="position: relative; margin-top: -30px;">
+                                    <div class="elitesection-container" id="sidemenutab-elite" style="position: relative; margin-top: 70px;">
                                         <ul class='nav nav-pills' id='elite-topnav'>
                                         </ul>
                                         <div class='tab-content' id='tabs-opData'>
@@ -340,7 +334,6 @@
                                             
                                         </div>
                                     </div>
-                                </div>
                                 <div class="row col-12 chara-footer-2" >
                                     <div class="text-center  ak-footer">
                                         With translate and data help from: dragonjet, Jetroyz and other on Rhodes island HQ discord server
