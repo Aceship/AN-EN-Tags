@@ -65,8 +65,11 @@
     });
     var d21 = $.getJSON("json/tl-charastory.json",function(data){
         db["charastoryTL"] = data;
-    });    
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21).then(function(){
+    });  
+    var d22 = $.getJSON("json/excel/charword_table.json",function(data){
+        db["charword"] = data;
+    });  
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22).then(function(){
         $.holdReady(false);
     });
 
@@ -460,6 +463,13 @@
             </div>
             </button>`))
 
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" data-toggle="modal" data-target="#opaudio">
+            <div>
+                <img src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px">
+                <div class="btn-story-header">Audio</div>
+            </div>
+            </button>`))
+
             $("#charazoom-button").html(zoombtn)
             $("#elite-sidenav").html(tabbtn);
             $("#tabs-opCG").html(tabcontent);
@@ -527,6 +537,7 @@
             //Story
 
             GetStory(opdataFull)
+            GetAudio(opdataFull)
             ///////////////////////////////////////////////// SKILLS SECTION //////////////////////////////////////////////////
 
             $("#skill-tabs").html("");
@@ -867,13 +878,50 @@
         // container.append(mats);
         return container;
     }
-
+    function LinkCheck(url)
+    {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        return http.status!=404;
+    }
+    function GetAudio (opdataFull){
+        // console.log(opdataFull)
+        
+        var curraudiolist = []
+        Object.keys(db.charword).forEach(element => {
+            if(db.charword[element]){
+                var curraudio = db.charword[element]
+                if(curraudio.charId&&curraudio.charId == opdataFull.id){
+                    curraudiolist.push(curraudio)
+                }
+            }
+        });
+        console.log(curraudiolist)
+        $('#opaudiocontent').html("")
+        curraudiolist.forEach(element => {
+            var curraudio  =`<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
+            // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
+            //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
+            // }
+            var currhtml = $(`
+            <table class="story-table">
+            <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
+            <tr><td style="text-align:center;background:#1a1a1a">${curraudio}</td></tr>
+            <tr><td style="height:10px"></td></tr>
+            <tr><td>${element.voiceText}</td></tr>
+            <tr><td style="height:10px"></td></tr>
+            </table>
+            `)
+            $('#opaudiocontent').append($(currhtml))
+        });
+    }
     function GetStory (opdataFull){
-        console.log(opdataFull)
+        // console.log(opdataFull)
         let currStory = db.handbookInfo.handbookDict[opdataFull.id]
-        console.log(currStory)
-        console.log(currStory.drawName)
-        console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
+        // console.log(currStory)
+        // console.log(currStory.drawName)
+        // console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
         let illustrator = currStory.drawName
         let voiceActor = db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName
         $('#info-illustrator').html(`<div class="btn-infoleft">Illustrator</div><div class="btn-inforight"><a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a></div>`)
@@ -893,7 +941,7 @@
                         var basicInfoTL = []
                         var webTL = []
                         var titlebefore = ""
-                        console.log(basicInfo)
+                        // console.log(basicInfo)
                         basicInfo.forEach((info,n) => {
                             var check = /(【)(.*)(】)(.*)/
                             var infoTitle = check.exec(info)
@@ -910,7 +958,7 @@
                                         var splitnum = infoTitle[4].trim().split("")
                                         var num = 0
                                         var end = ""
-                                        console.log(splitnum)
+                                        // console.log(splitnum)
                                         splitnum.forEach(eachnum => {
                                             if(typeof db.storytextTL[eachnum] == "number" )
                                                 num += db.storytextTL[eachnum]
@@ -949,11 +997,11 @@
                                     
                                     ;break;
                                     default: 
-                                    console.log("WEEI" +titlebefore)
+                                    // console.log("WEEI" +titlebefore)
                                     
                                         content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content.replace("约","Approximately ");
                                 }
-                                console.log(title)
+                                // console.log(title)
                                 titlebefore = title
                                 basicInfoTL.push(`[${title}] ${content}`)
                                 if(content==""){
@@ -961,7 +1009,7 @@
                                 }else
                                 webTL.push(`<tr><td>${title}</td><td>${content}</td></tr>`)
                             }else{
-                                console.log(info.split("，"))
+                                // console.log(info.split("，"))
                                 if(titlebefore =="Originium Infection"&& db.charastoryTL[opdataFull.id] && db.charastoryTL[opdataFull.id]["originiumInfection"]){
                                     content = db.charastoryTL[opdataFull.id]["originiumInfection"]
                                     titlebefore=""
@@ -1022,7 +1070,7 @@
                     // console.log(currstory)
                     textTL.push(`
                     <div class="col-12 top-buffer">
-                    <table class="story-table ">
+                    <table class="story-table">
                     <th colspan=2>${db.storytextTL[storySection.storyTitle]?db.storytextTL[storySection.storyTitle]:storySection.storyTitle}</th>
                     <tr><td>${currStory}</td></tr></table>
                     </div>`)
@@ -1038,7 +1086,7 @@
         if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id]["credit"]) $("#opstorycredits").html(`<div class="btn-infoleft">Trust Translation</div><div class="btn-inforight">${db.charastoryTL[opdataFull.id]["credit"]}</div>`)
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
-        console.log(puretext.join("\n"))
+        // console.log(puretext.join("\n"))
     }
 
     function BirthdayText(date) {
