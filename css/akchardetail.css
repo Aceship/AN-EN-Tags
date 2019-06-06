@@ -94,7 +94,7 @@ body {
     float: right;
     max-width: 400px;
     width: 100%;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
 }
 
@@ -120,14 +120,14 @@ body {
     position: relative;
     margin-top: 55px;
 }
-.chara-detail-container .tab-content .small-container p, #skill-contents p {
+.chara-detail-container .tab-content .small-container p.large-text, #skill-contents p.large-text {
     position: absolute;
     color: #636363;
     font-size: 4em;
     top: -0.3em;
     font-family: 'Novecentosanswide Normal', Arial, sans-serif;
 }
-.chara-detail-container .tab-content .small-container span, #skill-contents span {
+.chara-detail-container .tab-content .small-container span.custom-span, #skill-contents span.custom-span {
     display: inline-block;
     padding: 12px;
     padding-top:22px;
@@ -172,16 +172,16 @@ body {
 
 .chara-detail-container .small-container .maxlevel > .maxleveltext {
     z-index: 1;
-    position: absolute;
-    font-size: 0.8em;
+    position: absolute!important;
+    font-size: 0.8em!important;
     left: -78px;
     top: 25px;
 }
 
 .chara-detail-container .small-container .maxlevel > .leveltext {
     z-index: 1;
-    font-size: 3.7em;
-    padding: 10px;
+    font-size: 3.7em!important;
+    padding: 10px!important;
     line-height: 57px;
     font-family: 'Novecentosanswide Normal', Arial, sans-serif;
 }
@@ -332,6 +332,15 @@ body {
     font-size: 0.9em;
 }
 
+.side-menu-tabbings a {
+    background-color: #2f2f2f;
+    border: 1px solid #262626;
+}
+
+.side-menu-tabbings a.active {
+    background-color: #4f4f4f!important;
+}
+
 #skill-contents .skillstats {
     display: none;
 }
@@ -438,7 +447,7 @@ body {
 }
 
 .collapsible .stats-r {
-    text-align: center;
+    text-align: left;
 }
 
 .text-shadow {

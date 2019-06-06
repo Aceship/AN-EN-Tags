@@ -74,6 +74,7 @@
     var reg;
     var selectedOP;
     var lefthand;
+    var opdataFull = {};
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -332,7 +333,6 @@
             // });
             // console.log(charalist.join("\n"))
             //
-            var opdataFull = {};
             var opKey =""
             $.each(opdata2,function(key,v){
                 v['id'] = key;
@@ -423,9 +423,8 @@
                 
                 var elitehtml = getEliteHTML(i,opdataFull);
                 tabcontent2.push(elitehtml);
-
-                
             }
+
 
             if(extraSkin.length>0){
                 let dropdowntab = []
@@ -466,6 +465,11 @@
             $("#tabs-opCG").html(tabcontent);
             $("#elite-topnav").html(tabbtn2);
             $("#tabs-opData").html(tabcontent2);
+
+            for (var i = 0; i < opdataFull.phases.length; i++) {
+                EliteStatsDisplay(1,i);
+            }
+
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
             $("#op-nameTL").html(eval("opdata.name_"+lang));
             $("#op-nameREG").html("["+eval("opdata.name_"+reg)+"]");
@@ -661,8 +665,8 @@
                                 +"</li>");
                 var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? 'fade' : 'active')+"' id='skill"+i+"'>"
                                         +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
-                                        +        "<p>Skill "+(i+1)+"</p>"
-                                        +        "<span class='skillname'>"+skillname+"</span>"
+                                        +        "<p class='large-text'>Skill "+(i+1)+"</p>"
+                                        +        "<span class='custom-span skillname'>"+skillname+"</span>"
                                         +        "<div class='topright'>"
                                         +            "<div style='padding: 15px;'>"
                                         +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/skill_icon_"+skillIcon+".png' style='width: 100%;'>"
@@ -672,7 +676,7 @@
                                         +    "</div>"
                                         +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
                                         +       `<input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>`
-                                        +        `<div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
+                                        +        `<div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
                                         // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
                                         +        tables
                                         +    "</div>"
@@ -687,11 +691,11 @@
         var container = $("<div class='tab-pane container "+(i!=0 ? 'fade' : 'active')+"' id='elite_"+i+"_tab'></div>");
 
         var stats = $("<div class='small-container ak-shadow clickthrough'>"
-                        +   "<p>Base</p>"
-                        +   "<span>Stats</span>"
+                        +   "<p class='large-text'>Base</p>"
+                        +   "<span class='custom-span'>Stats</span>"
                         +   "<div class='topright maxlevel'>"
-                        +       "<span class='maxleveltext'>Max Level</span>"
-                        +       "<span class='leveltext'>"+opdataFull.phases[i].maxLevel+"</span>"
+                        +       "<span class='custom-span maxleveltext'>Max Level</span>"
+                        +       "<span class='custom-span leveltext'>"+opdataFull.phases[i].maxLevel+"</span>"
                         +       "<div class='ring'>"
                         +           "<div class='back ak-shadow'></div>"
                         +           "<div class='back-centre'></div>"
@@ -716,6 +720,42 @@
             <div style="text-align:center;background:#222">Elite Requirements</div>
             `+materialist.join("")
         }
+        var keyframes = [];
+        $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
+            keyframes[j] = v;
+        });
+        console.log(keyframes);
+        var statsLevelSlider = $("<span style='font-size:1.2em;vertical-align:super;padding-left:10px;'>Level: </span><input type='range' value='1' min='1' max='"+keyframes[1].level+"' name='levelStats' id='elite"+i+"LevelSlider' oninput='changeEliteLevel(this,"+i+")' style='margin-top:20px;width:60%;' class='skillLevelInput'></input>");
+        var statsLevelDisplay = $("<div class='form-group' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite"+i+"LevelDisplay' onchange='changeEliteLevel(this,"+i+")' style='line-height:1.1' type='number' value='1' min='1' max='"+keyframes[1].level+"'></div>")
+        var statsTable = $("<div id='elite"+i+"Stats'>"
+                            +   "<table id='elite"+i+"StatsTable'>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>MaxHP :</td><td class='stats-r' id='elite"+i+"maxHp'></td>"
+                            +           "<td class='stats-l'>Def :</td><td class='stats-r' id='elite"+i+"def'></td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>Atk :</td><td class='stats-r' id='elite"+i+"atk'></td>"
+                            +           "<td class='stats-l'>MRes :</td><td class='stats-r' id='elite"+i+"magicResistance'></td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td colspan=2 rowspan=4>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
+                            +           "<td class='stats-l'>Redeploy :</td><td class='stats-r' id='elite"+i+"respawnTime'> Sec</td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>Cost :</td><td class='stats-r' id='elite"+i+"cost'></td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>Block :</td><td class='stats-r' id='elite"+i+"blockCnt'></td>"
+                            +       "</tr>"
+                            +       "<tr>"
+                            +           "<td class='stats-l'>AtkTime :</td><td class='stats-r' id='elite"+i+"baseAttackTime'> Sec</td>"
+                            +       "</tr>"
+                            +       "<tr><td colspan=4 style='padding:10px 0px;'><td></tr>"
+                            +       "<tr><td colspan=4>"
+                            +       materialHtml
+                            +       "</td></tr>"
+                            +   "</table></div>");
+
         var navPills = $("<ul class='nav nav-pills'></ul>");
         var navTabs = $("<div class='tab-content'>");
 
@@ -763,10 +803,14 @@
             navPills.append(navItems);
             navTabs.append(tabStats);
         });
-        statsCollapsible.append(navPills);
-        statsCollapsible.append(navTabs);
+        statsCollapsible.append(statsLevelSlider);
+        statsCollapsible.append(statsLevelDisplay);
+        statsCollapsible.append(statsTable);
+        //statsCollapsible.append(navPills);
+        //statsCollapsible.append(navTabs);
 
         if(i > 0){
+
             var mats = $("<div class='small-container ak-shadow'>"
                         +   "<p>Elite "+i+"</p>"
                         +   "<span>Required materials</span>"
@@ -1054,7 +1098,6 @@
         });
         return `
             <div style="padding-top:10px">
-            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div>
                 ${talent.join("")}
             </div>`
     }
@@ -1253,6 +1296,33 @@
         }
     }
 
+    function changeEliteLevel(el,elite_no){
+        var value = $(el).val();
+        $("#elite"+elite_no+"LevelDisplay").val(value);
+        $("#elite"+elite_no+"LevelSlider").val(value);
+        EliteStatsDisplay(value,elite_no);
+    }
+
+    function EliteStatsDisplay(level,elite_no){
+        $("#elite"+elite_no+"maxHp").html(statsInterpolation('maxHp',level,elite_no));
+        $("#elite"+elite_no+"def").html(statsInterpolation('def',level,elite_no));
+        $("#elite"+elite_no+"atk").html(statsInterpolation('atk',level,elite_no));
+        $("#elite"+elite_no+"magicResistance").html(statsInterpolation('magicResistance',level,elite_no));
+        $("#elite"+elite_no+"respawnTime").html(statsInterpolation('respawnTime',level,elite_no)+" Sec");
+        $("#elite"+elite_no+"cost").html(statsInterpolation('cost',level,elite_no));
+        $("#elite"+elite_no+"blockCnt").html(statsInterpolation('blockCnt',level,elite_no));
+        $("#elite"+elite_no+"baseAttackTime").html(statsInterpolation('baseAttackTime',level,elite_no)+" Sec");
+    }
+
+    function statsInterpolation(key,level,elite_no){
+        var kf = [];
+        $.each(opdataFull.phases[elite_no].attributesKeyFrames,function(j,v){
+            kf[j] = v;
+        });
+        var pol = everpolate.linear([level],[kf[0].level,kf[1].level],[kf[0].data[key],kf[1].data[key]]);
+        return Math.round(pol);
+    }
+
     function changeSkillLevel(el,skill_no){
         var value = $(el).val();
         $("#skill"+skill_no+"StatsCollapsible").children("table").removeClass("active");
@@ -1279,8 +1349,8 @@
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc[level]:skill.description;
-        console.log(`Skill|${skillId}|${skill.name} `);
-        console.log(skill.blackboard)
+        //console.log(`Skill|${skillId}|${skill.name} `);
+        //console.log(skill.blackboard)
         // console.log(desc)
         
         // console.log(skillTL);
