@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang='zh-Hans' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+    <meta name='theme-color' content='#222222ff'>
+    <title translate-id='web-title'>Arknights Toolbox</title>
+    <link rel='manifest' href='./manifest.json' crossorigin='use-credentials'>
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/ak.css'>
+    <link rel='stylesheet' href='css/akhome.css'>
+    <link rel='stylesheet' href='css/akchardetail.css'>
+    <link href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
+    <script src='js/jquery-3.4.0.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <!-- site tag (gtag.js) - Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-138420636-1'></script>/
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-138420636-1');
+        
+    </script>
+    <script>
+            $(function(){
+              $('#nav-placeholder').load('nav.html');
+            });
+     </script>
+</head>
+<body  >
+    <!-- style=' background-image: url(./img/extra/bg1.png)' -->
+    <button class='btn btn-sm btn-primary goToTag' style='position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000' id='to-tag' type='button'>^ </button>
+    <nav id="aknav" class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );">
+            <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    </nav>
+    <div style='padding-bottom:40px;'></div>
+    <div class='row'>
+        <div class="col-10" style="display: block; margin: auto;">
+            <div class="row">
+                <div class="col-12" id="home-features">
+                    <div class="ak-header">
+                        <span>Available Tools</span>
+                        <div class="ak-separator"></div>
+                    </div>
+                    <div class="featurebtn-container" onclick="window.location.href = 'akhrchars.html'">
+                        <div class="featurebtn-open"><div>Open</div></div>
+                        <div class="featurebtn-button">
+                            <img src="img/ui/home/feature-1.png" style="display: inline-block;">
+                            <div class="featurebtn-info">
+                                <h4>Operator Informations</h4>
+                                <ul style="list-style-type: none; padding-left: 20px;">
+                                    <li><i class="fa fa-check"></i> Profile and Voice</li>
+                                    <li><i class="fa fa-check"></i> All Stats</li>
+                                    <li><i class="fa fa-check"></i> Skills</li>
+                                    <li><i class="fa fa-check"></i> CG Arts</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featurebtn-container" onclick="window.location.href = 'akriic.html'">
+                        <div class="featurebtn-open"><div>Open</div></div>
+                        <div class="featurebtn-button ak-shadow">
+                            <img src="img/ui/home/feature-6.png" style="display: inline-block;">
+                            <div class="featurebtn-info">
+                                <h4>Infrastructure Skills</h4>
+                                <ul style="list-style-type: none; padding-left: 20px;">
+                                    <li><i class="fa fa-check"></i> View the best OP for each room</li>
+                                    <li><i class="fa fa-check"></i> View RIIC bonuses of each OP</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featurebtn-container" onclick="window.location.href = 'akenemy.html'">
+                        <div class="featurebtn-open"><div>Open</div></div>
+                        <div class="featurebtn-button ak-shadow">
+                            <img src="img/ui/home/feature-5.png" style="display: inline-block;">
+                            <div class="featurebtn-info">
+                                <h4>Enemy Informations</h4>
+                                <ul style="list-style-type: none; padding-left: 20px;">
+                                    <li><i class="fa fa-check"></i> View all stats of an enemy</li>
+                                    <li><i class="fa fa-check"></i> All enemies browsable</li>
+                                    <li><i class="fa fa-check"></i> Searchable by name</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featurebtn-container" onclick="window.location.href = 'akhr.html'">
+                        <div class="featurebtn-open"><div>Open</div></div>
+                        <div class="featurebtn-button ak-shadow">
+                            <img src="img/ui/home/feature-2.png" style="display: inline-block;">
+                            <div class="featurebtn-info">
+                                <h4>Recruitment Tags</h4>
+                                <ul style="list-style-type: none; padding-left: 20px;">
+                                    <li><i class="fa fa-check"></i> Tag translations</li>
+                                    <li><i class="fa fa-check"></i> Operator result possibilities</li>
+                                    <li><i class="fa fa-check"></i> Varied filter options</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featurebtn-container" onclick="window.location.href = 'aklevel.html'">
+                        <div class="featurebtn-open"><div>Open</div></div>
+                        <div class="featurebtn-button ak-shadow">
+                            <img src="img/ui/home/feature-3.png" style="display: inline-block;">
+                            <div class="featurebtn-info">
+                                <h4>Leveling Calculator [WIP]</h4>
+                                <ul style="list-style-type: none; padding-left: 20px;">
+                                    <li><i class="fa fa-check"></i> Calculate total Lungmen Coins needed</li>
+                                    <li><i class="fa fa-check"></i> Calculate total Sanity needed</li>
+                                    <li><i class="fa fa-check"></i> Subtractable with current resources</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featurebtn-container" onclick="window.location.href = 'akevolve.html'">
+                        <div class="featurebtn-open"><div>Open</div></div>
+                        <div class="featurebtn-button ak-shadow">
+                            <img src="img/ui/home/feature-4.png" style="display: inline-block;">
+                            <div class="featurebtn-info">
+                                <h4>Material Tracker</h4>
+                                <ul style="list-style-type: none; padding-left: 20px;">
+                                    <li><i class="fa fa-check"></i> Saves your materials in cache</li>
+                                    <li><i class="fa fa-check"></i> Tracks how many materials you need</li>
+                                    <li><i class="fa fa-check"></i> Rarity filters</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featurebtn-container" onclick="window.location.href = 'akevolve.html'">
+                        <div class="featurebtn-open"><div>Open</div></div>
+                        <div class="featurebtn-button ak-shadow">
+                            <img src="img/ui/home/feature-7.png" style="display: inline-block;">
+                            <div class="featurebtn-info">
+                                <h4>Elite Materials [WIP]</h4>
+                                <ul style="list-style-type: none; padding-left: 20px;">
+                                    <li><i class="fa fa-check"></i> View all mats required for elite</li>
+                                    <li><i class="fa fa-check"></i> Detailed display of mats crafting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featurebtn-container" onclick="window.location.href = 'akevolve.html'">
+                        <div class="featurebtn-open"><div>Open</div></div>
+                        <div class="featurebtn-button ak-shadow">
+                            <img src="img/ui/home/feature-8.png" style="display: inline-block;">
+                            <div class="featurebtn-info">
+                                <h4>EN Story Viewer</h4>
+                                <ul style="list-style-type: none; padding-left: 20px;">
+                                    <li><i class="fa fa-check"></i> Optimized for mobile-viewing</li>
+                                    <li><i class="fa fa-check"></i> Easy-to-choose story selection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-separator" style="height:100px;"></div>
+    <div class="row" >
+        <div class="col-12 ak-footer chara-footer-1">
+            <div class="col-12 text-center" style="height: 50px;">
+                <span style="vertical-align: middle;line-height: 50px;">With translate and data help from: dragonjet, Jetroyz and other on Rhodes island HQ discord server</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/aknav.js"></script>
+<script src="js/akhrhome.js"></script>
+</html>

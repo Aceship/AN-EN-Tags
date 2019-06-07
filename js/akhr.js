@@ -1,46 +1,203 @@
-        $('#to-tag').click(function() {      // When arrow is clicked
-            $('body,html').animate({
-                scrollTop : 0                       // Scroll to top of body
-            }, 500);
+        $.holdReady(true);
+    
+        var lang;
+        var reg;
+
+        var checkedTags = [];
+        var checkedTagsTL = [];
+
+        if(typeof localStorage.checkedTagsCache === "undefined" || localStorage.checkedTagsCache == ""|| localStorage.checkedTagsCache == ""){
+            localStorage.setItem("checkedTagsCache", '');
+            localStorage.setItem("checkedTagsTLCache", '');
+        }
+        var globalOptStars = [];
+        var JsonDATA = [];
+        var tags_aval = {};
+        var all_chars = {};
+        var avg_char_tag = 0;
+        var data1, data2, data3;
+        var d0 = $.getJSON("json/tl-akhr.json", function (data) {
+
+                if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+                    localStorage.setItem("gameRegion", 'cn');
+                    localStorage.setItem("webLang", 'en');
+                    reg = "cn";
+                    lang = "en";
+                } else {
+                    reg = localStorage.gameRegion;
+                    lang = localStorage.webLang;
+                }
+                $('.reg[value='+reg+']').addClass('selected');
+                $('.lang[value='+lang+']').addClass('selected');
+
+                let tag_count = 0;
+                let char_tag_sum = 0;
+                // console.log(data);
+                $.each(data, function (_, char) {
+                    if (char.hidden) return;
+                    char.tags.push(char.type);
+                    if(reg == 'cn'){
+                        char.tags.push(char.sex + "性干员");
+                    } else {
+                        char.tags.push(char.sex);
+                    }
+                    $.each(char.tags, function (_, tag) {
+                        if (tag in tags_aval) {
+                            tags_aval[tag].push({ 
+                                "name_en": char.name_en, 
+                                "name": eval('char.name_'+reg),
+                                "name_tl": eval('char.name_'+lang),
+                                "level": char.level, 
+                                "type": char.type });
+                        } else {
+                            tags_aval[tag] = [{ 
+                                "name_en": char.name_en, 
+                                "name": eval('char.name_'+reg), 
+                                "name_tl": eval('char.name_'+lang),
+                                "level": char.level, 
+                                "type": char.type }];
+                                tag_count++;
+                        }
+                        char_tag_sum++;
+                    });
+                    all_chars[char.name_cn] = { 'name_cn': char.name_cn, 'name_en': char.name_en, 'name_jp': char.name_jp, 'name_kr': char.name_kr, 'level': char.level, 'tags': char.tags };
+                });
+                //$.each(tags_aval, function (key, _) {
+                //    $("#box-tags").append(
+                //        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
+                //    );
+                //    tag_count++;
+                //});
+                //console.log(avg_char_tag);
+                avg_char_tag = char_tag_sum / tag_count;
+
+                JsonDATA[0] = tags_aval;
+                JsonDATA[1] = all_chars;
+                JsonDATA[2] = avg_char_tag;
+            });
+        var d1 = $.getJSON("json/tl-tags.json", function (data){
+                    data1 = data;
+                });
+        var d2 = $.getJSON("json/tl-type.json", function (data){
+                    data2 = data;
+                });
+        var d3 = $.getJSON("json/tl-gender.json", function (data){
+                    data3 = data;
+                });
+        $.when(d0,d1,d2,d3).then(function(){
+            if(data1){
+                if(data2){
+                    JsonDATA[3] = data1;
+                    JsonDATA[4] = data2;
+                    JsonDATA[5] = data3;
+                }
+            }
+            $.holdReady(false);
         });
-        let lang;
-        let reg;
+        $(document).ready(function(){
+            $.getScript("js/aknav.js", function(){
+                $('#to-tag').click(function() {      // When arrow is clicked
+                    $('body,html').animate({
+                        scrollTop : 0                       // Scroll to top of body
+                    }, 500);
+                });
 
-        $('.dropdown-trigger').dropdown();
-        $('[data-toggle="tooltip"]').tooltip();
+                $('.dropdown-trigger').dropdown();
+                $('[data-toggle="tooltip"]').tooltip();
 
 
-        if(localStorage.getItem('showImage') === null){
-            localStorage.setItem("showImage", "true");
-            localStorage.setItem("showName", "true");
-            localStorage.setItem("size", 40);
-        } else {
-            if(localStorage.showName == 'false'){
-                $("#showName").toggleClass("btn-primary btn-secondary");
-            }
-            if(localStorage.showImage == 'false'){
-                $("#showImage").toggleClass("btn-primary btn-secondary");
-            }
-            if(localStorage.showClass == 'false'){
-                $("#showClass").toggleClass("btn-primary btn-secondary");
-            }
-        }
-        if(!localStorage.getItem('showClass'))localStorage.setItem("showClass","false")
+                if(localStorage.getItem('showImage') === null){
+                    localStorage.setItem("showImage", "true");
+                    localStorage.setItem("showName", "true");
+                    localStorage.setItem("size", 40);
+                } else {
+                    if(localStorage.showName == 'false'){
+                        $("#showName").toggleClass("btn-primary btn-secondary");
+                    }
+                    if(localStorage.showImage == 'false'){
+                        $("#showImage").toggleClass("btn-primary btn-secondary");
+                    }
+                    if(localStorage.showClass == 'false'){
+                        $("#showClass").toggleClass("btn-primary btn-secondary");
+                    }
+                }
+                if(!localStorage.getItem('showClass'))localStorage.setItem("showClass","false")
 
-        if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
-            console.log("game region undefined");
-            localStorage.setItem("gameRegion", 'cn');
-            localStorage.setItem("webLang", 'en');
-            reg = "cn";
-            lang = "en";
-        } else {
-            console.log(localStorage.webLang);
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
-        }
-        $('.reg[value='+reg+']').addClass('selected');
-        $('.lang[value='+lang+']').addClass('selected');
-        changeUILanguage();
+                if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+                    console.log("game region undefined");
+                    localStorage.setItem("gameRegion", 'cn');
+                    localStorage.setItem("webLang", 'en');
+                    reg = "cn";
+                    lang = "en";
+                } else {
+                    console.log(localStorage.webLang);
+                    reg = localStorage.gameRegion;
+                    lang = localStorage.webLang;
+                }
+                $('.reg[value='+reg+']').addClass('selected');
+                $('.lang[value='+lang+']').addClass('selected');
+                if(localStorage.checkedTagsCache != ''){
+                    var checkedTagsCache = JSON.parse(localStorage.checkedTagsCache)
+                    var checkedTagsTLCache = JSON.parse(localStorage.checkedTagsTLCache)
+                    if(checkedTagsCache.length != 0){
+                        $.each(checkedTagsCache,function(i,v){
+                            $('.button-tag').each(function(){
+                                let cntext = $(this).attr('cn-text');
+                                if(cntext && cntext == checkedTagsCache[i]){
+                                    $(this).trigger('click');
+                                }
+                            })
+                        });
+                        calculate();
+                    }
+                }
+                changeUILanguage();
+                console.log("Show Name: ");
+                console.log(localStorage.showName);
+                console.log("Show Image: ");
+                console.log(localStorage.showImage);
+                console.log("Show Class: ");
+                console.log(localStorage.showClass);
+
+                $(".imagesizeselect").each(function(_,el){
+                    let size = localStorage.size;
+                    $("#selectedImageSize").html(localStorage.size);
+                    if($(el).attr("title") == size){
+                        $("<span> <<</span>").appendTo(el);
+                    } else {
+                        $(el).html($(el).attr("title"));
+                    }
+                });
+
+                $(document).on("click", ".btn-name", function () {
+                    if(localStorage.getItem('showName') == 'false'){
+                        localStorage.setItem('showName','true');
+                    } else {
+                        localStorage.setItem('showName','false');
+                    }
+                    console.log("Show Name: ");
+                    console.log(localStorage.getItem('showName'));
+                })
+                $(document).on("click", ".btn-class", function () {
+                    if(localStorage.getItem('showClass') == 'false'){
+                        localStorage.setItem('showClass','true');
+                    } else {
+                        localStorage.setItem('showClass','false');
+                    }
+                    console.log("Show Class: ");
+                    console.log(localStorage.getItem('showClass'));
+                })
+                $(document).on("click", ".btn-image", function () {
+                    if(localStorage.getItem('showImage') == 'false'){
+                        localStorage.showImage = 'true';
+                    } else {
+                        localStorage.showImage = 'false';
+                    }
+                    console.log("Show Image: ");
+                    console.log(localStorage.getItem('showImage'));
+                });
+            });
+        });
 
         function regDropdown(el){
             localStorage.gameRegion = el.attr("value");
@@ -54,63 +211,14 @@
             console.log(localStorage.webLang)
             $(".dropdown-item.lang").removeClass("selected");
             el.addClass("selected");
-            changeUILanguage();
+            changeUILanguage(true);
         }   
 
 
-        console.log("Show Name: ");
-        console.log(localStorage.showName);
-        console.log("Show Image: ");
-        console.log(localStorage.showImage);
-        console.log("Show Class: ");
-        console.log(localStorage.showClass);
-
-        $(".imagesizeselect").each(function(_,el){
-            let size = localStorage.size;
-            $("#selectedImageSize").html(localStorage.size);
-            if($(el).attr("title") == size){
-                $("<span> <<</span>").appendTo(el);
-            } else {
-                $(el).html($(el).attr("title"));
-            }
-        });
-
-        $(document).on("click", ".btn-name", function () {
-            if(localStorage.getItem('showName') == 'false'){
-                localStorage.setItem('showName','true');
-            } else {
-                localStorage.setItem('showName','false');
-            }
-            console.log("Show Name: ");
-            console.log(localStorage.getItem('showName'));
-        })
-        $(document).on("click", ".btn-class", function () {
-            if(localStorage.getItem('showClass') == 'false'){
-                localStorage.setItem('showClass','true');
-            } else {
-                localStorage.setItem('showClass','false');
-            }
-            console.log("Show Class: ");
-            console.log(localStorage.getItem('showClass'));
-        })
-        $(document).on("click", ".btn-image", function () {
-            if(localStorage.getItem('showImage') == 'false'){
-                localStorage.showImage = 'true';
-            } else {
-                localStorage.showImage = 'false';
-            }
-            console.log("Show Image: ");
-            console.log(localStorage.getItem('showImage'));
-        });
+        
 
         //var global = this;
 
-        var JsonDATA = [];
-        
-            
-        var checkedTags = [];
-        var checkedTagsTL = [];
-        var globalOptStars = [];
 
         function showChar(el){
             let reg = $('.reg.selected').attr("value");
@@ -202,6 +310,8 @@
             $("#count-tag").html("")
             checkedTags = [];
             checkedTagsTL = [];
+            localStorage.checkedTagsCache = '';
+            localStorage.checkedTagsTLCache = '';
             localStorage.lastChar = ""
         }
 
@@ -281,20 +391,36 @@
 
                     return;
                 } else {
-                    checkedTags.push(tag);
-                    checkedTagsTL.push(tagTL);
+                    if(checkedTags.length != 0){
+                        let found = 0;
+                        $.each(checkedTags,function(_,v){
+                            if(v == tag){
+                                found = 1;
+                            }
+                        });
+                        if(found == 0){
+                            checkedTags.push(tag);
+                            checkedTagsTL.push(tagTL);
+                        }
+                    } else {
+                        checkedTags.push(tag);
+                        checkedTagsTL.push(tagTL);
+                    }
                 }
             }
             $(el).toggleClass("btn-primary btn-secondary");
             localStorage.lastChar = ""
-            // console.log(checkedTags);
-            // console.log(checkedTagsTL);
+             console.log(checkedTags);
+             console.log(checkedTagsTL);
+            localStorage.checkedTagsCache = JSON.stringify(checkedTags);
+            localStorage.checkedTagsTLCache = JSON.stringify(checkedTagsTL);
             // console.log(tag)
-            refresh();
+            calculate();
         }
 
         function calculate(){
-            
+            console.log(checkedTags)
+            console.log(JsonDATA)
             if(typeof checkedTags !== 'undefined'){
                 //console.log(JsonDATA);
                 let tags_aval = JsonDATA[0];
@@ -320,7 +446,6 @@
                 }
                 // console.log(combs);
                 $("#tbody-recommend").html("");
-                
                 $.each(combs, function (_, comb) {
                     let tags = comb.tags;
                     
@@ -398,6 +523,7 @@
                         (a.tags.length > b.tags.length ? 1 : (a.tags.length < b.tags.length ? -1 : 0)));
                 });
                 let no = 1;
+                console.log(combs)
                 $.each(combs, function (_, comb) {
                     if (comb.possible.length === 0) return;
                     let chars = comb.possible;
@@ -447,94 +573,18 @@
             }
         }
 
-        function loadJson(){
-            let tags_aval = {};
-            let all_chars = {};
-            let avg_char_tag = 0;
-            let reg = $('.reg.selected').attr("value");
-            let lang =$('.lang.selected').attr("value");
-            $.getJSON("json/tl-akhr.json", function (data) {
-                let tag_count = 0;
-                let char_tag_sum = 0;
-                // console.log(data);
-                $.each(data, function (_, char) {
-                    if (char.hidden) return;
-                    char.tags.push(char.type);
-                    if(reg == 'cn'){
-                        char.tags.push(char.sex + "性干员");
-                    } else {
-                        char.tags.push(char.sex);
-                    }
-                    $.each(char.tags, function (_, tag) {
-                        if (tag in tags_aval) {
-                            tags_aval[tag].push({ 
-                                "name_en": char.name_en, 
-                                "name": eval('char.name_'+reg),
-                                "name_tl": eval('char.name_'+lang),
-                                "level": char.level, 
-                                "type": char.type });
-                        } else {
-                            tags_aval[tag] = [{ 
-                                "name_en": char.name_en, 
-                                "name": eval('char.name_'+reg), 
-                                "name_tl": eval('char.name_'+lang),
-                                "level": char.level, 
-                                "type": char.type }];
-                                tag_count++;
-                        }
-                        char_tag_sum++;
-                    });
-                    all_chars[char.name_cn] = { 'name_cn': char.name_cn, 'name_en': char.name_en, 'name_jp': char.name_jp, 'name_kr': char.name_kr, 'level': char.level, 'tags': char.tags };
-                });
-                //$.each(tags_aval, function (key, _) {
-                //    $("#box-tags").append(
-                //        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
-                //    );
-                //    tag_count++;
-                //});
-                //console.log(avg_char_tag);
-                avg_char_tag = char_tag_sum / tag_count;
-
-                JsonDATA[0] = tags_aval;
-                JsonDATA[1] = all_chars;
-                JsonDATA[2] = avg_char_tag;
-            });
-            var data1, data2, data3;
-            $.when(
-                $.getJSON("json/tl-tags.json", function (data){
-                    data1 = data;
-                }),
-                $.getJSON("json/tl-type.json", function (data){
-                    data2 = data;
-                }),
-                $.getJSON("json/tl-gender.json", function (data){
-                    data3 = data;
-                })
-            ).then(function(){
-                if(data1){
-                    if(data2){
-                        JsonDATA[3] = data1;
-                        JsonDATA[4] = data2;
-                        JsonDATA[5] = data3;
-                    }
-                }
-            });
-            
-        }
-
-        function changeUILanguage(){
+        function changeUILanguage(calc=false){
             reg = localStorage.gameRegion;
             lang = localStorage.webLang;
 
             $('#display-reg').text(reg.toUpperCase())
-            
+            console.log(lang)
             switch (lang) {
-                case "en":$('#display-lang').text("English");break;
-                case "cn":$('#display-lang').text("Chinese");break;
-                case "jp":$('#display-lang').text("Japanese");break;
+                case "en":$('#display-lang').text("English");console.log('English');break;
+                case "cn":$('#display-lang').html("Chinese");console.log('Chinese');break;
+                case "jp":$('#display-lang').text("Japanese");console.log('Japanese');break;
             }
             
-            console.log($('#display-reg'))
             localStorage.setItem("gameRegion", reg);
             localStorage.setItem("webLang", lang);
             let types = ["qualifications","position","affix"];
@@ -585,12 +635,7 @@
                 }
             });
             console.log("done");
-            checkedTags = [];
-            checkedTagsTL = [];
-            //refresh();
-            $(".btn-tag.btn-primary").each(function(_,el){
-                doubleclick(el);
-            });
+            refresh(calc);
         }
 
         function getJSONdata(type, callback){
@@ -612,13 +657,83 @@
             $(el).click();
         }
 
-        function refresh(){
-            JsonDATA = [];
-            setTimeout(function(){
-                setTimeout(function(){
+        function refresh(calc=true){
+            if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+                localStorage.setItem("gameRegion", 'cn');
+                localStorage.setItem("webLang", 'en');
+                reg = "cn";
+                lang = "en";
+            } else {
+                reg = localStorage.gameRegion;
+                lang = localStorage.webLang;
+            }
+            $('.reg[value='+reg+']').addClass('selected');
+            $('.lang[value='+lang+']').addClass('selected');
+            tags_aval = {};
+            var d0 = $.getJSON("json/tl-akhr.json", function (data) {
+                let tag_count = 0;
+                let char_tag_sum = 0;
+                $.each(data, function (_, char) {
+                    if (char.hidden) return;
+                    char.tags.push(char.type);
+                    if(reg == 'cn'){
+                        char.tags.push(char.sex + "性干员");
+                    } else {
+                        char.tags.push(char.sex);
+                    }
+                    $.each(char.tags, function (_, tag) {
+                        if (tag in tags_aval) {
+                            tags_aval[tag].push({ 
+                                "name_en": char.name_en, 
+                                "name": eval('char.name_'+reg),
+                                "name_tl": eval('char.name_'+lang),
+                                "level": char.level, 
+                                "type": char.type });
+                        } else {
+                            tags_aval[tag] = [{ 
+                                "name_en": char.name_en, 
+                                "name": eval('char.name_'+reg), 
+                                "name_tl": eval('char.name_'+lang),
+                                "level": char.level, 
+                                "type": char.type }];
+                                tag_count++;
+                        }
+                        char_tag_sum++;
+                    });
+                    all_chars[char.name_cn] = { 'name_cn': char.name_cn, 'name_en': char.name_en, 'name_jp': char.name_jp, 'name_kr': char.name_kr, 'level': char.level, 'tags': char.tags };
+                });
+                //$.each(tags_aval, function (key, _) {
+                //    $("#box-tags").append(
+                //        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
+                //    );
+                //    tag_count++;
+                //});
+                //console.log(avg_char_tag);
+                avg_char_tag = char_tag_sum / tag_count;
+
+                JsonDATA[0] = tags_aval;
+                JsonDATA[1] = all_chars;
+                JsonDATA[2] = avg_char_tag;
+            });
+            var d1 = $.getJSON("json/tl-tags.json", function (data){
+                        data1 = data;
+                    });
+            var d2 = $.getJSON("json/tl-type.json", function (data){
+                        data2 = data;
+                    });
+            var d3 = $.getJSON("json/tl-gender.json", function (data){
+                        data3 = data;
+                    });
+            $.when(d0,d1,d2,d3).then(function(){
+                if(data1){
+                    if(data2){
+                        JsonDATA[3] = data1;
+                        JsonDATA[4] = data2;
+                        JsonDATA[5] = data3;
+                    }
+                }
+                if(calc){
                     calculate();
-                }, 200);
-                calculate();
-            }, 200);
-            loadJson();
+                }
+            });
         }

@@ -77,6 +77,7 @@ a:hover,a:active{
 .dropdown-menu{
     background:  rgb(93, 93, 93);
     padding:2px;
+    left: -60px;
 }
 .dropdown-menu>a{
     background : #00000055;
@@ -106,6 +107,9 @@ body>nav .nav-item {
 body>nav .navbar-nav .active {
     background-color: rgb(54, 54, 54);
 }
+body>nav .navbar-nav .active>a div {
+    color: white!important;
+}
 
 .btn.active.focus, 
 .btn.active:focus, 
@@ -126,6 +130,9 @@ input[type='range']:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+input[type='text'] {
+    height:35px;
+}
 
 .ak-active {
     color:#ddd;
@@ -133,6 +140,16 @@ input[type='range']:focus {
 .ak-browse {
     width: 250%;
     font-size: 13px;
+}
+
+.browse-btn {
+    border-radius: 4px!important;
+    background-color: #0098DC!important;
+    color: white;
+    margin-top: 6px!important;
+    margin-left: 10px;
+    padding: 5px 27px;
+    margin-bottom: 10px!important;
 }
 
 #navbarNav a {
@@ -191,16 +208,21 @@ html, body {
     background-color: #000;
     box-shadow: 2px 4px 3px 2px rgba(100,100,100,0.5);
 }
+.btn-primary {
+    background-color: #0098DC!important;
+    border-color: #0098DC!important;
+}
+
 #to-tag {
-    
-    background-color: #333;
+    margin-right: 5px;
+    background-color: #0098DC;
     opacity: 0.95;
     -webkit-box-shadow: 2px 4px 3px 2px rgba(0, 34, 49, 0.5);
     -moz-box-shadow: 2px 4px 3px 2px rgba(0,0,0,0.5);
     box-shadow: 2px 4px 3px 2px rgba(0,0,0,0.5);
     border-width: 0px;
-    border-radius: 0px;
-    font-size: 19px;
+    border-radius: 5px;
+    font-size: 1.8em;
     width: 40px;
     height: 50px;
     -webkit-transition: all 1s ease;
@@ -273,6 +295,9 @@ html, body {
 }
 .ak-shadow{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.ak-shadow-blue{
+    box-shadow: 0 4px 8px 0 rgba(0, 152, 220, 0.2), 0 6px 20px 0 rgba(0, 152, 220, 0.19);
 }
 .ak-shadow-small{
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1), 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
