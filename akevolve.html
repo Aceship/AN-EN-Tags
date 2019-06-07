@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="theme-color" content="#222222ff">
-    <title translate-id="web-title">Arknights Recruitment Calculator</title>
+    <title>Arknights Material Inventory</title>
     <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/ak.css">
@@ -110,7 +110,6 @@
         //let lang = getLang();
         let lang;
         let reg;
-        document.title = { 'cn': '明日方舟精英化材料计算器', 'en': 'Arknights Evolve Cost Calculator' }[lang];
         let ms = {};
         let mByLvl = [[], [], [], [], []];
         let ismobile = $('#mobile-only-visible').is(':visible');
@@ -130,6 +129,7 @@
             $('.reg[value='+reg+']').addClass('selected');
             $('.lang[value='+lang+']').addClass('selected');
 
+            document.title = { 'cn': '明日方舟物料库存', 'en': 'Arknights Material Inventory' }[lang];
             $('#display-reg').text(reg.toUpperCase())
             
             switch (lang) {
