@@ -198,8 +198,7 @@
             let muhRegex = /<@cc\.vup>(.*?)<\/>/
             var acurrNum = muhRegex.exec(acurr.description)[1]
             var bcurrNum = muhRegex.exec(bcurr.description)[1]
-            let muhRegex2 = /(\d+)(%?)/
-            
+            let muhRegex2 = /(\d+)(%?)/ 
             var acurrNum2 = parseInt(muhRegex2.exec(acurrNum)[1])
             var bcurrNum2 = parseInt(muhRegex2.exec(bcurrNum)[1])
             // console.log(acurr.description)
