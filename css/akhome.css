@@ -48,10 +48,22 @@
 }
 .featurebtn-button:hover,.featurebtn-container:hover .onimage{
 	top:0px;
-	color:transparent;
-	/* background: #222222ff; */
+	/* color:transparent; */
+	box-shadow: unset;
+	background: #222222ff;
 }
 
+/* .featurebtn-button:hover,.featurebtn-container:hover .titleonimage{
+	background: transparent;
+	box-shadow: unset;
+}
+.titleonimage{
+	padding: 2px 10px 2px 10px;
+	display: inline;
+	background: #111111dd;
+	box-shadow: 0px 0px 2px  #111111bb,0px 0px 4px  #111111aa,0px 0px 6px  #11111188,0px 0px 8px  #11111177;
+	transition: box-shadow 0.5s,background 0.5s;
+} */
 
 .featurebtn-button>div>img {
 	display: inline-block;
@@ -64,13 +76,13 @@
 	transition: filter 0.5s;
 	padding:0px;
 	margin:0px;
-	filter: brightness(10%) blur(2px);
+	filter: brightness(40%) blur(2px);
 }
 .subfeature{
 	background: #111;
 	width:auto;
 	padding-left:10px;
-	margin-top: -8px;
+	
 	font-size: 12px;
 }
 .home-feature-content{
@@ -93,7 +105,9 @@
 	/* height: 100%; */
 	top: 40%;
 	left:0px;
-	transition: top 0.5s,color 0.5s;
+	background: #222222dd;
+	box-shadow: 0px 0px 2px  #222222bb,0px 0px 4px  #222222aa,0px 0px 6px  #22222288,0px 0px 8px  #22222277;
+	transition: top 0.5s,color 0.5s,background 0.5s,box-shadow 0.5s;
 }
 .featurebtn-button>.left{
 	width:60%;
@@ -109,6 +123,7 @@
 }
 
 .featurebtn-header{
+	display: none;
 	background:#222;
 	border-radius: 0px 5px 0px 0px;
 	padding:7px 2px 3px 10px;
@@ -136,7 +151,11 @@
 	padding: 0px 10px;
 }
 @media (max-width: 700px ){
+	.subfeature{
+		margin-top: -8px;
+	}
 	.featurebtn-header{
+		display: block;
 		border-radius: 0px;
 		border-top: 2px solid #000;
 		padding-top:4px;
@@ -149,6 +168,7 @@
 
 	.left>.onimage{
 		color:transparent;
+		
 		/* background: #222222ff; */
 	}
 
