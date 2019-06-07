@@ -1187,13 +1187,14 @@
                 `)
             });
             talent.push(`
-                <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div>
                 <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
                     ${talentlist.join("")}
                 </div>`)
         });
         return `
+        
             <div style="padding-top:10px">
+            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div>
                 ${talent.join("")}
             </div>`
     }
