@@ -34,5 +34,13 @@
         Loading...
     </table>
     <script src="./js/aknav.js"></script>
+    <script type="text/javascript">
+        $.getScript("js/arrive.min.js", function(){
+            $(document).arrive("#regionDropdown", function(){
+                $("#navitemRegion").addClass('ak-disable2');
+                $("#navitemLanguage").addClass('ak-disable2');
+            });
+        });
+    </script>
 </body>
 </html>

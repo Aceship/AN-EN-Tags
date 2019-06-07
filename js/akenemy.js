@@ -79,6 +79,13 @@
         $('.lang[value='+lang+']').addClass('selected');
         changeUILanguage();
     });
+
+    $.getScript("js/arrive.min.js", function(){
+        $(document).arrive("#regionDropdown", function(){
+            $("#navitemRegion").addClass('ak-disable2');
+            $("#navitemLanguage").addClass('ak-disable2');
+        });
+    });
     
     function regDropdown(el){
         localStorage.gameRegion = el.attr("value");

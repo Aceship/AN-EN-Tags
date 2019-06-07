@@ -194,6 +194,13 @@
         //getSkillDesc('skchr_amiya_2',0);
     });
 
+    $.getScript("js/arrive.min.js", function(){
+        $(document).arrive("#regionDropdown", function(){
+            $("#navitemRegion").addClass('ak-disable2');
+            $("#navitemLanguage").addClass('ak-disable2');
+        });
+    });
+
     function clickBtnClear(){
         $("#chara-detail-container").hide();
         $("#elite-sidenav").html("");

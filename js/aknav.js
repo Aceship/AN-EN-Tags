@@ -105,7 +105,7 @@ $(document).ready(function(){
                 </ul>
             <ul class="navbar-nav ml-auto">
 
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" id="navitemRegion">
                         <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
                                 <div class="ak-subtitle ak-disable" translate-id="language-1">Server</div>
                                 <div class="ak-disable" id="display-reg">CN</div>
@@ -115,7 +115,7 @@ $(document).ready(function(){
                             <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="cn">Chinese</a>
                         </div>
                     </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown" id="navitemLanguage">
                     <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px"href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <div class="ak-subtitle ak-disable" translate-id="language-2">Language</div>
                             <div class="ak-disable" id="display-lang">English</div>
@@ -130,4 +130,4 @@ $(document).ready(function(){
         </div>
     `
     $('#aknav').html(html)
-})
+});

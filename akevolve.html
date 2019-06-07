@@ -102,13 +102,21 @@
             <p>Powered by GraueNeko, Aceship, Faryzal2020</p>
         </div>
     </div>
+    <script src='js/arrive.min.js'></script>
     <script src="./js/aknav.js"></script>
     <script> 
             
-            showCurrentLang();
-            //let lang = getLang();
-            let lang;
-            let reg;
+        showCurrentLang();
+        //let lang = getLang();
+        let lang;
+        let reg;
+        document.title = { 'cn': '明日方舟精英化材料计算器', 'en': 'Arknights Evolve Cost Calculator' }[lang];
+        let ms = {};
+        let mByLvl = [[], [], [], [], []];
+        let ismobile = $('#mobile-only-visible').is(':visible');
+        let allns = []; let allhs = []; let allos = [];
+
+        $(document).ready(function(){
             if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
                 console.log("game region undefined");
                 localStorage.setItem("gameRegion", 'cn');
@@ -129,6 +137,101 @@
                 case "cn":$('#display-lang').text("Chinese");break;
                 case "jp":$('#display-lang').text("Japanese");break;
             }
+            $(document).on('change input paste', '.in-mc', calc);
+            $(document).on("click", ".btn-opt", function () {
+                $(this).toggleClass("btn-primary btn-secondary");
+                let checked = $(this).hasClass("btn-primary");
+                if (checked) $(".lvl-" + $(this).attr("opt-id")).show();
+                else $(".lvl-" + $(this).attr("opt-id")).hide();
+                if ($(this).attr("id") === "opt-all") {
+                    $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
+                        checked ? "btn-primary" : "btn-secondary"
+                    );
+                    for (let i = 1; i <= 5; i++) {
+                        if (checked) $(".lvl-" + i).show();
+                        else $(".lvl-" + i).hide();
+                    }
+                } else {
+                    if ($("#opt-all").hasClass("btn-primary")) {
+                        $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    } else {
+                        let checkedCount = 0;
+                        $(".btn-opt").each(function (_, __) {
+                            if ($(this).attr("id") === "opt-all") return;
+                            if ($(this).hasClass("btn-primary")) checkedCount++;
+                        });
+                        if (checkedCount === 5) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    }
+                }
+                genUrl();
+            });
+
+            let togglefilter = false ;
+            $(document).on("click", "#btn-filter", () => {
+                // if (ismobile)
+                //     $(".card").each((_, e) => {
+                //         let v = parseInt($(e).find(".in-lack").val());
+                //         if (isNaN(v) || v === 0) $(e).hide();
+                //     });
+                // else
+                togglefilter = !togglefilter;
+                if(togglefilter){
+                    $(".ak-card-group").each((_, e) => {
+                        let v = parseInt($(e).find(".in-lack").val());
+                        if (isNaN(v) || v === 0) $(e).hide();
+                    });
+                }else{
+                    $(".ak-card-group").each((_, e) => {
+                        let v = parseInt($(e).find(".in-lack").val());
+                        if (isNaN(v) || v === 0) $(e).show();
+                    });
+                }
+            });
+            $(document).on("click", "#btn-reset", () => {
+                $(".btn-option").removeClass("btn-primary btn-secondary").addClass("btn-primary");
+                $(".in-mc, .in-lack").val("");
+                $(".in-lack").each(function() {
+                        $(this).css('background-color','#222');
+                })
+                // if (ismobile)
+                //     $(".card").show();
+                // else
+                    $(".ak-card-group").show();
+            })
+            let savedNeed = urlParam("n", "");
+            let savedHave = urlParam("h", "");
+            let savedOption = urlParam("o", "").split("+");
+            if (!(savedHave === "" || savedNeed === "" || savedOption === "")) {
+                $("#btn-load").show();
+            } else {
+                $("#btn-load").hide();
+            }
+
+            $(document).on("click", "#btn-load", () => {
+                let needs = savedNeed.split("+");
+                let haves = savedHave.split("+");
+                for (let i = 0; i < needs.length; i++) {
+                    $("#need-" + i).val(needs[i]);
+                }
+                for (let i = 0; i < haves.length; i++) {
+                    $("#have-" + i).val(haves[i]);
+                }
+                $(".btn-opt").removeClass("btn-primary btn-secondary");
+                for (let i = 1; i <= 5; i++) {
+                    if (savedOption.includes(i.toString())) {
+                        $(".btn-opt[opt-id='" + i + "']").addClass("btn-primary");
+                        $(".lvl-" + i).show();
+                    } else {
+                        $(".btn-opt[opt-id='" + i + "']").addClass("btn-secondary");
+                        $(".lvl-" + i).hide();
+                    }
+                }
+                $("#opt-all").addClass(savedOption.length === 5 ? "btn-primary" : "btn-secondary");
+                calc();
+            });
+            loadMaterials();
+        });
+            
 
             function regDropdown(el){
                 localStorage.gameRegion = el.attr("value");
@@ -143,11 +246,6 @@
                 el.addClass("selected");
                 changeUILanguage();
             }
-            document.title = { 'cn': '明日方舟精英化材料计算器', 'en': 'Arknights Evolve Cost Calculator' }[lang];
-            let ms = {};
-            let mByLvl = [[], [], [], [], []];
-            let ismobile = $('#mobile-only-visible').is(':visible');
-            loadMaterials();
             
             function refresh(){
                 ms = {};
@@ -196,7 +294,6 @@
                                 +         srcHtml.join("<br />")
                                 +     '</div>'
                             }
-                            console.log("lang: "+lang);
                             $("#row-m").append(
                                      '<div class="ak-shadow-small ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
                                     +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="border:transparent;padding:0px;z-index:1;">'
@@ -243,7 +340,6 @@
                 });
             }
 
-            let allns = []; let allhs = []; let allos = [];
             function genUrl() {
                 allos = [];
                 for (let i = 1; i <= 5; i++) {
@@ -340,98 +436,14 @@
                 })
                 genUrl();
             }
-            $(document).on('change input paste', '.in-mc', calc);
-            $(document).on("click", ".btn-opt", function () {
-                $(this).toggleClass("btn-primary btn-secondary");
-                let checked = $(this).hasClass("btn-primary");
-                if (checked) $(".lvl-" + $(this).attr("opt-id")).show();
-                else $(".lvl-" + $(this).attr("opt-id")).hide();
-                if ($(this).attr("id") === "opt-all") {
-                    $(".btn-opt").removeClass("btn-primary btn-secondary").addClass(
-                        checked ? "btn-primary" : "btn-secondary"
-                    );
-                    for (let i = 1; i <= 5; i++) {
-                        if (checked) $(".lvl-" + i).show();
-                        else $(".lvl-" + i).hide();
-                    }
-                } else {
-                    if ($("#opt-all").hasClass("btn-primary")) {
-                        $("#opt-all").toggleClass("btn-primary btn-secondary");
-                    } else {
-                        let checkedCount = 0;
-                        $(".btn-opt").each(function (_, __) {
-                            if ($(this).attr("id") === "opt-all") return;
-                            if ($(this).hasClass("btn-primary")) checkedCount++;
-                        });
-                        if (checkedCount === 5) $("#opt-all").toggleClass("btn-primary btn-secondary");
-                    }
-                }
-                genUrl();
-            });
+            
 
-            let togglefilter = false ;
-            $(document).on("click", "#btn-filter", () => {
-                // if (ismobile)
-                //     $(".card").each((_, e) => {
-                //         let v = parseInt($(e).find(".in-lack").val());
-                //         if (isNaN(v) || v === 0) $(e).hide();
-                //     });
-                // else
-                togglefilter = !togglefilter;
-                if(togglefilter){
-                    $(".ak-card-group").each((_, e) => {
-                        let v = parseInt($(e).find(".in-lack").val());
-                        if (isNaN(v) || v === 0) $(e).hide();
-                    });
-                }else{
-                    $(".ak-card-group").each((_, e) => {
-                        let v = parseInt($(e).find(".in-lack").val());
-                        if (isNaN(v) || v === 0) $(e).show();
-                    });
-                }
-            });
-            $(document).on("click", "#btn-reset", () => {
-                $(".btn-option").removeClass("btn-primary btn-secondary").addClass("btn-primary");
-                $(".in-mc, .in-lack").val("");
-                $(".in-lack").each(function() {
-                        $(this).css('background-color','#222');
-                })
-                // if (ismobile)
-                //     $(".card").show();
-                // else
-                    $(".ak-card-group").show();
-            })
-            let savedNeed = urlParam("n", "");
-            let savedHave = urlParam("h", "");
-            let savedOption = urlParam("o", "").split("+");
-            if (!(savedHave === "" || savedNeed === "" || savedOption === "")) {
-                $("#btn-load").show();
-            } else {
-                $("#btn-load").hide();
-            }
-
-            $(document).on("click", "#btn-load", () => {
-                let needs = savedNeed.split("+");
-                let haves = savedHave.split("+");
-                for (let i = 0; i < needs.length; i++) {
-                    $("#need-" + i).val(needs[i]);
-                }
-                for (let i = 0; i < haves.length; i++) {
-                    $("#have-" + i).val(haves[i]);
-                }
-                $(".btn-opt").removeClass("btn-primary btn-secondary");
-                for (let i = 1; i <= 5; i++) {
-                    if (savedOption.includes(i.toString())) {
-                        $(".btn-opt[opt-id='" + i + "']").addClass("btn-primary");
-                        $(".lvl-" + i).show();
-                    } else {
-                        $(".btn-opt[opt-id='" + i + "']").addClass("btn-secondary");
-                        $(".lvl-" + i).hide();
-                    }
-                }
-                $("#opt-all").addClass(savedOption.length === 5 ? "btn-primary" : "btn-secondary");
-                calc();
-            });
+        /*
+        $(document).arrive("#regionDropdown", function(){
+            $("#navitemRegion").addClass('ak-disable2');
+            $("#navitemLanguage").addClass('ak-disable2');
+        });
+        */
     </script>
 </body>
 </html>

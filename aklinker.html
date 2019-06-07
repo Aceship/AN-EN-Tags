@@ -90,7 +90,6 @@
         </div>
     </div>
     <script src="./js/aknav.js"></script>
-    <script src="./js/jsondbsystem.js"></script>
     <script>
     let link="https://search.bilibili.com/video?keyword=明日方舟"
     let mlink = "https://m.bilibili.com/search.html?keyword=明日方舟"
@@ -103,6 +102,13 @@
         // $("#link").value = link+el.value
         // $(el)
     }
+
+    $.getScript("js/arrive.min.js", function(){
+        $(document).arrive("#regionDropdown", function(){
+            $("#navitemRegion").addClass('ak-disable2');
+            $("#navitemLanguage").addClass('ak-disable2');
+        });
+    });
     </script>
 </body>
 </html>

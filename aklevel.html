@@ -175,9 +175,10 @@
             <p>Powered by GraueNeko, Aceship, Faryzal2020</p>
         </div>
     </div>
-    <script src="./js/aknav.js"></script>
+    <script src='js/arrive.min.js'></script>
+    <script src="js/aknav.js"></script>
     <script>
-        $(function () {
+        $(document).ready(function () {
             showCurrentLang();
             let lang = getLang();
             document.title = { 'cn': '明日方舟升级计算器', 'en': 'Arknights Levelup Cost Calculator' }[lang];
@@ -286,6 +287,10 @@
                     $("#tbody-result").append('<tr><th scope="row" class="text-right">' + v[0] + '</th><td>' + v[1] + '</td></tr>');
                 });
             });
+        });
+        $(document).arrive("#regionDropdown", function(){
+            $("#navitemRegion").addClass('ak-disable2');
+            $("#navitemLanguage").addClass('ak-disable2');
         });
     </script>
 </body>
