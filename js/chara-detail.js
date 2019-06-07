@@ -455,15 +455,15 @@
                 `)
                 
             }
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" data-toggle="modal" data-target="#opstory">
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-top ak-btn" style="width:50px;height:50px;margin-top:10px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-middle ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opstory">
             <div>
                 <img src="./img/ui/story/profile.png" style="max-width:40px;max-height:40px">
-                <div class="btn-story-header">Profile</div>
+                <div class="btn-story-header" style="border-radius:0px">Profile</div>
             </div>
             </button>`))
 
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px;border-radius:5px;margin-top:10px;" data-toggle="modal" data-target="#opaudio">
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-bottom ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio">
             <div>
                 <img src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px">
                 <div class="btn-story-header">Audio</div>
@@ -900,7 +900,7 @@
         console.log(curraudiolist)
         $('#opaudiocontent').html("")
         curraudiolist.forEach(element => {
-            var curraudio  =`<audio controls preload="none"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
+            var curraudio  =`<audio controls preload="metadata"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
             //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
             // }
