@@ -907,7 +907,7 @@
         console.log(curraudiolist)
         $('#opaudiocontent').html("")
         curraudiolist.forEach(element => {
-            var curraudio  =`<audio controls preload="metadata"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
+            var curraudio  =`<audio controls preload="metadata" style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
             //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
             // }
@@ -1194,7 +1194,7 @@
         return `
         
             <div style="padding-top:10px">
-            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div>
+            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div> 
                 ${talent.join("")}
             </div>`
     }
