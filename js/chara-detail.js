@@ -955,17 +955,19 @@
                             if(infoTitle){
                                 var title = db.storytextTL[infoTitle[2]]?db.storytextTL[infoTitle[2]]:infoTitle[2]
                                 var content = infoTitle[4]
-                                
+                                console.log(infoTitle[2])
                                 switch (infoTitle[2]) {
                                     case "代号": content = opdataFull.appellation;break;
 
+                                    case "表演经验":
                                     case "出厂时间":
                                     case "战斗经验": content= db.storytextTL[content]
+                                    
                                     if (!content){
                                         var splitnum = infoTitle[4].trim().split("")
                                         var num = 0
                                         var end = ""
-                                        // console.log(splitnum)
+                                        
                                         splitnum.forEach(eachnum => {
                                             if(typeof db.storytextTL[eachnum] == "number" )
                                                 num += db.storytextTL[eachnum]
