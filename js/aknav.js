@@ -2,6 +2,7 @@
 
 $(document).ready(function(){
     let dropdown = []
+    dropdown.push({name:"Home",content:"index.html"})
     dropdown.push({
         name:"Calculator",
         content:[
@@ -90,6 +91,23 @@ $(document).ready(function(){
             navDropdown.push(`</div>`)
         }
     })
+    var reg;
+    var lang, langText;
+
+    if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+        localStorage.setItem("gameRegion", 'cn');
+        localStorage.setItem("webLang", 'en');
+        reg = "cn";
+        lang = "en";
+    } else {
+        reg = localStorage.gameRegion;
+        lang = localStorage.webLang;
+    }
+    switch (lang) {
+        case "en":langText = 'English';break;
+        case "cn":langText = 'Chinese';break;
+        case "jp":langText = 'Japanese';break;
+    }
     let html = `
     <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
         <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
@@ -118,7 +136,7 @@ $(document).ready(function(){
                 <li class="nav-item dropdown" id="navitemLanguage">
                     <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px"href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             <div class="ak-subtitle ak-disable" translate-id="language-2">Language</div>
-                            <div class="ak-disable" id="display-lang">English</div>
+                            <div class="ak-disable" id="display-lang">`+langText+`</div>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="en">English</a>
