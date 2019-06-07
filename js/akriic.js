@@ -59,7 +59,7 @@
                 bufflist.push(splitted[0])
             }
         });
-        console.log(bufflist)
+        // console.log(bufflist)
         // array.forEach(element => {
         //     <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 tags-qualifications button-tag" data-toggle="tooltip" data-placement="top" title="Newbie" cn-text="新手">新手</button>
         // });
@@ -171,13 +171,56 @@
 
     function FilterType(type){
         charaFilter=[]
+        var sortby
         Object.keys(charaBuff).forEach(element => {
             // charaFilter.push()
             let currChara=charaBuff[element]
-            if(currChara.find(search=> search.buffId.includes(type)))
-            charaFilter.push({"name":element,"buff": currChara})
+            var currspecific =""
+            if(currChara.find(search=> {
+                if(currspecific =search.buffId.includes(type)){
+                    currspecific = search.buffId
+                    if(!sortby && db.building_buff[currspecific].description.includes("%"))
+                        sortby = true
+                }
+                return search.buffId.includes(type)
+            }))
+            charaFilter.push({"name":element,"buff": currChara,"specific":currspecific})
         });
-        // console.log(charaFilter)
+        // console.log(db.building_buff)
+        
+        charaFilter.sort((a,b)=>{
+            // var acurr 
+            // var bcurr
+            
+            var acurr = db.building_buff[a.specific]
+            var bcurr = db.building_buff[b.specific]
+            
+            let muhRegex = /<@cc\.vup>(.*?)<\/>/
+            var acurrNum = muhRegex.exec(acurr.description)[1]
+            var bcurrNum = muhRegex.exec(bcurr.description)[1]
+            let muhRegex2 = /(\d+)(%?)/
+            
+            var acurrNum2 = parseInt(muhRegex2.exec(acurrNum)[1])
+            var bcurrNum2 = parseInt(muhRegex2.exec(bcurrNum)[1])
+            // console.log(acurr.description)
+            // console.log(acurrNum2)
+            // console.log(acurrNum)
+            // console.log(bcurrNum)
+            // console.log(bcurr.description)
+            // console.log(bcurrNum2)
+            // console.log(a.specific < b.specific)
+            // console.log(a.specific)
+            // console.log(b.specific)
+            // console.log(acurrNum2 +" |is smaller than| "+ bcurrNum2 +" |"+ (acurrNum2 < bcurrNum2))
+            return (acurrNum2 < bcurrNum2)
+        })
+
+        // charaFilter.forEach(element => {
+        //     var acurr = db.building_buff[element.specific]
+        //     let muhRegex = /<@cc\.vup>(.*?)<\/>/
+        //     var acurrNum = muhRegex.exec(acurr.description)[1]
+        //     // console.log(acurrNum)
+        // });
         let currHtml = []
         $("#tbody-list").html("")
         charaFilter.forEach(element => {
@@ -200,7 +243,7 @@
                     // console.log(element.buff[i])
                     // console.log(building_chars[element].buffChar[i] )
                     let currBuff2 = db.building_buff[element.buff[i].buffId]
-                    console.log(currBuff2)
+                    // console.log(currBuff2)
                     extraInfo = ``
                     
                     if(element.buff[i].buffId.includes("control")){
