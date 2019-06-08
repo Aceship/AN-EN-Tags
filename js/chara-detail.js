@@ -994,6 +994,7 @@
                                         content = db.charastoryTL[opdataFull.id]["originiumInfection"]
                                     }else if(content){
                                         var datasplit = content.split("，")
+                                        console.log(datasplit)
                                         var arraycontent = []
                                         datasplit.forEach(originiumdesc => {
                                             arraycontent.push(db.storytextTL[originiumdesc]?db.storytextTL[originiumdesc]:originiumdesc)
