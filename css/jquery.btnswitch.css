@@ -1,0 +1,246 @@
+/* Button Theme */
+.button-group {
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+}
+
+.button-default {
+    background-color: #ddd;
+    color: #000;
+}
+
+.button-default:hover {
+    background-color: #ccc;
+    color: #000;
+    text-decoration: none;
+}
+
+.button-on {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.button-on:hover {
+    background-color: #3e8e41;
+    color: #fff;
+    text-decoration: none;
+}
+
+.button-off {
+    background-color: #B22222;
+    color: #fff;
+}
+
+.button-off:hover {
+    background-color: #800000;
+    color: #fff;
+    text-decoration: none;
+}
+
+.button-off[disabled],
+.button-on[disabled],
+.button-default[disabled] {
+    cursor: not-allowed;
+}
+
+/* Core */
+.tgl-sw {
+    display: none;
+}
+.tgl-sw,
+.tgl-sw:after,
+.tgl-sw:before,
+.tgl-sw *,
+.tgl-sw *:after,
+.tgl-sw *:before,
+.tgl-sw + .btn-switch {
+    box-sizing: border-box;
+}
+.tgl-sw::-moz-selection,
+.tgl-sw:after::-moz-selection,
+.tgl-sw:before::-moz-selection,
+.tgl-sw *::-moz-selection,
+.tgl-sw *:after::-moz-selection,
+.tgl-sw *:before::-moz-selection,
+.tgl-sw + .btn-switch::-moz-selection {
+    background: none;
+}
+.tgl-sw::selection,
+.tgl-sw:after::selection,
+.tgl-sw:before::selection,
+.tgl-sw *::selection,
+.tgl-sw *:after::selection,
+.tgl-sw *:before::selection,
+.tgl-sw + .btn-switch::selection {
+    background: none;
+}
+.tgl-sw + .btn-switch {
+    outline: 0;
+    display: block;
+    width: 4em;
+    height: 2em;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.tgl-sw + .btn-switch:after,
+.tgl-sw + .btn-switch:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+.tgl-sw + .btn-switch:after {
+    left: 0;
+}
+.tgl-sw + .btn-switch:before {
+    display: none;
+}
+.tgl-sw-active + .btn-switch:after {
+    left: 50%;
+}
+
+/* Light */
+.tgl-sw-light + .btn-switch {
+    background: #B22222;
+    border-radius: 2em;
+    padding: 2px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+}
+.tgl-sw-light + .btn-switch:after {
+    border-radius: 50%;
+    background: #fff;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+.tgl-sw-light-checked + .btn-switch {
+    background: #4CAF50;
+}
+
+/* iOS */
+.tgl-sw-ios + .btn-switch {
+    background: #B22222;
+    border-radius: 2em;
+    padding: 2px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    border: 1px solid #e8eae9;
+}
+.tgl-sw-ios + .btn-switch:after {
+    border-radius: 2em;
+    background: #f5f5f5;
+    -webkit-transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+    transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+.tgl-sw-ios + .btn-switch:hover:after {
+    will-change: padding;
+}
+.tgl-sw-ios + .btn-switch:active {
+    box-shadow: inset 0 0 0 2em #e8eae9;
+}
+.tgl-sw-ios + .btn-switch:active:after {
+    padding-right: .8em;
+}
+.tgl-sw-ios-checked + .btn-switch {
+    background: #4CAF50;
+}
+.tgl-sw-ios-checked + .btn-switch:active {
+    box-shadow: none;
+}
+.tgl-sw-ios-checked + .btn-switch:active:after {
+    margin-left: -.8em;
+}
+
+/* Swipe */
+.tgl-sw-swipe + .btn-switch {
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    font-family: sans-serif;
+    background: #B22222;
+}
+.tgl-sw-swipe + .btn-switch:after,
+.tgl-sw-swipe + .btn-switch:before {
+    display: inline-block;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    line-height: 2em;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.tgl-sw-swipe + .btn-switch:after {
+    left: 100%;
+    content: attr(data-tg-on);
+}
+.tgl-sw-swipe + .btn-switch:before {
+    left: 0;
+    content: attr(data-tg-off);
+}
+.tgl-sw-swipe + .btn-switch:active {
+    background: #B22222;
+}
+.tgl-sw-swipe + .btn-switch:active:before {
+    left: -10%;
+}
+.tgl-sw-swipe:checked + .btn-switch {
+    background: #4CAF50;
+}
+.tgl-sw-swipe:checked + .btn-switch:before {
+    left: -100%;
+}
+.tgl-sw-swipe:checked + .btn-switch:after {
+    left: 0;
+}
+.tgl-sw-swipe:checked + .btn-switch:active:after {
+    left: 10%;
+}
+
+/* Android */
+.tgl-sw-android + .btn-switch {
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 60px;
+    background: #B22222;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.tgl-sw-android + .btn-switch:after {
+    position: absolute;
+    left: -2px;
+    top: -3px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 100px;
+    background: #800000;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.05);
+    content: '';
+    transition: all 0.3s ease;
+}
+.tgl-sw-android-checked + .btn-switch {
+    background: #4CAF50;
+}
+.tgl-sw-android-checked + .btn-switch:after {
+    left: 40px;
+    background: #3e8e41;
+}

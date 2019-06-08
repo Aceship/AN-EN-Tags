@@ -1,7 +1,5 @@
 .slotscontainer {
-	border: 2px solid green;
 	margin: auto;
-	min-width:820px; 
 	width: fit-content;
 }
 .charaSlot-container {
@@ -10,7 +8,6 @@
 	width: 400px;
 	vertical-align: top;
 	display: inline-block;
-	border: 3px solid red;
 }
 
 .slotscontainer .op-rarity {
@@ -112,6 +109,25 @@
     left: 20px;
     border-radius: 50%;
 }
+.slotscontainer .tabbing-btns {
+    height: 50px;
+    width: 50px;
+    padding: 0px;
+    border: 1px solid #262626;
+    color: white;
+    background-color: #2f2f2f;
+}
+.slotscontainer .tabbing-btns.horiz-small {
+    height: 30px;
+    width: 80px;
+    padding-top: 2px;
+    border-radius: 5px 5px 0px 0px;
+    display: inline-block;
+}
+.slotscontainer .tabbing-btns.active {
+    background-color: #4f4f4f;
+    border: 1px solid #3a3a3a;
+}
 .stat-level-header {
     color: #ddd;
     background: #222;
@@ -139,6 +155,31 @@
     background: #bbb;
     touch-action: none;
 }
+.statlevelInput::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    
+    /* margin-bottom: 10px; */
+    /* padding-bottom:20px; */
+    border: 2px solid #bbb;
+    border-radius: 0px;
+    background: #2f2f2f;
+    cursor: pointer;
+    touch-action: none;
+}
+.statlevelInput::-webkit-slider-thumb {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    /* margin-bottom: 10px; */
+    /* padding-bottom:20px; */
+    border: 2px solid #bbb;
+    border-radius: 0px;
+    background: #2f2f2f;
+    cursor: pointer;
+    touch-action: none;
+}
 .stat-input {
     max-width: 60px;
 }
@@ -155,6 +196,14 @@
 .statlevelcontainer table {
     width: 100%;
     margin: 10px;
+}
+.collapsible, .collapsing {
+    padding-top: 20px;
+}
+.collapsible {
+    background-color: #4f4f4f;
+    color: white;
+    margin-top: 0px!important;
 }
 .collapsible .stats {
     display: inline-block;
@@ -196,6 +245,23 @@
 }
 .rangeTableContainer .rangeTable {
     margin: auto;
+}
+.rangeTableContainer>div {
+    text-align: center;
+}
+
+.optionsContainer .form-group {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+	margin-top: 10px;
+}
+.tgl-sw-light + .btn-switch {
+    background: grey!important;
+}
+
+.tgl-sw-light-checked + .btn-switch {
+    background: #0098DC!important;
 }
 
 .clickthrough {

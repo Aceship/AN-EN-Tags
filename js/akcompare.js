@@ -109,6 +109,8 @@
         } else {
             slotnum = localStorage.slotNum;
         }
+        $("#slotCount").val(slotnum)
+
         populateSlots();
         var selectedOpnames = {};
         if(typeof localStorage.selectedOpnames === "undefined" || localStorage.selectedOpnames == ""){
@@ -141,20 +143,130 @@
                 $(this).trigger("enterKey");
             }
         });
+        var containerWidth = (401 * slotnum)+1;
+        $("#slotscontainer").css('min-width',containerWidth);
+        $("#eliteSyncSwitch").btnSwitch({
+            Theme:'Light',
+            ToggleState:true,
+            OnCallback: function(val) {
+                if(typeof localStorage.syncElites === "undefined" || localStorage.syncElites == ""){
+                    localStorage.setItem("syncElites", 'true');
+                } else {
+                    localStorage.syncElites = 'true';
+                }
+                syncEliteTab();
+            },
+            OffCallback: function (val) {
+                if(typeof localStorage.syncElites === "undefined" || localStorage.syncElites == ""){
+                    localStorage.setItem("syncElites", 'false');
+                } else {
+                    localStorage.syncElites = 'false';
+                }
+            }
+        });
+        if(typeof localStorage.syncElites === "undefined" || localStorage.syncElites == ""){
+            localStorage.setItem("syncElites", 'true');
+        }
+    });
+
+    $.getScript("js/arrive.min.js", function(){
+        $(document).arrive("#regionDropdown", function(){
+            $("#navitemRegion").addClass('ak-disable2');
+            $("#navitemLanguage").addClass('ak-disable2');
+        });
     });
 
     function clickBtnClear(){
+        $("#slotscontainer").html("");
+        populateSlots();
+        let selectedOPDetailsObj = {};
+        let selectedOpnames = {};
+        localStorage.selectedOPDetailsObj = JSON.stringify(selectedOPDetailsObj);
+        localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+    }
+
+    function changeSlotNum(){
+        var oldslotnum = slotnum;
+        localStorage.slotNum = $("#slotCount").val();
+        slotnum = $("#slotCount").val();
+        if(oldslotnum > slotnum){
+            for (var i = slotnum; i < oldslotnum; i++) {
+                let selectedOPDetailsObj = {};
+                let selectedOpnames = {};
+                selectedOPDetailsObj = JSON.parse(localStorage.selectedOPDetailsObj);
+                selectedOpnames = JSON.parse(localStorage.selectedOpnames);
+                delete selectedOPDetailsObj[i];
+                delete selectedOpnames[i];
+                localStorage.selectedOPDetailsObj = JSON.stringify(selectedOPDetailsObj)
+                localStorage.selectedOpnames = JSON.stringify(selectedOpnames)
+            }
+        }
+        $('#slotscontainer').html('');
+        populateSlots();
+        var selectedOpnames = {};
+        if(typeof localStorage.selectedOpnames === "undefined" || localStorage.selectedOpnames == ""){
+            localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+        } else {
+            selectedOpnames = JSON.parse(localStorage.selectedOpnames);
+            $.each(selectedOpnames,function(k,v){
+                selectOperator(v,k);
+            });
+        }
+        var containerWidth = (401 * slotnum)+1;
+        $("#slotscontainer").css('min-width',containerWidth);
+    }
+
+    function syncEliteTab(selectedElite=-1){
+        var SE = selectedElite;
+        console.log("selectedElite: "+SE)
+        console.log('syncElites: '+localStorage.syncElites)
+        if($("#slot0-op-nametl").html() != "" && localStorage.syncElites == 'true'){
+            if(selectedElite==-1){
+                for (var i = 1; i <= 3; i++) {
+                    if($("#slot0-elite-topnav > li:nth-child("+i+") > a").hasClass('active')){
+                        SE = i-1;
+                    }
+                }
+            }
+            for (var i = 1; i < slotnum; i++) {
+                $("#slot"+i+"-elite-topnav > li").each(function(){
+                    $(this).children().removeClass('active');
+                });
+                var LIlength = $("#slot"+i+"-elite-topnav > li").length;
+                console.log(SE+1)
+                if( LIlength < SE+1 ){
+                    $("#slot"+i+"-elite-topnav > li:nth-child("+LIlength+") > a").addClass('active');
+                } else {
+                    $("#slot"+i+"-elite-topnav > li:nth-child("+(SE+1)+") > a").addClass('active');
+                }
+
+                $("#slot"+i+"-tabs-opData > div").each(function(){
+                    $(this).removeClass('active');
+                    $(this).removeClass('show');
+                });
+                var divLength = $("#slot"+i+"-tabs-opData > div").length;
+                if( divLength < SE+1 ){
+                    $("#slot"+i+"-tabs-opData > div:nth-child("+divLength+")").addClass('active');
+                    $("#slot"+i+"-tabs-opData > div:nth-child("+divLength+")").addClass('show');
+                } else {
+                    $("#slot"+i+"-tabs-opData > div:nth-child("+(SE+1)+")").addClass('active');
+                    $("#slot"+i+"-tabs-opData > div:nth-child("+(SE+1)+")").addClass('show');
+                }
+            }
+        }
     }
 
     function populateSlots(){
-        for (var i = 1; i < slotnum; i++) {
-            var html = $(`<div class='charaSlot-container container' id='charaSlot${i}'>
+        for (var i = 0; i < slotnum; i++) {
+            var html = $(`
+            <div class='charaSlot-container container' id='charaSlot${i}'>
+                <input readonly type="text" name="slot${i}-opID" id="slot${i}-opID" style="display: none;">
                 <div class='row' style='padding:0px'>
                     <input style='margin-left: 10px;margin-top:5px' type='text' autocomplete='off' class='form-control col-8' name='slot${i}-opname' id='slot${i}-opname' onkeyup='populateOperators(this,${i})' placeholder='Type in operator name . .'>
                     <div class='btn btn-sm ak-btn ak-rare-bg browse-btn' onclick="populateOperators('Browse',${i})" type='button'>Browse</div>
                 </div>
                 <div style='position: relative;'><ul class='ak-c-black ak-elite-browse' id='slot${i}-operatorsResult' style='display:none; position: absolute; z-index: 10; list-style-type: none; padding: 5px;color:#222'><li style='cursor: pointer'></li></ul></div>
-                <div class='col-12 op-statcard ak-c-black ak-rare-bg' style=' margin-top: 10px; margin-bottom: 10px; border-radius: 3px;padding: 0px;min-height:350px;'>
+                <div class='col-12 op-statcard ak-c-black ak-rare-bg ak-shadow' style=' margin-top: 10px; background-color: #4f4f4f; margin-bottom: 10px; border-radius: 3px;padding: 0px;min-height:350px;'>
                     <div class='row'>
                         <div class='col-6 col-sm-6 ' style='padding:13px 20px;'>
                             <div style='position: relative;display: block; margin: 0 auto; width: 150px;z-index: 0;min-height:280px;margin:auto;background: #55555511'>
@@ -179,6 +291,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12 op-statcard ak-c-black ak-rare-bg" style=" margin-top: 10px; margin-bottom: 10px; border-radius: 3px;padding: 0px; min-height: 350px;position: relative; background-color: #363636;">
+                    <ul class="nav nav-pills" id="slot${i}-elite-topnav" style="position: absolute; top: -30px;">
+                        
+                    </ul>
+                    <div class='tab-content' id="slot${i}-tabs-opData">
+                        
+                    </div>
+                </div>
             </div>`);
             $('#slotscontainer').append(html);
         }
@@ -201,11 +321,10 @@
             $.each(db.chars2,function(_,char){
                 var languages = ['cn','en','jp','kr'];
                 var found = false;
+                $('#slot'+slot+'-operatorsResult').css('min-width','364px');
                 if(el=="Browse"){
                     found=true;
-                    $('#slot'+slot+'-operatorsResult').css('min-width','900px');
                 }else{
-                    $('#slot'+slot+'-operatorsResult').css('min-width','364px');
                     for (var i = 0; i < languages.length; i++) {
                         var charname = eval('char.name_'+languages[i]).toUpperCase();
                         var unreadable = query(db.unreadNameTL,"name",char.name_en)
@@ -292,7 +411,7 @@
             $.each(opdata2,function(key,v){
                 v['id'] = key;
                 // console.log(v);
-                opdataFull = v;
+                opdataFull[slot] = v;
                 opKey = key;
                 $("#slot"+slot+"-opImage").attr('src','img/portraits/'+key+'_1.png');
                 $("#slot"+slot+"-opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
@@ -354,19 +473,42 @@
             // use opdata to get the operator data based on tl-akhr.json
             // use opdataFull to get the operator data based on character_table.json
 
-            
+            var tabbtn2 = [];
+            var tabcontent2 = [];
+            $("#slot"+slot+"-elite-topnav").html("");
+            for (var i = 0; i < opdataFull[slot].phases.length; i++) {
+                var l = opdataFull[slot].phases.length;
+                if(i == 0){
+                    if(l == 1){
+                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#slot"+slot+"-elite_0_tab' onclick='syncEliteTab(0)'>Non-Elite</a></li>");
+                    } else {
+                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#slot"+slot+"-elite_"+i+"_tab' onclick='syncEliteTab("+i+")'>Non-Elite</a></li>");
+                    }
+                } else if( i == l-1 ){
+                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' href='#slot"+slot+"-elite_"+i+"_tab' onclick='syncEliteTab("+i+")'>Elite "+i+"</a></li>");
+                } else {
+                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' href='#slot"+slot+"-elite_"+i+"_tab' onclick='syncEliteTab("+i+")'>Elite "+i+"</a></li>");
+                }
+                var elitehtml = getEliteHTML(i,opdataFull,slot);
+                tabcontent2.push(elitehtml);
+            }
+            $("#slot"+slot+"-tabs-opData").html(tabcontent2);
+            $("#slot"+slot+"-elite-topnav").html(tabbtn2);
+            for (var i = 0; i < opdataFull[slot].phases.length; i++) {
+                EliteStatsDisplay(1,i,slot);
+            }
         }
     }
 
     function getEliteHTML(i, opdataFull, slot){
-        var container = $("<div class='tab-pane container "+(i!=0 ? 'fade' : 'active')+"' id='slot"+slot+"-elite_"+i+"_tab'></div>");
+        var container = $("<div class='tab-pane container "+(i!=0 ? 'fade' : 'active')+"' id='slot"+slot+"-elite_"+i+"_tab' style='padding:unset;'></div>");
 
         var stats = $("<div class='small-container ak-shadow clickthrough'>"
                         +   "<p class='large-text'>Base</p>"
                         +   "<span class='custom-span'>Stats</span>"
                         +   "<div class='topright maxlevel'>"
                         +       "<span class='custom-span maxleveltext'>Max Level</span>"
-                        +       "<span class='custom-span leveltext'>"+opdataFull.phases[i].maxLevel+"</span>"
+                        +       "<span class='custom-span leveltext'>"+opdataFull[slot].phases[i].maxLevel+"</span>"
                         +       "<div class='ring'>"
                         +           "<div class='back ak-shadow'></div>"
                         +           "<div class='back-centre'></div>"
@@ -378,12 +520,10 @@
         var statsCollapsible = $("<div id='slot"+slot+"-elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
 
         var keyframes = [];
-        $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
+        $.each(opdataFull[slot].phases[i].attributesKeyFrames,function(j,v){
             keyframes[j] = v;
         });
         console.log(keyframes);
-        //var statsLevelSlider = $("<span style='font-size:1.2em;vertical-align:super;padding-left:10px;'>Level: </span><input type='range' value='1' min='1' max='"+keyframes[1].level+"' name='levelStats' id='slot"+slot+"-elite"+i+"LevelSlider' oninput='changeEliteLevel(this,"+i+","+slot+")' style='margin-top:20px;width:60%;' class='skillLevelInput'></input>");
-        //var statsLevelDisplay = $("<div class='form-group' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite"+i+"LevelDisplay' onchange='changeEliteLevel(this,"+i+")' style='line-height:1.1' type='number' value='1' min='1' max='"+keyframes[1].level+"'></div>")
         var statsLevelAll = $(`
         <div style='text-align:center'>
         <span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>
@@ -410,29 +550,12 @@
                     <div class='stats'><div class='stats-l'>Attack Time</div><div class='stats-r' id='slot${slot}-elite${i}baseAttackTime'></div></div>
                 </tr><td>
                 </table>
-                ${rangeMaker(opdataFull.phases[i].rangeId)}
-                <div style="margin:12px">
-                ${materialHtml}
-                </div>
+                ${rangeMaker(opdataFull[slot].phases[i].rangeId)}
                 </div>
         `);
         
         statsCollapsible.append(statsLevelAll);
         statsCollapsible.append(statsTable);
-
-        if(i > 0){
-
-            var mats = $("<div class='small-container ak-shadow'>"
-                        +   "<p>Elite "+i+"</p>"
-                        +   "<span>Required materials</span>"
-                        +   "<img class='topright' src='img/ui/elite/"+i+".png' width='100'>"
-                        +   "<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"MatsCollapsible'><i class='fa fa-sort-down'></i></button>"
-                        +   "<div id='elite"+i+"MatsCollapsible' class='collapse collapsible'>"
-                        +    materialist.join("")
-                        +   "</div></div>");
-        } else {
-            var mats = $("");
-        }
         container.append(stats);
         container.append(statsCollapsible);
         // container.append(mats);
@@ -485,27 +608,29 @@
         }
     }
 
-    function changeEliteLevel(el,elite_no){
+    function changeEliteLevel(el,elite_no,max,slot){
         var value = $(el).val();
-        $("#elite"+elite_no+"LevelDisplay").val(value);
-        $("#elite"+elite_no+"LevelSlider").val(value);
-        EliteStatsDisplay(value,elite_no);
+        $("#slot"+slot+"-elite"+elite_no+"LevelDisplay").val(value);
+        $("#slot"+slot+"-elite"+elite_no+"LevelSlider").val(value);
+        EliteStatsDisplay(Math.min(value,max),elite_no,slot);
     }
 
-    function EliteStatsDisplay(level,elite_no){
-        $("#elite"+elite_no+"maxHp").html(statsInterpolation('maxHp',level,elite_no));
-        $("#elite"+elite_no+"def").html(statsInterpolation('def',level,elite_no));
-        $("#elite"+elite_no+"atk").html(statsInterpolation('atk',level,elite_no));
-        $("#elite"+elite_no+"magicResistance").html(statsInterpolation('magicResistance',level,elite_no));
-        $("#elite"+elite_no+"respawnTime").html(statsInterpolation('respawnTime',level,elite_no)+" Sec");
-        $("#elite"+elite_no+"cost").html(statsInterpolation('cost',level,elite_no));
-        $("#elite"+elite_no+"blockCnt").html(statsInterpolation('blockCnt',level,elite_no));
-        $("#elite"+elite_no+"baseAttackTime").html(statsInterpolation('baseAttackTime',level,elite_no)+" Sec");
+    function EliteStatsDisplay(level,elite_no,slot){
+        $("#slot"+slot+"-elite"+elite_no+"maxHp").html(statsInterpolation('maxHp',level,elite_no,slot));
+        $("#slot"+slot+"-elite"+elite_no+"def").html(statsInterpolation('def',level,elite_no,slot));
+        $("#slot"+slot+"-elite"+elite_no+"atk").html(statsInterpolation('atk',level,elite_no,slot));
+        $("#slot"+slot+"-elite"+elite_no+"magicResistance").html(statsInterpolation('magicResistance',level,elite_no,slot));
+        $("#slot"+slot+"-elite"+elite_no+"respawnTime").html(statsInterpolation('respawnTime',level,elite_no,slot)+" Sec");
+        $("#slot"+slot+"-elite"+elite_no+"cost").html(statsInterpolation('cost',level,elite_no,slot));
+        //console.log(opdataFull[slot].phases[elite_no].attributesKeyFrames[0]);
+        //$("#slot"+slot+"-elite"+elite_no+"blockCnt").html(opdataFull[slot].phases[elite_no].attributesKeyFrames[0].data['blockCnt']);
+        $("#slot"+slot+"-elite"+elite_no+"blockCnt").html(statsInterpolation('blockCnt',level,elite_no,slot));
+        $("#slot"+slot+"-elite"+elite_no+"baseAttackTime").html(statsInterpolation('baseAttackTime',level,elite_no,slot)+" Sec");
     }
 
-    function statsInterpolation(key,level,elite_no){
+    function statsInterpolation(key,level,elite_no,slot){
         var kf = [];
-        $.each(opdataFull.phases[elite_no].attributesKeyFrames,function(j,v){
+        $.each(opdataFull[slot].phases[elite_no].attributesKeyFrames,function(j,v){
             kf[j] = v;
         });
         var pol = everpolate.linear([level],[kf[0].level,kf[1].level],[kf[0].data[key],kf[1].data[key]]);
