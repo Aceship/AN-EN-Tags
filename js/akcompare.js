@@ -502,7 +502,7 @@
     }
 
     function getEliteHTML(i, opdataFull, slot){
-        var container = $("<div class='tab-pane container "+(i!=0 ? 'fade' : 'active')+"' id='slot"+slot+"-elite_"+i+"_tab' style='padding:unset;'></div>");
+        var container = $("<div class='tab-pane container "+(i!=0 ? '' : 'active')+"' id='slot"+slot+"-elite_"+i+"_tab' style='padding:unset;'></div>");
 
         var stats = $("<div class='small-container ak-shadow clickthrough'>"
                         +   "<p class='large-text'>Base</p>"
