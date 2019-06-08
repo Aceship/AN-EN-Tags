@@ -228,7 +228,7 @@
                     }
                 }
             }
-            for (var i = 1; i < slotnum; i++) {
+            for (var i = 0; i < slotnum; i++) {
                 $("#slot"+i+"-elite-topnav > li").each(function(){
                     $(this).children().removeClass('active');
                 });
