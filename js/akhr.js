@@ -221,8 +221,8 @@
 
 
         function showChar(el){
-            let reg = $('.reg.selected').attr("value");
-            let lang =$('.lang.selected').attr("value");
+            // let reg = $('.reg[value='+reg+']').attr("value");
+            // let lang =$('.lang[value='+lang+']').attr("value");
             let all_chars = JsonDATA[1];
             let all_tags = JsonDATA[3];
             let all_types = JsonDATA[4];
@@ -282,7 +282,7 @@
                         (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button>\n")
                     }
                 });
-                
+                console.log(reg)
                 $("#tbody-recommend").append(
                     "<tr class=\"tr-chartag \"><td>#</td><td>" +
                     "<button type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small ak-rare-" + colors[char.level] +
