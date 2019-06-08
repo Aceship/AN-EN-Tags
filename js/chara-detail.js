@@ -1018,23 +1018,24 @@
                                 }else
                                 webTL.push(`<tr><td>${title}</td><td>${content}</td></tr>`)
                             }else{
-                                // console.log(info.split("，"))
+                                console.log(info.split("，"))
                                 if(titlebefore =="Originium Infection"&& db.charastoryTL[opdataFull.id] && db.charastoryTL[opdataFull.id]["originiumInfection"]){
                                     content = db.charastoryTL[opdataFull.id]["originiumInfection"]
                                     titlebefore=""
                                     webTL.push(`<tr><td colspan=2>${content}</td> </tr>`)
-                                }else if(titlebefore =="Originium Infection"){
+                                }else {
                                     var datasplit = info.split("，")
                                     var content = []
                                     datasplit.forEach(originiumdesc => {
                                         content.push(db.storytextTL[originiumdesc]?db.storytextTL[originiumdesc]:originiumdesc)
                                     });
+                                    
                                     webTL.push(`<tr><td colspan=2>${content.join(", ")}</td> </tr>`)
                                 }
-                                else{
-                                    basicInfoTL.push(info)
-                                    webTL.push(`<tr><td colspan=2>${info}</td> </tr>`)
-                                }
+                                // else{
+                                //     basicInfoTL.push(info)
+                                //     webTL.push(`<tr><td colspan=2>${info}</td> </tr>`)
+                                // }
                             }
                         });
                         textTL.push(`<div class="col-12 col-sm-6 top-buffer">
@@ -1074,8 +1075,10 @@
                     var currstory 
                     // console.log(storySection.storyTitle)
                     // console.log(db.charastoryTL[opdataFull.id])
-                    if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id][storySection.storyTitle]) currStory = db.charastoryTL[opdataFull.id][storySection.storyTitle].split("\n").join("</br>")
-                    else currStory = (storySection.stories[0].storyText.replace(/■/g,"■ ")).split("\n").join("</br>")
+                    if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id][storySection.storyTitle]) 
+                        currStory = db.charastoryTL[opdataFull.id][storySection.storyTitle].split("\n").join("</br>")
+                    else 
+                        currStory = (storySection.stories[0].storyText.replace(/■/g,"■ ")).split("\n").join("</br>")
                     // console.log(currstory)
                     textTL.push(`
                     <div class="col-12 top-buffer">
