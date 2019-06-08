@@ -10,7 +10,7 @@
     <link rel='stylesheet' href='css/bootstrap.min.css'>
     <link rel='stylesheet' href='css/ak.css'>
     <link rel='stylesheet' href='css/akMaterial.css'>
-    <link rel='stylesheet' href='css/akchardetail.css'>
+    <link rel='stylesheet' href='css/akcharacompare.css'>
     <link href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous'>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
     <script src='js/jquery-3.4.0.min.js'></script>
@@ -43,8 +43,49 @@
             </button>
     </nav>
     <div style='padding-bottom:40px;'></div>
-    <div class='col-md-12 col-sm-12 ' style='margin:auto;max-width:1000px;padding:0' >
-        <div class='row'>
+    <div class="row">
+        <div class="slotscontainer" id="slotscontainer">
+            <div class="charaSlot-container container" id="charaSlot0">
+                <input readonly type="text" name="slot0-opID" id="slot0-opID" style="display: none;">
+                <div class="row" style="padding:0px">
+                    <input style="margin-left: 10px;margin-top:5px" type="text" autocomplete="off" class="form-control col-8 opname" name="slot0-opname" id="slot0-opname" charaslot="0" onkeyup="populateOperators(this,0)" placeholder="Type in operator name . .">
+                    <div class="btn btn-sm ak-btn ak-rare-bg browse-btn" onclick='populateOperators("Browse",0)' type="button">Browse</div>
+                </div>
+                <div style="position: relative;"><ul class="ak-c-black ak-elite-browse operatorsResult" id="slot0-operatorsResult" charaslot="0" style="display:none; position: absolute; z-index: 10; list-style-type: none; padding: 5px;color:#222;min-width: 900px;"><li style="cursor: pointer"></li></ul></div>
+                <div class="col-12 op-statcard ak-c-black ak-rare-bg" style=" margin-top: 10px; margin-bottom: 10px; border-radius: 3px;padding: 0px; min-height: 350px;">
+                    <div class="row">
+                        <div class="col-6 col-sm-6 " style="padding:13px 20px;">
+                            <div style="position: relative;display: block; margin: 0 auto; width: 150px;z-index: 0;min-height:280px;margin:auto;background: #55555511">
+                                <div class="ak-shadow" style="display:flex;align-items:flex-end;;min-height:280px">
+                                    <img style ="position:relative;z-index:1;" src="img/chara/empty.png" width="150" id="slot0-opImage" charaslot="0">
+                                    <img  style ="position:absolute;left: 0px; top: 0px;z-index:0" src="" width="150" id="slot0-opHeader" charaslot="0">
+                                    <img  style ="position:absolute;left: 0px; bottom: 0px;z-index:0" src="" width="150" id="slot0-opBg" charaslot="0">
+                                    <img  style ="position:absolute;left: 0px; bottom: 40px;z-index:2" src="" width="150" id="slot0-opGlow" charaslot="0">
+                                    <img  style ="position:absolute;left: -2px; bottom:-5px;z-index:3" src="" width="152" id="slot0-opBanner" charaslot="0">
+                                    <div style="position: absolute;z-index:5;bottom:0px;right:2px" id="slot0-detail" charaslot="0"></div>
+                                    <p id="slot0-op-rarity" class="op-rarity" charaslot="0"></p>
+                                </div> 
+                                <img class="ak-shadow-small" style="display: block; z-index:3;position: absolute; left: 4px; top: 4px; margin: 0 auto; width: 35px;" src="" id="slot0-opClassImage" charaslot="0">
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="col-6 col-sm-6" style="padding: 5px;">
+                            <b><p id="slot0-op-nametl" class='ak-font-novecento' charaslot="0" style='font-size: 1.6em;margin-bottom:0px;'></p></b>
+                            <p id="slot0-op-name" charaslot="0"></p>
+                            <div id="slot0-op-tags" charaslot="0"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 op-statcard ak-c-black ak-rare-bg" style=" margin-top: 10px; margin-bottom: 10px; border-radius: 3px;padding: 0px; min-height: 350px;position: relative;">
+                    <ul class="nav nav-pills" id="slot0-elite-topnav" style="position: absolute; top: -30px;">
+                        
+                    </ul>
+                    <div class='tab-content' id="slot0-tabs-opData">
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row" >

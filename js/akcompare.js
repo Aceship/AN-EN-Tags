@@ -72,6 +72,7 @@
 
     var lang;
     var reg;
+    var slotnum;
     var selectedOP;
     var lefthand;
     var opdataFull = {};
@@ -100,21 +101,99 @@
         }
         $('.reg[value='+reg+']').addClass('selected');
         $('.lang[value='+lang+']').addClass('selected');
+
+        if(typeof localStorage.slotNum === "undefined" || localStorage.slotNum == ""){
+            console.log("slot num undefined");
+            localStorage.setItem("slotNum", '2');
+            slotnum = 3;
+        } else {
+            slotnum = localStorage.slotNum;
+        }
+        populateSlots();
+        var selectedOpnames = {};
+        if(typeof localStorage.selectedOpnames === "undefined" || localStorage.selectedOpnames == ""){
+            localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+        } else {
+            selectedOpnames = JSON.parse(localStorage.selectedOpnames);
+            $.each(selectedOpnames,function(k,v){
+                selectOperator(v,k);
+            });
+        }
+
+        $('.operatorsResult').click(function(event){
+            event.stopPropagation();
+        });
+        $('.opname').click(function(event){
+            event.stopPropagation();
+        });
+
+        $('.dropdown-trigger').dropdown();
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('.opname').bind("enterKey",function(e){
+            // console.log()
+            let slot = $(this).attr('charaslot');
+            populateOperators($(this).val(),slot,true)
+        });
+        $('.opname').keyup(function(e){
+            if(e.keyCode == 13)
+            {
+                $(this).trigger("enterKey");
+            }
+        });
     });
 
     function clickBtnClear(){
     }
 
-    function populateOperators(el,isenter = false){
+    function populateSlots(){
+        for (var i = 1; i < slotnum; i++) {
+            var html = $(`<div class='charaSlot-container container' id='charaSlot${i}'>
+                <div class='row' style='padding:0px'>
+                    <input style='margin-left: 10px;margin-top:5px' type='text' autocomplete='off' class='form-control col-8' name='slot${i}-opname' id='slot${i}-opname' onkeyup='populateOperators(this,${i})' placeholder='Type in operator name . .'>
+                    <div class='btn btn-sm ak-btn ak-rare-bg browse-btn' onclick="populateOperators('Browse',${i})" type='button'>Browse</div>
+                </div>
+                <div style='position: relative;'><ul class='ak-c-black ak-elite-browse' id='slot${i}-operatorsResult' style='display:none; position: absolute; z-index: 10; list-style-type: none; padding: 5px;color:#222'><li style='cursor: pointer'></li></ul></div>
+                <div class='col-12 op-statcard ak-c-black ak-rare-bg' style=' margin-top: 10px; margin-bottom: 10px; border-radius: 3px;padding: 0px;min-height:350px;'>
+                    <div class='row'>
+                        <div class='col-6 col-sm-6 ' style='padding:13px 20px;'>
+                            <div style='position: relative;display: block; margin: 0 auto; width: 150px;z-index: 0;min-height:280px;margin:auto;background: #55555511'>
+                                <div class='ak-shadow' style='display:flex;align-items:flex-end;;min-height:280px'>
+                                    <img style ='position:relative;z-index:1;' src='img/chara/empty.png' width='150' id='slot${i}-opImage'>
+                                    <img  style ='position:absolute;left: 0px; top: 0px;z-index:0' src='' width='150' id='slot${i}-opHeader'>
+                                    <img  style ='position:absolute;left: 0px; bottom: 0px;z-index:0' src='' width='150' id='slot${i}-opBg'>
+                                    <img  style ='position:absolute;left: 0px; bottom: 40px;z-index:2' src='' width='150' id='slot${i}-opGlow'>
+                                    <img  style ='position:absolute;left: -2px; bottom:-5px;z-index:3' src='' width='152' id='slot${i}-opBanner'>
+                                    <div style='position: absolute;z-index:5;bottom:0px;right:2px' id='slot${i}-detail'></div>
+                                    <p id='slot${i}-op-rarity' class='op-rarity'></p>
+                                </div> 
+                                <img class='ak-shadow-small' style='display: block; z-index:3;position: absolute; left: 4px; top: 4px; margin: 0 auto; width: 35px;' src='' id='slot${i}-opClassImage'>
+                                
+                            </div>
+                            
+                        </div>
+                        <div class='col-6 col-sm-6' style='padding: 5px;'>
+                            <b><p id='slot${i}-op-nametl' class='ak-font-novecento' style='font-size: 1.6em;margin-bottom:0px;'></p></b>
+                            <p id='slot${i}-op-name'></p>
+                            <div id='slot${i}-op-tags'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>`);
+            $('#slotscontainer').append(html);
+        }
+    }
+
+    function populateOperators(el,slot,isenter = false){
         // console.log(el)
         let inputs
         if(isenter)
             inputs = el
         else
             inputs = el.value
-        if(($('#operatorsResult').css("display") == "block") && el=="Browse"){
+        if(($('#slot'+slot+'-operatorsResult').css("display") == "block") && el=="Browse"){
             // console.log($('#operatorsResult').css("display") == "none" )
-            $('#operatorsResult').hide();
+            $('#slot'+slot+'-operatorsResult').hide();
             return;
         }
         if(el.value != ""||el=="Browse"||isenter&&el){
@@ -124,7 +203,9 @@
                 var found = false;
                 if(el=="Browse"){
                     found=true;
+                    $('#slot'+slot+'-operatorsResult').css('min-width','900px');
                 }else{
+                    $('#slot'+slot+'-operatorsResult').css('min-width','364px');
                     for (var i = 0; i < languages.length; i++) {
                         var charname = eval('char.name_'+languages[i]).toUpperCase();
                         var unreadable = query(db.unreadNameTL,"name",char.name_en)
@@ -156,46 +237,45 @@
             
             if(result.length > 0){
                 if(isenter){
-                    $('#operatorsResult').hide();
+                    $('#slot'+slot+'-operatorsResult').hide();
                     selectOperator(result[0].name_cn)
                     return
                 }
-                $('#operatorsResult').html("");
-                $('#operatorsResult').show();
+                $('#slot'+slot+'-operatorsResult').html("");
+                $('#slot'+slot+'-operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
                     // console.log(image)
                     if(el=="Browse"){
                         image = `<img style="height:70px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
-                        $("#operatorsResult").css("max-width","100vw");
-                        $("#operatorsResult").append(
-                                "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
+                        $("#slot"+slot+"-operatorsResult").css("max-width","100vw");
+                        $("#slot"+slot+"-operatorsResult").append(
+                                "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:85px;min-width:85px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"',"+slot+")\">"
                                 +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
                                 +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+`${result[i].name_readable?`[${result[i].name_readable}]`:""}`+result[i].nameTL+"</div>"
                                 +"</li>");
                     }else{
-                        $("#operatorsResult").css("max-width","290px");
-                        $("#operatorsResult").append(`<li class=" ak-shadow-small ak-rare-${result[i].rarity}"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="selectOperator('${result[i].name_cn}')">${image} ${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL} (${result[i].name})</li>`);
+                        $("#slot"+slot+"-operatorsResult").css("max-width","290px");
+                        $("#slot"+slot+"-operatorsResult").append(`<li class=" ak-shadow-small ak-rare-${result[i].rarity}"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="selectOperator('`+result[i].name_cn+`',${slot})">${image} ${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL} (${result[i].name})</li>`);
                     }
                 }
             }
             // console.log( $("#operatorsResult")  )
             // $('#operatorsResult').show();
         } else {
-            $('#operatorsResult').html("");
-            $('#operatorsResult').hide();
+            $('#slot'+slot+'-operatorsResult').html("");
+            $('#slot'+slot+'-operatorsResult').hide();
         }
     }
 
-    function selectOperator(opname){
+    function selectOperator(opname,slot){
         
         if(opname != ""){
-            $("#chara-detail-container").show();
             console.log("SELECT OPERATOR");
             console.log(opname);   
-            $("#opname").val("");
-            $('#operatorsResult').html("");
-            $('#operatorsResult').hide();
+            $("#slot"+slot+"-opname").val("");
+            $('#slot'+slot+'-operatorsResult').html("");
+            $('#slot'+slot+'-operatorsResult').hide();
             var opdata = query(db.chars2,"name_cn",opname);
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
@@ -207,18 +287,68 @@
             // });
             // console.log(charalist.join("\n"))
             //
-            var opKey =""
+            var opKey ="";
+            console.log(opdata2);
             $.each(opdata2,function(key,v){
                 v['id'] = key;
                 // console.log(v);
                 opdataFull = v;
                 opKey = key;
-                localStorage.selectedOPDetails = key;
+                $("#slot"+slot+"-opImage").attr('src','img/portraits/'+key+'_1.png');
+                $("#slot"+slot+"-opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
+                $("#slot"+slot+"-opBg").attr('src','img/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
+                $("#slot"+slot+"-opID").val(key);
+
+                let selectedOPDetailsObj = {};
+                let selectedOpnames = {};
+                if(typeof localStorage.selectedOPDetailsObj === "undefined" || localStorage.selectedOPDetailsObj == "" || localStorage.selectedOpnames == ""){
+                    localStorage.setItem("selectedOPDetailsObj", JSON.stringify(selectedOPDetailsObj));
+                    localStorage.setItem("selectedOpnames", JSON.stringify(selectedOpnames));
+                } else {
+                    try {
+                        selectedOPDetailsObj = JSON.parse(localStorage.selectedOPDetailsObj)
+                    } catch (e) {
+                        localStorage.selectedOPDetailsObj = JSON.stringify(selectedOPDetailsObj);
+                    }
+                    selectedOPDetailsObj = JSON.parse(localStorage.selectedOPDetailsObj)
+
+                    try {
+                        selectedOpnames = JSON.parse(localStorage.selectedOpnames)
+                    } catch (e) {
+                        localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+                    }
+                    selectedOpnames = JSON.parse(localStorage.selectedOpnames)
+                }
+                selectedOPDetailsObj[slot] = key;
+                localStorage.selectedOPDetailsObj = JSON.stringify(selectedOPDetailsObj);
+                selectedOpnames[slot] = opname;
+                localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+                console.log(localStorage.selectedOPDetailsObj);
+                console.log(localStorage.selectedOpnames);
                 return false
             });
-            
-            var curpath = window.location.pathname.split("?");
-            history.pushState(null, '', curpath+'?opname='+opdataFull.appellation.replace(/ /g,"_")); 
+            $("#slot"+slot+"-opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
+            console.log(lang);
+            $("#slot"+slot+"-op-nametl").html(eval('opdata.name_'+lang));
+            $("#slot"+slot+"-op-name").html(eval('opdata.name_'+reg));
+            $("#slot"+slot+"-detail").html("<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow ak-shadow-small my-1\" style=\"background:#444444DD\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+opdata.name_en.replace(/ /g,"_")   +"\" \">Detail</button>")
+            var rarity = "";
+            for (var i = 0; i < opdata.level; i++) {
+                rarity = rarity + "<i class='fa fa-star'></i>";
+            }
+            $("#slot"+slot+"-op-rarity").html(rarity);
+            $("#slot"+slot+"-op-rarity").addClass('op-rarity-'+opdata.level);
+            var tags_html = [];
+            $.each(opdata.tags,function(_,v){
+                var tag = query(db.tags,"tag_cn",v);
+                if(tag){
+                    var tagReg = eval('tag.tag_'+reg);
+                    var tagTL = eval('tag.tag_'+lang);
+                    tags_html.push("<li style=\"list-style-type:none; padding-bottom: 10px;\"><button readonly type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
+                            (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
+                }
+            });
+            $("#slot"+slot+"-op-tags").html(tags_html.join(""));
             
 
             // use opdata to get the operator data based on tl-akhr.json
@@ -228,8 +358,8 @@
         }
     }
 
-    function getEliteHTML(i, opdataFull){
-        var container = $("<div class='tab-pane container "+(i!=0 ? 'fade' : 'active')+"' id='elite_"+i+"_tab'></div>");
+    function getEliteHTML(i, opdataFull, slot){
+        var container = $("<div class='tab-pane container "+(i!=0 ? 'fade' : 'active')+"' id='slot"+slot+"-elite_"+i+"_tab'></div>");
 
         var stats = $("<div class='small-container ak-shadow clickthrough'>"
                         +   "<p class='large-text'>Base</p>"
@@ -242,113 +372,53 @@
                         +           "<div class='back-centre'></div>"
                         +       "</div>"
                         +   "</div>"
-                        +"<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#elite"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
+                        +"<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#slot"+slot+"-elite"+i+"StatsCollapsible'></button>"
                         +"</div>");
 
-        var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
-        var eliteCost = GetEliteCost(i,opdataFull)
-        var materialist = []
-        
-        if(eliteCost){
-            eliteCost.forEach(materials => {
-                materialist.push(CreateMaterial(materials.id,materials.count))
-            });
-            // console.log(materialist)
-        }
-        var materialHtml =''
-        if(materialist.length>0){
-            materialHtml=`
-            <div style="text-align:center;background:#222">Elite Requirements</div>
-            `+materialist.join("")
-        }
+        var statsCollapsible = $("<div id='slot"+slot+"-elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
+
         var keyframes = [];
         $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
             keyframes[j] = v;
         });
         console.log(keyframes);
-        var statsLevelSlider = $("<span style='font-size:1.2em;vertical-align:super;padding-left:10px;'>Level: </span><input type='range' value='1' min='1' max='"+keyframes[1].level+"' name='levelStats' id='elite"+i+"LevelSlider' oninput='changeEliteLevel(this,"+i+")' style='margin-top:20px;width:60%;' class='skillLevelInput'></input>");
-        var statsLevelDisplay = $("<div class='form-group' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite"+i+"LevelDisplay' onchange='changeEliteLevel(this,"+i+")' style='line-height:1.1' type='number' value='1' min='1' max='"+keyframes[1].level+"'></div>")
-        var statsTable = $("<div id='elite"+i+"Stats'>"
-                            +   "<table id='elite"+i+"StatsTable'>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>MaxHP :</td><td class='stats-r' id='elite"+i+"maxHp'></td>"
-                            +           "<td class='stats-l'>Def :</td><td class='stats-r' id='elite"+i+"def'></td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Atk :</td><td class='stats-r' id='elite"+i+"atk'></td>"
-                            +           "<td class='stats-l'>MRes :</td><td class='stats-r' id='elite"+i+"magicResistance'></td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td colspan=2 rowspan=4>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
-                            +           "<td class='stats-l'>Redeploy :</td><td class='stats-r' id='elite"+i+"respawnTime'> Sec</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Cost :</td><td class='stats-r' id='elite"+i+"cost'></td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Block :</td><td class='stats-r' id='elite"+i+"blockCnt'></td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>AtkTime :</td><td class='stats-r' id='elite"+i+"baseAttackTime'> Sec</td>"
-                            +       "</tr>"
-                            +       "<tr><td colspan=4 style='padding:10px 0px;'><td></tr>"
-                            +       "<tr><td colspan=4>"
-                            +       materialHtml
-                            +       "</td></tr>"
-                            +   "</table></div>");
+        //var statsLevelSlider = $("<span style='font-size:1.2em;vertical-align:super;padding-left:10px;'>Level: </span><input type='range' value='1' min='1' max='"+keyframes[1].level+"' name='levelStats' id='slot"+slot+"-elite"+i+"LevelSlider' oninput='changeEliteLevel(this,"+i+","+slot+")' style='margin-top:20px;width:60%;' class='skillLevelInput'></input>");
+        //var statsLevelDisplay = $("<div class='form-group' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite"+i+"LevelDisplay' onchange='changeEliteLevel(this,"+i+")' style='line-height:1.1' type='number' value='1' min='1' max='"+keyframes[1].level+"'></div>")
+        var statsLevelAll = $(`
+        <div style='text-align:center'>
+        <span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>
+        <input type='range' value='1' min='1' max='${keyframes[1].level}' name='levelStats' id='elite${i}LevelSlider' oninput='changeEliteLevel(this,${i},${keyframes[1].level},${slot})' style='margin-top:20px;width:60%;' class='statlevelInput ${lefthand=="true"?"lefthand-statlevelInput":"righthand-statlevelInput"}'></input>
+        <div class='form-group stat-input ${lefthand=="true"?"lefthand-stat-input":"righthand-stat-input"}' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='slot${slot}-elite${i}LevelDisplay' onchange='changeEliteLevel(this,${i},${keyframes[1].level},${slot})' style='line-height:1.1' type='number' value='1' min='1' max='${keyframes[1].level}'></div>
+        </div>
+        `)
 
-        var navPills = $("<ul class='nav nav-pills'></ul>");
-        var navTabs = $("<div class='tab-content'>");
+        var statsTable = $(`
+        <div id='slot${slot}-elite${i}Stats' class='${lefthand=="true"?"left-hand":"right-hand"} statlevelcontainer'>
+            <table id='slot${slot}-elite${i}StatsTable'>
+                <tr><td>
 
-        $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
-            var keyframe = opdataFull.phases[i].attributesKeyFrames[j];
-            // console.log(keyframe)
-            var navItems = $("<li class='nav-item'>"
-                            +   "<a class='btn tabbing-btns horiz nav-link "+(j!=0 ? '' : 'active')+"' data-toggle='pill' href='#elite"+i+"Stats"+j+"'>lv "+keyframe.level+"</a>"
-                            +"</li>");
-            if(keyframe.data["respawnTime"] >= 100){
-                var deploy = "Slow";
-            } else if(keyframe.data["respawnTime"] < 100 && keyframe.data["respawnTime"] >= 30){
-                var deploy = "Medium";
-            } else {
-                var deploy = "Fast";
-            }
-            var tabStats = $("<div class='tab-pane container "+(j!=0 ? 'fade' : 'active')+"' id='elite"+i+"Stats"+j+"'>"
-                            +   "<table id='elite"+i+"Stats"+j+"Table'>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>MaxHP :</td><td class='stats-r'>"+keyframe.data["maxHp"]+"</td>"
-                            +           "<td class='stats-l'>Def :</td><td class='stats-r'>"+keyframe.data["def"]+"</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Atk :</td><td class='stats-r'>"+keyframe.data["atk"]+"</td>"
-                            +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td colspan=2 rowspan=4>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
-                            +           "<td class='stats-l'>Redeploy :</td><td class='stats-r'>"+keyframe.data["respawnTime"]+" Sec</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Cost :</td><td class='stats-r'>"+keyframe.data["cost"]+"</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Block :</td><td class='stats-r'>"+keyframe.data["blockCnt"]+"</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>AtkTime :</td><td class='stats-r'>"+keyframe.data["baseAttackTime"]+" Sec</td>"
-                            +       "</tr>"
-                            // +       "<tr></tr>"
-                            +       "<tr><td colspan=4>"
-                            +       materialHtml
-                            +       "</td></tr>"
-                            +   "</table></div>");
-            navPills.append(navItems);
-            navTabs.append(tabStats);
-        });
-        statsCollapsible.append(statsLevelSlider);
-        statsCollapsible.append(statsLevelDisplay);
+                    <div class='stats'><div class='stats-l'>Maximum HP</div><div class='stats-r' id='slot${slot}-elite${i}maxHp'></div></div>
+                    <div class='stats'><div class='stats-l'>Redeploy Time</div><div class='stats-r' id='slot${slot}-elite${i}respawnTime'></div></div>
+                    
+                    <div class='stats'><div class='stats-l'>Attack Power</div><div class='stats-r' id='slot${slot}-elite${i}atk'></div></div>
+                    <div class='stats'><div class='stats-l'>Cost</div><div class='stats-r' id='slot${slot}-elite${i}cost'></div></div>
+                    
+                    <div class='stats'><div class='stats-l'>Defense</div><div class='stats-r' id='slot${slot}-elite${i}def'></div></div>
+                    <div class='stats'><div class='stats-l'>Block</div><div class='stats-r' id='slot${slot}-elite${i}blockCnt'></div></div>
+
+                    <div class='stats'><div class='stats-l'>Magic Resistance</div><div class='stats-r' id='slot${slot}-elite${i}magicResistance'></div></div>
+                    <div class='stats'><div class='stats-l'>Attack Time</div><div class='stats-r' id='slot${slot}-elite${i}baseAttackTime'></div></div>
+                </tr><td>
+                </table>
+                ${rangeMaker(opdataFull.phases[i].rangeId)}
+                <div style="margin:12px">
+                ${materialHtml}
+                </div>
+                </div>
+        `);
+        
+        statsCollapsible.append(statsLevelAll);
         statsCollapsible.append(statsTable);
-        //statsCollapsible.append(navPills);
-        //statsCollapsible.append(navTabs);
 
         if(i > 0){
 

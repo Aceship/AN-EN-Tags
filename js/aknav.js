@@ -29,6 +29,9 @@ $(document).ready(function(){
         },{
             href:"akriic.html",
             name:"Infrastructure Skill"
+        },{
+            href:"akhrcompare.html",
+            name:"Comparing"
         }]
     })
     dropdown.push({name:"Elite Materials",content:"akhrelite.html"})

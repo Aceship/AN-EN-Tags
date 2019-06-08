@@ -778,94 +778,10 @@
                 ${materialHtml}
                 </div>
                 </div>
-        `)
-
-        // var statsTable = $(`<div id='elite${i}Stats' class='${lefthand=="true"?"left-hand":""} statlevelcontainer'>`
-        //                     +   "<table id='elite"+i+"StatsTable'>"
-        //                     +       "<tr>"
-        //                     +           "<td><div class='stats-l'>Maximum HP</div><div class='stats-r' id='elite"+i+"maxHp'></div></td>"
-        //                     +           "<td class='stats-l'>Defense</td><td class='stats-r' id='elite"+i+"def'></td>"
-        //                     +       "</tr>"
-        //                     +       "<tr>"
-        //                     +           "<td class='stats-l'>Attack Power</td><td class='stats-r' id='elite"+i+"atk'></td>"
-        //                     +           "<td class='stats-l'>Magic Resistance</td><td class='stats-r' id='elite"+i+"magicResistance'></td>"
-        //                     +       "</tr>"
-        //                     +       "<tr>"
-                            
-        //                     +           "<td class='stats-l'>Redeploy Time</td><td class='stats-r' id='elite"+i+"respawnTime'> Sec</td>"
-        //                     +       "</tr>"
-        //                     +       "<tr>"
-        //                     +           "<td class='stats-l'>Cost</td><td class='stats-r' id='elite"+i+"cost'></td>"
-        //                     +       "</tr>"
-        //                     +       "<tr>"
-        //                     +           "<td class='stats-l'>Block</td><td class='stats-r' id='elite"+i+"blockCnt'></td>"
-        //                     +       "</tr>"
-        //                     +       "<tr>"
-        //                     +           "<td class='stats-l'>Attack Time    </td><td class='stats-r' id='elite"+i+"baseAttackTime'> Sec</td>"
-        //                     +       "</tr>"
-        //                     +       "<tr><td colspan=4 style='padding:10px 0px;'><td></tr>"
-        //                     +       "<tr><td colspan=4>"
-        //                     +       materialHtml
-        //                     +       "</td></tr>"
-        //                     +   "</table>"  
-        //                     +           "<td colspan=2 rowspan=4>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td></div>");
-
-        var navPills = $("<ul class='nav nav-pills'></ul>");
-        var navTabs = $("<div class='tab-content'>");
-
-        $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
-            var keyframe = opdataFull.phases[i].attributesKeyFrames[j];
-            // console.log(keyframe)
-            var navItems = $("<li class='nav-item'>"
-                            +   "<a class='btn tabbing-btns horiz nav-link "+(j!=0 ? '' : 'active')+"' data-toggle='pill' href='#elite"+i+"Stats"+j+"'>lv "+keyframe.level+"</a>"
-                            +"</li>");
-            if(keyframe.data["respawnTime"] >= 100){
-                var deploy = "Slow";
-            } else if(keyframe.data["respawnTime"] < 100 && keyframe.data["respawnTime"] >= 30){
-                var deploy = "Medium";
-            } else {
-                var deploy = "Fast";
-            }
-            var tabStats = $("<div class='tab-pane container "+(j!=0 ? 'fade' : 'active')+"' id='elite"+i+"Stats"+j+"'>"
-                            +   "<table id='elite"+i+"Stats"+j+"Table'>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>MaxHP :</td><td class='stats-r'>"+keyframe.data["maxHp"]+"</td>"
-                            +           "<td class='stats-l'>Def :</td><td class='stats-r'>"+keyframe.data["def"]+"</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Atk :</td><td class='stats-r'>"+keyframe.data["atk"]+"</td>"
-                            +           "<td class='stats-l'>MRes :</td><td class='stats-r'>"+keyframe.data["magicResistance"]+"</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td colspan=2 rowspan=4>"+rangeMaker(opdataFull.phases[i].rangeId)+"</td>"
-                            +           "<td class='stats-l'>Redeploy :</td><td class='stats-r'>"+keyframe.data["respawnTime"]+" Sec</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Cost :</td><td class='stats-r'>"+keyframe.data["cost"]+"</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>Block :</td><td class='stats-r'>"+keyframe.data["blockCnt"]+"</td>"
-                            +       "</tr>"
-                            +       "<tr>"
-                            +           "<td class='stats-l'>AtkTime :</td><td class='stats-r'>"+keyframe.data["baseAttackTime"]+" Sec</td>"
-                            +       "</tr>"
-                            // +       "<tr></tr>"
-                            +       "<tr><td colspan=4>"
-                            +       materialHtml
-                            +       "</td></tr>"
-                            +   "</table></div>");
-            navPills.append(navItems);
-            navTabs.append(tabStats);
-        });
-        // statsCollapsible.append(``);
+        `);
+        
         statsCollapsible.append(statsLevelAll);
-        // statsCollapsible.append(statsLevelHeader);
-        // statsCollapsible.append(statsLevelSlider);
-        // statsCollapsible.append(statsLevelDisplay);
-        // statsCollapsible.append(`</div>`);
         statsCollapsible.append(statsTable);
-        //statsCollapsible.append(navPills);
-        //statsCollapsible.append(navTabs);
 
         if(i > 0){
 
