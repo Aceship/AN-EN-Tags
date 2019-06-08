@@ -456,6 +456,7 @@
                 rarity = rarity + "<i class='fa fa-star'></i>";
             }
             $("#slot"+slot+"-op-rarity").html(rarity);
+            $("#slot"+slot+"-op-rarity").attr('class','op-rarity');
             $("#slot"+slot+"-op-rarity").addClass('op-rarity-'+opdata.level);
             var tags_html = [];
             $.each(opdata.tags,function(_,v){
