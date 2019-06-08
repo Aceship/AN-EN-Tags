@@ -1327,19 +1327,29 @@
         $("#elite"+elite_no+"def").html(statsInterpolation('def',level,elite_no));
         $("#elite"+elite_no+"atk").html(statsInterpolation('atk',level,elite_no));
         $("#elite"+elite_no+"magicResistance").html(statsInterpolation('magicResistance',level,elite_no));
-        $("#elite"+elite_no+"respawnTime").html(statsInterpolation('respawnTime',level,elite_no)+" Sec");
+        $("#elite"+elite_no+"respawnTime").html(statsInterpolation('respawnTime',level,elite_no)+`<div style='display:inline;font-size:10px'> Sec</div>`);
         $("#elite"+elite_no+"cost").html(statsInterpolation('cost',level,elite_no));
         $("#elite"+elite_no+"blockCnt").html(statsInterpolation('blockCnt',level,elite_no));
-        $("#elite"+elite_no+"baseAttackTime").html(statsInterpolation('baseAttackTime',level,elite_no)+" Sec");
+        $("#elite"+elite_no+"baseAttackTime").html(statsInterpolation('baseAttackTime',level,elite_no,false)+`<div style='display:inline;font-size:10px'> Sec</div>`);
     }
 
-    function statsInterpolation(key,level,elite_no){
+    function statsInterpolation(key,level,elite_no,isround=true){
         var kf = [];
         $.each(opdataFull.phases[elite_no].attributesKeyFrames,function(j,v){
             kf[j] = v;
         });
-        var pol = everpolate.linear([level],[kf[0].level,kf[1].level],[kf[0].data[key],kf[1].data[key]]);
-        return Math.round(pol);
+        console.log([kf[0].level,kf[1].level])
+        console.log([kf[0].data[key],kf[1].data[key]])
+        if(kf[0].data[key] == kf[1].data[key]){
+        return kf[0].data[key]
+        }else {
+            var pol = everpolate.linear([level],[kf[0].level,kf[1].level],[kf[0].data[key],kf[1].data[key]]);
+            if(isround)
+            return Math.round(pol);
+                else
+            return parseFloat(Math.round(pol*100))/100;
+        }
+        
     }
 
     function changeSkillLevel(el,skill_no){
