@@ -58,6 +58,7 @@
             if(!bufflist.find(search=> search == splitted[0])){
                 bufflist.push(splitted[0])
             }
+            // console.log(splitted)
         });
         // console.log(bufflist)
         // array.forEach(element => {
@@ -89,7 +90,7 @@
                 if(element2.buffData){
                     element2.buffData.forEach(element3 => {
                         if(element3.buffId){
-                            console.log(element3.buffId)
+                            // console.log(element3.buffId)
                             charaBuff[element].push({"buffId":element3.buffId,"cond":element3.cond})
                         }
                     });
@@ -201,16 +202,6 @@
             let muhRegex2 = /(\d+)(%?)/ 
             var acurrNum2 = parseInt(muhRegex2.exec(acurrNum)[1])
             var bcurrNum2 = parseInt(muhRegex2.exec(bcurrNum)[1])
-            // console.log(acurr.description)
-            // console.log(acurrNum2)
-            // console.log(acurrNum)
-            // console.log(bcurrNum)
-            // console.log(bcurr.description)
-            // console.log(bcurrNum2)
-            // console.log(a.specific < b.specific)
-            // console.log(a.specific)
-            // console.log(b.specific)
-            // console.log(acurrNum2 +" |is smaller than| "+ bcurrNum2 +" |"+ (acurrNum2 < bcurrNum2))
             return (acurrNum2 < bcurrNum2)
         })
 
@@ -227,6 +218,7 @@
             let charaRiic = db.building_chars[element.name]
             let charaRiicTL = db.riic[element.name]
             let extraInfo =""
+            let extrainfo2 = ''
             // console.log(element.name)
             
             currHtml.push(`<div class="row" style="padding:5px;margin:5px;background:#333333">
@@ -242,7 +234,7 @@
                     // console.log(element.buff[i])
                     // console.log(building_chars[element].buffChar[i] )
                     let currBuff2 = db.building_buff[element.buff[i].buffId]
-                    // console.log(currBuff2)
+                    extrainfo2 = ''
                     extraInfo = ``
                     
                     if(element.buff[i].buffId.includes("control")){
@@ -251,6 +243,26 @@
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-power" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px">Power </div>`
                     }else if(element.buff[i].buffId.includes("manu")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-manu" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
+                        let currbuff = db.building_buff[element.buff[i].buffId].description
+                        console.log([currBuff2.buffId])
+                        console.log(currbuff)
+                        console.log(`${charaRiicTL?charaRiicTL[i].desc:currBuff2.description}`)
+                        if(element.buff[i].buffId.includes("prod")){
+                            
+                        }else if (element.buff[i].buffId.includes("formula")){
+                            let muhRegex = /<@cc\.kw>(.*?)<\/>/g
+                            let muhRegex2 = /<@cc\.vup>(.*?)<\/>/g
+                            let extra = muhRegex.exec(currbuff)[1]
+                            let extra2 = muhRegex2.exec(currbuff)[1]
+                            // console.log([extra])
+                            // switch (extra) {
+                            //     case "源石": console.log(["Originium"]) ;extrainfo2=`Originium ${extra2}`;break;
+                            //     case "贵金属": console.log(["Gold Bar"]);extrainfo2=`Gold Bar ${extra2}`;break;
+                            //     case "作战记录": console.log(["EXP Card"]);extrainfo2=`EXP Card ${extra2}`;break;
+                            //     default: break;
+                            // }
+                        }
+                    
                     }else if(element.buff[i].buffId.includes("trade")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-trade" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px">Trading </div>`
                     }else if(element.buff[i].buffId.includes("workshop")){
@@ -267,10 +279,7 @@
                         if(element.buff[i].buffId.includes("meet_spd&team")){
                             let currbuff = db.building_buff[element.buff[i].buffId].description
                             // (element.buff[i].buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
-                            
-                            
                             // console.log(currbuff.indexOf("<@cc.kw>"))
-                            
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             if(currbuff.indexOf("<@cc.kw>")>0){
                                 let clue = ''
@@ -302,7 +311,11 @@
                         req = `<div class="btn btn-sm ak-disable ak-btn" style="height:25px;margin:auto;padding:1px;background:#0078BC;">Req: ${req}</div>`
                     }
                     // console.log(req)     
-                    currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto"><div style="padding:5px;background:#222">${extraInfo}  ${charaRiicTL?charaRiicTL[i].name: currBuff2.buffName} ${req}</div><div style="padding-left:20px">${charaRiicTL?charaRiicTL[i].desc:currBuff2.description}</div></div>` )
+                    currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto">
+                    <div style="padding:5px;background:#222">${extraInfo}  ${charaRiicTL?charaRiicTL[i].name: currBuff2.buffName} ${req}</div>
+                    <div style="padding-left:20px;margin:5px">
+                    ${extrainfo2==""?"":`<div style="display:inline;background:#222;padding:3px">${extrainfo2}</div><div></div>`} 
+                    ${charaRiicTL?charaRiicTL[i].desc:currBuff2.description}</div></div>` )
                 }
             // }
             currHtml.push(`</div></div> `)
