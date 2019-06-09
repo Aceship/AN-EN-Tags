@@ -849,6 +849,7 @@
         $('#info-voiceactor').html(`<div class="btn-infoleft">Voice Actor</div><div class="btn-inforight"><a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a></div>`)
         let puretext = []
         let textTL = []
+        let islong =false
         puretext.push(opdataFull.appellation)
         puretext.push("")
         if(currStory.storyTextAudio){
@@ -862,7 +863,8 @@
                         var basicInfoTL = []
                         var webTL = []
                         var titlebefore = ""
-                        // console.log(basicInfo)
+                        // if(basicInfo.length>20)islong = true;
+                        // console.log(basicInfo.length)
                         basicInfo.forEach((info,n) => {
                             var check = /(【)(.*)(】)(.*)/
                             var infoTitle = check.exec(info)
@@ -953,7 +955,7 @@
                                 // }
                             }
                         });
-                        textTL.push(`<div class="col-12 col-sm-6 top-buffer">
+                        textTL.push(`<div class="col-12 ${(islong?"":"col-sm-6")} top-buffer">
                         <table class="story-table"><th colspan=2>Basic File</th>${webTL.join("")}</table>
                         </div>`)
                         // textTL.push(basicInfoTL.join("</br>"))
@@ -979,7 +981,7 @@
                         }
                     })
                     // textTL.push(`<h2>Comprehensive test</h2>${basicInfoTL.join("</br>")}`)
-                    textTL.push(`<div class="col-12 col-sm-6 top-buffer">
+                    textTL.push(`<div class="col-12 ${(islong?"":"col-sm-6")} top-buffer">
                     <table class="story-table">
                     <th colspan=2>${db.storytextTL[storySection.storyTitle]?db.storytextTL[storySection.storyTitle]:storySection.storyTitle}</th>
                     ${webTL.join("")}</table>
@@ -1013,7 +1015,7 @@
         if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id]["credit"]) $("#opstorycredits").html(`<div class="btn-infoleft">Trust Translation</div><div class="btn-inforight">${db.charastoryTL[opdataFull.id]["credit"]}</div>`)
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
-        // console.log(puretext.join("\n"))
+        console.log(puretext.join("\n"))
     }
 
     function BirthdayText(date) {
