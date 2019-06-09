@@ -27,7 +27,10 @@
     var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){
             db["dataconst"] = data;
         });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8).then(function(){
+    var d15 = $.getJSON("json/tl-unreadablename.json",function(data){
+            db["unreadNameTL"] = data;
+        });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d15).then(function(){
         $.holdReady(false);
     });
 
@@ -147,7 +150,7 @@
 
 
 
-    function populateOperators(el,isenter){
+    function populateOperators(el,isenter=false){
         // console.log(el)
         let inputs
         if(isenter)
@@ -165,13 +168,13 @@
                 var languages = ['cn','en','jp','kr'];
                 var found = false;
                 if(el=="Browse"){
-                    
                     found=true;
                 }else{
                     for (var i = 0; i < languages.length; i++) {
                         var charname = eval('char.name_'+languages[i]).toUpperCase();
+                        var unreadable = query(db.unreadNameTL,"name",char.name_en)
                         var input = inputs.toUpperCase();
-                        var search = charname.search(input);
+                        var search = (unreadable?unreadable.name_en.toUpperCase().search(input):charname.search(input));
                         if(search != -1){
                             found = true;
                             break;
@@ -183,12 +186,13 @@
                     var name_cn = char.name_cn;
                     var name = eval('char.name_'+reg);
                     var nameTL = eval('char.name_'+lang);
+                    var unreadable = query(db.unreadNameTL,"name",char.name_en).name_en
                     var img_name = query(db.chars,"name",char.name_cn,true,true); 
                     // console.log(Object.keys(img_name))
                     var rarity = img_name[Object.keys(img_name)] ? img_name[Object.keys(img_name)].rarity + 1 : 0;
                     // console.log(rarity);
                     if(rarity!=0)
-                    result.push({'name':name,'name_cn':name_cn,'nameTL':nameTL,'img_name':Object.keys(img_name),rarity});
+                    result.push({'name':name,'name_cn':name_cn,'name_readable':unreadable,'nameTL':nameTL,'img_name':Object.keys(img_name),rarity});
                 }
             });
             // console.log(result)
@@ -210,11 +214,11 @@
                         $("#operatorsResult").append(
                             "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
                             +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
-                            +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+result[i].nameTL+"</div>"
+                            +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+`${result[i].name_readable?`[${result[i].name_readable}]`:""}`+result[i].nameTL+"</div>"
                             +"</li>");
                     }else{
                         $("#operatorsResult").css("max-width","290px");
-                        $("#operatorsResult").append("<li class=\" ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"width:100%;cursor: pointer;margin-bottom:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"+image+result[i].nameTL+" ("+result[i].name+")"+"</li>");
+                        $("#operatorsResult").append(`<li class=" ak-shadow-small ak-rare-${result[i].rarity}"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="selectOperator('${result[i].name_cn}')">${image} ${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL} (${result[i].name})</li>`);
                     }
                 }
             }

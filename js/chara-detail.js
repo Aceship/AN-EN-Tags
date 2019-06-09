@@ -265,7 +265,6 @@
                     var name_cn = char.name_cn;
                     var name = eval('char.name_'+reg);
                     var unreadable = query(db.unreadNameTL,"name",char.name_en).name_en
-                    // console.log(unreadable)
                     var nameTL = eval('char.name_'+lang);
                     var img_name = query(db.chars,"name",char.name_cn,true,true); 
                     // console.log(Object.keys(img_name))
@@ -277,7 +276,6 @@
             });
             // console.log(result)
             result.sort((a,b)=> b.rarity-a.rarity)
-            
             if(result.length > 0){
                 if(isenter){
                     $('#operatorsResult').hide();
