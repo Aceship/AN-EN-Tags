@@ -285,6 +285,20 @@
                 $('#operatorsResult').html("");
                 $('#operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
+
+                    //test for audio
+                    // var opdata = query(db.chars2,"name_cn",result[i].name);
+                    // var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
+                    // // console.log(opdata2)
+                    // $.each(opdata2,function(key,v){
+                    //     v['id'] = key;
+                    //     // console.log(v);
+                    //     opdataFull = v;
+                    //     opKey = key;
+                    //     return false
+                    // });
+                    // AudioText(opdataFull)
+
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
                     // console.log(image)
                     if(el=="Browse"){
@@ -806,19 +820,37 @@
         http.send();
         return http.status!=404;
     }
-    function GetAudio (opdataFull){
-        // console.log(opdataFull)
-        
+    function AudioText(opdataFull){
         var curraudiolist = []
+        var puretextlist =[]
         Object.keys(db.charword).forEach(element => {
             if(db.charword[element]){
                 var curraudio = db.charword[element]
                 if(curraudio.charId&&curraudio.charId == opdataFull.id){
                     curraudiolist.push(curraudio)
+                    puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
+                }
+            }
+        });
+        // console.log(curraudiolist)
+        console.log(puretextlist.join("\n"))
+    }
+    function GetAudio (opdataFull){
+        // console.log(opdataFull)
+        
+        var curraudiolist = []
+        var puretextlist =[]
+        Object.keys(db.charword).forEach(element => {
+            if(db.charword[element]){
+                var curraudio = db.charword[element]
+                if(curraudio.charId&&curraudio.charId == opdataFull.id){
+                    curraudiolist.push(curraudio)
+                    puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
                 }
             }
         });
         console.log(curraudiolist)
+        console.log(puretextlist.join("\n"))
         $('#opaudiocontent').html("")
         curraudiolist.forEach(element => {
             var curraudio  =`<audio controls preload="metadata" style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
