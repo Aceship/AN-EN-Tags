@@ -79,6 +79,7 @@
     var lefthand;
     var opdataFull = {};
     var curpath;
+    var opapp;
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -178,16 +179,20 @@
                     if(subvar[0] == "opname"){
                         var opname = decodeURIComponent(subvar[1]);
                         char = query(db.chars,"appellation",opname.replace(/_/g," "),true,true);
+                        
                     }
                 });
                 var opname;
                 $.each(char,function(key,v){
                     opname = v.name;
+                    opapp = v.appellation
                 })
+                
             } else {
                 selectedOP = localStorage.selectedOPDetails;
                 var opname = db.chars[selectedOP].name;
             }
+            
             selectOperator(opname);
            
             curpath.forEach(element => {
@@ -197,6 +202,37 @@
                     $('#opaudio').modal('show')
                 }
             });
+        }
+        if (window.history && window.history.pushState) {
+            $(window).on('popstate', function() {
+                var curpath = window.location.search.split("?");
+                console.log(opapp)
+                console.log(curpath)
+                if(curpath[1]){
+                    var historyopname = curpath[1].split("=")
+                    if(historyopname&&historyopname[1]){
+                        if(historyopname[1]!=opapp){
+                            var char = query(db.chars,"appellation",historyopname[1].replace(/_/g," "),true,true);
+                            // console.log()
+                            selectOperator(char[Object.keys(char)].name)
+                        }
+                    }
+                }
+                curpath.forEach(element => {
+                    if(element.includes("-story-")){
+                        $('#opstory').modal('show')
+                        $('#opaudio').modal('hide')
+                    }else if(element.includes("-voice-")){
+                        $('#opaudio').modal('show')
+                        $('#opstory').modal('hide')
+                    }else{
+                        $('#opstory').modal('hide')
+                        $('#opaudio').modal('hide')
+                    }
+                });
+            //   alert('Back button was pressed.');
+            });
+        
         }
 
         $('#opstory').on('shown.bs.modal', function(){
@@ -221,6 +257,9 @@
         $('.lang[value='+lang+']').addClass('selected');
 
         //getSkillDesc('skchr_amiya_2',0);
+        window.onhashchange = function() {
+            console.log(window.location.pathname)
+        }
     });
 
     $.getScript("js/arrive.min.js", function(){
@@ -230,6 +269,7 @@
         });
     });
 
+   
     function clickBtnClear(){
         $("#chara-detail-container").hide();
         $("#elite-sidenav").html("");
@@ -395,12 +435,13 @@
             });
             
             var curpath = window.location.pathname
-            console.log(curpath)
-            history.pushState(null, '', curpath+'?opname='+opdataFull.appellation.replace(/ /g,"_")); 
-            if(curpath[1]&&curpath[1].includes("opname="+opdataFull.appellation)){
+            var curpath2 = window.location.search.split('?')
+            console.log(curpath2)
+            opapp = opdataFull.appellation.replace(/ /g,"_")
+            if(curpath2[1]&&curpath2[1].includes("opname="+opdataFull.appellation.replace(/ /g,"_"))){
                 
             }else{
-                
+                history.pushState(null, '', curpath+'?opname='+opdataFull.appellation.replace(/ /g,"_")); 
             }
 
             // use opdata to get the operator data based on tl-akhr.json
