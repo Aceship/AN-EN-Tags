@@ -196,9 +196,9 @@
             selectOperator(opname);
            
             curpath.forEach(element => {
-                if(element.includes("-story-")){
+                if(element.includes("story=")){
                     $('#opstory').modal('show')
-                }else if(element.includes("-voice-")){
+                }else if(element.includes("voice=")){
                     $('#opaudio').modal('show')
                 }
             });
@@ -219,10 +219,10 @@
                     }
                 }
                 curpath.forEach(element => {
-                    if(element.includes("-story-")){
+                    if(element.includes("story=")){
                         $('#opstory').modal('show')
                         $('#opaudio').modal('hide')
-                    }else if(element.includes("-voice-")){
+                    }else if(element.includes("voice=")){
                         $('#opaudio').modal('show')
                         $('#opstory').modal('hide')
                     }else{
@@ -237,7 +237,7 @@
 
         $('#opstory').on('shown.bs.modal', function(){
             var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?-story-'); 
+            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?story='); 
         });
         $('#opstory').on('hidden.bs.modal', function(){
             var curpath = window.location.search.split("?");
@@ -245,7 +245,7 @@
         });
         $('#opaudio').on('shown.bs.modal', function(){
             var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?-voice-'); 
+            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?voice='); 
         });
         $('#opaudio').on('hidden.bs.modal', function(){
             var curpath = window.location.search.split("?");
