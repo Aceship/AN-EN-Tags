@@ -78,6 +78,7 @@
     var selectedOP;
     var lefthand;
     var opdataFull = {};
+    var curpath;
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -166,6 +167,9 @@
             console.log("selected OP defined");
             var curpath = window.location.search.split("?");
             // console.log(curpath)
+            // curpath.forEach(element => {
+                
+            // });
             if(typeof curpath[1] != "undefined"){
                 var variables = curpath[1].split("?");
                 var char = {};
@@ -185,7 +189,32 @@
                 var opname = db.chars[selectedOP].name;
             }
             selectOperator(opname);
+           
+            curpath.forEach(element => {
+                if(element.includes("-story-")){
+                    $('#opstory').modal('show')
+                }else if(element.includes("-voice-")){
+                    $('#opaudio').modal('show')
+                }
+            });
         }
+
+        $('#opstory').on('shown.bs.modal', function(){
+            var curpath = window.location.search.split("?");
+            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?-story-'); 
+        });
+        $('#opstory').on('hidden.bs.modal', function(){
+            var curpath = window.location.search.split("?");
+            history.pushState(null, '', window.location.pathname+'?'+curpath[1]); 
+        });
+        $('#opaudio').on('shown.bs.modal', function(){
+            var curpath = window.location.search.split("?");
+            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?-voice-'); 
+        });
+        $('#opaudio').on('hidden.bs.modal', function(){
+            var curpath = window.location.search.split("?");
+            history.pushState(null, '', window.location.pathname+'?'+curpath[1]); 
+        });
 
         // console.log("TEST")
         $('.reg[value='+reg+']').addClass('selected');
@@ -365,9 +394,14 @@
                 return false
             });
             
-            var curpath = window.location.pathname.split("?");
+            var curpath = window.location.pathname
+            console.log(curpath)
             history.pushState(null, '', curpath+'?opname='+opdataFull.appellation.replace(/ /g,"_")); 
-            
+            if(curpath[1]&&curpath[1].includes("opname="+opdataFull.appellation)){
+                
+            }else{
+                
+            }
 
             // use opdata to get the operator data based on tl-akhr.json
             // use opdataFull to get the operator data based on character_table.json
@@ -482,7 +516,7 @@
             </div>
             </button>`))
 
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-bottom ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio">
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-bottom ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio" >
             <div>
                 <img src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px">
                 <div class="btn-story-header">Audio</div>
