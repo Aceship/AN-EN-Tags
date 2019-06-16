@@ -178,14 +178,21 @@
                     var subvar = v.split("=");
                     if(subvar[0] == "opname"){
                         var opname = decodeURIComponent(subvar[1]);
-                        char = query(db.chars,"appellation",opname.replace(/_/g," "),true,true);
+                        console.log(opname)
+                        var unreadable = query(db.unreadNameTL,"name_en",opname.replace(/_/g," "))
+                        console.log(unreadable)
+                        var correctname = (unreadable?unreadable.name:opname)
+                        console.log(correctname)
+                        char = query(db.chars,"appellation",correctname,true,true);
                         
                     }
                 });
                 var opname;
                 $.each(char,function(key,v){
                     opname = v.name;
-                    opapp = v.appellation
+                    var unreadable = query(db.unreadNameTL,"name",v.appellation)
+                    var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):v.appellation.replace(/ /g,"_"))
+                    opapp = correctname
                 })
                 
             } else {
@@ -212,7 +219,10 @@
                     var historyopname = curpath[1].split("=")
                     if(historyopname&&historyopname[1]){
                         if(historyopname[1]!=opapp){
-                            var char = query(db.chars,"appellation",historyopname[1].replace(/_/g," "),true,true);
+                            var unreadable = query(db.unreadNameTL,"name_en",historyopname[1].replace(/_/g," "))
+                            var correctname = (unreadable?unreadable.name:historyopname[1].replace(/_/g," "))
+                            console.log(correctname)
+                            var char = query(db.chars,"appellation",correctname,true,true);
                             // console.log()
                             selectOperator(char[Object.keys(char)].name)
                         }
@@ -437,11 +447,13 @@
             var curpath = window.location.pathname
             var curpath2 = window.location.search.split('?')
             console.log(curpath2)
-            opapp = opdataFull.appellation.replace(/ /g,"_")
-            if(curpath2[1]&&curpath2[1].includes("opname="+opdataFull.appellation.replace(/ /g,"_"))){
+            var unreadable = query(db.unreadNameTL,"name",opdataFull.appellation)
+            var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):opdataFull.appellation.replace(/ /g,"_"))
+            opapp = correctname
+            if(curpath2[1]&&curpath2[1].includes("opname="+correctname)){
                 
             }else{
-                history.pushState(null, '', curpath+'?opname='+opdataFull.appellation.replace(/ /g,"_")); 
+                history.pushState(null, '', curpath+'?opname='+correctname); 
             }
 
             // use opdata to get the operator data based on tl-akhr.json

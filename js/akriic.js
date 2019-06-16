@@ -219,6 +219,8 @@
             let charaRiicTL = db.riic[element.name]
             let extraInfo =""
             let extrainfo2 = ''
+
+            GetRiicDetail(element.name)
             // console.log(element.name)
             
             currHtml.push(`<div class="row" style="padding:5px;margin:5px;background:#333333">
@@ -322,6 +324,16 @@
         });
         // console.log(currHtml)
         $("#tbody-list").html(currHtml.join(""))
+    }
+
+    function GetRiicDetail(charaname){
+        let chara = db.chars[charaname]
+        let charaRiic = db.building_chars[charaname]
+        let charaRiicTL = db.riic[charaname]
+
+        let detail = {}
+        
+
     }
     function clickBtnClear(){
         console.log(lang);
