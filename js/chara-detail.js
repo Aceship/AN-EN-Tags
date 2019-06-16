@@ -237,7 +237,7 @@
 
         $('#opstory').on('shown.bs.modal', function(){
             var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?story='); 
+            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?story=0'); 
         });
         $('#opstory').on('hidden.bs.modal', function(){
             var curpath = window.location.search.split("?");
@@ -245,7 +245,7 @@
         });
         $('#opaudio').on('shown.bs.modal', function(){
             var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?voice='); 
+            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?voice=0'); 
         });
         $('#opaudio').on('hidden.bs.modal', function(){
             var curpath = window.location.search.split("?");
