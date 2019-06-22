@@ -925,7 +925,7 @@
     //     });
     //     // console.log(curraudiolist)
     //     console.log(puretextlist.join("\n"))
-    // }
+    // }translator
     function GetAudio (opdataFull,lang="en"){
         // console.log(opdataFull)
         
@@ -968,6 +968,13 @@
             `)
             $('#opaudiocontent').append($(currhtml))
         });
+
+        if(currTL.translator){
+            $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">${currTL.translator}</div>`)
+        }else $('#opaudiotranslator').html()
+        if(currTL.proofreader){
+            $('#opaudioproofreader').html(`<div class="btn-infoleft">Voiceline Proofreader</div><div class="btn-inforight">${currTL.proofreader}</div>`)
+        }else $('#opaudioproofreader').html()
     }
     function GetStory (opdataFull){
         // console.log(opdataFull)
