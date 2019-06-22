@@ -69,7 +69,10 @@
     var d22 = $.getJSON("json/excel/charword_table.json",function(data){
         db["charword"] = data;
     });  
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22).then(function(){
+    var d23 = $.getJSON("json/tl-voiceline.json",function(data){
+        db["voicelineTL"] = data;
+    });  
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23).then(function(){
         $.holdReady(false);
     });
 
@@ -907,30 +910,34 @@
         http.send();
         return http.status!=404;
     }
-    function AudioText(opdataFull){
-        var curraudiolist = []
-        var puretextlist =[]
-        Object.keys(db.charword).forEach(element => {
-            if(db.charword[element]){
-                var curraudio = db.charword[element]
-                if(curraudio.charId&&curraudio.charId == opdataFull.id){
-                    curraudiolist.push(curraudio)
-                    puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
-                }
-            }
-        });
-        // console.log(curraudiolist)
-        console.log(puretextlist.join("\n"))
-    }
-    function GetAudio (opdataFull){
+    // function AudioText(opdataFull,lang="en"){
+    //     var curraudiolist = []
+    //     var puretextlist =[]
+    //     Object.keys(db.charword).forEach(element => {
+    //         if(db.charword[element]){
+    //             var curraudio = db.charword[element]
+                
+    //             if(curraudio.charId&&curraudio.charId == opdataFull.id){
+    //                 curraudiolist.push(curraudio)
+    //                 puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
+    //             }
+    //         }
+    //     });
+    //     // console.log(curraudiolist)
+    //     console.log(puretextlist.join("\n"))
+    // }
+    function GetAudio (opdataFull,lang="en"){
         // console.log(opdataFull)
         
         var curraudiolist = []
         var puretextlist =[]
+        var currTL = db.voicelineTL[opdataFull.id]
         Object.keys(db.charword).forEach(element => {
             if(db.charword[element]){
                 var curraudio = db.charword[element]
+                
                 if(curraudio.charId&&curraudio.charId == opdataFull.id){
+                    
                     curraudiolist.push(curraudio)
                     puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
                 }
@@ -944,12 +951,18 @@
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
             //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
             // }
+            
+            var voiceTL = currTL.voiceline[element.voiceTitle][lang]?currTL.voiceline[element.voiceTitle][lang]: element.voiceText
+            // console.log(element.voiceTitle)
+            // console.log(currTL)
+            // console.log(currTL.voiceline[element.voiceTitle])
+            // console.log(voiceTL)
             var currhtml = $(`
             <table class="story-table">
             <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
             <tr><td style="text-align:center;background:#1a1a1a">${curraudio}</td></tr>
             <tr><td style="height:10px"></td></tr>
-            <tr><td>${element.voiceText}</td></tr>
+            <tr><td>${voiceTL}</td></tr>
             <tr><td style="height:10px"></td></tr>
             </table>
             `)
