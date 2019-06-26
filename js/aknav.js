@@ -113,7 +113,7 @@ $(document).ready(function(){
     }
     let html = `
     <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
-        <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
+        <a class="navbar-brand" href="index.html" translate-id="topbar-1">Arknights Toolbox</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
             <span class="navbar-toggler-icon"></span>
