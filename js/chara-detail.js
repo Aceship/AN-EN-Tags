@@ -184,7 +184,7 @@
                         console.log(opname)
                         var unreadable = query(db.unreadNameTL,"name_en",opname.replace(/_/g," "))
                         console.log(unreadable)
-                        var correctname = (unreadable?unreadable.name:opname)
+                        var correctname = (unreadable?unreadable.name:opname.replace(/_/g," "))
                         console.log(correctname)
                         char = query(db.chars,"appellation",correctname,true,true);
                         
