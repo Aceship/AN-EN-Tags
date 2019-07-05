@@ -699,6 +699,7 @@
                     }
                     
                     if(v2.rangeId)grid = rangeMaker(v2.rangeId)
+                    
                     var spType = (v2.spData.spType)
                     // console.log(spType)
                     var spTypeHtml = ""
@@ -720,6 +721,9 @@
                                 spDurationName = "Target Effect Duration"
                             }
                         }
+                        if(skillinfo.key=="ability_range_forward_extend"){
+                            grid = rangeMaker(opdataFull.phases[0].rangeId,true,skillinfo.value)
+                        }
                     });
                     switch (force) {
                         case 0: force = "Small [0]";break;
@@ -727,7 +731,7 @@
                         case 2: force = "Large [2]";break;
                         case 3: force = "Huge [3]";break;
                     }
-                    // console.log(currSkill)
+                    console.log(currSkill)
                     var skillType = ""
                     switch(currSkill.skillType){
                         case 0 : skillType = "Passive" ;break;
@@ -1408,28 +1412,65 @@
 
         return titledbutton
     }
-    function rangeMaker(rangeId,withText=true){
-        let rangeData = db.range[rangeId]
-        if(rangeData){
+    function rangeMaker(rangeId,withText=true,extend=0){
+        var rangeData ={}
+        var rangeDataOrigin = Object.assign({},db.range[rangeId])
+
+        // extend =0
+        if(rangeDataOrigin){
             let minRow = 0
             let minCol = 0
             let maxRow = 0
             let maxCol = 0
             let table = []
             let grids = []
-            // console.log(rangeData.grids)
-            if(rangeData){
-                rangeData.grids.forEach(element => {
+            console.log(rangeDataOrigin.grids)
+            if(rangeDataOrigin){
+                if(extend>0){
+                    
+                }
+                rangeData = Object.assign({},rangeDataOrigin)
+                rangeData.grids = []
+                rangeDataOrigin.grids.forEach(element => {
                     maxRow = Math.max(maxRow,element.row)
                     maxCol = Math.max(maxCol,element.col)
                     minRow = Math.min(minRow,element.row)
                     minCol = Math.min(minCol,element.col)
+
+                    // console.log(element)
+                    // if(extend>0&&element.col>0){
+                        
+                    //  }
+                     if(element.col>0&&extend>0){
+                        rangeData.grids.push({row:element.row,col:element.col+parseFloat(extend)})
+                     }else{
+                        rangeData.grids.push({row:element.row,col:element.col})
+                     }
+                    
                 });
+                if(extend>0){
+                    maxCol +=extend
+                }
+                if(extend>0){
+                   for(i=minRow;i<=maxRow;i++){
+                        for(j=1;j<=extend;j++){
+                            console.log(`${i} : ${j}`)
+                            rangeData.grids.push({row:i,col:j,special:true})
+                            
+                        }
+                   }
+                }
+                extend = 0
             }
+            console.log(rangeData.grids)
             table.push(`<div class="rangeTableContainer"><table class='rangeTable' style="table-layout: fixed;border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:${(maxCol+minCol+1)*17}px;">`)
             
             for(r=0;r+minRow<maxRow+1;r++){
                 table.push(`<tr style="height:17px">`)
+                // if(extend>0&&r>1){
+                //     extend--
+                //     r=1
+                // }
                 // console.log(r+minRow)
                 for(c=0;c+minCol<maxCol+1;c++){
                     table.push(`<td style=";width:17px`)
@@ -1438,7 +1479,11 @@
                     }else{
                         rangeData.grids.forEach(element => {
                             if(element.row==r+minRow&&element.col==c+minCol){
-                                table.push(";border: 2px solid #DDDDDD88;")
+                                if(element.special){
+                                    table.push(";border: 2px solid #00FF6688;")
+                                }else{
+                                    table.push(";border: 2px solid #DDDDDD88;")
+                                }
                             }
                         });
                     }
