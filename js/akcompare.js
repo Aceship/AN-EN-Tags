@@ -396,7 +396,7 @@
             $('#slot'+slot+'-operatorsResult').html("");
             $('#slot'+slot+'-operatorsResult').hide();
             var opdata = query(db.chars2,"name_cn",opname);
-            var opclass = query(db.classes,"type_cn",opdata.type);
+            
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
             
             //test
@@ -417,7 +417,9 @@
                 $("#slot"+slot+"-opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
                 $("#slot"+slot+"-opBg").attr('src','img/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
                 $("#slot"+slot+"-opID").val(key);
-
+                var opclass = query(db.classes,"type_data",opdata2[key].profession);
+                console.log(opclass)
+                $("#slot"+slot+"-opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
                 let selectedOPDetailsObj = {};
                 let selectedOpnames = {};
                 if(typeof localStorage.selectedOPDetailsObj === "undefined" || localStorage.selectedOPDetailsObj == "" || localStorage.selectedOpnames == ""){
@@ -446,7 +448,8 @@
                 console.log(localStorage.selectedOpnames);
                 return false
             });
-            $("#slot"+slot+"-opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
+            console.log(opdata2)
+           
             console.log(lang);
             $("#slot"+slot+"-op-nametl").html(eval('opdata.name_'+lang));
             $("#slot"+slot+"-op-name").html(eval('opdata.name_'+reg));

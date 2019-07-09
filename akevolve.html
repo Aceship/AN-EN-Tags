@@ -252,13 +252,16 @@
                 mByLvl = [[], [], [], [], []];
                 $("#row-m").html("");
             }
-
+            
             function loadMaterials(){
                 refresh();
                 $.getJSON("./json/akmaterial.json", (data) => {
+                    
                     $.each(data, (_, v) => {
                         ms[v['name_cn']] = v;
-                        mByLvl[v['level'] - 1].push(v['name_cn']);
+                        if(!v.hidden){
+                            mByLvl[v['level'] - 1].push(v['name_cn']);
+                        }
                     });
                     let minShowLevel = 2;
                     let colors = ['1', '2', '3', '4', '5']
@@ -266,8 +269,7 @@
                         $.each(mByLvl[i - 1], (_, n) => {
                             let srcHtml = [];
                             let cardid = ms[n]['id'];
-                            
-                            
+
                             $.each(ms[n].source, (k, v) => { 
                                 let stageCol = "#555";
                                 switch (v) {
@@ -295,7 +297,7 @@
                                 +     '</div>'
                             }
                             $("#row-m").append(
-                                     '<div class="ak-shadow-small ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
+                                    '<div class="ak-shadow-small ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
                                     +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="border:transparent;padding:0px;z-index:1;">'
                                     +     '<div class="ak-title ak-shadow-small" style="z-index:5;display:inline-block;white-space: nowrap;">'+eval('ms[n].name_'+lang)+'</div>'  
                                     +         '<img class="card-img-bg" style=";z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
@@ -320,7 +322,7 @@
                                     +   '</div>'
                                     );
                             // if (!ismobile)
-                               
+                            
                             // else
                             //     $("#row-m").append('<div class="card col-4 my-1 p-0 lvl-' + ms[n]['level'] + ' border-' + colors[i - 1]
                             //         + '" ' + (i < minShowLevel ? 'style="display:none;"' : '')
