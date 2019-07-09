@@ -955,8 +955,8 @@
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
             //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
             // }
-            
-            var voiceTL = currTL.voiceline[element.voiceTitle][lang]?currTL.voiceline[element.voiceTitle][lang]: element.voiceText
+            var voiceTL = element.voiceText
+            if(currTL)voiceTL= currTL.voiceline[element.voiceTitle][lang]?currTL.voiceline[element.voiceTitle][lang]: element.voiceText
             // console.log(element.voiceTitle)
             // console.log(currTL)
             // console.log(currTL.voiceline[element.voiceTitle])
@@ -973,12 +973,14 @@
             $('#opaudiocontent').append($(currhtml))
         });
 
-        if(currTL.translator){
-            $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">${currTL.translator}</div>`)
-        }else $('#opaudiotranslator').html()
-        if(currTL.proofreader){
-            $('#opaudioproofreader').html(`<div class="btn-infoleft">Voiceline Proofreader</div><div class="btn-inforight">${currTL.proofreader}</div>`)
-        }else $('#opaudioproofreader').html()
+        if(currTL){
+            if(currTL.translator){
+                $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">${currTL.translator}</div>`)
+            }else $('#opaudiotranslator').html()
+            if(currTL.proofreader){
+                $('#opaudioproofreader').html(`<div class="btn-infoleft">Voiceline Proofreader</div><div class="btn-inforight">${currTL.proofreader}</div>`)
+            }else $('#opaudioproofreader').html()
+        }
     }
     function GetStory (opdataFull){
         // console.log(opdataFull)
