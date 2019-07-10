@@ -611,7 +611,7 @@
             
             $("#op-atktype").html(attackType)
             $("#op-rarity").html("");
-            $("#op-rarity").attr("class","op-rarity-"+opdata.level)
+            $("#op-rarity").attr("class","op-rarity-"+(opdataFull.rarity+1))
             
             $("#op-trust").html(GetTrust(opdataFull))
 
@@ -628,7 +628,7 @@
             }else{
                 $("#op-potentialist").html("")
             }
-            for (var i = 0; i < opdata.level; i++) {
+            for (var i = 0; i < (opdataFull.rarity+1); i++) {
                 $("#op-rarity").append("<i class='fa fa-star'></i>");
             }
             var tags_html = [];
