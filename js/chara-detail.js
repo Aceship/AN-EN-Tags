@@ -1158,6 +1158,7 @@
             });
         }
         if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id]["credit"]) $("#opstorycredits").html(`<div class="btn-infoleft">Trust Translation</div><div class="btn-inforight">${db.charastoryTL[opdataFull.id]["credit"]}</div>`)
+        else $("#opstorycredits").html(``)
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
         console.log(puretext.join("\n"))
