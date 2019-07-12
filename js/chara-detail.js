@@ -1023,18 +1023,28 @@
                                     case "表演经验":
                                     case "出厂时间":
                                     case "战斗经验": content= db.storytextTL[content]
-                                    
+                                    // console.log("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                                    // console.log(content)
                                     if (!content){
                                         var splitnum = infoTitle[4].trim().split("")
                                         var num = 0
                                         var end = ""
-                                        
+                                        console.log(splitnum)
                                         splitnum.forEach(eachnum => {
-                                            if(typeof db.storytextTL[eachnum] == "number" )
+                                            // console.log(eachnum)
+                                            // console.log(typeof parseInt(eachnum))
+                                            // console.log(parseInt(eachnum))
+                                            if(typeof db.storytextTL[eachnum] == "number" ){
                                                 num += db.storytextTL[eachnum]
-                                            else
+                                            }
+                                            else if(typeof parseInt(eachnum)  == "number" && !isNaN(parseInt(eachnum))){
+                                                num += parseInt(eachnum)
+                                            }
+                                            else{
                                                 end = db.storytextTL[eachnum]
+                                            }
                                         });
+                                        console.log(num)
                                         if(num% 1 != 0){
                                             if(num<1){
                                                 num = "Half a"
