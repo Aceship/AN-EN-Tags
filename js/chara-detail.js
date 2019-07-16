@@ -449,7 +449,7 @@
             
             var curpath = window.location.pathname
             var curpath2 = window.location.search.split('?')
-            console.log(curpath2)
+            // console.log(curpath2)
             var unreadable = query(db.unreadNameTL,"name",opdataFull.appellation)
             var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):opdataFull.appellation.replace(/ /g,"_"))
             opapp = correctname
@@ -475,7 +475,7 @@
                     
                 }
             });
-            console.log(extraSkin)
+            // console.log(extraSkin)
             // console.log(skinList);
             $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo.toLowerCase()+".png");
 
@@ -599,7 +599,7 @@
                 $("#op-nameRead").html("")
             }
             var gender = query(db.gender,"sex_cn",opdata.sex);
-
+            
             $("#op-gender").html(titledMaker(eval("gender.sex_"+lang),`Gender`))
             var position = query(db.tags,"tag_cn",opdataFull.position);
             $("#op-position").html(titledMaker(eval("position.tag_"+lang),`Position`))
@@ -731,7 +731,7 @@
                         case 2: force = "Large [2]";break;
                         case 3: force = "Huge [3]";break;
                     }
-                    console.log(currSkill)
+                    // console.log(currSkill)
                     var skillType = ""
                     switch(currSkill.skillType){
                         case 0 : skillType = "Passive" ;break;
@@ -848,7 +848,7 @@
         $.each(opdataFull.phases[i].attributesKeyFrames,function(j,v){
             keyframes[j] = v;
         });
-        console.log(keyframes);
+        // console.log(keyframes);
         // var statsLevelHeader = $(`<span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>`)
         // var statsLevelSlider = $(`<input type='range' value='1' min='1' max='${keyframes[1].level}' name='levelStats' id='elite${i}LevelSlider' oninput='changeEliteLevel(this,${i},${keyframes[1].level})' style='margin-top:20px;width:60%;' class='statlevelInput ${lefthand=="true"?"lefthand-statlevelInput":"righthand-statlevelInput"}'></input>`);
         // var statsLevelDisplay = $(`<div class='form-group stat-input ${lefthand=="true"?"lefthand-stat-input":"righthand-stat-input"}' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite${i}LevelDisplay' onchange='changeEliteLevel(this,${i},${keyframes[1].level})' style='line-height:1.1' type='number' value='1' min='1' max='${keyframes[1].level}'></div>`)
@@ -947,8 +947,8 @@
                 }
             }
         });
-        console.log(curraudiolist)
-        console.log(puretextlist.join("\n"))
+        // console.log(curraudiolist)
+        // console.log(puretextlist.join("\n"))
         $('#opaudiocontent').html("")
         curraudiolist.forEach(element => {
             var curraudio  =`<audio controls preload="metadata" style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
@@ -1016,10 +1016,13 @@
                             if(infoTitle){
                                 var title = db.storytextTL[infoTitle[2]]?db.storytextTL[infoTitle[2]]:infoTitle[2]
                                 var content = infoTitle[4]
-                                console.log(infoTitle[2])
+                                // console.log(infoTitle[2])
                                 switch (infoTitle[2]) {
                                     case "代号": content = opdataFull.appellation;break;
-
+                                    case "性别":
+                                    content= db.storytextTL[content]
+                                    $("#op-gender").html(titledMaker(content,`Gender`))
+                                    ;break;
                                     case "表演经验":
                                     case "出厂时间":
                                     case "战斗经验": content= db.storytextTL[content]
@@ -1029,7 +1032,7 @@
                                         var splitnum = infoTitle[4].trim().split("")
                                         var num = 0
                                         var end = ""
-                                        console.log(splitnum)
+                                        // console.log(splitnum)
                                         splitnum.forEach(eachnum => {
                                             // console.log(eachnum)
                                             // console.log(typeof parseInt(eachnum))
@@ -1044,7 +1047,7 @@
                                                 end = db.storytextTL[eachnum]
                                             }
                                         });
-                                        console.log(num)
+                                        // console.log(num)
                                         if(num% 1 != 0){
                                             if(num<1){
                                                 num = "Half a"
@@ -1065,7 +1068,7 @@
                                         content = db.charastoryTL[opdataFull.id]["originiumInfection"]
                                     }else if(content){
                                         var datasplit = content.split("，")
-                                        console.log(datasplit)
+                                        // console.log(datasplit)
                                         var arraycontent = []
                                         datasplit.forEach(originiumdesc => {
                                             arraycontent.push(db.storytextTL[originiumdesc]?db.storytextTL[originiumdesc]:originiumdesc)
@@ -1090,7 +1093,7 @@
                                 }else
                                 webTL.push(`<tr><td>${title}</td><td>${content}</td></tr>`)
                             }else{
-                                console.log(info.split("，"))
+                                // console.log(info.split("，"))
                                 if(titlebefore =="Originium Infection"&& db.charastoryTL[opdataFull.id] && db.charastoryTL[opdataFull.id]["originiumInfection"]){
                                     content = db.charastoryTL[opdataFull.id]["originiumInfection"]
                                     titlebefore=""
@@ -1171,7 +1174,7 @@
         else $("#opstorycredits").html(``)
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
-        console.log(puretext.join("\n"))
+        // console.log(puretext.join("\n"))
     }
 
     function BirthdayText(date) {
@@ -1220,7 +1223,7 @@
 
     function GetTalent(id,opdataFull){
         var combTalents = []
-        console.log(opdataFull.talents)
+        // console.log(opdataFull.talents)
         for(i=0;i<opdataFull.talents.length;i++){
             var currTalent = opdataFull.talents[i]
             // if(!db.talentsTL[id])break;
@@ -1437,7 +1440,7 @@
             let maxCol = 0
             let table = []
             let grids = []
-            console.log(rangeDataOrigin.grids)
+            // console.log(rangeDataOrigin.grids)
             if(rangeDataOrigin){
                 if(extend>0){
                     
@@ -1467,7 +1470,7 @@
                 if(extend>0){
                    for(i=minRow;i<=maxRow;i++){
                         for(j=1;j<=extend;j++){
-                            console.log(`${i} : ${j}`)
+                            // console.log(`${i} : ${j}`)
                             rangeData.grids.push({row:i,col:j,special:true})
                             
                         }
@@ -1475,7 +1478,7 @@
                 }
                 extend = 0
             }
-            console.log(rangeData.grids)
+            // console.log(rangeData.grids)
             table.push(`<div class="rangeTableContainer"><table class='rangeTable' style="table-layout: fixed;border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:${(maxCol+minCol+1)*17}px;">`)
             
             for(r=0;r+minRow<maxRow+1;r++){
@@ -1535,8 +1538,8 @@
         $.each(opdataFull.phases[elite_no].attributesKeyFrames,function(j,v){
             kf[j] = v;
         });
-        console.log([kf[0].level,kf[1].level])
-        console.log([kf[0].data[key],kf[1].data[key]])
+        // console.log([kf[0].level,kf[1].level])
+        // console.log([kf[0].data[key],kf[1].data[key]])
         if(kf[0].data[key] == kf[1].data[key]){
         return kf[0].data[key]
         }else {
