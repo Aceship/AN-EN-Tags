@@ -1020,7 +1020,8 @@
                                 switch (infoTitle[2]) {
                                     case "代号": content = opdataFull.appellation;break;
                                     case "性别":
-                                    content= db.storytextTL[content]
+                                    console.log(content)
+                                    content= db.storytextTL[content.trim()]
                                     $("#op-gender").html(titledMaker(content,`Gender`))
                                     ;break;
                                     case "表演经验":
@@ -1174,7 +1175,7 @@
         else $("#opstorycredits").html(``)
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
-        // console.log(puretext.join("\n"))
+        console.log(puretext.join("\n"))
     }
 
     function BirthdayText(date) {
