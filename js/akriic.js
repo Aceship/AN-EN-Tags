@@ -33,7 +33,7 @@
     var d10 = $.getJSON("json/excel/building_data.json",function(data){
             db["building_chars"] = data.chars;
         });
-    var d11 = $.getJSON("json/dragonjet/riic.json",function(data){
+    var d11 = $.getJSON("json/ace/riic.json",function(data){
             db["riic"] = data;
         });
     $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11).then(function(){
@@ -216,7 +216,7 @@
         charaFilter.forEach(element => {
             let chara = db.chars[element.name]
             let charaRiic = db.building_chars[element.name]
-            let charaRiicTL = db.riic[element.name]
+            
             let extraInfo =""
             let extrainfo2 = ''
 
@@ -236,6 +236,9 @@
                     // console.log(element.buff[i])
                     // console.log(building_chars[element].buffChar[i] )
                     let currBuff2 = db.building_buff[element.buff[i].buffId]
+                    let charaRiicTL = db.riic[element.buff[i].buffId]
+
+                    console.log(currBuff2)
                     extrainfo2 = ''
                     extraInfo = ``
                     
@@ -248,7 +251,7 @@
                         let currbuff = db.building_buff[element.buff[i].buffId].description
                         console.log([currBuff2.buffId])
                         console.log(currbuff)
-                        console.log(`${charaRiicTL?charaRiicTL[i].desc:currBuff2.description}`)
+                        console.log(`${charaRiicTL?charaRiicTL.desc:currBuff2.description}`)
                         if(element.buff[i].buffId.includes("prod")){
                             
                         }else if (element.buff[i].buffId.includes("formula")){
@@ -314,10 +317,10 @@
                     }
                     // console.log(req)     
                     currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto">
-                    <div style="padding:5px;background:#222">${extraInfo}  ${charaRiicTL?charaRiicTL[i].name: currBuff2.buffName} ${req}</div>
+                    <div style="padding:5px;background:#222">${extraInfo}  ${charaRiicTL?charaRiicTL.name: currBuff2.buffName} ${req}</div>
                     <div style="padding-left:20px;margin:5px">
                     ${extrainfo2==""?"":`<div style="display:inline;background:#222;padding:3px">${extrainfo2}</div><div></div>`} 
-                    ${charaRiicTL?charaRiicTL[i].desc:currBuff2.description}</div></div>` )
+                    ${charaRiicTL?charaRiicTL.desc:currBuff2.description}</div></div>` )
                 }
             // }
             currHtml.push(`</div></div> `)
