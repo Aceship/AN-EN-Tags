@@ -1179,26 +1179,29 @@
     }
 
     function BirthdayText(date) {
+        console.log(date)
         var check = date.split("月")
-        var check2 = check[1].split("日")
-        var check = `${check[0]}/${check2[0]}`
-        var date = check.split("/")
-        // console.log(date)
-        if (date.length >=2)
-        {
-            // console.log(date[1])
-            const currmonth = date[0]
-            const currday = date[1]
-            const monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
-            ];
-            // console.log(`${monthNames[currmonth-1]} ${currday}`)
-            // console.log(monthNames[currmonth-1])
-            if (monthNames[currmonth-1] == undefined){
-                return date
+        if(check[1]){
+            var check2 = check[1].split("日")
+            var check = `${check[0]}/${check2[0]}`
+            var date = check.split("/")
+            // console.log(date)
+            if (date.length >=2)
+            {
+                // console.log(date[1])
+                const currmonth = date[0]
+                const currday = date[1]
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+                ];
+                // console.log(`${monthNames[currmonth-1]} ${currday}`)
+                // console.log(monthNames[currmonth-1])
+                if (monthNames[currmonth-1] == undefined){
+                    return date
+                }
+                return  monthNames[currmonth-1] + " " + currday
             }
-            return  monthNames[currmonth-1] + " " + currday
-        }
+        }else return date
 
     }
 
