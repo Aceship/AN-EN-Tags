@@ -5315,6 +5315,117 @@
           "buffData": []
         }
       ]
+    },
+    "char_340_shwaz": {
+      "charId": "char_340_shwaz",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_single_P[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "train_spd&profession[140]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_348_ceylon": {
+      "charId": "char_348_ceylon",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "workshop_formula_probability[101]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "manu_formula_spd[220]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_326_glacus": {
+      "charId": "char_326_glacus",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "power_rec_spd[040]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "power_rec_spd[041]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": []
+        }
+      ]
+    },
+    "char_298_susuro": {
+      "charId": "char_298_susuro",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "train_spd&profession[070]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "workshop_formula_probability[111]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   "buffs": {
@@ -5366,7 +5477,7 @@
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
       "roomType": "CONTROL",
-      "description": "进驻控制中枢时，控制中枢内每个<@cc.kw>龙门近卫局</>干员，可使控制中枢内所有干员的心情每小时消耗<@cc.vup>-0.05</>"
+      "description": "进驻控制中枢时，控制中枢内每个<@cc.kw>龙门近卫局</>干员可使控制中枢内所有干员的心情每小时消耗<@cc.vup>-0.05</>"
     },
     "power_rec_spd[000]": {
       "buffId": "power_rec_spd[000]",
@@ -5437,6 +5548,26 @@
       "buffCategory": "OUTPUT",
       "roomType": "POWER",
       "description": "进驻发电站时，无人机每小时恢复速度<@cc.vup>+20%</>"
+    },
+    "power_rec_spd[040]": {
+      "buffId": "power_rec_spd[040]",
+      "buffName": "电磁充能·α",
+      "buffIcon": "power",
+      "buffColor": "#8fc31f",
+      "textColor": "#ffffff",
+      "buffCategory": "OUTPUT",
+      "roomType": "POWER",
+      "description": "进驻发电站时，无人机每小时恢复速度<@cc.vup>+10%</>"
+    },
+    "power_rec_spd[041]": {
+      "buffId": "power_rec_spd[041]",
+      "buffName": "电磁充能·β",
+      "buffIcon": "power",
+      "buffColor": "#8fc31f",
+      "textColor": "#ffffff",
+      "buffCategory": "OUTPUT",
+      "roomType": "POWER",
+      "description": "进驻发电站时，无人机每小时恢复速度<@cc.vup>+15%</>"
     },
     "manu_prod_spd[000]": {
       "buffId": "manu_prod_spd[000]",
@@ -5641,6 +5772,16 @@
     "manu_formula_spd[211]": {
       "buffId": "manu_formula_spd[211]",
       "buffName": "火山学家",
+      "buffIcon": "manufacture",
+      "buffColor": "#ffd800",
+      "textColor": "#333333",
+      "buffCategory": "OUTPUT",
+      "roomType": "MANUFACTURE",
+      "description": "进驻制造站时，<@cc.kw>源石</>类配方的生产力<@cc.vup>+35%</>"
+    },
+    "manu_formula_spd[220]": {
+      "buffId": "manu_formula_spd[220]",
+      "buffName": "源石研究",
       "buffIcon": "manufacture",
       "buffColor": "#ffd800",
       "textColor": "#333333",
@@ -5888,15 +6029,35 @@
       "roomType": "WORKSHOP",
       "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
     },
+    "workshop_formula_probability[101]": {
+      "buffId": "workshop_formula_probability[101]",
+      "buffName": "学者",
+      "buffIcon": "workshop",
+      "buffColor": "#e3eb00",
+      "textColor": "#333333",
+      "buffCategory": "FUNCTION",
+      "roomType": "WORKSHOP",
+      "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    },
     "workshop_formula_probability[110]": {
       "buffId": "workshop_formula_probability[110]",
-      "buffName": "药理学",
+      "buffName": "药理学·α",
       "buffIcon": "workshop",
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
       "roomType": "WORKSHOP",
       "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>75%</>"
+    },
+    "workshop_formula_probability[111]": {
+      "buffId": "workshop_formula_probability[111]",
+      "buffName": "药理学·β",
+      "buffIcon": "workshop",
+      "buffColor": "#e3eb00",
+      "textColor": "#333333",
+      "buffCategory": "FUNCTION",
+      "roomType": "WORKSHOP",
+      "description": "进驻加工站加工<@cc.kw>精英材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
     },
     "workshop_formula_probability[120]": {
       "buffId": "workshop_formula_probability[120]",
@@ -6130,13 +6291,23 @@
     },
     "train_spd&profession[130]": {
       "buffId": "train_spd&profession[130]",
-      "buffName": "般若之盾",
+      "buffName": "般若",
       "buffIcon": "training",
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
       "roomType": "TRAINING",
       "description": "进驻训练室协助位时，<@cc.kw>重装</>干员的专精技能训练速度<@cc.vup>+60%</>"
+    },
+    "train_spd&profession[140]": {
+      "buffId": "train_spd&profession[140]",
+      "buffName": "黑矢",
+      "buffIcon": "training",
+      "buffColor": "#7d0022",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "TRAINING",
+      "description": "进驻训练室协助位时，<@cc.kw>狙击</>干员的专精技能训练速度<@cc.vup>+60%</>"
     },
     "dorm_rec_oneself[000]": {
       "buffId": "dorm_rec_oneself[000]",
@@ -6197,6 +6368,16 @@
       "buffCategory": "RECOVERY",
       "roomType": "DORMITORY",
       "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.75</>（同种效果取最高）"
+    },
+    "dorm_rec_single_P[000]": {
+      "buffId": "dorm_rec_single_P[000]",
+      "buffName": "沏茶",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，使该宿舍内除自身以外心情未满的某个干员每小时恢复<@cc.vup>+0.55</>（同种效果取最高，且不计入额外效果），如果目标是<@cc.kw>锡兰</>，则恢复效果额外<@cc.vup>+0.45</>"
     },
     "dorm_rec_all[000]": {
       "buffId": "dorm_rec_all[000]",
@@ -9557,6 +9738,996 @@
         "processedByProductGroup": [],
         "canBeDestroy": true
       },
+      "furni_beach_cabinet_01": {
+        "id": "furni_beach_cabinet_01",
+        "name": "夏日小船柜",
+        "iconId": "furni_beach_cabinet_01",
+        "type": "CABINET",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 3,
+        "height": 8,
+        "comfort": 295,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "用小船改造成的木柜。装饰物充满热带气息，却没什么人认识。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 200,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_tableChairSets_01": {
+        "id": "furni_beach_tableChairSets_01",
+        "name": "夏日收藏柜",
+        "iconId": "furni_beach_tableChairSets_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 5,
+        "height": 6,
+        "comfort": 460,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "简单的木质双层柜，附送两个小板凳。柜子上堆满了干员们对夏日的回忆，看着看着，思绪便回到了那狂欢的日夜。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 313,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_calendar_01": {
+        "id": "furni_beach_calendar_01",
+        "name": "罗德岛夏日挂历",
+        "iconId": "furni_beach_calendar_01",
+        "type": "WALLDECO",
+        "location": "POSTER",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 1,
+        "height": 4,
+        "comfort": 85,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "去疗养的干员带回来的挂历。一些人的挂历只有在最重要的时刻才会翻页。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 73,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_floorLamp_01": {
+        "id": "furni_beach_floorLamp_01",
+        "name": "沙滩小屋落地灯",
+        "iconId": "furni_beach_floorLamp_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 3,
+        "height": 4,
+        "comfort": 190,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "沙滩小屋常用的落地灯，上面放着未投出的漂流瓶。到底是谁做好漂流瓶就跑去烧烤，忘记投送出去了？",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 143,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_anchor_01": {
+        "id": "furni_beach_anchor_01",
+        "name": "汐斯塔市徽纪念品",
+        "iconId": "furni_beach_anchor_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 6,
+        "comfort": 165,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔市官方贩卖的大号市徽纪念品，挂墙上正合适。这座城市只需两个单词就能完美概括。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 138,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_sail_01": {
+        "id": "furni_beach_sail_01",
+        "name": "航海印象儿童画",
+        "iconId": "furni_beach_sail_01",
+        "type": "WALLDECO",
+        "location": "POSTER",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 3,
+        "comfort": 105,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "某位小干员从汐斯塔回来后绘制的儿童画。稚嫩画技正是无限梦想的最佳载体。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 88,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_chair_01": {
+        "id": "furni_beach_chair_01",
+        "name": "懒懒™双人休息椅",
+        "iconId": "furni_beach_chair_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 3,
+        "height": 4,
+        "comfort": 150,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔销量第一的双人椅现正登陆罗德岛！简单的浪漫从这里开始！",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 113,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_coffeeTable_01": {
+        "id": "furni_beach_coffeeTable_01",
+        "name": "懒懒™茶几",
+        "iconId": "furni_beach_coffeeTable_01",
+        "type": "TABLE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 2,
+        "height": 3,
+        "comfort": 150,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔人均保有量第一的茶几就在你面前！懒懒™茶几，享受生活的最佳选择！",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 125,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_drinkTable_01": {
+        "id": "furni_beach_drinkTable_01",
+        "name": "懒懒™高脚茶几",
+        "iconId": "furni_beach_drinkTable_01",
+        "type": "TABLE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 3,
+        "comfort": 80,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔折扣力度最强的高脚茶几已经安置在你的房间里了！还不快来享受生活！",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 68,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_surfboard_01": {
+        "id": "furni_beach_surfboard_01",
+        "name": "冲浪达人的板架",
+        "iconId": "furni_beach_surfboard_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 8,
+        "depth": 2,
+        "height": 5,
+        "comfort": 195,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "四块冠军冲浪板，整整齐齐排在架子上。阿戈尔干员根本不能理解的行为。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 148,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_deckChair_01": {
+        "id": "furni_beach_deckChair_01",
+        "name": "懒懒™躺椅",
+        "iconId": "furni_beach_deckChair_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 4,
+        "height": 4,
+        "comfort": 160,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔最受欢迎的躺椅正式登陆罗德岛！享受生活，只需一步：躺下！",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 133,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_curtain_L_01": {
+        "id": "furni_beach_curtain_L_01",
+        "name": "蓝白帆布窗帘（左）",
+        "iconId": "furni_beach_curtain_L_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 1,
+        "height": 8,
+        "comfort": 185,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔经典款窗帘。从这里拉开，哇哦，居然能看到大海！少数阿戈尔干员对商品真实性提出了异议。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 125,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_curtain_R_01": {
+        "id": "furni_beach_curtain_R_01",
+        "name": "蓝白帆布窗帘（右）",
+        "iconId": "furni_beach_curtain_R_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 1,
+        "height": 8,
+        "comfort": 185,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔经典款窗帘。从这里拉开，哇噻，居然能看到火山！少数地质学家对城市本身产生了兴趣。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 125,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_carpet_01": {
+        "id": "furni_beach_carpet_01",
+        "name": "汐斯塔船舵地毯",
+        "iconId": "furni_beach_carpet_01",
+        "type": "CARPET",
+        "location": "CARPET",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 12,
+        "depth": 10,
+        "height": 1,
+        "comfort": 165,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔居家设计中常用的地毯。出于对舵手的感激与敬仰，船舵逐渐成为了汐斯塔人最为钟爱的图案。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 125,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_doorMat_01": {
+        "id": "furni_beach_doorMat_01",
+        "name": "汐斯塔特制门垫",
+        "iconId": "furni_beach_doorMat_01",
+        "type": "CARPET",
+        "location": "CARPET",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 5,
+        "height": 1,
+        "comfort": 40,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "汐斯塔居家设计中常用的门垫。吸水，防潮，清洗便捷。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 35,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_slopedCeiling_01": {
+        "id": "furni_beach_slopedCeiling_01",
+        "name": "木制顶梁",
+        "iconId": "furni_beach_slopedCeiling_01",
+        "type": "CEILING",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 7,
+        "height": 2,
+        "comfort": 795,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "沙滩小屋的顶梁，灯泡就像灯泡链上长出的果实。等灯泡亮起来，派对就开始啦！",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 538,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_wallpaper_01": {
+        "id": "furni_beach_wallpaper_01",
+        "name": "全景显示屏（汐斯塔）",
+        "iconId": "furni_beach_wallpaper_01",
+        "type": "WALLPAPER",
+        "location": "NONE",
+        "category": "WALL",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 1,
+        "height": 10,
+        "comfort": 225,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "花大价钱定制的，覆盖墙面的4k全景显示屏。汐斯塔沙滩实况转播，环绕整座内海，完美展现当地风貌。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 153,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_beach_floor_01": {
+        "id": "furni_beach_floor_01",
+        "name": "夏日实木地板",
+        "iconId": "furni_beach_floor_01",
+        "type": "FLOOR",
+        "location": "NONE",
+        "category": "FLOOR",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 10,
+        "height": 1,
+        "comfort": 225,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "用汐斯塔本地原产木材铺设的地板，至少说明书是这么说的。请注意防潮。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 153,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_guitar_guitar1_01": {
+        "id": "furni_guitar_guitar1_01",
+        "name": "“浮木”",
+        "iconId": "furni_guitar_guitar1_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员守林人常用的吉他。多少答案消逝在风中。",
+        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar2_01": {
+        "id": "furni_guitar_guitar2_01",
+        "name": "“舞台”",
+        "iconId": "furni_guitar_guitar2_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员烈夏的专属吉他。以狂风之势扫动琴弦，指缝间的鲜血和汗水一同滴落地板。",
+        "obtainApproach": "火蓝之心扭蛋机奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar3_01": {
+        "id": "furni_guitar_guitar3_01",
+        "name": "“麦香”",
+        "iconId": "furni_guitar_guitar3_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员慕斯的专属吉他。木料散发着温和的味道，琴弦拨出了温柔的旋律。",
+        "obtainApproach": "火蓝之心扭蛋机奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar4_01": {
+        "id": "furni_guitar_guitar4_01",
+        "name": "“浅海”",
+        "iconId": "furni_guitar_guitar4_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员蓝毒的专属吉他。迷幻的蓝调会像猛毒一样牢牢抓住你的心。",
+        "obtainApproach": "火蓝之心扭蛋机奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar5_01": {
+        "id": "furni_guitar_guitar5_01",
+        "name": "“磨砂”",
+        "iconId": "furni_guitar_guitar5_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员杜宾的专属吉他。在选择拿起武器前，从没有一天放下过乐器。",
+        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar6_01": {
+        "id": "furni_guitar_guitar6_01",
+        "name": "“墨钢”",
+        "iconId": "furni_guitar_guitar6_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员讯使的专属吉他。可别被外形唬住。",
+        "obtainApproach": "火蓝之心扭蛋机奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar7_01": {
+        "id": "furni_guitar_guitar7_01",
+        "name": "“琥珀”",
+        "iconId": "furni_guitar_guitar7_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员诗怀雅的专属吉他。生活本就是兴趣使然。",
+        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar8_01": {
+        "id": "furni_guitar_guitar8_01",
+        "name": "“白桦”",
+        "iconId": "furni_guitar_guitar8_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员白金的专属吉他。习惯了自娱自乐，偶尔也愿意为特别的听众独奏两曲。",
+        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar9_01": {
+        "id": "furni_guitar_guitar9_01",
+        "name": "“烈火”",
+        "iconId": "furni_guitar_guitar9_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员红豆的专属吉他。将内心炽烈的热情和对音乐无限的渴望全部倾注在演奏中。",
+        "obtainApproach": "火蓝之心扭蛋机奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitar10_01": {
+        "id": "furni_guitar_guitar10_01",
+        "name": "“乌云”",
+        "iconId": "furni_guitar_guitar10_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 1,
+        "height": 4,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "干员雷蛇的专属吉他。抛去繁文缛节，就是天生摇滚。",
+        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_guitarCases_01": {
+        "id": "furni_guitar_guitarCases_01",
+        "name": "巡演设备组合",
+        "iconId": "furni_guitar_guitarCases_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 3,
+        "height": 3,
+        "comfort": 235,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "为巡回演出准备的一系列设备。设备已经收拾好了，作为主角的乐手却迟迟不见踪影。",
+        "obtainApproach": "火蓝之心OF-5首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_drumKit_01": {
+        "id": "furni_guitar_drumKit_01",
+        "name": "雅尔玛汗™架子鼓",
+        "iconId": "furni_guitar_drumKit_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 4,
+        "height": 4,
+        "comfort": 310,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一套标准的雅尔玛汗™架子鼓，附有使用说明。“你只有通过演奏来变得更好。”",
+        "obtainApproach": "火蓝之心OF-7首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_longBench_01": {
+        "id": "furni_guitar_longBench_01",
+        "name": "排练室长凳",
+        "iconId": "furni_guitar_longBench_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 2,
+        "height": 2,
+        "comfort": 185,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "排练室内使用的长板凳。休息偶尔会让你变得更紧张。",
+        "obtainApproach": "火蓝之心OF-4首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_partitionWall_01": {
+        "id": "furni_guitar_partitionWall_01",
+        "name": "排练室隔断墙",
+        "iconId": "furni_guitar_partitionWall_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 1,
+        "depth": 9,
+        "height": 8,
+        "comfort": 315,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "排练室使用的黑色隔断墙，附带门帘。一定的隔音效果能营造完美的练习环境，也能减少被投诉的次数。",
+        "obtainApproach": "火蓝之心活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_reception_01": {
+        "id": "furni_guitar_reception_01",
+        "name": "排练室接待台",
+        "iconId": "furni_guitar_reception_01",
+        "type": "TABLE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 8,
+        "depth": 3,
+        "height": 4,
+        "comfort": 325,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "排练室的接待前台。出售多种音乐用具，不准外带乐器。",
+        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_stool_01": {
+        "id": "furni_guitar_stool_01",
+        "name": "排练室圆凳",
+        "iconId": "furni_guitar_stool_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 2,
+        "comfort": 90,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "前台使用的圆凳。不是很舒服，但也没人会长时间坐在这里。",
+        "obtainApproach": "火蓝之心扭蛋机奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_display_01": {
+        "id": "furni_guitar_display_01",
+        "name": "悬挂式滚动显示屏",
+        "iconId": "furni_guitar_display_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 9,
+        "depth": 1,
+        "height": 3,
+        "comfort": 135,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "前台使用的显示屏。开放时间、预约安排、商品促销，什么都可以显示。",
+        "obtainApproach": "火蓝之心OF-3首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_pegboard_01": {
+        "id": "furni_guitar_pegboard_01",
+        "name": "排练室背带挂板",
+        "iconId": "furni_guitar_pegboard_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 1,
+        "height": 4,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "陈列着各式各样吉他背带的挂板。选一根合适的背带，为了自己，也为了吉他。",
+        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_pegboard2_01": {
+        "id": "furni_guitar_pegboard2_01",
+        "name": "排练室配件挂板",
+        "iconId": "furni_guitar_pegboard2_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 1,
+        "height": 4,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "陈列着各式各样吉他配件的挂板。保持状态，记得随时休整。",
+        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_poster1_01": {
+        "id": "furni_guitar_poster1_01",
+        "name": "萨卡兹摇滚海报",
+        "iconId": "furni_guitar_poster1_01",
+        "type": "WALLDECO",
+        "location": "POSTER",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 1,
+        "height": 3,
+        "comfort": 55,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一位萨卡兹吉他手的涂鸦海报。“我认为那是美的。我要试试。”",
+        "obtainApproach": "火蓝之心OF-1首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_poster2_01": {
+        "id": "furni_guitar_poster2_01",
+        "name": "乐队宣传海报",
+        "iconId": "furni_guitar_poster2_01",
+        "type": "WALLDECO",
+        "location": "POSTER",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 1,
+        "height": 4,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一张摇滚乐队的海报。被允许张贴在排练室里是一种肯定，当然，谁在乎呢。",
+        "obtainApproach": "火蓝之心OF-2首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_curtain_01": {
+        "id": "furni_guitar_curtain_01",
+        "name": "排练室遮灰帘",
+        "iconId": "furni_guitar_curtain_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 5,
+        "depth": 1,
+        "height": 7,
+        "comfort": 150,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "排练室使用的遮灰帘。掀开它，拿起你的乐器，你的梦想近在眼前。",
+        "obtainApproach": "火蓝之心活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_spotlight_01": {
+        "id": "furni_guitar_spotlight_01",
+        "name": "排练室聚光灯",
+        "iconId": "furni_guitar_spotlight_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 12,
+        "depth": 1,
+        "height": 1,
+        "comfort": 105,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "排练室内使用的聚光灯。也有模仿舞台效果的功效。",
+        "obtainApproach": "火蓝之心活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_ceiling_01": {
+        "id": "furni_guitar_ceiling_01",
+        "name": "聚光灯吊顶",
+        "iconId": "furni_guitar_ceiling_01",
+        "type": "CEILING",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 24,
+        "depth": 6,
+        "height": 2,
+        "comfort": 485,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "模仿舞台布光效果的聚光灯吊顶。请勿在聚光灯下逗留太久。",
+        "obtainApproach": "火蓝之心活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_carpet_01": {
+        "id": "furni_guitar_carpet_01",
+        "name": "排练室专用地毯",
+        "iconId": "furni_guitar_carpet_01",
+        "type": "CARPET",
+        "location": "CARPET",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 22,
+        "depth": 10,
+        "height": 1,
+        "comfort": 245,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "排练室使用的地毯。能够有效吸纳灰尘，因此也需要经常清理。",
+        "obtainApproach": "火蓝之心OF-6首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_wallpaper_01": {
+        "id": "furni_guitar_wallpaper_01",
+        "name": "排练室吸音壁纸",
+        "iconId": "furni_guitar_wallpaper_01",
+        "type": "WALLPAPER",
+        "location": "WALL",
+        "category": "WALL",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 1,
+        "height": 10,
+        "comfort": 225,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "排练室使用的吸音壁纸。采用了最新的吸音技术，足以将少数菲林干员的大吼大叫留在墙内。",
+        "obtainApproach": "火蓝之心活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_guitar_floor_01": {
+        "id": "furni_guitar_floor_01",
+        "name": "排练室吸音地砖",
+        "iconId": "furni_guitar_floor_01",
+        "type": "FLOOR",
+        "location": "FLOOR",
+        "category": "FLOOR",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 10,
+        "height": 1,
+        "comfort": 225,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "排练室使用的吸音地砖。就算练习时急得跺脚也没用。",
+        "obtainApproach": "火蓝之心活动期间 家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
       "furni_s2_bed_01": {
         "id": "furni_s2_bed_01",
         "name": "檀木大床",
@@ -10657,6 +11828,72 @@
         "processedByProductGroup": [],
         "canBeDestroy": false
       },
+      "furni_obsidianFestival_DJBooth_01": {
+        "id": "furni_obsidianFestival_DJBooth_01",
+        "name": "“极限”混音设备",
+        "iconId": "furni_obsidianFestival_DJBooth_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 3,
+        "themeId": "",
+        "width": 8,
+        "depth": 3,
+        "height": 4,
+        "comfort": 200,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一套附带特殊光效的打碟混音音响设备。实验证明，有节律地施放源石技艺确实有助于调整节奏和活跃气氛。",
+        "obtainApproach": "火蓝之心任务里程碑最终奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_obsidianFestival_soundSystem_01": {
+        "id": "furni_obsidianFestival_soundSystem_01",
+        "name": "“专业”舞台音响",
+        "iconId": "furni_obsidianFestival_soundSystem_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 3,
+        "themeId": "",
+        "width": 6,
+        "depth": 3,
+        "height": 6,
+        "comfort": 200,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一套专业舞台音响设备。无数年来只为公众演出进行专门设计，无论价格还是性能都属于市面上最为出色的级别。",
+        "obtainApproach": "火蓝之心任务里程碑最终奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_obsidianFestival_portableSpeaker_01": {
+        "id": "furni_obsidianFestival_portableSpeaker_01",
+        "name": "“风格”手提音响",
+        "iconId": "furni_obsidianFestival_portableSpeaker_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 3,
+        "themeId": "",
+        "width": 8,
+        "depth": 5,
+        "height": 6,
+        "comfort": 200,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一台足够炫酷的手提式音响设备。为符合气氛做了些必要的装饰，以至于光是看见它就会不由自主地想要摇晃身躯。",
+        "obtainApproach": "火蓝之心任务里程碑最终奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
       "furni_dropS001_theLittleMermaid_01": {
         "id": "furni_dropS001_theLittleMermaid_01",
         "name": "饰牌《泡沫》",
@@ -11075,6 +12312,50 @@
         "processedByProductGroup": [],
         "canBeDestroy": false
       },
+      "furni_dropS004_kraftwerk_01": {
+        "id": "furni_dropS004_kraftwerk_01",
+        "name": "饰牌《电人》",
+        "iconId": "furni_dropS003_zero_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“我们正在充电，我们是电人。”",
+        "obtainApproach": "火蓝之心OF-8首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_dropS004_deadBySunrise_01": {
+        "id": "furni_dropS004_deadBySunrise_01",
+        "name": "饰牌《过早》",
+        "iconId": "furni_dropS003_zero_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“想要回头 时候依然太早，想要听见你的声音 却又太过安静。”",
+        "obtainApproach": "火蓝之心OF-EX6突袭模式首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
       "furni_taptap_arcadegame_01": {
         "id": "furni_taptap_arcadegame_01",
         "name": "taptap街机",
@@ -11157,6 +12438,28 @@
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "音符跃动的节奏渐渐与心跳的震颤同齐。脑海里的星空蓦然奏响，无数音色汇流成银河。",
         "obtainApproach": "网易云音乐×明日方舟联名周边礼包 兑换码奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_choShanLand_rabbit1st_01": {
+        "id": "furni_choShanLand_rabbit1st_01",
+        "name": "可爱兔兔雕像",
+        "iconId": "furni_choShanLand_rabbit1st_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 3,
+        "themeId": "",
+        "width": 4,
+        "depth": 3,
+        "height": 6,
+        "comfort": 165,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "很大很大，很可爱，看起来很软的兔兔的雕像。虽然没什么人见过这种神奇的生物，但它真的很可爱。",
+        "obtainApproach": "朝陇山购物兑换码奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -11297,7 +12600,7 @@
       },
       "furni_team001_penguin_frame_01": {
         "id": "furni_team001_penguin_frame_01",
-        "name": "皇帝™的相框",
+        "name": "大帝™的相框",
         "iconId": "furni_team001_penguin_frame_01",
         "type": "WALLDECO",
         "location": "WALL",
@@ -11309,7 +12612,7 @@
         "height": 3,
         "comfort": 65,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
-        "description": "皇帝的相框。嘿，发生什么事了，兄弟？",
+        "description": "大帝的相框。嘿，发生什么事了，兄弟？",
         "obtainApproach": "企鹅物流小队信赖值收集",
         "processedProductId": "3401",
         "processedProductCount": 0,
@@ -13033,7 +14336,7 @@
           {
             "furnitureId": "furni_chen_trash_01",
             "pos0": 23,
-            "pos1": 2
+            "pos1": 3
           },
           {
             "furnitureId": "furni_chen_wingChunDummy_01",
@@ -13092,12 +14395,12 @@
           },
           {
             "furnitureId": "furni_chen_spotlight_01",
-            "pos0": 21,
+            "pos0": 22,
             "pos1": 0
           },
           {
             "furnitureId": "furni_chen_spotlight_01",
-            "pos0": 27,
+            "pos0": 28,
             "pos1": 0
           },
           {
@@ -13107,6 +14410,255 @@
           },
           {
             "furnitureId": "furni_chen_floor_01",
+            "pos0": 0,
+            "pos1": 0
+          }
+        ]
+      },
+      "furni_set_beach": {
+        "id": "furni_set_beach",
+        "name": "汐斯塔沙滩小屋",
+        "desc": "再现了内海城市汐斯塔假日风情的概念房间。派对还没开始吗？",
+        "quickSetup": [
+          {
+            "furnitureId": "furni_beach_cabinet_01",
+            "pos0": 0,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_beach_tableChairSets_01",
+            "pos0": 4,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_beach_calendar_01",
+            "pos0": 10,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_beach_floorLamp_01",
+            "pos0": 11,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_beach_anchor_01",
+            "pos0": 15,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_beach_sail_01",
+            "pos0": 23,
+            "pos1": 5
+          },
+          {
+            "furnitureId": "furni_beach_chair_01",
+            "pos0": 20,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_beach_coffeeTable_01",
+            "pos0": 20,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_beach_drinkTable_01",
+            "pos0": 26,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_beach_surfboard_01",
+            "pos0": 26,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_beach_deckChair_01",
+            "pos0": 28,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_beach_curtain_L_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_beach_curtain_R_01",
+            "pos0": 28,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_beach_carpet_01",
+            "pos0": 11,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_beach_doorMat_01",
+            "pos0": 0,
+            "pos1": 5
+          },
+          {
+            "furnitureId": "furni_beach_doorMat_01",
+            "pos0": 32,
+            "pos1": 5
+          },
+          {
+            "furnitureId": "furni_beach_slopedCeiling_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_beach_wallpaper_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_beach_floor_01",
+            "pos0": 0,
+            "pos1": 0
+          }
+        ]
+      },
+      "furni_set_guitar": {
+        "id": "furni_set_guitar",
+        "name": "罗德岛现代音乐排练室",
+        "desc": "罗德岛的现代音乐练习室之一，免费向热爱吉他的干员开放。",
+        "quickSetup": [
+          {
+            "furnitureId": "furni_guitar_guitar1_01",
+            "pos0": 5,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar2_01",
+            "pos0": 6,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar3_01",
+            "pos0": 7,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar4_01",
+            "pos0": 8,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar5_01",
+            "pos0": 9,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar6_01",
+            "pos0": 11,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar7_01",
+            "pos0": 12,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar8_01",
+            "pos0": 13,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar9_01",
+            "pos0": 14,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitar10_01",
+            "pos0": 15,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_guitarCases_01",
+            "pos0": 15,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_guitar_drumKit_01",
+            "pos0": 2,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_guitar_longBench_01",
+            "pos0": 8,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_partitionWall_01",
+            "pos0": 24,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_guitar_reception_01",
+            "pos0": 26,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_stool_01",
+            "pos0": 28,
+            "pos1": 5
+          },
+          {
+            "furnitureId": "furni_guitar_stool_01",
+            "pos0": 30,
+            "pos1": 5
+          },
+          {
+            "furnitureId": "furni_guitar_display_01",
+            "pos0": 25,
+            "pos1": 6
+          },
+          {
+            "furnitureId": "furni_guitar_pegboard_01",
+            "pos0": 28,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_pegboard2_01",
+            "pos0": 31,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_poster1_01",
+            "pos0": 19,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_guitar_poster2_01",
+            "pos0": 21,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_guitar_curtain_01",
+            "pos0": 0,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_guitar_spotlight_01",
+            "pos0": 5,
+            "pos1": 7
+          },
+          {
+            "furnitureId": "furni_guitar_ceiling_01",
+            "pos0": 5,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_guitar_carpet_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_guitar_wallpaper_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_guitar_floor_01",
             "pos0": 0,
             "pos1": 0
           }
@@ -13741,6 +15293,132 @@
           "furni_chen_floor_01",
           "furni_chen_ceilingLight_R_01",
           "furni_chen_ceilingLight_C_01"
+        ]
+      },
+      "furni_set_beach_1": {
+        "id": "furni_set_beach_1",
+        "name": "盛夏回忆组合",
+        "themeId": "furni_set_beach",
+        "comfort": 255,
+        "count": 4,
+        "furniture": [
+          "furni_beach_cabinet_01",
+          "furni_beach_tableChairSets_01",
+          "furni_beach_floorLamp_01",
+          "furni_beach_calendar_01"
+        ]
+      },
+      "furni_set_beach_2": {
+        "id": "furni_set_beach_2",
+        "name": "清凉一夏套组",
+        "themeId": "furni_set_beach",
+        "comfort": 150,
+        "count": 5,
+        "furniture": [
+          "furni_beach_coffeeTable_01",
+          "furni_beach_chair_01",
+          "furni_beach_drinkTable_01",
+          "furni_beach_deckChair_01",
+          "furni_beach_surfboard_01"
+        ]
+      },
+      "furni_set_beach_3": {
+        "id": "furni_set_beach_3",
+        "name": "沙滩壁饰集锦",
+        "themeId": "furni_set_beach",
+        "comfort": 145,
+        "count": 4,
+        "furniture": [
+          "furni_beach_anchor_01",
+          "furni_beach_sail_01",
+          "furni_beach_curtain_L_01",
+          "furni_beach_curtain_R_01"
+        ]
+      },
+      "furni_set_beach_4": {
+        "id": "furni_set_beach_4",
+        "name": "汐斯塔自然风光",
+        "themeId": "furni_set_beach",
+        "comfort": 355,
+        "count": 5,
+        "furniture": [
+          "furni_beach_wallpaper_01",
+          "furni_beach_floor_01",
+          "furni_beach_slopedCeiling_01",
+          "furni_beach_carpet_01",
+          "furni_beach_doorMat_01"
+        ]
+      },
+      "furni_set_guitar_1": {
+        "id": "furni_set_guitar_1",
+        "name": "一号吉他收藏",
+        "themeId": "furni_set_guitar",
+        "comfort": 225,
+        "count": 5,
+        "furniture": [
+          "furni_guitar_guitar1_01",
+          "furni_guitar_guitar2_01",
+          "furni_guitar_guitar3_01",
+          "furni_guitar_guitar4_01",
+          "furni_guitar_guitar5_01"
+        ]
+      },
+      "furni_set_guitar_2": {
+        "id": "furni_set_guitar_2",
+        "name": "二号吉他收藏",
+        "themeId": "furni_set_guitar",
+        "comfort": 225,
+        "count": 5,
+        "furniture": [
+          "furni_guitar_guitar6_01",
+          "furni_guitar_guitar7_01",
+          "furni_guitar_guitar8_01",
+          "furni_guitar_guitar9_01",
+          "furni_guitar_guitar10_01"
+        ]
+      },
+      "furni_set_guitar_3": {
+        "id": "furni_set_guitar_3",
+        "name": "练习室套件",
+        "themeId": "furni_set_guitar",
+        "comfort": 300,
+        "count": 6,
+        "furniture": [
+          "furni_guitar_guitarCases_01",
+          "furni_guitar_drumKit_01",
+          "furni_guitar_longBench_01",
+          "furni_guitar_poster1_01",
+          "furni_guitar_poster2_01",
+          "furni_guitar_carpet_01"
+        ]
+      },
+      "furni_set_guitar_4": {
+        "id": "furni_set_guitar_4",
+        "name": "前台接待套件",
+        "themeId": "furni_set_guitar",
+        "comfort": 210,
+        "count": 5,
+        "furniture": [
+          "furni_guitar_reception_01",
+          "furni_guitar_stool_01",
+          "furni_guitar_display_01",
+          "furni_guitar_pegboard_01",
+          "furni_guitar_pegboard2_01"
+        ]
+      },
+      "furni_set_guitar_5": {
+        "id": "furni_set_guitar_5",
+        "name": "现场氛围套件",
+        "themeId": "furni_set_guitar",
+        "comfort": 390,
+        "count": 6,
+        "furniture": [
+          "furni_guitar_wallpaper_01",
+          "furni_guitar_floor_01",
+          "furni_guitar_ceiling_01",
+          "furni_guitar_spotlight_01",
+          "furni_guitar_partitionWall_01",
+          "furni_guitar_curtain_01"
         ]
       }
     },
