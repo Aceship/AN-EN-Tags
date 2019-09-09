@@ -5426,6 +5426,103 @@
           ]
         }
       ]
+    },
+    "char_188_helage": {
+      "charId": "char_188_helage",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_all&oneself[010]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "dorm_rec_all&oneself[011]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "dorm_rec_all&oneself[012]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "workshop_formula_probability[010]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_151_myrtle": {
+      "charId": "char_151_myrtle",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "trade_ord_limit&cost[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_all[030]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_274_astesi": {
+      "charId": "char_274_astesi",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "meet_spd&team[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "meet_spd&team[110]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": []
+        }
+      ]
     }
   },
   "buffs": {
@@ -6019,6 +6116,16 @@
       "roomType": "WORKSHOP",
       "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>70%</>"
     },
+    "workshop_formula_probability[010]": {
+      "buffId": "workshop_formula_probability[010]",
+      "buffName": "兵者诡道",
+      "buffIcon": "workshop",
+      "buffColor": "#e3eb00",
+      "textColor": "#333333",
+      "buffCategory": "FUNCTION",
+      "roomType": "WORKSHOP",
+      "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    },
     "workshop_formula_probability[100]": {
       "buffId": "workshop_formula_probability[100]",
       "buffName": "营养学",
@@ -6539,6 +6646,36 @@
       "roomType": "DORMITORY",
       "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.25</>（同种效果取最高）"
     },
+    "dorm_rec_all&oneself[010]": {
+      "buffId": "dorm_rec_all&oneself[010]",
+      "buffName": "超脱",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>"
+    },
+    "dorm_rec_all&oneself[011]": {
+      "buffId": "dorm_rec_all&oneself[011]",
+      "buffName": "挣脱",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    },
+    "dorm_rec_all&oneself[012]": {
+      "buffId": "dorm_rec_all&oneself[012]",
+      "buffName": "解脱",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    },
     "hire_spd[000]": {
       "buffId": "hire_spd[000]",
       "buffName": "人事管理·α",
@@ -6692,6 +6829,16 @@
     "meet_spd&team[100]": {
       "buffId": "meet_spd&team[100]",
       "buffName": "警司",
+      "buffIcon": "meeting",
+      "buffColor": "#dd653f",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "MEETING",
+      "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+    },
+    "meet_spd&team[110]": {
+      "buffId": "meet_spd&team[110]",
+      "buffName": "星象学",
       "buffIcon": "meeting",
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
@@ -12306,6 +12453,28 @@
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "“也许有一种语言会以我们完全不能理解的姿态出现，但那只会验证我们的浅薄。”",
         "obtainApproach": "H5-4首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_dropS004_daftPunk_01": {
+        "id": "furni_dropS004_daftPunk_01",
+        "name": "饰牌《整日》",
+        "iconId": "furni_dropS003_zero_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“我们整日不起，就是为了成为彼此的幸运独角兽。”",
+        "obtainApproach": "活动获得",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
