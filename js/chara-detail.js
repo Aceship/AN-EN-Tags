@@ -1401,6 +1401,7 @@
         let color = ""
         let trait = opdataFull.trait
         console.log(trait)
+        let isReplaced = false
         splitdesc.forEach(element => {
             if(element.length>1){
                 let typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
@@ -1410,8 +1411,20 @@
                 // console.log(element)
                 let muhRegex = /(.*){(.*?)}(.*)/g
                 let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
-                console.log(currTLconv)
-                let currTLconvfinal = currTLconv?currTLconv[1] + `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>` + currTLconv[3]:typetl?typetl.type_en:element.join("")
+                if(currTLconv){
+                    console.log(currTLconv)
+                    var textreplace = 'Value'
+                    if(trait && trait.candidates.length>1){
+                        textreplace =  `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>`
+                    }else if (trait && trait.candidates.length==1) {
+                        textreplace = trait.candidates[0].blackboard[0].value
+                        if(currTLconv[2].includes("%")){
+                            textreplace= textreplace*100 +("%")
+                        }
+                        isReplaced = true
+                    }
+                }
+                let currTLconvfinal = currTLconv?currTLconv[1] + textreplace + currTLconv[3]:typetl?typetl.type_en:element.join("")
                 splitdescTL.push(currTLconvfinal)
             }else{
                 var typetl = db.attacktype.find(search=>{
@@ -1429,7 +1442,7 @@
                 splitdescTL.push(typetl?typetl.type_en:element[0])
             }
         });
-        if(trait){
+        if(trait&&!(isReplaced)){
             trait.candidates.forEach(element => {
                 var imagereq = []
                     if(element.unlockCondition.level >0)
