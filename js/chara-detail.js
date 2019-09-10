@@ -607,7 +607,7 @@
             var type = query(db.classes,"type_data",opdataFull.profession);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
             $("#op-className").html(eval("type.type_"+lang))
-            var attackType = getSpeciality(opdataFull.description)
+            var attackType = getSpeciality(opdataFull.description,opdataFull)
             
             $("#op-atktype").html(attackType)
             $("#op-rarity").html("");
@@ -1332,13 +1332,13 @@
         </div>`)
         return material
     }
-    function getSpeciality(description){
+    function getSpeciality(description,opdataFull){
 
         //gonna need to split on "," and "\n" and repeat it
         let descriptions = description.split(/[，(\\n)]/)
         let splitdesc = []
         // console.log("=====================")
-        // console.log(descriptions)
+        console.log(descriptions)
         descriptions.forEach(element => {
             if(element){
                 let muhRegex = /<@ba\.kw>(.*?)<\/>/g
@@ -1355,7 +1355,7 @@
         // console.log(splitdesc)
         // console.log("===========================")
         
-        return SpecialityHtml(splitdesc)
+        return SpecialityHtml(splitdesc,opdataFull)
     }
     function GetTrust(opdataFull){
         // console.log()
@@ -1396,9 +1396,11 @@
         });
         return titledMaker(readable.join("</br>"),"Trust extra status","","","color:#ddd;min-width:120px")
     }
-    function SpecialityHtml(splitdesc){
+    function SpecialityHtml(splitdesc,opdataFull){
         let splitdescTL = []
         let color = ""
+        let trait = opdataFull.trait
+        console.log(trait)
         splitdesc.forEach(element => {
             if(element.length>1){
                 let typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
@@ -1406,16 +1408,45 @@
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
 
                 // console.log(element)
-                splitdescTL.push(typetl?typetl.type_en:element.join(""))
+                let muhRegex = /(.*){(.*?)}(.*)/g
+                let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
+                console.log(currTLconv)
+                let currTLconvfinal = currTLconv?currTLconv[1] + `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>` + currTLconv[3]:typetl?typetl.type_en:element.join("")
+                splitdescTL.push(currTLconvfinal)
             }else{
-                let typetl = db.attacktype.find(search=>{
+                var typetl = db.attacktype.find(search=>{
                     if(search.type_detail=="common")
                     return search.type_cn==element[0]
                 })
+                if(!typetl){
+                    typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
+                }
+                // console.log(element.join(""))
+
+                // console.log(typetl)
+                
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
                 splitdescTL.push(typetl?typetl.type_en:element[0])
             }
         });
+        if(trait){
+            trait.candidates.forEach(element => {
+                var imagereq = []
+                    if(element.unlockCondition.level >0)
+                    imagereq.push(`Lv.${element.unlockCondition.level}`)
+                    if(element.unlockCondition.phase >0)
+                    imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
+    
+                // console.log(s)
+                var each = []
+                element.blackboard.forEach(eachbb => {
+                    each.push(`${eachbb.key} : ${eachbb.value}`)
+                });
+                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px">${ each.join(" ")}</div>
+                <div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+                splitdescTL.push(info)
+            });
+        }
         // console.log(splitdescTL)
         // console.log(color)
 
