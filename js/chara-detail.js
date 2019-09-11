@@ -1032,14 +1032,20 @@
                                     if (!content){
                                         var splitnum = infoTitle[4].trim().split("")
                                         var num = 0
+                                        var count = 0
                                         var end = ""
-                                        // console.log(splitnum)
+                                        console.log(splitnum)
                                         splitnum.forEach(eachnum => {
                                             // console.log(eachnum)
                                             // console.log(typeof parseInt(eachnum))
                                             // console.log(parseInt(eachnum))
                                             if(typeof db.storytextTL[eachnum] == "number" ){
-                                                num += db.storytextTL[eachnum]
+                                                console.log(db.storytextTL[eachnum])
+                                                if(db.storytextTL[eachnum]==10 && count==1){
+                                                    num = num*10
+                                                }else{
+                                                    num += db.storytextTL[eachnum]
+                                                }
                                             }
                                             else if(typeof parseInt(eachnum)  == "number" && !isNaN(parseInt(eachnum))){
                                                 num += parseInt(eachnum)
@@ -1047,8 +1053,10 @@
                                             else{
                                                 end = db.storytextTL[eachnum]
                                             }
+                                            console.log(num)
+                                            count++
                                         });
-                                        // console.log(num)
+                                        
                                         if(num% 1 != 0){
                                             if(num<1){
                                                 num = "Half a"
