@@ -1026,7 +1026,8 @@
                                     ;break;
                                     case "表演经验":
                                     case "出厂时间":
-                                    case "战斗经验": content= db.storytextTL[content]
+                                    case "战斗经验": content= db.storytextTL[content.trim()]
+                                    // console.log(infoTitle)
                                     // console.log("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
                                     // console.log(content)
                                     if (!content){
