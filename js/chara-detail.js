@@ -1663,7 +1663,7 @@
         }
 
         // if(skillTL){
-
+        if(desc){
             var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
             // console.log(matches)
             $.each(matches,function(i,v){
@@ -1691,6 +1691,7 @@
                     desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
                 }
             });
+        }
         // }else{
 
         // }
