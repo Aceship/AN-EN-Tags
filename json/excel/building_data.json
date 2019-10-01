@@ -5426,6 +5426,131 @@
           ]
         }
       ]
+    },
+    "char_188_helage": {
+      "charId": "char_188_helage",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_all&oneself[010]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "dorm_rec_all&oneself[011]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "dorm_rec_all&oneself[012]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "workshop_formula_probability[010]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_151_myrtle": {
+      "charId": "char_151_myrtle",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "trade_ord_limit&cost[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_all[030]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_274_astesi": {
+      "charId": "char_274_astesi",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "meet_spd&team[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "meet_spd&team[110]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": []
+        }
+      ]
+    },
+    "char_260_durnar": {
+      "charId": "char_260_durnar",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "train_spd&profession[030]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "control_mp_cost[002]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   "buffs": {
@@ -5462,6 +5587,16 @@
     "control_mp_cost[001]": {
       "buffId": "control_mp_cost[001]",
       "buffName": "S.W.E.E.P",
+      "buffIcon": "control",
+      "buffColor": "#005752",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "CONTROL",
+      "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时消耗<@cc.vup>-0.05</>"
+    },
+    "control_mp_cost[002]": {
+      "buffId": "control_mp_cost[002]",
+      "buffName": "零食网络",
       "buffIcon": "control",
       "buffColor": "#005752",
       "textColor": "#ffffff",
@@ -6019,6 +6154,16 @@
       "roomType": "WORKSHOP",
       "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>70%</>"
     },
+    "workshop_formula_probability[010]": {
+      "buffId": "workshop_formula_probability[010]",
+      "buffName": "兵者诡道",
+      "buffIcon": "workshop",
+      "buffColor": "#e3eb00",
+      "textColor": "#333333",
+      "buffCategory": "FUNCTION",
+      "roomType": "WORKSHOP",
+      "description": "进驻加工站加工<@cc.kw>技巧概要</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    },
     "workshop_formula_probability[100]": {
       "buffId": "workshop_formula_probability[100]",
       "buffName": "营养学",
@@ -6539,6 +6684,36 @@
       "roomType": "DORMITORY",
       "description": "进驻宿舍时，自身心情每小时恢复<@cc.vdown>-0.1</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.25</>（同种效果取最高）"
     },
+    "dorm_rec_all&oneself[010]": {
+      "buffId": "dorm_rec_all&oneself[010]",
+      "buffName": "超脱",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>"
+    },
+    "dorm_rec_all&oneself[011]": {
+      "buffId": "dorm_rec_all&oneself[011]",
+      "buffName": "挣脱",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    },
+    "dorm_rec_all&oneself[012]": {
+      "buffId": "dorm_rec_all&oneself[012]",
+      "buffName": "解脱",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.55</>，该宿舍内所有干员的心情每小时恢复<@cc.vup>+0.1</>（同种效果取最高）"
+    },
     "hire_spd[000]": {
       "buffId": "hire_spd[000]",
       "buffName": "人事管理·α",
@@ -6692,6 +6867,16 @@
     "meet_spd&team[100]": {
       "buffId": "meet_spd&team[100]",
       "buffName": "警司",
+      "buffIcon": "meeting",
+      "buffColor": "#dd653f",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "MEETING",
+      "description": "进驻会客室时，线索搜集速度提升<@cc.vup>25%</>"
+    },
+    "meet_spd&team[110]": {
+      "buffId": "meet_spd&team[110]",
+      "buffName": "星象学",
       "buffIcon": "meeting",
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
@@ -10149,7 +10334,7 @@
         "comfort": 55,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "干员守林人常用的吉他。多少答案消逝在风中。",
-        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -10237,7 +10422,7 @@
         "comfort": 55,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "干员杜宾的专属吉他。在选择拿起武器前，从没有一天放下过乐器。",
-        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -10281,7 +10466,7 @@
         "comfort": 55,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "干员诗怀雅的专属吉他。生活本就是兴趣使然。",
-        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -10303,7 +10488,7 @@
         "comfort": 55,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "干员白金的专属吉他。习惯了自娱自乐，偶尔也愿意为特别的听众独奏两曲。",
-        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -10347,7 +10532,7 @@
         "comfort": 55,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "干员雷蛇的专属吉他。抛去繁文缛节，就是天生摇滚。",
-        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -10457,7 +10642,7 @@
         "comfort": 325,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "排练室的接待前台。出售多种音乐用具，不准外带乐器。",
-        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -10523,7 +10708,7 @@
         "comfort": 75,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "陈列着各式各样吉他背带的挂板。选一根合适的背带，为了自己，也为了吉他。",
-        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -10545,7 +10730,7 @@
         "comfort": 75,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "陈列着各式各样吉他配件的挂板。保持状态，记得随时休整。",
-        "obtainApproach": "火蓝之心任务里程碑奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -11843,7 +12028,7 @@
         "comfort": 200,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "一套附带特殊光效的打碟混音音响设备。实验证明，有节律地施放源石技艺确实有助于调整节奏和活跃气氛。",
-        "obtainApproach": "火蓝之心任务里程碑最终奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -11865,7 +12050,7 @@
         "comfort": 200,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "一套专业舞台音响设备。无数年来只为公众演出进行专门设计，无论价格还是性能都属于市面上最为出色的级别。",
-        "obtainApproach": "火蓝之心任务里程碑最终奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -11887,7 +12072,7 @@
         "comfort": 200,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "一台足够炫酷的手提式音响设备。为符合气氛做了些必要的装饰，以至于光是看见它就会不由自主地想要摇晃身躯。",
-        "obtainApproach": "火蓝之心任务里程碑最终奖励",
+        "obtainApproach": "火蓝之心里程碑奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -12306,6 +12491,28 @@
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "“也许有一种语言会以我们完全不能理解的姿态出现，但那只会验证我们的浅薄。”",
         "obtainApproach": "H5-4首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_dropS004_daftPunk_01": {
+        "id": "furni_dropS004_daftPunk_01",
+        "name": "饰牌《整日》",
+        "iconId": "furni_dropS003_zero_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“我们整日不起，就是为了成为彼此的幸运独角兽。”",
+        "obtainApproach": "活动获得",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,

@@ -607,7 +607,7 @@
             var type = query(db.classes,"type_data",opdataFull.profession);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
             $("#op-className").html(eval("type.type_"+lang))
-            var attackType = getSpeciality(opdataFull.description)
+            var attackType = getSpeciality(opdataFull.description,opdataFull)
             
             $("#op-atktype").html(attackType)
             $("#op-rarity").html("");
@@ -950,6 +950,8 @@
         // console.log(curraudiolist)
         // console.log(puretextlist.join("\n"))
         $('#opaudiocontent').html("")
+        $('#opaudiotranslator').html("")
+        $('#opaudioproofreader').html("")
         curraudiolist.forEach(element => {
             var curraudio  =`<audio controls preload="metadata" style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
@@ -972,7 +974,7 @@
             `)
             $('#opaudiocontent').append($(currhtml))
         });
-
+        
         if(currTL){
             if(currTL.translator){
                 $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">${currTL.translator}</div>`)
@@ -1026,20 +1028,27 @@
                                     ;break;
                                     case "表演经验":
                                     case "出厂时间":
-                                    case "战斗经验": content= db.storytextTL[content]
+                                    case "战斗经验": content= db.storytextTL[content.trim()]
+                                    // console.log(infoTitle)
                                     // console.log("WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
                                     // console.log(content)
                                     if (!content){
                                         var splitnum = infoTitle[4].trim().split("")
                                         var num = 0
+                                        var count = 0
                                         var end = ""
-                                        // console.log(splitnum)
+                                        console.log(splitnum)
                                         splitnum.forEach(eachnum => {
                                             // console.log(eachnum)
                                             // console.log(typeof parseInt(eachnum))
                                             // console.log(parseInt(eachnum))
                                             if(typeof db.storytextTL[eachnum] == "number" ){
-                                                num += db.storytextTL[eachnum]
+                                                console.log(db.storytextTL[eachnum])
+                                                if(db.storytextTL[eachnum]==10 && count==1){
+                                                    num = num*10
+                                                }else{
+                                                    num += db.storytextTL[eachnum]
+                                                }
                                             }
                                             else if(typeof parseInt(eachnum)  == "number" && !isNaN(parseInt(eachnum))){
                                                 num += parseInt(eachnum)
@@ -1047,8 +1056,10 @@
                                             else{
                                                 end = db.storytextTL[eachnum]
                                             }
+                                            console.log(num)
+                                            count++
                                         });
-                                        // console.log(num)
+                                        
                                         if(num% 1 != 0){
                                             if(num<1){
                                                 num = "Half a"
@@ -1332,13 +1343,13 @@
         </div>`)
         return material
     }
-    function getSpeciality(description){
+    function getSpeciality(description,opdataFull){
 
         //gonna need to split on "," and "\n" and repeat it
         let descriptions = description.split(/[，(\\n)]/)
         let splitdesc = []
         // console.log("=====================")
-        // console.log(descriptions)
+        console.log(descriptions)
         descriptions.forEach(element => {
             if(element){
                 let muhRegex = /<@ba\.kw>(.*?)<\/>/g
@@ -1355,7 +1366,7 @@
         // console.log(splitdesc)
         // console.log("===========================")
         
-        return SpecialityHtml(splitdesc)
+        return SpecialityHtml(splitdesc,opdataFull)
     }
     function GetTrust(opdataFull){
         // console.log()
@@ -1396,9 +1407,12 @@
         });
         return titledMaker(readable.join("</br>"),"Trust extra status","","","color:#ddd;min-width:120px")
     }
-    function SpecialityHtml(splitdesc){
+    function SpecialityHtml(splitdesc,opdataFull){
         let splitdescTL = []
         let color = ""
+        let trait = opdataFull.trait
+        console.log(trait)
+        let isReplaced = false
         splitdesc.forEach(element => {
             if(element.length>1){
                 let typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
@@ -1406,16 +1420,57 @@
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
 
                 // console.log(element)
-                splitdescTL.push(typetl?typetl.type_en:element.join(""))
+                let muhRegex = /(.*){(.*?)}(.*)/g
+                let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
+                if(currTLconv){
+                    console.log(currTLconv)
+                    var textreplace = 'Value'
+                    if(trait && trait.candidates.length>1){
+                        textreplace =  `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>`
+                    }else if (trait && trait.candidates.length==1) {
+                        textreplace = trait.candidates[0].blackboard[0].value
+                        if(currTLconv[2].includes("%")){
+                            textreplace= textreplace*100 +("%")
+                        }
+                        isReplaced = true
+                    }
+                }
+                let currTLconvfinal = currTLconv?currTLconv[1] + textreplace + currTLconv[3]:typetl?typetl.type_en:element.join("")
+                splitdescTL.push(currTLconvfinal)
             }else{
-                let typetl = db.attacktype.find(search=>{
+                var typetl = db.attacktype.find(search=>{
                     if(search.type_detail=="common")
                     return search.type_cn==element[0]
                 })
+                if(!typetl){
+                    typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
+                }
+                // console.log(element.join(""))
+
+                // console.log(typetl)
+                
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
                 splitdescTL.push(typetl?typetl.type_en:element[0])
             }
         });
+        if(trait&&!(isReplaced)){
+            trait.candidates.forEach(element => {
+                var imagereq = []
+                    if(element.unlockCondition.level >0)
+                    imagereq.push(`Lv.${element.unlockCondition.level}`)
+                    if(element.unlockCondition.phase >0)
+                    imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
+    
+                // console.log(s)
+                var each = []
+                element.blackboard.forEach(eachbb => {
+                    each.push(`${eachbb.key} : ${eachbb.value}`)
+                });
+                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px">${ each.join(" ")}</div>
+                <div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+                splitdescTL.push(info)
+            });
+        }
         // console.log(splitdescTL)
         // console.log(color)
 
@@ -1608,7 +1663,7 @@
         }
 
         // if(skillTL){
-
+        if(desc){
             var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
             // console.log(matches)
             $.each(matches,function(i,v){
@@ -1636,6 +1691,7 @@
                     desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
                 }
             });
+        }
         // }else{
 
         // }
