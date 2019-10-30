@@ -5662,6 +5662,61 @@
           ]
         }
       ]
+    },
+    "char_275_breeze": {
+      "charId": "char_275_breeze",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "meet_spd&team[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "meet_spd&team[071]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": []
+        }
+      ]
+    },
+    "char_355_ethan": {
+      "charId": "char_355_ethan",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "hire_spd[030]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_oneself[030]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   "buffs": {
@@ -5717,7 +5772,7 @@
     },
     "control_mp_cost[003]": {
       "buffId": "control_mp_cost[003]",
-      "buffName": "清理委托",
+      "buffName": "清理协议",
       "buffIcon": "control",
       "buffColor": "#005752",
       "textColor": "#ffffff",
@@ -6645,6 +6700,16 @@
       "roomType": "DORMITORY",
       "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+1</>"
     },
+    "dorm_rec_oneself[030]": {
+      "buffId": "dorm_rec_oneself[030]",
+      "buffName": "隐形的美食家",
+      "buffIcon": "dormitory",
+      "buffColor": "#21cdcb",
+      "textColor": "#ffffff",
+      "buffCategory": "RECOVERY",
+      "roomType": "DORMITORY",
+      "description": "进驻宿舍时，自身心情每小时恢复<@cc.vup>+0.75</>"
+    },
     "dorm_rec_single[000]": {
       "buffId": "dorm_rec_single[000]",
       "buffName": "医疗服务",
@@ -6915,6 +6980,16 @@
       "roomType": "HIRE",
       "description": "进驻人力办公室时，人脉资源的累积速度<@cc.vup>+40%</>"
     },
+    "hire_spd[030]": {
+      "buffId": "hire_spd[030]",
+      "buffName": "WRITER",
+      "buffIcon": "hire",
+      "buffColor": "#565656",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "HIRE",
+      "description": "进驻人力办公室时，人脉资源的累积速度<@cc.vup>+40%</>"
+    },
     "meet_spd[000]": {
       "buffId": "meet_spd[000]",
       "buffName": "线索搜集·α",
@@ -7018,6 +7093,16 @@
     "meet_spd&team[070]": {
       "buffId": "meet_spd&team[070]",
       "buffName": "传讯者",
+      "buffIcon": "meeting",
+      "buffColor": "#dd653f",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "MEETING",
+      "description": "进驻会客室时，线索搜集速度提升<@cc.vup>10%</>，且更容易获得<@cc.kw>格拉斯哥帮</>线索"
+    },
+    "meet_spd&team[071]": {
+      "buffId": "meet_spd&team[071]",
+      "buffName": "没落贵族",
       "buffIcon": "meeting",
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
@@ -12614,6 +12699,688 @@
         "processedByProductGroup": [],
         "canBeDestroy": true
       },
+      "furni_rococo_cabinet_01": {
+        "id": "furni_rococo_cabinet_01",
+        "name": "上锁的立柜",
+        "iconId": "furni_rococo_cabinet_01",
+        "type": "CABINET",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 5,
+        "depth": 3,
+        "height": 9,
+        "comfort": 255,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一个上锁的皇家立柜，配锁的钥匙已经不见了。听说里面藏着天大的秘密，但，没有钥匙怎么开？",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_bustStatue_01": {
+        "id": "furni_rococo_bustStatue_01",
+        "name": "兰城卫兵半身像",
+        "iconId": "furni_rococo_bustStatue_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 3,
+        "height": 5,
+        "comfort": 145,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一个兰赛拉尔卫士的半身像。普普通通，无处不在。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_table_01": {
+        "id": "furni_rococo_table_01",
+        "name": "宴席长桌",
+        "iconId": "furni_rococo_table_01",
+        "type": "TABLE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 22,
+        "depth": 3,
+        "height": 5,
+        "comfort": 605,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔皇室宴请时使用的长桌。“按照本地习俗，晚宴人数以一主六客为善，不宜少，不宜多 。”",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_mainSeat_01": {
+        "id": "furni_rococo_mainSeat_01",
+        "name": "宴会厅主座",
+        "iconId": "furni_rococo_mainSeat_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 4,
+        "comfort": 145,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔皇室宴请时使用的主椅。“主人应慷慨解囊，宴请宾客。”",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_secondarySeat_01": {
+        "id": "furni_rococo_secondarySeat_01",
+        "name": "宴会厅次席",
+        "iconId": "furni_rococo_secondarySeat_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 4,
+        "comfort": 80,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔皇室宴请时使用的次椅。“宾客应多多美言，真诚待主。”",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_stool_01": {
+        "id": "furni_rococo_stool_01",
+        "name": "兰赛拉尔矮凳",
+        "iconId": "furni_rococo_stool_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 3,
+        "height": 2,
+        "comfort": 175,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔宴会厅休息用的矮凳。饱餐一顿后，兰赛拉尔人免不了找个矮凳思索一番人生。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_fireplace_01": {
+        "id": "furni_rococo_fireplace_01",
+        "name": "蜡烛展示炉",
+        "iconId": "furni_rococo_fireplace_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 2,
+        "height": 5,
+        "comfort": 175,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔地方用于展示蜡烛的壁炉。壁炉里的蜡烛是分辨一个兰赛拉尔家庭富裕与否的重要象征。烤火，不是有火盆吗？",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_carpet_01": {
+        "id": "furni_rococo_carpet_01",
+        "name": "兰赛拉尔小方毯",
+        "iconId": "furni_rococo_carpet_01",
+        "type": "CARPET",
+        "location": "CARPET",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 3,
+        "height": 1,
+        "comfort": 50,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一块朴素的长方小地毯。想要垫脚？用它就对了。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_brazier_01": {
+        "id": "furni_rococo_brazier_01",
+        "name": "兰赛拉尔火盆",
+        "iconId": "furni_rococo_brazier_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 4,
+        "height": 3,
+        "comfort": 165,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔地方用于取暖的火盆。炽热的盆火通过地板将暖意渗透至房间的每个角落。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_observationDeck_01": {
+        "id": "furni_rococo_observationDeck_01",
+        "name": "全景显示屏（兰城.夜）",
+        "iconId": "furni_rococo_observationDeck_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 18,
+        "depth": 1,
+        "height": 8,
+        "comfort": 305,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔王城宴会厅外观景台的全景投影。月光之下，美景一览无余——而且也不会掉下去。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_pillar_01": {
+        "id": "furni_rococo_pillar_01",
+        "name": "艾式立柱",
+        "iconId": "furni_rococo_pillar_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 10,
+        "comfort": 130,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔王室最爱使用的艾式立柱。它在被创造的瞬间，就叫这个名字。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_framedArt_01": {
+        "id": "furni_rococo_framedArt_01",
+        "name": "《兰赛拉尔风光》",
+        "iconId": "furni_rococo_framedArt_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 1,
+        "height": 3,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "绘制着兰赛拉尔当地风光的风景画。仅有一城的偏远小国，占尽了世间的美丽。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_mirror_01": {
+        "id": "furni_rococo_mirror_01",
+        "name": "兰赛拉尔魔镜",
+        "iconId": "furni_rococo_mirror_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 4,
+        "comfort": 105,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一面金光闪闪的镜子，什么都照不出来。两日交汇的瞬间，钟声响起，魔力再现，没人见过。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_ceilingLight1_01": {
+        "id": "furni_rococo_ceilingLight1_01",
+        "name": "双层吸顶蜡烛吊灯",
+        "iconId": "furni_rococo_ceilingLight1_01",
+        "type": "CEILINGLAMP",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 4,
+        "height": 4,
+        "comfort": 140,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔宴会厅用的双层蜡烛吊灯。光芒倍增，加量不加价。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_ceilingLight2_01": {
+        "id": "furni_rococo_ceilingLight2_01",
+        "name": "吸顶蜡烛吊灯",
+        "iconId": "furni_rococo_ceilingLight2_01",
+        "type": "CEILINGLAMP",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 4,
+        "height": 3,
+        "comfort": 80,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔宴会厅用的蜡烛吊灯。即使有了替代能源，兰赛拉尔人依旧喜欢以蜡烛照明。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_doorMat_01": {
+        "id": "furni_rococo_doorMat_01",
+        "name": "礼宾门垫",
+        "iconId": "furni_rococo_doorMat_01",
+        "type": "CARPET",
+        "location": "CARPET",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 4,
+        "height": 1,
+        "comfort": 30,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "放置在门前的脚垫。“尊敬的客人啊，进门前请先卸下武器。兰赛拉尔只欢迎和平之人。”",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_wallpaper_01": {
+        "id": "furni_rococo_wallpaper_01",
+        "name": "兰城皇家墙纸",
+        "iconId": "furni_rococo_wallpaper_01",
+        "type": "WALLPAPER",
+        "location": "WALL",
+        "category": "WALL",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 1,
+        "height": 10,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "兰赛拉尔皇家才能使用的墙纸样式，已特别授予罗德岛使用权。“尊贵之人的晚宴，理应以奢华相配。”",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_rococo_floor_01": {
+        "id": "furni_rococo_floor_01",
+        "name": "兰赛拉尔原木地板",
+        "iconId": "furni_rococo_floor_01",
+        "type": "FLOOR",
+        "location": "FLOOR",
+        "category": "FLOOR",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 10,
+        "height": 1,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "以兰赛拉尔本地木材制作的地板。不计代价，只为结果。",
+        "obtainApproach": "部分关卡幸运掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 5,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_tree_01": {
+        "id": "furni_spirit_tree_01",
+        "name": "异样寝床",
+        "iconId": "furni_spirit_tree_01",
+        "type": "BEDDING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 12,
+        "depth": 5,
+        "height": 10,
+        "comfort": 1020,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "伴着异样装饰的石棺，生者勿眠。“你睁开双眼，世间相貌已变。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 548,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_window_01": {
+        "id": "furni_spirit_window_01",
+        "name": "锁夜石窗",
+        "iconId": "furni_spirit_window_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 6,
+        "comfort": 175,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "胡乱钉上木板的石窗。“封死窗户，暮色自隙间潜入闭室。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 145,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_pumpkin_01": {
+        "id": "furni_spirit_pumpkin_01",
+        "name": "数个仪瓜",
+        "iconId": "furni_spirit_pumpkin_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 8,
+        "depth": 2,
+        "height": 2,
+        "comfort": 230,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "几个堆放在一起的仪瓜。“仪瓜当能抵御安宁，而恐惧自当由安宁滋生。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 173,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_pumpkin2_01": {
+        "id": "furni_spirit_pumpkin2_01",
+        "name": "更多仪瓜",
+        "iconId": "furni_spirit_pumpkin2_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 2,
+        "comfort": 145,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "大量堆放在一起的仪瓜。“你将仪瓜点燃，期待以它熄灭心火。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 120,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_fireplace_01": {
+        "id": "furni_spirit_fireplace_01",
+        "name": "起仪壁炉",
+        "iconId": "furni_spirit_fireplace_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 8,
+        "depth": 4,
+        "height": 6,
+        "comfort": 475,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "放满贡品仪瓜的壁炉。“你奉献奇珍，期待启明灵识；灾厄浮现，恰如你所乞求。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 323,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_book_01": {
+        "id": "furni_spirit_book_01",
+        "name": "塑忆书群",
+        "iconId": "furni_spirit_book_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 3,
+        "height": 2,
+        "comfort": 175,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "成堆的密文书。“你每阅一字，过往都得重塑，未来将浮于脑海，而你当为其中囚徒。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 145,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_crucible_01": {
+        "id": "furni_spirit_crucible_01",
+        "name": "铸蜜坩埚",
+        "iconId": "furni_spirit_crucible_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 5,
+        "depth": 4,
+        "height": 5,
+        "comfort": 310,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "装满糖果的坩埚。“你走入密林，摘下红果，在它深邃的胸膛里熬煮已遭禁止的甜蜜。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 210,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_table_01": {
+        "id": "furni_spirit_table_01",
+        "name": "碎序书桌",
+        "iconId": "furni_spirit_table_01",
+        "type": "TABLE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 4,
+        "height": 8,
+        "comfort": 450,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "满是资料与笔记的书桌。“你的学识从笔尖流下，化作未解谜团萦绕心头。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 305,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_chair_01": {
+        "id": "furni_spirit_chair_01",
+        "name": "典雅木椅",
+        "iconId": "furni_spirit_chair_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 3,
+        "depth": 3,
+        "height": 4,
+        "comfort": 50,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一把典雅的木椅。“你的思维纷飞如絮，由扑火萤蛾肆意攫取，做茧成蚕。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 43,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_ceilingLight_01": {
+        "id": "furni_spirit_ceilingLight_01",
+        "name": "辅仪吊灯",
+        "iconId": "furni_spirit_ceilingLight_01",
+        "type": "CEILINGLAMP",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 6,
+        "height": 4,
+        "comfort": 205,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "一盏古旧的铁质吊灯。“你的心智已去，烛火燃起，阴影徘徊其间。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 155,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_carpet_01": {
+        "id": "furni_spirit_carpet_01",
+        "name": "平凡草席",
+        "iconId": "furni_spirit_carpet_01",
+        "type": "CARPET",
+        "location": "CARPET",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 10,
+        "depth": 10,
+        "height": 1,
+        "comfort": 200,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "由独特杂草编制的地毯。“你，思考，停止，夙愿，完成，必须。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 165,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_wallpaper_01": {
+        "id": "furni_spirit_wallpaper_01",
+        "name": "破败居室",
+        "iconId": "furni_spirit_wallpaper_01",
+        "type": "WALLPAPER",
+        "location": "WALL",
+        "category": "WALL",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 1,
+        "height": 10,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "崩毁前夕的居室墙壁，实为不存人世的景象。“你的世界分崩离析，帷幕升起，唤出晚夜空星。换言之就是电子屏。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 180,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_spirit_floor_01": {
+        "id": "furni_spirit_floor_01",
+        "name": "积岁砖石",
+        "iconId": "furni_spirit_floor_01",
+        "type": "FLOOR",
+        "location": "FLOOR",
+        "category": "FLOOR",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 10,
+        "height": 1,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "布满灰尘的石砖。“你步履蹒跚，背负重压，一如横遭践踏的碌碌顽石。”",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 180,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
       "furni_obsidianFestival_DJBooth_01": {
         "id": "furni_obsidianFestival_DJBooth_01",
         "name": "“极限”混音设备",
@@ -15605,6 +16372,205 @@
             "pos1": 0
           }
         ]
+      },
+      "furni_set_rococo": {
+        "id": "furni_set_rococo",
+        "name": "兰赛拉尔宴会厅",
+        "desc": "再现了偏远小国兰赛拉尔王城宴会厅的概念房间。群山之间一点光。",
+        "quickSetup": [
+          {
+            "furnitureId": "furni_rococo_cabinet_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_rococo_bustStatue_01",
+            "pos0": 0,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_table_01",
+            "pos0": 6,
+            "pos1": 6
+          },
+          {
+            "furnitureId": "furni_rococo_mainSeat_01",
+            "pos0": 16,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_secondarySeat_01",
+            "pos0": 13,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_secondarySeat_01",
+            "pos0": 19,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_secondarySeat_01",
+            "pos0": 10,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_secondarySeat_01",
+            "pos0": 22,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_secondarySeat_01",
+            "pos0": 7,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_secondarySeat_01",
+            "pos0": 25,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_stool_01",
+            "pos0": 3,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_fireplace_01",
+            "pos0": 28,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_rococo_carpet_01",
+            "pos0": 28,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_rococo_brazier_01",
+            "pos0": 30,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_rococo_observationDeck_01",
+            "pos0": 8,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_rococo_pillar_01",
+            "pos0": 11,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_rococo_pillar_01",
+            "pos0": 21,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_rococo_framedArt_01",
+            "pos0": 5,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_rococo_mirror_01",
+            "pos0": 29,
+            "pos1": 5
+          },
+          {
+            "furnitureId": "furni_rococo_ceilingLight1_01",
+            "pos0": 15,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_ceilingLight2_01",
+            "pos0": 5,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_ceilingLight2_01",
+            "pos0": 25,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_rococo_wallpaper_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_rococo_floor_01",
+            "pos0": 0,
+            "pos1": 0
+          }
+        ]
+      },
+      "furni_set_spirit": {
+        "id": "furni_set_spirit",
+        "name": "魂灵秘会",
+        "desc": "用这些装饰将舱室装扮成特别的样子。连行巫秘会都认可的装饰风格。",
+        "quickSetup": [
+          {
+            "furnitureId": "furni_spirit_tree_01",
+            "pos0": 0,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_spirit_window_01",
+            "pos0": 5,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_spirit_pumpkin_01",
+            "pos0": 13,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_spirit_pumpkin2_01",
+            "pos0": 2,
+            "pos1": 6
+          },
+          {
+            "furnitureId": "furni_spirit_fireplace_01",
+            "pos0": 13,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_spirit_book_01",
+            "pos0": 21,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_spirit_crucible_01",
+            "pos0": 23,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_spirit_table_01",
+            "pos0": 28,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_spirit_chair_01",
+            "pos0": 29,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_spirit_ceilingLight_01",
+            "pos0": 14,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_spirit_carpet_01",
+            "pos0": 19,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_spirit_wallpaper_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_spirit_floor_01",
+            "pos0": 0,
+            "pos1": 0
+          }
+        ]
       }
     },
     "groups": {
@@ -16417,6 +17383,109 @@
           "furni_safetyZone_downlight_01",
           "furni_safetyZone_wallpaper_01",
           "furni_safetyZone_floor_01"
+        ]
+      },
+      "furni_set_rococo_1": {
+        "id": "furni_set_rococo_1",
+        "name": "宴会厅长桌",
+        "themeId": "furni_set_rococo",
+        "comfort": 395,
+        "count": 5,
+        "furniture": [
+          "furni_rococo_table_01",
+          "furni_rococo_mainSeat_01",
+          "furni_rococo_secondarySeat_01",
+          "furni_rococo_observationDeck_01",
+          "furni_rococo_pillar_01"
+        ]
+      },
+      "furni_set_rococo_2": {
+        "id": "furni_set_rococo_2",
+        "name": "宴会厅储物角",
+        "themeId": "furni_set_rococo",
+        "comfort": 120,
+        "count": 4,
+        "furniture": [
+          "furni_rococo_cabinet_01",
+          "furni_rococo_bustStatue_01",
+          "furni_rococo_stool_01",
+          "furni_rococo_framedArt_01"
+        ]
+      },
+      "furni_set_rococo_3": {
+        "id": "furni_set_rococo_3",
+        "name": "宴会厅装饰角",
+        "themeId": "furni_set_rococo",
+        "comfort": 90,
+        "count": 4,
+        "furniture": [
+          "furni_rococo_fireplace_01",
+          "furni_rococo_brazier_01",
+          "furni_rococo_mirror_01",
+          "furni_rococo_carpet_01"
+        ]
+      },
+      "furni_set_rococo_4": {
+        "id": "furni_set_rococo_4",
+        "name": "兰赛拉尔之夜",
+        "themeId": "furni_set_rococo",
+        "comfort": 115,
+        "count": 5,
+        "furniture": [
+          "furni_rococo_wallpaper_01",
+          "furni_rococo_floor_01",
+          "furni_rococo_doorMat_01",
+          "furni_rococo_ceilingLight1_01",
+          "furni_rococo_ceilingLight2_01"
+        ]
+      },
+      "furni_set_spirit_1": {
+        "id": "furni_set_spirit_1",
+        "name": "安睡之塌",
+        "themeId": "furni_set_spirit",
+        "comfort": 310,
+        "count": 3,
+        "furniture": [
+          "furni_spirit_tree_01",
+          "furni_spirit_pumpkin2_01",
+          "furni_spirit_window_01"
+        ]
+      },
+      "furni_set_spirit_2": {
+        "id": "furni_set_spirit_2",
+        "name": "通密之仪",
+        "themeId": "furni_set_spirit",
+        "comfort": 220,
+        "count": 3,
+        "furniture": [
+          "furni_spirit_fireplace_01",
+          "furni_spirit_pumpkin_01",
+          "furni_spirit_ceilingLight_01"
+        ]
+      },
+      "furni_set_spirit_3": {
+        "id": "furni_set_spirit_3",
+        "name": "寻识之途",
+        "themeId": "furni_set_spirit",
+        "comfort": 225,
+        "count": 4,
+        "furniture": [
+          "furni_spirit_table_01",
+          "furni_spirit_chair_01",
+          "furni_spirit_crucible_01",
+          "furni_spirit_book_01"
+        ]
+      },
+      "furni_set_spirit_4": {
+        "id": "furni_set_spirit_4",
+        "name": "他界之貌",
+        "themeId": "furni_set_spirit",
+        "comfort": 130,
+        "count": 3,
+        "furniture": [
+          "furni_spirit_wallpaper_01",
+          "furni_spirit_floor_01",
+          "furni_spirit_carpet_01"
         ]
       }
     },
