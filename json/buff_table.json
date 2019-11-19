@@ -52,6 +52,25 @@
       }
     ]
   },
+  "spRecover": {
+    "buffKey": "spRecover",
+    "durationKey": null,
+    "attributes": {
+      "attributeModifiers": [
+        {
+          "attributeType": "SP_RECOVERY_PER_SEC",
+          "formulaItem": "ADDITION",
+          "value": 0.0,
+          "loadFromBlackboard": true
+        }
+      ]
+    },
+    "lifeTimeType": "INFINITY",
+    "priorityBBKeys": [
+      "sp_recovery_per_sec"
+    ],
+    "blackboard": []
+  },
   "status_resistance[inf]": {
     "buffKey": "status_resistance[inf]",
     "attributes": {
@@ -85,6 +104,7 @@
     },
     "priorityBBKeys": [
       "oneMinusStatusResistance"
-    ]
+    ],
+    "blackboard": []
   }
 }
