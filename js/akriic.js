@@ -196,13 +196,23 @@
             var acurr = db.building_buff[a.specific]
             var bcurr = db.building_buff[b.specific]
             
+            console.log(db.building_buff[b.specific])
+            
             let muhRegex = /<@cc\.vup>(.*?)<\/>/
-            var acurrNum = muhRegex.exec(acurr.description)[1]
-            var bcurrNum = muhRegex.exec(bcurr.description)[1]
-            let muhRegex2 = /(\d+)(%?)/ 
-            var acurrNum2 = parseInt(muhRegex2.exec(acurrNum)[1])
-            var bcurrNum2 = parseInt(muhRegex2.exec(bcurrNum)[1])
-            return (acurrNum2 < bcurrNum2)
+            
+            var acurrreg = muhRegex.exec(acurr.description)
+            var bcurrreg = muhRegex.exec(bcurr.description)
+            if(acurrreg&bcurrreg){
+                var acurrNum = muhRegex.exec(acurr.description)[1]
+                var bcurrNum = muhRegex.exec(bcurr.description)[1]
+                let muhRegex2 = /(\d+)(%?)/ 
+                var acurrNum2 = parseInt(muhRegex2.exec(acurrNum)[1])
+                var bcurrNum2 = parseInt(muhRegex2.exec(bcurrNum)[1])
+                return (acurrNum2 < bcurrNum2)
+            }else
+            return -1
+            
+            
         })
 
         // charaFilter.forEach(element => {
