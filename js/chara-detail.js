@@ -966,7 +966,7 @@
             var currhtml = $(`
             <table class="story-table">
             <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
-            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank"><i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:12px'></i></a></td></tr>
+            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank"><i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a></td></tr>
             <tr><td style="height:10px"></td></tr>
             <tr><td>${voiceTL}</td></tr>
             <tr><td style="height:10px"></td></tr>
