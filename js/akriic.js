@@ -209,8 +209,7 @@
                 var acurrNum2 = parseInt(muhRegex2.exec(acurrNum)[1])
                 var bcurrNum2 = parseInt(muhRegex2.exec(bcurrNum)[1])
                 return (acurrNum2 < bcurrNum2)
-            }else
-            return -1
+            }
             
             
         })
