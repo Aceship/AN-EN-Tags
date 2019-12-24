@@ -5642,7 +5642,7 @@
         {
           "buffData": [
             {
-              "buffId": "manu_prod_limit&cost[000]",
+              "buffId": "manu_prod_limit&cost[0000]",
               "cond": {
                 "phase": 0,
                 "level": 1
@@ -5807,7 +5807,7 @@
         {
           "buffData": [
             {
-              "buffId": "meet_spd[001]",
+              "buffId": "meet_spd[0010]",
               "cond": {
                 "phase": 0,
                 "level": 1
@@ -5882,6 +5882,90 @@
           "buffData": []
         }
       ]
+    },
+    "char_017_huang": {
+      "charId": "char_017_huang",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "power_rec_spd[010]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "workshop_formula_probability[210]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_367_swllow": {
+      "charId": "char_367_swllow",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "control_mp_cost[005]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_oneself[000]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_302_glaze": {
+      "charId": "char_302_glaze",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "dorm_rec_all&oneself[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "trade_ord_spd[001]",
+              "cond": {
+                "phase": 1,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   "buffs": {
@@ -5890,6 +5974,7 @@
       "buffName": "合作协议",
       "buffIcon": "control",
       "skillIcon": "bskill_ctrl_t_spd",
+      "sortId": 1402,
       "buffColor": "#005752",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -5901,6 +5986,7 @@
       "buffName": "大小姐",
       "buffIcon": "control",
       "skillIcon": "bskill_ctrl_t_spd",
+      "sortId": 1401,
       "buffColor": "#005752",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -5912,6 +5998,7 @@
       "buffName": "左膀右臂",
       "buffIcon": "control",
       "skillIcon": "bskill_ctrl_cost",
+      "sortId": 1003,
       "buffColor": "#005752",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -5923,6 +6010,7 @@
       "buffName": "S.W.E.E.P.",
       "buffIcon": "control",
       "skillIcon": "bskill_ctrl_cost",
+      "sortId": 1002,
       "buffColor": "#005752",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -5934,6 +6022,7 @@
       "buffName": "零食网络",
       "buffIcon": "control",
       "skillIcon": "bskill_ctrl_cost",
+      "sortId": 1001,
       "buffColor": "#005752",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -5945,6 +6034,7 @@
       "buffName": "清理协议",
       "buffIcon": "control",
       "skillIcon": "bskill_ctrl_cost",
+      "sortId": 1004,
       "buffColor": "#005752",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -5956,6 +6046,19 @@
       "buffName": "替身",
       "buffIcon": "control",
       "skillIcon": "bskill_ctrl_cost",
+      "sortId": 1005,
+      "buffColor": "#005752",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "CONTROL",
+      "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时消耗<@cc.vup>-0.05</>"
+    },
+    "control_mp_cost[005]": {
+      "buffId": "control_mp_cost[005]",
+      "buffName": "必要责任",
+      "buffIcon": "control",
+      "skillIcon": "bskill_ctrl_cost",
+      "sortId": 1006,
       "buffColor": "#005752",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -5967,6 +6070,7 @@
       "buffName": "德才兼备",
       "buffIcon": "control",
       "skillIcon": "bskill_ctrl_lungmen",
+      "sortId": 1102,
       "buffColor": "#005752",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -5977,7 +6081,8 @@
       "buffId": "power_rec_spd[000]",
       "buffName": "备用能源",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd1",
+      "sortId": 2001,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -5988,7 +6093,8 @@
       "buffId": "power_rec_spd[001]",
       "buffName": "设备维护",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd2",
+      "sortId": 2101,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -5999,7 +6105,8 @@
       "buffId": "power_rec_spd[002]",
       "buffName": "静电场",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd3",
+      "sortId": 2201,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6010,7 +6117,8 @@
       "buffId": "power_rec_spd[010]",
       "buffName": "热能充能·α",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd1",
+      "sortId": 2002,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6021,7 +6129,8 @@
       "buffId": "power_rec_spd[020]",
       "buffName": "高热充能",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd2",
+      "sortId": 2105,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6032,7 +6141,8 @@
       "buffId": "power_rec_spd[030]",
       "buffName": "脉冲电弧·α",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd2",
+      "sortId": 2103,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6043,7 +6153,8 @@
       "buffId": "power_rec_spd[031]",
       "buffName": "脉冲电弧·β",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd3",
+      "sortId": 2202,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6054,7 +6165,8 @@
       "buffId": "power_rec_spd[040]",
       "buffName": "电磁充能·α",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd1",
+      "sortId": 2003,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6065,7 +6177,8 @@
       "buffId": "power_rec_spd[041]",
       "buffName": "电磁充能·β",
       "buffIcon": "power",
-      "skillIcon": "bskill_pow_spd",
+      "skillIcon": "bskill_pow_spd2",
+      "sortId": 2104,
       "buffColor": "#8fc31f",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6076,7 +6189,8 @@
       "buffId": "manu_prod_spd[000]",
       "buffName": "标准化·α",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd",
+      "skillIcon": "bskill_man_spd1",
+      "sortId": 3501,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6087,7 +6201,8 @@
       "buffId": "manu_prod_spd[001]",
       "buffName": "标准化·β",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd",
+      "skillIcon": "bskill_man_spd2",
+      "sortId": 3522,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6098,7 +6213,8 @@
       "buffId": "manu_prod_spd[010]",
       "buffName": "莱茵科技·α",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd",
+      "skillIcon": "bskill_man_spd1",
+      "sortId": 3502,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6109,7 +6225,8 @@
       "buffId": "manu_prod_spd[011]",
       "buffName": "莱茵科技·β",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd",
+      "skillIcon": "bskill_man_spd2",
+      "sortId": 3523,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6120,7 +6237,8 @@
       "buffId": "manu_prod_spd[020]",
       "buffName": "咪波·制造型",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd",
+      "skillIcon": "bskill_man_spd3",
+      "sortId": 3531,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6131,7 +6249,8 @@
       "buffId": "manu_prod_spd_addition[030]",
       "buffName": "急性子",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd_add",
+      "skillIcon": "bskill_man_spd_add1",
+      "sortId": 3512,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6142,7 +6261,8 @@
       "buffId": "manu_prod_spd_addition[040]",
       "buffName": "慢性子",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd_add",
+      "skillIcon": "bskill_man_spd_add2",
+      "sortId": 3511,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6153,7 +6273,8 @@
       "buffId": "manu_prod_spd&limit[000]",
       "buffName": "仓库整备·α",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd&limit",
+      "skillIcon": "bskill_man_spd&limit1",
+      "sortId": 3401,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6164,7 +6285,8 @@
       "buffId": "manu_prod_spd&limit[001]",
       "buffName": "仓库整备·β",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd&limit",
+      "skillIcon": "bskill_man_spd&limit3",
+      "sortId": 3403,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6176,6 +6298,19 @@
       "buffName": "拾荒者",
       "buffIcon": "manufacture",
       "skillIcon": "bskill_man_limit&cost",
+      "sortId": 3101,
+      "buffColor": "#ffd800",
+      "textColor": "#333333",
+      "buffCategory": "OUTPUT",
+      "roomType": "MANUFACTURE",
+      "description": "进驻制造站时，仓库容量上限<@cc.vup>+8</>，心情每小时消耗<@cc.vup>-0.25</>"
+    },
+    "manu_prod_limit&cost[0000]": {
+      "buffId": "manu_prod_limit&cost[0000]",
+      "buffName": "拾荒者",
+      "buffIcon": "manufacture",
+      "skillIcon": "bskill_man_limit&cost",
+      "sortId": 3201,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6186,7 +6321,8 @@
       "buffId": "manu_prod_spd&limit&cost[000]",
       "buffName": "工匠精神·α",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd&limit&cost",
+      "skillIcon": "bskill_man_spd&limit&cost1",
+      "sortId": 3301,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6197,7 +6333,8 @@
       "buffId": "manu_prod_spd&limit&cost[001]",
       "buffName": "工匠精神·β",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd&limit&cost",
+      "skillIcon": "bskill_man_spd&limit&cost2",
+      "sortId": 3302,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6208,7 +6345,8 @@
       "buffId": "manu_prod_spd&limit&cost[010]",
       "buffName": "麻烦制造者",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd&limit&cost",
+      "skillIcon": "bskill_man_spd&limit&cost3",
+      "sortId": 3521,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6219,7 +6357,8 @@
       "buffId": "manu_prod_spd_variable[000]",
       "buffName": "回收利用",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd_variable",
+      "skillIcon": "bskill_man_spd_variable11",
+      "sortId": 3202,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6230,7 +6369,8 @@
       "buffId": "manu_prod_spd_variable2[000]",
       "buffName": "配合意识",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_spd_variable",
+      "skillIcon": "bskill_man_spd_variable21",
+      "sortId": 3601,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6241,7 +6381,8 @@
       "buffId": "manu_formula_spd[000]",
       "buffName": "作战指导录像",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_exp",
+      "skillIcon": "bskill_man_exp1",
+      "sortId": 3801,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6252,7 +6393,8 @@
       "buffId": "manu_formula_spd[001]",
       "buffName": "拳术指导录像",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_exp",
+      "skillIcon": "bskill_man_exp2",
+      "sortId": 3802,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6263,7 +6405,8 @@
       "buffId": "manu_formula_spd[100]",
       "buffName": "金属工艺·α",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_gold",
+      "skillIcon": "bskill_man_gold1",
+      "sortId": 3701,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6274,7 +6417,8 @@
       "buffId": "manu_formula_spd[101]",
       "buffName": "金属工艺·β",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_gold",
+      "skillIcon": "bskill_man_gold2",
+      "sortId": 3702,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6285,7 +6429,8 @@
       "buffId": "manu_formula_spd[200]",
       "buffName": "源石工艺·α",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_originium",
+      "skillIcon": "bskill_man_originium1",
+      "sortId": 3001,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6296,7 +6441,8 @@
       "buffId": "manu_formula_spd[201]",
       "buffName": "源石工艺·β",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_originium",
+      "skillIcon": "bskill_man_originium2",
+      "sortId": 3002,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6307,7 +6453,8 @@
       "buffId": "manu_formula_spd[210]",
       "buffName": "地质学家",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_originium",
+      "skillIcon": "bskill_man_originium2",
+      "sortId": 3003,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6318,7 +6465,8 @@
       "buffId": "manu_formula_spd[211]",
       "buffName": "火山学家",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_originium",
+      "skillIcon": "bskill_man_originium2",
+      "sortId": 3005,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6329,7 +6477,8 @@
       "buffId": "manu_formula_spd[220]",
       "buffName": "源石研究",
       "buffIcon": "manufacture",
-      "skillIcon": "bskill_man_originium",
+      "skillIcon": "bskill_man_originium2",
+      "sortId": 3004,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6341,6 +6490,7 @@
       "buffName": "团队精神",
       "buffIcon": "manufacture",
       "skillIcon": "bskill_man_cost_all",
+      "sortId": 3601,
       "buffColor": "#ffd800",
       "textColor": "#333333",
       "buffCategory": "OUTPUT",
@@ -6351,7 +6501,8 @@
       "buffId": "trade_ord_spd[000]",
       "buffName": "订单分发·α",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd",
+      "skillIcon": "bskill_tra_spd1",
+      "sortId": 4301,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6362,7 +6513,8 @@
       "buffId": "trade_ord_spd[001]",
       "buffName": "订单分发·β",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd",
+      "skillIcon": "bskill_tra_spd2",
+      "sortId": 4601,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6373,7 +6525,8 @@
       "buffId": "trade_ord_spd[010]",
       "buffName": "企鹅物流·α",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd",
+      "skillIcon": "bskill_tra_spd1",
+      "sortId": 4303,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6384,7 +6537,8 @@
       "buffId": "trade_ord_spd[011]",
       "buffName": "企鹅物流·β",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd",
+      "skillIcon": "bskill_tra_spd2",
+      "sortId": 4602,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6395,7 +6549,8 @@
       "buffId": "trade_ord_spd[020]",
       "buffName": "物流专家",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd",
+      "skillIcon": "bskill_tra_spd3",
+      "sortId": 4901,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6406,7 +6561,8 @@
       "buffId": "trade_ord_spd&limit[000]",
       "buffName": "订单管理·α",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd&limit",
+      "skillIcon": "bskill_tra_spd&limit1",
+      "sortId": 4101,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6417,7 +6573,8 @@
       "buffId": "trade_ord_spd&limit[010]",
       "buffName": "供应管理",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd&limit",
+      "skillIcon": "bskill_tra_spd&limit6",
+      "sortId": 4501,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6428,7 +6585,8 @@
       "buffId": "trade_ord_spd&limit[020]",
       "buffName": "喀兰贸易·α",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd&limit",
+      "skillIcon": "bskill_tra_spd&limit3",
+      "sortId": 4201,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6439,7 +6597,8 @@
       "buffId": "trade_ord_spd&limit[021]",
       "buffName": "喀兰贸易·β",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd&limit",
+      "skillIcon": "bskill_tra_spd&limit4",
+      "sortId": 4202,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6450,7 +6609,8 @@
       "buffId": "trade_ord_spd&limit[022]",
       "buffName": "喀兰之主",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd&limit",
+      "skillIcon": "bskill_tra_spd&limit5",
+      "sortId": 4304,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6461,7 +6621,8 @@
       "buffId": "trade_ord_spd&limit[030]",
       "buffName": "企鹅物流·α",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd",
+      "skillIcon": "bskill_tra_spd1",
+      "sortId": 4303,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6472,7 +6633,8 @@
       "buffId": "trade_ord_spd&limit[031]",
       "buffName": "使命必达",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd&limit",
+      "skillIcon": "bskill_tra_spd&limit7",
+      "sortId": 4604,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6483,7 +6645,8 @@
       "buffId": "trade_ord_spd&limit[032]",
       "buffName": "峯驰物流",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd",
+      "skillIcon": "bskill_tra_spd1",
+      "sortId": 4302,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6494,7 +6657,8 @@
       "buffId": "trade_ord_spd&limit[033]",
       "buffName": "少当家",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd&limit",
+      "skillIcon": "bskill_tra_spd&limit7",
+      "sortId": 4603,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6506,6 +6670,7 @@
       "buffName": "交际",
       "buffIcon": "trading",
       "skillIcon": "bskill_tra_spd&cost",
+      "sortId": 4801,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6517,6 +6682,7 @@
       "buffName": "谈判",
       "buffIcon": "trading",
       "skillIcon": "bskill_tra_limit&cost",
+      "sortId": 4001,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6527,7 +6693,8 @@
       "buffId": "trade_ord_spd&cost_P[000]",
       "buffName": "恩怨",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_spd&cost",
+      "skillIcon": "bskill_tra_texas1",
+      "sortId": 4903,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6538,7 +6705,8 @@
       "buffId": "trade_ord_limit&cost_P[010]",
       "buffName": "默契",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_cost",
+      "skillIcon": "bskill_tra_texas2",
+      "sortId": 4903,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6549,7 +6717,8 @@
       "buffId": "trade_ord_limit&cost_P[000]",
       "buffName": "醉翁之意·α",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_limit&cost",
+      "skillIcon": "bskill_tra_Lappland1",
+      "sortId": 4902,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6560,7 +6729,8 @@
       "buffId": "trade_ord_limit&cost_P[001]",
       "buffName": "醉翁之意·β",
       "buffIcon": "trading",
-      "skillIcon": "bskill_tra_limit&cost",
+      "skillIcon": "bskill_tra_Lappland2",
+      "sortId": 4902,
       "buffColor": "#0075a9",
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
@@ -6571,7 +6741,8 @@
       "buffId": "workshop_proc_probability[000]",
       "buffName": "专注·α",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_p",
+      "skillIcon": "bskill_ws_p1",
+      "sortId": 7001,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6582,7 +6753,8 @@
       "buffId": "workshop_proc_probability[001]",
       "buffName": "专注·β",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_p",
+      "skillIcon": "bskill_ws_p3",
+      "sortId": 7021,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6593,7 +6765,8 @@
       "buffId": "workshop_proc_probability[010]",
       "buffName": "能工巧匠",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_p",
+      "skillIcon": "bskill_ws_p2",
+      "sortId": 7011,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6604,7 +6777,8 @@
       "buffId": "workshop_proc_probability[011]",
       "buffName": "多功能测绘仪",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_p",
+      "skillIcon": "bskill_ws_p2",
+      "sortId": 7012,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6615,7 +6789,8 @@
       "buffId": "workshop_proc_probability[020]",
       "buffName": "咪波·加工型",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_p",
+      "skillIcon": "bskill_ws_p4",
+      "sortId": 7031,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6626,7 +6801,8 @@
       "buffId": "workshop_formula_cost[000]",
       "buffName": "龙腾式无人机",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_cost",
+      "skillIcon": "bskill_ws_cost_magallan",
+      "sortId": 7012,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6637,7 +6813,8 @@
       "buffId": "workshop_formula_probability[000]",
       "buffName": "技巧理论",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_skill",
+      "skillIcon": "bskill_ws_skill1",
+      "sortId": 7201,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6648,7 +6825,8 @@
       "buffId": "workshop_formula_probability[010]",
       "buffName": "兵者诡道",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_skill",
+      "skillIcon": "bskill_ws_skill2",
+      "sortId": 7203,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6659,7 +6837,8 @@
       "buffId": "workshop_formula_probability[020]",
       "buffName": "登峰造极",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_skill",
+      "skillIcon": "bskill_ws_skill2",
+      "sortId": 7202,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6670,7 +6849,8 @@
       "buffId": "workshop_formula_probability[100]",
       "buffName": "营养学",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_evolve",
+      "skillIcon": "bskill_ws_evolve1",
+      "sortId": 7401,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6681,7 +6861,8 @@
       "buffId": "workshop_formula_probability[101]",
       "buffName": "学者",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_evolve",
+      "skillIcon": "bskill_ws_evolve3",
+      "sortId": 7424,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6692,7 +6873,8 @@
       "buffId": "workshop_formula_probability[110]",
       "buffName": "药理学·α",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_evolve",
+      "skillIcon": "bskill_ws_evolve2",
+      "sortId": 7411,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6703,7 +6885,8 @@
       "buffId": "workshop_formula_probability[111]",
       "buffName": "药理学·β",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_evolve",
+      "skillIcon": "bskill_ws_evolve3",
+      "sortId": 7421,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6714,7 +6897,8 @@
       "buffId": "workshop_formula_probability[120]",
       "buffName": "毒理学·α",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_evolve",
+      "skillIcon": "bskill_ws_evolve2",
+      "sortId": 7412,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6725,7 +6909,8 @@
       "buffId": "workshop_formula_probability[121]",
       "buffName": "毒理学·β",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_evolve",
+      "skillIcon": "bskill_ws_evolve3",
+      "sortId": 7422,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6736,7 +6921,8 @@
       "buffId": "workshop_formula_probability[130]",
       "buffName": "爆破材料学·α",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_evolve",
+      "skillIcon": "bskill_ws_evolve2",
+      "sortId": 7413,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6747,7 +6933,8 @@
       "buffId": "workshop_formula_probability[131]",
       "buffName": "爆破材料学·β",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_evolve",
+      "skillIcon": "bskill_ws_evolve3",
+      "sortId": 7423,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6758,18 +6945,32 @@
       "buffId": "workshop_formula_probability[200]",
       "buffName": "工程学",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_build",
+      "skillIcon": "bskill_ws_build1",
+      "sortId": 7301,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
       "roomType": "WORKSHOP",
       "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>70%</>"
     },
+    "workshop_formula_probability[210]": {
+      "buffId": "workshop_formula_probability[210]",
+      "buffName": "斩铁裂钢",
+      "buffIcon": "workshop",
+      "skillIcon": "bskill_ws_build2",
+      "sortId": 7302,
+      "buffColor": "#e3eb00",
+      "textColor": "#333333",
+      "buffCategory": "FUNCTION",
+      "roomType": "WORKSHOP",
+      "description": "进驻加工站加工<@cc.kw>基建材料</>时，副产品的产出概率提升<@cc.vup>80%</>"
+    },
     "workshop_formula_probability[300]": {
       "buffId": "workshop_formula_probability[300]",
       "buffName": "特训记录",
       "buffIcon": "workshop",
-      "skillIcon": "bskill_ws_asc",
+      "skillIcon": "bskill_ws_asc1",
+      "sortId": 7101,
       "buffColor": "#e3eb00",
       "textColor": "#333333",
       "buffCategory": "FUNCTION",
@@ -6781,6 +6982,7 @@
       "buffName": "教官",
       "buffIcon": "training",
       "skillIcon": "bskill_train_all",
+      "sortId": 9001,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6791,7 +6993,8 @@
       "buffId": "train_spd&profession[010]",
       "buffName": "先锋专精·α",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_vanguard",
+      "skillIcon": "bskill_train_vanguard1",
+      "sortId": 9801,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6802,7 +7005,8 @@
       "buffId": "train_spd&profession[011]",
       "buffName": "先锋专精·β",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_vanguard",
+      "skillIcon": "bskill_train_vanguard2",
+      "sortId": 9811,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6813,7 +7017,8 @@
       "buffId": "train_spd&profession[020]",
       "buffName": "近卫专精·α",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_guard",
+      "skillIcon": "bskill_train_guard1",
+      "sortId": 9701,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6824,7 +7029,8 @@
       "buffId": "train_spd&profession[021]",
       "buffName": "近卫专精·β",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_guard",
+      "skillIcon": "bskill_train_guard2",
+      "sortId": 9711,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6835,7 +7041,8 @@
       "buffId": "train_spd&profession[030]",
       "buffName": "重装专精·α",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_defender",
+      "skillIcon": "bskill_train_defender1",
+      "sortId": 9601,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6846,7 +7053,8 @@
       "buffId": "train_spd&profession[031]",
       "buffName": "重装专精·β",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_defender",
+      "skillIcon": "bskill_train_defender2",
+      "sortId": 9611,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6857,7 +7065,8 @@
       "buffId": "train_spd&profession[040]",
       "buffName": "狙击专精·α",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_sniper",
+      "skillIcon": "bskill_train_sniper1",
+      "sortId": 9501,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6868,7 +7077,8 @@
       "buffId": "train_spd&profession[041]",
       "buffName": "狙击专精·β",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_sniper",
+      "skillIcon": "bskill_train_sniper2",
+      "sortId": 9511,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6879,7 +7089,8 @@
       "buffId": "train_spd&profession[050]",
       "buffName": "术师专精·α",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_caster",
+      "skillIcon": "bskill_train_caster1",
+      "sortId": 9401,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6890,7 +7101,8 @@
       "buffId": "train_spd&profession[051]",
       "buffName": "术师专精·β",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_caster",
+      "skillIcon": "bskill_train_caster2",
+      "sortId": 9411,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6901,7 +7113,8 @@
       "buffId": "train_spd&profession[060]",
       "buffName": "辅助专精·α",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_supporter",
+      "skillIcon": "bskill_train_supporter1",
+      "sortId": 9301,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6912,7 +7125,8 @@
       "buffId": "train_spd&profession[061]",
       "buffName": "辅助专精·β",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_supporter",
+      "skillIcon": "bskill_train_supporter2",
+      "sortId": 9311,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6923,7 +7137,8 @@
       "buffId": "train_spd&profession[070]",
       "buffName": "医疗专精·α",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_medic",
+      "skillIcon": "bskill_train_medic1",
+      "sortId": 9201,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6934,7 +7149,8 @@
       "buffId": "train_spd&profession[071]",
       "buffName": "医疗专精·β",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_medic",
+      "skillIcon": "bskill_train_medic2",
+      "sortId": 9211,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6945,7 +7161,8 @@
       "buffId": "train_spd&profession[080]",
       "buffName": "特种专精·α",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_specialist",
+      "skillIcon": "bskill_train_specialist1",
+      "sortId": 9101,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6956,7 +7173,8 @@
       "buffId": "train_spd&profession[081]",
       "buffName": "特种专精·β",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_specialist",
+      "skillIcon": "bskill_train_specialist2",
+      "sortId": 9111,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6967,7 +7185,8 @@
       "buffId": "train_spd&profession[130]",
       "buffName": "般若",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_defender",
+      "skillIcon": "bskill_train_defender3",
+      "sortId": 9621,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6978,7 +7197,8 @@
       "buffId": "train_spd&profession[140]",
       "buffName": "黑矢",
       "buffIcon": "training",
-      "skillIcon": "bskill_train_sniper",
+      "skillIcon": "bskill_train_sniper3",
+      "sortId": 9521,
       "buffColor": "#7d0022",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -6989,7 +7209,8 @@
       "buffId": "dorm_rec_oneself[000]",
       "buffName": "独处",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_one",
+      "skillIcon": "bskill_dorm_one2",
+      "sortId": 5002,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7000,7 +7221,8 @@
       "buffId": "dorm_rec_oneself[010]",
       "buffName": "狂热",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_one",
+      "skillIcon": "bskill_dorm_one4",
+      "sortId": 5004,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7011,7 +7233,8 @@
       "buffId": "dorm_rec_oneself[020]",
       "buffName": "悲歌",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_one",
+      "skillIcon": "bskill_dorm_one5",
+      "sortId": 5005,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7022,7 +7245,8 @@
       "buffId": "dorm_rec_oneself[030]",
       "buffName": "隐形的美食家",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_one",
+      "skillIcon": "bskill_dorm_one3",
+      "sortId": 5003,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7033,7 +7257,8 @@
       "buffId": "dorm_rec_single[000]",
       "buffName": "医疗服务",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single",
+      "skillIcon": "bskill_dorm_single2",
+      "sortId": 5102,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7044,7 +7269,8 @@
       "buffId": "dorm_rec_single[010]",
       "buffName": "善解人意",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single",
+      "skillIcon": "bskill_dorm_single1",
+      "sortId": 5101,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7055,7 +7281,8 @@
       "buffId": "dorm_rec_single[020]",
       "buffName": "慈悲",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single",
+      "skillIcon": "bskill_dorm_single3",
+      "sortId": 5103,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7066,7 +7293,8 @@
       "buffId": "dorm_rec_single_P[000]",
       "buffName": "沏茶",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single",
+      "skillIcon": "bskill_dorm_single_schwarz",
+      "sortId": 5104,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7077,7 +7305,8 @@
       "buffId": "dorm_rec_all[000]",
       "buffName": "鼓舞",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all",
+      "skillIcon": "bskill_dorm_all1",
+      "sortId": 5301,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7088,7 +7317,8 @@
       "buffId": "dorm_rec_all[010]",
       "buffName": "小提琴独奏",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all",
+      "skillIcon": "bskill_dorm_all2",
+      "sortId": 5305,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7099,7 +7329,8 @@
       "buffId": "dorm_rec_all[020]",
       "buffName": "偶像",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all",
+      "skillIcon": "bskill_dorm_all2",
+      "sortId": 5304,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7110,7 +7341,8 @@
       "buffId": "dorm_rec_all[030]",
       "buffName": "领袖",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all",
+      "skillIcon": "bskill_dorm_all2",
+      "sortId": 5303,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7121,7 +7353,8 @@
       "buffId": "dorm_rec_all[040]",
       "buffName": "凛冬将军",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all",
+      "skillIcon": "bskill_dorm_all3",
+      "sortId": 5306,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7132,7 +7365,8 @@
       "buffId": "dorm_rec_all[050]",
       "buffName": "狮心王",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all",
+      "skillIcon": "bskill_dorm_all3",
+      "sortId": 5308,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7143,7 +7377,8 @@
       "buffId": "dorm_rec_all[060]",
       "buffName": "提灯女神",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all",
+      "skillIcon": "bskill_dorm_all3",
+      "sortId": 5307,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7154,7 +7389,8 @@
       "buffId": "dorm_rec_single&oneself[000]",
       "buffName": "活泼",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single&one",
+      "skillIcon": "bskill_dorm_single&one01",
+      "sortId": 5201,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7165,7 +7401,8 @@
       "buffId": "dorm_rec_single&oneself[001]",
       "buffName": "探险家的热情",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single&one",
+      "skillIcon": "bskill_dorm_single&one02",
+      "sortId": 5202,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7176,7 +7413,8 @@
       "buffId": "dorm_rec_single&oneself[010]",
       "buffName": "烘焙",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single&one",
+      "skillIcon": "bskill_dorm_single&one11",
+      "sortId": 5211,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7187,7 +7425,8 @@
       "buffId": "dorm_rec_single&oneself[011]",
       "buffName": "烹饪",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single&one",
+      "skillIcon": "bskill_dorm_single&one12",
+      "sortId": 5212,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7198,7 +7437,8 @@
       "buffId": "dorm_rec_single&oneself[020]",
       "buffName": "和谐",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single&one",
+      "skillIcon": "bskill_dorm_single&one21",
+      "sortId": 5221,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7209,7 +7449,8 @@
       "buffId": "dorm_rec_single&oneself[021]",
       "buffName": "喀兰圣女",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single&one",
+      "skillIcon": "bskill_dorm_single&one22",
+      "sortId": 5222,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7220,7 +7461,8 @@
       "buffId": "dorm_rec_single&oneself[030]",
       "buffName": "耀骑士",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_single&one",
+      "skillIcon": "bskill_dorm_single&one22",
+      "sortId": 5223,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7231,7 +7473,8 @@
       "buffId": "dorm_rec_all&oneself[000]",
       "buffName": "慵懒",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all&one",
+      "skillIcon": "bskill_dorm_all&one1",
+      "sortId": 5402,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7242,7 +7485,8 @@
       "buffId": "dorm_rec_all&oneself[001]",
       "buffName": "嗜睡",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all&one",
+      "skillIcon": "bskill_dorm_all&one2",
+      "sortId": 5403,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7253,7 +7497,8 @@
       "buffId": "dorm_rec_all&oneself[010]",
       "buffName": "超脱",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_one",
+      "skillIcon": "bskill_dorm_one1",
+      "sortId": 5001,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7264,7 +7509,8 @@
       "buffId": "dorm_rec_all&oneself[011]",
       "buffName": "挣脱",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all",
+      "skillIcon": "bskill_dorm_all1",
+      "sortId": 5302,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7275,7 +7521,8 @@
       "buffId": "dorm_rec_all&oneself[012]",
       "buffName": "解脱",
       "buffIcon": "dormitory",
-      "skillIcon": "bskill_dorm_all&one",
+      "skillIcon": "bskill_dorm_all&one3",
+      "sortId": 5401,
       "buffColor": "#21cdcb",
       "textColor": "#ffffff",
       "buffCategory": "RECOVERY",
@@ -7286,7 +7533,8 @@
       "buffId": "hire_spd[000]",
       "buffName": "人事管理·α",
       "buffIcon": "hire",
-      "skillIcon": "bskill_hire_spd",
+      "skillIcon": "bskill_hire_spd1",
+      "sortId": 8001,
       "buffColor": "#565656",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7297,7 +7545,8 @@
       "buffId": "hire_spd[010]",
       "buffName": "天灾信使·α",
       "buffIcon": "hire",
-      "skillIcon": "bskill_hire_spd",
+      "skillIcon": "bskill_hire_spd2",
+      "sortId": 8101,
       "buffColor": "#565656",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7308,7 +7557,8 @@
       "buffId": "hire_spd[011]",
       "buffName": "天灾信使·β",
       "buffIcon": "hire",
-      "skillIcon": "bskill_hire_spd",
+      "skillIcon": "bskill_hire_spd5",
+      "sortId": 8401,
       "buffColor": "#565656",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7319,7 +7569,8 @@
       "buffId": "hire_spd[020]",
       "buffName": "心理学",
       "buffIcon": "hire",
-      "skillIcon": "bskill_hire_spd",
+      "skillIcon": "bskill_hire_spd4",
+      "sortId": 8301,
       "buffColor": "#565656",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7330,7 +7581,8 @@
       "buffId": "hire_spd[030]",
       "buffName": "WRITER",
       "buffIcon": "hire",
-      "skillIcon": "bskill_hire_spd",
+      "skillIcon": "bskill_hire_spd4",
+      "sortId": 8302,
       "buffColor": "#565656",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7341,7 +7593,8 @@
       "buffId": "meet_spd[000]",
       "buffName": "线索搜集·α",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_spd",
+      "skillIcon": "bskill_meet_spd1",
+      "sortId": 6001,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7352,7 +7605,20 @@
       "buffId": "meet_spd[001]",
       "buffName": "线索搜集·β",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_spd",
+      "skillIcon": "bskill_meet_spd2",
+      "sortId": 6002,
+      "buffColor": "#dd653f",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "MEETING",
+      "description": "进驻会客室时，线索搜集速度提升<@cc.vup>20%</>"
+    },
+    "meet_spd[0010]": {
+      "buffId": "meet_spd[0010]",
+      "buffName": "线索搜集·β",
+      "buffIcon": "meeting",
+      "skillIcon": "bskill_meet_spd2",
+      "sortId": 6201,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7363,7 +7629,8 @@
       "buffId": "meet_spd[010]",
       "buffName": "占卜",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_spd",
+      "skillIcon": "bskill_meet_spd3",
+      "sortId": 6003,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7374,7 +7641,8 @@
       "buffId": "meet_spd[020]",
       "buffName": "追踪者",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_spd",
+      "skillIcon": "bskill_meet_spd3",
+      "sortId": 6005,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7385,7 +7653,8 @@
       "buffId": "meet_team[020]",
       "buffName": "皇家探员（自称）",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_penguin",
+      "skillIcon": "bskill_meet_penguin1",
+      "sortId": 6201,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7396,7 +7665,8 @@
       "buffId": "meet_spd&team[000]",
       "buffName": "线索搜集·α",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_spd",
+      "skillIcon": "bskill_meet_spd1",
+      "sortId": 6001,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7407,7 +7677,8 @@
       "buffId": "meet_spd&team[010]",
       "buffName": "守望者",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_rhine",
+      "skillIcon": "bskill_meet_rhine2",
+      "sortId": 6101,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7418,7 +7689,8 @@
       "buffId": "meet_spd&team[020]",
       "buffName": "信使·企鹅物流",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_penguin",
+      "skillIcon": "bskill_meet_penguin2",
+      "sortId": 6202,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7429,7 +7701,8 @@
       "buffId": "meet_spd&team[030]",
       "buffName": "联络员",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_blacksteel",
+      "skillIcon": "bskill_meet_blacksteel2",
+      "sortId": 6301,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7440,7 +7713,8 @@
       "buffId": "meet_spd&team[040]",
       "buffName": "讯使",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_kjerag",
+      "skillIcon": "bskill_meet_kjerag2",
+      "sortId": 6601,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7451,7 +7725,8 @@
       "buffId": "meet_spd&team[050]",
       "buffName": "参谋",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_ursus",
+      "skillIcon": "bskill_meet_ursus2",
+      "sortId": 6401,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7462,7 +7737,8 @@
       "buffId": "meet_spd&team[060]",
       "buffName": "信使·罗德岛制药",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_rhodes",
+      "skillIcon": "bskill_meet_rhodes2",
+      "sortId": 6701,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7473,7 +7749,8 @@
       "buffId": "meet_spd&team[070]",
       "buffName": "传讯者",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_glasgow",
+      "skillIcon": "bskill_meet_glasgow2",
+      "sortId": 6502,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7484,7 +7761,8 @@
       "buffId": "meet_spd&team[071]",
       "buffName": "没落贵族",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_glasgow",
+      "skillIcon": "bskill_meet_glasgow2",
+      "sortId": 6501,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7495,7 +7773,8 @@
       "buffId": "meet_spd&team[100]",
       "buffName": "警司",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_spd",
+      "skillIcon": "bskill_meet_spd3",
+      "sortId": 6006,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -7506,7 +7785,8 @@
       "buffId": "meet_spd&team[110]",
       "buffName": "星象学",
       "buffIcon": "meeting",
-      "skillIcon": "bskill_meet_spd",
+      "skillIcon": "bskill_meet_spd3",
+      "sortId": 6004,
       "buffColor": "#dd653f",
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
@@ -12800,7 +13080,7 @@
         "id": "furni_safetyZone_box_01",
         "name": "安全舱物资箱",
         "iconId": "furni_safetyZone_box_01",
-        "type": "DECORATION",
+        "type": "CABINET",
         "location": "FLOOR",
         "category": "FURNITURE",
         "rarity": 2,
@@ -14446,6 +14726,336 @@
         "processedByProductGroup": [],
         "canBeDestroy": false
       },
+      "furni_elite_ceiling_01": {
+        "id": "furni_elite_ceiling_01",
+        "name": "泛光吊顶",
+        "iconId": "furni_elite_ceiling_01",
+        "type": "CEILING",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 16,
+        "depth": 6,
+        "height": 2,
+        "comfort": 400,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "内置光源的装饰吊顶。Ace离开后的午夜时分，整个工作间就只剩Logos的台灯还亮着。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 270,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_board_01": {
+        "id": "furni_elite_board_01",
+        "name": "工作间黑板",
+        "iconId": "furni_elite_board_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 8,
+        "depth": 1,
+        "height": 4,
+        "comfort": 235,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "工作间用于共享资讯与灵感的黑板。为煌设计武器时Mechanist花费了大量的心血，每一张草图都凝聚着他的智慧。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 195,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_sawingMachine_01": {
+        "id": "furni_elite_sawingMachine_01",
+        "name": "工业切割台",
+        "iconId": "furni_elite_sawingMachine_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 6,
+        "height": 4,
+        "comfort": 365,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "工作间内配备的切割台。面对着火花煌能发上一整天的呆，只是现今已经没人在使用它了。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 248,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_cabinet_01": {
+        "id": "furni_elite_cabinet_01",
+        "name": "物资箱",
+        "iconId": "furni_elite_cabinet_01",
+        "type": "CABINET",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 3,
+        "comfort": 180,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "堆得整整齐齐的物资箱，可以当收纳柜使用。放文件的箱子需要Ace和Outcast的钥匙才能打开。两把钥匙皆已焚毁，不余残渣。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 150,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_desk_01": {
+        "id": "furni_elite_desk_01",
+        "name": "工作台",
+        "iconId": "furni_elite_desk_01",
+        "type": "TABLE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 10,
+        "depth": 3,
+        "height": 4,
+        "comfort": 455,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "简易的工作台，一些实验用品杂乱地堆放在上面。Mechanist的工作台就是他的寝床，他常说阖眼与永眠是同种感受。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 308,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_stool_01": {
+        "id": "furni_elite_stool_01",
+        "name": "白色圆凳",
+        "iconId": "furni_elite_stool_01",
+        "type": "SEATING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 2,
+        "comfort": 160,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "工作间配备的圆凳。在圆凳滑行赛亚军Scout向他发起挑战前，Logos拒绝再次参加比赛。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 133,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_roboticArm_01": {
+        "id": "furni_elite_roboticArm_01",
+        "name": "机械臂",
+        "iconId": "furni_elite_roboticArm_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 3,
+        "height": 6,
+        "comfort": 305,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "工作间配备的机械臂。Whitesmith偶尔会和机械臂共舞，她的舞步连死亡也很难追上。最后她还是放慢了步伐。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 230,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_weaponCabinet_01": {
+        "id": "furni_elite_weaponCabinet_01",
+        "name": "武器收纳柜",
+        "iconId": "furni_elite_weaponCabinet_01",
+        "type": "CABINET",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 6,
+        "depth": 4,
+        "height": 7,
+        "comfort": 475,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "放置着精校武器的立柜。武器在等待校准，Logos在等待零件，Whitesmith在等待材料。所有的等待都已经失去意义。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 323,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_cleaningBucket_01": {
+        "id": "furni_elite_cleaningBucket_01",
+        "name": "清洁器",
+        "iconId": "furni_elite_cleaningBucket_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 2,
+        "depth": 2,
+        "height": 4,
+        "comfort": 200,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "配有喷枪的清洁器。Scout偶尔会用清洁器在墙上喷字，因为这样不会留下痕迹。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 165,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_suspensionCrane_01": {
+        "id": "furni_elite_suspensionCrane_01",
+        "name": "双梁式起重机",
+        "iconId": "furni_elite_suspensionCrane_01",
+        "type": "CEILING",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 8,
+        "depth": 4,
+        "height": 5,
+        "comfort": 235,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "载有大型物资的起重机。其实大多数重物，煌和Ace用手就能提起，省时省力。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 178,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_shadingBoard_01": {
+        "id": "furni_elite_shadingBoard_01",
+        "name": "透明隔板",
+        "iconId": "furni_elite_shadingBoard_01",
+        "type": "DECORATION",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 5,
+        "depth": 2,
+        "height": 9,
+        "comfort": 360,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "隔断高危工作区域的透明材质隔板。由Whitsmith设计的新材料制作而成，它见证了许多行业里渺小伟业的诞生。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 270,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_wallpaper_01": {
+        "id": "furni_elite_wallpaper_01",
+        "name": "工作间壁纸",
+        "iconId": "furni_elite_wallpaper_01",
+        "type": "WALLPAPER",
+        "location": "WALL",
+        "category": "WALL",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 1,
+        "height": 10,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "工作间使用的带标识壁纸。每个人都暗中立誓要奉献一切，而一些人已经完成了誓言。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 180,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_elite_floor_01": {
+        "id": "furni_elite_floor_01",
+        "name": "工作间地板",
+        "iconId": "furni_elite_floor_01",
+        "type": "FLOOR",
+        "location": "FLOOR",
+        "category": "FLOOR",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 10,
+        "height": 1,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "工作间使用的地板。大家都知道Outcast坐办公室前是名枪手，她说自己就算现在也能像年轻时一样用光环发出耀眼的光芒，她做到了。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 180,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": true
+      },
+      "furni_NY2020_wallpaper_01": {
+        "id": "furni_NY2020_wallpaper_01",
+        "name": "龙门新印象壁纸",
+        "iconId": "furni_NY2020_wallpaper_01",
+        "type": "WALLPAPER",
+        "location": "WALL",
+        "category": "WALL",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 1,
+        "height": 10,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "为祝贺新年特别筹备的壁纸。糅合了大家最熟悉的龙门元素，以前卫的手法展现在了墙面上。",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_NY2020_floor_01": {
+        "id": "furni_NY2020_floor_01",
+        "name": "龙门新印象地板",
+        "iconId": "furni_NY2020_floor_01",
+        "type": "FLOOR",
+        "location": "FLOOR",
+        "category": "FLOOR",
+        "rarity": 2,
+        "themeId": "",
+        "width": 34,
+        "depth": 10,
+        "height": 1,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "为祝贺新年特别清洁过的地板。干员们共同清扫了好久，现在看起来是不是像新的一样？",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
       "furni_obsidianFestival_DJBooth_01": {
         "id": "furni_obsidianFestival_DJBooth_01",
         "name": "“极限”混音设备",
@@ -14813,7 +15423,7 @@
         "comfort": 75,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "“时间和传奇一同流逝，旋律却依旧徘徊在城市，默默抚慰着所有失意的人。”",
-        "obtainApproach": "骑兵与猎人活动任务奖励",
+        "obtainApproach": "活动获得",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -14989,7 +15599,7 @@
         "comfort": 75,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "“我们正在充电，我们是电人。”",
-        "obtainApproach": "火蓝之心OF-8首次通关掉落",
+        "obtainApproach": "活动获得",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -15011,7 +15621,7 @@
         "comfort": 75,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "“时光流逝令你放声大笑，年岁增长让你心潮澎湃。”",
-        "obtainApproach": "SW-EV-5突袭模式首次通关掉落",
+        "obtainApproach": "活动获得",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -15033,7 +15643,7 @@
         "comfort": 75,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "“想要回头 时候依然太早，想要听见你的声音 却又太过安静。”",
-        "obtainApproach": "火蓝之心OF-EX6突袭模式首次通关掉落",
+        "obtainApproach": "活动获得",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -15056,6 +15666,94 @@
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "“我们公司想要买下这座城堡。”",
         "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_dropS005_sedmikrasky_01": {
+        "id": "furni_dropS005_sedmikrasky_01",
+        "name": "饰牌《玛丽》",
+        "iconId": "furni_dropS005_sedmikrasky_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“她们和这一切无关，她们的颜色四散在每张胶片，她们同样毫不在乎。”",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_dropS006_theHolyMountain_01": {
+        "id": "furni_dropS006_theHolyMountain_01",
+        "name": "饰牌《致幻》",
+        "iconId": "furni_dropS006_theHolyMountain_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“走吧，难道你还想听他唠叨吗。”",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_dropS006_suspiria_01": {
+        "id": "furni_dropS006_suspiria_01",
+        "name": "饰牌《温暖》",
+        "iconId": "furni_dropS006_suspiria_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“母爱仍在你身上流淌，还给她们。”",
+        "obtainApproach": "6-16突袭模式首次通关掉落",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false
+      },
+      "furni_dropS006_oceans12_01": {
+        "id": "furni_dropS006_oceans12_01",
+        "name": "饰牌《趋同》",
+        "iconId": "furni_dropS006_oceans12_01",
+        "type": "WALLDECO",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "rarity": 2,
+        "themeId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“我们需要运用正义和言语统一异见。”",
+        "obtainApproach": "H6-4首次三星通关掉落",
         "processedProductId": "3401",
         "processedProductCount": 0,
         "processedByProductPercentage": 0,
@@ -15748,7 +16446,7 @@
         "id": "furni_dropN001_box_01",
         "name": "黑色物资箱",
         "iconId": "furni_dropN001_box_01",
-        "type": "DECORATION",
+        "type": "CABINET",
         "location": "FLOOR",
         "category": "FURNITURE",
         "rarity": 2,
@@ -15770,7 +16468,7 @@
         "id": "furni_dropN001_box_02",
         "name": "白色物资箱",
         "iconId": "furni_dropN001_box_02",
-        "type": "DECORATION",
+        "type": "CABINET",
         "location": "FLOOR",
         "category": "FURNITURE",
         "rarity": 2,
@@ -15792,7 +16490,7 @@
         "id": "furni_dropN001_box_03",
         "name": "橄榄绿色物资箱",
         "iconId": "furni_dropN001_box_03",
-        "type": "DECORATION",
+        "type": "CABINET",
         "location": "FLOOR",
         "category": "FURNITURE",
         "rarity": 2,
@@ -17869,6 +18567,83 @@
             "pos1": 0
           }
         ]
+      },
+      "furni_set_elite": {
+        "id": "furni_set_elite",
+        "name": "罗德岛工作间",
+        "desc": "罗德岛工作间，主要供精英干员们进行各项开发、设计与维护任务。",
+        "quickSetup": [
+          {
+            "furnitureId": "furni_elite_ceiling_01",
+            "pos0": 2,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_elite_board_01",
+            "pos0": 4,
+            "pos1": 3
+          },
+          {
+            "furnitureId": "furni_elite_sawingMachine_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_elite_cabinet_01",
+            "pos0": 4,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_elite_desk_01",
+            "pos0": 4,
+            "pos1": 1
+          },
+          {
+            "furnitureId": "furni_elite_stool_01",
+            "pos0": 7,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_elite_stool_01",
+            "pos0": 12,
+            "pos1": 4
+          },
+          {
+            "furnitureId": "furni_elite_roboticArm_01",
+            "pos0": 14,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_elite_weaponCabinet_01",
+            "pos0": 20,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_elite_cleaningBucket_01",
+            "pos0": 27,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_elite_suspensionCrane_01",
+            "pos0": 26,
+            "pos1": 2
+          },
+          {
+            "furnitureId": "furni_elite_shadingBoard_01",
+            "pos0": 27,
+            "pos1": 6
+          },
+          {
+            "furnitureId": "furni_elite_wallpaper_01",
+            "pos0": 0,
+            "pos1": 0
+          },
+          {
+            "furnitureId": "furni_elite_floor_01",
+            "pos0": 0,
+            "pos1": 0
+          }
+        ]
       }
     },
     "groups": {
@@ -18888,6 +19663,55 @@
           "furni_penguin_ceiling_01",
           "furni_penguin_partitionGate_01"
         ]
+      },
+      "furni_set_elite_1": {
+        "id": "furni_set_elite_1",
+        "name": "设计与研发组合",
+        "themeId": "furni_set_elite",
+        "comfort": 180,
+        "count": 3,
+        "furniture": [
+          "furni_elite_board_01",
+          "furni_elite_desk_01",
+          "furni_elite_stool_01"
+        ]
+      },
+      "furni_set_elite_2": {
+        "id": "furni_set_elite_2",
+        "name": "原料与加工组合",
+        "themeId": "furni_set_elite",
+        "comfort": 170,
+        "count": 3,
+        "furniture": [
+          "furni_elite_sawingMachine_01",
+          "furni_elite_roboticArm_01",
+          "furni_elite_cabinet_01"
+        ]
+      },
+      "furni_set_elite_3": {
+        "id": "furni_set_elite_3",
+        "name": "成品与储存组合",
+        "themeId": "furni_set_elite",
+        "comfort": 255,
+        "count": 4,
+        "furniture": [
+          "furni_elite_weaponCabinet_01",
+          "furni_elite_suspensionCrane_01",
+          "furni_elite_shadingBoard_01",
+          "furni_elite_cleaningBucket_01"
+        ]
+      },
+      "furni_set_elite_4": {
+        "id": "furni_set_elite_4",
+        "name": "工作间基础装修",
+        "themeId": "furni_set_elite",
+        "comfort": 185,
+        "count": 3,
+        "furniture": [
+          "furni_elite_wallpaper_01",
+          "furni_elite_floor_01",
+          "furni_elite_ceiling_01"
+        ]
       }
     },
     "types": {
@@ -19384,6 +20208,7 @@
   "shopFormulas": {},
   "workshopFormulas": {
     "1": {
+      "sortId": 1001,
       "formulaId": "1",
       "rarity": 0,
       "itemId": "3131",
@@ -19417,6 +20242,7 @@
       "requireStages": []
     },
     "2": {
+      "sortId": 1002,
       "formulaId": "2",
       "rarity": 0,
       "itemId": "3132",
@@ -19450,6 +20276,7 @@
       "requireStages": []
     },
     "3": {
+      "sortId": 1003,
       "formulaId": "3",
       "rarity": 0,
       "itemId": "3133",
@@ -19483,6 +20310,7 @@
       "requireStages": []
     },
     "4": {
+      "sortId": 1101,
       "formulaId": "4",
       "rarity": 0,
       "itemId": "3113",
@@ -19521,6 +20349,7 @@
       ]
     },
     "5": {
+      "sortId": 1102,
       "formulaId": "5",
       "rarity": 0,
       "itemId": "3114",
@@ -19559,6 +20388,7 @@
       ]
     },
     "6": {
+      "sortId": 1201,
       "formulaId": "6",
       "rarity": 0,
       "itemId": "3401",
@@ -19597,6 +20427,7 @@
       "requireStages": []
     },
     "7": {
+      "sortId": 1202,
       "formulaId": "7",
       "rarity": 0,
       "itemId": "3401",
@@ -19630,6 +20461,7 @@
       "requireStages": []
     },
     "8": {
+      "sortId": 1203,
       "formulaId": "8",
       "rarity": 0,
       "itemId": "3401",
@@ -19663,6 +20495,7 @@
       "requireStages": []
     },
     "9": {
+      "sortId": 1204,
       "formulaId": "9",
       "rarity": 0,
       "itemId": "3401",
@@ -19701,6 +20534,7 @@
       "requireStages": []
     },
     "10": {
+      "sortId": 1205,
       "formulaId": "10",
       "rarity": 0,
       "itemId": "3401",
@@ -19734,6 +20568,7 @@
       "requireStages": []
     },
     "11": {
+      "sortId": 1206,
       "formulaId": "11",
       "rarity": 0,
       "itemId": "3401",
@@ -19767,6 +20602,7 @@
       "requireStages": []
     },
     "12": {
+      "sortId": 2001,
       "formulaId": "12",
       "rarity": 0,
       "itemId": "30135",
@@ -19826,6 +20662,16 @@
           "weight": 56,
           "itemId": "30104",
           "itemCount": 1
+        },
+        {
+          "weight": 72,
+          "itemId": "31014",
+          "itemCount": 1
+        },
+        {
+          "weight": 63,
+          "itemId": "31024",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -19855,6 +20701,7 @@
       "requireStages": []
     },
     "13": {
+      "sortId": 2002,
       "formulaId": "13",
       "rarity": 0,
       "itemId": "30125",
@@ -19914,6 +20761,16 @@
           "weight": 56,
           "itemId": "30104",
           "itemCount": 1
+        },
+        {
+          "weight": 72,
+          "itemId": "31014",
+          "itemCount": 1
+        },
+        {
+          "weight": 63,
+          "itemId": "31024",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -19938,6 +20795,7 @@
       "requireStages": []
     },
     "14": {
+      "sortId": 2003,
       "formulaId": "14",
       "rarity": 0,
       "itemId": "30115",
@@ -19997,6 +20855,16 @@
           "weight": 56,
           "itemId": "30104",
           "itemCount": 1
+        },
+        {
+          "weight": 72,
+          "itemId": "31014",
+          "itemCount": 1
+        },
+        {
+          "weight": 63,
+          "itemId": "31024",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -20025,7 +20893,216 @@
       ],
       "requireStages": []
     },
+    "55": {
+      "sortId": 2101,
+      "formulaId": "55",
+      "rarity": 0,
+      "itemId": "31024",
+      "count": 1,
+      "goldCost": 300,
+      "apCost": 1440000,
+      "formulaType": "F_EVOLVE",
+      "buffType": "W_EVOLVE",
+      "extraOutcomeRate": 0.1,
+      "extraOutcomeGroup": [
+        {
+          "weight": 60,
+          "itemId": "30013",
+          "itemCount": 1
+        },
+        {
+          "weight": 50,
+          "itemId": "30023",
+          "itemCount": 1
+        },
+        {
+          "weight": 50,
+          "itemId": "30033",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "30043",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "30053",
+          "itemCount": 1
+        },
+        {
+          "weight": 30,
+          "itemId": "30063",
+          "itemCount": 1
+        },
+        {
+          "weight": 45,
+          "itemId": "30073",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "30083",
+          "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "30093",
+          "itemCount": 1
+        },
+        {
+          "weight": 30,
+          "itemId": "30103",
+          "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
+        }
+      ],
+      "costs": [
+        {
+          "id": "30063",
+          "count": 1,
+          "type": "MATERIAL"
+        },
+        {
+          "id": "30093",
+          "count": 1,
+          "type": "MATERIAL"
+        },
+        {
+          "id": "31023",
+          "count": 1,
+          "type": "MATERIAL"
+        }
+      ],
+      "requireRooms": [
+        {
+          "roomId": "WORKSHOP",
+          "roomLevel": 3,
+          "roomCount": 1
+        }
+      ],
+      "requireStages": [
+        {
+          "stageId": "sub_03-3-1",
+          "rank": 2
+        }
+      ]
+    },
+    "56": {
+      "sortId": 2102,
+      "formulaId": "56",
+      "rarity": 0,
+      "itemId": "31014",
+      "count": 1,
+      "goldCost": 300,
+      "apCost": 1440000,
+      "formulaType": "F_EVOLVE",
+      "buffType": "W_EVOLVE",
+      "extraOutcomeRate": 0.1,
+      "extraOutcomeGroup": [
+        {
+          "weight": 60,
+          "itemId": "30013",
+          "itemCount": 1
+        },
+        {
+          "weight": 50,
+          "itemId": "30023",
+          "itemCount": 1
+        },
+        {
+          "weight": 50,
+          "itemId": "30033",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "30043",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "30053",
+          "itemCount": 1
+        },
+        {
+          "weight": 30,
+          "itemId": "30063",
+          "itemCount": 1
+        },
+        {
+          "weight": 45,
+          "itemId": "30073",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "30083",
+          "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "30093",
+          "itemCount": 1
+        },
+        {
+          "weight": 30,
+          "itemId": "30103",
+          "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
+        }
+      ],
+      "costs": [
+        {
+          "id": "30043",
+          "count": 1,
+          "type": "MATERIAL"
+        },
+        {
+          "id": "31013",
+          "count": 1,
+          "type": "MATERIAL"
+        },
+        {
+          "id": "31023",
+          "count": 1,
+          "type": "MATERIAL"
+        }
+      ],
+      "requireRooms": [
+        {
+          "roomId": "WORKSHOP",
+          "roomLevel": 3,
+          "roomCount": 1
+        }
+      ],
+      "requireStages": [
+        {
+          "stageId": "sub_04-4-1",
+          "rank": 2
+        }
+      ]
+    },
     "15": {
+      "sortId": 2103,
       "formulaId": "15",
       "rarity": 0,
       "itemId": "30104",
@@ -20085,6 +21162,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -20114,6 +21201,7 @@
       "requireStages": []
     },
     "16": {
+      "sortId": 2104,
       "formulaId": "16",
       "rarity": 0,
       "itemId": "30094",
@@ -20173,6 +21261,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -20202,6 +21300,7 @@
       "requireStages": []
     },
     "17": {
+      "sortId": 2105,
       "formulaId": "17",
       "rarity": 0,
       "itemId": "30084",
@@ -20261,6 +21360,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -20290,6 +21399,7 @@
       "requireStages": []
     },
     "18": {
+      "sortId": 2106,
       "formulaId": "18",
       "rarity": 0,
       "itemId": "30074",
@@ -20349,6 +21459,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -20378,6 +21498,7 @@
       "requireStages": []
     },
     "19": {
+      "sortId": 2201,
       "formulaId": "19",
       "rarity": 0,
       "itemId": "30062",
@@ -20436,6 +21557,7 @@
       "requireStages": []
     },
     "20": {
+      "sortId": 2202,
       "formulaId": "20",
       "rarity": 0,
       "itemId": "30063",
@@ -20494,6 +21616,7 @@
       "requireStages": []
     },
     "21": {
+      "sortId": 2203,
       "formulaId": "21",
       "rarity": 0,
       "itemId": "30064",
@@ -20553,6 +21676,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -20582,6 +21715,7 @@
       "requireStages": []
     },
     "22": {
+      "sortId": 2301,
       "formulaId": "22",
       "rarity": 0,
       "itemId": "30052",
@@ -20640,6 +21774,7 @@
       "requireStages": []
     },
     "23": {
+      "sortId": 2302,
       "formulaId": "23",
       "rarity": 0,
       "itemId": "30053",
@@ -20698,6 +21833,7 @@
       "requireStages": []
     },
     "24": {
+      "sortId": 2303,
       "formulaId": "24",
       "rarity": 0,
       "itemId": "30054",
@@ -20757,6 +21893,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -20786,6 +21932,7 @@
       "requireStages": []
     },
     "25": {
+      "sortId": 2401,
       "formulaId": "25",
       "rarity": 0,
       "itemId": "30042",
@@ -20844,6 +21991,7 @@
       "requireStages": []
     },
     "26": {
+      "sortId": 2402,
       "formulaId": "26",
       "rarity": 0,
       "itemId": "30043",
@@ -20902,6 +22050,7 @@
       "requireStages": []
     },
     "27": {
+      "sortId": 2403,
       "formulaId": "27",
       "rarity": 0,
       "itemId": "30044",
@@ -20961,6 +22110,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -20990,6 +22149,7 @@
       "requireStages": []
     },
     "28": {
+      "sortId": 2501,
       "formulaId": "28",
       "rarity": 0,
       "itemId": "30032",
@@ -21048,6 +22208,7 @@
       "requireStages": []
     },
     "29": {
+      "sortId": 2502,
       "formulaId": "29",
       "rarity": 0,
       "itemId": "30033",
@@ -21106,6 +22267,7 @@
       "requireStages": []
     },
     "30": {
+      "sortId": 2503,
       "formulaId": "30",
       "rarity": 0,
       "itemId": "30034",
@@ -21165,6 +22327,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -21194,6 +22366,7 @@
       "requireStages": []
     },
     "31": {
+      "sortId": 2601,
       "formulaId": "31",
       "rarity": 0,
       "itemId": "30022",
@@ -21252,6 +22425,7 @@
       "requireStages": []
     },
     "32": {
+      "sortId": 2602,
       "formulaId": "32",
       "rarity": 0,
       "itemId": "30023",
@@ -21310,6 +22484,7 @@
       "requireStages": []
     },
     "33": {
+      "sortId": 2603,
       "formulaId": "33",
       "rarity": 0,
       "itemId": "30024",
@@ -21369,6 +22544,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -21398,6 +22583,7 @@
       "requireStages": []
     },
     "34": {
+      "sortId": 2701,
       "formulaId": "34",
       "rarity": 0,
       "itemId": "30012",
@@ -21456,6 +22642,7 @@
       "requireStages": []
     },
     "35": {
+      "sortId": 2702,
       "formulaId": "35",
       "rarity": 0,
       "itemId": "30013",
@@ -21514,6 +22701,7 @@
       "requireStages": []
     },
     "36": {
+      "sortId": 2703,
       "formulaId": "36",
       "rarity": 0,
       "itemId": "30014",
@@ -21573,6 +22761,16 @@
           "weight": 30,
           "itemId": "30103",
           "itemCount": 1
+        },
+        {
+          "weight": 36,
+          "itemId": "31013",
+          "itemCount": 1
+        },
+        {
+          "weight": 40,
+          "itemId": "31023",
+          "itemCount": 1
         }
       ],
       "costs": [
@@ -21592,6 +22790,7 @@
       "requireStages": []
     },
     "37": {
+      "sortId": 3001,
       "formulaId": "37",
       "rarity": 0,
       "itemId": "3302",
@@ -21630,6 +22829,7 @@
       ]
     },
     "38": {
+      "sortId": 3002,
       "formulaId": "38",
       "rarity": 0,
       "itemId": "3303",
@@ -21668,6 +22868,7 @@
       ]
     },
     "39": {
+      "sortId": 4001,
       "formulaId": "39",
       "rarity": 0,
       "itemId": "3231",
@@ -21736,6 +22937,7 @@
       "requireStages": []
     },
     "40": {
+      "sortId": 4002,
       "formulaId": "40",
       "rarity": 0,
       "itemId": "3261",
@@ -21804,6 +23006,7 @@
       "requireStages": []
     },
     "41": {
+      "sortId": 4003,
       "formulaId": "41",
       "rarity": 0,
       "itemId": "3241",
@@ -21872,6 +23075,7 @@
       "requireStages": []
     },
     "42": {
+      "sortId": 4004,
       "formulaId": "42",
       "rarity": 0,
       "itemId": "3251",
@@ -21940,6 +23144,7 @@
       "requireStages": []
     },
     "43": {
+      "sortId": 4005,
       "formulaId": "43",
       "rarity": 0,
       "itemId": "3211",
@@ -22008,6 +23213,7 @@
       "requireStages": []
     },
     "44": {
+      "sortId": 4006,
       "formulaId": "44",
       "rarity": 0,
       "itemId": "3271",
@@ -22076,6 +23282,7 @@
       "requireStages": []
     },
     "45": {
+      "sortId": 4007,
       "formulaId": "45",
       "rarity": 0,
       "itemId": "3221",
@@ -22144,6 +23351,7 @@
       "requireStages": []
     },
     "46": {
+      "sortId": 4008,
       "formulaId": "46",
       "rarity": 0,
       "itemId": "3281",
@@ -22212,6 +23420,7 @@
       "requireStages": []
     },
     "47": {
+      "sortId": 4101,
       "formulaId": "47",
       "rarity": 0,
       "itemId": "3232",
@@ -22280,6 +23489,7 @@
       "requireStages": []
     },
     "48": {
+      "sortId": 4102,
       "formulaId": "48",
       "rarity": 0,
       "itemId": "3262",
@@ -22348,6 +23558,7 @@
       "requireStages": []
     },
     "49": {
+      "sortId": 4103,
       "formulaId": "49",
       "rarity": 0,
       "itemId": "3242",
@@ -22416,6 +23627,7 @@
       "requireStages": []
     },
     "50": {
+      "sortId": 4104,
       "formulaId": "50",
       "rarity": 0,
       "itemId": "3252",
@@ -22484,6 +23696,7 @@
       "requireStages": []
     },
     "51": {
+      "sortId": 4105,
       "formulaId": "51",
       "rarity": 0,
       "itemId": "3212",
@@ -22552,6 +23765,7 @@
       "requireStages": []
     },
     "52": {
+      "sortId": 4106,
       "formulaId": "52",
       "rarity": 0,
       "itemId": "3272",
@@ -22620,6 +23834,7 @@
       "requireStages": []
     },
     "53": {
+      "sortId": 4107,
       "formulaId": "53",
       "rarity": 0,
       "itemId": "3222",
@@ -22688,6 +23903,7 @@
       "requireStages": []
     },
     "54": {
+      "sortId": 4108,
       "formulaId": "54",
       "rarity": 0,
       "itemId": "3282",

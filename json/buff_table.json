@@ -85,7 +85,7 @@
     },
     "lifeTimeType": "INFINITY",
     "priorityBBKeys": [
-      "oneMinusStatusResistance"
+      "one_minus_status_resistance"
     ],
     "blackboard": []
   },
@@ -103,8 +103,36 @@
       ]
     },
     "priorityBBKeys": [
-      "oneMinusStatusResistance"
+      "one_minus_status_resistance"
     ],
     "blackboard": []
+  },
+  "e2c_freeze": {
+    "buffKey": "e2c_freeze",
+    "durationKey": "freeze",
+    "overrideEffectKey": "buff_frozen",
+    "attributes": {
+      "attributeModifiers": null,
+      "abnormalFlags": [
+          "FROZEN"
+      ]
+    }
+  },
+  "e2c_cold": {
+    "buffKey": "e2c_cold",
+    "durationKey": "freeze",
+    "templateKey": "e2c_cold",
+    "overrideEffectKey": "buff_cold",
+    "statusResistable": "YES",
+    "attributes": {
+      "attributeModifiers": [
+        {
+          "attributeType": "ATTACK_SPEED",
+          "formulaItem": "ADDITION",
+          "value": -30,
+          "loadFromBlackboard": false
+        }
+      ]
+    }
   }
 }
