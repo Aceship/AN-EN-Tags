@@ -72,7 +72,16 @@
     var d23 = $.getJSON("json/tl-voiceline.json",function(data){
         db["voicelineTL"] = data;
     });  
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23).then(function(){
+    var d24 = $.getJSON("json/excel/building_data.json",function(data){
+        db["buildbuffs"] = data.buffs;
+    });
+    var d25 = $.getJSON("json/excel/building_data.json",function(data){
+        db["buildchars"] = data.chars;
+    });
+    var d26 = $.getJSON("json/ace/riic.json",function(data){
+        db["riic"] = data;
+    });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26).then(function(){
         $.holdReady(false);
     });
 
@@ -429,6 +438,8 @@
             var opdata = query(db.chars2,"name_cn",opname);
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
+
+            var opcode = Object.keys(opdata2)[0]
             
             //test
             // var charalist = []
@@ -604,6 +615,8 @@
             var position = query(db.tags,"tag_cn",opdataFull.position);
             $("#op-position").html(titledMaker(eval("position.tag_"+lang),`Position`))
 
+            
+
             var type = query(db.classes,"type_data",opdataFull.profession);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
             $("#op-className").html(eval("type.type_"+lang))
@@ -641,8 +654,15 @@
                             (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
                 }
             });
+            var newtags = `<div style='margin-top: 12px;margin-bottom:0px'>${tags_html.join("")}</div>`
+            // $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
+            $("#op-taglist").append(titledMaker(newtags,"Tags","","","padding-bottom:-40px"));
+
+
+            var charaRiic = GetRiic(opdata2)
+            // console.log(charaRiic)
             
-            $("#op-taglist").append(tags_html);
+            $("#op-riic").html(charaRiic)
             //Story
 
             GetStory(opdataFull)
@@ -1234,6 +1254,86 @@
             potentialsTL.push(tlDesc)
         });
         return potentialsTL
+    }
+
+    function GetRiic(opdata2){
+        var charaRiic = db.buildchars[Object.keys(opdata2)[0]]
+        var riicList = []
+        var everybuff = []
+
+        charaRiic.buffChar.forEach(eachbuffchar => {
+            everybuff.push(eachbuffchar.buffData)
+            eachbuffchar.buffData.forEach(eachbuffdata => {
+                var checkphase = riicList.find(search=>search.phase==eachbuffdata.cond.phase&&search.level == eachbuffdata.cond.level)
+                if(!checkphase){
+                    riicList.push({phase:eachbuffdata.cond.phase,level:eachbuffdata.cond.level,list:[]})
+                }
+            });
+        });
+
+        
+        // console.log(everybuff)
+        riicList.forEach(eachcat =>{
+            // checkphase.list.push(eachbuffdata.buffId)
+            
+            everybuff.forEach(eachbuff => {
+                var sortedbuff = eachbuff.sort((a,b)=>{
+                    if(a.cond.phase<b.cond.phase) return 1
+                    if(a.cond.phase>b.cond.phase) return -1
+                    if(a.cond.level<b.cond.level) return 1
+                    if(a.cond.level>b.cond.level) return -1
+                    return 0
+                })
+                for(i=0;i<sortedbuff.length;i++){
+                    if(eachcat.phase>=sortedbuff[i].cond.phase&&eachcat.level >= sortedbuff[i].cond.level){
+                        eachcat.list.push(sortedbuff[i].buffId)
+                        break;
+                    }
+                }
+                // if(eachcat.phase>=eachbuff.cond.phase&&eachcat.level >= eachbuff.cond.level){
+                //     eachcat.list.push(eachbuff.buffId)
+                // }
+                console.log(sortedbuff)
+            });
+        })
+
+        var htmlcomb = []
+        
+        riicList.forEach(eachcat => {
+            var eachtab = []
+            eachcat.list.forEach(eachbuff => {
+                var currbuff = db.buildbuffs[eachbuff]
+                var tlbuff = db.riic[eachbuff]
+
+                var currname = tlbuff?tlbuff.name:currbuff.buffName
+                var currdesc = tlbuff?tlbuff.desc:currbuff.description
+                eachtab.push(`
+                    <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
+                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" title="${currname}\n\n${currdesc}">
+                    </div>`)
+            });
+            var imagereq = []
+                if(eachcat.level >0)
+                imagereq.push(`Lv.${eachcat.level}`)
+                if(eachcat.phase>0)
+                imagereq.push(`<img src="./img/ui/elite/${eachcat.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachcat.phase}">`)
+            var currinfo = `<div style="color:#999;background:#222;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+            htmlcomb.push(`
+            <div style="display:inline-block;background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;text-align:center">${currinfo}${eachtab.join("")}</div>
+            `)
+
+            // htmlcomb.push()
+        });
+        var combinehtml =`
+        <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">RIIC Skills</div>
+            <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666;text-align:center">
+                ${htmlcomb.join("")}
+            </div>
+        </div>
+        `
+        // console.log(htmlcomb.join(""))
+        return combinehtml
+        
     }
 
     function GetTalent(id,opdataFull){
