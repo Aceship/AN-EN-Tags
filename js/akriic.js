@@ -325,8 +325,9 @@
                         req = `<div class="btn btn-sm ak-disable ak-btn" style="height:25px;margin:auto;padding:1px;background:#0078BC;">Req: ${req}</div>`
                     }
                     // console.log(req)     
+                    var bufficon = `<img src="./img/ui/infrastructure/skill/${currBuff2.skillIcon}.png" style="" title="">`
                     currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto">
-                    <div style="padding:5px;background:#222">${extraInfo}  ${charaRiicTL?charaRiicTL.name: currBuff2.buffName} ${req}</div>
+                    <div style="padding:5px;background:#222">${bufficon} ${extraInfo} ${charaRiicTL?charaRiicTL.name: currBuff2.buffName} ${req}</div>
                     <div style="padding-left:20px;margin:5px">
                     ${extrainfo2==""?"":`<div style="display:inline;background:#222;padding:3px">${extrainfo2}</div><div></div>`} 
                     ${charaRiicTL?charaRiicTL.desc:currBuff2.description}</div></div>` )
