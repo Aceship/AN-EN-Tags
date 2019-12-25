@@ -81,7 +81,13 @@
     var d26 = $.getJSON("json/ace/riic.json",function(data){
         db["riic"] = data;
     });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26).then(function(){
+    var d27 = $.getJSON("json/en/excel/handbook_info_table.json",function(data){
+        db["handbookInfoEN"] = data;
+    });
+    var d28 = $.getJSON("json/en/excel/charword_table.json",function(data){
+        db["charwordEN"] = data;
+    });  
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28).then(function(){
         $.holdReady(false);
     });
 
@@ -955,14 +961,24 @@
         
         var curraudiolist = []
         var puretextlist =[]
+        var isEN
         var currTL = db.voicelineTL[opdataFull.id]
         Object.keys(db.charword).forEach(element => {
-            if(db.charword[element]){
+            var curraudio
+            if(db.charwordEN[element]){
+                var curraudio = db.charwordEN[element]
+                currTL = undefined
+                isEN = true
+            }
+            else if(db.charword[element]){
                 var curraudio = db.charword[element]
                 
+            }
+            if(curraudio){
                 if(curraudio.charId&&curraudio.charId == opdataFull.id){
                     
                     curraudiolist.push(curraudio)
+                    console.log(curraudio)
                     puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
                 }
             }
@@ -1003,10 +1019,18 @@
                 $('#opaudioproofreader').html(`<div class="btn-infoleft">Voiceline Proofreader</div><div class="btn-inforight">${currTL.proofreader}</div>`)
             }else $('#opaudioproofreader').html()
         }
+        if(isEN){
+            $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">Official EN Arknight</div>`)
+        }
     }
     function GetStory (opdataFull){
         // console.log(opdataFull)
         let currStory = db.handbookInfo.handbookDict[opdataFull.id]
+        var isEN 
+        if(db.handbookInfoEN.handbookDict[opdataFull.id]){
+            currStory = db.handbookInfoEN.handbookDict[opdataFull.id]
+            isEN = true
+        }
         // console.log(currStory)
         // console.log(currStory.drawName)
         // console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
@@ -1025,6 +1049,7 @@
                 puretext.push(storySection.stories[0].storyText)
                 puretext.push("")
                 switch(storySection.storyTitle){
+                    case "Basic Info":
                     case "基础档案":
                         var basicInfo = storySection.stories[0].storyText.split("\n")
                         var basicInfoTL = []
@@ -1033,12 +1058,13 @@
                         // if(basicInfo.length>20)islong = true;
                         // console.log(basicInfo.length)
                         basicInfo.forEach((info,n) => {
-                            var check = /(【)(.*)(】)(.*)/
+                            var check = isEN? /(\[)(.*)(\])(.*)/ : /(【)(.*)(】)(.*)/
                             var infoTitle = check.exec(info)
                             if(infoTitle){
                                 var title = db.storytextTL[infoTitle[2]]?db.storytextTL[infoTitle[2]]:infoTitle[2]
+                                
                                 var content = infoTitle[4]
-                                // console.log(infoTitle[2])
+                                // console.log(infoTitle)
                                 switch (infoTitle[2]) {
                                     case "代号": content = opdataFull.appellation;break;
                                     case "性别":
@@ -1151,13 +1177,15 @@
                         // textTL.push(basicInfoTL.join("</br>"))
                         // console.log(basicInfoTL.join("\n"))
                     ;break;
+                case "Physical Exam" :
+                case "Performance Review":
                 case "综合性能检测结果" :
                 case "综合体检测试" :
                     var basicInfo = storySection.stories[0].storyText.split("\n")
                     var basicInfoTL = []
                     var webTL = []
                     basicInfo.forEach(info => {
-                        var check = /(【)(.*)(】)(.*)/
+                        var check = isEN?/(\[)(.*)(\])(.*)/:/(【)(.*)(】)(.*)/
                         var infoTitle = check.exec(info)
                         if(infoTitle){
                             var title = db.storytextTL[infoTitle[2]]?db.storytextTL[infoTitle[2]]:infoTitle[2]
@@ -1204,6 +1232,10 @@
         }
         if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id]["credit"]) $("#opstorycredits").html(`<div class="btn-infoleft">Trust Translation</div><div class="btn-inforight">${db.charastoryTL[opdataFull.id]["credit"]}</div>`)
         else $("#opstorycredits").html(``)
+
+        if(isEN){
+            $('#opstorycredits').html(`<div class="btn-infoleft">Trust Translation</div><div class="btn-inforight">Official EN Arknight</div>`)
+        }
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
         console.log(puretext.join("\n"))
