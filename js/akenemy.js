@@ -36,7 +36,13 @@
     var d11 = $.getJSON("json/levels/enemydata/enemy_database.json",function(data){
         db["enemyDetail"] = data.enemies;
     });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9).then(function(){
+    var d12 = $.getJSON("json/en/levels/enemydata/enemy_database.json",function(data){
+        db["enemyDetailEN"] = data.enemies;
+    });
+    var d13 = $.getJSON("json/en/excel/enemy_handbook_table.json",function(data){
+        db["enemyEN"] = data;
+    });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d11,d12,13).then(function(){
         $.holdReady(false);
     });
 
@@ -185,10 +191,23 @@
         $('#enemyResult').html("");
         $('#enemyResult').hide();
         let currEnemy = query(db.enemy,"enemyId",el)
+        // console.log(el)
+        let currEnemyEN = db.enemyEN[el]
         let currEnemyDetail = db.enemyDetail.find(search=>search.Key == el)
+        // let currEnemyDetailEN = db.enemyDetailEN.find(search=>search.Key == el)
         let currHtml = []    
         // console.log(query(db.enemytl,"name_cn",currEnemy.name).name_en)
         let tlname = query(db.enemytl,"name_cn",currEnemy.name).name_en 
+        let tldesc = currEnemy.description
+        let tlrace = currEnemy.enemyRace?currEnemy.enemyRace:""
+        let tlability = currEnemy.ability?currEnemy.ability:""
+        if (currEnemyEN) {
+            // console.log(currEnemyEN)
+            tlname = currEnemyEN.name
+            tldesc = currEnemyEN.description
+            tlrace = currEnemyEN.enemyRace?currEnemyEN.enemyRace:""
+            tlability = currEnemyEN.ability?currEnemyEN.ability:""
+        }
         //Attack type
         let atktype =[]
         currEnemy.attackType.split(" ").forEach(element => {
@@ -209,7 +228,7 @@
                     <div style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:50px;width:50px;display:inline-block;font-size:30px">${currEnemy.enemyIndex}</div>
                     <div style="display:inline-block;vertical-align:top">   
                     <div>${tlname?tlname:""} [${currEnemy.name}] </div>
-                    <div>${currEnemy.enemyRace?`${currEnemy.enemyRace}`:""}</div>
+                    <div>${tlrace}</div>
                     </div>
                 </div>
             </div>
@@ -240,8 +259,8 @@
                     Spell Resist</div><div style="font-size:40px;margin-top:-5px">${currEnemy.resistance}</div>
                 </div>
             </div>
-            <div>${currEnemy.ability ?`Ability : ${currEnemy.ability}`:""}</div>
-            <div>${currEnemy.description}</div>
+            <div>${tlability ?`Ability : ${tlability}`:""}</div>
+            <div>${tldesc}</div>
         </div>`)
         
         if(currEnemyDetail){
