@@ -981,7 +981,7 @@
                 if(curraudio.charId&&curraudio.charId == opdataFull.id){
                     
                     curraudiolist.push(curraudio)
-                    console.log(curraudio)
+                    // console.log(curraudio)
                     puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
                 }
             }
@@ -1328,7 +1328,7 @@
                 // if(eachcat.phase>=eachbuff.cond.phase&&eachcat.level >= eachbuff.cond.level){
                 //     eachcat.list.push(eachbuff.buffId)
                 // }
-                console.log(sortedbuff)
+                // console.log(sortedbuff)
             });
         })
 
@@ -1344,9 +1344,11 @@
                 var currdesc = tlbuff?tlbuff.desc:currbuff.description
                 eachtab.push(`
                     <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname}\n\n${currdesc}">
+                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'")}','${currdesc.replace(/\'/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname}\n\n${currdesc}">
                     </div>`)
+                    console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
             });
+            
             var imagereq = []
                 if(eachcat.level >0)
                 imagereq.push(`Lv.${eachcat.level}`)
@@ -1389,8 +1391,8 @@
         }else{
             $("#op-riicdetail").slideDown(200)
             $("#op-riicdetail-img").attr("src",img)
-            $("#op-riicdetail-name").html(title)
-            $("#op-riicdetail-desc").html(desc)
+            $("#op-riicdetail-name").text(title)
+            $("#op-riicdetail-desc").text(desc)
         }
     }
     function GetTalent(id,opdataFull){
