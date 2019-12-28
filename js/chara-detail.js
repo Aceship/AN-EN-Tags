@@ -312,6 +312,8 @@
         history.pushState(null, '', window.location.pathname); 
     }
 
+    
+
     // function populateOperators(el,isenter = false){
     //     let inputs
     //     if(isenter)
@@ -669,6 +671,7 @@
             // console.log(charaRiic)
             
             $("#op-riic").html(charaRiic)
+            $('#op-riicdetail').hide();
             //Story
 
             GetStory(opdataFull)
@@ -1341,7 +1344,7 @@
                 var currdesc = tlbuff?tlbuff.desc:currbuff.description
                 eachtab.push(`
                     <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" title="${currname}\n\n${currdesc}">
+                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname}\n\n${currdesc}">
                     </div>`)
             });
             var imagereq = []
@@ -1360,14 +1363,36 @@
         <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">RIIC Skills</div>
             <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666;text-align:center">
                 ${htmlcomb.join("")}
+            <div id="op-riicdetail" class="ak-shadow" style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;text-align:left">
+                <div style="display:inline-block;width:40px;vertical-align:top;margin:3px;margin-right:0px">
+                    <img id="op-riicdetail-img" src="" style="" title="$"></img>
+                </div>
+                <div style="display:inline-block;width:260px">
+                    <div id="op-riicdetail-name" style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px"></div>
+                    <div id="op-riicdetail-desc" style="font-size:11px;"></div>
+                </div>
             </div>
+            </div>
+            
         </div>
         `
+
+        
         // console.log(htmlcomb.join(""))
         return combinehtml
         
     }
 
+    function ShowRiicDetail(title,desc,img){
+        if($("#op-riicdetail").is(":visible")&&$("#op-riicdetail-name").html()==title){
+            $("#op-riicdetail").slideUp(200)
+        }else{
+            $("#op-riicdetail").slideDown(200)
+            $("#op-riicdetail-img").attr("src",img)
+            $("#op-riicdetail-name").html(title)
+            $("#op-riicdetail-desc").html(desc)
+        }
+    }
     function GetTalent(id,opdataFull){
         var combTalents = []
         // console.log(opdataFull.talents)
