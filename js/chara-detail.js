@@ -739,7 +739,7 @@
                         case 8:spTypeHtml = "Always On";break;
                         default:spTypeHtml = spType;break;
                     }
-                    var spDuration= (v2.duration==0?"Instant Attack":v2.duration + " Seconds")
+                    var spDuration= (v2.duration==0?"Instant Attack":v2.duration==-1?"Infinite":v2.duration + " Seconds")
                     var spDurationName = (v2.duration==0?"":"Duration")
 
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
