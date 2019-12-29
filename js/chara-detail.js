@@ -687,7 +687,7 @@
                 var skillname
                 var tables = "";
                 var grid = ""
-                // console.log(skillData)
+                console.log(skillData)
                 // var materialList2 = []
                 $.each(skillData.levels,function(i2,v2){
                     // console.log(v2['spData'].spCost);
@@ -741,8 +741,9 @@
                     }
                     var spDuration= (v2.duration==0?"Instant Attack":v2.duration==-1?"Infinite":v2.duration + " Seconds")
                     var spDurationName = (v2.duration==0?"":"Duration")
-
+                    
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
+                        
                         if(skillinfo.key=="force") force= skillinfo.value
                         if(v2.duration==-1){
                             if(skillinfo.key =="duration"){
@@ -1071,7 +1072,7 @@
                                 switch (infoTitle[2]) {
                                     case "代号": content = opdataFull.appellation;break;
                                     case "性别":
-                                    console.log(content)
+                                    // console.log(content)
                                     content= db.storytextTL[content.trim()]
                                     $("#op-gender").html(titledMaker(content,`Gender`))
                                     ;break;
@@ -1086,7 +1087,7 @@
                                         var num = 0
                                         var count = 0
                                         var end = ""
-                                        console.log(splitnum)
+                                        // console.log(splitnum)
                                         splitnum.forEach(eachnum => {
                                             // console.log(eachnum)
                                             // console.log(typeof parseInt(eachnum))
@@ -1105,7 +1106,7 @@
                                             else{
                                                 end = db.storytextTL[eachnum]
                                             }
-                                            console.log(num)
+                                            // console.log(num)
                                             count++
                                         });
                                         
@@ -1364,7 +1365,7 @@
                     <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
                         <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'")}','${currdesc.replace(/\'/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname}\n\n${currdesc}">
                     </div>`)
-                    console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
+                    // console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
             });
             
             var imagereq = []
@@ -1526,7 +1527,7 @@
         let descriptions = description.split(/[，(\\n)]/)
         let splitdesc = []
         // console.log("=====================")
-        console.log(descriptions)
+        // console.log(descriptions)
         descriptions.forEach(element => {
             if(element){
                 let muhRegex = /<@ba\.kw>(.*?)<\/>/g
@@ -1588,7 +1589,7 @@
         let splitdescTL = []
         let color = ""
         let trait = opdataFull.trait
-        console.log(trait)
+        // console.log(trait)
         let isReplaced = false
         splitdesc.forEach(element => {
             if(element.length>1){
