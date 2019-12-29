@@ -516,20 +516,20 @@
                     if(l == 1){
                         tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns active'>"
                             + "<img src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
-                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#elite_0_tab'>Non-Elite</a></li>");
+                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite(0)' href='#elite_0_tab'>Non-Elite</a></li>");
                     } else {
                         tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_"+i+"_tab'>"
                                             + "<img src='img/ui/elite/0-s.png'></button></li>");
-                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' href='#elite_"+i+"_tab'>Non-Elite</a></li>");
+                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite("+i+")'href='#elite_"+i+"_tab'>Non-Elite</a></li>");
                     }
                 } else if( i == l-1 ){
                     tabbtn[0] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_"+i+"_tab'>"
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
-                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
+                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 } else {
                     tabbtn[l-i] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_"+i+"_tab'>"
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
-                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
+                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 }
                 
                 var skindata;
@@ -547,7 +547,7 @@
                         +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
                         +"</div>"));
                 } else {
-                    tabcontent.push($("<div class='tab-pane container fade' id='opCG_"+i+"_tab'>"
+                    tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
                         +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
                         +"</div>"));
                 }
@@ -566,7 +566,7 @@
                     </button>`))
 
                     tabcontent.push($(`
-                    <div class='tab-pane container fade' id='opCG_S${i}_tab'>
+                    <div class='tab-pane container' id='opCG_S${i}_tab'>
                     <img class='chara-image' src='img/characters/${encodeURIComponent(extraSkin[i].portraitId)}.png'>
                     </div>
                     `))
@@ -787,7 +787,7 @@
                             `       
                     if(grid){
                         tables +=            "<tr>"
-                                +               "<td rowspan=2>"+(grid?grid:"")+"</td>"
+                                +               "<td rowspan=2 id='skill"+i+"lv"+i2+"grid'>"+(grid?grid:"")+"</td>"
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
                                 +            "</tr>"
                                 +             "<tr>"
@@ -816,7 +816,7 @@
                 var tabItem = $("<li class='nav-item'>"
                                 +    "<button class='btn tabbing-btns horiz-small nav-link "+(i!=0 ? '' : 'active')+"' data-toggle='pill' href='#skill"+i+"'><p>Skill "+(i+1)+"</p></button>"
                                 +"</li>");
-                var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? 'fade' : 'active')+"' id='skill"+i+"'>"
+                var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? '' : 'active')+"' id='skill"+i+"'>"
                                         +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
                                         +        "<p class='large-text'>Skill "+(i+1)+"</p>"
                                         +        "<span class='custom-span skillname'>"+skillname+"</span>"
@@ -841,7 +841,7 @@
     }
 
     function getEliteHTML(i, opdataFull){
-        var container = $("<div class='tab-pane container "+(i!=0 ? 'fade' : 'active')+"' id='elite_"+i+"_tab'></div>");
+        var container = $("<div class='tab-pane container "+(i!=0 ? '' : 'active')+"' id='elite_"+i+"_tab'></div>");
 
         var stats = $("<div class='small-container ak-shadow clickthrough'>"
                         +   "<p class='large-text'>Base</p>"
@@ -1242,6 +1242,24 @@
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
         console.log(puretext.join("\n"))
+    }
+
+    function UpdateElite(elite){
+        // console.log("waaaaaaaaaaaaaaaaaaa")
+        // opdataFull.skills.forEach(i => {
+            // console.log(elite)
+        $.each(opdataFull.skills,function(i,v){
+            // console.log(i)
+            var skillId = opdataFull.skills[i].skillId;
+            var skillData = db.skills[skillId];
+            $.each(skillData.levels,function(i2,v2){
+                skillData.levels[i2].blackboard.forEach(skillinfo => {
+                    if(skillinfo.key=="ability_range_forward_extend"){
+                        grid = $(`#skill${i}lv${i2}grid`).html(rangeMaker(opdataFull.phases[elite].rangeId,true,skillinfo.value))
+                    }
+                });
+            })
+        });
     }
 
     function BirthdayText(date) {
