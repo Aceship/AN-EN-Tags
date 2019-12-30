@@ -43,6 +43,10 @@ $(document).ready(function(){
         {
             href:"aklinker.html",
             name:"bilibili Linker"
+        },
+        {
+            href:"akgallery.html",
+            name:"CG Gallery"
         }]
     })
     // console.log(window.location.href.split("/")[window.location.href.split("/").length-1])
