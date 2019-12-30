@@ -580,8 +580,10 @@
             reg = localStorage.gameRegion;
             lang = localStorage.webLang;
 
-            $('#display-reg').text(reg.toUpperCase())
+            
             console.log(lang)
+            console.log(reg)
+            $('#display-reg').text(reg.toUpperCase())
             switch (lang) {
                 case "en":$('#display-lang').text("English");console.log('English');break;
                 case "cn":$('#display-lang').html("Chinese");console.log('Chinese');break;
@@ -737,6 +739,7 @@
                 }
                 if(calc){
                     calculate();
+                    
                 }
             });
         }

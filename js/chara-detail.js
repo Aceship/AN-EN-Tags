@@ -965,22 +965,29 @@
         
         var curraudiolist = []
         var puretextlist =[]
-        var isEN
+        var isEN = false
         var currTL = db.voicelineTL[opdataFull.id]
+        console.log(currTL)
         Object.keys(db.charword).forEach(element => {
-            var curraudio
-            if(db.charwordEN[element]){
-                var curraudio = db.charwordEN[element]
-                currTL = undefined
-                isEN = true
-            }
-            else if(db.charword[element]){
-                var curraudio = db.charword[element]
+            var curraudio= db.charword[element]
+            // if(db.charwordEN[element]){
+            //     var curraudio = db.charwordEN[element]
+            //     console.log("waaaaaaaaaaaaaaaaaaaaaa")
+            //     currTL = undefined
+            //     isEN = true
+            // }
+            // else if(db.charword[element]){
+            //     var curraudio = db.charword[element]
                 
-            }
+            // }
             if(curraudio){
+                
                 if(curraudio.charId&&curraudio.charId == opdataFull.id){
-                    
+                    if(db.charwordEN[element]){
+                        curraudio = db.charwordEN[element]
+                        currTL = undefined
+                        isEN = true
+                    }
                     curraudiolist.push(curraudio)
                     // console.log(curraudio)
                     puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
