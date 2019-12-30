@@ -130,7 +130,8 @@
                     reg = "cn";
                     lang = "en";
                 } else {
-                    console.log(localStorage.webLang);
+                    console.log("language : "+localStorage.webLang);
+                    console.log("Region : "+localStorage.gameRegion);
                     reg = localStorage.gameRegion;
                     lang = localStorage.webLang;
                 }
@@ -203,12 +204,12 @@
             localStorage.gameRegion = el.attr("value");
             $(".dropdown-item.reg").removeClass("selected");
             el.addClass("selected");   
-            changeUILanguage();
+            changeUILanguage(true);
         }
                     
         function langDropdown(el){
             localStorage.webLang = el.attr("value");
-            console.log(localStorage.webLang)
+            console.log("language : "+localStorage.webLang )
             $(".dropdown-item.lang").removeClass("selected");
             el.addClass("selected");
             changeUILanguage(true);
@@ -282,7 +283,7 @@
                         (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button>\n")
                     }
                 });
-                console.log(reg)
+                console.log("Region : "+reg)
                 $("#tbody-recommend").append(
                     "<tr class=\"tr-chartag \"><td>#</td><td>" +
                     "<button type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small ak-rare-" + colors[char.level] +
@@ -317,7 +318,7 @@
 
         function changeImageSize(el){
             localStorage.size = parseInt($(el).attr('title'));
-            console.log("image size = "+localStorage.size);
+            // console.log("image size = "+localStorage.size);
             $("#selectedImageSize").html(localStorage.size);
             $(".imagesizeselect").each(function(){
                 let size = localStorage.size;
@@ -346,8 +347,8 @@
                         if ($(el).attr("id") === "opt-all") return;
                         if ($(el).hasClass("btn-primary")) checkedCount++;
                     });
-                    console.log("checked count:");
-                    console.log(checkedCount);
+                    // console.log("checked count:");
+                    // console.log(checkedCount);
                     if (checkedCount === 7) $("#opt-all").toggleClass("btn-primary btn-secondary");
                 }
             }
@@ -357,8 +358,8 @@
                 globalOptStars.push($(this).attr("opt-id"));
             });
             
-            console.log("opstars:")
-            console.log(globalOptStars);
+            // console.log("opstars:")
+            // console.log(globalOptStars);
 
             refresh();
         }
@@ -410,8 +411,8 @@
             }
             $(el).toggleClass("btn-primary btn-secondary");
             localStorage.lastChar = ""
-             console.log(checkedTags);
-             console.log(checkedTagsTL);
+            //  console.log(checkedTags);
+            //  console.log(checkedTagsTL);
             localStorage.checkedTagsCache = JSON.stringify(checkedTags);
             localStorage.checkedTagsTLCache = JSON.stringify(checkedTagsTL);
             // console.log(tag)
@@ -419,8 +420,8 @@
         }
 
         function calculate(){
-            console.log(checkedTags)
-            console.log(JsonDATA)
+            // console.log(checkedTags)
+            // console.log(JsonDATA)
             if(typeof checkedTags !== 'undefined'){
                 //console.log(JsonDATA);
                 let tags_aval = JsonDATA[0];
@@ -438,11 +439,12 @@
                         if ((i & mask) !== 0) {
                             ts.push(checkedTags[j]);
                             tstl.push(checkedTagsTL[j]);
+
                             // console.log(checkedTags[j]);
                         }
                         mask = mask * 2;
                     }
-                    combs.push({ "tags": ts, "tagsTL": tstl, "score": 0.0, "possible": [] });
+                    combs.push({ "tags": ts,"tagsSource":[], "tagsTL": tstl, "score": 0.0, "possible": [] });
                 }
                 // console.log(combs);
                 $("#tbody-recommend").html("");
@@ -515,7 +517,7 @@
                     comb.score = s - tags.length / 10 - chars.length / avg_char_tag;
                     //console.log("tags length = "+tags.length);
                     //console.log("chars length = "+chars.length);
-                    console.log("avg char tag = "+avg_char_tag);
+                    // console.log("avg char tag = "+avg_char_tag);
                     //console.log("score = "+comb.score);
                 });
                 combs.sort(function (a, b) {
@@ -523,7 +525,7 @@
                         (a.tags.length > b.tags.length ? 1 : (a.tags.length < b.tags.length ? -1 : 0)));
                 });
                 let no = 1;
-                console.log(combs)
+                // console.log(combs)
                 $.each(combs, function (_, comb) {
                     if (comb.possible.length === 0) return;
                     let chars = comb.possible;
@@ -561,6 +563,7 @@
                     });
                     let tagsTL_html = [];
                     $.each(tagsTL, function (i, tagTL) {
+                        // console.log(tags[i])
                         tagsTL_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ tags[i] +"\">" +
                         (tags[i] == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+tags[i]+'</a>') +  tagTL + "</button>\n")
                     });
@@ -622,7 +625,7 @@
             $(".tags-class").each(function(i,el){
                 getJSONdata("type",function(data){
                     if(data.length != 0){
-                        $(el).html(eval("data[i].type_"+reg)+(localStorage.showClass=="true"?"干员":""));
+                        $(el).html(eval("data[i].type_"+reg)+(localStorage.showClass=="true"?reg=='cn'?'干员':reg=='jp'?"タイプ":"":""));
                         $(el).attr("data-original-title", eval("data[i].type_"+lang));
                     }
                 });

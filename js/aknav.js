@@ -138,6 +138,8 @@ $(document).ready(function(){
                         
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="cn">Chinese</a>
+                            <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="en">English</a>
+                            <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="jp">Japanese</a>
                         </div>
                     </li>
                 <li class="nav-item dropdown" id="navitemLanguage">
