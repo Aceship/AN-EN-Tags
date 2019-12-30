@@ -1,4 +1,5 @@
 var fs = require('fs')
+const { Image } = require('image-js');
 // var jbinary = require('jbinary')
 // if (process.argv.length <= 2) {
 //     console.log("Usage: " + __filename + " path/to/directory");
@@ -18,14 +19,36 @@ var json = {}
 walk("../img/avg/", function(err, results) {
     if (err) throw err;
     
-    results.forEach(results => {
+    results.forEach(async results => {
         var text = results.split('\\avg\\')[1].replace(/\\/g,"/")
         // console.log(text)
+
         if(!json[text.split("/")[0]]) json[text.split("/")[0]]=[]
-        json[text.split("/")[0]].push("./img/avg/"+text)
+        json[text.split("/")[0]].push(text)
         // console.log("./img/avg/"+text.replace(/\\/g,"/"));
+        var currfolder = text.split("/")
+        currfolder =["img","smallavg"].concat( currfolder.splice(currfolder.length-2,1))
+        // console.log(currfolder)
+        var folder= ""
+        // fs.readdirSync(folder)
+        for(i=0;i<currfolder.length;i++){
+            
+            var folder2 =currfolder[i]+"/"
+            
+            if(!fs.readdirSync("../"+folder).includes(currfolder[i])){
+                fs.mkdirSync(`${"../"+folder}${currfolder[i]}`);
+            // console.log(folder+currfolder[i])
+            }
+            folder+=currfolder[i]+"/"
+            
+        }
+        
+        await execute(text,async function(response){
+            console.log(response)
+            // await 
+        })
     });
-    console.log(json)
+    // console.log(json)
     fs.writeFile(`../json/ace/gallerylist.json`, JSON.stringify(json, null, '\t'), function (err) {
         if (err) {
             return console.log(err);
@@ -59,6 +82,16 @@ function walk(dir, done) {
     })();
   });
 };
+
+function createfolder(folder){
+
+}
+async function execute(imgname,callback) {
+    let image = await Image.load('../img/avg/'+imgname);    
+    var newimage = await image.resize({ width: 200 })
+     newimage.save('../img/smallavg/'+imgname)
+    callback(newimage +" Clear") 
+}
 // // console.log(stageDetail.stages)
 // // var keys = {}
 // Object.keys(stageDetail.stages).forEach(element => {
