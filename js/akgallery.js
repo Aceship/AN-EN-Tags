@@ -56,6 +56,7 @@ $('#to-tag').click(function() {      // When arrow is clicked
 function ChangeImage(src=''){
     // var namesplit = images.split("/")
     console.log(src)
+    $("#imagezoom").attr("src","");
     $("#imagezoom").attr("src",src);
     $('#imagezoom').modal('handleUpdate')
     $('#imagezoomcontainer').modal("show");
