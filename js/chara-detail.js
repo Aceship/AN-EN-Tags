@@ -164,7 +164,7 @@
             }
         } else {
             console.log(localStorage.webLang);
-            reg = localStorage.gameRegion;
+            reg = "cn";
             lang = localStorage.webLang;
         }
         if(typeof localStorage.selectedOPDetails === "undefined" || localStorage.selectedOPDetails == ""){
