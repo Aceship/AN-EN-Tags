@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang='zh-Hans' xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+    <meta name='theme-color' content='#222222ff'>
+    <title translate-id='web-title'>Arknights Operator Comparing 2</title>
+    <link rel='manifest' href='./manifest.json' crossorigin='use-credentials'>
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/ak.css'>
+    <link rel='stylesheet' href='css/akMaterial.css'>
+    <link rel='stylesheet' href='css/jquery.btnswitch.css'>
+    <link rel='stylesheet' href='css/akcharacompare2.css'>
+    <link href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' integrity='sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN' crossorigin='anonymous'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
+    <script src='js/jquery-3.4.0.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src='js/jquery.btnswitch.js'></script>
+    <script src='js/akcompare2.js'></script>
+    <!-- site tag (gtag.js) - Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-138420636-1'></script>/
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-138420636-1');
+        
+    </script>
+    <script>
+            $(function(){
+              $('#nav-placeholder').load('nav.html');
+            });
+     </script>
+</head>
+<body  >
+    <!-- style=' background-image: url(./img/extra/bg1.png)' -->
+    <button class='btn btn-sm btn-primary goToTag' style='position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000' id='to-tag' type='button'>^ </button>
+    <nav id='aknav' class='navbar fixed-top navbar-expand-md navbar-dark bg-dark' style='background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );'>
+            <img src='./img/factions/logo_rhodes.png' width='40' height='40' style='transform:scale(1.2,1.2)translate(-8px,1px)'class='d-inline-block align-top' alt=''>
+            <a class='navbar-brand' href='#' translate-id='topbar-1'>Arknights Toolbox</a>
+            <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNav'
+                    aria-controls='navbarNav' aria-expanded='false' aria-label='展开'>
+                <span class='navbar-toggler-icon'></span>
+            </button>
+    </nav>
+    <div class='contents'>
+        <div class='row d-flex justify-content-center'>
+            <div style='width: max-content;'>
+                <div class='row'>
+
+                    <!-- LEFT PANEL -->
+                    <div class='left-panel'>
+                        <div class='filters-panel ak-shadow'>
+                            
+                        </div>
+                        <div class='attributes-panel ak-shadow subpanel'>
+                            <ul class='nav nav-tabs nav-justified'>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' data-toggle='tab'>E0</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' data-toggle='tab'>E1</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' data-toggle='tab'>E2</a>
+                                </li>
+                            </ul>
+
+                            <div class='lp-row light'>
+                                test
+                            </div>
+                            <div class='lp-row light'>
+                                test
+                            </div>
+                            <div class='lp-row light'>
+                                test
+                            </div>
+                        </div>
+                        <div class='skill-panel ak-shadow subpanel'>
+                            <ul class='nav nav-tabs nav-justified'>
+                                <li class='nav-item'>
+                                    <a class='nav-link active' data-toggle='tab'>Skill 1</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' data-toggle='tab'>Skill 2</a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' data-toggle='tab'>Skill 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT PANEL -->
+                    <div class='right-panel' id='slotsContainer'>
+                        <div class='opcontainer ak-shadow'>
+                            <div class='removebtn float-right'>
+                                <a href='#' class='btn btn-info btn-sm' style='border-radius: 0px;'>
+                                    <i class='fa fa-close'></i> 
+                                </a>
+                            </div>
+                            <div class='opname ak-font-novecento lp-row'>
+                                Amiya
+                            </div>
+                            <div>
+                                <img class='opimage ak-shadow mx-auto d-block' src='img/avatars/char_002_amiya_1.png'>
+                            </div>
+                            <div class='opstatspanel' style='margin-top: 43px;'>
+                                <div class='elite-title lp-row' id='elite-title'>
+                                    Elite 0
+                                </div>
+                                <div class='lp-row light'>
+                                    test
+                                </div>
+                                <div class='lp-row light'>
+                                    test
+                                </div>
+                                <div class='lp-row light'>
+                                    test
+                                </div>
+                            </div>
+                        </div>
+                        <div class='opcontainer ak-shadow'>
+                            <div>
+                                <button type='button' data-toggle='modal' data-target='#opchoosemodal' class='mx-auto d-block' id='addoperatorbtn' style=''>
+                                    <i class='fa fa-plus'></i> 
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='opchoosemodal' class='modal fade' role='dialog'>
+            <div class='modal-dialog'>
+                <div class='modal-content' style='background-color: #444'>
+                    <div class='modal-header' style='border-bottom: 1px solid #4f4f4f'>
+                        <h6 class='modal-title'>Select Operator</h6>
+                        <button type='button' style='color:white;' class='close' data-dismiss='modal'>&times;</button>
+                    </div>
+                    <div class='modal-body'>
+                        <ul class='nav nav-pills nav-justified' id='classlist'>
+                            <li class='nav-item'>
+                                <a class='nav-link' data-toggle='tab' href='#casterops' data-opclass='CASTER'>
+                                    <img width='50' src='img/classes/class_caster.png'>
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' data-toggle='tab' href='#guardops' data-opclass='WARRIOR'>
+                                    <img width='50' src='img/classes/class_guard.png'>
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' data-toggle='tab' href='#medicops' data-opclass='MEDIC'>
+                                    <img width='50' src='img/classes/class_medic.png'>
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' data-toggle='tab' href='#sniperops' data-opclass='SNIPER'>
+                                    <img width='50' src='img/classes/class_sniper.png'>
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' data-toggle='tab' href='#specialistops' data-opclass='SPECIAL'>
+                                    <img width='50' src='img/classes/class_specialist.png'>
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' data-toggle='tab' href='#supportops' data-opclass='SUPPORT'>
+                                    <img width='50' src='img/classes/class_support.png'>
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' data-toggle='tab' href='#tankops' data-opclass='TANK'>
+                                    <img width='50' src='img/classes/class_tank.png'>
+                                </a>
+                            </li>
+                            <li class='nav-item'>
+                                <a class='nav-link' data-toggle='tab' href='#vanguardops' data-opclass='PIONEER'>
+                                    <img width='50' src='img/classes/class_vanguard.png'>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class='tab-content'>
+                            <ul id='selectedopclass' style='padding-left: 0px;'>
+                                <!-- Operators of the selected class goes here -->
+                                <!--
+                                <li class='selectop-list ak-shadow'>
+                                    <img src='img/avatars/char_002_amiya_1.png'>
+                                    <div class='name ak-font-novecento'>Amiya</div>
+                                    <div class='rarity'><i class='fa fa-star'></i></div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- class='modal' -->
+    </div> <!-- class='contents' -->
+</body>
+<script src='js/everpolate.min.js'></script>
+<script src='./js/aknav.js'></script>
+<script>
+(function() {
+    function scrollHorizontally(e) {
+        e = window.event || e;
+        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+        document.getElementById('slotsContainer').scrollLeft -= (delta*40); // Multiplied by 40
+        e.preventDefault();
+    }
+    if (document.getElementById('slotsContainer').addEventListener) {
+        // IE9, Chrome, Safari, Opera
+        document.getElementById('slotsContainer').addEventListener('mousewheel', scrollHorizontally, false);
+        // Firefox
+        document.getElementById('slotsContainer').addEventListener('DOMMouseScroll', scrollHorizontally, false);
+    } else {
+        // IE 6/7/8
+        document.getElementById('slotsContainer').attachEvent('onmousewheel', scrollHorizontally);
+    }
+})();
+</script>
+</html>
