@@ -124,6 +124,9 @@
         $('#opBrowseButton').click(function(event){
             $("#opchoosemodal").modal('show');
         });
+        $('#opBrowseButton2').click(function(event){
+            event.stopPropagation();
+        });
         $('#opname').click(function(event){
             event.stopPropagation();
         });
