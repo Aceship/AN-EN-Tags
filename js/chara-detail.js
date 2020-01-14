@@ -322,10 +322,44 @@
 
     function selOpClass(cname){
         $("#selectedopclass").html("");
-        var result = query(db.chars,"profession",cname,false,true);
-        //console.log(result);
+        
+        var result 
+        if(cname!=""){
+            result= query(db.chars,"profession",cname,false,true);
+        }else{
+            result= ObjectToArray(db.chars)
+            
+        }
+        // console.log(result.length);
+
+
+        //add extra filter later
+        result = result.filter(search=>{
+            var searchOb = search[Object.keys(search)[0]]
+
+            switch(searchOb.profession){
+                case "TOKEN" :
+                case "TRAP" : return false
+            }
+            return true
+        })
+
+        //add extra sort later
+        result = result.sort((ak,bk)=>{
+            var a = ak[Object.keys(ak)[0]]
+            var b = bk[Object.keys(bk)[0]]
+            console.log(ak)
+            if(a.rarity<b.rarity) return 1
+            if(a.rarity>b.rarity) return -1
+            if(a.appellation>b.appellation)return 1
+            if(a.appellation<b.appellation)return -1
+        })
+
         for (var i = 0; i < result.length; i++) {
             var html;
+            // console.log(result[i])
+
+            //List Box
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
                 html = "<li class='selectop-list ak-shadow' onclick=\'selectOperator(\""+val.name+"\")\'>"
                         + "<img src='img/avatars/"+key+"_1.png'>"
@@ -336,6 +370,9 @@
                 }
                 html += "</div></li>";
             });
+
+            //Grid Box Later
+
             $("#selectedopclass").append(html);
         }
     }
@@ -1955,6 +1992,21 @@
                     }
                 }
             }
+        });
+        if(found){
+            return result;
+        } else {
+            return false;
+        }
+    }
+    function ObjectToArray(db){
+        var result = [];
+        var found = true;
+        $.each(db,function(key2,v){
+            console.log(v)
+            var obj = {};
+            obj[key2] = v; 
+            result.push(obj);
         });
         if(found){
             return result;
