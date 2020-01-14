@@ -365,6 +365,7 @@
                         + "<img src='img/avatars/"+key+"_1.png'>"
                         + "<div class='name ak-font-novecento'>"+getENname(val.name)+"</div>"
                         + "<div class='rarity op-rarity-"+(val.rarity+1)+"'>";
+                        
                 for (var i = 0; i < (val.rarity+1); i++) {
                     html += "<i class='fa fa-star'></i>";
                 }
