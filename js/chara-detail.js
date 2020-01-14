@@ -106,6 +106,14 @@
             }, 500);
         });
 
+        // Add listener to class tabs
+        // Add listener to class tabs
+        $("#classlist .nav-item").children().each(function(i){
+            $(this).click(function(){
+                selOpClass($(this).attr("data-opclass"));
+            })
+        });
+
         $(window).click(function() {
             $('#operatorsResult').html("");
             $('#operatorsResult').hide();
@@ -114,7 +122,7 @@
             event.stopPropagation();
         });
         $('#opBrowseButton').click(function(event){
-            event.stopPropagation();
+            $("#opchoosemodal").modal('show');
         });
         $('#opname').click(function(event){
             event.stopPropagation();
@@ -312,6 +320,42 @@
         history.pushState(null, '', window.location.pathname); 
     }
 
+    function selOpClass(cname){
+        $("#selectedopclass").html("");
+        var result = query(db.chars,"profession",cname,false,true);
+        //console.log(result);
+        for (var i = 0; i < result.length; i++) {
+            var html;
+            $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
+                html = "<li class='selectop-list ak-shadow' onclick=\'selectOperator(\""+val.name+"\")\'>"
+                        + "<img src='img/avatars/"+key+"_1.png'>"
+                        + "<div class='name ak-font-novecento'>"+getENname(val.name)+"</div>"
+                        + "<div class='rarity op-rarity-"+(val.rarity+1)+"'>";
+                for (var i = 0; i < (val.rarity+1); i++) {
+                    html += "<i class='fa fa-star'></i>";
+                }
+                html += "</div></li>";
+            });
+            $("#selectedopclass").append(html);
+        }
+    }
+
+    function getENname (CNname){
+        var result;
+        var found = false;
+        $.each(db.chars2,function(key,val){
+            if(eval('val.name_cn').toLowerCase() == CNname.toLowerCase()){
+                found = true;
+                result = val.name_en;
+            }
+        });
+        if(found){
+            return result;
+        } else {
+            return false;
+        }
+    }
+
     
 
     // function populateOperators(el,isenter = false){
@@ -435,7 +479,7 @@
         $('#charazoom').modal('handleUpdate')
     }
     function selectOperator(opname){
-        
+        $("#opchoosemodal").modal('hide');
         if(opname != ""){
             $("#chara-detail-container").show();
             console.log("SELECT OPERATOR");
@@ -687,7 +731,7 @@
                 var skillname
                 var tables = "";
                 var grid = ""
-                console.log(skillData)
+                //console.log(skillData)
                 // var materialList2 = []
                 $.each(skillData.levels,function(i2,v2){
                     // console.log(v2['spData'].spCost);
@@ -1249,7 +1293,7 @@
         }
         $("#opstorycontent").html(`<div class="row">${textTL.join("")}</div>`)
         // console.log(textTL)
-        console.log(puretext.join("\n"))
+        //console.log(puretext.join("\n"))
     }
 
     function UpdateElite(elite){

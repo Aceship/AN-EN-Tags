@@ -44,6 +44,71 @@
     </nav>
     <div style='padding-bottom:40px;'></div>
     <!-- <div class='warning-sign'style='position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center'>aaaaaaaaaaaaaaaaaaaaa</div> -->
+    <div id='opchoosemodal' class='modal fade' role='dialog'>
+        <div class='modal-dialog'>
+            <div class='modal-content' style='background-color: #444'>
+                <div class='modal-header' style='border-bottom: 1px solid #4f4f4f'>
+                    <h6 class='modal-title' style="color:white;">Select Operator</h6>
+                    <button type='button' style='color:white;' class='close' data-dismiss='modal'>&times;</button>
+                </div>
+                <div class='modal-body'>
+                    <ul class='nav nav-pills nav-justified' id='classlist'>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#casterops' data-opclass='CASTER'>
+                                <img width='50' src='img/classes/class_caster.png'>
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#guardops' data-opclass='WARRIOR'>
+                                <img width='50' src='img/classes/class_guard.png'>
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#medicops' data-opclass='MEDIC'>
+                                <img width='50' src='img/classes/class_medic.png'>
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#sniperops' data-opclass='SNIPER'>
+                                <img width='50' src='img/classes/class_sniper.png'>
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#specialistops' data-opclass='SPECIAL'>
+                                <img width='50' src='img/classes/class_specialist.png'>
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#supportops' data-opclass='SUPPORT'>
+                                <img width='50' src='img/classes/class_support.png'>
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#tankops' data-opclass='TANK'>
+                                <img width='50' src='img/classes/class_tank.png'>
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#vanguardops' data-opclass='PIONEER'>
+                                <img width='50' src='img/classes/class_vanguard.png'>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class='tab-content'>
+                        <ul id='selectedopclass' style='padding-left: 0px;'>
+                            <!-- Operators of the selected class goes here -->
+                            <!--
+                            <li class='selectop-list ak-shadow'>
+                                <img src='img/avatars/char_002_amiya_1.png'>
+                                <div class='name ak-font-novecento'>Amiya</div>
+                                <div class='rarity'><i class='fa fa-star'></i></div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- class='modal' -->
     <div class="modal fade" id="opzoom">
         <div class="modal-dialog modal-dialog-centered modal-lg" >
             <div class="modal-content" style="background:#444">
@@ -141,7 +206,7 @@
                     <input readonly type='text' name='opID' id='opID' style='display: none;'>
                     <div class='row'>
                             <input style='margin-left: 15px;margin-top:5px' type='text' autocomplete='off' class='form-control col-8' name='opname' id='opname' onkeyup='populateOperators(this)' placeholder='Type in operator name . .'>
-                            <div class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin:auto;margin-right: 15px;margin-top:10px' onclick='populateOperators("Browse")' type='button' id='opBrowseButton'>Browse</div>
+                            <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin:auto;margin-right: 15px;margin-top:10px' type='button' id='opBrowseButton'>Browse</button>
                     </div>
                     <div style='position: relative;'><ul class='ak-c-black ak-browse' id='operatorsResult' style='display:none; position: absolute; z-index: 10; list-style-type: none; padding: 5px;color:#222'><li style='cursor: pointer'></li></ul></div>
                 </div>
