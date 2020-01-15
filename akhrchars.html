@@ -52,12 +52,10 @@
                     <button type='button' style='color:white;' class='close' data-dismiss='modal'>&times;</button>
                 </div>
                 <div class='modal-body'>
+                    <a class='nav-link' style="height:23px;text-align: center;" id='all-op'  href='#allops' data-opclass=''>
+                            <div style="">All</div>
+                        </a>
                     <ul class='nav nav-pills nav-justified' id='classlist'>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#allops' data-opclass=''>
-                                <div style="height:53px;vertical-align: middle;">All</div>
-                            </a>
-                        </li>
                         <li class='nav-item'>
                             <a class='nav-link' data-toggle='tab' href='#casterops' data-opclass='CASTER'>
                                 <img width='50' src='img/classes/class_caster.png'>
@@ -100,7 +98,7 @@
                         </li>
                     </ul>
                     <div class='tab-content'>
-                        <ul id='selectedopclass' style='padding-left: 0px;'>
+                        <ul id='selectedopclass' style='padding-left: 0px;margin: auto;padding: auto;'>
                             <!-- Operators of the selected class goes here -->
                             <!--
                             <li class='selectop-list ak-shadow'>
@@ -211,7 +209,7 @@
                     <div class='row'>
                             <input style='margin-left: 15px;margin-top:5px' type='text' autocomplete='off' class='form-control col-4' name='opname' id='opname' onkeyup='populateOperators(this)' placeholder='Type in operator name . .'>
                             <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin-top:10px;padding: 5px 5px' onclick='populateOperators("Browse")' type='button' id='opBrowseButton2'>Browse Grid</button>
-                            <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin-top:10px;padding: 5px 5px' type='button' id='opBrowseButton'>Browse List</button>
+                            <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin-top:10px;padding: 5px 5px' type='button' id='opBrowseButton'>Browse Grid V2</button>
                     </div>
                     <div style='position: relative;'><ul class='ak-c-black ak-browse' id='operatorsResult' style='display:none; position: absolute; z-index: 10; list-style-type: none; padding: 5px;color:#222'><li style='cursor: pointer'></li></ul></div>
                 </div>

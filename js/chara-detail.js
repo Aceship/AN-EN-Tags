@@ -115,6 +115,11 @@
                 selOpClass($(this).attr("data-opclass"));
             })
         });
+        $("#all-op").each(function(i){
+            $(this).click(function(){
+                selOpClass($(this).attr("data-opclass"));
+            })
+        });
 
         $(window).click(function() {
             $('#operatorsResult').html("");
@@ -359,32 +364,47 @@
             if(a.appellation>b.appellation)return 1
             if(a.appellation<b.appellation)return -1
         })
-
+        var listtype = "Grid"
         for (var i = 0; i < result.length; i++) {
             var html;
             // console.log(result[i])
-
-            //List Box
+            
+            
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
-                // html = "<li class='selectop-list ak-shadow' onclick=\'selectOperator(\""+val.name+"\")\'>"
-                //         + "<img src='img/avatars/"+key+"_1.png'>"
-                //         + "<div class='name ak-font-novecento'>"+getENname(val.name)+"</div>"
-                //         + "<div class='rarity op-rarity-"+(val.rarity+1)+"'>";
-                        
-                html =
-                `<li class='selectop-list ak-shadow' onclick='selectOperator("${val.name}")'>
-                <img src='img/avatars/${key}_1.png'>
-                <div class='name ak-font-novecento'>${getENname(val.name)}</div>
-                <div class='rarity op-rarity-${val.rarity+1}'> 
-                `
+                switch (listtype) {
+                    case "List":
+                                html =
+                                `<li class='selectop-list ak-shadow' onclick='selectOperator("${val.name}")'>
+                                <img src='img/avatars/${key}_1.png'>
+                                <div class='name ak-font-novecento'>${getENname(val.name)}</div>
+                                <div class='rarity op-rarity-${val.rarity+1}'> 
+                                    ${(`<i class='fa fa-star'></i>`).repeat(val.rarity+1)}
+                                </div></li>
+                                `
+                        break;
 
-                for (var i = 0; i < (val.rarity+1); i++) {
-                    html += `<i class='fa fa-star'></i>`;
+                    case "Grid":
+                                html =
+                                `<li class='selectop-grid ak-shadow' onclick='selectOperator("${val.name}")'>
+                                <img src='img/avatars/${key}_1.png'>
+                                <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
+                                <div class='ak-rare-${val.rarity+1}'></div>
+                                <div class='grid-box op-rarity-${val.rarity+1}'> 
+                                </div></li>
+                                `
+
+                        break;
+
+                    default:
+                        break;
                 }
-                html += `</div></li>`;
+                //List Box
+                
+                //Grid Box Later
+                
             });
 
-            //Grid Box Later
+            
 
             $("#selectedopclass").append(html);
         }

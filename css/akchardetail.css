@@ -53,6 +53,10 @@ body {
     border-bottom: 0px;
 }
 
+#all-op {
+    background: #444;
+}
+
 .selectop-list {
     height: 50px;
     width: 100%;
@@ -102,6 +106,47 @@ body {
     left: 77%;
     font-size: 0.9em;
     top: 55%;
+}
+
+.selectop-grid {
+    display: inline-grid;
+    height: 113px;
+    width: 88px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+    background-color: #666666;
+    color: white;
+    transition-duration: 200ms;
+}
+
+.selectop-grid:hover {
+    cursor: pointer;
+    background-color: unset;
+    transition-duration: 200ms;
+    box-shadow: 2px 2px 8px #111;
+    z-index: 100;
+    transform: scale(1.1) ;
+}
+
+.selectop-grid img {
+    box-shadow: 2px 0px 3px #111;
+    width: 88px;
+    height: 88px;
+    transition-duration: 200ms;
+    background-color: #555555;
+}
+.selectop-grid:hover img {
+    transition-duration: 200ms;
+    background-color: #222222;
+}
+
+.selectop-grid .name {
+    top: 0px;
+    font-size: 0.8em;
+}
+.selectop-grid .rarity {
+    box-shadow: 1px 1px 2px #111;
 }
 
 .rangeTableContainer {
