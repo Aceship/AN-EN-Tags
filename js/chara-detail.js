@@ -98,6 +98,8 @@
     var opdataFull = {};
     var curpath;
     var opapp;
+    var classfilter;
+    var sort;
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -364,11 +366,17 @@
 
             //List Box
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
-                html = "<li class='selectop-list ak-shadow' onclick=\'selectOperator(\""+val.name+"\")\'>"
-                        + "<img src='img/avatars/"+key+"_1.png'>"
-                        + "<div class='name ak-font-novecento'>"+getENname(val.name)+"</div>"
-                        + "<div class='rarity op-rarity-"+(val.rarity+1)+"'>";
+                // html = "<li class='selectop-list ak-shadow' onclick=\'selectOperator(\""+val.name+"\")\'>"
+                //         + "<img src='img/avatars/"+key+"_1.png'>"
+                //         + "<div class='name ak-font-novecento'>"+getENname(val.name)+"</div>"
+                //         + "<div class='rarity op-rarity-"+(val.rarity+1)+"'>";
                         
+                html =
+                `<li class='selectop-list ak-shadow' onclick='selectOperator("${val.name}")'>
+                <img src='img/avatars/${key}_1.png'>
+                <div class='name ak-font-novecento'>${getENname(val.name)}</div>
+                <div class='rarity op-rarity-${val.rarity+1}'> 
+                `
                 for (var i = 0; i < (val.rarity+1); i++) {
                     html += "<i class='fa fa-star'></i>";
                 }
