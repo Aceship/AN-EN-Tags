@@ -368,8 +368,6 @@
         for (var i = 0; i < result.length; i++) {
             var html;
             // console.log(result[i])
-            
-            
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
                 switch (listtype) {
                     case "List":
@@ -398,14 +396,7 @@
                     default:
                         break;
                 }
-                //List Box
-                
-                //Grid Box Later
-                
             });
-
-            
-
             $("#selectedopclass").append(html);
         }
     }
