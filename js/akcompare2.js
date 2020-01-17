@@ -106,6 +106,7 @@ function deleteOp(index){
 function selOpClass(cname){
     $("#selectedopclass").html("");
     var result = query(db.chars,"profession",cname,false,true);
+    console.log(result)
     //console.log(result);
     for (var i = 0; i < result.length; i++) {
         var html;
