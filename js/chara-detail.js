@@ -1,4 +1,5 @@
     $.holdReady(true);
+    
     var db = {};
     var d0 = $.getJSON("json/excel/building_data.json",function(data){
             db["manufactformulas"] = data.manufactFormulas;
@@ -87,7 +88,10 @@
     var d28 = $.getJSON("json/en/excel/charword_table.json",function(data){
         db["charwordEN"] = data;
     });  
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28).then(function(){
+    var d29 = $.getJSON("json/en/excel/skill_table.json",function(data){
+        db["skillsEN"] = data;
+    });
+    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29).then(function(){
         $.holdReady(false);
     });
 
@@ -798,6 +802,7 @@
                     // console.log(v2['spData'].spCost);
                     var currSkill = skillData.levels[i2]
                     skillname = db.skillsTL[skillId]?db.skillsTL[skillId].name:currSkill.name;
+                    // if (db.skillsEN[skillId]&&db.skillsEN[skillId].levels[i2])skillname = db.skillsEN[skillId].levels[i2].name
                     var skilldesc = getSkillDesc(skillId,i2);
                     var skillMat = GetSkillCost(i2,i,opdataFull)
                     var force
@@ -1927,29 +1932,73 @@
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc[level]:skill.description;
+        // if(db.skillsEN[skillId] && db.skillsEN[skillId].levels[level]) desc = db.skillsEN[skillId].levels[level].description
         //console.log(`Skill|${skillId}|${skill.name} `);
         //console.log(skill.blackboard)
-        // console.log(desc)
+        // console.log()
         
         // console.log(skillTL);
         if(!skillTL){
-            let muhRegex = /<@ba\.vup>(.*?)<\/>/
-            let desc2 = muhRegex.exec(desc)[1]
-            // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
-            let muhRegex2 = /({)(.*?)(\:.*?)(})/
-            let desc3 = muhRegex2.exec(desc2)
-            
-            if(desc3){
-                desc3[2] = `{${desc3[2]}}`
-                desc3[3] = desc3[3].replace(":",":.")
-                let desc4 = []
-                // console.log(desc3)
-                for(i=1;i<desc3.length;i++){
-                    desc4.push(desc3[i])
+            let split = desc.split("<@ba.vup>")
+            console.log(split)
+            let skillall =""
+            // console.log(split.length)
+            for(i=0;i<split.length;i++){
+                if(i==0){
+                    skillall+= split[i]
                 }
-                // console.log(desc4)
-                desc = desc.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join(""))
+                else{
+                    var currsplit = "<@ba.vup>"+split[i]
+                    // console.log(currsplit)
+                    let muhRegex = /<@ba\.vup>(.*?)<\/>/g
+                    let desc2 = muhRegex.exec(currsplit)[1]
+                    // let desc2 = desc.replace(/<@ba\.vup>/g,"<a>")
+                    // console.log(i)
+                    console.log(desc2)
+                    // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
+                    let muhRegex2 = /({)(.*?)(\:.*?)(})/
+                    let desc3 = muhRegex2.exec(desc2)
+                    if(!desc3){
+                        let descextra = 
+                        skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc2).replace(/\\n/g,"</br>")
+                    }
+                    
+                    if(desc3){
+                        desc3[2] = `{${desc3[2]}}`
+                        desc3[3] = desc3[3].replace(":",":.")
+                        let desc4 = []
+                        
+                        for(j=1;j<desc3.length;j++){
+                            desc4.push(desc3[j])
+                        }
+                        // console.log(desc4)
+                        skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join("")).replace(/\\n/g,"</br>")
+                        console.log(currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join("")).replace(/\\n/g,"</br>"))
+                    }
+                }
+                
             }
+            // let muhRegex = /<@ba\.vup>(.*?)<\/>/g
+            // let desc2 = muhRegex.exec(desc)[1]
+            // // let desc2 = desc.replace(/<@ba\.vup>/g,"<a>")
+            // // console.log(desc2)
+            // // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
+            // let muhRegex2 = /({)(.*?)(\:.*?)(})/
+            // let desc3 = muhRegex2.exec(desc2)
+            
+            // if(desc3){
+            //     desc3[2] = `{${desc3[2]}}`
+            //     desc3[3] = desc3[3].replace(":",":.")
+            //     let desc4 = []
+            //     // console.log(desc3)
+            //     for(i=1;i<desc3.length;i++){
+            //         desc4.push(desc3[i])
+            //     }
+            //     // console.log(desc4)
+            //     desc = desc.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join("")).replace(/\\n/g,"</br>")
+                
+            // }
+            desc = skillall
         }
 
         // if(skillTL){
