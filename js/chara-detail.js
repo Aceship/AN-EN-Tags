@@ -187,7 +187,7 @@
         } else {
             console.log(localStorage.webLang);
             reg = "cn";
-            lang = localStorage.webLang;
+            lang = "en";
         }
         if(typeof localStorage.selectedOPDetails === "undefined" || localStorage.selectedOPDetails == ""){
             console.log("selected OP undefined");

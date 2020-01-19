@@ -561,6 +561,8 @@
                         chars_html.push("</button>\n")
                     });
                     let tags_html = [];
+                    console.log(tags)
+                    console.log(tagsTL)
                     $.each(tags, function (_, tag) {
                         tags_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\">" +
                             tag + "</button>\n")
