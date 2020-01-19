@@ -585,11 +585,11 @@
                     });
                     let tagsTL_html = [];
                     $.each(tagsTL, function (i, tagTL) {
-                        // console.log(tags[i])
+                        console.log(tags[i])
                         var currtags = all_tags.find(search=>{
                             var checkcurr
                             if(localStorage.showClass=="true"&&search.type_cn+"干员"==tags[i]) checkcurr= true
-                            if(localStorage.showClass=="false"&&search.type_cn==tags[i]) checkcurr= true
+                            else if(localStorage.showClass=="false"&&search.type_cn==tags[i]) checkcurr= true
                             else checkcurr = search.tag_cn==tags[i]
                             return checkcurr
                         })
