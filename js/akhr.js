@@ -230,6 +230,19 @@
             let all_types = JsonDATA[4];
             let all_genders = JsonDATA[5];
             let char_name = $(el).attr('data-original-title');
+
+            // console.log(JsonDATA[1])
+            
+            if(reg!="cn"){
+                Object.keys(all_chars).forEach(currkey => {
+                    if(all_chars[currkey]["name_"+reg]==char_name){
+                        char_name=all_chars[currkey]["name_cn"]
+                    }
+                });
+            }
+
+
+            
             //console.log(all_tags);
             //console.log(all_chars);
             console.log("char name: "+char_name);
@@ -255,7 +268,7 @@
                     if(!found){
                         $.each(all_types, function(_, alltypes){
                             if(alltypes.type_cn == tag){
-                                tagReg = eval('alltypes.type_'+reg)+(localStorage.showClass=="true"?"干员":"");
+                                tagReg = eval('alltypes.type_'+reg)+(localStorage.showClass=="true"&&reg=="cn"?"干员":"");
                                 tagTL = eval('alltypes.type_'+lang);
                                 found = true;
                                 return false;
@@ -428,11 +441,12 @@
                 let tags_aval = JsonDATA[0];
                 let all_chars = JsonDATA[1];
                 let avg_char_tag = JsonDATA[2];
+                let all_tags = JsonDATA[3].concat(JsonDATA[4]);
                 let len = checkedTags.length;
                 let count = Math.pow(2, checkedTags.length);
                 $("#count-tag").html(checkedTags.length>=1 ? checkedTags.length==6 ? "6 [MAX]": checkedTags.length: "")
                 
-                console.log(all_chars)
+                // console.log(all_chars)
                 let combs = [];
                 for (let i = 0; i < count; i++) {
                     let ts = [];
@@ -561,8 +575,10 @@
                         chars_html.push("</button>\n")
                     });
                     let tags_html = [];
-                    console.log(tags)
-                    console.log(tagsTL)
+                    // console.log(tags)
+                    // console.log(tagsTL)
+                    // console.log(all_tags)
+                    
                     $.each(tags, function (_, tag) {
                         tags_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\">" +
                             tag + "</button>\n")
@@ -570,8 +586,21 @@
                     let tagsTL_html = [];
                     $.each(tagsTL, function (i, tagTL) {
                         // console.log(tags[i])
+                        var currtags = all_tags.find(search=>{
+                            var checkcurr
+                            if(localStorage.showClass=="true"&&search.type_cn+"干员"==tags[i]) checkcurr= true
+                            else checkcurr = search.tag_cn==tags[i]
+                            return checkcurr
+                        })
+                        // console.log(currtags)
+                        var currtagtrailreg = reg=="cn"?"干员":reg=="jp"?"タイプ":""
+                        var currtagtraillang = lang=="cn"?"干员":lang=="jp"?"タイプ":""
+                        var currtag = currtags["type_"+reg]?localStorage.showClass=="true"?currtags["type_"+reg]+currtagtrailreg:currtags["type_"+reg]
+                        :currtags["tag_"+reg]
+                        var currtagtl = currtags["type_"+lang]?localStorage.showClass=="true"?currtags["type_"+lang]+currtagtraillang:currtags["type_"+lang]
+                        :currtags["tag_"+lang]
                         tagsTL_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ tags[i] +"\">" +
-                        (tags[i] == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+tags[i]+'</a>') +  tagTL + "</button>\n")
+                        (currtag == currtagtl ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+currtag+'</a>') +  currtagtl + "</button>\n")
                     });
                     $("#tbody-recommend").append(
                         "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
@@ -688,7 +717,7 @@
                     if (char.hidden) return;
                     if (char.globalHidden&&reg !="cn") return
                     char.tags.push(char.type);
-                    console.log(reg)
+                    // console.log(reg)
                     if(reg == 'cn'){
                         char.tags.push(char.sex + "性干员");
                     } else {
