@@ -149,17 +149,17 @@
                                 }
                             })
                         });
-                        calculate();
+                        // calculate();
                     }
                 }
-                changeUILanguage();
+                
                 console.log("Show Name: ");
                 console.log(localStorage.showName);
                 console.log("Show Image: ");
                 console.log(localStorage.showImage);
                 console.log("Show Class: ");
                 console.log(localStorage.showClass);
-
+                
                 $(".imagesizeselect").each(function(_,el){
                     let size = localStorage.size;
                     $("#selectedImageSize").html(localStorage.size);
@@ -197,6 +197,7 @@
                     console.log("Show Image: ");
                     console.log(localStorage.getItem('showImage'));
                 });
+                changeUILanguage(true);
             });
         });
 
@@ -431,6 +432,7 @@
                 let count = Math.pow(2, checkedTags.length);
                 $("#count-tag").html(checkedTags.length>=1 ? checkedTags.length==6 ? "6 [MAX]": checkedTags.length: "")
                 
+                console.log(all_chars)
                 let combs = [];
                 for (let i = 0; i < count; i++) {
                     let ts = [];
@@ -498,6 +500,7 @@
                         });
                         chars = reduce6;
                     }
+                    // console.log(chars)
                     let filtered_chars = [];
                     $.each(chars, function (_, char) {
                         //console.log(char.level);
@@ -505,6 +508,7 @@
                             filtered_chars.push(char);
                         }
                     });
+                    // console.log(filtered_chars)
                     chars = filtered_chars;
                     comb.possible = chars;
                     if (chars.length === 0) return;
@@ -579,7 +583,6 @@
         function changeUILanguage(calc=false){
             reg = localStorage.gameRegion;
             lang = localStorage.webLang;
-
             
             console.log(lang)
             console.log(reg)
@@ -663,6 +666,7 @@
         }
 
         function refresh(calc=true){
+            
             if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
                 localStorage.setItem("gameRegion", 'cn');
                 localStorage.setItem("webLang", 'en');
@@ -680,12 +684,15 @@
                 let char_tag_sum = 0;
                 $.each(data, function (_, char) {
                     if (char.hidden) return;
+                    if (char.globalHidden&&reg !="cn") return
                     char.tags.push(char.type);
+                    console.log(reg)
                     if(reg == 'cn'){
                         char.tags.push(char.sex + "性干员");
                     } else {
                         char.tags.push(char.sex);
                     }
+
                     $.each(char.tags, function (_, tag) {
                         if (tag in tags_aval) {
                             tags_aval[tag].push({ 
@@ -705,7 +712,7 @@
                         }
                         char_tag_sum++;
                     });
-                    all_chars[char.name_cn] = { 'name_cn': char.name_cn, 'name_en': char.name_en, 'name_jp': char.name_jp, 'name_kr': char.name_kr, 'level': char.level, 'tags': char.tags };
+                    all_chars[char.name_cn] = { 'name_cn': char.name_cn, 'name_en': char.name_en, 'name_jp': char.name_jp, 'name_kr': char.name_kr, 'level': char.level, 'tags': char.tags, 'globalHidden' : char.globalHidden?char.globalHidden:false };
                 });
                 //$.each(tags_aval, function (key, _) {
                 //    $("#box-tags").append(
