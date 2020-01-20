@@ -132,6 +132,9 @@ $(document).ready(function(){
                     
                 </ul>
             <ul class="navbar-nav ml-auto">
+                <li>
+                    <a href='https://ko-fi.com/T6T41D433' target='_blank'><img height='36' style='border:0px;height:33px;margin-top:10px; margin-right: 10px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Support Us on Ko-fi.com' /></a>
+                </li>
 
                 <li class="nav-item dropdown" id="navitemRegion">
                         <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;"href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
