@@ -39,7 +39,7 @@
     // var d12 = $.getJSON("json/en/levels/enemydata/enemy_database.json",function(data){
     //     db["enemyDetailEN"] = data.enemies;
     // });
-    var d13 = $.getJSON("json/en/excel/enemy_handbook_table.json",function(data){
+    var d13 = $.getJSON("json/gamedata/en/excel/enemy_handbook_table.json",function(data){
         db["enemyEN"] = data;
     });
     $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d11,d13).then(function(){
