@@ -116,6 +116,7 @@ $(document).ready(function(){
         case "en":langText = 'English';break;
         case "cn":langText = 'Chinese';break;
         case "jp":langText = 'Japanese';break;
+        case "kr":langText = 'Korean';break;
     }
     // console.log(reg)
     let html = `
@@ -146,6 +147,7 @@ $(document).ready(function(){
                             <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="cn">Chinese</a>
                             <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="en">English</a>
                             <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="jp">Japanese</a>
+                            <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="kr">Korean</a>
                         </div>
                     </li>
                 <li class="nav-item dropdown" id="navitemLanguage">
@@ -157,6 +159,7 @@ $(document).ready(function(){
                         <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="en">English</a>
                         <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="cn">Chinese</a>
                         <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="jp">Japanese</a>
+                        <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="kr">Korean</a>
                     </div>
                 </li>
             </ul>
