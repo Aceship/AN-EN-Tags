@@ -1,3 +1,4 @@
+
 $.holdReady(true);
 const jsonList = {
     chars           :"./json/excel/character_table.json",
@@ -12,7 +13,8 @@ const jsonList = {
     atkType         :"./json/tl-attacktype.json",
     unreadableTL    :"./json/tl-unreadablename.json",
     potsTL          :"./json/tl-potential.json",
-    talentsTL       :"./json/ace/tl-talents.json"
+    talentsTL       :"./json/ace/tl-talents.json",
+    campdata        :"./json/tl-campdata.json"
 };
 
 var db = {}
@@ -20,6 +22,7 @@ LoadAllJsonObjects(jsonList).then(function(result) {
     db = result
     $.holdReady(false);
 });
+
 
 var slotnum;
 
@@ -154,10 +157,12 @@ function selOpClass(cname){
         if(a.appellation<b.appellation)return -1
     })
     var listtype = "Grid"
+    var showtype = "a"
     for (var i = 0; i < result.length; i++) {
         var html;
         // console.log(result[i])
         $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
+            var type = query(db.classes,"type_data",val.profession);
             switch (listtype) {
                 case "List":
                             html =
@@ -176,6 +181,8 @@ function selOpClass(cname){
                             <img src='img/avatars/${key}_1.png'>
                             <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                             <div class='ak-rare-${val.rarity+1}'></div>
+                            ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${eval("type.type_en").toLowerCase()}.png'></div>`:""}
+                            ${showtype?`<div class='ak-showfaction'><img src='img/factions/${val.displayLogo.toLowerCase()}.png' title='${db.campdata[val.displayLogo]}' ></div>`:""}
                             <div class='grid-box op-rarity-${val.rarity+1}'> 
                             </div></li>
                             `
