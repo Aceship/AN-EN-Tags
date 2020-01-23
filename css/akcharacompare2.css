@@ -15,6 +15,10 @@
     cursor: pointer;
 }
 
+.contents a.nav-link img {
+    border-bottom: 3px solid #666666;
+}
+
 .contents a.nav-link.active {
     background-color: #4f4f4f !important;
     color: white !important; 
@@ -22,7 +26,8 @@
     border-bottom: 0px !important;
 }
 
-.contents a.nav-link:hover {
+.contents a.nav-link:hover img {
+    border-bottom: 3px solid white;
 }
 
 .contents a.nav-link:active {
@@ -65,9 +70,20 @@
 
 .right-panel {
     width: 60vw;
-    overflow: auto;
-    white-space: nowrap;
     padding-left: 10px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+}
+
+.right-panel.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
 }
 
 .filters-panel {
@@ -101,7 +117,7 @@
 }
 
 .opcontainer {
-    min-width: 250px;
+    min-width: 165px;
     height: 90%;
     display: inline-block;
     background-color: #4f4f4f;
@@ -162,4 +178,77 @@
     left: 77%;
     font-size: 0.9em;
     top: 55%;
+}
+
+.selectop-grid {
+    display: inline-grid;
+    height: 113px;
+    width: 88px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+    background-color: #666666;
+    color: white;
+    transition-duration: 200ms;
+}
+
+.selectop-grid:hover {
+    cursor: pointer;
+    background-color: unset;
+    transition-duration: 200ms;
+    box-shadow: 2px 2px 8px #111;
+    z-index: 100;
+    transform: scale(1.1) ;
+}
+
+.selectop-grid img {
+    box-shadow: 2px 0px 3px #111;
+    width: 88px;
+    height: 88px;
+    transition-duration: 200ms;
+    background-color: #555555;
+}
+.selectop-grid:hover img {
+    transition-duration: 200ms;
+    background-color: #222222;
+}
+
+.selectop-grid .name {
+    top: 0px;
+    font-size: 0.8em;
+}
+.selectop-grid .rarity {
+    box-shadow: 1px 1px 2px #111;
+}
+
+.selectop-grid .ak-showclass {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+}
+.selectop-grid .ak-showclass img {
+    width: 20px;
+    height: 20px;
+    background: rgba(17, 17, 17, 0.856);
+}
+.selectop-grid .ak-showclass img:hover {
+    width: 40px;
+    height: 40px;
+    background: rgb(17, 17, 17);
+}
+
+.selectop-grid .ak-showfaction {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+.selectop-grid .ak-showfaction img {
+    width: 20px;
+    height: 20px;
+    background: rgba(17, 17, 17, 0.856);
+}
+.selectop-grid .ak-showfaction img:hover {
+    width: 40px;
+    height: 40px;
+    background: rgb(17, 17, 17);
 }

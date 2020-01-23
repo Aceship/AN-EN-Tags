@@ -169,12 +169,12 @@
                             </li>
                             <li class='nav-item'>
                                 <a class='nav-link' data-toggle='tab' href='#supportops' data-opclass='SUPPORT'>
-                                    <img width='50' src='img/classes/class_support.png'>
+                                    <img width='50' src='img/classes/class_supporter.png'>
                                 </a>
                             </li>
                             <li class='nav-item'>
                                 <a class='nav-link' data-toggle='tab' href='#tankops' data-opclass='TANK'>
-                                    <img width='50' src='img/classes/class_tank.png'>
+                                    <img width='50' src='img/classes/class_defender.png'>
                                 </a>
                             </li>
                             <li class='nav-item'>
@@ -184,7 +184,7 @@
                             </li>
                         </ul>
                         <div class='tab-content'>
-                            <ul id='selectedopclass' style='padding-left: 0px;'>
+                            <ul id='selectedopclass' style='padding-left: 0px;margin: auto;padding: auto;'>
                                 <!-- Operators of the selected class goes here -->
                                 <!--
                                 <li class='selectop-list ak-shadow'>
@@ -200,25 +200,7 @@
         </div> <!-- class='modal' -->
     </div> <!-- class='contents' -->
 </body>
+<script src='./js/global.js'></script>
 <script src='js/everpolate.min.js'></script>
 <script src='./js/aknav.js'></script>
-<script>
-(function() {
-    function scrollHorizontally(e) {
-        e = window.event || e;
-        var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-        document.getElementById('slotsContainer').scrollLeft -= (delta*40); // Multiplied by 40
-        e.preventDefault();
-    }
-    if (document.getElementById('slotsContainer').addEventListener) {
-        // IE9, Chrome, Safari, Opera
-        document.getElementById('slotsContainer').addEventListener('mousewheel', scrollHorizontally, false);
-        // Firefox
-        document.getElementById('slotsContainer').addEventListener('DOMMouseScroll', scrollHorizontally, false);
-    } else {
-        // IE 6/7/8
-        document.getElementById('slotsContainer').attachEvent('onmousewheel', scrollHorizontally);
-    }
-})();
-</script>
 </html>
