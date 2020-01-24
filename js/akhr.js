@@ -671,6 +671,7 @@
             getJSONdata("ui",function(data){
                 if(data.length != 0){
                     $.each(data, function(i,text){
+                        // console.log(text)
                         $("[translate-id="+text.id).html(eval('text.ui_'+lang));
                     });
                 }
