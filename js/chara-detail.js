@@ -195,10 +195,12 @@
         if(typeof localStorage.selectedOPDetails === "undefined" || localStorage.selectedOPDetails == ""){
             console.log("selected OP undefined");
             var vars = getUrlVars();
+            console.log(vars)
             if(typeof vars.opname != "undefined"){
-                vars.opname = decodeURIComponent(vars.opname);
+                vars.opname = decodeURIComponent(vars.opname.replace("_"," "));
                 console.log(vars.opname);
                 var char = query(db.chars,"appellation",vars.opname,true,true);
+                console.log(char)
                 var opname;
                 $.each(char,function(key,v){
                     opname = v.name;
