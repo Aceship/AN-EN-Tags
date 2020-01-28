@@ -195,10 +195,12 @@
         if(typeof localStorage.selectedOPDetails === "undefined" || localStorage.selectedOPDetails == ""){
             console.log("selected OP undefined");
             var vars = getUrlVars();
+            console.log(vars)
             if(typeof vars.opname != "undefined"){
-                vars.opname = decodeURIComponent(vars.opname);
+                vars.opname = decodeURIComponent(vars.opname.replace("_"," "));
                 console.log(vars.opname);
                 var char = query(db.chars,"appellation",vars.opname,true,true);
+                console.log(char)
                 var opname;
                 $.each(char,function(key,v){
                     opname = v.name;
@@ -380,8 +382,10 @@
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
                 console.log(key)
                 var type = query(db.classes,"type_data",val.profession);
-                
+                var classlogo = eval("type.type_en").toLowerCase()
+                var camplogo = val.displayLogo
                 switch (listtype) {
+                    
                     case "List":
                                 html =
                                 `<li class='selectop-list ak-shadow' onclick='selectOperator("${val.name}")'>
@@ -399,8 +403,8 @@
                                 <img src='img/avatars/${key}_1.png'>
                                 <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                                 <div class='ak-rare-${val.rarity+1}'></div>
-                                ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${eval("type.type_en").toLowerCase()}.png'></div>`:""}
-                                ${showtype?`<div class='ak-showfaction'><img src='img/factions/${val.displayLogo.toLowerCase()}.png' title='${db.campdata[val.displayLogo]}' ></div>`:""}
+                                ${cname==""&&classlogo?`<div class='ak-showclass'><img src='img/classes/class_${classlogo}.png'></div>`:""}
+                                ${showtype&&camplogo?`<div class='ak-showfaction'><img src='img/factions/${camplogo.toLowerCase()}.png' title='${db.campdata[camplogo]}' ></div>`:""}
                                 <div class='grid-box op-rarity-${val.rarity+1}'> 
                                 </div></li>
                                 `
