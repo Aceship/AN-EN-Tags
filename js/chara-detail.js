@@ -1124,7 +1124,7 @@
         $('#opaudiotranslator').html("")
         $('#opaudioproofreader').html("")
         curraudiolist.forEach(element => {
-            var curraudio  =`<audio controls preload="metadata" style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
+            var curraudio  =`<audio controls style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> `
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
             //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
             // }
