@@ -52,30 +52,37 @@
                     <!-- LEFT PANEL -->
                     <div class='left-panel'>
                         <div class='filters-panel ak-shadow'>
-                            
+                            Filters panel (WIP)
                         </div>
                         <div class='attributes-panel ak-shadow subpanel'>
                             <ul class='nav nav-tabs nav-justified'>
                                 <li class='nav-item'>
-                                    <a class='nav-link active' data-toggle='tab'>E0</a>
+                                    <a class='nav-link active' data-toggle="tab" onclick="changeElite(0)">E0</a>
                                 </li>
                                 <li class='nav-item'>
-                                    <a class='nav-link' data-toggle='tab'>E1</a>
+                                    <a class='nav-link' data-toggle="tab" onclick="changeElite(1)">E1</a>
                                 </li>
                                 <li class='nav-item'>
-                                    <a class='nav-link' data-toggle='tab'>E2</a>
+                                    <a class='nav-link' data-toggle="tab" onclick="changeElite(2)">E2</a>
                                 </li>
                             </ul>
 
-                            <div class='lp-row light'>
-                                test
+
+                            <div style='text-align:center'>
+                                <span class='stat-level-header' style=''>Level</span>
+                                <input type='range' value='1' min='1' max='90' name='levelStats' id='levelSlider' oninput='changeLevel(this.value)' style='margin-top:20px;width:48%;' class='statlevelInput'></input>
+                                <div class='form-group stat-input' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='levelDisplay' onchange='changeLevel(this.value)' style='line-height:1.1' type='number' value='1' min='1' max='90'></div>
                             </div>
-                            <div class='lp-row light'>
-                                test
-                            </div>
-                            <div class='lp-row light'>
-                                test
-                            </div>
+
+                            <div class='lp-row light'>Max HP</div>
+                            <div class='lp-row light'>Attack</div>
+                            <div class='lp-row light'>Defense</div>
+                            <div class='lp-row light'>Magic Resistance</div>
+                            <div class='lp-row light'>Redeploy Time</div>
+                            <div class='lp-row light'>Deploy Cost</div>
+                            <div class='lp-row light'>Block Count</div>
+                            <div class='lp-row light'>Attack Time</div>
+                            <div class='lp-row light'>Damage per Second</div>
                         </div>
                         <div class='skill-panel ak-shadow subpanel'>
                             <ul class='nav nav-tabs nav-justified'>
@@ -94,33 +101,6 @@
 
                     <!-- RIGHT PANEL -->
                     <div class='right-panel' id='slotsContainer'>
-                        <div class='opcontainer ak-shadow'>
-                            <div class='removebtn float-right'>
-                                <a href='#' class='btn btn-info btn-sm' style='border-radius: 0px;'>
-                                    <i class='fa fa-close'></i> 
-                                </a>
-                            </div>
-                            <div class='opname ak-font-novecento lp-row'>
-                                Amiya
-                            </div>
-                            <div>
-                                <img class='opimage ak-shadow mx-auto d-block' src='img/avatars/char_002_amiya_1.png'>
-                            </div>
-                            <div class='opstatspanel' style='margin-top: 43px;'>
-                                <div class='elite-title lp-row' id='elite-title'>
-                                    Elite 0
-                                </div>
-                                <div class='lp-row light'>
-                                    test
-                                </div>
-                                <div class='lp-row light'>
-                                    test
-                                </div>
-                                <div class='lp-row light'>
-                                    test
-                                </div>
-                            </div>
-                        </div>
                         <div class='opcontainer ak-shadow'>
                             <div>
                                 <button type='button' data-toggle='modal' data-target='#opchoosemodal' class='mx-auto d-block' id='addoperatorbtn' style=''>
@@ -199,7 +179,6 @@
         </div> <!-- class='modal' -->
     </div> <!-- class='contents' -->
 </body>
-<script src='./js/global.js'></script>
 <script src='js/everpolate.min.js'></script>
 <script src='./js/aknav.js'></script>
 </html>
