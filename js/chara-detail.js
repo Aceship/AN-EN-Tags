@@ -251,6 +251,7 @@
                 if(element.includes("story=")){
                     $('#opstory').modal('show')
                 }else if(element.includes("voice=")){
+                    GetAudio(opdataFull)
                     $('#opaudio').modal('show')
                 }
             });
@@ -716,7 +717,7 @@
 
             tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-bottom ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio" >
             <div>
-                <img src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px">
+                <img src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px" onclick="GetAudio(opdataFull)">
                 <div class="btn-story-header">Audio</div>
             </div>
             </button>`))
@@ -798,7 +799,9 @@
             //Story
 
             GetStory(opdataFull)
-            GetAudio(opdataFull)
+            $('#opaudiocontent').html("")
+            $('#opaudiotranslator').html("")
+            $('#opaudioproofreader').html("")
             ///////////////////////////////////////////////// SKILLS SECTION //////////////////////////////////////////////////
 
             $("#skill-tabs").html("");
@@ -1124,7 +1127,7 @@
         $('#opaudiotranslator').html("")
         $('#opaudioproofreader').html("")
         curraudiolist.forEach(element => {
-            var curraudio  =`<audio preload="none" controls style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> `
+            var curraudio  =`<audio preload="metadata" controls style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> `
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
             //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
             // }
