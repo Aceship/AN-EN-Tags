@@ -201,6 +201,20 @@
             });
         });
 
+        $('#fastInput').click(function(event){
+            event.stopPropagation();
+        });
+         $('#fastInput').keyup(function(e){
+            if(e.keyCode == 13)
+            {
+                $('#fastInput').trigger("enterKey");
+            }
+        });
+
+        $('#fastInput').bind("enterKey",function(e){
+
+            CheckTag($('#fastInput'),true)
+         });
         function regDropdown(el){
             localStorage.gameRegion = el.attr("value");
             $(".dropdown-item.reg").removeClass("selected");
@@ -243,7 +257,7 @@
 
 
             
-            //console.log(all_tags);
+            console.log(all_tags);
             //console.log(all_chars);
             console.log("char name: "+char_name);
             $(".tr-recommd").show();
@@ -611,6 +625,41 @@
                 });
             }
         }
+
+        function CheckTag(el,isenter = false){
+            // console.log($(el).val())
+            console.log(isenter)
+            
+            var currsearch = $(el).val()
+
+            console.log(currsearch)
+            if(currsearch){
+                let all_tags = JsonDATA[3].concat(JsonDATA[4]);
+                var allsearch = []
+                all_tags.forEach(element => {
+                    Object.keys(element).forEach(searchkey => {
+                        if(element[searchkey].toLowerCase().includes(currsearch.toLowerCase())){
+                            if(!allsearch.find(search=>search[1]==element)){
+                                allsearch.push([element[searchkey],element])
+                            }
+                        }
+                    });
+                });
+                if(isenter){
+                    console.log(allsearch[0])
+                    var currtag = allsearch[0][1]['tag_'+lang]?allsearch[0][1]['tag_'+lang]:allsearch[0][1]['type_'+lang]
+                    console.log(`button[data-original-title='${currtag}']`)
+                    console.log($(`button[data-original-title='${currtag}']`))
+                    clickBtnTag($(`button[data-original-title='${currtag}']`)[0])
+                    $('#fastInput').val("")
+                }else{
+                    console.log(allsearch)
+                }
+                
+                
+            }
+        }
+        
 
         function changeUILanguage(calc=false){
             reg = localStorage.gameRegion;
