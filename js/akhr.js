@@ -204,11 +204,10 @@
         $('#fastInput').click(function(event){
             event.stopPropagation();
         });
-         $('#fastInput').keyup(function(e){
-            if(e.keyCode == 13)
-            {
-                $('#fastInput').trigger("enterKey");
-            }
+        
+        $('#fastInput').keyup(function(e) {
+            if (e.keyCode == 13) $('#fastInput').trigger("enterKey");
+            if (e.keyCode == 27) clickBtnClear()
         });
 
         $('#fastInput').bind("enterKey",function(e){
