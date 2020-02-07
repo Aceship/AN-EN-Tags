@@ -456,4 +456,29 @@ function initDragScroll(){
         slider.scrollLeft = scrollLeft - walk;
         //console.log(walk);
     });
+
+    slider.addEventListener('touchstart', (e) => {
+        isDown = true;
+        var e = e.touches[0];
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+    slider.addEventListener('touchcancel', () => {
+        isDown = false;
+        slider.classList.remove('active');
+    });
+    slider.addEventListener('touchend', () => {
+        isDown = false;
+      slider.classList.remove('active');
+    });
+    slider.addEventListener('touchmove', (e) => {
+        if(!isDown) return;
+        var e = e.touches[0];
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.5; //scroll-fast
+        slider.scrollLeft = scrollLeft - walk;
+        //console.log(walk);
+    });
 }

@@ -83,7 +83,6 @@
 .statlevelInput[type="range"] {
     -webkit-appearance: none;
     appearance: none;
-    width: 65%;
     max-width: 180px;
     display: inline-block;
     line-height: 0px;
@@ -145,6 +144,10 @@
     will-change: transform;
     user-select: none;
     cursor: pointer;
+}
+
+.right-panel::-webkit-scrollbar {
+    display: none;
 }
 
 .right-panel.active {
@@ -317,4 +320,23 @@
     width: 40px;
     height: 40px;
     background: rgb(17, 17, 17);
+}
+
+
+@media screen and (max-width:600px){
+    .left-panel {
+        width: 155px;
+    }
+    .right-panel {
+        overflow-x: scroll;
+    }
+    .levelSlider {
+        max-width: 87px;
+    }
+    .levelDisplay {
+        min-width: unset !important;
+    }
+    .opcontainer {
+        min-width: 150px;
+    }
 }
