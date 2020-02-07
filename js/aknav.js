@@ -30,7 +30,7 @@ $(document).ready(function(){
             href:"akriic.html",
             name:"Infrastructure Skill"
         },{
-            href:"akhrcompare.html",
+            href:"akhrcompare2.html",
             name:"Comparing"
         }]
     })
