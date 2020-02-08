@@ -201,10 +201,6 @@ function RefreshValues(){
         $("#slot-"+i+"-cost").html(statsInterpolation('cost',level,elite,opData));
         $("#slot-"+i+"-block").html(statsInterpolation('blockCnt',level,elite,opData));
         $("#slot-"+i+"-atkT").html(statsInterpolation('baseAttackTime',level,elite,opData));
-        var atkTime = statsInterpolation('baseAttackTime',level,elite,opData);
-        var atk = parseInt($("#slot-"+i+"-atk").html());
-        var dps = atk * (1/atkTime);
-        $("#slot-"+i+"-dps").html(parseInt(dps));
 
         var buffs = getTrustBonuses(opData);
         var s = {
@@ -226,6 +222,11 @@ function RefreshValues(){
                 $("<i class='fa fa-plus-circle' style='margin-left:2px; color:lightblue'></i>").insertAfter($("#slot-"+i+"-"+s[key]));
             }
         });
+        
+        var atkTime = statsInterpolation('baseAttackTime',level,elite,opData);
+        var atk = parseInt($("#slot-"+i+"-atk").html());
+        var dps = atk * (1/atkTime);
+        $("#slot-"+i+"-dps").html(parseInt(dps));
     }
     RefreshHighlight();
 }
