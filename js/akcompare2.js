@@ -28,6 +28,14 @@ var slotnum;
 var opLevel = 1;
 var opElite = 0;
 
+var applyTrust = false;
+if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts == ""){
+    localStorage.setItem("applyTrusts", 'false');
+} else {
+    applyTrust = localStorage.applyTrusts;
+}
+applyTrust = applyTrust == 'true'; // convert string to boolean
+
 var isMobile = false; //initiate as false
 // device detection
 if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -50,6 +58,32 @@ $(document).ready(function(){
     }
 
     RefreshSlots()
+
+
+    $("#applyTrustSwitch").btnSwitch({
+        Theme:'Swipe',
+        ToggleState:applyTrust,
+        OnCallback: function(val) {
+            if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts == ""){
+                localStorage.setItem("applyTrusts", 'true');
+            } else {
+                localStorage.applyTrusts = 'true';
+                applyTrust = localStorage.applyTrusts;
+                applyTrust = applyTrust == 'true';
+                RefreshValues();
+            }
+        },
+        OffCallback: function (val) {
+            if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts == ""){
+                localStorage.setItem("applyTrusts", 'false');
+            } else {
+                localStorage.applyTrusts = 'false';
+                applyTrust = localStorage.applyTrusts;
+                applyTrust = applyTrust == 'true';
+                RefreshValues();
+            }
+        }
+    });
     // ListBanner()
     
 });
@@ -111,6 +145,10 @@ function RefreshSlots(){
                     <div class='lp-row light'>
                         <span id='slot-${i}-dps'></span>
                     </div>
+                    <div class='separator ak-shadow'></div>
+                    <div class='lp-row light'>
+                        <span id='slot-${i}-trust'></span>
+                    </div>
                 </div>
             </div>
             `;
@@ -148,6 +186,11 @@ function RefreshValues(){
         var level = opLevel;
         if(maxLevel < level){ level = maxLevel}
 
+        var statNames = ['maxHP','atk','def','mRes','rTime','cost','block','atkT','dps'];
+        for (var j = 0; j < statNames.length; j++) {
+            $("#slot-"+i+"-"+statNames[j]).nextAll().remove();
+        }
+
         $("#slot-"+i+"-elite").html(elite);
         $("#slot-"+i+"-level").html(level);
         $("#slot-"+i+"-maxHP").html(statsInterpolation('maxHp',level,elite,opData));
@@ -162,8 +205,40 @@ function RefreshValues(){
         var atk = parseInt($("#slot-"+i+"-atk").html());
         var dps = atk * (1/atkTime);
         $("#slot-"+i+"-dps").html(parseInt(dps));
+
+        var buffs = getTrustBonuses(opData);
+        var s = {
+            maxHp:'maxHP',
+            atk:'atk',
+            def:'def',
+            magicResistance:'mRes',
+            respawnTime:'rTime',
+            cost:'cost',
+            blockCnt:'block',
+            baseAttackTime:'atkT',
+        };
+        $("#slot-"+i+"-trust").html("");
+        $.each(buffs,function(key,v){
+            $("#slot-"+i+"-trust").html($("#slot-"+i+"-trust").html()+" "+key+" +"+v);
+            if(applyTrust){
+                var base = parseInt($("#slot-"+i+"-"+s[key]).html());
+                $("#slot-"+i+"-"+s[key]).html(base+v);
+                $("<i class='fa fa-plus-circle' style='margin-left:2px; color:lightblue'></i>").insertAfter($("#slot-"+i+"-"+s[key]));
+            }
+        });
     }
     RefreshHighlight();
+}
+
+function getTrustBonuses(opdata){
+    var favorData = opdata.favorKeyFrames[1].data;
+    var buffs = {};
+    $.each(favorData,function(key,v){
+        if(v != 0){
+            buffs[key] = v;
+        }
+    });
+    return buffs;
 }
 
 function RefreshHighlight(){

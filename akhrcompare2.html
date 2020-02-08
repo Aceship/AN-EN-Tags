@@ -10,7 +10,6 @@
     <link rel='stylesheet' href='css/ak.css'>
     <link rel='stylesheet' href='css/akMaterial.css'>
     <link rel='stylesheet' href='css/jquery.btnswitch.css'>
-    <link rel='stylesheet' href='css/akcharacompare2.css'>
     <link href='https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css' rel='stylesheet'>
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
     <script src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'></script>
@@ -32,6 +31,8 @@
               $('#nav-placeholder').load('nav.html');
             });
      </script>
+
+    <link rel='stylesheet' href='css/akcharacompare2.css'>
 </head>
 <body  >
     <!-- style=' background-image: url(./img/extra/bg1.png)' -->
@@ -52,7 +53,10 @@
                     <!-- LEFT PANEL -->
                     <div class='left-panel'>
                         <div class='filters-panel ak-shadow'>
-                            Filters panel (WIP)
+                            <div class="form-group">
+                                <label style="vertical-align: top;" for="applyTrustSwitch">Apply Trust:</label>
+                                <div id="applyTrustSwitch" style="display: inline-block;"></div>
+                            </div>
                         </div>
                         <div class='attributes-panel ak-shadow subpanel'>
                             <ul class='nav nav-tabs nav-justified'>
@@ -87,6 +91,8 @@
                             <div class='lp-row light'>Block Count</div>
                             <div class='lp-row light'>Attack Time</div>
                             <div class='lp-row light'>Damage per Second</div>
+                            <div class='separator ak-shadow'></div>
+                            <div class='lp-row light'>Trust Bonus</div>
                         </div>
                         <div class='skill-panel ak-shadow subpanel'>
                             <ul class='nav nav-tabs nav-justified'>
