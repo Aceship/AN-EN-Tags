@@ -184,7 +184,7 @@
             lang = "en";
 
             var vars = getUrlVars();
-            if(typeof vars.opname != "undefined"){
+            if(vars.has("opname")){
                 // console.log("TEST1")
             }
         } else {
@@ -196,9 +196,9 @@
             console.log("selected OP undefined");
             var vars = getUrlVars();
             console.log(vars)
-            if(typeof vars.opname != "undefined"){
-                vars.opname = decodeURIComponent(vars.opname.replace("_"," "));
-                console.log(vars.opname);
+            if(vars.has("opname")){
+                vars.set("opname", decodeURIComponent(vars.get("opname").replace("_"," ")));
+                console.log(vars.get("opname"));
                 var char = query(db.chars,"appellation",vars.opname,true,true);
                 console.log(char)
                 var opname;
@@ -211,27 +211,19 @@
             }
         } else {
             console.log("selected OP defined");
-            var curpath = window.location.search.split("?");
-            // console.log(curpath)
+            var vars = getUrlVars();
             // curpath.forEach(element => {
                 
             // });
-            if(typeof curpath[1] != "undefined"){
-                var variables = curpath[1].split("?");
+            if(vars.has("opname")){
                 var char = {};
-                $.each(variables,function(_,v){
-                    var subvar = v.split("=");
-                    if(subvar[0] == "opname"){
-                        var opname = decodeURIComponent(subvar[1]);
-                        console.log(opname)
-                        var unreadable = query(db.unreadNameTL,"name_en",opname.replace(/_/g," "))
-                        console.log(unreadable)
-                        var correctname = (unreadable?unreadable.name:opname.replace(/_/g," "))
-                        console.log(correctname)
-                        char = query(db.chars,"appellation",correctname,true,true);
-                        
-                    }
-                });
+                var opname = decodeURIComponent(vars.get("opname"));
+                console.log(opname)
+                var unreadable = query(db.unreadNameTL,"name_en",opname.replace(/_/g," "))
+                console.log(unreadable)
+                var correctname = (unreadable?unreadable.name:opname.replace(/_/g," "))
+                console.log(correctname)
+                char = query(db.chars,"appellation",correctname,true,true);
                 var opname;
                 $.each(char,function(key,v){
                     opname = v.name;
@@ -247,65 +239,62 @@
             
             selectOperator(opname);
            
-            curpath.forEach(element => {
-                if(element.includes("story=")){
-                    $('#opstory').modal('show')
-                }else if(element.includes("voice=")){
-                    GetAudio(opdataFull)
-                    $('#opaudio').modal('show')
-                }
-            });
+            if(vars.has("story")){
+                $('#opstory').modal('show')
+            }else if(vars.has("voice")){
+                GetAudio(opdataFull)
+                $('#opaudio').modal('show')
+            }
+        
         }
         if (window.history && window.history.pushState) {
             $(window).on('popstate', function() {
-                var curpath = window.location.search.split("?");
+                var vars = getUrlVars()
                 console.log(opapp)
-                console.log(curpath)
-                if(curpath[1]){
-                    var historyopname = curpath[1].split("=")
-                    if(historyopname&&historyopname[1]){
-                        if(historyopname[1]!=opapp){
-                            var unreadable = query(db.unreadNameTL,"name_en",historyopname[1].replace(/_/g," "))
-                            var correctname = (unreadable?unreadable.name:historyopname[1].replace(/_/g," "))
-                            console.log(correctname)
-                            var char = query(db.chars,"appellation",correctname,true,true);
-                            // console.log()
-                            selectOperator(char[Object.keys(char)].name)
-                        }
-                    }
+                console.log(vars)
+                var historyopname = vars.get("opname")
+                if(historyopname!=opapp){
+                    var unreadable = query(db.unreadNameTL,"name_en",historyopname.replace(/_/g," "))
+                    var correctname = (unreadable?unreadable.name:historyopname.replace(/_/g," "))
+                    console.log(correctname)
+                    var char = query(db.chars,"appellation",correctname,true,true);
+                    // console.log()
+                    selectOperator(char[Object.keys(char)].name)
                 }
-                curpath.forEach(element => {
-                    if(element.includes("story=")){
-                        $('#opstory').modal('show')
-                        $('#opaudio').modal('hide')
-                    }else if(element.includes("voice=")){
-                        $('#opaudio').modal('show')
-                        $('#opstory').modal('hide')
-                    }else{
-                        $('#opstory').modal('hide')
-                        $('#opaudio').modal('hide')
-                    }
-                });
+                if(vars.has("story")){
+                    $('#opstory').modal('show')
+                    $('#opaudio').modal('hide')
+                }else if(vars.has("voice")){
+                    $('#opaudio').modal('show')
+                    $('#opstory').modal('hide')
+                }else{
+                    $('#opstory').modal('hide')
+                    $('#opaudio').modal('hide')
+                }
             //   alert('Back button was pressed.');
             });
         
         }
 
         $('#opstory').on('shown.bs.modal', function(){
-            var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?story=0'); 
+            var url = new URL(window.location.href);
+            url.searchParams.set('story', 0);
+            history.pushState(null, '', url);
         });
         $('#opstory').on('hidden.bs.modal', function(){
-            var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]); 
+            var url = new URL(window.location.href);
+            url.searchParams.delete('story');
+            history.pushState(null, '', url);
         });
         $('#opaudio').on('shown.bs.modal', function(){
-            var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?voice=0'); 
+            var url = new URL(window.location.href);
+            url.searchParams.set('voice', 0);
+            history.pushState(null, '', url);
         });
         $('#opaudio').on('hidden.bs.modal', function(){
-            var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]); 
+            var url = new URL(window.location.href);
+            url.searchParams.delete('voice');
+            history.pushState(null, '', url);
         });
 
         // console.log("TEST")
@@ -590,16 +579,15 @@
                 return false
             });
             
-            var curpath = window.location.pathname
-            var curpath2 = window.location.search.split('?')
-            // console.log(curpath2)
+            var url = new URL(window.location.href)
             var unreadable = query(db.unreadNameTL,"name",opdataFull.appellation)
             var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):opdataFull.appellation.replace(/ /g,"_"))
             opapp = correctname
-            if(curpath2[1]&&curpath2[1].includes("opname="+correctname)){
+            if(url.searchParams.get("opname")===correctname){
                 
             }else{
-                history.pushState(null, '', curpath+'?opname='+correctname); 
+                url.searchParams.set("opname", correctname);
+                history.pushState(null, '', url); 
             }
 
             // use opdata to get the operator data based on tl-akhr.json
@@ -2141,9 +2129,5 @@
     }
 
     function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-            vars[key] = value;
-        });
-        return vars;
+        return new URL(window.location.href).searchParams;
     }
