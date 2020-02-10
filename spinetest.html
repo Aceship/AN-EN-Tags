@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <script src="js/spine-widget.js"></script>
+    <script src="js/spine-skeleton-binary.js"></script>
+</head>
+
+<body>
+    <center>
+        <div id="spine-widget" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
+    </center>
+    <script>
+        var charName = 'char_101_sora';
+        var defaultAnimationName = "Default";
+        console.log(defaultAnimationName);
+        if (charName != null && defaultAnimationName != null) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', "./spineassets/" + charName + ".skel", true);
+            xhr.responseType = 'arraybuffer';
+            var array;
+            xhr.onloadend = function (e) {
+                if (xhr.status != 404) {
+                    buffer = xhr.response;
+                    array = new Uint8Array(buffer);
+                    // console.log(array);
+                    skelBin = new SkeletonBinary();
+                    skelBin.data = array;
+                    skelBin.initJson();
+                    // console.log(JSON.stringify(skelBin.json, null, "\t"));
+                    new spine.SpineWidget("spine-widget", {
+                        jsonContent: JSON.stringify(skelBin.json),
+                        atlas: "spineassets/" + charName + ".atlas",
+                        animation: defaultAnimationName,
+                        backgroundColor: "#00000000",
+                        // debug: true,
+                        premultipliedAlpha: true,
+                        fitToCanvas : true,
+                        // x:220,
+                        // y:100,
+                        scale:0.6,
+                        success: function (widget) {
+                            var animIndex = 0;
+                            widget.canvas.onclick = function () {
+                                animIndex++;
+                                var animations = widget.skeleton.data.animations;
+                                console.log(animations)
+                                if (animIndex >= animations.length) animIndex = 0;
+                                widget.setAnimation(animations[animIndex].name)
+                            }
+                        }
+                    })
+                }
+            };
+            xhr.send()
+        }
+    </script>
+</body>
+
+</html>
