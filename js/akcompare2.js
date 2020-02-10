@@ -141,7 +141,7 @@ function RefreshSlots(){
 
     for (var i = 0; i < selectedOpList.length; i++) {
         var opID = selectedOpList[i];
-        var opData = eval('db.chars.'+opID);
+        var opData = db.chars[opID];
         var html = `
             <div class='opcontainer ak-shadow'>
                 <div class='removebtn float-right'>
@@ -236,7 +236,7 @@ function RefreshValues(){
 
     for (var i = 0; i < selectedOpList.length; i++) {
         var opID = selectedOpList[i];
-        var opData = eval('db.chars.'+opID);
+        var opData = db.chars[opID];
         var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
 
         ///////////////// STATS SECTION //////////////////
@@ -459,7 +459,7 @@ function selOpClass(cname){
                             <img src='img/avatars/${key}_1.png'>
                             <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                             <div class='ak-rare-${val.rarity+1}'></div>
-                            ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${eval("type.type_en").toLowerCase()}.png'></div>`:""}
+                            ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}
                             ${showtype?`<div class='ak-showfaction'><img src='img/factions/${val.displayLogo.toLowerCase()}.png' title='${db.campdata[val.displayLogo]}' ></div>`:""}
                             <div class='grid-box op-rarity-${val.rarity+1}'> 
                             </div></li>
@@ -607,7 +607,7 @@ function query(db,key,val,single=true,returnKey=false){
     }
     var found = false;
     $.each(db,function(key2,v){
-        if(eval('v.'+key).toLowerCase() == val.toLowerCase()){
+        if(v[key].toLowerCase() == val.toLowerCase()){
             found = true;
             if(single){
                 if(returnKey){
@@ -638,7 +638,7 @@ function getENname (CNname){
     var result;
     var found = false;
     $.each(db.charsTL,function(key,val){
-        if(eval('val.name_cn').toLowerCase() == CNname.toLowerCase()){
+        if(val.name_cn.toLowerCase() == CNname.toLowerCase()){
             found = true;
             result = val.name_en;
         }
