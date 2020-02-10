@@ -1786,7 +1786,7 @@
         // console.log(splitdescTL)
         // console.log(color)
 
-        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`)
+        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`,"","white-space:initial;")
         // splitdescTL
     }
 

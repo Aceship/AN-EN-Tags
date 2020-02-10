@@ -36,6 +36,14 @@ if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts =
 }
 applyTrust = applyTrust == 'true'; // convert string to boolean
 
+var showMode = false;
+if(typeof localStorage.showMode === "undefined" || localStorage.showMode == ""){
+    localStorage.setItem("showMode", 'false');
+} else {
+    showMode = localStorage.showMode;
+}
+showMode = showMode == 'true'; // convert string to boolean
+
 var isMobile = false; //initiate as false
 // device detection
 if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -84,6 +92,38 @@ $(document).ready(function(){
             }
         }
     });
+
+
+    $("#modeSwitch").btnSwitch({
+        Theme:'Swipe',
+        ToggleState:showMode,
+        OnText: 'Stats',
+        OffText: 'Skills',
+        OnCallback: function(val) {
+            if(typeof localStorage.showMode === "undefined" || localStorage.showMode == ""){
+                localStorage.setItem("showMode", 'true');
+            } else {
+                localStorage.showMode = 'true';
+                showMode = localStorage.showMode;
+                showMode = showMode == 'true';
+                $(".statsSection").show();
+                $("#attributesPanel").show();
+                $(".skillsSection").hide();
+            }
+        },
+        OffCallback: function (val) {
+            if(typeof localStorage.showMode === "undefined" || localStorage.showMode == ""){
+                localStorage.setItem("showMode", 'false');
+            } else {
+                localStorage.showMode = 'false';
+                showMode = localStorage.showMode;
+                showMode = showMode == 'true';
+                $(".statsSection").hide();
+                $("#attributesPanel").hide();
+                $(".skillsSection").show();
+            }
+        }
+    });
     // ListBanner()
     
 });
@@ -111,7 +151,7 @@ function RefreshSlots(){
                 <div><img class='opimage ak-shadow mx-auto d-block' src='img/avatars/${opID}_1.png'></div>
 
 
-                <div id='slot-${i}-stats' style='margin-top:42px;'>
+                <div id='slot-${i}-stats' class='statsSection' style='margin-top:42px;'>
                     <div class='lp-row light'>
                         Elite <span id='slot-${i}-elite'>1</span>
                     </div>
@@ -150,6 +190,15 @@ function RefreshSlots(){
                         <span id='slot-${i}-trust'></span>
                     </div>
                 </div>
+
+                <div id='slot-${i}-skills' class='skillsSection' style'margin-top:42px;'>
+                    <div class='lp-row light'>
+                        <span id='slot-${i}-traits'></span>
+                    </div>
+                    <div class='lp-row light'>
+                        <span id='slot-${i}-skills'>(WIP)</span>
+                    </div>
+                </div>
             </div>
             `;
         $("#slotsContainer").append(html);
@@ -164,6 +213,16 @@ function RefreshSlots(){
         initDragScroll();
     }
     RefreshValues();
+
+    if(showMode){
+        $(".statsSection").show();
+        $("#attributesPanel").show();
+        $(".skillsSection").hide();
+    } else {
+        $(".statsSection").hide();
+        $("#attributesPanel").hide();
+        $(".skillsSection").show();
+    }
 }
 
 function RefreshValues(){
@@ -178,6 +237,9 @@ function RefreshValues(){
     for (var i = 0; i < selectedOpList.length; i++) {
         var opID = selectedOpList[i];
         var opData = eval('db.chars.'+opID);
+        var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
+
+        ///////////////// STATS SECTION //////////////////
 
         var maxElite = opData.phases.length-1;
         var elite = opElite;
@@ -222,11 +284,18 @@ function RefreshValues(){
                 $("<i class='fa fa-plus-circle' style='margin-left:2px; color:lightblue'></i>").insertAfter($("#slot-"+i+"-"+s[key]));
             }
         });
-        
+
         var atkTime = statsInterpolation('baseAttackTime',level,elite,opData);
         var atk = parseInt($("#slot-"+i+"-atk").html());
         var dps = atk * (1/atkTime);
         $("#slot-"+i+"-dps").html(parseInt(dps));
+
+        //////////////////// SKILLS SECTION /////////////////////
+
+        var traitsText = getProcessedTexts('traits',opData);
+        $("#slot-"+i+"-traits").html("");
+        $("#slot-"+i+"-traits").html(traitsText);
+
     }
     RefreshHighlight();
 }
@@ -405,6 +474,110 @@ function selOpClass(cname){
         $("#selectedopclass").append(html);
     }
     
+}
+
+function getProcessedTexts(type,opdataFull){
+    if(type == 'traits'){
+        var description = opdataFull.description
+        //gonna need to split on "," and "\n" and repeat it
+        let descriptions = description.split(/[，(\\n)]/)
+        let splitdesc = []
+        // console.log("=====================")
+        // console.log(descriptions)
+        descriptions.forEach(element => {
+            if(element){
+                let muhRegex = /<@ba\.kw>(.*?)<\/>/g
+                let currSpeciality = muhRegex.exec(element)
+                // console.log(currSpeciality)
+                let filterDesc
+                if(currSpeciality){
+                    splitdesc.push([element.replace(currSpeciality[0],""),currSpeciality[1]])
+                }else{
+                    splitdesc.push([element])
+                }
+            }
+        });
+        // console.log(splitdesc)
+        // console.log("===========================")
+
+        let splitdescTL = []
+        let color = ""
+        let trait = opdataFull.trait
+        // console.log(trait)
+        let isReplaced = false
+        splitdesc.forEach(element => {
+            if(element.length>1){
+                let typetl = db.atkType.find(search=>search.type_cn==element.join(""))
+                // if(!typetl) typetl = db.attacktype.find(search=>search.type_cn==element[1])
+                if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
+
+                // console.log(element)
+                let muhRegex = /(.*){(.*?)}(.*)/g
+                let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
+                if(currTLconv){
+                    console.log(currTLconv)
+                    var textreplace = 'Value'
+                    if(trait && trait.candidates.length>1){
+                        textreplace =  `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>`
+                    }else if (trait && trait.candidates.length==1) {
+                        textreplace = trait.candidates[0].blackboard[0].value
+                        if(currTLconv[2].includes("%")){
+                            textreplace= textreplace*100 +("%")
+                        }
+                        isReplaced = true
+                    }
+                }
+                let currTLconvfinal = currTLconv?currTLconv[1] + textreplace + currTLconv[3]:typetl?typetl.type_en:element.join("")
+                splitdescTL.push(currTLconvfinal)
+            }else{
+                var typetl = db.atkType.find(search=>{
+                    if(search.type_detail=="common")
+                    return search.type_cn==element[0]
+                })
+                if(!typetl){
+                    typetl = db.atkType.find(search=>search.type_cn==element.join(""))
+                }
+                // console.log(element.join(""))
+
+                // console.log(typetl)
+                
+                if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
+                splitdescTL.push(typetl?typetl.type_en:element[0])
+            }
+        });
+        if(trait&&!(isReplaced)){
+            trait.candidates.forEach(element => {
+                var imagereq = []
+                    if(element.unlockCondition.level >0)
+                    imagereq.push(`Lv.${element.unlockCondition.level}`)
+                    if(element.unlockCondition.phase >0)
+                    imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
+    
+                // console.log(s)
+                var each = []
+                element.blackboard.forEach(eachbb => {
+                    each.push(`${eachbb.key} : ${eachbb.value}`)
+                });
+                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px">${ each.join(" ")}</div>
+                <div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+                splitdescTL.push(info)
+            });
+        }
+        // console.log(splitdescTL)
+        // console.log(color)
+
+        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`);
+    }
+
+    function titledMaker (content,title,extraClass="",extraId="",extraStyle=""){
+        let titledbutton = `
+        <div style="padding-top:5px;display:inline-block">
+        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
+        ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
+        </div>`
+
+        return titledbutton
+    }
 }
 
 function statsInterpolation(key,level,elite_no,opdata,isround=true){
