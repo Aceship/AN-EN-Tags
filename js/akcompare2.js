@@ -247,6 +247,7 @@ function RefreshValues(){
         var maxLevel = opData.phases[elite].attributesKeyFrames[1].level;
         var level = opLevel;
         if(maxLevel < level){ level = maxLevel}
+        if(opElite > maxElite){ level = maxLevel}
 
         var statNames = ['maxHP','atk','def','mRes','rTime','cost','block','atkT','dps'];
         for (var j = 0; j < statNames.length; j++) {
