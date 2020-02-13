@@ -63,9 +63,74 @@
 
 .left-panel .subpanel {
     background-color: #4f4f4f;
-    height: 200px;
     width: 100%;
+    padding-bottom: 20px;
     margin-bottom: 20px;
+}
+
+
+.stat-level-header {
+    color: #ddd;
+    background: #222;
+    font-size: 18px;
+    vertical-align: super;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: -3px;
+}
+.statlevelInput[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    max-width: 180px;
+    display: inline-block;
+    line-height: 0px;
+    height: 25px;
+    margin-left: 2px;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    background: #bbb;
+    touch-action: none;
+}
+.statlevelInput::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    
+    /* margin-bottom: 10px; */
+    /* padding-bottom:20px; */
+    border: 2px solid #bbb;
+    border-radius: 0px;
+    background: #2f2f2f;
+    cursor: pointer;
+    touch-action: none;
+}
+.statlevelInput::-webkit-slider-thumb {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    /* margin-bottom: 10px; */
+    /* padding-bottom:20px; */
+    border: 2px solid #bbb;
+    border-radius: 0px;
+    background: #2f2f2f;
+    cursor: pointer;
+    touch-action: none;
+}
+.stat-input {
+    max-width: 45px;
+}
+.stat-input input {
+    margin-left: 2px;
+    margin-top: -2px;
+    padding: 7px 2px 6px 2px;
+    border-radius: 0px;
+    background: #666;
+    color: #ddd;
+    text-align: center;
+    border: 0px solid #444;
 }
 
 .right-panel {
@@ -81,6 +146,10 @@
     cursor: pointer;
 }
 
+.right-panel::-webkit-scrollbar {
+    display: none;
+}
+
 .right-panel.active {
     cursor: grabbing;
     cursor: -webkit-grabbing;
@@ -94,6 +163,7 @@
     width: 100%;
     margin-top: 5px;
     margin-bottom: 20px;
+    padding: 8px;
 }
 
 .attributes-panel {
@@ -118,7 +188,7 @@
 
 .opcontainer {
     min-width: 165px;
-    height: 90%;
+    height: 94.5%;
     display: inline-block;
     background-color: #4f4f4f;
     border-radius: 3px;
@@ -251,4 +321,36 @@
     width: 40px;
     height: 40px;
     background: rgb(17, 17, 17);
+}
+
+.btn-switch {
+    height: 25px !important;
+}
+
+.btn-switch::before, .btn-switch::after {
+    line-height: 1.6em !important;
+}
+
+.separator {
+    background-color: #2f2f2f;
+    height: 3px;
+    margin: 10px 0px;
+}
+
+@media screen and (max-width:600px){
+    .left-panel {
+        width: 155px;
+    }
+    .right-panel {
+        overflow-x: scroll;
+    }
+    .levelSlider {
+        max-width: 87px;
+    }
+    .levelDisplay {
+        min-width: unset !important;
+    }
+    .opcontainer {
+        min-width: 150px;
+    }
 }

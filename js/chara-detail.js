@@ -184,7 +184,7 @@
             lang = "en";
 
             var vars = getUrlVars();
-            if(typeof vars.opname != "undefined"){
+            if(vars.has("opname")){
                 // console.log("TEST1")
             }
         } else {
@@ -196,9 +196,9 @@
             console.log("selected OP undefined");
             var vars = getUrlVars();
             console.log(vars)
-            if(typeof vars.opname != "undefined"){
-                vars.opname = decodeURIComponent(vars.opname.replace("_"," "));
-                console.log(vars.opname);
+            if(vars.has("opname")){
+                vars.set("opname", decodeURIComponent(vars.get("opname").replace("_"," ")));
+                console.log(vars.get("opname"));
                 var char = query(db.chars,"appellation",vars.opname,true,true);
                 console.log(char)
                 var opname;
@@ -211,27 +211,19 @@
             }
         } else {
             console.log("selected OP defined");
-            var curpath = window.location.search.split("?");
-            // console.log(curpath)
+            var vars = getUrlVars();
             // curpath.forEach(element => {
                 
             // });
-            if(typeof curpath[1] != "undefined"){
-                var variables = curpath[1].split("?");
+            if(vars.has("opname")){
                 var char = {};
-                $.each(variables,function(_,v){
-                    var subvar = v.split("=");
-                    if(subvar[0] == "opname"){
-                        var opname = decodeURIComponent(subvar[1]);
-                        console.log(opname)
-                        var unreadable = query(db.unreadNameTL,"name_en",opname.replace(/_/g," "))
-                        console.log(unreadable)
-                        var correctname = (unreadable?unreadable.name:opname.replace(/_/g," "))
-                        console.log(correctname)
-                        char = query(db.chars,"appellation",correctname,true,true);
-                        
-                    }
-                });
+                var opname = decodeURIComponent(vars.get("opname"));
+                console.log(opname)
+                var unreadable = query(db.unreadNameTL,"name_en",opname.replace(/_/g," "))
+                console.log(unreadable)
+                var correctname = (unreadable?unreadable.name:opname.replace(/_/g," "))
+                console.log(correctname)
+                char = query(db.chars,"appellation",correctname,true,true);
                 var opname;
                 $.each(char,function(key,v){
                     opname = v.name;
@@ -247,65 +239,62 @@
             
             selectOperator(opname);
            
-            curpath.forEach(element => {
-                if(element.includes("story=")){
-                    $('#opstory').modal('show')
-                }else if(element.includes("voice=")){
-                    GetAudio(opdataFull)
-                    $('#opaudio').modal('show')
-                }
-            });
+            if(vars.has("story")){
+                $('#opstory').modal('show')
+            }else if(vars.has("voice")){
+                GetAudio(opdataFull)
+                $('#opaudio').modal('show')
+            }
+        
         }
         if (window.history && window.history.pushState) {
             $(window).on('popstate', function() {
-                var curpath = window.location.search.split("?");
+                var vars = getUrlVars()
                 console.log(opapp)
-                console.log(curpath)
-                if(curpath[1]){
-                    var historyopname = curpath[1].split("=")
-                    if(historyopname&&historyopname[1]){
-                        if(historyopname[1]!=opapp){
-                            var unreadable = query(db.unreadNameTL,"name_en",historyopname[1].replace(/_/g," "))
-                            var correctname = (unreadable?unreadable.name:historyopname[1].replace(/_/g," "))
-                            console.log(correctname)
-                            var char = query(db.chars,"appellation",correctname,true,true);
-                            // console.log()
-                            selectOperator(char[Object.keys(char)].name)
-                        }
-                    }
+                console.log(vars)
+                var historyopname = vars.get("opname")
+                if(historyopname!=opapp){
+                    var unreadable = query(db.unreadNameTL,"name_en",historyopname.replace(/_/g," "))
+                    var correctname = (unreadable?unreadable.name:historyopname.replace(/_/g," "))
+                    console.log(correctname)
+                    var char = query(db.chars,"appellation",correctname,true,true);
+                    // console.log()
+                    selectOperator(char[Object.keys(char)].name)
                 }
-                curpath.forEach(element => {
-                    if(element.includes("story=")){
-                        $('#opstory').modal('show')
-                        $('#opaudio').modal('hide')
-                    }else if(element.includes("voice=")){
-                        $('#opaudio').modal('show')
-                        $('#opstory').modal('hide')
-                    }else{
-                        $('#opstory').modal('hide')
-                        $('#opaudio').modal('hide')
-                    }
-                });
+                if(vars.has("story")){
+                    $('#opstory').modal('show')
+                    $('#opaudio').modal('hide')
+                }else if(vars.has("voice")){
+                    $('#opaudio').modal('show')
+                    $('#opstory').modal('hide')
+                }else{
+                    $('#opstory').modal('hide')
+                    $('#opaudio').modal('hide')
+                }
             //   alert('Back button was pressed.');
             });
         
         }
 
         $('#opstory').on('shown.bs.modal', function(){
-            var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?story=0'); 
+            var url = new URL(window.location.href);
+            url.searchParams.set('story', 0);
+            history.pushState(null, '', url);
         });
         $('#opstory').on('hidden.bs.modal', function(){
-            var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]); 
+            var url = new URL(window.location.href);
+            url.searchParams.delete('story');
+            history.pushState(null, '', url);
         });
         $('#opaudio').on('shown.bs.modal', function(){
-            var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]+'?voice=0'); 
+            var url = new URL(window.location.href);
+            url.searchParams.set('voice', 0);
+            history.pushState(null, '', url);
         });
         $('#opaudio').on('hidden.bs.modal', function(){
-            var curpath = window.location.search.split("?");
-            history.pushState(null, '', window.location.pathname+'?'+curpath[1]); 
+            var url = new URL(window.location.href);
+            url.searchParams.delete('voice');
+            history.pushState(null, '', url);
         });
 
         // console.log("TEST")
@@ -383,7 +372,7 @@
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
                 console.log(key)
                 var type = query(db.classes,"type_data",val.profession);
-                var classlogo = eval("type.type_en").toLowerCase()
+                var classlogo = type.type_en.toLowerCase()
                 var camplogo = val.displayLogo
                 switch (listtype) {
                     
@@ -424,7 +413,7 @@
         var result;
         var found = false;
         $.each(db.chars2,function(key,val){
-            if(eval('val.name_cn').toLowerCase() == CNname.toLowerCase()){
+            if(val.name_cn.toLowerCase() == CNname.toLowerCase()){
                 found = true;
                 result = val.name_en;
             }
@@ -473,7 +462,7 @@
                     found=true;
                 }else{
                     for (var i = 0; i < languages.length; i++) {
-                        var charname = eval('char.name_'+languages[i]).toUpperCase();
+                        var charname = char['name_'+languages[i]].toUpperCase();
                         var unreadable = query(db.unreadNameTL,"name",char.name_en)
                         var input = inputs.toUpperCase();
                         var search = (unreadable?unreadable.name_en.toUpperCase().search(input):charname.search(input));
@@ -486,9 +475,9 @@
                 if(found){
                     // console.log(char)
                     var name_cn = char.name_cn;
-                    var name = eval('char.name_'+reg);
+                    var name = char['name_'+reg];
                     var unreadable = query(db.unreadNameTL,"name",char.name_en).name_en
-                    var nameTL = eval('char.name_'+lang);
+                    var nameTL = char['name_'+lang];
                     var img_name = query(db.chars,"name",char.name_cn,true,true); 
                     // console.log(Object.keys(img_name))
                     var rarity = img_name[Object.keys(img_name)] ? img_name[Object.keys(img_name)].rarity + 1 : 0;
@@ -590,16 +579,15 @@
                 return false
             });
             
-            var curpath = window.location.pathname
-            var curpath2 = window.location.search.split('?')
-            // console.log(curpath2)
+            var url = new URL(window.location.href)
             var unreadable = query(db.unreadNameTL,"name",opdataFull.appellation)
             var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):opdataFull.appellation.replace(/ /g,"_"))
             opapp = correctname
-            if(curpath2[1]&&curpath2[1].includes("opname="+correctname)){
+            if(url.searchParams.get("opname")===correctname){
                 
             }else{
-                history.pushState(null, '', curpath+'?opname='+correctname); 
+                url.searchParams.set("opname", correctname);
+                history.pushState(null, '', url); 
             }
 
             // use opdata to get the operator data based on tl-akhr.json
@@ -733,8 +721,8 @@
             }
 
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
-            $("#op-nameTL").html(eval("opdata.name_"+lang));
-            $("#op-nameREG").html("["+eval("opdata.name_"+reg)+"]");
+            $("#op-nameTL").html(opdata['name_'+lang]);
+            $("#op-nameREG").html("["+opdata['name_'+reg]+"]");
             $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]}`)
             if(unreadable){
                 $("#op-nameRead").html(`[ ${unreadable} ]`);
@@ -743,15 +731,15 @@
             }
             var gender = query(db.gender,"sex_cn",opdata.sex);
             
-            $("#op-gender").html(titledMaker(eval("gender.sex_"+lang),`Gender`))
+            $("#op-gender").html(titledMaker(gender['sex_'+lang],`Gender`))
             var position = query(db.tags,"tag_cn",opdataFull.position);
-            $("#op-position").html(titledMaker(eval("position.tag_"+lang),`Position`))
+            $("#op-position").html(titledMaker(position['tag_'+lang],`Position`))
 
             
 
             var type = query(db.classes,"type_data",opdataFull.profession);
-            $("#op-classImage").attr("src","img/classes/black/icon_profession_"+eval("type.type_"+lang).toLowerCase()+"_large.png")
-            $("#op-className").html(eval("type.type_"+lang))
+            $("#op-classImage").attr("src","img/classes/black/icon_profession_"+type['type_'+lang].toLowerCase()+"_large.png")
+            $("#op-className").html(type['type_'+lang])
             var attackType = getSpeciality(opdataFull.description,opdataFull)
             
             $("#op-atktype").html(attackType)
@@ -780,8 +768,8 @@
             $.each(opdataFull.tagList,function(_,v){
                 var tag = query(db.tags,"tag_cn",v);
                 if(tag){
-                    var tagReg = eval('tag.tag_'+reg);
-                    var tagTL = eval('tag.tag_'+lang);
+                    var tagReg = tag['tag_'+reg];
+                    var tagTL = tag['tag_'+lang];
                     tags_html.push("<li style=\"list-style-type:none; padding-bottom: 10px;\"><button readonly type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
                             (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
                 }
@@ -1786,7 +1774,7 @@
         // console.log(splitdescTL)
         // console.log(color)
 
-        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`)
+        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`,"","white-space:initial;")
         // splitdescTL
     }
 
@@ -2063,7 +2051,7 @@
         }
         var found = false;
         $.each(db,function(key2,v){
-            if(eval('v.'+key).toLowerCase() == val.toLowerCase()){
+            if(v[key].toLowerCase() == val.toLowerCase()){
                 found = true;
                 if(single){
                     if(returnKey){
@@ -2141,9 +2129,5 @@
     }
 
     function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-            vars[key] = value;
-        });
-        return vars;
+        return new URL(window.location.href).searchParams;
     }

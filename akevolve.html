@@ -312,10 +312,17 @@
                                     +           '<div class="card-body p-1  style="padding:0px;margin:0px">'
                                     +           '<form style="">'
                                     +               '<div class="form-group mb-0">'
-                                    +                   '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="border-radius:2px;padding:0;text-align:center;background:#333;border:transparent;color:#DDD " placeholder=" ' + { 'cn': '需要', 'en': 'Need', 'kr': '필요량' }[lang] + '" id="need-' + cardid + '"/>'
-                                    +                   '<input type="text" class="form-control form-control-sm mt-1 in-mc   ak-mid" style="border-radius:2px;padding:0;text-align:center;background:#333;border:transparent;color:#DDD" placeholder=" ' +  { 'cn': '已有', 'en': 'Have', 'kr': '보유량' }[lang] + '" id="have-' + cardid + '"/>'
-                                    +                   '<input type="text" class="form-control form-control-sm mt-1 in-lack ak-mid" style="border-radius:2px;padding:0;text-align:center;background:#222;border:transparent;color:#DDD" placeholder=" ' +  { 'cn': '仍需', 'en': 'Lack', 'kr': '부족량' }[lang] + '" id="lack-' + cardid + '" disabled/>'
-                                    +               '</div>'
+                                    +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:2px 0px 0px 2px' onclick='Addition(-1,"need-${cardid}")'>-</button>`
+                                    +                   `<input type="text" min=0 class="form-control form-control-sm in-mc ak-btn" style="display: inline-block;border-radius:2px;padding:0;text-align:center;background:#333;border:transparent;color:#DDD;height:35px;width:40px" placeholder="${{ 'cn': '需要', 'en': 'Need', 'kr': '필요량' }[lang]}" id="need-${cardid}"/>`
+                                    +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:0px 2px 2px 0px' onclick='Addition(1,"need-${cardid}")'>+</button>`
+                                    
+
+                                    +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:2px 0px 0px 2px' onclick='Addition(-1,"have-${cardid}")'>-</button>`
+                                    +                   `<input type="text" min=0 class="form-control form-control-sm mt-1 in-mc   ak-mid" style="display: inline-block;border-radius:2px;padding:0;text-align:center;background:#333;border:transparent;color:#DDD;height:35px;width:40px" placeholder="${{ 'cn': '已有', 'en': 'Have', 'kr': '보유량' }[lang]}" id="have-${cardid}"/>`
+                                    +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:0px 2px 2px 0px' onclick='Addition(1,"have-${cardid}")'>+</button>`
+                                    
+                                    +                   `<input type="text"         class="form-control form-control-sm mt-1 in-lack ak-mid" style="border-radius:2px;padding:0;text-align:center;background:#222;border:transparent;color:#DDD" placeholder="${{ 'cn': '仍需', 'en': 'Lack', 'kr': '부족량' }[lang]}" id="lack-${cardid}"/>`
+                                    +               '</div>'    
                                     +           '</form>'
                                     
                                     +       '</div>'
@@ -340,6 +347,16 @@
                         $("#row-m").append('<div class="w-100 my-1" />');
                     }
                 });
+            }
+
+            function Addition(num,id){
+                // console.log(id)
+                if(!$(`#${id}`).val())$(`#${id}`).val(0)
+                if(parseInt($(`#${id}`).val())+num>=0){
+                    $(`#${id}`).val(parseInt($(`#${id}`).val())+num)
+                    calc()
+                }
+                
             }
 
             function genUrl() {
