@@ -44,10 +44,56 @@
                 <span class='navbar-toggler-icon'></span>
             </button>
     </nav>
-    <div class='contents'>
-        <div class='row d-flex justify-content-center'>
-            <div style='width: max-content;'>
-                <div class='row'>
+    <div class='contents' style="padding-top: 50px; overflow-x: auto;">
+        <div style='min-width: 740px;' class='d-flex justify-content-center'>
+            <div class='d-flex justify-content-end' style="padding-bottom: 20px;">
+                <div id='opcontainer' class='ak-container ak-shadow' style='margin-right: 20px;'>
+                    <div class='ak-shadow top-panel'>
+                        <div>
+                            <button type='button' data-toggle='modal' data-target='#opchoosemodal' class='mx-auto d-block btn btn-primary' id='selectoperatorbtn' style='height: 30px; line-height: 0.5; width: 80%; margin-top: 5px;'>
+                                Select Operator
+                            </button>
+                        </div>
+                        <div class='op-image'>
+                            <img src='img/avatars/char_179_cgbird_1.png'>
+                        </div>
+                        <div class="op-data" style="margin-left: 0px; padding-top: 19px;">
+                            <div class='level-slider' style="display: flex;">
+                                <div style="padding: unset;min-width: 40px;">
+                                    <span class='stat-level-header' style=''>Lv</span>
+                                </div>
+                                <div class="levelSlider" style="padding: unset; flex: 1;">
+                                    <input type='range' value='1' min='1' max='90' name='levelStats' id='levelSlider' oninput='changeLevel(this.value)' class='statlevelInput'></input>
+                                </div>
+                                <div class="levelDisplay" style="margin-right: 2px;">
+                                    <div class='form-group stat-input' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='levelDisplay' onchange='changeLevel(this.value)' style='line-height:1.1' type='number' value='1' min='1' max='90'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='bottom-panel' style='height: 500px;'>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class='d-flex justify-content-start' style="padding-bottom: 20px;">
+                <div id='enemycontainer' class='ak-container ak-shadow'>
+                    <div class='ak-shadow top-panel'>
+                        <div>
+                            <button type='button' data-toggle='modal' data-target='#opchoosemodal' class='mx-auto d-block btn btn-primary' id='selectoperatorbtn' style='height: 30px; line-height: 0.5; width: 80%; margin-top: 5px;'>
+                                Select Enemy
+                            </button>
+                        </div>
+                        <div class='op-image'>
+                            <img src='img/enemy/enemy_1001_bigbo_2.png'>
+                        </div>
+                        <div class="op-data" style="margin-left: 0px; padding-top: 19px;">
+                            
+                        </div>
+                    </div>
+                    <div class='bottom-panel' style='height: 500px;'>
+                        
+                    </div>
                 </div>
             </div>
         </div>
