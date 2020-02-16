@@ -164,59 +164,73 @@ function RefreshStats(){
     var opatkTime = statsInterpolation('baseAttackTime',opLevel,opElite,opData);
     var opatk = parseInt(statsInterpolation('atk',opLevel,opElite,opData));
     var opdps = opatk * (1/opatkTime);
-    $("#calcs-opDPS").html(parseInt(opdps));
+    $("#calcs-oprawDPS").html(parseInt(opdps));
 
     var enkilltime = "-";
+    var opdamageDealt = 0;
     if(opData.profession != "MEDIC"){
         var enHP = parseInt($("#enstats-maxHp").html());
         var enDef = parseInt($("#enstats-def").html());
         var enMRes = parseInt($("#enstats-magicResistance").html());
         var trait = getProcessedTexts('traits',opData,true)[0];
         if(trait.search("Spell") != -1){
-            var damageDealt = opatk * (1-enMRes/100);
-            enkilltime = enHP / (damageDealt * (1/opatkTime));
+            opdamageDealt = opatk * (1-enMRes/100);
+            enkilltime = enHP / (opdamageDealt * (1/opatkTime));
         } else {
             var minDamage = opatk * 5 / 100;
             if((opatk-enDef) < minDamage){
-                var damageDealt = minDamage;
+                opdamageDealt = minDamage;
             } else {
-                var damageDealt = opatk - enDef;
+                opdamageDealt = opatk - enDef;
             }
-            enkilltime = enHP / (damageDealt * (1/opatkTime));
+            enkilltime = enHP / (opdamageDealt * (1/opatkTime));
         }
     }
+    $("#calcs-opDPS").html((opdamageDealt * (1/opatkTime)).toFixed(2));
     if(enkilltime != "-"){
         $("#calcs-enkilltime").html(enkilltime.toFixed(2));
     } else {
-        $("#calcs-enkilltime").html("-");
+        $("#calcs-enkilltime").html("Infinity ");
     }
+    $("#calcs-opDPH").html(opdamageDealt);
 
     ///////////////// Enemy Calcs Section ////////////////
 
     var enatkTime = enemystats.attributes.baseAttackTime.m_value;
     var enatk = enemystats.attributes.atk.m_value;
     var endps = enatk * (1/enatkTime);
-    $("#calcs-enDPS").html(parseInt(endps));
+    $("#calcs-enrawDPS").html(parseInt(endps));
 
     var opkilltime = "-";
+    var endamageDealt = 0;
     if(enemydb.attackType != "None" || enemydb.attackType != "不攻击"){
         var opHP = parseInt($("#opstats-maxHp").html());
         var opDef = parseInt($("#opstats-def").html());
         var opMRes = parseInt($("#opstats-magicResistance").html());
         if(enemydb.attackType.search("Arts") != -1 ||enemydb.attackType.search("法术") != -1 ){
-            var damageDealt = enatk * (1-opMRes/100);
-            opkilltime = opHP / (damageDealt * (1/enatkTime));
+            endamageDealt = enatk * (1-opMRes/100);
+            opkilltime = opHP / (endamageDealt * (1/enatkTime));
         } else {
             var minDamage = enatk * 5 / 100;
             if((enatk-opDef) < minDamage){
-                var damageDealt = minDamage;
+                endamageDealt = minDamage;
             } else {
-                var damageDealt = enatk - opDef;
+                endamageDealt = enatk - opDef;
             }
-            opkilltime = opHP / (damageDealt * (1/enatkTime));
+            opkilltime = opHP / (endamageDealt * (1/enatkTime));
         }
     }
+    $("#calcs-enDPS").html((endamageDealt * (1/enatkTime)).toFixed(2));
     $("#calcs-opkilltime").html(opkilltime.toFixed(2));
+    $("#calcs-enDPH").html(endamageDealt);
+
+    var totalDamage = 0;
+    var totalHits;
+    for (var i = 1; totalDamage < opHP; i++) {
+        totalDamage += endamageDealt;
+        totalHits = i;
+    }
+    $("#calcs-opkillhits").html(totalHits);
 }
 
 function changeLevel(val){
