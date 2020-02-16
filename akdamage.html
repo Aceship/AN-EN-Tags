@@ -54,25 +54,90 @@
                                 Select Operator
                             </button>
                         </div>
-                        <div class='op-image'>
-                            <img src='img/avatars/char_179_cgbird_1.png'>
-                        </div>
-                        <div class="op-data" style="margin-left: 0px; padding-top: 19px;">
-                            <div class='level-slider' style="display: flex;">
-                                <div style="padding: unset;min-width: 40px;">
-                                    <span class='stat-level-header' style=''>Lv</span>
-                                </div>
-                                <div class="levelSlider" style="padding: unset; flex: 1;">
-                                    <input type='range' value='1' min='1' max='90' name='levelStats' id='levelSlider' oninput='changeLevel(this.value)' class='statlevelInput'></input>
-                                </div>
-                                <div class="levelDisplay" style="margin-right: 2px;">
-                                    <div class='form-group stat-input' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='levelDisplay' onchange='changeLevel(this.value)' style='line-height:1.1' type='number' value='1' min='1' max='90'></div>
+                        <div id="hideable1" style='display:none;'>
+                            <div class='op-image' style='display: inline-block;'>
+                                <img id='opimage' src=''>
+                            </div>
+                            <div class='op-desc'>
+                                <div id='opname' class='ak-font-novecento'></div>
+                                <ul class="nav nav-pills" id='eliteSelections'>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="pill" href="">Elite 0</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="">Elite 1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="">Elite 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="op-data" style="margin-left: 0px; padding-top: 10px;">
+                                <div class='level-slider' style="display: flex;">
+                                    <div style="padding: unset;min-width: 40px;">
+                                        <span class='stat-level-header' style=''>Lv</span>
+                                    </div>
+                                    <div class="levelSlider" style="padding: unset; flex: 1;">
+                                        <input type='range' value='1' min='1' max='90' name='levelStats' id='levelSlider' class='statlevelInput' oninput='changeLevel(this.value)'></input>
+                                    </div>
+                                    <div class="levelDisplay" style="margin-right: 2px;">
+                                        <div class='form-group stat-input' style='display:inline-block;vertical-align:middle; margin-bottom: 10px;'><input class='form-control' id='levelDisplay' style='line-height:1.1;' type='number' value='1' min='1' max='90' onchange='changeLevel(this.value)'></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class='bottom-panel' style='height: 500px;'>
-                        
+                        <div>
+                            <div class='ak-header'>
+                                Stats
+                            </div>
+                            <div style='display: flex; flex-wrap: wrap;'>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Maximum HP</div>
+                                    <div class='ak-stats-r' id='opstats-maxHp'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Redeploy Time</div>
+                                    <div class='ak-stats-r'><div id='opstats-respawnTime'>70</div> Sec</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Attack Power</div>
+                                    <div class='ak-stats-r' id='opstats-atk'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Cost</div>
+                                    <div class='ak-stats-r' id='opstats-cost'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Defense</div>
+                                    <div class='ak-stats-r' id='opstats-def'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Block</div>
+                                    <div class='ak-stats-r' id='opstats-blockCnt'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Magic Res</div>
+                                    <div class='ak-stats-r' id='opstats-magicResistance'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Attack Time</div>
+                                    <div class='ak-stats-r'><div id='opstats-baseAttackTime'>1.1</div> Sec</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class='ak-header'>
+                                Calculations
+                            </div>
+                            <div>
+                                <div class='ak-stats-l'>Damage per Second</div>
+                                <div class='ak-stats-r' id='calcs-opDPS'>999</div>
+                                <div class='ak-stats-l'>Can kill the Enemy in</div>
+                                <div class='ak-stats-r'><div id='calcs-enkilltime'>1.1</div> Seconds</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,19 +145,79 @@
                 <div id='enemycontainer' class='ak-container ak-shadow'>
                     <div class='ak-shadow top-panel'>
                         <div>
-                            <button type='button' data-toggle='modal' data-target='#opchoosemodal' class='mx-auto d-block btn btn-primary' id='selectoperatorbtn' style='height: 30px; line-height: 0.5; width: 80%; margin-top: 5px;'>
+                            <button type='button' data-toggle='modal' data-target='#enchoosemodal' class='mx-auto d-block btn btn-primary' id='selectenemybtn' onclick='populateEnemyList()' style='height: 30px; line-height: 0.5; width: 80%; margin-top: 5px;'>
                                 Select Enemy
                             </button>
                         </div>
-                        <div class='op-image'>
-                            <img src='img/enemy/enemy_1001_bigbo_2.png'>
+                        <div class='op-image' style="display: inline-block;">
+                            <img id='enimage' src=''>
+                        </div>
+                        <div class='op-desc'>
+                            <div id='enname' class='ak-font-novecento' style='font-size: 1.2em;'></div>
                         </div>
                         <div class="op-data" style="margin-left: 0px; padding-top: 19px;">
                             
                         </div>
                     </div>
                     <div class='bottom-panel' style='height: 500px;'>
-                        
+                        <div>
+                            <div class='ak-header'>
+                                Stats
+                            </div>
+                            <div style='display: flex; flex-wrap: wrap;'>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Maximum HP</div>
+                                    <div class='ak-stats-r' id='enstats-maxHp'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Attack Power</div>
+                                    <div class='ak-stats-r' id='enstats-atk'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Defense</div>
+                                    <div class='ak-stats-r' id='enstats-def'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Magic Res</div>
+                                    <div class='ak-stats-r' id='enstats-magicResistance'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Move Speed</div>
+                                    <div class='ak-stats-r' id='enstats-moveSpeed'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Attack Time</div>
+                                    <div class='ak-stats-r'><div id='enstats-baseAttackTime'>1.1</div> Sec</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>HP Recovery</div>
+                                    <div class='ak-stats-r'><div id='enstats-hpRecoveryPerSec'>1.1</div>/Sec</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Weight Level</div>
+                                    <div class='ak-stats-r' id='enstats-massLevel'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Stun Immune</div>
+                                    <div class='ak-stats-r' id='enstats-stunImmune'>999</div>
+                                </div>
+                                <div class='ak-stats'>
+                                    <div class='ak-stats-l'>Attack Range</div>
+                                    <div class='ak-stats-r'><div id='enstats-rangeRadius'>1.1</div> Tile(s)</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class='ak-header'>
+                                Calculations
+                            </div>
+                            <div>
+                                <div class='ak-stats-l'>Damage per Second</div>
+                                <div class='ak-stats-r' id='calcs-enDPS'>999</div>
+                                <div class='ak-stats-l'>Can kill the Operator in</div>
+                                <div class='ak-stats-r'><div id='calcs-opkilltime'>1.1</div> Seconds</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -101,7 +226,7 @@
             <div class='modal-dialog'>
                 <div class='modal-content' style='background-color: #444'>
                     <div class='modal-header' style='border-bottom: 1px solid #4f4f4f'>
-                        <h6 class='modal-title'>Select Operator</h6>
+                        <h6 class='modal-title' style='color:white; font-weight: bold;'>Select Operator</h6>
                         <button type='button' style='color:white;' class='close' data-dismiss='modal'>&times;</button>
                     </div>
                     <div class='modal-body'>
@@ -158,6 +283,19 @@
                                 </li> -->
                             </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- class='modal' -->
+
+        <div id='enchoosemodal' class='modal fade' role='dialog'>
+            <div class='modal-dialog' style='width: 100vw; max-width: 687px;'>
+                <div class='modal-content' style='background-color: #444'>
+                    <div class='modal-header' style='border-bottom: 1px solid #4f4f4f'>
+                        <h6 class='modal-title' style='color:white; font-weight: bold;'>Select Enemy</h6>
+                        <button type='button' style='color:white;' class='close' data-dismiss='modal'>&times;</button>
+                    </div>
+                    <div class='modal-body' id='enemyList'>
                     </div>
                 </div>
             </div>

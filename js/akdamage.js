@@ -14,7 +14,10 @@ const jsonList = {
     unreadableTL    :"./json/tl-unreadablename.json",
     potsTL          :"./json/tl-potential.json",
     talentsTL       :"./json/ace/tl-talents.json",
-    campdata        :"./json/tl-campdata.json"
+    campdata        :"./json/tl-campdata.json",
+    enemyData       :"./json/excel/enemy_handbook_table.json",
+    enemyStats      :"./json/levels/enemydata/enemy_database.json",
+    enemyTL         :"./json/gamedata/en/excel/enemy_handbook_table.json"
 };
 
 var db = {}
@@ -27,10 +30,7 @@ LoadAllJsonObjects(jsonList).then(function(result) {
 var opLevel = 1;
 var opElite = 0;
 var selectedOp;
-
-if(typeof localStorage.selectedOp === "undefined" || localStorage.selectedOp == ""){
-    localStorage.selectedOp = selectedOp;
-}
+var selectedEn;
 
 var applyTrust = false;
 if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts == ""){
@@ -57,10 +57,187 @@ $(document).ready(function(){
             selOpClass($(this).attr("data-opclass"));
         })
     });
-    
+
+    if(typeof localStorage.selectedOp === "undefined" || localStorage.selectedOp == ""){
+        localStorage.setItem("selectedOp", '');
+    } else {
+        selectedOp = localStorage.selectedOp;
+        $('#hideable1').show();
+    }
+
+    if(typeof localStorage.selectedEn === "undefined" || localStorage.selectedEn == ""){
+        localStorage.setItem("selectedEn", '');
+    } else {
+        selectedEn = localStorage.selectedEn;
+        $('#hideable1').show();
+    }
+
+    RefreshAlldata();
 });
 
+function RefreshAlldata() {
+    if(selectedOp != ""){
+        var opData = db.chars[selectedOp];
+        var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
+
+        $("#opimage").attr("src","img/avatars/"+selectedOp+"_1.png");
+        $("#opname").html(opDataTL.name_en);
+
+        $('#eliteSelections').html("");
+        for (var i = 0; i < opData.phases.length; i++) {
+            if(i == opElite){ var active = 'active';} else { var active = '';}
+            $('#eliteSelections').append(`
+                <li class="nav-item">
+                    <a class="nav-link ${active}" onclick="selectElite('${i}')">Elite ${i}</a>
+                </li>
+                `);
+        }
+
+        var maxLevel = opData.phases[opElite].attributesKeyFrames[1].level;
+        $("#levelSlider").attr('max',maxLevel);
+        if(opLevel > maxLevel){
+            $("#levelSlider").val(maxLevel);
+            $("#levelDisplay").val(maxLevel);
+        }
+    }
+    if(selectedEn != "" && selectedEn != undefined){
+        ///////////// Enemy Section ////////////
+
+        var enemydb;
+        if(selectedEn in db.enemyTL){
+            enemydb = db.enemyTL[selectedEn];
+        } else {
+            enemydb = db.enemyData[selectedEn];
+        }
+        //console.log(selectedEn);
+        var enemystats = query(db.enemyStats.enemies,'Key',selectedEn,true,false).Value[0].enemyData;
+        //console.log(enemystats);
+        //console.log(enemydb);
+
+        $("#enimage").attr("src","img/enemy/"+selectedEn+".png");
+        $("#enname").html(enemydb.name);
+
+
+        
+    }
+    RefreshStats();
+}
+
+function RefreshStats(){
+    var opData = db.chars[selectedOp];
+    var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
+    $("#opstats-maxHp").html(statsInterpolation('maxHp',opLevel,opElite,opData));
+    $("#opstats-atk").html(statsInterpolation('atk',opLevel,opElite,opData));
+    $("#opstats-def").html(statsInterpolation('def',opLevel,opElite,opData));
+    $("#opstats-magicResistance").html(statsInterpolation('magicResistance',opLevel,opElite,opData));
+    $("#opstats-respawnTime").html(statsInterpolation('respawnTime',opLevel,opElite,opData));
+    $("#opstats-cost").html(statsInterpolation('cost',opLevel,opElite,opData));
+    $("#opstats-blockCnt").html(statsInterpolation('blockCnt',opLevel,opElite,opData));
+    $("#opstats-baseAttackTime").html(statsInterpolation('baseAttackTime',opLevel,opElite,opData));
+
+    ///////////// Enemy Section ////////////
+    var enemydb;
+    if(selectedEn in db.enemyTL){
+        enemydb = db.enemyTL[selectedEn];
+    } else {
+        enemydb = db.enemyData[selectedEn];
+    }
+    var enemystats = query(db.enemyStats.enemies,'Key',selectedEn,true,false).Value[0].enemyData;
+    $("#enstats-maxHp").html(enemystats.attributes.maxHp.m_value);
+    $("#enstats-atk").html(enemystats.attributes.atk.m_value);
+    $("#enstats-def").html(enemystats.attributes.def.m_value);
+    $("#enstats-magicResistance").html(enemystats.attributes.magicResistance.m_value);
+    $("#enstats-moveSpeed").html(enemystats.attributes.moveSpeed.m_value);
+    $("#enstats-baseAttackTime").html(enemystats.attributes.baseAttackTime.m_value);
+    $("#enstats-hpRecoveryPerSec").html(enemystats.attributes.hpRecoveryPerSec.m_value);
+    $("#enstats-massLevel").html(enemystats.attributes.massLevel.m_value);
+    if(enemystats.attributes.stunImmune.m_value){
+        var stunimmune = 'True';
+    } else {
+        var stunimmune = 'False';
+    }
+    $("#enstats-stunImmune").html(stunimmune);
+    $("#enstats-rangeRadius").html(enemystats.rangeRadius.m_value);
+
+    ////////////// Operator Calcs Section //////////////
+
+    var opatkTime = statsInterpolation('baseAttackTime',opLevel,opElite,opData);
+    var opatk = parseInt(statsInterpolation('atk',opLevel,opElite,opData));
+    var opdps = opatk * (1/opatkTime);
+    $("#calcs-opDPS").html(parseInt(opdps));
+
+    var enkilltime = "-";
+    if(opData.profession != "MEDIC"){
+        var enHP = parseInt($("#enstats-maxHp").html());
+        var enDef = parseInt($("#enstats-def").html());
+        var enMRes = parseInt($("#enstats-magicResistance").html());
+        var trait = getProcessedTexts('traits',opData,true)[0];
+        if(trait.search("Spell") != -1){
+            var damageDealt = opatk * (1-enMRes/100);
+            enkilltime = enHP / (damageDealt * (1/opatkTime));
+        } else {
+            var minDamage = opatk * 5 / 100;
+            if((opatk-enDef) < minDamage){
+                var damageDealt = minDamage;
+            } else {
+                var damageDealt = opatk - enDef;
+            }
+            enkilltime = enHP / (damageDealt * (1/opatkTime));
+        }
+    }
+    if(enkilltime != "-"){
+        $("#calcs-enkilltime").html(enkilltime.toFixed(2));
+    } else {
+        $("#calcs-enkilltime").html("-");
+    }
+
+    ///////////////// Enemy Calcs Section ////////////////
+
+    var enatkTime = enemystats.attributes.baseAttackTime.m_value;
+    var enatk = enemystats.attributes.atk.m_value;
+    var endps = enatk * (1/enatkTime);
+    $("#calcs-enDPS").html(parseInt(endps));
+
+    var opkilltime = "-";
+    if(enemydb.attackType != "None" || enemydb.attackType != "不攻击"){
+        var opHP = parseInt($("#opstats-maxHp").html());
+        var opDef = parseInt($("#opstats-def").html());
+        var opMRes = parseInt($("#opstats-magicResistance").html());
+        if(enemydb.attackType.search("Arts") != -1 ||enemydb.attackType.search("法术") != -1 ){
+            var damageDealt = enatk * (1-opMRes/100);
+            opkilltime = opHP / (damageDealt * (1/enatkTime));
+        } else {
+            var minDamage = enatk * 5 / 100;
+            if((enatk-opDef) < minDamage){
+                var damageDealt = minDamage;
+            } else {
+                var damageDealt = enatk - opDef;
+            }
+            opkilltime = opHP / (damageDealt * (1/enatkTime));
+        }
+    }
+    $("#calcs-opkilltime").html(opkilltime.toFixed(2));
+}
+
+function changeLevel(val){
+    $("#levelSlider").val(val);
+    $("#levelDisplay").val(val);
+    opLevel = val;
+    RefreshStats();
+}
+
+function selectElite(val){
+    opElite = val;
+    RefreshAlldata();
+}
+
 function selectOp(opID){
+    localStorage.setItem("selectedOp", opID);
+    selectedOp = localStorage.selectedOp;
+    console.log(selectedOp);
+    RefreshAlldata();
+    opElite = 0;
+    $("#opchoosemodal").modal('hide');
 }
 
 function selOpClass(cname){
@@ -137,6 +314,147 @@ function selOpClass(cname){
         $("#selectedopclass").append(html);
     }
     
+}
+
+function selectEnemy(id){
+    localStorage.setItem("selectedEn", id);
+    selectedEn = localStorage.selectedEn;
+    console.log(selectedEn);
+    RefreshAlldata();
+    $("#enchoosemodal").modal('hide');
+}
+
+function populateEnemyList(){
+    console.log(db.enemyData);
+    $("#enemyList").html("");
+    var html = "";
+    $.each(db.enemyData,function(key,v){
+        html +=
+            `<li class='selectop-grid ak-shadow' onclick='selectEnemy("${key}")'>
+            <img src='img/enemy/${key}.png'>
+            <div class='name ak-font-novecento ak-center'>${getEnemyName(key)}</div>
+            </li>
+            `
+    });
+    $("#enemyList").html(html);
+}
+
+function getEnemyName(id){
+    var enemydb;
+    if(id in db.enemyTL){
+        enemydb = db.enemyTL;
+    } else {
+        enemydb = db.enemyData;
+    }
+
+    return enemydb[id].name;
+}
+
+function getProcessedTexts(type,opdataFull,getTraitText){
+
+    if(type == 'traits'){
+        var description = opdataFull.description
+        //gonna need to split on "," and "\n" and repeat it
+        let descriptions = description.split(/[，(\\n)]/)
+        let splitdesc = []
+        // console.log("=====================")
+        // console.log(descriptions)
+        descriptions.forEach(element => {
+            if(element){
+                let muhRegex = /<@ba\.kw>(.*?)<\/>/g
+                let currSpeciality = muhRegex.exec(element)
+                // console.log(currSpeciality)
+                let filterDesc
+                if(currSpeciality){
+                    splitdesc.push([element.replace(currSpeciality[0],""),currSpeciality[1]])
+                }else{
+                    splitdesc.push([element])
+                }
+            }
+        });
+        // console.log(splitdesc)
+        // console.log("===========================")
+
+        let splitdescTL = []
+        let color = ""
+        let trait = opdataFull.trait
+        // console.log(trait)
+        let isReplaced = false
+        splitdesc.forEach(element => {
+            if(element.length>1){
+                let typetl = db.atkType.find(search=>search.type_cn==element.join(""))
+                // if(!typetl) typetl = db.attacktype.find(search=>search.type_cn==element[1])
+                if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
+
+                // console.log(element)
+                let muhRegex = /(.*){(.*?)}(.*)/g
+                let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
+                if(currTLconv){
+                    console.log(currTLconv)
+                    var textreplace = 'Value'
+                    if(trait && trait.candidates.length>1){
+                        textreplace =  `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>`
+                    }else if (trait && trait.candidates.length==1) {
+                        textreplace = trait.candidates[0].blackboard[0].value
+                        if(currTLconv[2].includes("%")){
+                            textreplace= textreplace*100 +("%")
+                        }
+                        isReplaced = true
+                    }
+                }
+                let currTLconvfinal = currTLconv?currTLconv[1] + textreplace + currTLconv[3]:typetl?typetl.type_en:element.join("")
+                splitdescTL.push(currTLconvfinal)
+            }else{
+                var typetl = db.atkType.find(search=>{
+                    if(search.type_detail=="common")
+                    return search.type_cn==element[0]
+                })
+                if(!typetl){
+                    typetl = db.atkType.find(search=>search.type_cn==element.join(""))
+                }
+                // console.log(element.join(""))
+
+                // console.log(typetl)
+                
+                if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
+                splitdescTL.push(typetl?typetl.type_en:element[0])
+            }
+        });
+        if(trait&&!(isReplaced)){
+            trait.candidates.forEach(element => {
+                var imagereq = []
+                    if(element.unlockCondition.level >0)
+                    imagereq.push(`Lv.${element.unlockCondition.level}`)
+                    if(element.unlockCondition.phase >0)
+                    imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
+    
+                // console.log(s)
+                var each = []
+                element.blackboard.forEach(eachbb => {
+                    each.push(`${eachbb.key} : ${eachbb.value}`)
+                });
+                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px">${ each.join(" ")}</div>
+                <div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+                splitdescTL.push(info)
+            });
+        }
+        // console.log(color)
+        if(getTraitText){
+            return splitdescTL;
+        } else {
+            return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`);
+        }
+    }
+
+    function titledMaker (content,title,extraClass="",extraId="",extraStyle=""){
+        let titledbutton = `
+        <div style="padding-top:5px;display:inline-block">
+        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
+        ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
+        </div>`
+
+        return titledbutton
+    }
 }
 
 function statsInterpolation(key,level,elite_no,opdata,isround=true){

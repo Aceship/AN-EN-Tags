@@ -478,6 +478,7 @@ function selOpClass(cname){
 }
 
 function getProcessedTexts(type,opdataFull){
+    console.log(opdataFull)
     if(type == 'traits'){
         var description = opdataFull.description
         //gonna need to split on "," and "\n" and repeat it
@@ -564,7 +565,7 @@ function getProcessedTexts(type,opdataFull){
                 splitdescTL.push(info)
             });
         }
-        // console.log(splitdescTL)
+        console.log(splitdescTL)
         // console.log(color)
 
         return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`);
