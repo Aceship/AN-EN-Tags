@@ -194,6 +194,13 @@ function RefreshStats(){
     }
     $("#calcs-opDPH").html(opdamageDealt);
 
+    var totalDamage = 0;
+    var totalHits;
+    for (var i = 1; totalDamage < enHP; i++) {
+        totalDamage += opdamageDealt;
+        totalHits = i;
+    }
+    $("#calcs-enkillhits").html(totalHits);
     ///////////////// Enemy Calcs Section ////////////////
 
     var enatkTime = enemystats.attributes.baseAttackTime.m_value;
