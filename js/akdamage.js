@@ -76,7 +76,8 @@ $(document).ready(function(){
 });
 
 function RefreshAlldata() {
-    if(selectedOp != ""){
+    console.log(selectedOp);
+    if(selectedOp != "" && selectedOp != undefined){
         var opData = db.chars[selectedOp];
         var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
 
@@ -115,129 +116,134 @@ function RefreshAlldata() {
         //console.log(enemydb);
 
         $("#enimage").attr("src","img/enemy/"+selectedEn+".png");
-        $("#enname").html(enemydb.name);
-
-
-        
+        $("#enname").html(enemydb.name);  
     }
     RefreshStats();
 }
 
 function RefreshStats(){
-    var opData = db.chars[selectedOp];
-    var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
-    $("#opstats-maxHp").html(statsInterpolation('maxHp',opLevel,opElite,opData));
-    $("#opstats-atk").html(statsInterpolation('atk',opLevel,opElite,opData));
-    $("#opstats-def").html(statsInterpolation('def',opLevel,opElite,opData));
-    $("#opstats-magicResistance").html(statsInterpolation('magicResistance',opLevel,opElite,opData));
-    $("#opstats-respawnTime").html(statsInterpolation('respawnTime',opLevel,opElite,opData));
-    $("#opstats-cost").html(statsInterpolation('cost',opLevel,opElite,opData));
-    $("#opstats-blockCnt").html(statsInterpolation('blockCnt',opLevel,opElite,opData));
-    $("#opstats-baseAttackTime").html(statsInterpolation('baseAttackTime',opLevel,opElite,opData));
+    if(selectedOp != "" && selectedOp != undefined){
+        var opData = db.chars[selectedOp];
+        var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
+        $("#opstats-maxHp").html(statsInterpolation('maxHp',opLevel,opElite,opData));
+        $("#opstats-atk").html(statsInterpolation('atk',opLevel,opElite,opData));
+        $("#opstats-def").html(statsInterpolation('def',opLevel,opElite,opData));
+        $("#opstats-magicResistance").html(statsInterpolation('magicResistance',opLevel,opElite,opData));
+        $("#opstats-respawnTime").html(statsInterpolation('respawnTime',opLevel,opElite,opData));
+        $("#opstats-cost").html(statsInterpolation('cost',opLevel,opElite,opData));
+        $("#opstats-blockCnt").html(statsInterpolation('blockCnt',opLevel,opElite,opData));
+        $("#opstats-baseAttackTime").html(statsInterpolation('baseAttackTime',opLevel,opElite,opData));
+    }
 
     ///////////// Enemy Section ////////////
-    var enemydb;
-    if(selectedEn in db.enemyTL){
-        enemydb = db.enemyTL[selectedEn];
-    } else {
-        enemydb = db.enemyData[selectedEn];
-    }
-    var enemystats = query(db.enemyStats.enemies,'Key',selectedEn,true,false).Value[0].enemyData;
-    $("#enstats-maxHp").html(enemystats.attributes.maxHp.m_value);
-    $("#enstats-atk").html(enemystats.attributes.atk.m_value);
-    $("#enstats-def").html(enemystats.attributes.def.m_value);
-    $("#enstats-magicResistance").html(enemystats.attributes.magicResistance.m_value);
-    $("#enstats-moveSpeed").html(enemystats.attributes.moveSpeed.m_value);
-    $("#enstats-baseAttackTime").html(enemystats.attributes.baseAttackTime.m_value);
-    $("#enstats-hpRecoveryPerSec").html(enemystats.attributes.hpRecoveryPerSec.m_value);
-    $("#enstats-massLevel").html(enemystats.attributes.massLevel.m_value);
-    if(enemystats.attributes.stunImmune.m_value){
-        var stunimmune = 'True';
-    } else {
-        var stunimmune = 'False';
-    }
-    $("#enstats-stunImmune").html(stunimmune);
-    $("#enstats-rangeRadius").html(enemystats.rangeRadius.m_value);
 
-    ////////////// Operator Calcs Section //////////////
-
-    var opatkTime = statsInterpolation('baseAttackTime',opLevel,opElite,opData);
-    var opatk = parseInt(statsInterpolation('atk',opLevel,opElite,opData));
-    var opdps = opatk * (1/opatkTime);
-    $("#calcs-oprawDPS").html(parseInt(opdps));
-
-    var enkilltime = "-";
-    var opdamageDealt = 0;
-    if(opData.profession != "MEDIC"){
-        var enHP = parseInt($("#enstats-maxHp").html());
-        var enDef = parseInt($("#enstats-def").html());
-        var enMRes = parseInt($("#enstats-magicResistance").html());
-        var trait = getProcessedTexts('traits',opData,true)[0];
-        if(trait.search("Spell") != -1){
-            opdamageDealt = opatk * (1-enMRes/100);
-            enkilltime = enHP / (opdamageDealt * (1/opatkTime));
+    if(selectedEn != "" && selectedEn != undefined){
+        var enemydb;
+        if(selectedEn in db.enemyTL){
+            enemydb = db.enemyTL[selectedEn];
         } else {
-            var minDamage = opatk * 5 / 100;
-            if((opatk-enDef) < minDamage){
-                opdamageDealt = minDamage;
-            } else {
-                opdamageDealt = opatk - enDef;
-            }
-            enkilltime = enHP / (opdamageDealt * (1/opatkTime));
+            enemydb = db.enemyData[selectedEn];
         }
-    }
-    $("#calcs-opDPS").html((opdamageDealt * (1/opatkTime)).toFixed(2));
-    if(enkilltime != "-"){
-        $("#calcs-enkilltime").html(enkilltime.toFixed(2));
-    } else {
-        $("#calcs-enkilltime").html("Infinity ");
-    }
-    $("#calcs-opDPH").html(opdamageDealt);
-
-    var totalDamage = 0;
-    var totalHits;
-    for (var i = 1; totalDamage < enHP; i++) {
-        totalDamage += opdamageDealt;
-        totalHits = i;
-    }
-    $("#calcs-enkillhits").html(totalHits);
-    ///////////////// Enemy Calcs Section ////////////////
-
-    var enatkTime = enemystats.attributes.baseAttackTime.m_value;
-    var enatk = enemystats.attributes.atk.m_value;
-    var endps = enatk * (1/enatkTime);
-    $("#calcs-enrawDPS").html(parseInt(endps));
-
-    var opkilltime = "-";
-    var endamageDealt = 0;
-    if(enemydb.attackType != "None" || enemydb.attackType != "不攻击"){
-        var opHP = parseInt($("#opstats-maxHp").html());
-        var opDef = parseInt($("#opstats-def").html());
-        var opMRes = parseInt($("#opstats-magicResistance").html());
-        if(enemydb.attackType.search("Arts") != -1 ||enemydb.attackType.search("法术") != -1 ){
-            endamageDealt = enatk * (1-opMRes/100);
-            opkilltime = opHP / (endamageDealt * (1/enatkTime));
+        var enemystats = query(db.enemyStats.enemies,'Key',selectedEn,true,false).Value[0].enemyData;
+        $("#enstats-maxHp").html(enemystats.attributes.maxHp.m_value);
+        $("#enstats-atk").html(enemystats.attributes.atk.m_value);
+        $("#enstats-def").html(enemystats.attributes.def.m_value);
+        $("#enstats-magicResistance").html(enemystats.attributes.magicResistance.m_value);
+        $("#enstats-moveSpeed").html(enemystats.attributes.moveSpeed.m_value);
+        $("#enstats-baseAttackTime").html(enemystats.attributes.baseAttackTime.m_value);
+        $("#enstats-hpRecoveryPerSec").html(enemystats.attributes.hpRecoveryPerSec.m_value);
+        $("#enstats-massLevel").html(enemystats.attributes.massLevel.m_value);
+        if(enemystats.attributes.stunImmune.m_value){
+            var stunimmune = 'True';
         } else {
-            var minDamage = enatk * 5 / 100;
-            if((enatk-opDef) < minDamage){
-                endamageDealt = minDamage;
-            } else {
-                endamageDealt = enatk - opDef;
-            }
-            opkilltime = opHP / (endamageDealt * (1/enatkTime));
+            var stunimmune = 'False';
         }
+        $("#enstats-stunImmune").html(stunimmune);
+        $("#enstats-rangeRadius").html(enemystats.rangeRadius.m_value);
     }
-    $("#calcs-enDPS").html((endamageDealt * (1/enatkTime)).toFixed(2));
-    $("#calcs-opkilltime").html(opkilltime.toFixed(2));
-    $("#calcs-enDPH").html(endamageDealt);
 
-    var totalDamage = 0;
-    var totalHits;
-    for (var i = 1; totalDamage < opHP; i++) {
-        totalDamage += endamageDealt;
-        totalHits = i;
+    if(selectedEn != "" && selectedEn != undefined && selectedOp != "" && selectedOp != undefined){
+
+        ////////////// Operator Calcs Section //////////////
+
+        var opatkTime = statsInterpolation('baseAttackTime',opLevel,opElite,opData);
+        var opatk = parseInt(statsInterpolation('atk',opLevel,opElite,opData));
+        var opdps = opatk * (1/opatkTime);
+        $("#calcs-oprawDPS").html(parseInt(opdps));
+
+        var enkilltime = "-";
+        var opdamageDealt = 0;
+        if(opData.profession != "MEDIC"){
+            var enHP = parseInt($("#enstats-maxHp").html());
+            var enDef = parseInt($("#enstats-def").html());
+            var enMRes = parseInt($("#enstats-magicResistance").html());
+            var trait = getProcessedTexts('traits',opData,true)[0];
+            if(trait.search("Spell") != -1){
+                opdamageDealt = opatk * (1-enMRes/100);
+                enkilltime = enHP / (opdamageDealt * (1/opatkTime));
+            } else {
+                var minDamage = opatk * 5 / 100;
+                if((opatk-enDef) < minDamage){
+                    opdamageDealt = minDamage;
+                } else {
+                    opdamageDealt = opatk - enDef;
+                }
+                enkilltime = enHP / (opdamageDealt * (1/opatkTime));
+            }
+        }
+        $("#calcs-opDPS").html((opdamageDealt * (1/opatkTime)).toFixed(2));
+        if(enkilltime != "-"){
+            $("#calcs-enkilltime").html(enkilltime.toFixed(2));
+        } else {
+            $("#calcs-enkilltime").html("Infinity ");
+        }
+        $("#calcs-opDPH").html(opdamageDealt);
+
+        var totalDamage = 0;
+        var totalHits;
+        for (var i = 1; totalDamage < enHP; i++) {
+            totalDamage += opdamageDealt;
+            totalHits = i;
+        }
+        $("#calcs-enkillhits").html(totalHits);
+        ///////////////// Enemy Calcs Section ////////////////
+
+        var enatkTime = enemystats.attributes.baseAttackTime.m_value;
+        var enatk = enemystats.attributes.atk.m_value;
+        var endps = enatk * (1/enatkTime);
+        $("#calcs-enrawDPS").html(parseInt(endps));
+
+        var opkilltime = "-";
+        var endamageDealt = 0;
+        if(enemydb.attackType != "None" || enemydb.attackType != "不攻击"){
+            var opHP = parseInt($("#opstats-maxHp").html());
+            var opDef = parseInt($("#opstats-def").html());
+            var opMRes = parseInt($("#opstats-magicResistance").html());
+            if(enemydb.attackType.search("Arts") != -1 ||enemydb.attackType.search("法术") != -1 ){
+                endamageDealt = enatk * (1-opMRes/100);
+                opkilltime = opHP / (endamageDealt * (1/enatkTime));
+            } else {
+                var minDamage = enatk * 5 / 100;
+                if((enatk-opDef) < minDamage){
+                    endamageDealt = minDamage;
+                } else {
+                    endamageDealt = enatk - opDef;
+                }
+                opkilltime = opHP / (endamageDealt * (1/enatkTime));
+            }
+        }
+        $("#calcs-enDPS").html((endamageDealt * (1/enatkTime)).toFixed(2));
+        $("#calcs-opkilltime").html(opkilltime.toFixed(2));
+        $("#calcs-enDPH").html(endamageDealt);
+
+        var totalDamage = 0;
+        var totalHits;
+        for (var i = 1; totalDamage < opHP; i++) {
+            totalDamage += endamageDealt;
+            totalHits = i;
+        }
+        $("#calcs-opkillhits").html(totalHits);
     }
-    $("#calcs-opkillhits").html(totalHits);
 }
 
 function changeLevel(val){
@@ -319,7 +325,7 @@ function selOpClass(cname){
                             `<li class='selectop-grid ak-shadow' onclick='selectOp("${key}")'>
                             <img src='img/avatars/${key}_1.png'>
                             <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
-                            <div class='ak-rare-${val.rarity+1}'></div>
+                            <div class='ak-rare-${val.rarity+1}' style='height: 2px;'></div>
                             ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}
                             ${showtype?`<div class='ak-showfaction'><img src='img/factions/${val.displayLogo.toLowerCase()}.png' title='${db.campdata[val.displayLogo]}' ></div>`:""}
                             <div class='grid-box op-rarity-${val.rarity+1}'> 
