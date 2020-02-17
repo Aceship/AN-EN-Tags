@@ -6,20 +6,32 @@
     <script src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'></script>
 </head>
 
-<body style="background-color: black;">
+<body style="background-color: rgb(80, 80, 80);">
     <center>
         <div id="spine-text" style="color: white;"></div>
         <div id="spine-widget" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
         
     </center>
     <script>
-        
-        var charName = 'char_235_jesica';
-        var chibitype = 'front'
-        var chibiName = 'char_235_jesica_wild_2'
-        var folder = `./spineassets/${charName}/${chibitype}/`
+        var vars = getUrlVars()
+
+        var chibitype = 'character'
+        var charName = 'char_180_amgoat';
+        var chibipers = 'front'
+        var chibiName = 'char_180_amgoat'
+        var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
+
+        console.log(vars)
+        if(vars.has("folder")){
+            folder = vars.get("folder")
+        }
+        if(vars.has("name")){
+            chibiName = vars.get("name")
+        }
         var defaultAnimationName = "Default";
         console.log(defaultAnimationName);
+        console.log(folder)
+        console.log(chibiName)
         $(document).ready(function(){
             
             if (chibiName != null && defaultAnimationName != null) {
@@ -66,6 +78,10 @@
                 xhr.send()
             }
         })
+
+        function getUrlVars() {
+        return new URL(window.location.href).searchParams;
+    }
     </script>
 </body>
 
