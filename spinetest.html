@@ -9,8 +9,12 @@
 <body style="background-color: rgb(80, 80, 80);">
     <center>
         <div id="spine-text" style="color: white;"></div>
-        <div id="spine-widget" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
-        
+
+        <div id="spine-frame">
+            <div id="spine-widget" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
+            <div id="spine-bg" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
+            <div id="spine-toolbar" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
+        </div>
     </center>
     <script>
         var vars = getUrlVars()
@@ -68,18 +72,49 @@
                                 $("#spine-text").text(widget.skeleton.data.animations[0].name)
                                 var animations = widget.skeleton.data.animations;
                                 console.log(animations)
-                                setTimeout(function() {
-                                if(animations.find(search=>search.name=="Start")){
-                                    var starting = animations.map(function(e) { return e.name; }).indexOf('Start')
-                                    var idle = animations.map(function(e) { return e.name; }).indexOf('Idle')
-                                    widget.setAnimation(animations[starting].name)
-                                    $("#spine-widget").fadeIn(200)
-                                    setTimeout(function() { widget.setAnimation(animations[idle].name) }, animations[starting].duration*1000-20);
-                                }},1000);
-                                
-                                
-                                
+                                console.log(widget)
+                                $("#spine-widget").fadeIn(200)
+                                // setTimeout(function() {
+                                // if(animations.find(search=>search.name=="Start")){
+                                //     var starting = animations.map(function(e) { return e.name; }).indexOf('Start')
+                                //     var idle = animations.map(function(e) { return e.name; }).indexOf('Idle')
+                                //     widget.setAnimation(animations[starting].name)
+                                //     $("#spine-widget").fadeIn(200)
+                                //     setTimeout(function() { widget.setAnimation(animations[idle].name) }, animations[starting].duration*1000-20);
+                                // }},1000);
+                                // widget.stage.clearTracks()
+                                widget.state.setAnimation(0,"Start")
+                                widget.state.addAnimation(1,"Idle",true,animations[GetAnimationIndex(animations,'Start')].duration)
+
+                                //attack 5 times loop and then do nothing
+
+                                // var delay = 0
+                                // widget.state.setAnimation(0,"Attack_Begin")
+                                // delay +=animations[GetAnimationIndex(animations,'Attack_Begin')].duration
+                                // widget.state.addAnimation(1,"Attack_Loop",true,delay)
+                                // delay += animations[GetAnimationIndex(animations,'Attack_Loop')].duration*5
+                                // widget.state.addAnimation(2,"Attack_End",true,delay)
+                                // delay += animations[GetAnimationIndex(animations,'Attack_End')].duration
+                                // widget.state.addAnimation(3,"Idle",true,delay)
+                                // widget.setAnimation("Skill_2_Begin")
+
+                                //
+                                // var delay = 0
+                                // widget.state.clearTracks()
+                                //widget.setAnimation("Idle")
+                                // widget.state.setAnimation(0,"Skill_2_Begin")
+                                // delay +=animations[GetAnimationIndex(animations,'Skill_2_Begin')].duration
+                                // widget.state.addAnimation(1,"Skill_2_Loop",true,delay)
+                                // delay += animations[GetAnimationIndex(animations,'Skill_2_Loop')].duration*5
+                                // widget.state.addAnimation(2,"Skill_2_End",true,delay)
+                                // delay += animations[GetAnimationIndex(animations,'Skill_2_End')].duration
+                                // widget.state.addAnimation(3,"Idle",true,delay)
+
+                                // widget.state.trackEntry(3,"Idle",true,"Attack_Begin")
+                                console.log(widget.state)
+                                console.log(widget.state.trackEntry)
                                 widget.canvas.onclick = function () {
+                                    widget.state.clearTracks()
                                     animIndex++;
                                     
                                     // console.log(animations)
@@ -95,9 +130,12 @@
             }
         })
 
+        function GetAnimationIndex(anim,name){
+            return anim.map(function(e) { return e.name; }).indexOf(name)
+        }
         function getUrlVars() {
-        return new URL(window.location.href).searchParams;
-    }
+            return new URL(window.location.href).searchParams;
+        }
     </script>
 </body>
 
