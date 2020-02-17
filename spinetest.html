@@ -39,6 +39,7 @@
                 xhr.open('GET', folder + chibiName + ".skel", true);
                 xhr.responseType = 'arraybuffer';
                 var array;
+                $("#spine-widget").hide()
                 xhr.onloadend = function (e) {
                     if (xhr.status != 404) {
                         buffer = xhr.response;
@@ -57,16 +58,31 @@
                             // imagesPath: chibiName + ".png", 
                             premultipliedAlpha: true,
                             fitToCanvas : true,
+                            loop:true,
                             // x:220,
                             // y:100,
+                            
                             scale:0.6,
                             success: function (widget) {
                                 var animIndex = 0;
                                 $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                                var animations = widget.skeleton.data.animations;
+                                console.log(animations)
+                                setTimeout(function() {
+                                if(animations.find(search=>search.name=="Start")){
+                                    var starting = animations.map(function(e) { return e.name; }).indexOf('Start')
+                                    var idle = animations.map(function(e) { return e.name; }).indexOf('Idle')
+                                    widget.setAnimation(animations[starting].name)
+                                    $("#spine-widget").fadeIn(200)
+                                    setTimeout(function() { widget.setAnimation(animations[idle].name) }, animations[starting].duration*1000-20);
+                                }},1000);
+                                
+                                
+                                
                                 widget.canvas.onclick = function () {
                                     animIndex++;
-                                    var animations = widget.skeleton.data.animations;
-                                    console.log(animations)
+                                    
+                                    // console.log(animations)
                                     if (animIndex >= animations.length) animIndex = 0;
                                     widget.setAnimation(animations[animIndex].name)
                                     $("#spine-text").text(animations[animIndex].name)
