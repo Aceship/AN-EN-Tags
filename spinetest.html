@@ -3,56 +3,69 @@
 <head>
     <script src="js/spine-widget.js"></script>
     <script src="js/spine-skeleton-binary.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'></script>
 </head>
 
-<body>
+<body style="background-color: black;">
     <center>
+        <div id="spine-text" style="color: white;"></div>
         <div id="spine-widget" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
+        
     </center>
     <script>
-        var charName = 'char_101_sora';
+        
+        var charName = 'char_235_jesica';
+        var chibitype = 'front'
+        var chibiName = 'char_235_jesica_wild_2'
+        var folder = `./spineassets/${charName}/${chibitype}/`
         var defaultAnimationName = "Default";
         console.log(defaultAnimationName);
-        if (charName != null && defaultAnimationName != null) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', "./spineassets/" + charName + ".skel", true);
-            xhr.responseType = 'arraybuffer';
-            var array;
-            xhr.onloadend = function (e) {
-                if (xhr.status != 404) {
-                    buffer = xhr.response;
-                    array = new Uint8Array(buffer);
-                    // console.log(array);
-                    skelBin = new SkeletonBinary();
-                    skelBin.data = array;
-                    skelBin.initJson();
-                    // console.log(JSON.stringify(skelBin.json, null, "\t"));
-                    new spine.SpineWidget("spine-widget", {
-                        jsonContent: JSON.stringify(skelBin.json),
-                        atlas: "spineassets/" + charName + ".atlas",
-                        animation: defaultAnimationName,
-                        backgroundColor: "#00000000",
-                        // debug: true,
-                        premultipliedAlpha: true,
-                        fitToCanvas : true,
-                        // x:220,
-                        // y:100,
-                        scale:0.6,
-                        success: function (widget) {
-                            var animIndex = 0;
-                            widget.canvas.onclick = function () {
-                                animIndex++;
-                                var animations = widget.skeleton.data.animations;
-                                console.log(animations)
-                                if (animIndex >= animations.length) animIndex = 0;
-                                widget.setAnimation(animations[animIndex].name)
+        $(document).ready(function(){
+            
+            if (chibiName != null && defaultAnimationName != null) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', folder + chibiName + ".skel", true);
+                xhr.responseType = 'arraybuffer';
+                var array;
+                xhr.onloadend = function (e) {
+                    if (xhr.status != 404) {
+                        buffer = xhr.response;
+                        array = new Uint8Array(buffer);
+                        // console.log(array);
+                        skelBin = new SkeletonBinary();
+                        skelBin.data = array;
+                        skelBin.initJson();
+                        // console.log(JSON.stringify(skelBin.json, null, "\t"));
+                        new spine.SpineWidget("spine-widget", {
+                            jsonContent: JSON.stringify(skelBin.json),
+                            atlas: folder + chibiName + ".atlas",
+                            animation: defaultAnimationName,
+                            backgroundColor: "#00000000",
+                            // debug: true,
+                            // imagesPath: chibiName + ".png", 
+                            premultipliedAlpha: true,
+                            fitToCanvas : true,
+                            // x:220,
+                            // y:100,
+                            scale:0.6,
+                            success: function (widget) {
+                                var animIndex = 0;
+                                $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                                widget.canvas.onclick = function () {
+                                    animIndex++;
+                                    var animations = widget.skeleton.data.animations;
+                                    console.log(animations)
+                                    if (animIndex >= animations.length) animIndex = 0;
+                                    widget.setAnimation(animations[animIndex].name)
+                                    $("#spine-text").text(animations[animIndex].name)
+                                }
                             }
-                        }
-                    })
-                }
-            };
-            xhr.send()
-        }
+                        })
+                    }
+                };
+                xhr.send()
+            }
+        })
     </script>
 </body>
 
