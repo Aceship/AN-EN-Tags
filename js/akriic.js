@@ -308,8 +308,8 @@
                                     case "喀兰贸易": clue = 6;break;
                                     case "罗德岛制药": clue = 7;break;
                                 }
-                                extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
-                                             <div class="btn btn-sm ak-disable ak-btn ak-riic-meet-clue" style="height:25px;margin:auto">${clue}</div>`
+                                extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px;"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
+                                             <div class="btn btn-sm ak-disable ak-btn ak-riic-meet ak-riic-meet-clue" style="height:25px;width:20px;margin:auto;font-size: 20px;padding-bottom:30px"><B>${clue}</b></div>`
                             }
                         }
                     }
