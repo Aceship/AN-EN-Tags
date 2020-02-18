@@ -1,9 +1,13 @@
 <html>
 
 <head>
+    <link rel='stylesheet' href='css/ak.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css'>
     <script src="js/spine-widget.js"></script>
     <script src="js/spine-skeleton-binary.js"></script>
     <script src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js'></script>
 </head>
 
 <body style="background-color: rgb(80, 80, 80);">
@@ -12,8 +16,11 @@
 
         <div id="spine-frame">
             <div id="spine-widget" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
-            <div id="spine-bg" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
-            <div id="spine-toolbar" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
+            <div id="spine-bg" style=""></div>
+            <div id="spine-toolbar" style="">
+                <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin-top:10px;padding: 5px 5px' onclick='ChangeAnimation(-1)' type='button' id='opBrowseButton2'>Previous</button>
+                <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin-top:10px;padding: 5px 5px' onclick='ChangeAnimation(1)' type='button' id='opBrowseButton2'>Next</button>
+            </div>
         </div>
     </center>
     <script>
@@ -24,6 +31,9 @@
         var chibipers = 'front'
         var chibiName = 'char_180_amgoat'
         var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
+        var spinewidget 
+        var animIndex = 0;
+        var animations
 
         console.log(vars)
         if(vars.has("folder")){
@@ -68,9 +78,10 @@
                             
                             scale:0.6,
                             success: function (widget) {
-                                var animIndex = 0;
+                                
+                                spinewidget = widget
                                 $("#spine-text").text(widget.skeleton.data.animations[0].name)
-                                var animations = widget.skeleton.data.animations;
+                                animations = widget.skeleton.data.animations;
                                 console.log(animations)
                                 console.log(widget)
                                 $("#spine-widget").fadeIn(200)
@@ -83,9 +94,14 @@
                                 //     setTimeout(function() { widget.setAnimation(animations[idle].name) }, animations[starting].duration*1000-20);
                                 // }},1000);
                                 // widget.stage.clearTracks()
-                                widget.state.setAnimation(0,"Start")
-                                widget.state.addAnimation(1,"Idle",true,animations[GetAnimationIndex(animations,'Start')].duration)
+                                if(animations.find(search=>search.name=="Start")){
+                                    widget.state.setAnimation(0,"Start")
+                                    widget.state.addAnimation(1,"Idle",true,animations[GetAnimationIndex(animations,'Start')].duration)
+                                }else if(animations.find(search=>search.name=="Relax")){
+                                    widget.state.setAnimation(0,"Relax",true)
+                                }
 
+                                CheckAnimationSet(animations)
                                 //attack 5 times loop and then do nothing
 
                                 // var delay = 0
@@ -96,7 +112,22 @@
                                 // widget.state.addAnimation(2,"Attack_End",true,delay)
                                 // delay += animations[GetAnimationIndex(animations,'Attack_End')].duration
                                 // widget.state.addAnimation(3,"Idle",true,delay)
-                                // widget.setAnimation("Skill_2_Begin")
+
+                                // //auto repeat the same thing
+                                // var totaldelay = delay 
+
+                                // setInterval(function(){
+                                //     var delay = 0
+                                //     widget.state.clearTracks()
+                                //     widget.state.setAnimation(0,"Attack_Begin")
+                                //     delay +=animations[GetAnimationIndex(animations,'Attack_Begin')].duration
+                                //     widget.state.addAnimation(1,"Attack_Loop",true,delay)
+                                //     delay += animations[GetAnimationIndex(animations,'Attack_Loop')].duration*5
+                                //     widget.state.addAnimation(2,"Attack_End",true,delay)
+                                //     delay += animations[GetAnimationIndex(animations,'Attack_End')].duration
+                                //     widget.state.addAnimation(3,"Idle",true,delay)
+                                // }, (totaldelay+animations[GetAnimationIndex(animations,'Idle')].duration)*1000);
+                                
 
                                 // skill 2 5 times
                                 // var delay = 0
@@ -109,11 +140,29 @@
                                 // delay += animations[GetAnimationIndex(animations,'Skill_2_End')].duration
                                 // widget.state.addAnimation(3,"Idle",true,delay)
 
+                                //auto repeat the same thing
+                                // var totaldelay = delay 
+
+                                // var animationqueue = setInterval(function(){
+                                //     var delay = 0
+                                //     widget.state.clearTracks()
+                                //     widget.state.setAnimation(0,"Skill_2_Begin")
+                                //     delay +=animations[GetAnimationIndex(animations,'Skill_2_Begin')].duration
+                                //     widget.state.addAnimation(1,"Skill_2_Loop",true,delay)
+                                //     delay += animations[GetAnimationIndex(animations,'Skill_2_Loop')].duration*5
+                                //     widget.state.addAnimation(2,"Skill_2_End",true,delay)
+                                //     delay += animations[GetAnimationIndex(animations,'Skill_2_End')].duration
+                                //     widget.state.addAnimation(3,"Idle",true,delay)
+                                // }, (totaldelay+animations[GetAnimationIndex(animations,'Idle')].duration)*1000);
+
+                                //should've made function for this shit with array
+
                                 // widget.state.trackEntry(3,"Idle",true,"Attack_Begin")
                                 console.log(widget.state)
                                 console.log(widget.state.trackEntry)
-                                widget.canvas.onclick = function () {
+                                $("#spine-toolbar-next").onclick = function () {
                                     widget.state.clearTracks()
+                                    // if(animationqueue!=undefined)clearInterval(animationqueue)
                                     animIndex++;
                                     
                                     // console.log(animations)
@@ -127,7 +176,32 @@
                 };
                 xhr.send()
             }
+            
         })
+        function ChangeAnimation(num){
+            spinewidget.state.clearTracks()
+            // if(animationqueue!=undefined)clearInterval(animationqueue)
+            animIndex += num;
+            // console.log(animations)
+            if (animIndex >= animations.length) animIndex = 0;
+            else if (animIndex < 0) animIndex = animations.length-1;
+
+            console.log(animIndex)
+            spinewidget.setAnimation(animations[animIndex].name)
+            $("#spine-text").text(animations[animIndex].name)
+        }
+        
+        function CheckAnimationSet(anim){
+            console.log(anim)
+            if(anim.find(search=>search.name=="Interact")){
+                //Build Mode
+                console.log("Is Build")
+
+            }else if(anim.find(search=>search.name=="Idle")){
+                //Battle Mode
+                console.log("Is Battle")
+            }
+        }
 
         function GetAnimationIndex(anim,name){
             return anim.map(function(e) { return e.name; }).indexOf(name)
