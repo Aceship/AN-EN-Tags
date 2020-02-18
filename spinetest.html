@@ -12,15 +12,16 @@
 
 <body style="background-color: rgb(80, 80, 80);">
     <center>
-        <div id="spine-text" style="color: white;"></div>
+        
 
-        <div id="spine-frame">
-            <div id="spine-widget" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
-            <div id="spine-bg" style=""></div>
-            <div id="spine-toolbar" style="">
-                <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin-top:10px;padding: 5px 5px' onclick='ChangeAnimation(-1)' type='button' id='opBrowseButton2'>Previous</button>
-                <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin-top:10px;padding: 5px 5px' onclick='ChangeAnimation(1)' type='button' id='opBrowseButton2'>Next</button>
+        <div id="spine-frame" style="position: relative;width: 300px; height: 300px">
+            <div id="spine-widget" style="position:absolute;width: 400px; height: 400px;top:-80px;left:-50px"></div>
+            <div id="spine-bg" style="position:absolute"></div>
+            <div id="spine-toolbar" style="position:absolute;bottom:-20px;width:300px;height:70px">
+                <button class='col-3 btn btn-sm ' style='margin-top:10px;padding: 5px 5px' onclick='ChangeAnimation(-1)' type='button' id='opBrowseButton2'>Previous</button>
+                <button class='col-3 btn btn-sm ' style='margin-top:10px;padding: 5px 5px' onclick='ChangeAnimation(1)' type='button' id='opBrowseButton2'>Next</button>
             </div>
+            <div id="spine-text" style="color: white;"></div>
         </div>
     </center>
     <script>
@@ -71,12 +72,12 @@
                             // debug: true,
                             // imagesPath: chibiName + ".png", 
                             premultipliedAlpha: true,
-                            fitToCanvas : true,
+                            fitToCanvas : false,
                             loop:true,
-                            // x:220,
-                            // y:100,
+                            x:200,
+                            y:100,
                             
-                            scale:0.6,
+                            scale:0.35,
                             success: function (widget) {
                                 
                                 spinewidget = widget
@@ -158,8 +159,8 @@
                                 //should've made function for this shit with array
 
                                 // widget.state.trackEntry(3,"Idle",true,"Attack_Begin")
-                                console.log(widget.state)
-                                console.log(widget.state.trackEntry)
+                                // console.log(widget.state)
+                                // console.log(widget.state.trackEntry)
                                 $("#spine-toolbar-next").onclick = function () {
                                     widget.state.clearTracks()
                                     // if(animationqueue!=undefined)clearInterval(animationqueue)
@@ -185,7 +186,9 @@
             // console.log(animations)
             if (animIndex >= animations.length) animIndex = 0;
             else if (animIndex < 0) animIndex = animations.length-1;
-
+            // spinewidget.state.setDefaultMix(0.1);
+            // spinewidget.config.scale = 2
+            console.log(spinewidget)
             console.log(animIndex)
             spinewidget.setAnimation(animations[animIndex].name)
             $("#spine-text").text(animations[animIndex].name)
