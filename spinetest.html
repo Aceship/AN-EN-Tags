@@ -35,6 +35,7 @@
         var spinewidget 
         var animIndex = 0;
         var animations
+        var animationqueue
 
         console.log(vars)
         if(vars.has("folder")){
@@ -96,10 +97,9 @@
                                 // }},1000);
                                 // widget.stage.clearTracks()
                                 if(animations.find(search=>search.name=="Start")){
-                                    widget.state.setAnimation(0,"Start")
-                                    widget.state.addAnimation(1,"Idle",true,animations[GetAnimationIndex(animations,'Start')].duration)
+                                    CreateAnimation(["Start","Idle"])
                                 }else if(animations.find(search=>search.name=="Relax")){
-                                    widget.state.setAnimation(0,"Relax",true)
+                                    CreateAnimation("Relax")
                                 }
 
                                 CheckAnimationSet(animations)
@@ -141,10 +141,10 @@
                                 // delay += animations[GetAnimationIndex(animations,'Skill_2_End')].duration
                                 // widget.state.addAnimation(3,"Idle",true,delay)
 
-                                //auto repeat the same thing
+                                // // auto repeat the same thing
                                 // var totaldelay = delay 
 
-                                // var animationqueue = setInterval(function(){
+                                // animationqueue = setInterval(function(){
                                 //     var delay = 0
                                 //     widget.state.clearTracks()
                                 //     widget.state.setAnimation(0,"Skill_2_Begin")
@@ -156,6 +156,8 @@
                                 //     widget.state.addAnimation(3,"Idle",true,delay)
                                 // }, (totaldelay+animations[GetAnimationIndex(animations,'Idle')].duration)*1000);
 
+                                // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Idle"],true,true)
+
                                 //should've made function for this shit with array
 
                                 // widget.state.trackEntry(3,"Idle",true,"Attack_Begin")
@@ -163,9 +165,8 @@
                                 // console.log(widget.state.trackEntry)
                                 $("#spine-toolbar-next").onclick = function () {
                                     widget.state.clearTracks()
-                                    // if(animationqueue!=undefined)clearInterval(animationqueue)
+                                    if(animationqueue!=undefined)clearInterval(animationqueue)
                                     animIndex++;
-                                    
                                     // console.log(animations)
                                     if (animIndex >= animations.length) animIndex = 0;
                                     widget.setAnimation(animations[animIndex].name)
@@ -192,6 +193,55 @@
             console.log(animIndex)
             spinewidget.setAnimation(animations[animIndex].name)
             $("#spine-text").text(animations[animIndex].name)
+        }
+
+
+        function CreateAnimation(animArray,endloop = false,skipStart = false){
+            if(Array.isArray(animArray)||(Array.isArray(animArray)&&animArray.length!=1)){
+                var delay = 0
+                var animNum = 0
+                if(animationqueue!=undefined)clearInterval(animationqueue)
+                spinewidget.state.clearTracks()
+                animArray.forEach(element => {
+                    var curranim = element
+                    var animTimes = 1
+                    if(Array.isArray(element)){
+                        curranim = element[0]
+                        animTimes = element[1]
+                    }
+                    if(animNum==0)spinewidget.state.setAnimation(0,curranim)
+                    else spinewidget.state.addAnimation(animNum,curranim,true,delay)
+                    delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
+                    animNum++
+                    console.log(element)
+                });
+                if(endloop){
+                    if(skipStart)animArray.shift()
+
+                    console.log(animArray)
+                    animationqueue = setInterval(function(){
+                        var delay = 0
+                        var animNum = 0
+                        spinewidget.state.clearTracks()
+                        animArray.forEach(element => {
+                            var curranim = element
+                            var animTimes = 1
+                            if(Array.isArray(element)){
+                                curranim = element[0]
+                                animTimes = element[1]
+                            }
+                            if(animNum==0)spinewidget.state.setAnimation(0,curranim,true)
+                            else spinewidget.state.addAnimation(animNum,curranim,true,delay)
+                            delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
+                            animNum++
+                            console.log(element)
+                        });
+                    },delay*1000)
+                }
+            }else{
+                spinewidget.state.clearTracks()
+                spinewidget.state.setAnimation(0,animArray,true)
+            }
         }
         
         function CheckAnimationSet(anim){
