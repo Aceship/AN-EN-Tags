@@ -15,6 +15,8 @@
     <script src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js'></script>
+    <script src="js/spine-widget.js"></script>
+    <script src="js/spine-skeleton-binary.js"></script>
     <!-- site tag (gtag.js) - Google Analytics -->
     <script async src='https://www.googletagmanager.com/gtag/js?id=UA-138420636-1'></script>/
     <script>
@@ -227,18 +229,32 @@
                     </div>
                 </div>
                 <div class='col-md-12 absolute top-layer'>
+                    
                     <div class='row max-height'>
                         
                         <div class='col-md-7 col-sm-12 left-col-menu'>
                             <div class='elite-sidenav'>
                             <ul class='nav nav-pills' id='elite-sidenav'>
                             </ul>
+                            
                             </div>
                             <div class='addinfo-nav' >
                             <ul class='nav'id='infonav'>
                                 <li id='info-illustrator'></li>
                                 <li id='info-voiceactor'></li>
                             </ul>
+                            </div>
+                            <button class='btn btn-sm btn-inforight' style='position:absolute;left:85px;top:172px;margin-top:10px;min-width:10px;' onclick='' type='button' id='Chibi-Show'>C</button>
+                            <div id="spine-frame" style="position: absolute;width: 300px; height: 300px;bottom:20px;left:60px;transform: scale(0.75);">
+                                <div id="spine-widget" style="position:absolute;width: 1800px; height: 1800px;top:-775px;left:-750px;pointer-events: none;z-index: 20;transform: scale(0.5);"></div> <!-- scaling 0.5 for "supersampling" chibi -->
+                                <div id="spine-toolbar" style="position:absolute;bottom:-25px;width:300px;height:70px;text-align: center;">
+                                    <button class='btn btn-sm ak-sm-btn' style='margin-top:10px;min-width:30px;' onclick='ChangeAnimation(-1)' type='button' id='Chibi-Prev'>&lt;</button>
+                                    <button class='btn btn-sm ak-sm-btn' style='margin-top:10px;min-width:30px;' onclick='PlayPause()' type='button' id='Chibi-Play'>Play/Pause</button>
+                                    <button class='btn btn-sm ak-sm-btn' style='margin-top:10px;min-width:30px;' onclick='ChangeAnimation(1)' type='button' id='Chibi-Next'>&gt;</button>
+                                    <button id="spine-text" class="btn ak-sm-btn ak-disable" style="margin-top:10px;width:140px;height:30px;"></button>
+                                </div>
+                                <div id="spine-text" class="ak-sm-btn ak-disable" style="margin-top:-120px">Chibi player currently in WIP,need reload to load other thing (also wont stop rendering even not loading properly, refresh to fix) (also most chara chibi isnt included yet)</div>
+                                <div id="spine-bg" style="position:absolute;top:0px;left:0px;opacity:1;z-index: -1;"><img class='background' style="height:300px;width:300px" src='./img/ui/spine/bg.png'></div>
                             </div>
                         </div>
                         <div class='col-md-5 col-sm-12 right-col-menu max-height'>
