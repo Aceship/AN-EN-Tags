@@ -27,6 +27,7 @@
     <script>
         var vars = getUrlVars()
 
+        var skeletonType = "skel"
         var chibitype = 'character'
         var charName = 'char_180_amgoat';
         var chibipers = 'front'
@@ -44,7 +45,14 @@
         if(vars.has("name")){
             chibiName = vars.get("name")
         }
+        if(vars.has("skel")){
+            skeletonType = vars.get("skel")
+        }
         var defaultAnimationName = "Default";
+        if(vars.has("anim")){
+            defaultAnimationName = vars.get("anim")
+        }
+        
         console.log(defaultAnimationName);
         console.log(folder)
         console.log(chibiName)
@@ -52,7 +60,7 @@
             
             if (chibiName != null && defaultAnimationName != null) {
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', folder + chibiName + ".skel", true);
+                xhr.open('GET', folder + chibiName + "." +skeletonType, true);
                 xhr.responseType = 'arraybuffer';
                 var array;
                 $("#spine-widget").hide()
@@ -62,11 +70,23 @@
                         array = new Uint8Array(buffer);
                         // console.log(array);
                         skelBin = new SkeletonBinary();
-                        skelBin.data = array;
-                        skelBin.initJson();
+                        var jsonskel
+                        if (skeletonType== "skel"){
+                            skelBin.data = array
+                            skelBin.initJson()
+                            jsonskel = JSON.stringify(skelBin.json)
+                        }else if (skeletonType== "json"){
+                            jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
+
+                        }
+                        
+                        
+                        
+                        // var test = new TextDecoder("utf-8").decode(array);
+                        // console.log(JSON.parse(test))
                         // console.log(JSON.stringify(skelBin.json, null, "\t"));
                         new spine.SpineWidget("spine-widget", {
-                            jsonContent: JSON.stringify(skelBin.json),
+                            jsonContent: jsonskel,
                             atlas: folder + chibiName + ".atlas",
                             animation: defaultAnimationName,
                             backgroundColor: "#00000000",
