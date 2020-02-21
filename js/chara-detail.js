@@ -171,7 +171,6 @@
                     loadchibi=true
                 }
             }
-
         });
 
         $("#Chibi-Bg").click(function(){
@@ -193,6 +192,24 @@
 
             
         });
+
+
+        $('#Chibi-download').click(function(event){
+            // var canvas = spinewidget.canvas
+            var checkdiv = $("#spine-widget").children()[0].toDataURL("image/png")
+            console.log($("#spine-widget").children())
+            // console.log(canvas)
+            console.log(checkdiv)
+            // var img = canvas.toDataURL("image/png");
+            // console.log(img)
+            // $("#spine-widget-2").html('<img src="'+img+'"/>');
+
+            // var dataURL = $("#spine-widget")[0].toDataURL('image/png');
+            // var w = window.open('about:blank', 'image from canvas');
+            // w.document.write("<img src='" + dataURL + "' alt='from canvas'/>");
+
+        });
+
         $('#operatorsResult').click(function(event){
             event.stopPropagation();
         });
