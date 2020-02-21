@@ -119,6 +119,8 @@
     var animationqueue
     var defaultAnimationName = "Default";
     var loadchibi = false;
+    var chibiscaleweb = 0
+    var chibiscaleweblist = [[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
 
     var bgnum =0
 
@@ -193,6 +195,30 @@
             
         });
 
+        $("#Chibi-Scale").click(function(){
+            
+            chibiscaleweb++
+
+            
+            if(chibiscaleweb>chibiscaleweblist.length)chibiscaleweb=0
+            else if(chibiscaleweb<0)chibiscaleweb=chibiscaleweblist.length
+            console.log(chibiscaleweb)
+            console.log(chibiscaleweblist)
+
+            if(chibiscaleweb==0){
+                console.log("yay")
+                $("#spine-widget").css("transform","scale(0.5)")
+                $("#spine-widget").css("top","-775px")
+            }
+            else {
+                var currscale = chibiscaleweblist[chibiscaleweb-1]
+                console.log(currscale)
+                $("#spine-widget").css("transform",`scale(${currscale[0]})`)
+                $("#spine-widget").css("top",`${currscale[1]}px`)
+            }
+
+            
+        });
 
         $('#Chibi-download').click(function(event){
             // var canvas = spinewidget.canvas
