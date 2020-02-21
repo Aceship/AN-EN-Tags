@@ -120,6 +120,10 @@
     var defaultAnimationName = "Default";
     var loadchibi = false;
 
+    var bgnum =0
+
+    var bgmax = 2
+
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
             $('body,html').animate({
@@ -168,6 +172,26 @@
                 }
             }
 
+        });
+
+        $("#Chibi-Bg").click(function(){
+            bgnum++
+            if(bgnum>bgmax)bgnum=0
+            else if(bgnum<0)bgnum=bgmax
+
+            if(bgnum==0) $('#spine-bg').fadeOut('fast')
+            else {
+                
+                // $('#spine-bg').fadeIn()
+                $('#spine-bg').fadeOut('fast', function () {
+                    $('#spine-bg').attr("src","./img/ui/spine/bg"+bgnum+".png");
+                    $('#spine-bg').fadeIn('fast');
+                });
+                console.log( $('#spine-bg').attr("src") )
+            
+            }
+
+            
         });
         $('#operatorsResult').click(function(event){
             event.stopPropagation();
@@ -2191,8 +2215,10 @@
                             $("#spine-widget").fadeIn(200)
                             if(animations.find(search=>search.name=="Start")){
                                 CreateAnimation(["Start","Idle"])
+                                $("#spine-text").text("Idle")
                             }else if(animations.find(search=>search.name=="Relax")){
                                 CreateAnimation("Relax")
+                                $("#spine-text").text("Relax")
                             }
 
                             // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
