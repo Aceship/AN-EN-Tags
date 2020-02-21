@@ -122,7 +122,7 @@
 
     var bgnum =0
 
-    var bgmax = 2
+    var bgmax = 3
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
