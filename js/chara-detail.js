@@ -727,8 +727,9 @@
             $("#op-taglist").html("");
 
             charName = opcode;
-            // chibipers = 'front'
+            chibipers = 'front'
             chibiName = opcode
+            if(chibipers=='build') chibiName= "build_"+chibiName
             folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
             // if(spinewidget)
 
@@ -2341,12 +2342,14 @@
             animArray.forEach(element => {
                 var curranim = element
                 var animTimes = 1
+                var isloop = animNum==animArray.length-1
                 if(Array.isArray(element)){
                     curranim = element[0]
                     animTimes = element[1]
+                    isloop = true
                 }
-                if(animNum==0)spinewidget.state.setAnimation(0,curranim)
-                else spinewidget.state.addAnimation(animNum,curranim,true,delay)
+                if(animNum==0)spinewidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
+                else spinewidget.state.addAnimation(animNum,curranim,isloop,delay)
                 delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
                 animNum++
                 console.log(element)
@@ -2358,16 +2361,19 @@
                 animationqueue = setInterval(function(){
                     var delay = 0
                     var animNum = 0
+                    
                     spinewidget.state.clearTracks()
                     animArray.forEach(element => {
                         var curranim = element
                         var animTimes = 1
+                        var isloop = animNum==animArray.length-1
                         if(Array.isArray(element)){
                             curranim = element[0]
                             animTimes = element[1]
+                            isloop = true
                         }
-                        if(animNum==0)spinewidget.state.setAnimation(0,curranim,true)
-                        else spinewidget.state.addAnimation(animNum,curranim,true,delay)
+                        if(animNum==0)spinewidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
+                        else spinewidget.state.addAnimation(animNum,curranim,isloop,delay)
                         delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
                         animNum++
                         console.log(element)
