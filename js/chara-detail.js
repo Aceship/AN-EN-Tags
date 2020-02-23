@@ -124,7 +124,7 @@
 
     var bgnum =0
 
-    var bgmax = 3
+    var bgmax = 5
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -727,9 +727,10 @@
             $("#op-taglist").html("");
 
             charName = opcode;
-            chibipers = 'front'
             chibiName = opcode
+            console.log(chibipers)
             if(chibipers=='build') chibiName= "build_"+chibiName
+            console.log(chibiName)
             folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
             // if(spinewidget)
 
@@ -2319,6 +2320,7 @@
     function ChangeSkin(name){
         console.log(name)
         chibiName=name
+        if(chibipers=='build') {chibiName= "build_"+chibiName}
     }
 
 
