@@ -121,9 +121,9 @@
     var loadchibi = false;
     var chibiscaleweb = 0
     var chibiscaleweblist = [[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
-
+    var chibiperscurr = 0
+    var chibiperslist = ["front","back","build"]
     var bgnum =0
-
     var bgmax = 5
 
     $(document).ready(function(){
@@ -192,6 +192,16 @@
             
             }
 
+            
+        });
+        $("#Chibi-Perspective").click(function(){
+            chibiperscurr++
+            if(chibiperscurr>=chibiperslist.length)chibiperscurr=0
+            else if(chibiperscurr<0)chibiperscurr=chibiperslist.length-1
+
+            console.log(chibiperscurr)
+            console.log(chibiperslist[chibiperscurr])
+            ChangeSkin("",chibiperslist[chibiperscurr])
             
         });
 
@@ -750,16 +760,16 @@
                             + "<img src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
                         tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite(0)' href='#elite_0_tab'>Non-Elite</a></li>");
                     } else {
-                        tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_"+i+"_tab'>"
+                        tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_"+i+"_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/0-s.png'></button></li>");
                         tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite("+i+")'href='#elite_"+i+"_tab'>Non-Elite</a></li>");
                     }
                 } else if( i == l-1 ){
-                    tabbtn[0] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_"+i+"_tab'>"
+                    tabbtn[0] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_"+i+"_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
                     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 } else {
-                    tabbtn[l-i] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_"+i+"_tab'>"
+                    tabbtn[l-i] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_"+i+"_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
                     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 }
@@ -2320,10 +2330,13 @@
         $("#spine-text").text(animations[animIndex].name)
     }
 
-    function ChangeSkin(name){
-        console.log(name)
-        chibiName=name
-        if(chibipers=='build') {chibiName= "build_"+chibiName}
+    function ChangeSkin(name="",pers=""){
+        // console.log(name)
+        if(name!="")chibiName=name
+        if(pers!="")chibipers=pers
+        if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
+        else chibiName.includes("build")?chibiName=chibiName.split("_").slice(1).join("_"):chibiName=chibiName
+        folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
         if(spinewidget)LoadAnimation()
     }
 
