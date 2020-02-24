@@ -2219,6 +2219,10 @@
             spinewidget = undefined
             $("#spine-widget").remove()
             $("#spine-frame").append('<div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:-775px;left:-750px;pointer-events: none;z-index: 20;transform: scale(0.5);"></div>')
+            // console.log(loadchibi)
+            // if(loadchibi)$("#spine-frame").fadeIn(100);
+        }else{
+            if(loadchibi)$("#spine-frame").fadeIn(100);
         }
         if (chibiName != null && defaultAnimationName != null) {
             var xhr = new XMLHttpRequest();
