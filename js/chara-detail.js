@@ -760,16 +760,16 @@
                             + "<img src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
                         tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite(0)' href='#elite_0_tab'>Non-Elite</a></li>");
                     } else {
-                        tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_"+i+"_tab' onClick='ChangeSkin("${opcode}")'>`
+                        tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/0-s.png'></button></li>");
                         tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite("+i+")'href='#elite_"+i+"_tab'>Non-Elite</a></li>");
                     }
                 } else if( i == l-1 ){
-                    tabbtn[0] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_"+i+"_tab' onClick='ChangeSkin("${opcode}")'>`
+                    tabbtn[0] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
                     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 } else {
-                    tabbtn[l-i] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_"+i+"_tab' onClick='ChangeSkin("${opcode}")'>`
+                    tabbtn[l-i] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
                     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 }
