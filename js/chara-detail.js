@@ -154,7 +154,7 @@
         $("#Chibi-Show").click(function(){
             console.log($("#spine-widget"))
             var isvisible = $("#spine-frame").is(":visible")
-            $("#spine-frame").fadeToggle();
+            $("#spine-frame").fadeToggle(100);
             
             if(!loadchibi){
                 loadchibi=true
@@ -476,7 +476,7 @@
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
                 console.log(key)
                 var type = query(db.classes,"type_data",val.profession);
-                var classlogo = type.type_en.toLowerCase()
+                var classlogo = type?type.type_en.toLowerCase():""
                 var camplogo = val.displayLogo
                 switch (listtype) {
                     
@@ -737,7 +737,7 @@
             
             if(loadchibi){
                 LoadAnimation()
-                $("#spine-frame").fadeIn()
+                // $("#spine-frame").fadeIn(10)
             }
             else $("#spine-frame").hide()
             
@@ -2257,7 +2257,7 @@
                             animations = widget.skeleton.data.animations;
                             console.log(animations)
                             console.log(widget)
-                            $("#spine-widget").fadeIn(200)
+                            $("#spine-widget").show()
                             if(animations.find(search=>search.name=="Start")){
                                 CreateAnimation(["Start","Idle"])
                                 $("#spine-text").text("Idle")
