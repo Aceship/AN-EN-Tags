@@ -2212,6 +2212,7 @@
 
     function LoadAnimation(){
         console.log(spinewidget)
+        $("#loading-spine").text("Loading...")
         if(spinewidget){
             // spinewidget.loadWidgets()
             // spinewidget.loadTexture()
@@ -2230,6 +2231,9 @@
             xhr.responseType = 'arraybuffer';
             var array;
             $("#spine-widget").hide()
+
+            
+            $("#loading-spine").fadeIn(200)
             console.log(chibiName)
             xhr.onloadend = function (e) {
                 if (xhr.status != 404) {
@@ -2238,7 +2242,9 @@
                     // console.log(array);
                     skelBin = new SkeletonBinary();
                     var jsonskel
-                    if(array.length==0)$("#spine-frame").fadeOut()
+                    if(array.length==0){
+                        $("#loading-spine").text("Load Failed")
+                    }
                     if (skeletonType== "skel"){
                         skelBin.data = array
                         skelBin.initJson()
@@ -2271,6 +2277,7 @@
                             
                             spinewidget = widget
                             $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                            $("#loading-spine").fadeOut(200)
                             animations = widget.skeleton.data.animations;
                             console.log(animations)
                             console.log(widget)
@@ -2313,7 +2320,8 @@
                         }
                     })
                 }else{
-                    $("#spine-frame").fadeOut()
+                    $("#loading-spine").text("Load Failed")
+                    // $("#spine-frame").fadeOut()
                 }
             };
             xhr.send()
