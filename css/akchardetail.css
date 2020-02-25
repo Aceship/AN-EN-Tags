@@ -891,6 +891,7 @@ body {
 #bottom-nav{
     margin: 0px;
     background-color: rgb(52, 52, 52);  
+    border-top: 1px solid rgb(71, 71, 71);
 }
 #bottom-nav:before{
 
@@ -921,13 +922,13 @@ body {
 
 .ak-cutcorner-rt:after{
     content: "";
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     position: absolute;
     top: 0px;
-    right: -26px;
-    border-top: 26px solid #00000000;
-    border-left: 26px solid rgb(52, 52, 52);
+    right: -28px;
+    border-top: 28px solid #00000000;
+    border-left: 28px solid rgb(52, 52, 52);
 }
 
 #Chibi-nav{
@@ -970,7 +971,11 @@ body {
     }
     
     #spine-frame{
-        left:120px !important;
+        /* left:120px !important;    */
+        left: calc(40px + 20vw) !important;
+
+        /* -moz-left: -moz-calc(25% - 1em); */
+        /* right:20vw; */
     }
     #infonav{
         position: absolute;
