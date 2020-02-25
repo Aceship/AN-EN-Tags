@@ -1612,7 +1612,7 @@
                 var currdesc = tlbuff?tlbuff.desc:currbuff.description
                 eachtab.push(`
                     <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'")}','${currdesc.replace(/\'/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname}\n\n${currdesc}">
+                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${currdesc.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname.replace(/\"/g,"\'")}\n\n${currdesc.replace(/\"/g,"\'")}">
                     </div>`)
                     // console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
             });
@@ -1846,9 +1846,11 @@
                 // if(!typetl) typetl = db.attacktype.find(search=>search.type_cn==element[1])
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
 
-                // console.log(element)
+                console.log(element)
+                console.log(trait)
                 let muhRegex = /(.*){(.*?)}(.*)/g
                 let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
+                console.log(currTLconv)
                 if(currTLconv){
                     console.log(currTLconv)
                     var textreplace = 'Value'
@@ -1861,8 +1863,10 @@
                         }
                         isReplaced = true
                     }
+                    console.log(textreplace)
                 }
                 let currTLconvfinal = currTLconv?currTLconv[1] + textreplace + currTLconv[3]:typetl?typetl.type_en:element.join("")
+                console.log(currTLconvfinal)
                 splitdescTL.push(currTLconvfinal)
             }else{
                 var typetl = db.attacktype.find(search=>{
@@ -1893,7 +1897,7 @@
                 element.blackboard.forEach(eachbb => {
                     each.push(`${eachbb.key} : ${eachbb.value}`)
                 });
-                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px">${ each.join(" ")}</div>
+                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px;margin-bottom:2px;margin-top:2px">${each.join("</br>")}</div>
                 <div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
                 splitdescTL.push(info)
             });
