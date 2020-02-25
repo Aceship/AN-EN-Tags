@@ -120,7 +120,7 @@
     var defaultAnimationName = "Default";
     var loadchibi = false;
     var chibiscaleweb = 0
-    var chibiscaleweblist = [[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
+    var chibiscaleweblist = [[0.5,-775],[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
     var chibiperscurr = 0
     var chibiperslist = ["front","back","build"]
     var bgnum =0
@@ -210,22 +210,17 @@
             chibiscaleweb++
 
             
-            if(chibiscaleweb>chibiscaleweblist.length)chibiscaleweb=0
+            if(chibiscaleweb>=chibiscaleweblist.length)chibiscaleweb=0
             else if(chibiscaleweb<0)chibiscaleweb=chibiscaleweblist.length
             console.log(chibiscaleweb)
             console.log(chibiscaleweblist)
 
-            if(chibiscaleweb==0){
-                console.log("yay")
-                $("#spine-widget").css("transform","scale(0.5)")
-                $("#spine-widget").css("top","-775px")
-            }
-            else {
-                var currscale = chibiscaleweblist[chibiscaleweb-1]
-                console.log(currscale)
-                $("#spine-widget").css("transform",`scale(${currscale[0]})`)
-                $("#spine-widget").css("top",`${currscale[1]}px`)
-            }
+            
+            var currscale = chibiscaleweblist[chibiscaleweb]
+            console.log(currscale)
+            $("#spine-widget").css("transform",`scale(${currscale[0]})`)
+            $("#spine-widget").css("top",`${currscale[1]}px`)
+            
 
             
         });
@@ -2219,7 +2214,8 @@
             spinewidget.pause()
             spinewidget = undefined
             $("#spine-widget").remove()
-            $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${chibiscaleweblist[chibiscaleweb][1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${chibiscaleweblist[chibiscaleweb][0]});"></div>`)
+            currscale = chibiscaleweblist[chibiscaleweb]
+            $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${currscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${currscale[0]});"></div>`)
             // console.log(loadchibi)
             // if(loadchibi)$("#spine-frame").fadeIn(100);
         }else{
