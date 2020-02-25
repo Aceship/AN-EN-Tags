@@ -1255,11 +1255,15 @@
             var currhtml = $(`
             <table class="story-table">
             <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
-            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank"><i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a></td></tr>
+            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank">
+            <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
+            <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${element.voiceAsset.split("_").slice(-1)[0] }</div>
+            </td></tr>
             <tr><td style="height:10px"></td></tr>
             <tr><td>${voiceTL}</td></tr>
             <tr><td style="height:10px"></td></tr>
             </table>
+            
             `)
             $('#opaudiocontent').append($(currhtml))
         });
