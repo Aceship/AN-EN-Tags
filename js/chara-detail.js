@@ -162,7 +162,9 @@
                 loadchibi=true
                 if(!spinewidget){
                     LoadAnimation()
-                    LoadAnimationToken()
+                    if(opdataFull.tokenKey){
+                        LoadAnimationToken()
+                    }
                 }
             }
 
@@ -1070,9 +1072,9 @@
                 if(skilltoken== null) skilltoken = opdataFull.tokenKey
                 //
 
-                console.log(skilltoken)
+                
                 var tabItem = $("<li class='nav-item'>"
-                                +    `<button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' ${skilltoken?`onclick='LoadAnimationToken("${skilltoken}")'`:""} href='#skill${i}'><p>Skill ${i+1}</p></button>`
+                                +    `<button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'><p>Skill ${i+1}</p></button>`
                                 +"</li>");
                 var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? '' : 'active')+"' id='skill"+i+"'>"
                                         +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
@@ -2228,6 +2230,36 @@
         }
     }
 
+    function ChangeSkillAnim(skillnum,skillmax,token){
+        console.log(skillnum)
+        console.log(token)
+        console.log(skillmax)
+        if(spinewidgettoken&&token&&spinewidgettoken.loaded){
+            
+            LoadAnimationToken(token)
+        }else if(spinewidget&&spinewidget.loaded){
+            var animlist = Object.keys(spinewidget.customanimation).filter(search=>search.includes("Skill"))
+
+            animlist=animlist.sort((a,b)=>{
+                if(a<b)return 1
+                if(a>b)return -1
+                return 0
+            })
+            
+            if(animlist&&animlist.length>0){
+                console.log(animlist)
+                console.log(skillmax-skillnum-1)
+                
+                if(animlist[skillmax-skillnum-1]){
+                    CreateAnimation(spinewidget,spinewidget.customanimation[animlist[skillmax-skillnum-1]],true)
+                }
+            }
+            // console.log(currselectedanim)
+            // CreateAnimation(spinewidget)
+            
+        }
+    }
+
     function LoadAnimation(){
         console.log(spinewidget)
         $("#loading-spine").text("Loading...")
@@ -2313,7 +2345,8 @@
                             // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
                             // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Loop_End","Idle"],true)
 
-                            CheckAnimationSet(animations)
+                            widget.customanimation = CheckAnimationSet(animations)
+                            // console.log(widget)
 
 
                             //ange skill 2
@@ -2438,7 +2471,8 @@
                                 // $("#spine-text").text("Relax")
                             }
 
-                            CheckAnimationSet(tokenanimations)
+                            widget.customanimation = CheckAnimationSet(tokenanimations)
+                            // console.log(widget)
                         }
                     })
                 }else{
@@ -2447,6 +2481,31 @@
             xhr.send()
         }
     }
+    function ChangeAnimation2(widget,widgettext,num){
+        if(widget=="token") widget=spinewidgettoken
+        else widget=spinewidget
+
+        var curranimation = Object.keys(widget.customanimation)
+        widget.state.clearTracks()
+        if(animationqueue!=undefined)clearInterval(animationqueue)
+        animIndex += num;
+        // console.log(animIndex)
+        // console.log(curranimation)
+        
+        if (animIndex >= curranimation.length) animIndex = 0;
+        else if (animIndex < 0) animIndex = curranimation.length-1;
+        // spinewidget.state.setDefaultMix(0.1);
+        // spinewidget.config.scale = 2
+        // console.log(widget)
+        // console.log(animIndex)
+        // widget.setAnimation(curranimation[animIndex].name)
+        // console.log(widget.customanimation[Object.keys(widget.customanimation)[animIndex]])
+
+        CreateAnimation(widget,widget.customanimation[Object.keys(widget.customanimation)[animIndex]],true)
+        // console.log(widgettext)
+        $(widgettext).text(Object.keys(widget.customanimation)[animIndex])
+    }
+
     function ChangeAnimation(widget,widgettext,num){
         if(widget=="token") widget=spinewidgettoken
         else widget=spinewidget
@@ -2455,16 +2514,20 @@
         widget.state.clearTracks()
         if(animationqueue!=undefined)clearInterval(animationqueue)
         animIndex += num;
-        console.log(animIndex)
-        console.log(curranimation)
+        // console.log(animIndex)
+        // console.log(curranimation)
         
         if (animIndex >= curranimation.length) animIndex = 0;
         else if (animIndex < 0) animIndex = curranimation.length-1;
         // spinewidget.state.setDefaultMix(0.1);
         // spinewidget.config.scale = 2
-        console.log(widget)
-        console.log(animIndex)
-        widget.setAnimation(curranimation[animIndex].name)
+        // console.log(widget)
+        // console.log(animIndex)
+        // widget.setAnimation(curranimation[animIndex].name)
+        // console.log(widget.customanimation[Object.keys(widget.customanimation)[animIndex]])
+        // console.log(curranimation[index])
+        CreateAnimation(widget,curranimation[animIndex].name)
+        // widget.setAnimation(curranimation[animIndex].name)
         // console.log(widgettext)
         $(widgettext).text(curranimation[animIndex].name)
     }
@@ -2494,10 +2557,15 @@
 
 
     function CreateAnimation(chibiwidget,animArray,endloop = false,skipStart = false){
-        if(Array.isArray(animArray)||(Array.isArray(animArray)&&animArray.length!=1)){
+        // console.log(animArray)
+        // console.log(animArray.length)
+        // console.log(Array.isArray(animArray))
+        
+        if(Array.isArray(animArray)&&animArray.length>1){
             var delay = 0
             var animNum = 0
             if(animationqueue!=undefined)clearInterval(animationqueue)
+            if(chibiwidget.loaded)chibiwidget.setAnimation(animArray[0])
             chibiwidget.state.clearTracks()
             animArray.forEach(element => {
                 var curranim = element
@@ -2541,24 +2609,92 @@
                 },delay*1000)
             }
         }else{
+            // chibiwidget.state.setAnimation(animArray)
+            if(animationqueue!=undefined)clearInterval(animationqueue)
+            console.log(animArray)
+            if(chibiwidget.loaded)chibiwidget.setAnimation(animArray[0])
             chibiwidget.state.clearTracks()
+            
             chibiwidget.state.setAnimation(0,animArray,true)
         }
     }
     
     function CheckAnimationSet(anim){
         console.log(anim)
+        var curranimlist = {}
         if(anim.find(search=>search.name=="Interact")){
             //Build Mode
-            console.log("Is Build")
+            // console.log("Is Build")
 
         }else if(anim.find(search=>search.name=="Idle")){
             //Battle Mode
-            console.log("Is Battle")
+            // console.log("Is Battle")
+            anim.forEach(curranim => {
+                var numberregx = /(\d)/
+                var currsplit = curranim.name.split("_")[0]
+                
+                if(currsplit)
+                var splitnum = numberregx.exec(curranim.name)
+                if(splitnum){
+                    var nameregex = /(.*)(?=\d)/g
+                    var checkname = nameregex.exec(currsplit)
+                    // console.log(checkname[0])
+                    if(checkname)currsplit = checkname[0]
+                    // console.log(checkname[0])
+                    splitnum=splitnum[0]
+                }
+                else if (!splitnum) splitnum=""
+
+                if(!curranimlist[`${currsplit}${splitnum}`]){
+                    curranimlist[`${currsplit}${splitnum}`] = []
+                }
+                if(!curranim.name.includes("Down")){
+                    curranimlist[`${currsplit}${splitnum}`].push(curranim.name)
+                }
+                
+            });
+            Object.keys(curranimlist).forEach(keys => {
+                curranimlist[keys]= curranimlist[keys].sort((a,b)=>{
+                    var sortarray = [
+                        "Pre",
+                        "Begin",
+                        "Idle",
+                        "",
+                        "Loop",
+                        "End",
+                        "Die"
+                    ]
+                    var anum = 0
+                    var bnum = 0
+                    for(i=0;i<sortarray.length;i++){
+                        // console.log(sortarray[i])
+                        if(sortarray[i]==""){
+                            var isAfree = true
+                            var isBfree = true
+                            for(j=0;j<sortarray.length;j++){
+                                if(sortarray[j]!=""){
+                                    if(a.includes(sortarray[j]))isAfree=false
+                                    if(b.includes(sortarray[j]))isBfree=false
+                                }
+                            }
+                            if (isAfree) anum += 4
+                            if (isBfree) bnum += 4
+                        }else{
+                            if(a.includes(sortarray[i]))anum+=i+1
+                            if(b.includes(sortarray[i]))bnum+=i+1
+                        }
+                    }
+                    return anum - bnum
+                    
+                })
+            });
         }
+        console.log(curranimlist)
+        return curranimlist
     }
 
     function GetAnimationIndex(anim,name){
+        
         return anim.map(function(e) { return e.name; }).indexOf(name)
     }
 
