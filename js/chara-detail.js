@@ -2283,6 +2283,7 @@
                         scale:1,
                         success: function (widget) {
                             
+                            animIndex=0
                             spinewidget = widget
                             $("#spine-text").text(widget.skeleton.data.animations[0].name)
                             $("#loading-spine").fadeOut(200)
