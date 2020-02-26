@@ -259,8 +259,9 @@ body {
 }
 
 .chara-detail-container .right-menu-container {
-    padding: 8px;
-    padding-top:15px;
+    padding: 0px;
+    padding-left: 16px;
+    padding-top:5px;
     float: right;
     max-width: 400px;
     width: 100%;
@@ -288,7 +289,7 @@ body {
     background-color: #4f4f4f;
     color: #999999;
     position: relative;
-    margin-top: 55px;
+    margin-top: 65px;
 }
 .chara-detail-container .tab-content .small-container p.large-text, #skill-contents p.large-text {
     position: absolute;
@@ -483,24 +484,51 @@ body {
     top: 0px;
 }
 
-.general-stats-container .op-name {
-    top: -60px;
-    left: 0px;
+#op-displaynum {
+    position: absolute;
+    font-weight: 700;
+    font-size:10px;
+    /* right:75px; */
+    bottom:-4px;
+    color:#999;
+    background:#222;
+    padding:0px;
+    padding-left:2px;
+    padding-right:2px;
+
+    right:75px;
 }
+.general-stats-container .op-name {
+    top: -65px;
+    height:55px;
+    background-color:#2f2f2f; 
+    border-radius: 4px 4px 0px 0px;
+    padding-top:5px;
+    top: -65px;
+    left: 0px;
+    width: 100%;
+    border-radius:unset;
+    box-shadow: 2px 0px 8px #111;
+}
+
+
 
 .general-stats-container .op-name, .general-stats-container .op-name span {
     display: inline-block;
-    padding: 14px;
+    padding: 10px;
     padding-bottom:55px;
     font-size: 1.2em;
     position: absolute;
     color: white;
+    
 }
 
 .general-statcard {
     padding: 15px;
     font-size: 0.9em;
 }
+
+
 
 .side-menu-tabbings a {
     background-color: #2f2f2f;
@@ -724,6 +752,19 @@ body {
     display: inline-block;
     margin: 0px 5px;
 }
+
+
+.opresult-grid{
+    max-width:1000px;
+}
+.opresult-list{
+    max-width:345px;
+}
+
+.opres-img{
+    height:70px;
+    padding:2px
+}
 @media (max-width: 1220px ){
     .chara-detail-container {
         margin-top: 0px;
@@ -889,6 +930,12 @@ body {
   }
 
 #bottom-nav{
+    position:absolute;
+    height:30px;
+    /* 30px */
+    width:550px;
+    bottom:0px;
+    padding-left: 200px;
     margin: 0px;
     background-color: rgb(52, 52, 52);  
     border-top: 1px solid rgb(71, 71, 71);
@@ -896,11 +943,11 @@ body {
 #bottom-nav:before{
 
     content: "";
-    width: 335px;
+    width: 535px;
     height: 15px;
     position: absolute;
     top: -15px;
-
+    left:0px;
     border-top: 15px solid rgb(71, 71, 71);
 }
 #bottom-nav:after{
@@ -917,6 +964,7 @@ body {
 
 .ak-cutcorner-rt{
     box-shadow: 0px -2px 0px 0px rgb(37, 37, 37);
+    z-index: 5;
 }
 
 
@@ -929,6 +977,7 @@ body {
     right: -28px;
     border-top: 28px solid #00000000;
     border-left: 28px solid rgb(52, 52, 52);
+    z-index: 5;
 }
 
 #Chibi-nav{
@@ -937,6 +986,7 @@ body {
     top:-90px;
     margin-top:10px;
     min-width:10px;
+    z-index: 4;
 }
 .ak-chibi-btn{
     padding: 4px;
@@ -963,8 +1013,40 @@ body {
 }
 
 .top-buffer { margin-top:20px; }
+
+@media (max-width: 1000px ){
+    .opresult-grid{
+        width:100vw;
+    }
+    .opresult-grid img{
+        width:100%;
+        height:auto !important;
+    }
+    .opres-img{
+        height:auto;
+        /* padding:2px */
+    }
+}
 @media (max-width: 768px ){
 
+
+    .general-stats-container .op-name {
+        top: -65px;
+        left: 0px;
+        width: 100%;
+        border-radius:unset;
+        box-shadow: 2px 2px 8px #111;
+    }
+    #op-displaynum {
+        right:75px;
+    }
+
+    .opresult-grid{
+        max-width:100%;
+    }
+    .opresult-list{
+        max-width:345px;
+    }
     .audioprofilebutton{
         max-width: 30px !important;
         max-height: 30px !important;
@@ -1040,7 +1122,8 @@ body {
         display:unset;
     }
     .chara-detail-container .right-menu-container {
-        padding-top:10px;
+        padding:0px;
+        padding-top:20px;
         max-width: 100vw;
         overflow: visible;
     }
@@ -1109,9 +1192,9 @@ body {
     }
 
 
-    #operatorsResult img {
+    /* #operatorsResult img {
         height: 70px!important;
-    }
+    } */
     .righthand-stat-level-header{
         position: absolute;
         right:55px;

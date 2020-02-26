@@ -623,15 +623,19 @@
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
                     // console.log(image)
                     if(el=="Browse"){
-                        image = `<img style="height:70px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
-                        $("#operatorsResult").css("max-width","100vw");
+                        image = `<img class='opres-img' src="./img/avatars/${result[i].img_name}_1.png">  `
+                        $("#operatorsResult").css("text-align","center");
+                        $("#operatorsResult").removeClass("opresult-list");
+                        $("#operatorsResult").addClass("opresult-grid");
                         $("#operatorsResult").append(
                                 "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
                                 +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
                                 +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+`${result[i].name_readable?`[${result[i].name_readable}]`:""}`+result[i].nameTL+"</div>"
                                 +"</li>");
                     }else{
-                        $("#operatorsResult").css("max-width","290px");
+                        $("#operatorsResult").removeClass("opresult-grid");
+                        $("#operatorsResult").addClass("opresult-list");
+                        $("#operatorsResult").css("text-align","left");
                         $("#operatorsResult").append(`<li class=" ak-shadow-small ak-rare-${result[i].rarity}"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="selectOperator('${result[i].name_cn}')">${image} ${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL} (${result[i].name})</li>`);
                     }
                 }
