@@ -2557,9 +2557,9 @@
 
 
     function CreateAnimation(chibiwidget,animArray,endloop = false,skipStart = false){
-        // console.log(animArray)
-        // console.log(animArray.length)
-        // console.log(Array.isArray(animArray))
+        console.log(animArray)
+        console.log(animArray.length)
+        console.log(Array.isArray(animArray))
         
         if(Array.isArray(animArray)&&animArray.length>1){
             var delay = 0
@@ -2612,7 +2612,7 @@
             // chibiwidget.state.setAnimation(animArray)
             if(animationqueue!=undefined)clearInterval(animationqueue)
             console.log(animArray)
-            if(chibiwidget.loaded)chibiwidget.setAnimation(animArray[0])
+            if(chibiwidget.loaded)chibiwidget.setAnimation(animArray)
             chibiwidget.state.clearTracks()
             
             chibiwidget.state.setAnimation(0,animArray,true)
