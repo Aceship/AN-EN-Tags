@@ -114,8 +114,10 @@
     var chibiName = 'char_180_amgoat'
     var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
     var spinewidget 
+    var spinewidgettoken
     var animIndex = 0;
     var animations
+    var tokenanimations
     var animationqueue
     var defaultAnimationName = "Default";
     var loadchibi = false;
@@ -160,6 +162,7 @@
                 loadchibi=true
                 if(!spinewidget){
                     LoadAnimation()
+                    LoadAnimationToken()
                 }
             }
 
@@ -220,6 +223,8 @@
             console.log(currscale)
             $("#spine-widget").css("transform",`scale(${currscale[0]})`)
             $("#spine-widget").css("top",`${currscale[1]}px`)
+            $("#spine-widget-token").css("transform",`scale(${currscale[0]})`)
+            $("#spine-widget-token").css("top",`${currscale[1]}px`)
             
 
             
@@ -746,6 +751,7 @@
             
             if(loadchibi){
                 LoadAnimation()
+                LoadAnimationToken()
                 // $("#spine-frame").fadeIn(10)
             }
             else $("#spine-frame").hide()
@@ -1059,9 +1065,14 @@
                 } else {
                     var skillIcon = skillData.iconId;
                 }
+                console.log(opdataFull.skills[i])
+                var skilltoken = opdataFull.skills[i].overrideTokenKey
+                if(skilltoken== null) skilltoken = opdataFull.tokenKey
+                //
 
+                console.log(skilltoken)
                 var tabItem = $("<li class='nav-item'>"
-                                +    "<button class='btn tabbing-btns horiz-small nav-link "+(i!=0 ? '' : 'active')+"' data-toggle='pill' href='#skill"+i+"'><p>Skill "+(i+1)+"</p></button>"
+                                +    `<button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' ${skilltoken?`onclick='LoadAnimationToken("${skilltoken}")'`:""} href='#skill${i}'><p>Skill ${i+1}</p></button>`
                                 +"</li>");
                 var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? '' : 'active')+"' id='skill"+i+"'>"
                                         +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
@@ -2292,10 +2303,10 @@
                             console.log(widget)
                             $("#spine-widget").show()
                             if(animations.find(search=>search.name=="Start")){
-                                CreateAnimation(["Start","Idle"])
+                                CreateAnimation(spinewidget,["Start","Idle"])
                                 $("#spine-text").text("Idle")
                             }else if(animations.find(search=>search.name=="Relax")){
-                                CreateAnimation("Relax")
+                                CreateAnimation(spinewidget,"Relax")
                                 $("#spine-text").text("Relax")
                             }
 
@@ -2336,19 +2347,126 @@
             xhr.send()
         }
     }
-    function ChangeAnimation(num){
-        spinewidget.state.clearTracks()
+
+
+    function LoadAnimationToken(tokenkey=opdataFull.tokenKey){
+        console.log(spinewidgettoken)
+        console.log(opdataFull)
+        // var tokenName =
+        
+        var tokenfolder = `./spineassets/token/${opdataFull.id}/${tokenkey}`
+        // $("#loading-spine").text("Loading...")
+        if(spinewidgettoken){
+            // spinewidget.loadWidgets()
+            // spinewidget.loadTexture()
+            spinewidgettoken.pause()
+            spinewidgettoken = undefined
+            $("#spine-widget-token").remove()
+            currscale = chibiscaleweblist[chibiscaleweb]
+            $("#spine-frame-token").append(`<div id="spine-widget-token" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${currscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${currscale[0]});"></div>`)
+            // console.log(loadchibi)
+            // if(loadchibi)$("#spine-frame").fadeIn(100);
+        }else{
+            if(loadchibi)$("#spine-frame-token").fadeIn(100);
+        }
+        if (chibiName != null && defaultAnimationName != null) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', tokenfolder +"."+skeletonType, true);
+            xhr.responseType = 'arraybuffer';
+            var array;
+            $("#spine-widget-token").hide()
+
+            
+            // $("#loading-spine").fadeIn(200)
+            console.log(chibiName)
+            xhr.onloadend = function (e) {
+                if (xhr.status != 404) {
+                    buffer = xhr.response;
+                    array = new Uint8Array(buffer);
+                    // console.log(array);
+                    skelBin = new SkeletonBinary();
+                    var jsonskel
+                    if(array.length==0){
+                        // $("#loading-spine").text("Load Failed")
+                    }
+                    if (skeletonType== "skel"){
+                        skelBin.data = array
+                        skelBin.initJson()
+                        jsonskel = JSON.stringify(skelBin.json)
+                    }else if (skeletonType== "json"){
+                        jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
+
+                    }
+                    
+                    
+                    
+                    // var test = new TextDecoder("utf-8").decode(array);
+                    // console.log(JSON.parse(test))
+                    // console.log(JSON.stringify(skelBin.json, null, "\t"));
+                    new spine.SpineWidget("spine-widget-token", {
+                        jsonContent: jsonskel,
+                        atlas: tokenfolder + ".atlas",
+                        animation: defaultAnimationName,
+                        backgroundColor: "#00000000",
+                        // debug: true,
+                        // imagesPath: chibiName + ".png", 
+                        premultipliedAlpha: true,
+                        fitToCanvas : false,
+                        loop:true,
+                        x:900,
+                        y:650,
+                        //0.5 for normal i guess
+                        scale:1,
+                        success: function (widget) {
+                            
+                            // animIndex=0
+                            spinewidgettoken = widget
+                            // $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                            // $("#loading-spine").fadeOut(200)
+                            tokenanimations = widget.skeleton.data.animations;
+                            // console.log(animations)
+                            // console.log(widget)
+                            $("#spine-widget-token").show()
+                            if(tokenanimations.find(search=>search.name=="Start")){
+                                CreateAnimation(spinewidgettoken,["Start","Idle"])
+                                // $("#spine-text").text("Idle")
+                            }else if(tokenanimations.find(search=>search.name=="Relax")){
+                                CreateAnimation(spinewidgettoken,"Relax")
+                                // $("#spine-text").text("Relax")
+                            }else if(tokenanimations.find(search=>search.name=="Idle")){
+                                CreateAnimation(spinewidgettoken,"Idle")
+                                // $("#spine-text").text("Relax")
+                            }
+
+                            CheckAnimationSet(tokenanimations)
+                        }
+                    })
+                }else{
+                }
+            };
+            xhr.send()
+        }
+    }
+    function ChangeAnimation(widget,widgettext,num){
+        if(widget=="token") widget=spinewidgettoken
+        else widget=spinewidget
+
+        var curranimation = widget.skeleton.data.animations
+        widget.state.clearTracks()
         if(animationqueue!=undefined)clearInterval(animationqueue)
         animIndex += num;
-        // console.log(animations)
-        if (animIndex >= animations.length) animIndex = 0;
-        else if (animIndex < 0) animIndex = animations.length-1;
+        console.log(animIndex)
+        console.log(curranimation)
+        
+        if (animIndex >= curranimation.length) animIndex = 0;
+        else if (animIndex < 0) animIndex = curranimation.length-1;
         // spinewidget.state.setDefaultMix(0.1);
         // spinewidget.config.scale = 2
-        console.log(spinewidget)
+        console.log(widget)
         console.log(animIndex)
-        spinewidget.setAnimation(animations[animIndex].name)
-        $("#spine-text").text(animations[animIndex].name)
+        widget.setAnimation(curranimation[animIndex].name)
+        // console.log(widgettext)
+        $(widgettext).text(curranimation[animIndex].name)
     }
 
     function ChangeSkin(name="",pers=""){
@@ -2362,23 +2480,25 @@
     }
 
 
-    function PlayPause(){
-        if(spinewidget.isPlaying()){
+    function PlayPause(widget){
+        if(widget=="token") widget=spinewidgettoken
+        else widget=spinewidget
+        if(widget.isPlaying()){
             console.log("Playing")
-            spinewidget.pause()
+            widget.pause()
         }else{
             console.log("Paused")
-            spinewidget.play()
+            widget.play()
         }
     }
 
 
-    function CreateAnimation(animArray,endloop = false,skipStart = false){
+    function CreateAnimation(chibiwidget,animArray,endloop = false,skipStart = false){
         if(Array.isArray(animArray)||(Array.isArray(animArray)&&animArray.length!=1)){
             var delay = 0
             var animNum = 0
             if(animationqueue!=undefined)clearInterval(animationqueue)
-            spinewidget.state.clearTracks()
+            chibiwidget.state.clearTracks()
             animArray.forEach(element => {
                 var curranim = element
                 var animTimes = 1
@@ -2388,8 +2508,8 @@
                     animTimes = element[1]
                     isloop = true
                 }
-                if(animNum==0)spinewidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
-                else spinewidget.state.addAnimation(animNum,curranim,isloop,delay)
+                if(animNum==0)chibiwidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
+                else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                 delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
                 animNum++
                 console.log(element)
@@ -2402,7 +2522,7 @@
                     var delay = 0
                     var animNum = 0
                     
-                    spinewidget.state.clearTracks()
+                    chibiwidget.state.clearTracks()
                     animArray.forEach(element => {
                         var curranim = element
                         var animTimes = 1
@@ -2412,8 +2532,8 @@
                             animTimes = element[1]
                             isloop = true
                         }
-                        if(animNum==0)spinewidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
-                        else spinewidget.state.addAnimation(animNum,curranim,isloop,delay)
+                        if(animNum==0)chibiwidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
+                        else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                         delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
                         animNum++
                         console.log(element)
@@ -2421,8 +2541,8 @@
                 },delay*1000)
             }
         }else{
-            spinewidget.state.clearTracks()
-            spinewidget.state.setAnimation(0,animArray,true)
+            chibiwidget.state.clearTracks()
+            chibiwidget.state.setAnimation(0,animArray,true)
         }
     }
     
