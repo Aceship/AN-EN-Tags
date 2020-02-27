@@ -112,6 +112,7 @@
     var charName = 'char_180_amgoat';
     var chibipers = 'front'
     var chibiName = 'char_180_amgoat'
+    var currskin 
     var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
     var spinewidget 
     var spinewidgettoken
@@ -208,7 +209,7 @@
 
             console.log(chibiperscurr)
             console.log(chibiperslist[chibiperscurr])
-            ChangeSkin("",chibiperslist[chibiperscurr])
+            ChangeSkin(currskin,chibiperslist[chibiperscurr])
             
         });
 
@@ -683,7 +684,7 @@
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
 
             var opcode = Object.keys(opdata2)[0]
-            
+            currskin =opcode
             //test
             // var charalist = []
             // $.each(db.chars,(key,chara) => {
@@ -2539,7 +2540,8 @@
     }
 
     function ChangeSkin(name="",pers=""){
-        var skinname = name.split(opdataFull.id)[1]?name.split(opdataFull.id)[1]:""
+        currskin = name
+        var skinname = currskin.split(opdataFull.id)[1]?name.split(opdataFull.id)[1]:""
         console.log(opdataFull.id)
         console.log(skinname)
         if(name!="")chibiName=name
