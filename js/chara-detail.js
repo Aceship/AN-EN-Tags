@@ -862,7 +862,7 @@
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
             $("#op-nameTL").html(opdata['name_'+lang]);
             $("#op-nameREG").html("["+opdata['name_'+reg]+"]");
-            $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]}`)
+            $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]} | ${opdataFull.id.split("_")[2]}`)
             if(unreadable){
                 $("#op-nameRead").html(`[ ${unreadable} ]`);
             }else{
@@ -1310,8 +1310,8 @@
         // console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
         let illustrator = currStory.drawName
         let voiceActor = db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName
-        $('#info-illustrator').html(`<div class="btn-infoleft">Illustrator</div><div class="btn-inforight"><a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a></div>`)
-        $('#info-voiceactor').html(`<div class="btn-infoleft">Voice Actor</div><div class="btn-inforight"><a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a></div>`)
+        $('#info-illustrator').html(`<div class="btn-infoleft ak-shadow"><i class="fas fa-pencil-alt" title="Illustrator"></i></div><div class="btn-inforight"><a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a></div>`)
+        $('#info-voiceactor').html(`<div class="btn-infoleft ak-shadow"><i class="fas fa-microphone-alt" title="Voice Actor"></i></div><div class="btn-inforight"><a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a></div>`)
         let puretext = []
         let textTL = []
         let islong =false
@@ -2582,7 +2582,7 @@
                     animTimes = element[1]
                     isloop = true
                 }
-                if(animNum==0)chibiwidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
+                if(animNum==0)chibiwidget.state.setAnimation(0,curranim,animArray[0].length>1?true:false)
                 else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                 delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
                 animNum++
@@ -2606,7 +2606,7 @@
                             animTimes = element[1]
                             isloop = true
                         }
-                        if(animNum==0)chibiwidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
+                        if(animNum==0)chibiwidget.state.setAnimation(0,curranim,animArray[0].length>1?true:false)
                         else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                         delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
                         animNum++
