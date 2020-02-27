@@ -2251,6 +2251,8 @@
                 // console.log(skillmax-skillnum-1)
                 
                 if(animlist[skillmax-skillnum-1]){
+                    $("#spine-text").text(`Skill ${skillnum+1}`)
+                    // console.log()
                     CreateAnimation(spinewidget,spinewidget.customanimation[animlist[skillmax-skillnum-1]],true)
                 }
             }
@@ -2567,6 +2569,7 @@
             // console.log("ayyyyyy")
             var delay = 0
             var animNum = 0
+            if(animationqueue!=undefined)clearInterval(animationqueue)
             var curranimplay = Array.isArray(animArray[0])?animArray[0][0]:animArray[0]
             if(chibiwidget.loaded)chibiwidget.setAnimation(curranimplay)
             chibiwidget.state.clearTracks()
@@ -2704,6 +2707,9 @@
                 if(curranimlist[keys].find(search=>search.includes("End"))){
                     if(anim.find(search=>search.name.includes("Idle_Charge"))) curranimlist[keys].push("Idle_Charge")
                     else curranimlist[keys].push("Idle")
+                }
+                if(curranimlist[keys].find(search=>search.includes("Die"))){
+                    if(anim.find(search=>search.name.includes("Start"))) curranimlist[keys].push("Start")
                 }
                 for(i=0;i<curranimlist[keys].length;i++){
                     var filterarray = [
