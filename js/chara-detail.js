@@ -315,7 +315,7 @@
             if(vars.has("opname")){
                 vars.set("opname", decodeURIComponent(vars.get("opname").replace("_"," ")));
                 console.log(vars.get("opname"));
-                var char = query(db.chars,"appellation",vars.opname,true,true);
+                var char = query(db.chars,"appellation",vars.get("opname"),true,true);
                 console.log(char)
                 var opname;
                 $.each(char,function(key,v){
