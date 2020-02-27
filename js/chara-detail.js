@@ -117,6 +117,7 @@
     var spinewidgettoken
     var animIndex = 0;
     var animations
+    var tokenname 
     var tokenanimations
     var animationqueue
     var defaultAnimationName = "Default";
@@ -179,7 +180,8 @@
                 }
             }
         });
-
+        dragElement(document.getElementById("spine-frame"));
+        dragElement(document.getElementById("spine-frame-token"));
         $("#Chibi-Bg").click(function(){
             bgnum++
             if(bgnum>bgmax)bgnum=0
@@ -1071,7 +1073,7 @@
                 var skilltoken = opdataFull.skills[i].overrideTokenKey
                 if(skilltoken== null) skilltoken = opdataFull.tokenKey
                 //
-
+                tokenname = skilltoken
                 
                 var tabItem = $("<li class='nav-item'>"
                                 +    `<button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'><p>Skill ${i+1}</p></button>`
@@ -2234,6 +2236,7 @@
         // console.log(skillnum)
         // console.log(token)
         // console.log(skillmax)
+        console.log(token)
         if(spinewidgettoken&&token&&spinewidgettoken.loaded){
             
             LoadAnimationToken(token)
@@ -2388,8 +2391,9 @@
         // console.log(spinewidgettoken)
         // console.log(opdataFull)
         // var tokenName =
-        
+        var tokenname = tokenkey
         var tokenfolder = `./spineassets/token/${opdataFull.id}/${tokenkey}`
+        console.log(tokenfolder)
         // $("#loading-spine").text("Loading...")
         if(spinewidgettoken){
             // spinewidget.loadWidgets()
@@ -2474,7 +2478,7 @@
                             }
 
                             widget.customanimation = CheckAnimationSet(tokenanimations)
-                            // console.log(widget)
+                            console.log(widget)
                         }
                     })
                 }else{
@@ -2535,13 +2539,19 @@
     }
 
     function ChangeSkin(name="",pers=""){
-        // console.log(name)
+        var skinname = name.split(opdataFull.id)[1]?name.split(opdataFull.id)[1]:""
+        console.log(opdataFull.id)
+        console.log(skinname)
         if(name!="")chibiName=name
         if(pers!="")chibipers=pers
         if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
         else chibiName.includes("build")?chibiName=chibiName.split("_").slice(1).join("_"):chibiName=chibiName
         folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
         if(spinewidget)LoadAnimation()
+
+        if(spinewidgettoken){
+            LoadAnimationToken(tokenname+skinname)
+        }
     }
 
 
@@ -2573,10 +2583,12 @@
             var curranimplay = Array.isArray(animArray[0])?animArray[0][0]:animArray[0]
             if(chibiwidget.loaded)chibiwidget.setAnimation(curranimplay)
             chibiwidget.state.clearTracks()
+            var curranimations = chibiwidget.skeleton.data.animations
             animArray.forEach(element => {
                 var curranim = element
                 var animTimes = 1
                 var isloop = animNum==animArray.length-1
+                
                 if(Array.isArray(element)){
                     curranim = element[0]
                     animTimes = element[1]
@@ -2584,7 +2596,7 @@
                 }
                 if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
                 else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
-                delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
+                delay +=curranimations[GetAnimationIndex(curranimations,curranim)].duration*animTimes
                 animNum++
                 // console.log(element)
             });
@@ -2608,7 +2620,7 @@
                         }
                         if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
                         else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
-                        delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
+                        delay +=curranimations[GetAnimationIndex(curranimations,curranim)].duration*animTimes
                         animNum++
                         console.log(element)
                     });
@@ -2808,4 +2820,47 @@
 
     function getUrlVars() {
         return new URL(window.location.href).searchParams;
+    }
+
+    
+
+    function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+        // if present, the header is where you move the DIV from:
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+        // otherwise, move the DIV from anywhere inside the DIV:
+        elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        // stop moving when mouse button is released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
     }
