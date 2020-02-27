@@ -2582,7 +2582,7 @@
                     animTimes = element[1]
                     isloop = true
                 }
-                if(animNum==0)chibiwidget.state.setAnimation(0,curranim,animArray[0].length>1?true:false)
+                if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
                 else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                 delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
                 animNum++
@@ -2606,7 +2606,7 @@
                             animTimes = element[1]
                             isloop = true
                         }
-                        if(animNum==0)chibiwidget.state.setAnimation(0,curranim,animArray[0].length>1?true:false)
+                        if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
                         else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                         delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
                         animNum++
