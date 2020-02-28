@@ -145,6 +145,7 @@
         $("#opBg").attr('src','');
         $("#opGlow").attr('src','');
         $("#opBanner").attr('src','');
+        $("#detail").empty();
         $("#opID").val("");
     }
 
@@ -256,7 +257,7 @@
             console.log(lang);
             $("#op-nametl").html(opdata['name_'+lang]);
             $("#op-name").html(opdata['name_'+reg]);
-            $("#detail").html("<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow ak-shadow-small my-1\" style=\"background:#444444DD\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+opdata.name_en.replace(/ /g,"_")   +"\" \">Detail</button>")
+            $("#detail").html("<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow ak-shadow-small my-1\" style=\"background:#444444DD\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+opdata.name_en.replace(/ /g,"_")+"\">Detail</button>")
             var rarity = "";
             for (var i = 0; i < opdata.level; i++) {
                 rarity = rarity + " ★";
