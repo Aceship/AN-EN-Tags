@@ -447,7 +447,7 @@
                 })
                 currtags = currtags?currtags.type_en?currtags.type_en:currtags.tag_en:undefined
                 console.log(currtags)   
-                gtag('event', 'Selecting Tags (crude)', {
+                gtag('event', 'Selecting Tags (Crude)', {
                     'event_category' : 'Recruitment Calculator',
                     'event_label' : currtags 
                 });   
