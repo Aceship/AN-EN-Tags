@@ -45,15 +45,15 @@
                         if (tag in tags_aval) {
                             tags_aval[tag].push({ 
                                 "name_en": char.name_en, 
-                                "name": eval('char.name_'+reg),
-                                "name_tl": eval('char.name_'+lang),
+                                "name": char['name_'+reg],
+                                "name_tl": char['name_'+lang],
                                 "level": char.level, 
                                 "type": char.type });
                         } else {
                             tags_aval[tag] = [{ 
                                 "name_en": char.name_en, 
-                                "name": eval('char.name_'+reg), 
-                                "name_tl": eval('char.name_'+lang),
+                                "name": char['name_'+reg], 
+                                "name_tl": char['name_'+lang],
                                 "level": char.level, 
                                 "type": char.type }];
                                 tag_count++;
@@ -272,8 +272,8 @@
                     var found = false;
                     $.each(all_tags, function(_, alltag){
                         if(alltag.tag_cn == tag){
-                            tagReg = eval('alltag.tag_'+reg);
-                            tagTL = eval('alltag.tag_'+lang);
+                            tagReg = alltag['tag_'+reg];
+                            tagTL = alltag['tag_'+lang];
                             found = true;
                             return false;
                         }
@@ -281,8 +281,8 @@
                     if(!found){
                         $.each(all_types, function(_, alltypes){
                             if(alltypes.type_cn == tag){
-                                tagReg = eval('alltypes.type_'+reg)+(localStorage.showClass=="true"&&reg=="cn"?"干员":"");
-                                tagTL = eval('alltypes.type_'+lang);
+                                tagReg = alltypes['type_'+reg]+(localStorage.showClass=="true"&&reg=="cn"?"干员":"");
+                                tagTL = alltypes['type_'+lang];
                                 found = true;
                                 return false;
                             }
@@ -291,8 +291,8 @@
                             $.each(all_genders, function(_, allgenders){
                                 console.log(allgenders);
                                 if(allgenders.sex_cn+'性干员' == tag){
-                                    tagReg = eval('allgenders.sex_'+reg);
-                                    tagTL = eval('allgenders.sex_'+lang);
+                                    tagReg = allgenders['sex_'+reg];
+                                    tagTL = allgenders['sex_'+lang];
                                     if(reg=='cn'){
                                         tagReg = tagReg+'性干员';
                                     }
@@ -314,7 +314,7 @@
                 $("#tbody-recommend").append(
                     "<tr class=\"tr-chartag \"><td>#</td><td>" +
                     "<button type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small ak-rare-" + colors[char.level] +
-                    " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ eval("char.name_"+reg) +"\" onclick=\"showChar(this)\">" + eval("char.name_"+lang) + "</button>\n" +
+                    " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ char["name_"+reg] +"\" onclick=\"showChar(this)\">" + char["name_"+lang] + "</button>\n" +
                     "<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small my-1\" style=\"background:#444\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+char.name_en.replace(/ /g,"_")   +"\" \">Detail</button></td><td>" + tags_html.join("") +""
                     // "</td><td>#</td>" 
                     +"</tr>"
@@ -686,8 +686,8 @@
                                 if(data[i].type == types[m]){
                                     //console.log("j="+j+" , k="+k);
                                     if(j==k){
-                                        $(el).html(eval("data[i].tag_"+reg));
-                                        $(el).attr("data-original-title", eval("data[i].tag_"+lang));
+                                        $(el).html(data[i]["tag_"+reg]);
+                                        $(el).attr("data-original-title", data[i]["tag_"+lang]);
                                     }
                                     k++;
                                 }
@@ -700,19 +700,19 @@
                 getJSONdata("gender",function(data){
                     if(data.length != 0){
                         if(reg == 'cn'){
-                            $(el).html(eval("data[i].sex_"+reg)+'性干员');
+                            $(el).html(data[i]["sex_"+reg]+'性干员');
                         } else {
-                            $(el).html(eval("data[i].sex_"+reg));
+                            $(el).html(data[i]["sex_"+reg]);
                         }
-                        $(el).attr("data-original-title", eval("data[i].sex_"+lang));
+                        $(el).attr("data-original-title", data[i]["sex_"+lang]);
                     }
                 });
             });
             $(".tags-class").each(function(i,el){
                 getJSONdata("type",function(data){
                     if(data.length != 0){
-                        $(el).html(eval("data[i].type_"+reg)+(localStorage.showClass=="true"?reg=='cn'?'干员':reg=='jp'?"タイプ":"":""));
-                        $(el).attr("data-original-title", eval("data[i].type_"+lang));
+                        $(el).html(data[i]["type_"+reg]+(localStorage.showClass=="true"?reg=='cn'?'干员':reg=='jp'?"タイプ":"":""));
+                        $(el).attr("data-original-title", data[i]["type_"+lang]);
                     }
                 });
             });
@@ -720,7 +720,7 @@
                 if(data.length != 0){
                     $.each(data, function(i,text){
                         // console.log(text)
-                        $("[translate-id="+text.id).html(eval('text.ui_'+lang));
+                        $("[translate-id="+text.id).html(text['ui_'+lang]);
                     });
                 }
             });
@@ -779,15 +779,15 @@
                         if (tag in tags_aval) {
                             tags_aval[tag].push({ 
                                 "name_en": char.name_en, 
-                                "name": eval('char.name_'+reg),
-                                "name_tl": eval('char.name_'+lang),
+                                "name": char['name_'+reg],
+                                "name_tl": char['name_'+lang],
                                 "level": char.level, 
                                 "type": char.type });
                         } else {
                             tags_aval[tag] = [{ 
                                 "name_en": char.name_en, 
-                                "name": eval('char.name_'+reg), 
-                                "name_tl": eval('char.name_'+lang),
+                                "name": char['name_'+reg], 
+                                "name_tl": char['name_'+lang],
                                 "level": char.level, 
                                 "type": char.type }];
                                 tag_count++;
