@@ -112,9 +112,10 @@
     var charName = 'char_180_amgoat';
     var chibipers = 'front'
     var chibiName = 'char_180_amgoat'
-    var currskin 
     var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
     var spinewidget 
+
+    var currskin 
     var spinewidgettoken
     var animIndex = 0;
     var animations
