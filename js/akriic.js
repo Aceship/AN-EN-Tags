@@ -363,7 +363,7 @@
         }
         var found = false;
         $.each(db,function(key2,v){
-            if(eval('v.'+key).toLowerCase() == val.toLowerCase()){
+            if(v[key].toLowerCase() == val.toLowerCase()){
                 found = true;
                 if(single){
                     if(returnKey){
