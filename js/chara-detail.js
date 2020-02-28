@@ -671,7 +671,7 @@
         }
         $('#charazoom').modal('handleUpdate')
     }
-    function selectOperator(opname){
+    function selectOperator(opname,from='Selecting Operator From Browse'){
         $("#opchoosemodal").modal('hide');
         if(opname != ""){
             $("#chara-detail-container").show();
@@ -700,7 +700,7 @@
             gtag('event', 'Selecting Operator', {
                 'event_category' : 'Operator Details',
                 'event_label' : opdataFull.appellation ,
-                'value' : 'Selecting operator'
+                'value' : from
             });              
             
             //test
