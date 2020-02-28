@@ -684,7 +684,10 @@
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
 
             var opcode = Object.keys(opdata2)[0]
-            currskin =opcode
+            
+
+            
+            
             //test
             // var charalist = []
             // $.each(db.chars,(key,chara) => {
@@ -701,7 +704,11 @@
                 localStorage.selectedOPDetails = key;
                 return false
             });
-            
+
+            tokenname = opdataFull.tokenKey
+            currskin =opcode
+
+
             var url = new URL(window.location.href)
             var unreadable = query(db.unreadNameTL,"name",opdataFull.appellation)
             var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):opdataFull.appellation.replace(/ /g,"_"))
@@ -1074,7 +1081,7 @@
                 var skilltoken = opdataFull.skills[i].overrideTokenKey
                 if(skilltoken== null) skilltoken = opdataFull.tokenKey
                 //
-                tokenname = skilltoken
+                
                 
                 var tabItem = $("<li class='nav-item'>"
                                 +    `<button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'><p>Skill ${i+1}</p></button>`
@@ -2238,6 +2245,7 @@
         // console.log(token)
         // console.log(skillmax)
         console.log(token)
+        tokenname = token
         if(spinewidgettoken&&token&&spinewidgettoken.loaded){
             
             LoadAnimationToken(token)
@@ -2544,6 +2552,10 @@
         var skinname = currskin.split(opdataFull.id)[1]?name.split(opdataFull.id)[1]:""
         console.log(opdataFull.id)
         console.log(skinname)
+        if(spinewidgettoken){
+            console.log("      waaa "+tokenname)
+            LoadAnimationToken(tokenname+skinname)
+        }
         if(name!="")chibiName=name
         if(pers!="")chibipers=pers
         if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
@@ -2551,9 +2563,7 @@
         folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
         if(spinewidget)LoadAnimation()
 
-        if(spinewidgettoken){
-            LoadAnimationToken(tokenname+skinname)
-        }
+        
     }
 
 
