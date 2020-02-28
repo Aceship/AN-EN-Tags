@@ -447,10 +447,12 @@
                 })
                 currtags = currtags?currtags.type_en?currtags.type_en:currtags.tag_en:undefined
                 console.log(currtags)   
-                gtag('event', 'Selecting Tags (Crude)', {
-                    'event_category' : 'Recruitment Calculator',
-                    'event_label' : currtags 
-                });   
+                if(currtags){
+                    gtag('event', 'Selecting Tags (Crude)', {
+                        'event_category' : 'Recruitment Calculator',
+                        'event_label' : currtags 
+                    });  
+                } 
             }
             localStorage.lastChar = ""
             localStorage.checkedTagsCache = JSON.stringify(checkedTags);
