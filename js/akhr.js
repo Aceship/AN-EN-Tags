@@ -406,6 +406,7 @@
             let checked = $(el).hasClass("btn-primary");
             let tag = $(el).attr('cn-text');
             let tagTL = $(el).attr('data-original-title');
+            let tagEN 
             if (checked) {
                 checkedTags = checkedTags.filter(function (v, _, __) {
                     return v !== tag;
@@ -437,14 +438,26 @@
                 }
             }
             $(el).toggleClass("btn-primary btn-secondary");
+
+            if($(el).hasClass("btn-primary")){
+                let all_tags = JsonDATA[3].concat(JsonDATA[4]);
+                var currtags = all_tags.find(search=>{
+                    var checktags = search.type_cn?search.type_cn:search.tag_cn
+                    if(checktags==tag) return true
+                })
+                currtags = currtags?currtags.type_en?currtags.type_en:currtags.tag_en:undefined
+                console.log(currtags)   
+                gtag('event', 'Selecting Tags (crude)', {
+                    'event_category' : 'Recruitment Calculator',
+                    'event_label' : currtags 
+                });   
+            }
             localStorage.lastChar = ""
-            //  console.log(checkedTags);
-            //  console.log(checkedTagsTL);
             localStorage.checkedTagsCache = JSON.stringify(checkedTags);
             localStorage.checkedTagsTLCache = JSON.stringify(checkedTagsTL);
-            // console.log(tag)
             calculate();
         }
+
 
         function calculate(){
             // console.log(checkedTags)
@@ -598,7 +611,7 @@
                     });
                     let tagsTL_html = [];
                     $.each(tagsTL, function (i, tagTL) {
-                        console.log(tags[i])
+                        // console.log(tags[i])
                         var currtags = all_tags.find(search=>{
                             var checkcurr
                             if(localStorage.showClass=="true"&&search.type_cn+"干员"==tags[i]) checkcurr= true
