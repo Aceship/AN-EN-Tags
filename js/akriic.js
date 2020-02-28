@@ -1,15 +1,15 @@
     $.holdReady(true);
     var db = {};
-    var d0 = $.getJSON("json/excel/building_data.json",function(data){
+    var d0 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["manufactformulas"] = data.manufactFormulas;
         });
-    var d1 = $.getJSON("json/excel/building_data.json",function(data){
+    var d1 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["workshopformulas"] = data.workshopFormulas;
         });
-    var d2 = $.getJSON("json/excel/character_table.json",function(data){
+    var d2 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/character_table.json",function(data){
             db["chars"] = data;
         });
-    var d3 = $.getJSON("json/excel/item_table.json",function(data){
+    var d3 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/item_table.json",function(data){
             db["items"] = data.items;
         });
     var d4 = $.getJSON("json/tl-akhr.json",function(data){
@@ -24,13 +24,13 @@
     var d7 = $.getJSON("json/akmaterial.json",function(data){
             db["itemstl"] = data;
         });
-    var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){
+    var d8 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",function(data){
             db["dataconst"] = data;
         });
-    var d9 = $.getJSON("json/excel/building_data.json",function(data){
+    var d9 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["building_buff"] = data.buffs;
         });
-    var d10 = $.getJSON("json/excel/building_data.json",function(data){
+    var d10 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["building_chars"] = data.chars;
         });
     var d11 = $.getJSON("json/ace/riic.json",function(data){

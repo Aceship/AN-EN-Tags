@@ -1,15 +1,15 @@
 
 $.holdReady(true);
 const jsonList = {
-    chars           :"./json/excel/character_table.json",
+    chars           :"./json/gamedata/zh_CN/gamedata/excel/character_table.json",
     charsTL         :"./json/tl-akhr.json",
     classesTL       :"./json/tl-type.json",
     tagsTL          :"./json/tl-tags.json",
-    dataconst       :"./json/excel/gamedata_const.json",
+    dataconst       :"./json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",
     genderTL        :"./json/tl-gender.json",
-    skills          :"./json/excel/skill_table.json",
+    skills          :"./json/gamedata/zh_CN/gamedata/excel/skill_table.json",
     skillsTL        :"./json/ace/tl-skills.json",
-    range           :"./json/excel/range_table.json",
+    range           :"./json/gamedata/zh_CN/gamedata/excel/range_table.json",
     atkType         :"./json/tl-attacktype.json",
     unreadableTL    :"./json/tl-unreadablename.json",
     potsTL          :"./json/tl-potential.json",

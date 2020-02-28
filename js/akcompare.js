@@ -1,15 +1,15 @@
     $.holdReady(true);
     var db = {};
-    var d0 = $.getJSON("json/excel/building_data.json",function(data){
+    var d0 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["manufactformulas"] = data.manufactFormulas;
         });
-    var d1 = $.getJSON("json/excel/building_data.json",function(data){
+    var d1 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["workshopformulas"] = data.workshopFormulas;
         });
-    var d2 = $.getJSON("json/excel/character_table.json",function(data){
+    var d2 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/character_table.json",function(data){
             db["chars"] = data;
         });
-    var d3 = $.getJSON("json/excel/item_table.json",function(data){
+    var d3 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/item_table.json",function(data){
             db["items"] = data.items;
         });
     var d4 = $.getJSON("json/tl-akhr.json",function(data){
@@ -24,22 +24,22 @@
     var d7 = $.getJSON("json/tl-item.json",function(data){
             db["itemstl"] = data;
         });
-    var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){
+    var d8 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",function(data){
             db["dataconst"] = data;
         });
-    var d9 = $.getJSON("json/excel/skin_table.json",function(data){
+    var d9 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/skin_table.json",function(data){
             db["skintable"] = data;
         });
     var d10 = $.getJSON("json/tl-gender.json",function(data){
             db["gender"] = data;
         });
-    var d11 = $.getJSON("json/excel/skill_table.json",function(data){
+    var d11 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/skill_table.json",function(data){
             db["skills"] = data;
         });
     var d12 = $.getJSON("json/ace/tl-skills.json",function(data){
             db["skillsTL"] = data;
         });
-    var d13 = $.getJSON("json/excel/range_table.json",function(data){
+    var d13 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/range_table.json",function(data){
             db["range"] = data;
         });
     var d14 = $.getJSON("json/tl-attacktype.json",function(data){
@@ -54,7 +54,7 @@
     var d17 = $.getJSON("json/ace/tl-talents.json",function(data){
             db["talentsTL"] = data;
         });
-    var d18 = $.getJSON("json/excel/handbook_info_table.json",function(data){
+    var d18 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/handbook_info_table.json",function(data){
             db["handbookInfo"] = data;
         });
     var d19 = $.getJSON("json/tl-va.json",function(data){

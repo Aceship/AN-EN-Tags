@@ -1,23 +1,23 @@
 
 $.holdReady(true);
 const jsonList = {
-    chars           :"./json/excel/character_table.json",
+    chars           :"./json/gamedata/zh_CN/gamedata/excel/character_table.json",
     charsTL         :"./json/tl-akhr.json",
     classesTL       :"./json/tl-type.json",
     tagsTL          :"./json/tl-tags.json",
-    dataconst       :"./json/excel/gamedata_const.json",
+    dataconst       :"./json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",
     genderTL        :"./json/tl-gender.json",
-    skills          :"./json/excel/skill_table.json",
+    skills          :"./json/gamedata/zh_CN/gamedata/excel/skill_table.json",
     skillsTL        :"./json/ace/tl-skills.json",
-    range           :"./json/excel/range_table.json",
+    range           :"./json/gamedata/zh_CN/gamedata/excel/range_table.json",
     atkType         :"./json/tl-attacktype.json",
     unreadableTL    :"./json/tl-unreadablename.json",
     potsTL          :"./json/tl-potential.json",
     talentsTL       :"./json/ace/tl-talents.json",
     campdata        :"./json/tl-campdata.json",
-    enemyData       :"./json/excel/enemy_handbook_table.json",
+    enemyData       :"./json/gamedata/zh_CN/gamedata/excel/enemy_handbook_table.json",
     enemyStats      :"./json/levels/enemydata/enemy_database.json",
-    enemyTL         :"./json/gamedata/en/excel/enemy_handbook_table.json"
+    enemyTL         :"./json/gamedata/en_US/gamedata/excel/enemy_handbook_table.json"
 };
 
 var db = {}
