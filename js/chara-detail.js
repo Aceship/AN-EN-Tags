@@ -152,7 +152,7 @@
         });
 
         $(window).click(function() {
-            $('#operatorsResult').html("");
+            $('#operatorsResult').empty();
             $('#operatorsResult').hide();
         });
 
@@ -437,20 +437,20 @@
    
     function clickBtnClear(){
         $("#chara-detail-container").hide();
-        $("#elite-sidenav").html("");
-        $("#tabs-opCG").html("");
-        $("#elite-topnav").html("");
-        $("#tabs-opData").html("");
-        $("#op-taglist").html("");
+        $("#elite-sidenav").empty();
+        $("#tabs-opCG").empty();
+        $("#elite-topnav").empty();
+        $("#tabs-opData").empty();
+        $("#op-taglist").empty();
         $("#opname").val("");
-        $('#operatorsResult').html("");
+        $('#operatorsResult').empty();
         $('#operatorsResult').hide();
         localStorage.selectedOPDetails = "";
         history.pushState(null, '', window.location.pathname); 
     }
 
     function selOpClass(cname){
-        $("#selectedopclass").html("");
+        $("#selectedopclass").empty();
         
         var result 
         if(cname!=""){
@@ -614,7 +614,7 @@
                     selectOperator(result[0].name_cn)
                     return
                 }
-                $('#operatorsResult').html("");
+                $('#operatorsResult').empty();
                 $('#operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
 
@@ -654,7 +654,7 @@
             // console.log( $("#operatorsResult")  )
             // $('#operatorsResult').show();
         } else {
-            $('#operatorsResult').html("");
+            $('#operatorsResult').empty();
             $('#operatorsResult').hide();
         }
     }
@@ -678,7 +678,7 @@
             console.log("SELECT OPERATOR");
             console.log(opname);   
             $("#opname").val("");
-            $('#operatorsResult').html("");
+            $('#operatorsResult').empty();
             $('#operatorsResult').hide();
             var opdata = query(db.chars2,"name_cn",opname);
             var opclass = query(db.classes,"type_cn",opdata.type);
@@ -753,11 +753,11 @@
             var tabcontent2 = [];
             var zoombtn = [];
             
-            $("#elite-sidenav").html("");
-            $("#tabs-opCG").html("");
-            $("#elite-topnav").html("");
-            $("#tabs-opData").html("");
-            $("#op-taglist").html("");
+            $("#elite-sidenav").empty();
+            $("#tabs-opCG").empty();
+            $("#elite-topnav").empty();
+            $("#tabs-opData").empty();
+            $("#op-taglist").empty();
 
             charName = opcode;
             chibiName = opcode
@@ -883,7 +883,7 @@
             if(unreadable){
                 $("#op-nameRead").html(`[ ${unreadable} ]`);
             }else{
-                $("#op-nameRead").html("")
+                $("#op-nameRead").empty()
             }
             var gender = query(db.gender,"sex_cn",opdata.sex);
             
@@ -899,7 +899,7 @@
             var attackType = getSpeciality(opdataFull.description,opdataFull)
             
             $("#op-atktype").html(attackType)
-            $("#op-rarity").html("");
+            $("#op-rarity").empty();
             $("#op-rarity").attr("class","op-rarity-"+(opdataFull.rarity+1))
             
             $("#op-trust").html(GetTrust(opdataFull))
@@ -915,7 +915,7 @@
             if(potentials.length>0){
                 $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
             }else{
-                $("#op-potentialist").html("")
+                $("#op-potentialist").empty()
             }
             for (var i = 0; i < (opdataFull.rarity+1); i++) {
                 $("#op-rarity").append("<i class='fa fa-star'></i>");
@@ -943,13 +943,13 @@
             //Story
 
             GetStory(opdataFull)
-            $('#opaudiocontent').html("")
-            $('#opaudiotranslator').html("")
-            $('#opaudioproofreader').html("")
+            $('#opaudiocontent').empty()
+            $('#opaudiotranslator').empty()
+            $('#opaudioproofreader').empty()
             ///////////////////////////////////////////////// SKILLS SECTION //////////////////////////////////////////////////
 
-            $("#skill-tabs").html("");
-            $("#skill-contents").html("");
+            $("#skill-tabs").empty();
+            $("#skill-contents").empty();
             $.each(opdataFull.skills,function(i,v){
                 var maxSkillLevel = opdataFull.skills[i].levelUpCostCond.length;
                 var skillId = opdataFull.skills[i].skillId;
@@ -1272,9 +1272,9 @@
         });
         // console.log(curraudiolist)
         // console.log(puretextlist.join("\n"))
-        $('#opaudiocontent').html("")
-        $('#opaudiotranslator').html("")
-        $('#opaudioproofreader').html("")
+        $('#opaudiocontent').empty()
+        $('#opaudiotranslator').empty()
+        $('#opaudioproofreader').empty()
         curraudiolist.forEach(element => {
             var curraudio  =`<audio preload="metadata" controls style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> `
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){

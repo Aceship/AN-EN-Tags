@@ -129,7 +129,7 @@ $(document).ready(function(){
 });
 
 function RefreshSlots(){
-    $("#slotsContainer").html("");
+    $("#slotsContainer").empty();
 
     var selectedOpList = [];
     try {
@@ -276,7 +276,7 @@ function RefreshValues(){
             blockCnt:'block',
             baseAttackTime:'atkT',
         };
-        $("#slot-"+i+"-trust").html("");
+        $("#slot-"+i+"-trust").empty();
         $.each(buffs,function(key,v){
             $("#slot-"+i+"-trust").html($("#slot-"+i+"-trust").html()+" "+key+" +"+v);
             if(applyTrust){
@@ -294,7 +294,7 @@ function RefreshValues(){
         //////////////////// SKILLS SECTION /////////////////////
 
         var traitsText = getProcessedTexts('traits',opData);
-        $("#slot-"+i+"-traits").html("");
+        $("#slot-"+i+"-traits").empty();
         $("#slot-"+i+"-traits").html(traitsText);
 
     }
@@ -402,7 +402,7 @@ function deleteOp(index){
 }
 
 function selOpClass(cname){
-    $("#selectedopclass").html("");
+    $("#selectedopclass").empty();
 
     var result 
     if(cname!=""){

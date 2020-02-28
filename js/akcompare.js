@@ -177,7 +177,7 @@
     });
 
     function clickBtnClear(){
-        $("#slotscontainer").html("");
+        $("#slotscontainer").empty();
         populateSlots();
         let selectedOPDetailsObj = {};
         let selectedOpnames = {};
@@ -360,7 +360,7 @@
                     selectOperator(result[0].name_cn)
                     return
                 }
-                $('#slot'+slot+'-operatorsResult').html("");
+                $('#slot'+slot+'-operatorsResult').empty();
                 $('#slot'+slot+'-operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
@@ -382,7 +382,7 @@
             // console.log( $("#operatorsResult")  )
             // $('#operatorsResult').show();
         } else {
-            $('#slot'+slot+'-operatorsResult').html("");
+            $('#slot'+slot+'-operatorsResult').empty();
             $('#slot'+slot+'-operatorsResult').hide();
         }
     }
@@ -393,7 +393,7 @@
             console.log("SELECT OPERATOR");
             console.log(opname);   
             $("#slot"+slot+"-opname").val("");
-            $('#slot'+slot+'-operatorsResult').html("");
+            $('#slot'+slot+'-operatorsResult').empty();
             $('#slot'+slot+'-operatorsResult').hide();
             var opdata = query(db.chars2,"name_cn",opname);
             
@@ -479,7 +479,7 @@
 
             var tabbtn2 = [];
             var tabcontent2 = [];
-            $("#slot"+slot+"-elite-topnav").html("");
+            $("#slot"+slot+"-elite-topnav").empty();
             for (var i = 0; i < opdataFull[slot].phases.length; i++) {
                 var l = opdataFull[slot].phases.length;
                 if(i == 0){

@@ -84,7 +84,7 @@ function RefreshAlldata() {
         $("#opimage").attr("src","img/avatars/"+selectedOp+"_1.png");
         $("#opname").html(opDataTL.name_en);
 
-        $('#eliteSelections').html("");
+        $('#eliteSelections').empty();
         for (var i = 0; i < opData.phases.length; i++) {
             if(i == opElite){ var active = 'active';} else { var active = '';}
             $('#eliteSelections').append(`
@@ -268,7 +268,7 @@ function selectOp(opID){
 }
 
 function selOpClass(cname){
-    $("#selectedopclass").html("");
+    $("#selectedopclass").empty();
 
     var result 
     if(cname!=""){
@@ -353,7 +353,7 @@ function selectEnemy(id){
 
 function populateEnemyList(){
     console.log(db.enemyData);
-    $("#enemyList").html("");
+    $("#enemyList").empty();
     var html = "";
     $.each(db.enemyData,function(key,v){
         html +=
