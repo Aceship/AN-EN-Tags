@@ -124,7 +124,7 @@
     function FilterType(type){
         charaFilter=[]
         let currHtml = []
-        $("#tbody-list").html("")
+        $("#tbody-list").empty()
         
         // currHtml.push(`</div></div> `)
         // console.log(currHtml)
@@ -132,7 +132,7 @@
     }
     function clickBtnClear(){
         console.log(lang);
-        $("#tbody-list").html("")
+        $("#tbody-list").empty()
     }
     function populateEnemy(el){
         // console.log(el)
@@ -171,7 +171,7 @@
             let currHtml = []
             result.sort((a,b)=> a.sortId-b.sortId)
             if(result.length > 0){
-                $('#enemyResult').html("");
+                $('#enemyResult').empty();
                 $('#enemyResult').show();
                 for (var i = 0; i < result.length; i++) {
                     let currEnemy = query(db.enemy,"enemyId",result[i].id)
@@ -195,12 +195,12 @@
             // console.log( $("#operatorsResult")  )
             $('#operatorsResult').show();
         } else {
-            $('#enemyResult').html("");
+            $('#enemyResult').empty();
             $('#enemyResult').hide();
         }
     }
     function selectEnemy(el){
-        $('#enemyResult').html("");
+        $('#enemyResult').empty();
         $('#enemyResult').hide();
         let currEnemy = query(db.enemy,"enemyId",el)
         LoadAnimation(el)
@@ -305,7 +305,7 @@
     }
 
     function enemyDetail(el,level){
-        $('#enemyDetail2').html("");
+        $('#enemyDetail2').empty();
         $('#enemyDetail2').hide();
         let currEnemy = query(db.enemy,"enemyId",el)
         let currEnemyDetail = db.enemyDetail.find(search=>search.Key == el)

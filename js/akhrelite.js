@@ -47,7 +47,7 @@
         });
 
         $(window).click(function() {
-            // $('#operatorsResult').html("");
+            // $('#operatorsResult').empty();
             // $('#operatorsResult').hide();
         });
         // $('.browse-btn').click(function(event){
@@ -127,19 +127,19 @@
     
     function clickBtnClear(){
         $("#opname").val("");
-        $('#operatorsResult').html("");
+        $('#operatorsResult').empty();
         $('#operatorsResult').hide();
         localStorage.selectedOP = "";
         selectedOP = localStorage.selectedOP;
-        $("#reqmats-container").html("");
-        $("#tbody-materials").html("");
+        $("#reqmats-container").empty();
+        $("#tbody-materials").empty();
         $("#eliteReqMats").hide();
         $("#opClassImage").attr('src','');
             console.log(lang);
-        $("#op-nametl").html("");
-        $("#op-name").html("");
-        $("#op-rarity").html("");
-        $("#op-tags").html("");
+        $("#op-nametl").empty();
+        $("#op-name").empty();
+        $("#op-rarity").empty();
+        $("#op-tags").empty();
         $("#opImage").attr('src','img/chara/empty.png');
         $("#opHeader").attr('src','');
         $("#opBg").attr('src','');
@@ -203,7 +203,7 @@
                     selectOperator(result[0].name_cn)
                     return
                 }
-                $('#operatorsResult').html("");
+                $('#operatorsResult').empty();
                 $('#operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
@@ -225,7 +225,7 @@
             console.log( $("#operatorsResult")  )
             // $('#operatorsResult').show();
         } else {
-            $('#operatorsResult').html("");
+            $('#operatorsResult').empty();
             $('#operatorsResult').hide();
         }
     }
@@ -235,7 +235,7 @@
             console.log("SELECT OPERATOR");
             console.log(opname);
             $("#opname").val("");
-            $('#operatorsResult').html("");
+            $('#operatorsResult').empty();
             $('#operatorsResult').hide();
             var opdata = query(db.chars2,"name_cn",opname);
             var opclass = query(db.classes,"type_cn",opdata.type);
@@ -281,7 +281,7 @@
 
     function selectElite(num){
         console.log("SELECT ELITE");
-        $("#tbody-materials").html("");
+        $("#tbody-materials").empty();
         $("#eliteDropBtn").html("Elite "+num);
         let curChara = db.chars[$("#opID").val()];
         let reqmats = [];

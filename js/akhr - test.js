@@ -306,8 +306,8 @@
         function clickBtnClear(){
             
             $('.btn-tag').removeClass('btn-primary').addClass('btn-secondary');
-            $("#tbody-recommend").html("");
-            $("#count-tag").html("")
+            $("#tbody-recommend").empty();
+            $("#count-tag").empty()
             checkedTags = [];
             checkedTagsTL = [];
             localStorage.checkedTagsCache = '';
@@ -446,7 +446,7 @@
                     combs.push({ "tags": ts, "tagsTL": tstl, "score": 0.0, "possible": [] });
                 }
                 // console.log(combs);
-                $("#tbody-recommend").html("");
+                $("#tbody-recommend").empty();
                 $.each(combs, function (_, comb) {
                     let tags = comb.tags;
                     

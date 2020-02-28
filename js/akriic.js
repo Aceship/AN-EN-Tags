@@ -221,7 +221,7 @@
         //     // console.log(acurrNum)
         // });
         let currHtml = []
-        $("#tbody-list").html("")
+        $("#tbody-list").empty()
         charaFilter.forEach(element => {
             let chara = db.chars[element.name]
             let charaRiic = db.building_chars[element.name]
@@ -350,7 +350,7 @@
     }
     function clickBtnClear(){
         console.log(lang);
-        $("#tbody-list").html("")
+        $("#tbody-list").empty()
     }
     
     // function 
