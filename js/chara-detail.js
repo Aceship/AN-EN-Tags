@@ -477,7 +477,7 @@
         result = result.sort((ak,bk)=>{
             var a = ak[Object.keys(ak)[0]]
             var b = bk[Object.keys(bk)[0]]
-            console.log(ak)
+            // console.log(ak)
             if(a.rarity<b.rarity) return 1
             if(a.rarity>b.rarity) return -1
             if(a.appellation>b.appellation)return 1
@@ -490,7 +490,7 @@
             var html;
             // console.log(result[i])
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
-                console.log(key)
+                // console.log(key)
                 var type = query(db.classes,"type_data",val.profession);
                 var classlogo = type?type.type_en.toLowerCase():""
                 var camplogo = val.displayLogo
@@ -685,17 +685,7 @@
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
 
             var opcode = Object.keys(opdata2)[0]
-            
 
-            
-            
-            //test
-            // var charalist = []
-            // $.each(db.chars,(key,chara) => {
-            //     charalist.push(`${chara.appellation},${chara.displayLogo},${key.split("_")[1]},${key}_1`)
-            // });
-            // console.log(charalist.join("\n"))
-            //
             var opKey =""
             $.each(opdata2,function(key,v){
                 v['id'] = key;
@@ -705,6 +695,22 @@
                 localStorage.selectedOPDetails = key;
                 return false
             });
+
+            console.log(opdataFull.appellation)
+            gtag('event', 'Selecting Operator', {
+                'event_category' : 'Operator Details',
+                'event_label' : opdataFull.appellation ,
+                'value' : 'Selecting operator'
+            });              
+            
+            //test
+            // var charalist = []
+            // $.each(db.chars,(key,chara) => {
+            //     charalist.push(`${chara.appellation},${chara.displayLogo},${key.split("_")[1]},${key}_1`)
+            // });
+            // console.log(charalist.join("\n"))
+            //
+            
 
             tokenname = opdataFull.tokenKey
             currskin =opcode
