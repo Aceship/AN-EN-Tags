@@ -446,12 +446,36 @@
                     if(checktags==tag) return true
                 })
                 currtags = currtags?currtags.type_en?currtags.type_en:currtags.tag_en:undefined
-                console.log(currtags)   
+                // console.log(currtags)   
                 if(currtags){
                     gtag('event', 'Selecting Tags (Crude)', {
                         'event_category' : 'Recruitment Calculator',
                         'event_label' : currtags 
                     });  
+                    if(checkedTags.length==5){
+                        // console.log("5 Combinations !")  
+                        var combination = []
+                        checkedTags.forEach(element => {
+                            var currtags = all_tags.find(search=>{
+                                var checktags = search.type_cn?search.type_cn:search.tag_cn
+                                if(checktags==element   ) return true
+                            })
+                            currtags = currtags?currtags.type_en?currtags.type_en:currtags.tag_en:undefined
+                            combination.push(currtags)
+                        });
+                        // console.log(combination)
+                        combination = combination.sort((a,b)=>{
+                            if(a>b) return 1
+                            else if (a<b) return -1
+                            else return 0
+                        })
+                        // console.log(combination.join(",") )
+                        gtag('event', 'Tags Combinations (Crude)', {
+                            'event_category' : 'Recruitment Calculator',
+                            'event_label' : combination.join(",") 
+                        });  
+
+                    }
                 } 
             }
             localStorage.lastChar = ""
