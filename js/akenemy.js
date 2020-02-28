@@ -139,7 +139,7 @@
                     found=true;
                 }else{
                     for (var i = 0; i < languages.length; i++) {
-                        // var charname = eval('char.name_'+languages[i]).toUpperCase();
+                        // var charname = char['name_'+languages[i]].toUpperCase();
                         var input = el.value.toUpperCase();
                         var search = charname.search(input);
                         if(search != -1){
@@ -384,7 +384,7 @@
         getJSONdata("ui",function(data){
             if(data.length != 0){
                 $.each(data, function(i,text){
-                    $("[translate-id="+text.id).html(eval('text.ui_'+lang));
+                    $("[translate-id="+text.id).html(text['ui_'+lang]);
                 });
             }
         });

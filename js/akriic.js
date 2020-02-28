@@ -407,7 +407,7 @@
         getJSONdata("ui",function(data){
             if(data.length != 0){
                 $.each(data, function(i,text){
-                    $("[translate-id="+text.id).html(eval('text.ui_'+lang));
+                    $("[translate-id="+text.id).html(text['ui_'+lang]);
                 });
             }
         });

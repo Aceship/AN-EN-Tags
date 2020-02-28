@@ -171,7 +171,7 @@
                     found=true;
                 }else{
                     for (var i = 0; i < languages.length; i++) {
-                        var charname = eval('char.name_'+languages[i]).toUpperCase();
+                        var charname = char['name_'+languages[i]].toUpperCase();
                         var unreadable = query(db.unreadNameTL,"name",char.name_en)
                         var input = inputs.toUpperCase();
                         var search = (unreadable?unreadable.name_en.toUpperCase().search(input):charname.search(input));
@@ -184,8 +184,8 @@
                 if(found){
                     // console.log(char)
                     var name_cn = char.name_cn;
-                    var name = eval('char.name_'+reg);
-                    var nameTL = eval('char.name_'+lang);
+                    var name = char['name_'+reg];
+                    var nameTL = char['name_'+lang];
                     var unreadable = query(db.unreadNameTL,"name",char.name_en).name_en
                     var img_name = query(db.chars,"name",char.name_cn,true,true); 
                     // console.log(Object.keys(img_name))
@@ -254,8 +254,8 @@
             });
             $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
             console.log(lang);
-            $("#op-nametl").html(eval('opdata.name_'+lang));
-            $("#op-name").html(eval('opdata.name_'+reg));
+            $("#op-nametl").html(opdata['name_'+lang]);
+            $("#op-name").html(opdata['name_'+reg]);
             $("#detail").html("<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow ak-shadow-small my-1\" style=\"background:#444444DD\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+opdata.name_en.replace(/ /g,"_")   +"\" \">Detail</button>")
             var rarity = "";
             for (var i = 0; i < opdata.level; i++) {
@@ -266,8 +266,8 @@
             $.each(opdata.tags,function(_,v){
                 var tag = query(db.tags,"tag_cn",v);
                 if(tag){
-                    var tagReg = eval('tag.tag_'+reg);
-                    var tagTL = eval('tag.tag_'+lang);
+                    var tagReg = tag['tag_'+reg];
+                    var tagTL = tag['tag_'+lang];
                     tags_html.push("<li style=\"list-style-type:none; padding-bottom: 10px;\"><button readonly type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
                             (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
                 }
@@ -482,7 +482,7 @@
         getJSONdata("ui",function(data){
             if(data.length != 0){
                 $.each(data, function(i,text){
-                    $("[translate-id="+text.id).html(eval('text.ui_'+lang));
+                    $("[translate-id="+text.id).html(text['ui_'+lang]);
                 });
             }
         });
