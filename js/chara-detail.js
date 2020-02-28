@@ -1,100 +1,53 @@
     $.holdReady(true);
     
-    var db = {};
-    var d0 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
-            db["manufactformulas"] = data.manufactFormulas;
-        });
-    var d1 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
-            db["workshopformulas"] = data.workshopFormulas;
-        });
-    var d2 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/character_table.json",function(data){
-            db["chars"] = data;
-        });
-    var d3 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/item_table.json",function(data){
-            db["items"] = data.items;
-        });
-    var d4 = $.getJSON("json/tl-akhr.json",function(data){
-            db["chars2"] = data;
-        });
-    var d5 = $.getJSON("json/tl-type.json",function(data){
-            db["classes"] = data;
-        });
-    var d6 = $.getJSON("json/tl-tags.json",function(data){
-            db["tags"] = data;
-        });
-    var d7 = $.getJSON("json/tl-item.json",function(data){
-            db["itemstl"] = data;
-        });
-    var d8 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",function(data){
-            db["dataconst"] = data;
-        });
-    var d9 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/skin_table.json",function(data){
-            db["skintable"] = data;
-        });
-    var d10 = $.getJSON("json/tl-gender.json",function(data){
-            db["gender"] = data;
-        });
-    var d11 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/skill_table.json",function(data){
-            db["skills"] = data;
-        });
-    var d12 = $.getJSON("json/ace/tl-skills.json",function(data){
-            db["skillsTL"] = data;
-        });
-    var d13 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/range_table.json",function(data){
-            db["range"] = data;
-        });
-    var d14 = $.getJSON("json/tl-attacktype.json",function(data){
-            db["attacktype"] = data;
-        });
-    var d15 = $.getJSON("json/tl-unreadablename.json",function(data){
-            db["unreadNameTL"] = data;
-        });
-    var d16 = $.getJSON("json/tl-potential.json",function(data){
-            db["potentialTL"] = data;
-        });
-    var d17 = $.getJSON("json/ace/tl-talents.json",function(data){
-            db["talentsTL"] = data;
-        });
-    var d18 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/handbook_info_table.json",function(data){
-            db["handbookInfo"] = data;
-        });
-    var d19 = $.getJSON("json/tl-va.json",function(data){
-        db["vaTL"] = data;
-    });
-    var d20 = $.getJSON("json/tl-storytext.json",function(data){
-        db["storytextTL"] = data;
-    });
-    var d21 = $.getJSON("json/tl-charastory.json",function(data){
-        db["charastoryTL"] = data;
-    });  
-    var d22 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/charword_table.json",function(data){
-        db["charword"] = data;
-    });  
-    var d23 = $.getJSON("json/tl-voiceline.json",function(data){
-        db["voicelineTL"] = data;
-    });  
-    var d24 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
-        db["buildbuffs"] = data.buffs;
-    });
-    var d25 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
-        db["buildchars"] = data.chars;
-    });
-    var d26 = $.getJSON("json/ace/riic.json",function(data){
-        db["riic"] = data;
-    });
-    var d27 = $.getJSON("json/gamedata/en_US/gamedata/excel/handbook_info_table.json",function(data){
-        db["handbookInfoEN"] = data;
-    });
-    var d28 = $.getJSON("json/gamedata/en_US/gamedata/excel/charword_table.json",function(data){
-        db["charwordEN"] = data;
-    });  
-    var d29 = $.getJSON("json/gamedata/en_US/gamedata/excel/skill_table.json",function(data){
-        db["skillsEN"] = data;
-    });
-    var d30 = $.getJSON("json/tl-campdata.json",function(data){
-        db["campdata"] = data;
-    });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30).then(function(){
+    const jsonList = {
+
+        //CN
+        chars           :"./json/gamedata/zh_CN/gamedata/excel/character_table.json",
+        charword        :"./json/gamedata/zh_CN/gamedata/excel/charword_table.json",
+        build           :"./json/gamedata/zh_CN/gamedata/excel/building_data.json",
+        handbookInfo    :"./json/gamedata/zh_CN/gamedata/excel/handbook_info_table.json",
+        range           :"./json/gamedata/zh_CN/gamedata/excel/range_table.json",
+        skills          :"./json/gamedata/zh_CN/gamedata/excel/skill_table.json",
+        skintable       :"./json/gamedata/zh_CN/gamedata/excel/skin_table.json",
+        dataconst       :"./json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",
+        item_table      :"./json/gamedata/zh_CN/gamedata/excel/item_table.json",
+
+
+        //EN
+        handbookInfoEN  :"./json/gamedata/en_US/gamedata/excel/handbook_info_table.json",
+        charwordEN      :"./json/gamedata/en_US/gamedata/excel/charword_table.json",
+        skillsEN        :"./json/gamedata/en_US/gamedata/excel/skill_table.json",
+
+
+        //Utilities
+        attacktype      :"./json/tl-attacktype.json",
+        animlist        :"./json/ace/animlist.json",
+
+        //TL
+        voicelineTL     :"./json/tl-voiceline.json",
+        campdata        :"./json/tl-campdata.json",
+        charastoryTL    :"./json/tl-charastory.json",
+        storytextTL     :"./json/tl-storytext.json",
+        vaTL            :"./json/tl-va.json",
+        potentialTL     :"./json/tl-potential.json",
+        unreadNameTL    :"./json/tl-unreadablename.json",
+        itemstl         :"./json/tl-item.json",
+        tags            :"./json/tl-tags.json",
+        classes         :"./json/tl-type.json",
+        chars2          :"./json/tl-akhr.json",
+        gender          :"./json/tl-gender.json",
+
+        //jet TL
+        riic            :"./json/ace/riic.json",
+        talentsTL       :"./json/ace/tl-talents.json",
+        skillsTL        :"./json/ace/tl-skills.json"
+        
+    };
+    
+    var db = {}
+    LoadAllJsonObjects(jsonList).then(function(result) {
+        db = result
         $.holdReady(false);
     });
 
@@ -1598,7 +1551,7 @@
     }
 
     function GetRiic(opdata2){
-        var charaRiic = db.buildchars[Object.keys(opdata2)[0]]
+        var charaRiic = db.build.chars[Object.keys(opdata2)[0]]
         var riicList = []
         var everybuff = []
 
@@ -1643,7 +1596,7 @@
         riicList.forEach(eachcat => {
             var eachtab = []
             eachcat.list.forEach(eachbuff => {
-                var currbuff = db.buildbuffs[eachbuff]
+                var currbuff = db.build.buffs[eachbuff]
                 var tlbuff = db.riic[eachbuff]
 
                 var currname = tlbuff?tlbuff.name:currbuff.buffName
@@ -1795,7 +1748,7 @@
         }
     }
     function CreateMaterial(id,count){
-        var itemdata = db.items[id];
+        var itemdata = db.item_table.items[id];
         var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
         var material = 
         (`<div class="akmat-container" style="position:relative">
@@ -2257,27 +2210,34 @@
             
             LoadAnimationToken(token)
         }else if(spinewidget&&spinewidget.loaded){
-            var animlist = Object.keys(spinewidget.customanimation).filter(search=>search.includes("Skill"))
 
-            animlist=animlist.sort((a,b)=>{
-                if(a<b)return 1
-                if(a>b)return -1
-                return 0
-            })
-            
-            if(animlist&&animlist.length>0){
-                // console.log(animlist)
-                // console.log(skillmax-skillnum-1)
+            var animskill = db.animlist[opdataFull.id]
+            console.log(skillnum)
+            if(animskill && animskill.skills[skillnum]){
+                $("#spine-text").text(`Skill ${skillnum+1}`)
+                CreateAnimation(spinewidget,animskill.skills[skillnum],true)
+            }
+            else{
+                var animlist = Object.keys(spinewidget.customanimation).filter(search=>search.includes("Skill"))
+
+                animlist=animlist.sort((a,b)=>{
+                    if(a<b)return 1
+                    if(a>b)return -1
+                    return 0
+                })
                 
-                if(animlist[skillmax-skillnum-1]){
-                    $("#spine-text").text(`Skill ${skillnum+1}`)
-                    // console.log()
-                    CreateAnimation(spinewidget,spinewidget.customanimation[animlist[skillmax-skillnum-1]],true)
+                if(animlist&&animlist.length>0){
+                    // console.log(animlist)
+                    // console.log(skillmax-skillnum-1)
+                    
+                    if(animlist[skillmax-skillnum-1]){
+                        $("#spine-text").text(`Skill ${skillnum+1}`)
+                        // console.log()
+                        CreateAnimation(spinewidget,spinewidget.customanimation[animlist[skillmax-skillnum-1]],true)
+                    }
                 }
             }
-            // console.log(currselectedanim)
-            // CreateAnimation(spinewidget)
-            
+
         }
     }
 
@@ -2626,7 +2586,8 @@
                 animationqueue = setInterval(function(){
                     var delay = 0
                     var animNum = 0
-                    
+                    var curranimplay = Array.isArray(animArray[0])?animArray[0][0]:animArray[0]
+                    if(chibiwidget.loaded)chibiwidget.setAnimation(curranimplay)
                     chibiwidget.state.clearTracks()
                     animArray.forEach(element => {
                         var curranim = element
@@ -2643,7 +2604,7 @@
                         animNum++
                         console.log(element)
                     });
-                },delay*1000)
+                },delay*1000-20)
             }
         }else{
             // chibiwidget.state.setAnimation(animArray)
@@ -2767,7 +2728,7 @@
                         // console.log("Got "+ Math.round(8/currvariable.duration))
                         if(curranimlist[keys][i].includes("Idle")){
                             if(Math.round(3/currvariable.duration)>3)curranimlist[keys][i] = [curranimlist[keys][i],Math.round(3/currvariable.duration)]
-                        }else{
+                        }else if(currvariable.duration!=0){
                             curranimlist[keys][i] = [curranimlist[keys][i],Math.round(8/currvariable.duration)]
                         }
                         
@@ -2882,4 +2843,17 @@
         document.onmouseup = null;
         document.onmousemove = null;
     }
+    }
+    function LoadAllJsonObjects(obj) {
+        var result = {}
+        
+        var promises = Object.entries(obj).map(function(url){
+            return $.getJSON(url[1]).then(function(res){
+                result[url[0]]=res
+            })
+        })
+    
+        return Promise.all(promises).then(function(){
+            return result
+        })
     }
