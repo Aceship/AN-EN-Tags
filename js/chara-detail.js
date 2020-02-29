@@ -2329,12 +2329,22 @@
                         $("#loading-spine").text("Load Failed")
                     }
                     if (skeletonType== "skel"){
+                        defaultAnimationName = "Default"
                         skelBin.data = array
                         skelBin.initJson()
                         jsonskel = JSON.stringify(skelBin.json)
+                        var parsedskeljson = JSON.parse(jsonskel)
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
                     }else if (skeletonType== "json"){
                         jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
-
+                        var parsedskeljson = JSON.parse(jsonskel)
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
                     }
                     
                     
