@@ -2314,7 +2314,7 @@
             xhr.responseType = 'arraybuffer';
             var array;
             $("#spine-widget").hide()
-
+            var defaultskin ='default'
             
             $("#loading-spine").fadeIn(200)
             console.log(chibiName)
@@ -2329,7 +2329,6 @@
                         $("#loading-spine").text("Load Failed")
                     }
                     if (skeletonType== "skel"){
-                        defaultAnimationName = "Default"
                         skelBin.data = array
                         skelBin.initJson()
                         jsonskel = JSON.stringify(skelBin.json)
@@ -2338,12 +2337,18 @@
                         if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
                             defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
                         }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
                     }else if (skeletonType== "json"){
                         jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
-                        var parsedskeljson = JSON.parse(jsonskel)
+                        var parsedskeljson = jsonskel
                         console.log(JSON.parse(jsonskel))
                         if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
                             defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
                         }
                     }
                     
@@ -2451,7 +2456,7 @@
             xhr.responseType = 'arraybuffer';
             var array;
             $("#spine-widget-token").hide()
-
+            var defaultskin ='default'
             
             // $("#loading-spine").fadeIn(200)
             // console.log(chibiName)
@@ -2469,9 +2474,24 @@
                         skelBin.data = array
                         skelBin.initJson()
                         jsonskel = JSON.stringify(skelBin.json)
+                        var parsedskeljson = JSON.parse(jsonskel)
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
                     }else if (skeletonType== "json"){
                         jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
-
+                        var parsedskeljson = jsonskel
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
                     }
                     
                     

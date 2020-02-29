@@ -475,7 +475,7 @@
             xhr.responseType = 'arraybuffer';
             var array;
             $("#spine-widget").hide()
-
+            var defaultskin ='default'
             
             $("#loading-spine").fadeIn(200)
             console.log(chibiname)
@@ -493,9 +493,24 @@
                         skelBin.data = array
                         skelBin.initJson()
                         jsonskel = JSON.stringify(skelBin.json)
+                        var parsedskeljson = JSON.parse(jsonskel)
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
                     }else if (skeletonType== "json"){
                         jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
-
+                        var parsedskeljson = jsonskel
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
                     }
                     
                     
@@ -508,6 +523,7 @@
                         atlas: folder + chibiname + ".atlas",
                         animation: defaultAnimationName,
                         backgroundColor: "#00000000",
+                        skin : defaultskin,
                         // debug: true,
                         // imagesPath: chibiName + ".png", 
                         premultipliedAlpha: true,
