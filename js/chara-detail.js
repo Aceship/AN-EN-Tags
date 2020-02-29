@@ -2597,6 +2597,31 @@
         }
     }
 
+    function Mirror(el){
+        var currcss 
+        // if($(el).hasClass("MirrorDiv")){
+        //     curcss = $(el).css('transform')
+        //     var changex = curcss.split(",")
+        //     $(el).css('transform','scaleX("1")')
+        //     console.log(changex)
+        // }
+        // else {
+        //     curcss = $(el).css('transform')
+        //     $(el).css('transform','scaleX("-1")')
+        //     console.log(curcss)
+        // }
+        currcss = $(el).css('transform')
+        var regexcheck = /matrix\((.*)\)/g
+        var changex = regexcheck.exec(currcss)[1]
+        var changex1 = changex.split(",")
+        changex1[0] = changex1[0]*-1
+        $(el).css('transform','matrix('+changex1.join(",")+')')
+        console.log(changex)
+        $(el).toggleClass("MirrorDiv") 
+        
+        
+    }
+
 
     function CreateAnimation(chibiwidget,animArray,endloop = false,skipStart = false){
         // console.log(animArray)
