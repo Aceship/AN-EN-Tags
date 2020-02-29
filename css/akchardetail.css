@@ -766,6 +766,25 @@ body {
     padding:2px
 }
 
+#spine-frame{
+    position: absolute;
+    width: 300px; 
+    height: 300px;
+    bottom:-39px;
+    left:220px;
+    transform: scale(0.75);
+    z-index:500;
+    pointer-events: none;
+}
+#spine-frame-token{
+    position: absolute;
+    width: 300px; 
+    height: 300px;
+    bottom:-42px;
+    left:345px;
+    transform: scale(0.75);
+    z-index:490;
+}
 
 @media (max-width: 1220px ){
     .chara-detail-container {
@@ -1059,7 +1078,7 @@ body {
 }
 
 @media (max-width: 767px ){
-
+    
     .fixedNav{
         bottom:-1000px!important;
         z-index: 0  ;
@@ -1099,7 +1118,7 @@ body {
     #spine-frame{
         /* left:120px !important;    */
         left: calc(80px + 18vw) !important;
-
+        z-index: 0;
         /* -moz-left: -moz-calc(25% - 1em); */
         /* right:20vw; */
     }
@@ -1107,7 +1126,7 @@ body {
     #spine-frame-token{
         /* left:120px !important;    */
         left: calc(160px + 18vw) !important;
-
+        z-index: 0;
         /* -moz-left: -moz-calc(25% - 1em); */
         /* right:20vw; */
     }
