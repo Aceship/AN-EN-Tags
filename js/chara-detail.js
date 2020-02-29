@@ -23,6 +23,7 @@
         //Utilities
         attacktype      :"./json/tl-attacktype.json",
         animlist        :"./json/ace/animlist.json",
+        effect          :"./json/tl-effect.json",
 
         //TL
         voicelineTL     :"./json/tl-voiceline.json",
@@ -1016,9 +1017,17 @@
                     }
                     var spDuration= (v2.duration==0?"Instant Attack":v2.duration==-1?"Infinite":v2.duration + " Seconds")
                     var spDurationName = (v2.duration==0?"":"Duration")
-                    
+                    var skilldetails =[]
+                    console.log(skillname)
+                    // console.log(skillData.levels[i2])
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
-                        
+                        // console.log(skillinfo)
+                        var skilljson = {}
+                        skilljson.name = db.effect[skillinfo.key]?db.effect[skillinfo.key]:skillinfo.key
+                        skilljson.key = skillinfo.key
+                        skilljson.value = skillinfo.value
+
+                        skilldetails.push(skilljson)
                         if(skillinfo.key=="force") force= skillinfo.value
                         if(v2.duration==-1){
                             if(skillinfo.key =="duration"){
@@ -1030,6 +1039,7 @@
                             grid = rangeMaker(opdataFull.phases[0].rangeId,true,skillinfo.value)
                         }
                     });
+                    console.log(skilldetails)
                     switch (force) {
                         case 0: force = "Small [0]";break;
                         case 1: force = "Medium [1]";break;
@@ -1061,6 +1071,28 @@
                             </tr>
                             <tr style="height:10px"></tr>
                             `       
+
+                    var detailtable = []
+                    if(skilldetails.length>0){
+                        var skillhtmldetail = ""
+                        
+                        skilldetails.forEach(currdetails => {
+                            
+                            skillhtmldetail+=`
+                            <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
+                                    ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
+                            </div>`
+                        });
+                        detailtable = `<button id='skilldetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler("#skilldetailcontent-${i}")'style="color:#fff;text-align:center;background:#222;padding:2px">Skill Details <i class="fas fa-caret-down"></i></button> 
+                            <div id='skilldetailcontent-${i}' class="ak-shadow" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
+                                ${skillhtmldetail}
+                            </div>
+                        </div>`
+                    }else{
+                        detailtable=""
+                    }
+                    
+                    // if
                     if(grid){
                         tables +=            "<tr>"
                                 +               "<td rowspan=2 id='skill"+i+"lv"+i2+"grid'>"+(grid?grid:"")+"</td>"
@@ -1070,6 +1102,7 @@
                                 +                   `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 +               "</tr>"
                                 +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
+                                +               `${detailtable==""?"":`<tr><td colspan=3>${detailtable}</td></tr>`}`
                                 +               "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
                                 +        "</table>";   
                     } else {
@@ -1078,7 +1111,8 @@
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 +            "</tr>"
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
-                                + "<tr><td colspan=4><div style='height:10px'></div>"+ materialHtml + "</td><tr>"
+                                +               `${detailtable==""?"":`<tr><td colspan=4>${detailtable}</td></tr>`}`
+                                + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
                                 +        "</table>";
                     }
                 })
@@ -1097,26 +1131,47 @@
                 var tabItem = $("<li class='nav-item'>"
                                 +    `<button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'><p>Skill ${i+1}</p></button>`
                                 +"</li>");
-                var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? '' : 'active')+"' id='skill"+i+"'>"
-                                        +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
-                                        +        "<p class='large-text'>Skill "+(i+1)+"</p>"
-                                        +        "<span class='custom-span skillname'>"+skillname+"</span>"
-                                        +        "<div class='topright'>"
-                                        +            "<div style='padding: 15px;'>"
-                                        +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/skill_icon_"+skillIcon+".png' style='width: 100%;'>"
-                                        +            "</div>"
-                                        +        "</div>"
-                                        +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
-                                        +    "</div>"
-                                        +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
-                                        +       `<input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>`
-                                        +        `<div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
-                                        // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
-                                        +        tables
-                                        +    "</div>"
-                                        +"</div>");
+                // var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? '' : 'active')+"' id='skill"+i+"'>"
+                //                         +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
+                //                         +        "<p class='large-text'>Skill "+(i+1)+"</p>"
+                //                         +        "<span class='custom-span skillname'>"+skillname+"</span>"
+                //                         +        "<div class='topright'>"
+                //                         +            "<div style='padding: 15px;'>"
+                //                         +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/skill_icon_"+skillIcon+".png' style='width: 100%;'>"
+                //                         +            "</div>"
+                //                         +        "</div>"
+                //                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
+                //                         +    "</div>"
+                //                         +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
+                //                         +       `<input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>`
+                //                         +        `<div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
+                //                         // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
+                //                         +        tables
+                //                         +    "</div>"
+                //                         +"</div>");
+                var tabContents = $(`
+                <div class='tab-pane container clickthrough ${i!=0 ? '' : 'active'}' id='skill${i}'>
+                    <div class='small-container ak-shadow' style='margin-top: 50px;'>
+                        <p class='large-text'>Skill ${i+1}</p>
+                        <span class='custom-span skillname'>${skillname}</span>
+                            <div class='topright'>
+                                <div style='padding: 15px;'>
+                                    <img class='ak-shadow skill-image' id='skill${i}image' src='img/skills/skill_icon_${skillIcon}.png' style='width: 100%;'>
+                                </div>
+                            </div>
+                        <button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skil${i}StatsCollapsible'><i class='fa fa-sort-down'></i></button>
+                    </div>
+                    <div id='skill${i}StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >
+                        <input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>
+                            <div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>
+                        ${tables}
+                    </div>
+                <div>
+
+                `)
                 $("#skill-tabs").append(tabItem);
                 $("#skill-contents").append(tabContents);
+                // $("#skill-contents").append("WAAAAAAAAAAAAAAAAAAAAAI");
             });
         }
     }
@@ -1717,6 +1772,7 @@
                 var currCandidate = currTalent.candidates[j] 
                 var currCandidateTL = currTalentTL?currTalentTL[j]:undefined
                 talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
+                console.log(currCandidate)
             }
             combTalents.push(talentGroup)
         }
@@ -1956,6 +2012,15 @@
         <div style="padding-top:5px;display:inline-block">
         <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
         ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
+        </div>`
+
+        return titledbutton
+    }
+    function titledMaker2 (content,title,extraClass="",extraId="",extraStyle=""){
+        let titledbutton = `
+        <div style="padding-top:0px;display:inline-block">
+        <div class=\"${extraClass}\" style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
+         ${(title==""?"":`<a class="ak-subtitle" style="color:#999;background:#222;display:inline-block;border-radius:0px;padding:0px 3px;margin-left:-4px;margin-top:-12px"> ${title} </a>`)} ${content}</div>
         </div>`
 
         return titledbutton
@@ -2851,6 +2916,11 @@
     function GetAnimationIndex(anim,name){
         
         return anim.map(function(e) { return e.name; }).indexOf(name)
+    }
+
+    function SlideToggler(el){
+        $(el).slideToggle(100)
+            console.log("WEEEI")
     }
 
     function ObjectToArray(db){
