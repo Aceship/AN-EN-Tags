@@ -309,27 +309,31 @@
         $('#enemyDetail2').hide();
         let currEnemy = query(db.enemy,"enemyId",el)
         let currEnemyDetail = db.enemyDetail.find(search=>search.Key == el)
+        let firstEnemyData = currEnemyDetail.Value[0].enemyData
         let currEnemyData = currEnemyDetail.Value[level].enemyData
         let currHtml = []
         console.log(currEnemyDetail)
         
         // console.log(query(db.enemytl,"name_cn",currEnemy.name).name_en)
-        // <div>Attack Speed : ${currEnemyData.attributes.attackSpeed.m_value}</div>
+        // <div>Attack Speed : ${currattr.attackSpeed.m_value}</div>
         let tlname = query(db.enemytl,"name_cn",currEnemy.name).name_en 
+
+        var currattr = currEnemyData.attributes
+        var firstattr = firstEnemyData.attributes
         currHtml.push(`
         <div class="ak-c-black col">    
-            <div>Attack Damage : ${currEnemyData.attributes.atk.m_value}</div>
+            <div>Attack Damage : ${currattr.atk.m_value!=0?currattr.atk.m_value:firstattr.atk.m_value}</div>
 
-            <div>Attack Time : ${currEnemyData.attributes.baseAttackTime.m_value} Second</div>
-            <div>Health : ${currEnemyData.attributes.maxHp.m_value}</div>
-            <div>Health Recovery : ${currEnemyData.attributes.hpRecoveryPerSec.m_value} /Second</div>
-            <div>Defense : ${currEnemyData.attributes.def.m_value}</div>
-            <div>Magic Resistance : ${currEnemyData.attributes.magicResistance.m_value}</div>
-            <div>Weight : ${currEnemyData.attributes.massLevel.m_value}</div>
-            <div>Move Speed : ${currEnemyData.attributes.moveSpeed.m_value}</div>
-            <div>Range : ${currEnemyData.rangeRadius.m_value} Tile</div>
-            <div>Stun Immune : ${currEnemyData.attributes.stunImmune.m_value}</div>
-            <div>Silence Immune : ${currEnemyData.attributes.silenceImmune.m_value}</div>
+            <div>Attack Time : ${currattr.baseAttackTime.m_value!=0?currattr.baseAttackTime.m_value:firstattr.baseAttackTime.m_value} Second</div>
+            <div>Health : ${currattr.maxHp.m_value!=0?currattr.maxHp.m_value:firstattr.maxHp.m_value}</div>
+            <div>Health Recovery : ${currattr.hpRecoveryPerSec.m_value!=0?currattr.hpRecoveryPerSec.m_value:firstattr.hpRecoveryPerSec.m_value} /Second</div>
+            <div>Defense : ${currattr.def.m_value!=0?currattr.def.m_value:firstattr.def.m_value}</div>
+            <div>Magic Resistance : ${currattr.magicResistance.m_value!=0?currattr.magicResistance.m_value:firstattr.magicResistance.m_value}</div>
+            <div>Weight : ${currattr.massLevel.m_value!=0?currattr.massLevel.m_value:firstattr.massLevel.m_value}</div>
+            <div>Move Speed : ${currattr.moveSpeed.m_value!=0?currattr.moveSpeed.m_value:firstattr.moveSpeed.m_value}</div>
+            <div>Range : ${currEnemyData.rangeRadius.m_value!=0?currEnemyData.rangeRadius.m_value:firstEnemyData.rangeRadius.m_value} Tile</div>
+            <div>Stun Immune : ${currattr.stunImmune.m_value!=0?currattr.stunImmune.m_value:firstattr.stunImmune.m_value}</div>
+            <div>Silence Immune : ${currattr.silenceImmune.m_value!=0?currattr.silenceImmune.m_value:firstattr.silenceImmune.m_value}</div>
         `)
         currHtml.push(`</div>`)
         if(currEnemyData.talentBlackboard){
