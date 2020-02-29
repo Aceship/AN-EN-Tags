@@ -140,10 +140,13 @@
             var isvisible = $("#spine-frame").is(":visible")
             $("#spine-frame").fadeToggle(100);
             
+            
             if(!loadchibi){
                 loadchibi=true
                 if(!spinewidget){
                     LoadAnimation()
+                }
+                if(!spinewidgettoken){
                     if(opdataFull.tokenKey){
                         LoadAnimationToken()
                     }
@@ -158,6 +161,18 @@
                 else {
                     spinewidget.play()
                     loadchibi=true
+                }
+            }
+            
+            if(spinewidgettoken){
+                
+                if(isvisible){
+                    spinewidgettoken.pause()
+                    $("#spine-frame-token").fadeOut(100);
+                }
+                else {
+                    spinewidgettoken.play()
+                    $("#spine-frame-token").fadeIn(100);
                 }
             }
             var sticky = $('#ak-bottom-allnav')
