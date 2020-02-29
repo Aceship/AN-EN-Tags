@@ -1020,6 +1020,7 @@ body {
     bottom:-20px;
     padding-bottom: 2px;
     border-bottom: 20px solid rgb(52, 52, 52);
+    transition: bottom 1s, position 1s,z-index 0.5s;
 }
 #spine-bg{
     display:none;
@@ -1056,9 +1057,23 @@ body {
         /* padding:2px */
     }
 }
+
 @media (max-width: 767px ){
 
-
+    .fixedNav{
+        bottom:-1000px!important;
+        z-index: 0  ;
+    }
+    .fixedNav1{
+        position: fixed !important;
+        bottom:-500px!important;
+        z-index: 3000;
+    }
+    .fixedNav2{
+        position: fixed !important;
+        bottom: -100px !important;
+        z-index: 3000;
+    }
     .general-stats-container .op-name {
         top: -65px;
         left: 0px;
@@ -1083,7 +1098,7 @@ body {
     
     #spine-frame{
         /* left:120px !important;    */
-        left: calc(40px + 16vw) !important;
+        left: calc(80px + 18vw) !important;
 
         /* -moz-left: -moz-calc(25% - 1em); */
         /* right:20vw; */
@@ -1091,14 +1106,14 @@ body {
 
     #spine-frame-token{
         /* left:120px !important;    */
-        left: calc(120px + 16vw) !important;
+        left: calc(160px + 18vw) !important;
 
         /* -moz-left: -moz-calc(25% - 1em); */
         /* right:20vw; */
     }
 
     #spine-toolbar{
-        left: calc(40px + 16vw) !important;
+        left: calc(80px + 18vw) !important;
     }
     
     #infonav{

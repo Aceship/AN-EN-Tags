@@ -83,6 +83,7 @@
     var chibiperslist = ["front","back","build"]
     var bgnum =0
     var bgmax = 5
+    var scrollcheck = 0
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -90,7 +91,32 @@
                 scrollTop : 0                       // Scroll to top of body
             }, 500);
         });
+        $(window).scroll(function(){
+            var sticky = $('#ak-bottom-allnav'),
+                scroll = $(window).scrollTop();
+                isScrollUp = scroll<scrollcheck
+            console.log(scroll)
+            scrollcheck = scroll
 
+            if(loadchibi){
+                if (scroll >= 500) {
+                    sticky.removeClass('fixedNav');
+                    sticky.removeClass('fixedNav1');
+                    sticky.addClass('fixedNav2')
+                }
+                else if(scroll>=400&&!isScrollUp){
+                    sticky.addClass('fixedNav');
+                    sticky.removeClass('fixedNav2');
+                } else if(scroll>=400&&isScrollUp){
+                    sticky.addClass('fixedNav1');
+                    sticky.removeClass('fixedNav2');
+                }else{
+                    sticky.removeClass('fixedNav');
+                    sticky.removeClass('fixedNav1');
+                    sticky.removeClass('fixedNav2');
+                }
+            }
+        });
         // Add listener to class tabs
         // Add listener to class tabs
         $("#classlist .nav-item").children().each(function(i){
@@ -133,6 +159,16 @@
                     spinewidget.play()
                     loadchibi=true
                 }
+            }
+            var sticky = $('#ak-bottom-allnav')
+            console.log(scrollcheck)
+            if(scrollcheck>=500 && sticky.hasClass("fixedNav2")){
+                sticky.addClass('fixedNav1')
+                sticky.removeClass('fixedNav2');
+
+                window.setTimeout(function(){
+                    sticky.removeClass('fixedNav1')
+                },100);
             }
         });
         dragElement(document.getElementById("spine-frame"));
