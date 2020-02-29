@@ -1083,8 +1083,8 @@
                                     ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
                             </div>`
                         });
-                        detailtable = `<button id='skilldetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler("#skilldetailcontent-${i}")'style="color:#fff;text-align:center;background:#222;padding:2px">Skill Details <i class="fas fa-caret-down"></i></button> 
-                            <div id='skilldetailcontent-${i}' class="ak-shadow" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
+                        detailtable = `<button id='skilldetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler("skilldetailcontent")'style="color:#fff;text-align:center;background:#222;padding:2px">Skill Details <i class="fas fa-caret-down"></i></button> 
+                            <div id='skilldetailcontent' class="ak-shadow skilldetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
                                 ${skillhtmldetail}
                             </div>
                         </div>`
@@ -2919,7 +2919,8 @@
     }
 
     function SlideToggler(el){
-        $(el).slideToggle(100)
+
+            $(`.${el}`).slideToggle(100)
             console.log("WEEEI")
     }
 
