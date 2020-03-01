@@ -1032,7 +1032,7 @@
                     var spDuration= (v2.duration==0?"Instant Attack":v2.duration==-1?"Infinite":v2.duration + " Seconds")
                     var spDurationName = (v2.duration==0?"":"Duration")
                     var skilldetails =[]
-                    console.log(skillname)
+                    // console.log(skillname)
                     // console.log(skillData.levels[i2])
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
                         // console.log(skillinfo)
@@ -1053,7 +1053,7 @@
                             grid = rangeMaker(opdataFull.phases[0].rangeId,true,skillinfo.value)
                         }
                     });
-                    console.log(skilldetails)
+                    // console.log(skilldetails)
                     switch (force) {
                         case 0: force = "Small [0]";break;
                         case 1: force = "Medium [1]";break;
