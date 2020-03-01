@@ -668,12 +668,12 @@
     }
     function openOPZOOMmodal(){
         $('#opzoom').modal();
-        $('#charazoom').css("margin-top","auto")
+        $('#charazoom').css("margin","auto")
         $('#charazoom').css("margin-left","0px")
         $('#charazoom').css("width","100%")
-        $('#charazoom').css("height","unset")
+        $('#charazoom').css("height","85vh")
         $('#charazoom').css("max-width","100%")
-        $('#charazoom').css("max-height","90vh")
+        $('#charazoom').css("max-height","100%")
         $('#charazoomslider').val(100);
         $('#charazoominput').val(100)
         var image = $('#tabs-opCG').children('.active').children('img').attr('src');
