@@ -113,7 +113,7 @@
             </div>
         </div>
     </div> <!-- class='modal' -->
-    <div class="modal fade" id="opzoom">
+    <div class="modal fade" id="opzoom" style="overflow-x: hidden;overflow-y: hidden;;">
         <div class="modal-dialog modal-dialog-centered modal-lg" >
             <div class="modal-content" style="background:#444">
         
@@ -124,16 +124,19 @@
             </div>
         -->
             <!-- Modal body -->
-            <div class="modal-body" style="padding:0px;margin:0px">
-                <img id="charazoom" style="max-width:100%;max-height:80vh; display: block; margin: 0 auto;">
+            <div class="modal-body" style="padding:0px;margin:0px;min-height:95vh;max-height: 95vh;">
+                <img id="charazoom" style="margin-left:auto;width:100%;max-width:100%;max-height:90vh; display: block;">
             </div>
         
             <!-- Modal footer -->
-            <div class="modal-footer" style="border-top: 1px solid #2f2f2f">
+            <!-- <div class="modal-footer" style="border-top: 1px solid #2f2f2f;height: 90px;padding:0px">
+               
+            </div> -->
+            <div style="display:inline-flex;position: absolute;z-index: 150000;width:100%;bottom:0px;background: #444;padding:10px;border-radius: 2px;justify-content: right;">
+                <input type='range' class='statlevelInput' value='10' min='90' max='1000' id='charazoomslider' oninput="Zoomchara(this)" style='margin-top:15px;width:80%;'></input>
                 <div id="charazoom-button"></div>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
-        
             </div>
         </div>
     </div>
