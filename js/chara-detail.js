@@ -674,6 +674,8 @@
         $('#charazoom').css("height","unset")
         $('#charazoom').css("max-width","100%")
         $('#charazoom').css("max-height","90vh")
+        $('#charazoomslider').val(100);
+        $('#charazoominput').val(100)
         var image = $('#tabs-opCG').children('.active').children('img').attr('src');
         ChangeZoomChara('',image);
     }
@@ -2940,6 +2942,9 @@
     function Zoomchara(el){
         var widthbefore = $('#charazoom').width()
         var heightbefore = $('#charazoom').height()
+
+        $('#charazoominput').val(el.value)
+        $('#charazoomslider').val(el.value)
         $('#charazoom').css("max-width",`unset`)
         $('#charazoom').css("max-height",`unset`)
         var zoomvalue = `${el.value}%`
