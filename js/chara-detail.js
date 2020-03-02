@@ -147,6 +147,11 @@
             
             if(!loadchibi){
                 loadchibi=true
+                if(bgnum==0&&$("#spine-bg").is(":hidden")){
+                    bgnum=1
+                    $('#spine-bg').attr("src","./img/ui/spine/bg"+bgnum+".png");
+                    $('#spine-bg').fadeIn('fast');
+                }
                 if(!spinewidget){
                     LoadAnimation()
                 }
@@ -161,15 +166,21 @@
                 if(isvisible){
                     spinewidget.pause()
                     loadchibi=false
+                    $('#spine-bg').fadeOut('fast')
                 }
                 else {
                     spinewidget.play()
                     loadchibi=true
+                    
+                    if($("#spine-bg").is(":hidden")){
+                        if (bgnum==0) bgnum=1
+                        $('#spine-bg').attr("src","./img/ui/spine/bg"+bgnum+".png");
+                        $('#spine-bg').fadeIn('fast');
+                    }
                 }
             }
             
             if(spinewidgettoken){
-                
                 if(isvisible){
                     spinewidgettoken.pause()
                     $("#spine-frame-token").fadeOut(100);
@@ -177,6 +188,7 @@
                 else {
                     spinewidgettoken.play()
                     $("#spine-frame-token").fadeIn(100);
+                    
                 }
             }
             var sticky = $('#ak-bottom-allnav')
