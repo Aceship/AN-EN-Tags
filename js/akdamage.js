@@ -16,7 +16,7 @@ const jsonList = {
     talentsTL       :"./json/ace/tl-talents.json",
     campdata        :"./json/tl-campdata.json",
     enemyData       :"./json/gamedata/zh_CN/gamedata/excel/enemy_handbook_table.json",
-    enemyStats      :"./json/levels/enemydata/enemy_database.json",
+    enemyStats      :"./json/gamedata/en_US/gamedata/levels/enemydata/enemy_database.json",
     enemyTL         :"./json/gamedata/en_US/gamedata/excel/enemy_handbook_table.json"
 };
 
