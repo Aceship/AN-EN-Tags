@@ -134,6 +134,11 @@
             })
         });
 
+        $("#spine-frame-tokenheader").contextmenu(function(){
+            $('#spine-frame-token').toggleClass('spine-frame-token-above')
+            return false;
+        })
+
         $(window).click(function() {
             $('#operatorsResult').empty();
             $('#operatorsResult').hide();
