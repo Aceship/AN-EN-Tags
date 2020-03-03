@@ -109,8 +109,10 @@ async function Check(){
             
             challengeList[stage.code] = stagedesc
         }
-    })
 
+        
+    })
+    
     $("#challengelist").empty()
     var stagecodelist = {}
     $.each(challengeList,function(chname,ch) {
@@ -155,54 +157,12 @@ async function Check(){
 
     console.log(stagesObject)
     console.log(challengeList)
-    // console.log(conditionList)
-    // campaign = annihilation
-    //
-
-
-
-    // var data_txt = db2.split("\n")
-    // for(txt_num=0;txt_num<data_txt.length;txt_num++){
-
-    //         if(data_txt[txt_num].match("^\\s+$")) //ONLY SPACE REGEX
-    //     {
-    //         return -1;
-    //     }
-    //     else if(data_txt[txt_num].match("^\\s*//.*$")) //COMMENT REGEX
-    //     {
-    //         return -1;
-    //     }
-    //     var data_command = data_txt[txt_num].match("^\\[\\s*(?:(.*)\\((.*)\\)|(?:([\\.|\\w]*)|(.*)))\\s*\\]\\s*(.*)");
-    //     console.log(data_command)
-    // }
-    // console.log(storynow)
+    // LoadStage("obt/main/level_main_00-01.json")
 }
 
+
 function Start(){
-    var html = []
-    var html2=[]
-    // Object.keys(db.gallerylist).forEach(type => {
-    //     html.push(`<li class="nav-item">
-    //     <a class="nav-link ${type=="backgrounds"?"active":""}" style = "border:none;border-radius:2px" id="${type}-tab" data-toggle="tab" href="#${type}" role="tab" aria-controls="home" aria-selected="${type=="background"?"true":"false"}">${type.charAt(0).toUpperCase() + type.slice(1)}</a>
-    //   </li>`)
 
-    //     var imagelist= []
-    //     db.gallerylist[type].forEach(images => {
-    //         var namesplit = images.split("/")
-    //         imagelist.push(`
-    //         <a style="width:220px;margin-top:10px" onclick="ChangeImage('./img/avg/${images}')" >
-    //         <img src="./img/smallavg/${images}" style="width:200px;margin-top:5px" title="${namesplit[namesplit.length-1]}"></img>
-    //         </a>`)
-    //     });
-    //     html2.push(`
-    //     <div class="tab-pane fade ${type=="backgrounds"?"show active":""}" style="margin-top:40px" id="${type}" role="tabpanel" aria-labelledby="${type}-tab">
-    //         ${imagelist.join("")}
-    //     </div>
-    //     `)
-
-    // });
-    // $(`#gallerytabs`).html(html.join(""))
-    // $(`#gallerycontainer`).html(html2.join(""))
 }
 $('#to-tag').click(function() {      // When arrow is clicked
     $('body,html').animate({
@@ -210,19 +170,52 @@ $('#to-tag').click(function() {      // When arrow is clicked
     }, 500);
 });
 
+function LoadStage(stage){
+    var stagelevelfolder ="./json/gamedata/zh_CN/gamedata/levels/"
+
+    console.log(stagelevelfolder+stage)
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', stagelevelfolder+stage, true);
+    xhr.responseType = 'arraybuffer';
+    var array;
+    xhr.onloadend = function (e) {
+        // console.log(e)
+        if (xhr.status != 404) {
+            buffer = xhr.response;
+            array = new Uint8Array(buffer);
+
+            var jsonstage = JSON.parse(new TextDecoder("utf-8").decode(array))
+            console.log(jsonstage)
+        }else{
+            // console.log("Error ?")
+            // $("#spine-frame").fadeOut()
+        }
+        
+    }
+    xhr.send()
+
+}
+
+function GenerateMap(stagejson){
+
+}
+
+function GenerateTile(tiletype){
+
+}
 // function ShowImages(imagename){
 //     // $('#imagezoomcontainer').modal();
 //     // var image = $('#tabs-opCG').children('.active').children('img').attr('src');
 //     ChangeImage(imagename);
 // }
-function ChangeImage(src=''){
-    // var namesplit = images.split("/")
-    console.log(src)
-    $("#imagezoom").attr("src","");
-    $("#imagezoom").attr("src",src);
-    $('#imagezoom').modal('handleUpdate')
-    $('#imagezoomcontainer').modal("show");
-}
+// function ChangeImage(src=''){
+//     // var namesplit = images.split("/")
+//     console.log(src)
+//     $("#imagezoom").attr("src","");
+//     $("#imagezoom").attr("src",src);
+//     $('#imagezoom').modal('handleUpdate')
+//     $('#imagezoomcontainer').modal("show");
+// }
 // function ListBanner() {
     
 //     CreateTenBanner2()
