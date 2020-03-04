@@ -13,10 +13,15 @@
     width:100%;
 }
 
+
+.perspectiveMap{
+    transform:perspective(1000px) rotateX(30deg) ;
+}
 .mainmap{
-    display:flex;
+    display:inline-flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    transition: transform 0.5s;
 }
 
 
@@ -25,6 +30,7 @@
     display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-content: center;
 }
 
 /* Tile Info */
@@ -33,6 +39,11 @@
     border:0.5px solid #aaa;
     width:60px;
     height:60px;
+    margin:2px
+}
+
+.tile:hover:after{
+    background:#ffffff55 !important;
 }
 .tiledata-spec-tile_forbidden{
     background-color: #aaa;

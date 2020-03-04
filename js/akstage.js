@@ -159,7 +159,7 @@ async function Check(){
     console.log(challengeList)
     // LoadStage("obt/main/level_main_00-01.json")
     
-    LoadStage("obt/main/level_main_06-14.json")
+    LoadStage("obt/main/level_main_03-08.json")
 }
 
 
@@ -221,10 +221,14 @@ function GenerateMap(stagejson){
     });
 
     $('#MapPreview').html(`
-    <div class='mainmap'>
+    <div id='mappreview'class='mainmap perspectiveMap'>
         ${tiles.join("")}
     </div>
     `)
+}
+
+function TogglePerspective(){
+    $('#mappreview').toggleClass('perspectiveMap')
 }
 
 function GenerateTile(tiletype){
