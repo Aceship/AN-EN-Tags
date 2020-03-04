@@ -137,10 +137,11 @@
         var chars = { };
         var d1 = $.getJSON("json/gamedata/en/excel/character_table.json", function (data) {
             $.each(data, function (_, char) {
+                let avatar = char.phases[0].characterPrefabKey + "_1";
+
                 // retrieve E1 and E2 costs
-                i = 0
-                $.each(char.phases, function (_, phase) {
-                    let elevel = "E" + i++;
+                $.each(char.phases, function (p, phase) {
+                    let elevel = "E" + (p + 1);
                     if (phase.evolveCost) {
                         $.each(phase.evolveCost, function(_, mat) {
                             if (!(mat.id in chars)) chars[mat.id] = [];
@@ -148,6 +149,7 @@
                             chars[mat.id].push({
                                 "class": elevel,
                                 "name": char.name,
+                                "avatar": avatar,
                                 "count": mat.count,
                                 "char_level": char.rarity + 1
                             });
@@ -159,10 +161,12 @@
                 $.each(char.allSkillLvlup, function (skill_level, level) {
                     $.each(level.lvlUpCost, function (_, mat) {
                         if (!(mat.id in chars)) chars[mat.id] = [];
+
                         chars[mat.id].push({
                             "class": "Skill-up",
                             "name": char.name,
                             "count": mat.count,
+                            "avatar": avatar,
                             "char_level": char.rarity + 1,
                             "skill_index": 0,
                             "skill_level": skill_level + 2
@@ -170,16 +174,8 @@
                     });
                 });
 
-                /// Skill #
-                s = 0;
                 $.each(char.skills, function (skill_index, skill) {
-                    s += 1;
-
-                    /// Skill level
-                    l = 0;
                     $.each(skill.levelUpCostCond, function (skill_level, level) {
-                        l += 8;
-
                         $.each(level.levelUpCost, function (_, mat) {
                             if (!(mat.id in chars)) chars[mat.id] = [];
 
@@ -187,6 +183,7 @@
                                 "class": "Skill-up",
                                 "name": char.name,
                                 "count": mat.count,
+                                "avatar": avatar,
                                 "char_level": char.rarity + 1,
                                 "skill_index": skill_index + 1,
                                 "skill_level": skill_level + 8
@@ -369,13 +366,13 @@
                     body.push('<button type="button"' +
                               ' class="ak-shadow-small ak-btn btn btn-sm btn-char my-1 ak-rare-' + char.char_level + '"' +
                               ' data-toggle="tooltip" data-placement="bottom" onclick="charSwap(this)"' +
-                              style + ' "title="' + char.name + '" mat-id="' + mat_id + '" mat-count=' + char.count + '>');
+                              style + ' title="' + char.name + '" mat-id="' + mat_id + '" mat-count=' + char.count + '>');
 
                     if (localStorage.showImage == 'true') {
                         body.push('<img style="' + buttonstyle
                                 + '" height="' + localStorage.size
                                 + '" width="' + localStorage.size
-                                + '" src="./img/chara/' + char.name + '.png">');
+                                + '" src="./img/avatars/' + char.avatar + '.png">');
                     }
 
                     if(localStorage.size > 60) body.push("<div>")
