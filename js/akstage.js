@@ -158,6 +158,8 @@ async function Check(){
     console.log(stagesObject)
     console.log(challengeList)
     // LoadStage("obt/main/level_main_00-01.json")
+    
+    LoadStage("obt/main/level_main_06-14.json")
 }
 
 
@@ -186,6 +188,8 @@ function LoadStage(stage){
 
             var jsonstage = JSON.parse(new TextDecoder("utf-8").decode(array))
             console.log(jsonstage)
+
+            GenerateMap(jsonstage)
         }else{
             // console.log("Error ?")
             // $("#spine-frame").fadeOut()
@@ -197,7 +201,30 @@ function LoadStage(stage){
 }
 
 function GenerateMap(stagejson){
+    var mapdata = stagejson.mapData
+    var tiledata = mapdata.tiles
+    var tiles = []
+    mapdata.map.forEach(row => {
+        var currrow = [ ]
+        row.forEach(cell => {
+            console.log(tiledata[cell])
+            currrow.push(`
+            <div class='tile tiledata-spec-${tiledata[cell].tileKey} tile'></div>
+            `)
+        });
 
+        tiles.push(`
+        <div class='tile-row'> 
+            ${currrow.join("")}
+        </div>
+        `)
+    });
+
+    $('#MapPreview').html(`
+    <div class='mainmap'>
+        ${tiles.join("")}
+    </div>
+    `)
 }
 
 function GenerateTile(tiletype){
