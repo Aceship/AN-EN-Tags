@@ -363,9 +363,9 @@
                 for (let char of chars) {
                     total_materials[mat_id] += char.count;
 
-                    body.push('<button type="button"' +
-                              ' class="ak-shadow-small ak-btn btn btn-sm btn-char my-1 ak-rare-' + char.char_level + '"' +
-                              ' data-toggle="tooltip" data-placement="bottom" onclick="charSwap(this)"' +
+                    body.push('<button type="button" ' +
+                              'class="ak-shadow-small ak-btn btn btn-sm btn-char my-1 ak-rare-' + char.char_level + '" ' +
+                              'data-toggle="tooltip" data-placement="bottom" onclick="charSwap(this)" ' +
                               style + ' title="' + char.name + '" mat-id="' + mat_id + '" mat-count=' + char.count + '>');
 
                     if (localStorage.showImage == 'true') {
@@ -394,7 +394,7 @@
 
                 body.push('<td><div class="internal-container" style="position: relative;">' +
                             '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="img/material/bg/item-' + (mat_id % 10) + '.png">' +
-                            '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;" src="img/items/' + materials[mat_id].iconId + '.png">' +
+                            '<img class="item-image" style="max-width: 80px; max-height: 80px; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); z-index: 1; position: absolute; object-fit: contain;" src="img/items/' + materials[mat_id].iconId + '.png">' +
                             '<div class="item-amount" style="font-weight: bold; bottom: 0; right: 0; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000; position: absolute;" mat-id="' + mat_id + '">' + total_materials[mat_id] + "x</div>" +
                           "</div></td>");
                 $("#tbody-recommend").append(body.join(""));
