@@ -159,7 +159,12 @@ async function Check(){
     console.log(challengeList)
     // LoadStage("obt/main/level_main_00-01.json")
     
-    LoadStage("obt/main/level_main_03-08.json")
+    // LoadStage("obt/main/level_main_03-08.json")
+    // LoadStage("obt/main/level_main_06-15.json")
+    // LoadStage("obt/campaign/level_camp_03.json")
+
+    // LoadStage("obt/weekly/level_weekly_killcost_5.json")
+    LoadStage("obt/weekly/level_weekly_melee_5.json")
 }
 
 
@@ -209,7 +214,7 @@ function GenerateMap(stagejson){
         row.forEach(cell => {
             console.log(tiledata[cell])
             currrow.push(`
-            <div class='tile tiledata-spec-${tiledata[cell].tileKey} tile'></div>
+            <div class='tile tiledata-spec-${tiledata[cell].tileKey}'></div>
             `)
         });
 
