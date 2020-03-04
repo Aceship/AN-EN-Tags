@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#222222ff">
+    <title translate-id="web-title">Arknights Recruitment Calculator</title>
+    <link rel="manifest" href="./manifest.json" crossorigin="use-credentials">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ak.css">
+    <link rel="stylesheet" href="css/akchardetail.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138420636-1"></script>/
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-138420636-1');
+        
+    </script>
+    <script>
+            $(function(){
+              $("#nav-placeholder").load("nav.html");
+            });
+     </script>
+</head>
+<body  >
+    <!-- style=" background-image: url(./img/extra/bg1.png)" -->
+    <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
+    <nav id="aknav" class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );">
+        <img src="./img/factions/logo_rhodes.png" style="transform:scale(1.2,1.2)translate(-8px,1px)" class="d-inline-block align-top" alt="" width="40" height="40">
+            <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav">
+                        
+                <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;" href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <div class="ak-subtitle ak-disable">Calculator</div>
+                
+                        <div class="ak-disable ">Recruitment</div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                    <a class="dropdown-item" href="akhr.html">Recruitment</a>
+                    
+                    <a class="dropdown-item" href="aklevel.html">Leveling</a>
+                    
+                    <a class="dropdown-item" href="akevolve.html">Material</a>
+                    </div>
+                </li><li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;" href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <div class="ak-subtitle ak-disable">Information</div>
+                
+                        <div class="ak-disable ">Menu</div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                    <a class="dropdown-item" href="akhrchars.html">Operator</a>
+                    
+                    <a class="dropdown-item" href="akenemy.html">Enemy</a>
+                    
+                    <a class="dropdown-item" href="akriic.html">Infrastructure Skill</a>
+                    </div>
+                </li><li class="nav-item ">
+                    <a class="nav-link " href="akhrelite.html">Elite Materials</a>
+                </li> 
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="akguide.html">Guide</a>
+                </li> 
+                
+                <li class="nav-item ">
+                    <a class="nav-link " href="akstory.html">Mission Story</a>
+                </li> 
+                
+                <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;" href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <div class="ak-subtitle ak-disable">Extra</div>
+                
+                        <div class="ak-disable ">Menu</div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                    <a class="dropdown-item" href="aklinker.html">bilibili Linker</a>
+                    </div>
+                        
+                        
+                    </li></ul>
+                <ul class="navbar-nav ml-auto">
+    
+                    <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px;" href="#" id="regionDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                    <div class="ak-subtitle ak-disable" translate-id="language-1">Server</div>
+                                    <div class="ak-disable" id="display-reg">CN</div>
+                            </a>
+                            
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item reg unselectable" onclick="regDropdown($(this))" value="cn">Chinese</a>
+                            </div>
+                        </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" style="display:inline-flex;padding-left:25px" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <div class="ak-subtitle ak-disable" translate-id="language-2">Language</div>
+                                <div class="ak-disable" id="display-lang">English</div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="en">English</a>
+                            <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="cn">Chinese</a>
+                            <a class="dropdown-item lang unselectable" onclick="langDropdown($(this))" value="jp">Japanese</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <div style="padding-bottom:40px;"></div>
+    <!-- <div class="warning-sign"style="position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center">aaaaaaaaaaaaaaaaaaaaa</div> -->
+    <div class="col-md-12 col-sm-12 " style="margin:auto;max-width:1000px;padding:0" >
+        <div class="col-12 ak-back ak-shadow mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px" role="alert">
+            <div class="row" style="padding:0;padding-bottom: 4px">
+                <div class="col-12 btn btn-sm ak-btn ak-c-black ak-shadow-small ak-disable" style="padding:0" translate-id="selector-title">Select the materials :</div>
+            </div>
+            <div class="row" >
+                <div class="col-4 col-sm-2 my-1 ak-disable ak-btn-header" style="padding-right:0" translate-id="selector-categories-5">
+                    Tier 5
+                </div>
+                <div class="col-8 col-sm-10" style="padding-left:4px;padding-right: 4px">
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="D32 Steel" mat-id="30135"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Bipolar Nanoplate" mat-id="30125"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Polymerization Preparation" mat-id="30115"></button>
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-4 col-sm-2 my-1 ak-disable ak-btn-header" style="padding-right:0" translate-id="selector-categories-4">
+                    Tier 4
+                </div>
+                <div class="col-8 col-sm-10" style="padding-left:4px;padding-right: 4px">
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="RMA70-24" mat-id="30104"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Grinstone Pentahydrate" mat-id="30094"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Manganese Tryhydrate" mat-id="30084"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="White Horse Kohl" mat-id="30074"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Optimized Device" mat-id="30064"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Keton Colloid" mat-id="30054"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Oriron Block" mat-id="30044"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Polyesther Lump" mat-id="30034"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Sugar Lump" mat-id="30024"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Oririck Concentration" mat-id="30014"></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-sm-2 my-1 ak-disable ak-btn-header" style="padding-right:0" translate-id="selector-categories-3">
+                        Tier 3
+                </div>
+                <div class="col-8 col-sm-10" style="padding-left:4px;padding-right: 4px">
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="RMA70-12" mat-id="30103"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Grinstone" mat-id="30093"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Manganese Ore" mat-id="30083"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Loxic Kohl" mat-id="30073"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Integrated Device" mat-id="30063"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Aketon" mat-id="30053"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Oriron Cluster" mat-id="30043"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Polyesther Pack" mat-id="30033"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Sugar Pack" mat-id="30023"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Oririck Cluster" mat-id="30013"></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-sm-2 my-1 ak-disable ak-btn-header" style="padding-right:0" translate-id="selector-categories-2">
+                        Tier 2
+                </div>
+                <div class="col-8 col-sm-10" style="padding-left:4px;padding-right: 4px">
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Device" mat-id="30062"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Polyketon" mat-id="30052"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Oriron" mat-id="30042"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Polyesther" mat-id="30032"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Sugar" mat-id="30022"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Orirock" mat-id="30012"></button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4 col-sm-2 my-1 ak-disable ak-btn-header" style="padding-right:0" translate-id="selector-categories-1">
+                        Tier 1
+                </div>
+                <div class="col-8 col-sm-10" style="padding-left:4px;padding-right: 4px">
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Damaged Device" mat-id="30061"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Diketon" mat-id="30051"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Oriron Shard" mat-id="30041"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Esther" mat-id="30031"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Sugar substitute" mat-id="30021"></button>
+                    <button type="button" onclick="clickBtnTag(this)" class="btn btn-sm btn-secondary ak-btn btn-tag my-1 button-tag" data-toggle="tooltip" data-placement="top" title="Rock" mat-id="30011"></button>
+                </div>
+            </div>
+            <div class="row ak-small-row">
+                <div class="col-md-2 col-sm-12 my-1 ak-disable ak-btn-header ak-btn-header-span" translate-id="selector-categories-01">
+                    Filter Rarity
+                </div>
+                <div class= "col-md-10 col-sm-12 span"style="padding-left:4px;padding-right: 4px">
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 opt-all button-tag" opt-group="1" opt-id="all">ALL</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="1" opt-id="6">6★</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="1" opt-id="5">5★</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="1" opt-id="4">4★</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="1" opt-id="3">3★</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="1" opt-id="2">2★</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="1" opt-id="1">1★</button>
+                </div>
+            </div>
+            <div class="row ak-small-row">
+                <div class="col-md-2 col-sm-12 my-1 ak-disable ak-btn-header ak-btn-header-span" translate-id="selector-categories-02">
+                    Filter Usage
+                </div>
+                <div class= "col-md-10 col-sm-12 span"style="padding-left:4px;padding-right: 4px">
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt opt-all my-1 button-tag" opt-group="2" opt-id="all">ALL</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="2" opt-id="e1">E1</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="2" opt-id="e2">E2</button>
+                    <button type="button" onclick="clickBtnOpt(this)" class="btn btn-sm btn-primary btn-opt my-1 button-tag" opt-group="2" opt-id="sk">Skill-up</button>
+                </div>
+            </div>
+            <div class="row ak-small-row ak-rare-bg ak-shadow-small" >
+                    
+                    <div class= " col-xs-10 span"style="padding-left:4px;padding-right: 4px;margin:auto">
+                            <button type="button" onclick="clickBtnOpt2(this)" class="btn btn-sm btn-primary ak-btn my-1 btn-info" id="showInfo" opt-id="showInfo" translate-id="selector-name">Info</button>
+                            <button type="button" onclick="clickBtnOpt3(this)" class="btn btn-sm btn-primary ak-btn my-1 btn-image" id="showImage" opt-id="showImage" translate-id="selector-image">Image</button>
+                            <div style="display:inline-block">
+                                <button class="btn btn-sm btn-primary ak-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="z-index: 100; float:unset;border-radius: 5px 0px 0px 5px" translate-id="selector-size">
+                                    Image Size</button>
+                                <div  class="btn btn-sm btn-primary my-1 ak-btn btn-image disabled"  style="background-color: white; color: black; border-color: darkgrey;margin-left: -6px;border-radius: 0px 5px 5px 0px" disabled><span id="selectedImageSize"></span></div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <button class="dropdown-item btn-size ak-btn imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="20">20</button>
+                                        <button class="dropdown-item btn-size ak-btn imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="32">32</button>
+                                        <button class="dropdown-item btn-size ak-btn imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="40">40</button>
+                                        <button class="dropdown-item btn-size ak-btn imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="64">64</button>
+                                        <button class="dropdown-item btn-size ak-btn imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="80">80</button>
+                                        <button class="dropdown-item btn-size ak-btn imagesizeselect" onclick="changeImageSize(this)" id="btn-calculate" type="button" title="128">128</button>
+                                </div> 
+                            </div>
+                            
+                    </div>
+            </div>
+            <div class="row">
+                    <button class="btn btn-danger col-12 align-self-center ak-btn text-center" style="padding:1px ; z-index: 0;font-weight: 550" onclick="clickBtnClear()" ><span translate-id="selector-clear">Clear</span> <span id="count-tag"></span> <span translate-id="clear-tags">Tags</span></button>
+            </div>
+    </div>
+        <table class="table ak-table ak-table-striped table-hover my-2 ak-shadow" id="table-recommend">
+            <thead class="ak-thead">
+                <tr>
+                    <th scope="col">Material</th>
+                    <th scope="col" translate-id="result-characters">Usage</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-recommend"></tbody>
+        </table>
+        <div class="col-12 tutorial">
+            <div class="col-12 text-left ak-mid ak-shadow" style="padding:10px" >
+                <p translate-id="footer-instructions-1">How To Use ：</p>
+                <p translate-id="footer-instructions-2">1. Change the 'Game Server' drop down on the top right according to your AK client region.</p>
+                <p translate-id="footer-instructions-3">2. Change the language of the user interface to your preference.</p>
+                <p translate-id="footer-instructions-4">3. Click on the materials.</p>
+                <p translate-id="footer-instructions-5">4. You can hide or show the info and/or the image of the operator.</p>
+                <p translate-id="footer-instructions-6">5. Click 'clear' to reset all the materials selections.</p>
+            </div>
+        </div>
+        <div class="ak-div"></div>
+    </div>
+    <div class="row col-12 ak-footer">
+        <div class="col-12 text-center">
+            <p>Forked from <a href = "https://graueneko.github.io/akhr.html">grauneko web</a></p>
+        <div class="col-12 text-center"></div>
+            <p>Last update: 12 May 2019, <a href="https://github.com/Aceship/AN-EN-Tags/issues">Contact</a></p>
+            <p>
+                Data source:
+                <a href="http://wiki.joyme.com/arknights/%E5%B9%B2%E5%91%98%E6%95%B0%E6%8D%AE%E8%A1%A8">Arknights Wiki (CN)</a>
+            </p>
+            <p>Powered by GraueNeko, Aceship, Faryzal2020</p>
+        </div>
+    </div>
+    <script src="js/aknav.js"></script>
+    <script src="./js/akmatuses.js"></script>
+</body>
+</html>
