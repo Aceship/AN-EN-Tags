@@ -15,6 +15,9 @@ $(document).ready(function(){
             },{
                 href:"akevolve.html",
                 name:"Material"
+            },{
+                href:"akmatuses.html",
+                name:"Material Total Usage"
             }]
     })
     dropdown.push({

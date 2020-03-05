@@ -38,36 +38,6 @@
             });
         }
 
-        /*===== Initialize the display options =====*/
-        if (typeof localStorage.showInfo === "undefined") {
-            localStorage.setItem("showInfo", "true");
-        } else if (localStorage.showImage == 'false') {
-            $("#showInfo").toggleClass("btn-primary btn-secondary");
-        }
-        
-        if (typeof localStorage.showImage === "undefined") {
-            localStorage.setItem("showImage", "true");
-        } else if (localStorage.showImage == 'false') {
-            $("#showImage").toggleClass("btn-primary btn-secondary");
-        }
-
-        if (typeof localStorage.size === "undefined") {
-            localStorage.setItem("size", 40);
-        } else if (localStorage.showImage == 'false') {
-            $("#showImage").toggleClass("btn-primary btn-secondary");
-        }
-
-        $(".imagesizeselect").each(function(_, el) {
-            let size = localStorage.size;
-
-            $("#selectedImageSize").html(localStorage.size);
-            if ($(el).attr("title") == size) {
-                $("<span> <<</span>").appendTo(el);
-            } else {
-                $(el).html($(el).attr("title"));
-            }
-        });
-
         /*===== Initialize the level option =====*/
         function actualize_optLevels() {
             optLevels = []
@@ -117,7 +87,7 @@
             materials[$(this).attr("mat-id")] = {};
         });
 
-        var d0 = $.getJSON("json/gamedata/en/excel/item_table.json", function (data) {
+        var d0 = $.getJSON("json/gamedata/en_US/gamedata/excel/item_table.json", function (data) {
             $.each(data.items, function (key, item) {
                 if (key in materials) {
                     materials[key]["en"] = item.name;
@@ -135,10 +105,11 @@
 
         /*===== Retrieve and store characters =====*/
         var chars = { };
-        var d1 = $.getJSON("json/gamedata/en/excel/character_table.json", function (data) {
-            $.each(data, function (_, char) {
+        var d1 = $.getJSON("json/gamedata/en_US/gamedata/excel/character_table.json", function (data) {
+            $.each(data, function (key, char) {
                 // retrieve E1 and E2 costs
                 i = 0
+                console.log(key)
                 $.each(char.phases, function (_, phase) {
                     let elevel = "E" + i++;
                     if (phase.evolveCost) {
@@ -147,6 +118,7 @@
 
                             chars[mat.id].push({
                                 "class": elevel,
+                                "id": key,
                                 "name": char.name,
                                 "count": mat.count,
                                 "char_level": char.rarity + 1
@@ -161,6 +133,7 @@
                         if (!(mat.id in chars)) chars[mat.id] = [];
                         chars[mat.id].push({
                             "class": "Skill-up",
+                            "id": key,
                             "name": char.name,
                             "count": mat.count,
                             "char_level": char.rarity + 1,
@@ -185,6 +158,7 @@
 
                             chars[mat.id].push({
                                 "class": "Skill-up",
+                                "id": key,
                                 "name": char.name,
                                 "count": mat.count,
                                 "char_level": char.rarity + 1,
@@ -195,8 +169,10 @@
                     });
                 });
             });
+            
         });
 
+        
         $(document).ready(function() {
             $.getScript("js/aknav.js", function() {
                 $('#to-tag').click(function() {      // When arrow is clicked
@@ -208,12 +184,43 @@
                 $('.dropdown-trigger').dropdown();
                 $('[data-toggle="tooltip"]').tooltip();
             });
+
+            /*===== Initialize the display options =====*/
+            if (typeof localStorage.showInfo === "undefined") {
+                localStorage.setItem("showInfo", "true");
+            } else if (localStorage.showImage == 'false') {
+                $("#showInfo").toggleClass("btn-primary btn-secondary");
+            }
+            
+            if (typeof localStorage.showImage === "undefined") {
+                localStorage.setItem("showImage", "true");
+            } else if (localStorage.showImage == 'false') {
+                $("#showImage").toggleClass("btn-primary btn-secondary");
+            }
+
+            if (typeof localStorage.size === "undefined") {
+                localStorage.setItem("size", 40);
+            } else if (localStorage.showImage == 'false') {
+                $("#showImage").toggleClass("btn-primary btn-secondary");
+            }
+
+            $(".imagesizeselect").each(function(_, el) {
+                let size = localStorage.size;
+
+                $("#selectedImageSize").html(localStorage.size);
+                if ($(el).attr("title") == size) {
+                    $("<span> <<</span>").appendTo(el);
+                } else {
+                    $(el).html($(el).attr("title"));
+                }
+            });
         });
 
         $.when(d0, d1).then(function () {
             if (checkedTags.length) {
                 actualize();
             }
+            $.holdReady(false)
         });
 
         function regDropdown(el) {
@@ -326,7 +333,7 @@
 
         var total_materials = {};
         var inverse_levels = {"Skill-up": 2, "E1": 1, "E2": 0};
-        var skill_levels = ["lvl0", "lvl1", "lvl2", "lvl3", "lvl4", "lvl5", "lvl6", "lvl7", "M1", "M2", "M3"];
+        var skill_levels = ["0", "1", "2", "3", "4", "5", "6", "7", "M-1", "M-2", "M-3"];
         function actualize() {
             $("#tbody-recommend").html("");
 
@@ -351,7 +358,7 @@
 
             $.each(chars_selection, function (mat_id, chars) {
                 let padding = localStorage.showInfo == 'true' && localStorage.size < 60
-                            ? "padding-right: 8px;"
+                            ? "padding-right: 1px;"
                             : "padding-right: 1px;";
                 let style = localStorage.showImage == 'true'
                           ? 'style="padding: 1px 1px; ' + padding + '" '
@@ -363,7 +370,9 @@
                 let body = ['<tr class="tr-recommd"><td>', materials[mat_id][lang], "</td><td>"];
 
                 total_materials[mat_id] = 0;
+                console.log(chars)
                 for (let char of chars) {
+                    
                     total_materials[mat_id] += char.count;
 
                     body.push('<button type="button"' +
@@ -375,29 +384,52 @@
                         body.push('<img style="' + buttonstyle
                                 + '" height="' + localStorage.size
                                 + '" width="' + localStorage.size
-                                + '" src="./img/chara/' + char.name + '.png">');
+                                + '" src="./img/avatars/' + char.id + '_1.png">');
                     }
-
-                    if(localStorage.size > 60) body.push("<div>")
+                    
+                    if(localStorage.size > 60||localStorage.showImage=="false") body.push("<div style='background:#222'>")
+                    body.push(`<div style='background:#333;color:#aaa;
+                    ${(localStorage.size < 60)||localStorage.showImage=="false"?
+                    `padding:${localStorage.showImage=="true"?localStorage.size/2-10+'px 2px;display:inline;':"2px 2px"} `:
+                    `padding:2px 2px`}'>${char.name}</div>`)
                     if(localStorage.showInfo == 'true') {
-                        let info = " ";
+                        let info = `<div style='background:#222;border-radius:2px;margin:1px'>`;
                         if (char.class == "Skill-up") {
-                            info += "S";
-                            if (char.skill >= 7) info += char.skill_index;
-                            info += skill_levels[char.skill_level];
+                            info += "";
+                            var titleimg = skill_levels[char.skill_level]
+                            if (char.skill >= 7) titleimg = char.skill_level;
+                            // info += skill_levels[char.skill_level];
+                            info += `<img src='img/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
                         } else {
-                            info += char.class;
+                            if(char.class=="E1")info += "<img src='img/ui/elite/1-s.png'>";
+                            else info += "<img src='img/ui/elite/2-s.png'>";
+                            
                         }
-                        body.push(info + " - " + char.count);
+                        info+="</div>"
+                        body.push(info + `<div class="item-amount" style="font-weight: bold; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd">${char.count}x</div>`);
+                    }else{
+                        let info = `<div style='background:#222;border-radius:2px;margin:1px;color:#aaa;padding:1px 5px;min-width:50px'>`;
+                        if (char.class == "Skill-up") {
+                            info += "Skill ";
+                            var titleimg = skill_levels[char.skill_level]
+                            if (char.skill >= 7) titleimg = char.skill_level;
+                            info += skill_levels[char.skill_level];
+                            // info += `<img src='img/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
+                        } else {
+                            if(char.class=="E1")info += "Elite 1";
+                            else info += "Elite 2";
+                        }
+                        info+="</div>"
+                        body.push(info + `<div class="item-amount" style="font-weight: bold; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd">${char.count}x</div>`);
                     }
                     if(localStorage.size > 60) body.push("</div>")
                 
                     body.push("</button>\n")
                 }
 
-                body.push('<td><div class="internal-container" style="position: relative;">' +
+                body.push('<td><div class="internal-container" style="position: relative;width:100px;">' +
                             '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="img/material/bg/item-' + (mat_id % 10) + '.png">' +
-                            '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;" src="img/items/' + materials[mat_id].iconId + '.png">' +
+                            '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;object-fit: contain;" src="img/items/' + materials[mat_id].iconId + '.png">' +
                             '<div class="item-amount" style="font-weight: bold; bottom: 0; right: 0; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000; position: absolute;" mat-id="' + mat_id + '">' + total_materials[mat_id] + "x</div>" +
                           "</div></td>");
                 $("#tbody-recommend").append(body.join(""));
