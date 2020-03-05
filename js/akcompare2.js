@@ -148,7 +148,7 @@ function RefreshSlots(){
                     <a href='#' class='btn btn-danger btn-sm' style='border-radius: 0px;' onclick='deleteOp(${i})'>
                     <i class='fa fa-close'></i></a></div>
                 <div class='opname ak-font-novecento lp-row'>${getENname(opData.name)}</div>
-                <div><img class='opimage ak-shadow mx-auto d-block' src='img/avatars/${opID}_1.png'></div>
+                <div><img class='opimage ak-shadow mx-auto d-block' src='img/avatars/${opID}.png'></div>
 
 
                 <div id='slot-${i}-stats' class='statsSection' style='margin-top:42px;'>
@@ -446,7 +446,7 @@ function selOpClass(cname){
                 case "List":
                             html =
                             `<li class='selectop-list ak-shadow' onclick='selectOp("${key}")'>
-                            <img src='img/avatars/${key}_1.png'>
+                            <img src='img/avatars/${key}.png'>
                             <div class='name ak-font-novecento'>${getENname(val.name)}</div>
                             <div class='rarity op-rarity-${val.rarity+1}'> 
                                 ${(`<i class='fa fa-star'></i>`).repeat(val.rarity+1)}
@@ -457,7 +457,7 @@ function selOpClass(cname){
                 case "Grid":
                             html =
                             `<li class='selectop-grid ak-shadow' onclick='selectOp("${key}")'>
-                            <img src='img/avatars/${key}_1.png'>
+                            <img src='img/avatars/${key}.png'>
                             <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                             <div class='ak-rare-${val.rarity+1}'></div>
                             ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}

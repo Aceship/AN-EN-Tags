@@ -81,7 +81,7 @@ function RefreshAlldata() {
         var opData = db.chars[selectedOp];
         var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
 
-        $("#opimage").attr("src","img/avatars/"+selectedOp+"_1.png");
+        $("#opimage").attr("src","img/avatars/"+selectedOp+".png");
         $("#opname").html(opDataTL.name_en);
 
         $('#eliteSelections').empty();
@@ -312,7 +312,7 @@ function selOpClass(cname){
                 case "List":
                             html =
                             `<li class='selectop-list ak-shadow' onclick='selectOp("${key}")'>
-                            <img src='img/avatars/${key}_1.png'>
+                            <img src='img/avatars/${key}.png'>
                             <div class='name ak-font-novecento'>${getENname(val.name)}</div>
                             <div class='rarity op-rarity-${val.rarity+1}'> 
                                 ${(`<i class='fa fa-star'></i>`).repeat(val.rarity+1)}
@@ -323,7 +323,7 @@ function selOpClass(cname){
                 case "Grid":
                             html =
                             `<li class='selectop-grid ak-shadow' onclick='selectOp("${key}")'>
-                            <img src='img/avatars/${key}_1.png'>
+                            <img src='img/avatars/${key}.png'>
                             <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                             <div class='ak-rare-${val.rarity+1}' style='height: 2px;'></div>
                             ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}

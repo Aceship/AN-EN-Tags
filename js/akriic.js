@@ -234,7 +234,7 @@
             
             currHtml.push(`<div class="row" style="padding:5px;margin:5px;background:#333333">
                             <div class="col-4 col-sm-2" style="text-align:center;padding:3px;margin:auto">
-                                <div style="padding-top:3px"><img src="img/avatars/${element.name}_1.png" style="height:120px"></div>
+                                <div style="padding-top:3px"><img src="img/avatars/${element.name}.png" style="height:120px"></div>
                                 <div style="margin:auto">${chara.appellation}</div>
                             </div>
                             <div class="col-8 col-sm-10" style="margin:auto;padding:2px"> ` )

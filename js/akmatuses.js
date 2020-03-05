@@ -384,7 +384,7 @@
                         body.push('<img style="' + buttonstyle
                                 + '" height="' + localStorage.size
                                 + '" width="' + localStorage.size
-                                + '" src="./img/avatars/' + char.id + '_1.png">');
+                                + '" src="./img/avatars/' + char.id + '.png">');
                     }
                     
                     if(localStorage.size > 60||localStorage.showImage=="false") body.push("<div style='background:#222'>")

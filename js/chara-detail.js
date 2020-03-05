@@ -524,7 +524,7 @@
                     case "List":
                                 html =
                                 `<li class='selectop-list ak-shadow' onclick='selectOperator("${val.name}")'>
-                                <img src='img/avatars/${key}_1.png'>
+                                <img src='img/avatars/${key}.png'>
                                 <div class='name ak-font-novecento'>${getENname(val.name)}</div>
                                 <div class='rarity op-rarity-${val.rarity+1}'> 
                                     ${(`<i class='fa fa-star'></i>`).repeat(val.rarity+1)}
@@ -535,7 +535,7 @@
                     case "Grid":
                                 html =
                                 `<li class='selectop-grid ak-shadow' onclick='selectOperator("${val.name}")'>
-                                <img src='img/avatars/${key}_1.png'>
+                                <img src='img/avatars/${key}.png'>
                                 <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                                 <div class='ak-rare-${val.rarity+1}'></div>
                                 ${cname==""&&classlogo?`<div class='ak-showclass'><img src='img/classes/class_${classlogo}.png'></div>`:""}
@@ -656,10 +656,10 @@
                     // });
                     // AudioText(opdataFull)
 
-                    let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
+                    let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}.png">  `
                     // console.log(image)
                     if(el=="Browse"){
-                        image = `<img class='opres-img' src="./img/avatars/${result[i].img_name}_1.png">  `
+                        image = `<img class='opres-img' src="./img/avatars/${result[i].img_name}.png">  `
                         $("#operatorsResult").css("text-align","center");
                         $("#operatorsResult").removeClass("opresult-list");
                         $("#operatorsResult").addClass("opresult-grid");
