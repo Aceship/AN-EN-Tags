@@ -32,6 +32,9 @@ $(document).ready(function(){
         },{
             href:"akhrcompare2.html",
             name:"Comparing"
+        },{
+            href:"akstage.html",
+            name:"Stage(WIP)"
         }]
     })
     dropdown.push({name:"Elite Materials",content:"akhrelite.html"})

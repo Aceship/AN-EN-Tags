@@ -1,15 +1,15 @@
 
 $.holdReady(true);
 const jsonList = {
-    chars           :"./json/excel/character_table.json",
+    chars           :"./json/gamedata/zh_CN/gamedata/excel/character_table.json",
     charsTL         :"./json/tl-akhr.json",
     classesTL       :"./json/tl-type.json",
     tagsTL          :"./json/tl-tags.json",
-    dataconst       :"./json/excel/gamedata_const.json",
+    dataconst       :"./json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",
     genderTL        :"./json/tl-gender.json",
-    skills          :"./json/excel/skill_table.json",
+    skills          :"./json/gamedata/zh_CN/gamedata/excel/skill_table.json",
     skillsTL        :"./json/ace/tl-skills.json",
-    range           :"./json/excel/range_table.json",
+    range           :"./json/gamedata/zh_CN/gamedata/excel/range_table.json",
     atkType         :"./json/tl-attacktype.json",
     unreadableTL    :"./json/tl-unreadablename.json",
     potsTL          :"./json/tl-potential.json",
@@ -129,7 +129,7 @@ $(document).ready(function(){
 });
 
 function RefreshSlots(){
-    $("#slotsContainer").html("");
+    $("#slotsContainer").empty();
 
     var selectedOpList = [];
     try {
@@ -247,6 +247,7 @@ function RefreshValues(){
         var maxLevel = opData.phases[elite].attributesKeyFrames[1].level;
         var level = opLevel;
         if(maxLevel < level){ level = maxLevel}
+        if(opElite > maxElite){ level = maxLevel}
 
         var statNames = ['maxHP','atk','def','mRes','rTime','cost','block','atkT','dps'];
         for (var j = 0; j < statNames.length; j++) {
@@ -275,7 +276,7 @@ function RefreshValues(){
             blockCnt:'block',
             baseAttackTime:'atkT',
         };
-        $("#slot-"+i+"-trust").html("");
+        $("#slot-"+i+"-trust").empty();
         $.each(buffs,function(key,v){
             $("#slot-"+i+"-trust").html($("#slot-"+i+"-trust").html()+" "+key+" +"+v);
             if(applyTrust){
@@ -293,7 +294,7 @@ function RefreshValues(){
         //////////////////// SKILLS SECTION /////////////////////
 
         var traitsText = getProcessedTexts('traits',opData);
-        $("#slot-"+i+"-traits").html("");
+        $("#slot-"+i+"-traits").empty();
         $("#slot-"+i+"-traits").html(traitsText);
 
     }
@@ -401,7 +402,7 @@ function deleteOp(index){
 }
 
 function selOpClass(cname){
-    $("#selectedopclass").html("");
+    $("#selectedopclass").empty();
 
     var result 
     if(cname!=""){
@@ -477,6 +478,7 @@ function selOpClass(cname){
 }
 
 function getProcessedTexts(type,opdataFull){
+    console.log(opdataFull)
     if(type == 'traits'){
         var description = opdataFull.description
         //gonna need to split on "," and "\n" and repeat it
@@ -563,7 +565,7 @@ function getProcessedTexts(type,opdataFull){
                 splitdescTL.push(info)
             });
         }
-        // console.log(splitdescTL)
+        console.log(splitdescTL)
         // console.log(color)
 
         return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`);

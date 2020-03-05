@@ -1,100 +1,54 @@
     $.holdReady(true);
     
-    var db = {};
-    var d0 = $.getJSON("json/excel/building_data.json",function(data){
-            db["manufactformulas"] = data.manufactFormulas;
-        });
-    var d1 = $.getJSON("json/excel/building_data.json",function(data){
-            db["workshopformulas"] = data.workshopFormulas;
-        });
-    var d2 = $.getJSON("json/excel/character_table.json",function(data){
-            db["chars"] = data;
-        });
-    var d3 = $.getJSON("json/excel/item_table.json",function(data){
-            db["items"] = data.items;
-        });
-    var d4 = $.getJSON("json/tl-akhr.json",function(data){
-            db["chars2"] = data;
-        });
-    var d5 = $.getJSON("json/tl-type.json",function(data){
-            db["classes"] = data;
-        });
-    var d6 = $.getJSON("json/tl-tags.json",function(data){
-            db["tags"] = data;
-        });
-    var d7 = $.getJSON("json/tl-item.json",function(data){
-            db["itemstl"] = data;
-        });
-    var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){
-            db["dataconst"] = data;
-        });
-    var d9 = $.getJSON("json/excel/skin_table.json",function(data){
-            db["skintable"] = data;
-        });
-    var d10 = $.getJSON("json/tl-gender.json",function(data){
-            db["gender"] = data;
-        });
-    var d11 = $.getJSON("json/excel/skill_table.json",function(data){
-            db["skills"] = data;
-        });
-    var d12 = $.getJSON("json/ace/tl-skills.json",function(data){
-            db["skillsTL"] = data;
-        });
-    var d13 = $.getJSON("json/excel/range_table.json",function(data){
-            db["range"] = data;
-        });
-    var d14 = $.getJSON("json/tl-attacktype.json",function(data){
-            db["attacktype"] = data;
-        });
-    var d15 = $.getJSON("json/tl-unreadablename.json",function(data){
-            db["unreadNameTL"] = data;
-        });
-    var d16 = $.getJSON("json/tl-potential.json",function(data){
-            db["potentialTL"] = data;
-        });
-    var d17 = $.getJSON("json/ace/tl-talents.json",function(data){
-            db["talentsTL"] = data;
-        });
-    var d18 = $.getJSON("json/excel/handbook_info_table.json",function(data){
-            db["handbookInfo"] = data;
-        });
-    var d19 = $.getJSON("json/tl-va.json",function(data){
-        db["vaTL"] = data;
-    });
-    var d20 = $.getJSON("json/tl-storytext.json",function(data){
-        db["storytextTL"] = data;
-    });
-    var d21 = $.getJSON("json/tl-charastory.json",function(data){
-        db["charastoryTL"] = data;
-    });  
-    var d22 = $.getJSON("json/excel/charword_table.json",function(data){
-        db["charword"] = data;
-    });  
-    var d23 = $.getJSON("json/tl-voiceline.json",function(data){
-        db["voicelineTL"] = data;
-    });  
-    var d24 = $.getJSON("json/excel/building_data.json",function(data){
-        db["buildbuffs"] = data.buffs;
-    });
-    var d25 = $.getJSON("json/excel/building_data.json",function(data){
-        db["buildchars"] = data.chars;
-    });
-    var d26 = $.getJSON("json/ace/riic.json",function(data){
-        db["riic"] = data;
-    });
-    var d27 = $.getJSON("json/gamedata/en/excel/handbook_info_table.json",function(data){
-        db["handbookInfoEN"] = data;
-    });
-    var d28 = $.getJSON("json/gamedata/en/excel/charword_table.json",function(data){
-        db["charwordEN"] = data;
-    });  
-    var d29 = $.getJSON("json/gamedata/en/excel/skill_table.json",function(data){
-        db["skillsEN"] = data;
-    });
-    var d30 = $.getJSON("json/tl-campdata.json",function(data){
-        db["campdata"] = data;
-    });
-    $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18,d19,d20,d21,d22,d23,d24,d25,d26,d27,d28,d29,d30).then(function(){
+    const jsonList = {
+
+        //CN
+        chars           :"./json/gamedata/zh_CN/gamedata/excel/character_table.json",
+        charword        :"./json/gamedata/zh_CN/gamedata/excel/charword_table.json",
+        build           :"./json/gamedata/zh_CN/gamedata/excel/building_data.json",
+        handbookInfo    :"./json/gamedata/zh_CN/gamedata/excel/handbook_info_table.json",
+        range           :"./json/gamedata/zh_CN/gamedata/excel/range_table.json",
+        skills          :"./json/gamedata/zh_CN/gamedata/excel/skill_table.json",
+        skintable       :"./json/gamedata/zh_CN/gamedata/excel/skin_table.json",
+        dataconst       :"./json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",
+        item_table      :"./json/gamedata/zh_CN/gamedata/excel/item_table.json",
+
+
+        //EN
+        handbookInfoEN  :"./json/gamedata/en_US/gamedata/excel/handbook_info_table.json",
+        charwordEN      :"./json/gamedata/en_US/gamedata/excel/charword_table.json",
+        skillsEN        :"./json/gamedata/en_US/gamedata/excel/skill_table.json",
+
+
+        //Utilities
+        attacktype      :"./json/tl-attacktype.json",
+        animlist        :"./json/ace/animlist.json",
+        effect          :"./json/tl-effect.json",
+
+        //TL
+        voicelineTL     :"./json/tl-voiceline.json",
+        campdata        :"./json/tl-campdata.json",
+        charastoryTL    :"./json/tl-charastory.json",
+        storytextTL     :"./json/tl-storytext.json",
+        vaTL            :"./json/tl-va.json",
+        potentialTL     :"./json/tl-potential.json",
+        unreadNameTL    :"./json/tl-unreadablename.json",
+        itemstl         :"./json/tl-item.json",
+        tags            :"./json/tl-tags.json",
+        classes         :"./json/tl-type.json",
+        chars2          :"./json/tl-akhr.json",
+        gender          :"./json/tl-gender.json",
+
+        //jet TL
+        riic            :"./json/ace/riic.json",
+        talentsTL       :"./json/ace/tl-talents.json",
+        skillsTL        :"./json/ace/tl-skills.json"
+        
+    };
+    
+    var db = {}
+    LoadAllJsonObjects(jsonList).then(function(result) {
+        db = result
         $.holdReady(false);
     });
 
@@ -107,6 +61,30 @@
     var opapp;
     var classfilter;
     var sort;
+    var skeletonType = "skel"
+    var chibitype = 'character'
+    var charName = 'char_180_amgoat';
+    var chibipers = 'front'
+    var chibiName = 'char_180_amgoat'
+    var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
+    var spinewidget 
+
+    var currskin 
+    var spinewidgettoken
+    var animIndex = 0;
+    var animations
+    var tokenname 
+    var tokenanimations
+    var animationqueue
+    var defaultAnimationName = "Default";
+    var loadchibi = false;
+    var chibiscaleweb = 0
+    var chibiscaleweblist = [[0.5,-775],[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
+    var chibiperscurr = 0
+    var chibiperslist = ["front","back","build"]
+    var bgnum =0
+    var bgmax = 5
+    var scrollcheck = 0
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -114,6 +92,34 @@
                 scrollTop : 0                       // Scroll to top of body
             }, 500);
         });
+        $(window).scroll(function(){
+            var sticky = $('#ak-bottom-allnav'),
+                scroll = $(window).scrollTop();
+                isScrollUp = scroll<scrollcheck
+            // console.log(scroll)
+            scrollcheck = scroll
+
+            if(loadchibi){
+                if (scroll >= 500) {
+                    sticky.removeClass('fixedNav');
+                    sticky.removeClass('fixedNav1');
+                    sticky.addClass('fixedNav2')
+                }
+                else if(scroll>=400&&!isScrollUp){
+                    sticky.addClass('fixedNav');
+                    sticky.removeClass('fixedNav2');
+                } else if(scroll>=400&&isScrollUp){
+                    sticky.addClass('fixedNav1');
+                    sticky.removeClass('fixedNav2');
+                }else{
+                    sticky.removeClass('fixedNav');
+                    sticky.removeClass('fixedNav1');
+                    sticky.removeClass('fixedNav2');
+                }
+            }
+        });
+
+        dragElement2(document.getElementById("charazoom"),document.getElementById("charazoom"))
 
         // Add listener to class tabs
         // Add listener to class tabs
@@ -128,10 +134,149 @@
             })
         });
 
+        $("#spine-frame-tokenheader").contextmenu(function(){
+            $('#spine-frame-token').toggleClass('spine-frame-token-above')
+            return false;
+        })
+
         $(window).click(function() {
-            $('#operatorsResult').html("");
+            $('#operatorsResult').empty();
             $('#operatorsResult').hide();
         });
+
+        $("#Chibi-Show").click(function(){
+            // console.log($("#spine-widget"))
+            var isvisible = $("#spine-frame").is(":visible")
+            $("#spine-frame").fadeToggle(100);
+            
+            
+            if(!loadchibi){
+                loadchibi=true
+                if(bgnum==0&&$("#spine-bg").is(":hidden")){
+                    bgnum=1
+                    $('#spine-bg').attr("src","./img/ui/spine/bg"+bgnum+".png");
+                    $('#spine-bg').fadeIn('fast');
+                }
+                if(!spinewidget){
+                    LoadAnimation()
+                }
+                if(!spinewidgettoken){
+                    if(opdataFull.tokenKey){
+                        LoadAnimationToken()
+                    }
+                }
+            }
+
+            if(spinewidget){
+                if(isvisible){
+                    spinewidget.pause()
+                    loadchibi=false
+                    $('#spine-bg').fadeOut('fast')
+                }
+                else {
+                    spinewidget.play()
+                    loadchibi=true
+                    
+                    if($("#spine-bg").is(":hidden")){
+                        if (bgnum==0) bgnum=1
+                        $('#spine-bg').attr("src","./img/ui/spine/bg"+bgnum+".png");
+                        $('#spine-bg').fadeIn('fast');
+                    }
+                }
+            }
+            
+            if(spinewidgettoken){
+                if(isvisible){
+                    spinewidgettoken.pause()
+                    $("#spine-frame-token").fadeOut(100);
+                }
+                else {
+                    spinewidgettoken.play()
+                    $("#spine-frame-token").fadeIn(100);
+                    
+                }
+            }
+            var sticky = $('#ak-bottom-allnav')
+            console.log(scrollcheck)
+            if(scrollcheck>=500 && sticky.hasClass("fixedNav2")){
+                sticky.addClass('fixedNav1')
+                sticky.removeClass('fixedNav2');
+
+                window.setTimeout(function(){
+                    sticky.removeClass('fixedNav1')
+                },100);
+            }
+        });
+        dragElement(document.getElementById("spine-frame"));
+        dragElement(document.getElementById("spine-frame-token"));
+        $("#Chibi-Bg").click(function(){
+            bgnum++
+            if(bgnum>bgmax)bgnum=0
+            else if(bgnum<0)bgnum=bgmax
+
+            if(bgnum==0) $('#spine-bg').fadeOut('fast')
+            else {
+                
+                // $('#spine-bg').fadeIn()
+                $('#spine-bg').fadeOut('fast', function () {
+                    $('#spine-bg').attr("src","./img/ui/spine/bg"+bgnum+".png");
+                    $('#spine-bg').fadeIn('fast');
+                });
+                console.log( $('#spine-bg').attr("src") )
+            
+            }
+
+            
+        });
+        $("#Chibi-Perspective").click(function(){
+            chibiperscurr++
+            if(chibiperscurr>=chibiperslist.length)chibiperscurr=0
+            else if(chibiperscurr<0)chibiperscurr=chibiperslist.length-1
+
+            console.log(chibiperscurr)
+            console.log(chibiperslist[chibiperscurr])
+            ChangeSkin(currskin,chibiperslist[chibiperscurr])
+            
+        });
+
+        $("#Chibi-Scale").click(function(){
+            
+            chibiscaleweb++
+
+            
+            if(chibiscaleweb>=chibiscaleweblist.length)chibiscaleweb=0
+            else if(chibiscaleweb<0)chibiscaleweb=chibiscaleweblist.length
+            console.log(chibiscaleweb)
+            console.log(chibiscaleweblist)
+
+            
+            var currscale = chibiscaleweblist[chibiscaleweb]
+            console.log(currscale)
+            $("#spine-widget").css("transform",`scale(${currscale[0]})`)
+            $("#spine-widget").css("top",`${currscale[1]}px`)
+            $("#spine-widget-token").css("transform",`scale(${currscale[0]})`)
+            $("#spine-widget-token").css("top",`${currscale[1]}px`)
+            
+
+            
+        });
+
+        $('#Chibi-download').click(function(event){
+            // var canvas = spinewidget.canvas
+            var checkdiv = $("#spine-widget").children()[0].toDataURL("image/png")
+            console.log($("#spine-widget").children())
+            // console.log(canvas)
+            console.log(checkdiv)
+            // var img = canvas.toDataURL("image/png");
+            // console.log(img)
+            // $("#spine-widget-2").html('<img src="'+img+'"/>');
+
+            // var dataURL = $("#spine-widget")[0].toDataURL('image/png');
+            // var w = window.open('about:blank', 'image from canvas');
+            // w.document.write("<img src='" + dataURL + "' alt='from canvas'/>");
+
+        });
+
         $('#operatorsResult').click(function(event){
             event.stopPropagation();
         });
@@ -199,7 +344,7 @@
             if(vars.has("opname")){
                 vars.set("opname", decodeURIComponent(vars.get("opname").replace("_"," ")));
                 console.log(vars.get("opname"));
-                var char = query(db.chars,"appellation",vars.opname,true,true);
+                var char = query(db.chars,"appellation",vars.get("opname"),true,true);
                 console.log(char)
                 var opname;
                 $.each(char,function(key,v){
@@ -317,20 +462,20 @@
    
     function clickBtnClear(){
         $("#chara-detail-container").hide();
-        $("#elite-sidenav").html("");
-        $("#tabs-opCG").html("");
-        $("#elite-topnav").html("");
-        $("#tabs-opData").html("");
-        $("#op-taglist").html("");
+        $("#elite-sidenav").empty();
+        $("#tabs-opCG").empty();
+        $("#elite-topnav").empty();
+        $("#tabs-opData").empty();
+        $("#op-taglist").empty();
         $("#opname").val("");
-        $('#operatorsResult').html("");
+        $('#operatorsResult').empty();
         $('#operatorsResult').hide();
         localStorage.selectedOPDetails = "";
         history.pushState(null, '', window.location.pathname); 
     }
 
     function selOpClass(cname){
-        $("#selectedopclass").html("");
+        $("#selectedopclass").empty();
         
         var result 
         if(cname!=""){
@@ -357,7 +502,7 @@
         result = result.sort((ak,bk)=>{
             var a = ak[Object.keys(ak)[0]]
             var b = bk[Object.keys(bk)[0]]
-            console.log(ak)
+            // console.log(ak)
             if(a.rarity<b.rarity) return 1
             if(a.rarity>b.rarity) return -1
             if(a.appellation>b.appellation)return 1
@@ -370,9 +515,9 @@
             var html;
             // console.log(result[i])
             $.each(result[i],function(key,val){ // key = char_230_savage, val = data (obj)
-                console.log(key)
+                // console.log(key)
                 var type = query(db.classes,"type_data",val.profession);
-                var classlogo = type.type_en.toLowerCase()
+                var classlogo = type?type.type_en.toLowerCase():""
                 var camplogo = val.displayLogo
                 switch (listtype) {
                     
@@ -494,7 +639,7 @@
                     selectOperator(result[0].name_cn)
                     return
                 }
-                $('#operatorsResult').html("");
+                $('#operatorsResult').empty();
                 $('#operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
 
@@ -514,15 +659,19 @@
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
                     // console.log(image)
                     if(el=="Browse"){
-                        image = `<img style="height:70px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
-                        $("#operatorsResult").css("max-width","100vw");
+                        image = `<img class='opres-img' src="./img/avatars/${result[i].img_name}_1.png">  `
+                        $("#operatorsResult").css("text-align","center");
+                        $("#operatorsResult").removeClass("opresult-list");
+                        $("#operatorsResult").addClass("opresult-grid");
                         $("#operatorsResult").append(
                                 "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
                                 +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
                                 +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+`${result[i].name_readable?`[${result[i].name_readable}]`:""}`+result[i].nameTL+"</div>"
                                 +"</li>");
                     }else{
-                        $("#operatorsResult").css("max-width","290px");
+                        $("#operatorsResult").removeClass("opresult-grid");
+                        $("#operatorsResult").addClass("opresult-list");
+                        $("#operatorsResult").css("text-align","left");
                         $("#operatorsResult").append(`<li class=" ak-shadow-small ak-rare-${result[i].rarity}"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="selectOperator('${result[i].name_cn}')">${image} ${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL} (${result[i].name})</li>`);
                     }
                 }
@@ -530,16 +679,27 @@
             // console.log( $("#operatorsResult")  )
             // $('#operatorsResult').show();
         } else {
-            $('#operatorsResult').html("");
+            $('#operatorsResult').empty();
             $('#operatorsResult').hide();
         }
     }
     function openOPZOOMmodal(){
         $('#opzoom').modal();
+        $('#charazoom').css("margin","auto")
+        $('#charazoom').css("margin-left","0px")
+        $('#charazoom').css("width","100%")
+        $('#charazoom').css("height","85vh")
+        $('#charazoom').css("max-width","100%")
+        $('#charazoom').css("max-height","100%")
+        $('#charazoomslider').val(100);
+        $('#charazoominput').val(100)
         var image = $('#tabs-opCG').children('.active').children('img').attr('src');
         ChangeZoomChara('',image);
     }
     function ChangeZoomChara(skinName, src=''){
+        
+        
+
         if(skinName != ''){
             $("#charazoom").attr("src","img/characters/"+skinName+".png");
         } else {
@@ -547,28 +707,21 @@
         }
         $('#charazoom').modal('handleUpdate')
     }
-    function selectOperator(opname){
+    function selectOperator(opname,from='Selecting Operator From Browse'){
         $("#opchoosemodal").modal('hide');
         if(opname != ""){
             $("#chara-detail-container").show();
             console.log("SELECT OPERATOR");
             console.log(opname);   
             $("#opname").val("");
-            $('#operatorsResult').html("");
+            $('#operatorsResult').empty();
             $('#operatorsResult').hide();
             var opdata = query(db.chars2,"name_cn",opname);
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
 
             var opcode = Object.keys(opdata2)[0]
-            
-            //test
-            // var charalist = []
-            // $.each(db.chars,(key,chara) => {
-            //     charalist.push(`${chara.appellation},${chara.displayLogo},${key.split("_")[1]},${key}_1`)
-            // });
-            // console.log(charalist.join("\n"))
-            //
+
             var opKey =""
             $.each(opdata2,function(key,v){
                 v['id'] = key;
@@ -578,7 +731,27 @@
                 localStorage.selectedOPDetails = key;
                 return false
             });
+
+            console.log(opdataFull.appellation)
+            gtag('event', 'Selecting Operator', {
+                'event_category' : 'Operator Details',
+                'event_label' : opdataFull.appellation ,
+                'value' : from
+            });              
             
+            //test
+            // var charalist = []
+            // $.each(db.chars,(key,chara) => {
+            //     charalist.push(`${chara.appellation},${chara.displayLogo},${key.split("_")[1]},${key}_1`)
+            // });
+            // console.log(charalist.join("\n"))
+            //
+            
+
+            tokenname = opdataFull.tokenKey
+            currskin =opcode
+
+
             var url = new URL(window.location.href)
             var unreadable = query(db.unreadNameTL,"name",opdataFull.appellation)
             var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):opdataFull.appellation.replace(/ /g,"_"))
@@ -616,11 +789,28 @@
             var tabcontent2 = [];
             var zoombtn = [];
             
-            $("#elite-sidenav").html("");
-            $("#tabs-opCG").html("");
-            $("#elite-topnav").html("");
-            $("#tabs-opData").html("");
-            $("#op-taglist").html("");
+            $("#elite-sidenav").empty();
+            $("#tabs-opCG").empty();
+            $("#elite-topnav").empty();
+            $("#tabs-opData").empty();
+            $("#op-taglist").empty();
+
+            charName = opcode;
+            chibiName = opcode
+            console.log(chibipers)
+            if(chibipers=='build') chibiName= "build_"+chibiName
+            console.log(chibiName)
+            folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
+            // if(spinewidget)
+
+            
+            if(loadchibi){
+                LoadAnimation()
+                LoadAnimationToken()
+                // $("#spine-frame").fadeIn(10)
+            }
+            else $("#spine-frame").hide()
+            
 
             for (var i = 0; i < opdataFull.phases.length; i++) {
                 var l = opdataFull.phases.length;
@@ -630,16 +820,16 @@
                             + "<img src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
                         tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite(0)' href='#elite_0_tab'>Non-Elite</a></li>");
                     } else {
-                        tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_"+i+"_tab'>"
+                        tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/0-s.png'></button></li>");
                         tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite("+i+")'href='#elite_"+i+"_tab'>Non-Elite</a></li>");
                     }
                 } else if( i == l-1 ){
-                    tabbtn[0] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_"+i+"_tab'>"
+                    tabbtn[0] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
                     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 } else {
-                    tabbtn[l-i] = $("<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_"+i+"_tab'>"
+                    tabbtn[l-i] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
                                             + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
                     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 }
@@ -682,7 +872,9 @@
                     <img class='chara-image' src='img/characters/${encodeURIComponent(extraSkin[i].portraitId)}.png'>
                     </div>
                     `))
-                    dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns" data-toggle='pill' href='#opCG_S${i}_tab'>
+
+                    
+                    dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
                     <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
                     <img class='skinimage' style="max-width: 40px;max-height: 40px;margin-left:-5px;" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
                     </a></li>`)
@@ -698,14 +890,14 @@
             tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-top ak-btn" style="width:50px;height:50px;margin-top:10px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
             tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-middle ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opstory">
             <div>
-                <img src="./img/ui/story/profile.png" style="max-width:40px;max-height:40px">
+                <img class='audioprofilebutton' src="./img/ui/story/profile.png" style="max-width:40px;max-height:40px">
                 <div class="btn-story-header" style="border-radius:0px">Profile</div>
             </div>
             </button>`))
 
             tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-bottom ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio" >
             <div>
-                <img src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px" onclick="GetAudio(opdataFull)">
+                <img class='audioprofilebutton' src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px" onclick="GetAudio(opdataFull)">
                 <div class="btn-story-header">Audio</div>
             </div>
             </button>`))
@@ -723,11 +915,11 @@
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
             $("#op-nameTL").html(opdata['name_'+lang]);
             $("#op-nameREG").html("["+opdata['name_'+reg]+"]");
-            $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]}`)
+            $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]} | ${opdataFull.id.split("_")[2]}`)
             if(unreadable){
                 $("#op-nameRead").html(`[ ${unreadable} ]`);
             }else{
-                $("#op-nameRead").html("")
+                $("#op-nameRead").empty()
             }
             var gender = query(db.gender,"sex_cn",opdata.sex);
             
@@ -743,7 +935,7 @@
             var attackType = getSpeciality(opdataFull.description,opdataFull)
             
             $("#op-atktype").html(attackType)
-            $("#op-rarity").html("");
+            $("#op-rarity").empty();
             $("#op-rarity").attr("class","op-rarity-"+(opdataFull.rarity+1))
             
             $("#op-trust").html(GetTrust(opdataFull))
@@ -759,7 +951,7 @@
             if(potentials.length>0){
                 $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
             }else{
-                $("#op-potentialist").html("")
+                $("#op-potentialist").empty()
             }
             for (var i = 0; i < (opdataFull.rarity+1); i++) {
                 $("#op-rarity").append("<i class='fa fa-star'></i>");
@@ -787,13 +979,13 @@
             //Story
 
             GetStory(opdataFull)
-            $('#opaudiocontent').html("")
-            $('#opaudiotranslator').html("")
-            $('#opaudioproofreader').html("")
+            $('#opaudiocontent').empty()
+            $('#opaudiotranslator').empty()
+            $('#opaudioproofreader').empty()
             ///////////////////////////////////////////////// SKILLS SECTION //////////////////////////////////////////////////
 
-            $("#skill-tabs").html("");
-            $("#skill-contents").html("");
+            $("#skill-tabs").empty();
+            $("#skill-contents").empty();
             $.each(opdataFull.skills,function(i,v){
                 var maxSkillLevel = opdataFull.skills[i].levelUpCostCond.length;
                 var skillId = opdataFull.skills[i].skillId;
@@ -856,9 +1048,17 @@
                     }
                     var spDuration= (v2.duration==0?"Instant Attack":v2.duration==-1?"Infinite":v2.duration + " Seconds")
                     var spDurationName = (v2.duration==0?"":"Duration")
-                    
+                    var skilldetails =[]
+                    // console.log(skillname)
+                    // console.log(skillData.levels[i2])
                     skillData.levels[i2].blackboard.forEach(skillinfo => {
-                        
+                        // console.log(skillinfo)
+                        var skilljson = {}
+                        skilljson.name = db.effect[skillinfo.key]?db.effect[skillinfo.key]:skillinfo.key
+                        skilljson.key = skillinfo.key
+                        skilljson.value = skillinfo.value
+
+                        skilldetails.push(skilljson)
                         if(skillinfo.key=="force") force= skillinfo.value
                         if(v2.duration==-1){
                             if(skillinfo.key =="duration"){
@@ -870,6 +1070,7 @@
                             grid = rangeMaker(opdataFull.phases[0].rangeId,true,skillinfo.value)
                         }
                     });
+                    // console.log(skilldetails)
                     switch (force) {
                         case 0: force = "Small [0]";break;
                         case 1: force = "Medium [1]";break;
@@ -901,6 +1102,28 @@
                             </tr>
                             <tr style="height:10px"></tr>
                             `       
+
+                    var detailtable = []
+                    if(skilldetails.length>0){
+                        var skillhtmldetail = ""
+                        
+                        skilldetails.forEach(currdetails => {
+                            
+                            skillhtmldetail+=`
+                            <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
+                                    ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
+                            </div>`
+                        });
+                        detailtable = `<button id='skilldetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler("skilldetailcontent")'style="color:#fff;text-align:center;background:#222;padding:2px">Skill Details <i class="fas fa-caret-down"></i></button> 
+                            <div id='skilldetailcontent' class="ak-shadow skilldetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
+                                ${skillhtmldetail}
+                            </div>
+                        </div>`
+                    }else{
+                        detailtable=""
+                    }
+                    
+                    // if
                     if(grid){
                         tables +=            "<tr>"
                                 +               "<td rowspan=2 id='skill"+i+"lv"+i2+"grid'>"+(grid?grid:"")+"</td>"
@@ -910,6 +1133,7 @@
                                 +                   `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 +               "</tr>"
                                 +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
+                                +               `${detailtable==""?"":`<tr><td colspan=3>${detailtable}</td></tr>`}`
                                 +               "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
                                 +        "</table>";   
                     } else {
@@ -918,7 +1142,8 @@
                                 +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
                                 +            "</tr>"
                                 +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
-                                + "<tr><td colspan=4><div style='height:10px'></div>"+ materialHtml + "</td><tr>"
+                                +               `${detailtable==""?"":`<tr><td colspan=4>${detailtable}</td></tr>`}`
+                                + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
                                 +        "</table>";
                     }
                 })
@@ -928,30 +1153,56 @@
                 } else {
                     var skillIcon = skillData.iconId;
                 }
-
+                // console.log(opdataFull.skills[i])
+                var skilltoken = opdataFull.skills[i].overrideTokenKey
+                if(skilltoken== null) skilltoken = opdataFull.tokenKey
+                //
+                
+                
                 var tabItem = $("<li class='nav-item'>"
-                                +    "<button class='btn tabbing-btns horiz-small nav-link "+(i!=0 ? '' : 'active')+"' data-toggle='pill' href='#skill"+i+"'><p>Skill "+(i+1)+"</p></button>"
+                                +    `<button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'><p>Skill ${i+1}</p></button>`
                                 +"</li>");
-                var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? '' : 'active')+"' id='skill"+i+"'>"
-                                        +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
-                                        +        "<p class='large-text'>Skill "+(i+1)+"</p>"
-                                        +        "<span class='custom-span skillname'>"+skillname+"</span>"
-                                        +        "<div class='topright'>"
-                                        +            "<div style='padding: 15px;'>"
-                                        +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/skill_icon_"+skillIcon+".png' style='width: 100%;'>"
-                                        +            "</div>"
-                                        +        "</div>"
-                                        +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
-                                        +    "</div>"
-                                        +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
-                                        +       `<input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>`
-                                        +        `<div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
-                                        // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
-                                        +        tables
-                                        +    "</div>"
-                                        +"</div>");
+                // var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? '' : 'active')+"' id='skill"+i+"'>"
+                //                         +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
+                //                         +        "<p class='large-text'>Skill "+(i+1)+"</p>"
+                //                         +        "<span class='custom-span skillname'>"+skillname+"</span>"
+                //                         +        "<div class='topright'>"
+                //                         +            "<div style='padding: 15px;'>"
+                //                         +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/skill_icon_"+skillIcon+".png' style='width: 100%;'>"
+                //                         +            "</div>"
+                //                         +        "</div>"
+                //                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
+                //                         +    "</div>"
+                //                         +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
+                //                         +       `<input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>`
+                //                         +        `<div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
+                //                         // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
+                //                         +        tables
+                //                         +    "</div>"
+                //                         +"</div>");
+                var tabContents = $(`
+                <div class='tab-pane container clickthrough ${i!=0 ? '' : 'active'}' id='skill${i}'>
+                    <div class='small-container ak-shadow' style='margin-top: 50px;'>
+                        <p class='large-text'>Skill ${i+1}</p>
+                        <span class='custom-span skillname'>${skillname}</span>
+                            <div class='topright'>
+                                <div style='padding: 15px;'>
+                                    <img class='ak-shadow skill-image' id='skill${i}image' src='img/skills/skill_icon_${skillIcon}.png' style='width: 100%;'>
+                                </div>
+                            </div>
+                        <button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skil${i}StatsCollapsible'><i class='fa fa-sort-down'></i></button>
+                    </div>
+                    <div id='skill${i}StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >
+                        <input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>
+                            <div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>
+                        ${tables}
+                    </div>
+                <div>
+
+                `)
                 $("#skill-tabs").append(tabItem);
                 $("#skill-contents").append(tabContents);
+                // $("#skill-contents").append("WAAAAAAAAAAAAAAAAAAAAAI");
             });
         }
     }
@@ -1111,9 +1362,9 @@
         });
         // console.log(curraudiolist)
         // console.log(puretextlist.join("\n"))
-        $('#opaudiocontent').html("")
-        $('#opaudiotranslator').html("")
-        $('#opaudioproofreader').html("")
+        $('#opaudiocontent').empty()
+        $('#opaudiotranslator').empty()
+        $('#opaudioproofreader').empty()
         curraudiolist.forEach(element => {
             var curraudio  =`<audio preload="metadata" controls style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> `
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
@@ -1128,11 +1379,15 @@
             var currhtml = $(`
             <table class="story-table">
             <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
-            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank"><i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a></td></tr>
+            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank">
+            <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
+            <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${element.voiceAsset.split("_").slice(-1)[0] }</div>
+            </td></tr>
             <tr><td style="height:10px"></td></tr>
             <tr><td>${voiceTL}</td></tr>
             <tr><td style="height:10px"></td></tr>
             </table>
+            
             `)
             $('#opaudiocontent').append($(currhtml))
         });
@@ -1162,8 +1417,8 @@
         // console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
         let illustrator = currStory.drawName
         let voiceActor = db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName
-        $('#info-illustrator').html(`<div class="btn-infoleft">Illustrator</div><div class="btn-inforight"><a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a></div>`)
-        $('#info-voiceactor').html(`<div class="btn-infoleft">Voice Actor</div><div class="btn-inforight"><a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a></div>`)
+        $('#info-illustrator').html(`<div class="btn-infoleft ak-shadow"><i class="fas fa-pencil-alt" title="Illustrator"></i></div><div class="btn-inforight"><a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a></div>`)
+        $('#info-voiceactor').html(`<div class="btn-infoleft ak-shadow"><i class="fas fa-microphone-alt" title="Voice Actor"></i></div><div class="btn-inforight"><a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a></div>`)
         let puretext = []
         let textTL = []
         let islong =false
@@ -1433,7 +1688,7 @@
     }
 
     function GetRiic(opdata2){
-        var charaRiic = db.buildchars[Object.keys(opdata2)[0]]
+        var charaRiic = db.build.chars[Object.keys(opdata2)[0]]
         var riicList = []
         var everybuff = []
 
@@ -1478,14 +1733,14 @@
         riicList.forEach(eachcat => {
             var eachtab = []
             eachcat.list.forEach(eachbuff => {
-                var currbuff = db.buildbuffs[eachbuff]
+                var currbuff = db.build.buffs[eachbuff]
                 var tlbuff = db.riic[eachbuff]
 
                 var currname = tlbuff?tlbuff.name:currbuff.buffName
                 var currdesc = tlbuff?tlbuff.desc:currbuff.description
                 eachtab.push(`
                     <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'")}','${currdesc.replace(/\'/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname}\n\n${currdesc}">
+                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${currdesc.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname.replace(/\"/g,"\'")}\n\n${currdesc.replace(/\"/g,"\'")}">
                     </div>`)
                     // console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
             });
@@ -1548,6 +1803,7 @@
                 var currCandidate = currTalent.candidates[j] 
                 var currCandidateTL = currTalentTL?currTalentTL[j]:undefined
                 talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
+                console.log(currCandidate)
             }
             combTalents.push(talentGroup)
         }
@@ -1630,7 +1886,7 @@
         }
     }
     function CreateMaterial(id,count){
-        var itemdata = db.items[id];
+        var itemdata = db.item_table.items[id];
         var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
         var material = 
         (`<div class="akmat-container" style="position:relative">
@@ -1720,8 +1976,10 @@
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
 
                 // console.log(element)
+                // console.log(trait)
                 let muhRegex = /(.*){(.*?)}(.*)/g
                 let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
+                // console.log(currTLconv)
                 if(currTLconv){
                     console.log(currTLconv)
                     var textreplace = 'Value'
@@ -1734,8 +1992,10 @@
                         }
                         isReplaced = true
                     }
+                    // console.log(textreplace)
                 }
                 let currTLconvfinal = currTLconv?currTLconv[1] + textreplace + currTLconv[3]:typetl?typetl.type_en:element.join("")
+                // console.log(currTLconvfinal)
                 splitdescTL.push(currTLconvfinal)
             }else{
                 var typetl = db.attacktype.find(search=>{
@@ -1766,7 +2026,7 @@
                 element.blackboard.forEach(eachbb => {
                     each.push(`${eachbb.key} : ${eachbb.value}`)
                 });
-                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px">${ each.join(" ")}</div>
+                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px;margin-bottom:2px;margin-top:2px">${each.join("</br>")}</div>
                 <div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
                 splitdescTL.push(info)
             });
@@ -1783,6 +2043,15 @@
         <div style="padding-top:5px;display:inline-block">
         <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
         ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
+        </div>`
+
+        return titledbutton
+    }
+    function titledMaker2 (content,title,extraClass="",extraId="",extraStyle=""){
+        let titledbutton = `
+        <div style="padding-top:0px;display:inline-block">
+        <div class=\"${extraClass}\" style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
+         ${(title==""?"":`<a class="ak-subtitle" style="color:#999;background:#222;display:inline-block;border-radius:0px;padding:0px 3px;margin-left:-4px;margin-top:-12px"> ${title} </a>`)} ${content}</div>
         </div>`
 
         return titledbutton
@@ -2077,6 +2346,641 @@
             return false;
         }
     }
+
+    function ChangeSkillAnim(skillnum,skillmax,token){
+        // console.log(skillnum)
+        // console.log(token)
+        // console.log(skillmax)
+        console.log(token)
+        tokenname = token
+        if(spinewidgettoken&&token&&spinewidgettoken.loaded){
+            
+            LoadAnimationToken(token)
+        }else if(spinewidget&&spinewidget.loaded){
+
+            var animskill = db.animlist[opdataFull.id]
+            console.log(skillnum)
+            if(animskill && animskill.skills[skillnum]){
+                $("#spine-text").text(`Skill ${skillnum+1}`)
+                CreateAnimation(spinewidget,animskill.skills[skillnum],true)
+            }
+            else{
+                var animlist = Object.keys(spinewidget.customanimation).filter(search=>search.includes("Skill"))
+
+                animlist=animlist.sort((a,b)=>{
+                    if(a<b)return 1
+                    if(a>b)return -1
+                    return 0
+                })
+                
+                if(animlist&&animlist.length>0){
+                    // console.log(animlist)
+                    // console.log(skillmax-skillnum-1)
+                    
+                    if(animlist[skillmax-skillnum-1]){
+                        $("#spine-text").text(`Skill ${skillnum+1}`)
+                        // console.log()
+                        CreateAnimation(spinewidget,spinewidget.customanimation[animlist[skillmax-skillnum-1]],true)
+                    }
+                }
+            }
+
+        }
+    }
+
+    function LoadAnimation(){
+        // console.log(spinewidget)
+        $("#loading-spine").text("Loading...")
+        if(spinewidget){
+            // spinewidget.loadWidgets()
+            // spinewidget.loadTexture()
+            spinewidget.pause()
+            spinewidget = undefined
+            $("#spine-widget").remove()
+            currscale = chibiscaleweblist[chibiscaleweb]
+            $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${currscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${currscale[0]});"></div>`)
+            // console.log(loadchibi)
+            // if(loadchibi)$("#spine-frame").fadeIn(100);
+        }else{
+            if(loadchibi)$("#spine-frame").fadeIn(100);
+        }
+        if (chibiName != null && defaultAnimationName != null) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', folder + chibiName + "." +skeletonType, true);
+            xhr.responseType = 'arraybuffer';
+            var array;
+            $("#spine-widget").hide()
+            var defaultskin ='default'
+            
+            $("#loading-spine").fadeIn(200)
+            console.log(chibiName)
+            xhr.onloadend = function (e) {
+                if (xhr.status != 404) {
+                    buffer = xhr.response;
+                    array = new Uint8Array(buffer);
+                    // console.log(array);
+                    skelBin = new SkeletonBinary();
+                    var jsonskel
+                    if(array.length==0){
+                        $("#loading-spine").text("Load Failed")
+                    }
+                    if (skeletonType== "skel"){
+                        skelBin.data = array
+                        skelBin.initJson()
+                        jsonskel = JSON.stringify(skelBin.json)
+                        var parsedskeljson = JSON.parse(jsonskel)
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
+                    }else if (skeletonType== "json"){
+                        jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
+                        var parsedskeljson = jsonskel
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
+                    }
+                    
+                    
+                    
+                    // var test = new TextDecoder("utf-8").decode(array);
+                    // console.log(JSON.parse(test))
+                    // console.log(JSON.stringify(skelBin.json, null, "\t"));
+                    new spine.SpineWidget("spine-widget", {
+                        jsonContent: jsonskel,
+                        atlas: folder + chibiName + ".atlas",
+                        animation: defaultAnimationName,
+                        backgroundColor: "#00000000",
+                        // debug: true,
+                        // imagesPath: chibiName + ".png", 
+                        premultipliedAlpha: true,
+                        fitToCanvas : false,
+                        loop:true,
+                        x:900,
+                        y:650,
+                        //0.5 for normal i guess
+                        scale:1,
+                        success: function (widget) {
+                            
+                            animIndex=0
+                            spinewidget = widget
+                            $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                            $("#loading-spine").fadeOut(200)
+                            animations = widget.skeleton.data.animations;
+                            // console.log(animations)
+                            // console.log(widget)
+                            $("#spine-widget").show()
+                            if(animations.find(search=>search.name=="Start")){
+                                CreateAnimation(spinewidget,["Start","Idle"])
+                                $("#spine-text").text("Idle")
+                            }else if(animations.find(search=>search.name=="Relax")){
+                                CreateAnimation(spinewidget,"Relax")
+                                $("#spine-text").text("Relax")
+                            }
+
+                            // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
+                            // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Loop_End","Idle"],true)
+
+                            widget.customanimation = CheckAnimationSet(animations)
+                            // console.log(widget)
+
+
+                            //ange skill 2
+                            // CreateAnimation(["Skill1_Begin",["Skill1_Loop",15],"Skill1_End",["Idle_Charge",2]],true)
+
+                            //ange skill 3 (is weird)
+                            // CreateAnimation(["Skill2_Begin",["Skill2_Loop",15],"Skill2_End",["Idle_Charge",2]],true)
+
+                            // Normal skill loop with begin and idle i guess (nian skill 2)
+                            // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Idle"],true,true)
+
+
+                            // console.log(widget.state)
+                            // console.log(widget.state.trackEntry)
+                            $("#spine-toolbar-next").onclick = function () {
+                                widget.state.clearTracks()
+                                if(animationqueue!=undefined)clearInterval(animationqueue)
+                                animIndex++;
+                                // console.log(animations)
+                                if (animIndex >= animations.length) animIndex = 0;
+                                widget.setAnimation(animations[animIndex].name)
+                                $("#spine-text").text(animations[animIndex].name)
+                            }
+                        }
+                    })
+                }else{
+                    $("#loading-spine").text("Load Failed")
+                    // $("#spine-frame").fadeOut()
+                }
+            };
+            xhr.send()
+        }
+    }
+
+
+    function LoadAnimationToken(tokenkey=opdataFull.tokenKey){
+        // console.log(spinewidgettoken)
+        // console.log(opdataFull)
+        // var tokenName =
+        var tokenname = tokenkey
+        var tokenfolder = `./spineassets/token/${opdataFull.id}/${tokenkey}`
+        console.log(tokenfolder)
+        // $("#loading-spine").text("Loading...")
+        if(spinewidgettoken){
+            // spinewidget.loadWidgets()
+            // spinewidget.loadTexture()
+            spinewidgettoken.pause()
+            spinewidgettoken = undefined
+            $("#spine-widget-token").remove()
+            currscale = chibiscaleweblist[chibiscaleweb]
+            $("#spine-frame-token").append(`<div id="spine-widget-token" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${currscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${currscale[0]});"></div>`)
+            // console.log(loadchibi)
+            // if(loadchibi)$("#spine-frame").fadeIn(100);
+        }else{
+            if(loadchibi)$("#spine-frame-token").fadeIn(100);
+        }
+        if (chibiName != null && defaultAnimationName != null) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', tokenfolder +"."+skeletonType, true);
+            xhr.responseType = 'arraybuffer';
+            var array;
+            $("#spine-widget-token").hide()
+            var defaultskin ='default'
+            
+            // $("#loading-spine").fadeIn(200)
+            // console.log(chibiName)
+            xhr.onloadend = function (e) {
+                if (xhr.status != 404) {
+                    buffer = xhr.response;
+                    array = new Uint8Array(buffer);
+                    // console.log(array);
+                    skelBin = new SkeletonBinary();
+                    var jsonskel
+                    if(array.length==0){
+                        // $("#loading-spine").text("Load Failed")
+                    }
+                    if (skeletonType== "skel"){
+                        skelBin.data = array
+                        skelBin.initJson()
+                        jsonskel = JSON.stringify(skelBin.json)
+                        var parsedskeljson = JSON.parse(jsonskel)
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
+                    }else if (skeletonType== "json"){
+                        jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
+                        var parsedskeljson = jsonskel
+                        console.log(JSON.parse(jsonskel))
+                        if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                            defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                        }
+                        if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                            defaultskin = Object.keys(parsedskeljson.skins)[0]
+                        }
+                    }
+                    
+                    
+                    
+                    // var test = new TextDecoder("utf-8").decode(array);
+                    // console.log(JSON.parse(test))
+                    // console.log(JSON.stringify(skelBin.json, null, "\t"));
+                    new spine.SpineWidget("spine-widget-token", {
+                        jsonContent: jsonskel,
+                        atlas: tokenfolder + ".atlas",
+                        animation: defaultAnimationName,
+                        backgroundColor: "#00000000",
+                        // debug: true,
+                        // imagesPath: chibiName + ".png", 
+                        premultipliedAlpha: true,
+                        fitToCanvas : false,
+                        loop:true,
+                        x:900,
+                        y:650,
+                        //0.5 for normal i guess
+                        scale:1,
+                        success: function (widget) {
+                            
+                            // animIndex=0
+                            spinewidgettoken = widget
+                            // $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                            // $("#loading-spine").fadeOut(200)
+                            tokenanimations = widget.skeleton.data.animations;
+                            // console.log(animations)
+                            // console.log(widget)
+                            $("#spine-widget-token").show()
+                            if(tokenanimations.find(search=>search.name=="Start")){
+                                CreateAnimation(spinewidgettoken,["Start","Idle"])
+                                // $("#spine-text").text("Idle")
+                            }else if(tokenanimations.find(search=>search.name=="Relax")){
+                                CreateAnimation(spinewidgettoken,"Relax")
+                                // $("#spine-text").text("Relax")
+                            }else if(tokenanimations.find(search=>search.name=="Idle")){
+                                CreateAnimation(spinewidgettoken,"Idle")
+                                // $("#spine-text").text("Relax")
+                            }
+
+                            widget.customanimation = CheckAnimationSet(tokenanimations)
+                            console.log(widget)
+                        }
+                    })
+                }else{
+                }
+            };
+            xhr.send()
+        }
+    }
+    function ChangeAnimation2(widget,widgettext,num){
+        if(widget=="token") widget=spinewidgettoken
+        else widget=spinewidget
+
+        var curranimation = Object.keys(widget.customanimation)
+        widget.state.clearTracks()
+        if(animationqueue!=undefined)clearInterval(animationqueue)
+        animIndex += num;
+        // console.log(animIndex)
+        // console.log(curranimation)
+        
+        if (animIndex >= curranimation.length) animIndex = 0;
+        else if (animIndex < 0) animIndex = curranimation.length-1;
+        // spinewidget.state.setDefaultMix(0.1);
+        // spinewidget.config.scale = 2
+        // console.log(widget)
+        // console.log(animIndex)
+        // widget.setAnimation(curranimation[animIndex].name)
+        // console.log(widget.customanimation[Object.keys(widget.customanimation)[animIndex]])
+
+        CreateAnimation(widget,widget.customanimation[Object.keys(widget.customanimation)[animIndex]],true)
+        // console.log(widgettext)
+        $(widgettext).text(Object.keys(widget.customanimation)[animIndex])
+    }
+
+    function ChangeAnimation(widget,widgettext,num){
+        if(widget=="token") widget=spinewidgettoken
+        else widget=spinewidget
+
+        var curranimation = widget.skeleton.data.animations
+        widget.state.clearTracks()
+        if(animationqueue!=undefined)clearInterval(animationqueue)
+        animIndex += num;
+        // console.log(animIndex)
+        // console.log(curranimation)
+        
+        if (animIndex >= curranimation.length) animIndex = 0;
+        else if (animIndex < 0) animIndex = curranimation.length-1;
+        // spinewidget.state.setDefaultMix(0.1);
+        // spinewidget.config.scale = 2
+        // console.log(widget)
+        // console.log(animIndex)
+        // widget.setAnimation(curranimation[animIndex].name)
+        // console.log(widget.customanimation[Object.keys(widget.customanimation)[animIndex]])
+        // console.log(curranimation[index])
+        CreateAnimation(widget,curranimation[animIndex].name)
+        // widget.setAnimation(curranimation[animIndex].name)
+        // console.log(widgettext)
+        $(widgettext).text(curranimation[animIndex].name)
+    }
+
+    function ChangeSkin(name="",pers=""){
+        currskin = name
+        var skinname = currskin.split(opdataFull.id)[1]?name.split(opdataFull.id)[1]:""
+        console.log(opdataFull.id)
+        console.log(skinname)
+        if(spinewidgettoken){
+            console.log("      waaa "+tokenname)
+            LoadAnimationToken(tokenname+skinname)
+        }
+        if(name!="")chibiName=name
+        if(pers!="")chibipers=pers
+        if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
+        else chibiName.includes("build")?chibiName=chibiName.split("_").slice(1).join("_"):chibiName=chibiName
+        folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
+        if(spinewidget)LoadAnimation()
+
+        
+    }
+
+
+    function PlayPause(widget){
+        if(widget=="token") widget=spinewidgettoken
+        else widget=spinewidget
+        if(widget.isPlaying()){
+            console.log("Playing")
+            widget.pause()
+        }else{
+            console.log("Paused")
+            widget.play()
+        }
+    }
+
+    function Mirror(el){
+        var currcss 
+        // if($(el).hasClass("MirrorDiv")){
+        //     curcss = $(el).css('transform')
+        //     var changex = curcss.split(",")
+        //     $(el).css('transform','scaleX("1")')
+        //     console.log(changex)
+        // }
+        // else {
+        //     curcss = $(el).css('transform')
+        //     $(el).css('transform','scaleX("-1")')
+        //     console.log(curcss)
+        // }
+        currcss = $(el).css('transform')
+        var regexcheck = /matrix\((.*)\)/g
+        var changex = regexcheck.exec(currcss)[1]
+        var changex1 = changex.split(",")
+        changex1[0] = changex1[0]*-1
+        $(el).css('transform','matrix('+changex1.join(",")+')')
+        console.log(changex)
+        $(el).toggleClass("MirrorDiv") 
+        
+        
+    }
+
+    
+
+    function CreateAnimation(chibiwidget,animArray,endloop = false,skipStart = false){
+        // console.log(animArray)
+        
+        // console.log(Array.isArray(animArray))
+        // console.log(animArray.length>1)
+        // console.log(Array.isArray(animArray[0]))
+        
+        if((Array.isArray(animArray)&&animArray.length>1)){
+            // console.log("ayyyyyy")
+            var delay = 0
+            var animNum = 0
+            if(animationqueue!=undefined)clearInterval(animationqueue)
+            var curranimplay = Array.isArray(animArray[0])?animArray[0][0]:animArray[0]
+            if(chibiwidget.loaded)chibiwidget.setAnimation(curranimplay)
+            chibiwidget.state.clearTracks()
+            var curranimations = chibiwidget.skeleton.data.animations
+            animArray.forEach(element => {
+                var curranim = element
+                var animTimes = 1
+                var isloop = animNum==animArray.length-1
+                
+                if(Array.isArray(element)){
+                    curranim = element[0]
+                    animTimes = element[1]
+                    isloop = true
+                }
+                if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
+                else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
+                delay +=curranimations[GetAnimationIndex(curranimations,curranim)].duration*animTimes
+                animNum++
+                // console.log(element)
+            });
+            if(endloop){
+                if(skipStart)animArray.shift()
+
+                console.log(animArray)
+                animationqueue = setInterval(function(){
+                    var delay = 0
+                    var animNum = 0
+                    var curranimplay = Array.isArray(animArray[0])?animArray[0][0]:animArray[0]
+                    if(chibiwidget.loaded)chibiwidget.setAnimation(curranimplay)
+                    chibiwidget.state.clearTracks()
+                    animArray.forEach(element => {
+                        var curranim = element
+                        var animTimes = 1
+                        var isloop = animNum==animArray.length-1
+                        if(Array.isArray(element)){
+                            curranim = element[0]
+                            animTimes = element[1]
+                            isloop = true
+                        }
+                        if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
+                        else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
+                        delay +=curranimations[GetAnimationIndex(curranimations,curranim)].duration*animTimes
+                        animNum++
+                        console.log(element)
+                    });
+                },delay*1000-20)
+            }
+        }else{
+            // chibiwidget.state.setAnimation(animArray)
+            // console.log("WEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+            
+            if(animationqueue!=undefined)clearInterval(animationqueue)
+            // console.log(animArray)
+
+            var curranimplay = Array.isArray(animArray[0])?animArray[0][0]:animArray
+            if(chibiwidget.loaded)chibiwidget.setAnimation(curranimplay)
+            chibiwidget.state.clearTracks()
+            
+            chibiwidget.state.setAnimation(0,curranimplay,true)
+        }
+    }
+    
+    function CheckAnimationSet(anim){
+        // console.log(anim)
+        var curranimlist = {}
+        if(anim.find(search=>search.name=="Interact")){
+            //Build Mode
+            // console.log("Is Build")
+
+        }else if(anim.find(search=>search.name=="Idle")){
+            //Battle Mode
+            // console.log("Is Battle")
+            anim.forEach(curranim => {
+                var numberregx = /(\d)/
+                var currsplit = curranim.name.split("_")[0]
+                
+                if(currsplit)
+                var splitnum = numberregx.exec(curranim.name)
+                if(splitnum){
+                    var nameregex = /(.*)(?=\d)/g
+                    var checkname = nameregex.exec(currsplit)
+                    // console.log(checkname[0])
+                    if(checkname)currsplit = checkname[0]
+                    // console.log(checkname[0])
+                    splitnum=splitnum[0]
+                }
+                else if (!splitnum) splitnum=""
+
+                if(!curranimlist[`${currsplit}${splitnum}`]){
+                    curranimlist[`${currsplit}${splitnum}`] = []
+                }
+                if(!curranim.name.includes("Down")){
+                    curranimlist[`${currsplit}${splitnum}`].push(curranim.name)
+                }
+                
+            });
+            Object.keys(curranimlist).forEach(keys => {
+                curranimlist[keys]= curranimlist[keys].sort((a,b)=>{
+                    var sortarray = [
+                        "Pre",
+                        "Begin",
+                        "Start",
+                        "Idle",
+                        "",
+                        "Loop",
+                        "End",
+                        "Die"
+                    ]
+                    var anum = 0
+                    var bnum = 0
+                    for(i=0;i<sortarray.length;i++){
+                        // console.log(sortarray[i])
+                        if(sortarray[i]==""){
+                            var isAfree = true
+                            var isBfree = true
+                            for(j=0;j<sortarray.length;j++){
+                                if(sortarray[j]!=""){
+                                    if(a.includes(sortarray[j]))isAfree=false
+                                    if(b.includes(sortarray[j]))isBfree=false
+                                }
+                            }
+                            if (isAfree) anum += 4
+                            if (isBfree) bnum += 4
+                        }else{
+                            if(a.includes(sortarray[i]))anum+=i+1
+                            if(b.includes(sortarray[i]))bnum+=i+1
+                        }
+                    }
+                    return anum - bnum
+                    
+                })
+                // curranimlist[keys].forEach(element => {
+                //     if(curranimlist[keys].length>=2&&(element.includes("Loop")||element.includes("Idle"))){
+                //         console.log(element)
+                //         element = [element,5]
+                //     }
+                // });
+                if(curranimlist[keys].find(search=>search.includes("End"))){
+                    if(anim.find(search=>search.name.includes("Idle_Charge"))) curranimlist[keys].push("Idle_Charge")
+                    else curranimlist[keys].push("Idle")
+                }
+                if(curranimlist[keys].find(search=>search.includes("Die"))){
+                    if(anim.find(search=>search.name.includes("Start"))) curranimlist[keys].push("Start")
+                }
+                for(i=0;i<curranimlist[keys].length;i++){
+                    var filterarray = [
+                        "Pre",
+                        "Begin",
+                        "Start",
+                        "Idle",
+                        "Loop",
+                        "End",
+                        "Die"
+                    ]
+                    var iscomp = true
+                    if (curranimlist[keys].length>=2&&(curranimlist[keys][i].includes("Loop")||curranimlist[keys][i].includes("Idle"))&&!curranimlist[keys][i].includes("End")) iscomp = false
+                    else{
+                        iscomp = false
+                        filterarray.forEach(element => {
+                            if(curranimlist[keys][i].includes(element)) iscomp = true
+                        });
+                    }
+                    if(!iscomp){
+                        // console.log(curranimlist[keys][i])
+                        var currvariable = anim.find(search=> search.name == curranimlist[keys][i])
+                        // console.log(currvariable)
+                        // console.log("Got "+ Math.round(8/currvariable.duration))
+                        if(curranimlist[keys][i].includes("Idle")){
+                            if(Math.round(3/currvariable.duration)>3)curranimlist[keys][i] = [curranimlist[keys][i],Math.round(3/currvariable.duration)]
+                        }else if(currvariable.duration!=0){
+                            curranimlist[keys][i] = [curranimlist[keys][i],Math.round(8/currvariable.duration)]
+                        }
+                        
+                    }
+                }
+            });
+
+            
+        }
+        console.log(curranimlist)
+        return curranimlist
+    }
+
+    function GetAnimationIndex(anim,name){
+        
+        return anim.map(function(e) { return e.name; }).indexOf(name)
+    }
+
+    function SlideToggler(el){
+
+            $(`.${el}`).slideToggle(100)
+            console.log("WEEEI")
+    }
+
+    function Zoomchara(el){
+        var widthbefore = $('#charazoom').width()
+        var heightbefore = $('#charazoom').height()
+
+        $('#charazoominput').val(el.value)
+        $('#charazoomslider').val(el.value)
+        $('#charazoom').css("max-width",`unset`)
+        $('#charazoom').css("max-height",`unset`)
+        var zoomvalue = `${el.value}%`
+        $('#charazoom').css("width",zoomvalue)
+        $('#charazoom').css("height",zoomvalue)
+        var widthafter = $('#charazoom').width()
+        var heightafter = $('#charazoom').height()
+        // console.log(`${widthbefore} => ${widthafter}`)
+        var zoommargintop = parseFloat($('#charazoom').css("margin-top").split('px')[0])
+        var zoommarginleft = parseFloat($('#charazoom').css("margin-left").split('px')[0])
+        console.log(zoommargintop)
+
+        console.log(`${zoommargintop +(heightbefore/2-heightafter/2)}px`)
+        console.log(`${zoommarginleft +(widthbefore/2-widthafter/2)}px`)
+        $('#charazoom').css("margin-top",`${zoommargintop +(heightbefore/2-heightafter/2)}px`)
+        $('#charazoom').css("margin-left",`${zoommarginleft +(widthbefore/2-widthafter/2)}px`)
+        console.log(zoomvalue)
+    }
+
     function ObjectToArray(db){
         var result = [];
         var found = true;
@@ -2092,7 +2996,7 @@
             return false;
         }
     }
-
+    
     function changeUILanguage(){
         reg = localStorage.gameRegion;
         lang = localStorage.webLang;
@@ -2130,4 +3034,100 @@
 
     function getUrlVars() {
         return new URL(window.location.href).searchParams;
+    }
+
+    
+
+    function dragElement(elmnt,elmnt2 =elmnt.id+ "header") {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt2)) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt2).onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+    function dragElement2(elmnt,elmnt2 =elmnt.id+ "header") {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt2)) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt2).onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style["margin-top"] = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style["margin-left"] = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+    function LoadAllJsonObjects(obj) {
+        var result = {}
+        
+        var promises = Object.entries(obj).map(function(url){
+            return $.getJSON(url[1]).then(function(res){
+                result[url[0]]=res
+            })
+        })
+    
+        return Promise.all(promises).then(function(){
+            return result
+        })
     }

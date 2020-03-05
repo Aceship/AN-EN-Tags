@@ -1,0 +1,147 @@
+/* css file for arknight github calculator */
+
+#story{
+    width:100%;
+    text-align:center;
+}
+.storyimagecontainer{
+    width:100%;
+    text-align:center;
+}
+.storyimagecontainer img{
+    max-width:600px;
+    width:100%;
+}
+
+
+.perspectiveMap{
+    transform:perspective(1000px) rotateX(30deg) ;
+}
+.mainmap{
+    display:inline-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    transition: transform 0.5s;
+}
+
+
+
+.tile-row{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+
+/* Tile Info */
+.tile{
+    display: inline-flex;
+    /* border:0.2px solid #aaa; */
+    width:60px;
+    height:60px;
+    margin:1px;
+    transition: transform 0.5s;
+}
+
+/* .tile:hover:after{
+    background:#ffffff55 !important;
+} */
+
+
+
+.tiledata-spec-tile_forbidden{
+    background-color: #aaa;
+}
+.tiledata-spec-tile_wall{
+    background-color: #666;
+    border:0.5px solid #888;
+}
+.tiledata-spec-tile_road{
+    /* border: 0.2px solid #444; */
+    background-color: #333;
+}
+.tiledata-spec-tile_floor{
+    border: 0.5px solid #444;
+    background-color: #333;
+}
+.tiledata-spec-tile_floor:after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    border: 0.5px solid rgb(93, 93, 93);
+    background-color: #555;
+}
+.tiledata-spec-tile_fence{
+    border: 0.5px solid #444;
+    background-color: #333;
+}
+.tiledata-spec-tile_fence:after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    border: 0.5px solid rgb(255, 209, 59);
+    background-color: #555;
+}
+.tiledata-spec-tile_hole:after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    border: 0.5px solid rgb(155, 155, 155);
+    background-color: rgb(0, 0, 0);
+}
+
+.tiledata-spec-tile_start{
+    background-color: rgb(168, 0, 0);
+}
+.tiledata-spec-tile_end{
+    background-color: rgb(0, 59, 168);
+}
+.tiledata-spec-tile_flystart{
+    background-color: rgb(168, 0, 0);
+}
+.tiledata-spec-tile_flystart:after{
+    width: 60px;
+    content:'X';
+    color:white;
+    font-size: 40px;
+    text-align: center;
+}
+
+.tiledata-spec-tile_telin{
+    border: 0.5px solid #444;
+    background-color: #333;
+}
+.tiledata-spec-tile_telin:after{
+    width: 60px;
+    content:'V';
+    color:white;
+    font-size: 40px;
+    text-align: center;
+}
+.tiledata-spec-tile_telout{
+    border: 0.5px solid #444;
+    background-color: #333;
+
+}
+.tiledata-spec-tile_telout:after{
+    width: 60px;
+    content:'^';
+    color:white;
+    font-size: 40px;
+    text-align: center;
+}
+
+
+.perspectiveMap .tile-row .tiledata-spec-tile_wall,.perspectiveMap .tile-row .tiledata-spec-tile_forbidden,.perspectiveMap .tile-row .tiledata-spec-tile_flystart{
+    transform: translateY(-2px);
+}
+
+
+@media screen and (max-width:768px) {
+    .storyimagecontainer{
+        width:100%;
+    }
+}

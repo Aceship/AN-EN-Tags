@@ -1,57 +1,273 @@
 <html>
 
 <head>
+    <link rel='stylesheet' href='css/ak.css'>
+    <link rel='stylesheet' href='css/akchardetail.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css'>
     <script src="js/spine-widget.js"></script>
     <script src="js/spine-skeleton-binary.js"></script>
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js'></script>
 </head>
 
-<body>
-    <center>
-        <div id="spine-widget" style="margin-bottom: 20px; width: 600px; height: 600px;"></div>
+<body style="background-color: rgb(116, 116, 116);">
+    <center style="height:600px">
+        
+
+        <div id="spine-frame" style="position: relative;width: 300px; height: 300px;margin-top: 200px;transform: scale(1);">
+            <div id="spine-widget" style="position:absolute;width: 1800px; height: 1800px;top:-775px;left:-750px;pointer-events: none;z-index: 20;transform: scale(0.5);"></div> <!-- scaling 0.5 for "supersampling" chibi -->
+
+            <div id="spine-toolbar" style="position:absolute;bottom:-25px;width:300px;height:70px">
+                <button class='btn btn-sm ak-sm-btn' style='margin-top:10px;min-width:30px;' onclick='ChangeAnimation(-1)' type='button' id='opBrowseButton2'>&lt;</button>
+                <button class='btn btn-sm ak-sm-btn' style='margin-top:10px;min-width:30px;' onclick='PlayPause()' type='button' id='opBrowseButton2'>Play/Pause</button>
+                <button class='btn btn-sm ak-sm-btn' style='margin-top:10px;min-width:30px;' onclick='ChangeAnimation(1)' type='button' id='opBrowseButton2'>&gt;</button>
+                <button id="spine-text" class="btn ak-sm-btn ak-disable" style="margin-top:10px;width:140px;height:30px;"></button>
+            </div>
+            <div id="spine-bg" style="position:absolute;top:0px;left:0px;z-index:-1;opacity:0.5"><img class='background' src='img/ui/spine/bg.png'></div>
+        </div>
     </center>
     <script>
-        var charName = 'char_101_sora';
+        var vars = getUrlVars()
+
+        var skeletonType = "skel"
+        var chibitype = 'character'
+        var charName = 'char_180_amgoat';
+        var chibipers = 'front'
+        var chibiName = 'char_180_amgoat'
+        var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
+        var spinewidget 
+        var animIndex = -1;
+        var animations
+        var animationqueue
+
+        console.log(vars)
+        if(vars.has("folder")){
+            folder = vars.get("folder")
+        }
+        if(vars.has("name")){
+            chibiName = vars.get("name")
+        }
+        if(vars.has("skel")){
+            skeletonType = vars.get("skel")
+        }
         var defaultAnimationName = "Default";
+        if(vars.has("anim")){
+            defaultAnimationName = vars.get("anim")
+        }
+        
         console.log(defaultAnimationName);
-        if (charName != null && defaultAnimationName != null) {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', "./spineassets/" + charName + ".skel", true);
-            xhr.responseType = 'arraybuffer';
-            var array;
-            xhr.onloadend = function (e) {
-                if (xhr.status != 404) {
-                    buffer = xhr.response;
-                    array = new Uint8Array(buffer);
-                    // console.log(array);
-                    skelBin = new SkeletonBinary();
-                    skelBin.data = array;
-                    skelBin.initJson();
-                    // console.log(JSON.stringify(skelBin.json, null, "\t"));
-                    new spine.SpineWidget("spine-widget", {
-                        jsonContent: JSON.stringify(skelBin.json),
-                        atlas: "spineassets/" + charName + ".atlas",
-                        animation: defaultAnimationName,
-                        backgroundColor: "#00000000",
-                        // debug: true,
-                        premultipliedAlpha: true,
-                        fitToCanvas : true,
-                        // x:220,
-                        // y:100,
-                        scale:0.6,
-                        success: function (widget) {
-                            var animIndex = 0;
-                            widget.canvas.onclick = function () {
-                                animIndex++;
-                                var animations = widget.skeleton.data.animations;
-                                console.log(animations)
-                                if (animIndex >= animations.length) animIndex = 0;
-                                widget.setAnimation(animations[animIndex].name)
-                            }
+        console.log(folder)
+        console.log(chibiName)
+        $(document).ready(function(){
+            
+            LoadAnimation()
+            
+        })
+
+        function LoadAnimation(){
+            if (chibiName != null && defaultAnimationName != null) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', folder + chibiName + "." +skeletonType, true);
+                xhr.responseType = 'arraybuffer';
+                var array;
+                $("#spine-widget").hide()
+                xhr.onloadend = function (e) {
+                    if (xhr.status != 404) {
+                        buffer = xhr.response;
+                        array = new Uint8Array(buffer);
+                        console.log(array);
+                        skelBin = new SkeletonBinary();
+
+                        
+                        var jsonskel
+                        if (skeletonType== "skel"){
+                            skelBin.data = array
+                            skelBin.initJson()
+                            jsonskel = JSON.stringify(skelBin.json)
+                        }else if (skeletonType== "json"){
+                            jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
+
                         }
-                    })
+                        
+                        
+                        
+                        // var test = new TextDecoder("utf-8").decode(array);
+                        // console.log(JSON.parse(test))
+                        // console.log(JSON.stringify(skelBin.json, null, "\t"));
+                        new spine.SpineWidget("spine-widget", {
+                            jsonContent: jsonskel,
+                            atlas: folder + chibiName + ".atlas",
+                            animation: defaultAnimationName,
+                            backgroundColor: "#00000000",
+                            // debug: true,
+                            // imagesPath: chibiName + ".png", 
+                            premultipliedAlpha: true,
+                            fitToCanvas : false,
+                            loop:true,
+                            x:900,
+                            y:650,
+                            //0.5 for normal i guess
+                            scale:1,
+                            success: function (widget) {
+                                
+                                spinewidget = widget
+                                $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                                animations = widget.skeleton.data.animations;
+                                console.log(animations)
+                                console.log(widget)
+                                $("#spine-widget").fadeIn(200)
+                                if(animations.find(search=>search.name=="Start")){
+                                    CreateAnimation(["Start","Idle"])
+                                }else if(animations.find(search=>search.name=="Relax")){
+                                    CreateAnimation("Relax")
+                                }
+
+                                // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
+                                
+
+                                //mostima skill 3
+                                // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",3],"Skill_2_End","Idle"],true)
+
+
+                                
+
+                                //blaze skill 2 
+                                // CreateAnimation(["Idle","Skill_1_Begin","Skill_1_Idle",["Skill_1",5],"Skill_1_Idle","Skill_1_Die"],true)
+
+                                //blaze skill 3
+                                // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Loop_End","Idle"],true)
+
+                                CheckAnimationSet(animations)
+
+
+                                //ange skill 2
+                                // CreateAnimation(["Skill1_Begin",["Skill1_Loop",15],"Skill1_End",["Idle_Charge",2]],true)
+
+                                //ange skill 3 (is weird)
+                                // CreateAnimation(["Skill2_Begin",["Skill2_Loop",15],"Skill2_End",["Idle_Charge",2]],true)
+
+                                // Normal skill loop with begin and idle i guess (nian skill 2)
+                                // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Idle"],true,true)
+
+
+                                // console.log(widget.state)
+                                // console.log(widget.state.trackEntry)
+                                $("#spine-toolbar-next").onclick = function () {
+                                    widget.state.clearTracks()
+                                    if(animationqueue!=undefined)clearInterval(animationqueue)
+                                    animIndex++;
+                                    // console.log(animations)
+                                    if (animIndex >= animations.length) animIndex = 0;
+                                    widget.setAnimation(animations[animIndex].name)
+                                    $("#spine-text").text(animations[animIndex].name)
+                                }
+                            }
+                        })
+                    }else{
+                        $("#spine-frame").fadeOut()
+                    }
+                };
+                xhr.send()
+            }
+        }
+        function ChangeAnimation(num){
+            spinewidget.state.clearTracks()
+            if(animationqueue!=undefined)clearInterval(animationqueue)
+            animIndex += num;
+            // console.log(animations)
+            if (animIndex >= animations.length) animIndex = 0;
+            else if (animIndex < 0) animIndex = animations.length-1;
+            // spinewidget.state.setDefaultMix(0.1);
+            // spinewidget.config.scale = 2
+            console.log(spinewidget)
+            console.log(animIndex)
+            spinewidget.setAnimation(animations[animIndex].name)
+            $("#spine-text").text(animations[animIndex].name)
+        }
+
+
+        function PlayPause(){
+            if(spinewidget.isPlaying()){
+                console.log("Playing")
+                spinewidget.pause()
+            }else{
+                console.log("Paused")
+                spinewidget.play()
+            }
+        }
+
+
+        function CreateAnimation(animArray,endloop = false,skipStart = false){
+            if(Array.isArray(animArray)||(Array.isArray(animArray)&&animArray.length!=1)){
+                var delay = 0
+                var animNum = 0
+                if(animationqueue!=undefined)clearInterval(animationqueue)
+                spinewidget.state.clearTracks()
+                animArray.forEach(element => {
+                    var curranim = element
+                    var animTimes = 1
+                    var isloop = animNum==animArray.length-1
+                    if(Array.isArray(element)){
+                        curranim = element[0]
+                        animTimes = element[1]
+                        isloop = true
+                    }
+                    if(animNum==0)spinewidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
+                    else spinewidget.state.addAnimation(animNum,curranim,isloop,delay)
+                    delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
+                    animNum++
+                    console.log(element)
+                });
+                if(endloop){
+                    if(skipStart)animArray.shift()
+
+                    console.log(animArray)
+                    animationqueue = setInterval(function(){
+                        var delay = 0
+                        var animNum = 0
+                        
+                        spinewidget.state.clearTracks()
+                        animArray.forEach(element => {
+                            var curranim = element
+                            var animTimes = 1
+                            var isloop = animNum==animArray.length-1
+                            if(Array.isArray(element)){
+                                curranim = element[0]
+                                animTimes = element[1]
+                                isloop = true
+                            }
+                            if(animNum==0)spinewidget.state.setAnimation(0,curranim,animArray.length>1?false:true)
+                            else spinewidget.state.addAnimation(animNum,curranim,isloop,delay)
+                            delay +=animations[GetAnimationIndex(animations,curranim)].duration*animTimes
+                            animNum++
+                            console.log(element)
+                        });
+                    },delay*1000)
                 }
-            };
-            xhr.send()
+            }else{
+                spinewidget.state.clearTracks()
+                spinewidget.state.setAnimation(0,animArray,true)
+            }
+        }
+        
+        function CheckAnimationSet(anim){
+            console.log(anim)
+            if(anim.find(search=>search.name=="Interact")){
+                //Build Mode
+                console.log("Is Build")
+
+            }else if(anim.find(search=>search.name=="Idle")){
+                //Battle Mode
+                console.log("Is Battle")
+            }
+        }
+
+        function GetAnimationIndex(anim,name){
+            return anim.map(function(e) { return e.name; }).indexOf(name)
+        }
+        function getUrlVars() {
+            return new URL(window.location.href).searchParams;
         }
     </script>
 </body>

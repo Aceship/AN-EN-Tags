@@ -19,7 +19,7 @@
         });
 
         $(window).click(function() {
-            $('#searchResult').html("");
+            $('#searchResult').empty();
             $('#searchResult').hide();
         });
         $('#searchResult').click(function(event){
@@ -76,20 +76,20 @@
 
     function clickBtnClear(){
         $("#story").hide();
-        $("#elite-sidenav").html("");
-        $("#tabs-opCG").html("");
-        $("#elite-topnav").html("");
-        $("#tabs-opData").html("");
-        $("#op-taglist").html("");
+        $("#elite-sidenav").empty();
+        $("#tabs-opCG").empty();
+        $("#elite-topnav").empty();
+        $("#tabs-opData").empty();
+        $("#op-taglist").empty();
         $("#opname").val("");
-        $('#searchResult').html("");
+        $('#searchResult').empty();
         $('#searchResult').hide();
         localStorage.selectedOPDetails = "";
         history.pushState(null, '', window.location.pathname); 
     }
 
     function browseSearch(groups,value = "",value2 =""){
-        $('#searchResult').html("");
+        $('#searchResult').empty();
         $('#searchResult').show();
         // console.log(groups)
         // console.log(value)
@@ -163,7 +163,7 @@
                     SelectStory(result[0].name)
                     return
                 }
-                $('#searchResult').html("");
+                $('#searchResult').empty();
                 $('#searchResult').show();
                 for(var i=0;i<result.length;i++){
                     // console.log(result[i])
@@ -172,7 +172,7 @@
                 }
             } 
         } else {
-            $('#searchResult').html("");
+            $('#searchResult').empty();
             $('#searchResult').hide();
         }
     }
@@ -182,7 +182,7 @@
             scrollTop : 0                       // Scroll to top of body
         }, 500);
         $('#searchResult').hide();
-        $('#story').html("")
+        $('#story').empty()
         $('#story').show()
         let currstory = query(db.storylist.story,"name",storyname)
         // console.log(list)
@@ -251,7 +251,7 @@
         }
         var found = false;
         $.each(db,function(key2,v){
-            if(eval('v.'+key).toLowerCase() == val.toLowerCase()){
+            if(v[key].toLowerCase() == val.toLowerCase()){
                 found = true;
                 if(single){
                     if(returnKey){

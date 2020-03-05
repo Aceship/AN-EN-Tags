@@ -1,15 +1,15 @@
     $.holdReady(true);
     var db = {};
-    var d0 = $.getJSON("json/excel/building_data.json",function(data){
+    var d0 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["manufactformulas"] = data.manufactFormulas;
         });
-    var d1 = $.getJSON("json/excel/building_data.json",function(data){
+    var d1 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["workshopformulas"] = data.workshopFormulas;
         });
-    var d2 = $.getJSON("json/excel/character_table.json",function(data){
+    var d2 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/character_table.json",function(data){
             db["chars"] = data;
         });
-    var d3 = $.getJSON("json/excel/item_table.json",function(data){
+    var d3 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/item_table.json",function(data){
             db["items"] = data.items;
         });
     var d4 = $.getJSON("json/tl-akhr.json",function(data){
@@ -24,13 +24,13 @@
     var d7 = $.getJSON("json/akmaterial.json",function(data){
             db["itemstl"] = data;
         });
-    var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){
+    var d8 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",function(data){
             db["dataconst"] = data;
         });
-    var d9 = $.getJSON("json/excel/building_data.json",function(data){
+    var d9 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["building_buff"] = data.buffs;
         });
-    var d10 = $.getJSON("json/excel/building_data.json",function(data){
+    var d10 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["building_chars"] = data.chars;
         });
     var d11 = $.getJSON("json/ace/riic.json",function(data){
@@ -221,7 +221,7 @@
         //     // console.log(acurrNum)
         // });
         let currHtml = []
-        $("#tbody-list").html("")
+        $("#tbody-list").empty()
         charaFilter.forEach(element => {
             let chara = db.chars[element.name]
             let charaRiic = db.building_chars[element.name]
@@ -308,8 +308,8 @@
                                     case "喀兰贸易": clue = 6;break;
                                     case "罗德岛制药": clue = 7;break;
                                 }
-                                extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
-                                             <div class="btn btn-sm ak-disable ak-btn ak-riic-meet-clue" style="height:25px;margin:auto">${clue}</div>`
+                                extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px;"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
+                                             <div class="btn btn-sm ak-disable ak-btn ak-riic-meet ak-riic-meet-clue" style="height:25px;width:20px;margin:auto;font-size: 20px;padding-bottom:30px"><B>${clue}</b></div>`
                             }
                         }
                     }
@@ -350,7 +350,7 @@
     }
     function clickBtnClear(){
         console.log(lang);
-        $("#tbody-list").html("")
+        $("#tbody-list").empty()
     }
     
     // function 
@@ -363,7 +363,7 @@
         }
         var found = false;
         $.each(db,function(key2,v){
-            if(eval('v.'+key).toLowerCase() == val.toLowerCase()){
+            if(v[key].toLowerCase() == val.toLowerCase()){
                 found = true;
                 if(single){
                     if(returnKey){
@@ -407,7 +407,7 @@
         getJSONdata("ui",function(data){
             if(data.length != 0){
                 $.each(data, function(i,text){
-                    $("[translate-id="+text.id).html(eval('text.ui_'+lang));
+                    $("[translate-id="+text.id).html(text['ui_'+lang]);
                 });
             }
         });

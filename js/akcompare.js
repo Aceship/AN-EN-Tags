@@ -1,15 +1,15 @@
     $.holdReady(true);
     var db = {};
-    var d0 = $.getJSON("json/excel/building_data.json",function(data){
+    var d0 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["manufactformulas"] = data.manufactFormulas;
         });
-    var d1 = $.getJSON("json/excel/building_data.json",function(data){
+    var d1 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/building_data.json",function(data){
             db["workshopformulas"] = data.workshopFormulas;
         });
-    var d2 = $.getJSON("json/excel/character_table.json",function(data){
+    var d2 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/character_table.json",function(data){
             db["chars"] = data;
         });
-    var d3 = $.getJSON("json/excel/item_table.json",function(data){
+    var d3 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/item_table.json",function(data){
             db["items"] = data.items;
         });
     var d4 = $.getJSON("json/tl-akhr.json",function(data){
@@ -24,22 +24,22 @@
     var d7 = $.getJSON("json/tl-item.json",function(data){
             db["itemstl"] = data;
         });
-    var d8 = $.getJSON("json/excel/gamedata_const.json",function(data){
+    var d8 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",function(data){
             db["dataconst"] = data;
         });
-    var d9 = $.getJSON("json/excel/skin_table.json",function(data){
+    var d9 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/skin_table.json",function(data){
             db["skintable"] = data;
         });
     var d10 = $.getJSON("json/tl-gender.json",function(data){
             db["gender"] = data;
         });
-    var d11 = $.getJSON("json/excel/skill_table.json",function(data){
+    var d11 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/skill_table.json",function(data){
             db["skills"] = data;
         });
     var d12 = $.getJSON("json/ace/tl-skills.json",function(data){
             db["skillsTL"] = data;
         });
-    var d13 = $.getJSON("json/excel/range_table.json",function(data){
+    var d13 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/range_table.json",function(data){
             db["range"] = data;
         });
     var d14 = $.getJSON("json/tl-attacktype.json",function(data){
@@ -54,7 +54,7 @@
     var d17 = $.getJSON("json/ace/tl-talents.json",function(data){
             db["talentsTL"] = data;
         });
-    var d18 = $.getJSON("json/excel/handbook_info_table.json",function(data){
+    var d18 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/handbook_info_table.json",function(data){
             db["handbookInfo"] = data;
         });
     var d19 = $.getJSON("json/tl-va.json",function(data){
@@ -177,7 +177,7 @@
     });
 
     function clickBtnClear(){
-        $("#slotscontainer").html("");
+        $("#slotscontainer").empty();
         populateSlots();
         let selectedOPDetailsObj = {};
         let selectedOpnames = {};
@@ -326,7 +326,7 @@
                     found=true;
                 }else{
                     for (var i = 0; i < languages.length; i++) {
-                        var charname = eval('char.name_'+languages[i]).toUpperCase();
+                        var charname = char['name_'+languages[i]].toUpperCase();
                         var unreadable = query(db.unreadNameTL,"name",char.name_en)
                         var input = inputs.toUpperCase();
                         var search = (unreadable?unreadable.name_en.toUpperCase().search(input):charname.search(input));
@@ -339,10 +339,10 @@
                 if(found){
                     // console.log(char)
                     var name_cn = char.name_cn;
-                    var name = eval('char.name_'+reg);
+                    var name = char['name_'+reg];
                     var unreadable = query(db.unreadNameTL,"name",char.name_en).name_en
                     // console.log(unreadable)
-                    var nameTL = eval('char.name_'+lang);
+                    var nameTL = char['name_'+lang];
                     var img_name = query(db.chars,"name",char.name_cn,true,true); 
                     // console.log(Object.keys(img_name))
                     var rarity = img_name[Object.keys(img_name)] ? img_name[Object.keys(img_name)].rarity + 1 : 0;
@@ -360,7 +360,7 @@
                     selectOperator(result[0].name_cn)
                     return
                 }
-                $('#slot'+slot+'-operatorsResult').html("");
+                $('#slot'+slot+'-operatorsResult').empty();
                 $('#slot'+slot+'-operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
@@ -382,7 +382,7 @@
             // console.log( $("#operatorsResult")  )
             // $('#operatorsResult').show();
         } else {
-            $('#slot'+slot+'-operatorsResult').html("");
+            $('#slot'+slot+'-operatorsResult').empty();
             $('#slot'+slot+'-operatorsResult').hide();
         }
     }
@@ -393,7 +393,7 @@
             console.log("SELECT OPERATOR");
             console.log(opname);   
             $("#slot"+slot+"-opname").val("");
-            $('#slot'+slot+'-operatorsResult').html("");
+            $('#slot'+slot+'-operatorsResult').empty();
             $('#slot'+slot+'-operatorsResult').hide();
             var opdata = query(db.chars2,"name_cn",opname);
             
@@ -451,8 +451,8 @@
             console.log(opdata2)
            
             console.log(lang);
-            $("#slot"+slot+"-op-nametl").html(eval('opdata.name_'+lang));
-            $("#slot"+slot+"-op-name").html(eval('opdata.name_'+reg));
+            $("#slot"+slot+"-op-nametl").html(opdata['name_'+lang]);
+            $("#slot"+slot+"-op-name").html(opdata['name_'+reg]);
             $("#slot"+slot+"-detail").html("<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow ak-shadow-small my-1\" style=\"background:#444444DD\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+opdata.name_en.replace(/ /g,"_")   +"\" \">Detail</button>")
             var rarity = "";
             for (var i = 0; i < opdata.level; i++) {
@@ -465,8 +465,8 @@
             $.each(opdata.tags,function(_,v){
                 var tag = query(db.tags,"tag_cn",v);
                 if(tag){
-                    var tagReg = eval('tag.tag_'+reg);
-                    var tagTL = eval('tag.tag_'+lang);
+                    var tagReg = tag['tag_'+reg];
+                    var tagTL = tag['tag_'+lang];
                     tags_html.push("<li style=\"list-style-type:none; padding-bottom: 10px;\"><button readonly type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
                             (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
                 }
@@ -479,7 +479,7 @@
 
             var tabbtn2 = [];
             var tabcontent2 = [];
-            $("#slot"+slot+"-elite-topnav").html("");
+            $("#slot"+slot+"-elite-topnav").empty();
             for (var i = 0; i < opdataFull[slot].phases.length; i++) {
                 var l = opdataFull[slot].phases.length;
                 if(i == 0){
@@ -659,7 +659,7 @@
         }
         var found = false;
         $.each(db,function(key2,v){
-            if(eval('v.'+key).toLowerCase() == val.toLowerCase()){
+            if(v[key].toLowerCase() == val.toLowerCase()){
                 found = true;
                 if(single){
                     if(returnKey){
