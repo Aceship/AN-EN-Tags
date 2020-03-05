@@ -207,10 +207,10 @@
                 $('#operatorsResult').empty();
                 $('#operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
-                    let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
+                    let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}.png">  `
                     // console.log(image)
                     if(el=="Browse"){
-                        image = `<img style="height:70px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
+                        image = `<img style="height:70px;padding:2px" src="./img/avatars/${result[i].img_name}.png">  `
                         $("#operatorsResult").css("max-width","100vw");
                         $("#operatorsResult").append(
                             "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
