@@ -136,8 +136,9 @@
         /*===== Retrieve and store characters =====*/
         var chars = { };
         var d1 = $.getJSON("json/gamedata/en/excel/character_table.json", function (data) {
-            $.each(data, function (_, char) {
-                let avatar = char.phases[0].characterPrefabKey + "_1";
+            console.log(data);
+            $.each(data, function (c, char) {
+                let avatar = c + "_1";
 
                 // retrieve E1 and E2 costs
                 $.each(char.phases, function (p, phase) {
