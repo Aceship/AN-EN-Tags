@@ -161,10 +161,14 @@ async function Check(){
     
     // LoadStage("obt/main/level_main_03-08.json")
     // LoadStage("obt/main/level_main_06-15.json")
-    // LoadStage("obt/campaign/level_camp_03.json")
+    LoadStage("obt/campaign/level_camp_03.json")
 
+    // LoadStage("obt/weekly/level_weekly_killcost_4.json")
     // LoadStage("obt/weekly/level_weekly_killcost_5.json")
+    
     // LoadStage("obt/weekly/level_weekly_melee_5.json")
+    // LoadStage("obt/weekly/level_weekly_melee_5.json")
+
 
     //big force 
     // LoadStage("activities/act7d5/level_act7d5_05.json")
@@ -174,7 +178,7 @@ async function Check(){
     // act7d5_05
 
     // LoadStage("obt/main/level_main_04-03.json")
-    LoadStage("activities/act7d5/level_act7d5_03.json")
+    // LoadStage("activities/act7d5/level_act7d5_03.json")
 }
 
 
