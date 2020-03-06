@@ -22,6 +22,8 @@
     flex-direction: column;
     flex-wrap: nowrap;
     transition: transform 0.5s;
+    background: #000;
+    padding:4px;
 }
 
 
@@ -39,7 +41,7 @@
     /* border:0.2px solid #aaa; */
     width:60px;
     height:60px;
-    margin:1px;
+    /* margin:1px; */
     transition: transform 0.5s;
 }
 
@@ -47,7 +49,29 @@
     background:#ffffff55 !important;
 } */
 
+.tile-height-0{
+    background-color: #444;
+    border:0.5px solid #555;
+}
+.tile-height-1{
+    background-color: #666;
+    border:0.5px solid #888;
+}   
 
+.tile-bg img{
+    content:"";
+    width: 50px;
+    height: 50px;
+    margin: 4px;
+    border: 0.5px solid rgb(163, 163, 163);
+    background-color: #555;
+    filter: brightness(120%) saturate(120%) contrast(120%);   
+}
+
+
+.perspectiveMap .tile-row .tile-height-1{
+    transform: translateY(-5px);
+}
 
 .tiledata-spec-tile_forbidden{
     background-color: #aaa;
@@ -57,24 +81,25 @@
     border:0.5px solid #888;
 }
 .tiledata-spec-tile_road{
-    /* border: 0.2px solid #444; */
-    background-color: #333;
+    border: 0.2px solid #666;
+    background-color: #444;
 }
 .tiledata-spec-tile_floor{
-    border: 0.5px solid #444;
-    background-color: #333;
+    border: 0.5px solid #555;
+    background-color: #444;
 }
 .tiledata-spec-tile_floor:after{
     content: "";
     width: 50px;
     height: 50px;
     margin: 4px;
-    border: 0.5px solid rgb(93, 93, 93);
-    background-color: #555;
+    /* border: 0.5px solid rgb(167, 167, 167); */
+    background-color: rgb(47, 47, 47);
 }
+
 .tiledata-spec-tile_fence{
-    border: 0.5px solid #444;
-    background-color: #333;
+    border: 0.5px solid #555;
+    background-color: #444;
 }
 .tiledata-spec-tile_fence:after{
     content: "";
@@ -135,9 +160,9 @@
 }
 
 
-.perspectiveMap .tile-row .tiledata-spec-tile_wall,.perspectiveMap .tile-row .tiledata-spec-tile_forbidden,.perspectiveMap .tile-row .tiledata-spec-tile_flystart{
+/* .perspectiveMap .tile-row .tiledata-spec-tile_wall,.perspectiveMap .tile-row .tiledata-spec-tile_forbidden,.perspectiveMap .tile-row .tiledata-spec-tile_flystart{
     transform: translateY(-2px);
-}
+} */
 
 
 @media screen and (max-width:768px) {
