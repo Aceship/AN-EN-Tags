@@ -159,6 +159,8 @@ async function Check(){
     console.log(challengeList)
     // LoadStage("obt/main/level_main_00-01.json")
     
+    // LoadStage("obt/main/level_main_02-09.json")
+
     // LoadStage("obt/main/level_main_03-08.json")
     // LoadStage("obt/main/level_main_06-15.json")
     // LoadStage("obt/main/level_main_05-05.json")
@@ -170,6 +172,11 @@ async function Check(){
     // LoadStage("obt/campaign/level_camp_01.json")
     // LoadStage("obt/campaign/level_camp_02.json")
     // LoadStage("obt/campaign/level_camp_03.json")
+
+    // LoadStage("obt/weekly/level_weekly_fly_5.json")
+
+    // LoadStage("obt/weekly/level_weekly_armor_5.json")
+    LoadStage("obt/promote/level_promote_d_2.json")
 
     // LoadStage("obt/weekly/level_weekly_killcost_4.json")
     // LoadStage("obt/weekly/level_weekly_killcost_5.json")
@@ -288,16 +295,23 @@ function GenerateTile(tiletype){
             content =`<img style='width:100%' src='img/ui/stage/tile/def.png'>` 
             extraprop+=' tile-bg '
             break;
+        case 'tile_gazebo': 
+            content =`<img style='width:100%' src='img/ui/stage/tile/air.png'>` 
+            extraprop+=' tile-bg '
+            break;
+            
         case 'tile_floor': 
             content =`<img class='tilebg' src='img/ui/stage/tile/forb.png'>` 
+            
             break;
         case 'tile_flystart': 
-            content =`<img class='' src='img/ui/stage/tile/drone.png'>` 
+            content =`<img src='img/ui/stage/tile/drone.png'>` 
             break;    
         case 'tile_start': 
         case 'tile_end' :
-            content =`<img class='tileup' src='img/ui/stage/tile/base.png'>` 
+            content =`<img src='img/ui/stage/tile/base.png'>` 
             break;  
+            
         default:
 
     }

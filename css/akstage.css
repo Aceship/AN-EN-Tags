@@ -13,8 +13,8 @@
     width:100%;
 }
 @keyframes rotating {
-    from {transform:perspective(855px) rotateX(1deg) }
-    to {transform:perspective(855px) rotateX(40deg) }
+    from {transform:perspective(855px) rotateX(40deg) rotateZ(0deg)}
+    to {transform:perspective(855px) rotateX(40deg) rotateZ(360deg)}
   }
 
 .perspectiveMap{
@@ -32,7 +32,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     transition: transform 0.5s;
-    background: #000;
+    background: rgb(0, 0, 0);
     padding:30px;
     
 }
@@ -46,6 +46,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
+    /* transform: translateZ(10px); */
 }
 
 /* Tile Info */
@@ -65,11 +66,6 @@
     left:0px;
 } */
 
-.tilebg{
-    position: absolute;
-    width:60px;
-    height:60px;
-}
 
 /* .tile:hover:after{
     background:#ffffff55 !important;
@@ -89,14 +85,21 @@
     border:0.5px solid #999;
 }   
 
+.tilebg{
+    position: absolute;
+    width:60px;
+    height:60px;
+    
+}
 .tile-bg img{
     content:"";
-    width: 50px;
-    height: 50px;
-    margin: 4px;
-    border: 0.5px solid rgb(163, 163, 163);
-    background-color: #555;
-    filter: brightness(120%) saturate(120%) contrast(120%);   
+    /* width: 50px;
+    height: 50px; */
+    /* margin: 4px; */
+    /* border: 0.5px solid rgb(37, 37, 37);
+    background-color: #555; */
+    filter: brightness(120%) saturate(120%) contrast(120%) drop-shadow(0px 0px 4px rgb(0, 0, 0));   
+    box-shadow: inset 0 0 10px #00000094;
 }
 
 
@@ -122,7 +125,7 @@
     height:30px;
     background:inherit;
     border: inherit;
-    transform: rotateX(-90deg) translate3d(0px,15px,-15px);
+    transform: rotateX(-90deg) translate3d(-1px,15px,-16px);
 }
 .tileside-right{
     position: absolute;
@@ -187,19 +190,19 @@
 }
 .tiledata-spec-tile_hole:after{
     content: "";
-    width: 50px;
-    height: 50px;
-    margin: 4px;
-    border: 0.5px solid rgb(105, 91, 45);
+    width: 60px;
+    height: 60px;
+    margin: 0px;
+    /* border: 0.5px solid rgb(105, 91, 45); */
     background-color: rgb(0, 0, 0);
 }
 
-.tiledata-spec-tile_start{
-    /* background-color: rgb(168, 0, 0); */
+/* .tiledata-spec-tile_start{
+    background-color: rgb(168, 0, 0);
 }
 .tiledata-spec-tile_end{
-    /* background-color: rgb(0, 59, 168); */
-}
+    background-color: rgb(0, 59, 168);
+} */
 .tiledata-spec-tile_flystart{
     /* background-color: rgb(168, 0, 0); */
     background-color: rgb(39, 39, 39);
