@@ -12,23 +12,36 @@
     max-width:600px;
     width:100%;
 }
-
+@keyframes rotating {
+    from {transform:perspective(855px) rotateX(1deg) }
+    to {transform:perspective(855px) rotateX(40deg) }
+  }
 
 .perspectiveMap{
-    transform:perspective(1000px) rotateX(30deg) ;
+    transform-style: preserve-3d;
+    transform:perspective(855px) rotateX(25deg) ;
+    /* transform:perspective(55px)  ; */
+    /* animation-name: rotating;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
 }
 .mainmap{
+    transform-style: preserve-3d;
     display:inline-flex;
     flex-direction: column;
     flex-wrap: nowrap;
     transition: transform 0.5s;
     background: #000;
-    padding:4px;
+    padding:30px;
+    
 }
 
 
 
 .tile-row{
+    outline: 1px solid transparent;
+    transform-style: preserve-3d;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -41,8 +54,21 @@
     /* border:0.2px solid #aaa; */
     width:60px;
     height:60px;
+    box-shadow: inset 0 0 3px #00000094;
     /* margin:1px; */
     transition: transform 0.5s;
+}
+
+/* .tile img{
+    position: absolute;
+    top:0px;
+    left:0px;
+} */
+
+.tilebg{
+    position: absolute;
+    width:60px;
+    height:60px;
 }
 
 /* .tile:hover:after{
@@ -50,12 +76,17 @@
 } */
 
 .tile-height-0{
+    transform-style: preserve-3d;
     background-color: #444;
-    border:0.5px solid #555;
+    
+    /* border:0.5px solid #555; */
 }
 .tile-height-1{
+    transform-style: preserve-3d;
     background-color: #666;
-    border:0.5px solid #888;
+    /* border:0.5px solid #888; */
+    
+    border:0.5px solid #999;
 }   
 
 .tile-bg img{
@@ -69,24 +100,68 @@
 }
 
 
-.perspectiveMap .tile-row .tile-height-1{
-    transform: translateY(-5px);
+.tile-row .tile-height-1{
+    transform: translateZ(12px);
+    /* perspective: 500px; */
+}
+.tileside-front{
+    position: absolute;
+    top:0;
+    left:0;
+    width:60px;
+    height:30px;
+    background:inherit;
+    border: inherit;
+    transform: rotateX(-90deg) translate3d(-1px,15px,44px);
+}
+.tileside-back{
+    position: absolute;
+    top:0;
+    left:0;
+    width:60px;
+    height:30px;
+    background:inherit;
+    border: inherit;
+    transform: rotateX(-90deg) translate3d(0px,15px,-15px);
+}
+.tileside-right{
+    position: absolute;
+    top:0;
+    left:0;
+    width:60px;
+    height:30px;
+    background:inherit;
+    border: inherit;
+    transform: rotateX(-90deg) rotateY(90deg) translate3d(-14px,15px,29px);
+}
+.tileside-left{
+    position: absolute;
+    top:0;
+    left:0;
+    width:60px;
+    height:30px;
+    background:inherit;
+    border: inherit;
+    transform: rotateX(-90deg) rotateY(90deg) translate3d(-14px,15px,-31px);
 }
 
 .tiledata-spec-tile_forbidden{
     background-color: rgb(39, 39, 39);
-    border:0.5px solid rgb(39, 39, 39);
+    border:0.5px solid #242424;
+    box-shadow:unset;
 }
 .tiledata-spec-tile_wall{
-    background-color: #666;
-    border:0.5px solid #888;
+    /* background-color: #666; */
+    /* border:0.5px solid #888; */
 }
 .tiledata-spec-tile_road{
-    border: 0.2px solid #666;
+    /* border: 0.1px solid rgb(65, 65, 65); */
+    border:unset;
     background-color: #444;
 }
 .tiledata-spec-tile_floor{
-    border: 0.5px solid #555;
+    /* border: 0.5px solid #555; */
+    border: unset;
     background-color: #444;
 }
 .tiledata-spec-tile_floor:after{
@@ -115,26 +190,70 @@
     width: 50px;
     height: 50px;
     margin: 4px;
-    border: 0.5px solid rgb(155, 155, 155);
+    border: 0.5px solid rgb(105, 91, 45);
     background-color: rgb(0, 0, 0);
 }
 
 .tiledata-spec-tile_start{
-    background-color: rgb(168, 0, 0);
+    /* background-color: rgb(168, 0, 0); */
 }
 .tiledata-spec-tile_end{
-    background-color: rgb(0, 59, 168);
+    /* background-color: rgb(0, 59, 168); */
 }
 .tiledata-spec-tile_flystart{
-    background-color: rgb(168, 0, 0);
+    /* background-color: rgb(168, 0, 0); */
+    background-color: rgb(39, 39, 39);
+    border: 0.5px solid rgba(226, 24, 24, 0.089);
 }
-.tiledata-spec-tile_flystart:after{
-    width: 60px;
-    content:'X';
+.tiledata-spec-tile_flystart img{
+    transform: translateZ(15px);
+    border: 5px solid rgb(226, 24, 24);
+    filter: drop-shadow(0px 0px 8px rgb(226, 24, 24));
+}
+.tiledata-spec-tile_start img{
+    
+    transform: translateZ(15px);
+    border: 5px solid rgb(226, 24, 24);
+    filter: drop-shadow(0px 0px 8px rgb(226, 24, 24));
+}
+
+.tiledata-spec-tile_end img{
+    transform: translateZ(15px);
+    border: 5px solid rgb(12, 138, 255);
+    filter: drop-shadow(0px 0px 8px rgb(12, 138, 255));
+}
+
+
+.tiledata-spec-tile_volcano{
+    border: 1px solid #000000e5;
+    box-shadow: inset 0 0 5px #000000;
+}
+.tiledata-spec-tile_volcano img{
+    /* filter: drop-shadow(0px 0px 2px rgb(100, 20, 20))drop-shadow(0px 0px 6px rgba(235, 8, 8, 0.637)); */
+    /* border: 1px solid #000000e5; */
+    transform: translateZ(0.2px);
+    animation-name: volcano;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+@keyframes volcano {
+    0% {filter: drop-shadow(0px 0px 4px rgba(255, 34, 34, 0.664) )brightness(150%); }
+    20% {filter: drop-shadow(0px 0px 4px rgb(204, 43, 43) )brightness(90%); }
+    40% {filter: drop-shadow(0px 0px 4px rgb(117, 30, 30) )brightness(50%); }
+    60% {filter: drop-shadow(0px 0px 4px rgb(195, 34, 34) )brightness(120%); }
+    80% {filter: drop-shadow(0px 0px 4px rgba(255, 34, 34, 0.589) )brightness(200%); }
+    100% {filter: drop-shadow(0px 0px 4px rgb(173, 23, 23)) brightness(20%); }
+  }
+
+/* .tiledata-spec-tile_flystart:after{
+     width: 60px;
+    content:' ';
     color:white;
     font-size: 40px;
-    text-align: center;
-}
+    text-align: center; 
+} */
 
 .tiledata-spec-tile_telin{
     border: 0.5px solid #444;

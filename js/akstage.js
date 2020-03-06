@@ -161,7 +161,15 @@ async function Check(){
     
     // LoadStage("obt/main/level_main_03-08.json")
     // LoadStage("obt/main/level_main_06-15.json")
-    LoadStage("obt/campaign/level_camp_03.json")
+    // LoadStage("obt/main/level_main_05-05.json")
+    // LoadStage("obt/main/level_main_04-04.json")
+    // LoadStage("obt/main/level_main_04-06.json")
+    // LoadStage("obt/main/level_main_04-07.json")
+    // LoadStage("obt/main/level_main_04-09.json")
+
+    // LoadStage("obt/campaign/level_camp_01.json")
+    // LoadStage("obt/campaign/level_camp_02.json")
+    // LoadStage("obt/campaign/level_camp_03.json")
 
     // LoadStage("obt/weekly/level_weekly_killcost_4.json")
     // LoadStage("obt/weekly/level_weekly_killcost_5.json")
@@ -179,6 +187,10 @@ async function Check(){
 
     // LoadStage("obt/main/level_main_04-03.json")
     // LoadStage("activities/act7d5/level_act7d5_03.json")
+
+
+    // LoadStage("obt/main/level_sub_04-1-1.json")
+    // LoadStage("obt/main/level_sub_04-3-1.json")
 }
 
 
@@ -260,18 +272,37 @@ function GenerateTile(tiletype){
             extraprop+=' tile-bg '
             ;break;
         case 'tile_bigforce': 
-            content =`<img style='width:100%' src='img/ui/stage/tile/force.png'>` 
+            if(tiletype.blackboard[0].value==1)content =`<img style='width:100%' src='img/ui/stage/tile/force.png'>` 
+            if(tiletype.blackboard[0].value==2)content =`<img style='width:100%' src='img/ui/stage/tile/force2.png'>` 
             extraprop+=' tile-bg '
             break;
         case 'tile_infection': 
             content =`<img style='width:100%' src='img/ui/stage/tile/infection.png'>` 
             extraprop+=' tile-bg '
             break;
-        case 'tile_floor': 
-            content =`<img style='width:100%' src='img/ui/stage/tile/forb.png'>` 
+        case 'tile_volcano': 
+            content =`<img src='img/ui/stage/tile/volcano3.png'>` 
+            extraprop+=''
             break;
+        case 'tile_defup': 
+            content =`<img style='width:100%' src='img/ui/stage/tile/def.png'>` 
+            extraprop+=' tile-bg '
+            break;
+        case 'tile_floor': 
+            content =`<img class='tilebg' src='img/ui/stage/tile/forb.png'>` 
+            break;
+        case 'tile_flystart': 
+            content =`<img class='' src='img/ui/stage/tile/drone.png'>` 
+            break;    
+        case 'tile_start': 
+        case 'tile_end' :
+            content =`<img class='tileup' src='img/ui/stage/tile/base.png'>` 
+            break;  
         default:
 
+    }
+    if(height>0){
+        content+= `<div class='tileside-front'> </div><div class='tileside-right'> </div><div class='tileside-left'> </div><div class='tileside-back'> </div>`
     }
     var tile = `<div class='tile tile-height-${height} ${extraprop} tiledata-spec-${tile}'>${content}</div>`
     return tile
