@@ -21,7 +21,7 @@
     var d6 = $.getJSON("json/tl-tags.json",function(data){
             db["tags"] = data;
         });
-    var d7 = $.getJSON("json/akmaterial.json",function(data){
+    var d7 = $.getJSON("./json/tl-item.json",function(data){
             db["itemstl"] = data;
         });
     var d8 = $.getJSON("json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",function(data){
@@ -256,21 +256,28 @@
             $('#operatorsResult').empty();
             $('#operatorsResult').hide();
             var opdata = query(db.chars2,"name_cn",opname);
-            var opclass = query(db.classes,"type_cn",opdata.type);
+            var opdataFull
+            // var opclass = query(db.classes,"type_cn",opdata.type);
             console.log(opdata);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
             console.log(opdata2);
             $.each(opdata2,function(key,v){
                 $("#opImage").attr('src','img/portraits/'+key+'_1.png');
+                opdataFull = opdata2[key]
                 // $("#opGlow").attr('src','img/ui/chara/glow-'+(opdata2[key].rarity+1)+'.png');
                 $("#opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
                 $("#opBg").attr('src','img/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
                 // $("#opBanner").attr('src','img/ui/chara/banner-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
+                var type = query(db.classes,"type_data",opdata2[key].profession);
+                $("#op-classImage").attr("src","img/classes/black/icon_profession_"+type['type_'+lang].toLowerCase()+"_large.png")
                 $("#opID").val(key);
                 localStorage.selectedOP = key;
                 return false
             });
-            $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
+            // console.log(opclass)
+            // $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
+            // console.log(db.classes)
+            
             console.log(lang);
             $("#op-nametl").html(opdata['name_'+lang]);
             $("#op-name").html(opdata['name_'+reg]);
@@ -323,17 +330,8 @@
             var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
             
             // console.log(itemdataTL)
-            html.push("<li>"
-                    +       "<div class=\"internal-container\" style=\"position: relative;\">"
-                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
-                    +           "<div class=\"item-image\">"
-                    +               "<span></span>"
-                    +               "<img id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
-                    +           "</div>"
-                    +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
-                    +           "<div class=\"item-amount\">"+v.count+"x</div>"
-                    +       "</div>"
-                    +   "</li>");
+            
+            html.push(CreateMaterial(v.id,v.count));
         });
         $("#reqmats-container").html(html.join(""));
 
@@ -364,9 +362,9 @@
         let name = `${opdata[`name_${lang}`]} E${level}`;
 
         $("#selectops-container").append(`<li><div style="display: block; padding:2px;"> ${name} ` +
-                                         `<a type="button" class="btn btn-sm ak-btn ak-shadow shadow-small my-1" ` +
-                                         `style="background:#444444;" op-id="${key}" ` +
-                                         `onclick="rmOperator(this)"></div></li>`);
+                                         `<a type="button" class="btn btn-sm my-1 btn-danger" ` +
+                                         ` op-id="${key}" ` +
+                                         `onclick="rmOperator(this)">X</div></li>`);
 
         localStorage.setItem("chosenOps", JSON.stringify(Object.keys(chosen_ops)));
     }
@@ -439,19 +437,8 @@
                 for (i = formated_count.length - 3; i > 0; i -= 3) formated_count.splice(i, 0, ".");
                 formated_count = formated_count.join("");
             }
-
-            html.push(``
-            +   `<li>`
-            +       `<div class="internal-container" style="position: relative;">`
-            +           `<div class="item-name">${itemdataTL["name_" + lang]}</div>`
-            +           `<div class="item-image">`
-            +               `<span></span>`
-            +               `<img id="item-image" src="img/items/${itemdata.iconId}.png">`
-            +           `</div>`
-            +           `<img class="item-rarity" src="img/material/bg/item-${itemdata.rarity + 1}.png">`
-            +           `<div class="item-amount">${formated_count}x</div>`
-            +       `</div>`
-            +   `</li>`);
+            
+            html.push(CreateMaterial(mat.id,formated_count));
         }
 
         $("#comb-reqmats-container").html(html.join(""));
@@ -469,17 +456,7 @@
 
             var tr = $(`<tr></tr>`);
             var td = $(`<td style="vertical-align:middle; text-align: center; width: 180px; padding-left: 30px;"></td>`);
-            var L1 = $(`<div class="reqmats-container smallcontainer"><li>`
-                   +       `<div class="internal-container" style="position: relative;">`
-                   +           `<div class="item-name">${itemdataTL.name_en}</div>`
-                   +           `<div class="item-image">`
-                   +               `<span></span>`
-                   +               `<img src="img/items/${itemdata.iconId}.png">`
-                   +           `</div>`
-                   +           `<img class="item-rarity" src="img/material/bg/item-${itemdata.rarity + 1}.png">`
-                   +           `<div class="item-amount">${v.count}x</div>`
-                   +       `</div>`
-                   +   `</li></div>`);
+            var L1 = $(CreateMaterial(v.id,v.count));
             td.append(L1);
             tr.append(td);
 
@@ -513,18 +490,8 @@
                         let itemdataTL = query(db.itemstl, "name_cn", itemdata.name);
 
                         if(!itemdataTL.name_en) console.log(itemdata.name)
-
-                        let li = $(`<div class="reqmats-container smallcontainer"><li>`
-                               +       `<div class="internal-container" style="position: relative;">`
-                               +           `<div class="item-name">${itemdataTL.name_en}</div>`
-                               +           `<div class="item-image">`
-                               +               `<span></span>`
-                               +               `<img src="img/items/${itemdata.iconId}.png">`
-                               +           `</div>`
-                               +           `<img class="item-rarity" src="img/material/bg/item-${itemdata.rarity + 1}.png">`
-                               +           `<div class="item-amount">${v.count * parentcount}x</div>`
-                               +       `</div>`
-                               +   `</li></div>`);
+                        
+                        let li = CreateMaterial(v.id,v.count * parentcount);
 
                         col1.append(li);
                         row1.append(col1);
@@ -556,17 +523,8 @@
                                 for (let v2 of formula.costs) {
                                     let itemdata = db.items[v2.id];
                                     let itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
-                                    let li = $("<div class=\"reqmats-container smallcontainer\"><li>"
-                                    +       "<div class=\"internal-container\" style=\"position: relative;\">"
-                                    +           "<div class=\"item-name\">"+itemdataTL.name_en+"</div>"
-                                    +           "<div class=\"item-image\">"
-                                    +               "<span></span>"
-                                    +               "<img class=\" ak-mat-img\" id=\"item-image\" src=\"img/items/"+itemdata.iconId+".png\">"
-                                    +           "</div>"
-                                    +           "<img class=\"item-rarity\" src=\"img/material/bg/item-"+(itemdata.rarity+1)+".png\">"
-                                    +           "<div class=\"item-amount\">"+(v2.count*parentcount2)+"x</div>"
-                                    +       "</div>"
-                                    +   "</li></div>");
+                                    
+                                    let li = CreateMaterial(v2.id,v2.count * parentcount2)
 
                                     col3.append(li);
                                 }
@@ -583,6 +541,21 @@
                 $("#tbody-materials").append(tr);
             }
         }
+    }
+
+    function CreateMaterial(id,count){
+        var itemdata = db.items[id];
+        var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
+        var material = 
+        (`<div class="akmat-container" style="position:relative">
+            <div class="item-name" title="${itemdata.name}">${(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)}</div>
+            <div class="item-image">
+                <img id="item-image" src="img/items/${itemdata.iconId}.png">
+            </div>
+            <img class="item-rarity" src="img/material/bg/item-${itemdata.rarity+1}.png">
+            <div class="item-amount">${count}x</div>
+        </div>`)
+        return material
     }
 
     function query(db,key,val,single=true,returnKey=false){
