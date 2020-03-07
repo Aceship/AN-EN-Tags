@@ -408,24 +408,30 @@
                 }
             }
         }
-
+        
         combined = Object.values(combined_tmp);
+        console.log(combined)
+        
         /** TODO: fix issue
          *  After sorting, complex materials, such as Polymerization Preparation
          *  or D32 Steel have their last 3 items of the 3rd column leak in the
          *  row under.
          *  Sorting would be great, else it can become quite messy at some point
          */
-/*        combined.sort(function (a, b) {
+        combined.sort(function (a, b) {
             let itemdata1 = db.items[a.id];
             let itemdataTL1 = query(db.itemstl, "name_cn", itemdata1.name);
             let itemdata2 = db.items[b.id];
             let itemdataTL2 = query(db.itemstl, "name_cn", itemdata2.name);
-
-            return ((b.id === "4001") - (a.id === "4001")) * 100 +  // put GOLD first
-                   (itemdata2.rarity - itemdata1.rarity) * 10 +
-                   itemdataTL1[`name_${lang}`].localeCompare(itemdataTL2[`name_${lang}`]);
-        });*/
+            
+            let item1Chip = (itemdata1.iconId.includes("MTL_ASC")?(itemdata1.iconId[itemdata1.iconId.length-1]-4)*-1:0)
+            let item2Chip = (itemdata2.iconId.includes("MTL_ASC")?(itemdata2.iconId[itemdata2.iconId.length-1]-4)*-1:0)
+            console.log(item1Chip)
+            return  ((b.id === "4001") - (a.id === "4001")) * 1000 +  // put GOLD first
+                    (item2Chip - item1Chip)*100 +
+                    (itemdata2.rarity - itemdata1.rarity) * 10 +
+                    itemdataTL1[`name_${lang}`].localeCompare(itemdataTL2[`name_${lang}`]);
+        });
 
         let html = [];
         $("#comb-reqmats-container").html("");
@@ -444,6 +450,7 @@
         }
 
         $("#comb-reqmats-container").html(html.join(""));
+        // calculateBreakdown()
     }
 
     function calculateBreakdown() {
@@ -503,13 +510,14 @@
                             var parentcount2 = v.count * parentcount;
                             var formulaId = itemdata.buildingProductList[0].formulaId;
                             var skip = false;
-
+                            
                             if (itemdata.buildingProductList[0].roomType == "MANUFACTURE") {
                                 var formula = db.manufactformulas[formulaId];
                             } else {
                                 var formula = db.workshopformulas[formulaId];
                                 var check = db.items[formula.costs[0].id];
-
+                            //     console.log(itemdata.iconId)
+                            // console.log(check.iconId)
                                 if (itemdata.rarity == check.rarity &&
                                     itemdata.iconId.search("MTL_ASC") != -1 &&
                                     check.iconId.search("MTL_ASC") != -1)
