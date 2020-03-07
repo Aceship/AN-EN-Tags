@@ -158,25 +158,28 @@ async function Check(){
     console.log(stagesObject)
     console.log(challengeList)
     // LoadStage("obt/main/level_main_00-01.json")
+    // LoadStage("obt/main/level_main_01-12.json")
     
     // LoadStage("obt/main/level_main_02-09.json")
 
     // LoadStage("obt/main/level_main_03-08.json")
+    // LoadStage("obt/main/level_main_06-14.json")
     // LoadStage("obt/main/level_main_06-15.json")
     // LoadStage("obt/main/level_main_05-05.json")
     // LoadStage("obt/main/level_main_04-04.json")
     // LoadStage("obt/main/level_main_04-06.json")
     // LoadStage("obt/main/level_main_04-07.json")
     // LoadStage("obt/main/level_main_04-09.json")
+    // LoadStage("obt/main/level_main_04-10.json")
 
     // LoadStage("obt/campaign/level_camp_01.json")
     // LoadStage("obt/campaign/level_camp_02.json")
-    // LoadStage("obt/campaign/level_camp_03.json")
+    LoadStage("obt/campaign/level_camp_03.json")
 
     // LoadStage("obt/weekly/level_weekly_fly_5.json")
 
     // LoadStage("obt/weekly/level_weekly_armor_5.json")
-    LoadStage("obt/promote/level_promote_d_2.json")
+    // LoadStage("obt/promote/level_promote_d_2.json")
 
     // LoadStage("obt/weekly/level_weekly_killcost_4.json")
     // LoadStage("obt/weekly/level_weekly_killcost_5.json")
@@ -302,7 +305,6 @@ function GenerateTile(tiletype){
             
         case 'tile_floor': 
             content =`<img class='tilebg' src='img/ui/stage/tile/forb.png'>` 
-            
             break;
         case 'tile_flystart': 
             content =`<img src='img/ui/stage/tile/drone.png'>` 
@@ -311,12 +313,24 @@ function GenerateTile(tiletype){
         case 'tile_end' :
             content =`<img src='img/ui/stage/tile/base.png'>` 
             break;  
-            
+        case 'tile_telin' :
+            content =`<img src='img/ui/stage/tile/telin.png'>` 
+            break;  
+        case 'tile_telout' :
+            content =`<img src='img/ui/stage/tile/telout.png'>` 
+            break;  
+        // case 'tile_hole' :
+        //     content =`<img src='img/ui/stage/tile/hole.png'>` 
+        //     break;  
         default:
 
     }
     if(height>0){
-        content+= `<div class='tileside-front'> </div><div class='tileside-right'> </div><div class='tileside-left'> </div><div class='tileside-back'> </div>`
+        content+= `
+        <div class='tileside tileside-front'> </div>
+        <div class='tileside tileside-right'> </div>
+        <div class='tileside tileside-left'> </div>
+        <div class='tileside tileside-back'> </div>`
     }
     var tile = `<div class='tile tile-height-${height} ${extraprop} tiledata-spec-${tile}'>${content}</div>`
     return tile
