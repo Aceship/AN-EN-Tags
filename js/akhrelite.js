@@ -161,6 +161,7 @@
         $("#opID").val("");
         localStorage.chosenOps = "[]";
         chosen_ops = {};
+        $("#add-op").empty();
         $("#selectops-container").empty();
         $("#comb-reqmats-container").empty();
     }
