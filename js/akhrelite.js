@@ -268,8 +268,7 @@
                 $("#opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
                 $("#opBg").attr('src','img/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
                 // $("#opBanner").attr('src','img/ui/chara/banner-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
-                var type = query(db.classes,"type_data",opdata2[key].profession);
-                $("#op-classImage").attr("src","img/classes/black/icon_profession_"+type['type_'+lang].toLowerCase()+"_large.png")
+                
                 $("#opID").val(key);
                 localStorage.selectedOP = key;
                 return false
@@ -278,7 +277,10 @@
             // $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
             // console.log(db.classes)
             
-            console.log(lang);
+            var type = query(db.classes,"type_data",opdataFull.profession);
+            console.log(type)
+            $("#opClassImage").attr("src","img/classes/black/icon_profession_"+type.type_en.toLowerCase()+"_large.png")
+
             $("#op-nametl").html(opdata['name_'+lang]);
             $("#op-name").html(opdata['name_'+reg]);
             $("#detail").html("<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow ak-shadow-small my-1\" style=\"background:#444444DD\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+opdata.name_en.replace(/ /g,"_")+"\">Detail</button>")
