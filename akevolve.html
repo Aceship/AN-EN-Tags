@@ -255,8 +255,8 @@
             
             function loadMaterials(){
                 refresh();
+                $.getJSON("./json/tl-item.json",(data1)=>{
                 $.getJSON("./json/akmaterial.json", (data) => {
-                    
                     $.each(data, (_, v) => {
                         ms[v['name_cn']] = v;
                         if(!v.hidden){
@@ -296,10 +296,12 @@
                                 +         srcHtml.join("<br />")
                                 +     '</div>'
                             }
+                            
+                            var item2 = data1.find(search=>search.name_cn==ms[n].name_cn)
                             $("#row-m").append(
                                     '<div class="ak-shadow-small ak-card-group m-1 lvl-' + ms[n]['level'] + '"style=" ' + (i < minShowLevel ? 'display:none' : '')+ ';padding:0;">'
                                     +   '<div class="ak-card-container card ak-shadow-small ak-rare-bg' + '" style="border:transparent;padding:0px;z-index:1;">'
-                                    +     '<div class="ak-title ak-shadow-small" style="z-index:5;display:inline-block;white-space: nowrap;">'+eval('ms[n].name_'+lang)+'</div>'  
+                                    +     '<div class="ak-title ak-shadow-small" style="z-index:5;display:inline-block;white-space: nowrap;">'+item2["name_"+lang]+'</div>'  
                                     +         '<img class="card-img-bg" style=";z-index:3;position:absolute" src="img/material/bg/item-'+ i + '.png">'
                                     +         '<div class="ak-img-container" style="vertical-align:middle;padding-left:0px;margin:0px">'  
                                     +             '<img class="card-img-top col-12" style="z-index:4;display: block;" src="img/material/'+ ms[n]['id'] + '.png">'
@@ -346,7 +348,7 @@
                         });
                         $("#row-m").append('<div class="w-100 my-1" />');
                     }
-                });
+                })});
             }
 
             function Addition(num,id){
