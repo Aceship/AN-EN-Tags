@@ -139,8 +139,57 @@
     width:100%;
     font-size:13px
 }
+.mat-col1{
+    vertical-align:middle; 
+    text-align: center; 
+    width: 120px; 
+    padding-left: 30px;
+    background: #222;
+    box-shadow: inset -2px 2px 0px 0px #333;
+}
+.mat-col2{
+    min-width:120px;
+    padding: 10px;
+    text-align: center; 
+    width: 120px; 
+    background: #222;
+    box-shadow: inset -2px 2px 0px 0px #333;
+}
+.mat-col3{
+    width: 100%;
+    display: inline-flex;
+    padding: 10px;
+    text-align: center; 
+    background: #222;
+    box-shadow: inset -2px 2px 0px 0px #333;
+    flex-wrap: wrap;
+}
+.mat-row1{
+    display: inline-flex;
+}
+.mat-box{
+    display: flex;
+    flex-direction: column;
+    margin:0px !important;
+    padding:0px  !important;
+}
+.mat-arrow{
+    vertical-align:middle; 
+    text-align: center; 
+    min-width: 80px;
+    width:80px;
+    /* padding-bottom: 30px;  */
+    /* border-right: 5px solid darkgrey !important;  */
+    /* margin-bottom: 20px; */
+    padding-top: 42px !important;
+    background: #111;
+    box-shadow: inset -2px 2px 0px 0px #222;
+}
 
 @media screen and (max-width:768px) {
+    .ak-table{
+        width:100vw
+    }
     .ak-browse{
         width:100%;
         font-size:12px
@@ -149,7 +198,33 @@
         width:100%;
         font-size:12px
     }
-    .reqmats-container .item-name {
+    .mat-col1{
+        width: 90px; 
+        padding: 2px 2px !important;
+    }
+    .mat-col1 .akmat-container{
+        margin-right: 8px ;
+        /* margin-top: 8px ; */
+    }
+    .mat-arrow{
+        padding:2px 0px !important;
+        padding-top: 42px !important;
+        min-width: 35px;
+    }
+    .mat-arrow img{
+        width:20px;
+        height:50px;
+    }
+    .mat-col2{
+        padding:2px;
+        min-width: unset;
+        width: auto;
+    }
+    .mat-col2 .akmat-container{
+        margin-right: 8px ;
+        /* margin-top: 8px ; */
+    }
+    /* .reqmats-container .item-name {
         font-size: 0.7em;
     }
     .reqmats-container.smallcontainer .item-name {
@@ -189,7 +264,7 @@
     .reqmats-container.smallcontainer .internal-container {
         height: 90px;
         width: 90px;
-    }
+    } */
     #operatorsResult img {
         height: 70px!important;
     }

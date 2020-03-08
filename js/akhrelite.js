@@ -450,7 +450,7 @@
         }
 
         $("#comb-reqmats-container").html(html.join(""));
-        // calculateBreakdown()
+        calculateBreakdown()
     }
 
     function calculateBreakdown() {
@@ -463,8 +463,8 @@
             let itemdata = db.items[v.id];
             var itemdataTL = query(db.itemstl, "name_cn", itemdata.name);
 
-            var tr = $(`<tr></tr>`);
-            var td = $(`<td style="vertical-align:middle; text-align: center; width: 180px; padding-left: 30px;"></td>`);
+            var tr = $(`<tr class='mat-row'></tr>`);
+            var td = $(`<td class='mat-col1' style=""></td>`);
             var L1 = $(CreateMaterial(v.id,v.count));
             td.append(L1);
             tr.append(td);
@@ -488,13 +488,13 @@
                 }
 
                 if (!skip) {
-                    let td = $(`<td style="vertical-align:middle; text-align: center; padding-bottom: 30px; border-right: 5px solid darkgrey; margin-bottom: 20px;"></td>`);
-                    td.append(`<div style="font-size:2em; font-weight: bold;"><span><img class="ak-btn ak-c-black ak-shadow-small" src="./img/ui/Arrow.png"></span></div>`);
+                    let td = $(`<td class='mat-arrow' style=""></td>`);
+                    td.append(`<div style="font-size:2em; font-weight: bold;"><span><i class="fas fa-angle-double-left"></i></span></div>`);
                     tr.append(td);
-                    var td2 = $("<td></td>");
+                    var td2 = $("<td class='mat-box'></td>");
                     for (let v of formula.costs) {
-                        var row1 = $(`<div class="row"></div>`);
-                        var col1 = $(`<div class="col-3"></div>`);
+                        var row1 = $(`<div class="mat-row1"></div>`);
+                        var col1 = $(`<div class="mat-col2"></div>`);
                         let itemdata = db.items[v.id];
                         let itemdataTL = query(db.itemstl, "name_cn", itemdata.name);
 
@@ -525,10 +525,10 @@
                             }
 
                             if (!skip) {
-                                var col2 = $("<div class=\"col-2\" style=\"border-right: 5px solid darkgrey; margin-bottom: 20px;\"></div>");
-                                col2.append("<div style=\"margin-top: 50%; font-size:2em; font-weight: bold; min-width: 80px; max-width: 80px;\"><span><img class=\"ak-btn ak-c-black ak-shadow-small\" style =\" width:100%\"src=\"./img/ui/Arrow.png\"></span></div>");
+                                var col2 = $("<div class='mat-arrow'></div>");
+                                col2.append(`<div style="font-size:2em; font-weight: bold;"><span><i class="fas fa-angle-double-left"></i></span></div>`);
                                 row1.append(col2)
-                                var col3 = $("<div class=\"col-3\"></div>");
+                                var col3 = $(`<div class="mat-col3"></div>`);
 
                                 for (let v2 of formula.costs) {
                                     let itemdata = db.items[v2.id];
