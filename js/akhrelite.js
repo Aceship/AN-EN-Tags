@@ -40,7 +40,7 @@
     var lang;
     var reg;
     var reqmats = [];
-    var combined = [];
+    
     var selectedOP;
     var chosen_ops = {};
 
@@ -147,7 +147,7 @@
         $('#operatorsResult').hide();
         localStorage.selectedOP = "";
         selectedOP = localStorage.selectedOP;
-        combined=[]
+        // combined=[]
         $("#reqmats-container").empty();
         $("#tbody-materials").empty();
         $("#eliteReqMats").hide();
@@ -386,7 +386,6 @@
         addOperator(key);
 
         calculateCombined();
-        calculateBreakdown();
     }
 
     function rmOperator(el) {
@@ -396,12 +395,11 @@
         $(el).parent().parent().remove();
 
         calculateCombined();
-        calculateBreakdown();
 
         localStorage.setItem("chosenOps", JSON.stringify(Object.keys(chosen_ops)));
     }
 
-    
+    var combined = [];
     function calculateCombined() {
         combined_tmp = {};
         for (let mats of Object.values(chosen_ops)) {
@@ -505,7 +503,7 @@
 
                 if (!skip) {
                     let td = $(`<td class='mat-arrow' style=""></td>`);
-                    td.append(`<div style="font-size:2em; font-weight: bold;"><span><i class="fas fa-angle-double-left"></i></span></div>`);
+                    td.append(`<div style="font-size:2em; font-weight: bold;"><i class="fas fa-angle-double-left"></i></div>`);
                     tr.append(td);
                     var td2 = $("<td class='mat-box'></td>");
                     for (let v of formula.costs) {
@@ -542,7 +540,7 @@
 
                             if (!skip) {
                                 var col2 = $("<div class='mat-arrow'></div>");
-                                col2.append(`<div style="font-size:2em; font-weight: bold;"><span><i class="fas fa-angle-double-left"></i></span></div>`);
+                                col2.append(`<div style="font-size:2em; font-weight: bold;"><i class="fas fa-angle-double-left"></i></div>`);
                                 row1.append(col2)
                                 var col3 = $(`<div class="mat-col3"></div>`);
 
@@ -563,6 +561,8 @@
                     }
 
                     tr.append(td2);
+                }else{
+                    tr.append(`<td colspan="100%" style='padding:0px'><div class='mat-row' style='height:140px'> </div></td>`);
                 }
                 $("#tbody-materials").append(tr);
             }
