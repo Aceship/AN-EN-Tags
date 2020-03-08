@@ -37,6 +37,7 @@
     var lang;
     var reg;
     var reqmats = [];
+    var combined = [];
     var selectedOP;
     var chosen_ops = {};
 
@@ -143,6 +144,7 @@
         $('#operatorsResult').hide();
         localStorage.selectedOP = "";
         selectedOP = localStorage.selectedOP;
+        combined=[]
         $("#reqmats-container").empty();
         $("#tbody-materials").empty();
         $("#eliteReqMats").hide();
@@ -396,7 +398,7 @@
         localStorage.setItem("chosenOps", JSON.stringify(Object.keys(chosen_ops)));
     }
 
-    var combined = [];
+    
     function calculateCombined() {
         combined_tmp = {};
         for (let mats of Object.values(chosen_ops)) {
