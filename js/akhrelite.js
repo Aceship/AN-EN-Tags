@@ -30,6 +30,9 @@
     var d15 = $.getJSON("json/tl-unreadablename.json",function(data){
             db["unreadNameTL"] = data;
         });
+    var d16 = $.getJSON("json/akmaterial.json",function(data){
+            db["material"] = data.filter(e => !e.hidden).sort((a, b) => b.level - a.level);
+        });
     $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d15).then(function(){
         $.holdReady(false);
     });
@@ -448,6 +451,17 @@
             
             html.push(CreateMaterial(mat.id,formated_count));
         }
+
+        let need = Array.apply(null, Array(db["material"].length)).map(() => 0);
+        let have = $.extend([], need);
+
+        for (let mat of combined) {
+            let name_cn = db.items[mat.id].name;
+            let item = query(db.material, "name_cn", name_cn);
+
+            need[item.id] = mat.count;
+        }
+        $("#akevolve").attr("href", `akevolve.html?n=${need.join("+")}&h=${have.join("+")}&o=1+2+3+4+5`);
 
         $("#comb-reqmats-container").html(html.join(""));
         // calculateBreakdown()
