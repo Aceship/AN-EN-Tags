@@ -59,6 +59,9 @@
                 <!-- <span class="cn">加载已保存数据</span> -->
                 <span class="en">Load saved data</span>
             </button>
+            <br />
+            <input class="my-1" type="text" style="background-color:#444444;width:410px;border-width:0;border-radius:5px;padding:5px;color:white;" id="updater" placeholder="Put the adress of another akevolve to update the current" />
+            <button type="button" class="btn btn-sm my-1" style="background-color:#444444;position:relative;top:2px;border-radius:5px;color:white;" id="btn-update">Update</button>
             <hr class="my-1" />
             <!-- <p class="cn my-0"><small><a class="save" href="?n&h&o">右键或长按复制我，保存输入信息</a></small></p> -->
             <p class="en my-0"><small><a class="save" href="?n&h&o">Copy me with right click or long press, to save your input</a></small></p>
@@ -229,6 +232,39 @@
                 $("#opt-all").addClass(savedOption.length === 5 ? "btn-primary" : "btn-secondary");
                 calc();
             });
+
+            function checkOrDefault(val, pred, def) {
+                return (pred(val) ? val : def);
+            }
+
+            // tfw not just use onclick... who deactivated onclick !?
+            $(document).on("click", "#btn-update", () => {
+                let url = $("#updater").val();
+                console.log(url);
+                $("#updater").val("");
+
+                let names = Object.values(ms)
+                                  .filter(a => !a.hidden)
+                                  .sort((a, b) => (b.level - a.level))
+                                  .map(a => a.name_cn);
+
+                let need_begin = url.search("[&?]n=") + 3;
+                let need_end = checkOrDefault(url.indexOf("&", need_begin), a => a !== -1, url.length);
+                let need = url.slice(need_begin, need_end)
+                              .split("+")
+                              .filter(a => !isNaN(Number(a)))
+                              .reduce((vout, vin, i) => (vout[names[i]] = parseInt(vin), vout), {});
+
+                let have_begin = url.search("[&?]h=") + 3;
+                let have_end = checkOrDefault(url.indexOf("&", have_begin), a => a !== -1, url.length);
+                let have = url.slice(have_begin, have_end)
+                              .split("+")
+                              .filter(a => !isNaN(Number(a)))
+                              .reduce((vout, vin, i) => (vout[names[i]] = parseInt(vin), vout), {})
+
+                calc(need, have);
+            });
+
             loadMaterials();
         });
             
@@ -385,15 +421,19 @@
                 loadMaterials();
             }
 
-            function calc() {
-                
+            function calc(narray = {}, harray = {}) {
                 let counts = {};
                 $.each(ms, (n, m) => {
                     let need = parseInt($("#need-" + m['id']).val());
                     if (isNaN(need)) need = 0;
+                    need += n in narray ? narray[n] : 0;
+
                     let have = parseInt($("#have-" + m['id']).val());
                     if (isNaN(have)) have = 0;
+                    have += n in harray ? harray[n] : 0
+
                     let diff = need - have;
+
                     counts[n] = {
                         'need': need,
                         'have': have,
@@ -442,6 +482,8 @@
                 }
                 allns = []; allhs = [];
                 $.each(ms, (n, m) => {
+                    $("#have-" + m['id']).val(counts[n]['have']);
+                    $("#need-" + m['id']).val(counts[n]['need']);
                     $("#lack-" + m['id']).val(counts[n]['lack']);
                 })
                 $.each(ms, (_, m) => {
