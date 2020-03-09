@@ -32,29 +32,32 @@ LoadAllJsonObjects(jsonList).then(function(result) {
 // }))
 
 $(document).ready(function(){
+    $('#BrowseStage').click(function(event){
+        $("#stagechoosemodal").modal('show');
+    });
     console.log(db)
     // console.log(db2)
     // Start()
     // ListBanner()
     Check()
 });
+
+var challengeList={}
+var conditionList ={}
 var stagesObject = {
     "MAIN":{},
-}
-
-var challengeList={
-
-}
-
-var conditionList ={
-
+    "ACTIVITY":{},
+    "CAMPAIGN":{}
 }
 
 async function Check(){
     // console.log(db.stage_table)
     Object.keys(db.zone_table.zones).forEach(zoneName => {
         var zone = db.zone_table.zones[zoneName]
-        if(zone.type =="MAINLINE"){
+        if(zone.type =="CAMPAIGN"){
+            stagesObject.CAMPAIGN[zone.zoneID]={}
+            // stagesObject.ACTIVITY[zone.zoneID]={}
+        }else if(zone.type =="MAINLINE"){
             stagesObject.MAIN[zone.zoneID]={}
         }
     });
@@ -62,11 +65,20 @@ async function Check(){
 
     $.each(db.stage_table.stages,function(stagename,stage){
         $.each(stagesObject,function(a,b){
-            // console.log(a)
-            // console.log(stage.stageType)
-            if(a==stage.stageType){
-                // console.log(stage.code)
+            if(a=="MAIN"&&(stage.stageType=="MAIN"||stage.stageType=="SUB")){
                 b[stage.zoneId][stagename]=stage
+            }else if(a==stage.stageType&& a=="ACTIVITY"){
+                var splitstagename = stage.stageId.split("_")[0]
+                console.log(splitstagename)
+                if(!b[splitstagename]){
+                    b[splitstagename]={}
+                }
+                b[splitstagename][stagename]=stage
+
+            }else if (a==stage.stageType&&a=="CAMPAIGN"){
+                console.log(stage)
+                b[stage.zoneId][stagename]=stage
+                // console.log(stage)
             }
         })
         if(stage.difficulty=="FOUR_STAR"){
@@ -82,35 +94,18 @@ async function Check(){
                 // console.log(conditionList[stagedescsplit])
             }else if (db.stagedesc_tl[stagedescsplit]){
                 stagedesc= db.stagedesc_tl[stagedescsplit]
-                console.log(db.stagedesc_tl[stagedescsplit])
+                // console.log(db.stagedesc_tl[stagedescsplit])
             }else if(stage.description.split(/\\n/g)[2]){
                 var splitloc = stage.description.split(/\\n/g)
                 stagedesc = splitloc[1]
             }
-
-            
             var regexcond = /(<@lv.fs>)(.*)(<\/>)(\\n||\n)(.*)/g
             var split = regexcond.exec(stagedesc)
-            console.log(split)
-
-            
             if(split&&split[5]!=""){
                 stagedesc = `${split[5]}`
-                // var splitreplace = `<b>Condition:</b> ${split[5]}`
-                // split[0] = "<B>"
-                // split[1] = "Condition:"
-                // split[2] = "</B>"
-                // split[3] = ""
-
-                
-                // console.log(splitreplace)
             }
-
-            
             challengeList[stage.code] = stagedesc
         }
-
-        
     })
     
     $("#challengelist").empty()
@@ -156,7 +151,7 @@ async function Check(){
 
 
     console.log(stagesObject)
-    console.log(challengeList)
+    // console.log(challengeList)
     // LoadStage("obt/main/level_main_00-01.json")
     // LoadStage("obt/main/level_main_01-12.json")
     
@@ -174,7 +169,7 @@ async function Check(){
 
     // LoadStage("obt/campaign/level_camp_01.json")
     // LoadStage("obt/campaign/level_camp_02.json")
-    LoadStage("obt/campaign/level_camp_03.json")
+    // LoadStage("obt/campaign/level_camp_03.json")
 
     // LoadStage("obt/weekly/level_weekly_fly_5.json")
 
@@ -213,10 +208,58 @@ $('#to-tag').click(function() {      // When arrow is clicked
     }, 500);
 });
 
+function StageSubList(el){
+    // $(el).attr("data-stage")
+    console.log($($(el).attr("href")+"-selection"))
+
+    var selection = $(el).attr("data-stage")
+    var currhtml =''
+    $.each(stagesObject[selection],function(a,b){
+        console.log(a)
+        // console.log(b)
+        // console.log(db.zone_table.zones[a])
+        currhtml+= `
+        <li class='nav-item'>
+            <a class='nav-link' data-toggle='tab' style='padding:2px' href='#' onclick="StageList(this)"data-stage='${selection}-${a}'>
+                <div>
+                    <img width='90' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>
+                    <div class='stage-subTtitle'>Episode ${a.split("_")[1]}</div>
+                </div>
+            </a>
+        </li>
+        `
+    });
+    $($(el).attr("href")+"-selection").html(currhtml)
+    
+    
+}
+
+function StageList(el){
+    var selection = $(el).attr("data-stage")
+    var selectionsplit = selection.split("-")
+    var currhtml =''
+    $.each(stagesObject[selectionsplit[0]][selectionsplit[1]],function(a,b){
+        console.log(b)
+        if(b.levelId){
+            currhtml+= `
+            <li class='nav-item'>
+                <a class='nav-link' data-toggle='tab' style='padding:2px' href='#' onclick="LoadStage('${b.levelId.toLowerCase()}.json')"data-stage=''>
+                    <div>
+                        <div class='stage-subTtitle stage-inline'>${b.code} ${b.difficulty=="FOUR_STAR"?"Challenge":""}</div>
+                    </div>
+                </a>
+            </li>
+            `
+        }
+    })
+
+    $('#stageList').html(currhtml)
+}
 function LoadStage(stage){
+    $('#StagePreview').show()
     var stagelevelfolder ="./json/gamedata/zh_CN/gamedata/levels/"
 
-    console.log(stagelevelfolder+stage)
+    // console.log(stagelevelfolder+stage)
     var xhr = new XMLHttpRequest();
     xhr.open('GET', stagelevelfolder+stage, true);
     xhr.responseType = 'arraybuffer';
@@ -228,7 +271,7 @@ function LoadStage(stage){
             array = new Uint8Array(buffer);
 
             var jsonstage = JSON.parse(new TextDecoder("utf-8").decode(array))
-            console.log(jsonstage)
+            // console.log(jsonstage)
 
             GenerateMap(jsonstage)
         }else{
@@ -248,7 +291,7 @@ function GenerateMap(stagejson){
     mapdata.map.forEach(row => {
         var currrow = [ ]
         row.forEach(cell => {
-            console.log(tiledata[cell])
+            // console.log(tiledata[cell])
             currrow.push(GenerateTile(tiledata[cell]))
         });
 

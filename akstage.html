@@ -42,12 +42,96 @@
             </button>
     </nav>
     <div style='padding-bottom:40px;'></div>
+    <div id='stagechoosemodal' class='modal fade' role='dialog'>
+        <div class='modal-dialog'>
+            <div class='modal-content' style='background-color: #444'>
+                <div class='modal-header' style='border-bottom: 1px solid #4f4f4f'>
+                    <h6 class='modal-title' style="color:white;">Choose Stage</h6>
+                    <button type='button' style='color:white;' class='close' data-dismiss='modal'>&times;</button>
+                </div>
+                <div class='modal-body'>
+                    <!-- <a class='nav-link' style="height:23px;text-align: center;" id='all-op'  href='#allops' data-opclass=''>
+                            <div style="">All</div>
+                        </a> -->
+                    <ul class='nav nav-tabs nav-justified' id='stagelist'>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#mainStage' onclick="StageSubList(this)" data-stage='MAIN'>
+                                <!-- <img width='50' src='img/classes/class_caster.png'> -->
+                                Main Story
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#dailyStage' data-stage='DAILY'>
+                                <!-- <img width='50' src='img/classes/class_caster.png'> -->
+                                Daily
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#annihilationStage' onclick="StageSubList(this)" data-stage='CAMP'>
+                                <!-- <img width='50' src='img/classes/class_caster.png'> -->
+                                Annihilation
+                            </a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' data-toggle='tab' href='#eventStage' onclick="StageSubList(this)" data-stage='ACTIVITY'>
+                                <!-- <img width='50' src='img/classes/class_caster.png'> -->
+                                Event
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade" id="mainStage" role="tabpanel" aria-labelledby="mainStage-tab">
+                            <ul class='nav nav-pills justify-content-center' id='mainStage-selection'>
+                                <li class='nav-item'>
+                                    <a class='nav-link' data-toggle='tab' href='#mainStage' data-stage='MAIN'>
+                                        <!-- <img width='50' src='img/classes/class_caster.png'> -->
+                                        story1
+                                    </a>
+                                </li>
+                                <li class='nav-item'>
+                                    <a class='nav-link' data-toggle='tab' href='#dailyStage' data-stage='WEEKLY'>
+                                        <!-- <img width='50' src='img/classes/class_caster.png'> -->
+                                        story2
+                                    </a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade justify-content-center" id="dailyStage" role="tabpanel" aria-labelledby="dailyStage-tab">
+                            <ul class='nav nav-pills justify-content-center' id='dailyStage-selection'>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade justify-content-center" id="annihilationStage" role="tabpanel" aria-labelledby="annihilationStage-tab">
+                            <ul class='nav nav-pills justify-content-center' id='annihilationStage-selection'>
+                            </ul>
+                         </div>
+                         <div class="tab-pane fade justify-content-center" id="eventStage" role="tabpanel" aria-labelledby="eventStage-tab">
+                            <ul class='nav nav-pills justify-content-center' id='eventStage-selection'>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class='tab-content' style="margin-top:20px;background: #555;">
+                        <ul id='stageList' class="nav nav-pills justify-content-center" style='padding-left: 0px;margin: auto;padding: auto;text-align: center;'>
+                            <!-- Operators of the selected class goes here -->
+                            <!--
+                            <li class='selectop-list ak-shadow'>
+                                <img src='img/avatars/char_002_amiya_1.png'>
+                                <div class='name ak-font-novecento'>Amiya</div>
+                                <div class='rarity'><i class='fa fa-star'></i></div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- <div class='warning-sign'style='position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center'>aaaaaaaaaaaaaaaaaaaaa</div> -->
     
     <div id="stageinfo" class="ak-shadow" style="max-width: 1080px;min-height: 1200px;background:#444;margin:auto;margin-top: 20px;margin-bottom: 30px;padding:2px;padding-top:2px;border-radius:2px;text-align: center">
-        
+        <button class='col-3 btn btn-sm ak-btn ak-rare-bg browse-btn' style='margin:2px 2px;padding: 5px' type='button' id='BrowseStage'>Browse Stage</button>
         <div id="StagePreview" style="display: none;">
-            <button onclick="TogglePerspective()">aaa</button>
+            <button onclick="TogglePerspective()">Toggle Perspective</button>
             <div style="min-height: 50px;"></div>
             <!-- <div style="color:#222;font-size:13px;background:#999;padding:4px;margin:8px;border-radius:1px;text-align:center"><b>Challenge/Raid Conditions</b></div> -->
             <div id="MapPreview" style="text-align:center"></div>
