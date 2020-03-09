@@ -47,9 +47,9 @@
     padding: 2px 6px;
 }
 
-#mainStage-selection{
+/* #mainStage-selection{
     
-}
+} */
 .tile-row{
     outline: 1px solid transparent;
     transform-style: preserve-3d;
@@ -94,6 +94,8 @@
     content:"";
     filter: brightness(120%) saturate(120%) contrast(120%) drop-shadow(0px 0px 4px rgb(0, 0, 0));   
     box-shadow: inset 0 0 10px #000000b4;
+    height: 60px;
+    width:60px
 }
 
 
@@ -112,6 +114,10 @@
     filter: brightness(60%) ;
     /* box-shadow:inset 0 0 5px #000000b4 */
 }
+.mainmap:not(.perspectiveMap) .tile-row .tile .tileside{
+    display: none;
+}
+
 .tileside-front{
     transform: rotateX(-90deg) translate3d(-1px,15px,44px);
 }

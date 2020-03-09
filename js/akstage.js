@@ -211,19 +211,29 @@ $('#to-tag').click(function() {      // When arrow is clicked
 function StageSubList(el){
     // $(el).attr("data-stage")
     console.log($($(el).attr("href")+"-selection"))
-
+    $('#stageList').fadeOut()
+    $('#stageList').empty()
     var selection = $(el).attr("data-stage")
     var currhtml =''
     $.each(stagesObject[selection],function(a,b){
-        console.log(a)
+        // console.log(a)
         // console.log(b)
-        // console.log(db.zone_table.zones[a])
+        console.log(db.zone_table.zones[a])
+        // b
+        var name = ''
+        var size = 110
+        if(a.split("_")[1]) {
+            if(a.includes("main"))name = "Episode "+a.split("_")[1]
+        }else{
+            size = 140
+        }
+        // else if(a.includes)
         currhtml+= `
         <li class='nav-item'>
             <a class='nav-link' data-toggle='tab' style='padding:2px' href='#' onclick="StageList(this)"data-stage='${selection}-${a}'>
                 <div>
-                    <img width='90' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>
-                    <div class='stage-subTtitle'>Episode ${a.split("_")[1]}</div>
+                    <img width='${size}' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>
+                    <div class='stage-subTtitle'>${name}</div>
                 </div>
             </a>
         </li>
@@ -238,9 +248,10 @@ function StageList(el){
     var selection = $(el).attr("data-stage")
     var selectionsplit = selection.split("-")
     var currhtml =''
+    $('#stageList').empty()
     $.each(stagesObject[selectionsplit[0]][selectionsplit[1]],function(a,b){
-        console.log(b)
-        if(b.levelId){
+        // console.log(b)
+        if(b.levelId&&b.difficulty!="FOUR_STAR"){
             currhtml+= `
             <li class='nav-item'>
                 <a class='nav-link' data-toggle='tab' style='padding:2px' href='#' onclick="LoadStage('${b.levelId.toLowerCase()}.json')"data-stage=''>
@@ -252,7 +263,7 @@ function StageList(el){
             `
         }
     })
-
+    $('#stageList').fadeIn()
     $('#stageList').html(currhtml)
 }
 function LoadStage(stage){
@@ -303,7 +314,7 @@ function GenerateMap(stagejson){
     });
 
     $('#MapPreview').html(`
-    <div id='mappreview'class='mainmap perspectiveMap'>
+    <div id='mappreview'class='mainmap'>
         ${tiles.join("")}
     </div>
     `)
