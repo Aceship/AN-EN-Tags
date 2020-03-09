@@ -50,6 +50,8 @@ var stagesObject = {
     "CAMPAIGN":{}
 }
 
+var isperspective = false
+
 async function Check(){
     // console.log(db.stage_table)
     Object.keys(db.zone_table.zones).forEach(zoneName => {
@@ -269,6 +271,8 @@ function StageList(el){
 function LoadStage(stage){
     $('#StagePreview').show()
     var stagelevelfolder ="./json/gamedata/zh_CN/gamedata/levels/"
+    // var stagelevelfolder ="https://ak-data.mooncell.wiki/gamedata/levels/"
+
 
     // console.log(stagelevelfolder+stage)
     var xhr = new XMLHttpRequest();
@@ -314,13 +318,14 @@ function GenerateMap(stagejson){
     });
 
     $('#MapPreview').html(`
-    <div id='mappreview'class='mainmap'>
+    <div id='mappreview'class='mainmap ${isperspective?"perspectiveMap":""}'>
         ${tiles.join("")}
     </div>
     `)
 }
 
 function TogglePerspective(){
+    isperspective = !isperspective
     $('#mappreview').toggleClass('perspectiveMap')
 }
 
@@ -329,31 +334,33 @@ function GenerateTile(tiletype){
     var tile = tiletype.tileKey
     var height = tiletype.heightType
     var extraprop = ''
+    var isheight = true
 
     switch(tiletype.tileKey){
         case 'tile_healing': 
-            content =`<img style='width:100%' src='img/ui/stage/tile/healing.png'>` 
+            content =`<img class='tile-img' src='img/ui/stage/tile/healing.png'>` 
             extraprop+=' tile-bg '
             ;break;
         case 'tile_bigforce': 
-            if(tiletype.blackboard[0].value==1)content =`<img style='width:100%' src='img/ui/stage/tile/force.png'>` 
-            if(tiletype.blackboard[0].value==2)content =`<img style='width:100%' src='img/ui/stage/tile/force2.png'>` 
+            if(tiletype.blackboard[0].value==1)content =`<img class='tile-img' src='img/ui/stage/tile/force.png'>` 
+            if(tiletype.blackboard[0].value==2)content =`<img class='tile-img' src='img/ui/stage/tile/force2.png'>` 
             extraprop+=' tile-bg '
             break;
         case 'tile_infection': 
-            content =`<img style='width:100%' src='img/ui/stage/tile/infection.png'>` 
+            content =`<img class='tile-img' src='img/ui/stage/tile/infection.png'>` 
             extraprop+=' tile-bg '
             break;
         case 'tile_volcano': 
-            content =`<img src='img/ui/stage/tile/volcano3.png'>` 
+            // content =`<img src='img/ui/stage/tile/volcano3.png'>` 
+            content =`<img src='img/ui/stage/tile/mc/volcano2.png'>` 
             extraprop+=''
             break;
         case 'tile_defup': 
-            content =`<img style='width:100%' src='img/ui/stage/tile/def.png'>` 
+            content =`<img class='tile-img' src='img/ui/stage/tile/def.png'>` 
             extraprop+=' tile-bg '
             break;
         case 'tile_gazebo': 
-            content =`<img style='width:100%' src='img/ui/stage/tile/air.png'>` 
+            content =`<img class='tile-img' src='img/ui/stage/tile/air.png'>` 
             extraprop+=' tile-bg '
             break;
             
@@ -361,25 +368,38 @@ function GenerateTile(tiletype){
             content =`<img class='tilebg' src='img/ui/stage/tile/forb.png'>` 
             break;
         case 'tile_flystart': 
-            content =`<img src='img/ui/stage/tile/drone.png'>` 
+            content =`<img class='tile-img'  src='img/ui/stage/tile/drone.png'>` 
             break;    
         case 'tile_start': 
         case 'tile_end' :
-            content =`<img src='img/ui/stage/tile/base.png'>` 
+            content =`<img class='tile-img'  src='img/ui/stage/tile/base.png'>` 
             break;  
         case 'tile_telin' :
-            content =`<img src='img/ui/stage/tile/telin.png'>` 
+            content =`<img class='tile-img'  src='img/ui/stage/tile/telin.png'>` 
             break;  
         case 'tile_telout' :
-            content =`<img src='img/ui/stage/tile/telout.png'>` 
+            content =`<img class='tile-img'  src='img/ui/stage/tile/telout.png'>` 
             break;  
+        case 'tile_deepwater' :
+            // content =`<img src='img/ui/stage/tile/water.png'>` 
+            isheight=false
+            break;  
+        // case 'tile_road' :
+        //     // content =`<img src='img/ui/stage/tile/mc/path.png'>` 
+        //     break;  
+        // case 'tile_wall' :
+        //     // content =`<img src='img/ui/stage/tile/mc/slab.png'>` 
+        //     break;  
+        // case 'tile_forbidden' :
+        //     // content =`<img src='img/ui/stage/tile/mc/bedrock.png'>` 
+        //     break;  
         // case 'tile_hole' :
         //     content =`<img src='img/ui/stage/tile/hole.png'>` 
         //     break;  
         default:
 
     }
-    if(height>0){
+    if(height>0&&isheight){
         content+= `
         <div class='tileside tileside-front'> </div>
         <div class='tileside tileside-right'> </div>

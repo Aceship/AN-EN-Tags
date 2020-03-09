@@ -19,7 +19,7 @@
 
 .perspectiveMap{
     transform-style: preserve-3d;
-    transform:perspective(855px) rotateX(25deg) ;
+    transform:perspective(855px) rotateX(25deg) translateZ(-30px); ;
     /* transform:perspective(55px)  ; */
     /* animation-name: rotating;
     animation-duration: 20s;
@@ -34,7 +34,7 @@
     transition: transform 0.5s;
     background: rgb(0, 0, 0);
     padding:30px;
-    
+    /* transform: translateZ(-30px); */
 }
 
 .stage-subTtitle{
@@ -57,7 +57,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
-    /* transform: translateZ(10px); */
+    transform: translateZ(30px);
 }
 
 /* Tile Info */
@@ -103,7 +103,12 @@
     transform: translateZ(22px);
     /* perspective: 500px; */
 }
-.tileside{
+.mainmap:not(.perspectiveMap) .tile-row .tile .tileside{
+    display: none;
+}
+
+/* 30 px ver */
+/* .tileside{
     position: absolute;
     top:0;
     left:0;
@@ -112,11 +117,8 @@
     background:inherit;
     border: inherit;
     filter: brightness(60%) ;
-    /* box-shadow:inset 0 0 5px #000000b4 */
 }
-.mainmap:not(.perspectiveMap) .tile-row .tile .tileside{
-    display: none;
-}
+
 
 .tileside-front{
     transform: rotateX(-90deg) translate3d(-1px,15px,44px);
@@ -129,7 +131,37 @@
 }
 .tileside-left{
     transform: rotateX(-90deg) rotateY(90deg) translate3d(-14px,15px,-31px);
+} */
+
+/* 60 px ver */
+.tileside{
+    position: absolute;
+    top:0;
+    left:0;
+    width:60px;
+    height:60px;
+    background:inherit;
+    border: inherit;
+    filter: brightness(60%) ;
 }
+
+
+.tileside-front{
+    transform: rotateX(-90deg) translate3d(-1px,30px,29px);
+}
+.tileside-back{
+    transform: rotateX(-90deg) translate3d(-1px,30px,-31px);
+}
+.tileside-right{
+    transform: rotateX(-90deg) rotateY(90deg) translate3d(1px,30px,29px);
+}
+.tileside-left{
+    transform: rotateX(-90deg) rotateY(90deg) translate3d(1px,30px,-31px);
+}
+
+
+
+
 .tiledata-spec-tile_wall .tileside{
     filter: contrast(90%) brightness(40%) ;
     /* border:0.5px solid rgba(32, 32, 32, 0); */
@@ -297,6 +329,22 @@
     animation-timing-function: ease-in-out;
     animation-direction: alternate-reverse;
     
+}
+
+.tiledata-spec-tile_deepwater{
+    /* border: 0.5px solid #444; */
+    box-shadow: unset;
+    background-color: rgba(80, 141, 255, 0.349);
+    /* transform: translateZ(-10px); */
+}
+.tiledata-spec-tile_deepwater img{
+    /* border: 0.5px solid #444; */
+    opacity: 20%;
+}
+
+.tile-img{
+    width: 60px;
+    height: 60px;
 }
 
 @keyframes breath {
