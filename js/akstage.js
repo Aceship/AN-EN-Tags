@@ -47,7 +47,8 @@ var conditionList ={}
 var stagesObject = {
     "MAIN":{},
     "ACTIVITY":{},
-    "CAMPAIGN":{}
+    "CAMPAIGN":{},
+    "DAILY":{}
 }
 
 var isperspective = false
@@ -61,9 +62,12 @@ async function Check(){
             // stagesObject.ACTIVITY[zone.zoneID]={}
         }else if(zone.type =="MAINLINE"){
             stagesObject.MAIN[zone.zoneID]={}
+        }else if(zone.type =="WEEKLY"){
+            stagesObject.DAILY[zone.zoneID]={}
         }
     });
 
+    console.log(stagesObject)
 
     $.each(db.stage_table.stages,function(stagename,stage){
         $.each(stagesObject,function(a,b){
@@ -81,6 +85,9 @@ async function Check(){
                 console.log(stage)
                 b[stage.zoneId][stagename]=stage
                 // console.log(stage)
+            }else if(a==stage.stageType&&a=="DAILY"){
+                console.log(stage)
+                b[stage.zoneId][stagename]=stage
             }
         })
         if(stage.difficulty=="FOUR_STAR"){
@@ -351,8 +358,8 @@ function GenerateTile(tiletype){
             extraprop+=' tile-bg '
             break;
         case 'tile_volcano': 
-            // content =`<img src='img/ui/stage/tile/volcano3.png'>` 
-            content =`<img src='img/ui/stage/tile/mc/volcano2.png'>` 
+            content =`<img class='tile-img' src='img/ui/stage/tile/volcano3.png'>` 
+            // content =`<img class='tile-img' src='img/ui/stage/tile/mc/volcano2.png'>` 
             extraprop+=''
             break;
         case 'tile_defup': 
