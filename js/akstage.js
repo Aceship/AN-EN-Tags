@@ -348,19 +348,33 @@ function GenerateMap(stagejson){
     var mapdata = stagejson.mapData
     var tiledata = mapdata.tiles
     var tiles = []
-    mapdata.map.forEach(row => {
-        var currrow = [ ]
-        row.forEach(cell => {
-            // console.log(tiledata[cell])
-            currrow.push(GenerateTile(tiledata[cell]))
-        });
+    // mapdata.map.forEach(row => {
+    //     var currrow = [ ]
+    //     row.forEach(cell => {
+    //         // console.log(mapdata.map)
+    //         currrow.push(GenerateTile(tiledata,cell,mapdata.map))
+    //     });
 
+    //     tiles.push(`
+    //     <div class='tile-row'> 
+    //         ${currrow.join("")}
+    //     </div>
+    //     `)
+    // });
+
+    $.each(mapdata.map,function(rowname,row) {
+        var currrow = [ ]
+        console.log(rowname)
+        $.each(row,function(cellname,cell){
+            console.log(cellname)
+            currrow.push(GenerateTile(tiledata,rowname,cellname,mapdata.map))
+        })
         tiles.push(`
         <div class='tile-row'> 
             ${currrow.join("")}
         </div>
         `)
-    });
+    })
 
     $('#MapPreview').html(`
     <div id='mappreview'class='mainmap ${isperspective?"perspectiveMap":""}'>
@@ -374,7 +388,9 @@ function TogglePerspective(){
     $('#mappreview').toggleClass('perspectiveMap')
 }
 
-function GenerateTile(tiletype){
+function GenerateTile(tiledata,row,cell,mapdata){
+    // console.log(mapdata)
+    var tiletype = tiledata[mapdata[row][cell]]
     var content = ''
     var tile = tiletype.tileKey
     var height = tiletype.heightType
@@ -445,11 +461,24 @@ function GenerateTile(tiletype){
 
     }
     if(height>0&&isheight){
-        content+= `
-        <div class='tileside tileside-front'> </div>
-        <div class='tileside tileside-right'> </div>
-        <div class='tileside tileside-left'> </div>
-        <div class='tileside tileside-back'> </div>`
+        // content+= `
+        // <div class='tileside tileside-front'> </div>
+        // <div class='tileside tileside-right'> </div>
+        // <div class='tileside tileside-left'> </div>
+        // <div class='tileside tileside-back'> </div>`
+
+        if(row==0||(row>0&&tiledata[mapdata[row-1][cell]].heightType==0)){
+            content+=`<div class='tileside tileside-back'> </div>`
+        }
+        if(row==mapdata.length-1||(row<mapdata.length-1&&tiledata[mapdata[row+1][cell]].heightType==0)){
+            content+=`<div class='tileside tileside-front'> </div>`
+        }
+        if(cell==mapdata[row].length-1||(cell<mapdata[row].length-1&&tiledata[mapdata[row][cell+1]].heightType==0)){
+            content+=`<div class='tileside tileside-right'> </div>`
+        }
+        if(cell==0||(cell>0&&tiledata[mapdata[row][cell-1]].heightType==0)){
+            content+=`<div class='tileside tileside-left'> </div>`
+        }
     }
     var tile = `<div class='tile tile-height-${height} ${extraprop} tiledata-spec-${tile}'>${content}</div>`
     return tile
