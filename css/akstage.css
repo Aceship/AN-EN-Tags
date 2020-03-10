@@ -19,7 +19,7 @@
 
 .perspectiveMap{
     transform-style: preserve-3d;
-    transform:perspective(855px) rotateX(25deg) translateZ(-30px); ;
+    transform:perspective(855px) rotateX(25deg) translateZ(30px) translateY(-30px); ;
     /* transform:perspective(55px)  ; */
     /* animation-name: rotating;
     animation-duration: 20s;
@@ -33,7 +33,7 @@
     flex-wrap: nowrap;
     transition: transform 0.5s;
     background: rgb(0, 0, 0);
-    padding:30px;
+    padding:60px;
     /* transform: translateZ(-30px); */
 }
 
@@ -207,13 +207,16 @@
     border: 0.5px solid rgb(255, 209, 59);
     background-color: #555;
 }
+.tiledata-spec-tile_hole{
+    background: unset;
+}
 .tiledata-spec-tile_hole:after{
     content: "";
     width: 58px;
     height: 58px;
     margin: 1px;
     border: 0.5px solid rgb(105, 91, 45);
-    background-color: rgb(0, 0, 0);
+    /* background-color: rgb(0, 0, 0); */
 }
 
 /* .tiledata-spec-tile_start{
@@ -331,6 +334,11 @@
     
 }
 
+/* .tiledata-spec-tile_grass{
+    background: #9fb060;
+    border: 0.5px solid #9fb060;
+} */
+
 .tiledata-spec-tile_deepwater{
     /* border: 0.5px solid #444; */
     box-shadow: unset;
@@ -346,6 +354,31 @@
     width: 60px;
     height: 60px;
 }
+
+.grass {
+    position: absolute;
+    width: 60px;
+    height: 20px;
+}
+.grass-1{
+    transform: translateZ(8px) translateY(40px) rotateX(-45deg) ;
+}
+.grass-2{
+    transform: translateZ(8px) translateY(25px) rotateX(-45deg) ;
+}
+.grass-3{
+    transform: translateZ(8px) translateY(10px) rotateX(-45deg) scaleX(-1);
+}
+.grass-4{
+    transform: translateZ(8px) translateY(-5px) rotateX(-45deg) scaleX(-1);
+}
+
+
+
+
+
+
+
 
 .stage-btn-bg .nav-link .active .show{
     background: #ff00ff !important;

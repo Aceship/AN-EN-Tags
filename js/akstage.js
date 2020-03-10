@@ -348,29 +348,16 @@ function GenerateMap(stagejson){
     var mapdata = stagejson.mapData
     var tiledata = mapdata.tiles
     var tiles = []
-    // mapdata.map.forEach(row => {
-    //     var currrow = [ ]
-    //     row.forEach(cell => {
-    //         // console.log(mapdata.map)
-    //         currrow.push(GenerateTile(tiledata,cell,mapdata.map))
-    //     });
-
-    //     tiles.push(`
-    //     <div class='tile-row'> 
-    //         ${currrow.join("")}
-    //     </div>
-    //     `)
-    // });
 
     $.each(mapdata.map,function(rowname,row) {
         var currrow = [ ]
-        console.log(rowname)
+        // console.log(rowname)
         $.each(row,function(cellname,cell){
-            console.log(cellname)
+            // console.log(cellname)
             currrow.push(GenerateTile(tiledata,rowname,cellname,mapdata.map))
         })
         tiles.push(`
-        <div class='tile-row'> 
+        <div class='tile-row '> 
             ${currrow.join("")}
         </div>
         `)
@@ -424,7 +411,6 @@ function GenerateTile(tiledata,row,cell,mapdata){
             content =`<img class='tile-img' src='img/ui/stage/tile/air.png'>` 
             extraprop+=' tile-bg '
             break;
-            
         case 'tile_floor': 
             content =`<img class='tilebg' src='img/ui/stage/tile/forb.png'>` 
             break;
@@ -442,17 +428,24 @@ function GenerateTile(tiledata,row,cell,mapdata){
             content =`<img class='tile-img'  src='img/ui/stage/tile/telout.png'>` 
             break;  
         case 'tile_deepwater' :
-            // content =`<img src='img/ui/stage/tile/water.png'>` 
+            // content =`<img src='img/ui/stage/tile/mc/water.png'>` 
             isheight=false
             break;  
+        case 'tile_grass' :
+            content +=`<img class='' src='img/ui/stage/tile/grass.png'>` 
+            content +=`<img class='grass grass-1' src='img/ui/stage/tile/grass2.png'>` 
+            content +=`<img class='grass grass-2' src='img/ui/stage/tile/grass2.png'>` 
+            content +=`<img class='grass grass-3' src='img/ui/stage/tile/grass2.png'>` 
+            content +=`<img class='grass grass-4' src='img/ui/stage/tile/grass2.png'>` 
+            break;  
         // case 'tile_road' :
-        //     // content =`<img src='img/ui/stage/tile/mc/path.png'>` 
+        //     content =`<img src='img/ui/stage/tile/mc/path.png'>` 
         //     break;  
         // case 'tile_wall' :
-        //     // content =`<img src='img/ui/stage/tile/mc/slab.png'>` 
+        //     content =`<img src='img/ui/stage/tile/mc/slab.png'>` 
         //     break;  
         // case 'tile_forbidden' :
-        //     // content =`<img src='img/ui/stage/tile/mc/bedrock.png'>` 
+        //     content =`<img src='img/ui/stage/tile/mc/bedrock.png'>` 
         //     break;  
         // case 'tile_hole' :
         //     content =`<img src='img/ui/stage/tile/hole.png'>` 
@@ -461,12 +454,6 @@ function GenerateTile(tiledata,row,cell,mapdata){
 
     }
     if(height>0&&isheight){
-        // content+= `
-        // <div class='tileside tileside-front'> </div>
-        // <div class='tileside tileside-right'> </div>
-        // <div class='tileside tileside-left'> </div>
-        // <div class='tileside tileside-back'> </div>`
-
         if(row==0||(row>0&&tiledata[mapdata[row-1][cell]].heightType==0)){
             content+=`<div class='tileside tileside-back'> </div>`
         }
@@ -479,7 +466,21 @@ function GenerateTile(tiledata,row,cell,mapdata){
         if(cell==0||(cell>0&&tiledata[mapdata[row][cell-1]].heightType==0)){
             content+=`<div class='tileside tileside-left'> </div>`
         }
+    }else{
+        if(row==0||(row>0&&tiledata[mapdata[row-1][cell]].tileKey=="tile_hole")){
+            content+=`<div class='tileside tileside-back'> </div>`
+        }
+        if(row==mapdata.length-1||(row<mapdata.length-1&&tiledata[mapdata[row+1][cell]].tileKey=="tile_hole")){
+            content+=`<div class='tileside tileside-front'> </div>`
+        }
+        if(cell==mapdata[row].length-1||(cell<mapdata[row].length-1&&tiledata[mapdata[row][cell+1]].tileKey=="tile_hole")){
+            content+=`<div class='tileside tileside-right'> </div>`
+        }
+        if(cell==0||(cell>0&&tiledata[mapdata[row][cell-1]].tileKey=="tile_hole")){
+            content+=`<div class='tileside tileside-left'> </div>`
+        }
     }
+
     var tile = `<div class='tile tile-height-${height} ${extraprop} tiledata-spec-${tile}'>${content}</div>`
     return tile
 }
