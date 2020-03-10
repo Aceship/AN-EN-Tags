@@ -220,10 +220,10 @@ $('#to-tag').click(function() {      // When arrow is clicked
 function StageSubList(el){
     // $(el).attr("data-stage")
     console.log($($(el).attr("href")+"-selection"))
-    $('#stageList').fadeOut()
-    $('#stageList').empty()
+    
     var selection = $(el).attr("data-stage")
     var currhtml =''
+    var first = ''
     $.each(stagesObject[selection],function(a,b){
         // console.log(a)
         // console.log(b)
@@ -231,23 +231,43 @@ function StageSubList(el){
         // b
         var name = ''
         var size = 110
+        var img = ''
         if(a.split("_")[1]) {
-            if(a.includes("main"))name = "Episode "+a.split("_")[1]
+            if(a.includes("main")){
+                name = "Episode "+a.split("_")[1]
+                img = `<img width='${size}' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
+            }
+            else if(a.includes("camp")){
+                name = "Annihilation "+a.split("_")[1]
+                img = `<img width='300' src='img/ui/stage/banner/${selection.toLowerCase()}/${a}.png'>`
+            }
+            else if(a.includes("weekly")){
+                var weeklyname = db.zone_table_en.zones[a]
+                name = weeklyname.zoneNameSecond
+                img = `<img width='150' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
+            }
         }else{
             size = 140
+            img = `<img width='${size}' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
         }
         // else if(a.includes)
-        currhtml+= `
-        <li class='nav-item'>
-            <a class='nav-link' data-toggle='tab' style='padding:2px' href='#' onclick="StageList(this)"data-stage='${selection}-${a}'>
+        var button =`
+        <a class='nav-link' data-toggle='tab' style='padding:2px' href='#' onclick="StageList(this)"data-stage='${selection}-${a}'>
                 <div>
-                    <img width='${size}' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>
+                    ${img}
                     <div class='stage-subTtitle'>${name}</div>
                 </div>
-            </a>
+            </a>`
+        if(!first) first = button
+        currhtml+= `
+        <li class='nav-item'>
+            ${button}
         </li>
         `
     });
+    $('#stageList').empty()
+    if(!first) $('#stageList').fadeOut()
+    StageList(first)
     $($(el).attr("href")+"-selection").html(currhtml)
     
     
@@ -260,12 +280,30 @@ function StageList(el){
     $('#stageList').empty()
     $.each(stagesObject[selectionsplit[0]][selectionsplit[1]],function(a,b){
         // console.log(b)
+        console.log(a)
         if(b.levelId&&b.difficulty!="FOUR_STAR"){
+            var img =''
+            var highlight =''
+            var stageEn = db.stage_table_en.stages[a]
+            var stagecode = b.code
+            if(stageEn){
+                if(stageEn.code =="Annihilation") stagecode = stageEn.name
+                else stagecode = stageEn.code
+            }
+
+            if(b.bossMark)img = `<img class='stage-btn-icon' src='img/ui/stage/icon/icon_boss_hilight.png'>`
+            if(b.appearanceStyle==4) img = `<img class='stage-btn-icon' src='img/ui/stage/icon/bkg_spike_mark.png'>`
+            if(b.performanceStageFlag=="PERFORMANCE_STAGE") img = `<img class='stage-btn-icon' src='img/ui/stage/icon/bkg_story_only_mark.png'>`
+            
+            if(b.hilightMark || b.appearanceStyle==4)highlight = 'stage-btn-header-h'
             currhtml+= `
             <li class='nav-item'>
-                <a class='nav-link' data-toggle='tab' style='padding:2px' href='#' onclick="LoadStage('${b.levelId.toLowerCase()}.json')"data-stage=''>
-                    <div>
-                        <div class='stage-subTtitle stage-inline'>${b.code} ${b.difficulty=="FOUR_STAR"?"Challenge":""}</div>
+                <a class='stage-btn-bg nav-link' class='' data-toggle='tab' style='padding:2px' href='#' onclick="LoadStage('${b.levelId.toLowerCase()}.json')"data-stage=''>
+                    <div class='stage-btn stage-subTtitle stage-inline'>
+                        ${img}
+                        <div class='stage-btn-header'>
+                            <div class='stage-code ${highlight}'>${stagecode}</div>
+                        </div>
                     </div>
                 </a>
             </li>
