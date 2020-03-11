@@ -432,7 +432,7 @@ function GenerateTile(tiledata,row,cell,mapdata){
             isheight=false
             break;  
         case 'tile_grass' :
-            content +=`<img class='' src='img/ui/stage/tile/grass.png'>` 
+            content +=`<img class='tile-img' src='img/ui/stage/tile/grass.png'>` 
             content +=`<img class='grass grass-1' src='img/ui/stage/tile/grass2.png'>` 
             content +=`<img class='grass grass-2' src='img/ui/stage/tile/grass2.png'>` 
             content +=`<img class='grass grass-3' src='img/ui/stage/tile/grass2.png'>` 
