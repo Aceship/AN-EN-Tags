@@ -85,6 +85,7 @@
     var bgnum =0
     var bgmax = 5
     var scrollcheck = 0
+    var savenum = 0
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -263,6 +264,7 @@
 
         $('#Chibi-download').click(function(event){
             // var canvas = spinewidget.canvas
+            
             var checkdiv = $("#spine-widget").children()[0]
             // console.log($("#spine-widget").children())
             // console.log(canvas)
@@ -272,10 +274,15 @@
             // $('#Chibi-download').attr("download","a.png")
             // console.log(img)
             // $("#spine-widget-2").html('<img src="'+img+'"/>');
-
+            console.log(currskin)
+            var link = document.createElement("a");
+            link.download = `${currskin}-${savenum}.png`;
+            savenum++
+            link.href = img;
+            link.click();
             // var dataURL = $("#spine-widget")[0].toDataURL('image/png');
-            var w = window.open('about:blank', 'image from canvas');
-            w.document.write("<img src='" + img + "' alt='from canvas'/>");
+            // var w = window.open('about:blank', 'image from canvas');
+            // w.document.write("<img src='" + img + "' alt='from canvas'/>");
 
         });
 
