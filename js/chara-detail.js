@@ -1844,14 +1844,16 @@
 
                 var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
                 var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
+                console.log(eachtalent.talent.name)
+                var isTalentRange =  eachtalent.talent.name=="新人教官"?undefined:eachtalent.talent.rangeId
                 var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
                 talentlist.push(`
                 <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                <div style="vertical-align:top;${eachtalent.talent.rangeId?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
+                <div style="vertical-align:top;${isTalentRange?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
                     <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
                     <div style="font-size:11px;">${currTalentDesc}</div>
                 </div>
-                    ${eachtalent.talent.rangeId?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
+                    ${isTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
                 </div>
                 `)
             });
