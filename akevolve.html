@@ -264,7 +264,7 @@
                               .filter(a => !isNaN(Number(a)))
                               .reduce((vout, vin, i) => (vout[names[i]] = parseInt(vin), vout), {})
 
-                calc(need, have);
+                calc(need, have,true);
             });
 
             loadMaterials();
@@ -423,16 +423,16 @@
                 loadMaterials();
             }
 
-            function calc(narray = {}, harray = {}) {
+            function calc(narray = {}, harray = {},isauto=false) {
                 let counts = {};
                 $.each(ms, (n, m) => {
                     let need = parseInt($("#need-" + m['id']).val());
                     if (isNaN(need)) need = 0;
-                    need += n in narray ? narray[n] : 0;
+                    if(isauto) need += n in narray ? narray[n] : 0;
 
                     let have = parseInt($("#have-" + m['id']).val());
                     if (isNaN(have)) have = 0;
-                    have += n in harray ? harray[n] : 0
+                    if(isauto)have += n in harray ? harray[n] : 0
 
                     let diff = need - have;
 
@@ -484,8 +484,8 @@
                 }
                 allns = []; allhs = [];
                 $.each(ms, (n, m) => {
-                    $("#have-" + m['id']).val(counts[n]['have']);
-                    $("#need-" + m['id']).val(counts[n]['need']);
+                    if(isauto)$("#have-" + m['id']).val(counts[n]['have']);
+                    if(isauto)$("#need-" + m['id']).val(counts[n]['need']);
                     $("#lack-" + m['id']).val(counts[n]['lack']);
                 })
                 $.each(ms, (_, m) => {
