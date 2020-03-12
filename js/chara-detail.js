@@ -280,6 +280,7 @@
             savenum++
             link.href = img;
             link.click();
+            
             // var dataURL = $("#spine-widget")[0].toDataURL('image/png');
             // var w = window.open('about:blank', 'image from canvas');
             // w.document.write("<img src='" + img + "' alt='from canvas'/>");
