@@ -1820,7 +1820,7 @@
                 var currCandidate = currTalent.candidates[j] 
                 var currCandidateTL = currTalentTL?currTalentTL[j]:undefined
                 talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
-                console.log(currCandidate)
+                // console.log(currCandidate)
             }
             combTalents.push(talentGroup)
         }
@@ -1841,10 +1841,9 @@
                 if(eachtalent.talent.requiredPotentialRank >0)
                 imagereq.push(`<img src="./img/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
 
-
                 var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
                 var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
-                console.log(eachtalent.talent.name)
+                // console.log(eachtalent.talent.name)
                 var isTalentRange =  eachtalent.talent.name=="新人教官"?undefined:eachtalent.talent.rangeId
                 var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
                 talentlist.push(`
