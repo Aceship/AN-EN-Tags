@@ -7472,7 +7472,8 @@ var spine;
 			element.appendChild(canvas);
 			canvas.width = element.clientWidth;
 			canvas.height = element.clientHeight;
-			var webglConfig = { alpha: config.alpha };
+			// console.log(config)
+			var webglConfig = { alpha: config.alpha,preserveDrawingBuffer: config.preserveDrawingBuffer};
 			var gl = this.gl = (canvas.getContext("webgl", webglConfig) || canvas.getContext("experimental-webgl", webglConfig));
 			this.shader = spine.webgl.Shader.newColoredTextured(gl);
 			this.batcher = new spine.webgl.PolygonBatcher(gl);
@@ -7555,7 +7556,12 @@ var spine;
 				config.debug = false;
 			if (!config.alpha === undefined)
 				config.alpha = true;
+			// console.log(config.preserveDrawingBuffer)
+			if(config.preserveDrawingBuffer===undefined)
+				config.preserveDrawingBuffer = true;
+			// console.log(config.preserveDrawingBuffer)
 			this.backgroundColor.setFromString(config.backgroundColor);
+			
 			this.config = config;
 		};
 		SpineWidget.prototype.load = function () {
