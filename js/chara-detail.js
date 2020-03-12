@@ -78,8 +78,9 @@
     var animationqueue
     var defaultAnimationName = "Default";
     var loadchibi = false;
-    var chibiscaleweb = 0
-    var chibiscaleweblist = [[0.5,-775],[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
+    // var chibiscaleweb = 0
+    // var chibiscaleweblist = [[0.5,-775],[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
+    var chibiscale = [0.5,-775]
     var chibiperscurr = 0
     var chibiperslist = ["front","back","build"]
     var bgnum =0
@@ -239,24 +240,30 @@
             ChangeSkin(currskin,chibiperslist[chibiperscurr])
             
         });
+        $("#Chibi-Show-menu").click(function(){
+            $('#Chibi-menu').toggleClass("chibi-menu-closed")
+            
+        });
 
         $("#Chibi-Scale").click(function(){
             
-            chibiscaleweb++
+            // chibiscaleweb++
 
             
-            if(chibiscaleweb>=chibiscaleweblist.length)chibiscaleweb=0
-            else if(chibiscaleweb<0)chibiscaleweb=chibiscaleweblist.length
-            console.log(chibiscaleweb)
-            console.log(chibiscaleweblist)
+            // if(chibiscaleweb>=chibiscaleweblist.length)chibiscaleweb=0
+            // else if(chibiscaleweb<0)chibiscaleweb=chibiscaleweblist.length
+            // console.log(chibiscaleweb)
+            // console.log(chibiscaleweblist)
 
             
-            var currscale = chibiscaleweblist[chibiscaleweb]
-            console.log(currscale)
-            $("#spine-widget").css("transform",`scale(${currscale[0]})`)
-            $("#spine-widget").css("top",`${currscale[1]}px`)
-            $("#spine-widget-token").css("transform",`scale(${currscale[0]})`)
-            $("#spine-widget-token").css("top",`${currscale[1]}px`)
+            // var currscale = chibiscaleweblist[chibiscaleweb]
+            // console.log(currscale)
+            $('#chibizoomslider').val(0)
+            chibiscale=[0.5,-775]
+            $("#spine-widget").css("transform",`scale(0.5)`)
+            $("#spine-widget").css("top",`-775px`)
+            $("#spine-widget-token").css("transform",`scale(0.5)`)
+            $("#spine-widget-token").css("top",`-775px`)
             
 
             
@@ -2407,8 +2414,8 @@
             spinewidget.pause()
             spinewidget = undefined
             $("#spine-widget").remove()
-            currscale = chibiscaleweblist[chibiscaleweb]
-            $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${currscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${currscale[0]});"></div>`)
+            // currscale = chibiscaleweblist[chibiscaleweb]
+            $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${chibiscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
             // console.log(loadchibi)
             // if(loadchibi)$("#spine-frame").fadeIn(100);
         }else{
@@ -2549,8 +2556,8 @@
             spinewidgettoken.pause()
             spinewidgettoken = undefined
             $("#spine-widget-token").remove()
-            currscale = chibiscaleweblist[chibiscaleweb]
-            $("#spine-frame-token").append(`<div id="spine-widget-token" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${currscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${currscale[0]});"></div>`)
+            // currscale = chibiscaleweblist[chibiscaleweb]
+            $("#spine-frame-token").append(`<div id="spine-widget-token" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${chibiscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
             // console.log(loadchibi)
             // if(loadchibi)$("#spine-frame").fadeIn(100);
         }else{
@@ -2966,6 +2973,21 @@
             console.log("WEEEI")
     }
 
+    function ZoomChibi(el){
+        var minscale = 0.5
+        var maxscale = 2
+        var mintop = -775
+        var maxtop =-900
+        // var zoomvalue = `${el.value}`
+        var currscale = minscale + (maxscale*parseFloat(el.value)/100)
+        var currtop = mintop+((maxtop-mintop/2)*parseFloat(el.value)/100)
+
+        chibiscale=[currscale,currtop]
+        $("#spine-widget").css("transform",`scale(${currscale})`)
+        $("#spine-widget").css("top",`${currtop}px`)
+        $("#spine-widget-token").css("transform",`scale(${currscale})`)
+        $("#spine-widget-token").css("top",`${currtop}px`)
+    }
     function Zoomchara(el){
         var widthbefore = $('#charazoom').width()
         var heightbefore = $('#charazoom').height()

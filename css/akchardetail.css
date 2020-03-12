@@ -1005,11 +1005,30 @@ body {
     min-width:10px;
     z-index: 4;
 }
+#Chibi-menu{
+    position: absolute;
+    bottom: 0px;
+    background: #555;
+    padding: 4px;
+    box-shadow: inset 0px 0px 0px 2px rgba(51, 51, 51, 0.739);
+    width:123px;
+    height: 142px;
+    left:-3px;
+    z-index: -1;
+    /* transform: scaleY(1); */
+    transition: height 0.5s, opacity 0.4s;
+}
+
+.chibi-menu-closed{
+    height: 0px !important;
+    opacity: 0%;
+}
+
 .ak-chibi-btn{
     padding: 3px;
     padding-top: 2px;
     color: rgb(190, 190, 190);
-    
+    margin:2px 0px;
     /* background:rgb(49, 49, 49) ; */
     background:rgb(26, 26, 26) ;
     border-radius: 1px 1px;
@@ -1140,6 +1159,7 @@ body {
     #Chibi-nav{
         z-index: 0;
     }
+    
     #infonav{
         position: absolute;
         left:69px !important;
