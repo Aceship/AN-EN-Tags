@@ -80,13 +80,18 @@
     var loadchibi = false;
     // var chibiscaleweb = 0
     // var chibiscaleweblist = [[0.5,-775],[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
-    var chibiscale = [0.5,-775]
+    var chibiscale = [0.5,0]
     var chibiperscurr = 0
     var chibiperslist = ["front","back","build"]
     var bgnum =0
     var bgmax = 5
     var scrollcheck = 0
     var savenum = 0
+
+    var canvasNum = 0
+    var canvasSize = [[1800,1800],[1200,800],[800,800],[600,600],[500,500]]
+    var wid = 1800
+    var hei = 1800
 
     $(document).ready(function(){
         $('#to-tag').click(function(){      // When arrow is clicked
@@ -244,6 +249,25 @@
             $('#Chibi-menu').toggleClass("chibi-menu-closed")
             
         });
+        $("#Chibi-frameSize").click(function(){
+            // $('#Chibi-menu').toggleClass("chibi-menu-closed")
+            canvasNum++
+
+            
+            if(canvasNum>=canvasSize.length)canvasNum=0
+            else if(canvasNum<0)canvasNum=canvasSize.length
+
+            wid = canvasSize[canvasNum][0]
+            hei = canvasSize[canvasNum][1]
+            if(spinewidget){
+                LoadAnimation()
+            }
+            if(spinewidgettoken){
+                if(opdataFull.tokenKey){
+                    LoadAnimationToken()
+                }
+            }
+        });
 
         $("#Chibi-Scale").click(function(){
             
@@ -259,11 +283,12 @@
             // var currscale = chibiscaleweblist[chibiscaleweb]
             // console.log(currscale)
             $('#chibizoomslider').val(0)
-            chibiscale=[0.5,-775]
-            $("#spine-widget").css("transform",`scale(0.5)`)
-            $("#spine-widget").css("top",`-775px`)
-            $("#spine-widget-token").css("transform",`scale(0.5)`)
-            $("#spine-widget-token").css("top",`-775px`)
+            ZoomChibi(0)
+            // $('#chibizoomslider').click();
+            // $("#spine-widget").css("transform",`scale(0.5)`)
+            // $("#spine-widget").css("top",`-775px`)
+            // $("#spine-widget-token").css("transform",`scale(0.5)`)
+            // $("#spine-widget-token").css("top",`-775px`)
             
 
             
@@ -288,6 +313,8 @@
             link.href = img;
             link.click();
             
+            // CreateAnimation(spinewidget,["Skill_2_Begin",["Skill_2_Loop",20],"Skill_2_Loop_End"],false,false,true)
+            // console.log(spinewidget)
             // var dataURL = $("#spine-widget")[0].toDataURL('image/png');
             // var w = window.open('about:blank', 'image from canvas');
             // w.document.write("<img src='" + img + "' alt='from canvas'/>");
@@ -2410,18 +2437,14 @@
         // console.log(spinewidget)
         $("#loading-spine").text("Loading...")
         if(spinewidget){
-            // spinewidget.loadWidgets()
-            // spinewidget.loadTexture()
             spinewidget.pause()
             spinewidget = undefined
-            $("#spine-widget").remove()
-            // currscale = chibiscaleweblist[chibiscaleweb]
-            $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${chibiscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
-            // console.log(loadchibi)
-            // if(loadchibi)$("#spine-frame").fadeIn(100);
-        }else{
-            if(loadchibi)$("#spine-frame").fadeIn(100);
         }
+        // else{
+        //     if(loadchibi)$("#spine-frame").fadeIn(100);
+        // }
+        $("#spine-widget").remove()
+        $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: ${wid}px; height: ${hei}px;top:${-hei/2+150 +chibiscale[1]}px;left:-${wid/2-150}px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
         if (chibiName != null && defaultAnimationName != null) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', folder + chibiName + "." +skeletonType, true);
@@ -2471,6 +2494,11 @@
                     // var test = new TextDecoder("utf-8").decode(array);
                     // console.log(JSON.parse(test))
                     // console.log(JSON.stringify(skelBin.json, null, "\t"));
+                    var spineX = parseFloat($("#spine-widget").width())/2
+                    var spineY = parseFloat($("#spine-widget").height())/2 -200
+
+                    // console.log(spineX)
+                    // console.log(spineY)
                     new spine.SpineWidget("spine-widget", {
                         jsonContent: jsonskel,
                         atlas: folder + chibiName + ".atlas",
@@ -2481,8 +2509,10 @@
                         premultipliedAlpha: true,
                         fitToCanvas : false,
                         loop:true,
-                        x:900,
-                        y:650,
+                        // x:900,
+                        // y:650,
+                        x:spineX,
+                        y:spineY,
                         //0.5 for normal i guess
                         scale:1,
                         success: function (widget) {
@@ -2556,14 +2586,16 @@
             // spinewidget.loadTexture()
             spinewidgettoken.pause()
             spinewidgettoken = undefined
-            $("#spine-widget-token").remove()
-            // currscale = chibiscaleweblist[chibiscaleweb]
-            $("#spine-frame-token").append(`<div id="spine-widget-token" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${chibiscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
             // console.log(loadchibi)
             // if(loadchibi)$("#spine-frame").fadeIn(100);
-        }else{
-            if(loadchibi)$("#spine-frame-token").fadeIn(100);
         }
+        // else{
+        //     if(loadchibi)$("#spine-frame-token").fadeIn(100);
+        // }
+
+        $("#spine-widget-token").remove()
+        $("#spine-frame-token").append(`<div id="spine-widget-token" class="top-layer" style="position:absolute;width: ${wid}px; height: ${hei}px;top:${-hei/2+100 +chibiscale[1]}px;left:-${wid/2-150}px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
+            
         if (chibiName != null && defaultAnimationName != null) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', tokenfolder +"."+skeletonType, true);
@@ -2609,8 +2641,11 @@
                     }
                     
                     
-                    
+                    var spineX = parseFloat($("#spine-widget-token").width())/2
+                    var spineY = parseFloat($("#spine-widget-token").height())/2 -300
                     // var test = new TextDecoder("utf-8").decode(array);
+                    console.log($("#spine-widget-token").width())
+                    console.log(spineX)
                     // console.log(JSON.parse(test))
                     // console.log(JSON.stringify(skelBin.json, null, "\t"));
                     new spine.SpineWidget("spine-widget-token", {
@@ -2623,8 +2658,8 @@
                         premultipliedAlpha: true,
                         fitToCanvas : false,
                         loop:true,
-                        x:900,
-                        y:650,
+                        x:spineX,
+                        y:spineY,
                         //0.5 for normal i guess
                         scale:1,
                         success: function (widget) {
@@ -2768,7 +2803,7 @@
 
     
 
-    function CreateAnimation(chibiwidget,animArray,endloop = false,skipStart = false){
+    function CreateAnimation(chibiwidget,animArray,endloop = false,skipStart = false,isendstop=false){
         // console.log(animArray)
         
         // console.log(Array.isArray(animArray))
@@ -2795,6 +2830,7 @@
                     isloop = true
                 }
                 if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
+                else if(animNum==animArray.length-1) chibiwidget.state.addAnimation(animNum,curranim,!isendstop,delay)
                 else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                 delay +=curranimations[GetAnimationIndex(curranimations,curranim)].duration*animTimes
                 animNum++
@@ -2820,6 +2856,7 @@
                             isloop = true
                         }
                         if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
+                        
                         else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                         delay +=curranimations[GetAnimationIndex(curranimations,curranim)].duration*animTimes
                         animNum++
@@ -2838,8 +2875,12 @@
             if(chibiwidget.loaded)chibiwidget.setAnimation(curranimplay)
             chibiwidget.state.clearTracks()
             
-            chibiwidget.state.setAnimation(0,curranimplay,true)
+            chibiwidget.state.setAnimation(0,curranimplay,!isendstop)
         }
+    }
+
+    function CheckChibi(){
+        console.log(spinewidget)
     }
     
     function CheckAnimationSet(anim){
@@ -2975,19 +3016,25 @@
     }
 
     function ZoomChibi(el){
+
+        if (el==0) el = {value:0}
         var minscale = 0.5
         var maxscale = 2
-        var mintop = -775
-        var maxtop =-900
+        var mintop = 0
+        var maxtop =-400
+
+        // top:${-hei/2+150}px;left:-${wid/2-150}px
         // var zoomvalue = `${el.value}`
         var currscale = minscale + (maxscale*parseFloat(el.value)/100)
-        var currtop = mintop+((maxtop-mintop/2)*parseFloat(el.value)/100)
+        var currtop = ((maxtop-mintop)*parseFloat(el.value)/100)
+        // var currtop2 = mintop+((maxtop-mintop/2)*parseFloat(el.value)/100)
 
+        // console.log(currtop)
         chibiscale=[currscale,currtop]
         $("#spine-widget").css("transform",`scale(${currscale})`)
-        $("#spine-widget").css("top",`${currtop}px`)
+        $("#spine-widget").css("top",`${(-hei/2+150)+currtop}px`)
         $("#spine-widget-token").css("transform",`scale(${currscale})`)
-        $("#spine-widget-token").css("top",`${currtop}px`)
+        $("#spine-widget-token").css("top",`${-hei/2+100 +currtop}px`)
     }
     function Zoomchara(el){
         var widthbefore = $('#charazoom').width()
