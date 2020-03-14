@@ -2336,6 +2336,10 @@
                     // console.log(skill.blackboard)
                     if(skill.blackboard[i].key == submatches[0]){
                         value = skill.blackboard[i].value;
+                        if(skill.prefabId == "skchr_angel_3"&&skill.blackboard[i].key =='base_attack_time'){
+                            value = skill.blackboard[i].value*2;
+                            console.log("DOUBLE!!")
+                        }
                         // console.log(value)
                     }
                 }
