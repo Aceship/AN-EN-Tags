@@ -38,7 +38,7 @@
     <button class="btn btn-sm ak-ontop-button" style="position:fixed;bottom:60px ;right: 0px;size:70px 70px;padding: 4px;z-index: 10000" id="btn-filter" type="button">Filter </button>
     <button class="btn btn-sm ak-ontop-button" style="position:fixed;bottom:20px ;right: 0px;size:70px 70px;padding: 4px;z-index: 10000" id="btn-reset" type="button">Reset </button>
     <!-- <button class="btn btn-sm btn-primary ak-ontop-button" style="position:fixed;bottom:100px ;right: 0px;size:70px 70px;padding: 2px;z-index: 10000" id="btn-load" type="button">Filter </button> -->
-    <div class="container " style="margin:auto;max-width:1000px;padding:0">
+    <div class="container " style="margin:auto;max-width:1080px;padding:0">
         <div class="d-inline d-sm-none " id="mobile-only-visible"></div>
         <div class="col-12 alert alert-dark mt-3 p-1 p-sm-2 ak-c-black" role="alert">
             <button type="button" class="btn btn-sm btn-success my-1" id="btn-filter">
@@ -347,17 +347,17 @@
                                     + isOnStage
                                     +   '</div>'
                                     +   '<div class="ak-rare-' + colors[i - 1] +'" style="width:2px;margin:0px;padding:0;z-index:0"></div>'
-                                    +       '<div class="card p-0 ak-back ak-btn" style="max-width:72px;margin:0px">'
+                                    +       '<div class="card p-0 ak-back ak-btn" style="min-width:78px;max-width:80px;margin:0px">'
                                     +           '<div class="ak-shadow"style="height:16px"></div>'
                                     +           '<div class="card-body p-1" style="padding:0px;margin:0px">'
                                     +           '<form style="">'
                                     +               '<div class="form-group mb-0">'
-                                    +`<div>`
+                                    +`<div style='text-align:center'>`
                                     +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:2px 0px 0px 2px' onclick='Addition(-1,"need-${cardid}")'>-</button>`
                                     +                   `<input type="text" min=0 class="form-control form-control-sm in-mc ak-btn" style="display: inline-block;border-radius:2px;padding:0;text-align:center;background:#333;border:transparent;color:#DDD;height:35px;width:40px" placeholder="${{ 'cn': '需要', 'en': 'Need', 'kr': '필요량' }[lang]}" id="need-${cardid}"/>`
                                     +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:0px 2px 2px 0px' onclick='Addition(1,"need-${cardid}")'>+</button>`
                                     +`</div>`
-                                    +`<div>`
+                                    +`<div style='text-align:center'>`
                                     +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:2px 0px 0px 2px' onclick='Addition(-1,"have-${cardid}")'>-</button>`
                                     +                   `<input type="text" min=0 class="form-control form-control-sm mt-1 in-mc   ak-mid" style="display: inline-block;border-radius:2px;padding:0;text-align:center;background:#333;border:transparent;color:#DDD;height:35px;width:40px" placeholder="${{ 'cn': '已有', 'en': 'Have', 'kr': '보유량' }[lang]}" id="have-${cardid}"/>`
                                     +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:0px 2px 2px 0px' onclick='Addition(1,"have-${cardid}")'>+</button>`
@@ -385,7 +385,7 @@
                             //         + '</div></form>'
                             //         + '</div></div>');
                         });
-                        $("#row-m").append('<div class="w-100 my-1" />');
+                        $("#row-m").append('<div class="w-100 my-1" style="padding:2px;background:#111;border-radius:2px"/>');
                     }
                 })});
             }
