@@ -765,7 +765,7 @@
             case "SNIPER":      // SNIPER (ST, AOE)
                 return `${subclassHtml("SNIPER-ST", "ST Sniper")}${subclassHtml("SNIPER-AOE", "AoE Sniper")}`;
             case "SPECIAL":     // SPECIALIST (PUSH, PULL, QUICK-REDEPLOY, SPIKE)
-                return `${subclassHtml("SPECIAL-REDEPLOY", "Quick Redeployement")}${subclassHtml("SPECIAL", "Specialist")}`;
+                return `${subclassHtml("SPECIAL-REDEPLOY", "Quick Redeployement")}${subclassHtml("SPECIAL-PUSH", "Push Specialist")}${subclassHtml("SPECIAL-PULL", "Pull Specialist")}${subclassHtml("SPECIAL-SPIKES", "Spikes Specialist")}`;
             case "SUPPORT":     // SUPPORTER (SLOW, SUMMON, DEBUFF, BUFF)
                 return `${subclassHtml("SUPPORT-SLOW", "Retarder")}${subclassHtml("SUPPORT-SUMMON", "Summoner")}${subclassHtml("SUPPORT-DEBUFF", "Debuffer")}${subclassHtml("SUPPORT-BUFF", "Buffer")}`;
             case "TANK":        // DEFENDER (NORMAL, HEALING)
@@ -879,9 +879,10 @@
                 return tags.includes("群攻") ? "SNIPER-AOE" : "SNIPER-ST";
             case "SPECIAL":     // SPECIALIST (PUSH, PULL, FAST-REDEPLOY, SPIKE)
                 return tags.includes("快速复活") ? "SPECIAL-REDEPLOY" :
-                       // PUSH HERE
-                       // PULL HERE
-                       "SPECIAL";
+                       // same dirty hack as above
+                       char.description == "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位" ? "SPECIAL-PUSH" : 
+                       char.description == "技能可以使敌人产生<@ba.kw>位移</>\\n可以放置于远程位" ? "SPECIAL-PULL" :
+                       "SPECIAL-SPIKES";
             case "SUPPORT":     // SUPPORTER (SLOW, SUMMON, DEBUFF, BUFF)
                 return tags.includes("减速") ? "SUPPORT-SLOW" :
                        tags.includes("召唤") ? "SUPPORT-SUMMON" :
