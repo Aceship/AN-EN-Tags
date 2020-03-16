@@ -43,21 +43,17 @@
             color: white;
             float: left;
         }
-        .sort-asc {
-            background-image: url("https://www.flaticon.com/premium-icon/icons/svg/1484/1484682.svg");
-            background-repeat: no-repeat;
-            background-size: 20px;
-            height: 20px;
-            width: 20px;
+        .order-btn {
             margin-left: 5px;
         }
-        .sort-desc {
-            background-image: url("https://www.flaticon.com/premium-icon/icons/svg/1484/1484683.svg");
-            background-repeat: no-repeat;
-            background-size: 20px;
-            height: 20px;
+        .fas {
+            background-color: black;
+        }
+        .fa-sort-amount-down, .fa-sort-amount-up {
+            margin: 0;
+            padding: 0;
             width: 20px;
-            margin-left: 5px;
+            height: 20px;
         }
         .btn-disabled {
             opacity: 0.5;
@@ -116,13 +112,13 @@
                                 <td><div class="op-class btn-secondary" data-id="TANK" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_defender.png'></div></td>
                                 <td><div class="op-class btn-secondary" data-id="PIONEER" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_vanguard.png'></div></td>
                                 </tr></table></td>
-                            <td><div class="btn btn-danger btn-clear" id="clear-filter-class" onclick="clearFilter('.op-class, .op-subclass')">Clear</div></td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-class" onclick="clearFilter('.op-class, .op-subclass')" clear-data=".op-class, .op-subclass">Clear</div></td>
                         </tr>
                         <tr style="height: 10px;"></tr>
                         <tr>
                             <td><div id="filter-name-subclass" class="btn filter-name filter-exclusive" onclick="toggleExclusive(this)">Subclass</div></td>
                             <td id="subclass-container"></td>
-                            <td><div class="btn btn-danger btn-clear" id="clear-filter-subclass" onclick="clearFilter('.op-subclass')">Clear</div></td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-subclass" onclick="clearFilter('.op-subclass')" clear-data=".op-subclass">Clear</div></td>
                         </tr>
                         <tr style="height: 10px;"></tr>
                         <tr>
@@ -146,18 +142,18 @@
                                 <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="DP-Recovery"></div>
                                 <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Robot"></div>
                             </td>
-                            <td><div class="btn btn-danger btn-clear" id="clear-filter-tag" onclick="clearFilter('.op-tag')">Clear</div></td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-tag" onclick="clearFilter('.op-tag')" clear-data=".op-tag">Clear</div></td>
                         </tr>
                         <tr style="height: 10px;"></tr>
                         <tr>
                             <td><div class="filter-name" style="padding: .375rem .75rem; background-color: black; border-radius: .25rem;">Filter</div></td>
                             <td>
-                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-atk" onclick="switchState(this)">ATK<div class="btn btn-sm sort-desc" id="order-atk" onclick="invertSort(this)"></div></div>
-                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-def" onclick="switchState(this)">DEF<div class="btn sort-desc" id="order-def" onclick="invertSort(this)"></div></div>
-                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-hp" onclick="switchState(this)">HP<div class="btn sort-desc" id="order-hp" onclick="invertSort(this)"></div></div>
-                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-dp" onclick="switchState(this)">DP COST<div class="btn sort-desc" id="order-dp" onclick="invertSort(this)"></div></div>
-                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-block" onclick="switchState(this)">BLOCK COUNT<div class="btn sort-desc" id="order-block" onclick="invertSort(this)"></div></div>
-                                <div class="btn btn-secondary btn-sm my-1 btn-enabled btn-sort" id="sort-rarity" onclick="switchState(this)">RARITY<div class="btn sort-desc" id="order-rarity" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-atk" onclick="switchState(this)"><span style="margin-right: 5px;">ATK</span><div class="btn fas fa-sort-amount-down" id="order-atk" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-def" onclick="switchState(this)"><span style="margin-right: 5px;">DEF</span><div class="btn fas fa-sort-amount-down" id="order-def" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-hp" onclick="switchState(this)"><span style="margin-right: 5px;">HP</span><div class="btn fas fa-sort-amount-down" id="order-hp" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-dp" onclick="switchState(this)"><span style="margin-right: 5px;">DP COST</span><div class="btn fas fa-sort-amount-down" id="order-dp" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-block" onclick="switchState(this)"><span style="margin-right: 5px;">BLOCK COUNT</span><div class="btn fas fa-sort-amount-down" id="order-block" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-enabled btn-sort" id="sort-rarity" onclick="switchState(this)"><span style="margin-right: 5px;">RARITY</span><div class="btn fas fa-sort-amount-down" id="order-rarity" onclick="invertSort(this)"></div></div>
                             </td>
                             <td><div class="btn btn-danger btn-clear" onclick="resetSorting()">Reset</div></td>
                         </tr>
@@ -183,7 +179,7 @@
                                 <td><div class="op-faction btn-secondary" data-id="LOGO_LEITHANIEN" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_leithanien.png'></div></td>
                                 <td><div class="op-faction btn-secondary" data-id="LOGO_RIM" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_rim.png'></div></td>
                             </tr></table></td>
-                            <td><div class="btn btn-danger btn-clear" id="clear-filter-faction" onclick="clearFilter('.op-faction')">Clear</div></td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-faction" onclick="clearFilter('.op-faction')" clear-data=".op-faction">Clear</div></td>
                         </tr>
                         <tr style="height: 10px;"></tr>
                         <tr>
@@ -194,7 +190,7 @@
                                 <div class="btn btn-secondary btn-sm my-1 op-skill" section="skill" onclick="toggleBtn(this)" data-id=4>Getting Hit</div>
                                 <div class="btn btn-secondary btn-sm my-1 op-skill" section="skill" onclick="toggleBtn(this)" data-id=8>Always On</div>
                             </td>
-                            <td><div class="btn btn-danger btn-clear" id="clear-filter-skill" onclick="clearFilter('.op-skill')">Clear</div></td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-skill" onclick="clearFilter('.op-skill')" clear-data=".op-skill">Clear</div></td>
                         </tr>
                     </table>
                     <br />

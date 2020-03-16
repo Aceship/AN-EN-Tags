@@ -335,8 +335,8 @@
         $('#opname').click(function(event){
             event.stopPropagation();
         });
-        $(".sort-asc").click(event => event.stopPropagation());
-        $(".sort-desc").click(event => event.stopPropagation());
+        $(".fa-sort-amount-up").click(event => event.stopPropagation());
+        $(".fa-sort-amount-down").click(event => event.stopPropagation());
         $('#lefthandtoggle').click(function(event){
             if(lefthand=="true")
                 lefthand = "false"
@@ -766,8 +766,7 @@
 
     function toggleExclusive(el) {
         $(el).toggleClass("filter-exclusive filter-nonexclusive");
-        // TODO: find something better than eval to trigger the onclick
-        eval($(`#clear-filter-${$(el).attr("id").slice(12)}`).attr("onclick"));
+        clearFilter($(`#clear-filter-${$(el).attr("id").slice(12)}`).attr("clear-data"));
         if ($(el).attr("id") == "filter-name-class") actualizeSubclass();
 
         actualizeFilter();
@@ -798,7 +797,7 @@
     }
 
     function invertSort(el) {
-        $(el).toggleClass("sort-desc sort-asc");
+        $(el).toggleClass("fa-sort-amount-down fa-sort-amount-up");
 
         actualizeFilter();
     }
@@ -811,25 +810,25 @@
         $("#sort-block").removeClass("btn-enabled").addClass("btn-disabled");
         $("#sort-rarity").removeClass("btn-disabled").addClass("btn-enabled");
 
-        $("#order-atk").removeClass("sort-asc").addClass("sort-desc");
-        $("#order-def").removeClass("sort-asc").addClass("sort-desc");
-        $("#order-hp").removeClass("sort-asc").addClass("sort-desc");
-        $("#order-dp").removeClass("sort-asc").addClass("sort-desc");
-        $("#order-block").removeClass("sort-asc").addClass("sort-desc");
-        $("#order-rarity").removeClass("sort-asc").addClass("sort-desc");
+        $("#order-atk").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-def").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-hp").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-dp").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-block").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-rarity").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
 
         actualizeFilter();
-    }
-
-    // can't use array methods without discarding id and id isn't stored right inside char *sigh*
-    function id(char) {
-        return char.phases[0].characterPrefabKey;
     }
 
     function sortFilter(val_a, val_b, stat_class) {
         if ($(`#sort-${stat_class}`).hasClass("btn-disabled")) return 0;
 
-        return $(`#order-${stat_class}`).hasClass("sort-desc") ? val_b - val_a : val_a - val_b;
+        return $(`#order-${stat_class}`).hasClass("fa-sort-amount-down") ? val_b - val_a : val_a - val_b;
+    }
+
+    // can't use array methods without discarding id and id isn't stored right inside char *sigh*
+    function getId(char) {
+        return char.phases[0].characterPrefabKey;
     }
 
     function getStat(char, stat_class) {
@@ -858,8 +857,8 @@
                        char.phases.slice(-1)[0].rangeId.split("").filter(c => c > 1).length ? "GUARD-RANGED" :
                        "GUARD-ST";
             case "MEDIC":       // MEDIC (ST, AOE)
-                /*  eh, don't really like this hack. Half hardcoded and doesn't even
-                 *  take Silence S2 and Gavial S2 into consideration */
+                /*  NOTE: eh, don't really like this hack. Half hardcoded and doesn't even
+                 *        take Silence S2 and Gavial S2 into consideration */
                 return char.description == "同时恢复三个友方单位的生命" ? "MEDIC-AOE" : "MEDIC-ST";
             case "SNIPER":      // SNIPER (ST, AOE)
                 return tags.includes("群攻") ? "SNIPER-AOE" : "SNIPER-ST";
@@ -909,7 +908,7 @@
             op_skill.length == 0) return;
 
         // EXTRACTION
-        let ops = Object.values(db.chars).filter(char => char.profession != "TOKEN" && char.profession != "TRAP");        
+        let ops = Object.values(db.chars).filter(char => char.profession != "TOKEN" && char.profession != "TRAP");
 
         // FILTERING
         if (op_class.length) ops = exclusive_class ? ops.filter(char => op_class[0] == char.profession)
@@ -936,13 +935,13 @@
                                  sortFilter(getStat(a, "cost"), getStat(b, "cost"), "dp")   * 1000 +
                                  sortFilter(getStat(a, "blockCnt"), getStat(b, "blockCnt"), "block")   * 100 +
                                  sortFilter(a.rarity, b.rarity, "rarity") * 10 +
-                                 (db.names[id(a)][lang].localeCompare(db.names[id(b)][lang])));
+                                 (db.names[getId(a)][lang].localeCompare(db.names[getId(b)][lang])));
 
         // CONSTRUCTION
         $("#selectedopclass").html(ops.map(char =>
             `<li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
-                <img src="img/avatars/${id(char)}.png">
-                <div class="name ak-font-novecento ak-center">${db.names[id(char)][lang]}</div>
+                <img src="img/avatars/${getId(char)}.png">
+                <div class="name ak-font-novecento ak-center">${db.names[getId(char)][lang]}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
                 <div class="ak-showfaction"><img src="img/factions/${char.displayLogo.toLowerCase()}.png" title="${db.campdata[char.displayLogo]}"></div>
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
