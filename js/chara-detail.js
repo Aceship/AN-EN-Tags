@@ -734,6 +734,21 @@
         }
     }
 
+    function collapse(el) {
+        $(el).toggleClass("collapsible-closed collapsible-open");
+        $(el).children("div").toggleClass("fa-angle-down fa-angle-up");
+
+        let target = $(`#${$(el).attr("target")}`);
+        let size = target[0].scrollHeight;
+        let delay = 200 / size;
+
+        if ($(el).hasClass("collapsible-open")) {
+            for (i = 0; i < size; i++) setTimeout((i) => target.css("max-height", `${i}px`), delay * i, i);
+        } else {
+            for (i = 0; i < size; i++) setTimeout((i) => target.css("max-height",`${size - i}px`), delay * i, i);
+        }
+    }
+
     function getSubclassHtml(btn) {
         function subclassHtml(data_id, data_name) {
             return `<div class="btn btn-secondary btn-sm my-1 op-subclass" onclick="toggleBtn(this)" section="subclass" data-id="${data_id}">${data_name}</div>`
