@@ -779,14 +779,14 @@
 
         if (exclusive) $(`.op-${section}`).removeClass("btn-primary").addClass("btn-secondary");
         $(el).toggleClass("btn-secondary btn-primary");
-        if ($(el).hasClass("op-class")) $("#subclass-container").html($(".op-class.btn-primary").map((_, btn) => getSubclassHtml(btn)).get().join(""));
+        if ($(el).hasClass("op-class")) actualizeSubclass();
 
         actualizeFilter();
     }
 
     function clearFilter(cls) {
         $(cls).removeClass("btn-primary").addClass("btn-secondary");
-        if (cls.includes(".op-class")) $("#subclass-container").html($(".op-class.btn-primary").map((_, btn) => getSubclassHtml(btn)).get().join(""));
+        if (cls.includes(".op-class")) actualizeSubclass();
 
         actualizeFilter();
     }
