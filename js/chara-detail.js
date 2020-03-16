@@ -803,6 +803,24 @@
         actualizeFilter();
     }
 
+    function resetSorting() {
+        $("#sort-atk").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-def").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-hp").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-dp").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-block").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-rarity").removeClass("btn-disabled").addClass("btn-enabled");
+
+        $("#order-atk").removeClass("sort-asc").addClass("sort-desc");
+        $("#order-def").removeClass("sort-asc").addClass("sort-desc");
+        $("#order-hp").removeClass("sort-asc").addClass("sort-desc");
+        $("#order-dp").removeClass("sort-asc").addClass("sort-desc");
+        $("#order-block").removeClass("sort-asc").addClass("sort-desc");
+        $("#order-rarity").removeClass("sort-asc").addClass("sort-desc");
+
+        actualizeFilter();
+    }
+
     // can't use array methods without discarding id and id isn't stored right inside char *sigh*
     function id(char) {
         return char.phases[0].characterPrefabKey;
