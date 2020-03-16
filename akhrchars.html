@@ -31,6 +31,56 @@
               $('#nav-placeholder').load('nav.html');
             });
      </script>
+     <style>
+        td {
+            margin: 0;
+            padding: 0;
+        }
+        .btn-sort {
+            display: block;
+            padding: 2px 5px;
+            margin: 2px;
+            color: white;
+            float: left;
+        }
+        .sort-asc {
+            background-image: url("https://www.flaticon.com/premium-icon/icons/svg/1484/1484682.svg");
+            background-repeat: no-repeat;
+            background-size: 20px;
+            height: 20px;
+            width: 20px;
+            margin-left: 5px;
+        }
+        .sort-desc {
+            background-image: url("https://www.flaticon.com/premium-icon/icons/svg/1484/1484683.svg");
+            background-repeat: no-repeat;
+            background-size: 20px;
+            height: 20px;
+            width: 20px;
+            margin-left: 5px;
+        }
+        .btn-disabled {
+            opacity: 0.5;
+        }
+        .btn-clear {
+            color: white;
+            font-weight: bold;
+            margin-left: 10px;
+            padding: 2px;
+            border-radius: 2px;
+        }
+        .filter-name {
+            color: white;
+            margin-right: 10px;
+            float: left;
+        }
+        .filter-exclusive {
+            background-color: brown;
+        }
+        .filter-nonexclusive {
+            background-color: darkblue;
+        }
+     </style>
 </head>
 <body  >
     <!-- style=' background-image: url(./img/extra/bg1.png)' -->
@@ -53,51 +103,101 @@
                     <button type='button' style='color:white;' class='close' data-dismiss='modal'>&times;</button>
                 </div>
                 <div class='modal-body'>
-                    <a class='nav-link' style="height:23px;text-align: center;" id='all-op'  href='#allops' data-opclass=''>
-                            <div>All</div>
-                        </a>
-                    <ul class='nav nav-pills nav-justified' id='classlist'>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#casterops' data-opclass='CASTER'>
-                                <img width='50' src='img/classes/class_caster.png'>
-                            </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#guardops' data-opclass='WARRIOR'>
-                                <img width='50' src='img/classes/class_guard.png'>
-                            </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#medicops' data-opclass='MEDIC'>
-                                <img width='50' src='img/classes/class_medic.png'>
-                            </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#sniperops' data-opclass='SNIPER'>
-                                <img width='50' src='img/classes/class_sniper.png'>
-                            </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#specialistops' data-opclass='SPECIAL'>
-                                <img width='50' src='img/classes/class_specialist.png'>
-                            </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#supportops' data-opclass='SUPPORT'>
-                                <img width='50' src='img/classes/class_supporter.png'>
-                            </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#tankops' data-opclass='TANK'>
-                                <img width='50' src='img/classes/class_defender.png'>
-                            </a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' data-toggle='tab' href='#vanguardops' data-opclass='PIONEER'>
-                                <img width='50' src='img/classes/class_vanguard.png'>
-                            </a>
-                        </li>
-                    </ul>
+                    <table style="margin-left: -7px">
+                        <tr>
+                            <td><div id="filter-name-class" class="btn filter-name filter-exclusive" onclick="toggleExclusive(this)">Class</div></td>
+                            <td><table><tr></tr>
+                                <td><div class="op-class btn-secondary" data-id="CASTER" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_caster.png'></div></td>
+                                <td><div class="op-class btn-secondary" data-id="WARRIOR" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_guard.png'></div></td>
+                                <td><div class="op-class btn-secondary" data-id="MEDIC" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_medic.png'></div></td>
+                                <td><div class="op-class btn-secondary" data-id="SNIPER" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_sniper.png'></div></td>
+                                <td><div class="op-class btn-secondary" data-id="SPECIAL" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_specialist.png'></div></td>
+                                <td><div class="op-class btn-secondary" data-id="SUPPORT" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_supporter.png'></div></td>
+                                <td><div class="op-class btn-secondary" data-id="TANK" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_defender.png'></div></td>
+                                <td><div class="op-class btn-secondary" data-id="PIONEER" section="class" onclick="toggleBtn(this)"><img width='40' src='img/classes/class_vanguard.png'></div></td>
+                                </tr></table></td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-class" onclick="clearFilter('.op-class, .op-subclass')">Clear</div></td>
+                        </tr>
+                        <tr style="height: 10px;"></tr>
+                        <tr>
+                            <td><div id="filter-name-subclass" class="btn filter-name filter-exclusive" onclick="toggleExclusive(this)">Subclass</div></td>
+                            <td id="subclass-container"></td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-subclass" onclick="clearFilter('.op-subclass')">Clear</div></td>
+                        </tr>
+                        <tr style="height: 10px;"></tr>
+                        <tr>
+                            <td><div id="filter-name-tag" class="btn filter-name filter-exclusive" onclick="toggleExclusive(this)">Tags</div></td>
+                            <td>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Melee"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Ranged"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Healing"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Support"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="DPS"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="AoE"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Slow"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Survival"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Defense"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Debuff"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Shift"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Crowd Control"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Nuker"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Summon"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Fast-Redeploy"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="DP-Recovery"></div>
+                                <div class="btn btn-secondary btn-sm my-1 op-tag" onclick="toggleBtn(this)" data-id="Robot"></div>
+                            </td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-tag" onclick="clearFilter('.op-tag')">Clear</div></td>
+                        </tr>
+                        <tr style="height: 10px;"></tr>
+                        <tr>
+                            <td><div class="filter-name" style="padding: .375rem .75rem; background-color: black; border-radius: .25rem;">Filter</div></td>
+                            <td>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-atk" onclick="switchState(this)">ATK<div class="btn btn-sm sort-desc" id="order-atk" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-def" onclick="switchState(this)">DEF<div class="btn sort-desc" id="order-def" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-hp" onclick="switchState(this)">HP<div class="btn sort-desc" id="order-hp" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-dp" onclick="switchState(this)">DP COST<div class="btn sort-desc" id="order-dp" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-block" onclick="switchState(this)">BLOCK COUNT<div class="btn sort-desc" id="order-block" onclick="invertSort(this)"></div></div>
+                                <div class="btn btn-secondary btn-sm my-1 btn-enabled btn-sort" id="sort-rarity" onclick="switchState(this)">RARITY<div class="btn sort-desc" id="order-rarity" onclick="invertSort(this)"></div></div>
+                            </td>
+                            <td><div class="btn btn-danger btn-clear" onclick="resetSorting()">Reset</div></td>
+                        </tr>
+                        <tr style="height: 10px;"></tr>
+                        <tr>
+                            <td><div id="filter-name-faction" class="btn filter-name filter-nonexclusive" onclick="toggleExclusive(this)">Factions</div></td>
+                            <td><table><tr>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_BLACKSTEEL" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_blacksteel.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_VICTORIA" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_victoria.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_SIESTA" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_siesta.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_KAZIMIERZ" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_kazimierz.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_RHINE" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_rhine.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_PENGUIN" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_penguin.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_REUNION" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_reunion.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_RHODES" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_rhodes.png'></div></td>
+                                </tr><tr>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_ABYSSAL" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_abyssal.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_KJERAG" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_kjerag.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_URSUS" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_ursus.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_LUNGMEN" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_lungmen.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_YAN" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_yan.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_LATERANO" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_laterano.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_LEITHANIEN" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_leithanien.png'></div></td>
+                                <td><div class="op-faction btn-secondary" data-id="LOGO_RIM" onclick="toggleBtn(this)" section="faction"><img width='40' src='img/factions/logo_rim.png'></div></td>
+                            </tr></table></td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-faction" onclick="clearFilter('.op-faction')">Clear</div></td>
+                        </tr>
+                        <tr style="height: 10px;"></tr>
+                        <tr>
+                            <td><div id="filter-name-skill" class="btn filter-exclusive filter-name" onclick="toggleExclusive(this)">Skill type</div></td>
+                            <td>
+                                <div class="btn btn-secondary btn-sm my-1 op-skill" section="skill" onclick="toggleBtn(this)" data-id=1>Per second</div>
+                                <div class="btn btn-secondary btn-sm my-1 op-skill" section="skill" onclick="toggleBtn(this)" data-id=2>Attacking Enemy</div>
+                                <div class="btn btn-secondary btn-sm my-1 op-skill" section="skill" onclick="toggleBtn(this)" data-id=4>Getting Hit</div>
+                                <div class="btn btn-secondary btn-sm my-1 op-skill" section="skill" onclick="toggleBtn(this)" data-id=8>Always On</div>
+                            </td>
+                            <td><div class="btn btn-danger btn-clear" id="clear-filter-skill" onclick="clearFilter('.op-skill')">Clear</div></td>
+                        </tr>
+                    </table>
+                    <br />
                     <div class='tab-content'>
                         <ul id='selectedopclass' style='padding-left: 0px;margin: auto;padding: auto;text-align: center;'>
                             <!-- Operators of the selected class goes here -->
@@ -109,6 +209,17 @@
                             </li> -->
                         </ul>
                     </div>
+                    <br />
+                    <table>
+                        <tr style="color: white"><td><span style="background-color: brown; font-weight: bold; padding: 5px; border-radius: 2px;">Exclusive</span></td><td style="width: 5px;"></td><td>All the criteria must match in a section</td></tr>
+                        <tr style="color: white"><td><span style="background-color: darkblue; font-weight: bold; padding: 5px; border-radius: 2px;">Non-exclusive</span></td><td style="width: 5px"></td><td> Any criterion can match in a section</td></tr>
+                    </table>
+                    <br />
+                    <span style="color: white">Click on the button to switch bewteen
+                        <span style="background-color: brown; font-weight: bold; padding: 5px; border-radius: 2px;">Exclusive</span><br />and
+                        <span style="background-color: darkblue; font-weight: bold; padding: 5px; border-radius: 2px;">Non-exclusive</span>
+                    </span>
+                    <br />
                 </div>
             </div>
         </div>
