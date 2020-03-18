@@ -368,13 +368,68 @@
         var opdata = query(db.chars2, "name_cn", db.chars[id].name);
         let name = `${opdata[`name_${lang}`]} E${level}`;
 
-        $("#selectops-container").append(`<li><div style="display: block; padding:2px;"> ${name} ` +
-                                         `<a type="button" class="btn btn-sm my-1 btn-danger" ` +
-                                         ` op-id="${key}" ` +
-                                         `onclick="rmOperator(this)">X</div></li>`);
+        $("#selectops-container").append(`<li><div style="display: block; padding:2px;"
+                                          op-id="${key}"
+                                          onmouseover="reqmatsShow(this)"
+                                          onmouseout="reqmatsHide(this)"><span> ${name} </span>
+                                          <a type="button" class="btn btn-sm my-1 btn-danger"
+                                          onclick="rmOperator(this)">X</div></li>`);
 
         localStorage.setItem("chosenOps", JSON.stringify(Object.keys(chosen_ops)));
     }
+
+    // Walk through the DOM tree and execute "func" on each node
+    function walkTree(el, func) {
+        func(el);
+        $(el).children().each((_, e) => walkTree(e, func));
+    }
+
+    function reqmatsShow(el) {
+        let name = $(el).children("span").text();
+        let key = $(el).attr("op-id");
+
+        let level = key.slice(-1);
+        let id = key.slice(0, -1);
+
+        let char = db.chars[id];
+        let gold = [{"id": "4001",
+                     "count": db.dataconst["evolveGoldCost"][char.rarity][level - 1],
+                     "type": "GOLD"}];
+
+        if (gold[0].count > 0) {
+            var required_mats = (typeof char.phases[level] === "undefined") ?
+                                gold : gold.concat(char.phases[level].evolveCost);
+        }
+
+        $(el).parent().after(`<div id="floating-reqmats-container" style="position: absolute;">
+                                  <div class="requiredmats-box"
+                                       style="background-color: #444; border: solid black 2px; border-radius: 5px;">
+                                      <div style="text-align: center; font-weight: bold; background-color: #222;">${name}</div>
+                                      <div class="reqmats-container"; style="padding: 0 2px 0 10px;">${required_mats.map(mat => CreateMaterial(mat.id, mat.count)).join("")}</div>
+                                  </div>
+                                  <div id="floating-reqmats-arrow"></div>
+                              </div>`);
+
+        let self = $("#floating-reqmats-container");
+        let width = self.width();
+        let height = self.height();
+        let position = $(el).position();
+
+        // allow div to go off-screen and avoid frame flickering
+        self.css("min-width", `${width}px`);
+
+        /*  without rewriting top and left, frame position would be :
+         *      - top:  $(el).position().top + $(el).height()
+         *      - left: $(el).position().left */
+        self.css("top", `${position.top - height - 10}px`);
+        self.css("left", `${position.left + $(el).width()/2 - width/2}px`);
+
+        walkTree("#floating-reqmats-container", (e) => $(e).css("z-index", 9001));
+    }
+
+    function reqmatsHide() {
+        $("#floating-reqmats-container").remove();
+    } 
 
     function addCurrentOperator() {
         let id = localStorage.selectedOP;
@@ -389,7 +444,7 @@
     }
 
     function rmOperator(el) {
-        delete chosen_ops[$(el).attr("op-id")];
+        delete chosen_ops[$(el).parent().attr("op-id")];
 
         // remove button -> div -> li
         $(el).parent().parent().remove();
