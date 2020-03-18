@@ -368,7 +368,7 @@
         var opdata = query(db.chars2, "name_cn", db.chars[id].name);
         let name = `${opdata[`name_${lang}`]} E${level}`;
 
-        $("#selectops-container").append(`<li><div style="display: block; padding:2px;"
+        $("#selectops-container").append(`<li><div style="display: block; padding:2px; z-index: 10000"
                                           op-id="${key}"
                                           onmouseover="reqmatsShow(this)"
                                           onmouseout="reqmatsHide(this)"><span> ${name} </span>
