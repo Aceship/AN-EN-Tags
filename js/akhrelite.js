@@ -403,7 +403,7 @@
 
         $(el).parent().after(`<div id="floating-reqmats-container" style="position: absolute;">
                                   <div class="requiredmats-box"
-                                       style="background-color: #444; border: solid black 2px; border-radius: 5px;">
+                                       style="background-color: #555; border: solid black 2px; border-radius: 2px;">
                                       <div style="text-align: center; font-weight: bold; background-color: #222;">${name}</div>
                                       <div class="reqmats-container"; style="padding: 0 2px 0 10px;">${required_mats.map(mat => CreateMaterial(mat.id, mat.count)).join("")}</div>
                                   </div>
