@@ -499,6 +499,7 @@
             console.log(window.location.pathname)
         }
 
+        $(".op-gender").each((_, btn) => $(btn).text(db.gender[$(btn).attr("data-id")][`sex_${lang}`]));
         $(".op-tag").each((_, btn) => $(btn).text(db.ktags[$(btn).attr("data-id")][lang]));
     });
 
@@ -907,18 +908,21 @@
 
         let op_class = $(".op-class.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
         let op_subclass = $(".op-subclass.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
+        let op_gender = $(".op-gender.btn-primary").map((_, btn) => db.gender[$(btn).attr("data-id")]["sex_cn"]).get();
         let op_tag = $(".op-tag.btn-primary").map((_, btn) => db.ktags[$(btn).attr("data-id")]["cn"]).get();
         let op_faction = $(".op-faction.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
         let op_skill = $(".op-skill.btn-primary").map((_, btn) => parseInt($(btn).attr("data-id"))).get();
 
         let exclusive_class = $("#filter-name-class").hasClass("filter-exclusive");
         let exclusive_subclass = $("#filter-name-subclass").hasClass("filter-exclusive");
+        let exclusive_gender = $("#filter-name-gender").hasClass("filter-exclusive");
         let exclusive_tag = $("#filter-name-tag").hasClass("filter-exclusive");
         let exclusive_faction = $("#filter-name-faction").hasClass("filter-exclusive");
         let exclusive_skill = $("#filter-name-skill").hasClass("filter-exclusive");
 
         if (op_class.length == 0 &&
             op_subclass.length == 0 &&
+            op_gender.length == 0 &&
             op_tag.length == 0 &&
             op_faction.length == 0 &&
             op_skill.length == 0) return;
@@ -931,6 +935,9 @@
                                                    : ops.filter(char => op_class.includes(char.profession));
         if (op_subclass.length) ops = exclusive_subclass ? ops.filter(char => op_subclass[0] == getSubclass(char))
                                                          : ops.filter(char => op_subclass.includes(getSubclass(char)));
+        // using query in a lambda is really awful. "sex" should be in chars, not chars2
+        if (op_gender.length) ops = exclusive_gender ? ops.filter(char => op_gender[0] == query(db.chars2, "name_cn", char.name).sex)
+                                                     : ops.filter(char => op_gender.includes(query(db.chars2, "name_cn", char.name).sex));
         if (op_tag.length) ops = exclusive_tag ? ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length == op_tag.length)
                                                : ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length > 0);
         if (op_faction.length) ops = exclusive_faction ? ops.filter(char => op_faction[0] == char.displayLogo.toUpperCase())
