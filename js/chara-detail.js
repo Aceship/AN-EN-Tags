@@ -752,7 +752,7 @@
 
     function getSubclassHtml(btn) {
         function subclassHtml(data_id, data_name) {
-            return `<div class="btn btn-secondary btn-sm my-1 op-subclass" onclick="toggleBtn(this)" section="subclass" data-id="${data_id}">${data_name}</div>`
+            return `<div class="btn btn-secondary btn-sm my-1 op-subclass filter-btn-s" onclick="toggleBtn(this)" section="subclass" data-id="${data_id}">${data_name}</div>`
         }
 
         switch ($(btn).attr("data-id"))
@@ -766,9 +766,9 @@
             case "SNIPER":      // SNIPER (ST, AOE)
                 return `${subclassHtml("SNIPER-ST", "ST Sniper")}${subclassHtml("SNIPER-AOE", "AoE Sniper")}`;
             case "SPECIAL":     // SPECIALIST (PUSH, PULL, QUICK-REDEPLOY, SPIKE)
-                return `${subclassHtml("SPECIAL-REDEPLOY", "Quick Redeployement")}${subclassHtml("SPECIAL-PUSH", "Push Specialist")}${subclassHtml("SPECIAL-PULL", "Pull Specialist")}${subclassHtml("SPECIAL-SPIKES", "Spikes Specialist")}`;
+                return `${subclassHtml("SPECIAL-REDEPLOY", "Fast-Redeploy")}${subclassHtml("SPECIAL-PUSH", "Push Specialist")}${subclassHtml("SPECIAL-PULL", "Pull Specialist")}${subclassHtml("SPECIAL-SPIKES", "Spikes Specialist")}`;
             case "SUPPORT":     // SUPPORTER (SLOW, SUMMON, DEBUFF, BUFF)
-                return `${subclassHtml("SUPPORT-SLOW", "Retarder")}${subclassHtml("SUPPORT-SUMMON", "Summoner")}${subclassHtml("SUPPORT-DEBUFF", "Debuffer")}${subclassHtml("SUPPORT-BUFF", "Buffer")}`;
+                return `${subclassHtml("SUPPORT-SLOW", "Slow")}${subclassHtml("SUPPORT-SUMMON", "Summoner")}${subclassHtml("SUPPORT-DEBUFF", "Debuffer")}${subclassHtml("SUPPORT-BUFF", "Buffer")}`;
             case "TANK":        // DEFENDER (NORMAL, HEALING)
                 return `${subclassHtml("DEFENDER-NORMAL", "Defender")}${subclassHtml("DEFENDER-HEALING", "Healing Defender")}`;
             case "PIONEER":     // VANGUARD (DP ON TIME, DP ON KILL, NO DP)
