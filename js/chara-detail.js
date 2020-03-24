@@ -38,6 +38,8 @@
         classes         :"./json/tl-type.json",
         chars2          :"./json/tl-akhr.json",
         gender          :"./json/tl-gender.json",
+        names           :"./json/tl-char.json",
+        ktags           :"./json/tl-tags-key.json",
 
         //jet TL
         riic            :"./json/ace/riic.json",
@@ -333,6 +335,8 @@
         $('#opname').click(function(event){
             event.stopPropagation();
         });
+        $(".fa-sort-amount-up").click(event => event.stopPropagation());
+        $(".fa-sort-amount-down").click(event => event.stopPropagation());
         $('#lefthandtoggle').click(function(event){
             if(lefthand=="true")
                 lefthand = "false"
@@ -494,6 +498,9 @@
         window.onhashchange = function() {
             console.log(window.location.pathname)
         }
+
+        $(".op-gender").each((_, btn) => $(btn).text(db.gender[$(btn).attr("data-id")][`sex_${lang}`]));
+        $(".op-tag").each((_, btn) => $(btn).text(db.ktags[$(btn).attr("data-id")][lang]));
     });
 
     $.getScript("js/arrive.min.js", function(){
@@ -727,6 +734,243 @@
             $('#operatorsResult').hide();
         }
     }
+
+    function collapse(el) {
+        $(el).toggleClass("collapsible-closed collapsible-open");
+        $(el).children("div").toggleClass("fa-angle-down fa-angle-up");
+
+        let target = $(`#${$(el).attr("target")}`);
+        let size = target[0].scrollHeight;
+        let delay = 200 / size;
+
+        if ($(el).hasClass("collapsible-open")) {
+            for (i = 0; i < size; i++) setTimeout((i) => target.css("max-height", `${i}px`), delay * i, i);
+        } else {
+            for (i = 0; i < size; i++) setTimeout((i) => target.css("max-height",`${size - i}px`), delay * i, i);
+        }
+    }
+
+    function getSubclassHtml(btn) {
+        function subclassHtml(data_id, data_name) {
+            return `<div class="btn btn-secondary btn-sm my-1 op-subclass filter-btn-s" onclick="toggleBtn(this)" section="subclass" data-id="${data_id}">${data_name}</div>`
+        }
+
+        switch ($(btn).attr("data-id"))
+        {
+            case "CASTER":      // CASTER (ST, AOE)
+                return `${subclassHtml("CASTER-ST", "ST Caster")}${subclassHtml("CASTER-AOE", "AoE Caster")}`;
+            case "WARRIOR":     // GUARD (ST, AOE, RANGED)
+                return `${subclassHtml("GUARD-ST", "ST Guard")}${subclassHtml("GUARD-AOE", "AoE Guard")}${subclassHtml("GUARD-RANGED", "Ranged Guard")}`;
+            case "MEDIC":       // MEDIC (ST, AOE)
+                return `${subclassHtml("MEDIC-ST", "ST Medic")}${subclassHtml("MEDIC-AOE", "AoE Medic")}`;
+            case "SNIPER":      // SNIPER (ST, AOE)
+                return `${subclassHtml("SNIPER-ST", "ST Sniper")}${subclassHtml("SNIPER-AOE", "AoE Sniper")}`;
+            case "SPECIAL":     // SPECIALIST (PUSH, PULL, QUICK-REDEPLOY, SPIKE)
+                return `${subclassHtml("SPECIAL-REDEPLOY", "Fast-Redeploy")}${subclassHtml("SPECIAL-PUSH", "Push Specialist")}${subclassHtml("SPECIAL-PULL", "Pull Specialist")}${subclassHtml("SPECIAL-SPIKES", "Spikes Specialist")}`;
+            case "SUPPORT":     // SUPPORTER (SLOW, SUMMON, DEBUFF, BUFF)
+                return `${subclassHtml("SUPPORT-SLOW", "Slow")}${subclassHtml("SUPPORT-SUMMON", "Summoner")}${subclassHtml("SUPPORT-DEBUFF", "Debuffer")}${subclassHtml("SUPPORT-BUFF", "Buffer")}`;
+            case "TANK":        // DEFENDER (NORMAL, HEALING)
+                return `${subclassHtml("DEFENDER-NORMAL", "Defender")}${subclassHtml("DEFENDER-HEALING", "Healing Defender")}`;
+            case "PIONEER":     // VANGUARD (DP ON TIME, DP ON KILL, NO DP)
+                return `${subclassHtml("VANGUARD-DP-KILL", "DP on kill")}${subclassHtml("VANGUARD-DP-TIME", "DP on time")}${subclassHtml("VANGUARD-NO-DP", "No DP")}`;
+        }
+    }
+
+    function actualizeSubclass() {
+        $("#subclass-container").html($(".op-class.btn-primary").map((_, btn) => getSubclassHtml(btn)).get().join(""));
+    }
+
+    function toggleExclusive(el) {
+        $(el).toggleClass("filter-exclusive filter-nonexclusive");
+        clearFilter($(`#clear-filter-${$(el).attr("id").slice(12)}`).attr("clear-data"));
+        if ($(el).attr("id") == "filter-name-class") actualizeSubclass();
+
+        actualizeFilter();
+    }
+
+    function toggleBtn(el) {
+        let section = $(el).attr("section");
+        let exclusive = section && $(el).hasClass("btn-secondary") && $(`#filter-name-${section}`).hasClass("filter-exclusive");
+
+        if (exclusive) $(`.op-${section}`).removeClass("btn-primary").addClass("btn-secondary");
+        $(el).toggleClass("btn-secondary btn-primary");
+        if ($(el).hasClass("op-class")) actualizeSubclass();
+
+        actualizeFilter();
+    }
+
+    function clearFilter(cls) {
+        $(cls).removeClass("btn-primary").addClass("btn-secondary");
+        if (cls.includes(".op-class")) actualizeSubclass();
+
+        actualizeFilter();
+    }
+
+    function switchState(el) {
+        $(el).toggleClass("btn-disabled btn-enabled");
+
+        actualizeFilter();
+    }
+
+    function invertSort(el) {
+        $(el).toggleClass("fa-sort-amount-down fa-sort-amount-up");
+
+        actualizeFilter();
+    }
+
+    function resetSorting() {
+        $("#sort-atk").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-def").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-hp").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-dp").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-block").removeClass("btn-enabled").addClass("btn-disabled");
+        $("#sort-rarity").removeClass("btn-disabled").addClass("btn-enabled");
+
+        $("#order-atk").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-def").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-hp").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-dp").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-block").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+        $("#order-rarity").removeClass("fa-sort-amount-up").addClass("fa-sort-amount-down");
+
+        actualizeFilter();
+    }
+
+    function sortFilter(val_a, val_b, stat_class) {
+        if ($(`#sort-${stat_class}`).hasClass("btn-disabled")) return 0;
+
+        return $(`#order-${stat_class}`).hasClass("fa-sort-amount-down") ? val_b - val_a : val_a - val_b;
+    }
+
+    // can't use array methods without discarding id and id isn't stored right inside char *sigh*
+    function getId(char) {
+        return char.phases[0].characterPrefabKey;
+    }
+
+    function getStat(char, stat_class) {
+        return char.phases.slice(-1)[0].attributesKeyFrames[0].data[stat_class];
+    }
+
+    function getTags(char) {
+        return char.tagList.concat(char.position == "MELEE" || char.position == "ALL" ? ["近战位"] : [],    // Melee
+                                   char.position == "RANGED" || char.position == "ALL" ? ["远程位"] : [],   // Ranged
+                                   char.rarity == 1 ? ["新手"] : [],                                        // Starter
+                                   char.rarity == 0 ? ["支援机械"] : []);                                    // Robot
+    }
+
+    function getSubclass(char) {
+        let tags = getTags(char);
+
+        /* NOTE: would like to add "sp generator", but there is not really any class
+                 it belongs to and filtering it without hardcoding seems very tricky */
+
+        switch (char.profession)
+        {
+            case "CASTER":      // CASTER (ST, AOE)
+                return tags.includes("群攻") ? "CASTER-AOE" : "CASTER-ST";
+            case "WARRIOR":     // GUARD (ST, AOE, RANGED)
+                return tags.includes("群攻") ? "GUARD-AOE" :
+                       char.phases.slice(-1)[0].rangeId.split("").filter(c => c > 1).length ? "GUARD-RANGED" :
+                       "GUARD-ST";
+            case "MEDIC":       // MEDIC (ST, AOE)
+                /*  NOTE: eh, don't really like this hack. Half hardcoded and doesn't even
+                 *        take Silence S2 and Gavial S2 into consideration */
+                return char.description == "同时恢复三个友方单位的生命" ? "MEDIC-AOE" : "MEDIC-ST";
+            case "SNIPER":      // SNIPER (ST, AOE)
+                return tags.includes("群攻") ? "SNIPER-AOE" : "SNIPER-ST";
+            case "SPECIAL":     // SPECIALIST (PUSH, PULL, FAST-REDEPLOY, SPIKE)
+                return tags.includes("快速复活") ? "SPECIAL-REDEPLOY" :
+                       // same dirty hack as above
+                       char.description == "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位" ? "SPECIAL-PUSH" : 
+                       char.description == "技能可以使敌人产生<@ba.kw>位移</>\\n可以放置于远程位" ? "SPECIAL-PULL" :
+                       "SPECIAL-SPIKES";
+            case "SUPPORT":     // SUPPORTER (SLOW, SUMMON, DEBUFF, BUFF)
+                return tags.includes("减速") ? "SUPPORT-SLOW" :
+                       tags.includes("召唤") ? "SUPPORT-SUMMON" :
+                       tags.includes("削弱") ? "SUPPORT-DEBUFF" :
+                       "SUPPORT-BUFF";
+            case "TANK":        // DEFENDER (NORMAL, HEALING)
+                return tags.includes("治疗") ? "DEFENDER-HEALING" : "DEFENDER-NORMAL";
+            case "PIONEER":     // VANGUARD (DP ON TIME, DP ON KILL, NO DP)
+                return char.trait && char.trait.candidates.filter(trait =>
+                        trait.blackboard.filter(data =>
+                            data.key == "cost").length).length ? "VANGUARD-DP-KILL" :   // DP on kill is a trait
+                       char.skills.filter(skill =>
+                            db.skills[skill.skillId].levels.filter(level =>
+                                level.blackboard.filter(data =>
+                                    data.key == "cost").length).length).length ? "VANGUARD-DP-TIME" : // DP on time is a skill
+                       "VANGUARD-NO-DP";
+        }
+    }
+
+    function actualizeFilter() {
+        $("#selectedopclass").html("");
+
+        let op_class = $(".op-class.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
+        let op_subclass = $(".op-subclass.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
+        let op_gender = $(".op-gender.btn-primary").map((_, btn) => db.gender[$(btn).attr("data-id")]["sex_cn"]).get();
+        let op_tag = $(".op-tag.btn-primary").map((_, btn) => db.ktags[$(btn).attr("data-id")]["cn"]).get();
+        let op_faction = $(".op-faction.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
+        let op_skill = $(".op-skill.btn-primary").map((_, btn) => parseInt($(btn).attr("data-id"))).get();
+
+        let exclusive_class = $("#filter-name-class").hasClass("filter-exclusive");
+        let exclusive_subclass = $("#filter-name-subclass").hasClass("filter-exclusive");
+        let exclusive_gender = $("#filter-name-gender").hasClass("filter-exclusive");
+        let exclusive_tag = $("#filter-name-tag").hasClass("filter-exclusive");
+        let exclusive_faction = $("#filter-name-faction").hasClass("filter-exclusive");
+        let exclusive_skill = $("#filter-name-skill").hasClass("filter-exclusive");
+
+        if (op_class.length == 0 &&
+            op_subclass.length == 0 &&
+            op_gender.length == 0 &&
+            op_tag.length == 0 &&
+            op_faction.length == 0 &&
+            op_skill.length == 0) return;
+
+        // EXTRACTION
+        let ops = Object.values(db.chars).filter(char => char.profession != "TOKEN" && char.profession != "TRAP");
+
+        // FILTERING
+        if (op_class.length) ops = exclusive_class ? ops.filter(char => op_class[0] == char.profession)
+                                                   : ops.filter(char => op_class.includes(char.profession));
+        if (op_subclass.length) ops = exclusive_subclass ? ops.filter(char => op_subclass[0] == getSubclass(char))
+                                                         : ops.filter(char => op_subclass.includes(getSubclass(char)));
+        // using query in a lambda is really awful. "sex" should be in chars, not chars2
+        if (op_gender.length) ops = exclusive_gender ? ops.filter(char => op_gender[0] == query(db.chars2, "name_cn", char.name).sex)
+                                                     : ops.filter(char => op_gender.includes(query(db.chars2, "name_cn", char.name).sex));
+        if (op_tag.length) ops = exclusive_tag ? ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length == op_tag.length)
+                                               : ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length > 0);
+        if (op_faction.length) ops = exclusive_faction ? ops.filter(char => op_faction[0] == char.displayLogo.toUpperCase())
+                                                       : ops.filter(char => op_faction.includes(char.displayLogo.toUpperCase()));
+        if (op_skill.length) ops = exclusive_skill ? ops.filter(char =>
+                                                        char.skills.filter(skill =>
+                                                            db.skills[skill.skillId].levels.filter(sp =>
+                                                                op_skill[0] == sp.spData.spType).length).length)
+                                                   : ops.filter(char =>
+                                                        char.skills.filter(skill =>
+                                                            db.skills[skill.skillId].levels.filter(sp =>
+                                                                op_skill.includes(sp.spData.spType)).length).length);
+
+        // SORTING
+        ops = ops.sort((a, b) => sortFilter(getStat(a, "atk"), getStat(b, "atk"), "atk")    * 100000 * 10000 * 1000 + // def is never more than 1 000
+                                 sortFilter(getStat(a, "def"), getStat(b, "def"), "def")    * 100000 * 10000 +        // maxHp is never more than 10 000
+                                 sortFilter(getStat(a, "maxHp"), getStat(b, "maxHp"), "hp") * 100000 +                // dp cost is never more than 100
+                                 sortFilter(getStat(a, "cost"), getStat(b, "cost"), "dp")   * 1000 +
+                                 sortFilter(getStat(a, "blockCnt"), getStat(b, "blockCnt"), "block")   * 100 +
+                                 sortFilter(a.rarity, b.rarity, "rarity") * 10 +
+                                 (db.names[getId(a)][lang].localeCompare(db.names[getId(b)][lang])));
+
+        // CONSTRUCTION
+        $("#selectedopclass").html(ops.map(char =>
+            `<li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
+                <img src="img/avatars/${getId(char)}.png">
+                <div class="name ak-font-novecento ak-center">${db.names[getId(char)][lang]}</div>
+                <div class='ak-rare-${char.rarity + 1}'></div>
+                <div class="ak-showfaction"><img src="img/factions/${char.displayLogo.toLowerCase()}.png" title="${db.campdata[char.displayLogo]}"></div>
+                <div class="grid-box op-rarity-${char.rarity + 1}"></div>
+            </li>`).join(""));
+    }
+
     function openOPZOOMmodal(){
         $('#opzoom').modal();
         $('#charazoom').css("margin","auto")
@@ -3086,15 +3330,14 @@
         lang = localStorage.webLang;
 
         $('#display-reg').text(reg.toUpperCase())
-        
+
         switch (lang) {
             case "en":$('#display-lang').text("English");break;
             case "cn":$('#display-lang').text("Chinese");break;
             case "jp":$('#display-lang').text("Japanese");break;
+            case "kr": $("#display-lang").text("Korean"); break;
         }
         
-        localStorage.setItem("gameRegion", reg);
-        localStorage.setItem("webLang", lang);
         getJSONdata("ui",function(data){
             if(data.length != 0){
                 $.each(data, function(i,text){
@@ -3102,6 +3345,8 @@
                 });
             }
         });
+
+        $(".op-tag").each((_, btn) => $(btn).text(db.ktags[$(btn).attr("data-id")][lang]));
     }
 
     function getJSONdata(type, callback){
