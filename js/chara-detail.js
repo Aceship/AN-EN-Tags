@@ -38,7 +38,7 @@
         classes         :"./json/tl-type.json",
         chars2          :"./json/tl-akhr.json",
         gender          :"./json/tl-gender.json",
-        names           :"./json/tl-char.json",
+        // names           :"./json/tl-char.json",
         ktags           :"./json/tl-tags-key.json",
 
         //jet TL
@@ -958,17 +958,19 @@
                                  sortFilter(getStat(a, "cost"), getStat(b, "cost"), "dp")   * 1000 +
                                  sortFilter(getStat(a, "blockCnt"), getStat(b, "blockCnt"), "block")   * 100 +
                                  sortFilter(a.rarity, b.rarity, "rarity") * 10 +
-                                 (db.names[getId(a)][lang].localeCompare(db.names[getId(b)][lang])));
+                                //  (db.names[getId(a)][lang].localeCompare(db.names[getId(b)][lang]))
+                                 (b.appellation>a.appellation?-1 :+1)
+                                 );
 
         // CONSTRUCTION
         $("#selectedopclass").html(ops.map(char =>
             `<li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
                 <img src="img/avatars/${getId(char)}.png">
-                <div class="name ak-font-novecento ak-center">${db.names[getId(char)][lang]}</div>
+                <div class="name ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
                 <div class="ak-showfaction"><img src="img/factions/${char.displayLogo.toLowerCase()}.png" title="${db.campdata[char.displayLogo]}"></div>
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
-            </li>`).join(""));
+            </li>`).join(" "));
     }
 
     function openOPZOOMmodal(){
