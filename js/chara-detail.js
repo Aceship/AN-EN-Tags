@@ -24,6 +24,7 @@
         attacktype      :"./json/tl-attacktype.json",
         animlist        :"./json/ace/animlist.json",
         effect          :"./json/tl-effect.json",
+        subclass        :"./json/subclass.json",
 
         //TL
         voicelineTL     :"./json/tl-voiceline.json",
@@ -861,6 +862,20 @@
     function getSubclass(char) {
         let tags = getTags(char);
 
+
+        //Handpicked subclass check 
+        let sub = db.subclass[char.profession]
+        
+        if(sub){
+            var subclasses = []
+            $.each(sub,function(key,v){
+                if(char.appellation==v)subclasses.push(key)
+            })
+            if(subclasses.length>0)return subclasses
+        }
+
+
+        //Automatic subclass check
         /* NOTE: would like to add "sp generator", but there is not really any class
                  it belongs to and filtering it without hardcoding seems very tricky */
 
@@ -933,8 +948,22 @@
         // FILTERING
         if (op_class.length) ops = exclusive_class ? ops.filter(char => op_class[0] == char.profession)
                                                    : ops.filter(char => op_class.includes(char.profession));
-        if (op_subclass.length) ops = exclusive_subclass ? ops.filter(char => op_subclass[0] == getSubclass(char))
-                                                         : ops.filter(char => op_subclass.includes(getSubclass(char)));
+        if (op_subclass.length) ops = ops.filter(char => {
+            //add support for multiple subclass per operator 
+
+            var checksubclass = getSubclass(char)
+            if(Array.isArray(checksubclass)){
+                console.log(op_subclass)
+                console.log(checksubclass)
+                var exist = false
+                $.each(op_subclass,function(key,v){
+                    if(checksubclass.includes(v)) exist = true
+                })
+                return exist
+            }else{
+                return op_subclass.includes(checksubclass)
+            }
+        });
         // using query in a lambda is really awful. "sex" should be in chars, not chars2
         if (op_gender.length) ops = exclusive_gender ? ops.filter(char => op_gender[0] == query(db.chars2, "name_cn", char.name).sex)
                                                      : ops.filter(char => op_gender.includes(query(db.chars2, "name_cn", char.name).sex));
