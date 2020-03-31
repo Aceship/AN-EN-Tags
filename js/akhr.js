@@ -160,15 +160,8 @@
                 console.log("Show Class: ");
                 console.log(localStorage.showClass);
                 
-                $(".imagesizeselect").each(function(_,el){
-                    let size = localStorage.size;
-                    $("#selectedImageSize").html(localStorage.size);
-                    if($(el).attr("title") == size){
-                        $("<span> <<</span>").appendTo(el);
-                    } else {
-                        $(el).html($(el).attr("title"));
-                    }
-                });
+                var size = JSON.parse(localStorage.getItem('size'));
+                updateImageSizeDropdownList(size);
 
                 $(document).on("click", ".btn-name", function () {
                     if(localStorage.getItem('showName') == 'false'){
@@ -188,7 +181,7 @@
                     console.log("Show Class: ");
                     console.log(localStorage.getItem('showClass'));
                 })
-                $(document).on("click", ".btn-image", function () {
+                $(document).on("click", ".btn-image:not(.disabled)", function () {
                     if(localStorage.getItem('showImage') == 'false'){
                         localStorage.showImage = 'true';
                     } else {
@@ -343,18 +336,23 @@
             localStorage.lastChar = ""
         }
 
-        function changeImageSize(el){
-            localStorage.size = parseInt($(el).attr('title'));
-            // console.log("image size = "+localStorage.size);
-            $("#selectedImageSize").html(localStorage.size);
-            $(".imagesizeselect").each(function(){
-                let size = localStorage.size;
-                if($(this).attr("title") == size){
-                    $("<span> <<</span>").appendTo(this);
+        function updateImageSizeDropdownList(size) {
+            size = parseInt(size);
+            $("#selectedImageSize").text(size);
+            $(".imagesizeselect").each(function() {
+                var itemSize = parseInt($(this).attr("title"));
+                if(itemSize === size) {
+                    $(this).addClass("active");
                 } else {
-                    $(this).html($(this).attr("title"));
+                    $(this).removeClass("active");
                 }
             });
+            localStorage.size = size;
+        }
+
+        function changeImageSize(el){
+            let size = $(el).attr('title');
+            updateImageSizeDropdownList(size);
             refresh();
         }
 
