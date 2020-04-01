@@ -1232,8 +1232,12 @@
             }
 
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
-            $("#op-nameTL").html(opdata['name_'+lang]);
-            $("#op-nameREG").html("["+opdata['name_'+reg]+"]");
+            // $("#op-nameTL").html(opdata['name_'+lang]);
+            // $("#op-nameREG").html("["+opdata['name_'+reg]+"]");
+
+            $("#op-nameTL").html(opdataFull.appellation);
+            $("#op-nameREG").html("["+opdataFull.name+"]");
+
             $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]} | ${opdataFull.id.split("_")[2]}`)
             if(unreadable){
                 $("#op-nameRead").html(`[ ${unreadable} ]`);
