@@ -1768,8 +1768,9 @@
                                 switch (infoTitle[2]) {
                                     case "代号": content = opdataFull.appellation;break;
                                     case "性别":
-                                    // console.log(content)
+                                    console.log(content)
                                     content= db.storytextTL[content.trim()]
+                                    if (!content) content = infoTitle[4].trim()
                                     $("#op-gender").html(titledMaker(content,`Gender`))
                                     ;break;
                                     case "表演经验":
