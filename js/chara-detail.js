@@ -15,9 +15,11 @@
 
 
         //EN
+        charsEN         :"./json/gamedata/en_US/gamedata/excel/character_table.json",
         handbookInfoEN  :"./json/gamedata/en_US/gamedata/excel/handbook_info_table.json",
         charwordEN      :"./json/gamedata/en_US/gamedata/excel/charword_table.json",
         skillsEN        :"./json/gamedata/en_US/gamedata/excel/skill_table.json",
+        item_tableEN    :"./json/gamedata/en_US/gamedata/excel/item_table.json",
 
 
         //Utilities
@@ -1747,6 +1749,37 @@
         let islong =false
         puretext.push(opdataFull.appellation)
         puretext.push("")
+
+        //check potential and recruit
+        // opdataFull.text
+
+        var recruitcheck = db.charsEN[opdataFull.id]
+        if(!recruitcheck) recruitcheck = opdataFull
+        textTL.push(`<div class="col-12 ${(islong?"":"col-sm-6")} top-buffer">
+                        <table class="story-table"><th colspan=2>Recruitment Contract</th>
+                        <tr>
+                            <td>${recruitcheck.itemDesc}</td>
+                        </tr>
+                        <tr>
+                            <td>${recruitcheck.itemUsage}</td>
+                        </tr></table>
+                        </div>`)
+        //check potential token
+        var tokencheck = db.item_tableEN.items[opdataFull.potentialItemId]
+        if(!tokencheck) tokencheck = db.item_table.items[opdataFull.potentialItemId]
+        console.log(tokencheck)
+
+        textTL.push(`<div class="col-12 ${(islong?"":"col-sm-6")} top-buffer">
+                        <table class="story-table"><th colspan=2>Token</th>
+                        <tr>
+                            <td>${tokencheck.description}</td>
+                        </tr>
+                        <tr>
+                            <td>${tokencheck.usage}</td>
+                        </tr>
+                        </table>
+                        </div>`)
+        //
         if(currStory.storyTextAudio){
             currStory.storyTextAudio.forEach(storySection => {
                 puretext.push(`---------${storySection.storyTitle}-----------`)
