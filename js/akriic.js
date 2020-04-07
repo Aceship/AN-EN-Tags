@@ -124,22 +124,22 @@
         $('[data-toggle="tooltip"]').tooltip();
 
 
-        if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+        if(!localStorage.getItem("gameRegion") || !localStorage.getItem("webLang")){
             console.log("game region undefined");
             localStorage.setItem("gameRegion", 'cn');
             localStorage.setItem("webLang", 'en');
             reg = "cn";
             lang = "en";
         } else {
-            console.log(localStorage.webLang);
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
+            console.log(localStorage.getItem("webLang"));
+            reg = localStorage.getItem("gameRegion");
+            lang = localStorage.getItem("webLang");
         }
 
-        if(typeof localStorage.selectedOP === "undefined" || localStorage.selectedOP == ""){
-            localStorage.setItem("selectedOP","");
+        if(!localStorage.getItem("selectedOP")){
+            localStorage.removeItem("selectedOP");
         } else {
-            selectedOP = localStorage.selectedOP;
+            selectedOP = localStorage.getItem("selectedOP");
             var opname = db.chars[selectedOP].name;
             selectOperator(opname);
         }
@@ -156,15 +156,15 @@
     });
 
     function regDropdown(el){
-        localStorage.gameRegion = el.attr("value");
+        localStorage.setItem("gameRegion", el.attr("value"));
         $(".dropdown-item.reg").removeClass("selected");
         el.addClass("selected");   
         changeUILanguage();
     }
                 
     function langDropdown(el){
-        localStorage.webLang = el.attr("value");
-        console.log(localStorage.webLang)
+        localStorage.setItem("webLang", el.attr("value"));
+        console.log(localStorage.getItem("webLang"))
         $(".dropdown-item.lang").removeClass("selected");
         el.addClass("selected");
         changeUILanguage();
@@ -241,29 +241,33 @@
             // console.log(charaRiic)
             // console.log(charaRiicTL)
             // if (charaRiicTL){
-                for(i=0;i<charaRiic.buffChar.length;i++){
-                    // console.log(element.buff[i])
+                element.buff.forEach((buff, i) => {
+                    // console.log(buff)
                     // console.log(building_chars[element].buffChar[i] )
-                    let currBuff2 = db.building_buff[element.buff[i].buffId]
-                    let charaRiicTL = db.riic[element.buff[i].buffId]
+                    let buffId = buff.buffId;
+                    let currBuff2 = db.building_buff[buffId]
+                    let charaRiicTL = db.riic[buffId]
+
+                    let buffName = charaRiicTL?charaRiicTL.name:currBuff2.buffName
+                    let description = charaRiicTL?charaRiicTL.desc:currBuff2.description
 
                     console.log(currBuff2)
                     extrainfo2 = ''
                     extraInfo = ``
                     
-                    if(element.buff[i].buffId.includes("control")){
+                    if(buffId.includes("control")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-control" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px">HQ </div>`
-                    }else if(element.buff[i].buffId.includes("power")){
+                    }else if(buffId.includes("power")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-power" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px">Power </div>`
-                    }else if(element.buff[i].buffId.includes("manu")){
+                    }else if(buffId.includes("manu")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-manu" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
-                        let currbuff = db.building_buff[element.buff[i].buffId].description
+                        let currbuff = currBuff2.description
                         console.log([currBuff2.buffId])
                         console.log(currbuff)
-                        console.log(`${charaRiicTL?charaRiicTL.desc:currBuff2.description}`)
-                        if(element.buff[i].buffId.includes("prod")){
+                        console.log(`${description}`)
+                        if(buffId.includes("prod")){
                             
-                        }else if (element.buff[i].buffId.includes("formula")){
+                        }else if (buffId.includes("formula")){
                             let muhRegex = /<@cc\.kw>(.*?)<\/>/g
                             let muhRegex2 = /<@cc\.vup>(.*?)<\/>/g
                             let extra = muhRegex.exec(currbuff)[1]
@@ -277,22 +281,22 @@
                             // }
                         }
                     
-                    }else if(element.buff[i].buffId.includes("trade")){
+                    }else if(buffId.includes("trade")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-trade" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px">Trading </div>`
-                    }else if(element.buff[i].buffId.includes("workshop")){
+                    }else if(buffId.includes("workshop")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-workshop" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px">Workshop </div>`
-                    }else if(element.buff[i].buffId.includes("train")){
+                    }else if(buffId.includes("train")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-train" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px">Training </div>`
-                    }else if(element.buff[i].buffId.includes("dorm")){
+                    }else if(buffId.includes("dorm")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-dorm" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px">Dorm </div>`
-                    }else if(element.buff[i].buffId.includes("hire")){
+                    }else if(buffId.includes("hire")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-hire" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px">Hiring </div>`
-                    }else if(element.buff[i].buffId.includes("meet")){
+                    }else if(buffId.includes("meet")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>`
     
-                        if(element.buff[i].buffId.includes("meet_spd&team")){
-                            let currbuff = db.building_buff[element.buff[i].buffId].description
-                            // (element.buff[i].buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
+                        if(buffId.includes("meet_spd&team")){
+                            let currbuff = currBuff2.description
+                            // (buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             if(currbuff.indexOf("<@cc.kw>")>0){
@@ -314,24 +318,24 @@
                         }
                     }
                     let req =``
-                    // console.log(`Lv.${element.buff[i].cond.level}/ Elite ${element.buff[i].cond.phase}`)
-                    if(element.buff[i].cond.level>1){
-                        req = `Lv.${element.buff[i].cond.level}`
+                    // console.log(`Lv.${buff.cond.level}/ Elite ${buff.cond.phase}`)
+                    if(buff.cond.level>1){
+                        req = `Lv.${buff.cond.level}`
                     }
-                    if(element.buff[i].cond.phase>0){
-                        req = req + ` Elite ${element.buff[i].cond.phase}`
+                    if(buff.cond.phase>0){
+                        req += ` Elite ${buff.cond.phase}`
                     }
-                    if(req!=""){
+                    if(req!==""){
                         req = `<div class="btn btn-sm ak-disable ak-btn" style="height:25px;margin:auto;padding:1px;background:#0078BC;">Req: ${req}</div>`
                     }
                     // console.log(req)     
                     var bufficon = `<img src="./img/ui/infrastructure/skill/${currBuff2.skillIcon}.png" style="" title="">`
                     currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto">
-                    <div style="padding:5px;background:#222">${bufficon} ${extraInfo} ${charaRiicTL?charaRiicTL.name: currBuff2.buffName} ${req}</div>
+                    <div style="padding:5px;background:#222">${bufficon} ${extraInfo} ${buffName} ${req}</div>
                     <div style="padding-left:20px;margin:5px">
                     ${extrainfo2==""?"":`<div style="display:inline;background:#222;padding:3px">${extrainfo2}</div><div></div>`} 
-                    ${charaRiicTL?charaRiicTL.desc:currBuff2.description}</div></div>` )
-                }
+                    ${description}</div></div>` )
+                });
             // }
             currHtml.push(`</div></div> `)
         });
@@ -391,8 +395,8 @@
     }
 
     function changeUILanguage(){
-        reg = localStorage.gameRegion;
-        lang = localStorage.webLang;
+        reg = localStorage.getItem("gameRegion");
+        lang = localStorage.getItem("webLang");
 
         $('#display-reg').text(reg.toUpperCase())
         
