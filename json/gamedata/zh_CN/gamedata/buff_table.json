@@ -36,21 +36,25 @@
       ]
     }
   },
-  "weak": {
+  "weak[inf]": {
     "buffKey": "weak",
     "durationKey": null,
-    "templateKey": "scale_damage_on_hp_less",
+    "templateKey": "damage_scale[input]",
     "lifeTimeType": "INFINITY",
     "priorityBBKeys": [
       "damage_scale"
     ],
-    "blackboard": [
-      {
-        "key": "hp_ratio",
-        "value": 0.4,
-        "valueStr": null
-      }
-    ]
+    "overrideKey": "weak[bonus]"
+  },
+  "weak[limit]": {
+    "buffKey": "weak",
+    "durationKey": "weak[limit]",
+    "templateKey": "damage_scale[input]",
+    "priorityBBKeys": [
+      "damage_scale"
+    ],
+    "overrideKey": "weak[bonus]",
+    "overrideEffectKey": "buff_weak[limit]"
   },
   "spRecover": {
     "buffKey": "spRecover",

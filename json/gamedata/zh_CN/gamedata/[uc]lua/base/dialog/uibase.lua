@@ -105,8 +105,24 @@ end
 ---@param obj object
 ---@param delegateName string
 ---@param func function
-function UIBase:AsignDelegate(obj, delegateName, func)
-    obj[delegateName] = func;
+---@param ... any 不定参数, 可以在注册时传递一些数据到func里去，在回调参数之后。
+---                如代理本身有a，b，c三个参数，注册时传递了arg1 arg2 arg3三个参数
+---                则最终在函数func里得到的参数是 function(a, b, c, arg1, arg2, arg3)
+function UIBase:AsignDelegate(obj, delegateName, func, ...)
+    local args = {...}
+    local this = self;
+    obj[delegateName] = function(...)
+        local params = {...}
+        if #params < 1 then
+            params = args;
+        elseif #args > 0 then
+            for _, v in ipairs(args) do
+                table.insert(params, v);
+            end
+        end
+        
+        func(this, table.unpack(params));
+    end
     
     self:_AddToDoWhenClose(function()
         if not CS.Torappu.Lua.Util.IsDestroyed(obj) then
@@ -168,6 +184,44 @@ function UIBase:_RecordTimer(timer)
         self.m_allTimer = {};
     end
     table.insert(self.m_allTimer, timer);
+end
+
+---打开UI页面
+function UIBase:OpenPage(pageName, openType, options)
+    CS.Torappu.UI.UIPageController.OpenPage(pageName, openType, options)
+end
+
+--- 打开UI页面
+---示例：
+---self:OpenPage1("stage")
+---self:OpenPage(CS.Torappu.UI.UIPageNames.STAGE)
+function UIBase:OpenPage1(pageName)
+    CS.Torappu.UI.UIPageController.OpenPage(pageName)
+end
+
+--- 打开UI页面
+---示例：
+---self:OpenPage2(CS.Torappu.UI.UIPageNames.SHOP, CS.Torappu.UI.UIPageOpenType.SINGLE_INST);
+function UIBase:OpenPage2(pageName, openType)
+    CS.Torappu.UI.UIPageController.OpenPage(pageName, openType)
+end
+
+--- 打开UI页面
+---示例：
+--[[
+local params = CS.Torappu.UI.UIGainItemPage.Params();
+
+local pointItemData = CS.Torappu.UI.UIItemViewModel();
+pointItemData:LoadGameData(self.pointId, CS.Torappu.ItemType.NONE);
+params.itemModels = {pointItemData};
+
+self:OpenPage3(CS.Torappu.UI.UIPageNames.GAIN_ITEM, {
+    args = params
+});
+
+]]
+function UIBase:OpenPage3(pageName, options)
+    CS.Torappu.UI.UIPageController.OpenPage(pageName, options)
 end
 
 ---@private call by lualayout

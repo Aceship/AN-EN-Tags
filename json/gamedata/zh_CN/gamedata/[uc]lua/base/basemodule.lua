@@ -2,11 +2,14 @@ require "Base/Utils/MiscUtil"
 require "Base/Utils/ClassAbout"
 require "Base/Utils/StringUtil"
 require "Base/Utils/Event"
+require "Base/Utils/LogUtil"
 
 require "Base/Collections/LuaList"
 
 require "Base/Dialog/UIBase"
 require "Base/Dialog/UIWidget"
+require "Base/Dialog/UIWidgetContainer"
+require "Base/Dialog/UIPanel"
 require "Base/Dialog/DlgBase"
 require "Base/Dialog/DlgMgr"
 

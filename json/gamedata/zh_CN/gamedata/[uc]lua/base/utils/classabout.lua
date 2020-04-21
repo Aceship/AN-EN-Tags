@@ -63,6 +63,14 @@ function Class(classname, super)
   return cls
 end
 
+function IsSubclassOf(sub, super)
+  while sub.super do
+    if sub.super == super then
+      return true;
+    end
+  end
+  return false;
+end
   
 --[[
   e.q.  ： clean all meta info in lua
