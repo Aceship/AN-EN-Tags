@@ -33,13 +33,11 @@ var selectedOp;
 var selectedEn;
 
 var applyTrust = false;
-if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts == ""){
-    localStorage.setItem("applyTrusts", 'false');
+if(!localStorage.getItem('applyTrusts')){
+    localStorage.setItem("applyTrusts", JSON.stringify(applyTrust));
 } else {
-    applyTrust = localStorage.applyTrusts;
+    applyTrust = JSON.parse(localStorage.getItem('applyTrusts'));
 }
-applyTrust = applyTrust == 'true'; // convert string to boolean
-
 
 var isMobile = false; //initiate as false
 // device detection
@@ -58,17 +56,17 @@ $(document).ready(function(){
         })
     });
 
-    if(typeof localStorage.selectedOp === "undefined" || localStorage.selectedOp == ""){
-        localStorage.setItem("selectedOp", '');
+    if(!localStorage.getItem('selectedOp')){
+        localStorage.removeItem("selectedOp");
     } else {
-        selectedOp = localStorage.selectedOp;
+        selectedOp = localStorage.getItem('selectedOp');
         $('#hideable1').show();
     }
 
-    if(typeof localStorage.selectedEn === "undefined" || localStorage.selectedEn == ""){
-        localStorage.setItem("selectedEn", '');
+    if(!localStorage.getItem('selectedEn')){
+        localStorage.removeItem("selectedEn");
     } else {
-        selectedEn = localStorage.selectedEn;
+        selectedEn = localStorage.getItem('selectedEn');
         $('#hideable1').show();
     }
 
@@ -260,7 +258,7 @@ function selectElite(val){
 
 function selectOp(opID){
     localStorage.setItem("selectedOp", opID);
-    selectedOp = localStorage.selectedOp;
+    selectedOp = localStorage.getItem('selectedOp');
     console.log(selectedOp);
     RefreshAlldata();
     opElite = 0;
@@ -345,7 +343,7 @@ function selOpClass(cname){
 
 function selectEnemy(id){
     localStorage.setItem("selectedEn", id);
-    selectedEn = localStorage.selectedEn;
+    selectedEn = localStorage.getItem('selectedEn');
     console.log(selectedEn);
     RefreshAlldata();
     $("#enchoosemodal").modal('hide');

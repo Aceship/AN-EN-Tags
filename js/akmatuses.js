@@ -4,14 +4,14 @@
         var lang;
         var reg;
 
-        if (typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == "" || localStorage.webLang == "") {
-            localStorage.setItem("gameRegion", 'en');
+        if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
+            localStorage.setItem("gameRegion", 'cn');
             localStorage.setItem("webLang", 'en');
-            reg = "en";
+            reg = "cn";
             lang = "en";
         } else {
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
+            reg = localStorage.getItem('gameRegion');
+            lang = localStorage.getItem('webLang');
         }
 
         $('.reg[value=' + reg + ']').addClass('selected');
@@ -27,10 +27,10 @@
             localStorage.setItem("optStars", JSON.stringify(optStars));
         }
 
-        if (typeof localStorage.optStars === "undefined") {
+        if (!localStorage.getItem('optStars')) {
             actualize_optStars();
         } else {
-            optStars = JSON.parse(localStorage.optStars);
+            optStars = JSON.parse(localStorage.getItem('optStars'));
             $('button[opt-group="1"]').each(function() {
                 if (!optStars.includes($(this).attr("opt-id"))) {
                     $(this).removeClass('btn-primary').addClass('btn-secondary');
@@ -48,10 +48,10 @@
             localStorage.setItem("optLevels", JSON.stringify(optLevels));
         }
 
-        if (typeof localStorage.optLevels === "undefined") {
+        if (!localStorage.getItem('optLevels')) {
             actualize_optLevels();
         } else {
-            optLevels = JSON.parse(localStorage.optLevels);
+            optLevels = JSON.parse(localStorage.getItem('optLevels'));
             $('button[opt-group="2"]').each(function() {
                 if (!optLevels.includes($(this).text())) {
                     $(this).removeClass('btn-primary').addClass('btn-secondary');
@@ -70,10 +70,10 @@
             localStorage.setItem("checkedTags", JSON.stringify(checkedTags));
         }
 
-        if (typeof localStorage.checkedTags === "undefined") {
+        if (!localStorage.getItem('checkedTags')) {
             actualize_tags();
         } else {
-            checkedTags = JSON.parse(localStorage.checkedTags);
+            checkedTags = JSON.parse(localStorage.getItem('checkedTags'));
             $(".btn-tag").each(function() {
                 if (checkedTags.includes($(this).attr("mat-id"))) {
                     $(this).removeClass('btn-secondary').addClass('btn-primary');
@@ -186,28 +186,28 @@
             });
 
             /*===== Initialize the display options =====*/
-            if (typeof localStorage.showInfo === "undefined") {
-                localStorage.setItem("showInfo", "true");
-            } else if (localStorage.showImage == 'false') {
+            if (!localStorage.getItem('showInfo')) {
+                localStorage.setItem("showInfo", JSON.stringify(true));
+            } else if (!JSON.parse(localStorage.getItem('showImage'))) {
                 $("#showInfo").toggleClass("btn-primary btn-secondary");
             }
             
-            if (typeof localStorage.showImage === "undefined") {
-                localStorage.setItem("showImage", "true");
-            } else if (localStorage.showImage == 'false') {
+            if (!localStorage.getItem('showImage')) {
+                localStorage.setItem("showImage", JSON.stringify(true));
+            } else if (!JSON.parse(localStorage.getItem('showImage'))) {
                 $("#showImage").toggleClass("btn-primary btn-secondary");
             }
 
-            if (typeof localStorage.size === "undefined") {
-                localStorage.setItem("size", 40);
-            } else if (localStorage.showImage == 'false') {
+            if (!localStorage.getItem('size')) {
+                localStorage.setItem("size", JSON.stringify(40));
+            } else if (!JSON.parse(localStorage.getItem('showImage'))) {
                 $("#showImage").toggleClass("btn-primary btn-secondary");
             }
 
             $(".imagesizeselect").each(function(_, el) {
-                let size = localStorage.size;
+                let size = JSON.parse(localStorage.getItem('size'));
 
-                $("#selectedImageSize").html(localStorage.size);
+                $("#selectedImageSize").html(JSON.parse(localStorage.getItem('size')));
                 if ($(el).attr("title") == size) {
                     $("<span> <<</span>").appendTo(el);
                 } else {
@@ -224,15 +224,15 @@
         });
 
         function regDropdown(el) {
-            localStorage.gameRegion = el.attr("value");
+            localStorage.setItem('gameRegion', el.attr("value"));
             $(".dropdown-item.reg").removeClass("selected");
             el.addClass("selected");
             changeUILanguage(true);
         }
 
         function langDropdown(el) {
-            localStorage.webLang = el.attr("value");
-            console.log("language : " + localStorage.webLang)
+            localStorage.setItem('webLang', el.attr("value"));
+            console.log("language : " + localStorage.getItem('webLang'))
             $(".dropdown-item.lang").removeClass("selected");
             el.addClass("selected");
             changeUILanguage(true);
@@ -243,7 +243,7 @@
             $("#tbody-recommend").html("");
 
             checkedTags = [];
-            localStorage.checkedTags = '';
+            localStorage.removeItem('checkedTags');
         }
 
         function clickBtnOpt(el) {
@@ -270,24 +270,24 @@
 
         function clickBtnOpt2(el) {
             $(el).toggleClass("btn-primary btn-secondary");
-            localStorage.showInfo = ($(el).hasClass("btn-primary")).toString();
+            localStorage.setItem('showInfo', JSON.stringify($(el).hasClass("btn-primary")));
 
             actualize();
         }
 
         function clickBtnOpt3(el) {
             $(el).toggleClass("btn-primary btn-secondary");
-            localStorage.showImage = ($(el).hasClass("btn-primary")).toString();
+            localStorage.setItem('showImage', JSON.stringify($(el).hasClass("btn-primary")));
 
             actualize();
         }
 
         function changeImageSize(el) {
-            localStorage.size = parseInt($(el).attr('title'));
+            localStorage.setItem(size, parseInt($(el).attr('title')));
 
-            $("#selectedImageSize").html(localStorage.size);
+            $("#selectedImageSize").html(JSON.parse(localStorage.getItem('size')));
             $(".imagesizeselect").each(function() {
-                let size = localStorage.size;
+                let size = JSON.parse(localStorage.getItem('size'));
                 if($(this).attr("title") == size) {
                     $("<span> <<</span>").appendTo(this);
                 } else {
@@ -306,8 +306,8 @@
         }
 
         function changeUILanguage() {
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
+            reg = localStorage.getItem('gameRegion');
+            lang = localStorage.getItem('webLang');
 
             console.log(lang)
             console.log(reg)
@@ -356,14 +356,18 @@
                     b.name.localeCompare(a.name) + 1);
             }
 
+            var showImage = JSON.parse(localStorage.getItem('showImage'))
+            var showInfo = JSON.parse(localStorage.getItem('showInfo'))
+            var size = JSON.parse(localStorage.getItem('size'))
+            
             $.each(chars_selection, function (mat_id, chars) {
-                let padding = localStorage.showInfo == 'true' && localStorage.size < 60
+                let padding = showInfo && size < 60
                             ? "padding-right: 1px;"
                             : "padding-right: 1px;";
-                let style = localStorage.showImage == 'true'
+                let style = showImage
                           ? 'style="padding: 1px 1px; ' + padding + '" '
                           : "";
-                let buttonstyle = localStorage.size > 25
+                let buttonstyle = size > 25
                                 ? "background-color: #AAA"
                                 : "background-color: transparent";
 
@@ -380,19 +384,19 @@
                               ' data-toggle="tooltip" data-placement="bottom" onclick="charSwap(this)"' +
                               style + ' "title="' + char.name + '" mat-id="' + mat_id + '" mat-count=' + char.count + '>');
 
-                    if (localStorage.showImage == 'true') {
+                    if (showImage) {
                         body.push('<img style="' + buttonstyle
-                                + '" height="' + localStorage.size
-                                + '" width="' + localStorage.size
+                                + '" height="' + size
+                                + '" width="' + size
                                 + '" src="./img/avatars/' + char.id + '.png">');
                     }
                     
-                    if(localStorage.size > 60||localStorage.showImage=="false") body.push("<div style='background:#222'>")
+                    if(size > 60||!showImage) body.push("<div style='background:#222'>")
                     body.push(`<div style='background:#333;color:#aaa;
-                    ${(localStorage.size < 60)||localStorage.showImage=="false"?
-                    `padding:${localStorage.showImage=="true"?localStorage.size/2-10+'px 2px;display:inline;':"2px 2px"} `:
+                    ${(size < 60)||!showImage?
+                    `padding:${showImage?size/2-10+'px 2px;display:inline;':"2px 2px"} `:
                     `padding:2px 2px`}'>${char.name}</div>`)
-                    if(localStorage.showInfo == 'true') {
+                    if(showInfo) {
                         let info = `<div style='background:#222;border-radius:2px;margin:1px'>`;
                         if (char.class == "Skill-up") {
                             info += "";
@@ -422,7 +426,7 @@
                         info+="</div>"
                         body.push(info + `<div class="item-amount" style="font-weight: bold; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd">${char.count}x</div>`);
                     }
-                    if(localStorage.size > 60) body.push("</div>")
+                    if(size > 60) body.push("</div>")
                 
                     body.push("</button>\n")
                 }

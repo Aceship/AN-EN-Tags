@@ -29,20 +29,18 @@ var opLevel = 1;
 var opElite = 0;
 
 var applyTrust = false;
-if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts == ""){
-    localStorage.setItem("applyTrusts", 'false');
+if(!localStorage.getItem('applyTrusts')){
+    localStorage.setItem("applyTrusts", JSON.stringify(applyTrust));
 } else {
-    applyTrust = localStorage.applyTrusts;
+    applyTrust = JSON.parse(localStorage.getItem('applyTrusts'));
 }
-applyTrust = applyTrust == 'true'; // convert string to boolean
 
 var showMode = false;
-if(typeof localStorage.showMode === "undefined" || localStorage.showMode == ""){
-    localStorage.setItem("showMode", 'false');
+if(!localStorage.getItem('showMode')){
+    localStorage.setItem("showMode", JSON.stringify(showMode));
 } else {
-    showMode = localStorage.showMode;
+    showMode = JSON.parse(localStorage.getItem('showMode'));
 }
-showMode = showMode == 'true'; // convert string to boolean
 
 var isMobile = false; //initiate as false
 // device detection
@@ -61,8 +59,8 @@ $(document).ready(function(){
         })
     });
     var selectedOpList = [];
-    if(typeof localStorage.selectedOpList === "undefined" || localStorage.selectedOpList == ""){
-        localStorage.selectedOpList = JSON.stringify(selectedOpList);
+    if(!localStorage.getItem('selectedOpList')){
+        localStorage.setItem('selectedOpList', JSON.stringify(selectedOpList));
     }
 
     RefreshSlots()
@@ -72,22 +70,20 @@ $(document).ready(function(){
         Theme:'Swipe',
         ToggleState:applyTrust,
         OnCallback: function(val) {
-            if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts == ""){
-                localStorage.setItem("applyTrusts", 'true');
+            if(!localStorage.getItem('applyTrusts')){
+                localStorage.setItem("applyTrusts", JSON.stringify(true));
             } else {
-                localStorage.applyTrusts = 'true';
-                applyTrust = localStorage.applyTrusts;
-                applyTrust = applyTrust == 'true';
+                localStorage.setItem("applyTrusts", JSON.stringify(true));
+                applyTrust = JSON.parse(localStorage.getItem('applyTrusts'));
                 RefreshValues();
             }
         },
         OffCallback: function (val) {
-            if(typeof localStorage.applyTrusts === "undefined" || localStorage.applyTrusts == ""){
-                localStorage.setItem("applyTrusts", 'false');
+            if(!localStorage.getItem('applyTrusts')){
+                localStorage.setItem("applyTrusts", JSON.stringify(false));
             } else {
-                localStorage.applyTrusts = 'false';
-                applyTrust = localStorage.applyTrusts;
-                applyTrust = applyTrust == 'true';
+                localStorage.setItem("applyTrusts", JSON.stringify(false));
+                applyTrust = JSON.parse(localStorage.getItem('applyTrusts'));
                 RefreshValues();
             }
         }
@@ -100,24 +96,22 @@ $(document).ready(function(){
         OnText: 'Stats',
         OffText: 'Skills',
         OnCallback: function(val) {
-            if(typeof localStorage.showMode === "undefined" || localStorage.showMode == ""){
-                localStorage.setItem("showMode", 'true');
+            if(!localStorage.getItem('showMode')){
+                localStorage.setItem("showMode", JSON.stringify(true));
             } else {
-                localStorage.showMode = 'true';
-                showMode = localStorage.showMode;
-                showMode = showMode == 'true';
+                localStorage.setItem("showMode", JSON.stringify(true));
+                showMode = JSON.parse(localStorage.getItem('showMode'));
                 $(".statsSection").show();
                 $("#attributesPanel").show();
                 $(".skillsSection").hide();
             }
         },
         OffCallback: function (val) {
-            if(typeof localStorage.showMode === "undefined" || localStorage.showMode == ""){
-                localStorage.setItem("showMode", 'false');
+            if(!localStorage.getItem('showMode')){
+                localStorage.setItem("showMode", JSON.stringify(false));
             } else {
-                localStorage.showMode = 'false';
-                showMode = localStorage.showMode;
-                showMode = showMode == 'true';
+                localStorage.setItem("showMode", JSON.stringify(false));
+                showMode = JSON.parse(localStorage.getItem('showMode'));
                 $(".statsSection").hide();
                 $("#attributesPanel").hide();
                 $(".skillsSection").show();
@@ -133,9 +127,9 @@ function RefreshSlots(){
 
     var selectedOpList = [];
     try {
-        selectedOpList = JSON.parse(localStorage.selectedOpList);
+        selectedOpList = JSON.parse(localStorage.getItem('selectedOpList'));
     } catch (e) {
-        localStorage.selectedOpList = JSON.stringify(selectedOpList);
+        localStorage.setItem('selectedOpList', JSON.stringify(selectedOpList));
     }
     //console.log(selectedOpList);
 
@@ -229,9 +223,9 @@ function RefreshValues(){
 
     var selectedOpList = [];
     try {
-        selectedOpList = JSON.parse(localStorage.selectedOpList);
+        selectedOpList = JSON.parse(localStorage.getItem('selectedOpList'));
     } catch (e) {
-        localStorage.selectedOpList = JSON.stringify(selectedOpList);
+        localStorage.setItem('selectedOpList', JSON.stringify(selectedOpList));
     }
 
     for (var i = 0; i < selectedOpList.length; i++) {
@@ -315,9 +309,9 @@ function getTrustBonuses(opdata){
 function RefreshHighlight(){
     var selectedOpList = [];
     try {
-        selectedOpList = JSON.parse(localStorage.selectedOpList);
+        selectedOpList = JSON.parse(localStorage.getItem('selectedOpList'));
     } catch (e) {
-        localStorage.selectedOpList = JSON.stringify(selectedOpList);
+        localStorage.setItem('selectedOpList', JSON.stringify(selectedOpList));
     }
     var statNames = ['maxHP','atk','def','mRes','rTime','cost','block','atkT','dps'];
     //console.clear();
@@ -373,13 +367,13 @@ function changeElite(val){
 function selectOp(opID){
     var selectedOpList = [];
     try {
-        selectedOpList = JSON.parse(localStorage.selectedOpList);
+        selectedOpList = JSON.parse(localStorage.getItem('selectedOpList'));
     } catch (e) {
-        localStorage.selectedOpList = JSON.stringify(selectedOpList);
+        localStorage.setItem('selectedOpList', JSON.stringify(selectedOpList));
     }
     if(selectedOpList.indexOf(opID) == -1){
         selectedOpList.push(opID);
-        localStorage.selectedOpList = JSON.stringify(selectedOpList);
+        localStorage.setItem('selectedOpList', JSON.stringify(selectedOpList));
         $("#opchoosemodal").modal('hide');
         RefreshSlots();
     } else {
@@ -390,13 +384,13 @@ function selectOp(opID){
 function deleteOp(index){
     var selectedOpList = [];
     try {
-        selectedOpList = JSON.parse(localStorage.selectedOpList);
+        selectedOpList = JSON.parse(localStorage.getItem('selectedOpList'));
     } catch (e) {
-        localStorage.selectedOpList = JSON.stringify(selectedOpList);
+        localStorage.setItem('selectedOpList', JSON.stringify(selectedOpList));
     }
     if(selectedOpList.length > 0){
         selectedOpList.splice(index,1);
-        localStorage.selectedOpList = JSON.stringify(selectedOpList);
+        localStorage.setItem('selectedOpList', JSON.stringify(selectedOpList));
         RefreshSlots();
     }
 }

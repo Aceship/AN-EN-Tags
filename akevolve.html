@@ -121,15 +121,15 @@
         let allns = []; let allhs = []; let allos = [];
 
         $(document).ready(function(){
-            if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+            if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
                 console.log("game region undefined");
                 localStorage.setItem("gameRegion", 'cn');
                 localStorage.setItem("webLang", 'en');
                 reg = "cn";
                 lang = "en";
             } else {
-                reg = localStorage.gameRegion;
-                lang = localStorage.webLang;
+                reg = localStorage.getItem('gameRegion');
+                lang = localStorage.getItem('webLang');
             }
             $('.reg[value='+reg+']').addClass('selected');
             $('.lang[value='+lang+']').addClass('selected');
@@ -272,14 +272,14 @@
             
 
             function regDropdown(el){
-                localStorage.gameRegion = el.attr("value");
+                localStorage.setItem('gameRegion', el.attr("value"));
                 $(".dropdown-item.reg").removeClass("selected");
                 el.addClass("selected");   
                 changeUILanguage();
             }
                         
             function langDropdown(el){
-                localStorage.webLang = el.attr("value");
+                localStorage.setItem('webLang', el.attr("value"));
                 $(".dropdown-item.lang").removeClass("selected");
                 el.addClass("selected");
                 changeUILanguage();
