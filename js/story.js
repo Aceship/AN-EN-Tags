@@ -41,8 +41,8 @@
                  $(this).trigger("enterKey");
              }
          });
-        
-        if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+
+        if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
             console.log("game region undefined");
             localStorage.setItem("gameRegion", 'cn');
             localStorage.setItem("webLang", 'en');
@@ -54,9 +54,9 @@
                 // console.log("TEST1")
             }
         } else {
-            console.log(localStorage.webLang);
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
+            console.log(localStorage.getItem('webLang'));
+            reg = localStorage.getItem('gameRegion');
+            lang = localStorage.getItem('webLang');
         }
 
         // console.log("TEST")
@@ -84,7 +84,7 @@
         $("#opname").val("");
         $('#searchResult').empty();
         $('#searchResult').hide();
-        localStorage.selectedOPDetails = "";
+        localStorage.removeItem('selectedOPDetails');
         history.pushState(null, '', window.location.pathname); 
     }
 
@@ -279,8 +279,8 @@
     }
 
     function changeUILanguage(){
-        reg = localStorage.gameRegion;
-        lang = localStorage.webLang;
+        reg = localStorage.getItem('gameRegion');
+        lang = localStorage.getItem('webLang');
 
         $('#display-reg').text(reg.toUpperCase())
         

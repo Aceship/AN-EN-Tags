@@ -6,9 +6,9 @@
         var checkedTags = [];
         var checkedTagsTL = [];
 
-        if(typeof localStorage.checkedTagsCache === "undefined" || localStorage.checkedTagsCache == ""|| localStorage.checkedTagsCache == ""){
-            localStorage.setItem("checkedTagsCache", '');
-            localStorage.setItem("checkedTagsTLCache", '');
+        if(!localStorage.getItem('checkedTagsCache')){
+            localStorage.removeItem("checkedTagsCache");
+            localStorage.removeItem("checkedTagsTLCache");
         }
         var globalOptStars = [];
         var JsonDATA = [];
@@ -18,14 +18,14 @@
         var data1, data2, data3;
         var d0 = $.getJSON("json/tl-akhr.json", function (data) {
 
-                if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+                if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
                     localStorage.setItem("gameRegion", 'cn');
                     localStorage.setItem("webLang", 'en');
                     reg = "cn";
                     lang = "en";
                 } else {
-                    reg = localStorage.gameRegion;
-                    lang = localStorage.webLang;
+                    reg = localStorage.getItem('gameRegion');
+                    lang = localStorage.getItem('webLang');
                 }
                 $('.reg[value='+reg+']').addClass('selected');
                 $('.lang[value='+lang+']').addClass('selected');
@@ -106,39 +106,40 @@
                 $('[data-toggle="tooltip"]').tooltip();
 
 
-                if(localStorage.getItem('showImage') === null){
-                    localStorage.setItem("showImage", "true");
-                    localStorage.setItem("showName", "true");
+                if(!localStorage.getItem('showImage')){
+                    localStorage.setItem("showImage", JSON.stringify(true));
+                    localStorage.setItem("showName", JSON.stringify(true));
                     localStorage.setItem("size", 40);
                 } else {
-                    if(localStorage.showName == 'false'){
+                    if(!JSON.parse(localStorage.getItem('showName'))){
                         $("#showName").toggleClass("btn-primary btn-secondary");
                     }
-                    if(localStorage.showImage == 'false'){
+                    if(!JSON.parse(localStorage.getItem('showImage'))){
                         $("#showImage").toggleClass("btn-primary btn-secondary");
                     }
-                    if(localStorage.showClass == 'false'){
+                    if(!JSON.parse(localStorage.getItem('showClass'))){
                         $("#showClass").toggleClass("btn-primary btn-secondary");
                     }
                 }
-                if(!localStorage.getItem('showClass'))localStorage.setItem("showClass","false")
+                if(!localStorage.getItem('showClass'))
+                    localStorage.setItem("showClass",JSON.stringify(false))
 
-                if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+                if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
                     console.log("game region undefined");
                     localStorage.setItem("gameRegion", 'cn');
                     localStorage.setItem("webLang", 'en');
                     reg = "cn";
                     lang = "en";
                 } else {
-                    console.log(localStorage.webLang);
-                    reg = localStorage.gameRegion;
-                    lang = localStorage.webLang;
+                    console.log(localStorage.getItem('webLang'));
+                    reg = localStorage.getItem('gameRegion');
+                    lang = localStorage.getItem('webLang');
                 }
                 $('.reg[value='+reg+']').addClass('selected');
                 $('.lang[value='+lang+']').addClass('selected');
-                if(localStorage.checkedTagsCache != ''){
-                    var checkedTagsCache = JSON.parse(localStorage.checkedTagsCache)
-                    var checkedTagsTLCache = JSON.parse(localStorage.checkedTagsTLCache)
+                if(localStorage.getItem('checkedTagsCache')){
+                    var checkedTagsCache = JSON.parse(localStorage.getItem('checkedTagsCache'))
+                    var checkedTagsTLCache = JSON.parse(localStorage.getItem('checkedTagsTLCache'))
                     if(checkedTagsCache.length != 0){
                         $.each(checkedTagsCache,function(i,v){
                             $('.button-tag').each(function(){
@@ -152,63 +153,51 @@
                     }
                 }
                 changeUILanguage();
-                console.log("Show Name: ");
-                console.log(localStorage.showName);
-                console.log("Show Image: ");
-                console.log(localStorage.showImage);
-                console.log("Show Class: ");
-                console.log(localStorage.showClass);
+                console.log("Show Name: ", JSON.parse(localStorage.getItem('showName')));
+                console.log("Show Image: ", JSON.parse(localStorage.getItem('showImage')));
+                console.log("Show Class: ", JSON.parse(localStorage.getItem('showClass')));
 
                 $(".imagesizeselect").each(function(_,el){
-                    let size = localStorage.size;
-                    $("#selectedImageSize").html(localStorage.size);
+                    let size = JSON.parse(localStorage.getItem('size'));
+                    $("#selectedImageSize").text(size);
                     if($(el).attr("title") == size){
                         $("<span> <<</span>").appendTo(el);
                     } else {
-                        $(el).html($(el).attr("title"));
+                        $(el).text($(el).attr("title"));
                     }
                 });
 
                 $(document).on("click", ".btn-name", function () {
-                    if(localStorage.getItem('showName') == 'false'){
-                        localStorage.setItem('showName','true');
-                    } else {
-                        localStorage.setItem('showName','false');
-                    }
-                    console.log("Show Name: ");
-                    console.log(localStorage.getItem('showName'));
+                    let showName = JSON.parse(localStorage.getItem('showName'))
+                    showName = !showName
+                    localStorage.setItem('showName',JSON.stringify(showName));
+                    console.log("Show Name: ", showName);
                 })
                 $(document).on("click", ".btn-class", function () {
-                    if(localStorage.getItem('showClass') == 'false'){
-                        localStorage.setItem('showClass','true');
-                    } else {
-                        localStorage.setItem('showClass','false');
-                    }
-                    console.log("Show Class: ");
-                    console.log(localStorage.getItem('showClass'));
+                    let showClass = JSON.parse(localStorage.getItem('showClass'))
+                    showClass = !showClass
+                    localStorage.setItem('showClass',JSON.stringify(showClass));
+                    console.log("Show Class: ", showClass);
                 })
                 $(document).on("click", ".btn-image", function () {
-                    if(localStorage.getItem('showImage') == 'false'){
-                        localStorage.showImage = 'true';
-                    } else {
-                        localStorage.showImage = 'false';
-                    }
-                    console.log("Show Image: ");
-                    console.log(localStorage.getItem('showImage'));
+                    let showImage = JSON.parse(localStorage.getItem('showImage'))
+                    showImage = !showImage
+                    localStorage.setItem('showImage',JSON.stringify(showImage));
+                    console.log("Show Image: ", showImage);
                 });
             });
         });
 
         function regDropdown(el){
-            localStorage.gameRegion = el.attr("value");
+            localStorage.setItem('gameRegion', el.attr("value"));
             $(".dropdown-item.reg").removeClass("selected");
             el.addClass("selected");   
             changeUILanguage();
         }
                     
         function langDropdown(el){
-            localStorage.webLang = el.attr("value");
-            console.log(localStorage.webLang)
+            localStorage.setItem('webLang', el.attr("value"));
+            console.log(localStorage.getItem('webLang'))
             $(".dropdown-item.lang").removeClass("selected");
             el.addClass("selected");
             changeUILanguage(true);
@@ -233,7 +222,7 @@
             console.log("char name: "+char_name);
             $(".tr-recommd").show();
             $(".tr-chartag").remove();
-            if (localStorage.lastChar != char_name) {
+            if (localStorage.getItem('lastChar') != char_name) {
                 $(".tr-recommd:not(:contains('" + $(el).text() + "'))").hide();
                 let char = all_chars[char_name];
                 let colors = { 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6" };
@@ -253,7 +242,7 @@
                     if(!found){
                         $.each(all_types, function(_, alltypes){
                             if(alltypes.type_cn == tag){
-                                tagReg = alltypes['type_'+reg]+(localStorage.showClass=="true"?"干员":"");
+                                tagReg = alltypes['type_'+reg]+(JSON.parse(localStorage.getItem('showClass'))?"干员":"");
                                 tagTL = alltypes['type_'+lang];
                                 found = true;
                                 return false;
@@ -293,10 +282,10 @@
                 );
 
                 $('[data-toggle="tooltip"]').tooltip();
-                localStorage.lastChar = char_name
+                localStorage.setItem('lastChar', char_name)
             }else{
                 $(".tr-chartag").remove();
-                localStorage.lastChar = ""
+                localStorage.removeItem('lastChar')
                 // setTimeout(function(){
                 //     showChar(el);
                 // }, 200);
@@ -310,21 +299,21 @@
             $("#count-tag").empty()
             checkedTags = [];
             checkedTagsTL = [];
-            localStorage.checkedTagsCache = '';
-            localStorage.checkedTagsTLCache = '';
-            localStorage.lastChar = ""
+            localStorage.removeItem('checkedTagsCache');
+            localStorage.removeItem('checkedTagsTLCache');
+            localStorage.removeItem('lastChar');
         }
 
         function changeImageSize(el){
-            localStorage.size = parseInt($(el).attr('title'));
-            console.log("image size = "+localStorage.size);
-            $("#selectedImageSize").html(localStorage.size);
+            localStorage.setItem('size', parseInt($(el).attr('title'));
+            console.log("image size = "+JSON.parse(localStorage.getItem('size')));
+            $("#selectedImageSize").text(JSON.parse(localStorage.getItem('size')));
             $(".imagesizeselect").each(function(){
-                let size = localStorage.size;
+                let size = JSON.parse(localStorage.getItem('size'));
                 if($(this).attr("title") == size){
                     $("<span> <<</span>").appendTo(this);
                 } else {
-                    $(this).html($(this).attr("title"));
+                    $(this).text($(this).attr("title"));
                 }
             });
             refresh();
@@ -365,12 +354,12 @@
 
         function clickBtnOpt2(el){
             $(el).toggleClass("btn-primary btn-secondary");
-            localStorage.lastChar = ""
+            localStorage.removeItem('lastChar')
             refresh();
         }
         function clickBtnOpt3(el){
             $(el).toggleClass("btn-primary btn-secondary");
-            localStorage.lastChar = ""
+            localStorage.removeItem('lastChar')
             changeUILanguage(el);
         }
 
@@ -409,11 +398,11 @@
                 }
             }
             $(el).toggleClass("btn-primary btn-secondary");
-            localStorage.lastChar = ""
+            localStorage.removeItem('lastChar');
              console.log(checkedTags);
              console.log(checkedTagsTL);
-            localStorage.checkedTagsCache = JSON.stringify(checkedTags);
-            localStorage.checkedTagsTLCache = JSON.stringify(checkedTagsTL);
+            localStorage.setItem('checkedTagsCache', JSON.stringify(checkedTags));
+            localStorage.setItem('checkedTagsTLCache', JSON.stringify(checkedTagsTL));
             // console.log(tag)
             calculate();
         }
@@ -454,7 +443,7 @@
                     //     let currtag = tagextra
                     //    if(JsonDATA[4].find(search=>search.type_cn==tagextra)){
                     //        console.log(tagextra)
-                    //        currtag = tagextra+(localStorage.showClass=="true"?"干员":"")
+                    //        currtag = tagextra+(JSON.parse(localStorage.getItem('showClass'))?"干员":"")
                     //    }
                     //    return currtag
                     // });
@@ -534,7 +523,7 @@
                         let currtag = tagextra
                        if(JsonDATA[4].find(search=>search.type_cn==tagextra)){
                            
-                           currtag = tagextra+(localStorage.showClass=="true"?"干员":"")
+                           currtag = tagextra+(JSON.parse(localStorage.getItem('showClass'))?"干员":"")
                        }
                        return currtag
                     });
@@ -545,14 +534,14 @@
                         return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
                     });
                     $.each(chars, function (_, char) {
-                        let padding = localStorage.showName=='true' && localStorage.size <60? "padding-right: 8px" : "padding-right: 1px";
-                        let style = localStorage.showImage=='true' ? "style=\"padding: 1px 1px;" + padding + ";\" " : "";
-                        let buttonstyle = localStorage.size >25? "background-color: #AAA": "background-color: transparent";
+                        let padding = JSON.parse(localStorage.getItem('showName')) && JSON.parse(localStorage.getItem('size')) <60? "padding-right: 8px" : "padding-right: 1px";
+                        let style = JSON.parse(localStorage.getItem('showImage')) ? "style=\"padding: 1px 1px;" + padding + ";\" " : "";
+                        let buttonstyle = JSON.parse(localStorage.getItem('size')) >25? "background-color: #AAA": "background-color: transparent";
                         chars_html.push("<button type=\"button\" class=\" ak-shadow-small ak-btn btn btn-sm ak-rare-" + colors[char.level] + " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"bottom\" onclick=\"showChar(this)\" " +style+"title=\""+ char.name +"\">");
-                        if(localStorage.showImage == 'true')chars_html.push("<img style=\""+buttonstyle+"\"height=\""+localStorage.size+"\" width=\""+localStorage.size+"\" src=\"./img/chara/"+ char.name_en +".png\">   " )
-                        if(localStorage.size>60)chars_html.push("<div>")
-                        if(localStorage.showName == 'true')chars_html.push(char.name_tl)
-                        if(localStorage.size>60)chars_html.push("</div>")
+                        if(JSON.parse(localStorage.getItem('showImage')))chars_html.push("<img style=\""+buttonstyle+"\"height=\""+JSON.parse(localStorage.getItem('size'))+"\" width=\""+JSON.parse(localStorage.getItem('size'))+"\" src=\"./img/chara/"+ char.name_en +".png\">   " )
+                        if(JSON.parse(localStorage.getItem('size'))>60)chars_html.push("<div>")
+                        if(JSON.parse(localStorage.getItem('showName')))chars_html.push(char.name_tl)
+                        if(JSON.parse(localStorage.getItem('size'))>60)chars_html.push("</div>")
                         chars_html.push("</button>\n")
                     });
                     let tags_html = [];
@@ -585,8 +574,8 @@
         }
 
         function changeUILanguage(calc=false){
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
+            reg = localStorage.getItem('gameRegion');
+            lang = localStorage.getItem('webLang');
             // showTooltip = false
             $('#display-reg').text(reg.toUpperCase())
             console.log(lang)
@@ -645,10 +634,10 @@
                 getJSONdata("type",function(data){
                     if(data.length != 0){
                         if(reg==lang){
-                            $(el).html(data[i]["type_"+reg]+(localStorage.showClass=="true"?"干员":""));
+                            $(el).html(data[i]["type_"+reg]+(JSON.parse(localStorage.getItem('showClass'))?"干员":""));
                             // $(el).attr("data-toggle", "tooltip");
                         }else{
-                            $(el).html(titledMaker(data[i]["type_"+reg]+(localStorage.showClass=="true"?"干员":""),data[i]["type_"+lang]));
+                            $(el).html(titledMaker(data[i]["type_"+reg]+(JSON.parse(localStorage.getItem('showClass'))?"干员":""),data[i]["type_"+lang]));
                         }
                         $(el).attr("data-original-title", data[i]["type_"+lang]);
                     }
@@ -685,14 +674,14 @@
         }
 
         function refresh(calc=true){
-            if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+            if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
                 localStorage.setItem("gameRegion", 'cn');
                 localStorage.setItem("webLang", 'en');
                 reg = "cn";
                 lang = "en";
             } else {
-                reg = localStorage.gameRegion;
-                lang = localStorage.webLang;
+                reg = localStorage.getItem('gameRegion');
+                lang = localStorage.getItem('webLang');
             }
             $('.reg[value='+reg+']').addClass('selected');
             $('.lang[value='+lang+']').addClass('selected');

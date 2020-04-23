@@ -107,16 +107,16 @@ $(document).ready(function(){
     var reg;
     var lang, langText;
 
-    // console.log(localStorage.gameRegion)
+    // console.log(localStorage.getItem('gameRegion'))
 
-    if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+    if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
         localStorage.setItem("gameRegion", 'cn');
         localStorage.setItem("webLang", 'en');
         reg = "cn";
         lang = "en";
     } else {
-        reg = localStorage.gameRegion;
-        lang = localStorage.webLang;
+        reg = localStorage.getItem('gameRegion');
+        lang = localStorage.getItem('webLang');
     }
     switch (lang) {
         case "en":langText = 'English';break;

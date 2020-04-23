@@ -341,22 +341,19 @@
         $(".fa-sort-amount-up").click(event => event.stopPropagation());
         $(".fa-sort-amount-down").click(event => event.stopPropagation());
         $('#lefthandtoggle').click(function(event){
-            if(lefthand=="true")
-                lefthand = "false"
-            else 
-                lefthand = "true"
-            localStorage.setItem("lefthand",lefthand)
+            lefthand = !lefthand
+            localStorage.setItem("lefthand",JSON.stringify(lefthand))
             // console.log(lefthand)
             location.reload()
         })
-        if(typeof localStorage.lefthand ==="undefined"){
-            localStorage.setItem("leftHand","false")
-            lefthand = "false"
+        if(!localStorage.getItem('lefthand')){
+            lefthand = false
+            localStorage.setItem("leftHand",JSON.stringify(lefthand))
 
         }else{
-            lefthand = localStorage.lefthand
+            lefthand = JSON.parse(localStorage.getItem('lefthand'))
         }
-        if(lefthand=="true")
+        if(lefthand)
         $('#lefthandtoggle').css("background-color","#0077AA")
         else 
         $('#lefthandtoggle').css("background-color","#222")
@@ -372,8 +369,7 @@
              }
          });
         
-        if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
-            console.log("game region undefined");
+        if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
             localStorage.setItem("gameRegion", 'cn');
             localStorage.setItem("webLang", 'en');
             reg = "cn";
@@ -384,11 +380,11 @@
                 // console.log("TEST1")
             }
         } else {
-            console.log(localStorage.webLang);
+            console.log(localStorage.getItem('webLang'));
             reg = "cn";
             lang = "en";
         }
-        if(typeof localStorage.selectedOPDetails === "undefined" || localStorage.selectedOPDetails == ""){
+        if(!localStorage.getItem('selectedOPDetails')){
             console.log("selected OP undefined");
             var vars = getUrlVars();
             console.log(vars)
@@ -403,7 +399,7 @@
                 });
                 selectOperator(opname);
             } else {
-                localStorage.setItem("selectedOP","");
+                localStorage.removeItem("selectedOP");
             }
         } else {
             console.log("selected OP defined");
@@ -429,7 +425,7 @@
                 })
                 
             } else {
-                selectedOP = localStorage.selectedOPDetails;
+                selectedOP = localStorage.getItem('selectedOPDetails');
                 var opname = db.chars[selectedOP].name;
             }
             
@@ -524,7 +520,7 @@
         $("#opname").val("");
         $('#operatorsResult').empty();
         $('#operatorsResult').hide();
-        localStorage.selectedOPDetails = "";
+        localStorage.removeItem('selectedOPDetails');
         history.pushState(null, '', window.location.pathname); 
     }
 
@@ -1049,7 +1045,7 @@
                 // console.log(v);
                 opdataFull = v;
                 opKey = key;
-                localStorage.selectedOPDetails = key;
+                localStorage.setItem('selectedOPDetails', key);
                 return false
             });
 
@@ -3403,8 +3399,8 @@
     }
     
     function changeUILanguage(){
-        reg = localStorage.gameRegion;
-        lang = localStorage.webLang;
+        reg = localStorage.getItem('gameRegion');
+        lang = localStorage.getItem('webLang');
 
         $('#display-reg').text(reg.toUpperCase())
 

@@ -83,7 +83,7 @@
                 scrollTop : 0                       // Scroll to top of body
             }, 500);
         });
-        if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+        if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
             console.log("game region undefined");
             localStorage.setItem("gameRegion", 'cn');
             localStorage.setItem("webLang", 'en');
@@ -95,28 +95,28 @@
                 // console.log("TEST1")
             }
         } else {
-            console.log(localStorage.webLang);
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
+            console.log(localStorage.getItem('webLang'));
+            reg = localStorage.getItem('gameRegion');
+            lang = localStorage.getItem('webLang');
         }
         $('.reg[value='+reg+']').addClass('selected');
         $('.lang[value='+lang+']').addClass('selected');
 
-        if(typeof localStorage.slotNum === "undefined" || localStorage.slotNum == ""){
+        if(!localStorage.getItem('slotNum')){
             console.log("slot num undefined");
-            localStorage.setItem("slotNum", '2');
+            localStorage.setItem("slotNum", JSON.stringify(2));
             slotnum = 3;
         } else {
-            slotnum = localStorage.slotNum;
+            slotnum = JSON.parse(localStorage.getItem('slotNum'));
         }
         $("#slotCount").val(slotnum)
 
         populateSlots();
         var selectedOpnames = {};
-        if(typeof localStorage.selectedOpnames === "undefined" || localStorage.selectedOpnames == ""){
-            localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+        if(!localStorage.getItem('selectedOpnames')){
+            localStorage.setItem('selectedOpnames', JSON.stringify(selectedOpnames));
         } else {
-            selectedOpnames = JSON.parse(localStorage.selectedOpnames);
+            selectedOpnames = JSON.parse(localStorage.getItem('selectedOpnames'));
             $.each(selectedOpnames,function(k,v){
                 selectOperator(v,k);
             });
@@ -149,23 +149,23 @@
             Theme:'Light',
             ToggleState:true,
             OnCallback: function(val) {
-                if(typeof localStorage.syncElites === "undefined" || localStorage.syncElites == ""){
-                    localStorage.setItem("syncElites", 'true');
+                if(!localStorage.getItem('syncElites')){
+                    localStorage.setItem("syncElites", JSON.stringify(true));
                 } else {
-                    localStorage.syncElites = 'true';
+                    localStorage.setItem("syncElites", JSON.stringify(true));
                 }
                 syncEliteTab();
             },
             OffCallback: function (val) {
-                if(typeof localStorage.syncElites === "undefined" || localStorage.syncElites == ""){
-                    localStorage.setItem("syncElites", 'false');
+                if(!localStorage.getItem('syncElites')){
+                    localStorage.setItem("syncElites", JSON.stringify(false));
                 } else {
-                    localStorage.syncElites = 'false';
+                    localStorage.setItem("syncElites", JSON.stringify(false));
                 }
             }
         });
-        if(typeof localStorage.syncElites === "undefined" || localStorage.syncElites == ""){
-            localStorage.setItem("syncElites", 'true');
+        if(!localStorage.getItem('syncElites')){
+            localStorage.setItem("syncElites", JSON.stringify(true));
         }
     });
 
@@ -181,33 +181,33 @@
         populateSlots();
         let selectedOPDetailsObj = {};
         let selectedOpnames = {};
-        localStorage.selectedOPDetailsObj = JSON.stringify(selectedOPDetailsObj);
-        localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+        localStorage.setItem('selectedOPDetailsObj', JSON.stringify(selectedOPDetailsObj));
+        localStorage.setItem('selectedOpnames', JSON.stringify(selectedOpnames));
     }
 
     function changeSlotNum(){
         var oldslotnum = slotnum;
-        localStorage.slotNum = $("#slotCount").val();
         slotnum = $("#slotCount").val();
+        localStorage.setItem('slotNum', JSON.stringify(slotnum));
         if(oldslotnum > slotnum){
             for (var i = slotnum; i < oldslotnum; i++) {
                 let selectedOPDetailsObj = {};
                 let selectedOpnames = {};
-                selectedOPDetailsObj = JSON.parse(localStorage.selectedOPDetailsObj);
-                selectedOpnames = JSON.parse(localStorage.selectedOpnames);
+                selectedOPDetailsObj = JSON.parse(localStorage.getItem('selectedOPDetailsObj'));
+                selectedOpnames = JSON.parse(localStorage.getItem('selectedOpnames'));
                 delete selectedOPDetailsObj[i];
                 delete selectedOpnames[i];
-                localStorage.selectedOPDetailsObj = JSON.stringify(selectedOPDetailsObj)
-                localStorage.selectedOpnames = JSON.stringify(selectedOpnames)
+                localStorage.setItem('selectedOPDetailsObj', JSON.stringify(selectedOPDetailsObj));
+                localStorage.setItem('selectedOpnames', JSON.stringify(selectedOpnames));
             }
         }
         $('#slotscontainer').html('');
         populateSlots();
         var selectedOpnames = {};
-        if(typeof localStorage.selectedOpnames === "undefined" || localStorage.selectedOpnames == ""){
-            localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+        if(!localStorage.getItem('selectedOpnames')){
+            localStorage.setItem('selectedOpnames', JSON.stringify(selectedOpnames));
         } else {
-            selectedOpnames = JSON.parse(localStorage.selectedOpnames);
+            selectedOpnames = JSON.parse(localStorage.getItem('selectedOpnames'));
             $.each(selectedOpnames,function(k,v){
                 selectOperator(v,k);
             });
@@ -219,8 +219,8 @@
     function syncEliteTab(selectedElite=-1){
         var SE = selectedElite;
         console.log("selectedElite: "+SE)
-        console.log('syncElites: '+localStorage.syncElites)
-        if($("#slot0-op-nametl").html() != "" && localStorage.syncElites == 'true'){
+        console.log('syncElites: '+localStorage.getItem('syncElites'))
+        if($("#slot0-op-nametl").html() != "" && JSON.parse(localStorage.getItem('syncElites'))){
             if(selectedElite==-1){
                 for (var i = 1; i <= 3; i++) {
                     if($("#slot0-elite-topnav > li:nth-child("+i+") > a").hasClass('active')){
@@ -422,30 +422,30 @@
                 $("#slot"+slot+"-opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
                 let selectedOPDetailsObj = {};
                 let selectedOpnames = {};
-                if(typeof localStorage.selectedOPDetailsObj === "undefined" || localStorage.selectedOPDetailsObj == "" || localStorage.selectedOpnames == ""){
+                if(!localStorage.getItem("selectedOPDetailsObj") || !localStorage.getItem('selectedOpnames')){
                     localStorage.setItem("selectedOPDetailsObj", JSON.stringify(selectedOPDetailsObj));
                     localStorage.setItem("selectedOpnames", JSON.stringify(selectedOpnames));
                 } else {
                     try {
-                        selectedOPDetailsObj = JSON.parse(localStorage.selectedOPDetailsObj)
+                        selectedOPDetailsObj = JSON.parse(localStorage.getItem('selectedOPDetailsObj'))
                     } catch (e) {
-                        localStorage.selectedOPDetailsObj = JSON.stringify(selectedOPDetailsObj);
+                        localStorage.setItem('selectedOPDetailsObj', JSON.stringify(selectedOPDetailsObj));
                     }
-                    selectedOPDetailsObj = JSON.parse(localStorage.selectedOPDetailsObj)
+                    selectedOPDetailsObj = JSON.parse(localStorage.getItem('selectedOPDetailsObj'))
 
                     try {
-                        selectedOpnames = JSON.parse(localStorage.selectedOpnames)
+                        selectedOpnames = JSON.parse(localStorage.getItem('selectedOpnames'))
                     } catch (e) {
-                        localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
+                        localStorage.setItem('selectedOpnames', JSON.stringify(selectedOpnames));
                     }
-                    selectedOpnames = JSON.parse(localStorage.selectedOpnames)
+                    selectedOpnames = JSON.parse(localStorage.getItem('selectedOpnames'))
                 }
                 selectedOPDetailsObj[slot] = key;
-                localStorage.selectedOPDetailsObj = JSON.stringify(selectedOPDetailsObj);
+                localStorage.setItem('selectedOPDetailsObj', JSON.stringify(selectedOPDetailsObj));
                 selectedOpnames[slot] = opname;
-                localStorage.selectedOpnames = JSON.stringify(selectedOpnames);
-                console.log(localStorage.selectedOPDetailsObj);
-                console.log(localStorage.selectedOpnames);
+                localStorage.setItem('selectedOpnames', JSON.stringify(selectedOpnames));
+                console.log(localStorage.getItem('selectedOPDetailsObj'));
+                console.log(localStorage.getItem('selectedOpnames'));
                 return false
             });
             console.log(opdata2)
@@ -687,8 +687,8 @@
     }
 
     function changeUILanguage(){
-        reg = localStorage.gameRegion;
-        lang = localStorage.webLang;
+        reg = localStorage.getItem('gameRegion');
+        lang = localStorage.getItem('webLang');
 
         $('#display-reg').text(reg.toUpperCase())
         

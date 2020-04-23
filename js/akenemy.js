@@ -75,21 +75,21 @@
         $('[data-toggle="tooltip"]').tooltip();
 
 
-        if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+        if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
             console.log("game region undefined");
             localStorage.setItem("gameRegion", 'cn');
             localStorage.setItem("webLang", 'en');
             reg = "cn";
             lang = "en";
         } else {
-            console.log(localStorage.webLang);
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
+            console.log(localStorage.getItem('webLang'));
+            reg = localStorage.getItem('gameRegion');
+            lang = localStorage.getItem('webLang');
         }
-        if(typeof localStorage.selectedEnemy === "undefined" || localStorage.selectedEnemy == ""){
-            localStorage.setItem("selectedEnemy","");
+        if(!localStorage.getItem('selectedEnemy')){
+            localStorage.removeItem("selectedEnemy");
         } else {
-            selectedEnemy = localStorage.selectedEnemy;
+            selectedEnemy = localStorage.getItem('selectedEnemy');
             var opname = db.chars[selectedEnemy].name;
             selectOperator(opname);
         }
@@ -106,15 +106,15 @@
     });
     
     function regDropdown(el){
-        localStorage.gameRegion = el.attr("value");
+        localStorage.setItem('gameRegion', el.attr("value"));
         $(".dropdown-item.reg").removeClass("selected");
         el.addClass("selected");   
         changeUILanguage();
     }
                 
     function langDropdown(el){
-        localStorage.webLang = el.attr("value");
-        console.log(localStorage.webLang)
+        localStorage.setItem('webLang', el.attr("value"));
+        console.log(localStorage.getItem('webLang'))
         $(".dropdown-item.lang").removeClass("selected");
         el.addClass("selected");
         changeUILanguage();
@@ -385,8 +385,8 @@
     }
 
     function changeUILanguage(){
-        reg = localStorage.gameRegion;
-        lang = localStorage.webLang;
+        reg = localStorage.getItem('gameRegion');
+        lang = localStorage.getItem('webLang');
 
         $('#display-reg').text(reg.toUpperCase())
         

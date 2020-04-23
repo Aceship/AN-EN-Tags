@@ -73,16 +73,16 @@
         $('[data-toggle="tooltip"]').tooltip();
 
 
-        if(typeof localStorage.gameRegion === "undefined" || localStorage.gameRegion == ""|| localStorage.webLang == ""){
+        if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
             console.log("game region undefined");
             localStorage.setItem("gameRegion", 'cn');
             localStorage.setItem("webLang", 'en');
             reg = "cn";
             lang = "en";
         } else {
-            console.log(localStorage.webLang);
-            reg = localStorage.gameRegion;
-            lang = localStorage.webLang;
+            console.log(!localStorage.getItem('webLang'));
+            reg = localStorage.getItem('gameRegion');
+            lang = localStorage.getItem('webLang');
         }
         $('#opname').bind("enterKey",function(e){
             // console.log()
@@ -95,22 +95,22 @@
              }
          });
 
-        if(typeof localStorage.selectedOP === "undefined" || localStorage.selectedOP == ""){
-            localStorage.setItem("selectedOP","");
+        if(!localStorage.getItem('selectedOP')){
+            localStorage.removeItem("selectedOP");
         } else {
-            selectedOP = localStorage.selectedOP;
+            selectedOP = localStorage.getItem('selectedOP');
             var opname = db.chars[selectedOP].name;
             selectOperator(opname);
         }
 
-        if (typeof localStorage.chosenOps !== "undefined") {
-            let chosen_ids = JSON.parse(localStorage.chosenOps);
+        if (localStorage.getItem('chosenOps')) {
+            let chosen_ids = JSON.parse(localStorage.getItem('chosenOps'));
             for (let id of chosen_ids) addOperator(id);
 
             calculateCombined();
             calculateBreakdown();
         } else {
-            localStorage.setItem("chosenOps", "[]");
+            localStorage.setItem("chosenOps", JSON.stringify([]));
         }
 
         $('.reg[value='+reg+']').addClass('selected');
@@ -126,15 +126,15 @@
     });
 
     function regDropdown(el){
-        localStorage.gameRegion = el.attr("value");
+        localStorage.setItem('gameRegion', el.attr("value"));
         $(".dropdown-item.reg").removeClass("selected");
         el.addClass("selected");   
         changeUILanguage();
     }
                 
     function langDropdown(el){
-        localStorage.webLang = el.attr("value");
-        console.log(localStorage.webLang)
+        localStorage.setItem('webLang', el.attr("value"));
+        console.log(localStorage.getItem('webLang'))
         $(".dropdown-item.lang").removeClass("selected");
         el.addClass("selected");
         changeUILanguage();
@@ -145,8 +145,8 @@
         $("#opname").val("");
         $('#operatorsResult').empty();
         $('#operatorsResult').hide();
-        localStorage.selectedOP = "";
-        selectedOP = localStorage.selectedOP;
+        localStorage.removeItem('selectedOP');
+        selectedOP = localStorage.getItem('selectedOP');
         // combined=[]
         $("#reqmats-container").empty();
         $("#tbody-materials").empty();
@@ -164,7 +164,7 @@
         $("#opBanner").attr('src','');
         $("#detail").empty();
         $("#opID").val("");
-        localStorage.chosenOps = "[]";
+        localStorage.setItem('chosenOps', JSON.stringify([]));
         chosen_ops = {};
         $("#add-op").empty();
         $("#selectops-container").empty();
@@ -275,7 +275,7 @@
                 // $("#opBanner").attr('src','img/ui/chara/banner-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
                 
                 $("#opID").val(key);
-                localStorage.selectedOP = key;
+                localStorage.setItem('selectedOP', key);
                 return false
             });
             // console.log(opclass)
@@ -432,7 +432,7 @@
     } 
 
     function addCurrentOperator() {
-        let id = localStorage.selectedOP;
+        let id = localStorage.getItem('selectedOP');
         let level = $("#eliteDropBtn").text()[6];
 
         let key = `${id}${level}`;
@@ -675,8 +675,8 @@
     }
 
     function changeUILanguage(){
-        reg = localStorage.gameRegion;
-        lang = localStorage.webLang;
+        reg = localStorage.getItem('gameRegion');
+        lang = localStorage.getItem('webLang');
 
         $('#display-reg').text(reg.toUpperCase())
         
