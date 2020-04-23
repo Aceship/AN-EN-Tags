@@ -11,7 +11,9 @@
             localStorage.removeItem("checkedTagsTLCache");
         }
         var globalOptStars = [];
-        var JsonDATA = [];
+        var JsonDATA = {};
+
+    function init() {
         var tags_aval = {};
         var all_chars = {};
         var avg_char_tag = 0;
@@ -33,6 +35,7 @@
                 // console.log(data);
                 $.each(data, function (_, char) {
                     if (char.hidden) return;
+                    if (char.globalHidden&&reg !="cn") return
                     char.tags.push(char.type);
                     if(reg == 'cn'){
                         char.tags.push(char.sex + "性干员");
@@ -69,9 +72,9 @@
                 //console.log(avg_char_tag);
                 avg_char_tag = char_tag_sum / tag_count;
 
-                JsonDATA[0] = tags_aval;
-                JsonDATA[1] = all_chars;
-                JsonDATA[2] = avg_char_tag;
+                JsonDATA.tags_aval = tags_aval;
+                JsonDATA.all_chars = all_chars;
+                JsonDATA.avg_char_tag = avg_char_tag;
             });
         var d1 = $.getJSON("json/tl-tags.json", function (data){
                     data1 = data;
@@ -82,16 +85,20 @@
         var d3 = $.getJSON("json/tl-gender.json", function (data){
                     data3 = data;
                 });
-        $.when(d0,d1,d2,d3).then(function(){
+        return $.when(d0,d1,d2,d3).then(function(){
             if(data1){
                 if(data2){
-                    JsonDATA[3] = data1;
-                    JsonDATA[4] = data2;
-                    JsonDATA[5] = data3;
+                    JsonDATA.tagsTL = data1;
+                    JsonDATA.typesTL = data2;
+                    JsonDATA.gendersTL = data3;
                 }
             }
-            $.holdReady(false);
         });
+    }
+
+        init().then(function() {
+            $.holdReady(false);
+        })
         $(document).ready(function(){
             $.getScript("js/aknav.js", function(){
                 $('#to-tag').click(function() {      // When arrow is clicked
@@ -214,13 +221,13 @@
         function showChar(el){
             // let reg = $('.reg[value='+reg+']').attr("value");
             // let lang =$('.lang[value='+lang+']').attr("value");
-            let all_chars = JsonDATA[1];
-            let all_tags = JsonDATA[3];
-            let all_types = JsonDATA[4];
-            let all_genders = JsonDATA[5];
+            let all_chars = JsonDATA.all_chars;
+            let all_tags = JsonDATA.tagsTL;
+            let all_types = JsonDATA.typesTL;
+            let all_genders = JsonDATA.gendersTL;
             let char_name = $(el).attr('data-original-title');
 
-            // console.log(JsonDATA[1])
+            // console.log(JsonDATA.all_chars)
             
             if(reg!="cn"){
                 Object.keys(all_chars).forEach(currkey => {
@@ -422,7 +429,7 @@
             $(el).toggleClass("btn-primary btn-secondary");
 
             if($(el).hasClass("btn-primary")){
-                let all_tags = JsonDATA[3].concat(JsonDATA[4]);
+                let all_tags = JsonDATA.tagsTL.concat(JsonDATA.typesTL);
                 var currtags = all_tags.find(search=>{
                     var checktags = search.type_cn?search.type_cn:search.tag_cn
                     if(checktags==tag) return true
@@ -472,10 +479,10 @@
             // console.log(JsonDATA)
             if(typeof checkedTags !== 'undefined'){
                 //console.log(JsonDATA);
-                let tags_aval = JsonDATA[0];
-                let all_chars = JsonDATA[1];
-                let avg_char_tag = JsonDATA[2];
-                let all_tags = JsonDATA[3].concat(JsonDATA[4]);
+                let tags_aval = JsonDATA.tags_aval;
+                let all_chars = JsonDATA.all_chars;
+                let avg_char_tag = JsonDATA.avg_char_tag;
+                let all_tags = JsonDATA.tagsTL.concat(JsonDATA.typesTL);
                 let len = checkedTags.length;
                 let count = Math.pow(2, checkedTags.length);
                 $("#count-tag").html(checkedTags.length>=1 ? checkedTags.length==6 ? "6 [MAX]": checkedTags.length: "")
@@ -503,7 +510,7 @@
                     
                     // let anotag = tags.map(tagextra => {
                     //     let currtag = tagextra
-                    //    if(JsonDATA[4].find(search=>search.type_cn==tagextra)){
+                    //    if(JsonDATA.typesTL.find(search=>search.type_cn==tagextra)){
                     //        console.log(tagextra)
                     //        currtag = tagextra+(JSON.parse(localStorage.getItem('showClass'))?"干员":"")
                     //    }
@@ -589,7 +596,7 @@
                     let tagsTL = comb.tagsTL
                     let anotag = tags.map(tagextra => {
                         let currtag = tagextra
-                       if(JsonDATA[4].find(search=>search.type_cn==tagextra)){
+                       if(JsonDATA.typesTL.find(search=>search.type_cn==tagextra)){
                            
                            currtag = tagextra+(showClass?"干员":"")
                        }
@@ -658,7 +665,7 @@
 
             console.log(currsearch)
             if(currsearch){
-                let all_tags = JsonDATA[3].concat(JsonDATA[4]);
+                let all_tags = JsonDATA.tagsTL.concat(JsonDATA.typesTL);
                 var allsearch = []
                 all_tags.forEach(element => {
                     Object.keys(element).forEach(searchkey => {
@@ -704,7 +711,7 @@
             let types = ["qualifications","position","affix"];
             for (let m = 0; m < types.length; m++) {
                 $(".tags-"+types[m]).each(function(j,el){
-                    getJSONdata("tags",function(data){
+                    let data = JsonDATA.tagsTL
                         if(data.length != 0){
                             let k = 0;
                             for (var i = 0; i < data.length; i++) {
@@ -718,11 +725,10 @@
                                 }
                             }
                         }
-                    });
                 });
             }
             $(".tags-gender").each(function(i,el){
-                getJSONdata("gender",function(data){
+                let data = JsonDATA.gendersTL
                     if(data.length != 0){
                         if(reg == 'cn'){
                             $(el).html(data[i]["sex_"+reg]+'性干员');
@@ -731,16 +737,14 @@
                         }
                         $(el).attr("data-original-title", data[i]["sex_"+lang]);
                     }
-                });
             });
+            var showClass = JSON.parse(localStorage.getItem('showClass'))
             $(".tags-class").each(function(i,el){
-                getJSONdata("type",function(data){
+                let data = JsonDATA.typesTL
                     if(data.length != 0){
                         $(el).attr("data-original-title", data[i]["type_"+lang]);
                     }
-            var showClass = JSON.parse(localStorage.getItem('showClass'))
                     $(el).html(data[i]["type_"+reg]+(showClass?reg=='cn'?'干员':reg=='jp'?"タイプ":"":""));
-                });
             });
             getJSONdata("ui",function(data){
                 if(data.length != 0){
@@ -774,84 +778,7 @@
         }
 
         function refresh(calc=true){
-            
-            if(!localStorage.getItem("gameRegion") || !localStorage.getItem("webLang")){
-                localStorage.setItem("gameRegion", 'cn');
-                localStorage.setItem("webLang", 'en');
-                reg = "cn";
-                lang = "en";
-            } else {
-                reg = localStorage.getItem("gameRegion");
-                lang = localStorage.getItem("webLang");
-            }
-            $('.reg[value='+reg+']').addClass('selected');
-            $('.lang[value='+lang+']').addClass('selected');
-            tags_aval = {};
-            var d0 = $.getJSON("json/tl-akhr.json", function (data) {
-                let tag_count = 0;
-                let char_tag_sum = 0;
-                $.each(data, function (_, char) {
-                    if (char.hidden) return;
-                    if (char.globalHidden&&reg !="cn") return
-                    char.tags.push(char.type);
-                    // console.log(reg)
-                    if(reg == 'cn'){
-                        char.tags.push(char.sex + "性干员");
-                    } else {
-                        char.tags.push(char.sex);
-                    }
-
-                    $.each(char.tags, function (_, tag) {
-                        if (tag in tags_aval) {
-                            tags_aval[tag].push({ 
-                                "name_en": char.name_en, 
-                                "name": char['name_'+reg],
-                                "name_tl": char['name_'+lang],
-                                "level": char.level, 
-                                "type": char.type });
-                        } else {
-                            tags_aval[tag] = [{ 
-                                "name_en": char.name_en, 
-                                "name": char['name_'+reg], 
-                                "name_tl": char['name_'+lang],
-                                "level": char.level, 
-                                "type": char.type }];
-                                tag_count++;
-                        }
-                        char_tag_sum++;
-                    });
-                    all_chars[char.name_cn] = { 'name_cn': char.name_cn, 'name_en': char.name_en, 'name_jp': char.name_jp, 'name_kr': char.name_kr, 'level': char.level, 'tags': char.tags, 'globalHidden' : char.globalHidden?char.globalHidden:false };
-                });
-                //$.each(tags_aval, function (key, _) {
-                //    $("#box-tags").append(
-                //        "<button type=\"button\" class=\"btn btn-sm btn-secondary btn-tag my-1\">" + key + "</button>\n"
-                //    );
-                //    tag_count++;
-                //});
-                //console.log(avg_char_tag);
-                avg_char_tag = char_tag_sum / tag_count;
-
-                JsonDATA[0] = tags_aval;
-                JsonDATA[1] = all_chars;
-                JsonDATA[2] = avg_char_tag;
-            });
-            var d1 = $.getJSON("json/tl-tags.json", function (data){
-                        data1 = data;
-                    });
-            var d2 = $.getJSON("json/tl-type.json", function (data){
-                        data2 = data;
-                    });
-            var d3 = $.getJSON("json/tl-gender.json", function (data){
-                        data3 = data;
-                    });
-            $.when(d0,d1,d2,d3).then(function(){
-                if(data1){
-                    if(data2){
-                        JsonDATA[3] = data1;
-                        JsonDATA[4] = data2;
-                        JsonDATA[5] = data3;
-                    }
-                }
+            init().then(function() {
                 if(calc){
                     calculate();
                     
