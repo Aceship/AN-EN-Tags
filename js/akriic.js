@@ -294,7 +294,7 @@
                     }else if(buffId.includes("meet")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>`
     
-                        if(buffId.includes("meet_spd&team")){
+                        if(buffId.includes("team")){
                             let currbuff = currBuff2.description
                             // (buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
                             // console.log(currbuff.indexOf("<@cc.kw>"))
