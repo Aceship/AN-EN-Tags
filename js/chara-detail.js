@@ -2722,7 +2722,8 @@
         if(spinewidgettoken&&token&&spinewidgettoken.loaded){
             
             LoadAnimationToken(token)
-        }else if(spinewidget&&spinewidget.loaded){
+        }
+        if(spinewidget&&spinewidget.loaded){
 
             var animskill = db.animlist[opdataFull.id]
             console.log(skillnum)
