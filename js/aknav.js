@@ -188,12 +188,12 @@ $(document).ready(function(){
             <div class="modal-body acedonate-body">
 
                 <div class='acedonate-card'>
-                    <div>Donate for international platform</div>
+                    <div>Donate with international platform</div>
                     <a href='https://ko-fi.com/T6T41D433' target='_blank'><img height='36' style='border:0px;height:33px' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Support Us on Ko-fi.com' /></a>
                 </div>
 
                 <div class='acedonate-card'>
-                    <div>Donate with indonesia platform</div>
+                    <div>Donate with indonesian platform</div>
                     <a href='https://trakteer.id/Aceship123' target='_black' style='background:#be1e2d;padding:8px;border-radius:4px'><img height='36' style='border:0px;height:33px' src='https://trakteer.id/images/mix/navbar-logo-lite-white-beta.png'></a>
                 </div>
 
