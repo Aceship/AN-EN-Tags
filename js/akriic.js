@@ -141,7 +141,7 @@
         } else {
             selectedOP = localStorage.getItem("selectedOP");
             var opname = db.chars[selectedOP].name;
-            selectOperator(opname);
+            // selectOperator(opname);
         }
         $('.reg[value='+reg+']').addClass('selected');
         $('.lang[value='+lang+']').addClass('selected');
@@ -178,17 +178,19 @@
             let currChara=charaBuff[element]
             var currspecific =""
             if(currChara.find(search=> {
-                if(currspecific =search.buffId.includes(type)){
+                // console.log(search.buffId)
+                // console.log(type)
+                if(currspecific =search.buffId.startsWith(type)){
                     currspecific = search.buffId
                     if(!sortby && db.building_buff[currspecific].description.includes("%"))
                         sortby = true
                 }
-                return search.buffId.includes(type)
+                return search.buffId.startsWith(type)
             }))
             charaFilter.push({"name":element,"buff": currChara,"specific":currspecific})
         });
         // console.log(db.building_buff)
-        
+        console.log(charaFilter)
         charaFilter.sort((a,b)=>{
             // var acurr 
             // var bcurr
@@ -196,7 +198,7 @@
             var acurr = db.building_buff[a.specific]
             var bcurr = db.building_buff[b.specific]
             
-            console.log(db.building_buff[b.specific])
+            // console.log(db.building_buff[b.specific])
             
             let muhRegex = /<@cc\.vup>(.*?)<\/>/
             
@@ -232,14 +234,17 @@
             GetRiicDetail(element.name)
             // console.log(element.name)
             
-            currHtml.push(`<div class="row" style="padding:5px;margin:5px;background:#333333">
-                            <div class="col-4 col-sm-2" style="text-align:center;padding:3px;margin:auto">
-                                <div style="padding-top:3px"><img src="img/avatars/${element.name}.png" style="height:120px"></div>
-                                <div style="margin:auto">${chara.appellation}</div>
+            currHtml.push(`<div class="row riicbody" style="">
+                            <div class="riic-avatar" style="">
+                                <div class="riic-avatar2">
+                                    <div ><img class='riic-pic' src="img/avatars/${element.name}.png" style="height:120px"></div>
+                                    <div class="riic-name">${chara.appellation}</div>
+                                </div>
                             </div>
-                            <div class="col-8 col-sm-10" style="margin:auto;padding:2px"> ` )
+                            <div class="riic-desc" style=""> ` )
             // console.log(charaRiic)
             // console.log(charaRiicTL)
+            // console.log(chara)
             // if (charaRiicTL){
                 element.buff.forEach((buff, i) => {
                     // console.log(buff)
@@ -247,24 +252,27 @@
                     let buffId = buff.buffId;
                     let currBuff2 = db.building_buff[buffId]
                     let charaRiicTL = db.riic[buffId]
-
+                    let clue = ''
                     let buffName = charaRiicTL?charaRiicTL.name:currBuff2.buffName
                     let description = charaRiicTL?charaRiicTL.desc:currBuff2.description
+                    let place = currBuff2.roomType.toLowerCase()
+                    console.log(place)
+                    // console.log(place)
 
-                    console.log(currBuff2)
+                    // console.log(currBuff2)
                     extrainfo2 = ''
                     extraInfo = ``
                     
                     if(buffId.includes("control")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-control" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px">HQ </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-control" style=""><img src="img/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px"> HQ </div>`
                     }else if(buffId.includes("power")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-power" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px">Power </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-power" style=""><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px"> Power </div>`
                     }else if(buffId.includes("manu")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-manu" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-manu" style=""><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
                         let currbuff = currBuff2.description
-                        console.log([currBuff2.buffId])
-                        console.log(currbuff)
-                        console.log(`${description}`)
+                        // console.log([currBuff2.buffId])
+                        // console.log(currbuff)
+                        // console.log(`${description}`)
                         if(buffId.includes("prod")){
                             
                         }else if (buffId.includes("formula")){
@@ -282,17 +290,17 @@
                         }
                     
                     }else if(buffId.includes("trade")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-trade" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px">Trading </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-trade" style=""><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px"> Trading </div>`
                     }else if(buffId.includes("workshop")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-workshop" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px">Workshop </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-workshop" style=""><img src="img/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px"> Workshop </div>`
                     }else if(buffId.includes("train")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-train" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px">Training </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-train" style=""><img src="img/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px"> Training </div>`
                     }else if(buffId.includes("dorm")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-dorm" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px">Dorm </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-dorm" style=""><img src="img/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px"> Dorm </div>`
                     }else if(buffId.includes("hire")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-hire" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px">Hiring </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-hire" style=""><img src="img/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px"> Hiring </div>`
                     }else if(buffId.includes("meet")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=""><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px"> Meeting </div>`
     
                         if(buffId.includes("team")){
                             let currbuff = currBuff2.description
@@ -300,7 +308,7 @@
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             if(currbuff.indexOf("<@cc.kw>")>0){
-                                let clue = ''
+                                
                                 let muhRegex = /<@cc\.kw>(.*?)<\/>/g
                                 currbuff = muhRegex.exec(currbuff)[1]
                                 switch (currbuff) {
@@ -312,8 +320,8 @@
                                     case "喀兰贸易": clue = 6;break;
                                     case "罗德岛制药": clue = 7;break;
                                 }
-                                extraInfo = `<div class="btn btn-sm ak-disable ak-btn ak-riic-meet" style="height:25px;margin:auto;padding:1px;padding-right:3px;"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
-                                             <div class="btn btn-sm ak-disable ak-btn ak-riic-meet ak-riic-meet-clue" style="height:25px;width:20px;margin:auto;font-size: 20px;padding-bottom:30px"><B>${clue}</b></div>`
+                                extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=";"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
+                                             `
                             }
                         }
                     }
@@ -323,18 +331,32 @@
                         req = `Lv.${buff.cond.level}`
                     }
                     if(buff.cond.phase>0){
-                        req += ` Elite ${buff.cond.phase}`
+                        req += `<img src="./img/ui/elite/${buff.cond.phase}.png" style="width:20px;height:20px" title="Elite ${buff.cond.phase}">`
                     }
                     if(req!==""){
-                        req = `<div class="btn btn-sm ak-disable ak-btn" style="height:25px;margin:auto;padding:1px;background:#0078BC;">Req: ${req}</div>`
+                        req = `<div class="riic-req" style="">${req}</div>`
                     }
                     // console.log(req)     
-                    var bufficon = `<img src="./img/ui/infrastructure/skill/${currBuff2.skillIcon}.png" style="" title="">`
-                    currHtml.push(`<div class="ak-disable ak-c-black" style="padding:10px;margin:auto">
-                    <div style="padding:5px;background:#222">${bufficon} ${extraInfo} ${buffName} ${req}</div>
-                    <div style="padding-left:20px;margin:5px">
-                    ${extrainfo2==""?"":`<div style="display:inline;background:#222;padding:3px">${extrainfo2}</div><div></div>`} 
-                    ${description}</div></div>` )
+                    var bufficon = `<img src="./img/ui/infrastructure/skill/${currBuff2.skillIcon}.png" style="width:40px;height:40px" title="">`
+                    currHtml.push(`
+                    <div class='riic-tab'>
+                    <div class='riic-icon'>${bufficon}
+                    ${clue?`<div class='riic-clue'><img src="./img/ui/clue/${clue}-s.png" style="width:40px" title="Clue ${clue}"></div>`:""}
+                    </div>
+                    
+                    <div class="riic-eachdesc">
+                        
+                            <div class='riic-desc-title riic-color-${place}' style="">${extraInfo}${req}${buffName}</div>
+                                <div class='riic-desc-desc riic-color-${place}-sub'style="">
+                                    ${extrainfo2==""?"":`<div style="display:inline;background:#222;padding:3px">${extrainfo2}</div>
+                                <div>
+                            </div>`} 
+                        ${description}
+                        </div>
+                    </div>
+                    </div>
+                    
+                    ` )
                 });
             // }
             currHtml.push(`</div></div> `)
