@@ -666,24 +666,23 @@
             console.log(currsearch)
             if(currsearch){
                 let all_tags = JsonDATA.tagsTL.concat(JsonDATA.typesTL);
-                var allsearch = all_tags.reduce((acc, element) => {
-                    Object.entries(element).forEach(([k,v]) => {
-                        if(/^(tag|type)_/.test(k) && v.toLowerCase().includes(currsearch.toLowerCase())){
-                            acc.add(v);
+                var allsearch = []
+                all_tags.forEach(element => {
+                    Object.keys(element).forEach(searchkey => {
+                        if(element[searchkey].toLowerCase().includes(currsearch.toLowerCase())){
+                            if(!allsearch.find(search=>search[1]==element)){
+                                allsearch.push([element[searchkey],element])
+                            }
                         }
                     });
-                    return acc;
-                }, new Set());
+                });
                 if(isenter){
-                    let firstTag = allsearch.values().next().value
-                    if (firstTag) {
-                        console.log(firstTag)
-                        var currtag = firstTag['tag_'+lang]?firstTag['tag_'+lang]:firstTag['type_'+lang]
-                        console.log(`button[data-original-title='${currtag}']`)
-                        console.log($(`button[data-original-title='${currtag}']`))
-                        clickBtnTag($(`button[data-original-title='${currtag}']`)[0])
-                        $('#fastInput').val("")
-                    }
+                    console.log(allsearch[0])
+                    var currtag = allsearch[0][1]['tag_'+lang]?allsearch[0][1]['tag_'+lang]:allsearch[0][1]['type_'+lang]
+                    console.log(`button[data-original-title='${currtag}']`)
+                    console.log($(`button[data-original-title='${currtag}']`))
+                    clickBtnTag($(`button[data-original-title='${currtag}']`)[0])
+                    $('#fastInput').val("")
                 }else{
                     console.log(allsearch)
                 }
