@@ -140,7 +140,7 @@ $(document).ready(function(){
                 </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a href='https://ko-fi.com/T6T41D433' target='_blank'><img height='36' style='border:0px;height:33px' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Support Us on Ko-fi.com' /></a>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ace-donatemodal"><img height='20px' style='border:0px;height:20px;margin-top:-5px' src='./img/items/GOLD.png'>  Donate</button>
                 </li>
 
                 <li class="nav-item dropdown" id="navitemRegion">
@@ -172,4 +172,41 @@ $(document).ready(function(){
         </div>
     `
     $('#aknav').html(html)
+
+    var donate = `
+    <div class="modal fade " id="ace-donatemodal">
+        <div class="modal-dialog modal-dialog-centered modal" >
+            <div class="modal-content" style="background:#444">
+        
+            <!-- Modal Header -->
+            <!-- <div class="modal-header">
+                <h4 class="modal-title"></h4>
+                
+            </div> -->
+        
+            <!-- Modal body -->
+            <div class="modal-body acedonate-body">
+
+                <div class='acedonate-card'>
+                    <div>Donate for international platform</div>
+                    <a href='https://ko-fi.com/T6T41D433' target='_blank'><img height='36' style='border:0px;height:33px' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Support Us on Ko-fi.com' /></a>
+                </div>
+
+                <div class='acedonate-card'>
+                    <div>Donate with indonesia platform</div>
+                    <a href='https://trakteer.id/Aceship123' target='_black' style='background:#be1e2d;padding:8px;border-radius:4px'><img height='36' style='border:0px;height:33px' src='https://trakteer.id/images/mix/navbar-logo-lite-white-beta.png'></a>
+                </div>
+
+            </div>
+        
+            <!-- Modal footer -->
+            <div class="modal-footer" style="border-top: 1px solid #2f2f2f">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        
+            </div>
+        </div>
+    </div>
+    `
+    $('#acedonate').html(donate)
 });
