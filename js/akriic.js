@@ -263,11 +263,11 @@
                     extrainfo2 = ''
                     extraInfo = ``
                     
-                    if(buffId.includes("control")){
+                    if(buffId.startsWith("control")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-control" style=""><img src="img/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px"> HQ </div>`
-                    }else if(buffId.includes("power")){
+                    }else if(buffId.startsWith("power")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-power" style=""><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px"> Power </div>`
-                    }else if(buffId.includes("manu")){
+                    }else if(buffId.startsWith("manu")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-manu" style=""><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
                         let currbuff = currBuff2.description
                         // console.log([currBuff2.buffId])
@@ -289,17 +289,17 @@
                             // }
                         }
                     
-                    }else if(buffId.includes("trade")){
+                    }else if(buffId.startsWith("trade")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-trade" style=""><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px"> Trading </div>`
-                    }else if(buffId.includes("workshop")){
+                    }else if(buffId.startsWith("workshop")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-workshop" style=""><img src="img/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px"> Workshop </div>`
-                    }else if(buffId.includes("train")){
+                    }else if(buffId.startsWith("train")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-train" style=""><img src="img/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px"> Training </div>`
-                    }else if(buffId.includes("dorm")){
+                    }else if(buffId.startsWith("dorm")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-dorm" style=""><img src="img/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px"> Dorm </div>`
-                    }else if(buffId.includes("hire")){
+                    }else if(buffId.startsWith("hire")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-hire" style=""><img src="img/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px"> Hiring </div>`
-                    }else if(buffId.includes("meet")){
+                    }else if(buffId.startsWith("meet")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=""><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px"> Meeting </div>`
     
                         if(buffId.includes("team")){
