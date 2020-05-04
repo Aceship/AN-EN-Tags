@@ -1380,7 +1380,7 @@
                         skilljson.value = skillinfo.value
 
                         skilldetails.push(skilljson)
-                        if(skillinfo.key=="force") force= skillinfo.value
+                        if(skillinfo.key=="force"||skillinfo.key=="base_force_level") force= skillinfo.value
                         if(v2.duration==-1){
                             if(skillinfo.key =="duration"){
                                 spDuration = skillinfo.value;
@@ -1393,10 +1393,12 @@
                     });
                     // console.log(skilldetails)
                     switch (force) {
+                        case -1: force = "Very Small [-1]";break;
                         case 0: force = "Small [0]";break;
                         case 1: force = "Medium [1]";break;
                         case 2: force = "Large [2]";break;
                         case 3: force = "Huge [3]";break;
+                        case 4: force = "Extreme [4]";break;
                     }
                     // console.log(currSkill)
                     var skillType = ""
