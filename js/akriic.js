@@ -254,7 +254,7 @@
                     let charaRiicTL = db.riic[buffId]
                     let clue = ''
                     let buffName = charaRiicTL?charaRiicTL.name:currBuff2.buffName
-                    let description = charaRiicTL?charaRiicTL.desc:currBuff2.description
+                    let description = charaRiicTL?charaRiicTL.descformat:currBuff2.description
                     let place = currBuff2.roomType.toLowerCase()
                     console.log(place)
                     // console.log(place)
@@ -269,7 +269,7 @@
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-power" style=""><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px"> Power </div>`
                     }else if(buffId.startsWith("manu")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-manu" style=""><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
-                        let currbuff = currBuff2.description
+                        let currbuff = description
                         // console.log([currBuff2.buffId])
                         // console.log(currbuff)
                         // console.log(`${description}`)
@@ -303,14 +303,12 @@
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=""><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px"> Meeting </div>`
     
                         if(buffId.includes("team")){
-                            let currbuff = currBuff2.description
                             // (buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             // console.log(currbuff.indexOf("<@cc.kw>"))
-                            if(currbuff.indexOf("<@cc.kw>")>0){
-                                
-                                let muhRegex = /<@cc\.kw>(.*?)<\/>/g
-                                currbuff = muhRegex.exec(currbuff)[1]
+                            let muhRegex = /<@cc\.kw>(.*?)<\/>/g
+                            if(muhRegex.test(description)){
+                                let currbuff = muhRegex.exec(description)[1]
                                 switch (currbuff) {
                                     case "莱茵生命": clue = 1;break;
                                     case "企鹅物流": clue = 2;break;
@@ -320,11 +318,22 @@
                                     case "喀兰贸易": clue = 6;break;
                                     case "罗德岛制药": clue = 7;break;
                                 }
-                                extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=";"><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px">Meeting </div>
-                                             `
                             }
                         }
                     }
+                    description = description.replace(/<@(.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+                        console.log(m, rtf, text);
+                        let rich = db.dataconst.richTextStyles[rtf];
+                        if (rich) {
+                            let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
+                            if (colorRTF.test(rich)) {
+                                let color = colorRTF.exec(rich)[1]
+                                return `<span style="color:${color}">${text}</span>`
+                            } else {
+                                return rich.replace('{0}', text)
+                            }
+                        }
+                    })
                     let req =``
                     // console.log(`Lv.${buff.cond.level}/ Elite ${buff.cond.phase}`)
                     if(buff.cond.level>1){
