@@ -303,12 +303,14 @@
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=""><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px"> Meeting </div>`
     
                         if(buffId.includes("team")){
+                            let currbuff = description
                             // (buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             // console.log(currbuff.indexOf("<@cc.kw>"))
-                            let muhRegex = /<@cc\.kw>(.*?)<\/>/g
-                            if(muhRegex.test(description)){
-                                let currbuff = muhRegex.exec(description)[1]
+                            if(currbuff.indexOf("<@cc.kw>")>0){
+                                
+                                let muhRegex = /<@cc\.kw>(.*?)<\/>/g
+                                currbuff = muhRegex.exec(currbuff)[1]
                                 switch (currbuff) {
                                     case "莱茵生命": clue = 1;break;
                                     case "企鹅物流": clue = 2;break;
