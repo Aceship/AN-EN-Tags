@@ -34,10 +34,10 @@ $(document).ready(function(){
             name:"Infrastructure Skill"
         },{
             href:"akhrcompare2.html",
-            name:"Comparing"
+            name:"Comparing (WIP)"
         },{
             href:"akstage.html",
-            name:"Stage(WIP)"
+            name:"Stage (WIP)"
         }]
     })
     dropdown.push({name:"Elite Materials",content:"akhrelite.html"})
@@ -186,16 +186,37 @@ $(document).ready(function(){
         
             <!-- Modal body -->
             <div class="modal-body acedonate-body">
+            	<div style="text-align:left; margin: 5px;">
+            		<h5>Help us maintain the website</h5>
+            		<p>We made this website on our spare time and it took us quite some time to get into what it is now. Currently we do have some list of new features that we want to implement, but the progress is slow because we only work on it when we have the time and motivation to do it.</p>
+            		<p>Aside from implementing a new feature, fixing bugs, and receiving feedbacks, we prioritizes updating our database whenever the game got updated.
+            		<p>Your donation will definitely help on improving the website, keeping it updated, and motivating us to keep doing what we're doing and this is completely optional for you to do.</p>
+            	</div>
+            	<div class="row" style="padding: 10px; max-height: 160px; background-color: #333;">
+            		<div class="col-md-6">
+	            		<a class="btn btn-info" style="padding:15px; width: 100%; height: 100%" href='https://ko-fi.com/aceship' target='_blank'>
+	            			<b style=" color: white;">Donate on Ko-fi</b>
+	            			<div style="display:block; margin-top: 20px;">
+	            				<img height="50" src="https://theme.zdassets.com/theme_assets/2141020/171bb773b32c4a72bcc2edfee4d01cbc00d8a004.png">
+	            				<img height="30" style="filter: brightness(100)" src="https://pngimg.com/uploads/paypal/paypal_PNG4.png">
+	            			</div>
+	            		</a>
+            		</div>
+            		<div class="col-md-6">
+	            		<a class="btn btn-info" style="padding:15px 10px 10px 10px; width: 100%;" href='https://trakteer.id/Aceship123' target='_blank'>
+	            			<b style=" color: white;">Donate on Trakteer</b>
+	            			<div style="display:block;">
+	            				<div style="background-color: #bf202f; display: inline-block; border-radius: 6px; padding: 5px 10px; vertical-align: middle;">
+	            					<div style="background-image: url('https://trakteer.id/images/mix/navbar-logo-lite-white-beta.png'); background-size: cover; height: 43px; width: 28px; background-position: 0% 0%;"></div>
+	            				</div>
 
-                <div class='acedonate-card'>
-                    <div>Donate with international platform</div>
-                    <a href='https://ko-fi.com/T6T41D433' target='_blank'><img height='36' style='border:0px;height:33px' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=2' border='0' alt='Support Us on Ko-fi.com' /></a>
-                </div>
-
-                <div class='acedonate-card'>
-                    <div>Donate with indonesian platform</div>
-                    <a href='https://trakteer.id/Aceship123' target='_black' style='background:#be1e2d;padding:8px;border-radius:4px'><img height='36' style='border:0px;height:33px' src='https://trakteer.id/images/mix/navbar-logo-lite-white-beta.png'></a>
-                </div>
+	            				<div style="display: inline-block; padding: 5px 10px; position: relative; width: 100px; height: 90px; vertical-align: middle;">
+	            					<div style="filter: brightness(100); height: 110px; width: 100px; left: 0px; top: -10px; position: absolute; background-position: 0% 0%; background-size: cover; background-image: url('https://lh3.googleusercontent.com/proxy/q5UFTgG-S2gU5mhWB-I3spahzQViiiU1TRWX4Tj8d6cPKcbmYYVTBLDkhHNQR4u84cc4LIzHvZELbnEpgrPNMtpFRHfA5C5SwyQ');"></div>
+	            				</div>
+	            			</div>
+	            		</a>
+            		</div>
+            	</div>
 
             </div>
         
