@@ -211,7 +211,7 @@ $(document).ready(function(){
 	            				</div>
 
 	            				<div style="display: inline-block; padding: 5px 10px; position: relative; width: 100px; height: 90px; vertical-align: middle;">
-	            					<div style="filter: brightness(100); height: 110px; width: 100px; left: 0px; top: -10px; position: absolute; background-position: 0% 0%; background-size: cover; background-image: url('https://lh3.googleusercontent.com/proxy/q5UFTgG-S2gU5mhWB-I3spahzQViiiU1TRWX4Tj8d6cPKcbmYYVTBLDkhHNQR4u84cc4LIzHvZELbnEpgrPNMtpFRHfA5C5SwyQ');"></div>
+	            					<div style="filter: brightness(100); height: 110px; width: 100px; left: 0px; top: -10px; position: absolute; background-position: 0% 0%; background-size: cover; background-image: url('./img/extra/gopay.png');"></div>
 	            				</div>
 	            			</div>
 	            		</a>
