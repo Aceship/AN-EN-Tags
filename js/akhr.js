@@ -366,24 +366,17 @@
                 if ($("#opt-all").hasClass("btn-primary")) {
                     $("#opt-all").toggleClass("btn-primary btn-secondary");
                 } else {
-                    let checkedCount = 0;
-                    $(".btn-opt").each(function (_, __) {
-                        if ($(el).attr("id") === "opt-all") return;
-                        if ($(el).hasClass("btn-primary")) checkedCount++;
-                    });
-                    // console.log("checked count:");
-                    // console.log(checkedCount);
-                    if (checkedCount === 7) $("#opt-all").toggleClass("btn-primary btn-secondary");
+                    // console.log("checked count:", checkedCount);
+                    let checkedCount = $(".btn-opt.btn-primary:not(#opt-all)").length;
+                    if (checkedCount === 6) $("#opt-all").toggleClass("btn-primary btn-secondary");
                 }
             }
             globalOptStars = [];
-            $(".btn-opt").each(function (_, __) {
-                if ($(this).attr("opt-id") === "all" || $(this).hasClass("btn-secondary")) return;
+            $(".btn-opt.btn-primary:not(#opt-id)").each(function (_, __) {
                 globalOptStars.push($(this).attr("opt-id"));
             });
             
-            // console.log("opstars:")
-            // console.log(globalOptStars);
+            // console.log("opstars:", globalOptStars);
 
             refresh();
         }
@@ -546,8 +539,7 @@
 
                     let optStars = globalOptStars;
                     if(optStars.length == 0 ){
-                        $(".btn-opt").each(function (_, __) {
-                            if ($(this).attr("opt-id") === "all" || $(this).hasClass("btn-secondary")) return;
+                        $(".btn-opt.btn-primary:not(#opt-id)").each(function (_, __) {
                             optStars.push($(this).attr("opt-id"));
                         });
                     }
