@@ -108,7 +108,11 @@
                 });
 
                 $('.dropdown-trigger').dropdown();
-                $('[data-toggle="tooltip"]').tooltip();
+                $('[data-toggle="tooltip"]').tooltip({
+                    trigger: "hover"
+                }).on('click', function() {
+                    $(this).blur();
+                });
 
 
                 if(!localStorage.getItem('showImage')){
@@ -304,7 +308,11 @@
                     +"</tr>"
                 );
 
-                $('[data-toggle="tooltip"]').tooltip();
+                $('[data-toggle="tooltip"]').tooltip({
+                    trigger: "hover"
+                }).on('click', function() {
+                    $(this).blur();
+                });
                 localStorage.setItem('lastChar', char_name)
             }else{
                 $(".tr-chartag").remove();
@@ -652,7 +660,11 @@
                         "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
                         "</td>"+""+"</tr>"
                     );
-                    $('[data-toggle="tooltip"]').tooltip();
+                    $('[data-toggle="tooltip"]').tooltip({
+                        trigger: "hover"
+                    }).on('click', function() {
+                        $(this).blur();
+                    });
                 });
             }
         }
