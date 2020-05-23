@@ -4,12 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Arknights Recruitment Calculator</title>
-    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css'>
     <link rel="stylesheet" href="css/multilingual.css">
     <link rel="stylesheet" href="css/ak.css">
+    <style type="text/css">
+        .levelformcontainer label {
+            margin-bottom: 0px;
+            margin-top: 10px;
+        }
+    </style>
     <script src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js'></script>
     <script src="js/multilingual.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159317757-1"></script>
@@ -21,6 +27,23 @@
     </script>
 </head>
 <body>
+    <div id="loadingOverlay" style="width: 100vw; height: 150%; background-color: rgb(54, 54, 54); position: absolute; z-index: 9999; top:0px;">
+        <div class="d-flex justify-content-center" style="margin-top: 50vh">
+            <div class="spinner-border" role="status" style="border-color: #0098DC; border-right-color: transparent; width: 4rem; height: 4rem;">
+            </div>
+        </div>
+        <div style="width: 100%; text-align: center; color: white; font-family: 'Novecentosanswide Normal', Arial, sans-serif; font-size: 1.2em; margin-top: 13px;">Loading Toolbox</div>
+    </div>
+    <script>
+        $(function(){
+          $('#nav-placeholder').load('nav.html');
+        });
+        $(window).on("load", function () {
+            setTimeout(function () {
+                $("#loadingOverlay").fadeOut(); 
+            }, 1000);
+        });
+    </script>
     <button class="btn btn-sm btn-primary goToTag" style="position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000" id="to-tag" type="button">^ </button>
     <nav id="aknav" class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );">
             <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
@@ -32,12 +55,12 @@
     </nav>
     <div id='acedonate'></div>
     <div style="padding-bottom:50px"></div>
-    <div class="container col-12" style="margin:auto; max-width: 1200px;">
+    <div class="container col-12 levelformcontainer" style="margin:auto; max-width: 1200px; margin-top: 30px;">
     	<div class="row">
     		<div class="col-md-6 col-sm-12">
-		        <div class="alert alert-dark mt-3 px-3 px-sm-4 form-control-sm">
-		            <div class="form-row">
-		                <div class="form-group col-12 col-sd-2">
+		        <div class="alert alert-dark">
+		            <div class="row">
+		                <div class="col">
 		                    <label for="star">Rarity★</label>
 		                    <select id="star" class="form-control form-control-sm">
 		                        <option selected>6</option>
@@ -48,7 +71,9 @@
 		                        <option>1</option>
 		                    </select>
 		                </div>
-		                <div class="form-group col-6 col-sm-5">
+                    </div>
+                    <div class="row">
+                        <div class="col">
 		                    <label for="lslevel">EXP Card Map</label>
 		                    <select id="lslevel" class="form-control form-control-sm">
 		                        <option selected>LS-5</option>
@@ -58,7 +83,7 @@
 		                        <option>LS-1</option>-->
 		                    </select>
 		                </div>
-		                <div class="form-group col-6 col-sm-5">
+                        <div class="col">
 		                    <label for="lslevel">Lungmen Coin Map</label>
 		                    <select id="lslevel" class="form-control form-control-sm">
 		                        <option selected>CE-5</option>
@@ -70,8 +95,8 @@
 		                </div>
 		            </div>
 
-		            <div class="form-row">
-		                <div class="form-group col-4">
+                    <div class="row">
+                        <div class="col">
 		                    <label for="current-evolve">Current Elite</label>
 		                    <select id="current-evolve" class="form-control form-control-sm">
 		                        <option selected>0</option>
@@ -79,44 +104,59 @@
 		                        <option>2</option>
 		                    </select>
 		                </div>
-		                <div class="form-group col-4">
+                        <div class="col">
+                            <label for="target-evolve">Target Elite</label>
+                            <select id="target-evolve" class="form-control form-control-sm">
+                                <option selected>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
 		                    <label for="current-level">Current Level</label>
 		                    <input type="text" class="form-control form-control-sm" id="current-level" value="1">
 		                </div>
-		                <div class="form-group col-4">
-		                    <label for="current-exp">Current Exp</label>
-		                    <input type="text" class="form-control form-control-sm" id="current-exp" value="0">
-		                </div>
-		                <div class="form-group col-4">
-		                    <label for="target-evolve">Target Elite</label>
-		                    <select id="target-evolve" class="form-control form-control-sm">
-		                        <option selected>0</option>
-		                        <option>1</option>
-		                        <option>2</option>
-		                    </select>
-		                </div>
-		                <div class="form-group col-6">
-		                    <label for="target-level">Target Level</label>
-		                    <input type="text" class="form-control form-control-sm" id="target-level" value="1">
-		                </div>
-		                <div style="width: 100%; display: inline-block; padding: 5px; font-weight: bold; font-size: 1.2em; margin-bottom: 10px;"><span>Resources currently have:</span></div>
-		                <div class="form-group col-4">
-		                    <label for="gold-asset">Lungmen Coins</label>
+                        <div class="col">
+                            <label for="target-level">Target Level</label>
+                            <input type="text" class="form-control form-control-sm" id="target-level" value="1">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="current-exp">Current Exp</label>
+                            <input type="text" class="form-control form-control-sm" id="current-exp" value="0">
+                        </div>
+                    </div>
+
+                    <div class="row">
+		                <div style="width: 100%; display: inline-block; padding: 5px; font-weight: bold; font-size: 1.2em; margin-top: 10px;"><span>Resources currently have:</span></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+		                    <label for="gold-asset">LMD</label>
 		                    <input type="text" class="form-control form-control-sm" id="gold-asset" value="0">
 		                </div>
-		                <div class="form-group col-3">
+                        <div class="col">
 		                    <label for="book-basic">Green Exp Card</label>
 		                    <input type="text" class="form-control form-control-sm" id="book-basic" value="0">
 		                </div>
-		                <div class="form-group col-3">
+                        <div class="col">
 		                    <label for="book-primary">Blue Exp Card</label>
 		                    <input type="text" class="form-control form-control-sm" id="book-primary" value="0">
 		                </div>
-		                <div class="form-group col-3">
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
 		                    <label for="book-middle">Yellow Exp Card</label>
 		                    <input type="text" class="form-control form-control-sm" id="book-middle" value="0">
 		                </div>
-		                <div class="form-group col-3">
+                        <div class="col">
 		                    <label for="book-advanced">Gold Exp Card</label>
 		                    <input type="text" class="form-control form-control-sm" id="book-advanced" value="0">
 		                </div>
