@@ -2196,7 +2196,7 @@
                 <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
                 <div style="vertical-align:top;${isTalentRange?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
                     <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
-                    <div style="font-size:11px;">${currTalentDesc}</div>
+                    <div style="font-size:13px; font-family:'Source Sans Pro'">${currTalentDesc}</div>
                 </div>
                     ${isTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
                 </div>
