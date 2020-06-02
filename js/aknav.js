@@ -38,6 +38,9 @@ $(document).ready(function(){
         },{
             href:"akstage.html",
             name:"Stage (WIP)"
+        },{
+            href:"akmedal.html",
+            name:"Medal List (WIP)"
         }]
     })
     dropdown.push({name:"Elite Materials",content:"akhrelite.html"})
