@@ -110,8 +110,6 @@
                 $('.dropdown-trigger').dropdown();
                 $('[data-toggle="tooltip"]').tooltip({
                     trigger: "hover"
-                }).on('click', function() {
-                    $(this).blur();
                 });
 
 
@@ -310,8 +308,6 @@
 
                 $('[data-toggle="tooltip"]').tooltip({
                     trigger: "hover"
-                }).on('click', function() {
-                    $(this).blur();
                 });
                 localStorage.setItem('lastChar', char_name)
             }else{
@@ -652,11 +648,9 @@
                         "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
                         "</td>"+""+"</tr>"
                     );
-                    $('[data-toggle="tooltip"]').tooltip({
-                        trigger: "hover"
-                    }).on('click', function() {
-                        $(this).blur();
-                    });
+                });
+                $('[data-toggle="tooltip"]').tooltip({
+                    trigger: "hover"
                 });
             }
         }
