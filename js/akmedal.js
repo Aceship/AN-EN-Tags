@@ -30,14 +30,14 @@ function Start(){
         console.log(b.medalId)
 
         html +=`
-        <div style='background:#222;color:#ddd;padding:5px;margin:5px;padding-left:20px'>
+        <div style='background:#222;color:#ddd;margin:5px'>
             <div style ='display:inline-flex'>
             
-            <div style='margin:auto'>
-                <img height='100px' width='auto' src='./img/ui/medalicon/${b.medalId}.png'>
+            <div style='background:#111;margin:auto;height:120px;width:120px;text-align:center;padding:5px'>
+                <img height='110px' width='auto' src='./img/ui/medalicon/${b.medalId}.png'>
             </div>
             
-            <div style='padding-left:20px;margin:auto'>
+            <div style='padding-left:5px;margin:auto'>
                 <div style='background:#111;border-radius:4px;display:inline-flex;padding:5px'>
                     <b>${b.medalName}</b>
                 </div>
