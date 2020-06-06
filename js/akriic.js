@@ -255,6 +255,7 @@
                     let clue = ''
                     let buffName = charaRiicTL?charaRiicTL.name:currBuff2.buffName
                     let description = charaRiicTL?charaRiicTL.descformat:currBuff2.description
+                    let cndesc = currBuff2.description
                     let place = currBuff2.roomType.toLowerCase()
                     console.log(place)
                     // console.log(place)
@@ -302,15 +303,22 @@
                     }else if(buffId.startsWith("meet")){
                         extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=""><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px"> Meeting </div>`
     
-                        if(buffId.includes("team")){
-                            let currbuff = description
+                        if(buffId.includes("team")||buffId.includes("flag")){
+                            // console.log(buffId)
+                            let currbuff = cndesc
+                            // console.log(cndesc)
                             // (buffId.match(/\[.+?\]/g)|| []).map(function(str) { return str.slice(1,-1).slice(1,-1)});
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             // console.log(currbuff.indexOf("<@cc.kw>"))
                             if(currbuff.indexOf("<@cc.kw>")>0){
                                 
                                 let muhRegex = /<@cc\.kw>(.*?)<\/>/g
+                                
                                 currbuff = muhRegex.exec(currbuff)[1]
+                                if(buffId=="meet_spd&team[060]")
+                                console.log(currbuff)
+                                
+                                
                                 switch (currbuff) {
                                     case "莱茵生命": clue = 1;break;
                                     case "企鹅物流": clue = 2;break;
@@ -324,7 +332,7 @@
                         }
                     }
                     description = description.replace(/<@(.+?)>(.+?)<\/>/g, function(m, rtf, text) {
-                        console.log(m, rtf, text);
+                        // console.log(m, rtf, text);
                         let rich = db.dataconst.richTextStyles[rtf];
                         if (rich) {
                             let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
