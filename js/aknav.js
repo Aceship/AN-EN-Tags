@@ -234,3 +234,7 @@ $(document).ready(function(){
     `
     $('#acedonate').html(donate)
 });
+
+function hideload(){
+    $("#loadingOverlay").fadeOut(); 
+}
