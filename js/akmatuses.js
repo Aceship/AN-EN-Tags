@@ -283,7 +283,7 @@
         }
 
         function changeImageSize(el) {
-            localStorage.setItem(size, parseInt($(el).attr('title')));
+            localStorage.setItem('size', parseInt($(el).attr('title')));
 
             $("#selectedImageSize").html(JSON.parse(localStorage.getItem('size')));
             $(".imagesizeselect").each(function() {
