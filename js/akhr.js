@@ -602,7 +602,7 @@
                     let chars_html = [];
                     let colors = { 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6" };
                     comb.possible.sort(function (a, b) {
-                        return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
+                        return a.level - b.level;
                     });
                     $.each(chars, function (_, char) {
                         let padding = showName && size <60? "padding-right: 8px" : "padding-right: 1px";
