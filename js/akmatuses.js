@@ -361,12 +361,7 @@
             var size = JSON.parse(localStorage.getItem('size'))
             
             $.each(chars_selection, function (mat_id, chars) {
-                let padding = showInfo && size < 60
-                            ? "padding-right: 1px;"
-                            : "padding-right: 1px;";
-                let style = showImage
-                          ? 'style="padding: 1px 1px; ' + padding + '" '
-                          : "";
+                let style = 'style="padding:2px;"';
                 let buttonstyle = size > 25
                                 ? "background-color: #AAA"
                                 : "background-color: transparent";
@@ -385,25 +380,37 @@
                               style + ' "title="' + char.name + '" mat-id="' + mat_id + '" mat-count=' + char.count + '>');
 
                     if (showImage) {
+                        if (size < 60) {
+                            body.push('<div style="display:flex;">');
+                        }
                         body.push('<img style="' + buttonstyle
                                 + '" height="' + size
                                 + '" width="' + size
                                 + '" src="./img/avatars/' + char.id + '.png">');
                     }
-                    
-                    if(size > 60||!showImage) body.push("<div style='background:#222'>")
-                    body.push(`<div style='background:#333;color:#aaa;
+
+                    body.push(`<div style='background:#333;color:#aaa;width:100%;
                     ${(size < 60)||!showImage?
-                    `padding:${showImage?size/2-10+'px 2px;display:inline;':"2px 2px"} `:
+                    `padding:${showImage?size/2-10+'px 7px 0px 7px;':"2px 2px"} `:
                     `padding:2px 2px`}'>${char.name}</div>`)
+                    if (showImage && size < 60) {
+                        body.push('</div>');
+                    }
                     if(showInfo) {
-                        let info = `<div style='background:#222;border-radius:2px;margin:1px'>`;
+                        let info = `<div style='background:#222;margin:2px 0px 2px 0px;width:100%;'>`;
                         if (char.class == "Skill-up") {
-                            info += "";
                             var titleimg = skill_levels[char.skill_level]
                             if (char.skill >= 7) titleimg = char.skill_level;
                             // info += skill_levels[char.skill_level];
+                            if (char.skill_index > 0) {
+                                info = `<div style='background-color:transparent;margin:2px 0px 2px 0px;display:flex;width:100%;'>`;
+                                info += `<div style='color:#ffffff;font-size:24px;font-weight:bold;background:#000;width:50%;float:left;margin-right:1px;display:flex;justify-content:center;align-items:center;'>S${char.skill_index}</div>`;
+                                info += `<div style="background:#222; width:50%; float:right; display:flex; justify-content:center; margin-left:1px;">`
+                            }
                             info += `<img src='img/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
+                            if (char.skill_index > 0) {
+                                info += "</div>";
+                            }
                         } else {
                             if(char.class=="E1")info += "<img src='img/ui/elite/1-s.png'>";
                             else info += "<img src='img/ui/elite/2-s.png'>";
@@ -412,9 +419,13 @@
                         info+="</div>"
                         body.push(info + `<div class="item-amount" style="font-weight: bold; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd">${char.count}x</div>`);
                     }else{
-                        let info = `<div style='background:#222;border-radius:2px;margin:1px;color:#aaa;padding:1px 5px;min-width:50px'>`;
+                        let info = `<div style='background:#222;margin:2px 0px 2px 0px;color:#aaa;padding:0px 5px 0px 5px;min-width:50px'>`;
                         if (char.class == "Skill-up") {
-                            info += "Skill ";
+                            if (char.skill_index == 0) {
+                                info += "Skill Level ";
+                            } else {
+                                info += `Skill ${char.skill_index} `;
+                            }
                             var titleimg = skill_levels[char.skill_level]
                             if (char.skill >= 7) titleimg = char.skill_level;
                             info += skill_levels[char.skill_level];
@@ -426,7 +437,6 @@
                         info+="</div>"
                         body.push(info + `<div class="item-amount" style="font-weight: bold; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd">${char.count}x</div>`);
                     }
-                    if(size > 60) body.push("</div>")
                 
                     body.push("</button>\n")
                 }
