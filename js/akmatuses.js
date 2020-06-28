@@ -404,8 +404,8 @@
                             // info += skill_levels[char.skill_level];
                             if (char.skill_index > 0) {
                                 info = `<div style='background-color:transparent;margin:2px 0px 2px 0px;display:flex;width:100%;'>`;
-                                info += `<div style='color:#ffffff;font-size:24px;font-weight:bold;background:#000;width:50%;float:left;margin-right:1px;display:flex;justify-content:center;align-items:center;'>S${char.skill_index}</div>`;
-                                info += `<div style="background:#222; width:50%; float:right; display:flex; justify-content:center; margin-left:1px;">`
+                                info += `<div style='color:#ffffff;font-size:24px;font-weight:bold;background:#000;width:50%;float:left;margin-right:1px;display:flex;justify-content:center;align-items:center;padding:0px 5px 0px 5px;'>S${char.skill_index}</div>`;
+                                info += `<div style="background:#222; width:50%; float:right; display:flex; justify-content:center; margin-left:1px;padding:0px 5px 0px 5px;">`
                             }
                             info += `<img src='img/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
                             if (char.skill_index > 0) {
