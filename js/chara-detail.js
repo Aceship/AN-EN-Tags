@@ -2713,7 +2713,7 @@
                     if(typeof submatches[1] != "undefined"){
                         // console.log(submatches[1])
                         if(submatches[1].includes("%")){
-                            value = Math.round((value * 100)) + "%";
+                            value = Math.round((value * 100000))/1000 + "%";
                         }
                     }
                     desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
