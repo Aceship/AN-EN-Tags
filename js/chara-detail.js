@@ -2319,12 +2319,14 @@
         // console.log(descriptions)
         descriptions.forEach(element => {
             if(element){
-                let muhRegex = /<@ba\.kw>(.*?)<\/>/g
-                let currSpeciality = muhRegex.exec(element)
+                // let muhRegex = /<@ba\.kw>(.*?)<\/>/g
+                // let currSpeciality = muhRegex.exec(element)
+                // console.log(element)
+                let currSpeciality = element.replace(/\<(.*?)\>/gi,"")
                 // console.log(currSpeciality)
                 let filterDesc
                 if(currSpeciality){
-                    splitdesc.push([element.replace(currSpeciality[0],""),currSpeciality[1]])
+                    splitdesc.push([currSpeciality])
                 }else{
                     splitdesc.push([element])
                 }
@@ -2381,7 +2383,7 @@
         // console.log(trait)
         let isReplaced = false
         splitdesc.forEach(element => {
-            if(element.length>1){
+            if(element.length>0){
                 let typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
                 // if(!typetl) typetl = db.attacktype.find(search=>search.type_cn==element[1])
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
@@ -2392,7 +2394,7 @@
                 let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
                 // console.log(currTLconv)
                 if(currTLconv){
-                    console.log(currTLconv)
+                    // console.log(currTLconv)
                     var textreplace = 'Value'
                     if(trait && trait.candidates.length>1){
                         textreplace =  `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>`
