@@ -2690,7 +2690,7 @@
 
         // if(skillTL){
         if(desc){
-            var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
+            var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{\{(.*?)\}:.1(.)\}|\{(.*?)\})/gm);
             // console.log(matches)
             $.each(matches,function(i,v){
                 var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
