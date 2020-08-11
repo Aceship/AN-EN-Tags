@@ -1180,8 +1180,12 @@
                 let dropdowntab = []
                 
                 for(var i=0;i<extraSkin.length;i++){
+                    
+                    var currskingroupsplit = extraSkin[i].displaySkin.skinGroupId.split("#")
+                    var currskingroup = `${currskingroupsplit[0]}#${currskingroupsplit[1]}`
+                    console.log(currskingroup)
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
-                    <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
+                    <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
                     </button>`))
 
                     tabcontent.push($(`
@@ -1193,7 +1197,7 @@
                     
                     dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
                     <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-                    <img class='skinimage' style="max-width: 40px;max-height: 40px;margin-left:-5px;" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
+                    <img class='skinimage' style="max-width: 40px;max-height: 40px;margin-left:-5px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
                     </a></li>`)
                 }
                 
