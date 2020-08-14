@@ -847,7 +847,7 @@
     }
 
     function getStat(char, stat_class) {
-        return char.phases.slice(-1)[0].attributesKeyFrames[0].data[stat_class];
+        return char.phases.slice(-1)[0].attributesKeyFrames[1].data[stat_class];
     }
 
     function getTags(char) {
