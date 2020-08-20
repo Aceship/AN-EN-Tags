@@ -847,7 +847,7 @@
     }
 
     function getStat(char, stat_class) {
-        return char.phases.slice(-1)[0].attributesKeyFrames[0].data[stat_class];
+        return char.phases.slice(-1)[0].attributesKeyFrames[1].data[stat_class];
     }
 
     function getTags(char) {
@@ -1180,8 +1180,12 @@
                 let dropdowntab = []
                 
                 for(var i=0;i<extraSkin.length;i++){
+                    
+                    var currskingroupsplit = extraSkin[i].displaySkin.skinGroupId.split("#")
+                    var currskingroup = `${currskingroupsplit[0]}#${currskingroupsplit[1]}`
+                    console.log(currskingroup)
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
-                    <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
+                    <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
                     </button>`))
 
                     tabcontent.push($(`
@@ -1193,7 +1197,7 @@
                     
                     dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
                     <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-                    <img class='skinimage' style="max-width: 40px;max-height: 40px;margin-left:-5px;" src='img/skingroups/${encodeURIComponent(extraSkin[i].displaySkin.skinGroupId)}.png'>
+                    <img class='skinimage' style="max-width: 40px;max-height: 40px;margin-left:-5px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
                     </a></li>`)
                 }
                 
@@ -2319,12 +2323,14 @@
         // console.log(descriptions)
         descriptions.forEach(element => {
             if(element){
-                let muhRegex = /<@ba\.kw>(.*?)<\/>/g
-                let currSpeciality = muhRegex.exec(element)
+                // let muhRegex = /<@ba\.kw>(.*?)<\/>/g
+                // let currSpeciality = muhRegex.exec(element)
+                // console.log(element)
+                let currSpeciality = element.replace(/\<(.*?)\>/gi,"")
                 // console.log(currSpeciality)
                 let filterDesc
                 if(currSpeciality){
-                    splitdesc.push([element.replace(currSpeciality[0],""),currSpeciality[1]])
+                    splitdesc.push([currSpeciality])
                 }else{
                     splitdesc.push([element])
                 }
@@ -2381,7 +2387,7 @@
         // console.log(trait)
         let isReplaced = false
         splitdesc.forEach(element => {
-            if(element.length>1){
+            if(element.length>0){
                 let typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
                 // if(!typetl) typetl = db.attacktype.find(search=>search.type_cn==element[1])
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
@@ -2392,7 +2398,7 @@
                 let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
                 // console.log(currTLconv)
                 if(currTLconv){
-                    console.log(currTLconv)
+                    // console.log(currTLconv)
                     var textreplace = 'Value'
                     if(trait && trait.candidates.length>1){
                         textreplace =  `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>`
@@ -2688,7 +2694,7 @@
 
         // if(skillTL){
         if(desc){
-            var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{(.*?)\})/gm);
+            var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{\{(.*?)\}:.1(.)\}|\{(.*?)\})/gm);
             // console.log(matches)
             $.each(matches,function(i,v){
                 var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
@@ -2713,7 +2719,7 @@
                     if(typeof submatches[1] != "undefined"){
                         // console.log(submatches[1])
                         if(submatches[1].includes("%")){
-                            value = Math.round((value * 100)) + "%";
+                            value = Math.round((value * 100000))/1000 + "%";
                         }
                     }
                     desc = desc.replace(v,`<div class="stat-important">${value}</div>`);

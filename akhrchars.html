@@ -164,12 +164,12 @@
                         <div class='filter-category'>
                             <div class="filter-name" >Sort By</div>
                             <div class='filter-category-content'>
-                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-atk" onclick="switchState(this)"><span style="margin-right: 5px;">ATK</span><div class="btn fas fa-sort-amount-down" id="order-atk" onclick="invertSort(this)"></div></div>
-                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-def" onclick="switchState(this)"><span style="margin-right: 5px;">DEF</span><div class="btn fas fa-sort-amount-down" id="order-def" onclick="invertSort(this)"></div></div>
-                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-hp" onclick="switchState(this)"><span style="margin-right: 5px;">HP</span><div class="btn fas fa-sort-amount-down" id="order-hp" onclick="invertSort(this)"></div></div>
-                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-dp" onclick="switchState(this)"><span style="margin-right: 5px;">DP COST</span><div class="btn fas fa-sort-amount-down" id="order-dp" onclick="invertSort(this)"></div></div>
-                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-block" onclick="switchState(this)"><span style="margin-right: 5px;">BLOCK COUNT</span><div class="btn fas fa-sort-amount-down" id="order-block" onclick="invertSort(this)"></div></div>
-                                <div class="filter-btn btn-secondary btn-sm my-1 btn-enabled btn-sort" id="sort-rarity" onclick="switchState(this)"><span style="margin-right: 5px;">RARITY</span><div class="btn fas fa-sort-amount-down" id="order-rarity" onclick="invertSort(this)"></div></div>
+                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-atk" onclick="switchState(this)"><div style="margin-right: 5px;cursor: pointer;">ATK</div><div class="btn fas fa-sort-amount-down" id="order-atk" onclick="invertSort(this)"></div></div>
+                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-def" onclick="switchState(this)"><div style="margin-right: 5px;cursor: pointer;">DEF</div><div class="btn fas fa-sort-amount-down" id="order-def" onclick="invertSort(this)"></div></div>
+                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-hp" onclick="switchState(this)"><div style="margin-right: 5px;cursor: pointer;">HP</div><div class="btn fas fa-sort-amount-down" id="order-hp" onclick="invertSort(this)"></div></div>
+                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-dp" onclick="switchState(this)"><div style="margin-right: 5px;cursor: pointer;">DP COST</div><div class="btn fas fa-sort-amount-down" id="order-dp" onclick="invertSort(this)"></div></div>
+                                <div class="filter-btn btn-secondary btn-sm my-1 btn-disabled btn-sort" id="sort-block" onclick="switchState(this)"><div style="margin-right: 5px;cursor: pointer;">BLOCK COUNT</div><div class="btn fas fa-sort-amount-down" id="order-block" onclick="invertSort(this)"></div></div>
+                                <div class="filter-btn btn-secondary btn-sm my-1 btn-enabled btn-sort" id="sort-rarity" onclick="switchState(this)"><div style="margin-right: 5px;cursor: pointer;">RARITY</div><div class="btn fas fa-sort-amount-down" id="order-rarity" onclick="invertSort(this)"></div></div>
                             </div>
                             <div class="btn btn-danger btn-clear" onclick="resetSorting()">Reset</div>
                         </div>
@@ -180,12 +180,6 @@
                     <div class='tab-content'>
                         <ul id='selectedopclass' style='padding-left: 0px;margin: auto;padding: auto;text-align: center;'>
                             <!-- Operators of the selected class goes here -->
-                            <!--
-                            <li class='selectop-list ak-shadow'>
-                                <img src='img/avatars/char_002_amiya_1.png'>
-                                <div class='name ak-font-novecento'>Amiya</div>
-                                <div class='rarity'><i class='fa fa-star'></i></div>
-                            </li> -->
                         </ul>
                     </div>
                     <br />
@@ -608,7 +602,7 @@
         </div>
     </div>
     <div class="row" >
-        <div class="col-12 ak-footer chara-footer-1" style="margin-top: 100px;">
+        <div class="col-12 ak-footer chara-footer-1" style="margin-top: 155px;padding:5px;border-radius: 2px;box-shadow: 0px 0px 5px black;">
             <div class="col-12 text-center" style="height: 50px">
                 <div style="vertical-align: middle;line-height: 30px;">Developed and Maintained by: Aceship and Faryzal2020</div>
                 <div style="vertical-align: middle;line-height: 20px;">With translate and data help from: dragonjet, Jetroyz, AEsir and others on <a href="https://discord.gg/vJvAP8X" target="_blank">Rhodes island HQ discord server</a></div>

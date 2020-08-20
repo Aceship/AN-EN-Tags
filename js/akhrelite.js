@@ -295,8 +295,11 @@
                 rarity = rarity + " ★";
             }
             $("#op-rarity").html(rarity);
+            let positions = {'MELEE': '近战位', 'RANGED': '远程位'}
+            let position = positions[opdataFull.position]
+            let tags = [position, ...opdataFull.tagList]
             var tags_html = [];
-            $.each(opdata.tags,function(_,v){
+            $.each(tags,function(_,v){
                 var tag = query(db.tags,"tag_cn",v);
                 if(tag){
                     var tagReg = tag['tag_'+reg];
