@@ -963,12 +963,13 @@
             }
         });
         // using query in a lambda is really awful. "sex" should be in chars, not chars2
+
         if (op_gender.length) ops = exclusive_gender ? ops.filter(char => op_gender[0] == query(db.chars2, "name_cn", char.name).sex)
                                                      : ops.filter(char => op_gender.includes(query(db.chars2, "name_cn", char.name).sex));
         if (op_tag.length) ops = exclusive_tag ? ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length == op_tag.length)
                                                : ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length > 0);
-        if (op_faction.length) ops = exclusive_faction ? ops.filter(char => op_faction[0] == char.displayLogo.toUpperCase())
-                                                       : ops.filter(char => op_faction.includes(char.displayLogo.toUpperCase()));
+        if (op_faction&&op_faction.length) ops = exclusive_faction ? ops.filter(char => op_faction[0] == char.displayLogo?char.displayLogo.toUpperCase():"")
+                                                       : ops.filter(char => op_faction.includes(char.displayLogo?char.displayLogo.toUpperCase():""));
         if (op_skill.length) ops = exclusive_skill ? ops.filter(char =>
                                                         char.skills.filter(skill =>
                                                             db.skills[skill.skillId].levels.filter(sp =>
@@ -990,12 +991,16 @@
                                  );
 
         // CONSTRUCTION
+        var showfaction = false
+        if(op_class.length>1||op_class.length==0)
+        showfaction=true
         $("#selectedopclass").html(ops.map(char =>
             `<li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
                 <img src="img/avatars/${getId(char)}.png">
                 <div class="name ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
-                <div class="ak-showfaction"><img src="img/factions/${char.displayLogo?char.displayLogo.toLowerCase():""}.png" title="${db.campdata[char.displayLogo]}"></div>
+                ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en}.png'></div>`:""}
+                <div class="ak-showfaction"><img src="img/factions/${char.displayLogo?char.displayLogo.toLowerCase():"none"}.png" title="${char.displayLogo?db.campdata[char.displayLogo]:"None"}"></div>
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
             </li>`).join(" "));
     }
