@@ -995,7 +995,7 @@
                 <img src="img/avatars/${getId(char)}.png">
                 <div class="name ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
-                <div class="ak-showfaction"><img src="img/factions/${char.displayLogo.toLowerCase()}.png" title="${db.campdata[char.displayLogo]}"></div>
+                <div class="ak-showfaction"><img src="img/factions/${char.displayLogo?char.displayLogo.toLowerCase():""}.png" title="${db.campdata[char.displayLogo]}"></div>
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
             </li>`).join(" "));
     }
@@ -1098,7 +1098,11 @@
             });
             // console.log(extraSkin)
             // console.log(skinList);
-            $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo.toLowerCase()+".png");
+            if(opdataFull.displayLogo){
+                $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo.toLowerCase()+".png");
+            }else{
+                $("#op-faction").attr("src","img/factions/none.png")
+            }
 
             var tabbtn = [];
             var tabbtn2 = [];
@@ -1157,19 +1161,22 @@
                 } else {
                     skindata = db.skintable.charSkins[skinList[i]];
                 }
-                zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
-                if(i == 0){
-                    $("#charazoom").attr("src","img/characters/"+skindata.portraitId+".png");
-                    $('#charazoom').modal('handleUpdate')
-                    
-                    tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
-                        +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
-                        +"</div>"));
-                } else {
-                    tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
-                        +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
-                        +"</div>"));
+                if(skindata){
+                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
+                    if(i == 0){
+                        $("#charazoom").attr("src","img/characters/"+skindata.portraitId+".png");
+                        $('#charazoom').modal('handleUpdate')
+                        
+                        tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
+                            +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
+                            +"</div>"));
+                    } else {
+                        tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
+                            +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
+                            +"</div>"));
+                    }
                 }
+                
                 
                 var elitehtml = getEliteHTML(i,opdataFull);
                 tabcontent2.push(elitehtml);
@@ -1303,7 +1310,10 @@
             $('#op-riicdetail').hide();
             //Story
 
-            GetStory(opdataFull)
+            if(db.handbookInfo.handbookDict[opdataFull.id]){
+                GetStory(opdataFull)
+            }
+            
             $('#opaudiocontent').empty()
             $('#opaudiotranslator').empty()
             $('#opaudioproofreader').empty()
@@ -1557,7 +1567,9 @@
         
         if(eliteCost){
             eliteCost.forEach(materials => {
-                materialist.push(CreateMaterial(materials.id,materials.count))
+                if (materials){
+                    materialist.push(CreateMaterial(materials.id,materials.count))
+                }
             });
             // console.log(materialist)
         }
