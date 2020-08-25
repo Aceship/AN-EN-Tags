@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'>
+    <meta name='theme-color' content='#222222ff'>
+    <title translate-id='web-title'>Arknights Roguelike Info</title>
+    <link rel='manifest' href='./manifest.json' crossorigin='use-credentials'>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/ak.css'>
+    <link rel='stylesheet' href='css/akrogue.css'>
+    <link rel='stylesheet' href='css/akchardetail.css'>
+    <link href='https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
+    <script src='https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js'></script>
+    <!-- site tag (gtag.js) - Google Analytics -->
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-159317757-1'></script>/
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-159317757-1');
+        
+    </script>
+    <script>
+            $(function(){
+              $('#nav-placeholder').load('nav.html');
+            });
+     </script>
+</head>
+<body  >
+    <!-- style=' background-image: url(./img/extra/bg1.png)' -->
+    <button class='btn btn-sm btn-primary goToTag' style='position:fixed;bottom:15px ;right: 0px;size:70px 70px;padding: 10px;z-index: 10000' id='to-tag' type='button'>^ </button>
+    <nav id="aknav" class="navbar fixed-top navbar-expand-md navbar-dark bg-dark" style="background-image: linear-gradient(#222222ff 70%,#222222ff , #111111aa );">
+            <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
+            <a class="navbar-brand" href="#" translate-id="topbar-1">Arknights Toolbox</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    </nav>
+    <div id='acedonate'></div>
+    <div style='padding-bottom:40px;'></div>
+    <!-- <div class='warning-sign'style='position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center'>aaaaaaaaaaaaaaaaaaaaa</div> -->
+    
+    <div id="stageinfo" class="ak-shadow" style="max-width: 1080px;min-height: 1200px;background:#444;margin:auto;margin-top: 20px;margin-bottom: 30px;padding:2px;padding-top:2px;border-radius:2px;text-align: center">
+        <div id="StagePreview" style="display: none;">
+            <button onclick="TogglePerspective()">Toggle Perspective</button>
+            <div style="min-height: 50px;"></div>
+            <!-- <div style="color:#222;font-size:13px;background:#999;padding:4px;margin:8px;border-radius:1px;text-align:center"><b>Challenge/Raid Conditions</b></div> -->
+            <div id="MapPreview" style="text-align:center;"></div>
+        </div>
+        <div id="challengeInfo" style="">
+            <div style="color:#222;font-size:13px;background:#999;padding:4px;margin:8px;border-radius:1px;text-align:center"><b>Relic List</b></div>
+            <div id="reliclist"></div>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-12 ak-footer chara-footer-1">
+            <div class="col-12 text-center" style="height: 50px;">
+                <div style="vertical-align: middle;line-height: 30px;">Made by : Aceship and Faryzal2020</div>
+                <div style="vertical-align: middle;line-height: 20px;">With translate and data help from: dragonjet, Jetroyz and other on <a href="https://discord.gg/vJvAP8X" target="_blank">Rhodes island HQ discord server</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src='js/everpolate.min.js'></script>
+<script src="./js/aknav.js"></script>
+<script src='js/akrogue.js'></script>
+</html>
