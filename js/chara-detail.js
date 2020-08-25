@@ -1270,6 +1270,7 @@
             $("#op-rarity").empty();
             $("#op-rarity").attr("class","op-rarity-"+(opdataFull.rarity+1))
             
+
             $("#op-trust").html(GetTrust(opdataFull))
 
             var potentials = GetPotential(opdataFull)
@@ -1279,7 +1280,12 @@
                 potentialist.push(`<div style="font-size:13px;padding:1px;margin-left:-6px;color:#DDD;vertical-align:bottom"><img src="./img/ui/potential/${i+2}.png" style="margin-top:-4px;width:20px;background:#222;border-radius:25%;padding:2px"> ${potentials[i]}</div>`)
             }
             // console.log(potentials)
-            $("#op-talentlist").html(GetTalent(opKey,opdataFull))
+            if (opdataFull.talents){
+                $("#op-talentlist").html(GetTalent(opKey,opdataFull))
+            }else{
+                $("#op-talentlist").html("")
+            }
+            
             if(potentials.length>0){
                 $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
             }else{
@@ -2153,10 +2159,13 @@
             
         </div>
         `
-
+        console.log()
         
         // console.log(htmlcomb.join(""))
+        if (riicList.length>0)
         return combinehtml
+        else
+        return ""
         
     }
 
@@ -2358,15 +2367,22 @@
         let mintrust = opdataFull.favorKeyFrames[0].data
         let maxtrust = opdataFull.favorKeyFrames[1].data
         let differences = {}
-        // console.log(mintrust)
+        let differencesnum = 0
+        console.log(mintrust)
         Object.keys(mintrust).forEach(key => {
             // console.log(key)
-            if(mintrust[key]!=maxtrust[key])
+            if(mintrust[key]!=maxtrust[key]){
             differences[key]=maxtrust[key]-mintrust[key]
+            differencesnum=differencesnum+1
+            }
         });
-        // console.log(differences)
+        console.log(differences)
 
-        return TrustParse(differences)
+        if(differencesnum!=0){
+            return TrustParse(differences)
+        }else{
+            return ""
+        }
     }
     function TrustParse(differences) {
         let readable = []
