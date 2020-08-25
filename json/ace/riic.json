@@ -9,6 +9,11 @@
 		"desc": "When stationed at the Command Center, order acquisition efficiency of all Trade Stations +7% (Only highest effect becomes active)",
 		"descformat": "When stationed at the Command Center, order acquisition efficiency of all Trade Stations <@cc.vup>+7%</> (Only highest effect becomes active)"
 	},
+	"control_pow_bot[000]": {
+		"name": "I think it's Possible",
+		"desc": "When stationed at the Command Center, if Lancet-2 is stationed at a Power Station, it will be considered as having 2 additional Power Stations (only affects facility count)",
+		"descformat": "When stationed at the Command Center, if <@cc.kw>Lancet-2</> is stationed at a <@cc.kw>Power Station</>, it will be considered as having <@cc.kw>2</> additional <@cc.kw>Power Stations</> (only affects facility count)"
+	},
 	"control_clue_cost[000]": {
 		"name": "Neurotic",
 		"desc": "When stationed at the Command Center, increase the bias of operators in Reception finding clues from their own faction, however greatly increase mood reduction per hour of all operatives in the Command Center",
@@ -126,10 +131,15 @@
 	},
 	"manu_prod_spd&power[000]": {
 		"name": "Automation·α",
+		"desc": "When stationed at a Craft Station, production from other operators reduced to 0, however increase production by +5% for every existing Power Station",
+		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</>, however increase production by <@cc.vup>+5%</> for every existing <@cc.kw>Power Station</>"
+	},
+	"manu_prod_spd&power[010]": {
+		"name": "Automation·β",
 		"desc": "When stationed at a Craft Station, production from other operators reduced to 0, however increase production by +10% for every existing Power Station",
 		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</>, however increase production by <@cc.vup>+10%</> for every existing <@cc.kw>Power Station</>"
 	},
-	"manu_prod_spd&power[011]": {
+	"manu_prod_spd&power[020]": {
 		"name": "Bionic Seadragon",
 		"desc": "When stationed at a Craft Station, production from other operators reduced to 0, however increase production by +15% for every existing Power Station",
 		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</>, however increase production by <@cc.vup>+15%</> for every existing <@cc.kw>Power Station</>"
@@ -210,17 +220,17 @@
 		"descformat": "When stationed at a Craft Station, storage capacity <@cc.vup>+16</> and mood reduction per hour <@cc.vup>-0.25</>"
 	},
 	"manu_formula_cost[000]": {
-		"name": "vlog",
+		"name": "Vlog",
 		"desc": "When stationed at a Craft Station and producing EXP cards, mood reduction per hour -0.25",
 		"descformat": "When stationed at a Craft Station and producing <@cc.kw>EXP cards</>, mood reduction per hour <@cc.vup>-0.25</>"
 	},
 	"manu_formula_limit[000]": {
-		"name": "Video Editing",
+		"name": "Editing",
 		"desc": "When stationed at a Craft Station and producing EXP cards, storage capacity +12",
 		"descformat": "When stationed at a Craft Station and producing <@cc.kw>EXP cards</>, storage capacity <@cc.vup>+12</>"
 	},
 	"manu_formula_limit[001]": {
-		"name": "Video Editing",
+		"name": "Editing",
 		"desc": "When stationed at a Craft Station and producing EXP cards, storage capacity +12",
 		"descformat": "When stationed at a Craft Station and producing <@cc.kw>EXP cards</>, storage capacity <@cc.vup>+12</>"
 	},
@@ -729,6 +739,16 @@
 		"desc": "When stationed at the Training Station, increase the skill training speed of Specialist operatives by +60%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Specialist</> operatives by <@cc.vup>+60%</>"
 	},
+	"train_spd&profession2[250]": {
+		"name": "Smattering of Knowledge",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Caster operatives by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Caster</> operatives by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
+	},
+	"train_spd&profession2[320]": {
+		"name": "Asceticism",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Guard operatives by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Guard</> operatives by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
+	},
 	"train_spd&profession2[420]": {
 		"name": "Maximum Effort",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard operatives by +30%. If the current training is for Mastery 3, increase the skill training speed by an additional +45%",
@@ -799,6 +819,11 @@
 		"desc": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by +0.55 per hour (When stacked, only the highest effect becomes active, and not counted as an additional effect). If the target is Ceylon, increase recovery by an additional +0.45",
 		"descformat": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by <@cc.vup>+0.55</> per hour (When stacked, only the highest effect becomes active, and not counted as an additional effect). If the target is <@cc.kw>Ceylon</>, increase recovery by an additional <@cc.vup>+0.45</>"
 	},
+	"dorm_rec_single_P[001]": {
+		"name": "BBQ Master",
+		"desc": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by +0.55 per hour (When stacked, only the highest effect becomes active, and not counted as an additional effect). If the target is Gavial, increase recovery by an additional +0.45",
+		"descformat": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by <@cc.vup>+0.55</> per hour (When stacked, only the highest effect becomes active, and not counted as an additional effect). If the target is <@cc.kw>Gavial</>, increase recovery by an additional <@cc.vup>+0.45</>"
+	},
 	"dorm_rec_all[000]": {
 		"name": "Inspiring",
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.1 per hour (When stacked, only the highest effect becomes active)",
@@ -859,6 +884,11 @@
 		"desc": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by +0.35 per hour (When stacked, only the highest effect becomes active). At the same time, self mood recovery per hour +0.35",
 		"descformat": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by <@cc.vup>+0.35</> per hour (When stacked, only the highest effect becomes active). At the same time, self mood recovery per hour <@cc.vup>+0.35</>"
 	},
+	"dorm_rec_single&oneself[012]": {
+		"name": "Give me five",
+		"desc": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by +0.35 per hour (When stacked, only the highest effect becomes active). At the same time, self mood recovery per hour +0.35",
+		"descformat": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by <@cc.vup>+0.35</> per hour (When stacked, only the highest effect becomes active). At the same time, self mood recovery per hour <@cc.vup>+0.35</>"
+	},
 	"dorm_rec_single&oneself[020]": {
 		"name": "Harmonius",
 		"desc": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by +0.4 per hour (When stacked, only the highest effect becomes active). At the same time, self mood recovery per hour +0.2",
@@ -891,8 +921,8 @@
 	},
 	"dorm_rec_all&oneself[011]": {
 		"name": "Breaking Free",
-		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.1 per hour (When stacked, only the highest effect becomes active)",
-		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.1</> per hour (When stacked, only the highest effect becomes active)"
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators except self within that dorm by +0.1 per hour (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators except self within that dorm by <@cc.vup>+0.1</> per hour (When stacked, only the highest effect becomes active)"
 	},
 	"dorm_rec_all&oneself[012]": {
 		"name": "Extricated",
@@ -926,6 +956,11 @@
 	},
 	"hire_spd[030]": {
 		"name": "WRITER",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +40%",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+40%</>"
+	},
+	"hire_spd[031]": {
+		"name": "B-girl",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +40%",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+40%</>"
 	},
@@ -971,28 +1006,28 @@
 	},
 	"meet_team[020]": {
 		"name": "Royal Agent (Self-proclaimed)",
-		"desc": "When stationed at Reception, it becomes easier to obtain clues from Penguin Logistics",
-		"descformat": "When stationed at Reception, it becomes easier to obtain clues from <@cc.kw>Penguin Logistics</>"
+		"desc": "When stationed at Reception, it becomes easier to obtain clues from Penguin Logistics (affected by work duration)",
+		"descformat": "When stationed at Reception, it becomes easier to obtain clues from <@cc.kw>Penguin Logistics</> (affected by work duration)"
 	},
 	"meet_team[050]": {
 		"name": "Secret Investigation",
-		"desc": "When stationed at Reception, it becomes easier to obtain clues from Ursus Student Council",
-		"descformat": "When stationed at Reception, it becomes easier to obtain clues from <@cc.kw>Ursus Student Council</>"
+		"desc": "When stationed at Reception, it becomes easier to obtain clues from Ursus Student Council (affected by work duration)",
+		"descformat": "When stationed at Reception, it becomes easier to obtain clues from <@cc.kw>Ursus Student Council</> (affected by work duration)"
 	},
 	"meet_team[060]": {
 		"name": "Correspondent",
-		"desc": "When stationed at Reception, it becomes easier to obtain clues from Rhodes Island",
-		"descformat": "When stationed at Reception, it becomes easier to obtain clues from <@cc.kw>Rhodes Island</>"
+		"desc": "When stationed at Reception, it becomes easier to obtain clues from Rhodes Island (affected by work duration)",
+		"descformat": "When stationed at Reception, it becomes easier to obtain clues from <@cc.kw>Rhodes Island</> (affected by work duration)"
 	},
 	"meet_flag[050]": {
 		"name": "Screening",
-		"desc": "When stationed at Reception, whenever a newly obtained clue is not from Ursus Student Council, further increase the chance of obtaining clues from Ursus Student Council",
-		"descformat": "When stationed at Reception, whenever a newly obtained clue is not from <@cc.kw>Ursus Student Council</>, further increase the chance of obtaining clues from <@cc.kw>Ursus Student Council</>"
+		"desc": "When stationed at Reception, whenever a newly obtained clue is not from Ursus Student Council, further increase the chance of obtaining clues from Ursus Student Council (affected by work duration)",
+		"descformat": "When stationed at Reception, whenever a newly obtained clue is not from <@cc.kw>Ursus Student Council</>, further increase the chance of obtaining clues from <@cc.kw>Ursus Student Council</> (affected by work duration)"
 	},
 	"meet_flag[060]": {
 		"name": "Flag-planting",
-		"desc": "When stationed at Reception, whenever a newly obtained clue is not from Rhodes Island, further increase the chance of obtaining clues from Rhodes Island",
-		"descformat": "When stationed at Reception, whenever a newly obtained clue is not from <@cc.kw>Rhodes Island</>, further increase the chance of obtaining clues from <@cc.kw>Rhodes Island</>"
+		"desc": "When stationed at Reception, whenever a newly obtained clue is not from Rhodes Island, further increase the chance of obtaining clues from Rhodes Island (affected by work duration)",
+		"descformat": "When stationed at Reception, whenever a newly obtained clue is not from <@cc.kw>Rhodes Island</>, further increase the chance of obtaining clues from <@cc.kw>Rhodes Island</> (affected by work duration)"
 	},
 	"meet_spd&team[000]": {
 		"name": "Clue Collection·α",
@@ -1001,43 +1036,43 @@
 	},
 	"meet_spd&team[010]": {
 		"name": "Watchman",
-		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Rhine Labs",
-		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Rhine Labs</>"
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Rhine Labs (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Rhine Labs</> (affected by work duration)"
 	},
 	"meet_spd&team[020]": {
 		"name": "Envoy · Penguin Logistics",
-		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Penguin Logistics",
-		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Penguin Logistics</>"
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Penguin Logistics (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Penguin Logistics</> (affected by work duration)"
 	},
 	"meet_spd&team[030]": {
 		"name": "Liaison",
-		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Blacksteel",
-		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Blacksteel</>"
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Blacksteel (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Blacksteel</> (affected by work duration)"
 	},
 	"meet_spd&team[040]": {
 		"name": "Messenger",
-		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Karlan Trading",
-		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Karlan Trading</>"
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Karlan Trading (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Karlan Trading</> (affected by work duration)"
 	},
 	"meet_spd&team[050]": {
 		"name": "Strategist",
-		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Ursus Student Council",
-		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Ursus Student Council</>"
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Ursus Student Council (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Ursus Student Council</> (affected by work duration)"
 	},
 	"meet_spd&team[060]": {
 		"name": "Envoy · Rhodes Island",
-		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Rhodes Island",
-		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Rhodes Island</>"
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Rhodes Island (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Rhodes Island</> (affected by work duration)"
 	},
 	"meet_spd&team[070]": {
 		"name": "Courier",
-		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Glasgow Group",
-		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Glasgow Group</>"
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Glasgow Group (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Glasgow Group</> (affected by work duration)"
 	},
 	"meet_spd&team[071]": {
 		"name": "Declining Nobility",
-		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Glasgow Group",
-		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Glasgow Group</>"
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Glasgow Group (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Glasgow Group</> (affected by work duration)"
 	},
 	"meet_spd&team[100]": {
 		"name": "Superintendent",
