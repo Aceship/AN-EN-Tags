@@ -997,10 +997,10 @@
         $("#selectedopclass").html(ops.map(char =>
             `<li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
                 <img src="img/avatars/${getId(char)}.png">
-                <div class="name ak-font-novecento ak-center">${char.appellation}</div>
+                <div class="${char.appellation.length>12?"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
                 ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en}.png'></div>`:""}
-                <div class="ak-showfaction"><img src="img/factions/${char.displayLogo?char.displayLogo.toLowerCase():"none"}.png" title="${char.displayLogo?db.campdata[char.displayLogo]:"None"}"></div>
+                ${char.displayLogo?`<div class="ak-showfaction"><img src="img/factions/${char.displayLogo?char.displayLogo.toLowerCase():"none"}.png" title="${char.displayLogo?db.campdata[char.displayLogo]:"None"}"></div>`:""}
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
             </li>`).join(" "));
     }
@@ -1248,11 +1248,17 @@
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
             // $("#op-nameTL").html(opdata['name_'+lang]);
             // $("#op-nameREG").html("["+opdata['name_'+reg]+"]");
+            $("#op-nameTL").removeClass("smallopname");
+            $("#op-nameREG").removeClass("smallopname");
+            if(opdataFull.appellation.length+opdataFull.name.length>16){
+                $("#op-nameTL").addClass("smallopname");
+                $("#op-nameREG").addClass("smallopname");
+            }
 
             $("#op-nameTL").html(opdataFull.appellation);
             $("#op-nameREG").html("["+opdataFull.name+"]");
 
-            $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]} | ${opdataFull.id.split("_")[2]}`)
+            $("#op-displaynum").html(`${opdataFull.displayNumber?`${opdataFull.displayNumber} | `:""}${opdataFull.id.split("_")[1]} | ${opdataFull.id.split("_")[2]}`)
             if(unreadable){
                 $("#op-nameRead").html(`[ ${unreadable} ]`);
             }else{
@@ -1350,9 +1356,11 @@
                     var skillMat = GetSkillCost(i2,i,opdataFull)
                     var force
                     var materialist = []
-                    skillMat.forEach(mat => {
-                        materialist.push(CreateMaterial(mat.id,mat.count))
-                    });
+                    if(skillMat){
+                        skillMat.forEach(mat => {
+                            materialist.push(CreateMaterial(mat.id,mat.count))
+                        });
+                    }
                     var materialHtml =``
                     if(i2>=7){
                         var time = opdataFull.skills[i].levelUpCostCond[i2-7].lvlUpTime
