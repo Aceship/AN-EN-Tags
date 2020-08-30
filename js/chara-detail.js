@@ -2751,7 +2751,7 @@
                         value = skill.blackboard[i].value;
                         if(skill.prefabId == "skchr_angel_3"&&skill.blackboard[i].key =='base_attack_time'){
                             value = skill.blackboard[i].value*2;
-                            console.log("DOUBLE!!")
+                            // console.log("DOUBLE!!")
                         }
                         // console.log(value)
                     }
@@ -2765,6 +2765,11 @@
                     }
                     desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
                 }
+            });
+            var highlights = desc.match(/\[\[(.*?)\]\]/gm)
+            // console.log(highlights)
+            $.each(highlights,function(i,v){
+                desc = desc.replace(v,`<div class="stat-important">${v.substring(2,v.length-2)}</div>`);
             });
         }
         // }else{
