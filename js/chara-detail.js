@@ -999,7 +999,7 @@
                 <img src="img/avatars/${getId(char)}.png">
                 <div class="${char.appellation.length>12?"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
-                ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en}.png'></div>`:""}
+                ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
                 ${char.displayLogo?`<div class="ak-showfaction"><img src="img/factions/${char.displayLogo?char.displayLogo.toLowerCase():"none"}.png" title="${char.displayLogo?db.campdata[char.displayLogo]:"None"}"></div>`:""}
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
             </li>`).join(" "));
