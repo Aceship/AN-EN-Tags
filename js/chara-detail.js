@@ -1329,6 +1329,9 @@
 
             if(db.handbookInfo.handbookDict[opdataFull.id]){
                 GetStory(opdataFull)
+            }else{
+                $('#info-illustrator').html("")
+                $('#info-voiceactor').html("")
             }
             
             $('#opaudiocontent').empty()
