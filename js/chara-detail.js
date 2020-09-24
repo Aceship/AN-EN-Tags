@@ -1193,8 +1193,9 @@
                 
                 for(var i=0;i<extraSkin.length;i++){
                     
-                    var currskingroupsplit = extraSkin[i].displaySkin.skinGroupId.split("#")
-                    var currskingroup = `${currskingroupsplit[0]}#${currskingroupsplit[1]}`
+                    // var currskingroupsplit = extraSkin[i].displaySkin.skinGroupId.split("#")
+                    // var currskingroup = `${currskingroupsplit[0]}#${currskingroupsplit[1]}`
+                    var currskingroup = extraSkin[i].displaySkin.skinGroupId
                     console.log(currskingroup)
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
                     <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
