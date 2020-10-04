@@ -455,7 +455,7 @@ function selOpClass(cname){
                             <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                             <div class='ak-rare-${val.rarity+1}'></div>
                             ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}
-                            ${showtype?`<div class='ak-showfaction'><img src='img/factions/${val.displayLogo.toLowerCase()}.png' title='${db.campdata[val.displayLogo]}' ></div>`:""}
+                            ${showtype&&val.displayLogo?`<div class='ak-showfaction'><img src='img/factions/${val.displayLogo.toLowerCase()}.png' title='${db.campdata[val.displayLogo]}' ></div>`:""}
                             <div class='grid-box op-rarity-${val.rarity+1}'> 
                             </div></li>
                             `

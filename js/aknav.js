@@ -41,6 +41,9 @@ $(document).ready(function(){
         },{
             href:"akmedal.html",
             name:"Medal List (WIP)"
+        },{
+            href:"akrogue.html",
+            name:"Roguelike Relic List (WIP)"
         }]
     })
     dropdown.push({name:"Elite Materials",content:"akhrelite.html"})

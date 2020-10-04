@@ -963,12 +963,13 @@
             }
         });
         // using query in a lambda is really awful. "sex" should be in chars, not chars2
+
         if (op_gender.length) ops = exclusive_gender ? ops.filter(char => op_gender[0] == query(db.chars2, "name_cn", char.name).sex)
                                                      : ops.filter(char => op_gender.includes(query(db.chars2, "name_cn", char.name).sex));
         if (op_tag.length) ops = exclusive_tag ? ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length == op_tag.length)
                                                : ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length > 0);
-        if (op_faction.length) ops = exclusive_faction ? ops.filter(char => op_faction[0] == char.displayLogo.toUpperCase())
-                                                       : ops.filter(char => op_faction.includes(char.displayLogo.toUpperCase()));
+        if (op_faction&&op_faction.length) ops = exclusive_faction ? ops.filter(char => op_faction[0] == char.displayLogo?char.displayLogo.toUpperCase():"")
+                                                       : ops.filter(char => op_faction.includes(char.displayLogo?char.displayLogo.toUpperCase():""));
         if (op_skill.length) ops = exclusive_skill ? ops.filter(char =>
                                                         char.skills.filter(skill =>
                                                             db.skills[skill.skillId].levels.filter(sp =>
@@ -990,12 +991,16 @@
                                  );
 
         // CONSTRUCTION
+        var showfaction = false
+        if(op_class.length>1||op_class.length==0)
+        showfaction=true
         $("#selectedopclass").html(ops.map(char =>
             `<li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
                 <img src="img/avatars/${getId(char)}.png">
-                <div class="name ak-font-novecento ak-center">${char.appellation}</div>
+                <div class="${char.appellation.length>12?"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
-                <div class="ak-showfaction"><img src="img/factions/${char.displayLogo.toLowerCase()}.png" title="${db.campdata[char.displayLogo]}"></div>
+                ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
+                ${char.displayLogo?`<div class="ak-showfaction"><img src="img/factions/${char.displayLogo?char.displayLogo.toLowerCase():"none"}.png" title="${char.displayLogo?db.campdata[char.displayLogo]:"None"}"></div>`:""}
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
             </li>`).join(" "));
     }
@@ -1098,7 +1103,11 @@
             });
             // console.log(extraSkin)
             // console.log(skinList);
-            $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo.toLowerCase()+".png");
+            if(opdataFull.displayLogo){
+                $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo.toLowerCase()+".png");
+            }else{
+                $("#op-faction").attr("src","img/factions/none.png")
+            }
 
             var tabbtn = [];
             var tabbtn2 = [];
@@ -1157,19 +1166,22 @@
                 } else {
                     skindata = db.skintable.charSkins[skinList[i]];
                 }
-                zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
-                if(i == 0){
-                    $("#charazoom").attr("src","img/characters/"+skindata.portraitId+".png");
-                    $('#charazoom').modal('handleUpdate')
-                    
-                    tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
-                        +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
-                        +"</div>"));
-                } else {
-                    tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
-                        +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
-                        +"</div>"));
+                if(skindata){
+                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
+                    if(i == 0){
+                        $("#charazoom").attr("src","img/characters/"+skindata.portraitId+".png");
+                        $('#charazoom').modal('handleUpdate')
+                        
+                        tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
+                            +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
+                            +"</div>"));
+                    } else {
+                        tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
+                            +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
+                            +"</div>"));
+                    }
                 }
+                
                 
                 var elitehtml = getEliteHTML(i,opdataFull);
                 tabcontent2.push(elitehtml);
@@ -1181,8 +1193,9 @@
                 
                 for(var i=0;i<extraSkin.length;i++){
                     
-                    var currskingroupsplit = extraSkin[i].displaySkin.skinGroupId.split("#")
-                    var currskingroup = `${currskingroupsplit[0]}#${currskingroupsplit[1]}`
+                    // var currskingroupsplit = extraSkin[i].displaySkin.skinGroupId.split("#")
+                    // var currskingroup = `${currskingroupsplit[0]}#${currskingroupsplit[1]}`
+                    var currskingroup = extraSkin[i].displaySkin.skinGroupId
                     console.log(currskingroup)
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
                     <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
@@ -1236,11 +1249,17 @@
             var unreadable = query(db.unreadNameTL,"name",opdata.name_en).name_en
             // $("#op-nameTL").html(opdata['name_'+lang]);
             // $("#op-nameREG").html("["+opdata['name_'+reg]+"]");
+            $("#op-nameTL").removeClass("smallopname");
+            $("#op-nameREG").removeClass("smallopname");
+            if(opdataFull.appellation.length+opdataFull.name.length>16){
+                $("#op-nameTL").addClass("smallopname");
+                $("#op-nameREG").addClass("smallopname");
+            }
 
             $("#op-nameTL").html(opdataFull.appellation);
             $("#op-nameREG").html("["+opdataFull.name+"]");
 
-            $("#op-displaynum").html(`${opdataFull.displayNumber} | ${opdataFull.id.split("_")[1]} | ${opdataFull.id.split("_")[2]}`)
+            $("#op-displaynum").html(`${opdataFull.displayNumber?`${opdataFull.displayNumber} | `:""}${opdataFull.id.split("_")[1]} | ${opdataFull.id.split("_")[2]}`)
             if(unreadable){
                 $("#op-nameRead").html(`[ ${unreadable} ]`);
             }else{
@@ -1263,6 +1282,7 @@
             $("#op-rarity").empty();
             $("#op-rarity").attr("class","op-rarity-"+(opdataFull.rarity+1))
             
+
             $("#op-trust").html(GetTrust(opdataFull))
 
             var potentials = GetPotential(opdataFull)
@@ -1272,7 +1292,12 @@
                 potentialist.push(`<div style="font-size:13px;padding:1px;margin-left:-6px;color:#DDD;vertical-align:bottom"><img src="./img/ui/potential/${i+2}.png" style="margin-top:-4px;width:20px;background:#222;border-radius:25%;padding:2px"> ${potentials[i]}</div>`)
             }
             // console.log(potentials)
-            $("#op-talentlist").html(GetTalent(opKey,opdataFull))
+            if (opdataFull.talents){
+                $("#op-talentlist").html(GetTalent(opKey,opdataFull))
+            }else{
+                $("#op-talentlist").html("")
+            }
+            
             if(potentials.length>0){
                 $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
             }else{
@@ -1303,7 +1328,13 @@
             $('#op-riicdetail').hide();
             //Story
 
-            GetStory(opdataFull)
+            if(db.handbookInfo.handbookDict[opdataFull.id]){
+                GetStory(opdataFull)
+            }else{
+                $('#info-illustrator').html("")
+                $('#info-voiceactor').html("")
+            }
+            
             $('#opaudiocontent').empty()
             $('#opaudiotranslator').empty()
             $('#opaudioproofreader').empty()
@@ -1329,9 +1360,11 @@
                     var skillMat = GetSkillCost(i2,i,opdataFull)
                     var force
                     var materialist = []
-                    skillMat.forEach(mat => {
-                        materialist.push(CreateMaterial(mat.id,mat.count))
-                    });
+                    if(skillMat){
+                        skillMat.forEach(mat => {
+                            materialist.push(CreateMaterial(mat.id,mat.count))
+                        });
+                    }
                     var materialHtml =``
                     if(i2>=7){
                         var time = opdataFull.skills[i].levelUpCostCond[i2-7].lvlUpTime
@@ -1557,7 +1590,9 @@
         
         if(eliteCost){
             eliteCost.forEach(materials => {
-                materialist.push(CreateMaterial(materials.id,materials.count))
+                if (materials){
+                    materialist.push(CreateMaterial(materials.id,materials.count))
+                }
             });
             // console.log(materialist)
         }
@@ -2141,10 +2176,13 @@
             
         </div>
         `
-
+        console.log()
         
         // console.log(htmlcomb.join(""))
+        if (riicList.length>0)
         return combinehtml
+        else
+        return ""
         
     }
 
@@ -2346,15 +2384,22 @@
         let mintrust = opdataFull.favorKeyFrames[0].data
         let maxtrust = opdataFull.favorKeyFrames[1].data
         let differences = {}
-        // console.log(mintrust)
+        let differencesnum = 0
+        console.log(mintrust)
         Object.keys(mintrust).forEach(key => {
             // console.log(key)
-            if(mintrust[key]!=maxtrust[key])
+            if(mintrust[key]!=maxtrust[key]){
             differences[key]=maxtrust[key]-mintrust[key]
+            differencesnum=differencesnum+1
+            }
         });
-        // console.log(differences)
+        console.log(differences)
 
-        return TrustParse(differences)
+        if(differencesnum!=0){
+            return TrustParse(differences)
+        }else{
+            return ""
+        }
     }
     function TrustParse(differences) {
         let readable = []
@@ -2710,7 +2755,7 @@
                         value = skill.blackboard[i].value;
                         if(skill.prefabId == "skchr_angel_3"&&skill.blackboard[i].key =='base_attack_time'){
                             value = skill.blackboard[i].value*2;
-                            console.log("DOUBLE!!")
+                            // console.log("DOUBLE!!")
                         }
                         // console.log(value)
                     }
@@ -2724,6 +2769,11 @@
                     }
                     desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
                 }
+            });
+            var highlights = desc.match(/\[\[(.*?)\]\]/gm)
+            // console.log(highlights)
+            $.each(highlights,function(i,v){
+                desc = desc.replace(v,`<div class="stat-important">${v.substring(2,v.length-2)}</div>`);
             });
         }
         // }else{
