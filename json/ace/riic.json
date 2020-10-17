@@ -214,6 +214,11 @@
 		"desc": "When stationed at a Craft Station, storage capacity +8 and mood reduction per hour -0.25",
 		"descformat": "When stationed at a Craft Station, storage capacity <@cc.vup>+8</> and mood reduction per hour <@cc.vup>-0.25</>"
 	},
+	"manu_prod_limit&cost[010]": {
+		"name": "Hoarder",
+		"desc": "When stationed at a Craft Station, storage capacity +10 and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Craft Station, storage capacity <@cc.vup>+10</> and mood reduction per hour <@cc.vup>-0.25</>"
+	},
 	"manu_prod_limit&cost[020]": {
 		"name": "Explorer",
 		"desc": "When stationed at a Craft Station, storage capacity +16 and mood reduction per hour -0.25",
@@ -258,6 +263,11 @@
 		"name": "Recycling",
 		"desc": "When stationed at a Craft Station, production +2% for every +1 storage capacity provided by operators",
 		"descformat": "When stationed at a Craft Station, production <@cc.vup>+2%</> for every +1 storage capacity provided by operators"
+	},
+	"manu_prod_spd_variable3[000]": {
+		"name": "\"Bigger is Better!\"",
+		"desc": "When stationed at a Craft Station, operators in the current Craft Station increase production based on the storage capacity they provide. Operators with 18 or less storage capacity gain 1% production per storage capacity; Operators with more than 18 storage capacity gain 3% production per storage capacity (Does not stack with [Recycling], and takes priority over it)",
+		"descformat": "When stationed at a Craft Station, operators in the current Craft Station increase production based on the storage capacity they provide. Operators with <@cc.vup>18</> or less storage capacity gain <@cc.vup>1%</> production per storage capacity; Operators with more than <@cc.vup>18</> storage capacity gain <@cc.vup>3%</> production per storage capacity (Does not stack with <@cc.rem>[Recycling]</>, and takes priority over it)"
 	},
 	"manu_prod_spd_variable2[000]": {
 		"name": "Sense of Cooperation",
@@ -499,6 +509,16 @@
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, recipes which consume 4 mood and above will have -2 mood consumed",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, recipes which consume <@cc.kw>4</> mood and above will have <@cc.vup>-2</> mood consumed"
 	},
+	"workshop_formula_recovery[000]": {
+		"name": "The Art of Explosions",
+		"desc": "When stationed at the Synthesis Station and producing any kind of material, recover mood equal to the cost of the recipe whenever production fails to produce by-products 2 times in a row (calculated at the end of the batch)",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, <@cc.kw>recover mood</> equal to the <@cc.kw>cost of the recipe</> whenever production fails to produce by-products <@cc.kw>2</> times in a row (calculated at the end of the batch)"
+	},
+	"workshop_formula_cost2[000]": {
+		"name": "Passionate Tinker",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 40%. Additionally, recipes which consume 8 mood and above will have -4 mood consumed",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>40%</>. Additionally, recipes which consume <@cc.kw>8</> mood and above will have <@cc.vup>-4</> mood consumed"
+	},
 	"workshop_formula_cost[010]": {
 		"name": "Unrestrained",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, all corresponding recipes will consume 2 extra mood",
@@ -528,11 +548,6 @@
 		"name": "Indifference",
 		"desc": "When stationed at the Synthesis Station and producing chips, recipes which consume 2 mood will have -1 mood consumed",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>chips</>, recipes which consume <@cc.kw>2</> mood will have <@cc.vup>-1</> mood consumed"
-	},
-	"workshop_formula_recovery[000]": {
-		"name": "The Art of Explosions",
-		"desc": "When stationed at the Synthesis Station and producing any kind of material, recover mood equal to the cost of the recipe whenever production fails to produce by-products 2 times in a row (calculated at the end of the batch)",
-		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, <@cc.kw>recover mood</> equal to the <@cc.kw>cost of the recipe</> whenever production fails to produce by-products <@cc.kw>2</> times in a row (calculated at the end of the batch)"
 	},
 	"workshop_formula_probability[000]": {
 		"name": "Skill Theory",
@@ -609,6 +624,11 @@
 		"desc": "When stationed at the Synthesis Station and producing elite materials, for every 1 operator with 20 or less mood stationed in the Dorms, increase the rate of by-products by 5%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, for every <@cc.kw>1</> operator with <@cc.vup>20</> or less mood stationed in the Dorms, increase the rate of by-products by <@cc.vup>5%</>"
 	},
+	"workshop_formula_free[000]": {
+		"name": "Meticulous Budgeting",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, remove LMD expenditure",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, remove LMD expenditure"
+	},
 	"workshop_formula_probability[200]": {
 		"name": "Engineering",
 		"desc": "When stationed at the Synthesis Station and producing infrastructure materials, increase the rate of by-products by 70%",
@@ -639,7 +659,17 @@
 		"desc": "When stationed at the Synthesis Station and producing device-type elite materials, increase the rate of by-products by 90%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>device-type elite materials</>, increase the rate of by-products by <@cc.vup>90%</>"
 	},
+	"workshop_formula_device[030]": {
+		"name": "DIY·Polyester",
+		"desc": "When stationed at the Synthesis Station and producing polyester-type elite materials, increase the rate of by-products by 90%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>polyester-type elite materials</>, increase the rate of by-products by <@cc.vup>90%</>"
+	},
 	"train_spd[000]": {
+		"name": "Instructor",
+		"desc": "When stationed at the Training Station, operative skill training speed +25%",
+		"descformat": "When stationed at the Training Station, operative skill training speed <@cc.vup>+25%</>"
+	},
+	"train_spd[0000]": {
 		"name": "Instructor",
 		"desc": "When stationed at the Training Station, operative skill training speed +25%",
 		"descformat": "When stationed at the Training Station, operative skill training speed <@cc.vup>+25%</>"
@@ -1011,8 +1041,8 @@
 	},
 	"hire_spd&clue[100]": {
 		"name": "Empathic Insight",
-		"desc": "When stationed at Human Resource, accumulation of networking resources +30%. Additionally, further increase accumulation of networking resources by +5% for every Open Recruitment slot (excluding the initial slot)",
-		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+30%</>. Additionally, further increase accumulation of networking resources by <@cc.vup>+5%</> for every Open Recruitment slot (excluding the initial slot)"
+		"desc": "When stationed at Human Resource, accumulation of networking resources +30%. Additionally, further increase clue collection speed by +5% for every Open Recruitment slot (excluding the initial slot)",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+30%</>. Additionally, further increase clue collection speed by <@cc.vup>+5%</> for every Open Recruitment slot (excluding the initial slot)"
 	},
 	"hire_spd&clue2[250]": {
 		"name": "Prestigious",
