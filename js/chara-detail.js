@@ -4,6 +4,7 @@
 
         //CN
         chars           :"./json/gamedata/zh_CN/gamedata/excel/character_table.json",
+        charpatch       :"./json/gamedata/zh_CN/gamedata/excel/char_patch_table.json",
         charword        :"./json/gamedata/zh_CN/gamedata/excel/charword_table.json",
         build           :"./json/gamedata/zh_CN/gamedata/excel/building_data.json",
         handbookInfo    :"./json/gamedata/zh_CN/gamedata/excel/handbook_info_table.json",
@@ -1041,6 +1042,8 @@
             var opdata = query(db.chars2,"name_cn",opname);
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
+            var opdata3 = db.charpatch.patchChars.char_1001_amiya2
+            console.log(opdata3)
 
             var opcode = Object.keys(opdata2)[0]
 
