@@ -11,8 +11,8 @@
 	},
 	"control_pow_bot[000]": {
 		"name": "I think it's Possible",
-		"desc": "When stationed at the Command Center, if Lancet-2 is stationed at a Power Station, it will be considered as having 2 additional Power Stations (only affects facility count)",
-		"descformat": "When stationed at the Command Center, if <@cc.kw>Lancet-2</> is stationed at a <@cc.kw>Power Station</>, it will be considered as having <@cc.kw>2</> additional <@cc.kw>Power Stations</> (only affects facility count)"
+		"desc": "When stationed at the Command Center, if Lancet-2 is stationed at a Power Station, Power Stations +2 (only affects facility count)",
+		"descformat": "When stationed at the Command Center, if <@cc.kw>Lancet-2</> is stationed at a <@cc.kw>Power Station</>, <@cc.kw>Power Stations</> <@cc.vup>+2</> (only affects facility count)"
 	},
 	"control_clue_cost[000]": {
 		"name": "Neurotic",
@@ -131,18 +131,18 @@
 	},
 	"manu_prod_spd&power[000]": {
 		"name": "Automation·α",
-		"desc": "When stationed at a Craft Station, production from other operators reduced to 0, however increase production by +5% for every existing Power Station",
-		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</>, however increase production by <@cc.vup>+5%</> for every existing <@cc.kw>Power Station</>"
+		"desc": "When stationed at a Craft Station, production from other operators reduced to 0 (excluding production gained from facility count), however increase production by +5% for every existing Power Station",
+		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</> (excluding production gained from facility count), however increase production by <@cc.vup>+5%</> for every existing <@cc.kw>Power Station</>"
 	},
 	"manu_prod_spd&power[010]": {
 		"name": "Automation·β",
-		"desc": "When stationed at a Craft Station, production from other operators reduced to 0, however increase production by +10% for every existing Power Station",
-		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</>, however increase production by <@cc.vup>+10%</> for every existing <@cc.kw>Power Station</>"
+		"desc": "When stationed at a Craft Station, production from other operators reduced to 0 (excluding production gained from facility count), however increase production by +10% for every existing Power Station",
+		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</> (excluding production gained from facility count), however increase production by <@cc.vup>+10%</> for every existing <@cc.kw>Power Station</>"
 	},
 	"manu_prod_spd&power[020]": {
 		"name": "Bionic Seadragon",
-		"desc": "When stationed at a Craft Station, production from other operators reduced to 0, however increase production by +15% for every existing Power Station",
-		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</>, however increase production by <@cc.vup>+15%</> for every existing <@cc.kw>Power Station</>"
+		"desc": "When stationed at a Craft Station, production from other operators reduced to 0 (excluding production gained from facility count), however increase production by +15% for every existing Power Station",
+		"descformat": "When stationed at a Craft Station, production from other operators <@cc.vdown>reduced to 0</> (excluding production gained from facility count), however increase production by <@cc.vup>+15%</> for every existing <@cc.kw>Power Station</>"
 	},
 	"manu_prod_spd[000]": {
 		"name": "Standardization·α",
@@ -229,7 +229,7 @@
 		"desc": "When stationed at a Craft Station and producing EXP cards, mood reduction per hour -0.25",
 		"descformat": "When stationed at a Craft Station and producing <@cc.kw>EXP cards</>, mood reduction per hour <@cc.vup>-0.25</>"
 	},
-	"manu_formula_limit[000]": {
+	"manu_formula_limit[0000]": {
 		"name": "Editing·α",
 		"desc": "When stationed at a Craft Station and producing EXP cards, storage capacity +12",
 		"descformat": "When stationed at a Craft Station and producing <@cc.kw>EXP cards</>, storage capacity <@cc.vup>+12</>"
@@ -271,8 +271,23 @@
 	},
 	"manu_prod_spd_variable2[000]": {
 		"name": "Sense of Cooperation",
-		"desc": "When stationed at a Craft Station, production +5% for every 5% production provided by operators, capping at +40%",
-		"descformat": "When stationed at a Craft Station, production <@cc.vup>+5%</> for every <@cc.vup>5%</> production provided by operators, capping at <@cc.vup>+40%</>"
+		"desc": "When stationed at a Craft Station, production +5% for every 5% production provided by other operators, capping at +40% (is not affected by production gained from facility count)",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+5%</> for every <@cc.vup>5%</> production provided by other operators, capping at <@cc.vup>+40%</> (is not affected by production gained from facility count)"
+	},
+	"manu_prod_spd_bd_n1[000]": {
+		"name": "Supersensory",
+		"desc": "When stationed at a Craft Station, gain +1 sensory information for every 1 operator stationed in the Dorms. Additionally, every 1 sensory information is converted into 1 chain of thought",
+		"descformat": "When stationed at a Craft Station, gain <@cc.vup>+1</> <@cc.rem>sensory information</> for every <@cc.kw>1</> operator stationed in the Dorms. Additionally, every <@cc.vup>1</> <@cc.rem>sensory information</> is converted into <@cc.vup>1</> <@cc.rem>chain of thought</>"
+	},
+	"manu_prod_spd_bd[000]": {
+		"name": "Psychokinesis",
+		"desc": "When stationed at a Craft Station, production +1% for every 2 chains of thought",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>2</> <@cc.rem>chains of thought</>"
+	},
+	"manu_prod_spd_bd[010]": {
+		"name": "Manifestation of Consciousness",
+		"desc": "When stationed at a Craft Station, production +1% for every 1 chain of thought",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>1</> <@cc.rem>chain of thought</>"
 	},
 	"manu_formula_spd[000]": {
 		"name": "Combat Directive Recordings",
@@ -514,6 +529,11 @@
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, recover mood equal to the cost of the recipe whenever production fails to produce by-products 2 times in a row (calculated at the end of the batch)",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, <@cc.kw>recover mood</> equal to the <@cc.kw>cost of the recipe</> whenever production fails to produce by-products <@cc.kw>2</> times in a row (calculated at the end of the batch)"
 	},
+	"workshop_formula_cost4[000]": {
+		"name": "Persistent",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, all corresponding recipes will only consume 2 mood",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, all corresponding recipes will only consume <@cc.vup>2</> mood"
+	},
 	"workshop_formula_cost2[000]": {
 		"name": "Passionate Tinker",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 40%. Additionally, recipes which consume 8 mood and above will have -4 mood consumed",
@@ -663,6 +683,11 @@
 		"name": "DIY·Polyester",
 		"desc": "When stationed at the Synthesis Station and producing polyester-type elite materials, increase the rate of by-products by 90%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>polyester-type elite materials</>, increase the rate of by-products by <@cc.vup>90%</>"
+	},
+	"workshop_formula_device[050]": {
+		"name": "DIY·Orirock",
+		"desc": "When stationed at the Synthesis Station and producing orirock-type elite materials, increase the rate of by-products by 90%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>orirock-type elite materials</>, increase the rate of by-products by <@cc.vup>90%</>"
 	},
 	"train_spd[000]": {
 		"name": "Instructor",
@@ -1048,6 +1073,16 @@
 		"name": "Prestigious",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Whenever a refresh count is gained, increase the chance of obtaining clues from Ursus Student Council (affected by work duration and Open Recruitment slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Whenever <@cc.vup>a refresh count</> is gained, increase the chance of obtaining clues from <@cc.kw>Ursus Student Council</> (affected by work duration and Open Recruitment slots)"
+	},
+	"hire_spd_bd_n1_n1[000]": {
+		"name": "Patrolling",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Additionally, gain +10 memory fragments for every Open Recruitment slot (excluding the initial slot)",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Additionally, gain <@cc.vup>+10</> <@cc.rem>memory fragments</> for every Open Recruitment slot (excluding the initial slot)"
+	},
+	"hire_spd_bd_n1[000]": {
+		"name": "Recollection",
+		"desc": "When stationed at Human Resource, every 1 memory fragment is converted into 1 sensory information. When mood reaches 0, remove all memory fragments and sensory information",
+		"descformat": "When stationed at Human Resource, every <@cc.vup>1</> <@cc.rem>memory fragment</> is converted into <@cc.vup>1</> <@cc.rem>sensory information</>. When mood reaches 0, remove all <@cc.rem>memory fragments</> and <@cc.rem>sensory information</>"
 	},
 	"meet_spd[000]": {
 		"name": "Clue Collection·α",
