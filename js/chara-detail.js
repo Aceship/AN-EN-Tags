@@ -1046,7 +1046,7 @@
             console.log(opdata3)
 
             var opcode = Object.keys(opdata2)[0]
-
+ 
             var opKey =""
             $.each(opdata2,function(key,v){
                 v['id'] = key;
@@ -1057,6 +1057,7 @@
                 return false
             });
 
+            console.log(opKey)
             console.log(opdataFull.appellation)
             gtag('event', 'Selecting Operator', {
                 'event_category' : 'Operator Details',
@@ -1086,6 +1087,12 @@
             }else{
                 url.searchParams.set("opname", correctname);
                 history.pushState(null, '', url); 
+            }
+
+            if(opKey=="char_002_amiya"){
+                $('#class-change').show();
+            }else{
+                $('#class-change').hide();
             }
 
             // use opdata to get the operator data based on tl-akhr.json
