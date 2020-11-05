@@ -67,6 +67,7 @@
     var opapp;
     var classfilter;
     var sort;
+    var opSType;
     var skeletonType = "skel"
     var chibitype = 'character'
     var charName = 'char_180_amgoat';
@@ -74,6 +75,7 @@
     var chibiName = 'char_180_amgoat'
     var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
     var spinewidget 
+    var curropname
 
     var currskin 
     var spinewidgettoken
@@ -1043,7 +1045,12 @@
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
             var opdata3 = db.charpatch.patchChars.char_1001_amiya2
+            curropname = opname
+
+            var opcode2 = ""
             console.log(opdata3)
+            
+            if (opdata2)
 
             var opcode = Object.keys(opdata2)[0]
  
@@ -1058,6 +1065,7 @@
             });
 
             console.log(opKey)
+
             console.log(opdataFull.appellation)
             gtag('event', 'Selecting Operator', {
                 'event_category' : 'Operator Details',
@@ -1091,6 +1099,13 @@
 
             if(opKey=="char_002_amiya"){
                 $('#class-change').show();
+                if(opSType){
+                    opcode = "char_1001_amiya2"
+                    opcode2 = "char_002_amiya"
+                    opKey=opcode
+                    opdataFull = opdata3
+                    opdataFull.id = opcode
+                }
             }else{
                 $('#class-change').hide();
             }
@@ -1171,10 +1186,12 @@
                 }
                 
                 var skindata;
-                if(!(skinList[i] in db.skintable.charSkins)){
-                    skindata = db.skintable.charSkins[skinList[i-1]];
-                } else {
-                    skindata = db.skintable.charSkins[skinList[i]];
+                if(skinList){
+                    if(!(skinList[i] in db.skintable.charSkins)){
+                        skindata = db.skintable.charSkins[skinList[i-1]];
+                    } else {
+                        skindata = db.skintable.charSkins[skinList[i]];
+                    }
                 }
                 if(skindata){
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
@@ -1188,6 +1205,22 @@
                     } else {
                         tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
                             +"<img class='chara-image' src='img/characters/"+skindata.portraitId+".png'>"
+                            +"</div>"));
+                    }
+                }
+
+                if(opKey=="char_1001_amiya2"){
+                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('char_1001_amiya2_2')"><img src='img/ui/elite/${i}-s.png'></button>`))
+                    if(i == 0){
+                        $("#charazoom").attr("src","img/characters/char_1001_amiya2_2.png");
+                        $('#charazoom').modal('handleUpdate')
+                        
+                        tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
+                            +"<img class='chara-image' src='img/characters/char_1001_amiya2_2.png'>"
+                            +"</div>"));
+                    } else {
+                        tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
+                            +"<img class='chara-image' src='img/characters/char_1001_amiya2_2.png'>"
                             +"</div>"));
                     }
                 }
@@ -1699,7 +1732,7 @@
     //     console.log(puretextlist.join("\n"))
     // }translator
     function GetAudio (opdataFull,lang="en"){
-        // console.log(opdataFull)
+        console.log(opdataFull)
         
         var curraudiolist = []
         var puretextlist =[]
@@ -1720,7 +1753,7 @@
             // }
             if(curraudio){
                 
-                if(curraudio.charId&&curraudio.charId == opdataFull.id){
+                if(curraudio.charId&&curraudio.wordKey == opdataFull.id){
                     if(db.charwordEN[element]){
                         curraudio = db.charwordEN[element]
                         currTL = undefined
@@ -1732,7 +1765,7 @@
                 }
             }
         });
-        // console.log(curraudiolist)
+        console.log(curraudiolist)
         // console.log(puretextlist.join("\n"))
         $('#opaudiocontent').empty()
         $('#opaudiotranslator').empty()
@@ -3203,6 +3236,11 @@
         
     }
 
+    function ChangeSType(){
+        opSType= !opSType
+        selectOperator(curropname)
+        console.log(opSType)
+    }
 
     function PlayPause(widget){
         if(widget=="token") widget=spinewidgettoken
