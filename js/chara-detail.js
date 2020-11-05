@@ -1371,7 +1371,7 @@
             $('#op-riicdetail').hide();
             //Story
 
-            if(db.handbookInfo.handbookDict[opdataFull.id]){
+            if(db.handbookInfo.handbookDict[opdataFull.id]|| opdataFull.id == "char_1001_amiya2"){
                 GetStory(opdataFull)
             }else{
                 $('#info-illustrator').html("")
@@ -1816,6 +1816,9 @@
         if(db.handbookInfoEN.handbookDict[opdataFull.id]){
             currStory = db.handbookInfoEN.handbookDict[opdataFull.id]
             isEN = true
+        }
+        if(opdataFull.id=="char_1001_amiya2"){
+            currStory = db.handbookInfo.handbookDict["char_002_amiya"]
         }
         // console.log(currStory)
         // console.log(currStory.drawName)
