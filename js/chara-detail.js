@@ -13,6 +13,7 @@
         skintable       :"./json/gamedata/zh_CN/gamedata/excel/skin_table.json",
         dataconst       :"./json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",
         item_table      :"./json/gamedata/zh_CN/gamedata/excel/item_table.json",
+        audio_data      :"./json/gamedata/zh_CN/gamedata/excel/audio_data.json",
 
 
         //EN
@@ -439,6 +440,9 @@
             }else if(vars.has("voice")){
                 GetAudio(opdataFull)
                 $('#opaudio').modal('show')
+            }else if(vars.has("sfx")){
+                GetSFX(opdataFull)
+                $('#opsfx').modal('show')
             }
         
         }
@@ -489,6 +493,16 @@
         $('#opaudio').on('hidden.bs.modal', function(){
             var url = new URL(window.location.href);
             url.searchParams.delete('voice');
+            history.pushState(null, '', url);
+        });
+        $('#opsfx').on('shown.bs.modal', function(){
+            var url = new URL(window.location.href);
+            url.searchParams.set('sfx', 0);
+            history.pushState(null, '', url);
+        });
+        $('#opsfx').on('hidden.bs.modal', function(){
+            var url = new URL(window.location.href);
+            url.searchParams.delete('sfx');
             history.pushState(null, '', url);
         });
 
@@ -1272,10 +1286,15 @@
             </div>
             </button>`))
 
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-bottom ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio" >
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio" onclick="GetAudio(opdataFull)">
             <div>
-                <img class='audioprofilebutton' src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px" onclick="GetAudio(opdataFull)">
+                <img class='audioprofilebutton' src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px">
                 <div class="btn-story-header">Audio</div>
+            </div>
+            </button>`))
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-bottom ak-btn" style="width:50px;height:18px" data-toggle="modal" data-target="#opsfx" onclick="GetSFX(opdataFull)">
+            <div>
+                <div class="btn-story-header" style="margin-top: 0px;">SFX</div>
             </div>
             </button>`))
 
@@ -1379,6 +1398,7 @@
             }
             
             $('#opaudiocontent').empty()
+            $('#opsfxcontent').empty()
             $('#opaudiotranslator').empty()
             $('#opaudioproofreader').empty()
             ///////////////////////////////////////////////// SKILLS SECTION //////////////////////////////////////////////////
@@ -2115,6 +2135,91 @@
 
     }
 
+    function GetSFX(opdataFull){
+        $('#opsfxcontent').empty()
+        console.log(opdataFull.id)
+        // console.log()
+        var filteredFX = []
+        console.log(opdataFull)
+        db.audio_data.soundFXBanks.forEach(element => {
+            if(element.name.includes(opdataFull.id)){
+                console.log(element.name)
+                element.sounds.forEach(soundfx => {
+                    var fxdir = "./etc/"+soundfx.asset.replace("Audio/Sound_Beta_2/","").toLowerCase()
+                    var fxname = soundfx.asset.split("/")
+                    filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
+                });
+            }
+            opdataFull.skills.forEach(skill => {
+                if(element.name.includes(skill.skillId)){
+                    console.log(element.name)
+                    element.sounds.forEach(soundfx => {
+                        var fxdir = "./etc/"+soundfx.asset.replace("Audio/Sound_Beta_2/","").toLowerCase()
+                        var fxname = soundfx.asset.split("/")
+                        filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
+                    });
+                }
+            });
+            if(element.name.includes(opdataFull.tokenKey)){
+                console.log(element.name)
+                element.sounds.forEach(soundfx => {
+                    var fxdir = "./etc/"+soundfx.asset.replace("Audio/Sound_Beta_2/","").toLowerCase()
+                    var fxname = soundfx.asset.split("/")
+                    filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
+                });
+            }
+        });
+        var sfxnum = 0
+        filteredFX.forEach(element => {
+            var fxdir = element.dir
+            var fxname = element.name
+            var fxdataname = element.dataname
+            console.log(fxname)
+            console.log(fxname)
+            console.log(fxdir)
+            var curraudio  =`<audio class="sfxplayer" preload="metadata" controls style="margin-top:5px"> <source src="${fxdir}.wav" type="audio/wav">Your browser does not support the audio tag.</audio> `
+            var currhtml = $(`
+            <table class="sfx-table">
+            <th>${fxdataname}</th>
+            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="${fxdir}.wav"  target="_blank">
+            <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
+            <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${fxname}</div>
+            </td></tr>
+            </table>
+            
+            `)
+            $('#opsfxcontent').append($(currhtml))
+            sfxnum +=1
+        });
+        $(".sfxplayer").each(function(a){
+            $(".sfxplayer")[a].volume = 0.3;
+        })
+        // curraudiolist.forEach(element => {
+        //     var curraudio  =`<audio preload="metadata" controls style="margin-top:5px"> <source src="./etc/player/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> `
+        //     // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
+        //     //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
+        //     // }
+        //     if(currTL)voiceTL= currTL.voiceline[element.voiceTitle][lang]?currTL.voiceline[element.voiceTitle][lang]: element.voiceText
+        //     // console.log(element.voiceTitle)
+        //     // console.log(currTL)
+        //     // console.log(currTL.voiceline[element.voiceTitle])
+        //     // console.log(voiceTL)
+        //     var currhtml = $(`
+        //     <table class="story-table">
+        //     <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
+        //     <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank">
+        //     <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
+        //     <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${element.voiceAsset.split("_").slice(-1)[0] }</div>
+        //     </td></tr>
+        //     <tr><td style="height:10px"></td></tr>
+        //     <tr><td>${voiceTL}</td></tr>
+        //     <tr><td style="height:10px"></td></tr>
+        //     </table>
+            
+        //     `)
+        //     $('#opaudiocontent').append($(currhtml))
+        // });
+    }
     function GetPotential(opdataFull){
         var potentials = opdataFull.potentialRanks
         var potentialsTL = []
