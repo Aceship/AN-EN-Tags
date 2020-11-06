@@ -2145,26 +2145,26 @@
             if(element.name.includes(opdataFull.id)){
                 console.log(element.name)
                 element.sounds.forEach(soundfx => {
-                    var fxdir = "./etc/"+soundfx.asset.replace("Audio/Sound_Beta_2/","").toLowerCase()
                     var fxname = soundfx.asset.split("/")
+                    var fxdir = "./etc/"+soundfx.asset.split("/").splice(2,2).join("/").toLowerCase()+"/"+fxname[fxname.length-1]
                     filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
                 });
             }
             opdataFull.skills.forEach(skill => {
                 if(element.name.includes(skill.skillId)){
-                    console.log(element.name)
+                    // console.log(element.name)
                     element.sounds.forEach(soundfx => {
-                        var fxdir = "./etc/"+soundfx.asset.replace("Audio/Sound_Beta_2/","").toLowerCase()
                         var fxname = soundfx.asset.split("/")
+                        var fxdir = "./etc/"+soundfx.asset.split("/").splice(2,2).join("/").toLowerCase()+"/"+fxname[fxname.length-1]
                         filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
                     });
                 }
             });
             if(element.name.includes(opdataFull.tokenKey)){
-                console.log(element.name)
+                // console.log(element.name)
                 element.sounds.forEach(soundfx => {
-                    var fxdir = "./etc/"+soundfx.asset.replace("Audio/Sound_Beta_2/","").toLowerCase()
                     var fxname = soundfx.asset.split("/")
+                    var fxdir = "./etc/"+soundfx.asset.split("/").splice(2,2).join("/").toLowerCase()+"/"+fxname[fxname.length-1]
                     filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
                 });
             }
@@ -2174,9 +2174,9 @@
             var fxdir = element.dir
             var fxname = element.name
             var fxdataname = element.dataname
-            console.log(fxname)
-            console.log(fxname)
-            console.log(fxdir)
+            // console.log(fxname)
+            // console.log(fxname)
+            // console.log(fxdir)
             var curraudio  =`<audio class="sfxplayer" preload="metadata" controls style="margin-top:5px"> <source src="${fxdir}.wav" type="audio/wav">Your browser does not support the audio tag.</audio> `
             var currhtml = $(`
             <table class="sfx-table">
