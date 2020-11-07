@@ -731,10 +731,12 @@
                         $("#operatorsResult").removeClass("opresult-list");
                         $("#operatorsResult").addClass("opresult-grid");
                         $("#operatorsResult").append(
-                                "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
-                                +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+image+"</div>"
-                                +"<div style=\"white-space: nowrap;padding:0px;text-align:center;margin:0 \">"+`${result[i].name_readable?`[${result[i].name_readable}]`:""}`+result[i].nameTL+"</div>"
-                                +"</li>");
+                            `<li class="col-2 col-sm-1 ak-shadow-small ak-rare-${result[i].rarity}"style="display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px" onclick="selectOperator('${result[i].name_cn}')">
+                             <div style="white-space: nowrap;padding:0px;text-align:center;margin:0 ">${image}</div>
+                             <div style="white-space: nowrap;padding:0px;text-align:center;margin:0 ">${result[i].name_readable?`[${result[i].name_readable}]`:""}${result[i].nameTL}</div>
+                             </li>
+                            `);
+                            //                             <a class="ak-stealthlink" href="#?opname=${result[i].nameTL}">
                     }else{
                         $("#operatorsResult").removeClass("opresult-grid");
                         $("#operatorsResult").addClass("opresult-list");
@@ -743,6 +745,8 @@
                     }
                 }
             }
+
+            //<a href="?opname=${getENname(val.name)}">
             // console.log( $("#operatorsResult")  )
             // $('#operatorsResult').show();
         } else {
