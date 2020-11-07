@@ -2147,32 +2147,51 @@
         console.log(opdataFull)
         db.audio_data.soundFXBanks.forEach(element => {
             if(element.name.includes(opdataFull.id)){
-                console.log(element.name)
+                // console.log(element.name)
                 element.sounds.forEach(soundfx => {
                     var fxname = soundfx.asset.split("/")
                     var fxdir = "./etc/"+soundfx.asset.split("/").splice(2,2).join("/").toLowerCase()+"/"+fxname[fxname.length-1]
-                    filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
+                    filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir,type:"1"})
                 });
             }
+            // console.log("_chr_"+opdataFull.id.split("_")[2])
             opdataFull.skills.forEach(skill => {
                 if(element.name.includes(skill.skillId)){
                     // console.log(element.name)
                     element.sounds.forEach(soundfx => {
                         var fxname = soundfx.asset.split("/")
                         var fxdir = "./etc/"+soundfx.asset.split("/").splice(2,2).join("/").toLowerCase()+"/"+fxname[fxname.length-1]
-                        filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
+                        filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir,type:"2"})
                     });
                 }
             });
+            if(element.name.includes("_chr_"+opdataFull.id.split("_")[2])){
+                element.sounds.forEach(soundfx => {
+                    var fxname = soundfx.asset.split("/")
+                    
+                    var fxdir = "./etc/"+soundfx.asset.split("/").splice(2,2).join("/").toLowerCase()+"/"+fxname[fxname.length-1]
+                    console.log(fxdir)
+                    filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir,type:"3"})
+                });
+            }
             if(element.name.includes(opdataFull.tokenKey)){
                 // console.log(element.name)
                 element.sounds.forEach(soundfx => {
                     var fxname = soundfx.asset.split("/")
                     var fxdir = "./etc/"+soundfx.asset.split("/").splice(2,2).join("/").toLowerCase()+"/"+fxname[fxname.length-1]
-                    filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir})
+                    filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir,type:"4"})
                 });
             }
+
+            
         });
+        console.log(filteredFX)
+        filteredFX =filteredFX.sort(function(a,b){
+            if(a.type>b.type)return 1
+            else if(a.type<b.type)return -1
+            else return 0
+        })
+        console.log(filteredFX)
         var sfxnum = 0
         filteredFX.forEach(element => {
             var fxdir = element.dir
