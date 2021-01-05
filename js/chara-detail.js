@@ -2864,13 +2864,20 @@
                     var currsplit = "<@ba.vup>"+split[i]
                     // console.log(currsplit)
                     let muhRegex = /<@ba\.vup>(.*?)<\/>/g
+                    let plusmin = /[+-]/
+                    
                     let desc2 = muhRegex.exec(currsplit)[1]
+                    let plusdesc = ""
+                    if(plusmin.exec(desc2)&&plusmin.exec(desc2)[0]) plusdesc = plusmin.exec(desc2)[0]
+                    // console.log(desc2)
                     // let desc2 = desc.replace(/<@ba\.vup>/g,"<a>")
                     // console.log(i)
+                    console.log(plusdesc)
                     console.log(desc2)
                     // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
                     let muhRegex2 = /({)(.*?)(\:.*?)(})/
                     let desc3 = muhRegex2.exec(desc2)
+                    console.log(desc3)
                     if(!desc3){
                         let descextra = 
                         skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc2).replace(/\\n/g,"</br>")
@@ -2885,8 +2892,8 @@
                             desc4.push(desc3[j])
                         }
                         // console.log(desc4)
-                        skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join("")).replace(/\\n/g,"</br>")
-                        console.log(currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join("")).replace(/\\n/g,"</br>"))
+                        skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,plusdesc+desc4.join("")).replace(/\\n/g,"</br>")
+                        console.log(currsplit.replace(/<@ba\.vup>(.*?)<\/>/,plusdesc+desc4.join("")).replace(/\\n/g,"</br>"))
                     }
                 }
                 
