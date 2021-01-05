@@ -21,10 +21,15 @@ walk("../img/avg/", function(err, results) {
     
     results.forEach(async results => {
         var text = results.split('\\avg\\')[1].replace(/\\/g,"/")
-        // console.log(text)
+        var text1 = text.split('/')[0]
+        var text2 = text.split('/')[1]
+        console.log(text)
+        console.log(text1)
+        console.log(text2)
 
         if(!json[text.split("/")[0]]) json[text.split("/")[0]]=[]
-        json[text.split("/")[0]].push(text)
+        json[text.split("/")[0]].push(text1+'/'+encodeURIComponent(text2))
+
         // console.log("./img/avg/"+text.replace(/\\/g,"/"));
         var currfolder = text.split("/")
         currfolder =["img","smallavg"].concat( currfolder.splice(currfolder.length-2,1))
@@ -48,7 +53,7 @@ walk("../img/avg/", function(err, results) {
             // await 
         })
     });
-    // console.log(json)
+    console.log(json)
     fs.writeFile(`../json/ace/gallerylist.json`, JSON.stringify(json, null, '\t'), function (err) {
         if (err) {
             return console.log(err);
@@ -90,7 +95,7 @@ async function execute(imgname,callback) {
     let image = await Image.load('../img/avg/'+imgname);    
     var newimage = await image.resize({ width: 200 })
      newimage.save('../img/smallavg/'+imgname)
-    callback(newimage +" Clear") 
+    callback('../img/smallavg/'+imgname +" Clear") 
 }
 // // console.log(stageDetail.stages)
 // // var keys = {}
