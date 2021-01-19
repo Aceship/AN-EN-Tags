@@ -1147,13 +1147,7 @@
             });
             // console.log(extraSkin)
             // console.log(skinList);
-            var logo = GetLogo(opdataFull)
-
-            if(logo){
-                $("#op-faction").attr("src","img/factions/"+logo.toLowerCase()+".png");
-            }else{
-                $("#op-faction").attr("src","img/factions/none.png")
-            }
+            
 
             var tabbtn = [];
             var tabbtn2 = [];
@@ -1166,6 +1160,18 @@
             $("#elite-topnav").empty();
             $("#tabs-opData").empty();
             $("#op-taglist").empty();
+            $("#op-fact-image").empty();
+            $("#op-fact-text").empty();
+
+            var logo = GetLogo(opdataFull)
+
+            if(logo){
+                $("#op-faction").attr("src","img/factions/"+logo.toLowerCase()+".png");
+                $("#op-fact-image").html(`<img id='op-fact-image2' src='img/factions/${logo.toLowerCase()}.png'>`)
+                $("#op-fact-text").html(`${GetLogoInfo(opdataFull).powerCode}`)
+            }else{
+                $("#op-faction").attr("src","img/factions/none.png")
+            }
 
             charName = opcode;
             chibiName = opcode
