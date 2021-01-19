@@ -8,6 +8,7 @@
         charword        :"./json/gamedata/zh_CN/gamedata/excel/charword_table.json",
         build           :"./json/gamedata/zh_CN/gamedata/excel/building_data.json",
         handbookInfo    :"./json/gamedata/zh_CN/gamedata/excel/handbook_info_table.json",
+        handbookTeam    :"./json/gamedata/zh_CN/gamedata/excel/handbook_team_table.json",
         range           :"./json/gamedata/zh_CN/gamedata/excel/range_table.json",
         skills          :"./json/gamedata/zh_CN/gamedata/excel/skill_table.json",
         skintable       :"./json/gamedata/zh_CN/gamedata/excel/skin_table.json",
@@ -958,7 +959,7 @@
             op_subclass.length == 0 &&
             op_gender.length == 0 &&
             op_tag.length == 0 &&
-            op_faction.length == 0 &&
+            // op_faction.length == 0 &&
             op_skill.length == 0) return;
 
         // EXTRACTION
@@ -1021,7 +1022,7 @@
                 <div class="${char.appellation.length>12?"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
                 ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
-                ${char.displayLogo?`<div class="ak-showfaction"><img src="img/factions/${char.displayLogo?char.displayLogo.toLowerCase():"none"}.png" title="${char.displayLogo?db.campdata[char.displayLogo]:"None"}"></div>`:""}
+                ${GetLogo(char)?`<div class="ak-showfaction"><img src="img/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
             </li>`).join(" "));
     }
@@ -1146,8 +1147,10 @@
             });
             // console.log(extraSkin)
             // console.log(skinList);
-            if(opdataFull.displayLogo){
-                $("#op-faction").attr("src","img/factions/"+opdataFull.displayLogo.toLowerCase()+".png");
+            var logo = GetLogo(opdataFull)
+
+            if(logo){
+                $("#op-faction").attr("src","img/factions/"+logo.toLowerCase()+".png");
             }else{
                 $("#op-faction").attr("src","img/factions/none.png")
             }
@@ -1832,6 +1835,34 @@
         if(isEN){
             $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">Official EN Arknight</div>`)
         }
+    }
+
+    function GetLogo (opdataFull){
+        if(opdataFull.teamId)
+            return "logo_"+opdataFull.teamId
+        else if(opdataFull.groupId)
+            return "logo_"+opdataFull.groupId
+        else if(opdataFull.nationId)
+            return "logo_"+opdataFull.nationId
+        
+        return null
+    }
+    function GetLogoInfo (opdataFull){
+        var faction 
+        if(opdataFull.teamId)
+            faction= opdataFull.teamId
+        else if(opdataFull.groupId)
+            faction= opdataFull.groupId
+        else if(opdataFull.nationId)
+            faction= opdataFull.nationId
+
+        console.log(faction)
+        
+        var factionname = db.handbookTeam[faction]
+        console.log(factionname)    
+        if (factionname) return factionname
+        
+        return null
     }
     function GetStory (opdataFull){
         // console.log(opdataFull)
