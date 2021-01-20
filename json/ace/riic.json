@@ -59,6 +59,11 @@
 		"desc": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center -0.05",
 		"descformat": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center <@cc.vup>-0.05</>"
 	},
+	"control_mp_cost&faction2[000]": {
+		"name": "Amiable Fortitude",
+		"desc": "When stationed at the Command Center, for every operator from Li's Detective Agency in the Command Center, mood reduction per hour of all operators in the Command Center -0.05, and additionally reduce the mood reduction per hour of operators from that faction.",
+		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Li's Detective Agency</> in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>, and <@cc.kw>additionally reduce the mood reduction per hour</> of operators from that faction."
+	},
 	"control_mp_cost&faction[000]": {
 		"name": "Ability & Integrity",
 		"desc": "When stationed at the Command Center, for every operator from Lungmen Guard Bureau in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
@@ -68,11 +73,6 @@
 		"name": "Student Council Leader",
 		"desc": "When stationed at the Command Center, for every operator from Ursus Student Council in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
 		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Ursus Student Council</> in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>"
-	},
-	"control_mp_cost&faction2[000]": {
-		"name": "Amiable Fortitude",
-		"desc": "When stationed at the Command Center, for every operator from Li's Detective Agency in the Command Center, mood reduction per hour of all operators in the Command Center -0.05, and additionally reduce the mood reduction per hour of operators from that faction.",
-		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Li's Detective Agency</> in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>, and <@cc.kw>additionally reduce the mood reduction per hour</> of operators from that faction."
 	},
 	"power_rec_spd&cost[000]": {
 		"name": "Enthusiasm",
@@ -400,12 +400,12 @@
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+5%</> for every <@cc.vup>5%</> efficiency provided by operators, capping at <@cc.vup>+35%</>"
 	},
 	"trade_ord_spd&dorm&lv[000]": {
-		"name": "Sincere Fundraising",
+		"name": "Sincere Fundraising·α",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +1% for each level of every Dorm",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+1%</> for each level of every Dorm"
 	},
 	"trade_ord_spd&dorm&lv[010]": {
-		"name": "Sincere Fundraising",
+		"name": "Sincere Fundraising·β",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +2% for each level of every Dorm",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+2%</> for each level of every Dorm"
 	},
@@ -418,6 +418,16 @@
 		"name": "Order Management·β",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +10% and order limit +4",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+10%</> and order limit <@cc.vup>+4</>"
+	},
+	"trade_ord_spd&gold[000]": {
+		"name": "Logistics Planning·α",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +5%. Additionally, further increase order acquisition efficiency by +15% for every 4 Craft Stations producing precious metals",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+5%</>. Additionally, further increase order acquisition efficiency by <@cc.vup>+15%</> for every <@cc.kw>4</> <@cc.kw>Craft Stations</> producing <@cc.kw>precious metals</>"
+	},
+	"trade_ord_spd&gold[010]": {
+		"name": "Logistics Planning·β",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +5%. Additionally, further increase order acquisition efficiency by +15% for every 2 Craft Stations producing precious metals",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+5%</>. Additionally, further increase order acquisition efficiency by <@cc.vup>+15%</> for every <@cc.kw>2</> <@cc.kw>Craft Stations</> producing <@cc.kw>precious metals</>"
 	},
 	"trade_ord_spd&limit[010]": {
 		"name": "Supply Management",
@@ -1134,15 +1144,15 @@
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Whenever a refresh count is gained, increase the chance of obtaining clues from Ursus Student Council (affected by work duration and Open Recruitment slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Whenever <@cc.vup>a refresh count</> is gained, increase the chance of obtaining clues from <@cc.kw>Ursus Student Council</> (affected by work duration and Open Recruitment slots)"
 	},
-	"hire_spd_bd_n1_n1[000]": {
+	"hire_spd_bd_n1_n1[100]": {
 		"name": "Patrolling",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Additionally, gain +10 Memory Fragments for every Open Recruitment slot (excluding the initial slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Additionally, gain <@cc.vup>+10</> <@cc.rem>Memory Fragments</> for every Open Recruitment slot (excluding the initial slots)"
 	},
 	"hire_spd_bd_n1[000]": {
 		"name": "Recollection",
-		"desc": "When stationed at Human Resource, every 1 Memory Fragment is converted into 1 Sensory Information. When mood reaches 0, remove all Memory Fragments and Sensory Information",
-		"descformat": "When stationed at Human Resource, every <@cc.vup>1</> <@cc.rem>Memory Fragment</> is converted into <@cc.vup>1</> <@cc.rem>Sensory Information</>. When mood reaches 0, remove all <@cc.rem>Memory Fragments</> and <@cc.rem>Sensory Information</>"
+		"desc": "When stationed at Human Resource, every 1 Memory Fragment is converted into 1 Sensory Information. When mood reaches 0, remove all Memory Fragments and Sensory Information accumulated by self",
+		"descformat": "When stationed at Human Resource, every <@cc.vup>1</> <@cc.rem>Memory Fragment</> is converted into <@cc.vup>1</> <@cc.rem>Sensory Information</>. When mood reaches 0, remove all <@cc.rem>Memory Fragments</> and <@cc.rem>Sensory Information</> accumulated by self"
 	},
 	"meet_spd[000]": {
 		"name": "Clue Collection·α",
