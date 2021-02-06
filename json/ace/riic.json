@@ -59,6 +59,11 @@
 		"desc": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center -0.05",
 		"descformat": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center <@cc.vup>-0.05</>"
 	},
+	"control_mp_cost&faction2[000]": {
+		"name": "Amiable Fortitude",
+		"desc": "When stationed at the Command Center, for every operator from Li's Detective Agency in the Command Center, mood reduction per hour of all operators in the Command Center -0.05, and additionally reduce the mood reduction per hour of operators from that faction.",
+		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Li's Detective Agency</> in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>, and <@cc.kw>additionally reduce the mood reduction per hour</> of operators from that faction."
+	},
 	"control_mp_cost&faction[000]": {
 		"name": "Ability & Integrity",
 		"desc": "When stationed at the Command Center, for every operator from Lungmen Guard Bureau in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
@@ -69,10 +74,20 @@
 		"desc": "When stationed at the Command Center, for every operator from Ursus Student Council in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
 		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Ursus Student Council</> in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>"
 	},
-	"control_mp_cost&faction2[000]": {
-		"name": "Amiable Fortitude",
-		"desc": "When stationed at the Command Center, for every operator from Li's Detective Agency in the Command Center, mood reduction per hour of all operators in the Command Center -0.05, and additionally reduce the mood reduction per hour of operators from that faction.",
-		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Li's Detective Agency</> in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>, and <@cc.kw>additionally reduce the mood reduction per hour</> of operators from that faction."
+	"control_mp_cost&faction[900]": {
+		"name": "SP Personnel",
+		"desc": "When stationed at the Command Center, for every SP operator in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
+		"descformat": "When stationed at the Command Center, for every <@cc.kw>SP</> operator in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>"
+	},
+	"control_mp_cost&bd1[000]": {
+		"name": "\"Unstirred by Gain\"",
+		"desc": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center -0.05. Additionally, when self mood is 12 or below, gain +15 Worldly Plight",
+		"descformat": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center <@cc.vup>-0.05</>. Additionally, when self mood is <@cc.kw>12</> or below, gain <@cc.vup>+15</> <@cc.rem>Worldly Plight</>"
+	},
+	"control_mp_cost&bd2[000]": {
+		"name": "\"Unmoved by Loss\"",
+		"desc": "When stationed at the Command Center, self mood reduction per hour +0.5. Additionally, when self mood is above 12, gain +10 Sensory Information",
+		"descformat": "When stationed at the Command Center, self mood reduction per hour <@cc.vdown>+0.5</>. Additionally, when self mood is above <@cc.kw>12</>, gain <@cc.vup>+10</> <@cc.rem>Sensory Information</>"
 	},
 	"power_rec_spd&cost[000]": {
 		"name": "Enthusiasm",
@@ -103,6 +118,11 @@
 		"name": "Thermal Energy·α",
 		"desc": "When stationed at a Power Station, drone recovery per hour +10%",
 		"descformat": "When stationed at a Power Station, drone recovery per hour <@cc.vup>+10%</>"
+	},
+	"power_rec_spd[022]": {
+		"name": "Thermal Energy·γ",
+		"desc": "When stationed at a Power Station, drone recovery per hour +20%",
+		"descformat": "When stationed at a Power Station, drone recovery per hour <@cc.vup>+20%</>"
 	},
 	"power_rec_spd[013]": {
 		"name": "High Temperature Recharge",
@@ -164,6 +184,11 @@
 		"desc": "When stationed at a Craft Station, production +25%",
 		"descformat": "When stationed at a Craft Station, production <@cc.vup>+25%</>"
 	},
+	"manu_prod_spd[002]": {
+		"name": "Metal Crab · Beany",
+		"desc": "When stationed at a Craft Station, production +15%",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+15%</>"
+	},
 	"manu_prod_spd[020]": {
 		"name": "Mibo·Production Model",
 		"desc": "When stationed at a Craft Station, production +30%",
@@ -206,6 +231,11 @@
 	},
 	"manu_prod_limit&cost[0000]": {
 		"name": "Scavenger",
+		"desc": "When stationed at a Craft Station, storage capacity +8 and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Craft Station, storage capacity <@cc.vup>+8</> and mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"manu_prod_limit&cost[001]": {
+		"name": "Metal Crab · Little Pan",
 		"desc": "When stationed at a Craft Station, storage capacity +8 and mood reduction per hour -0.25",
 		"descformat": "When stationed at a Craft Station, storage capacity <@cc.vup>+8</> and mood reduction per hour <@cc.vup>-0.25</>"
 	},
@@ -276,18 +306,18 @@
 	},
 	"manu_prod_spd_bd_n1[000]": {
 		"name": "Supersensory",
-		"desc": "When stationed at a Craft Station, gain +1 sensory information for every 1 operator stationed in the Dorms. Additionally, every 1 sensory information is converted into 1 chain of thought",
-		"descformat": "When stationed at a Craft Station, gain <@cc.vup>+1</> <@cc.rem>sensory information</> for every <@cc.kw>1</> operator stationed in the Dorms. Additionally, every <@cc.vup>1</> <@cc.rem>sensory information</> is converted into <@cc.vup>1</> <@cc.rem>chain of thought</>"
+		"desc": "When stationed at a Craft Station, gain +1 Sensory Information for every 1 operator stationed in the Dorms. Additionally, every 1 Sensory Information is converted into 1 Chain of Thought",
+		"descformat": "When stationed at a Craft Station, gain <@cc.vup>+1</> <@cc.rem>Sensory Information</> for every <@cc.kw>1</> operator stationed in the Dorms. Additionally, every <@cc.vup>1</> <@cc.rem>Sensory Information</> is converted into <@cc.vup>1</> <@cc.rem>Chain of Thought</>"
 	},
 	"manu_prod_spd_bd[000]": {
 		"name": "Psychokinesis",
-		"desc": "When stationed at a Craft Station, production +1% for every 2 chains of thought",
-		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>2</> <@cc.rem>chains of thought</>"
+		"desc": "When stationed at a Craft Station, production +1% for every 2 Chains of Thought",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>2</> <@cc.rem>Chains of Thought</>"
 	},
 	"manu_prod_spd_bd[010]": {
 		"name": "Manifestation of Consciousness",
-		"desc": "When stationed at a Craft Station, production +1% for every 1 chain of thought",
-		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>1</> <@cc.rem>chain of thought</>"
+		"desc": "When stationed at a Craft Station, production +1% for every 1 Chain of Thought",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>1</> <@cc.rem>Chain of Thought</>"
 	},
 	"manu_formula_spd[000]": {
 		"name": "Combat Directive Recordings",
@@ -389,6 +419,16 @@
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +5% for every 5% efficiency provided by operators, capping at +35%",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+5%</> for every <@cc.vup>5%</> efficiency provided by operators, capping at <@cc.vup>+35%</>"
 	},
+	"trade_ord_spd&dorm&lv[000]": {
+		"name": "Sincere Fundraising·α",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +1% for each level of every Dorm",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+1%</> for each level of every Dorm"
+	},
+	"trade_ord_spd&dorm&lv[010]": {
+		"name": "Sincere Fundraising·β",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +2% for each level of every Dorm",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+2%</> for each level of every Dorm"
+	},
 	"trade_ord_spd&limit[000]": {
 		"name": "Order Management·α",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +10% and order limit +2",
@@ -398,6 +438,16 @@
 		"name": "Order Management·β",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +10% and order limit +4",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+10%</> and order limit <@cc.vup>+4</>"
+	},
+	"trade_ord_spd&gold[000]": {
+		"name": "Logistics Planning·α",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +5%. Additionally, further increase order acquisition efficiency by +15% for every 4 Craft Stations producing precious metals",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+5%</>. Additionally, further increase order acquisition efficiency by <@cc.vup>+15%</> for every <@cc.kw>4</> <@cc.kw>Craft Stations</> producing <@cc.kw>precious metals</>"
+	},
+	"trade_ord_spd&gold[010]": {
+		"name": "Logistics Planning·β",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +5%. Additionally, further increase order acquisition efficiency by +15% for every 2 Craft Stations producing precious metals",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+5%</>. Additionally, further increase order acquisition efficiency by <@cc.vup>+15%</> for every <@cc.kw>2</> <@cc.kw>Craft Stations</> producing <@cc.kw>precious metals</>"
 	},
 	"trade_ord_spd&limit[010]": {
 		"name": "Supply Management",
@@ -443,6 +493,11 @@
 		"name": "Communication",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +30% and mood reduction per hour -0.25",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+30%</> and mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"trade_ord_spd_bd_n2[000]": {
+		"name": "“Willingly Deceived”",
+		"desc": "When stationed at a Trade Station, gain +1 Worldly Plight for every 1 operator stationed in the Dorms. Additionally, order acquisition efficiency +1% for every 1 Worldly Plight",
+		"descformat": "When stationed at a Trade Station, gain <@cc.vup>+1</> <@cc.rem>Worldly Plight</> for every <@cc.kw>1</> operator stationed in the Dorms. Additionally, order acquisition efficiency <@cc.vup>+1%</> for every <@cc.vup>1</> <@cc.rem>Worldly Plight</>"
 	},
 	"trade_ord_limit&cost[000]": {
 		"name": "Negotiation",
@@ -536,8 +591,8 @@
 	},
 	"workshop_formula_recovery[000]": {
 		"name": "The Art of Explosions",
-		"desc": "When stationed at the Synthesis Station and producing any kind of material, recover mood equal to the cost of the recipe whenever production fails to produce by-products 2 times in a row (calculated at the end of the batch)",
-		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, <@cc.kw>recover mood</> equal to the <@cc.kw>cost of the recipe</> whenever production fails to produce by-products <@cc.kw>2</> times in a row (calculated at the end of the batch)"
+		"desc": "When stationed at the Synthesis Station and producing any kind of material, recover mood equal to the cost of the recipe once for every 2 times production fails to produce by-products (calculated at the end of the batch)",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, <@cc.kw>recover mood</> equal to the <@cc.kw>cost of the recipe once</> for every <@cc.kw>2</> times production fails to produce by-products (calculated at the end of the batch)"
 	},
 	"workshop_formula_cost4[000]": {
 		"name": "Persistent",
@@ -814,6 +869,11 @@
 		"desc": "When stationed at the Training Station, increase the skill training speed of Specialist operatives by +50%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Specialist</> operatives by <@cc.vup>+50%</>"
 	},
+	"train_spd&profession[110]": {
+		"name": "Asceticism",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Vanguard operatives by +60%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Vanguard</> operatives by <@cc.vup>+60%</>"
+	},
 	"train_spd&profession[120]": {
 		"name": "Memories of Swordplay",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard operatives by +60%",
@@ -948,6 +1008,16 @@
 		"name": "Inspiring",
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.1 per hour (When stacked, only the highest effect becomes active)",
 		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.1</> per hour (When stacked, only the highest effect becomes active)"
+	},
+	"dorm_rec_bd_n1_n2[000]": {
+		"name": "Bedtime Story",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.1 per hour (When stacked, only the highest effect becomes active). Additionally, gain 1 Dream for every level of the current Dorm",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.1</> per hour (When stacked, only the highest effect becomes active). Additionally, gain <@cc.vup>1</> <@cc.rem>Dream</> for every level of the current Dorm"
+	},
+	"dorm_rec_bd_n1[000]": {
+		"name": "Sleep Talking",
+		"desc": "When stationed at a Dorm, every 1 Dream is converted into 1 Sensory Information",
+		"descformat": "When stationed at a Dorm, every <@cc.vup>1</> <@cc.rem>Dream</> is converted into <@cc.vup>1</> <@cc.rem>Sensory Information</>"
 	},
 	"dorm_rec_all[010]": {
 		"name": "Violin Solo",
@@ -1094,6 +1164,11 @@
 		"desc": "When stationed at Human Resource, accumulation of networking resources +30%. Additionally, further increase clue collection speed by +5% for every Open Recruitment slot (excluding the initial slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+30%</>. Additionally, further increase clue collection speed by <@cc.vup>+5%</> for every Open Recruitment slot (excluding the initial slots)"
 	},
+	"hire_spd&clue[101]": {
+		"name": "Bringer of Good Tidings",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +30%. Additionally, further increase clue collection speed by +5% for every Open Recruitment slot (excluding the initial slots)",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+30%</>. Additionally, further increase clue collection speed by <@cc.vup>+5%</> for every Open Recruitment slot (excluding the initial slots)"
+	},
 	"hire_spd&clue2[230]": {
 		"name": "Insider",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Whenever a refresh count is gained, increase the chance of obtaining clues from Blacksteel (affected by work duration and Open Recruitment slots)",
@@ -1104,15 +1179,15 @@
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Whenever a refresh count is gained, increase the chance of obtaining clues from Ursus Student Council (affected by work duration and Open Recruitment slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Whenever <@cc.vup>a refresh count</> is gained, increase the chance of obtaining clues from <@cc.kw>Ursus Student Council</> (affected by work duration and Open Recruitment slots)"
 	},
-	"hire_spd_bd_n1_n1[000]": {
+	"hire_spd_bd_n1_n1[100]": {
 		"name": "Patrolling",
-		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Additionally, gain +10 memory fragments for every Open Recruitment slot (excluding the initial slots)",
-		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Additionally, gain <@cc.vup>+10</> <@cc.rem>memory fragments</> for every Open Recruitment slot (excluding the initial slots)"
+		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Additionally, gain +10 Memory Fragments for every Open Recruitment slot (excluding the initial slots)",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Additionally, gain <@cc.vup>+10</> <@cc.rem>Memory Fragments</> for every Open Recruitment slot (excluding the initial slots)"
 	},
 	"hire_spd_bd_n1[000]": {
 		"name": "Recollection",
-		"desc": "When stationed at Human Resource, every 1 memory fragment is converted into 1 sensory information. When mood reaches 0, remove all memory fragments and sensory information",
-		"descformat": "When stationed at Human Resource, every <@cc.vup>1</> <@cc.rem>memory fragment</> is converted into <@cc.vup>1</> <@cc.rem>sensory information</>. When mood reaches 0, remove all <@cc.rem>memory fragments</> and <@cc.rem>sensory information</>"
+		"desc": "When stationed at Human Resource, every 1 Memory Fragment is converted into 1 Sensory Information. When mood reaches 0, remove all Memory Fragments and Sensory Information accumulated by self",
+		"descformat": "When stationed at Human Resource, every <@cc.vup>1</> <@cc.rem>Memory Fragment</> is converted into <@cc.vup>1</> <@cc.rem>Sensory Information</>. When mood reaches 0, remove all <@cc.rem>Memory Fragments</> and <@cc.rem>Sensory Information</> accumulated by self"
 	},
 	"meet_spd[000]": {
 		"name": "Clue Collection·α",
