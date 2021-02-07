@@ -74,6 +74,21 @@
 		"desc": "When stationed at the Command Center, for every operator from Ursus Student Council in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
 		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Ursus Student Council</> in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>"
 	},
+	"control_mp_cost&faction[900]": {
+		"name": "SP Personnel",
+		"desc": "When stationed at the Command Center, for every SP operator in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
+		"descformat": "When stationed at the Command Center, for every <@cc.kw>SP</> operator in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>"
+	},
+	"control_mp_cost&bd1[000]": {
+		"name": "\"Unstirred by Gain\"",
+		"desc": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center -0.05. Additionally, when self mood is 12 or below, gain +15 Worldly Plight",
+		"descformat": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center <@cc.vup>-0.05</>. Additionally, when self mood is <@cc.kw>12</> or below, gain <@cc.vup>+15</> <@cc.rem>Worldly Plight</>"
+	},
+	"control_mp_cost&bd2[000]": {
+		"name": "\"Unmoved by Loss\"",
+		"desc": "When stationed at the Command Center, self mood reduction per hour +0.5. Additionally, when self mood is above 12, gain +10 Sensory Information",
+		"descformat": "When stationed at the Command Center, self mood reduction per hour <@cc.vdown>+0.5</>. Additionally, when self mood is above <@cc.kw>12</>, gain <@cc.vup>+10</> <@cc.rem>Sensory Information</>"
+	},
 	"power_rec_spd&cost[000]": {
 		"name": "Enthusiasm",
 		"desc": "When stationed at a Power Station, mood reduction per hour -0.52",
@@ -103,6 +118,11 @@
 		"name": "Thermal Energy·α",
 		"desc": "When stationed at a Power Station, drone recovery per hour +10%",
 		"descformat": "When stationed at a Power Station, drone recovery per hour <@cc.vup>+10%</>"
+	},
+	"power_rec_spd[022]": {
+		"name": "Thermal Energy·γ",
+		"desc": "When stationed at a Power Station, drone recovery per hour +20%",
+		"descformat": "When stationed at a Power Station, drone recovery per hour <@cc.vup>+20%</>"
 	},
 	"power_rec_spd[013]": {
 		"name": "High Temperature Recharge",
@@ -474,6 +494,11 @@
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +30% and mood reduction per hour -0.25",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+30%</> and mood reduction per hour <@cc.vup>-0.25</>"
 	},
+	"trade_ord_spd_bd_n2[000]": {
+		"name": "“Willingly Deceived”",
+		"desc": "When stationed at a Trade Station, gain +1 Worldly Plight for every 1 operator stationed in the Dorms. Additionally, order acquisition efficiency +1% for every 1 Worldly Plight",
+		"descformat": "When stationed at a Trade Station, gain <@cc.vup>+1</> <@cc.rem>Worldly Plight</> for every <@cc.kw>1</> operator stationed in the Dorms. Additionally, order acquisition efficiency <@cc.vup>+1%</> for every <@cc.vup>1</> <@cc.rem>Worldly Plight</>"
+	},
 	"trade_ord_limit&cost[000]": {
 		"name": "Negotiation",
 		"desc": "When stationed at a Trade Station, order limit +5 and mood reduction per hour -0.25",
@@ -566,8 +591,8 @@
 	},
 	"workshop_formula_recovery[000]": {
 		"name": "The Art of Explosions",
-		"desc": "When stationed at the Synthesis Station and producing any kind of material, recover mood equal to the cost of the recipe whenever production fails to produce by-products 2 times in a row (calculated at the end of the batch)",
-		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, <@cc.kw>recover mood</> equal to the <@cc.kw>cost of the recipe</> whenever production fails to produce by-products <@cc.kw>2</> times in a row (calculated at the end of the batch)"
+		"desc": "When stationed at the Synthesis Station and producing any kind of material, recover mood equal to the cost of the recipe once for every 2 times production fails to produce by-products (calculated at the end of the batch)",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, <@cc.kw>recover mood</> equal to the <@cc.kw>cost of the recipe once</> for every <@cc.kw>2</> times production fails to produce by-products (calculated at the end of the batch)"
 	},
 	"workshop_formula_cost4[000]": {
 		"name": "Persistent",
@@ -843,6 +868,11 @@
 		"name": "Specialist Specialization·β",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Specialist operatives by +50%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Specialist</> operatives by <@cc.vup>+50%</>"
+	},
+	"train_spd&profession[110]": {
+		"name": "Asceticism",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Vanguard operatives by +60%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Vanguard</> operatives by <@cc.vup>+60%</>"
 	},
 	"train_spd&profession[120]": {
 		"name": "Memories of Swordplay",
@@ -1131,6 +1161,11 @@
 	},
 	"hire_spd&clue[100]": {
 		"name": "Empathic Insight",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +30%. Additionally, further increase clue collection speed by +5% for every Open Recruitment slot (excluding the initial slots)",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+30%</>. Additionally, further increase clue collection speed by <@cc.vup>+5%</> for every Open Recruitment slot (excluding the initial slots)"
+	},
+	"hire_spd&clue[101]": {
+		"name": "Bringer of Good Tidings",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +30%. Additionally, further increase clue collection speed by +5% for every Open Recruitment slot (excluding the initial slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+30%</>. Additionally, further increase clue collection speed by <@cc.vup>+5%</> for every Open Recruitment slot (excluding the initial slots)"
 	},
