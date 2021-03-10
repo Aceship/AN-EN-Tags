@@ -79,6 +79,11 @@
 		"desc": "When stationed at the Command Center, for every SP operator in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
 		"descformat": "When stationed at the Command Center, for every <@cc.kw>SP</> operator in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>"
 	},
+	"control_mp_cost&faction[990]": {
+		"name": "Team Rainbow",
+		"desc": "When stationed at the Command Center, for every operator from Team Rainbow in the Command Center, mood reduction per hour of all operators in the Command Center -0.05",
+		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Team Rainbow</> in the Command Center, mood reduction per hour of all operators in the Command Center <@cc.vup>-0.05</>"
+	},
 	"control_mp_cost&bd1[000]": {
 		"name": "\"Unstirred by Gain\"",
 		"desc": "When stationed at the Command Center, mood reduction per hour of all operatives in the Command Center -0.05. Additionally, when self mood is 12 or below, gain +15 Worldly Plight",
@@ -88,6 +93,16 @@
 		"name": "\"Unmoved by Loss\"",
 		"desc": "When stationed at the Command Center, self mood reduction per hour +0.5. Additionally, when self mood is above 12, gain +10 Sensory Information",
 		"descformat": "When stationed at the Command Center, self mood reduction per hour <@cc.vdown>+0.5</>. Additionally, when self mood is above <@cc.kw>12</>, gain <@cc.vup>+10</> <@cc.rem>Sensory Information</>"
+	},
+	"control_mp_bd[000]": {
+		"name": "Intelligence Reserve",
+		"desc": "When stationed at the Command Center, for every operator from Team Rainbow in the Command Center, gain +1 Intelligence Reserve",
+		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Team Rainbow</> in the Command Center, gain <@cc.vup>+1</> <@cc.rem>Intelligence Reserve</>"
+	},
+	"control_mp_bd[010]": {
+		"name": "Ursus Specialty Drink",
+		"desc": "When stationed at the Command Center, for every operator from Ursus Student Council in the Command Center, gain +1 Ursus Specialty Drink",
+		"descformat": "When stationed at the Command Center, for every operator from <@cc.kw>Ursus Student Council</> in the Command Center, gain <@cc.vup>+1</> <@cc.rem>Ursus Specialty Drink</>"
 	},
 	"power_rec_spd&cost[000]": {
 		"name": "Enthusiasm",
@@ -559,7 +574,7 @@
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 40%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, increase the rate of by-products by <@cc.vup>40%</>"
 	},
-	"workshop_proc_probability[001]": {
+	"workshop_proc_probability[020]": {
 		"name": "Focus·β",
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 60%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, increase the rate of by-products by <@cc.vup>60%</>"
@@ -579,7 +594,12 @@
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 50%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, increase the rate of by-products by <@cc.vup>50%</>"
 	},
-	"workshop_proc_probability[020]": {
+	"workshop_proc_probability[021]": {
+		"name": "Hale and Hearty",
+		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 60%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, increase the rate of by-products by <@cc.vup>60%</>"
+	},
+	"workshop_proc_probability[030]": {
 		"name": "Mibo·Processing Model",
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 65%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, increase the rate of by-products by <@cc.vup>65%</>"
@@ -593,6 +613,11 @@
 		"name": "The Art of Explosions",
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, recover mood equal to the cost of the recipe once for every 2 times production fails to produce by-products (calculated at the end of the batch)",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, <@cc.kw>recover mood</> equal to the <@cc.kw>cost of the recipe once</> for every <@cc.kw>2</> times production fails to produce by-products (calculated at the end of the batch)"
+	},
+	"workshop_formula_frost[000]": {
+		"name": "Mechanical Engineering",
+		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 50%. Additionally, increase the rate of by-products by 5% for every 1 Intelligence Reserve; If there are 4 Ursus Specialty Drinks, further increase the rate of by-products by 15%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, increase the rate of by-products by <@cc.vup>50%</>. Additionally, increase the rate of by-products by <@cc.vup>5%</> for every <@cc.vup>1</> <@cc.rem>Intelligence Reserve</>; If there are <@cc.vup>4</> <@cc.rem>Ursus Specialty Drinks</>, further increase the rate of by-products by <@cc.vup>15%</>"
 	},
 	"workshop_formula_cost4[000]": {
 		"name": "Persistent",
@@ -1180,14 +1205,19 @@
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Whenever <@cc.vup>a refresh count</> is gained, increase the chance of obtaining clues from <@cc.kw>Ursus Student Council</> (affected by work duration and Open Recruitment slots)"
 	},
 	"hire_spd_bd_n1_n1[100]": {
-		"name": "Patrolling",
+		"name": "Itinerant",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Additionally, gain +10 Memory Fragments for every Open Recruitment slot (excluding the initial slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Additionally, gain <@cc.vup>+10</> <@cc.rem>Memory Fragments</> for every Open Recruitment slot (excluding the initial slots)"
 	},
 	"hire_spd_bd_n1[000]": {
-		"name": "Recollection",
+		"name": "Memory Seeker",
 		"desc": "When stationed at Human Resource, every 1 Memory Fragment is converted into 1 Sensory Information. When mood reaches 0, remove all Memory Fragments and Sensory Information accumulated by self",
 		"descformat": "When stationed at Human Resource, every <@cc.vup>1</> <@cc.rem>Memory Fragment</> is converted into <@cc.vup>1</> <@cc.rem>Sensory Information</>. When mood reaches 0, remove all <@cc.rem>Memory Fragments</> and <@cc.rem>Sensory Information</> accumulated by self"
+	},
+	"hire_spd_blitz[000]": {
+		"name": "Linguistics",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Additionally, further increase accumulation of networking resources by +5% for every 1 Intelligence Reserve and +5% for every 1 Ursus Specialty Drink",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Additionally, further increase accumulation of networking resources by <@cc.vup>+5%</> for every <@cc.vup>1</> <@cc.rem>Intelligence Reserve</> and <@cc.vup>+5%</> for every <@cc.vup>1</> <@cc.rem>Ursus Specialty Drink</>"
 	},
 	"meet_spd[000]": {
 		"name": "Clue Collection·α",
@@ -1261,6 +1291,11 @@
 	},
 	"meet_spd&team[030]": {
 		"name": "Liaison",
+		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Blacksteel (affected by work duration)",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Blacksteel</> (affected by work duration)"
+	},
+	"meet_spd&team[031]": {
+		"name": "B.P.R.S",
 		"desc": "When stationed at Reception, clue collection speed +10% and it becomes easier to obtain clues from Blacksteel (affected by work duration)",
 		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+10%</> and it becomes easier to obtain clues from <@cc.kw>Blacksteel</> (affected by work duration)"
 	},
