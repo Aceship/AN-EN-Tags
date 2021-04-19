@@ -3076,7 +3076,7 @@
     function ChangeDescriptionContent(desc,skill){
         // console.log(desc,blackboard)
         let blackboard=skill.blackboard
-        desc = desc.replace(/\{{0,1}\{([A-Z@_a-z\[\]0-9.]+)\}{0,1}:(.{1,3})\}/g, function(m, content, format) {
+        desc = desc.replace(/\{{0,1}\{([A-Z@_a-z\[\]0-9.]+)\}{0,1}:(.{1,4})\}/g, function(m, content, format) {
             // console.log(content)
             // console.log(format)
             // console.log(blackboard)
@@ -3084,8 +3084,7 @@
                 if (blackboard[i].key==content){
                     // console.log(blackboard[i].value)
                     let value = blackboard[i].value
-                    if (format ==".0%") value = Math.round((value * 100000))/1000 + "%";
-                    if (format =="0%") value = Math.round((value * 100000))/1000 + "%";
+                    if (format.includes("%")) value = Math.round((value * 100000))/1000 + "%";
                     return `<div class="stat-important">${value}</div>`
                 }
             }
