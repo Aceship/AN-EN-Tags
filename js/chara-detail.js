@@ -50,8 +50,8 @@
         //jet TL
         riic            :"./json/ace/riic.json",
         talentsTL       :"./json/ace/tl-talents.json",
-        skillsTL        :"./json/ace/tl-skills.json"
-        
+        skillsTL        :"./json/ace/tl-skills.json",
+        named_effects   :"./json/named_effects.json"
     };
     
     var db = {}
@@ -104,6 +104,9 @@
     var hei = 1800
 
     $(document).ready(function(){
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+          })
         $('#to-tag').click(function(){      // When arrow is clicked
             $('body,html').animate({
                 scrollTop : 0                       // Scroll to top of body
@@ -2888,114 +2891,99 @@
         // console.log()
         
         // console.log(skillTL);
+        desc = ChangeDescriptionColor(desc)
         if(!skillTL){
-            let split = desc.split("<@ba.vup>")
-            console.log(split)
-            let skillall =""
+            // let split = desc.split("<@ba.vup>")
+            // console.log(split)
+            // let skillall =""
             // console.log(split.length)
-            for(i=0;i<split.length;i++){
-                if(i==0){
-                    skillall+= split[i]
-                }
-                else{
-                    var currsplit = "<@ba.vup>"+split[i]
-                    // console.log(currsplit)
-                    let muhRegex = /<@ba\.vup>(.*?)<\/>/g
-                    let plusmin = /[+-]/
-                    
-                    let desc2 = muhRegex.exec(currsplit)[1]
-                    let plusdesc = ""
-                    if(plusmin.exec(desc2)&&plusmin.exec(desc2)[0]) plusdesc = plusmin.exec(desc2)[0]
-                    // console.log(desc2)
-                    // let desc2 = desc.replace(/<@ba\.vup>/g,"<a>")
-                    // console.log(i)
-                    console.log(plusdesc)
-                    console.log(desc2)
-                    // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
-                    let muhRegex2 = /({)(.*?)(\:.*?)(})/
-                    let desc3 = muhRegex2.exec(desc2)
-                    console.log(desc3)
-                    if(!desc3){
-                        let descextra = 
-                        skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc2).replace(/\\n/g,"</br>")
-                    }
-                    
-                    if(desc3){
-                        desc3[2] = `{${desc3[2]}}`
-                        desc3[3] = desc3[3].replace(":",":.")
-                        let desc4 = []
-                        
-                        for(j=1;j<desc3.length;j++){
-                            desc4.push(desc3[j])
-                        }
-                        // console.log(desc4)
-                        skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,plusdesc+desc4.join("")).replace(/\\n/g,"</br>")
-                        console.log(currsplit.replace(/<@ba\.vup>(.*?)<\/>/,plusdesc+desc4.join("")).replace(/\\n/g,"</br>"))
-                    }
-                }
-                
-            }
-            // let muhRegex = /<@ba\.vup>(.*?)<\/>/g
-            // let desc2 = muhRegex.exec(desc)[1]
-            // // let desc2 = desc.replace(/<@ba\.vup>/g,"<a>")
-            // // console.log(desc2)
-            // // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
-            // let muhRegex2 = /({)(.*?)(\:.*?)(})/
-            // let desc3 = muhRegex2.exec(desc2)
-            
-            // if(desc3){
-            //     desc3[2] = `{${desc3[2]}}`
-            //     desc3[3] = desc3[3].replace(":",":.")
-            //     let desc4 = []
-            //     // console.log(desc3)
-            //     for(i=1;i<desc3.length;i++){
-            //         desc4.push(desc3[i])
+            // for(i=0;i<split.length;i++){
+            //     if(i==0){
+            //         skillall+= split[i]
             //     }
-            //     // console.log(desc4)
-            //     desc = desc.replace(/<@ba\.vup>(.*?)<\/>/,desc4.join("")).replace(/\\n/g,"</br>")
+            //     else{
+            //         var currsplit = "<@ba.vup>"+split[i]
+            //         // console.log(currsplit)
+            //         let muhRegex = /<@ba\.vup>(.*?)<\/>/g
+            //         let plusmin = /[+-]/
+                    
+            //         let desc2 = muhRegex.exec(currsplit)[1]
+            //         let plusdesc = ""
+            //         if(plusmin.exec(desc2)&&plusmin.exec(desc2)[0]) plusdesc = plusmin.exec(desc2)[0]
+            //         // console.log(desc2)
+            //         // let desc2 = desc.replace(/<@ba\.vup>/g,"<a>")
+            //         // console.log(i)
+            //         console.log(plusdesc)
+            //         console.log(desc2)
+            //         // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
+            //         let muhRegex2 = /({)(.*?)(\:.*?)(})/
+            //         let desc3 = muhRegex2.exec(desc2)
+            //         console.log(desc3)
+            //         if(!desc3){
+            //             let descextra = 
+            //             skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc2).replace(/\\n/g,"</br>")
+            //         }
+                    
+            //         if(desc3){
+            //             desc3[2] = `{${desc3[2]}}`
+            //             desc3[3] = desc3[3].replace(":",":.")
+            //             let desc4 = []
+                        
+            //             for(j=1;j<desc3.length;j++){
+            //                 desc4.push(desc3[j])
+            //             }
+            //             // console.log(desc4)
+            //             skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,plusdesc+desc4.join("")).replace(/\\n/g,"</br>")
+            //             console.log(currsplit.replace(/<@ba\.vup>(.*?)<\/>/,plusdesc+desc4.join("")).replace(/\\n/g,"</br>"))
+            //         }
+            //     }
                 
             // }
-            desc = skillall
+
+            // desc = skillall
+
+            
         }
 
         // if(skillTL){
         if(desc){
-            var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{\{(.*?)\}:.1(.)\}|\{(.*?)\})/gm);
+            desc=ChangeDescriptionContent(desc,skill)
+            // var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{\{(.*?)\}:.1(.)\}|\{(.*?)\})/gm);
             // console.log(matches)
-            $.each(matches,function(i,v){
-                var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
+            // $.each(matches,function(i,v){
+            //     var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
                 
-                if(!submatches[1]){
-                    submatches = v.match(/(?:(?!\{).(?!$))+/gm);
-                }
-                // console.log(submatches)
-                var value;
-                for (var i = 0; i < skill.blackboard.length; i++) {
-                    // console.log(skill.blackboard)
-                    if(skill.blackboard[i].key == submatches[0]){
-                        value = skill.blackboard[i].value;
-                        if(skill.prefabId == "skchr_angel_3"&&skill.blackboard[i].key =='base_attack_time'){
-                            value = skill.blackboard[i].value*2;
-                            // console.log("DOUBLE!!")
-                        }
-                        // console.log(value)
-                    }
-                }
-                if(value){
-                    if(typeof submatches[1] != "undefined"){
-                        // console.log(submatches[1])
-                        if(submatches[1].includes("%")){
-                            value = Math.round((value * 100000))/1000 + "%";
-                        }
-                    }
-                    desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
-                }
-            });
-            var highlights = desc.match(/\[\[(.*?)\]\]/gm)
-            // console.log(highlights)
-            $.each(highlights,function(i,v){
-                desc = desc.replace(v,`<div class="stat-important">${v.substring(2,v.length-2)}</div>`);
-            });
+            //     if(!submatches[1]){
+            //         submatches = v.match(/(?:(?!\{).(?!$))+/gm);
+            //     }
+            //     // console.log(submatches)
+            //     var value;
+            //     for (var i = 0; i < skill.blackboard.length; i++) {
+            //         // console.log(skill.blackboard)
+            //         if(skill.blackboard[i].key == submatches[0]){
+            //             value = skill.blackboard[i].value;
+            //             if(skill.prefabId == "skchr_angel_3"&&skill.blackboard[i].key =='base_attack_time'){
+            //                 value = skill.blackboard[i].value*2;
+            //                 // console.log("DOUBLE!!")
+            //             }
+            //             // console.log(value)
+            //         }
+            //     }
+            //     if(value){
+            //         if(typeof submatches[1] != "undefined"){
+            //             // console.log(submatches[1])
+            //             if(submatches[1].includes("%")){
+            //                 value = Math.round((value * 100000))/1000 + "%";
+            //             }
+            //         }
+            //         desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
+            //     }
+            // });
+            // var highlights = desc.match(/\[\[(.*?)\]\]/gm)
+            // // console.log(highlights)
+            // $.each(highlights,function(i,v){
+            //     desc = desc.replace(v,`<div class="stat-important">${v.substring(2,v.length-2)}</div>`);
+            // });
         }
         // }else{
 
@@ -3037,6 +3025,88 @@
         } else {
             return false;
         }
+    }
+
+    function ChangeDescriptionColor(desc){
+        desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich = db.dataconst.richTextStyles[rtf];
+            if (rich) {
+                let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
+                if (colorRTF.test(rich)) {
+                    let color = colorRTF.exec(rich)[1]
+                    return `<span style="color:${color}">${text}</span>`
+                } else {
+                    return rich.replace('{0}', text)
+                }
+            }
+            
+        })
+        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            if (rich2) {
+                return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
+            }
+        })
+        return desc
+    }
+
+    function CreateTooltip(desc){
+
+        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            console.log(m)
+            if (rich2) {
+                return `<span class="stat-important tooltip3" style="color:#0098DC">${text}<span class="tooltiptext2" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip2(rich2.description)}</span></span>`
+            }
+        })
+        return desc
+    }
+    function CreateTooltip2(desc){
+
+        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            console.log(m)
+            if (rich2) {
+                return `<span class="stat-important" style="color:#0098DC">${text}</span>`
+            }
+        })
+        return desc
+    }
+
+    function ChangeDescriptionContent(desc,skill){
+        // console.log(desc,blackboard)
+        let blackboard=skill.blackboard
+        desc = desc.replace(/\{{0,1}\{([A-Z@_a-z\[\]0-9.]+)\}{0,1}:(.{1,3})\}/g, function(m, content, format) {
+            // console.log(content)
+            // console.log(format)
+            // console.log(blackboard)
+            for (var i = 0; i < blackboard.length; i++) {
+                if (blackboard[i].key==content){
+                    // console.log(blackboard[i].value)
+                    let value = blackboard[i].value
+                    if (format ==".0%") value = Math.round((value * 100000))/1000 + "%";
+                    if (format =="0%") value = Math.round((value * 100000))/1000 + "%";
+                    return `<div class="stat-important">${value}</div>`
+                }
+            }
+            return m
+        })
+
+        desc = desc.replace(/\{([A-Z_@a-z]+)\}/g, function(m, content) {
+            for (var i = 0; i < blackboard.length; i++) {
+                if (blackboard[i].key==content){
+                    // console.log(blackboard[i].value)
+                    value = blackboard[i].value
+                    if(skill && skill.prefabId == "skchr_angel_3"&&blackboard[i].key =='base_attack_time'){
+                        value = value*2;
+                        // console.log("DOUBLE!!")
+                    }
+                    return `<div class="stat-important">${value}</div>`
+                }
+            }
+            return m
+        })
+        return desc
     }
 
     function ChangeSkillAnim(skillnum,skillmax,token){
