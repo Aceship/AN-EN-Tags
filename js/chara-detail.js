@@ -1484,6 +1484,7 @@
                         default:spTypeHtml = spType;break;
                     }
                     var spDuration= (v2.duration==0?"Instant Attack":v2.duration==-1?"Infinite":v2.duration + " Seconds")
+                    console.log(v2)
                     var spDurationName = (v2.duration==0?"":"Duration")
                     var skilldetails =[]
                     // console.log(skillname)
@@ -1501,6 +1502,10 @@
                             if(skillinfo.key =="duration"){
                                 spDuration = skillinfo.value;
                                 spDurationName = "Target Effect Duration"
+                            }
+                            if(v2.prefabId=="skchr_pasngr_1"){
+                                spDuration = "Instant Attack";
+                                spDurationName = ""
                             }
                         }
                         if(skillinfo.key=="ability_range_forward_extend"){
