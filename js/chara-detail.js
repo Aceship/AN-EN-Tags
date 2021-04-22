@@ -892,7 +892,8 @@
         if(sub){
             var subclasses = []
             $.each(sub,function(key,v){
-                if(char.appellation==v)subclasses.push(key)
+                console.log(v,char.appellation)
+                if(v.includes(char.appellation))subclasses.push(key)
             })
             if(subclasses.length>0)return subclasses
         }
@@ -1022,7 +1023,7 @@
         $("#selectedopclass").html(ops.map(char =>
             `<li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
                 <img src="img/avatars/${getId(char)}.png">
-                <div class="${char.appellation.length>12?"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
+                <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
                 ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
                 ${GetLogo(char)?`<div class="ak-showfaction"><img src="img/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
