@@ -3034,6 +3034,13 @@
     }
 
     function ChangeDescriptionColor(desc){
+
+        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            if (rich2) {
+                return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
+            }
+        })
         desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich = db.dataconst.richTextStyles[rtf];
             if (rich) {
@@ -3046,12 +3053,6 @@
                 }
             }
             
-        })
-        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
-            let rich2 = db.named_effects.termDescriptionDict[rtf];
-            if (rich2) {
-                return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
-            }
         })
         return desc
     }
