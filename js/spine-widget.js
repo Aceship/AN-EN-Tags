@@ -4847,6 +4847,8 @@ var spine;
 					else if (direction == "xy")
 						page.uWrap = page.vWrap = spine.TextureWrap.Repeat;
 					page.texture = textureLoader(line);
+					console.log(line)
+					console.log(textureLoader(line))
 					page.texture.setFilters(page.minFilter, page.magFilter);
 					page.texture.setWraps(page.uWrap, page.vWrap);
 					page.width = page.texture.getImage().width;

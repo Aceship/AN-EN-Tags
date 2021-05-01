@@ -3804,6 +3804,156 @@
         console.log(zoomvalue)
     }
 
+
+    function LoadAnimation2(widget){
+        // console.log(spinewidget)
+        $("#loading-spine").text("Loading...")
+        if(spinewidget){
+            spinewidget.pause()
+            spinewidget = undefined
+        }
+        $("#spine-widget").remove()
+        $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: ${wid}px; height: ${hei}px;top:${-hei/2+150 +chibiscale[1]}px;left:-${wid/2-150}px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
+        if (chibiName != null && defaultAnimationName != null) {
+            var xhr = new XMLHttpRequest();
+            folder2 = `./spineassets/dynchars/char_1012_skadi2/dyn_illust_char_1012_skadi2_2/dyn_illust_char_1012_skadi2`
+            xhr.open('GET', folder2 + "." +skeletonType, true);
+            xhr.responseType = 'arraybuffer';
+            var array;
+            $("#spine-widget").hide()
+            var defaultskin ='default'
+
+            xhr.onprogress = function () {
+                console.log('LOADING: ', xhr.status);
+                $("#loading-spine").fadeIn(200)
+            };
+            
+            
+            console.log(chibiName)
+            xhr.onloadend = function (e) {
+                console.log(xhr.status)
+                if (xhr.status != 404) {
+                    buffer = xhr.response;
+                    array = new Uint8Array(buffer);
+                    // console.log(array);
+                    skelBin = new SkeletonBinary();
+                    var jsonskel
+                    if(array.length==0){
+                        $("#loading-spine").text("Load Failed (Not Found)")
+                        // chibiperscurr++
+                        // if(chibiperscurr>=chibiperslist.length)chibiperscurr=0
+                        // else if(chibiperscurr<0)chibiperscurr=chibiperslist.length-1
+                        // LoadAnimation()
+
+                    }else{
+                        if (skeletonType== "skel"){
+                            skelBin.data = array
+                            skelBin.initJson()
+                            jsonskel = JSON.stringify(skelBin.json)
+                            var parsedskeljson = JSON.parse(jsonskel)
+                            console.log(JSON.parse(jsonskel))
+                            if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                                defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                            }
+                            if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                                defaultskin = Object.keys(parsedskeljson.skins)[0]
+                            }
+                        }else if (skeletonType== "json"){
+                            jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
+                            var parsedskeljson = jsonskel
+                            console.log(JSON.parse(jsonskel))
+                            if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
+                                defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
+                            }
+                            if(!Object.keys(parsedskeljson.skins).find(search=>search==defaultskin)){
+                                defaultskin = Object.keys(parsedskeljson.skins)[0]
+                            }
+                        }
+                        
+                        
+                        
+                        // var test = new TextDecoder("utf-8").decode(array);
+                        // console.log(JSON.parse(test))
+                        // console.log(JSON.stringify(skelBin.json, null, "\t"));
+                        var spineX = parseFloat($("#spine-widget").width())/2
+                        var spineY = parseFloat($("#spine-widget").height())/2 -200
+    
+                        // console.log(spineX)
+                        // console.log(spineY)
+                        new spine.SpineWidget("spine-widget", {
+                            jsonContent: jsonskel,
+                            atlas: folder2 + ".atlas",
+                            animation: defaultAnimationName,
+                            backgroundColor: "#00000000",
+                            // debug: true,
+                            // imagesPath: chibiName + ".png", 
+                            premultipliedAlpha: true,
+                            fitToCanvas : false,
+                            loop:true,
+                            // x:900,
+                            // y:650,
+                            x:spineX,
+                            y:spineY,
+                            //0.5 for normal i guess
+                            scale:1,
+                            success: function (widget) {
+                                
+                                animIndex=0
+                                spinewidget = widget
+                                $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                                $("#loading-spine").fadeOut(200)
+                                animations = widget.skeleton.data.animations;
+                                // console.log(animations)
+                                // console.log(widget)
+                                $("#spine-widget").show()
+                                if(animations.find(search=>search.name=="Start")){
+                                    CreateAnimation(spinewidget,["Start","Idle"])
+                                    $("#spine-text").text("Idle")
+                                }else if(animations.find(search=>search.name=="Relax")){
+                                    CreateAnimation(spinewidget,"Relax")
+                                    $("#spine-text").text("Relax")
+                                }
+    
+                                // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
+                                // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Loop_End","Idle"],true)
+    
+                                widget.customanimation = CheckAnimationSet(animations)
+                                // console.log(widget)
+    
+    
+                                //ange skill 2
+                                // CreateAnimation(["Skill1_Begin",["Skill1_Loop",15],"Skill1_End",["Idle_Charge",2]],true)
+    
+                                //ange skill 3 (is weird)
+                                // CreateAnimation(["Skill2_Begin",["Skill2_Loop",15],"Skill2_End",["Idle_Charge",2]],true)
+    
+                                // Normal skill loop with begin and idle i guess (nian skill 2)
+                                // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Idle"],true,true)
+    
+    
+                                // console.log(widget.state)
+                                // console.log(widget.state.trackEntry)
+                                $("#spine-toolbar-next").onclick = function () {
+                                    widget.state.clearTracks()
+                                    if(animationqueue!=undefined)clearInterval(animationqueue)
+                                    animIndex++;
+                                    // console.log(animations)
+                                    if (animIndex >= animations.length) animIndex = 0;
+                                    widget.setAnimation(animations[animIndex].name)
+                                    $("#spine-text").text(animations[animIndex].name)
+                                }
+                            }
+                        })
+                    }
+                }else{
+                    $("#loading-spine").text("Load Failed 2")
+                    // $("#spine-frame").fadeOut()
+                }
+            };
+            xhr.send()
+        }
+    }
+
     function ObjectToArray(db){
         var result = [];
         var found = true;
