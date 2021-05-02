@@ -36,6 +36,9 @@
     var d11 = $.getJSON("json/ace/riic.json",function(data){
             db["riic"] = data;
         });
+    var d12 = $.getJSON("json/named_effects.json",function(data){
+            db["named_effects"] = data;
+        });
     $.when(d0,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11).then(function(){
         $.holdReady(false);
     });
@@ -331,19 +334,24 @@
                             }
                         }
                     }
-                    description = description.replace(/<@(.+?)>(.+?)<\/>/g, function(m, rtf, text) {
-                        // console.log(m, rtf, text);
-                        let rich = db.dataconst.richTextStyles[rtf];
-                        if (rich) {
-                            let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
-                            if (colorRTF.test(rich)) {
-                                let color = colorRTF.exec(rich)[1]
-                                return `<span style="color:${color}">${text}</span>`
-                            } else {
-                                return rich.replace('{0}', text)
-                            }
-                        }
-                    })
+                    
+                    description = description.replace(/\\n/g,"<br><br>")
+                    // console.log(description)
+                    // description = description.replace(/<@(.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+                    //     // console.log(m, rtf, text);
+                    //     let rich = db.dataconst.richTextStyles[rtf];
+                    //     if (rich) {
+                    //         let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
+                    //         if (colorRTF.test(rich)) {
+                    //             let color = colorRTF.exec(rich)[1]
+                    //             return `<span style="color:${color}">${text}</span>`
+                    //         } else {
+                    //             return rich.replace('{0}', text)
+                    //         }
+                    //     }
+                    // })
+                    description = ChangeDescriptionColor(description)
+                    console.log(description)
                     let req =``
                     // console.log(`Lv.${buff.cond.level}/ Elite ${buff.cond.phase}`)
                     if(buff.cond.level>1){
@@ -398,6 +406,54 @@
         $("#tbody-list").empty()
     }
     
+    function ChangeDescriptionColor(desc){
+
+        desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich = db.dataconst.richTextStyles[rtf];
+            console.log(rtf)
+            if (rich) {
+                let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
+                if (colorRTF.test(rich)) {
+                    let color = colorRTF.exec(rich)[1]
+                    return `<span style="color:${color}">${text}</span>`
+                } else {
+                    return rich.replace('{0}', text)
+                }
+            }
+            
+        })
+        // desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+        //     let rich2 = db.named_effects.termDescriptionDict[rtf];
+        //     console.log(db.named_effects.termDescriptionDict[rtf])
+        //     if (rich2) {
+        //         return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
+        //     }
+        // })
+        
+        return desc
+    }
+    function CreateTooltip(desc){
+
+        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            console.log(m)
+            if (rich2) {
+                return `<span class="stat-important tooltip3" style="color:#0098DC">${text}<span class="tooltiptext2" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip2(rich2.description)}</span></span>`
+            }
+        })
+        return desc
+    }
+    function CreateTooltip2(desc){
+
+        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            console.log(m)
+            if (rich2) {
+                return `<span class="stat-important" style="color:#0098DC">${text}</span>`
+            }
+        })
+        return desc
+    }
     // function 
 
     function query(db,key,val,single=true,returnKey=false){

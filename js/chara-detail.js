@@ -2360,9 +2360,11 @@
 
                 var currname = tlbuff?tlbuff.name:currbuff.buffName
                 var currdesc = tlbuff?tlbuff.desc:currbuff.description
+                var normdesc = currdesc
+                currdesc = currdesc.replace(/\\n/g,"\n\n")
                 eachtab.push(`
                     <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${currdesc.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname.replace(/\"/g,"\'")}\n\n${currdesc.replace(/\"/g,"\'")}">
+                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${normdesc.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname.replace(/\"/g,"\'")}\n\n${currdesc.replace(/\"/g,"\'")}">
                     </div>`)
                     // console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
             });
@@ -2410,10 +2412,11 @@
         if($("#op-riicdetail").is(":visible")&&$("#op-riicdetail-name").html()==title){
             $("#op-riicdetail").slideUp(200)
         }else{
-            $("#op-riicdetail").slideDown(200)
             $("#op-riicdetail-img").attr("src",img)
             $("#op-riicdetail-name").text(title)
-            $("#op-riicdetail-desc").text(desc)
+            desc = desc.replace(/\n/g,"<br><br>")
+            $("#op-riicdetail-desc").html(desc)
+            $("#op-riicdetail").slideDown(200)
         }
     }
     function GetTalent(id,opdataFull){
