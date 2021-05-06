@@ -1498,7 +1498,7 @@
                         skilljson.value = skillinfo.value
 
                         skilldetails.push(skilljson)
-                        if(skillinfo.key=="force"||skillinfo.key=="base_force_level") force= skillinfo.value
+                        if(skillinfo.key=="force"||skillinfo.key=="base_force_level"||skillinfo.key=="attack@force") force= skillinfo.value
                         if(v2.duration==-1){
                             if(skillinfo.key =="duration"){
                                 spDuration = skillinfo.value;
@@ -1545,7 +1545,6 @@
                             <tr>
                                 <td colspan='${grid?3:2}' class='skilldesc'>${skilldesc}</td>
                             </tr>
-                            <tr style="height:10px"></tr>
                             `       
 
                     var detailtable = []
@@ -1569,29 +1568,92 @@
                     }
                     
                     // if
+                    // if(grid){
+                    //     tables +=            "<tr>"
+                    //             +               "<td rowspan=2 id='skill"+i+"lv"+i2+"grid'>"+(grid?grid:"")+"</td>"
+                    //             +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
+                    //             +            "</tr>"
+                    //             +             "<tr>"
+                    //             +                   `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
+                    //             +               "</tr>"
+                    //             +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
+                    //             +               `${detailtable==""?"":`<tr><td colspan=3>${detailtable}</td></tr>`}`
+                    //             +               "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
+                    //             +        "</table>";   
+                    // } else {
+                    //     tables +=           "<tr style=\"height:10px\"></tr>"
+                    //             +            "<tr>"
+                    //             +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
+                    //             +            "</tr>"
+                    //             +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
+                    //             +               `${detailtable==""?"":`<tr><td colspan=4>${detailtable}</td></tr>`}`
+                    //             + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
+                    //             +        "</table>";
+                    // }
+
                     if(grid){
-                        tables +=            "<tr>"
-                                +               "<td rowspan=2 id='skill"+i+"lv"+i2+"grid'>"+(grid?grid:"")+"</td>"
-                                +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
-                                +            "</tr>"
-                                +             "<tr>"
-                                +                   `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
-                                +               "</tr>"
-                                +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
-                                +               `${detailtable==""?"":`<tr><td colspan=3>${detailtable}</td></tr>`}`
-                                +               "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
-                                +        "</table>";   
-                    } else {
-                        tables +=           "<tr style=\"height:10px\"></tr>"
-                                +            "<tr>"
-                                +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
-                                +            "</tr>"
-                                +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
-                                +               `${detailtable==""?"":`<tr><td colspan=4>${detailtable}</td></tr>`}`
-                                + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
-                                +        "</table>";
+                        tables+= 
+                        `
+                            <tr>
+                                <td>
+                                    <div class="skill-detail-grid">
+                                        <div id="skill${i}lv${i2}grid" class="skill-grid">
+                                                ${grid?grid:""}
+                                        </div>
+                                        <div class="skill-grid-num">
+                                            <div>${titledMaker(v2['spData'].spCost,"SP Cost")}</div>
+                                            <div>${titledMaker(v2['spData'].initSp,"Initial SP")}</div>
+                                            <div>${force!=undefined?`${titledMaker(force,"Force Level")}`: ""}</div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            ${detailtable==""?"":`<tr><td colspan=3>${detailtable}</td></tr>`}
+                            <tr>
+                                <td colspan=3> ${materialHtml} </td>
+                            </tr>
+                        </table>
+                        `
+                    }else{
+                        tables+=
+                        `
+                            <tr style="height:10px"></tr>
+                            <tr>
+                                <td>
+                                    ${titledMaker(v2['spData'].spCost,"SP Cost")}
+                                    ${titledMaker(v2['spData'].initSp,"Initial SP")}
+                                    ${force!=undefined?`${titledMaker(force,"Force Level")}`: ""}
+                                </td>
+                            </tr>
+                            
+                            ${detailtable==""?"":`<tr><td colspan=4>${detailtable}</td></tr>`}
+                            <tr>
+                                <td colspan=4>${materialHtml} </td>
+                            </tr>
+                        </table>
+                        `
                     }
                 })
+
+                        // `
+                        //     <tr>
+                        //         <td rowspan=${force?3:2} id="skill${i}lv${i2}grid">
+                        //             ${grid?grid:""}
+                        //         </td>
+                        //         <td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>
+                        //     </tr>
+                        //     <tr>
+                        //         <td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>
+                        //     </tr>
+                        //     <tr>
+                        //         <td> ${force!=undefined?`${titledMaker(force,"Force Level")}`: ""} </td>
+                        //     </tr>
+                        //     ${detailtable==""?"":`<tr><td colspan=3>${detailtable}</td></tr>`}
+                        //     <tr>
+                        //         <td colspan=3> ${materialHtml} </td>
+                        //     </tr>
+                        // </table>
+                        // `
 
                 if(skillData.iconId == null){
                     var skillIcon = skillId;
