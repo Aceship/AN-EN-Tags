@@ -3146,8 +3146,9 @@
     }
 
     function ChangeDescriptionContent(desc,skill){
-        // console.log(desc,blackboard)
         let blackboard=skill.blackboard
+        // console.log(desc)
+        // console.log(blackboard)
         desc = desc.replace(/\{{0,1}\{([A-Z@_a-z\[\]0-9.]+)\}{0,1}:(.{1,4})\}/g, function(m, content, format) {
             // console.log(content)
             // console.log(format)
@@ -3163,7 +3164,7 @@
             return m
         })
 
-        desc = desc.replace(/\{([A-Z_@a-z]+)\}/g, function(m, content) {
+        desc = desc.replace(/\{([A-Z_@a-z.0-9\[\]]+)\}/g, function(m, content) {
             for (var i = 0; i < blackboard.length; i++) {
                 if (blackboard[i].key==content){
                     // console.log(blackboard[i].value)
