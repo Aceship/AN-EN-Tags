@@ -2518,6 +2518,9 @@
 
                 var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
                 var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
+                currTalentDesc = currTalentDesc.replace(/\<(.+)\>/g, function(m, rtf, text) {
+                    return `\< ${rtf} \>`
+                })
                 // console.log(eachtalent.talent.name)
                 var isTalentRange =  eachtalent.talent.name=="新人教官"?undefined:eachtalent.talent.rangeId
 
