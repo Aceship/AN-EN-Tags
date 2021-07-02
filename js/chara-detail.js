@@ -1198,22 +1198,22 @@
                 var l = opdataFull.phases.length;
                 if(i == 0){
                     if(l == 1){
-                        tabbtn[l] = $("<li class='nav-item'><button class='btn tabbing-btns active'>"
-                            + "<img src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
+                        tabbtn[l] = $("<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle active' style='height:30px'>"
+                            + "<img style='max-height:30px' src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
                         tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite(0)' href='#elite_0_tab'>Non-Elite</a></li>");
                     } else {
-                        tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-bottom active' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                                            + "<img src='img/ui/elite/0-s.png'></button></li>");
+                        tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle active' data-toggle='pill' style='height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
+                                            + "<img style='max-height:30px' src='img/ui/elite/0-s.png'></button></li>");
                         tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite("+i+")'href='#elite_"+i+"_tab'>Non-Elite</a></li>");
                     }
                 } else if( i == l-1 ){
-                    tabbtn[0] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-top' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                                            + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
-                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
+                    tabbtn[0] = $(`<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle'  style='height:30px' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
+                                            + "<img style='max-height:30px' src='img/ui/elite/"+i+"-s.png'></button></li>");
+                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' style='height:30px' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 } else {
-                    tabbtn[l-i] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                                            + "<img src='img/ui/elite/"+i+"-s.png'></button></li>");
-                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
+                    tabbtn[l-i] = $(`<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle'  style='height:30px' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
+                                            + "<img style='max-height:30px' src='img/ui/elite/"+i+"-s.png'></button></li>");
+                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' style='height:30px' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 }
                 
                 var skindata;
@@ -1270,6 +1270,7 @@
                     // var currskingroupsplit = extraSkin[i].displaySkin.skinGroupId.split("#")
                     // var currskingroup = `${currskingroupsplit[0]}#${currskingroupsplit[1]}`
                     var currskingroup = extraSkin[i].displaySkin.skinGroupId
+                    console.log(extraSkin[i]);
                     console.log(currskingroup)
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
                     <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
@@ -1282,9 +1283,9 @@
                     `))
 
                     
-                    dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
+                    dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns tabbing-btns-middle" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
                     <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-                    <img class='skinimage' style="max-width: 40px;max-height: 40px;margin-left:-5px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
+                    <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-4px;margin-top:1px" src='img/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
                     </a></li>`)
                 }
                 
@@ -1295,7 +1296,7 @@
                 `)
                 
             }
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-top ak-btn" style="width:50px;height:50px;margin-top:10px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns  tabbing-btns-middle ak-btn" style="width:50px;height:50px;margin-top:5px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
             tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-middle ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opstory">
             <div>
                 <img class='audioprofilebutton' src="./img/ui/story/profile.png" style="max-width:40px;max-height:40px">
@@ -1303,13 +1304,13 @@
             </div>
             </button>`))
 
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio" onclick="GetAudio(opdataFull)">
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn  tabbing-btns-middle" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio" onclick="GetAudio(opdataFull)">
             <div>
                 <img class='audioprofilebutton' src="./img/ui/story/audio.png" style="max-width:40px;max-height:40px">
                 <div class="btn-story-header">Audio</div>
             </div>
             </button>`))
-            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-bottom ak-btn" style="width:50px;height:18px" data-toggle="modal" data-target="#opsfx" onclick="GetSFX(opdataFull)">
+            tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-middle ak-btn" style="width:50px;height:18px" data-toggle="modal" data-target="#opsfx" onclick="GetSFX(opdataFull)">
             <div>
                 <div class="btn-story-header" style="margin-top: 0px;">SFX</div>
             </div>
