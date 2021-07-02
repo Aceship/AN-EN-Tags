@@ -1273,7 +1273,7 @@
                     console.log(extraSkin[i]);
                     console.log(currskingroup)
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
-                    <img style="max-width:40px;max-height:40px;" src='img/skingroups/${encodeURIComponent(currskingroup)}.png'>
+                    <img style="max-width:40px;max-height:40px;" src='img/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
                     </button>`))
 
                     tabcontent.push($(`
