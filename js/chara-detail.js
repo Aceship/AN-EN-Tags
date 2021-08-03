@@ -45,6 +45,7 @@
         classes         :"./json/tl-type.json",
         chars2          :"./json/tl-akhr.json",
         gender          :"./json/tl-gender.json",
+        tlsubclass      :"./json/tl-subclass.json",
         // names           :"./json/tl-char.json",
         ktags           :"./json/tl-tags-key.json",
 
@@ -610,6 +611,7 @@
                                 <img src='img/avatars/${key}.png'>
                                 <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                                 <div class='ak-rare-${val.rarity+1}'></div>
+                                <div class='ak-showsubclass'><img src='img/ui/subclass/sub_${val.subProfessionId}_icon.png'></div>
                                 ${cname==""&&classlogo?`<div class='ak-showclass'><img src='img/classes/class_${classlogo}.png'></div>`:""}
                                 ${showtype&&camplogo?`<div class='ak-showfaction'><img src='img/factions/${camplogo.toLowerCase()}.png' title='${db.campdata[camplogo]}' ></div>`:""}
                                 <div class='grid-box op-rarity-${val.rarity+1}'> 
@@ -775,6 +777,31 @@
         }
     }
 
+    function getBranchclassHtml(btn) {
+        function branchclassHtml(data_id, data_name) {
+            return `<div class="btn btn-secondary btn-sm op-branch filter-btn-s tooltip2" onclick="toggleBtn(this)" section="branch" data-id="${data_id}">
+            <img src="${`img/ui/subclass/sub_${data_id}_icon.png`}" style="width:33px;height:33px;object-fit: contain;display: inline-block;" alt="${data_name}"> 
+            <span class="tooltiptext tooltipstyle1">${data_name}</span>
+            </div>`
+        }
+
+        var list = ""
+        db.tlsubclass.list[$(btn).attr("data-id")].forEach(element => {
+            console.log(element)
+            var branchname = element
+            if(db.tlsubclass.subclass[element]){
+                var currsub = db.tlsubclass.subclass[element]
+                if(currsub.en && currsub.en.length>0){
+                    branchname = currsub.en
+                }else if(currsub.name){
+                    branchname = currsub.name
+                }
+            }
+            list+= branchclassHtml(element,branchname)
+        });
+        return list
+    }
+
     function getSubclassHtml(btn) {
         function subclassHtml(data_id, data_name) {
             return `<div class="btn btn-secondary btn-sm my-1 op-subclass filter-btn-s" onclick="toggleBtn(this)" section="subclass" data-id="${data_id}">${data_name}</div>`
@@ -804,11 +831,15 @@
     function actualizeSubclass() {
         $("#subclass-container").html($(".op-class.btn-primary").map((_, btn) => getSubclassHtml(btn)).get().join(""));
     }
+    
+    function actualizeBranch(){
+        $("#branch-container").html($(".op-class.btn-primary").map((_, btn) => getBranchclassHtml(btn)).get().join(""));
+    }
 
     function toggleExclusive(el) {
         $(el).toggleClass("filter-exclusive filter-nonexclusive");
         clearFilter($(`#clear-filter-${$(el).attr("id").slice(12)}`).attr("clear-data"));
-        if ($(el).attr("id") == "filter-name-class") actualizeSubclass();
+        if ($(el).attr("id") == "filter-name-class") actualizeBranch();
 
         actualizeFilter();
     }
@@ -819,7 +850,10 @@
 
         if (exclusive) $(`.op-${section}`).removeClass("btn-primary").addClass("btn-secondary");
         $(el).toggleClass("btn-secondary btn-primary");
-        if ($(el).hasClass("op-class")) actualizeSubclass();
+        if ($(el).hasClass("op-class")){
+            // actualizeSubclass();
+            actualizeBranch();
+        }
 
         actualizeFilter();
     }
@@ -881,6 +915,10 @@
                                    char.position == "RANGED" || char.position == "ALL" ? ["远程位"] : [],   // Ranged
                                    char.rarity == 1 ? ["新手"] : [],                                        // Starter
                                    char.rarity == 0 ? ["支援机械"] : []);                                    // Robot
+    }
+    
+    function getBranchClass(char){
+        return char.subProfessionId
     }
 
     function getSubclass(char) {
@@ -948,6 +986,7 @@
 
         let op_class = $(".op-class.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
         let op_subclass = $(".op-subclass.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
+        let op_branch = $(".op-branch.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
         let op_gender = $(".op-gender.btn-primary").map((_, btn) => db.gender[$(btn).attr("data-id")]["sex_cn"]).get();
         let op_tag = $(".op-tag.btn-primary").map((_, btn) => db.ktags[$(btn).attr("data-id")]["cn"]).get();
         let op_faction = $(".op-faction.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
@@ -973,20 +1012,18 @@
         // FILTERING
         if (op_class.length) ops = exclusive_class ? ops.filter(char => op_class[0] == char.profession)
                                                    : ops.filter(char => op_class.includes(char.profession));
-        if (op_subclass.length) ops = ops.filter(char => {
+        if (op_branch.length) ops = ops.filter(char => {
             //add support for multiple subclass per operator 
 
-            var checksubclass = getSubclass(char)
+            var checksubclass = getBranchClass(char)
             if(Array.isArray(checksubclass)){
-                console.log(op_subclass)
-                console.log(checksubclass)
                 var exist = false
-                $.each(op_subclass,function(key,v){
-                    if(checksubclass.includes(v)) exist = true
+                $.each(op_branch,function(key,v){
+                    if(op_branch.includes(v)) exist = true
                 })
                 return exist
             }else{
-                return op_subclass.includes(checksubclass)
+                return op_branch.includes(checksubclass)
             }
         });
         // using query in a lambda is really awful. "sex" should be in chars, not chars2
@@ -1026,10 +1063,13 @@
                 <img src="img/avatars/${getId(char)}.png">
                 <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
                 <div class='ak-rare-${char.rarity + 1}'></div>
+                
                 ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
                 ${GetLogo(char)?`<div class="ak-showfaction"><img src="img/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
                 <div class="grid-box op-rarity-${char.rarity + 1}"></div>
             </li>`).join(" "));
+
+            // <div class='ak-showsubclass'><img src='img/ui/subclass/sub_${char.subProfessionId}_icon.png'></div>
     }
 
     function openOPZOOMmodal(){
@@ -1359,6 +1399,14 @@
             $("#op-className").html(type['type_'+lang])
             $("#op-subclassImage").attr("src",`img/ui/subclass/sub_${opdataFull.subProfessionId}_icon.png`)
             var capsubclass = opdataFull.subProfessionId.charAt(0).toUpperCase()+opdataFull.subProfessionId.slice(1)
+            if(db.tlsubclass.subclass[opdataFull.subProfessionId]){
+                var currsub = db.tlsubclass.subclass[opdataFull.subProfessionId]
+                if(currsub.en && currsub.en.length>0){
+                    capsubclass = currsub.en
+                }else if(currsub.name){
+                    capsubclass = currsub.name
+                }
+            }
             $("#op-subclassName").html(capsubclass)
             var attackType = getSpeciality(opdataFull.description,opdataFull)
             
@@ -1938,10 +1986,10 @@
         else if(opdataFull.nationId)
             faction= opdataFull.nationId
 
-        console.log(faction)
+        // console.log(faction)
         
         var factionname = db.handbookTeam[faction]
-        console.log(factionname)    
+        // console.log(factionname)    
         if (factionname) return factionname
         
         return null
