@@ -15,6 +15,7 @@
         dataconst       :"./json/gamedata/zh_CN/gamedata/excel/gamedata_const.json",
         item_table      :"./json/gamedata/zh_CN/gamedata/excel/item_table.json",
         audio_data      :"./json/gamedata/zh_CN/gamedata/excel/audio_data.json",
+        uniequip        :"./json/gamedata/zh_CN/gamedata/excel/uniequip_table.json",
 
 
         //EN
