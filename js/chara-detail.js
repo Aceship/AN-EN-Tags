@@ -1356,6 +1356,9 @@
             var type = query(db.classes,"type_data",opdataFull.profession);
             $("#op-classImage").attr("src","img/classes/black/icon_profession_"+type['type_'+lang].toLowerCase()+"_large.png")
             $("#op-className").html(type['type_'+lang])
+            $("#op-subclassImage").attr("src",`img/ui/subclass/sub_${opdataFull.subProfessionId}_icon.png`)
+            var capsubclass = opdataFull.subProfessionId.charAt(0).toUpperCase()+opdataFull.subProfessionId.slice(1)
+            $("#op-subclassName").html(capsubclass)
             var attackType = getSpeciality(opdataFull.description,opdataFull)
             
             $("#op-atktype").html(attackType)
