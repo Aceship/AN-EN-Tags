@@ -1728,8 +1728,8 @@
                                     <div style = "display:inline-block; position:absolute;margin: -1px 0px 0px -35px">
                                         <img class='equip-image' src='img/equip/type/${currequip.typeIcon}.png' style='width: 30px; position:absolute;'></img>
                                     </div>
-                                    <div style = "display:inline-block;position:absolute;margin: 0px 0px 0px 0px">
-                                        <div style = "width:60px;margin: 4px 0px 0px -50%;background:#222;color:#ddd;font-size:10px">${currequip.typeName}</div>
+                                    <div style = "position:absolute;margin: 0px 0px 0px 0px">
+                                        <div style = "width:60px;margin: 4px 0px 0px -10px;background:#222;color:#ddd;font-size:10px">${currequip.typeName}</div>
                                     </div>
                                 </div>
                             </div>
