@@ -1806,7 +1806,8 @@
                             <span class='custom-span equipname'>${currequip.uniEquipName}</span>
                             
                                 <div class='equipimage'>
-                                    <button type="button" class="ak-button" style="width:110px;height:110px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
+                                    <button type="button" class="btn ak-button" style="width:110px;height:110px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
+                                        <span style="position:absolute;font-size: 14px;bottom:4px;left:4px;color:#fff;background:#222222dd;padding:4px;border-radius:2px" class="fa fa-search-plus"> Info</span>
                                         <img class='equip-image' id='equip${i}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width: 110px;height:110px;object-fit:contain'>
                                     </button>
                                 </div>
