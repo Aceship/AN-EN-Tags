@@ -1237,25 +1237,29 @@
 
             for (var i = 0; i < opdataFull.phases.length; i++) {
                 var l = opdataFull.phases.length;
-                if(i == 0){
-                    if(l == 1){
-                        tabbtn[l] = $("<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle active' style='height:30px'>"
-                            + "<img style='max-height:30px' src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
-                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite(0)' href='#elite_0_tab'>Non-Elite</a></li>");
-                    } else {
-                        tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle active' data-toggle='pill' style='height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                                            + "<img style='max-height:30px' src='img/ui/elite/0-s.png'></button></li>");
-                        tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active' data-toggle='pill' onclick='UpdateElite("+i+")'href='#elite_"+i+"_tab'>Non-Elite</a></li>");
-                    }
-                } else if( i == l-1 ){
-                    tabbtn[0] = $(`<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle'  style='height:30px' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                                            + "<img style='max-height:30px' src='img/ui/elite/"+i+"-s.png'></button></li>");
-                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' style='height:30px' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
-                } else {
-                    tabbtn[l-i] = $(`<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle'  style='height:30px' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                                            + "<img style='max-height:30px' src='img/ui/elite/"+i+"-s.png'></button></li>");
-                    tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link' data-toggle='pill' style='height:30px' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
-                }
+
+                tabbtn[l-i] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>
+                                            <img style='max-height:30px' src='img/ui/elite/${i}-s.png'></button></li>`);
+                tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link ${i==0?"active":""} tablink' data-toggle='pill' onclick='UpdateElite(${i})'href='#elite_${i}_tab'><img src="./img/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}</a></li>`);
+                // if(i == 0){
+                //     if(l == 1){
+                //         tabbtn[l] = $("<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle active' style='height:30px'>"
+                //             + "<img style='max-height:30px' src='img/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
+                //         tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active tablink' data-toggle='pill' onclick='UpdateElite(0)' href='#elite_0_tab'>Non-Elite</a></li>`);
+                //     } else {
+                //         tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle active' data-toggle='pill' style='height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
+                //                             + "<img style='max-height:30px' src='img/ui/elite/0-s.png'></button></li>");
+                //         tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active tablink' data-toggle='pill' onclick='UpdateElite(${i})'href='#elite_${i}_tab'><img src="./img/ui/elite/0.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite0">E0</a></li>`);
+                //     }
+                // } else if( i == l-1 ){
+                //     tabbtn[0] = $(`<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle'  style='height:30px' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
+                //                             + "<img style='max-height:30px' src='img/ui/elite/"+i+"-s.png'></button></li>");
+                //     tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link tablink' data-toggle='pill' style='height:30px' onclick='UpdateElite(${i})' href='#elite_${i}_tab'><img src="./img/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}</a></li>`);
+                // } else {
+                //     tabbtn[l-i] = $(`<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle'  style='height:30px' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
+                //                             + "<img style='max-height:30px' src='img/ui/elite/"+i+"-s.png'></button></li>");
+                //     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link tablink' data-toggle='pill' style='height:30px' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
+                // }
                 
                 var skindata;
                 if(skinList){
@@ -1674,23 +1678,26 @@
                 
                 var tabItem = $(`
                 <li class='nav-item'>
-                    <button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'><p>Skill ${i+1}</p></button>
+                    <button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')} tablink' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'>
+                    <p><img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='img/skills/skill_icon_${skillIcon}.png' style='width: 20px;margin:-4px 6px 0px -5px'>Skill ${i+1}</p>
+                    </button>
                 </li>
                 `)
 
                 var tabContents = $(`
                 <div class='tab-pane container clickthrough ${i!=0 ? '' : 'active'}' id='skill${i}'>
-                    <div class='small-container ak-shadow' style='margin-top: 50px;'>
+                    <div class='small-container' style='margin-top: 50px;'>
                         <p class='large-text'>Skill ${i+1}</p>
-                        <span class='custom-span skillname'>${skillname}</span>
+                        <span class='custom-span skillname notclickthrough'>${skillname}</span>
                             <div class='topright'>
-                                <div style='padding: 15px;'>
-                                    <img class='ak-shadow skill-image' id='skill${i}image' src='img/skills/skill_icon_${skillIcon}.png' style='width: 100%;'>
+                                <div style='margin-top:-10px;padding:10px'>
+                                    <img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='img/skills/skill_icon_${skillIcon}.png' style='width: 100%;'>
                                 </div>
                             </div>
-                        <button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skil${i}StatsCollapsible'><i class='fa fa-sort-down'></i></button>
+                        
                     </div>
-                    <div id='skill${i}StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >
+                    <div class='dividerdark'> </div>
+                    <div id='skill${i}StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow show' >
                         <input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>
                             <div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>
                         ${tables}
@@ -1847,7 +1854,7 @@
                     }
                     contenthtml =`
                     <div class='tab-pane container ${num!=2 ? '' : 'active'}' id='equip${num}'>
-                        <div class='small-container ak-shadow' style='margin-top: 50px;'>
+                        <div class='small-container' style='margin-top: 50px;'>
                             <span class='custom-span equipname'>${currequip.uniEquipName}</span>
                             
                                 <div class='equipimage'>
@@ -1858,6 +1865,7 @@
                                 </div>
                             
                         </div>
+                        <div class='dividerdark'> </div>
                         <div id='equip${num}StatsCollapsible' class='show' style="padding:15px 5px 10px 5px" >
                             ${equiphtml}
                         </div>
@@ -1892,7 +1900,7 @@
     function getEliteHTML(i, opdataFull){
         var container = $("<div class='tab-pane container "+(i!=0 ? '' : 'active')+"' id='elite_"+i+"_tab'></div>");
 
-        var stats = $("<div class='small-container ak-shadow clickthrough'>"
+        var stats = $("<div class='small-container clickthrough'>"
                         +   "<p class='large-text'>Base</p>"
                         +   "<span class='custom-span'>Stats</span>"
                         +   "<div class='topright maxlevel'>"
@@ -1903,10 +1911,10 @@
                         +           "<div class='back-centre'></div>"
                         +       "</div>"
                         +   "</div>"
-                        +"<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#elite"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
-                        +"</div>");
+                        +"</div>"
+                        +"<div class='dividerdark'> </div>");
 
-        var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='collapse collapsible eliteStatsContainer ak-shadow collapse show'></div>");
+        var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='eliteStatsContainer ak-shadow greybackground'></div>");
         var eliteCost = GetEliteCost(i,opdataFull)
         var materialist = []
         
