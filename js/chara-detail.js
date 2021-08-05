@@ -1800,6 +1800,10 @@
                             missionnum +=1
                         });
                     }
+                    
+                    if(currequip.typeName=="ORIGINAL"){
+                        equiphtml += titledMaker(currequip.uniEquipDesc,`Basic Information`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")
+                    }
                     contenthtml =`
                     <div class='tab-pane container ${num!=2 ? '' : 'active'}' id='equip${num}'>
                         <div class='small-container ak-shadow' style='margin-top: 50px;'>
@@ -1808,12 +1812,12 @@
                                 <div class='equipimage'>
                                     <button type="button" class="btn ak-button" style="width:110px;height:110px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
                                         <span style="position:absolute;font-size: 14px;bottom:4px;left:4px;color:#fff;background:#222222dd;padding:4px;border-radius:2px" class="fa fa-search-plus"> Info</span>
-                                        <img class='equip-image' id='equip${i}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width: 110px;height:110px;object-fit:contain'>
+                                        <img class='equip-image' id='equip${num}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width: 110px;height:110px;object-fit:contain'>
                                     </button>
                                 </div>
                             
                         </div>
-                        <div id='equip${i}StatsCollapsible' class='show' style="padding:15px 5px 10px 5px" >
+                        <div id='equip${num}StatsCollapsible' class='show' style="padding:15px 5px 10px 5px" >
                             ${equiphtml}
                         </div>
                     <div>
