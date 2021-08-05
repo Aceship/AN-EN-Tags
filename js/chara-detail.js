@@ -1768,11 +1768,52 @@
                                 if(part.target == "TALENT"){
                                     //??
                                 }
+
                             });
+                            if(phase.attributeBlackboard.length>0){
+                                var statcontent = ''
+                                phase.attributeBlackboard.forEach(stat => {
+                                    var tlstat = db.effect[stat.key]
+                                    statcontent += 
+                                        `
+                                            <div class="stats">
+                                                <div class="stats-l">${tlstat?tlstat:stat.key}</div><div class="stats-r" >${stat.value}</div>
+                                            </div>
+                                        `
+                                });
+                                equiphtml += `
+                                <div style='margin:12px'> </div>
+                                ${titledMaker(statcontent,"Additional Stats","","","padding:6px 10px 6px 10px")}
+                                `
+                            }
+                            console.log(Object.keys(phase.tokenAttributeBlackboard))
+                            if(Object.keys(phase.tokenAttributeBlackboard).length>0){
+                                var tokenlist = Object.keys(phase.tokenAttributeBlackboard)
+                                tokenlist.forEach(token => {
+                                    var curtoken = phase.tokenAttributeBlackboard[token]
+                                    var statcontent = ''
+                                    curtoken.forEach(stat => {
+                                        var tlstat = db.effect[stat.key]
+                                        statcontent += 
+                                            `
+                                                <div class="stats">
+                                                    <div class="stats-l">${tlstat?tlstat:stat.key}</div><div class="stats-r" >${stat.value}</div>
+                                                </div>
+                                            `
+                                    });
+                                    equiphtml += `
+                                    <div style='margin:12px'> </div>
+                                    ${titledMaker(statcontent,`Additional Summon Stats (${token})`,"","","padding:3px 10px 6px 10px")}
+                                    `
+                                });
+                                
+                            }
+                            
                         });
                         
                         
                     }
+                    
                     if(currequip.itemCost){
                         var imagereq = []
                         if(currequip.unlockEvolvePhase >=0)
@@ -2826,7 +2867,9 @@
     }
 
     function GetTrait(desc,trait,traitname = "Traits"){
-        if(trait&&trait.candidates[0].overrideDescripton){
+        console.log(desc)
+        console.log(trait)
+        if(trait&&(trait.candidates[0].overrideDescripton||trait.candidates[0].additionalDescription)){
             var num = 1
             var tabs = []
             var contents = []
@@ -3288,7 +3331,7 @@
                 if (blackboard[i].key==content){
                     // console.log(blackboard[i].value)
                     let value = blackboard[i].value
-                    if (format.includes("%")) value = Math.round((value * 100000))/1000 + "%";
+                    if (format && format.includes("%")) value = Math.round((value * 100000))/1000 + "%";
                     num +=1
                     return `<div class="stat-important">${value}</div>`
                 }
