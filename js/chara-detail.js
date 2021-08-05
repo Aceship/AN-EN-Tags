@@ -1410,7 +1410,7 @@
             $("#op-subclassName").html(capsubclass)
 
             //TRAIT MAKING
-            GetTrait(opdataFull.description,opdataFull.trait)
+            $("#op-atktype").html(GetTrait(opdataFull.description,opdataFull.trait))
         
             $("#op-rarity").empty();
             $("#op-rarity").attr("class","op-rarity-"+(opdataFull.rarity+1))
@@ -1721,7 +1721,7 @@
                     }
                     tabhtml =`
                     <li class='nav-item'>                     
-                        <button class='btn horiz-small nav-link ${(num!=1 ? '' : 'active')} equiplink' data-toggle='pill' href='#equip${num}'>
+                        <button class='btn horiz-small nav-link ${(num!=2 ? '' : 'active')} equiplink' data-toggle='pill' href='#equip${num}'>
                             <div style = "display:inline-block;text-align:center;">
                                 <div style = "display:inline-block; height:40px">
                                     <img class='equip-image' src='img/equip/shining/${currequip.equipShiningColor}_shining.png' style='width: 50px; margin: 0px -5px 0px -5px'></img>
@@ -1742,47 +1742,73 @@
                             phase.parts.forEach(part => {
                                 if(part.target == "TRAIT"){
                                     equiphtml += 
-                                `
-                                    <div>
-                                    ${titledMaker(currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription,"Traits",``,"","white-space:initial;")}
-                                    </div>
-                                `
-                                GetFullTraitsTranslation(currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription)
-                            }
-                            if(part.target == "TRAIT_DATA_ONLY"){
+                                    `
+                                        <div>
+                                        ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
+                                        </div>
+                                    `
+                                }
+                                if(part.target == "TRAIT_DATA_ONLY"){
                                     equiphtml += 
-                                `
-                                    <div>
-                                    ${titledMaker(currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].overrideDescripton,"Traits",``,"","white-space:initial;")}
-                                    </div>
-                                `
-                                GetFullTraitsTranslation(currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].overrideDescripton)
-                            }
-                            if(part.target == "DISPLAY"){
-                                equiphtml += 
-                            `
-                                <div>
-                                ${currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription}
-                                </div>
-                            `
-                            }
-                            if(part.target == "TALENT"){
-                                //??
-                            }
+                                    `
+                                        <div>
+                                        ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle)}
+                                        </div>
+                                    `
+                                }
+                                if(part.target == "DISPLAY"){
+                                    console.log(part.overrideTraitDataBundle.candidates[0])
+                                    equiphtml += 
+                                    `
+                                        <div>
+                                        ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
+                                        </div>
+                                    `
+                                }
+                                if(part.target == "TALENT"){
+                                    //??
+                                }
                             });
                         });
                         
                         
                     }
+                    if(currequip.itemCost){
+                        var imagereq = []
+                        if(currequip.unlockEvolvePhase >=0)
+                        imagereq.push(`<img src="./img/ui/elite/${currequip.unlockEvolvePhase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${currequip.unlockEvolvePhase}">`)
+                        if(currequip.unlockLevel >1)
+                        imagereq.push(`Lv.${currequip.unlockLevel}`)
+                        
+                        equiphtml += `
+                        <div style="text-align:center;background:#222;color:#fff">Unlock Requirements ${imagereq.join("")}</div>
+                        <div style="text-align:center">
+                        `
+                        currequip.itemCost.forEach(item => {
+                            equiphtml += CreateMaterial(item.id,item.count)
+                            console.log(item)
+                        });
+                        equiphtml += `
+                        </div>
+                        <div style="text-align:center;background:#222;color:#fff">Unlock Mission</div>
+                        
+                        `
+                        var missionnum = 1
+                        currequip.missionList.forEach(mission => {
+                            var currmission = db.uniequip.missionList[mission]
+                            equiphtml +=titledMaker(currmission.desc,`Mission ${missionnum}`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")
+                            missionnum +=1
+                        });
+                    }
                     contenthtml =`
-                    <div class='tab-pane container clickthrough ${num!=1 ? '' : 'active'}' id='equip${num}'>
+                    <div class='tab-pane container clickthrough ${num!=2 ? '' : 'active'}' id='equip${num}'>
                         <div class='small-container ak-shadow' style='margin-top: 50px;'>
                             <span class='custom-span equipname'>${currequip.uniEquipName}</span>
                                 <div class='equipimage'>
                                         <img class='equip-image' id='equip${i}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width: 110px;height:110px;object-fit:contain'>
                                 </div>
                         </div>
-                        <div id='equip${i}StatsCollapsible' class='notclickthrough ak-shadow show' style="padding:15px 5px 10px 5px" >
+                        <div id='equip${i}StatsCollapsible' class='show' style="padding:15px 5px 10px 5px" >
                             ${equiphtml}
                         </div>
                     <div>
@@ -2777,17 +2803,12 @@
         return titledMaker(readable.join("</br>"),"Trust extra status","","","color:#ddd;min-width:120px")
     }
 
-    function GetTrait(desc,trait){
+    function GetTrait(desc,trait,traitname = "Traits"){
         if(trait&&trait.candidates[0].overrideDescripton){
             var num = 1
-            
-            $("#op-atktype").html(titledMaker(`
-            <div class="traitsection-container" id="sidemenutab-traits" style="position: relative; margin-top: 0px">
-            <ul class='nav nav-pills' id='traits-tabs' style="margin: 4px 0px 0px 0px;"></ul>
-                <div class="tab-content" id="traits-contents" style="margin: 2px 0px 2px 0px;">
-                </div>
-            </div>
-            `,"Traits",``,"traitdisplay","white-space:initial;"))
+            var tabs = []
+            var contents = []
+            var color 
             trait.candidates.forEach(element => {
                 var imagereq = []
                 if(element.unlockCondition.phase >=0)
@@ -2801,7 +2822,7 @@
                 });
                 console.log(num)
                 //<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px;margin-bottom:2px;margin-top:2px">${each.join("</br>")}</div>
-                var info = `
+                var info =`
                 <li class='nav-item' style="background:#444;">                     
                     <button class='btn horiz-small nav-link ${(num!=trait.candidates.length ? '' : 'active')} equiplink' data-toggle='pill' href='#trait${num}' style="padding:0px 4px">
                     ${imagereq.join(" ")}
@@ -2809,6 +2830,10 @@
                 </li>
                 `
                 var tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].overrideDescripton)
+                console.log(trait.candidates[trait.candidates.length-1])
+                if(!tl){
+                    tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].additionalDescription)
+                }
                 console.log(`Trait info : ${trait.candidates[trait.candidates.length-1].overrideDescripton}`)
                 var traitdescription = ""
                 var traitcolor = ""
@@ -2818,21 +2843,32 @@
                 }else{
                     traitdescription = trait.candidates[trait.candidates.length-1].overrideDescripton
                 }
-                var contenthtml = `
-                    <div class='tab-pane container ${num!=trait.candidates.length ? '' : 'active'}' id='trait${num}'>
-                        ${ChangeDescriptionColor(ChangeDescriptionContent(traitdescription,element.blackboard),true)}
-                    <div>
-                    `
-                    
-                    num +=1
-                    if(tl&&!$("#traitdisplay").hasClass(`ak-trait-${traitcolor}`)){
-                        $("#traitdisplay").addClass(`ak-trait-${traitcolor}`)
-                    }
-                    if(trait.candidates.length>1){
-                        $("#traits-tabs").append(info)
-                    }
-                    $("#traits-contents").append(contenthtml)   
+                contents.push(`
+                <div class='tab-pane container ${num!=trait.candidates.length ? '' : 'active'}' id='trait${num}'>
+                    ${ChangeDescriptionColor(ChangeDescriptionContent(traitdescription,element.blackboard),true)}
+                </div>
+                `)
+                
+                num +=1
+                if(tl&&!color){
+                    color = traitcolor
+                }
+                if(trait.candidates.length>1){
+                    tabs.push(info)
+                }
             });
+
+            return titledMaker(`
+            <div class="traitsection-container" id="sidemenutab-traits" style="position: relative; margin-top: 0px">
+            <ul class='nav nav-pills' id='traits-tabs' style="margin: 4px 0px 0px 0px;">
+            ${tabs.join("")}
+            </ul>
+                <div class="tab-content" id="traits-contents" style="margin: 2px 0px 2px 0px;">
+                ${contents.join("")}
+                </div>
+            </div>
+            `,traitname,`${color?`ak-trait-${color}`:""}`,"","white-space:initial;")
+
         }else{
             var curspec = GetFullTraitsTranslation(desc)
             console.log(`Trait info (no candid) : ${desc}`)
@@ -2842,10 +2878,10 @@
                 ${ChangeDescriptionColor(content,true)}</br>
                 
                 `
-                $("#op-atktype").html(titledMaker(text,"Traits",`ak-trait-${curspec.color}`,"","white-space:initial;"))
+                return titledMaker(text,traitname,`ak-trait-${curspec.color}`,"","white-space:initial;")
             }
             else{
-                $("#op-atktype").html(titledMaker(ChangeDescriptionColor(desc).replace("\\n","</br>"),"Traits",``,"","white-space: normal;"))
+                return titledMaker(ChangeDescriptionColor(desc).replace("\\n","</br>"),traitname,``,"","white-space: normal;")
             }
         }
     }
