@@ -1,403 +1,693 @@
-[
-    {
-        "type_cn":"攻击造成法术伤害",
-        "type_en":"Spell damage",
-        "type_jp":"敵に術ダメーゾを与える",
-        "type_kr":"",
-        "type_color":"magic"
+{
+    "full":{
+        "不攻击，持续恢复范围内所有友军<@ba.kw>生命</>（每秒相当于自身攻击力<@ba.kw>{attack@atk_to_hp_recovery_ratio:0%}</>的生命），自身不受<$ba.inspire>鼓舞</>影响":{
+            "en":"Does not attack </br>Continously heal all ally in range </br>(<@ba.kw>{attack@atk_to_hp_recovery_ratio:0%}</> of self ATK every second)</br>Self unaffected by <$ba.inspire>Inspire</> effects",
+            "color":"heal"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@max_target}</>个敌人间跳跃，每次跳跃伤害降低15%并造成短暂<$ba.sluggish>停顿</>":{
+            "en":"Attack deals <@ba.kw>Arts Damage</> and inflicts <$ba.sluggish>Slow</></br>Attack can chain up to <@ba.kw>{attack@max_target}</> enemies </br> Damage reduced by 15% per jump</br>",
+            "color":"magic"
+        },
+        "普通攻击连续造成<@ba.kw>两次</>伤害":{
+            "en":"Regular attacks deal damage <@ba.kw>twice</>",
+            "color":"physical"
+        },
+        "能够阻挡两个敌人":{
+            "en":"Can block 2 enemies",
+            "jp":"敵を2体敵をまでブロツク",
+            "detail":"common"
+        },
+        "恢复友方单位生命":{
+            "en":"Heal friendly unit",
+            "jp":"味方のHPを回復",
+            "kr":"",
+            "color":"heal",
+            "detail":"common"
+        },
+        "同时恢复三个友方单位的生命":{
+            "en":"Heal up to 3 friendly unit at once",
+            "jp":"",
+            "kr":"",
+            "color":"heal",
+            "detail":"common"
+        },
+        "攻击造成<@ba.kw>超远距离的群体法术伤害</>":{
+            "en":"Attack deals <@ba.kw>Super Long Range Area Arts Damage</>",
+            "jp":"",
+            "kr":"",
+            "color":"magic"
+        },
+        "攻击造成<@ba.kw>法术伤害</>":{
+            "en":"Attack deals <@ba.kw>Arts damage</>",
+            "jp":"敵に術ダメーゾを与える",
+            "kr":"",
+            "color":"magic"
+        },
+        "自身生命会不断流失":{
+            "en":"Self HP will decreases over time",
+            "jp":"",
+            "kr":"",
+            "color":"debuff"
+        },
+        "再部署时间大幅度<@ba.kw>减少</>":{
+            "en":"Greatly <@ba.kw>Reduced</> Redeployment Time",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，并对敌人造成短暂的<$ba.sluggish>停顿</>":{
+            "en":"Attack deals <@ba.kw>Arts damage</> and inflicts <$ba.sluggish>Slow</>",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "不成为其他角色的治疗目标，每次攻击到敌人后回复自身<@ba.kw>{value}</>生命":{
+            "en":"Cannot be healed by other operators</br>Heal {value} on every hit on enemies",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "可以进行<@ba.kw>远程攻击</>，但此时攻击力降低至80%":{
+            "en":"Can perform <@ba.kw>ranged attack</></br>However attack decreased to 80% when attacking enemies with ranged attack",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "能够阻挡三个敌人":{
+            "en":"Can block 3 enemies",
+            "jp":"敵を3体敵をまでブロツク",
+            "kr":"",
+            "color":"",
+            "detail":"common"
+        },
+        "技能可以治疗友方单位":{
+            "en":"Skills heal friendly unit",
+            "jp":"",
+            "kr":"",
+            "color":"heal",
+            "detail":"common"
+        },
+        "能够阻挡一个敌人":{
+            "en":"Can block single enemy",
+            "jp":"敵を1体敵をまでブロツク",
+            "kr":"",
+            "color":"",
+            "detail":"common"
+        },
+        "高精度的近距离射击":{
+            "en":"High precision close range shooting",
+            "jp":"",
+            "kr":"",
+            "color":"",
+            "detail":"common"
+        },
+        "攻击造成<@ba.kw>法术伤害</>\\n可以使用<@ba.kw>召唤物</>协助作战":{
+            "en":"Attack deals <@ba.kw>Arts damage</></br>Can use <@ba.kw>summons</> in battle",
+            "jp":"敵に術ダメーゾを与える",
+            "kr":"",
+            "color":"magic"
+        },
+        "攻击造成<@ba.kw>群体法术伤害</>":{
+            "en":"Attack deals <@ba.kw>Splash Arts Damage</>",
+            "jp":"",
+            "kr":"",
+            "color":"magic"
+        },
+        "同时攻击阻挡的<@ba.kw>所有敌人</>":{
+            "en":"Attack <@ba.kw>multiple enemies</> equal to block count",
+            "jp":"ブロツク中の敵全員を同時に攻撃",
+            "kr":"",
+            "color":"physical"
+        },
+        "击杀敌人后获得1点部署费用，撤退时返还初始部署费用":{
+            "en":"Obtain 1 cost on every kill</br>Full cost refund on retreat",
+            "jp":"",
+            "kr":"",
+            "color":"extra",
+            "detail":"common"
+        },
+        "攻击造成<@ba.kw>群体物理伤害</>":{
+            "en":"Attack deals <@ba.kw>Physical Splash Damage</>",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位":{
+            "en":"Attack <@ba.kw>multiple enemies</> equal to block count</br>Can be placed on higher ground",
+            "jp":"ブロツク中の敵全員を同時に攻撃",
+            "kr":"",
+            "color":"physical"
+        },
+        "优先攻击重量最重的敌人":{
+            "en":"Targets highest weight enemy",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "只有阻挡敌人时才能够回复技力":{
+            "en":"Can only gain SP when blocking",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "攻击对小范围的<@ba.kw>地面</>敌人造成<@ba.kw>两次</>物理伤害（第二次为余震，伤害降低至攻击力的一半）":{
+            "en":"Attacks deals physical splash damage <@ba.kw>Twice</> to <@ba.kw>Ground</> enemies in a small area</br>(2nd hit is an aftershock with halved damage)",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "<@ba.kw>无法</>被友方角色治疗":{
+            "en":"<@ba.kw>Cannot</> be healed by allies",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "优先攻击空中单位":{
+            "en":"Prioritize attacking air units",
+            "jp":"",
+            "kr":"",
+            "color":"",
+            "detail":"common"
+        },
+        "技能可以使敌人产生<@ba.kw>位移</>\\n可以放置于远程位":{
+            "en":"Skill can <@ba.kw>Displace</> enemy</br>Can be placed on higher ground",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "通常时<@ba.kw>不攻击</>且防御力和法术抗性大幅度<@ba.kw>提升</>，技能开启时攻击造成<@ba.kw>群体法术伤害</>":{
+            "en":"<@ba.kw>Does not attack</> normally, instead gain <@ba.kw>increased</> Defense & Arts resistance when skill is inactive</br>Deals <@ba.kw>Arts damage to all enemies within range</> during skill duration",
+            "jp":"",
+            "kr":"",
+            "color":"magic"
+        },
+        "可以攻击到<@ba.kw>较远敌人</>，攻击自身未阻挡的敌人时攻击力提升至120%":{
+            "en":"Can attack <@ba.kw>distant enemies</></br>Attack Increased to 120% when attacking enemies not blocked by self",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "攻击范围内的<@ba.kw>所有敌人</>，对自己前方一横排的敌人攻击力提升至150%":{
+            "en":"Attack <@ba.kw>all enemies</> within range</br>Attack Increased to 150% to enemies a row ahead",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "对攻击范围内<@ba.kw>所有敌人</>造成伤害\\n拥有50%的物理和法术闪避且不容易成为敌人的<@ba.kw>攻击目标</>":{
+            "en":"Attack <@ba.kw>all enemies</> within range</br>50% Physical & Arts Evasion</br><@ba.kw>Lower priority to be attacked by enemies</>",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "操作<@ba.kw>浮游单元</>造成<@ba.kw>法术伤害</>\\n单元攻击同一敌人伤害提升（最高造成干员110%攻击力的伤害）":{
+            "en":"Controls a <@ba.kw>Drone</> that deals Arts damage</br>Drone damage increased when attacking the same enemy (Up to 110% of the operator's Attack)",
+            "jp":"",
+            "kr":"",
+            "color":"magic"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，在找不到攻击目标时可以将攻击能量<@ba.kw>储存</>起来之后一齐发射（最多3个）":{
+            "en":"Attack deals <@ba.kw>Arts damage</></br>When there's no targets within range, can <@ba.kw>store</> the attack energy (up to 3 times) and fire it off in a burst",
+            "jp":"敵に術ダメーゾを与える",
+            "kr":"",
+            "color":"magic"
+        },
+        "无法被友方角色治疗，攻击造成<@ba.kw>群体伤害</>，每攻击到一个敌人回复自身<@ba.kw>{value}</>生命，最大生效数等于阻挡数":{
+            "en":"Cannot be healed by allies</br>Attack <@ba.kw>all enemies</> within range</></br>Recovers <@ba.kw>{value}</> HP with every enemy hit (up to Block count)",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "通常不攻击且阻挡数为0，技能未开启时<@ba.kw>{max_stack_cnt}</>秒内攻击力逐渐提升至最高<@ba.kw>+{atk:0%}</>且技能结束时重置攻击力":{
+            "en":"Does not attack and have 0 block count normally</br>Gradually increase attack power up to <@ba.kw>+{atk:0%}</> after <@ba.kw>{max_stack_cnt}</> seconds when skill is not active</br>Attack increase resets after skill ends",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "拥有较大治疗范围，但在治疗较远目标时治疗量变为<@ba.kw>{heal_scale:0%}</>":{
+            "en":"Larger Healing Range</br>However attack power will be reduced to <@ba.kw>{heal_scale:0%}</> <br>when healing distant target",
+            "jp":"",
+            "kr":"",
+            "color":"heal",
+            "detail":"common"
+        },
+        "优先攻击攻击范围内<@ba.kw>防御力最低</>的敌方单位":{
+            "en":"Prioritize <@ba.kw>lowest defense</> enemies within attack range",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "再部署时间<@ba.kw>减少</>，撤退时不返还<@ba.kw>部署费用</>，在场时每3秒<@ba.kw>消耗</>3点部署费用（不足时自动撤退）":{
+            "en":"<@ba.kw>Decreased</> Redeployment Time</br><@ba.kw>No cost refund</> on retreat</br>Uses 3 cost on every 3 second</br>(automatically retreat when insufficient cost)",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "可以使用陷阱来协助作战，但陷阱无法放置于<@ba.kw>敌人已在</>的格子中":{
+            "en":"Can use traps in battle</br>Cannot deploy trap in tiles with <@ba.kw>enemies in it</>",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "受到致命伤时不撤退，切换成<替身>作战（替身阻挡数为0），持续20s后自身再次替换<替身>":{
+            "en":"Does not retreat when receiving lethal damage</br>Instead, swaps to a [Substitute] to continue fighting ([Substitute] has 0 Block Count)</br>After a certain period, the [Substitute] will be replaced by the original",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        },
+        "技能开启时普通攻击会造成法术伤害":{
+            "en":"Attack cause Arts damage on skill",
+            "jp":"",
+            "kr":"",
+            "color":"magic"
+        },
+        "技能发动期间阻挡数变为0":{
+            "en":"Reduce block count to 0 when using skills",
+            "jp":"",
+            "kr":"",
+            "color":"physical"
+        },
+        "可以在攻击范围内选择一次<@ba.kw>战术点</>来召唤援军，自身攻击援军阻挡的敌人时攻击力提升至150%":{
+            "en":"Can summon <@ba.kw>Tactical point</> within attack range once</br>Damage increased to 150% when attacking enemies blocked by summon",
+            "jp":"",
+            "kr":"",
+            "color":"extra"
+        }
     },
-    {
-        "type_cn":"同时攻击阻挡的所有敌人",
-        "type_en":"Attack multiple enemies equal to block count",
-        "type_jp":"ブロツク中の敵全員を同時に攻撃",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"攻击造成群体物理伤害",
-        "type_en":"Physical Splash Damage",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"攻击造成超远距离的群体法术伤害",
-        "type_en":"Super Long Range Splash Spell Damage",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"magic"
-    },
-    {
-        "type_cn":"可以进行远程攻击",
-        "type_en":"Can perform ranged attack",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"可以攻击到较远敌人",
-        "type_en":"Can attack distant enemies",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"攻击造成群体法术伤害",
-        "type_en":"Splash Magic Damage",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"magic"
-    },
-    {
-        "type_cn":"再部署时间大幅度减少",
-        "type_en":"Greatly Decreased Redeployment Time",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"技能可以使敌人产生位移",
-        "type_en":"Skill can displace enemy",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"对攻击范围内所有敌人造成伤害",
-        "type_en":"Attack all enemy in range",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"优先攻击攻击范围内防御力最低的敌方单位",
-        "type_en":"Targets lowest defense enemy",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"优先攻击重量最重的敌人",
-        "type_en":"Targets highest weight enemy",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"持续恢复攻击范围内所有友军的生命（每秒恢复相当于空攻击力10%的生命）",
-        "type_en":"Heal all allies in range </br>(Equal to 10% of attack power every second)",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"heal"
-    },
-    {
-        "type_cn":"且不受部署数量限制",
-        "type_en":"Ignore deploy limits",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"无法被友方角色治疗",
-        "type_en":"Cannot be healed by friendly unit",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"可以使用召唤物协助作战",
-        "type_en":"Can use summons in battle",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"并对敌人造成短暂的停顿",
-        "type_en":"Slows enemy",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"拥有50%的物理和法术闪避且不容易成为敌人的攻击目标",
-        "type_en":"50% Physical & Magical Dodge</br>Harder to be targeted",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"优先攻击空中单位",
-        "type_en":"Prioritize attacking air units",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"能够阻挡三个敌人",
-        "type_en":"Can block 3 enemies",
-        "type_jp":"敵を3体敵をまでブロツク",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"能够阻挡两个敌人",
-        "type_en":"Can block 2 enemies",
-        "type_jp":"敵を2体敵をまでブロツク",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"能够阻挡一个敌人",
-        "type_en":"Can block single enemy",
-        "type_jp":"敵を1体敵をまでブロツク",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"恢复友方单位生命",
-        "type_en":"Heal friendly unit",
-        "type_jp":"味方のHPを回復",
-        "type_kr":"",
-        "type_color":"heal",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"同时恢复三个友方单位的生命",
-        "type_en":"Heal up to 3 friendly unit at once",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"heal",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"技能可以治疗友方单位",
-        "type_en":"Skills heal friendly unit",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"heal",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"高精度的近距离射击",
-        "type_en":"High precision close range shooting",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"击杀敌人后获得1点部署费用",
-        "type_en":"Obtain 1 cost on every kill",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"撤退时返还初始部署费用",
-        "type_en":"Full cost refund on retreat",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"可以放置于远程位",
-        "type_en":"Can be placed on higher ground",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"不进行攻击",
-        "type_en":"Does not attack",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"但此时攻击力降低至80%",
-        "type_en":"However attack power will be reduced to 80%",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"但再部署时间极长",
-        "type_en":"Long redeployment time",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"普通攻击连续造成两次伤害",
-        "type_en":"Regular attacks deal damage twice",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"不成为其他角色的治疗目标",
-        "type_en":"Cannot be healed by other operators",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"每次攻击到敌人后回复自身{value}生命",
-        "type_en":"Heal {value} on every hit on enemies",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"拥有较大治疗范围",
-        "type_en":"Larger Healing Range",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"heal"
-    },
-    {
-        "type_cn":"但在治疗较远目标时治疗量变为{heal_scale:0%}",
-        "type_en":"However attack power will be reduced to {heal_scale:0%} <br>when healing distant target",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"技能发动期间阻挡数变为0",
-        "type_en":"Reduce block count to 0 when using skills",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"技能开启时普通攻击会造成法术伤害",
-        "type_en":"Attack cause spell damage on skill",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"magic"
-    },
-    {
-        "type_cn":"攻击范围内的所有敌人",
-        "type_en":"Attacks all enemy in range",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"common"
-    },
-    {
-        "type_cn":"对自己前方一横排的敌人攻击力提升至150%",
-        "type_en":"Deal 150% damage to enemies a row ahead",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"common"
-    },
-    {
-        "type_cn":"自身生命会不断减少",
-        "type_en":"Self HP will decreases over time",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"debuff"
-    },
-    {
-        "type_cn":"被友方角色治疗无法",
-        "type_en":"Cannot be healed by allies",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"且会在3个敌人间跳跃",
-        "type_en":"Attacks bounce between up to 3 times",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"每次跳跃伤害降低25%并造成短暂停顿",
-        "type_en":"Reduce damage by 25% each time and inflicting slow for 0.2 seconds",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"操作浮游单元对敌人造成法术伤害",
-        "type_en":"Controls a Float Unit that deals magic damage",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"magic"
-    },
-    {
-        "type_cn":"浮游单元连续攻击同一敌人时伤害提升（最高造成干员110%攻击力的伤害）",
-        "type_en":"Float Unit damage up when attacking the same enemy (Up to 110% of the operator's Attack)",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"magic"
-    },
-    {
-        "type_cn":"通常时不攻击且防御力和法术抗性大幅度提升",
-        "type_en":"Does not attack normally, massively increased defense & magic res when not attacking",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"magic"
-    },
-    {
-        "type_cn":"技能开启时攻击造成群体法术伤害",
-        "type_en":"Deal spell damage on all enemy in range while skill is active",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"magic"
-    },
-    {
-        "type_cn":"再部署时间减少",
-        "type_en":"Decreased Redeployment Time",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"撤退时不返还部署费用",
-        "type_en":"No cost refund on retreat",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"在场时每3秒消耗3点部署费用（不足时自动撤退）",
-        "type_en":"Uses 3 cost on every 3 second (automatically retreat when insufficient cost)",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"",
-        "type_detail":"common"
-    },
-    {
-        "type_cn":"只有阻挡敌人时才能够回复技力",
-        "type_en":"Can only gain SP when blocking",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"extra"
-    },
-    {
-        "type_cn":"攻击对小范围的地面敌人造成两次物理伤害（第二次为余震",
-        "type_en":"Attacks deal physical splash damage twice to ground enemies in a small area",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    },
-    {
-        "type_cn":"伤害降低至攻击力的一半）",
-        "type_en":"(2nd hit is an aftershock with 50% Attack)",
-        "type_jp":"",
-        "type_kr":"",
-        "type_color":"physical"
-    }
-]
+    "parts":[
+        {
+            "type_cn":"攻击造成法术伤害",
+            "type_en":"Spell damage",
+            "type_jp":"敵に術ダメーゾを与える",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"同时攻击阻挡的所有敌人",
+            "type_en":"Attack multiple enemies equal to block count",
+            "type_jp":"ブロツク中の敵全員を同時に攻撃",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"攻击造成群体物理伤害",
+            "type_en":"Physical Splash Damage",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"攻击造成超远距离的群体法术伤害",
+            "type_en":"Super Long Range Splash Spell Damage",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"可以进行远程攻击",
+            "type_en":"Can perform ranged attack",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"可以攻击到较远敌人",
+            "type_en":"Can attack distant enemies",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"攻击造成群体法术伤害",
+            "type_en":"Splash Magic Damage",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"再部署时间大幅度减少",
+            "type_en":"Greatly Decreased Redeployment Time",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"技能可以使敌人产生位移",
+            "type_en":"Skill can displace enemy",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"对攻击范围内所有敌人造成伤害",
+            "type_en":"Attack all enemy in range",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"优先攻击攻击范围内防御力最低的敌方单位",
+            "type_en":"Targets lowest defense enemy",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"优先攻击重量最重的敌人",
+            "type_en":"Targets highest weight enemy",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"持续恢复攻击范围内所有友军的生命（每秒恢复相当于空攻击力10%的生命）",
+            "type_en":"Heal all allies in range </br>(Equal to 10% of attack power every second)",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"heal"
+        },
+        {
+            "type_cn":"且不受部署数量限制",
+            "type_en":"Ignore deploy limits",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"无法被友方角色治疗",
+            "type_en":"Cannot be healed by friendly unit",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"可以使用召唤物协助作战",
+            "type_en":"Can use summons in battle",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"并对敌人造成短暂的停顿",
+            "type_en":"Slows enemy",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"拥有50%的物理和法术闪避且不容易成为敌人的攻击目标",
+            "type_en":"50% Physical & Magical Dodge</br>Harder to be targeted",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"优先攻击空中单位",
+            "type_en":"Prioritize attacking air units",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"能够阻挡三个敌人",
+            "type_en":"Can block 3 enemies",
+            "type_jp":"敵を3体敵をまでブロツク",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"能够阻挡两个敌人",
+            "type_en":"Can block 2 enemies",
+            "type_jp":"敵を2体敵をまでブロツク",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"能够阻挡一个敌人",
+            "type_en":"Can block single enemy",
+            "type_jp":"敵を1体敵をまでブロツク",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"恢复友方单位生命",
+            "type_en":"Heal friendly unit",
+            "type_jp":"味方のHPを回復",
+            "type_kr":"",
+            "type_color":"heal",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"同时恢复三个友方单位的生命",
+            "type_en":"Heal up to 3 friendly unit at once",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"heal",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"技能可以治疗友方单位",
+            "type_en":"Skills heal friendly unit",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"heal",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"高精度的近距离射击",
+            "type_en":"High precision close range shooting",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"击杀敌人后获得1点部署费用",
+            "type_en":"Obtain 1 cost on every kill",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"撤退时返还初始部署费用",
+            "type_en":"Full cost refund on retreat",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"可以放置于远程位",
+            "type_en":"Can be placed on higher ground",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"不进行攻击",
+            "type_en":"Does not attack",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"但此时攻击力降低至80%",
+            "type_en":"However attack power will be reduced to 80%",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"但再部署时间极长",
+            "type_en":"Long redeployment time",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"普通攻击连续造成两次伤害",
+            "type_en":"Regular attacks deal damage twice",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"不成为其他角色的治疗目标",
+            "type_en":"Cannot be healed by other operators",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"每次攻击到敌人后回复自身{value}生命",
+            "type_en":"Heal {value} on every hit on enemies",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"拥有较大治疗范围",
+            "type_en":"Larger Healing Range",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"heal"
+        },
+        {
+            "type_cn":"但在治疗较远目标时治疗量变为{heal_scale:0%}",
+            "type_en":"However attack power will be reduced to {heal_scale:0%} <br>when healing distant target",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"技能发动期间阻挡数变为0",
+            "type_en":"Reduce block count to 0 when using skills",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"技能开启时普通攻击会造成法术伤害",
+            "type_en":"Attack cause spell damage on skill",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"攻击范围内的所有敌人",
+            "type_en":"Attacks all enemy in range",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"common"
+        },
+        {
+            "type_cn":"对自己前方一横排的敌人攻击力提升至150%",
+            "type_en":"Deal 150% damage to enemies a row ahead",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"common"
+        },
+        {
+            "type_cn":"自身生命会不断流失",
+            "type_en":"Self HP will decreases over time",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"debuff"
+        },
+        {
+            "type_cn":"被友方角色治疗无法",
+            "type_en":"Cannot be healed by allies",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"且会在3个敌人间跳跃",
+            "type_en":"Attacks bounce between up to 3 times",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"每次跳跃伤害降低25%并造成短暂停顿",
+            "type_en":"Reduce damage by 25% each time and inflicting slow for 0.2 seconds",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"操作浮游单元对敌人造成法术伤害",
+            "type_en":"Controls a Float Unit that deals magic damage",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"浮游单元连续攻击同一敌人时伤害提升（最高造成干员110%攻击力的伤害）",
+            "type_en":"Float Unit damage up when attacking the same enemy (Up to 110% of the operator's Attack)",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"通常时不攻击且防御力和法术抗性大幅度提升",
+            "type_en":"Does not attack normally, massively increased defense & magic res when not attacking",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"技能开启时攻击造成群体法术伤害",
+            "type_en":"Deal spell damage on all enemy in range while skill is active",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"再部署时间减少",
+            "type_en":"Decreased Redeployment Time",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"撤退时不返还部署费用",
+            "type_en":"No cost refund on retreat",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"在场时每3秒消耗3点部署费用（不足时自动撤退）",
+            "type_en":"Uses 3 cost on every 3 second (automatically retreat when insufficient cost)",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"",
+            "type_detail":"common"
+        },
+        {
+            "type_cn":"只有阻挡敌人时才能够回复技力",
+            "type_en":"Can only gain SP when blocking",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"extra"
+        },
+        {
+            "type_cn":"攻击对小范围的地面敌人造成两次物理伤害（第二次为余震",
+            "type_en":"Attacks deal physical splash damage twice to ground enemies in a small area",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"伤害降低至攻击力的一半）",
+            "type_en":"(2nd hit is an aftershock with 50% Attack)",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        },
+        {
+            "type_cn":"每次跳跃伤害降低15%并造成短暂停顿",
+            "type_en":"Each chain cause small pause and -15% damage",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"magic"
+        },
+        {
+            "type_cn":"攻击自身未阻挡的敌人时攻击力提升至120%",
+            "type_en":"Damage Increased to 120% when attacking enemies not blocked by self",
+            "type_jp":"",
+            "type_kr":"",
+            "type_color":"physical"
+        }
+    ]
+}

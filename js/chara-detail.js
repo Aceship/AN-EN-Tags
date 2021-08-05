@@ -16,7 +16,7 @@
         item_table      :"./json/gamedata/zh_CN/gamedata/excel/item_table.json",
         audio_data      :"./json/gamedata/zh_CN/gamedata/excel/audio_data.json",
         uniequip        :"./json/gamedata/zh_CN/gamedata/excel/uniequip_table.json",
-
+        battle_equip    :"./json/gamedata/zh_CN/gamedata/excel/battle_equip_table.json",
 
         //EN
         charsEN         :"./json/gamedata/en_US/gamedata/excel/character_table.json",
@@ -1408,13 +1408,12 @@
                 }
             }
             $("#op-subclassName").html(capsubclass)
-            var attackType = getSpeciality(opdataFull.description,opdataFull)
-            
-            $("#op-atktype").html(attackType)
+
+            //TRAIT MAKING
+            GetTrait(opdataFull.description,opdataFull.trait)
+        
             $("#op-rarity").empty();
             $("#op-rarity").attr("class","op-rarity-"+(opdataFull.rarity+1))
-            
-
             $("#op-trust").html(GetTrust(opdataFull))
 
             var potentials = GetPotential(opdataFull)
@@ -1538,7 +1537,7 @@
                         default:spTypeHtml = spType;break;
                     }
                     var spDuration= (v2.duration==0?"Instant Attack":v2.duration==-1?"Infinite":v2.duration + " Seconds")
-                    console.log(v2)
+                    // console.log(v2)
                     var spDurationName = (v2.duration==0?"":"Duration")
                     var skilldetails =[]
                     // console.log(skillname)
@@ -1619,30 +1618,6 @@
                     }else{
                         detailtable=""
                     }
-                    
-                    // if
-                    // if(grid){
-                    //     tables +=            "<tr>"
-                    //             +               "<td rowspan=2 id='skill"+i+"lv"+i2+"grid'>"+(grid?grid:"")+"</td>"
-                    //             +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>`
-                    //             +            "</tr>"
-                    //             +             "<tr>"
-                    //             +                   `<td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
-                    //             +               "</tr>"
-                    //             +             "<tr><td>"+(force!=undefined?`${titledMaker(force,"Force Level")}`: "")+"</td></tr>"
-                    //             +               `${detailtable==""?"":`<tr><td colspan=3>${detailtable}</td></tr>`}`
-                    //             +               "<tr><td colspan=3>"+ materialHtml + "</td><tr>"
-                    //             +        "</table>";   
-                    // } else {
-                    //     tables +=           "<tr style=\"height:10px\"></tr>"
-                    //             +            "<tr>"
-                    //             +                `<td>${titledMaker(v2['spData'].spCost,"SP Cost")}${titledMaker(v2['spData'].initSp,"Initial SP")}</td>`
-                    //             +            "</tr>"
-                    //             +             (force!=undefined?`<tr><td>${titledMaker(force,"Force Level")}</td></tr>`: "")
-                    //             +               `${detailtable==""?"":`<tr><td colspan=4>${detailtable}</td></tr>`}`
-                    //             + "<tr><td colspan=4>"+ materialHtml + "</td><tr>"
-                    //             +        "</table>";
-                    // }
 
                     if(grid){
                         tables+= 
@@ -1688,58 +1663,21 @@
                     }
                 })
 
-                        // `
-                        //     <tr>
-                        //         <td rowspan=${force?3:2} id="skill${i}lv${i2}grid">
-                        //             ${grid?grid:""}
-                        //         </td>
-                        //         <td>${titledMaker(v2['spData'].spCost,"SP Cost")}</td>
-                        //     </tr>
-                        //     <tr>
-                        //         <td>${titledMaker(v2['spData'].initSp,"Initial SP")}</td>
-                        //     </tr>
-                        //     <tr>
-                        //         <td> ${force!=undefined?`${titledMaker(force,"Force Level")}`: ""} </td>
-                        //     </tr>
-                        //     ${detailtable==""?"":`<tr><td colspan=3>${detailtable}</td></tr>`}
-                        //     <tr>
-                        //         <td colspan=3> ${materialHtml} </td>
-                        //     </tr>
-                        // </table>
-                        // `
-
                 if(skillData.iconId == null){
                     var skillIcon = skillId;
                 } else {
                     var skillIcon = skillData.iconId;
                 }
-                // console.log(opdataFull.skills[i])
+
                 var skilltoken = opdataFull.skills[i].overrideTokenKey
                 if(skilltoken== null) skilltoken = opdataFull.tokenKey
-                //
                 
-                
-                var tabItem = $("<li class='nav-item'>"
-                                +    `<button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'><p>Skill ${i+1}</p></button>`
-                                +"</li>");
-                // var tabContents = $("<div class='tab-pane container clickthrough "+(i!=0 ? '' : 'active')+"' id='skill"+i+"'>"
-                //                         +    "<div class='small-container ak-shadow' style='margin-top: 50px;'>"
-                //                         +        "<p class='large-text'>Skill "+(i+1)+"</p>"
-                //                         +        "<span class='custom-span skillname'>"+skillname+"</span>"
-                //                         +        "<div class='topright'>"
-                //                         +            "<div style='padding: 15px;'>"
-                //                         +                "<img class='ak-shadow skill-image' id='skill"+i+"image' src='img/skills/skill_icon_"+skillIcon+".png' style='width: 100%;'>"
-                //                         +            "</div>"
-                //                         +        "</div>"
-                //                         +        "<button class='btn btn-default btn-collapsible notclickthrough' data-toggle='collapse' data-target='#skill"+i+"StatsCollapsible'><i class='fa fa-sort-down'></i></button>"
-                //                         +    "</div>"
-                //                         +    "<div id='skill"+i+"StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow collapse show' >"
-                //                         +       `<input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:20px;" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>`
-                //                         +        `<div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>`
-                //                         // +        `<div style="position:absolute"style="bottom:0px;right:0px">Level</div>`
-                //                         +        tables
-                //                         +    "</div>"
-                //                         +"</div>");
+                var tabItem = $(`
+                <li class='nav-item'>
+                    <button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')}' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'><p>Skill ${i+1}</p></button>
+                </li>
+                `)
+
                 var tabContents = $(`
                 <div class='tab-pane container clickthrough ${i!=0 ? '' : 'active'}' id='skill${i}'>
                     <div class='small-container ak-shadow' style='margin-top: 50px;'>
@@ -1762,8 +1700,103 @@
                 `)
                 $("#skill-tabs").append(tabItem);
                 $("#skill-contents").append(tabContents);
-                // $("#skill-contents").append("WAAAAAAAAAAAAAAAAAAAAAI");
             });
+
+            $("#equip-tabs").html("");
+            $("#equip-contents").html("");
+
+            if(db.uniequip.charEquip[opKey]){
+                var equiplist = db.uniequip.charEquip[opKey]
+                
+                var num = 1
+                var tabhtml = ""
+                var contenthtml = ""
+
+                equiplist.forEach(element => {
+                    var currequip = db.uniequip.equipDict[element]
+                    var currebattequip
+                    var equiphtml = ""
+                    if(db.battle_equip[currequip.uniEquipId]){
+                        currebattequip = db.battle_equip[currequip.uniEquipId]
+                    }
+                    tabhtml =`
+                    <li class='nav-item'>                     
+                        <button class='btn horiz-small nav-link ${(num!=1 ? '' : 'active')} equiplink' data-toggle='pill' href='#equip${num}'>
+                            <div style = "display:inline-block;text-align:center;">
+                                <div style = "display:inline-block; height:40px">
+                                    <img class='equip-image' src='img/equip/shining/${currequip.equipShiningColor}_shining.png' style='width: 50px; margin: 0px -5px 0px -5px'></img>
+                                    <div style = "display:inline-block; position:absolute;margin: -1px 0px 0px -35px">
+                                        <img class='equip-image' src='img/equip/type/${currequip.typeIcon}.png' style='width: 30px; position:absolute;'></img>
+                                    </div>
+                                    <div style = "display:inline-block;position:absolute;margin: 0px 0px 0px 0px">
+                                        <div style = "width:60px;margin: 4px 0px 0px -50%;background:#222;color:#ddd;font-size:10px">${currequip.typeName}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </button>
+                    </li>
+                    `
+                    
+                    if(currebattequip){
+                        currebattequip.phases.forEach(phase => {
+                            phase.parts.forEach(part => {
+                                if(part.target == "TRAIT"){
+                                    equiphtml += 
+                                `
+                                    <div>
+                                    ${titledMaker(currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription,"Traits",``,"","white-space:initial;")}
+                                    </div>
+                                `
+                                GetFullTraitsTranslation(currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription)
+                            }
+                            if(part.target == "TRAIT_DATA_ONLY"){
+                                    equiphtml += 
+                                `
+                                    <div>
+                                    ${titledMaker(currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].overrideDescripton,"Traits",``,"","white-space:initial;")}
+                                    </div>
+                                `
+                                GetFullTraitsTranslation(currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].overrideDescripton)
+                            }
+                            if(part.target == "DISPLAY"){
+                                equiphtml += 
+                            `
+                                <div>
+                                ${currebattequip.phases[0].parts[0].overrideTraitDataBundle.candidates[0].additionalDescription}
+                                </div>
+                            `
+                            }
+                            if(part.target == "TALENT"){
+                                //??
+                            }
+                            });
+                        });
+                        
+                        
+                    }
+                    contenthtml =`
+                    <div class='tab-pane container clickthrough ${num!=1 ? '' : 'active'}' id='equip${num}'>
+                        <div class='small-container ak-shadow' style='margin-top: 50px;'>
+                            <span class='custom-span equipname'>${currequip.uniEquipName}</span>
+                                <div class='equipimage'>
+                                        <img class='equip-image' id='equip${i}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width: 110px;height:110px;object-fit:contain'>
+                                </div>
+                        </div>
+                        <div id='equip${i}StatsCollapsible' class='notclickthrough ak-shadow show' style="padding:15px 5px 10px 5px" >
+                            ${equiphtml}
+                        </div>
+                    <div>
+                    `
+                    
+                    //${currequip.uniEquipDesc}
+                    $("#equip-tabs").append(tabhtml);
+                    $("#equip-contents").append(contenthtml)
+                    num +=1
+                });
+                //${equiphtml}
+                
+                
+            }
         }
     }
 
@@ -2589,7 +2622,7 @@
 
                 var detailtable = []
                 var detailHeader = ''
-                console.log(talentdetails)
+                // console.log(talentdetails)
                 
                 if(talentdetails.length>0){
                     var talenthtmldetail = ""
@@ -2696,40 +2729,14 @@
         </div>`)
         return material
     }
-    function getSpeciality(description,opdataFull){
 
-        //gonna need to split on "," and "\n" and repeat it
-        let descriptions = description.split(/[，(\\n)]/)
-        let splitdesc = []
-        // console.log("=====================")
-        // console.log(descriptions)
-        descriptions.forEach(element => {
-            if(element){
-                // let muhRegex = /<@ba\.kw>(.*?)<\/>/g
-                // let currSpeciality = muhRegex.exec(element)
-                // console.log(element)
-                let currSpeciality = element.replace(/\<(.*?)\>/gi,"")
-                // console.log(currSpeciality)
-                let filterDesc
-                if(currSpeciality){
-                    splitdesc.push([currSpeciality])
-                }else{
-                    splitdesc.push([element])
-                }
-            }
-        });
-        // console.log(splitdesc)
-        // console.log("===========================")
-        
-        return SpecialityHtml(splitdesc,opdataFull)
-    }
     function GetTrust(opdataFull){
         // console.log()
         let mintrust = opdataFull.favorKeyFrames[0].data
         let maxtrust = opdataFull.favorKeyFrames[1].data
         let differences = {}
         let differencesnum = 0
-        console.log(mintrust)
+        // console.log(mintrust)
         Object.keys(mintrust).forEach(key => {
             // console.log(key)
             if(mintrust[key]!=maxtrust[key]){
@@ -2769,15 +2776,124 @@
         });
         return titledMaker(readable.join("</br>"),"Trust extra status","","","color:#ddd;min-width:120px")
     }
+
+    function GetTrait(desc,trait){
+        if(trait&&trait.candidates[0].overrideDescripton){
+            var num = 1
+            
+            $("#op-atktype").html(titledMaker(`
+            <div class="traitsection-container" id="sidemenutab-traits" style="position: relative; margin-top: 0px">
+            <ul class='nav nav-pills' id='traits-tabs' style="margin: 4px 0px 0px 0px;"></ul>
+                <div class="tab-content" id="traits-contents" style="margin: 2px 0px 2px 0px;">
+                </div>
+            </div>
+            `,"Traits",``,"traitdisplay","white-space:initial;"))
+            trait.candidates.forEach(element => {
+                var imagereq = []
+                if(element.unlockCondition.phase >=0)
+                imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${element.unlockCondition.phase}">`)
+                if(element.unlockCondition.level >1)
+                imagereq.push(`Lv.${element.unlockCondition.level}`)
+                // console.log(s)
+                var each = []
+                element.blackboard.forEach(eachbb => {
+                    each.push(`${eachbb.key} : ${eachbb.value}`)
+                });
+                console.log(num)
+                //<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px;margin-bottom:2px;margin-top:2px">${each.join("</br>")}</div>
+                var info = `
+                <li class='nav-item' style="background:#444;">                     
+                    <button class='btn horiz-small nav-link ${(num!=trait.candidates.length ? '' : 'active')} equiplink' data-toggle='pill' href='#trait${num}' style="padding:0px 4px">
+                    ${imagereq.join(" ")}
+                    </button>
+                </li>
+                `
+                var tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].overrideDescripton)
+                console.log(`Trait info : ${trait.candidates[trait.candidates.length-1].overrideDescripton}`)
+                var traitdescription = ""
+                var traitcolor = ""
+                if(tl){
+                    traitdescription = tl.en
+                    traitcolor = tl.color
+                }else{
+                    traitdescription = trait.candidates[trait.candidates.length-1].overrideDescripton
+                }
+                var contenthtml = `
+                    <div class='tab-pane container ${num!=trait.candidates.length ? '' : 'active'}' id='trait${num}'>
+                        ${ChangeDescriptionColor(ChangeDescriptionContent(traitdescription,element.blackboard),true)}
+                    <div>
+                    `
+                    
+                    num +=1
+                    if(tl&&!$("#traitdisplay").hasClass(`ak-trait-${traitcolor}`)){
+                        $("#traitdisplay").addClass(`ak-trait-${traitcolor}`)
+                    }
+                    if(trait.candidates.length>1){
+                        $("#traits-tabs").append(info)
+                    }
+                    $("#traits-contents").append(contenthtml)   
+            });
+        }else{
+            var curspec = GetFullTraitsTranslation(desc)
+            console.log(`Trait info (no candid) : ${desc}`)
+            if(curspec){
+                var content = curspec.en
+                var text = `
+                ${ChangeDescriptionColor(content,true)}</br>
+                
+                `
+                $("#op-atktype").html(titledMaker(text,"Traits",`ak-trait-${curspec.color}`,"","white-space:initial;"))
+            }
+            else{
+                $("#op-atktype").html(titledMaker(ChangeDescriptionColor(desc).replace("\\n","</br>"),"Traits",``,"","white-space: normal;"))
+            }
+        }
+    }
+    function GetFullTraitsTranslation(description){
+        var tl = db.attacktype.full[description]
+        if(tl){
+            return tl
+        }
+        return false
+    }
+    function getSpeciality(description,opdataFull){
+
+        //gonna need to split on "," and "\n" and repeat it
+        let descriptions = description.split(/[，(\\n)]/)
+        let splitdesc = []
+        // console.log("=====================")
+        // console.log(descriptions)
+        descriptions.forEach(element => {
+            if(element){
+                // let muhRegex = /<@ba\.kw>(.*?)<\/>/g
+                // let currSpeciality = muhRegex.exec(element)
+                // console.log(element)
+                let currSpeciality = element.replace(/\<(.*?)\>/gi,"")
+                // console.log(currSpeciality)
+                let filterDesc
+                if(currSpeciality){
+                    splitdesc.push([currSpeciality])
+                }else{
+                    splitdesc.push([element])
+                }
+            }
+        });
+        // console.log(splitdesc)
+        // console.log("===========================")
+        
+        return SpecialityHtml(splitdesc,opdataFull)
+    }
+
     function SpecialityHtml(splitdesc,opdataFull){
         let splitdescTL = []
         let color = ""
         let trait = opdataFull.trait
-        // console.log(trait)
+        console.log(splitdesc)
+        console.log(trait)
         let isReplaced = false
         splitdesc.forEach(element => {
             if(element.length>0){
-                let typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
+                let typetl = db.attacktype.parts.find(search=>search.type_cn==element.join(""))
                 // if(!typetl) typetl = db.attacktype.find(search=>search.type_cn==element[1])
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
 
@@ -2804,12 +2920,12 @@
                 // console.log(currTLconvfinal)
                 splitdescTL.push(currTLconvfinal)
             }else{
-                var typetl = db.attacktype.find(search=>{
+                var typetl = db.attacktype.parts.find(search=>{
                     if(search.type_detail=="common")
                     return search.type_cn==element[0]
                 })
                 if(!typetl){
-                    typetl = db.attacktype.find(search=>search.type_cn==element.join(""))
+                    typetl = db.attacktype.parts.find(search=>search.type_cn==element.join(""))
                 }
                 // console.log(element.join(""))
 
@@ -3012,110 +3128,11 @@
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc[level]:skill.description;
-        // if(db.skillsEN[skillId] && db.skillsEN[skillId].levels[level]) desc = db.skillsEN[skillId].levels[level].description
-        //console.log(`Skill|${skillId}|${skill.name} `);
-        //console.log(skill.blackboard)
-        // console.log()
-        
-        // console.log(skillTL);
+
         desc = ChangeDescriptionColor(desc)
-        if(!skillTL){
-            // let split = desc.split("<@ba.vup>")
-            // console.log(split)
-            // let skillall =""
-            // console.log(split.length)
-            // for(i=0;i<split.length;i++){
-            //     if(i==0){
-            //         skillall+= split[i]
-            //     }
-            //     else{
-            //         var currsplit = "<@ba.vup>"+split[i]
-            //         // console.log(currsplit)
-            //         let muhRegex = /<@ba\.vup>(.*?)<\/>/g
-            //         let plusmin = /[+-]/
-                    
-            //         let desc2 = muhRegex.exec(currsplit)[1]
-            //         let plusdesc = ""
-            //         if(plusmin.exec(desc2)&&plusmin.exec(desc2)[0]) plusdesc = plusmin.exec(desc2)[0]
-            //         // console.log(desc2)
-            //         // let desc2 = desc.replace(/<@ba\.vup>/g,"<a>")
-            //         // console.log(i)
-            //         console.log(plusdesc)
-            //         console.log(desc2)
-            //         // desc2 = desc2.replace(/({)(.*?)(\:.*?)(})/,"")
-            //         let muhRegex2 = /({)(.*?)(\:.*?)(})/
-            //         let desc3 = muhRegex2.exec(desc2)
-            //         console.log(desc3)
-            //         if(!desc3){
-            //             let descextra = 
-            //             skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,desc2).replace(/\\n/g,"</br>")
-            //         }
-                    
-            //         if(desc3){
-            //             desc3[2] = `{${desc3[2]}}`
-            //             desc3[3] = desc3[3].replace(":",":.")
-            //             let desc4 = []
-                        
-            //             for(j=1;j<desc3.length;j++){
-            //                 desc4.push(desc3[j])
-            //             }
-            //             // console.log(desc4)
-            //             skillall += currsplit.replace(/<@ba\.vup>(.*?)<\/>/,plusdesc+desc4.join("")).replace(/\\n/g,"</br>")
-            //             console.log(currsplit.replace(/<@ba\.vup>(.*?)<\/>/,plusdesc+desc4.join("")).replace(/\\n/g,"</br>"))
-            //         }
-            //     }
-                
-            // }
-
-            // desc = skillall
-
-            
-        }
-
-        // if(skillTL){
         if(desc){
             desc=ChangeDescriptionContent(desc,skill)
-            // var matches = desc.match(/(\{\{(.*?)\}:.0(.)\}|\{\{(.*?)\}:.1(.)\}|\{(.*?)\})/gm);
-            // console.log(matches)
-            // $.each(matches,function(i,v){
-            //     var submatches = v.match(/(?:(?!\{).(?!:))+/gm);
-                
-            //     if(!submatches[1]){
-            //         submatches = v.match(/(?:(?!\{).(?!$))+/gm);
-            //     }
-            //     // console.log(submatches)
-            //     var value;
-            //     for (var i = 0; i < skill.blackboard.length; i++) {
-            //         // console.log(skill.blackboard)
-            //         if(skill.blackboard[i].key == submatches[0]){
-            //             value = skill.blackboard[i].value;
-            //             if(skill.prefabId == "skchr_angel_3"&&skill.blackboard[i].key =='base_attack_time'){
-            //                 value = skill.blackboard[i].value*2;
-            //                 // console.log("DOUBLE!!")
-            //             }
-            //             // console.log(value)
-            //         }
-            //     }
-            //     if(value){
-            //         if(typeof submatches[1] != "undefined"){
-            //             // console.log(submatches[1])
-            //             if(submatches[1].includes("%")){
-            //                 value = Math.round((value * 100000))/1000 + "%";
-            //             }
-            //         }
-            //         desc = desc.replace(v,`<div class="stat-important">${value}</div>`);
-            //     }
-            // });
-            // var highlights = desc.match(/\[\[(.*?)\]\]/gm)
-            // // console.log(highlights)
-            // $.each(highlights,function(i,v){
-            //     desc = desc.replace(v,`<div class="stat-important">${v.substring(2,v.length-2)}</div>`);
-            // });
         }
-        // }else{
-
-        // }
-        // console.log(desc);
         return desc;
     }
 
@@ -3154,7 +3171,7 @@
         }
     }
 
-    function ChangeDescriptionColor(desc){
+    function ChangeDescriptionColor(desc,addbackgroundcolor = false){
 
         desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich2 = db.named_effects.termDescriptionDict[rtf];
@@ -3168,7 +3185,7 @@
                 let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
                 if (colorRTF.test(rich)) {
                     let color = colorRTF.exec(rich)[1]
-                    return `<span style="color:${color}">${text}</span>`
+                    return `<span class="${addbackgroundcolor?`stat-important2`:""}" style="color:${color}">${text}</span>`
                 } else {
                     return rich.replace('{0}', text)
                 }
@@ -3201,19 +3218,20 @@
         return desc
     }
 
-    function ChangeDescriptionContent(desc,skill){
-        let blackboard=skill.blackboard
-        // console.log(desc)
-        // console.log(blackboard)
+    function ChangeDescriptionContent(desc,blackboard,getNum = false){
+        var num = 0
+        var skill 
+        if(blackboard.prefabId){
+            skill = blackboard
+            blackboard = skill.blackboard
+        }
         desc = desc.replace(/\{{0,1}\{([A-Z@_a-z\[\]0-9.]+)\}{0,1}:(.{1,4})\}/g, function(m, content, format) {
-            // console.log(content)
-            // console.log(format)
-            // console.log(blackboard)
             for (var i = 0; i < blackboard.length; i++) {
                 if (blackboard[i].key==content){
                     // console.log(blackboard[i].value)
                     let value = blackboard[i].value
                     if (format.includes("%")) value = Math.round((value * 100000))/1000 + "%";
+                    num +=1
                     return `<div class="stat-important">${value}</div>`
                 }
             }
@@ -3229,12 +3247,17 @@
                         value = value*2;
                         // console.log("DOUBLE!!")
                     }
+                    num+=1
                     return `<div class="stat-important">${value}</div>`
                 }
             }
             return m
         })
+        if(getNum){
+            return {desc:desc,num:num}
+        }
         return desc
+        
     }
 
     function ChangeSkillAnim(skillnum,skillmax,token){
