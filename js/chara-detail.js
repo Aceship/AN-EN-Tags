@@ -1801,12 +1801,16 @@
                         });
                     }
                     contenthtml =`
-                    <div class='tab-pane container clickthrough ${num!=2 ? '' : 'active'}' id='equip${num}'>
+                    <div class='tab-pane container ${num!=2 ? '' : 'active'}' id='equip${num}'>
                         <div class='small-container ak-shadow' style='margin-top: 50px;'>
                             <span class='custom-span equipname'>${currequip.uniEquipName}</span>
+                            
                                 <div class='equipimage'>
+                                    <button type="button" class="ak-button" style="width:110px;height:110px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
                                         <img class='equip-image' id='equip${i}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width: 110px;height:110px;object-fit:contain'>
+                                    </button>
                                 </div>
+                            
                         </div>
                         <div id='equip${i}StatsCollapsible' class='show' style="padding:15px 5px 10px 5px" >
                             ${equiphtml}
@@ -1824,6 +1828,19 @@
                 
             }
         }
+    }
+
+    function GetModuleStory(module){
+        var currequip = db.uniequip.equipDict[module]
+        $("#opmodulestorycontent").html(`
+            <div style="background:#222;padding:6px 5px 6px 5px;font-size:20px;text-align:center">${currequip.uniEquipName}</div>
+            <div style="background:#333;padding:6px 5px 6px 5px;text-align:center">
+            <img class='equip-image' id='equip${i}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width:100%;max-width:500px;object-fit:contain'>
+            </div>
+            
+            <div style="background:#222;padding:6px 5px 6px 5px;font-size:20px;text-align:center">Basic Information</div>
+            <div style="background:#333;padding:6px 5px 6px 5px;">${currequip.uniEquipDesc.replace(/\n/g,"</br>")}</div>
+        `)
     }
 
     function getEliteHTML(i, opdataFull){
