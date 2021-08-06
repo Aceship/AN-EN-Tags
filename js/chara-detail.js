@@ -1238,9 +1238,19 @@
             for (var i = 0; i < opdataFull.phases.length; i++) {
                 var l = opdataFull.phases.length;
 
-                tabbtn[l-i] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>
-                                            <img style='max-height:30px' src='img/ui/elite/${i}-s.png'></button></li>`);
-                tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link ${i==0?"active":""} tablink' data-toggle='pill' onclick='UpdateElite(${i})'href='#elite_${i}_tab'><img src="./img/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}</a></li>`);
+                tabbtn[l-i] = $(`
+                <li class='nav-item'>
+                    <button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>
+                        <img style='max-height:30px' src='img/ui/elite/${i}-s.png'>
+                    </button>
+                </li>`);
+                tabbtn2[i] = $(`
+                <li class='nav-item'>
+                    <a class='btn tabbing-btns horiz-small nav-link ${i==0?"active":""} tablink' data-toggle='pill' onclick='UpdateElite(${i})'href='#elite_${i}_tab'>
+                        <img src="./img/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}
+                    </a>
+                </li>`);
+                
                 // if(i == 0){
                 //     if(l == 1){
                 //         tabbtn[l] = $("<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle active' style='height:30px'>"
