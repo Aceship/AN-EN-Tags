@@ -474,105 +474,7 @@ function selOpClass(cname){
 function getProcessedTexts(type,opdataFull){
     console.log(opdataFull)
     if(type == 'traits'){
-        var description = opdataFull.description
-        //gonna need to split on "," and "\n" and repeat it
-        let descriptions = description.split(/[，(\\n)]/)
-        let splitdesc = []
-        // console.log("=====================")
-        // console.log(descriptions)
-        descriptions.forEach(element => {
-            if(element){
-                let muhRegex = /<@ba\.kw>(.*?)<\/>/g
-                let currSpeciality = muhRegex.exec(element)
-                // console.log(currSpeciality)
-                let filterDesc
-                if(currSpeciality){
-                    splitdesc.push([element.replace(currSpeciality[0],""),currSpeciality[1]])
-                }else{
-                    splitdesc.push([element])
-                }
-            }
-        });
-        // console.log(splitdesc)
-        // console.log("===========================")
-
-        let splitdescTL = []
-        let color = ""
-        let trait = opdataFull.trait
-        // console.log(trait)
-        let isReplaced = false
-        splitdesc.forEach(element => {
-            if(element.length>1){
-                let typetl = db.atkType.find(search=>search.type_cn==element.join(""))
-                // if(!typetl) typetl = db.attacktype.find(search=>search.type_cn==element[1])
-                if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
-
-                // console.log(element)
-                let muhRegex = /(.*){(.*?)}(.*)/g
-                let currTLconv = muhRegex.exec(typetl?typetl.type_en:element.join(""))
-                if(currTLconv){
-                    console.log(currTLconv)
-                    var textreplace = 'Value'
-                    if(trait && trait.candidates.length>1){
-                        textreplace =  `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">(value)</div>`
-                    }else if (trait && trait.candidates.length==1) {
-                        textreplace = trait.candidates[0].blackboard[0].value
-                        if(currTLconv[2].includes("%")){
-                            textreplace= textreplace*100 +("%")
-                        }
-                        isReplaced = true
-                    }
-                }
-                let currTLconvfinal = currTLconv?currTLconv[1] + textreplace + currTLconv[3]:typetl?typetl.type_en:element.join("")
-                splitdescTL.push(currTLconvfinal)
-            }else{
-                var typetl = db.atkType.find(search=>{
-                    if(search.type_detail=="common")
-                    return search.type_cn==element[0]
-                })
-                if(!typetl){
-                    typetl = db.atkType.find(search=>search.type_cn==element.join(""))
-                }
-                // console.log(element.join(""))
-
-                // console.log(typetl)
-                
-                if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
-                splitdescTL.push(typetl?typetl.type_en:element[0])
-            }
-        });
-        if(trait&&!(isReplaced)){
-            trait.candidates.forEach(element => {
-                var imagereq = []
-                    if(element.unlockCondition.level >0)
-                    imagereq.push(`Lv.${element.unlockCondition.level}`)
-                    if(element.unlockCondition.phase >0)
-                    imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
-    
-                // console.log(s)
-                var each = []
-                element.blackboard.forEach(eachbb => {
-                    each.push(`${eachbb.key} : ${eachbb.value}`)
-                });
-                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px">${ each.join(" ")}</div>
-                <div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
-                splitdescTL.push(info)
-            });
-        }
-        console.log(splitdescTL)
-        // console.log(color)
-
-        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`);
-    }
-
-    function titledMaker (content,title,extraClass="",extraId="",extraStyle=""){
-        let titledbutton = `
-        <div style="padding-top:5px;display:inline-block">
-        <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
-        ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
-        </div>`
-
-        return titledbutton
+        return GetTrait(opdataFull.description,opdataFull.trait)
     }
 }
 
@@ -712,4 +614,194 @@ function initDragScroll(){
         //console.log(walk);
     });
 
+}
+function GetTrait(desc,trait,traitname = "Traits"){
+    console.log(desc)
+    console.log(trait)
+    if(trait&&(trait.candidates[0].overrideDescripton||trait.candidates[0].additionalDescription)){
+        var num = 1
+        var tabs = []
+        var contents = []
+        var color 
+        trait.candidates.forEach(element => {
+            var imagereq = []
+            if(element.unlockCondition.phase >=0)
+            imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${element.unlockCondition.phase}">`)
+            if(element.unlockCondition.level >1)
+            imagereq.push(`Lv.${element.unlockCondition.level}`)
+            // console.log(s)
+            var each = []
+            element.blackboard.forEach(eachbb => {
+                each.push(`${eachbb.key} : ${eachbb.value}`)
+            });
+            console.log(num)
+            //<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px;margin-bottom:2px;margin-top:2px">${each.join("</br>")}</div>
+            var info =`
+            <li class='nav-item' style="background:#444;">                     
+                <button class='btn horiz-small nav-link ${(num!=trait.candidates.length ? '' : 'active')} equiplink' data-toggle='pill' href='#trait${num}' style="padding:0px 4px">
+                ${imagereq.join(" ")}
+                </button>
+            </li>
+            `
+            var tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].overrideDescripton)
+            console.log(trait.candidates[trait.candidates.length-1])
+            if(!tl){
+                tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].additionalDescription)
+            }
+            console.log(`Trait info : ${trait.candidates[trait.candidates.length-1].overrideDescripton}`)
+            var traitdescription = ""
+            var traitcolor = ""
+            if(tl){
+                traitdescription = tl.en
+                traitcolor = tl.color
+            }else{
+                traitdescription = trait.candidates[trait.candidates.length-1].overrideDescripton
+            }
+            contents.push(`
+            <div class='tab-pane container ${num!=trait.candidates.length ? '' : 'active'}' id='trait${num}'>
+                ${ChangeDescriptionColor(ChangeDescriptionContent(traitdescription,element.blackboard),true)}
+            </div>
+            `)
+            
+            num +=1
+            if(tl&&!color){
+                color = traitcolor
+            }
+            if(trait.candidates.length>1){
+                tabs.push(info)
+            }
+        });
+
+        return titledMaker(`
+        <div class="traitsection-container" id="sidemenutab-traits" style="position: relative; margin-top: 0px">
+        <ul class='nav nav-pills' id='traits-tabs' style="margin: 4px 0px 0px 0px;">
+        ${tabs.join("")}
+        </ul>
+            <div class="tab-content" id="traits-contents" style="margin: 2px 0px 2px 0px;">
+            ${contents.join("")}
+            </div>
+        </div>
+        `,traitname,`${color?`ak-trait-${color}`:""}`,"","white-space:initial;width:160px")
+
+    }else{
+        var curspec = GetFullTraitsTranslation(desc)
+        console.log(`Trait info (no candid) : ${desc}`)
+        if(curspec){
+            var content = curspec.en
+            var text = `
+            ${ChangeDescriptionColor(content,true)}</br>
+            
+            `
+            return titledMaker(text,traitname,`ak-trait-${curspec.color}`,"","white-space:initial;width:160px")
+        }
+        else{
+            return titledMaker(ChangeDescriptionColor(desc).replace("\\n","</br>"),traitname,``,"","white-space: normal;width:160px")
+        }
+    }
+}
+function GetFullTraitsTranslation(description){
+    var tl = db.atkType.full[description]
+    if(tl){
+        return tl
+    }
+    return false
+}
+function ChangeDescriptionColor(desc,addbackgroundcolor = false){
+
+    desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+        let rich2 = db.named_effects.termDescriptionDict[rtf];
+        if (rich2) {
+            return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
+        }
+    })
+    desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+        let rich = db.dataconst.richTextStyles[rtf];
+        if (rich) {
+            let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
+            if (colorRTF.test(rich)) {
+                let color = colorRTF.exec(rich)[1]
+                return `<span class="${addbackgroundcolor?`stat-important2`:""}" style="color:${color}">${text}</span>`
+            } else {
+                return rich.replace('{0}', text)
+            }
+        }
+        
+    })
+    return desc
+}
+
+function CreateTooltip(desc){
+
+    desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+        let rich2 = db.named_effects.termDescriptionDict[rtf];
+        console.log(m)
+        if (rich2) {
+            return `<span class="stat-important tooltip3" style="color:#0098DC">${text}<span class="tooltiptext2" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip2(rich2.description)}</span></span>`
+        }
+    })
+    return desc
+}
+function CreateTooltip2(desc){
+
+    desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+        let rich2 = db.named_effects.termDescriptionDict[rtf];
+        console.log(m)
+        if (rich2) {
+            return `<span class="stat-important" style="color:#0098DC">${text}</span>`
+        }
+    })
+    return desc
+}
+
+function ChangeDescriptionContent(desc,blackboard,getNum = false){
+    var num = 0
+    var skill 
+    if(blackboard.blackboard){
+        skill = blackboard
+        blackboard = skill.blackboard
+    }
+    console.log(desc)
+    desc = desc.replace(/\{{0,1}\{([A-Z@_a-z\[\]0-9.]+)\}{0,1}:(.{1,4})\}/g, function(m, content, format) {
+        for (var i = 0; i < blackboard.length; i++) {
+            if (blackboard[i].key==content){
+                // console.log(blackboard[i].value)
+                let value = blackboard[i].value
+                if (format && format.includes("%")) value = Math.round((value * 100000))/1000 + "%";
+                num +=1
+                return `<div class="stat-important">${value}</div>`
+            }
+        }
+        return m
+    })
+
+    desc = desc.replace(/\{([A-Z_@a-z.0-9\[\]]+)\}/g, function(m, content) {
+        for (var i = 0; i < blackboard.length; i++) {
+            if (blackboard[i].key==content){
+                // console.log(blackboard[i].value)
+                value = blackboard[i].value
+                if(skill && skill.prefabId == "skchr_angel_3"&&blackboard[i].key =='base_attack_time'){
+                    value = value*2;
+                    // console.log("DOUBLE!!")
+                }
+                num+=1
+                return `<div class="stat-important">${value}</div>`
+            }
+        }
+        return m
+    })
+    if(getNum){
+        return {desc:desc,num:num}
+    }
+    return desc
+    
+}
+
+function titledMaker (content,title,extraClass="",extraId="",extraStyle=""){
+    let titledbutton = `
+    <div style="padding-top:5px;display:inline-block">
+    <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
+    ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
+    </div>`
+
+    return titledbutton
 }
