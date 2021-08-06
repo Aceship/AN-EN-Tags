@@ -17,6 +17,7 @@
         audio_data      :"./json/gamedata/zh_CN/gamedata/excel/audio_data.json",
         uniequip        :"./json/gamedata/zh_CN/gamedata/excel/uniequip_table.json",
         battle_equip    :"./json/gamedata/zh_CN/gamedata/excel/battle_equip_table.json",
+        stage           :"./json/gamedata/zh_CN/gamedata/excel/stage_table.json",
 
         //EN
         charsEN         :"./json/gamedata/en_US/gamedata/excel/character_table.json",
@@ -1865,11 +1866,19 @@
                         
                         `
                         var missionnum = 1
+                        var missionhtml = ``
                         currequip.missionList.forEach(mission => {
                             var currmission = db.uniequip.missionList[mission]
-                            equiphtml +=titledMaker(currmission.desc,`Mission ${missionnum}`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")
+                            var missioncheck = ModuleMissionDescription(currmission)
+                            missionhtml +=`
+                            ${titledMaker2(missioncheck,`Mission ${missionnum}`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")}
+                            </br>
+                            `
                             missionnum +=1
                         });
+                        equiphtml +=`
+                        ${titledMaker(missionhtml,"",``,``,"width:100%")}
+                        `
                     }
                     
                     if(currequip.typeName=="ORIGINAL"){
@@ -1905,6 +1914,132 @@
                 
             }
         }
+    }
+
+    function ModuleMissionDescription(mission){
+        console.log(mission)
+        var tl = ''
+        var squadinfo =''
+        //probably good
+        // <@ba.kw> = Blue Highlight
+        switch (mission.template) {
+            case "EquipmentCharKilled":
+                tl = `
+                    Kill <@ba.kw>${mission.paramList[1]}</> enemies with Non-Borrowed <@ba.kw>${db.chars[mission.paramList[0]].appellation}</>
+                `
+                break;
+            case "EquipmentDeployStage":
+                tl=`
+                    Complete <@ba.kw>${mission.paramList[0]}</> stages, Deploy at least <@ba.kw>${mission.paramList[1]}</> summons of Non-Borrowed <@ba.kw>${db.chars[mission.paramList[3]].appellation}</> in each stage
+                    `
+                break;
+            case "EquipmentDeployTotal":
+                tl=`
+                    Deploy <@ba.kw>${mission.paramList[0]}</> summons of Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</>
+                `
+                break;
+            case "EquipmentSquadPro":
+                var splitsquad = mission.paramList[3].split(",")
+                var stage = db.stage.stages[mission.paramList[1]].code
+                if(splitsquad[0]==13){
+                    var currclass = query(db.classes,"type_data",splitsquad[1])
+                    squadinfo = ` and <@ba.kw>${currclass.type_en}</> only in party`
+                }
+                else if(splitsquad[0]>0){
+                    var currclass = query(db.classes,"type_data",splitsquad[1])
+                    squadinfo = ` and up to <@ba.kw>${splitsquad[0]}</> <@ba.kw>${currclass.type_en}</> class only`
+                }else if(splitsquad[0]==0){
+                    squadinfo = ` with no other operator`
+                }
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> ${squadinfo}
+                 `
+                break;
+            case "EquipmentSquadProStage":
+                var splitsquad = mission.paramList[2].split(",")
+                var currclass = query(db.classes,"type_data",splitsquad[1])
+                if(splitsquad[0]==13){
+                    squadinfo = ` and <@ba.kw>${currclass.type_en}</> only in party`
+                }
+                else if(splitsquad[0]>0){
+                    squadinfo = ` and up to <@ba.kw>${splitsquad[0]}</> <@ba.kw>${currclass.type_en}</> class only`
+                }else if(splitsquad[0]==0){
+                    squadinfo = ` with no other operator`
+                }
+                tl=`
+                    Clear <@ba.kw>${mission.paramList[0]}</> stages
+                    </br>Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[1]].appellation}</> ${squadinfo}
+                 `
+                break;
+            case "EquipmentSquadPos":
+                var splitsquad = mission.paramList[3].split(",")
+                var stage = db.stage.stages[mission.paramList[1]].code
+                var currclass = splitsquad[1]=="MELEE"?"Melee":"Ranged"
+                if(splitsquad[0]==13){
+                    squadinfo = ` and <@ba.kw>${currclass}</> operator only in party`
+                }
+                else if(splitsquad[0]>0){
+                    squadinfo = ` and up to <@ba.kw>${splitsquad[0]}</> <@ba.kw>${currclass}</> operator`
+                }else if(splitsquad[0]==0){
+                    squadinfo = ` with no other operator`
+                }
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> ${squadinfo}
+                    `
+                break;
+            case "EquipmentSquadStarStage":
+                var splitsquad = mission.paramList[2].split(",")
+                var currclass = `${splitsquad[1]} Star`
+                if(splitsquad[0]==13){
+                    squadinfo = ` and <@ba.kw>${currclass}</> operator only in party`
+                }
+                else if(splitsquad[0]>0){
+                    squadinfo = ` and up to <@ba.kw>${splitsquad[0]}</> <@ba.kw>${currclass}</> operator only`
+                }else if(splitsquad[0]==0){
+                    squadinfo = ` with no other operator`
+                }
+                tl=`
+                    Clear <@ba.kw>${mission.paramList[0]}</> stages
+                    </br>Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[1]].appellation}</> ${squadinfo}
+                    `
+                break;
+            case "EquipmentSquadStar":
+                var splitsquad = mission.paramList[3].split(",")
+                var stage = db.stage.stages[mission.paramList[1]].code
+                var currclass = `${splitsquad[1]} Star`
+                if(splitsquad[0]==13){
+                    squadinfo = ` and <@ba.kw>${currclass}</> operator only in party`
+                }
+                else if(splitsquad[0]>0){
+                    squadinfo = ` and up to <@ba.kw>${splitsquad[0]}</> <@ba.kw>${currclass}</> operator`
+                }else if(splitsquad[0]==0){
+                    squadinfo = ` with no other operator`
+                }
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> ${squadinfo}
+                    `
+                break;
+        }
+
+        if(tl==""){
+            return `
+                (Non-translated)</br>
+                ${mission.desc}
+            `
+        }else{
+            tl = `
+                (Auto-translated)</br>
+                ${tl}
+                </br>
+                </br>
+                (Non-translated)</br>
+                ${mission.desc}
+            `
+        }
+        return ChangeDescriptionColor(tl,true)
     }
 
     function UpdateToken(skilltoken,i,skillLength){
