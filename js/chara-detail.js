@@ -80,6 +80,10 @@
     var folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
     var spinewidget 
     var curropname
+    var globaltoken
+    var globalelite = 0
+    var globallevel =[1,1,1]
+    var globalskill = 0
 
     var currskin 
     var spinewidgettoken
@@ -1115,7 +1119,6 @@
             console.log(opdata3)
             
             if (opdata2)
-
             var opcode = Object.keys(opdata2)[0]
  
             var opKey =""
@@ -1200,6 +1203,7 @@
             var tabcontent2 = [];
             var zoombtn = [];
             
+            
             $("#elite-sidenav").empty();
             $("#tabs-opCG").empty();
             $("#elite-topnav").empty();
@@ -1220,6 +1224,8 @@
 
             charName = opcode;
             chibiName = opcode
+            globalelite = 0
+            globallevel = [1,1,1]
             console.log(chibipers)
             if(chibipers=='build') chibiName= "build_"+chibiName
             console.log(chibiName)
@@ -1250,7 +1256,7 @@
                         <img src="./img/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}
                     </a>
                 </li>`);
-                
+
                 // if(i == 0){
                 //     if(l == 1){
                 //         tabbtn[l] = $("<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle active' style='height:30px'>"
@@ -1688,7 +1694,7 @@
                 
                 var tabItem = $(`
                 <li class='nav-item'>
-                    <button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')} tablink' data-toggle='pill' onclick='ChangeSkillAnim(${i},${opdataFull.skills.length},"${skilltoken}")' href='#skill${i}'>
+                    <button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')} tablink' data-toggle='pill' onclick='UpdateToken("${skilltoken}",${i},${opdataFull.skills.length})' href='#skill${i}'>
                     <p><img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='img/skills/skill_icon_${skillIcon}.png' style='width: 20px;margin:-4px 6px 0px -5px'>Skill ${i+1}</p>
                     </button>
                 </li>
@@ -1720,12 +1726,10 @@
             });
 
             //TOKEN SOON ??
-            
-            if(opdataFull.tokenKey){
-                var tokenfulldata = db.chars[opdataFull.tokenKey]
-                console.log(tokenfulldata)
-            }
-
+            $("#token-contents").html("")
+            globaltoken = opdataFull.tokenKey
+            globalelite = 0
+            UpdateTokenContent()
             //EQUIP CHECK
             $("#equip-tabs").html("");
             $("#equip-contents").html("");
@@ -1901,6 +1905,97 @@
                 
             }
         }
+    }
+
+    function UpdateToken(skilltoken,i,skillLength){
+        globaltoken = skilltoken
+        ChangeSkillAnim(i,skillLength,skilltoken)
+        globalskill = i
+        UpdateTokenContent()
+    }
+
+    function UpdateTokenContent(){
+        console.log(globaltoken)
+        if(!globaltoken){
+            return
+        }
+
+        var tokenfulldata = db.chars[globaltoken]
+        //skin problem
+        // console.log(currskin)
+        // var skinname = currskin.split(opdataFull.id)[1]?currskin.split(opdataFull.id)[1]:""
+        // // var skinicon = 
+        
+        // console.log(tokenname+skinname)
+        console.log(tokenfulldata)
+        var currlevel = globallevel[globalelite]
+        var currelite = globalelite
+
+        if(currelite<globalskill){
+            currelite = globalskill
+            currlevel = globallevel[globalskill]
+        }
+
+        console.log(`Elite : ${globalelite} - Level : ${currlevel}`)
+        var stats = `
+        <div>
+            <div class='stats'>
+                <div class='stats-l'>Maximum HP</div><div class='stats-r' id='summon-maxHp'>${statsInterpolation(tokenfulldata,'maxHp',currlevel,currelite)}</div>
+            </div>
+            <div class='stats'>
+                <div class='stats-l'>Redeploy Time</div><div class='stats-r' id='summon-respawnTime'>${statsInterpolation(tokenfulldata,'respawnTime',currlevel,currelite)} <div style='display:inline;font-size:10px'> Sec</div></div>
+            </div>
+            
+            <div class='stats'>
+                <div class='stats-l'>Attack Power</div><div class='stats-r' id='summon-atk'>${statsInterpolation(tokenfulldata,'atk',currlevel,currelite)}</div>
+            </div>
+            <div class='stats'>
+                <div class='stats-l'>Cost</div><div class='stats-r' id='summon-cost'>${statsInterpolation(tokenfulldata,'cost',currlevel,currelite)}</div>
+            </div>
+            
+            <div class='stats'>
+                <div class='stats-l'>Defense</div><div class='stats-r' id='summon-def'>${statsInterpolation(tokenfulldata,'def',currlevel,currelite)}</div>
+            </div>
+            <div class='stats'>
+                <div class='stats-l'>Block</div><div class='stats-r' id='summon-blockCnt'>${statsInterpolation(tokenfulldata,'blockCnt',currlevel,currelite)}</div>
+            </div>
+
+            <div class='stats'>
+                <div class='stats-l'>Magic Resistance</div><div class='stats-r' id='summon-magicResistance'>${statsInterpolation(tokenfulldata,'magicResistance',currlevel,currelite)}</div>
+            </div>
+            <div class='stats'>
+                <div class='stats-l'>Attack Time</div><div class='stats-r' id='summon-baseAttackTime'>${statsInterpolation(tokenfulldata,'baseAttackTime',currlevel,currelite,false)} <div style='display:inline;font-size:10px'> Sec</div></div>
+            </div>
+        </div>
+        `
+        // array.forEach(element => {
+        //     stats.push(`
+        //     <div class="stats">
+        //         <div class="stats-l">${tlstat?tlstat:stat.key}</div><div class="stats-r" >${stat.value}</div>
+        //     </div>
+        //     `)
+        // });
+        $("#token-contents").html(
+            `
+            <div style='background:#333;margin:2px 0px;padding:2px 10px'>
+                <div style ="display:inline-block;margin:0px 2px;background:#222222aa">
+                    <img class='token-image notclickthrough' id='Tokenimage' src='img/avatars/${globaltoken}.png' style='width: 60px;margin:-0px 0px 0px 0px'>
+                </div>
+                <div style ="position:absolute;left:80px;top:7px">
+                    <div class='stats'>
+                        <div class='stats-l' style="min-width:unset;width:40px;background:#3D3D3D"><img style='max-height:30px;margin:-11px -10px -9px -10px' src='img/ui/elite/${currelite}-s.png'></div><div class='stats-r' style="min-width:unset">Lv <span id="summon-level">${currlevel}</span></div>
+                    </div>
+                    <div>
+                        ${tokenfulldata.appellation}
+                    </div>
+                </div>
+            </div>
+            <div style="width:100%;text-align:center">
+                ${stats}
+            </div>
+            ${rangeMaker(tokenfulldata.phases[globalelite].rangeId)}
+            `
+        )
     }
 
     function GetModuleStory(module){
@@ -2408,6 +2503,8 @@
         // console.log("waaaaaaaaaaaaaaaaaaa")
         // opdataFull.skills.forEach(i => {
             // console.log(elite)
+        globalelite = elite
+        UpdateTokenContent()
         $.each(opdataFull.skills,function(i,v){
             // console.log(i)
             var skillId = opdataFull.skills[i].skillId;
@@ -3201,19 +3298,43 @@
     }
 
     function EliteStatsDisplay(level,elite_no){
-        $("#elite"+elite_no+"maxHp").html(statsInterpolation('maxHp',level,elite_no));
-        $("#elite"+elite_no+"def").html(statsInterpolation('def',level,elite_no));
-        $("#elite"+elite_no+"atk").html(statsInterpolation('atk',level,elite_no));
-        $("#elite"+elite_no+"magicResistance").html(statsInterpolation('magicResistance',level,elite_no));
-        $("#elite"+elite_no+"respawnTime").html(statsInterpolation('respawnTime',level,elite_no)+`<div style='display:inline;font-size:10px'> Sec</div>`);
-        $("#elite"+elite_no+"cost").html(statsInterpolation('cost',level,elite_no));
-        $("#elite"+elite_no+"blockCnt").html(statsInterpolation('blockCnt',level,elite_no));
-        $("#elite"+elite_no+"baseAttackTime").html(statsInterpolation('baseAttackTime',level,elite_no,false)+`<div style='display:inline;font-size:10px'> Sec</div>`);
+        globalelite = elite_no
+        globallevel[elite_no] = level
+        $("#elite"+elite_no+"maxHp").html(statsInterpolation(opdataFull,'maxHp',level,elite_no));
+        $("#elite"+elite_no+"def").html(statsInterpolation(opdataFull,'def',level,elite_no));
+        $("#elite"+elite_no+"atk").html(statsInterpolation(opdataFull,'atk',level,elite_no));
+        $("#elite"+elite_no+"magicResistance").html(statsInterpolation(opdataFull,'magicResistance',level,elite_no));
+        $("#elite"+elite_no+"respawnTime").html(statsInterpolation(opdataFull,'respawnTime',level,elite_no)+`<div style='display:inline;font-size:10px'> Sec</div>`);
+        $("#elite"+elite_no+"cost").html(statsInterpolation(opdataFull,'cost',level,elite_no));
+        $("#elite"+elite_no+"blockCnt").html(statsInterpolation(opdataFull,'blockCnt',level,elite_no));
+        $("#elite"+elite_no+"baseAttackTime").html(statsInterpolation(opdataFull,'baseAttackTime',level,elite_no,false)+`<div style='display:inline;font-size:10px'> Sec</div>`);
+    
+        var tokenfulldata = db.chars[globaltoken]
+        
+        if(tokenfulldata){
+            console.log("Update Token")
+            var currlevel = globallevel[globalelite]
+            var currelite = globalelite
+
+            if(currelite<globalskill){
+                currelite = globalskill
+                currlevel = globallevel[globalskill]
+            }
+            $("#summon-level").html(currlevel)
+            $("#summon-maxHp").html(statsInterpolation(tokenfulldata,'maxHp',currlevel,currelite));
+            $("#summon-def").html(statsInterpolation(tokenfulldata,'def',currlevel,currelite));
+            $("#summon-atk").html(statsInterpolation(tokenfulldata,'atk',currlevel,currelite));
+            $("#summon-magicResistance").html(statsInterpolation(tokenfulldata,'magicResistance',currlevel,currelite));
+            $("#summon-respawnTime").html(statsInterpolation(tokenfulldata,'respawnTime',currlevel,currelite)+`<div style='display:inline;font-size:10px'> Sec</div>`);
+            $("#summon-cost").html(statsInterpolation(tokenfulldata,'cost',currlevel,currelite));
+            $("#summon-blockCnt").html(statsInterpolation(tokenfulldata,'blockCnt',currlevel,currelite));
+            $("#summon-baseAttackTime").html(statsInterpolation(tokenfulldata,'baseAttackTime',currlevel,currelite,false)+`<div style='display:inline;font-size:10px'> Sec</div>`);
+        }
     }
 
-    function statsInterpolation(key,level,elite_no,isround=true){
+    function statsInterpolation(operator,key,level,elite_no,isround=true){
         var kf = [];
-        $.each(opdataFull.phases[elite_no].attributesKeyFrames,function(j,v){
+        $.each(operator.phases[elite_no].attributesKeyFrames,function(j,v){
             kf[j] = v;
         });
         // console.log([kf[0].level,kf[1].level])
