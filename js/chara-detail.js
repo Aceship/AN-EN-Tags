@@ -2050,12 +2050,13 @@
     }
 
     function UpdateTokenContent(){
-        console.log(globaltoken)
         if(!globaltoken){
             return
         }
-
         var tokenfulldata = db.chars[globaltoken]
+        if(!tokenfulldata){
+            return
+        }
         //skin problem
         // console.log(currskin)
         // var skinname = currskin.split(opdataFull.id)[1]?currskin.split(opdataFull.id)[1]:""
@@ -3515,6 +3516,7 @@
 
         desc = ChangeDescriptionColor(desc)
         if(desc){
+            console.log(skill)
             desc=ChangeDescriptionContent(desc,skill)
         }
         return desc;
@@ -3605,10 +3607,11 @@
     function ChangeDescriptionContent(desc,blackboard,getNum = false){
         var num = 0
         var skill 
-        if(blackboard.prefabId){
+        if(blackboard.blackboard){
             skill = blackboard
             blackboard = skill.blackboard
         }
+        console.log(desc)
         desc = desc.replace(/\{{0,1}\{([A-Z@_a-z\[\]0-9.]+)\}{0,1}:(.{1,4})\}/g, function(m, content, format) {
             for (var i = 0; i < blackboard.length; i++) {
                 if (blackboard[i].key==content){
@@ -3651,7 +3654,6 @@
         console.log(token)
         tokenname = token
         if(spinewidgettoken&&token&&spinewidgettoken.loaded){
-            
             LoadAnimationToken(token)
         }
         if(spinewidget&&spinewidget.loaded){
