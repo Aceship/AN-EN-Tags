@@ -1698,7 +1698,7 @@
                     </div>
                     <div class='dividerdark'> </div>
                     <div id='skill${i}StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow show' >
-                        <input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:10px;margin-bottom:5px" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>
+                        <input type='range' value='1' min='1' max=${skillData.levels.length} name='skillLevel' id='skill${i}Level' oninput='changeSkillLevel(this,${i})'style="margin-top:10px" class='${lefthand=="true"?"lefthandskillLevelInput":""} skillLevelInput'>
                             <div class='${lefthand=="true"?"lefthandskillleveldisplaycontainer":""} skillleveldisplaycontainer'><span class="custom-span ak-btn btn btn-sm ak-c-black" id='skill${i}LevelDisplay'>${SkillRankDisplay(1)}</span></div>
                         ${tables}
                     </div>
@@ -1709,9 +1709,17 @@
                 $("#skill-contents").append(tabContents);
             });
 
+            //TOKEN SOON ??
+            
+            if(opdataFull.tokenKey){
+                var tokenfulldata = db.chars[opdataFull.tokenKey]
+                console.log(tokenfulldata)
+            }
+
+            //EQUIP CHECK
             $("#equip-tabs").html("");
             $("#equip-contents").html("");
-
+            
             if(db.uniequip.charEquip[opKey]){
                 var equiplist = db.uniequip.charEquip[opKey]
                 
@@ -1789,8 +1797,8 @@
                                         `
                                 });
                                 equiphtml += `
-                                <div style='margin:12px'> </div>
-                                ${titledMaker(statcontent,"Additional Stats","","","padding:6px 10px 6px 10px")}
+                                <div style='margin:12px;width:100%'> </div>
+                                ${titledMaker(statcontent,"Additional Stats","","","padding:6px 10px 6px 10px;margin-bottom:6px;width:100%")}
                                 `
                             }
                             console.log(Object.keys(phase.tokenAttributeBlackboard))
@@ -1798,6 +1806,7 @@
                                 var tokenlist = Object.keys(phase.tokenAttributeBlackboard)
                                 tokenlist.forEach(token => {
                                     var curtoken = phase.tokenAttributeBlackboard[token]
+                                    var tokenfulldata = db.chars[token]
                                     var statcontent = ''
                                     curtoken.forEach(stat => {
                                         var tlstat = db.effect[stat.key]
@@ -1809,8 +1818,8 @@
                                             `
                                     });
                                     equiphtml += `
-                                    <div style='margin:12px'> </div>
-                                    ${titledMaker(statcontent,`Additional Summon Stats (${token})`,"","","padding:3px 10px 6px 10px")}
+                                    <div style='margin:12px;width:100%'> </div>
+                                    ${titledMaker(statcontent,`Additional Summon Stats (${tokenfulldata?tokenfulldata.appellation:token})`,"","","padding:3px 10px 6px 10px;width:100%")}
                                     `
                                 });
                                 
@@ -1829,7 +1838,7 @@
                         imagereq.push(`Lv.${currequip.unlockLevel}`)
                         
                         equiphtml += `
-                        <div style="text-align:center;background:#222;color:#fff">Unlock Requirements ${imagereq.join("")}</div>
+                        <div style="text-align:center;background:#222;color:#fff;margin-top:5px">Unlock Requirements ${imagereq.join("")}</div>
                         <div style="text-align:center">
                         `
                         currequip.itemCost.forEach(item => {
@@ -3071,10 +3080,10 @@
 
     function titledMaker (content,title,extraClass="",extraId="",extraStyle=""){
         let titledbutton = `
-        <div style="padding-top:5px;display:inline-block">
+        
         <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
         ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
-        </div>`
+        `
 
         return titledbutton
     }
