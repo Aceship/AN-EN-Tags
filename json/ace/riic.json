@@ -249,6 +249,11 @@
 		"desc": "When stationed at a Craft Station, production +30%",
 		"descformat": "When stationed at a Craft Station, production <@cc.vup>+30%</>"
 	},
+	"manu_skill_spd1[010]": {
+		"name": "Consciousness Agreement",
+		"desc": "When stationed at a Craft Station, production +5% for every Standardization-type skill in the same Craft Station",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+5%</> for every <$cc.sk.manu1><@cc.kw>Standardization</></>-type skill in the same Craft Station"
+	},
 	"manu_prod_spd_addition[030]": {
 		"name": "Impatient",
 		"desc": "When stationed at a Craft Station, production +20% for the first hour. Thereafter, increase by +1% every hour, capping at +25%",
@@ -634,6 +639,16 @@
 		"desc": "When stationed together with Texas at the same Trade Station, mood reduction per hour -0.1 and order limit +4",
 		"descformat": "When stationed together with <@cc.kw>Texas</> at the same Trade Station, mood reduction per hour <@cc.vup>-0.1</> and order limit <@cc.vup>+4</>"
 	},
+	"trade_ord_long[000]": {
+		"name": "Investment·α",
+		"desc": "When stationed at a Trade Station, if the amount of precious metals traded is higher than 3, increase the LMD gained by +250. Additionally, mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, if the amount of <@cc.kw>precious metals</> traded is higher than <@cc.kw>3</>, increase the LMD gained by <@cc.kw>+250</>. Additionally, mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"trade_ord_long[010]": {
+		"name": "Investment·β",
+		"desc": "When stationed at a Trade Station, if the amount of precious metals traded is higher than 3, increase the LMD gained by +500. Additionally, mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, if the amount of <@cc.kw>precious metals</> traded is higher than <@cc.kw>3</>, increase the LMD gained by <@cc.kw>+500</>. Additionally, mood reduction per hour <@cc.vup>-0.25</>"
+	},
 	"workshop_proc_probability[000]": {
 		"name": "Focus·α",
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 40%",
@@ -739,6 +754,11 @@
 		"desc": "When stationed at the Synthesis Station and producing chips, recipes which consume 2 mood will have -1 mood consumed",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>chips</>, recipes which consume <@cc.kw>2</> mood will have <@cc.vup>-1</> mood consumed"
 	},
+	"workshop_formula_cost3[000]": {
+		"name": "Spaced Out",
+		"desc": "When stationed at the Synthesis Station and producing skill materials, recipes which consume 2 mood will have -1 mood consumed",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>skill materials</>, recipes which consume <@cc.kw>2</> mood will have <@cc.vup>-1</> mood consumed"
+	},
 	"workshop_formula_probability[000]": {
 		"name": "Skill Theory",
 		"desc": "When stationed at the Synthesis Station and producing skill materials, increase the rate of by-products by 70%",
@@ -753,6 +773,11 @@
 		"name": "Unparalleled",
 		"desc": "When stationed at the Synthesis Station and producing skill materials, increase the rate of by-products by 80%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>skill materials</>, increase the rate of by-products by <@cc.vup>80%</>"
+	},
+	"workshop_formula_probability[030]": {
+		"name": "Adaptibility",
+		"desc": "When stationed at the Synthesis Station and producing skill materials, increase the rate of by-products by 75%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>skill materials</>, increase the rate of by-products by <@cc.vup>75%</>"
 	},
 	"workshop_formula_probability[100]": {
 		"name": "Nutriology",
@@ -1024,57 +1049,67 @@
 		"desc": "When stationed at the Training Station, increase the skill training speed of Specialist operators by +60%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Specialist</> operators by <@cc.vup>+60%</>"
 	},
-	"train_spd&profession2[220]": {
+	"train_spd&profession2[120]": {
 		"name": "Shinkage-ryu",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Guard</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
-	"train_spd&profession2[250]": {
+	"train_spd&profession2[440]": {
+		"name": "Leading by Example",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Sniper operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +65%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Sniper</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+65%</>"
+	},
+	"train_spd&profession2[150]": {
 		"name": "Smattering of Knowledge",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Caster operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Caster</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
-	"train_spd&profession2[350]": {
+	"train_spd&profession2[250]": {
 		"name": "Widely Read",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Caster operators by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Caster</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
-	"train_spd&profession2[330]": {
+	"train_spd&profession2[230]": {
 		"name": "Battlefield Experience",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Defender operators by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Defender</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
-	"train_spd&profession2[320]": {
+	"train_spd&profession2[220]": {
 		"name": "Asceticism",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard operators by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Guard</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
-	"train_spd&profession2[420]": {
+	"train_spd&profession2[320]": {
 		"name": "Maximum Effort",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard operators by +30%. If the current training is for Mastery 3, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Guard</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 3</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
-	"train_spd&profession2[641]": {
+	"train_spd&profession2[660]": {
 		"name": "Assimilation",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Supporter operators by +30%. If the current training is for Mastery 3, increase the skill training speed by an additional +65%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Supporter</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 3</>, increase the skill training speed by an additional <@cc.vup>+65%</>"
 	},
-	"train_spd&profession2[441]": {
+	"train_spd&profession2[640]": {
 		"name": "Opportunistic",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Sniper operators by +30%. If the current training is for Mastery 3, increase the skill training speed by an additional +65%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Sniper</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 3</>, increase the skill training speed by an additional <@cc.vup>+65%</>"
 	},
-	"train_spd&profession2[280]": {
+	"train_spd&profession2[180]": {
 		"name": "Trap Focus",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Specialist operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Specialist</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
-	"train_cost&profession[040]": {
+	"train_cost&profession[340]": {
 		"name": "Disinterest",
 		"desc": "When stationed at the Training Station and training a Sniper operator to Mastery 3, mood reduction per hour +1",
 		"descformat": "When stationed at the Training Station and training a <@cc.kw>Sniper</> operator to <@cc.vup>Mastery 3</>, mood reduction per hour <@cc.vdown>+1</>"
 	},
-	"train_cost&profession[060]": {
+	"train_cost&profession[140]": {
+		"name": "Workaholic",
+		"desc": "When stationed at the Training Station and training a Sniper operator to Mastery 1, mood reduction per hour +1",
+		"descformat": "When stationed at the Training Station and training a <@cc.kw>Sniper</> operator to <@cc.vup>Mastery 1</>, mood reduction per hour <@cc.vdown>+1</>"
+	},
+	"train_cost&profession[360]": {
 		"name": "Mutation",
 		"desc": "When stationed at the Training Station and training a Supporter operator to Mastery 3, mood reduction per hour +1",
 		"descformat": "When stationed at the Training Station and training a <@cc.kw>Supporter</> operator to <@cc.vup>Mastery 3</>, mood reduction per hour <@cc.vdown>+1</>"
