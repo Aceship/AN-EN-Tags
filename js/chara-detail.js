@@ -1132,17 +1132,20 @@
             return `
             ${extrathing}
             <li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
-            <img src="img/avatars/${getId(char)}.png">
+            <div class="op-image-grid">
+                ${GetLogo(char)?`<div class="op-grid-faction"><img src="img/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
+                <img src="img/avatars/${getId(char)}.png">
+            </div>
             <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
             <div class='ak-rare-${char.rarity + 1}'></div>
             
             ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
-            ${GetLogo(char)?`<div class="ak-showfaction"><img src="img/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
+            ${op_branch.length!=1?`<div class='ak-showsubclass'><img src='img/ui/subclass/sub_${char.subProfessionId}_icon.png'></div>`:""}
             <div class="grid-box op-rarity-${char.rarity + 1}"></div>
             </li>`
         }).join(" "));
 
-            // <div class='ak-showsubclass'><img src='img/ui/subclass/sub_${char.subProfessionId}_icon.png'></div>
+            // 
     }
 
     function openOPZOOMmodal(){

@@ -139,16 +139,33 @@ body {
     transform: scale(1.1) ;
 }
 
-.selectop-grid img {
+.selectop-grid .op-image-grid {
     box-shadow: 2px 0px 3px #111;
     width: 88px;
     height: 88px;
     transition-duration: 200ms;
     background-color: #555555;
 }
-.selectop-grid:hover img {
+.selectop-grid:hover .op-image-grid {
     transition-duration: 200ms;
     background-color: #222222;
+}
+.selectop-grid .op-image-grid img{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 88px;
+    height: 88px;
+    z-index: 1;
+}
+.selectop-grid .op-grid-faction{
+    z-index: 2;
+}
+
+.selectop-grid .op-grid-faction img{
+    width:30px;
+    height:30px;
+    opacity: 0.5;
 }
 
 .selectop-grid .name {
@@ -172,7 +189,8 @@ body {
 .selectop-grid .ak-showclass {
     position: absolute;
     top: 20px;
-    left: 0px;
+    right: 0px;
+    z-index: 3;
 }
 .selectop-grid .ak-showclass img {
     width: 20px;
@@ -206,11 +224,13 @@ body {
     position: absolute;
     top: 0px;
     right: 0px;
+    z-index: 3;
 }
 .selectop-grid .ak-showsubclass img {
     width: 20px;
     height: 20px;
     background: rgba(17, 17, 17, 0.856);
+    object-fit: contain;
 }
 .selectop-grid .ak-showsubclass img:hover {
     width: 40px;
