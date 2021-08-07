@@ -86,6 +86,7 @@
     var globalelite = 0
     var globallevel =[1,1,1]
     var globalskill = 0
+    var israritygrouped 
 
     var currskin 
     var spinewidgettoken
@@ -369,6 +370,20 @@
         }else{
             lefthand = JSON.parse(localStorage.getItem('lefthand'))
         }
+
+        if(!localStorage.getItem('israritygrouped')){
+            israritygrouped = true
+            localStorage.setItem("israritygrouped",JSON.stringify(israritygrouped))
+            $(`#group-rarity`).addClass("btn-primary");
+        }else{
+            israritygrouped = JSON.parse(localStorage.getItem('israritygrouped'))
+            if(israritygrouped){
+                $(`#group-rarity`).addClass("btn-primary");
+            }else{
+                $(`#group-rarity`).addClass("btn-secondary");
+            }
+        }
+
         if(lefthand)
         $('#lefthandtoggle').css("background-color","#0077AA")
         else 
@@ -787,7 +802,7 @@
         function branchclassHtml(data_id, data_name) {
             return `<div class="btn btn-secondary btn-sm op-branch filter-btn-s tooltip2" onclick="toggleBtn(this)" section="branch" data-id="${data_id}">
             <img src="${`img/ui/subclass/sub_${data_id}_icon.png`}" style="width:33px;height:33px;object-fit: contain;display: inline-block;" alt="${data_name}"> 
-            <span class="tooltiptext tooltipstyle1">${data_name}</span>
+            <span class="tooltiptext tooltipstyle1 nohover">${data_name}</span>
             </div>`
         }
 
@@ -861,6 +876,13 @@
             actualizeBranch();
         }
 
+        actualizeFilter();
+    }
+
+    function toggleGroup(el){
+        $(el).toggleClass("btn-secondary btn-primary");
+        israritygrouped = !israritygrouped
+        localStorage.setItem("israritygrouped",JSON.stringify(israritygrouped))
         actualizeFilter();
     }
 
@@ -993,6 +1015,7 @@
         let op_class = $(".op-class.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
         let op_subclass = $(".op-subclass.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
         let op_branch = $(".op-branch.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
+        let op_rarity = $(".op-rarity.btn-primary").map((_, btn) => parseInt($(btn).attr("data-id"))).get();
         let op_gender = $(".op-gender.btn-primary").map((_, btn) => db.gender[$(btn).attr("data-id")]["sex_cn"]).get();
         let op_tag = $(".op-tag.btn-primary").map((_, btn) => db.ktags[$(btn).attr("data-id")]["cn"]).get();
         let op_faction = $(".op-faction.btn-primary").map((_, btn) => $(btn).attr("data-id")).get();
@@ -1005,8 +1028,11 @@
         let exclusive_faction = $("#filter-name-faction").hasClass("filter-exclusive");
         let exclusive_skill = $("#filter-name-skill").hasClass("filter-exclusive");
 
+        var totalRarity = {}
         if (op_class.length == 0 &&
+            op_branch.length == 0 &&
             op_subclass.length == 0 &&
+            op_rarity.length ==0 &&
             op_gender.length == 0 &&
             op_tag.length == 0 &&
             // op_faction.length == 0 &&
@@ -1033,7 +1059,9 @@
             }
         });
         // using query in a lambda is really awful. "sex" should be in chars, not chars2
-
+        if (op_rarity.length)  ops = ops.filter(char => {
+            return op_rarity.includes(char.rarity)
+        })
         if (op_gender.length) ops = exclusive_gender ? ops.filter(char => op_gender[0] == query(db.chars2, "name_cn", char.name).sex)
                                                      : ops.filter(char => op_gender.includes(query(db.chars2, "name_cn", char.name).sex));
         if (op_tag.length) ops = exclusive_tag ? ops.filter(char => getTags(char).filter(tag => op_tag.includes(tag)).length == op_tag.length)
@@ -1060,20 +1088,59 @@
                                  (b.appellation>a.appellation?-1 :+1)
                                  );
 
+        ops.forEach(char => {
+            totalRarity[char.rarity]=1
+        });
+        totalRarity = Object.keys(totalRarity).length
         // CONSTRUCTION
         var showfaction = false
         if(op_class.length>1||op_class.length==0)
         showfaction=true
-        $("#selectedopclass").html(ops.map(char =>
-            `<li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
-                <img src="img/avatars/${getId(char)}.png">
-                <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
-                <div class='ak-rare-${char.rarity + 1}'></div>
-                
-                ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
-                ${GetLogo(char)?`<div class="ak-showfaction"><img src="img/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
-                <div class="grid-box op-rarity-${char.rarity + 1}"></div>
-            </li>`).join(" "));
+        var rarity = -1
+        var numrar=0
+        console.log($("#order-atk").hasClass("btn-enabled"))
+
+        var isgrouped = israritygrouped
+        if(
+        $("#sort-atk").hasClass("btn-enabled")||
+        $("#sort-def").hasClass("btn-enabled")||
+        $("#sort-hp").hasClass("btn-enabled")||
+        $("#sort-dp").hasClass("btn-enabled")||
+        $("#sort-block").hasClass("btn-enabled")||
+        $("#sort-rarity").hasClass("btn-disabled")){
+
+            isgrouped = false
+        }
+        
+        console.log(totalRarity)
+        $("#selectedopclass").html(ops.map(char =>{
+            var extrathing = ""
+            if (rarity!=char.rarity&&isgrouped){
+                rarity = char.rarity
+                extrathing = `
+                ${numrar!=0?"</div>":""}
+                ${titledMaker(`
+                ${titledMaker(``,"",`ak-rare-${rarity+1} ak-shadow`,"",`height:3px;width:calc(100% + 20px);margin:-28px -10px -10px -10px;padding:0px`)}
+                <div style="margin-top:-15px">
+                ${(`<i class="fa fa-star"></i>`).repeat((rarity+1))}
+                </div>
+                `,"",`op-rarity2-${rarity+1}`,"",`font-size:12px;height:20px;width:calc(100% + 20px);margin:-10px -10px -10px -10px;text-align:center;padding-top:0px`)}
+                <div style="background:#333;padding-bottom:10px">
+                `
+                numrar+=1
+            }
+            return `
+            ${extrathing}
+            <li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
+            <img src="img/avatars/${getId(char)}.png">
+            <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
+            <div class='ak-rare-${char.rarity + 1}'></div>
+            
+            ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
+            ${GetLogo(char)?`<div class="ak-showfaction"><img src="img/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
+            <div class="grid-box op-rarity-${char.rarity + 1}"></div>
+            </li>`
+        }).join(" "));
 
             // <div class='ak-showsubclass'><img src='img/ui/subclass/sub_${char.subProfessionId}_icon.png'></div>
     }
