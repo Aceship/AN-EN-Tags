@@ -1493,7 +1493,7 @@
             }
 
             $("#op-nameTL").html(opdataFull.appellation);
-            $("#op-nameREG").html("["+opdataFull.name+"]");
+            $("#op-nameREG").html(opdataFull.name);
 
             $("#op-displaynum").html(`${opdataFull.displayNumber?`${opdataFull.displayNumber} | `:""}${opdataFull.id.split("_")[1]} | ${opdataFull.id.split("_")[2]}`)
             if(unreadable){
@@ -3859,18 +3859,18 @@
             $("#spine-widget-op").hide()
             var defaultskin ='default'
             xhr.onprogress = function () {
-                console.log('LOADING: ', xhr.status);
+                // console.log('LOADING: ', xhr.status);
                 $("#loading-spine-op").fadeIn(200)
             };
             console.log(chibiName)
             xhr.onloadend = function (e) {
-                console.log(xhr.status)
+                // console.log(xhr.status)
                 if (xhr.status != 404) {
                     buffer = xhr.response;
                     array = new Uint8Array(buffer);
                     skelBin = new SkeletonBinary();
                     var jsonskel
-                    console.log(array)
+                    // console.log(array)
                     if(array.length==0){
 
                     }else{
@@ -3879,7 +3879,7 @@
                             skelBin.initJson()
                             jsonskel = JSON.stringify(skelBin.json)
                             var parsedskeljson = JSON.parse(jsonskel)
-                            console.log(JSON.parse(jsonskel))
+                            // console.log(JSON.parse(jsonskel))
                             if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
                                 defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
                             }
@@ -3962,14 +3962,12 @@
             var defaultskin ='default'
 
             xhr.onprogress = function () {
-                console.log('LOADING: ', xhr.status);
+                // console.log('LOADING: ', xhr.status);
                 $("#loading-spine").fadeIn(200)
             };
-            
-            
-            console.log(chibiName)
+            // console.log(chibiName)
             xhr.onloadend = function (e) {
-                console.log(xhr.status)
+                // console.log(xhr.status)
                 if (xhr.status != 404) {
                     buffer = xhr.response;
                     array = new Uint8Array(buffer);
@@ -3989,7 +3987,7 @@
                             skelBin.initJson()
                             jsonskel = JSON.stringify(skelBin.json)
                             var parsedskeljson = JSON.parse(jsonskel)
-                            console.log(JSON.parse(jsonskel))
+                            // console.log(JSON.parse(jsonskel))
                             if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
                                 defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
                             }
@@ -3999,7 +3997,7 @@
                         }else if (skeletonType== "json"){
                             jsonskel = JSON.parse(new TextDecoder("utf-8").decode(array))
                             var parsedskeljson = jsonskel
-                            console.log(JSON.parse(jsonskel))
+                            // console.log(JSON.parse(jsonskel))
                             if(!Object.keys(parsedskeljson.animations).find(search=>search==defaultAnimationName)){
                                 defaultAnimationName = Object.keys(parsedskeljson.animations)[0]
                             }
@@ -4099,7 +4097,7 @@
         // var tokenName =
         var tokenname = tokenkey
         var tokenfolder = `./spineassets/token/${opdataFull.id}/${tokenkey}`
-        console.log(tokenfolder)
+        // console.log(tokenfolder)
         // $("#loading-spine").text("Loading...")
         if(spinewidgettoken){
             // spinewidget.loadWidgets()
@@ -4165,7 +4163,7 @@
                     var spineY = parseFloat($("#spine-widget-token").height())/2 -300
                     // var test = new TextDecoder("utf-8").decode(array);
                     console.log($("#spine-widget-token").width())
-                    console.log(spineX)
+                    // console.log(spineX)
                     // console.log(JSON.parse(test))
                     // console.log(JSON.stringify(skelBin.json, null, "\t"));
                     new spine.SpineWidget("spine-widget-token", {
