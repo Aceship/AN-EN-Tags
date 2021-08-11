@@ -1539,7 +1539,7 @@
             }
             // console.log(potentials)
             if (opdataFull.talents){
-                $("#op-talentlist").html(GetTalent(opKey,opdataFull))
+                GetTalent(opKey,opdataFull)
             }else{
                 $("#op-talentlist").html("")
             }
@@ -3011,117 +3011,285 @@
     }
     function GetTalent(id,opdataFull){
         var combTalents = []
-        // console.log(opdataFull.talents)
+        var talenthtml = []
+        var talentnum = 0
+        var talenttype = 0
+        var talentObject = {req:[],req2:[],talents:[],html:{}}
+        var talentTab = []
+        var activeLevel = 0
+        var activeElite = 0
+        var activePotential = 0
+
+        opdataFull.talents.forEach(currTalent => {
+            currTalent.candidates.forEach(currCandidate => {
+                var currlevel = parseInt(currCandidate.unlockCondition.level)
+                var currphase = parseInt(currCandidate.unlockCondition.phase)
+                var currpotent = parseInt(currCandidate.requiredPotentialRank)
+                if(!talentObject.req.includes(`${currphase}-${currlevel}-${currpotent}`,0)){
+                    talentObject.req.push(`${currphase}-${currlevel}-${currpotent}`)
+                    talentObject.req2.push([currphase,currlevel,currpotent])
+                    talentObject.html[`${currphase}-${currlevel}-${currpotent}`]={req:[currphase,currlevel,currpotent],talents:[]}
+                    var imagereq = []
+                    if(currphase >=0)
+                        imagereq.push(`<img src="./img/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
+                    if(currlevel >1)
+                        imagereq.push(`<span style='font-size:11px;margin-left:-6px'><span style='font-size:4px'>Lv.</span>${currlevel}</span>`)
+                    if(currpotent >0)
+                        imagereq.push(`<img src="./img/ui/potential/${currpotent+1}.png" style="width:18px">`)
+                    talentTab.push(`
+                    <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} | Potential ${currpotent+1}'>                     
+                        <button class='btn horiz-small nav-link talentlink' data-toggle='pill' id='tabtalent${currphase}-${currlevel}-${currpotent}' href='#talent${currphase}-${currlevel}-${currpotent}' style="padding:0px 0px;margin:0px 1px 0px 1px;background:#666;width:50px">
+                        ${imagereq.join("")}
+                        </button>
+                    </li>
+                    `)
+
+                    if(currphase==2&&activeElite<2){
+                        activeElite=2
+                    }
+                    if(currphase==1&&activeElite<=1){
+                        activeElite=1
+                        if(activeLevel<currlevel){
+                            activeLevel= currlevel
+                        }
+                        if(opdataFull.rarity<=2&&activePotential<currpotent){
+                            activePotential = currpotent
+                        }
+                    }
+                }
+            });
+        });
         for(i=0;i<opdataFull.talents.length;i++){
             var currTalent = opdataFull.talents[i]
             // if(!db.talentsTL[id])break;
             var currTalentTL = db.talentsTL[id]?db.talentsTL[id][i]:undefined
             var talentGroup = []
+            talentObject.talents[talenttype]=[]
             for(j=0;j<currTalent.candidates.length;j++){
                 var currCandidate = currTalent.candidates[j] 
                 var currCandidateTL = currTalentTL?currTalentTL[j]:undefined
                 talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
-                // console.log(currCandidate)
+                var currlevel = parseInt(currCandidate.unlockCondition.level)
+                var currphase = parseInt(currCandidate.unlockCondition.phase)
+                var currpotent = parseInt(currCandidate.requiredPotentialRank)
+                talentObject.req2.forEach(requirements => {
+                    if(requirements[0]>=currphase&&requirements[1]>=currlevel&&requirements[2]>=currpotent){
+                        talentObject.html[`${requirements[0]}-${requirements[1]}-${requirements[2]}`].talents[currCandidate.prefabKey]={talent:currCandidate,talentTL:currCandidateTL}
+                    }
+                });
+                
             }
+            talenttype+=1
             combTalents.push(talentGroup)
         }
-        return TalentParse(combTalents)
-    }
 
-    function TalentParse(combTalents){
-        // console.log(combTalents)
-        var talent = []
+        var talenthtml = ''
         var talentnum = 0
-        combTalents.forEach(combcandidate => {
-            let talentlist = [] 
-            
-            combcandidate.forEach(eachtalent => {
-                var imagereq = []
-                if(eachtalent.talent.unlockCondition.level >0)
-                imagereq.push(`Lv.${eachtalent.talent.unlockCondition.level}`)
-                if(eachtalent.talent.unlockCondition.phase >0)
-                imagereq.push(`<img src="./img/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
-                if(eachtalent.talent.requiredPotentialRank >0)
-                imagereq.push(`<img src="./img/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
-
-                var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
-                var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
-                currTalentDesc = currTalentDesc.replace(/\<(.+)\>/g, function(m, rtf, text) {
-                    return `\< ${rtf} \>`
-                })
-                // console.log(eachtalent.talent.name)
-                var isTalentRange =  eachtalent.talent.name=="新人教官"?undefined:eachtalent.talent.rangeId
-
-                var talentdetails = []
-                eachtalent.talent.blackboard.forEach(talentInfo=>{
-                    var talentjson={}
-                    talentjson.name = db.effect[talentInfo.key]?db.effect[talentInfo.key]:talentInfo.key
-                    talentjson.key = talentInfo.key
-                    talentjson.value = talentInfo.value
-
-                    talentdetails.push(talentjson)
-                })
-
-                var detailtable = []
-                var detailHeader = ''
-                // console.log(talentdetails)
-                
-                if(talentdetails.length>0){
-                    var talenthtmldetail = ""
-                    
-                    talentdetails.forEach(currdetails => {
-                        
-                        talenthtmldetail+=`
-                        <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
-                                ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
-                        </div>`
-                    });
-                    detailHeader = `<button id='talentdetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler2("talentdetailcontent${talentnum}")'style="display:inline-block;color:#aaa;text-align:center;background:#333;padding:2px;font-size:12px">Talent Details <i class="fas fa-caret-down"></i></button>`
-                    detailtable = ` 
-                        <div id='talentdetailcontent${talentnum}' class="ak-shadow talentdetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
-                            ${talenthtmldetail}
-                        </div>
-                    `
-
-                    talentnum+=1
-                }else{
-                    detailtable=""
-                }
-
-                var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
-                talentlist.push(`
-                <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                <div style="vertical-align:top;${isTalentRange?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
-                    <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
-                    <div style="font-size:13px; font-family:'Source Sans Pro'">
-                    <div class="ak-line">
-                    ${currTalentDesc.replace(/<\/br>/g, '<div class="ak-newline"></div>')}
-                    </div>
-                    ${detailHeader} 
-                    ${detailtable}
-                    </div>
-                    
-                </div>
-                    ${isTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
-                </div>
-                `)
-
-                
-                
-                
+        Object.keys(talentObject.html).forEach(key => {
+            var currhtml = talentObject.html[key]
+            talenthtml += `
+            <div class='tab-pane container' id='talent${key}'>    
+            `
+            Object.keys(currhtml.talents).forEach(eachtalent => {
+                var currtalent = currhtml.talents[eachtalent]
+                // console.log(currtalent)
+                talenthtml +=`
+                ${TalentParse2(currtalent,talentnum)}
+                `
+                talentnum +=1
             });
-            talent.push(`
-                <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
-                    ${talentlist.join("")}
-                </div>`)
+            talenthtml +=`
+            </div>
+            `
         });
-        return `
-        
-            <div style="padding-top:10px">
-            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div> 
-                ${talent.join("")}
-            </div>`
+        // console.log(talenthtml)
+
+        console.log(talentObject)
+        $("#op-talentlist").html(`
+        <div style="padding-top:10px">
+            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talents</div> 
+                <div class="ak-shadow" style="margin-bottom:8px;padding:0px;padding-bottom:2px;background:#666">
+                    <div style="width:100%;background:#444">
+                        <ul class='nav nav-pills' id='talent-tabs' style="margin: 0px 0px 0px 0px">
+                            ${talentTab.join("")}
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="talents-contents" style="margin: 2px 0px 2px 0px;">
+                        ${talenthtml}
+                    </div>
+                </div>
+        </div>
+        `) 
+
+        //check  active 
+        $(`#tabtalent${activeElite}-${activeLevel}-${activePotential}`).toggleClass("active")
+        $(`#talent${activeElite}-${activeLevel}-${activePotential}`).toggleClass("active")
     }
+    function TalentParse2(eachtalent,talentnum){
+        // console.log(talentnum)
+        var imagereq = []
+        if(eachtalent.talent.unlockCondition.level >1)
+        imagereq.push(`Lv.${eachtalent.talent.unlockCondition.level}`)
+        if(eachtalent.talent.unlockCondition.phase >=0)
+        imagereq.push(`<img src="./img/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
+        if(eachtalent.talent.requiredPotentialRank >0)
+        imagereq.push(`<img src="./img/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
+
+        var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
+        var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
+        currTalentDesc = currTalentDesc.replace(/\<(.+)\>/g, function(m, rtf, text) {
+            return `\< ${rtf} \>`
+        })
+        // console.log(eachtalent.talent.name)
+        var isTalentRange =  eachtalent.talent.name=="新人教官"?undefined:eachtalent.talent.rangeId
+
+        var talentdetails = []
+        eachtalent.talent.blackboard.forEach(talentInfo=>{
+            var talentjson={}
+            talentjson.name = db.effect[talentInfo.key]?db.effect[talentInfo.key]:talentInfo.key
+            talentjson.key = talentInfo.key
+            talentjson.value = talentInfo.value
+
+            talentdetails.push(talentjson)
+        })
+
+        var detailtable = []
+        var detailHeader = ''
+        // console.log(talentdetails)
+        
+        if(talentdetails.length>0){
+            var talenthtmldetail = ""
+            
+            talentdetails.forEach(currdetails => {
+                
+                talenthtmldetail+=`
+                <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
+                        ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
+                </div>`
+            });
+            detailHeader = `<button id='talentdetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler2("talentdetailcontent${talentnum}")'style="display:inline-block;color:#aaa;text-align:center;background:#333;padding:2px;font-size:12px">Talent Details <i class="fas fa-caret-down"></i></button>`
+            detailtable = ` 
+                <div id='talentdetailcontent${talentnum}' class="ak-shadow talentdetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
+                    ${talenthtmldetail}
+                </div>
+            `
+
+        }else{
+            detailtable=""
+        }
+
+        var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+        return (`
+        <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
+        <div style="vertical-align:top;${isTalentRange?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
+            <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName}</div>
+            <div style="font-size:13px; font-family:'Source Sans Pro'">
+            <div class="ak-line">
+            ${currTalentDesc.replace(/<\/br>/g, '<div class="ak-newline"></div>')}
+            </div>
+            ${detailHeader} 
+            ${detailtable}
+            </div>
+            
+        </div>
+            ${isTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
+        </div>
+        `)
+    }
+    // function TalentParse(combTalents){
+    //     // console.log(combTalents)
+    //     var talent = []
+    //     var talentnum = 0
+    //     combTalents.forEach(combcandidate => {
+    //         let talentlist = [] 
+            
+    //         combcandidate.forEach(eachtalent => {
+    //             var imagereq = []
+    //             if(eachtalent.talent.unlockCondition.level >1)
+    //             imagereq.push(`Lv.${eachtalent.talent.unlockCondition.level}`)
+    //             if(eachtalent.talent.unlockCondition.phase >0)
+    //             imagereq.push(`<img src="./img/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
+    //             if(eachtalent.talent.requiredPotentialRank >0)
+    //             imagereq.push(`<img src="./img/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
+
+    //             var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
+    //             var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
+    //             currTalentDesc = currTalentDesc.replace(/\<(.+)\>/g, function(m, rtf, text) {
+    //                 return `\< ${rtf} \>`
+    //             })
+    //             // console.log(eachtalent.talent.name)
+    //             var isTalentRange =  eachtalent.talent.name=="新人教官"?undefined:eachtalent.talent.rangeId
+
+    //             var talentdetails = []
+    //             eachtalent.talent.blackboard.forEach(talentInfo=>{
+    //                 var talentjson={}
+    //                 talentjson.name = db.effect[talentInfo.key]?db.effect[talentInfo.key]:talentInfo.key
+    //                 talentjson.key = talentInfo.key
+    //                 talentjson.value = talentInfo.value
+
+    //                 talentdetails.push(talentjson)
+    //             })
+
+    //             var detailtable = []
+    //             var detailHeader = ''
+    //             // console.log(talentdetails)
+                
+    //             if(talentdetails.length>0){
+    //                 var talenthtmldetail = ""
+                    
+    //                 talentdetails.forEach(currdetails => {
+                        
+    //                     talenthtmldetail+=`
+    //                     <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
+    //                             ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
+    //                     </div>`
+    //                 });
+    //                 detailHeader = `<button id='talentdetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler2("talentdetailcontent${talentnum}")'style="display:inline-block;color:#aaa;text-align:center;background:#333;padding:2px;font-size:12px">Talent Details <i class="fas fa-caret-down"></i></button>`
+    //                 detailtable = ` 
+    //                     <div id='talentdetailcontent${talentnum}' class="ak-shadow talentdetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
+    //                         ${talenthtmldetail}
+    //                     </div>
+    //                 `
+
+    //                 talentnum+=1
+    //             }else{
+    //                 detailtable=""
+    //             }
+
+    //             var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+    //             talentlist.push(`
+    //             <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
+    //             <div style="vertical-align:top;${isTalentRange?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
+    //                 <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
+    //                 <div style="font-size:13px; font-family:'Source Sans Pro'">
+    //                 <div class="ak-line">
+    //                 ${currTalentDesc.replace(/<\/br>/g, '<div class="ak-newline"></div>')}
+    //                 </div>
+    //                 ${detailHeader} 
+    //                 ${detailtable}
+    //                 </div>
+                    
+    //             </div>
+    //                 ${isTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
+    //             </div>
+    //             `)
+
+                
+                
+                
+    //         });
+    //         talent.push(`
+    //             <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
+    //                 ${talentlist.join("")}
+    //             </div>`)
+    //     });
+    //     return `
+        
+    //         <div style="padding-top:10px">
+    //         <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div> 
+    //             ${talent.join("")}
+    //         </div>`
+    // }
     // ${titledMaker(,eachtalent.talentTL.name,"","","font-size:10px;background:#444;color:#ddd")}
     function GetSkillCost(i2,i, opdataFull){
         let reqmats=[]
