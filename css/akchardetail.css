@@ -168,19 +168,19 @@ body {
     opacity: 0.5;
 }
 
-.selectop-grid .name {
+.name {
     top: 0px;
     font-size: 0.8em;
 }
-.selectop-grid .namesmall {
+.namesmall {
     top: 0px;
     font-size: 0.6em;
-    height: 16px;
+    /* height: 16px; */
 }
-.selectop-grid .namesmaller {
-    margin-top: 4px;
+.namesmaller {
+    margin-top: 2px;
     font-size: 0.5em;
-    height: 15px;
+    /* height: 15px; */
 }
 .selectop-grid .rarity {
     box-shadow: 1px 1px 2px #111;
@@ -236,6 +236,59 @@ body {
     width: 40px;
     height: 40px;
     background: rgb(17, 17, 17);
+}
+
+
+.selectop-grid2 {
+    display: inline-grid;
+    height: 85px;
+    width: 80px;
+    overflow: hidden;
+    position: relative;
+    background-color: #666666;
+    color: white;
+    transition-duration: 200ms;
+    margin: 1px 1px;
+}
+.selectop-grid2:hover {
+    cursor: pointer;
+    background-color: unset;
+    transition-duration: 200ms;
+    z-index: 100;
+    transform: scale(1) ;
+}
+.selectop-grid2 .op-image-grid2 {
+    width: 80px;
+    height: 60px;
+    transition-duration: 200ms;
+    /* background-color: #555555; */
+    /* box-shadow: 0px 0px 5px #111; */
+}
+.selectop-grid2:hover .op-image-grid2 {
+    transition-duration: 200ms;
+    /* background-color: #222222; */
+}
+.selectop-grid2 .op-image-grid2 img{
+    position: absolute;
+    top:-10px;
+    left:0px;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+}
+
+.selectopopgridline{
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    height: 2px;
+    z-index: 3;
+}
+
+.nameshadow{
+    background: #222;
+    z-index: 2;
+    width: 100%;
 }
 
 .rangeTableContainer {

@@ -352,6 +352,9 @@
         $('#opBrowseButton2').click(function(event){
             event.stopPropagation();
         });
+        $('#opBrowseButton3').click(function(event){
+            event.stopPropagation();
+        });
         $('#opname').click(function(event){
             event.stopPropagation();
         });
@@ -688,17 +691,21 @@
             inputs = el
         else
             inputs = el.value
-        if(($('#operatorsResult').css("display") == "block") && el=="Browse"){
+        if(($('#operatorsResult').css("display") == "block") && 
+            ((el=="Browse"&& $("#operatorsResult").hasClass("opbrowse1"))||
+             (el=="Browse2"&& $("#operatorsResult").hasClass("opbrowse2")))){
             // console.log($('#operatorsResult').css("display") == "none" )
+            $("#operatorsResult").removeClass("opbrowse1");
+            $("#operatorsResult").removeClass("opbrowse2");
             $('#operatorsResult').hide();
             return;
         }
-        if(el.value != ""||el=="Browse"||isenter&&el){
+        if(el.value != ""||el=="Browse"||el=="Browse2"||isenter&&el){
             var result = [];
             $.each(db.chars2,function(_,char){
                 var languages = ['cn','en','jp','kr'];
                 var found = false;
-                if(el=="Browse"){
+                if(el=="Browse"||el=="Browse2"){
                     found=true;
                 }else{
                     for (var i = 0; i < languages.length; i++) {
@@ -736,6 +743,8 @@
                 }
                 $('#operatorsResult').empty();
                 $('#operatorsResult').show();
+                var numrar=0
+                var rarity= -1
                 for (var i = 0; i < result.length; i++) {
 
                     //test for audio
@@ -753,23 +762,58 @@
 
                     let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}.png">  `
                     // console.log(image)
+                    $("#operatorsResult").removeClass("opbrowse1");
+                    $("#operatorsResult").removeClass("opbrowse2");
                     if(el=="Browse"){
                         image = `<img class='opres-img' src="./img/avatars/${result[i].img_name}.png">  `
                         $("#operatorsResult").css("text-align","center");
                         $("#operatorsResult").removeClass("opresult-list");
                         $("#operatorsResult").addClass("opresult-grid");
+                        $("#operatorsResult").addClass("opbrowse1");
                         $("#operatorsResult").append(
                             `<li class="col-2 col-sm-1 ak-shadow-small ak-rare-${result[i].rarity}"style="display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px" onclick="selectOperator('${result[i].name_cn}')">
                              <div style="white-space: nowrap;padding:0px;text-align:center;margin:0 ">${image}</div>
                              <div style="white-space: nowrap;padding:0px;text-align:center;margin:0 ">${result[i].name_readable?`[${result[i].name_readable}]`:""}${result[i].nameTL}</div>
                              </li>
                             `);
-                            //                             <a class="ak-stealthlink" href="#?opname=${result[i].nameTL}">
+
+                    }else if(el=="Browse2"){
+                        image = `<img class='opres-img' src="./img/avatars/${result[i].img_name}.png">  `
+                        $("#operatorsResult").css("text-align","center");
+                        $("#operatorsResult").removeClass("opresult-list");
+                        $("#operatorsResult").addClass("opresult-grid");
+                        $("#operatorsResult").addClass("opbrowse2");
+
+                        var opcurrname = result[i].name_readable?`[${result[i].name_readable}]`:"" + result[i].nameTL
+                        var extrathing = ''
+                        if (rarity!=result[i].rarity){
+                            rarity = result[i].rarity
+                            extrathing = `
+                            ${titledMaker(`
+                            ${titledMaker(``,"",`ak-rare-${rarity} ak-shadow`,"",`height:3px;width:calc(100% + 20px);margin:-28px -10px -10px -10px;padding:0px`)}
+                            <div style="margin-top:-15px">
+                            ${(`<i class="fa fa-star"></i>`).repeat((rarity))}
+                            </div>
+                            `,"",`op-rarity2-${rarity}`,"",`font-size:12px;height:20px;width:calc(100% + 20px);margin:0px -10px -5px -10px;text-align:center;padding-top:0px`)}
+                            <div style="padding-bottom:10px"></div>
+                            `
+                            numrar+=1
+                        }
+                        $("#operatorsResult").append(
+                            `${extrathing}<li class="selectop-grid2" onclick="selectOperator('${result[i].name_cn}')">
+                            <div class="op-image-grid2">
+                                <img src="img/avatars/${result[i].img_name}.png">
+                            </div>
+                            <div class="${opcurrname.length>12?opcurrname.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center nameshadow">${opcurrname}</div>
+                            <div class='ak-rare-${result[i].rarity} selectopopgridline'></div>
+                            </li>`
+                        )
                     }else{
                         $("#operatorsResult").removeClass("opresult-grid");
                         $("#operatorsResult").addClass("opresult-list");
                         $("#operatorsResult").css("text-align","left");
-                        $("#operatorsResult").append(`<li class=" ak-shadow-small ak-rare-${result[i].rarity}"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="selectOperator('${result[i].name_cn}')">${image} ${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL} (${result[i].name})</li>`);
+                        $("#operatorsResult").append(`
+                        <li class=" ak-shadow-small ak-rare-${result[i].rarity}"style="width:100%;cursor: pointer;margin-bottom:2px" onclick="selectOperator('${result[i].name_cn}')">${image} ${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL} (${result[i].name})</li>`);
                     }
                 }
             }
@@ -1137,11 +1181,11 @@
                 <img src="img/avatars/${getId(char)}.png">
             </div>
             <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
-            <div class='ak-rare-${char.rarity + 1}'></div>
+            <div class='selectopopgridline ak-rare-${char.rarity + 1}'></div>
             
             ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
             ${op_branch.length!=1?`<div class='ak-showsubclass'><img src='img/ui/subclass/sub_${char.subProfessionId}_icon.png'></div>`:""}
-            <div class="grid-box op-rarity-${char.rarity + 1}"></div>
+        
             </li>`
         }).join(" "));
 
