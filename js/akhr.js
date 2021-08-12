@@ -563,21 +563,22 @@
                     chars = filtered_chars;
                     comb.possible = chars;
                     if (chars.length === 0) return;
-                    let s = 0;
+                    let minRarity = 6;
                     $.each(chars, (_, char) => {
-                        s += char.level;
+                        minRarity = Math.min(char.level, minRarity);
                         // console.log(char)
                     });
-                    s = s / chars.length;
-                    comb.score = s - tags.length / 10 - chars.length / avg_char_tag;
+                    let minRarityCount = $.grep(chars, (char, _) => char.level === minRarity).length;
+                    comb.score = minRarity*1000 - minRarityCount*10 - tags.length;
                     //console.log("tags length = "+tags.length);
                     //console.log("chars length = "+chars.length);
                     // console.log("avg char tag = "+avg_char_tag);
                     //console.log("score = "+comb.score);
                 });
                 combs.sort(function (a, b) {
-                    return a.score > b.score ? -1 : (a.score < b.score ? 1 :
-                        (a.tags.length > b.tags.length ? 1 : (a.tags.length < b.tags.length ? -1 : 0)));
+                    return a.score !== b.score
+                        ? b.score - a.score
+                        : a.possible.length - b.possible.length;
                 });
                 let no = 1;
                 // console.log(combs)
@@ -602,7 +603,7 @@
                     let chars_html = [];
                     let colors = { 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6" };
                     comb.possible.sort(function (a, b) {
-                        return a.level > b.level ? -1 : (a.level < b.level ? 1 : 0);
+                        return a.level - b.level;
                     });
                     $.each(chars, function (_, char) {
                         let padding = showName && size <60? "padding-right: 8px" : "padding-right: 1px";
