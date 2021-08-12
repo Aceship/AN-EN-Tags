@@ -99,7 +99,7 @@ $(document).ready(function(){
             navDropdown.push(`
                     <div class="ak-disable ">${isCurrent}</div>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu expanded-small" aria-labelledby="navbarDropdown">
             `)
             // console.log(navDropdown)
             drop.content.forEach(dropelement => {
