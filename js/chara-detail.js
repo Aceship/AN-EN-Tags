@@ -3064,7 +3064,7 @@
         }
     }
     function GetTalent(id,opdataFull){
-        var combTalents = []
+        // var combTalents = []
         var talenthtml = []
         var talentnum = 0
         var talenttype = 0
@@ -3133,12 +3133,12 @@
             var currTalent = opdataFull.talents[i]
             // if(!db.talentsTL[id])break;
             var currTalentTL = db.talentsTL[id]?db.talentsTL[id][i]:undefined
-            var talentGroup = []
+            // var talentGroup = []
             talentObject.talents[talenttype]=[]
             for(j=0;j<currTalent.candidates.length;j++){
                 var currCandidate = currTalent.candidates[j] 
                 var currCandidateTL = currTalentTL?currTalentTL[j]:undefined
-                talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
+                // talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
                 var currlevel = parseInt(currCandidate.unlockCondition.level)
                 var currphase = parseInt(currCandidate.unlockCondition.phase)
                 var currpotent = parseInt(currCandidate.requiredPotentialRank)
@@ -3150,7 +3150,7 @@
                 
             }
             talenttype+=1
-            combTalents.push(talentGroup)
+            // combTalents.push(talentGroup)
         }
 
         var talenthtml = ''
