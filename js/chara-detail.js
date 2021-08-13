@@ -3172,10 +3172,10 @@
     function TalentParse2(eachtalent,talentnum){
         // console.log(talentnum)
         var imagereq = []
-        if(eachtalent.talent.unlockCondition.level >1)
-        imagereq.push(`Lv.${eachtalent.talent.unlockCondition.level}`)
-        if(eachtalent.talent.unlockCondition.phase >=0)
-        imagereq.push(`<img src="./img/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
+        // if(eachtalent.talent.unlockCondition.level >1)
+        // imagereq.push(`Lv.${eachtalent.talent.unlockCondition.level}`)
+        // if(eachtalent.talent.unlockCondition.phase >=0)
+        // imagereq.push(`<img src="./img/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
         if(eachtalent.talent.requiredPotentialRank >0)
         imagereq.push(`<img src="./img/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
 
@@ -3223,10 +3223,13 @@
         }
 
         var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
+        if(imagereq.length==0){
+            info = ""
+        }
         return (`
         <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
         <div style="vertical-align:top;${isTalentRange?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
-            <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName}</div>
+            <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
             <div style="font-size:13px; font-family:'Source Sans Pro'">
             <div class="ak-line">
             ${currTalentDesc.replace(/<\/br>/g, '<div class="ak-newline"></div>')}
