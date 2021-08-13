@@ -260,7 +260,7 @@
                     let description = charaRiicTL?charaRiicTL.descformat:currBuff2.description
                     let cndesc = currBuff2.description
                     let place = currBuff2.roomType.toLowerCase()
-                    console.log(place)
+                    // console.log(place)
                     // console.log(place)
 
                     // console.log(currBuff2)
@@ -350,8 +350,8 @@
                     //         }
                     //     }
                     // })
-                    description = ChangeDescriptionColor(description)
-                    console.log(description)
+                    description = ChangeDescriptionColor2(description)
+                    // console.log(description)
                     let req =``
                     // console.log(`Lv.${buff.cond.level}/ Elite ${buff.cond.phase}`)
                     if(buff.cond.level>1){
@@ -406,50 +406,66 @@
         $("#tbody-list").empty()
     }
     
-    function ChangeDescriptionColor(desc){
-
-        desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
-            let rich = db.dataconst.richTextStyles[rtf];
-            console.log(rtf)
-            if (rich) {
-                let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
-                if (colorRTF.test(rich)) {
-                    let color = colorRTF.exec(rich)[1]
-                    return `<span style="color:${color}">${text}</span>`
-                } else {
-                    return rich.replace('{0}', text)
-                }
-            }
-            
-        })
-        // desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
-        //     let rich2 = db.named_effects.termDescriptionDict[rtf];
-        //     console.log(db.named_effects.termDescriptionDict[rtf])
-        //     if (rich2) {
-        //         return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
-        //     }
-        // })
-        
+    function ChangeDescriptionColor2(desc,addbackgroundcolor = false){
+        desc = ChangeDesc1(desc,addbackgroundcolor)
+        desc = ChangeDesc2(desc)
         return desc
     }
-    function CreateTooltip(desc){
 
+    function CreateTooltip(desc,addbackgroundcolor = false){
+        desc = ChangeDesc1(desc,addbackgroundcolor)
         desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich2 = db.named_effects.termDescriptionDict[rtf];
             console.log(m)
+            if (!rich2){
+                rich2 = db.dataconst.termDescriptionDict[rtf]
+            }
             if (rich2) {
                 return `<span class="stat-important tooltip3" style="color:#0098DC">${text}<span class="tooltiptext2" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip2(rich2.description)}</span></span>`
             }
         })
         return desc
     }
-    function CreateTooltip2(desc){
-
+    function CreateTooltip2(desc,addbackgroundcolor = false){
+        desc = ChangeDesc1(desc,addbackgroundcolor)
         desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich2 = db.named_effects.termDescriptionDict[rtf];
             console.log(m)
+            if (!rich2){
+                rich2 = db.dataconst.termDescriptionDict[rtf]
+            }
             if (rich2) {
                 return `<span class="stat-important" style="color:#0098DC">${text}</span>`
+            }
+        })
+        return desc
+    }
+
+    function ChangeDesc1(desc,addbackgroundcolor = false){
+        desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich = db.dataconst.richTextStyles[rtf];
+            if (rich) {
+                let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
+                if (colorRTF.test(rich)) {
+                    let color = colorRTF.exec(rich)[1]
+                    return `<span class="${addbackgroundcolor?`stat-important2`:""}" style="color:${color}">${text}</span>`
+                } else {
+                    return rich.replace('{0}', text)
+                }
+            }else{
+                return text
+            }
+        })
+        return desc
+    }
+    function ChangeDesc2(desc){
+        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            if (!rich2){
+                rich2 = db.dataconst.termDescriptionDict[rtf]
+            }
+            if (rich2) {
+                return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
             }
         })
         return desc

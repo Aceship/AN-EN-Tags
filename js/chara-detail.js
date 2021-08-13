@@ -2995,10 +2995,11 @@
                 var currname = tlbuff?tlbuff.name:currbuff.buffName
                 var currdesc = tlbuff?tlbuff.desc:currbuff.description
                 var normdesc = currdesc
+                // console.log(eachbuff)
                 currdesc = currdesc.replace(/\\n/g,"\n\n")
                 eachtab.push(`
                     <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${currname.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${normdesc.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname.replace(/\"/g,"\'")}\n\n${currdesc.replace(/\"/g,"\'")}">
+                        <img src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${eachbuff}','${currname.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${normdesc.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname.replace(/\"/g,"\'")}\n\n${currdesc.replace(/\"/g,"\'")}">
                     </div>`)
                     // console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','./img/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
             });
@@ -3010,7 +3011,7 @@
                 imagereq.push(`<img src="./img/ui/elite/${eachcat.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachcat.phase}">`)
             var currinfo = `<div style="color:#999;background:#222;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
             htmlcomb.push(`
-            <div style="display:inline-block;background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;text-align:center">${currinfo}${eachtab.join("")}</div>
+            <div style="display:inline-block;background:#444;margin:0px;padding:2px;padding-top:2px;background:#444;border-radius:2px;text-align:center">${currinfo}${eachtab.join("")}</div>
             `)
 
             // htmlcomb.push()
@@ -3019,12 +3020,13 @@
         <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">RIIC Skills</div>
             <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666;text-align:center">
                 ${htmlcomb.join("")}
-            <div id="op-riicdetail" class="ak-shadow" style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;text-align:left">
-                <div style="display:inline-block;width:40px;vertical-align:top;margin:3px;margin-right:0px">
-                    <img id="op-riicdetail-img" src="" style="" title="$"></img>
+            <div id="op-riicdetail" class="ak-shadow" style="background:#444;margin:4px;padding:0px;background:#444;border-radius:2px;text-align:left">
+                <div style="background:#999;display:inline-block;padding:2px;width:100%;border-radius:2px 2px 0px 0px;position:relative;height:46px">
+                    <img id="op-riicdetail-img" src="" style="border-radius:50%;background:#333;padding:3px;position:absolute;left:2px;top:2px" title=""></img>
+                    <div id="op-riicdetail-name" style="display:inline-block;color:#ddd;font-size:13px;background:#333;padding:4px 5px 4px 12px;border-radius:0px 6px 6px 0px;margin:7px 2px 2px 30px;z-index:1"></div>
                 </div>
-                <div style="display:inline-block;width:260px">
-                    <div id="op-riicdetail-name" style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px"></div>
+                <div style="display:inline-block;margin:4px">
+                    
                     <div id="op-riicdetail-desc" style="font-size:11px;"></div>
                 </div>
             </div>
@@ -3042,14 +3044,22 @@
         
     }
 
-    function ShowRiicDetail(title,desc,img){
+    function ShowRiicDetail(id,title,desc,img){
         if($("#op-riicdetail").is(":visible")&&$("#op-riicdetail-name").html()==title){
             $("#op-riicdetail").slideUp(200)
         }else{
+            var currbuff = db.build.buffs[id]
+            var tlbuff = db.riic[id]
+
+            var currname = tlbuff?tlbuff.name:currbuff.buffName
+            var currdesc = tlbuff?tlbuff.descformat:currbuff.description
+            var formattedesc = ChangeDescriptionColor2(currdesc)
+            console.log(currname)
+            console.log(currdesc)
             $("#op-riicdetail-img").attr("src",img)
             $("#op-riicdetail-name").text(title)
-            desc = desc.replace(/\n/g,"<br><br>")
-            $("#op-riicdetail-desc").html(desc)
+            formattedesc = formattedesc.replace(/\\n/g,"<br><br>")
+            $("#op-riicdetail-desc").html(formattedesc)
             $("#op-riicdetail").slideDown(200)
         }
     }
@@ -3866,13 +3876,46 @@
     }
 
     function ChangeDescriptionColor(desc,addbackgroundcolor = false){
+        desc = ChangeDesc2(desc)
+        desc = ChangeDesc1(desc,addbackgroundcolor)
+        return desc
+    }
+    function ChangeDescriptionColor2(desc,addbackgroundcolor = false){
+        desc = ChangeDesc1(desc,addbackgroundcolor)
+        desc = ChangeDesc2(desc)
+        return desc
+    }
 
+    function CreateTooltip(desc,addbackgroundcolor = false){
+        desc = ChangeDesc1(desc,addbackgroundcolor)
         desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich2 = db.named_effects.termDescriptionDict[rtf];
+            console.log(m)
+            if (!rich2){
+                rich2 = db.dataconst.termDescriptionDict[rtf]
+            }
             if (rich2) {
-                return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
+                return `<span class="stat-important tooltip3" style="color:#0098DC">${text}<span class="tooltiptext2" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip2(rich2.description)}</span></span>`
             }
         })
+        return desc
+    }
+    function CreateTooltip2(desc,addbackgroundcolor = false){
+        desc = ChangeDesc1(desc,addbackgroundcolor)
+        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            console.log(m)
+            if (!rich2){
+                rich2 = db.dataconst.termDescriptionDict[rtf]
+            }
+            if (rich2) {
+                return `<span class="stat-important" style="color:#0098DC">${text}</span>`
+            }
+        })
+        return desc
+    }
+
+    function ChangeDesc1(desc,addbackgroundcolor = false){
         desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich = db.dataconst.richTextStyles[rtf];
             if (rich) {
@@ -3883,30 +3926,20 @@
                 } else {
                     return rich.replace('{0}', text)
                 }
-            }
-            
-        })
-        return desc
-    }
-
-    function CreateTooltip(desc){
-
-        desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
-            let rich2 = db.named_effects.termDescriptionDict[rtf];
-            console.log(m)
-            if (rich2) {
-                return `<span class="stat-important tooltip3" style="color:#0098DC">${text}<span class="tooltiptext2" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip2(rich2.description)}</span></span>`
+            }else{
+                return text
             }
         })
         return desc
     }
-    function CreateTooltip2(desc){
-
+    function ChangeDesc2(desc){
         desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich2 = db.named_effects.termDescriptionDict[rtf];
-            console.log(m)
+            if (!rich2){
+                rich2 = db.dataconst.termDescriptionDict[rtf]
+            }
             if (rich2) {
-                return `<span class="stat-important" style="color:#0098DC">${text}</span>`
+                return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
             }
         })
         return desc
