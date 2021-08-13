@@ -3017,7 +3017,7 @@
             // htmlcomb.push()
         });
         var combinehtml =`
-        <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">RIIC Skills</div>
+        <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Infrastructure Skills</div>
             <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666;text-align:center">
                 ${htmlcomb.join("")}
             <div id="op-riicdetail" class="ak-shadow" style="background:#444;margin:4px;padding:0px;background:#444;border-radius:2px;text-align:left">
@@ -3083,20 +3083,6 @@
                     talentObject.req.push(`${currphase}-${currlevel}-${currpotent}`)
                     talentObject.req2.push([currphase,currlevel,currpotent])
                     talentObject.html[`${currphase}-${currlevel}-${currpotent}`]={req:[currphase,currlevel,currpotent],talents:[]}
-                    var imagereq = []
-                    if(currphase >=0)
-                        imagereq.push(`<img src="./img/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
-                    if(currlevel >1)
-                        imagereq.push(`<span style='font-size:11px;margin-left:-6px'><span style='font-size:4px'>Lv.</span>${currlevel}</span>`)
-                    if(currpotent >0)
-                        imagereq.push(`<img src="./img/ui/potential/${currpotent+1}.png" style="width:18px">`)
-                    talentTab.push(`
-                    <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} | Potential ${currpotent+1}'>                     
-                        <button class='btn horiz-small nav-link talentlink' data-toggle='pill' id='tabtalent${currphase}-${currlevel}-${currpotent}' href='#talent${currphase}-${currlevel}-${currpotent}' style="padding:0px 0px;margin:0px 1px 0px 1px;background:#666;width:50px">
-                        ${imagereq.join("")}
-                        </button>
-                    </li>
-                    `)
 
                     if(currphase==2&&activeElite<2){
                         activeElite=2
@@ -3113,6 +3099,36 @@
                 }
             });
         });
+
+        talentObject.req2 = talentObject.req2.sort((a,b)=>{
+            var calc = 0
+            calc =+ (a[0]-b[0])*100
+            + (a[1]-b[1])*10
+            + (a[2]-b[2])*1
+            return calc
+        })
+        
+        talentObject.req2.forEach(reqs => {
+            var imagereq = []
+            var currlevel = reqs[1]
+            var currphase = reqs[0]
+            var currpotent = reqs[2]
+            if(currphase >=0)
+                imagereq.push(`<img src="./img/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
+            if(currlevel >1)
+                imagereq.push(`<span style='font-size:11px;margin-left:-6px'><span style='font-size:4px'>Lv.</span>${currlevel}</span>`)
+            if(currpotent >0)
+                imagereq.push(`<img src="./img/ui/potential/${currpotent+1}.png" style="width:18px">`)
+            talentTab.push(`
+            <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} | Potential ${currpotent+1}'>                     
+                <button class='btn horiz-small nav-link talentlink' data-toggle='pill' id='tabtalent${currphase}-${currlevel}-${currpotent}' href='#talent${currphase}-${currlevel}-${currpotent}' style="padding:0px 0px;margin:0px 1px 0px 1px;background:#666;width:50px">
+                ${imagereq.join("")}
+                </button>
+            </li>
+            `)
+        });
+
+        console.log(talentObject.req2)
         for(i=0;i<opdataFull.talents.length;i++){
             var currTalent = opdataFull.talents[i]
             // if(!db.talentsTL[id])break;
