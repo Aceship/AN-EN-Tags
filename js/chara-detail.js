@@ -2050,6 +2050,7 @@
                 
                 
             }
+            $('[data-toggle="tooltip"]').tooltip()
         }
     }
 
@@ -3062,6 +3063,7 @@
             $("#op-riicdetail-desc").html(formattedesc)
             $("#op-riicdetail").slideDown(200)
         }
+        $('[data-toggle="tooltip"]').tooltip()
     }
     function GetTalent(id,opdataFull){
         // var combTalents = []
@@ -3955,7 +3957,14 @@
                 rich2 = db.dataconst.termDescriptionDict[rtf]
             }
             if (rich2) {
-                return `<span class="stathover tooltip2" style="color:#0098DC">${text}<span class="tooltiptext" style="display:inline-block"><div class="tooltipHeader">${rich2.termName}</div>${CreateTooltip(rich2.description)}</span></span>`
+                return `<span class="stathover" data-toggle="tooltip" data-html="true" data-delay='{ "show": 0, "hide": 500 }' data-placement="bottom" 
+                title='
+                <span class="tooltiptext" style="display:inline-block">
+                    <div class="tooltipHeader">${rich2.termName}</div>
+                    <div class="tooltipcontent">${CreateTooltip(rich2.description)}</div>
+                </span>'
+
+                style="color:#0098DC">${text}</span>`
             }
         })
         return desc
