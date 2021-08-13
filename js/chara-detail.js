@@ -3088,6 +3088,7 @@
 
                     if(currphase==2&&activeElite<2){
                         activeElite=2
+                        activeLevel=currlevel
                     }
                     if(currphase==1&&activeElite<=1){
                         activeElite=1
@@ -3101,6 +3102,9 @@
                 }
             });
         });
+        console.log(activeElite)
+        console.log(activeLevel)
+        console.log(activePotential)
 
         talentObject.req2 = talentObject.req2.sort((a,b)=>{
             var calc = 0
