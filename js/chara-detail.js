@@ -3850,7 +3850,7 @@
         var skillTL = db.skillsTL[skillId];
         var desc = skillTL?skillTL.desc[level]:skill.description;
 
-        desc = ChangeDescriptionColor(desc)
+        desc = ChangeDescriptionColor2(desc)
         if(desc){
             // console.log(skill)
             desc=ChangeDescriptionContent(desc,skill)
@@ -3963,7 +3963,6 @@
                     <div class="tooltipHeader">${rich2.termName}</div>
                     <div class="tooltipcontent">${CreateTooltip(rich2.description)}</div>
                 </span>'
-
                 style="color:#0098DC">${text}</span>`
             }
         })
