@@ -1628,11 +1628,10 @@
             $("#op-taglist").append(titledMaker(newtags,"Tags","","","padding-bottom:-40px"));
 
 
-            var charaRiic = GetRiic(opdata2)
+            GetRiic2(opdata2)
             // console.log(charaRiic)
             
-            $("#op-riic").html(charaRiic)
-            $('#op-riicdetail').hide();
+            
             //Story
 
             if(db.handbookInfo.handbookDict[opdataFull.id]|| opdataFull.id == "char_1001_amiya2"){
@@ -1970,7 +1969,7 @@
                                 ${titledMaker(statcontent,"Additional Stats","","","padding:6px 10px 6px 10px;margin-bottom:6px;width:100%")}
                                 `
                             }
-                            console.log(Object.keys(phase.tokenAttributeBlackboard))
+                            // console.log(Object.keys(phase.tokenAttributeBlackboard))
                             if(Object.keys(phase.tokenAttributeBlackboard).length>0){
                                 var tokenlist = Object.keys(phase.tokenAttributeBlackboard)
                                 tokenlist.forEach(token => {
@@ -2014,9 +2013,9 @@
                             </div>
                         `)
                         if(currequip.unlockFavorPoint>0){
-                            console.log(currequip.unlockFavorPoint)
+                            // console.log(currequip.unlockFavorPoint)
                             let trust = db.favor.favorFrames.find(favor=>favor.level==currequip.unlockFavorPoint)
-                            console.log(trust)
+                            // console.log(trust)
                             imagereq.push(`
                             <div style="color:#fff;font-size:13px;background:#444;display:inline-block;padding:2px;border-radius:2px">
                                 ${trust.data.percent}% <span style="font-size:8px">Trust</span>
@@ -2032,7 +2031,7 @@
                         `
                         currequip.itemCost.forEach(item => {
                             equiphtml += CreateMaterial(item.id,item.count)
-                            console.log(item)
+                            // console.log(item)
                         });
                         equiphtml += `
                         </div>
@@ -2092,7 +2091,7 @@
     }
 
     function ModuleMissionDescription(mission){
-        console.log(mission)
+        // console.log(mission)
         var tl = ''
         var squadinfo =''
         //probably good
@@ -2981,6 +2980,135 @@
         return potentialsTL
     }
 
+    function GetRiic2(opdata2){
+        var charaRiic = db.build.chars[Object.keys(opdata2)[0]]
+        var riicList = []
+        var everybuff = []
+        var riicTab = []
+        var riiccontent = []
+        var activeLevel = 0
+        var activeElite = 0
+
+        charaRiic.buffChar.forEach(eachbuffchar => {
+            everybuff.push(eachbuffchar.buffData)
+            eachbuffchar.buffData.forEach(eachbuffdata => {
+                var checkphase = riicList.find(search=>search.phase==eachbuffdata.cond.phase&&search.level == eachbuffdata.cond.level)
+                if(!checkphase){
+                    riicList.push({phase:eachbuffdata.cond.phase,level:eachbuffdata.cond.level,list:[]})
+                }
+            });
+        });
+
+        if (riicList.length==0){
+            return
+        }
+        
+        riicList.forEach(eachcat =>{
+            // checkphase.list.push(eachbuffdata.buffId)
+            var currlevel = eachcat.level
+            var currphase = eachcat.phase
+            var imagereq =[]
+            if(currphase >=0)
+                imagereq.push(`<img src="./img/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
+            if(currlevel >1)
+                imagereq.push(`<span style='font-size:11px;margin-left:-2px'><span style='font-size:6px'>Lv.</span>${currlevel}</span>`)
+            
+                riicTab.push(`
+            <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} '>                     
+                <button class='btn horiz-small nav-link talentlink' data-toggle='pill' id='tabriic${currphase}-${currlevel}' href="#riic${currphase}-${currlevel}" style="padding:0px 0px;margin:0px 2px 0px 0px;background:#666;width:50px">
+                ${imagereq.join("")}
+                </button>
+            </li>
+            `)
+
+            if(currphase==2&&activeElite<2){
+                activeElite=2
+                activeLevel=currlevel
+            }
+            if(currphase==1&&activeElite<=1){
+                activeElite=1
+                if(activeLevel<currlevel){
+                    activeLevel= currlevel
+                }
+            }
+            if(currphase==0&&activeElite<=0){
+                activeElite=0
+                if(activeLevel<currlevel){
+                    activeLevel= currlevel
+                }
+            }
+            
+
+
+            everybuff.forEach(eachbuff => {
+                var sortedbuff = eachbuff.sort((a,b)=>{
+                    if(a.cond.phase<b.cond.phase) return 1
+                    if(a.cond.phase>b.cond.phase) return -1
+                    if(a.cond.level<b.cond.level) return 1
+                    if(a.cond.level>b.cond.level) return -1
+                    return 0
+                })
+                for(i=0;i<sortedbuff.length;i++){
+                    if(eachcat.phase>=sortedbuff[i].cond.phase&&eachcat.level >= sortedbuff[i].cond.level){
+                        eachcat.list.push(sortedbuff[i].buffId)
+                        break;
+                    }
+                }
+            });
+
+            var riicskills = []
+
+            eachcat.list.forEach(id => {
+                var currbuff = db.build.buffs[id]
+                var tlbuff = db.riic[id]
+
+                var currname = tlbuff?tlbuff.name:currbuff.buffName
+                var currdesc = tlbuff?tlbuff.descformat:currbuff.description
+                var formattedesc = ChangeDescriptionColor2(currdesc)
+                formattedesc = formattedesc.replace(/\\n/g,"<br><br>")
+                riicskills.push(`
+                <div class="" style="background:#444;margin:4px;padding:0px;background:#444;border-radius:2px;text-align:left">
+                    <div style="background:#999;display:inline-block;padding:2px;width:100%;border-radius:2px 2px 0px 0px;position:relative;height:33px">
+                        <img id="op-riicdetail-img" src="./img/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="border-radius:50%;background:#333;padding:3px;position:absolute;left:2px;top:2px;width:30px" title=""></img>
+                        <div id="op-riicdetail-name" style="display:inline-block;color:#ddd;font-size:13px;background:#333;padding:2px 5px 2px 12px;border-radius:0px 6px 6px 0px;margin:3px 2px 2px 18px;z-index:1">
+                            ${currname}
+                        </div>
+                    </div>
+                    <div style="display:inline-block;margin:4px">
+                        <div id="op-riicdetail-desc" style="font-size:11px;">
+                            ${formattedesc}
+                        </div>
+                    </div>
+                </div>
+                `)
+            });
+            riiccontent.push(`
+                <div class='tab-pane container' id='riic${currphase}-${currlevel}'>     
+                    ${riicskills.join("")}
+                </div>
+            `)
+        })
+
+        var combinehtml =`
+        <div style="padding-top:10px">
+            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Infrastructure Skills</div> 
+                <div class="ak-shadow" style="margin-bottom:8px;padding:0px;padding-bottom:2px;background:#666">
+                    <div style="width:100%;background:#444;display:inline-flex;justify-content:space-between">
+                        <ul class='nav nav-pills' id='riic-tabs' style="margin: 0px 0px 0px 0px;width:unset">
+                            ${riicTab.join("")}
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="riic-contents" style="margin: 2px 0px 2px 0px;">
+                        ${riiccontent.join("")}
+                    </div>
+                </div>
+        </div>`
+        $("#op-riic").html(combinehtml)
+
+        $(`#tabriic${activeElite}-${activeLevel}`).toggleClass("active")
+        $(`#riic${activeElite}-${activeLevel}`).toggleClass("active")
+    }
+
     function GetRiic(opdata2){
         var charaRiic = db.build.chars[Object.keys(opdata2)[0]]
         var riicList = []
@@ -2997,7 +3125,7 @@
         });
 
         
-        // console.log(everybuff)
+        
         riicList.forEach(eachcat =>{
             // checkphase.list.push(eachbuffdata.buffId)
             
@@ -3021,7 +3149,7 @@
                 // console.log(sortedbuff)
             });
         })
-
+        console.log(riicList)
         var htmlcomb = []
         
         riicList.forEach(eachcat => {
@@ -3043,9 +3171,9 @@
             });
             
             var imagereq = []
-                if(eachcat.level >0)
+                if(eachcat.level >1)
                 imagereq.push(`Lv.${eachcat.level}`)
-                if(eachcat.phase>0)
+                if(eachcat.phase>=0)
                 imagereq.push(`<img src="./img/ui/elite/${eachcat.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachcat.phase}">`)
             var currinfo = `<div style="color:#999;background:#222;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
             htmlcomb.push(`
@@ -3151,9 +3279,9 @@
                 }
             });
         });
-        console.log(activeElite)
-        console.log(activeLevel)
-        console.log(activePotential)
+        // console.log(activeElite)
+        // console.log(activeLevel)
+        // console.log(activePotential)
 
         talentObject.req2 = talentObject.req2.sort((a,b)=>{
             var calc = 0
@@ -3188,17 +3316,25 @@
 
             var imagereq = []
             if(!potential.includes(currpotent)){
-                if(currpotent+1 >0)
-                    imagereq.push(`<img src="./img/ui/potential/${currpotent+1}.png" style="width:18px"> ${currpotent+1}`)
-                talentTab2.push(`
-                <li class='nav-item' style="" title='Potential ${currpotent+1}'>                     
-                    <button class='btn horiz-small nav-link talentlink talenttabpot' data-toggle='pill' id='tabtalent2${currpotent}' onclick='TalentShow(-1,-1,${currpotent})' style="padding:0px 0px;margin:0px 0px 0px 2px;background:#666;width:50px">
-                    ${imagereq.join("")}
-                    </button>
-                </li>
-                `)
+                
                 potential.push(currpotent)
             }
+        });
+
+        potential = potential.sort((a,b)=>{
+            return a-b
+        })
+        potential.forEach(currpotent => {
+            var imagereq = []
+            if(currpotent+1 >0)
+                imagereq.push(`<img src="./img/ui/potential/${currpotent+1}.png" style="width:18px"> ${currpotent+1}`)
+            talentTab2.push(`
+            <li class='nav-item' style="" title='Potential ${currpotent+1}'>                     
+                <button class='btn horiz-small nav-link talentlink talenttabpot' data-toggle='pill' id='tabtalent2${currpotent}' onclick='TalentShow(-1,-1,${currpotent})' style="padding:0px 0px;margin:0px 0px 0px 2px;background:#666;width:50px">
+                ${imagereq.join("")}
+                </button>
+            </li>
+            `)
         });
 
         console.log(talentObject.req2)
@@ -3247,7 +3383,7 @@
         });
         // console.log(talenthtml)
 
-        console.log(talentObject)
+        // console.log(talentObject)
         $("#op-talentlist").html(`
         <div style="padding-top:10px">
             <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talents</div> 
