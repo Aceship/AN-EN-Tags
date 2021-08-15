@@ -3730,7 +3730,7 @@
     function GetTrait(desc,trait,traitname = "Traits"){
         console.log(desc)
         console.log(trait)
-        if(trait&&(trait.candidates[0].overrideDescripton||trait.candidates[0].additionalDescription)){
+        if(trait&&(trait.candidates.length>0)){
             var num = 1
             var tabs = []
             var contents = []
@@ -3761,14 +3761,23 @@
                     tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].additionalDescription)
                 }
                 console.log(`Trait info : ${trait.candidates[trait.candidates.length-1].overrideDescripton}`)
+                if(!tl){
+                    tl = GetFullTraitsTranslation(desc)
+                }
+                
                 var traitdescription = ""
                 var traitcolor = ""
                 if(tl){
                     traitdescription = tl.en
                     traitcolor = tl.color
-                }else{
+                }else {
                     traitdescription = trait.candidates[trait.candidates.length-1].overrideDescripton
                 }
+
+                
+
+                console.log(traitdescription)
+
                 contents.push(`
                 <div class='tab-pane container ${num!=trait.candidates.length ? '' : 'active'}' id='trait${num}'>
                     ${ChangeDescriptionColor(ChangeDescriptionContent(traitdescription,element.blackboard),true)}
