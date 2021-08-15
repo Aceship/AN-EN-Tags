@@ -1090,7 +1090,9 @@
         Object.keys(db.chars).forEach(id => {
             let curops = db.chars[id]
             curops.id = id
-            ops.push(curops)
+            if(curops.profession != "TOKEN" && curops.profession != "TRAP"){
+                ops.push(curops)
+            }
         });
         console.log(ops)
         // let ops = Object.values(db.chars).filter(char => char.profession != "TOKEN" && char.profession != "TRAP");
@@ -1112,6 +1114,8 @@
                 return op_branch.includes(checksubclass)
             }
         });
+
+        console.log(op_rarity)
         // using query in a lambda is really awful. "sex" should be in chars, not chars2
         if (op_rarity.length)  ops = ops.filter(char => {
             return op_rarity.includes(char.rarity)
@@ -1167,6 +1171,7 @@
 
             isgrouped = false
         }
+        
         
         console.log(totalRarity)
         $("#selectedopclass").html(ops.map(char =>{
