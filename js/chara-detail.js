@@ -3134,6 +3134,15 @@
                             activePotential = currpotent
                         }
                     }
+                    if(currphase==0&&activeElite<=0){
+                        activeElite=0
+                        if(activeLevel<currlevel){
+                            activeLevel= currlevel
+                        }
+                        if(opdataFull.rarity<=2&&activePotential<currpotent){
+                            activePotential = currpotent
+                        }
+                    }
                 }
             });
         });
