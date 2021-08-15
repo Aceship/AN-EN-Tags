@@ -88,6 +88,8 @@
     var globallevel =[1,1,1]
     var globalskill = 0
     var israritygrouped 
+    var talentValue = [0,0,0]
+    var talentLimit = []
 
     var currskin 
     var spinewidgettoken
@@ -3102,6 +3104,9 @@
         var talenttype = 0
         var talentObject = {req:[],req2:[],talents:[],html:{}}
         var talentTab = []
+        var talentTab2 = []
+        var elitelevel = []
+        var potential = []
         var activeLevel = 0
         var activeElite = 0
         var activePotential = 0
@@ -3143,25 +3148,43 @@
             + (a[2]-b[2])*1
             return calc
         })
-        
+        talentLimit = talentObject.req2
         talentObject.req2.forEach(reqs => {
             var imagereq = []
             var currlevel = reqs[1]
             var currphase = reqs[0]
             var currpotent = reqs[2]
-            if(currphase >=0)
-                imagereq.push(`<img src="./img/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
-            if(currlevel >1)
-                imagereq.push(`<span style='font-size:11px;margin-left:-6px'><span style='font-size:4px'>Lv.</span>${currlevel}</span>`)
-            if(currpotent >0)
-                imagereq.push(`<img src="./img/ui/potential/${currpotent+1}.png" style="width:18px">`)
-            talentTab.push(`
-            <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} | Potential ${currpotent+1}'>                     
-                <button class='btn horiz-small nav-link talentlink' data-toggle='pill' id='tabtalent${currphase}-${currlevel}-${currpotent}' href='#talent${currphase}-${currlevel}-${currpotent}' style="padding:0px 0px;margin:0px 1px 0px 1px;background:#666;width:50px">
-                ${imagereq.join("")}
-                </button>
-            </li>
-            `)
+            var elreq = `${currphase}${currlevel}`
+            if(!elitelevel.includes(elreq)){
+                if(currphase >=0)
+                    imagereq.push(`<img src="./img/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
+                if(currlevel >1)
+                    imagereq.push(`<span style='font-size:11px;margin-left:-2px'><span style='font-size:6px'>Lv.</span>${currlevel}</span>`)
+                
+                talentTab.push(`
+                <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} '>                     
+                    <button class='btn horiz-small nav-link talentlink' data-toggle='pill' id='tabtalent${currphase}-${currlevel}' onclick='TalentShow(${currphase},${currlevel},-1)' style="padding:0px 0px;margin:0px 2px 0px 0px;background:#666;width:50px">
+                    ${imagereq.join("")}
+                    </button>
+                </li>
+                `)
+                elitelevel.push(elreq)
+            }
+            
+
+            var imagereq = []
+            if(!potential.includes(currpotent)){
+                if(currpotent+1 >0)
+                    imagereq.push(`<img src="./img/ui/potential/${currpotent+1}.png" style="width:18px"> ${currpotent+1}`)
+                talentTab2.push(`
+                <li class='nav-item' style="" title='Potential ${currpotent+1}'>                     
+                    <button class='btn horiz-small nav-link talentlink talenttabpot' data-toggle='pill' id='tabtalent2${currpotent}' onclick='TalentShow(-1,-1,${currpotent})' style="padding:0px 0px;margin:0px 0px 0px 2px;background:#666;width:50px">
+                    ${imagereq.join("")}
+                    </button>
+                </li>
+                `)
+                potential.push(currpotent)
+            }
         });
 
         console.log(talentObject.req2)
@@ -3194,7 +3217,7 @@
         Object.keys(talentObject.html).forEach(key => {
             var currhtml = talentObject.html[key]
             talenthtml += `
-            <div class='tab-pane container' id='talent${key}'>    
+            <div class='tab-pane container alltalentinfo' id='talent${key}'>    
             `
             Object.keys(currhtml.talents).forEach(eachtalent => {
                 var currtalent = currhtml.talents[eachtalent]
@@ -3215,9 +3238,12 @@
         <div style="padding-top:10px">
             <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talents</div> 
                 <div class="ak-shadow" style="margin-bottom:8px;padding:0px;padding-bottom:2px;background:#666">
-                    <div style="width:100%;background:#444">
-                        <ul class='nav nav-pills' id='talent-tabs' style="margin: 0px 0px 0px 0px">
+                    <div style="width:100%;background:#444;display:inline-flex">
+                        <ul class='nav nav-pills' id='talent-tabs' style="margin: 0px 0px 0px 0px;width:50%">
                             ${talentTab.join("")}
+                        </ul>
+                        <ul class='nav nav-pills' id='talent2-tabs' style="margin: 0px 0px 0px 0px;width:50%;justify-content:right">
+                            ${talentTab2.join("")}
                         </ul>
                     </div>
                     <div class="tab-content" id="talents-contents" style="margin: 2px 0px 2px 0px;">
@@ -3228,9 +3254,65 @@
         `) 
 
         //check  active 
-        $(`#tabtalent${activeElite}-${activeLevel}-${activePotential}`).toggleClass("active")
-        $(`#talent${activeElite}-${activeLevel}-${activePotential}`).toggleClass("active")
+        TalentShow(activeElite,activeLevel,activePotential)
+        $(`#tabtalent${activeElite}-${activeLevel}`).toggleClass("active")
+        $(`#tabtalent2${activePotential}`).toggleClass("active")
     }
+
+    function TalentShow(elite,level,potential){
+        var waspot = potential
+
+        if(elite == -1) elite = talentValue[0]
+        if(level == -1) level = talentValue[1]
+        if(potential == -1) {
+            potential = talentValue[2]
+        }
+        
+        // console.log(talentLimit)
+        // console.log(`${elite}-${level}-${potential}`)
+        // console.log(talentLimit.includes(`${elite}-${level}-${potential}`))
+        var currlimit = talentLimit.find(limit =>{
+            if(`${limit[0]}-${limit[1]}-${limit[2]}`==`${elite}-${level}-${potential}`){
+                return true
+            }
+            return false
+        })
+
+
+        if (currlimit){
+            $(`.alltalentinfo`).removeClass("active")
+            $(`#talent${elite}-${level}-${potential}`).addClass("active")
+        }else{
+            var maxpot = 0
+            if(waspot == -1){
+                talentLimit.forEach(limit => {
+                    if(limit[0]==elite&&limit[1]==level){
+                        maxpot = Math.max(maxpot,limit[2])
+                    }
+                });
+                console.log(maxpot)
+                $(`.talenttabpot`).removeClass("active")
+                $(`#tabtalent2${maxpot}`).toggleClass("active")
+                $(`.alltalentinfo`).removeClass("active")
+                $(`#talent${elite}-${level}-${maxpot}`).addClass("active")
+                potential = maxpot
+            }else{
+
+            }
+        }
+        
+
+        
+
+        
+        // $(`#tabtalent${elite}-${level}`).toggleClass("active")
+        
+
+        
+
+        talentValue = [elite,level,potential]
+    }
+
     function TalentParse2(eachtalent,talentnum){
         // console.log(talentnum)
         var imagereq = []
