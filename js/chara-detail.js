@@ -3090,7 +3090,6 @@
         })
 
         var combinehtml =`
-        <div style="padding-top:10px">
             <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Infrastructure Skills</div> 
                 <div class="ak-shadow" style="margin-bottom:8px;padding:0px;padding-bottom:2px;background:#666">
                     <div style="width:100%;background:#444;display:inline-flex;justify-content:space-between">
@@ -3102,7 +3101,7 @@
                         ${riiccontent.join("")}
                     </div>
                 </div>
-        </div>`
+        `
         $("#op-riic").html(combinehtml)
 
         $(`#tabriic${activeElite}-${activeLevel}`).toggleClass("active")
