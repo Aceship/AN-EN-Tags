@@ -18,6 +18,7 @@
         uniequip        :"./json/gamedata/zh_CN/gamedata/excel/uniequip_table.json",
         battle_equip    :"./json/gamedata/zh_CN/gamedata/excel/battle_equip_table.json",
         stage           :"./json/gamedata/zh_CN/gamedata/excel/stage_table.json",
+        favor          :"./json/gamedata/zh_CN/gamedata/excel/favor_table.json",
 
         //EN
         charsEN         :"./json/gamedata/en_US/gamedata/excel/character_table.json",
@@ -1994,12 +1995,32 @@
                     if(currequip.itemCost){
                         var imagereq = []
                         if(currequip.unlockEvolvePhase >=0)
-                        imagereq.push(`<img src="./img/ui/elite/${currequip.unlockEvolvePhase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${currequip.unlockEvolvePhase}">`)
+                        imagereq.push(`
+                            <div style="color:#fff;font-size:13px;background:#444;display:inline-block;padding:2px;border-radius:2px">
+                                <img src="./img/ui/elite/${currequip.unlockEvolvePhase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${currequip.unlockEvolvePhase}">
+                            </div>
+                        `)
                         if(currequip.unlockLevel >1)
-                        imagereq.push(`Lv.${currequip.unlockLevel}`)
+                        imagereq.push(`
+                            <div style="color:#fff;font-size:13px;background:#444;display:inline-block;padding:2px;border-radius:2px">
+                                <span style="font-size:8px">Lv.</span>${currequip.unlockLevel}
+                            </div>
+                        `)
+                        if(currequip.unlockFavorPoint>0){
+                            console.log(currequip.unlockFavorPoint)
+                            let trust = db.favor.favorFrames.find(favor=>favor.level==currequip.unlockFavorPoint)
+                            console.log(trust)
+                            imagereq.push(`
+                            <div style="color:#fff;font-size:13px;background:#444;display:inline-block;padding:2px;border-radius:2px">
+                                ${trust.data.percent}% <span style="font-size:8px">Trust</span>
+                            </div>
+                            `)
+                        }
+                        
                         
                         equiphtml += `
-                        <div style="text-align:center;background:#222;color:#fff;margin-top:5px">Unlock Requirements ${imagereq.join("")}</div>
+                        <div style="text-align:center;background:#222;color:#fff;margin-top:5px">Unlock Requirements</div>
+                        <div style="text-align:center;background:#222;color:#fff;margin:0px;padding:0px 0px 2px 0px">${imagereq.join(" ")}</div>
                         <div style="text-align:center">
                         `
                         currequip.itemCost.forEach(item => {
