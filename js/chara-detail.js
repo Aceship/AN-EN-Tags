@@ -1079,11 +1079,18 @@
             op_rarity.length ==0 &&
             op_gender.length == 0 &&
             op_tag.length == 0 &&
-            // op_faction.length == 0 &&
+            $("#filter-equip").hasClass("btn-secondary") &&
             op_skill.length == 0) return;
 
         // EXTRACTION
-        let ops = Object.values(db.chars).filter(char => char.profession != "TOKEN" && char.profession != "TRAP");
+        let ops = []
+        Object.keys(db.chars).forEach(id => {
+            let curops = db.chars[id]
+            curops.id = id
+            ops.push(curops)
+        });
+        console.log(ops)
+        // let ops = Object.values(db.chars).filter(char => char.profession != "TOKEN" && char.profession != "TRAP");
 
         // FILTERING
         if (op_class.length) ops = exclusive_class ? ops.filter(char => op_class[0] == char.profession)
@@ -1121,6 +1128,8 @@
                                                             db.skills[skill.skillId].levels.filter(sp =>
                                                                 op_skill.includes(sp.spData.spType)).length).length);
 
+        if ($("#filter-equip").hasClass("btn-primary")) ops = ops.filter(char=>Object.keys(db.uniequip.charEquip).includes(char.id))
+
         // SORTING
         ops = ops.sort((a, b) => sortFilter(getStat(a, "atk"), getStat(b, "atk"), "atk")    * 100000 * 10000 * 1000 + // def is never more than 1 000
                                  sortFilter(getStat(a, "def"), getStat(b, "def"), "def")    * 100000 * 10000 +        // maxHp is never more than 10 000
@@ -1142,7 +1151,7 @@
         showfaction=true
         var rarity = -1
         var numrar=0
-        console.log($("#order-atk").hasClass("btn-enabled"))
+        // console.log($("#order-atk").hasClass("btn-enabled"))
 
         var isgrouped = israritygrouped
         if(
