@@ -3252,11 +3252,11 @@
         <div style="padding-top:10px">
             <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talents</div> 
                 <div class="ak-shadow" style="margin-bottom:8px;padding:0px;padding-bottom:2px;background:#666">
-                    <div style="width:100%;background:#444;display:inline-flex">
-                        <ul class='nav nav-pills' id='talent-tabs' style="margin: 0px 0px 0px 0px;width:50%">
+                    <div style="width:100%;background:#444;display:inline-flex;justify-content:space-between">
+                        <ul class='nav nav-pills' id='talent-tabs' style="margin: 0px 0px 0px 0px;width:unset">
                             ${talentTab.join("")}
                         </ul>
-                        <ul class='nav nav-pills' id='talent2-tabs' style="margin: 0px 0px 0px 0px;width:50%;justify-content:right">
+                        <ul class='nav nav-pills' id='talent2-tabs' style="margin: 0px 0px 0px 0px;width:unset;justify-content:right">
                             ${talentTab2.join("")}
                         </ul>
                     </div>
