@@ -420,9 +420,9 @@ body {
 
 .chara-detail-container .small-container .topright, #skill-contents .topright {
     float: right; 
-    margin-top: -40px;
-    width: 80px;
-    right: 10px;
+    margin-top: -20px;
+    width: 90px;
+    right: 0px;
     position: relative;
 }
 
@@ -513,10 +513,17 @@ body {
 }
 
 
-#skill-tabs .skillname {
-    line-height: 22px;
-    padding: 10px;
-    max-width: 255px;
+.skillname {
+    display: inline-flex !important;
+    line-height: 16px;
+    padding-top : 16px !important;
+    /* padding: 10px; */
+    height: 100%;
+    max-width: calc(100% - 70px);
+    
+}
+.skillname div{
+    align-self: center;
 }
 
 #skill-tabs, #elite-topnav {
@@ -622,7 +629,9 @@ body {
     right: 0px;
     top: 0px;
 }
-
+.topright.maxlevel{
+    margin-top: -30px !important;
+}
 #op-displaynum {
     position: absolute;
     font-weight: 700;
@@ -1092,6 +1101,19 @@ body {
     border-radius: 0px !important;
     padding: 4px 10px;
 }
+.equipname
+{
+    display: inline-flex !important;
+    line-height: 16px;
+    padding-top : 16px !important;
+    /* padding: 10px; */
+    height: 100%;
+    max-width: calc(100% - 70px);
+    
+}
+.equipname div{
+    align-self: center;
+}
 .tablink
 {
     border-radius: 0px !important;
@@ -1120,10 +1142,10 @@ body {
 
 .equipimage
 {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     position: absolute;
-    top: -52px;
+    top: -40px;
     right: 5px;
     background: #333333;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

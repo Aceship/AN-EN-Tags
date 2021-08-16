@@ -1859,7 +1859,7 @@
                 <div class='tab-pane container clickthrough ${i!=0 ? '' : 'active'}' id='skill${i}'>
                     <div class='small-container' style='margin-top: 50px;'>
                         <p class='large-text'>Skill ${i+1}</p>
-                        <span class='custom-span skillname notclickthrough'>${skillname}</span>
+                        <span class='custom-span skillname notclickthrough'><div>${skillname}</div></span>
                             <div class='topright'>
                                 <div style='margin-top:-10px;padding:10px'>
                                     <img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='img/skills/skill_icon_${skillIcon}.png' style='width: 100%;'>
@@ -2060,12 +2060,12 @@
                     contenthtml =`
                     <div class='tab-pane container ${num!=2 ? '' : 'active'}' id='equip${num}'>
                         <div class='small-container' style='margin-top: 50px;'>
-                            <span class='custom-span equipname'>${currequip.uniEquipName}</span>
+                            <span class='custom-span equipname'><div>${currequip.uniEquipName}</div></span>
                             
                                 <div class='equipimage'>
-                                    <button type="button" class="btn ak-button" style="width:110px;height:110px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
+                                    <button type="button" class="btn ak-button" style="width:90px;height:90px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
                                         <span style="position:absolute;font-size: 14px;bottom:4px;left:4px;color:#fff;background:#222222dd;padding:4px;border-radius:2px" class="fa fa-search-plus"> Info</span>
-                                        <img class='equip-image' id='equip${num}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width: 110px;height:110px;object-fit:contain'>
+                                        <img class='equip-image' id='equip${num}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width: 90px;height:90px;object-fit:contain'>
                                     </button>
                                 </div>
                             
