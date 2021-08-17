@@ -1563,10 +1563,12 @@
                 $("#op-nameRead").empty()
             }
             var gender = query(db.gender,"sex_cn",opdata.sex);
-            
-            $("#op-gender").html(titledMaker(gender['sex_'+lang],`Gender`))
+            $("#op-gender").removeClass(`gender-male`)
+            $("#op-gender").removeClass(`gender-female`)
+            $("#op-gender").html(`<i class="fas fa-${gender['sex_'+lang].toLowerCase()}"></i> ${gender['sex_'+lang]}`)
+            $("#op-gender").addClass(`gender-${gender['sex_'+lang].toLowerCase()}`)
             var position = query(db.tags,"tag_cn",opdataFull.position);
-            $("#op-position").html(titledMaker(position['tag_'+lang],`Position`))
+            $("#op-position").html(position['tag_'+lang],`Position`)
 
             
 
@@ -1619,13 +1621,16 @@
                 if(tag){
                     var tagReg = tag['tag_'+reg];
                     var tagTL = tag['tag_'+lang];
-                    tags_html.push("<li style=\"list-style-type:none; padding-bottom: 10px;\"><button readonly type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
-                            (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
+                    tags_html.push(`
+                        ${titledMaker2(tagTL,"")}
+                    `)
+                    // tags_html.push("<li style=\"list-style-type:none; padding-bottom: 10px;\"><button readonly type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
+                    //         (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button></li>");
                 }
             });
-            var newtags = `<div style='margin-top: 12px;margin-bottom:0px'>${tags_html.join("")}</div>`
+            var newtags = `<div style=''>${tags_html.join("")}</div>`
             // $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
-            $("#op-taglist").append(titledMaker(newtags,"Tags","","","padding-bottom:-40px"));
+            $("#op-taglist").append(newtags);
 
 
             GetRiic2(opdata2)
@@ -2638,7 +2643,7 @@
                                     console.log(content)
                                     content= db.storytextTL[content.trim()]
                                     if (!content) content = infoTitle[4].trim()
-                                    $("#op-gender").html(titledMaker(content,`Gender`))
+                                    $("#op-gender").html(`<i class="fas fa-${content.toLowerCase()}"></i> ${content}`)
                                     ;break;
                                     case "表演经验":
                                     case "出厂时间":
