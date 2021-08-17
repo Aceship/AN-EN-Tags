@@ -3807,7 +3807,7 @@
                 ${contents.join("")}
                 </div>
             </div>
-            `,traitname,`${color?`ak-trait-${color}`:""}`,"","white-space:initial;")
+            `,traitname,`${color?`ak-trait ak-trait-${color}`:""}`,"","white-space:initial;")
 
         }else{
             var curspec = GetFullTraitsTranslation(desc)
@@ -3818,7 +3818,7 @@
                 ${ChangeDescriptionColor(content,true)}</br>
                 
                 `
-                return titledMaker(text,traitname,`ak-trait-${curspec.color}`,"","white-space:initial;")
+                return titledMaker(text,traitname,`ak-trait ak-trait-${curspec.color}`,"","white-space:initial;")
             }
             else{
                 return titledMaker(ChangeDescriptionColor(desc).replace("\\n","</br>"),traitname,``,"","white-space: normal;")
@@ -3932,7 +3932,7 @@
         // console.log(splitdescTL)
         // console.log(color)
 
-        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait-${color}`,"","white-space:initial;")
+        return titledMaker(splitdescTL.join("</br>"),"Traits",`ak-trait ak-trait-${color}`,"","white-space:initial;")
         // splitdescTL
     }
 
