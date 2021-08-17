@@ -1235,6 +1235,10 @@
     }
     function selectOperator(opname,from='Selecting Operator From Browse'){
         $("#opchoosemodal").modal('hide');
+
+        if(spinewidgetcg){
+            spinewidgetcg.pause()
+        }
         if(opname != ""){
             $("#chara-detail-container").show();
             console.log("SELECT OPERATOR");
@@ -4818,17 +4822,15 @@
         var skinname = currskin.split(opdataFull.id)[1]?name.split(opdataFull.id)[1]:""
         console.log(opdataFull.id)
         console.log(skinname)
-        if(spinewidgettoken){
-            console.log("      waaa "+tokenname)
-            LoadAnimationToken(tokenname+skinname)
-        }
+
+        
+        
         if(name!="")chibiName=name
         if(pers!="")chibipers=pers
         if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
         else chibiName.includes("build")?chibiName=chibiName.split("_").slice(1).join("_"):chibiName=chibiName
         folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
-        LoadAnimation()
-
+        
         if($("#spine-frame-op:visible")){
             $("#spine-frame-op").fadeOut(200)
             $("#tabs-opCG").fadeIn(200)
@@ -4837,7 +4839,13 @@
             }
         }
 
-        
+        if($("#spine-frame").is(":visible")){
+            if(spinewidgettoken){
+                console.log("      waaa "+tokenname)
+                LoadAnimationToken(tokenname+skinname)
+            }
+            LoadAnimation()
+        }
     }
 
     function ShowDynamic(name){
