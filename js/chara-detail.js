@@ -2997,7 +2997,6 @@
         var riiccontent = []
         var activeLevel = 0
         var activeElite = 0
-
         charaRiic.buffChar.forEach(eachbuffchar => {
             everybuff.push(eachbuffchar.buffData)
             eachbuffchar.buffData.forEach(eachbuffdata => {
@@ -3011,7 +3010,15 @@
         if (riicList.length==0){
             return
         }
-        
+        riicList = riicList.sort((a,b)=>{
+            var calc = 0 
+            calc += (a.phase - b.phase)*100
+            + (a.level - b.level)*1
+
+            console.log(calc)
+            return calc
+        })
+
         riicList.forEach(eachcat =>{
             // checkphase.list.push(eachbuffdata.buffId)
             var currlevel = eachcat.level
