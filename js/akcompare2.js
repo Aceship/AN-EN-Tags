@@ -14,7 +14,8 @@ const jsonList = {
     unreadableTL    :"./json/tl-unreadablename.json",
     potsTL          :"./json/tl-potential.json",
     talentsTL       :"./json/ace/tl-talents.json",
-    campdata        :"./json/tl-campdata.json"
+    campdata        :"./json/tl-campdata.json",
+    named_effects   :"./json/named_effects.json"
 };
 
 var db = {}
