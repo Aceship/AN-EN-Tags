@@ -240,7 +240,7 @@
             currHtml.push(`<div class="row riicbody" style="">
                             <div class="riic-avatar" style="">
                                 <div class="riic-avatar2">
-                                    <div ><img class='riic-pic' src="img/avatars/${element.name}.png" style="height:120px"></div>
+                                    <div ><img class='riic-pic' src="img/avatars/${element.name}.png"></div>
                                     <div class="riic-name">${chara.appellation}</div>
                                 </div>
                             </div>
