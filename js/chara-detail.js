@@ -3481,10 +3481,10 @@
     function TalentParse2(eachtalent,talentnum){
         // console.log(talentnum)
         var imagereq = []
-        // if(eachtalent.talent.unlockCondition.level >1)
-        // imagereq.push(`Lv.${eachtalent.talent.unlockCondition.level}`)
-        // if(eachtalent.talent.unlockCondition.phase >=0)
-        // imagereq.push(`<img src="./img/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
+        if(eachtalent.talent.unlockCondition.level >1)
+        imagereq.push(`<span style="font-size:8px">Lv.</span>${eachtalent.talent.unlockCondition.level} `)
+        if(eachtalent.talent.unlockCondition.phase >=0)
+        imagereq.push(`<img src="./img/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
         if(eachtalent.talent.requiredPotentialRank >0)
         imagereq.push(`<img src="./img/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
 
