@@ -1709,6 +1709,14 @@
                     }
                     
                     if(v2.rangeId)grid = rangeMaker(v2.rangeId)
+
+                    var skillblacklistrange = [
+                        "skchr_tachak_2"
+                    ]
+
+                    if(skillblacklistrange.includes(v2.prefabId)){
+                        grid = ""
+                    }
                     
                     var spType = (v2.spData.spType)
                     // console.log(spType)
@@ -3494,15 +3502,23 @@
             return `\< ${rtf} \>`
         })
         // console.log(eachtalent.talent.name)
-        var isTalentRange =  eachtalent.talent.name=="新人教官"?undefined:eachtalent.talent.rangeId
-
+        var isTalentRange = eachtalent.talent.rangeId
+        var blacklist = 
+        ["新人教官"]
+        if(blacklist.includes(eachtalent.talent.name)){
+            isTalentRange = undefined
+        }
+        console.log(eachtalent)
+        var isTalentRangeExtend 
         var talentdetails = []
         eachtalent.talent.blackboard.forEach(talentInfo=>{
             var talentjson={}
             talentjson.name = db.effect[talentInfo.key]?db.effect[talentInfo.key]:talentInfo.key
             talentjson.key = talentInfo.key
             talentjson.value = talentInfo.value
-
+            if(talentInfo.key=="ability_range_forward_extend"){      
+                isTalentRangeExtend = rangeMaker(opdataFull.phases[0].rangeId,true,talentjson.value)
+            }
             talentdetails.push(talentjson)
         })
 
@@ -3537,7 +3553,7 @@
         }
         return (`
         <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-        <div style="vertical-align:top;${isTalentRange?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
+        <div style="vertical-align:top;${isTalentRange||isTalentRangeExtend?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
             <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">${currTalentName} ${info}</div>
             <div style="font-size:13px; font-family:'Source Sans Pro'">
             <div class="ak-line">
@@ -3549,6 +3565,7 @@
             
         </div>
             ${isTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
+            ${isTalentRangeExtend?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${isTalentRangeExtend}</div>`:""}
         </div>
         `)
     }
