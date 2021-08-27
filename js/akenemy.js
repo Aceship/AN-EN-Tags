@@ -62,6 +62,7 @@
     var animationqueue
     var chibiscaleweb = 0
     var chibiscaleweblist = [[0.5,-775],[0.6,-800],[0.7,-825],[0.8,-850],[0.9,-875],[1,-900]]
+    var savenum = 0
 
     $(document).ready(function(){
         FilterType("BOSS")
@@ -104,7 +105,18 @@
             $("#navitemLanguage").addClass('ak-disable2');
         });
     });
-    
+    $('#Chibi-download').click(function(event){
+        // var canvas = spinewidget.canvas
+        
+        var checkdiv = $("#spine-widget").children()[0]
+        console.log(checkdiv)
+        var img = checkdiv.toDataURL("image/png");
+        var link = document.createElement("a");
+        link.download = `${chibiName}-${savenum}.png`;
+        savenum++
+        link.href = img;
+        link.click();
+    });
     function regDropdown(el){
         localStorage.setItem('gameRegion', el.attr("value"));
         $(".dropdown-item.reg").removeClass("selected");
@@ -479,6 +491,7 @@
             
             $("#loading-spine").fadeIn(200)
             console.log(chibiname)
+            chibiName = chibiname
             xhr.onloadend = function (e) {
                 if (xhr.status != 404) {
                     buffer = xhr.response;
