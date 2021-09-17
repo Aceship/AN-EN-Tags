@@ -3803,8 +3803,12 @@
                 if(tl){
                     traitdescription = tl.en
                     traitcolor = tl.color
-                }else {
+                }
+                if(!traitdescription) {
                     traitdescription = trait.candidates[trait.candidates.length-1].overrideDescripton
+                }
+                if(!traitdescription){
+                    traitdescription = trait.candidates[trait.candidates.length-1].additionalDescription
                 }
 
                 
@@ -4241,6 +4245,10 @@
     }
 
     function ChangeDesc1(desc,addbackgroundcolor = false){
+        if(!desc){
+            console.log("DESC NULL")
+            return desc
+        }
         desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich = db.dataconst.richTextStyles[rtf];
             if (rich) {
@@ -4258,6 +4266,10 @@
         return desc
     }
     function ChangeDesc2(desc){
+        if(!desc){
+            console.log("DESC NULL")
+            return desc
+        }
         desc = desc.replace(/<[$](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich2 = db.named_effects.termDescriptionDict[rtf];
             if (!rich2){
@@ -4284,6 +4296,10 @@
             blackboard = skill.blackboard
         }
         // console.log(desc)
+        if(!desc){
+            console.log("DESC NULL")
+            return desc
+        }
         desc = desc.replace(/\{{0,1}\{([A-Z@_a-z\[\]0-9.]+)\}{0,1}:(.{1,4})\}/g, function(m, content, format) {
             for (var i = 0; i < blackboard.length; i++) {
                 if (blackboard[i].key==content){
