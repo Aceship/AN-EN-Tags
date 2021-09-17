@@ -18,7 +18,8 @@
         uniequip        :"./json/gamedata/zh_CN/gamedata/excel/uniequip_table.json",
         battle_equip    :"./json/gamedata/zh_CN/gamedata/excel/battle_equip_table.json",
         stage           :"./json/gamedata/zh_CN/gamedata/excel/stage_table.json",
-        favor          :"./json/gamedata/zh_CN/gamedata/excel/favor_table.json",
+        favor           :"./json/gamedata/zh_CN/gamedata/excel/favor_table.json",
+        enemy           :"./json/gamedata/zh_CN/gamedata/excel/enemy_handbook_table.json",
 
         //EN
         charsEN         :"./json/gamedata/en_US/gamedata/excel/character_table.json",
@@ -26,6 +27,7 @@
         charwordEN      :"./json/gamedata/en_US/gamedata/excel/charword_table.json",
         skillsEN        :"./json/gamedata/en_US/gamedata/excel/skill_table.json",
         item_tableEN    :"./json/gamedata/en_US/gamedata/excel/item_table.json",
+        enemyEN         :"./json/gamedata/en_US/gamedata/excel/enemy_handbook_table.json",
 
 
         //Utilities
@@ -2121,8 +2123,12 @@
                 `
                 break;
             case "EquipmentDeployStage":
+                var character = db.chars[mission.paramList[2].split(";")[0]]
+                var extra = ""
+                console.log(character)
+                if (character.profession=="TOKEN") extra = "summons of"
                 tl=`
-                    Complete <@ba.kw>${mission.paramList[0]}</> stages, Deploy at least <@ba.kw>${mission.paramList[1]}</> summons of Non-Borrowed <@ba.kw>${db.chars[mission.paramList[3]].appellation}</> in each stage
+                    Complete <@ba.kw>${mission.paramList[0]}</> stages, Deploy at least <@ba.kw>${mission.paramList[1]}</> ${extra} Non-Borrowed <@ba.kw>${db.chars[mission.paramList[3]].appellation}</> in each stage
                     `
                 break;
             case "EquipmentDeployTotal":
@@ -2147,6 +2153,19 @@
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
                     Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> ${squadinfo}
                  `
+                break;
+            case "EquipmentSquadProEx":
+                var splitsquad = mission.paramList[3].split(";")
+                var stage = db.stage.stages[mission.paramList[1]].code
+                var squads = []
+                splitsquad.forEach(element => {
+                    squads.push(query(db.classes,"type_data",element).type_en)
+                });
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> 
+                    </br>Other <@ba.kw>${squads.join(", ")}</> not allowed in party
+                    `
                 break;
             case "EquipmentSquadProStage":
                 var splitsquad = mission.paramList[2].split(",")
@@ -2181,6 +2200,13 @@
                     Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> ${squadinfo}
                     `
                 break;
+            case "EquipmentSquadNum":
+                var stage = db.stage.stages[mission.paramList[1]].code
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> and max of <@ba.kw>${mission.paramList[3]}</> other operator
+                    `
+                break;
             case "EquipmentSquadStarStage":
                 var splitsquad = mission.paramList[2].split(",")
                 var currclass = `${splitsquad[1]} Star`
@@ -2212,6 +2238,124 @@
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
                     Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> ${squadinfo}
+                    `
+                break;
+            case "EquipmentSkillCastStage":
+                var stage = db.stage.stages[mission.paramList[1]].code
+                var skillId = mission.paramList[2]
+                var currSkill = db.skills[skillId]
+                var skillname = db.skillsTL[skillId]?db.skillsTL[skillId].name:currSkill.name;
+                var skillnum = opdataFull.skills.findIndex(skill => skill.skillId==skillId)
+
+                if(skillnum>=0){
+                    skillnum = `(Skill ${skillnum+1})`
+                }else{
+                    skillnum = ''
+                }
+                console.log(opdataFull.skills)
+                console.log(skillnum)
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[4]].appellation}</>, Cast <@ba.kw>${skillname} ${skillnum}</> skill <@ba.kw>${mission.paramList[3]}</> times
+                    `
+                break;
+            case "EquipmentSkillCast":
+                var skillId = mission.paramList[1]
+                var currSkill = db.skills[skillId]
+                var skillname = db.skillsTL[skillId]?db.skillsTL[skillId].name:currSkill.name;
+                var skillnum = opdataFull.skills.findIndex(skill => skill.skillId==skillId)
+
+                if(skillnum>=0){
+                    skillnum = `(Skill ${skillnum+1})`
+                }else{
+                    skillnum = ''
+                }
+                console.log(opdataFull.skills)
+                console.log(skillnum)
+                tl=`
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[0]].appellation}</>
+                    </br>Cast <@ba.kw>${skillname} ${skillnum}</> skill <@ba.kw>${mission.paramList[2]}</> times
+                    `
+                break;
+            case "EquipmentDamageTotal":
+                tl=`
+                    Deal total of <@ba.kw>${mission.paramList[1]}</> damage </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[0]].appellation}</>
+                    `
+                break;
+            case "EquipmentCharKilledStage":
+                var stage = db.stage.stages[mission.paramList[1]].code
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
+                    </br>Kill <@ba.kw>${mission.paramList[3]}</> enemies 
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</>
+                    `
+                break;
+            case "EquipmentEventTotal":
+                var splitreq = mission.paramList[1].split(",")
+                var objective = ""
+                var enemytype = ""
+
+                switch (splitreq[0]) {
+                    case "DEATHDETAIL":
+                        objective = "Kill"
+                        break;
+                    case "PROJECTILEBORN":
+                        objective = "Launch"
+                        break;
+                    default:
+                        objective = "???"
+                        break;
+                }
+                switch (splitreq[2]) {
+                    case "RANGED":
+                        enemytype = "Ranged enemies"
+                        break;
+                    case "projectile_breeze_s2":
+                        enemytype = "Skill 2 heal projectile"
+                        break;
+                    case "1":
+                        enemytype = "Enemies with skill 1"
+                        break;
+                    case "2":
+                        enemytype = "Enemies with skill 2"
+                        break;
+                    default:
+                        enemytype = "???"
+                        break;
+                }
+                tl=`
+                    ${objective} <@ba.kw>${mission.paramList[2]}</> <@ba.kw>${enemytype}</>
+                    </br>Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[0]].appellation}</>
+                    `
+                break; 
+            case "EquipmentEventStageMore" :
+                var stage = db.stage.stages[mission.paramList[1]].code
+                var splitreq = mission.paramList[3].split(",")
+                var objective = ""
+                var enemycn = db.enemy[splitreq[2]]
+                var enemyen = db.enemyEN[splitreq[2]]
+                var enemyName = enemyen?enemyen.name:enemycn.name
+
+                switch (splitreq[0]) {
+                    case "DEATHDETAIL":
+                        objective = "Kill"
+                        break;
+                    case "PROJECTILEBORN":
+                            objective = "Launch"
+                            break;
+                    default:
+                        objective = "???"
+                        break;
+                }
+                console.log(db.enemy[splitreq[2]])
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
+                    </br>${objective} <@ba.kw>${mission.paramList[4]}</> <@ba.kw>${enemyName}</>
+                    <img src="./img/enemy/${splitreq[2]}.png" style="max-width:50px">
+                    </br>Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</>
+
+                    
                     `
                 break;
         }
