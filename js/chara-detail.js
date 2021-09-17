@@ -2467,8 +2467,9 @@
         var puretextlist =[]
         var isEN = false
         var currTL = db.voicelineTL[opdataFull.id]
-        console.log(db.charword)
-        console.log(currTL)
+        var voiceDict = db.charword.voiceLangDict[opdataFull.id]
+        // console.log(db.charword)
+        // console.log(currTL)
         Object.keys(db.charword.charWords).forEach(element => {
             var curraudio= db.charword.charWords[element]
             // if(db.charwordEN[element]){
@@ -2495,13 +2496,16 @@
                 }
             }
         });
-        console.log(curraudiolist)
+        // console.log(curraudiolist)
         // console.log(puretextlist.join("\n"))
         $('#opaudiocontent').empty()
         $('#opaudiotranslator').empty()
         $('#opaudioproofreader').empty()
         curraudiolist.forEach(element => {
-            var curraudio  =`<audio preload="metadata" controls style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> `
+            var curraudio  =`
+            JP <audio preload="metadata" controls style="margin-top:5px"> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+            <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank">
+            <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>`
             // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
             //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
             // }
@@ -2511,12 +2515,41 @@
             // console.log(currTL)
             // console.log(currTL.voiceline[element.voiceTitle])
             // console.log(voiceTL)
+
+            var audiolist =[]
+            Object.keys(voiceDict.cvDictionary).forEach(dict => {
+                var foldername = "voice"
+                var lang = ""
+                switch (dict) {
+                    case "CN_MANDARIN":
+                        foldername = "voice_cn"
+                        lang = "CN"
+                        break;
+                    case "JP":
+                        lang = "JP"
+                        break;
+                    case "EN":
+                        lang = "EN"
+                        break;
+                    default:
+                        break;
+                }
+                audiolist.push(`
+                <div style="display:inline-block;padding-top:15px;vertical-align:top;width:20px" >${lang}</div>
+                <div style="display:inline-block">
+                <audio preload="metadata" controls style="margin-top:10px"> <source src="./etc/${foldername}/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+                <a href="./etc/${foldername}/${element.voiceAsset}.mp3"  target="_blank">
+                <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
+                </div>`)
+            });
+
             var currhtml = $(`
             <table class="story-table">
             <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
-            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank">
-            <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
-            <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${element.voiceAsset.split("_").slice(-1)[0] }</div>
+            <tr><td style="text-align:center;background:#1a1a1a;vertical-align:middle"><div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:0px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${element.voiceAsset.split("_").slice(-1)[0] }</div>
+            
+            ${audiolist.join(`<tr><td style="text-align:center;background:#1a1a1a;vertical-align:middle">`)} 
+            
             </td></tr>
             <tr><td style="height:10px"></td></tr>
             <tr><td>${voiceTL}</td></tr>
@@ -2538,6 +2571,29 @@
         if(isEN){
             $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">Official EN Arknight</div>`)
         }
+        
+        Object.keys(voiceDict.cvDictionary).forEach(dict => {
+            var lang = ""
+            switch (dict) {
+                case "CN_MANDARIN":
+                    lang = "CN VA"
+                    break;
+                case "JP":
+                    lang = "JP VA"
+                    break;
+                case "EN":
+                    lang = "EN VA"
+                    break;
+                default:
+                    break;
+            }
+            var content = voiceDict.cvDictionary[dict]
+            $('#opaudiocontent').append(`
+            <div style="text-align:center">
+            <div class="btn-infoleft ak-shadow" style="width:100px"><i class="fas fa-microphone-alt" title="Voice Actor"> ${lang}</i></div><div class="btn-inforight" style="width:70%"><a href="https://www.google.com/search?q=Voice+Actor+${content}"  target="_blank">${content}</a></div>
+            </div>
+            `)
+        });
     }
 
     function GetLogo (opdataFull){
