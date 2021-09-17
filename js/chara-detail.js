@@ -2466,9 +2466,10 @@
         var puretextlist =[]
         var isEN = false
         var currTL = db.voicelineTL[opdataFull.id]
+        console.log(db.charword)
         console.log(currTL)
-        Object.keys(db.charword).forEach(element => {
-            var curraudio= db.charword[element]
+        Object.keys(db.charword.charWords).forEach(element => {
+            var curraudio= db.charword.charWords[element]
             // if(db.charwordEN[element]){
             //     var curraudio = db.charwordEN[element]
             //     console.log("waaaaaaaaaaaaaaaaaaaaaa")
