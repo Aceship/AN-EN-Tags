@@ -1970,6 +1970,13 @@
                                 }
                                 if(part.target == "TALENT"){
                                     //??
+                                    console.log(part.rangeId)
+                                    if(part.addOrOverrideTalentDataBundle.candidates[0].rangeId){
+                                        equiphtml+=
+                                    `<div>
+                                        ${titledMaker2(rangeMaker(part.addOrOverrideTalentDataBundle.candidates[0].rangeId,false),"")}
+                                    </div>`
+                                    }
                                 }
 
                             });
