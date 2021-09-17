@@ -1590,6 +1590,7 @@
                 }
             }
             $("#op-subclassName").html(capsubclass)
+            $("#op-subclassName").addClass("subclasssmall")
 
             //TRAIT MAKING
             $("#op-atktype").html(GetTrait(opdataFull.description,opdataFull.trait))
