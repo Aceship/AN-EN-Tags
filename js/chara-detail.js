@@ -4020,9 +4020,6 @@
                     traitdescription = trait.candidates[trait.candidates.length-1].additionalDescription
                 }
 
-                
-
-                console.log(traitdescription)
 
                 contents.push(`
                 <div class='tab-pane container ${num!=trait.candidates.length ? '' : 'active'}' id='trait${num}'>
@@ -4460,6 +4457,10 @@
         }
         desc = desc.replace(/<[@](.+?)>(.+?)<\/>/g, function(m, rtf, text) {
             let rich = db.dataconst.richTextStyles[rtf];
+            let rich2 = db.named_effects.termDescriptionDict[rtf];
+            if (!rich2){
+                rich2 = db.dataconst.termDescriptionDict[rtf]
+            }
             if (rich) {
                 let colorRTF = /<color=(#[0-9A-F]+)>\{0\}<\/color>/;
                 if (colorRTF.test(rich)) {
@@ -4468,6 +4469,14 @@
                 } else {
                     return rich.replace('{0}', text)
                 }
+            } else if (rich2) {
+                return `<span class="stathover" data-toggle="tooltip" data-html="true" data-delay='{ "show": 0, "hide": 500 }' data-placement="bottom" 
+                title='
+                <span class="tooltiptext" style="display:inline-block">
+                    <div class="tooltipHeader">${rich2.termName}</div>
+                    <div class="tooltipcontent">${CreateTooltip(rich2.description)}</div>
+                </span>'
+                style="color:#0098DC">${text}</span>`
             }else{
                 return text
             }
