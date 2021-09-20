@@ -3475,7 +3475,6 @@
         var activeLevel = 0
         var activeElite = 0
         var activePotential = 0
-
         opdataFull.talents.forEach(currTalent => {
             currTalent.candidates.forEach(currCandidate => {
                 var currlevel = parseInt(currCandidate.unlockCondition.level)
@@ -3569,7 +3568,7 @@
             `)
         });
 
-        console.log(talentObject.req2)
+        // console.log(talentObject.req2)
         for(i=0;i<opdataFull.talents.length;i++){
             var currTalent = opdataFull.talents[i]
             // if(!db.talentsTL[id])break;
@@ -3585,7 +3584,7 @@
                 var currpotent = parseInt(currCandidate.requiredPotentialRank)
                 talentObject.req2.forEach(requirements => {
                     if(requirements[0]>=currphase&&requirements[1]>=currlevel&&requirements[2]>=currpotent){
-                        talentObject.html[`${requirements[0]}-${requirements[1]}-${requirements[2]}`].talents[currCandidate.prefabKey]={talent:currCandidate,talentTL:currCandidateTL}
+                        talentObject.html[`${requirements[0]}-${requirements[1]}-${requirements[2]}`].talents[talenttype]={talent:currCandidate,talentTL:currCandidateTL}
                     }
                 });
                 
@@ -3593,7 +3592,6 @@
             talenttype+=1
             // combTalents.push(talentGroup)
         }
-
         var talenthtml = ''
         var talentnum = 0
         Object.keys(talentObject.html).forEach(key => {
