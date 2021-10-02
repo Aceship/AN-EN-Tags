@@ -4471,8 +4471,8 @@
                 return `<span class="stathover" data-toggle="tooltip" data-html="true" data-delay='{ "show": 0, "hide": 500 }' data-placement="bottom" 
                 title='
                 <span class="tooltiptext" style="display:inline-block">
-                    <div class="tooltipHeader">${rich2.termName}</div>
-                    <div class="tooltipcontent">${CreateTooltip(rich2.description)}</div>
+                    <div class="tooltipHeader">${rich2.termName.replace(/\'/g,"&apos;")}</div>
+                    <div class="tooltipcontent">${CreateTooltip(rich2.description.replace(/\'/g,"&apos;"))}</div>
                 </span>'
                 style="color:#0098DC">${text}</span>`
             }else{
@@ -4495,8 +4495,8 @@
                 return `<span class="stathover" data-toggle="tooltip" data-html="true" data-delay='{ "show": 0, "hide": 500 }' data-placement="bottom" 
                 title='
                 <span class="tooltiptext" style="display:inline-block">
-                    <div class="tooltipHeader">${rich2.termName}</div>
-                    <div class="tooltipcontent">${CreateTooltip(rich2.description)}</div>
+                    <div class="tooltipHeader">${rich2.termName.replace(/\'/g,"&apos;")}</div>
+                    <div class="tooltipcontent">${CreateTooltip(rich2.description.replace(/\'/g,"&apos;"))}</div>
                 </span>'
                 style="color:#0098DC">${text}</span>`
             }
