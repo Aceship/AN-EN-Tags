@@ -10,6 +10,10 @@ body {
     pointer-events: all;
 }
 
+.blacktext{
+    color:#000
+}
+
 .greybackground{
     background-color: #4f4f4f;
     color:#fff;
@@ -178,8 +182,10 @@ body {
     /* height: 16px; */
 }
 .namesmaller {
-    margin-top: 2px;
-    font-size: 0.5em;
+    padding-top: 2px;
+    margin-top:-2px;
+    font-size: 0.6em;
+    line-height: 0.8em;
     /* height: 15px; */
 }
 
@@ -292,6 +298,54 @@ body {
     height: 80px !important;
     object-position: bottom;
     z-index: 1;
+}
+
+.selectop-grid3 {
+    display: inline-grid;
+    height: 92px;
+    width: 75px;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    transition-duration: 200ms;
+    margin: 2px 2px;
+    border-radius:2px;
+}
+.selectop-grid3:hover {
+    cursor: pointer;
+    /* background-color: unset; */
+    transition-duration: 200ms;
+    z-index: 100;
+    /* transform: scale(1.05) ; */
+}
+.selectop-grid3 .op-image-grid2 {
+    width: 75px;
+    height: 75px;
+    transition-duration: 200ms;
+    /* background-color: #555555; */
+    /* box-shadow: 0px 0px 5px #111; */
+}
+.selectop-grid3:hover .op-image-grid2 {
+    transition-duration: 200ms;
+    /* background-color: #222222; */
+}
+.selectop-grid3 .op-image-grid2 img{
+    object-fit: cover;
+    position: absolute;
+    top:-2px;
+    left:0px;
+    width: 75px !important;
+    height: 75px !important;
+    object-position: bottom;
+    z-index: 1;
+}
+.selectop-grid3 .nametext{
+    margin-top: -3px;
+}
+.selectop-grid3 .namesmaller{
+    font-size: 9px;
+    margin-top: -5px;
+    line-height: 8px;
 }
 
 .selectopopgridline{

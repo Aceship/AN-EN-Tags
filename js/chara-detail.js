@@ -769,8 +769,9 @@
                     // console.log(image)
                     $("#operatorsResult").removeClass("opbrowse1");
                     $("#operatorsResult").removeClass("opbrowse2");
-                    if(el=="Browse"){
+                    if(el=="Browse3"){
                         image = `<img class='opres-img' src="./img/avatars/${result[i].img_name}.png">  `
+                        var charaname = `${result[i].name_readable?`[${result[i].name_readable}]`:""}${result[i].nameTL}`
                         $("#operatorsResult").css("text-align","center");
                         $("#operatorsResult").removeClass("opresult-list");
                         $("#operatorsResult").addClass("opresult-grid");
@@ -778,7 +779,7 @@
                         $("#operatorsResult").append(
                             `<li class="col-2 col-sm-1 ak-shadow-small ak-rare-${result[i].rarity}"style="display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px" onclick="selectOperator('${result[i].name_cn}')">
                              <div style="white-space: nowrap;padding:0px;text-align:center;margin:0 ">${image}</div>
-                             <div style="white-space: nowrap;padding:0px;text-align:center;margin:0 ">${result[i].name_readable?`[${result[i].name_readable}]`:""}${result[i].nameTL}</div>
+                             <div style="white-space: nowrap;padding:0px;text-align:center;margin:0 ">${charaname}</div>
                              </li>
                             `);
 
@@ -789,7 +790,7 @@
                         $("#operatorsResult").addClass("opresult-grid");
                         $("#operatorsResult").addClass("opbrowse2");
 
-                        var opcurrname = result[i].name_readable?`[${result[i].name_readable}]`:"" + result[i].nameTL
+                        var opcurrname = `${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL}`
                         var extrathing = ''
                         if (rarity!=result[i].rarity){
                             rarity = result[i].rarity
@@ -811,6 +812,23 @@
                             </div>
                             <div class="${opcurrname.length>12?opcurrname.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center nameshadow">${opcurrname}</div>
                             <div class='ak-rare-${result[i].rarity} selectopopgridline'></div>
+                            </li>`
+                        )
+                    }else if(el=="Browse"){
+                        image = `<img class='opres-img' src="./img/avatars/${result[i].img_name}.png">  `
+                        $("#operatorsResult").css("text-align","center");
+                        $("#operatorsResult").removeClass("opresult-list");
+                        $("#operatorsResult").addClass("opresult-grid");
+                        $("#operatorsResult").addClass("opbrowse1");
+
+                        var opcurrname = `${result[i].name_readable?`[${result[i].name_readable}]`:""} ${result[i].nameTL}`
+                        $("#operatorsResult").append(
+                            `<li class="selectop-grid3 ak-rare-${result[i].rarity}" onclick="selectOperator('${result[i].name_cn}')">
+                            <div class="op-image-grid2">
+                                <img src="img/avatars/${result[i].img_name}.png">
+                            </div>
+                            <div class="nametext ${opcurrname.length>12?opcurrname.length>16?"namesmaller":"name":""} ak-center blacktext">${opcurrname}</div>
+                            </div>
                             </li>`
                         )
                     }else{
@@ -1192,6 +1210,7 @@
                 `
                 numrar+=1
             }
+            var unreadable = query(db.unreadNameTL,"name",char.appellation).name_en
             return `
             ${extrathing}
             <li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
@@ -1199,7 +1218,7 @@
                 ${GetLogo(char)?`<div class="op-grid-faction"><img src="img/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
                 <img src="img/avatars/${getId(char)}.png">
             </div>
-            <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${char.appellation}</div>
+            <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${unreadable?`[${unreadable}]`:""} ${char.appellation}</div>
             <div class='selectopopgridline ak-rare-${char.rarity + 1}'></div>
             
             ${showfaction?`<div class='ak-showclass'><img src='img/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
