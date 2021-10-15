@@ -57,7 +57,10 @@
         riic            :"./json/ace/riic.json",
         talentsTL       :"./json/ace/tl-talents.json",
         skillsTL        :"./json/ace/tl-skills.json",
-        named_effects   :"./json/named_effects.json"
+        named_effects   :"./json/named_effects.json",
+
+        //extra
+        extra_range       :"./json/ace/extra_range.json"
     };
     
     var db = {}
@@ -1687,6 +1690,7 @@
                 var skillname
                 var tables = "";
                 var grid = ""
+                var grid2 = "";
                 //console.log(skillData)
                 // var materialList2 = []
                 $.each(skillData.levels,function(i2,v2){
@@ -1778,6 +1782,10 @@
                         if(skillinfo.key=="ability_range_forward_extend"){
                             grid = rangeMaker(opdataFull.phases[0].rangeId,true,skillinfo.value)
                         }
+                        if(v2.prefabId=="skchr_fartth_3"){
+                            grid2 = `
+                            <div style="max-width:350px;overflow-x:scroll;display:inline-block">${rangeMaker("ft",false)}</div>`
+                        }
                     });
                     // console.log(skilldetails)
                     switch (force) {
@@ -1857,9 +1865,25 @@
                         </table>
                         `
                     }else{
+                        var extrastuff = `
+                        <tr style="background: #444;text-align:center">
+                            <td colspan=4>
+                                <div id="skill${i}lv${i2}grid" class="skill-grid" style="text-align:center">
+                                        ${grid2?grid2:""}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr style="background: #444;text-align:center">
+                            <td colspan=4>
+                                Range
+                            </td>
+                        </tr>
+                        <tr style="height:10px"></tr>
+                        `
                         tables+=
                         `
                             <tr style="height:10px"></tr>
+                            ${grid2?extrastuff:""}
                             <tr>
                                 <td>
                                     ${titledMaker(v2['spData'].spCost,"SP Cost")}
@@ -4232,8 +4256,9 @@
         return titledbutton
     }
     function rangeMaker(rangeId,withText=true,extend=0){
+        var rangelist =  Object.assign({},db.range,db.extra_range)
         var rangeData ={}
-        var rangeDataOrigin = Object.assign({},db.range[rangeId])
+        var rangeDataOrigin = Object.assign({},rangelist[rangeId])
 
         // extend =0
         if(rangeDataOrigin){
@@ -4311,7 +4336,7 @@
                 }
             }
             table.push(`</table>`);
-            table.push(`${withText?`<div><span style="all:inherit;">Range</span></div>`:""}</div>`);
+            table.push(`${withText?`<div><span style="all:inherit">Range</span></div>`:""}</div>`);
             return table.join("")
         }else{
             return undefined
