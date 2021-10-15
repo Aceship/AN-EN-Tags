@@ -4268,6 +4268,7 @@
             let maxCol = 0
             let table = []
             let grids = []
+            let getcol = 0
             // console.log(rangeDataOrigin.grids)
             if(rangeDataOrigin){
                 if(extend>0){
@@ -4280,13 +4281,18 @@
                     maxCol = Math.max(maxCol,element.col)
                     minRow = Math.min(minRow,element.row)
                     minCol = Math.min(minCol,element.col)
+                    if(element.row==maxRow||element.row==minRow){
+                        getcol=element.col
+                     }
+                })
+                rangeDataOrigin.grids.forEach(element => {
 
-                    // console.log(element)
-                    // if(extend>0&&element.col>0){
-                        
-                    //  }
-                     if(element.col>0&&extend>0){
-                        rangeData.grids.push({row:element.row,col:element.col+parseFloat(extend)})
+                     if(extend>0){
+                         if(element.row==maxRow||element.row==minRow||element.col<=getcol){
+                            rangeData.grids.push({row:element.row,col:element.col})
+                         }else{
+                            rangeData.grids.push({row:element.row,col:element.col+parseFloat(extend)})
+                         }
                      }else{
                         rangeData.grids.push({row:element.row,col:element.col})
                      }
@@ -4299,14 +4305,14 @@
                    for(i=minRow;i<=maxRow;i++){
                         for(j=1;j<=extend;j++){
                             // console.log(`${i} : ${j}`)
-                            rangeData.grids.push({row:i,col:j,special:true})
+                            rangeData.grids.push({row:i,col:j+getcol,special:true})
                             
                         }
                    }
                 }
                 extend = 0
             }
-            // console.log(rangeData.grids)
+            console.log(rangeData.grids)
             table.push(`<div class="rangeTableContainer"><table class='rangeTable' style="table-layout: fixed;border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:${(maxCol+minCol+1)*17}px;">`)
             
             for(r=0;r+minRow<maxRow+1;r++){
