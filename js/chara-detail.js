@@ -1784,7 +1784,7 @@
                         }
                         if(v2.prefabId=="skchr_fartth_3"){
                             grid2 = `
-                            <div style="max-width:350px;overflow-x:scroll;display:inline-block">${rangeMaker("ft",false)}</div>`
+                            <div style="max-width:350px;overflow-x:scroll;display:inline-block">${rangeMaker("ft",false,200)}</div>`
                         }
                     });
                     // console.log(skilldetails)
