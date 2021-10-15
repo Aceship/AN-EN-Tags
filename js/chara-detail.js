@@ -2364,9 +2364,18 @@
                 var enemycn = db.enemy[splitreq[2]]
                 var enemyen = db.enemyEN[splitreq[2]]
                 var enemyName 
+                var skill
+                var skillname
+                var chara = db.chars[mission.paramList[2]]
 
                 if(enemycn){
                     enemyName = enemyen?enemyen.name:enemycn.name
+                }
+                if(!enemyName){
+                    skill = splitreq[2]
+                    skill = chara.skills[skill-1].skillId
+                    skillname = db.skills[skill].levels[0].name
+                    console.log(db.skills[skill])
                 }
 
                 switch (splitreq[0]) {
@@ -2381,14 +2390,21 @@
                         break;
                 }
 
-                tl=`
+                if (enemyName){
+                    tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
                     </br>${objective} <@ba.kw>${mission.paramList[4]}</> <@ba.kw>${enemyName}</>
                     <img src="./img/enemy/${splitreq[2]}.png" style="max-width:50px">
-                    </br>Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</>
-
-                    
+                    </br>Using Non-Borrowed <@ba.kw>${chara.appellation}</>
                     `
+                }else {
+                    tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
+                    </br>${objective} <@ba.kw>${mission.paramList[4]}</> enemies using <@ba.kw> <img src="./img/skills/skill_icon_${skill}.png" style="max-width:20px;margin:2px"> Skill ${splitreq[2]} (${skillname})</>
+                    
+                    </br>Using Non-Borrowed <@ba.kw>${chara.appellation}</>
+                    `
+                }
                 break;
         }
 
