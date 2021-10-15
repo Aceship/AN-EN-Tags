@@ -2359,9 +2359,15 @@
                 var stage = db.stage.stages[mission.paramList[1]].code
                 var splitreq = mission.paramList[3].split(",")
                 var objective = ""
+
+                console.log(splitreq)
                 var enemycn = db.enemy[splitreq[2]]
                 var enemyen = db.enemyEN[splitreq[2]]
-                var enemyName = enemyen?enemyen.name:enemycn.name
+                var enemyName 
+
+                if(enemycn){
+                    enemyName = enemyen?enemyen.name:enemycn.name
+                }
 
                 switch (splitreq[0]) {
                     case "DEATHDETAIL":
@@ -2374,7 +2380,7 @@
                         objective = "???"
                         break;
                 }
-                console.log(db.enemy[splitreq[2]])
+
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
                     </br>${objective} <@ba.kw>${mission.paramList[4]}</> <@ba.kw>${enemyName}</>
