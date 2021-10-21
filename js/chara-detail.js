@@ -60,7 +60,8 @@
         named_effects   :"./json/named_effects.json",
 
         //extra
-        extra_range       :"./json/ace/extra_range.json"
+        extra_range       :"./json/ace/extra_range.json",
+        sanitygone        :"./json/sanitygone.json"
     };
     
     var db = {}
@@ -1336,6 +1337,20 @@
                 }
             }else{
                 $('#class-change').hide();
+            }
+
+            var linkconvert = opdataFull.appellation.replace(/[ ']/g,"-").toLowerCase()
+            var guidelink = db.sanitygone.find(a=>a==linkconvert)
+            console.log(linkconvert)
+            console.log(guidelink)
+
+            if(guidelink){
+                $("#sanitygone").show()
+                $("#sanitylink").attr("href",`https://sanitygone.help/operators/${guidelink}`)
+                $("#sanitylink").attr("title",`${opdataFull.appellation} Sanity;Gone guide link`)
+            }else{
+                $("#sanitylink").attr("href",`https://sanitygone.help/operators/`)
+                $("#sanitygone").hide()
             }
 
             // use opdata to get the operator data based on tl-akhr.json

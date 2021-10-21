@@ -1744,15 +1744,57 @@ body {
     padding-right:5px;
 }
 
-#class-change{
-    cursor: pointer ;
+#top-right-buttons{
     position: absolute;
     right:0px;
     top:15px;
+    text-align: right;
+}
+#class-change{
+    cursor: pointer ;
     width:100px;
     height: 50px;
-    
     box-shadow: 2px 2px 8px #111;
+}
+
+#sanitygone{
+    display: none;
+}
+#sanitys{
+    object-fit: cover;
+    object-position: 0% 100%;
+    width: 10px;
+    transition: width 0.4s;
+}
+#sanityg{
+    object-fit: cover;
+    object-position: 63% 100%;
+    width: 25px;
+    transition: width 0.1s, object-position 0.2s;
+}
+#sanitybut:hover #sanitys{
+    object-position: 0% 100%;
+    width: 85px;
+    /* width: 25px; */
+    transition: width 1.0s;
+}
+#sanitybut:hover #sanityg{
+    object-position: 100% 100%;
+    width: 74px;
+    /* object-position: 72% 100%;
+    width: 40px; */
+    transition: width 0.8s, object-position 0.9s;
+}
+#sanitybut{
+    background-color: #222;
+    padding: 10px 0px;
+    transition: width 0.4s,background-color 0.8s;
+}
+#sanitybut:hover{
+    background-color: #111;
+    width: 200px;
+    /* width: 80px; */
+    transition: width 0.2s,background-color 0.8s;
 }
 
 #class-icon{
