@@ -61,7 +61,8 @@
 
         //extra
         extra_range       :"./json/ace/extra_range.json",
-        sanitygone        :"./json/sanitygone.json"
+        sanitygone        :"./json/sanitygone.json",
+        voiceold          :"./json/ace/oldvoice.json"
     };
     
     var db = {}
@@ -2699,6 +2700,7 @@
         var isEN = false
         var currTL = db.voicelineTL[opdataFull.id]
         var voiceDict = db.charword.voiceLangDict[opdataFull.id]
+        var checkold = db.voiceold[opdataFull.id]
         // console.log(db.charword)
         // console.log(currTL)
         Object.keys(db.charword.charWords).forEach(element => {
@@ -2746,8 +2748,9 @@
             // console.log(currTL)
             // console.log(currTL.voiceline[element.voiceTitle])
             // console.log(voiceTL)
+            
 
-            var audiolist =[]
+            var audiolist = []
             Object.keys(voiceDict.cvDictionary).forEach(dict => {
                 var foldername = "voice"
                 var lang = ""
@@ -2758,6 +2761,15 @@
                         break;
                     case "JP":
                         lang = "JP"
+                        if(checkold){
+                            audiolist.push(`
+                            <div style="display:inline-block;padding-top:15px;vertical-align:top;width:20px" >JP0</div>
+                            <div style="display:inline-block">
+                            <audio preload="metadata" controls style="margin-top:10px"> <source src="./etc/voice_old/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+                            <a href="./etc/voice_old/${element.voiceAsset}.mp3"  target="_blank">
+                            <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
+                            </div>`)
+                        }
                         break;
                     case "EN":
                         lang = "EN"
@@ -2765,6 +2777,7 @@
                     default:
                         break;
                 }
+                
                 audiolist.push(`
                 <div style="display:inline-block;padding-top:15px;vertical-align:top;width:20px" >${lang}</div>
                 <div style="display:inline-block">
@@ -2772,6 +2785,7 @@
                 <a href="./etc/${foldername}/${element.voiceAsset}.mp3"  target="_blank">
                 <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
                 </div>`)
+                
             });
 
             var currhtml = $(`
