@@ -2495,6 +2495,22 @@
             currelite = globalskill
             currlevel = globallevel[globalskill]
         }
+        console.log(tokenfulldata)
+        var blockCount = statsInterpolation(tokenfulldata,'blockCnt',currlevel,currelite)
+        if (blockCount==0&&tokenfulldata.talents){
+            var searchCandidate = tokenfulldata.talents[0].candidates.find(cand => {
+                return cand.unlockCondition.phase == currelite
+            })
+            if(searchCandidate){
+                var actualblockcount = searchCandidate.blackboard.find(eachbb =>{
+                    return eachbb.key == "block_cnt"
+                })
+                if(actualblockcount){
+                    blockCount = actualblockcount.value
+                }
+            }
+            
+        }
 
         console.log(`Elite : ${globalelite} - Level : ${currlevel}`)
         var stats = `
@@ -2517,7 +2533,7 @@
                 <div class='stats-l'>Defense</div><div class='stats-r' id='summon-def'>${statsInterpolation(tokenfulldata,'def',currlevel,currelite)}</div>
             </div>
             <div class='stats'>
-                <div class='stats-l'>Block</div><div class='stats-r' id='summon-blockCnt'>${statsInterpolation(tokenfulldata,'blockCnt',currlevel,currelite)}</div>
+                <div class='stats-l'>Block</div><div class='stats-r' id='summon-blockCnt'>${blockCount}</div>
             </div>
 
             <div class='stats'>
