@@ -5,7 +5,7 @@
             "color":"heal"
         },
         "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@max_target}</>个敌人间跳跃，每次跳跃伤害降低15%并造成短暂<$ba.sluggish>停顿</>":{
-            "en":"Attack deals <@ba.kw>Arts Damage</> and inflicts <$ba.sluggish>Slow</></br>Attack can chain up to <@ba.kw>{attack@max_target}</> enemies </br> Damage reduced by 15% per jump</br>",
+            "en":"Attack deals <@ba.kw>Arts Damage</> and inflicts <$ba.sluggish>Slow</> <@ba.kw> for {attack@sluggish}s</></br>Attack can chain up to <@ba.kw>{attack@max_target}</> enemies </br> Damage reduced by 15% per jump</br>",
             "color":"magic"
         },
         "普通攻击连续造成<@ba.kw>两次</>伤害":{
@@ -356,7 +356,31 @@
             "jp":"",
             "kr":"",
             "color":"physical"
+        },
+        "撤退时返还<@ba.kw>大量</>该次部署费用":{
+            "en":"Refund <@ba.kw>{withdraw_cost_recover_ratio:0%}</> of operator deploy cost on retreat",
+            "jp":"",
+            "kr":"",
+            "color":"extra",
+            "detail":"common"
+        },
+        "周围四格没有友方干员时攻击力<@ba.kw>+{atk:0%}</>":{
+            "en":"Attack <@ba.kw>+{atk:0%}</> when there are no friendly operator in the surrounding four squares",
+            "jp":"",
+            "kr":"",
+            "color":"extra",
+            "detail":"common"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@max_target}</>个敌人间跳跃，每次跳跃伤害降低<@ba.kw>{value:0%}</>并造成一定时间<$ba.sluggish>停顿</>":{
+            "en":"Attack deals <@ba.kw>Arts Damage</> and inflicts <$ba.sluggish>Slow</> <@ba.kw>for {attack@sluggish}s</></br>Attack can chain up to <@ba.kw>{attack@max_target}</> enemies </br> Damage reduced by <@ba.kw>10%</> per jump</br>",
+            "color":"magic"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@max_target}</>个敌人间跳跃，每次跳跃伤害<@ba.kw>不再降低</>并造成短暂的<$ba.sluggish>停顿</>":{
+            "en":"Attack deals <@ba.kw>Arts Damage</> and inflicts <$ba.sluggish>Slow</> <@ba.kw>for {attack@sluggish}s</></br>Attack can chain up to <@ba.kw>{attack@max_target}</> enemies </br> <@ba.kw>Damage no longer reduced</> per jump</br>",
+            "color":"magic"
         }
+
+        
     },
     "parts":[
         {
