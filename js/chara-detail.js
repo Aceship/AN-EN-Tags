@@ -2184,9 +2184,12 @@
         // <@ba.kw> = Blue Highlight
         switch (mission.template) {
             case "EquipmentCharKilled":
-                tl = `
-                    Kill <@ba.kw>${mission.paramList[1]}</> enemies with Non-Borrowed <@ba.kw>${db.chars[mission.paramList[0]].appellation}</>
-                `
+                console.log()
+                if(!mission.paramList[0].includes(";")){
+                    tl = `
+                        Kill <@ba.kw>${mission.paramList[1]}</> enemies with Non-Borrowed <@ba.kw>${db.chars[mission.paramList[0]].appellation}</>
+                    `
+                }
                 break;
             case "EquipmentDeployStage":
                 var character = db.chars[mission.paramList[2].split(";")[0]]
@@ -2408,12 +2411,21 @@
                 var skillname
                 var chara = db.chars[mission.paramList[2]]
 
+                console.log(mission.paramList[2])
+                if(mission.paramList[2].includes(";")){
+                    break
+                }
+                
                 if(enemycn){
                     enemyName = enemyen?enemyen.name:enemycn.name
                 }
                 if(!enemyName){
                     skill = splitreq[2]
-                    skill = chara.skills[skill-1].skillId
+                    skill = chara.skills[skill-1]
+                    if(!skill){
+                        break
+                    }
+                    skill = skill.skillId
                     skillname = db.skills[skill].levels[0].name
                     console.log(db.skills[skill])
                 }
