@@ -2561,15 +2561,17 @@
         console.log(tokenfulldata)
         var blockCount = statsInterpolation(tokenfulldata,'blockCnt',currlevel,currelite)
         if (blockCount==0&&tokenfulldata.talents){
-            var searchCandidate = tokenfulldata.talents[0].candidates.find(cand => {
-                return cand.unlockCondition.phase == currelite
-            })
-            if(searchCandidate){
-                var actualblockcount = searchCandidate.blackboard.find(eachbb =>{
-                    return eachbb.key == "block_cnt"
+            if(tokenfulldata.talents[0].candidates){
+                var searchCandidate = tokenfulldata.talents[0].candidates.find(cand => {
+                    return cand.unlockCondition.phase == currelite
                 })
-                if(actualblockcount){
-                    blockCount = actualblockcount.value
+                if(searchCandidate){
+                    var actualblockcount = searchCandidate.blackboard.find(eachbb =>{
+                        return eachbb.key == "block_cnt"
+                    })
+                    if(actualblockcount){
+                        blockCount = actualblockcount.value
+                    }
                 }
             }
             
