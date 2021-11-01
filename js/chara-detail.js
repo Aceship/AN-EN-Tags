@@ -2900,6 +2900,7 @@
         
         Object.keys(voiceDict.cvDictionary).forEach(dict => {
             var lang = ""
+            var content = voiceDict.cvDictionary[dict]
             switch (dict) {
                 case "CN_MANDARIN":
                     lang = "CN VA"
@@ -2921,7 +2922,6 @@
                 default:
                     break;
             }
-            var content = voiceDict.cvDictionary[dict]
             $('#opaudiocontent').append(`
             <div style="text-align:center">
             <div class="btn-infoleft ak-shadow" style="width:100px"><i class="fas fa-microphone-alt" title="Voice Actor"> ${lang}</i></div><div class="btn-inforight" style="width:70%"><a href="https://www.google.com/search?q=Voice+Actor+${content}"  target="_blank">${content}</a></div>
@@ -2971,10 +2971,24 @@
         // console.log(currStory)
         // console.log(currStory.drawName)
         // console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
+        $('#name-voiceactor').html("-")
+        $('#name-voiceactor-cn').html("-")
+        
         let illustrator = currStory.drawName
         let voiceActor = db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName
-        $('#info-illustrator').html(`<div class="btn-infoleft ak-shadow"><i class="fas fa-pencil-alt" title="Illustrator"></i></div><div class="btn-inforight"><a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a></div>`)
-        $('#info-voiceactor').html(`<div class="btn-infoleft ak-shadow"><i class="fas fa-microphone-alt" title="Voice Actor"></i></div><div class="btn-inforight"><a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a></div>`)
+        $('#name-illustrator').html(`<a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a>`)
+        var voiceDict = db.charword.voiceLangDict[opdataFull.id]
+        console.log(voiceDict)
+        var jpvoice = voiceDict.cvDictionary.JP
+        var cnvoice = voiceDict.cvDictionary.CN_MANDARIN
+        $('#name-voiceactor').html(`<a href="https://www.google.com/search?q=Voice+Actor+${jpvoice}"  target="_blank">${jpvoice}</a>`)
+        if(cnvoice){
+            $('#name-voiceactor-cn').html(`<a href="https://www.google.com/search?q=Voice+Actor+${cnvoice}"  target="_blank">${cnvoice}</a>`)
+        }
+        if(voiceActor !="Unknown"){
+            $('#name-voiceactor').html(`<a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a>`)
+        }
+        
         let puretext = []
         let textTL = []
         let islong =false
