@@ -4865,7 +4865,7 @@
             spinewidgetcg = undefined
         }
         $("#spine-widget-op").remove()
-        $("#spine-frame-op").append(`<div id="spine-widget-op" class="top-layer" style="position:absolute;width: 5000px; height: 5000px;top:-2600px;left:-1800px;;pointer-events: none;z-index: 20;transform: scale(0.5);"></div>`)
+        $("#spine-frame-op").append(`<div id="spine-widget-op" class="top-layer" style="position:absolute;width: 3000px; height: 3000px;top:-1100px;left:-1300px;;pointer-events: none;z-index: 20;transform: scale(0.6);"></div>`)
         if (chibiName != null && defaultAnimationName != null) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', dynfolder + skelname + "." +skeletonType, true);
@@ -4931,7 +4931,7 @@
                                     x:spineX,
                                     y:spineY,
                                     //0.5 for normal i guess
-                                    scale:1,
+                                    scale:0.85,
                                     success: function (widget) {
                                         animIndex=0
                                         spinewidgetcg = widget
