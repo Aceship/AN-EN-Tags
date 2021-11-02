@@ -61,8 +61,8 @@
 
         //extra
         extra_range       :"./json/ace/extra_range.json",
-        sanitygone        :"./json/sanitygone.json",
-        voiceold          :"./json/ace/oldvoice.json"
+        voiceold          :"./json/ace/oldvoice.json",
+        sanitygone        :"https://sanitygone.help/aceship.json"
     };
     
     var db = {}
@@ -1341,13 +1341,13 @@
             }
 
             var linkconvert = opdataFull.appellation.replace(/[ ']/g,"-").toLowerCase()
-            var guidelink = db.sanitygone.find(a=>a==linkconvert)
+            var guidelink = db.sanitygone[opKey];
             console.log(linkconvert)
             console.log(guidelink)
 
             if(guidelink){
                 $("#sanitygone").show()
-                $("#sanitylink").attr("href",`https://sanitygone.help/operators/${guidelink}`)
+                $("#sanitylink").attr("href",`https://sanitygone.help${guidelink}`)
                 $("#sanitylink").attr("title",`${opdataFull.appellation} Sanity;Gone guide link`)
             }else{
                 $("#sanitylink").attr("href",`https://sanitygone.help/operators/`)
