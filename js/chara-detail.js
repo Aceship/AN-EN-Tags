@@ -3411,6 +3411,10 @@
         var riiccontent = []
         var activeLevel = 0
         var activeElite = 0
+        if(!charaRiic){
+            $("#op-riic").html("")
+            return
+        }
         charaRiic.buffChar.forEach(eachbuffchar => {
             everybuff.push(eachbuffchar.buffData)
             eachbuffchar.buffData.forEach(eachbuffdata => {
@@ -3422,6 +3426,7 @@
         });
 
         if (riicList.length==0){
+            $("#op-riic").html("")
             return
         }
         riicList = riicList.sort((a,b)=>{
