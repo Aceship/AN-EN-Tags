@@ -4,6 +4,11 @@
 		"desc": "When stationed at the Command Center, production of all Craft Stations +2% (Only highest effect becomes active)",
 		"descformat": "When stationed at the Command Center, production of all Craft Stations <@cc.vup>+2%</> (Only highest effect becomes active)"
 	},
+	"control_token_prod_spd[000]": {
+		"name": "Overclock",
+		"desc": "When stationed at the Command Center, if there are 2 or more Operation Platforms stationed in Power Stations, production of all Craft Stations +2% (Only highest effect becomes active)",
+		"descformat": "When stationed at the Command Center, if there are <@cc.kw>2</> or more <$cc.tag.op><@cc.kw>Operation Platforms</></> stationed in <@cc.kw>Power Stations</>, production of all Craft Stations <@cc.vup>+2%</> (Only highest effect becomes active)"
+	},
 	"control_tra_spd[000]": {
 		"name": "Cooperation Agreement",
 		"desc": "When stationed at the Command Center, order acquisition efficiency of all Trade Stations +7% (Only highest effect becomes active)",
@@ -74,6 +79,11 @@
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
 		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
 	},
+	"control_mp_cost[007]": {
+		"name": "Tiny Leader",
+		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
+		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
+	},
 	"control_mp_cost&faction2[000]": {
 		"name": "Amiable Fortitude",
 		"desc": "When stationed at the Command Center, for every operator from Li's Detective Agency in the Command Center, mood recovery per hour of all operators in the Command Center +0.05, and additionally increase the mood recovery per hour of operators from that faction.",
@@ -133,6 +143,11 @@
 		"name": "Group Hunting·β",
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05. Additionally, Abyssal Hunters operators within the base gain Special Bonus (has Special Priority Rules with certain skills)",
 		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>. Additionally, <$cc.g.abyssal><@cc.kw>Abyssal Hunters</></> operators within the base gain <$cc.c.abyssal2_2><@cc.rem>Special Bonus</></> (has <$cc.c.abyssal2_3><@cc.rem>Special Priority Rules</></> with certain skills)"
+	},
+	"control_mp_psk[000]": {
+		"name": "Knights of Pinus",
+		"desc": "When stationed at the Command Center, every operator from Pinus Sylvestris stationed in a Craft Station gains +10% production of EXP cards and -10% production of precious metals",
+		"descformat": "When stationed at the Command Center, every operator from <$cc.g.psk><@cc.kw>Pinus Sylvestris</></> stationed in a Craft Station gains <@cc.vup>+10%</> production of <@cc.kw>EXP cards</> and <@cc.vdown>-10%</> production of <@cc.kw>precious metals</>"
 	},
 	"power_rec_spd&cost[000]": {
 		"name": "Enthusiasm",
@@ -208,6 +223,11 @@
 		"name": "Lighthouse Power Supply Module",
 		"desc": "When stationed at a Power Station, drone recovery per hour +15%",
 		"descformat": "When stationed at a Power Station, drone recovery per hour <@cc.vup>+15%</>"
+	},
+	"power_prod_spd_P[000]": {
+		"name": "“Beep beep, activate!”",
+		"desc": "When stationed at a Power Station, production of the Craft Station Wild Mane is stationed in +5%",
+		"descformat": "When stationed at a Power Station, production of the Craft Station <@cc.kw>Wild Mane</> is stationed in <@cc.vup>+5%</>"
 	},
 	"manu_prod_spd&power[000]": {
 		"name": "Automation·α",
@@ -799,27 +819,37 @@
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 70%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>70%</>"
 	},
-	"workshop_formula_probability[101]": {
+	"workshop_formula_probability[119]": {
+		"name": "Industrial Design",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 75%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>75%</>"
+	},
+	"workshop_formula_probability[129]": {
 		"name": "Scholar",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 80%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
 	},
-	"workshop_formula_probability[102]": {
-		"name": "Industrial Design",
+	"workshop_formula_probability[113]": {
+		"name": "Corrosion Studies·α",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 75%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>75%</>"
+	},
+	"workshop_formula_probability[123]": {
+		"name": "Corrosion Studies·β",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 80%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
 	},
 	"workshop_formula_probability[110]": {
 		"name": "Pharmacology·α",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 75%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>75%</>"
 	},
-	"workshop_formula_probability[111]": {
+	"workshop_formula_probability[120]": {
 		"name": "Pharmacology·β",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 80%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
 	},
-	"workshop_formula_probability[120]": {
+	"workshop_formula_probability[111]": {
 		"name": "Toxicology·α",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 75%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>75%</>"
@@ -829,17 +859,27 @@
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 80%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
 	},
-	"workshop_formula_probability[130]": {
+	"workshop_formula_probability[112]": {
 		"name": "Explosive Science·α",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 75%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>75%</>"
 	},
-	"workshop_formula_probability[131]": {
+	"workshop_formula_probability[122]": {
 		"name": "Explosive Science·β",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 80%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
 	},
-	"workshop_formula_probability[140]": {
+	"workshop_formula_probability[114]": {
+		"name": "Herbalism·α",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 75%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>75%</>"
+	},
+	"workshop_formula_probability[124]": {
+		"name": "Herbalism·β",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 80%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
+	},
+	"workshop_formula_probability[160]": {
 		"name": "Rare Metals Identification",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 100%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>100%</>"
@@ -853,6 +893,11 @@
 		"name": "\"Everyone Doing Their Part\"",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, for every 1 operator with 20 or less mood stationed in the Dorms, increase the rate of by-products by 5%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, for every <@cc.kw>1</> operator with <@cc.vup>20</> or less mood stationed in the Dorms, increase the rate of by-products by <@cc.vup>5%</>"
+	},
+	"workshop_formula_drop[020]": {
+		"name": "Corrosion Inhibition Tech",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, any by-products of T3 quality produced will be Oriron Clusters",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, any by-products of <@cc.kw>T3</> quality produced will be <@cc.kw>Oriron Clusters</>"
 	},
 	"workshop_formula_free[000]": {
 		"name": "Meticulous Budgeting",
@@ -913,6 +958,16 @@
 		"name": "Instructor",
 		"desc": "When stationed at the Training Station, operator skill training speed +25%",
 		"descformat": "When stationed at the Training Station, operator skill training speed <@cc.vup>+25%</>"
+	},
+	"train_spd_tag[000]": {
+		"name": "Knight Training",
+		"desc": "When stationed at the Training Station, every Knight operator in the base (excluding Assistants) increases the skill training speed by +5% (caps at 5 operators)",
+		"descformat": "When stationed at the Training Station, every <$cc.tag.knight><@cc.kw>Knight</></> operator in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+5%</> (caps at <@cc.kw>5</> operators)"
+	},
+	"train_spd_tag[010]": {
+		"name": "Noble Creed",
+		"desc": "When stationed at the Training Station, every Knight operator in the base (excluding Assistants) increases the skill training speed by +5% (caps at 8 operators)",
+		"descformat": "When stationed at the Training Station, every <$cc.tag.knight><@cc.kw>Knight</></> operator in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+5%</> (caps at <@cc.kw>8</> operators)"
 	},
 	"train_spd&profession[010]": {
 		"name": "Vanguard Specialization·α",
@@ -1079,50 +1134,50 @@
 		"desc": "When stationed at the Training Station, increase the skill training speed of Caster operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Caster</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
-	"train_spd&profession2[250]": {
-		"name": "Widely Read",
-		"desc": "When stationed at the Training Station, increase the skill training speed of Caster operators by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
-		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Caster</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
-	},
-	"train_spd&profession2[230]": {
-		"name": "Battlefield Experience",
-		"desc": "When stationed at the Training Station, increase the skill training speed of Defender operators by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
-		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Defender</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
+	"train_spd&profession2[180]": {
+		"name": "Trap Focus",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Specialist operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Specialist</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
 	"train_spd&profession2[220]": {
 		"name": "Asceticism",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard operators by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Guard</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
+	"train_spd&profession2[230]": {
+		"name": "Battlefield Experience",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Defender operators by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Defender</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
+	},
+	"train_spd&profession2[250]": {
+		"name": "Widely Read",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Caster operators by +30%. If the current training is for Mastery 2, increase the skill training speed by an additional +45%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Caster</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 2</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
+	},
 	"train_spd&profession2[320]": {
 		"name": "Maximum Effort",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard operators by +30%. If the current training is for Mastery 3, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Guard</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 3</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
-	},
-	"train_spd&profession2[660]": {
-		"name": "Assimilation",
-		"desc": "When stationed at the Training Station, increase the skill training speed of Supporter operators by +30%. If the current training is for Mastery 3, increase the skill training speed by an additional +65%",
-		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Supporter</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 3</>, increase the skill training speed by an additional <@cc.vup>+65%</>"
 	},
 	"train_spd&profession2[640]": {
 		"name": "Opportunistic",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Sniper operators by +30%. If the current training is for Mastery 3, increase the skill training speed by an additional +65%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Sniper</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 3</>, increase the skill training speed by an additional <@cc.vup>+65%</>"
 	},
-	"train_spd&profession2[180]": {
-		"name": "Trap Focus",
-		"desc": "When stationed at the Training Station, increase the skill training speed of Specialist operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
-		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Specialist</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
-	},
-	"train_cost&profession[340]": {
-		"name": "Disinterest",
-		"desc": "When stationed at the Training Station and training a Sniper operator to Mastery 3, mood reduction per hour +1",
-		"descformat": "When stationed at the Training Station and training a <@cc.kw>Sniper</> operator to <@cc.vup>Mastery 3</>, mood reduction per hour <@cc.vdown>+1</>"
+	"train_spd&profession2[660]": {
+		"name": "Assimilation",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Supporter operators by +30%. If the current training is for Mastery 3, increase the skill training speed by an additional +65%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Supporter</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 3</>, increase the skill training speed by an additional <@cc.vup>+65%</>"
 	},
 	"train_cost&profession[140]": {
 		"name": "Workaholic",
 		"desc": "When stationed at the Training Station and training a Sniper operator to Mastery 1, mood reduction per hour +1",
 		"descformat": "When stationed at the Training Station and training a <@cc.kw>Sniper</> operator to <@cc.vup>Mastery 1</>, mood reduction per hour <@cc.vdown>+1</>"
+	},
+	"train_cost&profession[340]": {
+		"name": "Disinterest",
+		"desc": "When stationed at the Training Station and training a Sniper operator to Mastery 3, mood reduction per hour +1",
+		"descformat": "When stationed at the Training Station and training a <@cc.kw>Sniper</> operator to <@cc.vup>Mastery 3</>, mood reduction per hour <@cc.vdown>+1</>"
 	},
 	"train_cost&profession[360]": {
 		"name": "Mutation",
@@ -1186,6 +1241,11 @@
 	},
 	"dorm_rec_single[031]": {
 		"name": "Victorian Literature",
+		"desc": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by +0.7 per hour (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by <@cc.vup>+0.7</> per hour (When stacked, only the highest effect becomes active)"
+	},
+	"dorm_rec_single[032]": {
+		"name": "Psychological Counseling",
 		"desc": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by +0.7 per hour (When stacked, only the highest effect becomes active)",
 		"descformat": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by <@cc.vup>+0.7</> per hour (When stacked, only the highest effect becomes active)"
 	},
@@ -1290,7 +1350,7 @@
 		"descformat": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by <@cc.vup>+0.5</> per hour (When stacked, only the highest effect becomes active). At the same time, self mood recovery per hour <@cc.vup>+0.25</>"
 	},
 	"dorm_rec_single&oneself[030]": {
-		"name": "Knight of Light",
+		"name": "Follower",
 		"desc": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by +0.5 per hour (When stacked, only the highest effect becomes active). At the same time, self mood recovery per hour +0.25",
 		"descformat": "When stationed at a Dorm, increase mood recovery of one random operator below maximum mood except self within that dorm by <@cc.vup>+0.5</> per hour (When stacked, only the highest effect becomes active). At the same time, self mood recovery per hour <@cc.vup>+0.25</>"
 	},
