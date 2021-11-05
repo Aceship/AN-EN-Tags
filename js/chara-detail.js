@@ -2215,21 +2215,31 @@
                 `
                 break;
             case "EquipmentSquadPro":
-                var splitsquad = mission.paramList[3].split(",")
                 var stage = db.stage.stages[mission.paramList[1]].code
-                if(splitsquad[0]==13){
-                    var currclass = query(db.classes,"type_data",splitsquad[1])
-                    squadinfo = ` and <@ba.kw>${currclass.type_en}</> only in party`
-                }
-                else if(splitsquad[0]>0){
-                    var currclass = query(db.classes,"type_data",splitsquad[1])
-                    squadinfo = ` and up to <@ba.kw>${splitsquad[0]}</> <@ba.kw>${currclass.type_en}</> class only`
-                }else if(splitsquad[0]==0){
-                    squadinfo = ` with no other operator`
-                }
+                var splitall = mission.paramList[3].split(";")
+                var squadinfo = ""
+                var squadprefix = ""
+                var squadsuffix = ""
+                splitall.forEach(squadtype => {
+                    var splitsquad = squadtype.split(",")
+                    if(splitsquad[0]==13){
+                        var currclass = query(db.classes,"type_data",splitsquad[1])
+                        squadprefix = "and"
+                        squadinfo += ` <@ba.kw>${currclass.type_en}</>`
+                        squadsuffix = " only in party"
+                    }
+                    else if(splitsquad[0]>0){
+                        var currclass = query(db.classes,"type_data",splitsquad[1])
+                        squadprefix = "and up to"
+                        squadinfo += ` <@ba.kw>${splitsquad[0]}</> <@ba.kw>${currclass.type_en}</>`
+                        squadsuffix = " class only"
+                    }else if(splitsquad[0]==0){
+                        squadinfo += ` with no other operator`
+                    }
+                });
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
-                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> ${squadinfo}
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> ${squadprefix}${squadinfo}${squadsuffix}
                  `
                 break;
             case "EquipmentSquadProEx":
@@ -2443,7 +2453,8 @@
                 var objective2 = ""
 
                 console.log(splitreq)
-                var enemyid = splitreq[2]
+                var enemyid = splitreq[splitreq.length-1]
+                var skillid = parseInt(splitreq[2])-1
                 if(enemyid.includes(";")){
                     enemyid = enemyid.split(";")[0]
                 }
@@ -2452,7 +2463,12 @@
                 var enemyName 
                 
                 var chara = db.chars[mission.paramList[2]]
-                var skill = chara.skills[enemyid-1]
+                console.log(enemycn)
+                var skill = chara.skills[skillid]
+                if(enemycn){
+                    skillid = skillid+1
+                    skill = chara.skills[skillid]
+                }
                 var skillname
 
                 var chara2 = db.chars[splitreq[1]]
@@ -2460,10 +2476,10 @@
                 if(enemycn){
                     enemyName = enemyen?enemyen.name:enemycn.name
                 }
-                else if(skill){
+                if(skill){
+                    console.log(skill)
                     skill = skill.skillId
-                    skillname = db.skills[skill].levels[0].name
-                    console.log(db.skills[skill])
+                    skillname = db.skillsTL[skill]?db.skillsTL[skill].name:currSkill.name;
                 }
                 
                 switch (splitreq[0]) {
@@ -2477,7 +2493,16 @@
                         objective = "???"
                         break;
                 }
-                if (enemyName){
+                if(enemyName&&skill){
+                    tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
+                    </br>${objective} <@ba.kw>${mission.paramList[4]}</> <@ba.kw>${enemyName}</>
+                    <img src="./img/enemy/${enemyid}.png" style="max-width:50px">
+                    </br>with <@ba.kw> <img src="./img/skills/skill_icon_${skill}.png" style="max-width:20px;margin:2px"> Skill ${skillid+1} (${skillname})</>
+                    </br>Using Non-Borrowed <@ba.kw>${chara.appellation}</>
+                    `
+                }
+                else if (enemyName){
                     tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
                     </br>${objective} <@ba.kw>${mission.paramList[4]}</> <@ba.kw>${enemyName}</>
