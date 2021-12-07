@@ -5957,9 +5957,12 @@
         var result = {}
         
         var promises = Object.entries(obj).map(function(url){
-            return $.getJSON(url[1]).then(function(res){
-                result[url[0]]=res
-            })
+            return $.getJSON(url[1]).then(function (res) {
+                result[url[0]] = res
+            }).catch(function (e) {
+                console.error("Failed to load file: " + url[0], e);
+                result[url[0]] = {}
+            });
         })
     
         return Promise.all(promises).then(function(){
