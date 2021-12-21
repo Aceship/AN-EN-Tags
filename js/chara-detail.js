@@ -2534,6 +2534,69 @@
                     Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> without any operator get killed
                     `
                 break;
+            case "EquipmentEventBattleMore" :
+                var splitreq = mission.paramList[2].split(",")
+
+                var enemytype 
+
+                switch (splitreq[2]) {
+                    case "drone":
+                        enemytype = "Drones"
+                        break;
+                
+                    default:
+                        break;
+                }
+                tl=`
+                    Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
+                    Kill At least <@ba.kw>${mission.paramList[3]}</> <@ba.kw>${enemytype}</> </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[1]].appellation}</> 
+                    `
+                break;
+            case "EquipmentSkillCastBattle" :
+                var splitskills = mission.paramList[1].split(";")
+                var skills = []
+
+                splitskills.forEach(element => {
+                    console.log(element)
+                    var currSkill = db.skills[element]
+                    var skillname = db.skillsTL[element]?db.skillsTL[element].name:currSkill.name;
+                    var skillnum = opdataFull.skills.findIndex(skill => skill.skillId==element)
+                    skills.push({id:element,name:skillname,num:skillnum+1})
+                });
+
+                var skilltext = `Use at least <@ba.kw> ${mission.paramList[2]}</> times of the following skills :`
+                skills.forEach(element => {
+                    console.log(element.id)
+                    skilltext += `<@ba.kw> <img src="./img/skills/skill_icon_${element.id}.png" style="max-width:20px;margin:2px"> Skill ${element.num} (${element.name})</> </br>`
+                });
+                tl=`
+                    Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
+                    ${skilltext}
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[3]].appellation}</> 
+                    `
+                break;
+            case "EquipmentDeployCharOrder" :
+                var order = ""
+                switch (mission.paramList[1]) {
+                    case "1":
+                        order = "1st"
+                        break;
+                    case "2":
+                        order = "2nd"
+                        break;
+                    case "3":
+                        order = "3rd"
+                        break;
+                    default:
+                        order = `${mission.paramList[1]}th`
+                        break;
+                }
+                tl=`
+                    Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
+                    Deploy Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> on the <@ba.kw>${order}</> order
+                    `
+                break;
         }
 
         if(tl==""){
