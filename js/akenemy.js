@@ -157,26 +157,29 @@
         if(el.value != ""||el=="Browse"){
             var result = [];
             $.each(db.enemy,function(_,enemy){
-                var languages = ['cn','en','jp','kr'];
+                var languages = [db.enemy, db.enemyEN];
                 var found = false;
+                var nameTL;
                 if(el=="Browse"){
                     found=true;
                 }else{
-                    for (var i = 0; i < languages.length; i++) {
-                        // var charname = char['name_'+languages[i]].toUpperCase();
-                        var input = el.value.toUpperCase();
-                        var search = charname.search(input);
-                        if(search != -1){
+                    var input = el.value.toUpperCase();
+                    $.each(languages, function(_,langDB){
+                        if (!(enemy.enemyId in langDB))
+                            return;
+                        var charname = langDB[enemy.enemyId].name.toUpperCase();
+                        if(charname.search(input) != -1){
+                            nameTL = langDB[enemy.enemyId].name;
                             found = true;
-                            break;
-                        };
-                    }
+                            return false;
+                        }
+                    });
                 }
                 if(found){
                     var id = enemy.enemyId;
                     var name = enemy.name;
                     var sortId = enemy.sortId;
-                    result.push({'id':id,'name':name,'sortId':sortId});
+                    result.push({'id':id,'name':name,'sortId':sortId,'nameTL':name == nameTL?null:nameTL});
                 }
             });
             // console.log(result)
@@ -199,13 +202,14 @@
                         
                         </li>`)
                     }else{
-                        // $("#operatorsResult").append("<li class=\" ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"width:100%;cursor: pointer;margin-bottom:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"+image+result[i].nameTL+" ("+result[i].name+")"+"</li>");
+                        $("#enemyResult").append("<li class=\"ak-shadow-small\" style=\"width:100%;cursor: pointer;margin-bottom:2px; color:#fff;\" onclick=\"selectEnemy('"+result[i].id+"')\">"+image+(result[i].nameTL?result[i].nameTL+" ("+result[i].name+")":result[i].name)+"</li>");
                     }
                 }
+            } else {
+                $('#enemyResult').empty();
+                $('#enemyResult').hide();
             }
             $("#enemyResult").append(currHtml.join(""));
-            // console.log( $("#operatorsResult")  )
-            $('#operatorsResult').show();
         } else {
             $('#enemyResult').empty();
             $('#enemyResult').hide();
