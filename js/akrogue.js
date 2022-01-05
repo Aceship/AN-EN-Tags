@@ -60,7 +60,7 @@ function RelicBox(relicid,relic){
     // console.log(relic.id)
     
     var item = relic
-    var desc = !db.tl_rogue.desc[relicid]?item.description:db.tl_rogue.desc[relicid]
+    var desc = !db.tl_rogue.desc[relicid]?item.usage:db.tl_rogue.desc[relicid]
 
     var name = !db.tl_rogue.name[relicid]?item.name:db.tl_rogue.name[relicid]
     var rarity = item.rarity
