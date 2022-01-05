@@ -1,6 +1,6 @@
 $.holdReady(true);
 const jsonList = {
-    roguelike_table             :"./json/gamedata/zh_CN/gamedata/excel/roguelike_table.json",
+    roguelike_table             :"./json/gamedata/zh_CN/gamedata/excel/roguelike_topic_table.json",
 
     //TL
 
@@ -45,22 +45,24 @@ var isperspective = false
 
 async function Check(){
 
-    $.each(db.roguelike_table.itemTable.relics,function(relicid,relic){
+    $.each(db.roguelike_table.details.rogue_1.items,function(relicid,relic){
         // console.log(relicid)
-        if(!relicid.includes("b")){
-            relicshtml.push(RelicBox(relic))
-        }
+        // if(!relicid.includes("b")){
+        //     relicshtml.push(RelicBox(relic))
+        // }
+        if(relic.type =="RELIC")
+        relicshtml.push(RelicBox(relicid,relic))
     })
     $("#reliclist").html(relicshtml.join(""))
 }
 
-function RelicBox(relic){
+function RelicBox(relicid,relic){
     // console.log(relic.id)
     
-    var item = db.roguelike_table.itemTable.items[relic.id]
-    var desc = db.tl_rogue.desc[relic.id]
+    var item = relic
+    var desc = !db.tl_rogue.desc[relicid]?item.description:db.tl_rogue.desc[relicid]
 
-    var name = db.tl_rogue.name[relic.id]==""?item.name:db.tl_rogue.name[relic.id]
+    var name = !db.tl_rogue.name[relicid]?item.name:db.tl_rogue.name[relicid]
     var rarity = item.rarity
     console.log(rarity)
     var html = `
@@ -68,7 +70,7 @@ function RelicBox(relic){
     <div class="relic-title relic-rarity relic-rarity-${rarity}">${name}</div>
     
     <div class="relic-imagebox">
-    <img style="margin:auto;width: 80px; height: 80px;object-fit: contain;" src="img/ui/roguelike/item/${relic.id}.png">
+    <img style="margin:auto;width: 80px; height: 80px;object-fit: contain;" src="img/ui/roguelike/item/${relic.iconId}.png">
     </div>
 
     <div class="relic-effect">
