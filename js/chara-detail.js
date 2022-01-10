@@ -736,11 +736,18 @@
                     var unreadable = query(db.unreadNameTL,"name",char.name_en).name_en
                     var nameTL = char['name_'+lang];
                     var img_name = query(db.chars,"name",char.name_cn,true,true); 
-                    // console.log(Object.keys(img_name))
-                    var rarity = img_name[Object.keys(img_name)] ? img_name[Object.keys(img_name)].rarity + 1 : 0;
+
+                    var img_key = Object.keys(img_name)
+                    console.log(img_key)
+                    
+                    var rarity = img_name[img_key] ? img_name[img_key].rarity + 1 : 0;
+                    if(img_key[0] == "char_512_aprot"){
+                        img_key[0] = "char_4025_aprot2"
+                    }
+                        
                     // console.log(rarity);
                     if(rarity!=0)
-                    result.push({'name':name,'name_cn':name_cn,'name_readable':unreadable,'nameTL':nameTL,'img_name':Object.keys(img_name),rarity});
+                    result.push({'name':name,'name_cn':name_cn,'name_readable':unreadable,'nameTL':nameTL,'img_name':img_key,rarity});
                 }
             });
             // console.log(result)
@@ -1116,7 +1123,11 @@
             let curops = db.chars[id]
             curops.id = id
             if(curops.profession != "TOKEN" && curops.profession != "TRAP"){
-                ops.push(curops)
+                if(id=="char_512_aprot"){
+                    
+                }else{
+                    ops.push(curops)
+                }
             }
         });
         console.log(ops)
@@ -1279,7 +1290,7 @@
             curropname = opname
 
             var opcode2 = ""
-            console.log(opdata3)
+            // console.log(opdata3)
             
             if (opdata2)
             var opcode = Object.keys(opdata2)[0]
@@ -1287,12 +1298,20 @@
             var opKey =""
             $.each(opdata2,function(key,v){
                 v['id'] = key;
-                // console.log(v);
+                console.log(v);
                 opdataFull = v;
                 opKey = key;
                 localStorage.setItem('selectedOPDetails', key);
                 return false
             });
+
+            if(opcode == "char_512_aprot"){
+                opcode = "char_4025_aprot2"
+                opdata2 = {"char_4025_aprot2":db.chars["char_4025_aprot2"]}
+                opkey = "char_4025_aprot2"
+                opdataFull = db.chars["char_4025_aprot2"]
+                opdataFull.id = "char_4025_aprot2"
+            }
 
             console.log(opKey)
 
