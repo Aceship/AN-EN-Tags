@@ -3073,7 +3073,7 @@
             isEN = true
         }
         if(opdataFull.id=="char_1001_amiya2"){
-            currStory = db.handbookInfo.handbookDict["char_002_amiya"]
+            currStory = db.handbookInfoEN.handbookDict["char_002_amiya"]?db.handbookInfoEN.handbookDict["char_002_amiya"]:db.handbookInfo.handbookDict["char_002_amiya"]
         }
         // console.log(currStory)
         // console.log(currStory.drawName)
