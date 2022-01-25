@@ -2616,6 +2616,28 @@
                     Deploy Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> on the <@ba.kw>${order}</> order
                     `
                 break;
+            case "EquipmentBattleCharKilled" :
+                var splitChara = mission.paramList[1].split(",")
+                var splitName = ''
+                splitChara.forEach(element => {
+                    console.log(element)
+                    var currchar = db.chars[element]
+                    console.log(currchar.appellation)
+                    splitName+=  `<@ba.kw> <img src="./img/avatars/${element}.png" style="max-width:50px"> ${currchar.appellation} </> </br>`
+                });
+                tl=`
+                    Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
+                    Kill at least <@ba.kw>${mission.paramList[2]}</> enemies using Non-Borrowed : </br>
+                    ${splitName}
+                `
+                break;
+            case "EquipmentStageDeployCntAndSpec":
+                var stage = db.stage.stages[mission.paramList[1]].code
+                tl=`
+                    Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> and deploy at max of <@ba.kw>${mission.paramList[3]}</> other operators
+                    `
+                break;
         }
 
         if(tl==""){
@@ -2939,10 +2961,14 @@
             
 
             var audiolist = []
-            Object.keys(voiceDict.cvDictionary).forEach(dict => {
+            Object.keys(voiceDict.dict).forEach(dict => {
                 var foldername = "voice"
                 var lang = ""
                 switch (dict) {
+                    case "CN_TOPOLECT":
+                        foldername = "voice_custom"
+                        lang = "CNT"
+                        break;
                     case "CN_MANDARIN":
                         foldername = "voice_cn"
                         lang = "CN"
@@ -3005,12 +3031,15 @@
             $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">Official EN Arknight</div>`)
         }
         
-        Object.keys(voiceDict.cvDictionary).forEach(dict => {
+        Object.keys(voiceDict.dict).forEach(dict => {
             var lang = ""
-            var content = voiceDict.cvDictionary[dict]
+            var content = voiceDict.dict[dict].cvName
             switch (dict) {
                 case "CN_MANDARIN":
                     lang = "CN VA"
+                    break;
+                case "CN_TOPOLECT":
+                    lang = "CN Top VA"
                     break;
                 case "JP":
                     lang = "JP VA"
@@ -3086,8 +3115,11 @@
         $('#name-illustrator').html(`<a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a>`)
         var voiceDict = db.charword.voiceLangDict[opdataFull.id]
         console.log(voiceDict)
-        var jpvoice = voiceDict.cvDictionary.JP
-        var cnvoice = voiceDict.cvDictionary.CN_MANDARIN
+        var jpvoice = voiceDict.dict.JP.cvName
+        var cnvoice 
+        if (voiceDict.dict.CN_MANDARIN){
+            cnvoice = voiceDict.dict.CN_MANDARIN.cvName
+        }
         $('#name-voiceactor').html(`<a href="https://www.google.com/search?q=Voice+Actor+${jpvoice}"  target="_blank">${jpvoice}</a>`)
         if(cnvoice){
             $('#name-voiceactor-cn').html(`<a href="https://www.google.com/search?q=Voice+Actor+${cnvoice}"  target="_blank">${cnvoice}</a>`)
