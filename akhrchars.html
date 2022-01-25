@@ -494,6 +494,13 @@
                                     <button id="spine-text" class="btn ak-chibi-btn" style="width:140px;height:30px; "onclick='ChangeAnimation("widget","#spine-text",0)'></button>
                                     <button class='btn btn-sm ak-chibi-btn' style='min-width:30px;height:30px' onclick='ChangeAnimation("widget","#spine-text",1)' type='button' id='Chibi-Next'><i class="fas fa-step-forward"></i></button>
                                 </div>
+                                <div id="spine-token-toolbar">
+                                    <button class='btn btn-sm ak-chibi-btn ak-disable' style='min-width:30px;height:30px'  type='button' >T</button>
+                                    <button class='btn btn-sm ak-chibi-btn' style='min-width:31px;height:30px' onclick='PlayPause("token")' type='button' id='Chibi-Play'><b>l l </b></button>
+                                    <button class='btn btn-sm ak-chibi-btn' style='min-width:30px;height:30px' onclick='ChangeAnimation2("token","#spine-text2",-1)' type='button' id='Chibi-Prev'><i class="fas fa-step-backward"></i></button>
+                                    <button id="spine-text2" class="btn ak-chibi-btn" style="width:140px;height:30px; "onclick='ChangeAnimation2("token","#spine-text2",0)'></button>
+                                    <button class='btn btn-sm ak-chibi-btn' style='min-width:30px;height:30px' onclick='ChangeAnimation2("token","#spine-text2",1)' type='button' id='Chibi-Next'><i class="fas fa-step-forward"></i></button>
+                                </div>
                                 <div id="spine-frame" style="position: absolute;width: 300px; height: 300px;bottom:-39px;left:220px;transform: scale(0.75);pointer-events: none;">
                                     <div id="spine-frameheader" class='btn btn-sm ak-sm-btn' ondblclick="Mirror($('#spine-frame'))" style="display:inline-block;cursor: move;pointer-events:all;transform: scale(2);margin:0px;position: absolute;left:140px;top:90px;opacity: 0;"><i class="fas fa-arrows-alt"></i></div>
                                     <button class='btn btn-sm ak-sm-btn ak-disable' style='position:absolute;top:75px;left:75px;font-size:30px'  type='button' id='loading-spine'>Loading ...</button>

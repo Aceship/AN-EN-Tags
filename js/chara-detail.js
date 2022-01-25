@@ -5361,9 +5361,9 @@
                         scale:1,
                         success: function (widget) {
                             
-                            // animIndex=0
+                            animIndex=0
                             spinewidgettoken = widget
-                            // $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                            $("#spine-text2").text(widget.skeleton.data.animations[0].name)
                             // $("#loading-spine").fadeOut(200)
                             tokenanimations = widget.skeleton.data.animations;
                             // console.log(animations)
@@ -5371,13 +5371,13 @@
                             $("#spine-widget-token").show()
                             if(tokenanimations.find(search=>search.name=="Start")){
                                 CreateAnimation(spinewidgettoken,["Start","Idle"])
-                                // $("#spine-text").text("Idle")
-                            }else if(tokenanimations.find(search=>search.name=="Relax")){
-                                CreateAnimation(spinewidgettoken,"Relax")
-                                // $("#spine-text").text("Relax")
+                                $("#spine-text2").text("Idle")
                             }else if(tokenanimations.find(search=>search.name=="Idle")){
                                 CreateAnimation(spinewidgettoken,"Idle")
-                                // $("#spine-text").text("Relax")
+                                $("#spine-text2").text("Idle")
+                            }else if(tokenanimations.find(search=>search.name=="Relax")){
+                                CreateAnimation(spinewidgettoken,"Relax")
+                                $("#spine-text2").text("Relax")
                             }
 
                             widget.customanimation = CheckAnimationSet(tokenanimations)
@@ -5507,8 +5507,10 @@
     }
 
     function PlayPause(widget){
-        if(widget=="token") widget=spinewidgettoken
-        else widget=spinewidget
+        if(widget=="token") 
+            widget=spinewidgettoken
+        else 
+            widget=spinewidget
         if(widget.isPlaying()){
             console.log("Playing")
             widget.pause()
