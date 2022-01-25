@@ -1575,7 +1575,7 @@
                             </button>
                         `:""}
                         
-                        <a class="btn tabbing-btns tabbing-btns-middle" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
+                        <a class="btn tabbing-btns tabbing-btns-middle" style="${extraSkin[i].dynIllustId?"width:62px":""}" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
                             <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
                             <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='img/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
                         </a></li>
