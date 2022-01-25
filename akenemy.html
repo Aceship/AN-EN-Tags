@@ -62,6 +62,46 @@
     </nav>
     <div id='acedonate'></div>
     <div style="padding-bottom:40px;"></div>
+    <div class="modal fade" id="enemysd" style="overflow-x: hidden;overflow-y: hidden;">
+        <div class="modal-dialog modal-dialog-centered modal-lg" >
+            <div class="modal-content" style="background:#444">
+        
+            <!-- Modal Header -->
+            <!-- <div class="modal-header">
+                <h4 class="modal-title"></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+        -->
+            <!-- Modal body -->
+            <div class="modal-body" style="padding:0px;margin:0px;min-height:88vh;max-height: 88vh;display: block">
+                <div>
+                    <div id="spine-frame" style="width: 300px; height: 300px;transform: scale(0.75);z-index:2;pointer-events: none;">
+                        <div id="spine-frameheader" class='btn btn-sm ak-sm-btn' style="display:inline-block;cursor: move;pointer-events:all;transform: scale(2);margin:0px;position: absolute;left:140px;top:90px;opacity: 0;"><i class="fas fa-arrows-alt"></i></div>
+                        <button class='btn btn-sm ak-sm-btn ak-disable' style='display:none;position:absolute;top:75px;left:75px;font-size:30px'  type='button' id='loading-spine'>Loading ...</button>
+                        <div id="spine-widget" class="top-layer" style="position:absolute;width: 2500px; height: 2500px;top:-775px;left:-750px;pointer-events: none;z-index: 20;transform: scale(0.5);"></div> <!-- scaling 0.5 for "supersampling" chibi -->   
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Modal footer -->
+            <!-- <div class="modal-footer" style="border-top: 1px solid #2f2f2f;height: 90px;padding:0px">
+               
+            </div> -->
+            <div style="height: 70px;"></div>
+            <div style="display:inline-flex;position: absolute;z-index: 150000;width:100%;bottom:0px;background: #444;padding:10px;border-radius: 2px;justify-content: right;">
+                <div id="spine-toolbar" style="width: 320px; height: 50px;z-index:1;">
+                        <button class="btn btn-sm ak-chibi-btn" id="Chibi-download" title='Experimental Saving'><i class="far fa-save"></i></button>
+                        <button class='btn btn-sm ak-chibi-btn ak-disable' style='min-width:30px;height:30px'  type='button' >C</button>
+                        <button class='btn btn-sm ak-chibi-btn' style='min-width:31px;height:30px' onclick='PlayPause("widget")' type='button' id='Chibi-Play'><b>l l </b></button>
+                        <button class='btn btn-sm ak-chibi-btn' style='min-width:30px;height:30px' onclick='ChangeAnimation("widget","#spine-text",-1)' type='button' id='Chibi-Prev'><i class="fas fa-step-backward"></i></button>
+                        <button id="spine-text" class="btn ak-chibi-btn" style="width:140px;height:30px; "onclick='ChangeAnimation("widget","#spine-text",0)'></button>
+                        <button class='btn btn-sm ak-chibi-btn' style='min-width:30px;height:30px' onclick='ChangeAnimation("widget","#spine-text",1)' type='button' id='Chibi-Next'><i class="fas fa-step-forward"></i></button>
+                    </div>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
     <!-- <div class="warning-sign"style="position: absolute;z-index: 999999;background:#aaa;top:100px;left:50%;width:500px;height:200px;margin-left:-250px;text-align:center; vertical-align:center">aaaaaaaaaaaaaaaaaaaaa</div> -->
     <div class="col-md-12 col-sm-12 " style="margin:auto;min-height:1000px;max-width:1000px;padding:0" >
         <div class="col-12 ak-bg ak-shadow mt-3" style="padding:15px;padding-top:0%;padding-bottom:0;border-radius:0px" role="alert">
@@ -79,26 +119,10 @@
                 
             </div>
             <div class="row">
-                    <button class="btn btn-danger col-12 align-self-center ak-btn text-center" style="padding:1px ; z-index: 0;font-weight: 550" onclick="clickBtnClear()" ><span translate-id="selector-clear">Clear</span> <span id="count-tag"></a> </button>
-            </div>
+                <button class="btn btn-danger col-12 align-self-center ak-btn text-center" style="padding:1px ; z-index: 0;font-weight: 550" onclick="clickBtnClear()" ><span translate-id="selector-clear">Clear</span> <span id="count-tag"></a> </button>
+        </div>
     </div>
-        
         <div>
-            <div>
-                <div id="spine-frame" style="position: absolute;width: 300px; height: 300px;top:100px;left:550px;transform: scale(0.75);z-index:2;pointer-events: none;">
-                    <div id="spine-frameheader" class='btn btn-sm ak-sm-btn' style="display:inline-block;cursor: move;pointer-events:all;transform: scale(2);margin:0px;position: absolute;left:140px;top:90px;opacity: 0;"><i class="fas fa-arrows-alt"></i></div>
-                    <button class='btn btn-sm ak-sm-btn ak-disable' style='display:none;position:absolute;top:75px;left:75px;font-size:30px'  type='button' id='loading-spine'>Loading ...</button>
-                    <div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:-775px;left:-750px;pointer-events: none;z-index: 20;transform: scale(0.5);"></div> <!-- scaling 0.5 for "supersampling" chibi -->   
-                </div>
-                <div id="spine-toolbar" style="position: absolute;width: 320px; height: 300px;top:340px;left:550px;;z-index:1;">
-                    <button class="btn btn-sm ak-chibi-btn" id="Chibi-download" title='Experimental Saving'><i class="far fa-save"></i></button>
-                    <button class='btn btn-sm ak-chibi-btn ak-disable' style='min-width:30px;height:30px'  type='button' >C</button>
-                    <button class='btn btn-sm ak-chibi-btn' style='min-width:31px;height:30px' onclick='PlayPause("widget")' type='button' id='Chibi-Play'><b>l l </b></button>
-                    <button class='btn btn-sm ak-chibi-btn' style='min-width:30px;height:30px' onclick='ChangeAnimation("widget","#spine-text",-1)' type='button' id='Chibi-Prev'><i class="fas fa-step-backward"></i></button>
-                    <button id="spine-text" class="btn ak-chibi-btn" style="width:140px;height:30px; "onclick='ChangeAnimation("widget","#spine-text",0)'></button>
-                    <button class='btn btn-sm ak-chibi-btn' style='min-width:30px;height:30px' onclick='ChangeAnimation("widget","#spine-text",1)' type='button' id='Chibi-Next'><i class="fas fa-step-forward"></i></button>
-                </div>
-            </div>
             <div id="enemyDetail" class="ak-c-black" style="min-height: 300px;"></div>
             <div id="enemyDetail2"></div>
         </div>
@@ -112,6 +136,7 @@
                 
             </tbody>
         </table>
+        
         <div class="col-12 tutorial">
             <div class="col-12 text-left ak-mid ak-shadow" style="padding:10px" >
                 <p>How To Use ：</p>

@@ -259,7 +259,11 @@
                     </div>
                 </div>
             
-            
+            <div>
+                <button type="button" class="btn ak-button  browse-btn" style="width:90px" data-toggle="modal" data-target="#enemysd"">
+                    Check SD
+                </button>
+            </div>
             <div>Enemy Type : ${currEnemy.enemyLevel.charAt(0) + currEnemy.enemyLevel.slice(1).toLowerCase()}</div>
             
             <div>Attack type : ${atktype.join(" ")}</div>
@@ -465,6 +469,63 @@
         }
     }
 
+    function ConvertAtlas(atlas){
+        var combined = []
+        var eachpart = atlas.split(/\n\n/g)
+        // console.log(eachpart)
+        eachpart.forEach(part => {
+            combined.push(ParseAtlas(part))
+        });
+        return combined
+    }
+    function ParseAtlas(texts){
+        var json = {parts:[]}
+        var eachlines = texts.split(/\n/g)
+        var isheaderfinished=false
+        var isheader = false
+        var currheader
+        var num = -1
+        eachlines.forEach(line => {
+            // console.log(line)
+            if(line=="\r"){
+                
+            }
+            else if(line!=""){
+                if(!isheaderfinished){
+                    if(!json.image){
+                            json.image=line;
+                        }else{
+                            var currvalue = GetAtlasValue(line)
+                            json[currvalue.key] = currvalue.value
+                            if(currvalue.key=="repeat"){
+                                isheaderfinished=true
+                            }
+                    }
+                }else{
+                    if((/(  )/g).test(line)&&currheader){
+                        isheader = false
+                        var currvalue = GetAtlasValue(line.replace("  ",""))
+                        json.parts[currheader][currvalue.key] = currvalue.value
+                    }else{
+                        isheader = true
+                        num =+1
+                        currheader = line
+                        json.parts[line]={}
+                    }
+                }
+            }
+        });
+        return json
+    }
+    function GetAtlasValue(value){
+        var content = value.split(":")
+        var splitvalue = [content[1]]
+        if(content[1]&&content[1].includes(",")){
+          splitvalue = content[1].split(",")
+        }
+        return {key:content[0],value:splitvalue}
+      }
+    
     function LoadAnimation(chibiname = chibiName){
         // console.log(spinewidget)
         $("#loading-spine").text("Loading...")
@@ -475,7 +536,7 @@
             spinewidget = undefined
             $("#spine-widget").remove()
             currscale = chibiscaleweblist[chibiscaleweb]
-            $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: 1800px; height: 1800px;top:${currscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${currscale[0]});"></div>`)
+            $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: 2500px; height: 2500px;top:${currscale[1]}px;left:-750px;pointer-events: none;z-index: 20;transform: scale(${currscale[0]});"></div>`)
             // console.log(loadchibi)
             // if(loadchibi)$("#spine-frame").fadeIn(100);
         }else{
@@ -492,6 +553,7 @@
             $("#loading-spine").fadeIn(200)
             console.log(chibiname)
             chibiName = chibiname
+            
             xhr.onloadend = function (e) {
                 if (xhr.status != 404) {
                     buffer = xhr.response;
@@ -531,69 +593,87 @@
                     // var test = new TextDecoder("utf-8").decode(array);
                     // console.log(JSON.parse(test))
                     // console.log(JSON.stringify(skelBin.json, null, "\t"));
-                    new spine.SpineWidget("spine-widget", {
-                        jsonContent: jsonskel,
-                        atlas: folder + chibiname + ".atlas",
-                        animation: defaultAnimationName,
-                        backgroundColor: "#00000000",
-                        skin : defaultskin,
-                        // debug: true,
-                        // imagesPath: chibiName + ".png", 
-                        premultipliedAlpha: true,
-                        fitToCanvas : false,
-                        loop:true,
-                        x:900,
-                        y:650,
-                        //0.5 for normal i guess
-                        scale:1,
-                        success: function (widget) {
-                            
-                            animIndex=0
-                            spinewidget = widget
-                            $("#spine-text").text(widget.skeleton.data.animations[0].name)
-                            $("#loading-spine").fadeOut(200)
-                            animations = widget.skeleton.data.animations;
-                            // console.log(animations)
-                            // console.log(widget)
-                            $("#spine-widget").show()
-                            if(animations.find(search=>search.name=="Start")){
-                                CreateAnimation(spinewidget,["Start","Idle"])
-                                $("#spine-text").text("Idle")
-                            }else if(animations.find(search=>search.name=="Relax")){
-                                CreateAnimation(spinewidget,"Relax")
-                                $("#spine-text").text("Relax")
-                            }
+                    var spineX = parseFloat(2500)/2
+                    var spineY = parseFloat(2500)/2 -900
+                    var xhratlas = new XMLHttpRequest();
+                    xhratlas.open('GET', folder + chibiname + ".atlas", true);
+                    xhratlas.onloadend = function (e) {
+                        if (xhratlas.status != 404) {
+                            var loadedatlas = xhratlas.response;
+                            var imagename = ConvertAtlas(loadedatlas)
+                            var atlaslist = []
+                            imagename.forEach(image => {
+                                atlaslist.push(image.image)
+                            });
+                            console.log(atlaslist)
+                            new spine.SpineWidget("spine-widget", {
+                                jsonContent: jsonskel,
+                                atlas: folder + chibiname + ".atlas",
+                                atlasPages: atlaslist,
+                                animation: defaultAnimationName,
+                                backgroundColor: "#00000000",
+                                skin : defaultskin,
+                                // debug: true,
+                                // imagesPath: chibiName + ".png", 
+                                premultipliedAlpha: true,
+                                fitToCanvas : false,
+                                loop:true,
+                                x:spineX,
+                                y:spineY,
+                                //0.5 for normal i guess
+                                scale:1,
+                                success: function (widget) {
+                                    
+                                    animIndex=0
+                                    spinewidget = widget
+                                    $("#spine-text").text(widget.skeleton.data.animations[0].name)
+                                    $("#loading-spine").fadeOut(200)
+                                    animations = widget.skeleton.data.animations;
+                                    // console.log(animations)
+                                    // console.log(widget)
+                                    $("#spine-widget").show()
+                                    if(animations.find(search=>search.name=="Start")){
+                                        CreateAnimation(spinewidget,["Start","Idle"])
+                                        $("#spine-text").text("Idle")
+                                    }else if(animations.find(search=>search.name=="Relax")){
+                                        CreateAnimation(spinewidget,"Relax")
+                                        $("#spine-text").text("Relax")
+                                    }
 
-                            // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
-                            // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Loop_End","Idle"],true)
+                                    // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
+                                    // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Loop_End","Idle"],true)
 
-                            widget.customanimation = CheckAnimationSet(animations)
-                            // console.log(widget)
-
-
-                            //ange skill 2
-                            // CreateAnimation(["Skill1_Begin",["Skill1_Loop",15],"Skill1_End",["Idle_Charge",2]],true)
-
-                            //ange skill 3 (is weird)
-                            // CreateAnimation(["Skill2_Begin",["Skill2_Loop",15],"Skill2_End",["Idle_Charge",2]],true)
-
-                            // Normal skill loop with begin and idle i guess (nian skill 2)
-                            // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Idle"],true,true)
+                                    widget.customanimation = CheckAnimationSet(animations)
+                                    // console.log(widget)
 
 
-                            // console.log(widget.state)
-                            // console.log(widget.state.trackEntry)
-                            $("#spine-toolbar-next").onclick = function () {
-                                widget.state.clearTracks()
-                                if(animationqueue!=undefined)clearInterval(animationqueue)
-                                animIndex++;
-                                // console.log(animations)
-                                if (animIndex >= animations.length) animIndex = 0;
-                                widget.setAnimation(animations[animIndex].name)
-                                $("#spine-text").text(animations[animIndex].name)
-                            }
+                                    //ange skill 2
+                                    // CreateAnimation(["Skill1_Begin",["Skill1_Loop",15],"Skill1_End",["Idle_Charge",2]],true)
+
+                                    //ange skill 3 (is weird)
+                                    // CreateAnimation(["Skill2_Begin",["Skill2_Loop",15],"Skill2_End",["Idle_Charge",2]],true)
+
+                                    // Normal skill loop with begin and idle i guess (nian skill 2)
+                                    // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Idle"],true,true)
+
+
+                                    // console.log(widget.state)
+                                    // console.log(widget.state.trackEntry)
+                                    $("#spine-toolbar-next").onclick = function () {
+                                        widget.state.clearTracks()
+                                        if(animationqueue!=undefined)clearInterval(animationqueue)
+                                        animIndex++;
+                                        // console.log(animations)
+                                        if (animIndex >= animations.length) animIndex = 0;
+                                        widget.setAnimation(animations[animIndex].name)
+                                        $("#spine-text").text(animations[animIndex].name)
+                                    }
+                                }
+                            })
                         }
-                    })
+                        
+                    }
+                    xhratlas.send()
                 }else{
                     $("#loading-spine").text("Load Failed")
                     // $("#spine-frame").fadeOut()
