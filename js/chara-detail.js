@@ -2651,6 +2651,22 @@
                     Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> and deploy at max of <@ba.kw>${mission.paramList[3]}</> other operators
                     `
                 break;
+            case "EquipmentDeployCharAndKillCnt":
+                var currchar = db.chars[mission.paramList[2]]
+                tl=`
+                    Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
+                    Kill at least <@ba.kw>${mission.paramList[4]}</> enemies using Non-Borrowed </br>
+                    <@ba.kw> <img src="./img/avatars/${mission.paramList[2]}.png" style="max-width:50px"> ${currchar.appellation} </>, and at least deployed <@ba.kw>${mission.paramList[1]}</> times
+                `
+                break;
+            case "EquipmentBattleCharDamage":
+                var currchar = db.chars[mission.paramList[1]]
+                tl=`
+                    Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
+                    Deal at least <@ba.kw>${mission.paramList[2]}</> damage using Non-Borrowed </br>
+                    <@ba.kw> <img src="./img/avatars/${mission.paramList[1]}.png" style="max-width:50px"> ${currchar.appellation} </>
+                `
+                break;
         }
 
         if(tl==""){
