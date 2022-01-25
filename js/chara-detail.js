@@ -1505,6 +1505,7 @@
                     }
                 }
                 if(skindata){
+                    console.log(skindata)
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='img/ui/elite/${i}-s.png'></button>`))
                     if(i == 0){
                         $("#charazoom").attr("src","img/characters/"+skindata.portraitId+".png");
@@ -1562,11 +1563,23 @@
                     </div>
                     `))
 
-                    
-                    dropdowntab.push(`<li class='nav-item' ${i==0?`style="margin-top:5px"`:""}><a class="btn tabbing-btns tabbing-btns-middle" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
-                    <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-                    <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='img/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
-                    </a></li>`)
+                    dropdowntab.push(`
+                        <li class='nav-item' ${i==0?`style="margin-top:5px"`:""}>
+                        ${extraSkin[i].dynIllustId?`
+                            <button class='btn tabbing-btns tabbing-btns-middle' data-toggle='pill' style='width:24px;height:25px;display:inline-block' title="Show Animated CG" onClick='ShowDynamic("${opcode}",true,"${extraSkin[i].dynIllustId.replace("#","_")}")'>
+                                <i class="fas fa-play-circle"></i>
+                            </button><button class='btn tabbing-btns tabbing-btns-middle' style='width:19px;height:25px;display:inline-block' title="Play Interact Animation" onClick='CreateAnimation(spinewidgetcg,["Interact","Idle"])'>
+                                <i class="fas fa-hand-point-down"></i>
+                            </button><button class='btn tabbing-btns tabbing-btns-middle' style='width:19px;height:25px;display:inline-block' title="Play Special Animation" onClick='CreateAnimation(spinewidgetcg,["Special","Idle"])'>
+                                <i class="far fa-star"></i>
+                            </button>
+                        `:""}
+                        
+                        <a class="btn tabbing-btns tabbing-btns-middle" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
+                            <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
+                            <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='img/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
+                        </a></li>
+                        `)
                 }
                 
                 tabbtn.push(`
@@ -4999,11 +5012,16 @@
         return {key:content[0],value:splitvalue}
       }
     
-    function LoadAnimationCG(opid,dynid){
+    function LoadAnimationCG(opid,dynid,isSkin = false){
         var dynfolder = `./spineassets/dynchars/${opid}/`
         var splitdyn = dynid.split("_")
         var splitdynj = splitdyn.slice(0, splitdyn.length - 1).join("_")
         var skelname = `${splitdynj}`
+
+        if(isSkin){
+            skelname = dynid
+        }
+        console.log(skelname)
         if(spinewidgetcg){
             spinewidgetcg.pause()
             spinewidgetcg = undefined
@@ -5452,12 +5470,20 @@
         }
     }
 
-    function ShowDynamic(name){
+    function ShowDynamic(name,isSkin = false,dynid = ""){
         var checkskin = db.skintable.buildinEvolveMap[name]
-        if(checkskin){
+        if(isSkin){
+            console.log(isSkin)
+            console.log(name)
+            console.log(dynid)
+            $("#spine-frame-op").fadeIn(200)
+            $("#tabs-opCG").fadeOut(200)
+            LoadAnimationCG(name,dynid,true)
+            return
+        }else if(checkskin){
             if(checkskin[2]){
                 var currentskin = db.skintable.charSkins[checkskin[2]]
-                // console.log(currentskin)
+                console.log(currentskin)
                 if(currentskin&&currentskin.dynIllustId){
                     $("#spine-frame-op").fadeIn(200)
                     $("#tabs-opCG").fadeOut(200)
@@ -5467,6 +5493,7 @@
                     
             }
         }
+        
         $("#spine-frame-op").fadeOut(200)
         $("#tabs-opCG").fadeIn(200)
     }
