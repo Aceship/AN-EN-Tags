@@ -9,6 +9,11 @@
 		"desc": "When stationed at the Command Center, if there are 2 or more Operation Platforms stationed in Power Stations, production of all Craft Stations +2% (Only highest effect becomes active)",
 		"descformat": "When stationed at the Command Center, if there are <@cc.kw>2</> or more <$cc.tag.op><@cc.kw>Operation Platforms</></> stationed in <@cc.kw>Power Stations</>, production of all Craft Stations <@cc.vup>+2%</> (Only highest effect becomes active)"
 	},
+	"control_pow_bot[000]": {
+		"name": "I think it's Possible",
+		"desc": "When stationed at the Command Center, if Lancet-2 is stationed at a Power Station, Power Stations +2 (only affects facility count)",
+		"descformat": "When stationed at the Command Center, if <@cc.kw>Lancet-2</> is stationed at a <@cc.kw>Power Station</>, <@cc.kw>Power Stations</> <@cc.vup>+2</> (only affects facility count)"
+	},
 	"control_tra_spd[000]": {
 		"name": "Cooperation Agreement",
 		"desc": "When stationed at the Command Center, order acquisition efficiency of all Trade Stations +7% (Only highest effect becomes active)",
@@ -29,20 +34,20 @@
 		"desc": "When stationed at the Command Center, if the rate of accumulation of networking resources at HR is less than 30% (including the base 5%), increase accumulation of networking resources by +20% (unique effect across the entire base, unaffected by other effects)",
 		"descformat": "When stationed at the Command Center, if the rate of accumulation of networking resources at HR is less than <@cc.vup>30%</> (including the base 5%), increase accumulation of networking resources by <@cc.vup>+20%</> (unique effect across the entire base, unaffected by other effects)"
 	},
-	"control_pow_bot[000]": {
-		"name": "I think it's Possible",
-		"desc": "When stationed at the Command Center, if Lancet-2 is stationed at a Power Station, Power Stations +2 (only affects facility count)",
-		"descformat": "When stationed at the Command Center, if <@cc.kw>Lancet-2</> is stationed at a <@cc.kw>Power Station</>, <@cc.kw>Power Stations</> <@cc.vup>+2</> (only affects facility count)"
+	"control_upMeetingSpeed[000]": {
+		"name": "Worldly Insight",
+		"desc": "When stationed at the Command Center, clue collection speed +25%",
+		"descformat": "When stationed at the Command Center, clue collection speed <@cc.vup>+25%</>"
 	},
 	"control_clue_cost[000]": {
 		"name": "Neurotic",
-		"desc": "When stationed at the Command Center, increase the bias of operators in Reception finding clues from their own faction, however greatly increase mood reduction per hour of all operators in the Command Center",
-		"descformat": "When stationed at the Command Center, <@cc.kw>increase</> the bias of operators in Reception <@cc.kw>finding clues from their own faction</>, however <@cc.vdown>greatly increase mood reduction per hour</> of all operators in the Command Center"
+		"desc": "When stationed at the Command Center, increase the bias of operators in Reception finding clues from their own faction, however mood reduction per hour of all operators in the Command Center +1.5",
+		"descformat": "When stationed at the Command Center, <@cc.kw>increase</> the bias of operators in Reception <@cc.kw>finding clues from their own faction</>, however mood reduction per hour of all operators in the Command Center <@cc.vdown>+1.5</>"
 	},
 	"control_clue_cost[010]": {
 		"name": "Perceptive",
-		"desc": "When stationed at the Command Center, slightly increase the bias of operators in Reception finding clues from their own faction, however slightly increase mood reduction per hour of all operators in the Command Center",
-		"descformat": "When stationed at the Command Center, <@cc.kw>slightly increase</> the bias of operators in Reception <@cc.kw>finding clues from their own faction</>, however <@cc.vdown>slightly increase mood reduction per hour</> of all operators in the Command Center"
+		"desc": "When stationed at the Command Center, slightly increase the bias of operators in Reception finding clues from their own faction, however mood reduction per hour of all operators in the Command Center +0.5",
+		"descformat": "When stationed at the Command Center, <@cc.kw>slightly increase</> the bias of operators in Reception <@cc.kw>finding clues from their own faction</>, however mood reduction per hour of all operators in the Command Center <@cc.vdown>+0.5</>"
 	},
 	"control_clue_cost[011]": {
 		"name": "Keen Insight",
@@ -89,10 +94,15 @@
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
 		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
 	},
+	"control_allCost_condChar[000]": {
+		"name": "Moment of Respite",
+		"desc": "When stationed together with Aak at the Command Center, mood recovery per hour of all operators in the Command Center +0.25",
+		"descformat": "When stationed together with <@cc.kw>Aak</> at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.25</>"
+	},
 	"control_mp_cost&faction2[000]": {
 		"name": "Amiable Fortitude",
-		"desc": "When stationed at the Command Center, for every operator from Li's Detective Agency in the Command Center, mood recovery per hour of all operators in the Command Center +0.05, and additionally increase the mood recovery per hour of operators from that faction.",
-		"descformat": "When stationed at the Command Center, for every operator from <$cc.g.lda><@cc.kw>Li's Detective Agency</></> in the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>, and <@cc.kw>additionally increase the mood recovery per hour</> of operators from that faction."
+		"desc": "When stationed at the Command Center, for every operator from Li's Detective Agency in the Command Center, mood recovery per hour of all operators in the Command Center +0.05. Additionally, mood recovery per hour of operators from that faction +0.2.",
+		"descformat": "When stationed at the Command Center, for every operator from <$cc.g.lda><@cc.kw>Li's Detective Agency</></> in the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>. Additionally, mood recovery per hour of operators from that faction <@cc.vup>+0.2</>."
 	},
 	"control_mp_cost&faction[000]": {
 		"name": "Ability & Integrity",
@@ -128,6 +138,16 @@
 		"name": "\"Unmoved by Loss\"",
 		"desc": "When stationed at the Command Center, self mood reduction per hour +0.5. Additionally, when self mood is above 12, gain +10 Sensory Information",
 		"descformat": "When stationed at the Command Center, self mood reduction per hour <@cc.vdown>+0.5</>. Additionally, when self mood is above <@cc.kw>12</>, gain <@cc.vup>+10</> <$cc.bd_a1><@cc.rem>Sensory Information</></>"
+	},
+	"control_facCostReset[000]": {
+		"name": "Keep the Wine Flowing",
+		"desc": "When stationed at the Command Center, remove self-affecting mood reduction effects of operators belonging to Sui in the Command Center",
+		"descformat": "When stationed at the Command Center, <@cc.kw>remove self-affecting</> mood reduction effects of operators belonging to <$cc.g.sui><@cc.kw>Sui</></> in the Command Center"
+	},
+	"control_costToBD[000]": {
+		"name": "\"Vast Mountains and Rivers\"",
+		"desc": "When stationed at the Command Center, if self mood is above 12, gain +15 Worldly Plight; If self mood is 12 or below, gain +10 Sensory Information",
+		"descformat": "When stationed at the Command Center, if self mood is above <@cc.kw>12</>, gain <@cc.vup>+15</> <$cc.bd_b1><@cc.rem>Worldly Plight</></>; If self mood is <@cc.kw>12</> or below, gain <@cc.vup>+10</> <$cc.bd_a1><@cc.rem>Sensory Information</></>"
 	},
 	"control_mp_bd[000]": {
 		"name": "Intelligence Reserve",
@@ -994,6 +1014,11 @@
 		"desc": "When stationed at the Training Station, increase the skill training speed of Vanguard operators by +30%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Vanguard</> operators by <@cc.vup>+30%</>"
 	},
+	"train_spd&profession2[010]": {
+		"name": "Vanguard Specialization·α",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Vanguard operators by +30%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Vanguard</> operators by <@cc.vup>+30%</>"
+	},
 	"train_spd&profession[011]": {
 		"name": "Vanguard Specialization·β",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Vanguard operators by +50%",
@@ -1140,9 +1165,19 @@
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Specialist</> operators by <@cc.vup>+60%</>"
 	},
 	"train_spd&profession3[130]": {
-		"name": "Infection of the Arts",
+		"name": "Combat Techniques: Arts Protector",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Defender operators by +30%. If the trainee's subclass is Arts Protector, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Defender</> operators by <@cc.vup>+30%</>. If the trainee's subclass is <@cc.kw>Arts Protector</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
+	},
+	"train_spd&profession3[140]": {
+		"name": "Combat Techniques: Marksman",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Sniper operators by +30%. If the trainee's subclass is Marksman, increase the skill training speed by an additional +45%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Sniper</> operators by <@cc.vup>+30%</>. If the trainee's subclass is <@cc.kw>Marksman</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
+	},
+	"train_spd&profession2[110]": {
+		"name": "Tactics Studies",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Vanguard operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Vanguard</> operators by <@cc.vup>+30%</>. If the current training is for <@cc.vup>Mastery 1</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
 	"train_spd&profession2[120]": {
 		"name": "Shinkage-ryu",
