@@ -3146,8 +3146,15 @@
         $('#name-illustrator').html(`<a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a>`)
         var voiceDict = db.charword.voiceLangDict[opdataFull.id]
         console.log(voiceDict)
-        var jpvoice = voiceDict.dict.JP.cvName
+        var jpvoice
         var cnvoice 
+        if (voiceDict.dict.JP){
+            $('#voiceactor-1').html(` JP`)
+            jpvoice = voiceDict.dict.JP.cvName
+        }else{
+            $('#voiceactor-1').html(``)
+            jpvoice = voiceDict.dict[Object.keys(voiceDict.dict)[0]].cvName
+        }
         if (voiceDict.dict.CN_MANDARIN){
             cnvoice = voiceDict.dict.CN_MANDARIN.cvName
         }
