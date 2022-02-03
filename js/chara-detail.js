@@ -3019,6 +3019,11 @@
                     case "EN":
                         lang = "EN"
                         break;
+                    case "LINKAGE":
+                        var path = voiceDict.dict[dict].voicePath
+                        foldername = path.split("/")
+                        foldername = foldername[foldername.length-2]
+                        break;
                     default:
                         break;
                 }
