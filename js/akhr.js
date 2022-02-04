@@ -45,6 +45,7 @@
                     $.each(char.tags, function (_, tag) {
                         if (tag in tags_aval) {
                             tags_aval[tag].push({ 
+                                'id': char.id,
                                 "name_en": char.name_en, 
                                 "name": char['name_'+reg],
                                 "name_tl": char['name_'+lang],
@@ -52,6 +53,7 @@
                                 "type": char.type });
                         } else {
                             tags_aval[tag] = [{ 
+                                'id': char.id,
                                 "name_en": char.name_en, 
                                 "name": char['name_'+reg], 
                                 "name_tl": char['name_'+lang],
@@ -61,7 +63,15 @@
                         }
                         char_tag_sum++;
                     });
-                    all_chars[char.name_cn] = { 'name_cn': char.name_cn, 'name_en': char.name_en, 'name_jp': char.name_jp, 'name_kr': char.name_kr, 'level': char.level, 'tags': char.tags };
+                    all_chars[char.name_cn] = {
+                        'id': char.id,
+                        'name_cn': char.name_cn,
+                        'name_en': char.name_en,
+                        'name_jp': char.name_jp,
+                        'name_kr': char.name_kr,
+                        'level': char.level,
+                        'tags': char.tags
+                    };
                 });
                 //$.each(tags_aval, function (key, _) {
                 //    $("#box-tags").append(
@@ -610,7 +620,7 @@
                         let style = showImage ? "style=\"padding: 1px 1px;" + padding + ";\" " : "";
                         let buttonstyle = size >25? "background-color: #AAA": "background-color: transparent";
                         chars_html.push("<button type=\"button\" class=\" ak-shadow-small ak-btn btn btn-sm ak-rare-" + colors[char.level] + " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"bottom\" onclick=\"showChar(this)\" " +style+"title=\""+ char.name +"\">");
-                        if(showImage)chars_html.push("<img style=\""+buttonstyle+"\"height=\""+size+"\" width=\""+size+"\" src=\"./img/chara/"+ char.name_en +".png\">   " )
+                        if(showImage)chars_html.push("<img style=\""+buttonstyle+"\"height=\""+size+"\" width=\""+size+"\" src=\"./img/avatars/"+ char.id +".png\">   " )
                         if(size>60)chars_html.push("<div>")
                         if(showName)chars_html.push(char.name_tl)
                         if(size>60)chars_html.push("</div>")
