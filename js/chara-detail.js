@@ -3080,10 +3080,9 @@
                 case "JP":
                     lang = "JP VA"
                     if(checkold){
-                        var content = checkold.jp
                         $('#opaudiocontent').append(`
                         <div style="text-align:center">
-                        <div class="btn-infoleft ak-shadow" style="width:100px"><i class="fas fa-microphone-alt" title="Voice Actor">JP0 VA</i></div><div class="btn-inforight" style="width:70%"><a href="https://www.google.com/search?q=Voice+Actor+${content}"  target="_blank">${content}</a></div>
+                        <div class="btn-infoleft ak-shadow" style="width:100px"><i class="fas fa-microphone-alt" title="Voice Actor">JP0 VA</i></div><div class="btn-inforight" style="width:70%"><a href="https://www.google.com/search?q=Voice+Actor+${checkold.jp}"  target="_blank">${checkold.jp}</a></div>
                         </div>
                         `)
                     }
