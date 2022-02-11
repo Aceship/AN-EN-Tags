@@ -2166,7 +2166,8 @@
                         var missionhtml = ``
                         currequip.missionList.forEach(mission => {
                             var currmission = db.uniequip.missionList[mission]
-                            var missioncheck = ModuleMissionDescription(currmission)
+                            var currmissionEN = db.uniequipEN.missionList[mission]
+                            var missioncheck = ModuleMissionDescription(currmission,currmissionEN)
                             missionhtml +=`
                             ${titledMaker2(missioncheck,`Mission ${missionnum}`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")}
                             </br>
@@ -2214,7 +2215,7 @@
         }
     }
 
-    function ModuleMissionDescription(mission){
+    function ModuleMissionDescription(mission,missionEN){
         // console.log(mission)
         var tl = ''
         var squadinfo =''
@@ -2674,22 +2675,22 @@
                 `
                 break;
         }
-
-        if(tl==""){
-            return `
-                (Non-translated)</br>
-                ${mission.desc}
-            `
-        }else{
-            tl = `
-                (Auto-translated)</br>
-                ${tl}
-                </br>
-                </br>
-                (Non-translated)</br>
-                ${mission.desc}
-            `
-        }
+        tl = `
+            ${tl?`
+            (Auto-translated)</br>
+            ${tl}
+            </br>
+            </br>
+            `:""}
+            ${missionEN?`
+            (Official Translate)</br>
+            ${missionEN.desc}
+            </br>
+            </br>
+            `:""}
+            (Non-translated)</br>
+            ${mission.desc}
+        `
         return ChangeDescriptionColor(tl,true)
     }
 
