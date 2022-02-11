@@ -893,6 +893,8 @@
                 var currsub = db.tlsubclass.subclass[element]
                 if(currsub.en && currsub.en.length>0){
                     branchname = currsub.en
+                }else if(currsub.tl && currsub.tl.length>0){
+                    branchname = currsub.tl
                 }else if(currsub.name){
                     branchname = currsub.name
                 }
@@ -1657,6 +1659,8 @@
                 var currsub = db.tlsubclass.subclass[opdataFull.subProfessionId]
                 if(currsub.en && currsub.en.length>0){
                     capsubclass = currsub.en
+                }else if(currsub.tl && currsub.tl.length>0){
+                    capsubclass = currsub.tl
                 }else if(currsub.name){
                     capsubclass = currsub.name
                 }
