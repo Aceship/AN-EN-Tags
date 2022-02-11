@@ -28,7 +28,7 @@
         skillsEN        :"./json/gamedata/en_US/gamedata/excel/skill_table.json",
         item_tableEN    :"./json/gamedata/en_US/gamedata/excel/item_table.json",
         enemyEN         :"./json/gamedata/en_US/gamedata/excel/enemy_handbook_table.json",
-
+        uniequipEN      :"./json/gamedata/en_US/gamedata/excel/uniequip_table.json",
 
         //Utilities
         attacktype      :"./json/tl-attacktype.json",
@@ -2002,12 +2002,14 @@
             if(db.uniequip.charEquip[opKey]){
                 var equiplist = db.uniequip.charEquip[opKey]
                 
+                
                 var num = 1
                 var tabhtml = ""
                 var contenthtml = ""
 
                 equiplist.forEach(element => {
                     var currequip = db.uniequip.equipDict[element]
+                    var currequipEN = db.uniequipEN.equipDict[element]
                     var currebattequip
                     var equiphtml = ""
                     if(db.battle_equip[currequip.uniEquipId]){
@@ -2023,7 +2025,7 @@
                                         <img class='equip-image' src='img/equip/type/${currequip.typeIcon}.png' style='width: 30px; position:absolute;'></img>
                                     </div>
                                     <div style = "position:absolute;margin: 0px 0px 0px 0px">
-                                        <div style = "width:60px;margin: 4px 0px 0px -10px;background:#222;color:#ddd;font-size:10px">${currequip.typeName}</div>
+                                        <div style = "width:60px;margin: 4px 0px 0px -10px;background:#222;color:#ddd;font-size:10px">${currequipEN?currequipEN.typeName:currequip.typeName}</div>
                                     </div>
                                 </div>
                             </div>
@@ -2173,12 +2175,12 @@
                     }
                     
                     if(currequip.typeName=="ORIGINAL"){
-                        equiphtml += titledMaker(currequip.uniEquipDesc,`Basic Information`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")
+                        equiphtml += titledMaker(currequipEN?currequipEN.uniEquipDesc:currequip.uniEquipDesc,`Basic Information`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")
                     }
                     contenthtml =`
                     <div class='tab-pane container ${num!=2 ? '' : 'active'}' id='equip${num}'>
                         <div class='small-container' style='margin-top: 50px;'>
-                            <span class='custom-span equipname'><div>${currequip.uniEquipName}</div></span>
+                            <span class='custom-span equipname'><div>${currequipEN?currequipEN.uniEquipName:currequip.uniEquipName}</div></span>
                             
                                 <div class='equipimage'>
                                     <button type="button" class="btn ak-button" style="width:90px;height:90px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
@@ -2799,14 +2801,15 @@
 
     function GetModuleStory(module){
         var currequip = db.uniequip.equipDict[module]
+        var currequipEN = db.uniequipEN.equipDict[module]
         $("#opmodulestorycontent").html(`
-            <div style="background:#222;padding:6px 5px 6px 5px;font-size:20px;text-align:center">${currequip.uniEquipName}</div>
+            <div style="background:#222;padding:6px 5px 6px 5px;font-size:20px;text-align:center">${currequipEN?currequipEN.uniEquipName:currequip.uniEquipName}</div>
             <div style="background:#333;padding:6px 5px 6px 5px;text-align:center">
             <img class='equip-image' id='equip${i}image' src='img/equip/icon/${currequip.uniEquipIcon}.png' style='width:100%;max-width:500px;object-fit:contain'>
             </div>
             
             <div style="background:#222;padding:6px 5px 6px 5px;font-size:20px;text-align:center">Basic Information</div>
-            <div style="background:#333;padding:6px 5px 6px 5px;">${currequip.uniEquipDesc.replace(/\n/g,"</br>")}</div>
+            <div style="background:#333;padding:6px 5px 6px 5px;">${currequipEN?currequipEN.uniEquipDesc.replace(/\n/g,"</br>"):currequip.uniEquipDesc.replace(/\n/g,"</br>")}</div>
         `)
     }
 
