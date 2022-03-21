@@ -2965,8 +2965,8 @@
             if(curraudio){
                 
                 if(curraudio.charId&&curraudio.wordKey == opdataFull.id){
-                    if(db.charwordEN[element]){
-                        curraudio = db.charwordEN[element]
+                    if(db.charwordEN.charWords[element]){
+                        curraudio = db.charwordEN.charWords[element]
                         currTL = undefined
                         isEN = true
                     }
