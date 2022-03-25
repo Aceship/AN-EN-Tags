@@ -3039,8 +3039,8 @@
                 audiolist.push(`
                 <div style="display:inline-block;padding-top:15px;vertical-align:top;width:20px" >${lang}</div>
                 <div style="display:inline-block">
-                <audio preload="metadata" controls style="margin-top:10px"> <source src="./etc/${foldername}/${wordKey}/${element.voiceId}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
-                <a href="./etc/${foldername}/${wordKey}/${element.voiceId}.mp3"  target="_blank">
+                <audio preload="metadata" controls style="margin-top:10px"> <source src="./etc/${foldername.toLowerCase()}/${wordKey}/${element.voiceId}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+                <a href="./etc/${foldername.toLowerCase()}/${wordKey}/${element.voiceId}.mp3"  target="_blank">
                 <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
                 </div>`)
                 
