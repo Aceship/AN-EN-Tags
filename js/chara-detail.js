@@ -3535,14 +3535,15 @@
             var fxdir = element.dir
             var fxname = element.name
             var fxdataname = element.dataname
-            // console.log(fxname)
-            // console.log(fxname)
-            // console.log(fxdir)
-            var curraudio  =`<audio class="sfxplayer" preload="metadata" controls style="margin-top:5px"> <source src="${fxdir}.wav" type="audio/wav">Your browser does not support the audio tag.</audio> `
+            var fxExt = "wav"
+            if(fxdir.includes("voice")){
+                fxExt = "mp3"
+            }
+            var curraudio  =`<audio class="sfxplayer" preload="metadata" controls style="margin-top:5px"> <source src="${fxdir}.${fxExt}" type="audio/${fxExt}">Your browser does not support the audio tag.</audio> `
             var currhtml = $(`
             <table class="sfx-table">
             <th>${fxdataname}</th>
-            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="${fxdir}.wav"  target="_blank">
+            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="${fxdir}.${fxExt}"  target="_blank">
             <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
             <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${fxname}</div>
             </td></tr>
@@ -3555,31 +3556,6 @@
         $(".sfxplayer").each(function(a){
             $(".sfxplayer")[a].volume = 0.3;
         })
-        // curraudiolist.forEach(element => {
-        //     var curraudio  =`<audio preload="metadata" controls style="margin-top:5px"> <source src="./etc/player/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> `
-        //     // if(LinkCheck(`./etc/voice/${element.voiceAsset}.mp3`)){
-        //     //     curraudio= '<audio controls> <source src="./etc/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
-        //     // }
-        //     if(currTL)voiceTL= currTL.voiceline[element.voiceTitle][lang]?currTL.voiceline[element.voiceTitle][lang]: element.voiceText
-        //     // console.log(element.voiceTitle)
-        //     // console.log(currTL)
-        //     // console.log(currTL.voiceline[element.voiceTitle])
-        //     // console.log(voiceTL)
-        //     var currhtml = $(`
-        //     <table class="story-table">
-        //     <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
-        //     <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="./etc/voice/${element.voiceAsset}.mp3"  target="_blank">
-        //     <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
-        //     <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${element.voiceAsset.split("_").slice(-1)[0] }</div>
-        //     </td></tr>
-        //     <tr><td style="height:10px"></td></tr>
-        //     <tr><td>${voiceTL}</td></tr>
-        //     <tr><td style="height:10px"></td></tr>
-        //     </table>
-            
-        //     `)
-        //     $('#opaudiocontent').append($(currhtml))
-        // });
     }
     function GetPotential(opdataFull){
         var potentials = opdataFull.potentialRanks
