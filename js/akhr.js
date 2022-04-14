@@ -42,6 +42,7 @@
                     } else {
                         char.tags.push(char.sex);
                     }
+                    char.tags = Array.from(new Set(char.tags));
                     $.each(char.tags, function (_, tag) {
                         if (tag in tags_aval) {
                             tags_aval[tag].push({ 
