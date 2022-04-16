@@ -54,6 +54,11 @@
 		"desc": "When stationed at the Command Center, slightly increase the bias of operators in Reception finding clues from their own faction",
 		"descformat": "When stationed at the Command Center, <@cc.kw>slightly increase</> the bias of operators in Reception <@cc.kw>finding clues from their own faction</>"
 	},
+	"control_clue_faction[070]": {
+		"name": "“A Thousand Letters”",
+		"desc": "When stationed at the Command Center, it becomes easier to obtain clues from Glasgow Group (affected by work duration)",
+		"descformat": "When stationed at the Command Center, it becomes easier to obtain clues from <@cc.kw>Glasgow Group</> (affected by work duration)"
+	},
 	"control_mp_cost[000]": {
 		"name": "Competent",
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
@@ -484,7 +489,7 @@
 		"desc": "When stationed at a Craft Station, increase production of precious metals by +30%",
 		"descformat": "When stationed at a Craft Station, increase production of <@cc.kw>precious metals</> by <@cc.vup>+30%</>"
 	},
-	"manu_formula_spd[101]": {
+	"manu_formula_spd[110]": {
 		"name": "Metal Crafts·β",
 		"desc": "When stationed at a Craft Station, increase production of precious metals by +35%",
 		"descformat": "When stationed at a Craft Station, increase production of <@cc.kw>precious metals</> by <@cc.vup>+35%</>"
@@ -546,6 +551,11 @@
 	},
 	"trade_ord_spd[020]": {
 		"name": "Logistics Expert",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +35%",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+35%</>"
+	},
+	"trade_ord_spd[021]": {
+		"name": "Celebrity Meetup",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +35%",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+35%</>"
 	},
@@ -754,6 +764,11 @@
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 65%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, increase the rate of by-products by <@cc.vup>65%</>"
 	},
+	"workshop_proc_probability[031]": {
+		"name": "Discarded Surplus",
+		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 65%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>any kind of material</>, increase the rate of by-products by <@cc.vup>65%</>"
+	},
 	"workshop_proc_probability[040]": {
 		"name": "Unknown Technology",
 		"desc": "When stationed at the Synthesis Station and producing any kind of material, increase the rate of by-products by 70%",
@@ -811,6 +826,11 @@
 	},
 	"workshop_formula_cost3[111]": {
 		"name": "Molten Casting",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, recipes which consume 4 mood will have -1 mood consumed",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, recipes which consume <@cc.kw>4</> mood will have <@cc.vup>-1</> mood consumed"
+	},
+	"workshop_formula_cost3[112]": {
+		"name": "Military Engineering",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, recipes which consume 4 mood will have -1 mood consumed",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, recipes which consume <@cc.kw>4</> mood will have <@cc.vup>-1</> mood consumed"
 	},
@@ -940,6 +960,11 @@
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, for every <@cc.kw>1</> operator with <@cc.vup>20</> or less mood stationed in the Dorms, increase the rate of by-products by <@cc.vup>5%</>"
 	},
 	"workshop_formula_drop[020]": {
+		"name": "Worthless Boon",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, any by-products of T3 quality produced will be Polyester Packs",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, any by-products of <@cc.kw>T3</> quality produced will be <@cc.kw>Polyester Packs</>"
+	},
+	"workshop_formula_drop[030]": {
 		"name": "Corrosion Inhibition Tech",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, any by-products of T3 quality produced will be Oriron Clusters",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, any by-products of <@cc.kw>T3</> quality produced will be <@cc.kw>Oriron Clusters</>"
@@ -993,6 +1018,11 @@
 		"name": "DIY·Orirock",
 		"desc": "When stationed at the Synthesis Station and producing orirock-type elite materials, increase the rate of by-products by 90%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>orirock-type elite materials</>, increase the rate of by-products by <@cc.vup>90%</>"
+	},
+	"workshop_formula_device[111]": {
+		"name": "DIY·Alloy",
+		"desc": "When stationed at the Synthesis Station and producing alloy-type elite materials, increase the rate of by-products by 100%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>alloy-type elite materials</>, increase the rate of by-products by <@cc.vup>100%</>"
 	},
 	"train_spd[000]": {
 		"name": "Instructor",
@@ -1461,13 +1491,13 @@
 	},
 	"dorm_exchangeAp[000]": {
 		"name": "Fellow Sufferers",
-		"desc": "When stationed at a Dorm, if self is in the \"energized\" state, swap mood values with the last operator (excluding self) that entered the current Dorm",
-		"descformat": "When stationed at a Dorm, if self is in the <@cc.kw>\"energized\"</> state, swap mood values with the <@cc.kw>last</> operator (excluding self) that entered the current Dorm"
+		"desc": "When stationed at a Dorm, if self has maxed mood, swap mood values with the operator that entered the current Dorm before self",
+		"descformat": "When stationed at a Dorm, if self has <@cc.kw>maxed mood</>, swap mood values with the operator that entered the current Dorm <@cc.kw>before self</>"
 	},
 	"dorm_recExcludeOther[000]": {
 		"name": "Self-Discipline",
-		"desc": "When stationed at a Dorm, self mood recovery is fixed to 2 per hour, and this is unaffected by any other source of mood recovery effects",
-		"descformat": "When stationed at a Dorm, self mood recovery is fixed to <@cc.vup>2</> per hour, and this is <@cc.vdown>unaffected</> by any other source of mood recovery effects"
+		"desc": "When stationed at a Dorm, self mood recovery per hour +2, and become unaffected by any other source of mood recovery effects",
+		"descformat": "When stationed at a Dorm, self mood recovery per hour <@cc.vup>+2</>, and become <@cc.vdown>unaffected</> by any other source of mood recovery effects"
 	},
 	"hire_spd[000]": {
 		"name": "HR Management·α",
@@ -1602,7 +1632,7 @@
 	"meet_spd_condChar[000]": {
 		"name": "Masterful Proficiency",
 		"desc": "When stationed at Reception and only self is working, clue collection speed +35%",
-		"descformat": "When stationed at Reception and only <@cc.kw>self</> is working, clue collection speed <@cc.vup>+35%</>"
+		"descformat": "When stationed at Reception and only self is working, clue collection speed <@cc.vup>+35%</>"
 	},
 	"meet_spd&cost[100]": {
 		"name": "Logical Deduction",
