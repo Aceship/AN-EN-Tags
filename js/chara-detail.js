@@ -99,6 +99,7 @@
     var talentLimit = []
 
     var currskin 
+    var currVoiceID
     var spinewidgettoken
     var animIndex = 0;
     var animations
@@ -478,6 +479,7 @@
             if(vars.has("story")){
                 $('#opstory').modal('show')
             }else if(vars.has("voice")){
+                currVoiceID = opdataFull.id
                 GetAudio(opdataFull)
                 $('#opaudio').modal('show')
             }else if(vars.has("sfx")){
@@ -1299,7 +1301,6 @@
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
             var opdata3 = db.charpatch.patchChars.char_1001_amiya2
             curropname = opname
-
             var opcode2 = ""
             // console.log(opdata3)
             
@@ -1344,7 +1345,6 @@
 
             tokenname = opdataFull.tokenKey
             currskin =opcode
-
 
             var url = new URL(window.location.href)
             var unreadable = query(db.unreadNameTL,"name",opdataFull.appellation)
@@ -1586,7 +1586,7 @@
                             </button>
                         `:""}
                         
-                        <a class="btn tabbing-btns tabbing-btns-middle" style="${extraSkin[i].dynIllustId?"width:62px":""}" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}")'> 
+                        <a class="btn tabbing-btns tabbing-btns-middle" style="${extraSkin[i].dynIllustId?"width:62px":""}" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}","","${extraSkin[i].skinId}")'> 
                             <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
                             <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='img/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
                         </a></li>
@@ -2950,17 +2950,18 @@
     // }translator
     function GetAudio (opdataFull,lang="en"){
         console.log(opdataFull)
-        
+        console.log(currVoiceID)
         var curraudiolist = []
         var puretextlist =[]
         var isEN = false
         var currTL = db.voicelineTL[opdataFull.id]
-        var voiceDict = db.charword.voiceLangDict[opdataFull.id]
+        var voiceDict = db.charword.voiceLangDict[currVoiceID]
         var checkold = db.voiceold[opdataFull.id]
         // console.log(db.charword)
         // console.log(currTL)
         Object.keys(db.charword.charWords).forEach(element => {
             var curraudio= db.charword.charWords[element]
+            // console.log(element)
             // if(db.charwordEN[element]){
             //     var curraudio = db.charwordEN[element]
             //     console.log("waaaaaaaaaaaaaaaaaaaaaa")
@@ -2973,7 +2974,7 @@
             // }
             if(curraudio){
                 
-                if(curraudio.charId&&curraudio.wordKey == opdataFull.id){
+                if(curraudio.charId&&curraudio.wordKey == currVoiceID){
                     if(db.charwordEN.charWords[element]){
                         curraudio = db.charwordEN.charWords[element]
                         currTL = undefined
@@ -3010,8 +3011,9 @@
             Object.keys(voiceDict.dict).forEach(dict => {
                 var foldername = "voice"
                 var lang = ""
-                var wordKey = voiceDict.dict[dict].wordkey
-                console.log(voiceDict)
+                var wordKey = voiceDict.dict[dict].wordkey.replace("#","_")
+
+                console.log(wordKey)
                 switch (dict) {
                     case "CN_TOPOLECT":
                         foldername = "voice_custom"
@@ -5461,13 +5463,17 @@
         $(widgettext).text(curranimation[animIndex].name)
     }
 
-    function ChangeSkin(name="",pers=""){
+    function ChangeSkin(name="",pers="",id=""){
         currskin = name
         var skinname = currskin.split(opdataFull.id)[1]?name.split(opdataFull.id)[1]:""
         console.log(opdataFull.id)
         console.log(skinname)
-
-        
+        console.log(currskin)
+        console.log(db.skintable.charSkins[id])
+        if(db.skintable.charSkins[id]&&db.skintable.charSkins[id].voiceId)
+            currVoiceID = db.skintable.charSkins[id].voiceId
+        else 
+            currVoiceID = opdataFull.id
         
         if(name!="")chibiName=name
         if(pers!="")chibipers=pers
