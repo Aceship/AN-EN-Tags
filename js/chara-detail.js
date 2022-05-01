@@ -1345,6 +1345,7 @@
 
             tokenname = opdataFull.tokenKey
             currskin =opcode
+            currVoiceID = opdataFull.id
 
             var url = new URL(window.location.href)
             var unreadable = query(db.unreadNameTL,"name",opdataFull.appellation)
