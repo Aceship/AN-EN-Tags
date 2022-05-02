@@ -1320,7 +1320,7 @@
             if(opcode == "char_512_aprot"){
                 opcode = "char_4025_aprot2"
                 opdata2 = {"char_4025_aprot2":db.chars["char_4025_aprot2"]}
-                opkey = "char_4025_aprot2"
+                opKey = "char_4025_aprot2"
                 opdataFull = db.chars["char_4025_aprot2"]
                 opdataFull.id = "char_4025_aprot2"
             }
