@@ -303,18 +303,59 @@
                         }
                     }
                     if(found){
-                        tags_html.push("<button type=\"button\" class=\"btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"top\" title=\""+ tagReg +"\">" +
-                        (tagReg == tagTL ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">'+tagReg+'</a>') +tagTL + "</button>\n")
+                        let subtitle = '';
+                        if (tagReg !== tagTL) {
+                            subtitle = $('<a>', {
+                                'class': "ak-subtitle2",
+                                'style': "font-size:11px;margin-left:-9px;margin-bottom:-15px",
+                                'text': tagReg
+                            });
+                        }
+                        let button = $("<button>", {
+                            'type': "button",
+                            'class': "btn btn-sm ak-shadow-small ak-btn btn-secondary btn-char my-1",
+                            'data-toggle': "tooltip",
+                            'data-placement': "top",
+                            'title': tagReg
+                        }).append([
+                            subtitle,
+                            tagTL
+                        ])
+                        tags_html.push(button, ' ');
                     }
                 });
                 console.log("Region : "+reg)
                 $("#tbody-recommend").append(
-                    "<tr class=\"tr-chartag \"><td>#</td><td>" +
-                    "<button type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small ak-rare-" + colors[char.level] +
-                    " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ char["name_"+reg] +"\" onclick=\"showChar(this)\">" + char["name_"+lang] + "</button>\n" +
-                    "<a type=\"button\" class=\"btn btn-sm ak-btn ak-shadow-small my-1\" style=\"background:#444\"data-toggle=\"tooltip\" data-placement=\"right\" href=\"./akhrchars.html?opname="+char.name_en.replace(/ /g,"_")   +"\" \">Detail</button></td><td>" + tags_html.join("") +""
-                    // "</td><td>#</td>" 
-                    +"</tr>"
+                    $('<tr>', {
+                        'class': 'tr-chartag'
+                    }).append([
+                        $("<td>", {
+                            'text': '#'
+                        }),
+                        $('<td>').append([
+                            $("<button>", {
+                                'type': "button",
+                                'class': "btn btn-sm ak-btn ak-shadow-small ak-rare-" + colors[char.level] + " btn-char my-1",
+                                'data-toggle': "tooltip",
+                                'data-placement': "right",
+                                'title': char["name_"+reg],
+                                'text': char["name_"+lang]
+                            }).on('click', function () {
+                                showChar(this);
+                            }),
+                            ' ',
+                            $("<a>", {
+                                'type': "button",
+                                'class': "btn btn-sm ak-btn ak-shadow-small my-1",
+                                'style': "background:#444",
+                                'data-toggle': "tooltip",
+                                'data-placement': "right",
+                                'href': "./akhrchars.html?opname="+char.name_en.replace(/ /g,"_"),
+                                'text': 'Detail'
+                            })
+                        ]),
+                        $('<td>').append(tags_html)
+                    ])
                 );
 
                 $('[data-toggle="tooltip"]').tooltip({
@@ -618,14 +659,41 @@
                     });
                     $.each(chars, function (_, char) {
                         let padding = showName && size <60? "padding-right: 8px" : "padding-right: 1px";
-                        let style = showImage ? "style=\"padding: 1px 1px;" + padding + ";\" " : "";
-                        let buttonstyle = size >25? "background-color: #AAA": "background-color: transparent";
-                        chars_html.push("<button type=\"button\" class=\" ak-shadow-small ak-btn btn btn-sm ak-rare-" + colors[char.level] + " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"bottom\" onclick=\"showChar(this)\" " +style+"title=\""+ char.name +"\">");
-                        if(showImage)chars_html.push("<img style=\""+buttonstyle+"\"height=\""+size+"\" width=\""+size+"\" src=\"./img/avatars/"+ char.id +".png\">   " )
-                        if(size>60)chars_html.push("<div>")
-                        if(showName)chars_html.push(char.name_tl)
-                        if(size>60)chars_html.push("</div>")
-                        chars_html.push("</button>\n")
+                        let style = showImage ? "padding: 1px 1px;" + padding + ";" : "";
+                        let buttonstyle = size > 25? "background-color: #AAA": "background-color: transparent";
+                        let img = '';
+                        let name = '';
+                        if (showImage) {
+                            img = $("<img>", {
+                                'style': buttonstyle,
+                                'height': size,
+                                'width': size,
+                                'src': "./img/avatars/" + char.id + ".png"
+                            });
+                        }
+                        if (showName) {
+                            if (size > 60) {
+                                name = $('<div>', {
+                                    'text': char.name_tl
+                                });
+                            } else {
+                                name = char.name_tl;
+                            }
+                        }
+                        let button = $("<button>", {
+                            'type': "button",
+                            'class': "ak-shadow-small ak-btn btn btn-sm ak-rare-" + colors[char.level] + " btn-char my-1",
+                            'data-toggle': "tooltip",
+                            'data-placement': "bottom",
+                            'style': style,
+                            'title': char.name
+                        }).on('click', function() {
+                            showChar(this);
+                        }).append([
+                            img,
+                            name
+                        ]);
+                        chars_html.push(button, ' ');
                     });
                     let tags_html = [];
                     // console.log(tags)
@@ -633,8 +701,12 @@
                     // console.log(all_tags)
                     
                     $.each(tags, function (_, tag) {
-                        tags_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\">" +
-                            tag + "</button>\n")
+                        let button = $("<button>", {
+                            'type': "button",
+                            'class': "btn btn-sm ak-btn btn-secondary btn-char my-1",
+                            'text': tag
+                        });
+                        tags_html.push(button);
                     });
                     let tagsTL_html = [];
                     $.each(tagsTL, function (i, tagTL) {
@@ -652,13 +724,33 @@
                         var currtag = currtags["type_"+reg]?showClass?currtags["type_"+reg]+currtagtrailreg:currtags["type_"+reg]
                         :currtags["tag_"+reg]
                         var currtagtl = currtags["type_"+lang]?showClass?currtags["type_"+lang]+currtagtraillang:currtags["type_"+lang]
-                        :currtags["tag_"+lang]
-                        tagsTL_html.push("<button type=\"button\" class=\"btn btn-sm ak-btn btn-secondary btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"right\" title=\""+ tags[i] +"\">" +
-                        (currtag == currtagtl ? "" : '<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-top:-15px">'+currtag+'</a>') +  currtagtl + "</button>\n")
+                        :currtags["tag_"+lang];
+                        let subtitle = '';
+                        if (currtag !== currtagtl) {
+                            subtitle = $('<a>', {
+                                'class': "ak-subtitle2",
+                                'style': "font-size:11px;margin-left:-9px;margin-top:-15px",
+                                'text': currtag
+                            });
+                        }
+                        let button = $("<button>", {
+                            'type': "button",
+                            'class': "btn btn-sm ak-btn btn-secondary btn-char my-1",
+                            'data-toggle': "tooltip",
+                            'data-placement': "right",
+                            'title': tags[i]
+                        }).append([
+                            subtitle,
+                            currtagtl
+                        ]);
+                        tagsTL_html.push(button, ' ');
                     });
                     $("#tbody-recommend").append(
-                        "<tr class=\"tr-recommd\"><td>" + no++ + "</td><td>" + tagsTL_html.join("") + "</td><td>" + chars_html.join("") +
-                        "</td>"+""+"</tr>"
+                        $("<tr>", {class: "tr-recommd" }).append([
+                            $("<td>").append(no++),
+                            $("<td>").append(tagsTL_html),
+                            $("<td>").append(chars_html)
+                        ])
                     );
                 });
                 $('[data-toggle="tooltip"]').tooltip({
@@ -763,7 +855,7 @@
                 if(data.length != 0){
                     $.each(data, function(i,text){
                         // console.log(text)
-                        $("[translate-id="+text.id).html(text['ui_'+lang]);
+                        $('[translate-id="'+text.id+'"]').html(text['ui_'+lang]);
                     });
                 }
             });
