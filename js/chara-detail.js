@@ -2025,7 +2025,7 @@
                     var currequip = db.uniequip.equipDict[element]
                     var currequipEN = db.uniequipEN.equipDict[element]
                     var currebattequip
-                    var equiphtml = ""
+                    var equiphtml = []
                     if(db.battle_equip[currequip.uniEquipId]){
                         currebattequip = db.battle_equip[currequip.uniEquipId]
                     }
@@ -2039,7 +2039,7 @@
                                         <img class='equip-image' src='img/equip/type/${currequip.typeIcon}.png' style='width: 30px; position:absolute;'></img>
                                     </div>
                                     <div style = "position:absolute;margin: 0px 0px 0px 0px">
-                                        <div style = "width:60px;margin: 4px 0px 0px -10px;background:#222;color:#ddd;font-size:10px">${currequipEN?currequipEN.typeName:currequip.typeName}</div>
+                                        <div style = "width:60px;margin: 4px 0px 0px -10px;background:#222;color:#ddd;font-size:10px">${currequipEN?currequipEN.typeIcon.toUpperCase():currequip.typeIcon.toUpperCase()}</div>
                                     </div>
                                 </div>
                             </div>
@@ -2048,10 +2048,12 @@
                     `
                     
                     if(currebattequip){
+                        var curreqphase = 0
                         currebattequip.phases.forEach(phase => {
+                            equiphtml[curreqphase] = ""
                             phase.parts.forEach(part => {
                                 if(part.target == "TRAIT"){
-                                    equiphtml += 
+                                    equiphtml[curreqphase] += 
                                     `
                                         <div>
                                         ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
@@ -2059,7 +2061,7 @@
                                     `
                                 }
                                 if(part.target == "TRAIT_DATA_ONLY"){
-                                    equiphtml += 
+                                    equiphtml[curreqphase] += 
                                     `
                                         <div>
                                         ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle)}
@@ -2068,7 +2070,7 @@
                                 }
                                 if(part.target == "DISPLAY"){
                                     console.log(part.overrideTraitDataBundle.candidates[0])
-                                    equiphtml += 
+                                    equiphtml[curreqphase] += 
                                     `
                                         <div>
                                         ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
@@ -2079,7 +2081,7 @@
                                     //??
                                     console.log(part.rangeId)
                                     if(part.addOrOverrideTalentDataBundle.candidates[0].rangeId){
-                                        equiphtml+=
+                                        equiphtml[curreqphase]+=
                                     `<div>
                                         ${titledMaker2(rangeMaker(part.addOrOverrideTalentDataBundle.candidates[0].rangeId,false),"")}
                                     </div>`
@@ -2098,7 +2100,7 @@
                                             </div>
                                         `
                                 });
-                                equiphtml += `
+                                equiphtml[curreqphase] += `
                                 <div style='margin:12px;width:100%'> </div>
                                 ${titledMaker(statcontent,"Additional Stats","","","padding:6px 10px 6px 10px;margin-bottom:6px;width:100%")}
                                 `
@@ -2119,14 +2121,14 @@
                                                 </div>
                                             `
                                     });
-                                    equiphtml += `
+                                    equiphtml[curreqphase] += `
                                     <div style='margin:12px;width:100%'> </div>
                                     ${titledMaker(statcontent,`Additional Summon Stats (${tokenfulldata?tokenfulldata.appellation:token})`,"","","padding:3px 10px 6px 10px;width:100%")}
                                     `
                                 });
                                 
                             }
-                            
+                            curreqphase += 1
                         });
                         
                         
@@ -2157,46 +2159,92 @@
                             `)
                         }
                         
+                        var curreqphase = 0
                         
-                        equiphtml += `
-                        <div style="text-align:center;background:#222;color:#fff;margin-top:5px">Unlock Requirements</div>
-                        <div style="text-align:center;background:#222;color:#fff;margin:0px;padding:0px 0px 2px 0px">${imagereq.join(" ")}</div>
-                        <div style="text-align:center">
-                        `
-                        currequip.itemCost.forEach(item => {
-                            equiphtml += CreateMaterial(item.id,item.count)
-                            // console.log(item)
-                        });
-                        equiphtml += `
-                        </div>
-                        <div style="text-align:center;background:#222;color:#fff">Unlock Mission</div>
-                        
-                        `
-                        var missionnum = 1
-                        var missionhtml = ``
-                        currequip.missionList.forEach(mission => {
-                            var currmission = db.uniequip.missionList[mission]
-                            var currmissionEN = db.uniequipEN.missionList[mission]
-                            var missioncheck = ModuleMissionDescription(currmission,currmissionEN)
-                            missionhtml +=`
-                            ${titledMaker2(missioncheck,`Mission ${missionnum}`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")}
-                            </br>
+                        $.each(currequip.itemCost,function(key,v){
+                            
+                            if(curreqphase==0){
+                                equiphtml[curreqphase] += `
+                                <div style="text-align:center;background:#222;color:#fff;margin-top:5px">Unlock Requirements</div>
+                                <div style="text-align:center;background:#222;color:#fff;margin:0px;padding:0px 0px 2px 0px">${imagereq.join(" ")}</div>
+                                <div style="text-align:center">
+                                `
+                            }else{
+                                equiphtml[curreqphase] += `
+                                <div style="text-align:center;background:#222;color:#fff;margin-top:5px">Upgrade Requirements</div>
+                                <div style="text-align:center;background:#222;color:#fff;margin:0px;padding:0px 0px 2px 0px">
+                                    <div style="color:#fff;font-size:13px;background:#444;display:inline-block;padding:2px;border-radius:2px">Stage ${key}</div>
+                                </div>
+                                <div style="text-align:center">
+                                `
+                            }
+                            if(v){
+                                v.forEach(item => {
+                                    equiphtml[curreqphase] += CreateMaterial(item.id,item.count)
+                                    // console.log(item)
+                                });
+                            }
+                            equiphtml[curreqphase] += `
+                            </div>
+                            <div style="text-align:center;background:#222;color:#fff">Unlock Mission</div>
+                            
                             `
-                            missionnum +=1
-                        });
-                        equiphtml +=`
-                        ${titledMaker(missionhtml,"",``,``,"width:100%")}
-                        `
+                            var missionnum = 1
+                            var missionhtml = ``
+                            currequip.missionList.forEach(mission => {
+                                var currmission = db.uniequip.missionList[mission]
+                                var currmissionEN = db.uniequipEN.missionList[mission]
+                                var missioncheck = ModuleMissionDescription(currmission,currmissionEN)
+                                missionhtml +=`
+                                ${titledMaker2(missioncheck,`Mission ${missionnum}`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")}
+                                </br>
+                                `
+                                missionnum +=1
+                            });
+                            equiphtml[curreqphase] +=`
+                            ${titledMaker(missionhtml,"",``,``,"width:100%")}
+                            `
+                            curreqphase +=1
+                        })
+                        
                     }
                     
-                    if(currequip.typeName=="ORIGINAL"){
-                        equiphtml += titledMaker(currequipEN?currequipEN.uniEquipDesc:currequip.uniEquipDesc,`Basic Information`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")
+                    if(currequip.typeIcon=="original"){
+                        equiphtml[0] = titledMaker(currequipEN?currequipEN.uniEquipDesc:currequip.uniEquipDesc,`Basic Information`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")
                     }
+                    
+
+                    leveltabhtml = ``
+                    equiptabhtml = ``
+                    for(i=0 ; i<equiphtml.length;i++){
+                        leveltabhtml += `
+                        <li class='nav-item'>                     
+                            <button class='btn horiz-small nav-link ${(i!=0 ? '' : 'active')} equiplevel' data-toggle='pill' href='#equip${num}level${i}' style ='padding:0;border-radius:0px'>
+                                <div style = "display:inline-block;text-align:center;">
+                                    <div style = "width:50px;margin: 2px;color:#ddd;font-size:10px">
+                                        <div style="font-size:20px;margin:-5px 0px;padding:0px">
+                                            ${i+1}
+                                        </div>
+                                        <div style="font-size:8px;margin:0px;padding:0px">
+                                            Stage
+                                        </div>
+                                          
+                                    </div>
+                                </div>
+                            </button>
+                        </li>
+                        `
+                        equiptabhtml +=`
+                        <div class='tab-pane container ${i!=0 ? '' : 'active'}' id='equip${num}level${i}'>
+                            ${equiphtml[i]}
+                        </div>
+                        `
+                    }
+
                     contenthtml =`
                     <div class='tab-pane container ${num!=2 ? '' : 'active'}' id='equip${num}'>
                         <div class='small-container' style='margin-top: 50px;'>
                             <span class='custom-span equipname'><div>${currequipEN?currequipEN.uniEquipName:currequip.uniEquipName}</div></span>
-                            
                                 <div class='equipimage'>
                                     <button type="button" class="btn ak-button" style="width:90px;height:90px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
                                         <span style="position:absolute;font-size: 14px;bottom:4px;left:4px;color:#fff;background:#222222dd;padding:4px;border-radius:2px" class="fa fa-search-plus"> Info</span>
@@ -2205,10 +2253,12 @@
                                 </div>
                             
                         </div>
-                        <div class='dividerdark'> </div>
-                        <div id='equip${num}StatsCollapsible' class='show' style="padding:15px 5px 10px 5px" >
-                            ${equiphtml}
-                        </div>
+                            <ul class='nav nav-pills' id='equip-tabs' style="background:#222">
+                                ${leveltabhtml}
+                            </ul>
+                        
+                        <div class="tab-content" id="equip-phases" style="margin: 0px 0px 0px 0px;padding:15px 5px 10px 5px">${equiptabhtml}</div>
+                        
                     <div>
                     `
                     
