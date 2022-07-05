@@ -3087,9 +3087,11 @@
                         }
                         break;
                     case "EN":
+                        foldername = "voice_en"
                         lang = "EN"
                         break;
                     case "KR":
+                        foldername = "voice_kr"
                         lang = "KR"
                         break;
                     case "LINKAGE":
