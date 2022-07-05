@@ -3089,6 +3089,9 @@
                     case "EN":
                         lang = "EN"
                         break;
+                    case "KR":
+                        lang = "KR"
+                        break;
                     case "LINKAGE":
                         var path = voiceDict.dict[dict].voicePath
                         foldername = path.split("/")
@@ -3159,6 +3162,9 @@
                     break;
                 case "EN":
                     lang = "EN VA"
+                    break;
+                case "KR":
+                    lang = "KR VA"
                     break;
                 default:
                     break;
