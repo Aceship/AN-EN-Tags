@@ -130,25 +130,50 @@
       "termName": "Levitate",
       "description": "Changes into an aerial unit and becomes unable to move, attack and use skills; Duration halved against enemies with more than 3 weight"
     },
+    "ba.physhield": {
+      "termId": "ba.physhield",
+      "termName": "Physical Shield",
+      "description": "Each layer of shield can block one instance of Physical damage"
+    },
+    "ba.magicfragile": {
+      "termId": "ba.magicfragile",
+      "termName": "Arts Fragility",
+      "description": "Increase Arts damage taken by the stated percentage (Does not stack, strongest effect takes precedence)"
+    },
     "cc.bd_A_1": {
       "termId": "cc.bd_A_1",
       "termName": "Supersensory",
-      "description": "Provided by the following operators\nRosmontis"
+      "description": "Operator with this skill\nRosmontis"
     },
     "cc.bd_A_2": {
       "termId": "cc.bd_A_2",
       "termName": "Manifestation of Consciousness",
-      "description": "Provided by the following operators\nRosmontis"
+      "description": "Operator with this skill\nRosmontis"
+    },
+    "cc.bd_B_1": {
+      "termId": "cc.bd_B_1",
+      "termName": "Resounding Melodies",
+      "description": "Operator with this skill\nEbenholz"
+    },
+    "cc.bd_B_2": {
+      "termId": "cc.bd_B_2",
+      "termName": "Sorrowful Harmonies",
+      "description": "Operator with this skill\nEbenholz"
     },
     "cc.bd_A": {
       "termId": "cc.bd_A",
       "termName": "Chain of Thought",
       "description": "Affects skills related to <$cc.bd_A_1><@cc.rem>Supersensory</></>, <$cc.bd_A_2><@cc.rem>Manifestation of Consciousness</></>\nProvided by the following operators\nRosmontis"
     },
+    "cc.bd_B": {
+      "termId": "cc.bd_B",
+      "termName": "Silent Resonance",
+      "description": "Affects skills related to <$cc.bd_B_1><@cc.rem>Resounding Melodies</></>, <$cc.bd_B_2><@cc.rem>Sorrowful Harmonies</></>\nProvided by the following operators\nEbenholz"
+    },
     "cc.bd_a1": {
       "termId": "cc.bd_a1",
       "termName": "Sensory Information",
-      "description": "Affects skills related to <$cc.bd_A><@cc.rem>Chain of Thought</></>\nProvided by the following operators\nRosmontis, Dusk, Ling, Whisperain, Iris"
+      "description": "Affects variables related to <$cc.bd_A><@cc.rem>Chain of Thought</></>, <$cc.bd_B><@cc.rem>Silent Resonance</></>\nProvided by the following operators\nRosmontis, Ebenholz, Dusk, Ling, Whisperain, Iris, Czerny"
     },
     "cc.bd_b1": {
       "termId": "cc.bd_b1",
@@ -168,22 +193,37 @@
     "cc.bd_a1_a1": {
       "termId": "cc.bd_a1_a1",
       "termName": "Memory Fragment",
-      "description": "Affects skills related to <$cc.bd_a1><@cc.rem>Sensory Information</></>\nProvided by the following operators\nWhisperain"
+      "description": "Affects variables related to <$cc.bd_a1><@cc.rem>Sensory Information</></>\nProvided by the following operators\nWhisperain"
     },
     "cc.bd_a1_a2": {
       "termId": "cc.bd_a1_a2",
       "termName": "Dream",
-      "description": "Affects skills related to <$cc.bd_a1><@cc.rem>Sensory Information</></>\nProvided by the following operators\nIris"
+      "description": "Affects variables related to <$cc.bd_a1><@cc.rem>Sensory Information</></>\nProvided by the following operators\nIris"
+    },
+    "cc.bd_a1_a3": {
+      "termId": "cc.bd_a1_a3",
+      "termName": "Bar",
+      "description": "Affects variables related to <$cc.bd_a1><@cc.rem>Sensory Information</></>\nProvided by the following operators\nCzerny"
     },
     "cc.m.var1": {
       "termId": "cc.m.var1",
       "termName": "Recycling",
-      "description": "Provided by the following operators\nVermeil"
+      "description": "Operator with this skill\nVermeil"
     },
     "cc.m.var2": {
       "termId": "cc.m.var2",
       "termName": "Sense of Cooperation",
-      "description": "Provided by the following operators\nWaai Fu"
+      "description": "Operator with this skill\nWaai Fu"
+    },
+    "cc.t.snsant1": {
+      "termId": "cc.t.snsant1",
+      "termName": "Heavenly Reward·α",
+      "description": "Operator with this skill\nSnowsant"
+    },
+    "cc.t.snsant2": {
+      "termId": "cc.t.snsant2",
+      "termName": "Heavenly Reward·β",
+      "description": "Operator with this skill\nSnowsant"
     },
     "cc.g.lgd": {
       "termId": "cc.g.lgd",
@@ -208,7 +248,7 @@
     "cc.g.sp": {
       "termId": "cc.g.sp",
       "termName": "SP",
-      "description": "Includes the following operators\nLava the Purgatory, Skadi the Corrupting Heart, Ch'en the Holungday, Nearl the Radiant Knight, Kroos the Keen Glint, Specter the Unchained"
+      "description": "Includes the following operators\nLava the Purgatory, Skadi the Corrupting Heart, Ch'en the Holungday, Nearl the Radiant Knight, Kroos the Keen Glint, Specter the Unchained, Hibiscus the Purifier"
     },
     "cc.g.abyssal": {
       "termId": "cc.g.abyssal",
@@ -245,6 +285,11 @@
       "termName": "Special Priority Rules",
       "description": "Cannot stack with <$cc.m.var2><@cc.rem>Sense of Cooperation</></>, will override\nCannot stack with <$cc.m.pow1><@cc.rem>Automation·α</></>, <$cc.m.pow2><@cc.rem>Automation·β</></> and <$cc.m.pow3><@cc.rem>Bionic Seadragon</></>, will be overridden"
     },
+    "cc.t.strong2": {
+      "termId": "cc.t.strong2",
+      "termName": "Special Priority Rules",
+      "description": "Cannot stack with <$cc.t.snsant1><@cc.rem>Heavenly Reward·α</></>, <$cc.t.snsant2><@cc.rem>Heavenly Reward·β</></>, will override\nWhen <$cc.t.snsant1><@cc.rem>Heavenly Reward·α</></>, <$cc.t.snsant2><@cc.rem>Heavenly Reward·β</></> stacks with other skills, this skill will take effect on the resulting effect"
+    },
     "cc.m.pow1": {
       "termId": "cc.m.pow1",
       "termName": "Automation·α",
@@ -260,8 +305,8 @@
       "termName": "Bionic Seadragon",
       "description": "Provided by the following operators\nWeedy"
     },
-    "cc.t.line_gold": {
-      "termId": "cc.t.line_gold",
+    "cc.t.flow_gold": {
+      "termId": "cc.t.flow_gold",
       "termName": "Gold Production Line",
       "description": "<@cc.kw>+1</> Gold Production Line for <@cc.kw>every</> <@cc.kw>Craft Station</> producing <@cc.kw>precious metals</>"
     },
@@ -279,6 +324,11 @@
       "termId": "cc.sk.manu1",
       "termName": "Standardization-type Skills",
       "description": "Includes the following skills\nStandardization·α, Standardization·β"
+    },
+    "cc.sk.manu2": {
+      "termId": "cc.sk.manu2",
+      "termName": "Rhine Technology-type Skills",
+      "description": "Includes the following skills\nRhine Technology·α, Rhine Technology·β"
     },
     "cc.tag.op": {
       "termId": "cc.tag.op",
