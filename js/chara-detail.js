@@ -1370,7 +1370,7 @@
             }else{
                 $('#class-change').hide();
             }
-
+            currVoiceID = opdataFull.id
             var linkconvert = opdataFull.appellation.replace(/[ ']/g,"-").toLowerCase()
             var guidelink = db.sanitygone[opKey];
             console.log(linkconvert)
