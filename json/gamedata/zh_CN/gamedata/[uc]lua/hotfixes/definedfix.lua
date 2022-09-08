@@ -3,7 +3,7 @@ local list =
 {
   
   "HotFixes/ShopHotfixer",
-  "HotFixes/BossRushHotfixer"
+  "HotFixes/UIEquipSelectFix"
 };
 
 return list;

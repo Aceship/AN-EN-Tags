@@ -9728,6 +9728,69 @@
           ]
         }
       ]
+    },
+    "char_4064_mlynar": {
+      "charId": "char_4064_mlynar",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "control_mp_cost[008]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "control_mp_lonely[000]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "char_4032_provs": {
+      "charId": "char_4032_provs",
+      "maxManpower": 8640000,
+      "buffChar": [
+        {
+          "buffData": [
+            {
+              "buffId": "trade_ord_law[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            }
+          ]
+        },
+        {
+          "buffData": [
+            {
+              "buffId": "trade_ord_against[000]",
+              "cond": {
+                "phase": 0,
+                "level": 1
+              }
+            },
+            {
+              "buffId": "trade_ord_against[010]",
+              "cond": {
+                "phase": 2,
+                "level": 1
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   "buffs": {
@@ -9971,6 +10034,18 @@
       "roomType": "CONTROL",
       "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
     },
+    "control_mp_cost[008]": {
+      "buffId": "control_mp_cost[008]",
+      "buffName": "独善其身",
+      "buffIcon": "control",
+      "skillIcon": "bskill_ctrl_cost",
+      "sortId": 1109,
+      "buffColor": "#005752",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "CONTROL",
+      "description": "进驻控制中枢时，控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>"
+    },
     "control_allCost_condChar[000]": {
       "buffId": "control_allCost_condChar[000]",
       "buffName": "浮生得闲",
@@ -9993,7 +10068,7 @@
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
       "roomType": "CONTROL",
-      "description": "进驻控制中枢时，控制中枢内每个<$cc.g.lda><@cc.kw>鲤氏侦探事务所</></>干员可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.05</>，同时该派系干员的心情每小时恢复额外<@cc.vup>+0.2</>"
+      "description": "进驻控制中枢时，控制中枢内每个<$cc.g.lda><@cc.kw>鲤氏侦探事务所</></>干员可使该派系干员<@cc.kw>额外恢复心情</>，同时每人可使控制中枢内所有干员的心情每小时恢复<@cc.vup>+0.2</>"
     },
     "control_mp_cost&faction[000]": {
       "buffId": "control_mp_cost&faction[000]",
@@ -10174,6 +10249,18 @@
       "buffCategory": "FUNCTION",
       "roomType": "CONTROL",
       "description": "进驻控制中枢时，每个进驻在制造站的<$cc.g.psk><@cc.kw>红松骑士团</></>干员，<@cc.kw>作战记录</>类配方的生产力<@cc.vup>+10%</>，<@cc.kw>贵金属</>类配方的生产力<@cc.vdown>-10%</>"
+    },
+    "control_mp_lonely[000]": {
+      "buffId": "control_mp_lonely[000]",
+      "buffName": "公事公办",
+      "buffIcon": "control",
+      "skillIcon": "bskill_ctrl_lonely",
+      "sortId": 1300,
+      "buffColor": "#005752",
+      "textColor": "#ffffff",
+      "buffCategory": "FUNCTION",
+      "roomType": "CONTROL",
+      "description": "进驻控制中枢时，<$cc.c.room1><@cc.kw>部分设施</></>内处于工作状态的干员心情每小时恢复<@cc.vup>+0.1</>；同时控制中枢内<$cc.c.skill><@cc.kw>部分技能</></>可以为<$cc.c.room2><@cc.kw>其他设施</></>内处于工作状态的干员额外提供心情恢复"
     },
     "power_rec_spd&cost[000]": {
       "buffId": "power_rec_spd&cost[000]",
@@ -11601,7 +11688,7 @@
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
       "roomType": "TRADING",
-      "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>，则其龙门币收益<@cc.kw>+250</>，心情每小时消耗<@cc.vup>-0.25</>"
+      "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+250</>，心情每小时消耗<@cc.vup>-0.25</>"
     },
     "trade_ord_long[010]": {
       "buffId": "trade_ord_long[010]",
@@ -11613,7 +11700,43 @@
       "textColor": "#ffffff",
       "buffCategory": "OUTPUT",
       "roomType": "TRADING",
-      "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>，则其龙门币收益<@cc.kw>+500</>，心情每小时消耗<@cc.vup>-0.25</>"
+      "description": "进驻贸易站后，如果下笔<@cc.kw>赤金订单</>交付数大于<@cc.kw>3</>（违约订单不视作赤金订单），则其龙门币收益<@cc.kw>+500</>，心情每小时消耗<@cc.vup>-0.25</>"
+    },
+    "trade_ord_law[000]": {
+      "buffId": "trade_ord_law[000]",
+      "buffName": "合同法",
+      "buffIcon": "trading",
+      "skillIcon": "bskill_tra_law",
+      "sortId": 4005,
+      "buffColor": "#0075a9",
+      "textColor": "#ffffff",
+      "buffCategory": "OUTPUT",
+      "roomType": "TRADING",
+      "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>交付数小于<@cc.kw>4</>，则视为<@cc.kw>违约订单</>"
+    },
+    "trade_ord_against[000]": {
+      "buffId": "trade_ord_against[000]",
+      "buffName": "违约索赔·α",
+      "buffIcon": "trading",
+      "skillIcon": "bskill_tra_against",
+      "sortId": 4005,
+      "buffColor": "#0075a9",
+      "textColor": "#ffffff",
+      "buffCategory": "OUTPUT",
+      "roomType": "TRADING",
+      "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+1</>"
+    },
+    "trade_ord_against[010]": {
+      "buffId": "trade_ord_against[010]",
+      "buffName": "违约索赔·β",
+      "buffIcon": "trading",
+      "skillIcon": "bskill_tra_against2",
+      "sortId": 4005,
+      "buffColor": "#0075a9",
+      "textColor": "#ffffff",
+      "buffCategory": "OUTPUT",
+      "roomType": "TRADING",
+      "description": "进驻贸易站时，如果下笔<@cc.kw>赤金订单</>是<@cc.kw>违约订单</>，则<@cc.kw>赤金</>交付数额外<@cc.vup>+2</>"
     },
     "workshop_proc_probability[000]": {
       "buffId": "workshop_proc_probability[000]",
@@ -12957,7 +13080,7 @@
       "textColor": "#ffffff",
       "buffCategory": "FUNCTION",
       "roomType": "TRAINING",
-      "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+45%</>"
+      "description": "进驻训练室协助位时，<@cc.kw>近卫</>干员的专精技能训练速度<@cc.vup>+30%</>，如果本次训练专精技能至<@cc.vup>3</>级，则训练速度额外<@cc.vup>+65%</>"
     },
     "train_spd&profession2[640]": {
       "buffId": "train_spd&profession2[640]",
@@ -25291,7 +25414,7 @@
         "height": 7,
         "comfort": 365,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
-        "description": "放满了萨科塔枪械的陈列架。部分萨卡兹拥有向同族展示战利品以炫耀武力的习惯。",
+        "description": "放满了萨科塔铳械的陈列架。部分萨卡兹拥有向同族展示战利品以炫耀武力的习惯。",
         "obtainApproach": "家具商店限时购买",
         "processedProductId": "3401",
         "processedProductCount": 278,
@@ -43020,6 +43143,499 @@
         "isOnly": -1,
         "quantity": 1
       },
+      "furni_camp_curtain_01": {
+        "id": "furni_camp_curtain_01",
+        "sortId": 993,
+        "name": "轻纱帷幔",
+        "iconId": "furni_camp_curtain_01",
+        "type": "WALLDECO",
+        "subType": "CURTAIN",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": false,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_4",
+        "width": 6,
+        "depth": 1,
+        "height": 10,
+        "comfort": 235,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "营地内用以遮挡风沙的帷幔。卡西米尔清风不止，帷幔永世飘摇。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_ceilingLight_01": {
+        "id": "furni_camp_ceilingLight_01",
+        "sortId": 994,
+        "name": "野营吊顶灯",
+        "iconId": "furni_camp_ceilingLight_01",
+        "type": "CEILINGLAMP",
+        "subType": "NONE",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_1",
+        "width": 3,
+        "depth": 1,
+        "height": 4,
+        "comfort": 70,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "作为营地光源配置的成对顶灯。非对称的设计显现非平衡的心灵，沐浴在这光芒下的人啊，你何时才能寻到安宁？",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_toolTable_01": {
+        "id": "furni_camp_toolTable_01",
+        "sortId": 995,
+        "name": "野营厨台",
+        "iconId": "furni_camp_toolTable_01",
+        "type": "DECORATION",
+        "subType": "CATERING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_1",
+        "width": 6,
+        "depth": 2,
+        "height": 6,
+        "comfort": 270,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "用以处理野营食物的厨作工具台。比起仗剑御敌，挥刀剔骨才是常事，这是否属于堕落，世间人尚无资格妄下评论。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_BBQGrill_01": {
+        "id": "furni_camp_BBQGrill_01",
+        "sortId": 996,
+        "name": "野营烧烤架",
+        "iconId": "furni_camp_BBQGrill_01",
+        "type": "DECORATION",
+        "subType": "COOKING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_1",
+        "width": 2,
+        "depth": 4,
+        "height": 2,
+        "comfort": 195,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "用以烹饪食物的无烟烧烤架。家族没落起源自长辈的逝去，于是总有小辈要成为长辈，命运从不予人选择的余地。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_carpet_01": {
+        "id": "furni_camp_carpet_01",
+        "sortId": 997,
+        "name": "类叶地毯",
+        "iconId": "furni_camp_carpet_01",
+        "type": "CARPET",
+        "subType": "NONE",
+        "location": "CARPET",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_1",
+        "width": 5,
+        "depth": 3,
+        "height": 1,
+        "comfort": 50,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "叶片形状的营地用地毯。只有死叶才会落地，挨上一脚践踏后就此深埋大地。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_brazier_01": {
+        "id": "furni_camp_brazier_01",
+        "sortId": 998,
+        "name": "待燃炭火盆",
+        "iconId": "furni_camp_brazier_01",
+        "type": "DECORATION",
+        "subType": "WARM",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_1",
+        "width": 2,
+        "depth": 2,
+        "height": 2,
+        "comfort": 135,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "尚未点燃的炭火盆。斯尼茨、约兰塔，即使他呼唤这两个名字，也不会有人来帮忙点燃木炭。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_column_01": {
+        "id": "furni_camp_column_01",
+        "sortId": 999,
+        "name": "野营装饰石柱",
+        "iconId": "furni_camp_column_01",
+        "type": "DECORATION",
+        "subType": "ART_D",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_4",
+        "width": 3,
+        "depth": 3,
+        "height": 8,
+        "comfort": 250,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "采用普通石块进行简单源石技艺加工后形成的石柱。心中的高墙不用石块垒起，但它会比石头更坚硬，将想要逃脱的心灵死死封闭。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_ceiling_01": {
+        "id": "furni_camp_ceiling_01",
+        "sortId": 1000,
+        "name": "野营装饰吊顶",
+        "iconId": "furni_camp_ceiling_01",
+        "type": "CEILING",
+        "subType": "NONE",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_2",
+        "width": 14,
+        "depth": 2,
+        "height": 4,
+        "comfort": 210,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "挂上灯链，作为副光源使用的装饰吊顶。他确实还怀念天空闪闪发光的日子，厌恶大楼闪闪发光的夜晚。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_ceilingLamp_01": {
+        "id": "furni_camp_ceilingLamp_01",
+        "sortId": 1001,
+        "name": "野营艺术吊灯",
+        "iconId": "furni_camp_ceilingLamp_01",
+        "type": "CEILINGLAMP",
+        "subType": "NONE",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_2",
+        "width": 3,
+        "depth": 3,
+        "height": 4,
+        "comfort": 115,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "以层叠叶片为灵感制作的艺术吊灯。光芒洒下阴影便显现，举目望去，大地一片漆黑。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_table_01": {
+        "id": "furni_camp_table_01",
+        "sortId": 1002,
+        "name": "野营长桌",
+        "iconId": "furni_camp_table_01",
+        "type": "TABLE",
+        "subType": "NONE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_2",
+        "width": 13,
+        "depth": 4,
+        "height": 6,
+        "comfort": 715,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "用于堆放杂物或是供众人聚餐的木制野营长桌。他早已独行，这样的长桌留给他只是平添孤寂。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_longBench_01": {
+        "id": "furni_camp_longBench_01",
+        "sortId": 1003,
+        "name": "野营长椅",
+        "iconId": "furni_camp_longBench_01",
+        "type": "SEATING",
+        "subType": "BENCH",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_2",
+        "width": 10,
+        "depth": 3,
+        "height": 2,
+        "comfort": 320,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "为在长桌旁歇息的人提供的木制野营长椅。但他确实也幻想过，椅子上坐满人的温馨时光。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_pager_01": {
+        "id": "furni_camp_pager_01",
+        "sortId": 1004,
+        "name": "荒野用电台",
+        "iconId": "furni_camp_pager_01",
+        "type": "DECORATION",
+        "subType": "DEVICE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_3",
+        "width": 3,
+        "depth": 3,
+        "height": 2,
+        "comfort": 200,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "轻巧便携，供野营人员与他人联系用的简易电台。电台联系不到他想寻找的人，而他也拒绝一切不必要的联系，孤独就在这里。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_hangingChair_01": {
+        "id": "furni_camp_hangingChair_01",
+        "sortId": 1005,
+        "name": "野营吊椅",
+        "iconId": "furni_camp_hangingChair_01",
+        "type": "SEATING",
+        "subType": "ORTHER_S",
+        "location": "CEILING",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_3",
+        "width": 6,
+        "depth": 3,
+        "height": 9,
+        "comfort": 225,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "野营必备的麻绳吊椅。这是为自我放逐者准备的厚礼。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_stone_01": {
+        "id": "furni_camp_stone_01",
+        "sortId": 1006,
+        "name": "荒野苔石",
+        "iconId": "furni_camp_stone_01",
+        "type": "DECORATION",
+        "subType": "ORTHER_D",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_3",
+        "width": 6,
+        "depth": 3,
+        "height": 6,
+        "comfort": 330,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "搭建营地时尚未丢弃的石料，不知不觉间成为了装饰品。某人将台灯插上了苔石，苔石就此成为了办公桌，死物的意义尚能如此覆盖，那生灵呢？",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_fishingRodKit_01": {
+        "id": "furni_camp_fishingRodKit_01",
+        "sortId": 1007,
+        "name": "便携式钓具套组",
+        "iconId": "furni_camp_fishingRodKit_01",
+        "type": "DECORATION",
+        "subType": "DEVICE",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_3",
+        "width": 3,
+        "depth": 3,
+        "height": 8,
+        "comfort": 250,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "河边垂钓用的全套工具。听说垂钓是等待与期待的过程，如果一个人不期待任何事物，他还会去垂钓吗？",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_wallpaper_01": {
+        "id": "furni_camp_wallpaper_01",
+        "sortId": 1008,
+        "name": "全景显示屏（野营地）",
+        "iconId": "furni_camp_wallpaper_01",
+        "type": "WALLPAPER",
+        "subType": "NONE",
+        "location": "NONE",
+        "category": "WALL",
+        "validOnRotate": false,
+        "enableRotate": false,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_4",
+        "width": 34,
+        "depth": 1,
+        "height": 10,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "展现茨沃涅克乡野日落时刻的全景显示屏。今日的太阳即将亡去，可惜他只烧灼天空，对易燃的大地束手无策。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
+      "furni_camp_floor_01": {
+        "id": "furni_camp_floor_01",
+        "sortId": 1009,
+        "name": "营地木地板",
+        "iconId": "furni_camp_floor_01",
+        "type": "FLOOR",
+        "subType": "NONE",
+        "location": "NONE",
+        "category": "FLOOR",
+        "validOnRotate": false,
+        "enableRotate": false,
+        "rarity": 2,
+        "themeId": "furni_set_camp",
+        "groupId": "furni_set_camp_4",
+        "width": 34,
+        "depth": 10,
+        "height": 1,
+        "comfort": 240,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "使用茨沃涅克原产木料铺设的全木地板。家乡是亲人的住所，抑或是熟悉景色的集合体？如果以此作判断，玛恩纳并没有家乡。",
+        "obtainApproach": "家具商店限时购买",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 1
+      },
       "furni_MA2020_rabbit_01": {
         "id": "furni_MA2020_rabbit_01",
         "sortId": 10001,
@@ -43078,9 +43694,125 @@
         "isOnly": 1,
         "quantity": 0
       },
+      "furni_MA_mooncake_S_01": {
+        "id": "furni_MA_mooncake_S_01",
+        "sortId": 10003,
+        "name": "“满颜色”礼盒",
+        "iconId": "furni_MA_mooncake_S_01",
+        "type": "DECORATION",
+        "subType": "CATERING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "",
+        "groupId": "",
+        "width": 4,
+        "depth": 3,
+        "height": 3,
+        "comfort": 110,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "包装精致的手工酥皮月饼礼盒，适合走亲访友。团团佳月盒中留，盈盈笑语迎中秋。",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 0
+      },
+      "furni_MA_mooncake_S_02": {
+        "id": "furni_MA_mooncake_S_02",
+        "sortId": 10004,
+        "name": "“正圆月”礼盒",
+        "iconId": "furni_MA_mooncake_S_02",
+        "type": "DECORATION",
+        "subType": "CATERING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "",
+        "groupId": "",
+        "width": 4,
+        "depth": 3,
+        "height": 3,
+        "comfort": 110,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "包装精致的手工酥皮月饼礼盒，适合走亲访友。团团佳月盒中留，盈盈笑语迎中秋。",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 0
+      },
+      "furni_MA_mooncake_G_01": {
+        "id": "furni_MA_mooncake_G_01",
+        "sortId": 10005,
+        "name": "“笑靥开”礼盒",
+        "iconId": "furni_MA_mooncake_G_01",
+        "type": "DECORATION",
+        "subType": "CATERING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "",
+        "groupId": "",
+        "width": 4,
+        "depth": 3,
+        "height": 3,
+        "comfort": 110,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "包装精美的手工糖皮月饼礼盒，适合亲朋相聚。满庭桂香飘散去，落入醉眼看人间。",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 0
+      },
+      "furni_MA_mooncake_G_02": {
+        "id": "furni_MA_mooncake_G_02",
+        "sortId": 10006,
+        "name": "“桂子落”礼盒",
+        "iconId": "furni_MA_mooncake_G_02",
+        "type": "DECORATION",
+        "subType": "CATERING",
+        "location": "FLOOR",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": true,
+        "rarity": 2,
+        "themeId": "",
+        "groupId": "",
+        "width": 4,
+        "depth": 3,
+        "height": 3,
+        "comfort": 110,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "包装精美的手工糖皮月饼礼盒，适合亲朋相聚。满庭桂香飘散去，落入醉眼看人间。",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 0
+      },
       "furni_oct1st_seating_01": {
         "id": "furni_oct1st_seating_01",
-        "sortId": 10003,
+        "sortId": 10007,
         "name": "假日摇椅",
         "iconId": "furni_oct1st_seating_01",
         "type": "SEATING",
@@ -43109,7 +43841,7 @@
       },
       "furni_oct1st_ladder_01": {
         "id": "furni_oct1st_ladder_01",
-        "sortId": 10004,
+        "sortId": 10008,
         "name": "手工移动木梯",
         "iconId": "furni_oct1st_ladder_01",
         "type": "DECORATION",
@@ -43138,7 +43870,7 @@
       },
       "furni_duanwu_lazysofa_01": {
         "id": "furni_duanwu_lazysofa_01",
-        "sortId": 10005,
+        "sortId": 10009,
         "name": "端午粽子沙发",
         "iconId": "furni_duanwu_lazysofa_01",
         "type": "SEATING",
@@ -43167,7 +43899,7 @@
       },
       "furni_duanwu_bed_L_01": {
         "id": "furni_duanwu_bed_L_01",
-        "sortId": 10006,
+        "sortId": 10010,
         "name": "龙舟榻（首）",
         "iconId": "furni_duanwu_bed_L_01",
         "type": "BEDDING",
@@ -43196,7 +43928,7 @@
       },
       "furni_duanwu_bed_R_01": {
         "id": "furni_duanwu_bed_R_01",
-        "sortId": 10007,
+        "sortId": 10011,
         "name": "龙舟榻（尾）",
         "iconId": "furni_duanwu_bed_R_01",
         "type": "BEDDING",
@@ -43225,7 +43957,7 @@
       },
       "furni_duanwu_wormwoodFloorLamp_01": {
         "id": "furni_duanwu_wormwoodFloorLamp_01",
-        "sortId": 10010,
+        "sortId": 10014,
         "name": "艾草落地灯",
         "iconId": "furni_duanwu_wormwoodFloorLamp_01",
         "type": "DECORATION",
@@ -43254,7 +43986,7 @@
       },
       "furni_act12d0_throne_01": {
         "id": "furni_act12d0_throne_01",
-        "sortId": 10011,
+        "sortId": 10015,
         "name": "大酋长宝座",
         "iconId": "furni_act12d0_throne_01",
         "type": "SEATING",
@@ -43283,7 +44015,7 @@
       },
       "furni_act10d5_sideboard_01": {
         "id": "furni_act10d5_sideboard_01",
-        "sortId": 10012,
+        "sortId": 10016,
         "name": "乌萨斯餐具收藏柜",
         "iconId": "furni_act10d5_sideboard_01",
         "type": "CABINET",
@@ -43312,7 +44044,7 @@
       },
       "furni_act10d5_coatRack_01": {
         "id": "furni_act10d5_coatRack_01",
-        "sortId": 10013,
+        "sortId": 10017,
         "name": "崭新制式军衣",
         "iconId": "furni_act10d5_coatRack_01",
         "type": "DECORATION",
@@ -43341,7 +44073,7 @@
       },
       "furni_act10d5_plushBear_01": {
         "id": "furni_act10d5_plushBear_01",
-        "sortId": 10014,
+        "sortId": 10018,
         "name": "超大号乌萨斯玩偶",
         "iconId": "furni_act10d5_plushBear_01",
         "type": "DECORATION",
@@ -43370,7 +44102,7 @@
       },
       "furni_act10d5_walldecoKit_01": {
         "id": "furni_act10d5_walldecoKit_01",
-        "sortId": 10015,
+        "sortId": 10019,
         "name": "一些壁挂",
         "iconId": "furni_act10d5_walldecoKit_01",
         "type": "WALLDECO",
@@ -43399,7 +44131,7 @@
       },
       "furni_act10d5_banner_01": {
         "id": "furni_act10d5_banner_01",
-        "sortId": 10016,
+        "sortId": 10020,
         "name": "社团看板",
         "iconId": "furni_act10d5_banner_01",
         "type": "DECORATION",
@@ -43428,7 +44160,7 @@
       },
       "furni_act10d5_honeyDrink_01": {
         "id": "furni_act10d5_honeyDrink_01",
-        "sortId": 10017,
+        "sortId": 10021,
         "name": "乌萨斯式风味蜜饮",
         "iconId": "furni_act10d5_honeyDrink_01",
         "type": "DECORATION",
@@ -43457,7 +44189,7 @@
       },
       "furni_act9d0_carpet_01": {
         "id": "furni_act9d0_carpet_01",
-        "sortId": 10018,
+        "sortId": 10022,
         "name": "周年庆典地毯",
         "iconId": "furni_act9d0_carpet_01",
         "type": "CARPET",
@@ -43486,7 +44218,7 @@
       },
       "furni_act9d0_bed_01": {
         "id": "furni_act9d0_bed_01",
-        "sortId": 10019,
+        "sortId": 10023,
         "name": "周年庆典床榻",
         "iconId": "furni_act9d0_bed_01",
         "type": "BEDDING",
@@ -43515,7 +44247,7 @@
       },
       "furni_act9d0_walllamp_01": {
         "id": "furni_act9d0_walllamp_01",
-        "sortId": 10020,
+        "sortId": 10024,
         "name": "周年庆典壁灯",
         "iconId": "furni_act9d0_walllamp_01",
         "type": "WALLLAMP",
@@ -43544,7 +44276,7 @@
       },
       "furni_act18d0_cabinet_01": {
         "id": "furni_act18d0_cabinet_01",
-        "sortId": 10021,
+        "sortId": 10025,
         "name": "周年庆典茶柜",
         "iconId": "furni_act18d0_cabinet_01",
         "type": "TABLE",
@@ -43573,7 +44305,7 @@
       },
       "furni_act18d0_cakeTower_01": {
         "id": "furni_act18d0_cakeTower_01",
-        "sortId": 10022,
+        "sortId": 10026,
         "name": "周年庆典蛋糕",
         "iconId": "furni_act18d0_cakeTower_01",
         "type": "DECORATION",
@@ -43602,7 +44334,7 @@
       },
       "furni_act7d5_bookshelf": {
         "id": "furni_act7d5_bookshelf",
-        "sortId": 10023,
+        "sortId": 10027,
         "name": "组合式书架",
         "iconId": "furni_act7d5_bookshelf",
         "type": "DECORATION",
@@ -43631,7 +44363,7 @@
       },
       "furni_act7d5_atomicClock": {
         "id": "furni_act7d5_atomicClock",
-        "sortId": 10024,
+        "sortId": 10028,
         "name": "莱茵生命原子钟",
         "iconId": "furni_act7d5_atomicClock",
         "type": "DECORATION",
@@ -43660,7 +44392,7 @@
       },
       "furni_act7d5_weaponRack": {
         "id": "furni_act7d5_weaponRack",
-        "sortId": 10025,
+        "sortId": 10029,
         "name": "刻俄柏的武器架",
         "iconId": "furni_act7d5_weaponRack",
         "type": "WALLDECO",
@@ -43689,7 +44421,7 @@
       },
       "furni_act7d5_wallSticker": {
         "id": "furni_act7d5_wallSticker",
-        "sortId": 10026,
+        "sortId": 10030,
         "name": "预备干员激励海报",
         "iconId": "furni_act7d5_wallSticker",
         "type": "WALLDECO",
@@ -43718,7 +44450,7 @@
       },
       "furni_act7d5_petHouse": {
         "id": "furni_act7d5_petHouse",
-        "sortId": 10027,
+        "sortId": 10031,
         "name": "“大黑”的新家",
         "iconId": "furni_act7d5_petHouse",
         "type": "DECORATION",
@@ -43747,7 +44479,7 @@
       },
       "furni_act7d5_apron": {
         "id": "furni_act7d5_apron",
-        "sortId": 10028,
+        "sortId": 10032,
         "name": "家用围裙",
         "iconId": "furni_act7d5_apron",
         "type": "WALLDECO",
@@ -43776,7 +44508,7 @@
       },
       "furni_act14d0_arcadegame_01": {
         "id": "furni_act14d0_arcadegame_01",
-        "sortId": 10029,
+        "sortId": 10033,
         "name": "新款游乐机械",
         "iconId": "furni_act14d0_arcadegame_01",
         "type": "DECORATION",
@@ -43805,7 +44537,7 @@
       },
       "furni_act15d0_carpet_01": {
         "id": "furni_act15d0_carpet_01",
-        "sortId": 10030,
+        "sortId": 10034,
         "name": "丝绒雪花毯",
         "iconId": "furni_act15d0_carpet_01",
         "type": "CARPET",
@@ -43834,7 +44566,7 @@
       },
       "furni_act15d0_stool_01": {
         "id": "furni_act15d0_stool_01",
-        "sortId": 10031,
+        "sortId": 10035,
         "name": "雪糕兔兔沙发",
         "iconId": "furni_act15d0_stool_01",
         "type": "SEATING",
@@ -43863,7 +44595,7 @@
       },
       "furni_act15d0_snowman_01": {
         "id": "furni_act15d0_snowman_01",
-        "sortId": 10032,
+        "sortId": 10036,
         "name": "“方块兄弟”",
         "iconId": "furni_act15d0_snowman_01",
         "type": "DECORATION",
@@ -43892,7 +44624,7 @@
       },
       "furni_act16d0_floorLamp_01": {
         "id": "furni_act16d0_floorLamp_01",
-        "sortId": 10033,
+        "sortId": 10037,
         "name": "“曲树提灯”",
         "iconId": "furni_act16d0_floorLamp_01",
         "type": "DECORATION",
@@ -43921,7 +44653,7 @@
       },
       "furni_act16d0_drum_01": {
         "id": "furni_act16d0_drum_01",
-        "sortId": 10034,
+        "sortId": 10038,
         "name": "兔兔打鼓玩具",
         "iconId": "furni_act16d0_drum_01",
         "type": "DECORATION",
@@ -43950,7 +44682,7 @@
       },
       "furni_act16d0_walldeco_01": {
         "id": "furni_act16d0_walldeco_01",
-        "sortId": 10035,
+        "sortId": 10039,
         "name": "祥纹摆扇",
         "iconId": "furni_act16d0_walldeco_01",
         "type": "WALLDECO",
@@ -43979,7 +44711,7 @@
       },
       "furni_act17d0_box_01": {
         "id": "furni_act17d0_box_01",
-        "sortId": 10036,
+        "sortId": 10040,
         "name": "争夺目标",
         "iconId": "furni_act17d0_box_01",
         "type": "CABINET",
@@ -44008,7 +44740,7 @@
       },
       "furni_act17d0_acog_01": {
         "id": "furni_act17d0_acog_01",
-        "sortId": 10037,
+        "sortId": 10041,
         "name": "瞄具型望远镜",
         "iconId": "furni_act17d0_acog_01",
         "type": "DECORATION",
@@ -44037,7 +44769,7 @@
       },
       "furni_act19d0_showcase_01": {
         "id": "furni_act19d0_showcase_01",
-        "sortId": 10038,
+        "sortId": 10042,
         "name": "古物陈设展柜",
         "iconId": "furni_act19d0_showcase_01",
         "type": "CABINET",
@@ -44066,7 +44798,7 @@
       },
       "furni_act21d0_fan_01": {
         "id": "furni_act21d0_fan_01",
-        "sortId": 10039,
+        "sortId": 10043,
         "name": "假日落地风扇",
         "iconId": "furni_act21d0_fan_01",
         "type": "DECORATION",
@@ -44095,7 +44827,7 @@
       },
       "furni_act21d0_foodCart_01": {
         "id": "furni_act21d0_foodCart_01",
-        "sortId": 10040,
+        "sortId": 10044,
         "name": "海风水果刨冰车",
         "iconId": "furni_act21d0_foodCart_01",
         "type": "DECORATION",
@@ -44124,7 +44856,7 @@
       },
       "furni_act21d0_barrel_01": {
         "id": "furni_act21d0_barrel_01",
-        "sortId": 10041,
+        "sortId": 10045,
         "name": "多索雷斯冰桶",
         "iconId": "furni_act21d0_barrel_01",
         "type": "DECORATION",
@@ -44153,7 +44885,7 @@
       },
       "furni_act21d0_motorcycle_01": {
         "id": "furni_act21d0_motorcycle_01",
-        "sortId": 10042,
+        "sortId": 10046,
         "name": "多索雷斯限量机车",
         "iconId": "furni_act21d0_motorcycle_01",
         "type": "DECORATION",
@@ -44182,7 +44914,7 @@
       },
       "furni_act22d0_chair_01": {
         "id": "furni_act22d0_chair_01",
-        "sortId": 10043,
+        "sortId": 10047,
         "name": "宫殿风吊椅",
         "iconId": "furni_act22d0_chair_01",
         "type": "SEATING",
@@ -44211,7 +44943,7 @@
       },
       "furni_act22d4_letterBox_01": {
         "id": "furni_act22d4_letterBox_01",
-        "sortId": 10044,
+        "sortId": 10048,
         "name": "灰毫的收件箱",
         "iconId": "furni_act22d4_letterBox_01",
         "type": "DECORATION",
@@ -44240,7 +44972,7 @@
       },
       "furni_act22d4_ceiling_01": {
         "id": "furni_act22d4_ceiling_01",
-        "sortId": 10045,
+        "sortId": 10049,
         "name": "远牙的风铃",
         "iconId": "furni_act22d4_ceiling_01",
         "type": "CEILING",
@@ -44269,7 +45001,7 @@
       },
       "furni_act23d0_decoration_01": {
         "id": "furni_act23d0_decoration_01",
-        "sortId": 10046,
+        "sortId": 10050,
         "name": "“他日幻景”",
         "iconId": "furni_act23d0_decoration_01",
         "type": "DECORATION",
@@ -44298,7 +45030,7 @@
       },
       "furni_act23d0_ceilingLamp_01": {
         "id": "furni_act23d0_ceilingLamp_01",
-        "sortId": 10047,
+        "sortId": 10051,
         "name": "承翼库兰塔吊灯",
         "iconId": "furni_act23d0_ceilingLamp_01",
         "type": "CEILINGLAMP",
@@ -44327,7 +45059,7 @@
       },
       "furni_act24d0_dunhuang_01": {
         "id": "furni_act24d0_dunhuang_01",
-        "sortId": 10048,
+        "sortId": 10052,
         "name": "“缥缈云间”",
         "iconId": "furni_act24d0_dunhuang_01",
         "type": "DECORATION",
@@ -44356,7 +45088,7 @@
       },
       "furni_act24d0_clock_01": {
         "id": "furni_act24d0_clock_01",
-        "sortId": 10049,
+        "sortId": 10053,
         "name": "“终幕之告”",
         "iconId": "furni_act24d0_clock_01",
         "type": "DECORATION",
@@ -44385,7 +45117,7 @@
       },
       "furni_act24d0_house_01": {
         "id": "furni_act24d0_house_01",
-        "sortId": 10050,
+        "sortId": 10054,
         "name": "大黑的节日新居",
         "iconId": "furni_act24d0_house_01",
         "type": "DECORATION",
@@ -44414,7 +45146,7 @@
       },
       "furni_act24d0_table_01": {
         "id": "furni_act24d0_table_01",
-        "sortId": 10051,
+        "sortId": 10055,
         "name": "炎式梳妆案",
         "iconId": "furni_act24d0_table_01",
         "type": "TABLE",
@@ -44443,7 +45175,7 @@
       },
       "furni_act25d0_table_01": {
         "id": "furni_act25d0_table_01",
-        "sortId": 10052,
+        "sortId": 10056,
         "name": "“山中弈”",
         "iconId": "furni_act25d0_table_01",
         "type": "TABLE",
@@ -44472,7 +45204,7 @@
       },
       "furni_act25d0_decoration_01": {
         "id": "furni_act25d0_decoration_01",
-        "sortId": 10053,
+        "sortId": 10057,
         "name": "“亭上雪”",
         "iconId": "furni_act25d0_decoration_01",
         "type": "DECORATION",
@@ -44501,7 +45233,7 @@
       },
       "furni_act27d0_prizeWheel_01": {
         "id": "furni_act27d0_prizeWheel_01",
-        "sortId": 10055,
+        "sortId": 10059,
         "name": "周年庆典转盘",
         "iconId": "furni_act27d0_prizeWheel_01",
         "type": "DECORATION",
@@ -44530,7 +45262,7 @@
       },
       "furni_act30d0_fan_01": {
         "id": "furni_act30d0_fan_01",
-        "sortId": 10056,
+        "sortId": 10060,
         "name": "玻璃柜风扇",
         "iconId": "furni_act30d0_fan_01",
         "type": "DECORATION",
@@ -46065,9 +46797,38 @@
         "isOnly": 1,
         "quantity": 0
       },
+      "furni_dropS031_spaceWar_01": {
+        "id": "furni_dropS031_spaceWar_01",
+        "sortId": 11046,
+        "name": "饰牌《创新》",
+        "iconId": "furni_dropS031_spaceWar_01",
+        "type": "WALLDECO",
+        "subType": "PLAQUE",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": false,
+        "rarity": 2,
+        "themeId": "",
+        "groupId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 2,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "“崭新的娱乐初生时总被认为是累赘，时间会证明它的价值。”",
+        "obtainApproach": "活动获得",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 0
+      },
       "furni_dropS018_needlePhobia_01": {
         "id": "furni_dropS018_needlePhobia_01",
-        "sortId": 11046,
+        "sortId": 11047,
         "name": "饰牌《针刺》",
         "iconId": "furni_dropS018_needlePhobia_01",
         "type": "WALLDECO",
@@ -46096,7 +46857,7 @@
       },
       "furni_dropS018_thalassophobia_01": {
         "id": "furni_dropS018_thalassophobia_01",
-        "sortId": 11047,
+        "sortId": 11048,
         "name": "饰牌《沉没》",
         "iconId": "furni_dropS018_thalassophobia_01",
         "type": "WALLDECO",
@@ -46125,7 +46886,7 @@
       },
       "furni_dropS018_octopus_01": {
         "id": "furni_dropS018_octopus_01",
-        "sortId": 11048,
+        "sortId": 11049,
         "name": "饰牌《日出》",
         "iconId": "furni_dropS018_octopus_01",
         "type": "WALLDECO",
@@ -46154,7 +46915,7 @@
       },
       "furni_dropS018_claustrophobia_01": {
         "id": "furni_dropS018_claustrophobia_01",
-        "sortId": 11049,
+        "sortId": 11050,
         "name": "饰牌《幽闭》",
         "iconId": "furni_dropS018_claustrophobia_01",
         "type": "WALLDECO",
@@ -46183,7 +46944,7 @@
       },
       "furni_dropS022_aos_01": {
         "id": "furni_dropS022_aos_01",
-        "sortId": 11050,
+        "sortId": 11051,
         "name": "饰牌《结构》",
         "iconId": "furni_dropS022_aos_01",
         "type": "WALLDECO",
@@ -46212,7 +46973,7 @@
       },
       "furni_dropS022_mountain_01": {
         "id": "furni_dropS022_mountain_01",
-        "sortId": 11051,
+        "sortId": 11052,
         "name": "饰牌《群岳》",
         "iconId": "furni_dropS022_mountain_01",
         "type": "WALLDECO",
@@ -46241,7 +47002,7 @@
       },
       "furni_dropS023_birdmanOfAlcatraz_01": {
         "id": "furni_dropS023_birdmanOfAlcatraz_01",
-        "sortId": 11052,
+        "sortId": 11053,
         "name": "饰牌《改变》",
         "iconId": "furni_dropS023_birdmanOfAlcatraz_01",
         "type": "WALLDECO",
@@ -46270,7 +47031,7 @@
       },
       "furni_dropS024_twinPeaks_01": {
         "id": "furni_dropS024_twinPeaks_01",
-        "sortId": 11053,
+        "sortId": 11054,
         "name": "饰牌《双峰》",
         "iconId": "furni_dropS024_twinPeaks_01",
         "type": "WALLDECO",
@@ -46299,7 +47060,7 @@
       },
       "furni_dropS025_mahjong_01": {
         "id": "furni_dropS025_mahjong_01",
-        "sortId": 11054,
+        "sortId": 11055,
         "name": "饰牌《同乐》",
         "iconId": "furni_dropS025_mahjong_01",
         "type": "WALLDECO",
@@ -46328,7 +47089,7 @@
       },
       "furni_dropS025_cai_01": {
         "id": "furni_dropS025_cai_01",
-        "sortId": 11055,
+        "sortId": 11056,
         "name": "饰牌《生财》",
         "iconId": "furni_dropS025_cai_01",
         "type": "WALLDECO",
@@ -46357,7 +47118,7 @@
       },
       "furni_dropS026_seven_01": {
         "id": "furni_dropS026_seven_01",
-        "sortId": 11056,
+        "sortId": 11057,
         "name": "饰牌《罪责》",
         "iconId": "furni_dropS026_seven_01",
         "type": "WALLDECO",
@@ -46386,7 +47147,7 @@
       },
       "furni_dropS026_greed_01": {
         "id": "furni_dropS026_greed_01",
-        "sortId": 11058,
+        "sortId": 11059,
         "name": "饰牌《慷慨》",
         "iconId": "furni_dropS026_greed_01",
         "type": "WALLDECO",
@@ -46415,7 +47176,7 @@
       },
       "furni_dropS026_sloth_01": {
         "id": "furni_dropS026_sloth_01",
-        "sortId": 11059,
+        "sortId": 11060,
         "name": "饰牌《勤勉》",
         "iconId": "furni_dropS026_sloth_01",
         "type": "WALLDECO",
@@ -46444,7 +47205,7 @@
       },
       "furni_dropS026_lust_01": {
         "id": "furni_dropS026_lust_01",
-        "sortId": 11060,
+        "sortId": 11061,
         "name": "饰牌《克己》",
         "iconId": "furni_dropS026_lust_01",
         "type": "WALLDECO",
@@ -46473,7 +47234,7 @@
       },
       "furni_dropS026_pride_01": {
         "id": "furni_dropS026_pride_01",
-        "sortId": 11061,
+        "sortId": 11062,
         "name": "饰牌《谦虚》",
         "iconId": "furni_dropS026_pride_01",
         "type": "WALLDECO",
@@ -46502,7 +47263,7 @@
       },
       "furni_dropS026_envy_01": {
         "id": "furni_dropS026_envy_01",
-        "sortId": 11062,
+        "sortId": 11063,
         "name": "饰牌《宽容》",
         "iconId": "furni_dropS026_envy_01",
         "type": "WALLDECO",
@@ -46531,7 +47292,7 @@
       },
       "furni_dropS026_wrath_01": {
         "id": "furni_dropS026_wrath_01",
-        "sortId": 11063,
+        "sortId": 11064,
         "name": "饰牌《忍耐》",
         "iconId": "furni_dropS026_wrath_01",
         "type": "WALLDECO",
@@ -46848,6 +47609,35 @@
         "isOnly": 1,
         "quantity": 0
       },
+      "furni_contract_s10_01": {
+        "id": "furni_contract_s10_01",
+        "sortId": 12011,
+        "name": "尘环之旗",
+        "iconId": "furni_contract_s10_01",
+        "type": "WALLDECO",
+        "subType": "CONTRACT",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": false,
+        "rarity": 2,
+        "themeId": "",
+        "groupId": "",
+        "width": 2,
+        "depth": 1,
+        "height": 4,
+        "comfort": 75,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "描摹了某片残败建筑的旗帜，炮弹在城市的皮肤上砸出伤口，亦在心上烙下永难平复的伤痕，人们描摹其形状以纪念。",
+        "obtainApproach": "危机合约赛季奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 0
+      },
       "furni_annihilation_s2_01": {
         "id": "furni_annihilation_s2_01",
         "sortId": 13001,
@@ -47100,6 +47890,35 @@
         "comfort": 105,
         "usage": "能够用来装扮宿舍，提高宿舍的氛围",
         "description": "完成炎国盘桓蜀道剿灭并提交报告后获得的纪念品。蜀道的余音似乎还在耳边回响。",
+        "obtainApproach": "剿灭委托奖励",
+        "processedProductId": "3401",
+        "processedProductCount": 0,
+        "processedByProductPercentage": 0,
+        "processedByProductGroup": [],
+        "canBeDestroy": false,
+        "isOnly": 1,
+        "quantity": 0
+      },
+      "furni_annihilation_s12_01": {
+        "id": "furni_annihilation_s12_01",
+        "sortId": 13010,
+        "name": "拉特兰的回声（巧克力大街）",
+        "iconId": "furni_annihilation_s12_01",
+        "type": "WALLDECO",
+        "subType": "ANNIHILATION",
+        "location": "WALL",
+        "category": "FURNITURE",
+        "validOnRotate": false,
+        "enableRotate": false,
+        "rarity": 2,
+        "themeId": "",
+        "groupId": "",
+        "width": 4,
+        "depth": 1,
+        "height": 4,
+        "comfort": 105,
+        "usage": "能够用来装扮宿舍，提高宿舍的氛围",
+        "description": "完成拉特兰巧克力大街剿灭并提交报告后获得的纪念品。巧克力大街的余音似乎还在耳边回响。",
         "obtainApproach": "剿灭委托奖励",
         "processedProductId": "3401",
         "processedProductCount": 0,
@@ -57201,6 +58020,142 @@
           "furni_durin_wallpaper_01",
           "furni_durin_floor_01"
         ]
+      },
+      "furni_set_camp": {
+        "id": "furni_set_camp",
+        "sortId": 59,
+        "name": "茨沃涅克乡野营地",
+        "themeType": "NORMAL",
+        "desc": "根据茨沃涅克城市宣传手册配图搭建的营地风房间。玛恩纳或许在这样的营地中歇息过片刻。",
+        "quickSetup": [
+          {
+            "furnitureId": "furni_camp_curtain_01",
+            "pos0": 6,
+            "pos1": 0,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_ceilingLight_01",
+            "pos0": 3,
+            "pos1": 2,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_toolTable_01",
+            "pos0": 0,
+            "pos1": 0,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_BBQGrill_01",
+            "pos0": 0,
+            "pos1": 2,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_carpet_01",
+            "pos0": 0,
+            "pos1": 2,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_brazier_01",
+            "pos0": 3,
+            "pos1": 2,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_column_01",
+            "pos0": 7,
+            "pos1": 2,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_ceiling_01",
+            "pos0": 10,
+            "pos1": 1,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_ceilingLamp_01",
+            "pos0": 15,
+            "pos1": 3,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_table_01",
+            "pos0": 11,
+            "pos1": 1,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_longBench_01",
+            "pos0": 12,
+            "pos1": 6,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_pager_01",
+            "pos0": 25,
+            "pos1": 4,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_hangingChair_01",
+            "pos0": 28,
+            "pos1": 3,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_stone_01",
+            "pos0": 26,
+            "pos1": 0,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_fishingRodKit_01",
+            "pos0": 29,
+            "pos1": 6,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_wallpaper_01",
+            "pos0": 0,
+            "pos1": 0,
+            "dir": 0
+          },
+          {
+            "furnitureId": "furni_camp_floor_01",
+            "pos0": 0,
+            "pos1": 10,
+            "dir": 0
+          }
+        ],
+        "groups": [
+          "furni_set_camp_1",
+          "furni_set_camp_2",
+          "furni_set_camp_3",
+          "furni_set_camp_4"
+        ],
+        "furnitures": [
+          "furni_camp_curtain_01",
+          "furni_camp_ceilingLight_01",
+          "furni_camp_toolTable_01",
+          "furni_camp_BBQGrill_01",
+          "furni_camp_carpet_01",
+          "furni_camp_brazier_01",
+          "furni_camp_column_01",
+          "furni_camp_ceiling_01",
+          "furni_camp_ceilingLamp_01",
+          "furni_camp_table_01",
+          "furni_camp_longBench_01",
+          "furni_camp_pager_01",
+          "furni_camp_hangingChair_01",
+          "furni_camp_stone_01",
+          "furni_camp_fishingRodKit_01",
+          "furni_camp_wallpaper_01",
+          "furni_camp_floor_01"
+        ]
       }
     },
     "groups": {
@@ -60565,6 +61520,63 @@
           "furni_durin_door_01",
           "furni_durin_floorlamp_01"
         ]
+      },
+      "furni_set_camp_1": {
+        "id": "furni_set_camp_1",
+        "sortId": 1,
+        "name": "烧烤区",
+        "themeId": "furni_set_camp",
+        "comfort": 150,
+        "count": 5,
+        "furniture": [
+          "furni_camp_ceilingLight_01",
+          "furni_camp_toolTable_01",
+          "furni_camp_BBQGrill_01",
+          "furni_camp_carpet_01",
+          "furni_camp_brazier_01"
+        ]
+      },
+      "furni_set_camp_2": {
+        "id": "furni_set_camp_2",
+        "sortId": 2,
+        "name": "用餐区",
+        "themeId": "furni_set_camp",
+        "comfort": 340,
+        "count": 4,
+        "furniture": [
+          "furni_camp_ceiling_01",
+          "furni_camp_ceilingLamp_01",
+          "furni_camp_table_01",
+          "furni_camp_longBench_01"
+        ]
+      },
+      "furni_set_camp_3": {
+        "id": "furni_set_camp_3",
+        "sortId": 3,
+        "name": "休闲区",
+        "themeId": "furni_set_camp",
+        "comfort": 240,
+        "count": 4,
+        "furniture": [
+          "furni_camp_pager_01",
+          "furni_camp_hangingChair_01",
+          "furni_camp_stone_01",
+          "furni_camp_fishingRodKit_01"
+        ]
+      },
+      "furni_set_camp_4": {
+        "id": "furni_set_camp_4",
+        "sortId": 4,
+        "name": "本地装潢",
+        "themeId": "furni_set_camp",
+        "comfort": 220,
+        "count": 4,
+        "furniture": [
+          "furni_camp_curtain_01",
+          "furni_camp_column_01",
+          "furni_camp_wallpaper_01",
+          "furni_camp_floor_01"
+        ]
       }
     },
     "types": {
@@ -60987,6 +61999,9 @@
         },
         {
           "skinId": "char_401_elysm@summer#9"
+        },
+        {
+          "skinId": "char_484_robrta@summer#10"
         }
       ]
     },
