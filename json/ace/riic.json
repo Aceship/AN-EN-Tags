@@ -99,6 +99,11 @@
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
 		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
 	},
+	"control_mp_cost[008]": {
+		"name": "Egocentric",
+		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
+		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
+	},
 	"control_allCost_condChar[000]": {
 		"name": "Moment of Respite",
 		"desc": "When stationed together with Aak at the Command Center, mood recovery per hour of all operators in the Command Center +0.25",
@@ -183,6 +188,11 @@
 		"name": "Knights of Pinus",
 		"desc": "When stationed at the Command Center, every operator from Pinus Sylvestris stationed in a Craft Station gains production of EXP cards +10% and production of precious metals -10%",
 		"descformat": "When stationed at the Command Center, every operator from <$cc.g.psk><@cc.kw>Pinus Sylvestris</></> stationed in a Craft Station gains production of <@cc.kw>EXP cards</> <@cc.vup>+10%</> and production of <@cc.kw>precious metals</> <@cc.vdown>-10%</>"
+	},
+	"control_mp_lonely[000]": {
+		"name": "Official Business",
+		"desc": "When stationed at the Command Center, mood recovery per hour of operators working in certain facilities +0.1. Additionally, apply the effects of certain skills within the Command Center to operators working in other facilities",
+		"descformat": "When stationed at the Command Center, mood recovery per hour of operators working in <$cc.c.room1><@cc.kw>certain facilities</></> <@cc.vup>+0.1</>. Additionally, apply the effects of <$cc.c.skill><@cc.kw>certain skills</></> within the Command Center to operators working in <$cc.c.room2><@cc.kw>other facilities</></>"
 	},
 	"power_rec_spd&cost[000]": {
 		"name": "Enthusiasm",
@@ -736,23 +746,23 @@
 	},
 	"trade_ord_wt&cost[000]": {
 		"name": "Tailoring·α",
-		"desc": "When stationed at a Trade Station, slightly increase the appearance rate of high volume orders of precious metals (affected by work duration) and mood reduction per hour -0.25",
-		"descformat": "When stationed at a Trade Station, <@cc.kw>slightly increase</> the appearance rate of <@cc.kw>high volume orders of precious metals</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
+		"desc": "When stationed at a Trade Station, slightly increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, <@cc.kw>slightly increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
 	},
 	"trade_ord_wt&cost[010]": {
 		"name": "Tailoring·β",
-		"desc": "When stationed at a Trade Station, increase the appearance rate of high volume orders of precious metals (affected by work duration) and mood reduction per hour -0.25",
-		"descformat": "When stationed at a Trade Station, <@cc.kw>increase</> the appearance rate of <@cc.kw>high volume orders of precious metals</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
+		"desc": "When stationed at a Trade Station, increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, <@cc.kw>increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
 	},
 	"trade_ord_wt&cost[001]": {
 		"name": "Handicrafts·α",
-		"desc": "When stationed at a Trade Station, slightly increase the appearance rate of high volume orders of precious metals (affected by work duration) and mood reduction per hour -0.25",
-		"descformat": "When stationed at a Trade Station, <@cc.kw>slightly increase</> the appearance rate of <@cc.kw>high volume orders of precious metals</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
+		"desc": "When stationed at a Trade Station, slightly increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, <@cc.kw>slightly increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
 	},
 	"trade_ord_wt&cost[011]": {
 		"name": "Handicrafts·β",
-		"desc": "When stationed at a Trade Station, increase the appearance rate of high volume orders of precious metals (affected by work duration) and mood reduction per hour -0.25",
-		"descformat": "When stationed at a Trade Station, <@cc.kw>increase</> the appearance rate of <@cc.kw>high volume orders of precious metals</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
+		"desc": "When stationed at a Trade Station, increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, <@cc.kw>increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
 	},
 	"trade_ord_spd&cost_P[000]": {
 		"name": "Resentment",
@@ -776,13 +786,28 @@
 	},
 	"trade_ord_long[000]": {
 		"name": "Investment·α",
-		"desc": "When stationed at a Trade Station, if the amount of precious metals traded is higher than 3, increase the LMD gained by +250. Additionally, mood reduction per hour -0.25",
-		"descformat": "When stationed at a Trade Station, if the amount of <@cc.kw>precious metals</> traded is higher than <@cc.kw>3</>, increase the LMD gained by <@cc.kw>+250</>. Additionally, mood reduction per hour <@cc.vup>-0.25</>"
+		"desc": "When stationed at a Trade Station, if the amount of Pure Gold traded in a Pure Gold order is higher than 3 (Default orders are not considered as Pure Gold orders), increase the LMD gained by +250. Additionally, mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, if the amount of Pure Gold traded in a <@cc.kw>Pure Gold order</> is higher than <@cc.kw>3</> (Default orders are not considered as Pure Gold orders), increase the LMD gained by <@cc.kw>+250</>. Additionally, mood reduction per hour <@cc.vup>-0.25</>"
 	},
 	"trade_ord_long[010]": {
 		"name": "Investment·β",
-		"desc": "When stationed at a Trade Station, if the amount of precious metals traded is higher than 3, increase the LMD gained by +500. Additionally, mood reduction per hour -0.25",
-		"descformat": "When stationed at a Trade Station, if the amount of <@cc.kw>precious metals</> traded is higher than <@cc.kw>3</>, increase the LMD gained by <@cc.kw>+500</>. Additionally, mood reduction per hour <@cc.vup>-0.25</>"
+		"desc": "When stationed at a Trade Station, if the amount of Pure Gold traded in a Pure Gold order is higher than 3 (Default orders are not considered as Pure Gold orders), increase the LMD gained by +500. Additionally, mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, if the amount of Pure Gold traded in a <@cc.kw>Pure Gold order</> is higher than <@cc.kw>3</> (Default orders are not considered as Pure Gold orders), increase the LMD gained by <@cc.kw>+500</>. Additionally, mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"trade_ord_law[000]": {
+		"name": "Contract Law",
+		"desc": "When stationed at a Trade Station, if the amount of Pure Gold traded in a Pure Gold order is lower than 4, the order is considered a Default order",
+		"descformat": "When stationed at a Trade Station, if the amount of Pure Gold traded in a <@cc.kw>Pure Gold order</> is lower than <@cc.kw>4</>, the order is considered a <@cc.kw>Default order</>"
+	},
+	"trade_ord_against[000]": {
+		"name": "Breach of Contract·α",
+		"desc": "When stationed at a Trade Station, if a Pure Gold order is a Default order, increase the amount of Pure Gold traded by +1",
+		"descformat": "When stationed at a Trade Station, if a <@cc.kw>Pure Gold order</> is a <@cc.kw>Default order</>, increase the amount of <@cc.kw>Pure Gold</> traded by <@cc.vup>+1</>"
+	},
+	"trade_ord_against[010]": {
+		"name": "Breach of Contract·β",
+		"desc": "When stationed at a Trade Station, if a Pure Gold order is a Default order, increase the amount of Pure Gold traded by +2",
+		"descformat": "When stationed at a Trade Station, if a <@cc.kw>Pure Gold order</> is a <@cc.kw>Default order</>, increase the amount of <@cc.kw>Pure Gold</> traded by <@cc.vup>+2</>"
 	},
 	"workshop_proc_probability[000]": {
 		"name": "Focus·α",
