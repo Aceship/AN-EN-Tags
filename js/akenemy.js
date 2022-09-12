@@ -55,7 +55,7 @@
     var charName = 'enemy_1510_frstar2';
     var chibipers = 'front'
     var chibiName = 'enemy_1510_frstar2'
-    var folder = `./spineassets/${chibitype}/`
+    var folder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/${chibitype}/`
     var spinewidget 
     var loadchibi = true;
     var defaultAnimationName = "Default";
@@ -190,7 +190,7 @@
                 $('#enemyResult').show();
                 for (var i = 0; i < result.length; i++) {
                     let currEnemy = query(db.enemy,"enemyId",result[i].id)
-                    let image = `<img style="height:80px;padding:1px" src="./img/enemy/${result[i].id}.png">  `
+                    let image = `<img style="height:80px;padding:1px" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/enemy/${result[i].id}.png">  `
                     // console.log(currEnemy)
 
                     if(el=="Browse"){
@@ -254,7 +254,7 @@
         
             <div style="padding-top:30px">
             <div  class="ak-shadow" style="margin-bottom:8px;padding:5px;padding-top:10px;background:#444;margin-top:2px;display:inline-block;padding-left:10px;padding-right:30px">
-                <div style="display:inline-block"><img style="height:80px;padding:1px" src="./img/enemy/${currEnemy.enemyId}.png"> </div>
+                <div style="display:inline-block"><img style="height:80px;padding:1px" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/enemy/${currEnemy.enemyId}.png"> </div>
                 <div style="display:inline-block">
                     <div style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:50px;width:50px;display:inline-block;${currEnemy.enemyIndex.length==2?"font-size:30px":"font-size:15px;padding-top:10px"}">${currEnemy.enemyIndex}</div>
                     <div style="display:inline-block;vertical-align:top">   
@@ -276,23 +276,23 @@
             <div style="max-width:100%;margin-bottom:15px;margin-top:15px" >
                 <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
                 <div style="padding:0px;font-size:12px">
-                    <img src="./img/ui/enemy/hp.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/hp.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
                     Health</div><div style="font-size:40px;margin-top:-5px">${currEnemy.endure}</div>
                 </div>
                 <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
                 
                 <div style="padding:0px;font-size:12px">
-                    <img src="./img/ui/enemy/atk.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/atk.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
                     Attack</div><div style="font-size:40px;margin-top:-5px">${currEnemy.attack}</div>
                 </div>
                 <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
                 <div style="padding:0px;font-size:12px">
-                    <img src="./img/ui/enemy/defense.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/defense.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
                     Defense</div><div style="font-size:40px;margin-top:-5px">${currEnemy.defence}</div>
                 </div>
                 <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
                 <div style="padding:0px;font-size:12px;text-align:right;margin-right:5px">
-                    <img src="./img/ui/enemy/resistance.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/resistance.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
                     Spell Resist</div><div style="font-size:40px;margin-top:-5px">${currEnemy.resistance}</div>
                 </div>
             </div>
@@ -693,7 +693,7 @@
         // console.log(opdataFull)
         // var tokenName =
         var tokenname = tokenkey
-        var tokenfolder = `./spineassets/token/${opdataFull.id}/${tokenkey}`
+        var tokenfolder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/token/${opdataFull.id}/${tokenkey}`
         console.log(tokenfolder)
         // $("#loading-spine").text("Loading...")
         if(spinewidgettoken){
@@ -852,7 +852,7 @@
         if(pers!="")chibipers=pers
         if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
         else chibiName.includes("build")?chibiName=chibiName.split("_").slice(1).join("_"):chibiName=chibiName
-        folder = `./spineassets/${chibitype}/${charName}/${chibipers}/`
+        folder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/${chibitype}/${charName}/${chibipers}/`
         if(spinewidget)LoadAnimation()
 
         

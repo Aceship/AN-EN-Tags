@@ -386,7 +386,7 @@
                         body.push('<img style="' + buttonstyle
                                 + '" height="' + size
                                 + '" width="' + size
-                                + '" src="./img/avatars/' + char.id + '.png">');
+                                + '" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/' + char.id + '.png">');
                     }
 
                     body.push(`<div style='background:#333;color:#aaa;width:100%;
@@ -407,13 +407,13 @@
                                 info += `<div style='color:#ffffff;font-size:24px;font-weight:bold;background:#000;width:50%;float:left;margin-right:1px;display:flex;justify-content:center;align-items:center;padding:0px 5px 0px 5px;'>S${char.skill_index}</div>`;
                                 info += `<div style="background:#222; width:50%; float:right; display:flex; justify-content:center; margin-left:1px;padding:0px 5px 0px 5px;">`
                             }
-                            info += `<img src='img/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
+                            info += `<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
                             if (char.skill_index > 0) {
                                 info += "</div>";
                             }
                         } else {
-                            if(char.class=="E1")info += "<img src='img/ui/elite/1-s.png'>";
-                            else info += "<img src='img/ui/elite/2-s.png'>";
+                            if(char.class=="E1")info += "<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/1-s.png'>";
+                            else info += "<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/2-s.png'>";
                             
                         }
                         info+="</div>"
@@ -429,7 +429,7 @@
                             var titleimg = skill_levels[char.skill_level]
                             if (char.skill >= 7) titleimg = char.skill_level;
                             info += skill_levels[char.skill_level];
-                            // info += `<img src='img/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
+                            // info += `<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
                         } else {
                             if(char.class=="E1")info += "Elite 1";
                             else info += "Elite 2";

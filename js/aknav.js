@@ -136,7 +136,7 @@ $(document).ready(function(){
     }
     // console.log(reg)
     let html = `
-    <img src="./img/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
+    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/factions/logo_rhodes.png" width="40" height="40" style="transform:scale(1.2,1.2)translate(-8px,1px)"class="d-inline-block align-top" alt="">
         <a class="navbar-brand" href="index.html" translate-id="topbar-1">Aceship's Toolbox</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="展开">
@@ -150,7 +150,7 @@ $(document).ready(function(){
                 </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ace-donatemodal"><img height='20px' style='border:0px;height:20px;margin-top:-5px' src='./img/items/GOLD.png'>  Donate</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ace-donatemodal"><img height='20px' style='border:0px;height:20px;margin-top:-5px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/GOLD.png'>  Donate</button>
                 </li>
 
                 <li class="nav-item dropdown" id="navitemRegion">

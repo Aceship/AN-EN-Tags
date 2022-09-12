@@ -187,7 +187,7 @@
         let currstory = query(db.storylist.story,"name",storyname)
         // console.log(list)
         for(i=1;i<=currstory.total;i++){
-            let image=`<img src='./img/story/${currstory.folder}/${('0'+i).slice(-2)}.png'>`
+            let image=`<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/story/${currstory.folder}/${('0'+i).slice(-2)}.png'>`
             $('#story').append(`<div class="storyimagecontainer">${image}</div>`)
         }
         console.log()

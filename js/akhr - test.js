@@ -548,7 +548,7 @@
                         let style = JSON.parse(localStorage.getItem('showImage')) ? "style=\"padding: 1px 1px;" + padding + ";\" " : "";
                         let buttonstyle = JSON.parse(localStorage.getItem('size')) >25? "background-color: #AAA": "background-color: transparent";
                         chars_html.push("<button type=\"button\" class=\" ak-shadow-small ak-btn btn btn-sm ak-rare-" + colors[char.level] + " btn-char my-1\" data-toggle=\"tooltip\" data-placement=\"bottom\" onclick=\"showChar(this)\" " +style+"title=\""+ char.name +"\">");
-                        if(JSON.parse(localStorage.getItem('showImage')))chars_html.push("<img style=\""+buttonstyle+"\"height=\""+JSON.parse(localStorage.getItem('size'))+"\" width=\""+JSON.parse(localStorage.getItem('size'))+"\" src=\"./img/avatars/"+ char.id +".png\">   " )
+                        if(JSON.parse(localStorage.getItem('showImage')))chars_html.push("<img style=\""+buttonstyle+"\"height=\""+JSON.parse(localStorage.getItem('size'))+"\" width=\""+JSON.parse(localStorage.getItem('size'))+"\" src=\"https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/"+ char.id +".png\">   " )
                         if(JSON.parse(localStorage.getItem('size'))>60)chars_html.push("<div>")
                         if(JSON.parse(localStorage.getItem('showName')))chars_html.push(char.name_tl)
                         if(JSON.parse(localStorage.getItem('size'))>60)chars_html.push("</div>")

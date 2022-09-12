@@ -24,7 +24,7 @@ $.when(d0).then(function(){
             <div class="featurebtn-container" onclick="window.location.href = '${eachcontent.link}'">
                 <div class="featurebtn-open"><div>Open</div></div>
                 <div class="featurebtn-button">
-                    <div class="left"><img src="img/ui/home/${eachcontent.image}.PNG">
+                    <div class="left"><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/home/${eachcontent.image}.PNG">
                     <div class="onimage"><div class="titleonimage">${eachcontent.title}</div></div>
                     </div><div class="right"><div class="featurebtn-info">
                     <div class= "featurebtn-header"><h4>${eachcontent.title}</h4></div>

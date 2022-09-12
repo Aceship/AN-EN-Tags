@@ -143,7 +143,7 @@ function RefreshSlots(){
                     <a href='#' class='btn btn-danger btn-sm' style='border-radius: 0px;' onclick='deleteOp(${i})'>
                     <i class='fa fa-close'></i></a></div>
                 <div class='opname ak-font-novecento lp-row'>${getENname(opData.name)}</div>
-                <div><img class='opimage ak-shadow mx-auto d-block' src='img/avatars/${opID}.png'></div>
+                <div><img class='opimage ak-shadow mx-auto d-block' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${opID}.png'></div>
 
 
                 <div id='slot-${i}-stats' class='statsSection' style='margin-top:42px;'>
@@ -441,7 +441,7 @@ function selOpClass(cname){
                 case "List":
                             html =
                             `<li class='selectop-list ak-shadow' onclick='selectOp("${key}")'>
-                            <img src='img/avatars/${key}.png'>
+                            <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${key}.png'>
                             <div class='name ak-font-novecento'>${getENname(val.name)}</div>
                             <div class='rarity op-rarity-${val.rarity+1}'> 
                                 ${(`<i class='fa fa-star'></i>`).repeat(val.rarity+1)}
@@ -452,10 +452,10 @@ function selOpClass(cname){
                 case "Grid":
                             html =
                             `<li class='selectop-grid ak-shadow' onclick='selectOp("${key}")'>
-                            <img src='img/avatars/${key}.png'>
+                            <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${key}.png'>
                             <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                             <div class='ak-rare-${val.rarity+1}'></div>
-                            ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}
+                            ${cname==""?`<div class='ak-showclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}
                             ${showtype&&val.displayLogo?`<div class='ak-showfaction'><img src='img/factions/${val.displayLogo.toLowerCase()}.png' title='${db.campdata[val.displayLogo]}' ></div>`:""}
                             <div class='grid-box op-rarity-${val.rarity+1}'> 
                             </div></li>
@@ -627,7 +627,7 @@ function GetTrait(desc,trait,traitname = "Traits"){
         trait.candidates.forEach(element => {
             var imagereq = []
             if(element.unlockCondition.phase >=0)
-            imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${element.unlockCondition.phase}">`)
+            imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${element.unlockCondition.phase}">`)
             if(element.unlockCondition.level >1)
             imagereq.push(`Lv.${element.unlockCondition.level}`)
             // console.log(s)

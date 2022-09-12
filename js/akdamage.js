@@ -79,7 +79,7 @@ function RefreshAlldata() {
         var opData = db.chars[selectedOp];
         var opDataTL = query(db.charsTL,'name_cn',opData.name,true,false);
 
-        $("#opimage").attr("src","img/avatars/"+selectedOp+".png");
+        $("#opimage").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/"+selectedOp+".png");
         $("#opname").html(opDataTL.name_en);
 
         $('#eliteSelections').empty();
@@ -310,7 +310,7 @@ function selOpClass(cname){
                 case "List":
                             html =
                             `<li class='selectop-list ak-shadow' onclick='selectOp("${key}")'>
-                            <img src='img/avatars/${key}.png'>
+                            <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${key}.png'>
                             <div class='name ak-font-novecento'>${getENname(val.name)}</div>
                             <div class='rarity op-rarity-${val.rarity+1}'> 
                                 ${(`<i class='fa fa-star'></i>`).repeat(val.rarity+1)}
@@ -321,10 +321,10 @@ function selOpClass(cname){
                 case "Grid":
                             html =
                             `<li class='selectop-grid ak-shadow' onclick='selectOp("${key}")'>
-                            <img src='img/avatars/${key}.png'>
+                            <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${key}.png'>
                             <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                             <div class='ak-rare-${val.rarity+1}' style='height: 2px;'></div>
-                            ${cname==""?`<div class='ak-showclass'><img src='img/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}
+                            ${cname==""?`<div class='ak-showclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/class_${type.type_en.toLowerCase()}.png'></div>`:""}
                             ${showtype?`<div class='ak-showfaction'><img src='img/factions/${val.displayLogo.toLowerCase()}.png' title='${db.campdata[val.displayLogo]}' ></div>`:""}
                             <div class='grid-box op-rarity-${val.rarity+1}'> 
                             </div></li>
@@ -451,7 +451,7 @@ function getProcessedTexts(type,opdataFull,getTraitText){
                     if(element.unlockCondition.level >0)
                     imagereq.push(`Lv.${element.unlockCondition.level}`)
                     if(element.unlockCondition.phase >0)
-                    imagereq.push(`<img src="./img/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
+                    imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
     
                 // console.log(s)
                 var each = []

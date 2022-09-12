@@ -157,7 +157,7 @@
         $("#op-name").empty();
         $("#op-rarity").empty();
         $("#op-tags").empty();
-        $("#opImage").attr('src','img/chara/empty.png');
+        $("#opImage").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/empty.png');
         $("#opHeader").attr('src','');
         $("#opBg").attr('src','');
         $("#opGlow").attr('src','');
@@ -229,10 +229,10 @@
                 $('#operatorsResult').empty();
                 $('#operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
-                    let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}.png">  `
+                    let image = `<img style="height:40px;padding:2px" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}.png">  `
                     // console.log(image)
                     if(el=="Browse"){
-                        image = `<img style="height:70px;padding:2px" src="./img/avatars/${result[i].img_name}.png">  `
+                        image = `<img style="height:70px;padding:2px" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}.png">  `
                         $("#operatorsResult").css("max-width","100vw");
                         $("#operatorsResult").append(
                             "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:75px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"')\">"
@@ -269,22 +269,22 @@
             $.each(opdata2,function(key,v){
                 $("#opImage").attr('src','img/portraits/'+key+'_1.png');
                 opdataFull = opdata2[key]
-                // $("#opGlow").attr('src','img/ui/chara/glow-'+(opdata2[key].rarity+1)+'.png');
-                $("#opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
-                $("#opBg").attr('src','img/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
-                // $("#opBanner").attr('src','img/ui/chara/banner-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
+                // $("#opGlow").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/glow-'+(opdata2[key].rarity+1)+'.png');
+                $("#opHeader").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
+                $("#opBg").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
+                // $("#opBanner").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/banner-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
                 
                 $("#opID").val(key);
                 localStorage.setItem('selectedOP', key);
                 return false
             });
             // console.log(opclass)
-            // $("#opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
+            // $("#opClassImage").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
             // console.log(db.classes)
             
             var type = query(db.classes,"type_data",opdataFull.profession);
             console.log(type)
-            $("#opClassImage").attr("src","img/classes/black/icon_profession_"+type.type_en.toLowerCase()+"_large.png")
+            $("#opClassImage").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/black/icon_profession_"+type.type_en.toLowerCase()+"_large.png")
 
             $("#op-nametl").html(opdata['name_'+lang]);
             $("#op-name").html(opdata['name_'+reg]);

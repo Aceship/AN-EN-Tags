@@ -34,7 +34,7 @@ function Start(){
             <div style ='display:inline-flex'>
             
             <div style='background:#111;margin:auto;height:120px;width:120px;text-align:center;padding:5px'>
-                <img height='110px' width='auto' src='./img/ui/medalicon/${b.medalId}.png'>
+                <img height='110px' width='auto' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/medalicon/${b.medalId}.png'>
             </div>
             
             <div style='padding-left:5px;margin:auto'>

@@ -271,7 +271,7 @@
                         <div class='col-6 col-sm-6 ' style='padding:13px 20px;'>
                             <div style='position: relative;display: block; margin: 0 auto; width: 150px;z-index: 0;min-height:280px;margin:auto;background: #55555511'>
                                 <div class='ak-shadow' style='display:flex;align-items:flex-end;;min-height:280px'>
-                                    <img style ='position:relative;z-index:1;' src='img/chara/empty.png' width='150' id='slot${i}-opImage'>
+                                    <img style ='position:relative;z-index:1;' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/empty.png' width='150' id='slot${i}-opImage'>
                                     <img  style ='position:absolute;left: 0px; top: 0px;z-index:0' src='' width='150' id='slot${i}-opHeader'>
                                     <img  style ='position:absolute;left: 0px; bottom: 0px;z-index:0' src='' width='150' id='slot${i}-opBg'>
                                     <img  style ='position:absolute;left: 0px; bottom: 40px;z-index:2' src='' width='150' id='slot${i}-opGlow'>
@@ -363,10 +363,10 @@
                 $('#slot'+slot+'-operatorsResult').empty();
                 $('#slot'+slot+'-operatorsResult').show();
                 for (var i = 0; i < result.length; i++) {
-                    let image = `<img style="height:40px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
+                    let image = `<img style="height:40px;padding:2px" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}_1.png">  `
                     // console.log(image)
                     if(el=="Browse"){
-                        image = `<img style="height:70px;padding:2px" src="./img/avatars/${result[i].img_name}_1.png">  `
+                        image = `<img style="height:70px;padding:2px" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}_1.png">  `
                         $("#slot"+slot+"-operatorsResult").css("max-width","100vw");
                         $("#slot"+slot+"-operatorsResult").append(
                                 "<li class=\"col-2 col-sm-1 ak-shadow-small ak-rare-"+result[i].rarity+"\"style=\"display:inline-block;cursor: pointer;width:85px;min-width:85px;margin:2px;margin-bottom:2px;padding:1px;border-radius:2px\" onclick=\"selectOperator('"+result[i].name_cn+"',"+slot+")\">"
@@ -414,12 +414,12 @@
                 opdataFull[slot] = v;
                 opKey = key;
                 $("#slot"+slot+"-opImage").attr('src','img/portraits/'+key+'_1.png');
-                $("#slot"+slot+"-opHeader").attr('src','img/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
-                $("#slot"+slot+"-opBg").attr('src','img/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
+                $("#slot"+slot+"-opHeader").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
+                $("#slot"+slot+"-opBg").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/bg-'+(opdata2[key].rarity<=2? 1:opdata2[key].rarity+1 )+'.png');
                 $("#slot"+slot+"-opID").val(key);
                 var opclass = query(db.classes,"type_data",opdata2[key].profession);
                 console.log(opclass)
-                $("#slot"+slot+"-opClassImage").attr('src','img/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
+                $("#slot"+slot+"-opClassImage").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/black/icon_profession_'+opclass.type_en.toLowerCase()+'_large.png');
                 let selectedOPDetailsObj = {};
                 let selectedOpnames = {};
                 if(!localStorage.getItem("selectedOPDetailsObj") || !localStorage.getItem('selectedOpnames')){

@@ -70,7 +70,7 @@ function RelicBox(relicid,relic){
     <div class="relic-title relic-rarity relic-rarity-${rarity}">${name}</div>
     
     <div class="relic-imagebox">
-    <img style="margin:auto;width: 80px; height: 80px;object-fit: contain;" src="img/ui/roguelike/item/${relic.iconId}.png">
+    <img style="margin:auto;width: 80px; height: 80px;object-fit: contain;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/roguelike/item/${relic.iconId}.png">
     </div>
 
     <div class="relic-effect">
@@ -152,20 +152,20 @@ function StageSubList(el){
         if(a.split("_")[1]) {
             if(a.includes("main")){
                 name = "Episode "+a.split("_")[1]
-                img = `<img width='${size}' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
+                img = `<img width='${size}' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
             }
             else if(a.includes("camp")){
                 name = "Annihilation "+a.split("_")[1]
-                img = `<img width='300' src='img/ui/stage/banner/${selection.toLowerCase()}/${a}.png'>`
+                img = `<img width='300' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/banner/${selection.toLowerCase()}/${a}.png'>`
             }
             else if(a.includes("weekly")){
                 var weeklyname = db.zone_table_en.zones[a]
                 name = weeklyname.zoneNameSecond
-                img = `<img width='150' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
+                img = `<img width='150' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
             }
         }else{
             size = 140
-            img = `<img width='${size}' src='img/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
+            img = `<img width='${size}' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/banner/${selection.toLowerCase()}/small/${a}.png'>`
         }
         // else if(a.includes)
         var button =`
@@ -208,9 +208,9 @@ function StageList(el){
                 else stagecode = stageEn.code
             }
 
-            if(b.bossMark)img = `<img class='stage-btn-icon' src='img/ui/stage/icon/icon_boss_hilight.png'>`
-            if(b.appearanceStyle==4) img = `<img class='stage-btn-icon' src='img/ui/stage/icon/bkg_spike_mark.png'>`
-            if(b.performanceStageFlag=="PERFORMANCE_STAGE") img = `<img class='stage-btn-icon' src='img/ui/stage/icon/bkg_story_only_mark.png'>`
+            if(b.bossMark)img = `<img class='stage-btn-icon' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/icon/icon_boss_hilight.png'>`
+            if(b.appearanceStyle==4) img = `<img class='stage-btn-icon' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/icon/bkg_spike_mark.png'>`
+            if(b.performanceStageFlag=="PERFORMANCE_STAGE") img = `<img class='stage-btn-icon' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/icon/bkg_story_only_mark.png'>`
             
             if(b.hilightMark || b.appearanceStyle==4)highlight = 'stage-btn-header-h'
             currhtml+= `
@@ -330,69 +330,69 @@ function GenerateTile(tiledata,row,cell,mapdata){
     }
     switch(tiletype.tileKey){
         case 'tile_healing': 
-            content +=`<img class='tile-img' src='img/ui/stage/tile/healing.png'>` 
+            content +=`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/healing.png'>` 
             extraprop+=' tile-bg '
             ;break;
         case 'tile_bigforce': 
-            if(tiletype.blackboard[0].value==1)content =`<img class='tile-img' src='img/ui/stage/tile/force.png'>` 
-            if(tiletype.blackboard[0].value==2)content =`<img class='tile-img' src='img/ui/stage/tile/force2.png'>` 
+            if(tiletype.blackboard[0].value==1)content =`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/force.png'>` 
+            if(tiletype.blackboard[0].value==2)content =`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/force2.png'>` 
             extraprop+=' tile-bg '
             break;
         case 'tile_infection': 
-            content +=`<img class='tile-img' src='img/ui/stage/tile/infection.png'>` 
+            content +=`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/infection.png'>` 
             extraprop+=' tile-bg '
             break;
         case 'tile_volcano': 
-            content +=`<img class='tile-img' src='img/ui/stage/tile/volcano3.png'>` 
-            // content =`<img class='tile-img' src='img/ui/stage/tile/mc/volcano2.png'>` 
+            content +=`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/volcano3.png'>` 
+            // content =`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/mc/volcano2.png'>` 
             extraprop+=''
             break;
         case 'tile_defup': 
-            content +=`<img class='tile-img' src='img/ui/stage/tile/def.png'>` 
+            content +=`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/def.png'>` 
             extraprop+=' tile-bg '
             break;
         case 'tile_gazebo': 
-            content +=`<img class='tile-img' src='img/ui/stage/tile/air.png'>` 
+            content +=`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/air.png'>` 
             extraprop+=' tile-bg '
             break;
         case 'tile_floor': 
-            content +=`<img class='tilebg' src='img/ui/stage/tile/forb.png'>` 
+            content +=`<img class='tilebg' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/forb.png'>` 
             break;
         case 'tile_flystart': 
-            content +=`<img class='tile-img'  src='img/ui/stage/tile/drone.png'>` 
+            content +=`<img class='tile-img'  src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/drone.png'>` 
             break;    
         case 'tile_start': 
         case 'tile_end' :
-            content +=`<img class='tile-img'  src='img/ui/stage/tile/base.png'>` 
+            content +=`<img class='tile-img'  src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/base.png'>` 
             break;  
         case 'tile_telin' :
-            content +=`<img class='tile-img'  src='img/ui/stage/tile/telin.png'>` 
+            content +=`<img class='tile-img'  src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/telin.png'>` 
             break;  
         case 'tile_telout' :
-            content +=`<img class='tile-img'  src='img/ui/stage/tile/telout.png'>` 
+            content +=`<img class='tile-img'  src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/telout.png'>` 
             break;  
         case 'tile_deepwater' :
-            // content =`<img src='img/ui/stage/tile/mc/water.png'>` 
+            // content =`<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/mc/water.png'>` 
             // isheight=false
             break;  
         case 'tile_grass' :
-            content +=`<img class='tile-img' src='img/ui/stage/tile/grass.png'>` 
-            content +=`<img class='grass grass-1' src='img/ui/stage/tile/grass2.png'>` 
-            content +=`<img class='grass grass-2' src='img/ui/stage/tile/grass2.png'>` 
-            content +=`<img class='grass grass-3' src='img/ui/stage/tile/grass2.png'>` 
-            content +=`<img class='grass grass-4' src='img/ui/stage/tile/grass2.png'>` 
+            content +=`<img class='tile-img' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/grass.png'>` 
+            content +=`<img class='grass grass-1' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/grass2.png'>` 
+            content +=`<img class='grass grass-2' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/grass2.png'>` 
+            content +=`<img class='grass grass-3' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/grass2.png'>` 
+            content +=`<img class='grass grass-4' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/grass2.png'>` 
             break;  
         // case 'tile_road' :
-        //     content =`<img src='img/ui/stage/tile/mc/path.png'>` 
+        //     content =`<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/mc/path.png'>` 
         //     break;  
         // case 'tile_wall' :
-        //     content =`<img src='img/ui/stage/tile/mc/slab.png'>` 
+        //     content =`<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/mc/slab.png'>` 
         //     break;  
         // case 'tile_forbidden' :
-        //     content =`<img src='img/ui/stage/tile/mc/bedrock.png'>` 
+        //     content =`<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/mc/bedrock.png'>` 
         //     break;  
         // case 'tile_hole' :
-        //     content =`<img src='img/ui/stage/tile/hole.png'>` 
+        //     content =`<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/stage/tile/hole.png'>` 
         //     break;  
         default:
 

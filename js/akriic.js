@@ -240,7 +240,7 @@
             currHtml.push(`<div class="row riicbody" style="">
                             <div class="riic-avatar" style="">
                                 <div class="riic-avatar2">
-                                    <div ><img class='riic-pic' src="img/avatars/${element.name}.png"></div>
+                                    <div ><img class='riic-pic' src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${element.name}.png"></div>
                                     <div class="riic-name">${chara.appellation}</div>
                                 </div>
                             </div>
@@ -268,11 +268,11 @@
                     extraInfo = ``
                     
                     if(buffId.startsWith("control")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-control" style=""><img src="img/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px"> HQ </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-control" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/control.png" style="height:20px;padding-bottom:3px"> HQ </div>`
                     }else if(buffId.startsWith("power")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-power" style=""><img src="img/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px"> Power </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-power" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/power.png" style="height:20px;padding-bottom:3px"> Power </div>`
                     }else if(buffId.startsWith("manu")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-manu" style=""><img src="img/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-manu" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/manu.png" style="height:20px;padding-bottom:3px">Manufacture </div>`
                         let currbuff = description
                         // console.log([currBuff2.buffId])
                         // console.log(currbuff)
@@ -294,17 +294,17 @@
                         }
                     
                     }else if(buffId.startsWith("trade")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-trade" style=""><img src="img/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px"> Trading </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-trade" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/trade.png" style="height:20px;padding-bottom:3px"> Trading </div>`
                     }else if(buffId.startsWith("workshop")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-workshop" style=""><img src="img/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px"> Workshop </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-workshop" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/workshop.png" style="height:20px;padding-bottom:3px"> Workshop </div>`
                     }else if(buffId.startsWith("train")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-train" style=""><img src="img/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px"> Training </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-train" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/train.png" style="height:20px;padding-bottom:3px"> Training </div>`
                     }else if(buffId.startsWith("dorm")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-dorm" style=""><img src="img/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px"> Dorm </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-dorm" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/dorm.png" style="height:20px;padding-bottom:3px"> Dorm </div>`
                     }else if(buffId.startsWith("hire")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-hire" style=""><img src="img/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px"> Hiring </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-hire" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/hire.png" style="height:20px;padding-bottom:3px"> Hiring </div>`
                     }else if(buffId.startsWith("meet")){
-                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=""><img src="img/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px"> Meeting </div>`
+                        extraInfo = `<div class="btn btn-sm ak-disable ak-btn riic-type ak-riic-meet" style=""><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/meet.png" style="height:20px;padding-bottom:3px"> Meeting </div>`
     
                         if(buffId.includes("team")||buffId.includes("flag")){
                             // console.log(buffId)
@@ -358,17 +358,17 @@
                         req = `Lv.${buff.cond.level}`
                     }
                     if(buff.cond.phase>0){
-                        req += `<img src="./img/ui/elite/${buff.cond.phase}.png" style="width:20px;height:20px" title="Elite ${buff.cond.phase}">`
+                        req += `<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${buff.cond.phase}.png" style="width:20px;height:20px" title="Elite ${buff.cond.phase}">`
                     }
                     if(req!==""){
                         req = `<div class="riic-req" style="">${req}</div>`
                     }
                     // console.log(req)     
-                    var bufficon = `<img src="./img/ui/infrastructure/skill/${currBuff2.skillIcon}.png" style="width:40px;height:40px" title="">`
+                    var bufficon = `<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/skill/${currBuff2.skillIcon}.png" style="width:40px;height:40px" title="">`
                     currHtml.push(`
                     <div class='riic-tab'>
                     <div class='riic-icon'>${bufficon}
-                    ${clue?`<div class='riic-clue'><img src="./img/ui/clue/${clue}-s.png" style="width:40px" title="Clue ${clue}"></div>`:""}
+                    ${clue?`<div class='riic-clue'><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/clue/${clue}-s.png" style="width:40px" title="Clue ${clue}"></div>`:""}
                     </div>
                     
                     <div class="riic-eachdesc">
