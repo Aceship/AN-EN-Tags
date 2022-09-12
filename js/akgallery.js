@@ -28,8 +28,8 @@ function Start(){
         db.gallerylist[type].forEach(images => {
             var namesplit = images.split("/")
             imagelist.push(`
-            <a style="width:220px;margin-top:10px" onclick="ChangeImage('./img/avg/${images}')" >
-            <img src="./img/smallavg/${images}" style="width:200px;margin-top:5px" title="${namesplit[namesplit.length-1]}"></img>
+            <a style="width:220px;margin-top:10px" onclick="ChangeImage('https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avg/${images}')" >
+            <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/smallavg/${images}" style="width:200px;margin-top:5px" title="${namesplit[namesplit.length-1]}"></img>
             </a>`)
         });
         html2.push(`
