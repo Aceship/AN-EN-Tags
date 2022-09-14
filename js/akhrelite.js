@@ -267,7 +267,7 @@
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
             console.log(opdata2);
             $.each(opdata2,function(key,v){
-                $("#opImage").attr('src','img/portraits/'+key+'_1.png');
+                $("#opImage").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/portraits/'+key+'_1.png');
                 opdataFull = opdata2[key]
                 // $("#opGlow").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/glow-'+(opdata2[key].rarity+1)+'.png');
                 $("#opHeader").attr('src','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/chara/header-'+(opdata2[key].rarity+1)+'.png');
@@ -634,9 +634,9 @@
         (`<div class="akmat-container" style="position:relative">
             <div class="item-name" title="${itemdata.name}">${(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)}</div>
             <div class="item-image">
-                <img id="item-image" src="img/items/${itemdata.iconId}.png">
+                <img id="item-image" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/${itemdata.iconId}.png">
             </div>
-            <img class="item-rarity" src="img/material/bg/item-${itemdata.rarity+1}.png">
+            <img class="item-rarity" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-${itemdata.rarity+1}.png">
             <div class="item-amount">${count}x</div>
         </div>`)
         return material

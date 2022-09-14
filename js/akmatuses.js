@@ -442,8 +442,8 @@
                 }
 
                 body.push('<td><div class="internal-container" style="position: relative;width:100px;">' +
-                            '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="img/material/bg/item-' + (mat_id % 10) + '.png">' +
-                            '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;object-fit: contain;" src="img/items/' + materials[mat_id].iconId + '.png">' +
+                            '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-' + (mat_id % 10) + '.png">' +
+                            '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;object-fit: contain;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/' + materials[mat_id].iconId + '.png">' +
                             '<div class="item-amount" style="font-weight: bold; bottom: 0; right: 0; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000; position: absolute;" mat-id="' + mat_id + '">' + total_materials[mat_id] + "x</div>" +
                           "</div></td>");
                 $("#tbody-recommend").append(body.join(""));
