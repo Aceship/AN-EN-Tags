@@ -16,23 +16,23 @@ const { Image } = require('image-js');
 // let keys = JSON.parse(fs.readFileSync("./input/tl-stagedesc.json","utf8"))
 
 var json = {}
-walk("../img/avg/", function(err, results) {
+walk("../../Arknight-Images/avg/", function(err, results) {
     if (err) throw err;
     
     results.forEach(async results => {
         var text = results.split('\\avg\\')[1].replace(/\\/g,"/")
         var text1 = text.split('/')[0]
         var text2 = text.split('/')[1]
-        console.log(text)
-        console.log(text1)
-        console.log(text2)
+        // console.log(text)
+        // console.log(text1)
+        // console.log(text2)
 
         if(!json[text.split("/")[0]]) json[text.split("/")[0]]=[]
         json[text.split("/")[0]].push(text1+'/'+encodeURIComponent(text2))
 
         // console.log("./img/avg/"+text.replace(/\\/g,"/"));
         var currfolder = text.split("/")
-        currfolder =["img","smallavg"].concat( currfolder.splice(currfolder.length-2,1))
+        currfolder =["Arknight-Images","smallavg"].concat( currfolder.splice(currfolder.length-2,1))
         // console.log(currfolder)
         var folder= ""
         // fs.readdirSync(folder)
@@ -40,8 +40,8 @@ walk("../img/avg/", function(err, results) {
             
             var folder2 =currfolder[i]+"/"
             
-            if(!fs.readdirSync("../"+folder).includes(currfolder[i])){
-                fs.mkdirSync(`${"../"+folder}${currfolder[i]}`);
+            if(!fs.readdirSync("../../"+folder).includes(currfolder[i])){
+                fs.mkdirSync(`${"../../"+folder}${currfolder[i]}`);
             // console.log(folder+currfolder[i])
             }
             folder+=currfolder[i]+"/"
@@ -53,7 +53,7 @@ walk("../img/avg/", function(err, results) {
             // await 
         })
     });
-    console.log(json)
+    // console.log(json)
     fs.writeFile(`../json/ace/gallerylist.json`, JSON.stringify(json, null, '\t'), function (err) {
         if (err) {
             return console.log(err);
@@ -92,10 +92,11 @@ function createfolder(folder){
 
 }
 async function execute(imgname,callback) {
-    let image = await Image.load('../img/avg/'+imgname);    
+  console.log(imgname)
+    let image = await Image.load('../../Arknight-Images/avg/'+imgname);    
     var newimage = await image.resize({ width: 200 })
-     newimage.save('../img/smallavg/'+imgname)
-    callback('../img/smallavg/'+imgname +" Clear") 
+     newimage.save('../../Arknight-Images/smallavg/'+imgname)
+    callback('../../Arknight-Images/smallavg/'+imgname +" Clear") 
 }
 // // console.log(stageDetail.stages)
 // // var keys = {}
