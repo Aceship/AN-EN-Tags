@@ -1,5 +1,7 @@
 var fs = require('fs')
 let charaFile = JSON.parse(fs.readFileSync("../../ArknightsGameData2/zh_CN/gamedata/excel/character_table.json","utf8"))
+let charaFileJP = JSON.parse(fs.readFileSync("../../ArknightsGameData2/ja_JP/gamedata/excel/character_table.json","utf8"))
+let charaFileKR = JSON.parse(fs.readFileSync("../../ArknightsGameData2/ko_KR/gamedata/excel/character_table.json","utf8"))
 let akhrtlFile = JSON.parse(fs.readFileSync("../json/tl-akhr.json","utf8"))
 let handbook =  JSON.parse(fs.readFileSync("../../ArknightsGameData2/zh_CN/gamedata/excel/handbook_info_table.json","utf8"))
 
@@ -12,6 +14,12 @@ Object.keys(charaFile).forEach(element => {
     akhrtlFile.forEach(element2 => {
         if (element2.id == element){
             isExist = true;
+            if(charaFileJP[element]){
+                element2.name_jp = charaFileJP[element].name
+            }
+            if(charaFileKR[element]){
+                element2.name_kr = charaFileKR[element].name
+            }
         }
     });
     if(!isExist){
