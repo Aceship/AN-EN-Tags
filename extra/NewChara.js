@@ -14,6 +14,8 @@ Object.keys(charaFile).forEach(element => {
     akhrtlFile.forEach(element2 => {
         if (element2.id == element){
             isExist = true;
+            element2.tags = checkTag(currChara)
+            element2.type = getClass(currChara)
             if(charaFileJP[element]){
                 element2.name_jp = charaFileJP[element].name
             }
@@ -28,6 +30,8 @@ Object.keys(charaFile).forEach(element => {
         if(currChara.subProfessionId.startsWith("notchar")||element.startsWith("trap")||element.startsWith("token")||currChara.isNotObtainable == true || !sex){
 
         }else{
+            var taglist = checkTag(currChara)
+            
             json.push({
                 id:element,
                 name_cn:currChara.name,
@@ -39,11 +43,10 @@ Object.keys(charaFile).forEach(element => {
                 characteristic_jp: "",
                 characteristic_kr: "",
                 camp: "",
-                type: "",
+                type: getClass(currChara),
                 level: currChara.rarity+1,
                 sex: sex,
-                tags: [
-                ],
+                tags:  taglist,
                 hidden: true,
                 globalHidden:true
             })
@@ -52,6 +55,45 @@ Object.keys(charaFile).forEach(element => {
     }
 });
 
+function checkTag(currChara){
+    var taglist = []
+
+    if(currChara.rarity==5){
+        taglist.push("高级资深干员")
+    }else if(currChara.rarity==4){
+        taglist.push("资深干员")
+    }else if(currChara.rarity==0){
+        taglist.push("支援机械")
+    }
+
+    if(currChara.position == "MELEE"){
+        taglist.push("近战位")
+    } else if(currChara.position == "RANGED"){
+        taglist.push("远程位")
+    }
+
+    currChara.tagList.forEach(element => {
+        taglist.push(element)
+    });
+
+    
+
+    return taglist
+}
+
+function getClass(currChara){
+    switch(currChara.profession){
+        case ("WARRIOR"): return "近卫";
+        case ("MEDIC"): return "医疗";
+        case ("PIONEER"): return "先锋";
+        case ("CASTER"): return "术师";
+        case ("SNIPER"): return "狙击";
+        case ("TANK"): return "重装";
+        case ("SUPPORT"): return "辅助";
+        case ("SPECIAL"): return "特种";
+        default : return "";
+    }
+}
 
 function getSex(name){
     var currCharaBook = handbook.handbookDict[name]
