@@ -3067,6 +3067,10 @@
 
                 console.log(wordKey)
                 switch (dict) {
+                    case "ITA":
+                        foldername = "voice_custom"
+                        lang = "ITA"
+                        break;
                     case "CN_TOPOLECT":
                         foldername = "voice_custom"
                         lang = "CNT"
