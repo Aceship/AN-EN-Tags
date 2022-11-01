@@ -3067,10 +3067,6 @@
 
                 console.log(wordKey)
                 switch (dict) {
-                    case "ITA":
-                        foldername = "voice_custom"
-                        lang = "ITA"
-                        break;
                     case "CN_TOPOLECT":
                         foldername = "voice_custom"
                         lang = "CNT"
@@ -3105,6 +3101,8 @@
                         foldername = foldername[foldername.length-2]
                         break;
                     default:
+                        foldername = "voice_custom"
+                        lang = dict
                         break;
                 }
                 
@@ -3174,6 +3172,7 @@
                     lang = "KR VA"
                     break;
                 default:
+                    lang = dict +" VA"
                     break;
             }
             $('#opaudiocontent').append(`
