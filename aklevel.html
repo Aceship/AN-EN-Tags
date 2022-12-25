@@ -81,8 +81,9 @@
                         <div class="col">
 		                    <label for="lslevel">EXP Card Map</label>
 		                    <select id="lslevel" class="form-control form-control-sm">
-		                        <option selected>LS-5</option>
-		                        <!--<option>LS-4</option>
+		                        <option selected>LS-6</option>
+					<!--<option>LS-5</option>
+		                        <option>LS-4</option>
 		                        <option>LS-3</option>
 		                        <option>LS-2</option>
 		                        <option>LS-1</option>-->
@@ -91,8 +92,9 @@
                         <div class="col">
 		                    <label for="lslevel">Lungmen Coin Map</label>
 		                    <select id="lslevel" class="form-control form-control-sm">
-		                        <option selected>CE-5</option>
-		                        <!--<option>CE-4</option>
+		                        <option selected>CE-6</option>
+		                        <!--<option>CE-5</option>
+		                        <option>CE-4</option>
 		                        <option>CE-3</option>
 		                        <option>CE-2</option>
 		                        <option>CE-1</option>-->
@@ -314,14 +316,14 @@
                 let gs = (cs + ea).toFixed(1);
                 let gn = gs - ga;
                 if (gn < 0) gn = 0;
-                let lsn = Math.ceil((eb / 7500).toFixed(1));
-                let cen = Math.ceil((gn / 7500).toFixed(1));
+                let lsn = Math.ceil((eb / 10000).toFixed(1));
+                let cen = Math.ceil((gn / 10000).toFixed(1));
                 $.each([
-                    ['Total Sanity Cost', "<b>" + (lsn + cen) * 30 + "</b> <sub>= " + lsn * 30 + " + " + cen * 30 + "</sub>"],
+                    ['Total Sanity Cost', "<b>" + (lsn + cen) * 36 + "</b> <sub>= " + lsn * 36 + " + " + cen * 36 + "</sub>"],
                     ['Exp', "<b>" + eb + "</b> <sub>= " + es + " - " + bs + "</sub>"],
-                    ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * 30 + "</b> <sub>= 30 * " + lsn + "</sub>"],
+                    ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * 36 + "</b> <sub>= 36 * " + lsn + "</sub>"],
                     ['Coins', "<b>" + gn + "</b> <sub>= " + gs + " - " + ga + "</sub>"],
-                    ['CE Sanity <sub>Cost</sub>', "<b>" + cen * 30 + "</b> <sub>= 30 * " + cen + "</sub>"],
+                    ['CE Sanity <sub>Cost</sub>', "<b>" + cen * 36 + "</b> <sub>= 36 * " + cen + "</sub>"],
                     ['Coins for Leveling', cs.toFixed(1)],
                     ['Coins for Elite', ea],
                 ], function (_, v) {
