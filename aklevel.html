@@ -312,12 +312,10 @@
                 }
                 let lsl = document.getElementById("lslevel").value;
                 let cel = document.getElementById("celevel").value;
-                let lsr = lsl; 
-                if (lsr = 6) lsr = 10000;
-                if (lsr = 5) lsr = 7400;
-                let cer = cel;
-                if (cer = 6) cer = 10000;
-                if (cer = 5) cer = 7500;
+                if (lsl = 5) {let lsr = 7400};
+                if (lsl = 6) {let lsr = 10000};
+                if (cel = 5) {let cer = 7500};
+                if (cel = 6) {let cer = 10000};
                 let lsc = lsl * 6;
                 let cec = cel * 6;
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
