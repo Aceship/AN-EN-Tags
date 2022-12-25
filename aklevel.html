@@ -314,7 +314,7 @@
                 let cel = document.getElementById("celevel").value;
                 let lsr = lsl; 
                 if (lsr = 6) lsr = 10000;
-                if (lsr = 5) lsr = 7500;
+                if (lsr = 5) lsr = 7400;
                 let cer = cel;
                 if (cer = 6) cer = 10000;
                 if (cer = 5) cer = 7500;
@@ -329,11 +329,11 @@
                 let lsn = Math.ceil((eb / lsr).toFixed(1));
                 let cen = Math.ceil((gn / cer).toFixed(1));
                 $.each([
-                    ['Total Sanity Cost', "<b>" + ((lsn * lsc) + (cen * cec)) + "</b> <sub>= " + lsn * lsc + " + " + cen * cec + "</sub>"],
+                    ['Total Sanity Cost', "<b>" + ((lsn * lsc) + (cen * cec)) + "</b> <sub>= " + lsn + " * " + lsc + " + " + cen + " * " + cec + "</sub>"],
                     ['Exp', "<b>" + eb + "</b> <sub>= " + es + " - " + bs + "</sub>"],
-                    ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * lsc + "</b> <sub>= " + lsc * lsn + "</sub>"],
+                    ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * lsc + "</b> <sub>= " + lsc + " * " + lsn + "</sub>"],
                     ['Coins', "<b>" + gn + "</b> <sub>= " + gs + " - " + ga + "</sub>"],
-                    ['CE Sanity <sub>Cost</sub>', "<b>" + cen * cec + "</b> <sub>= " + cec * cen + "</sub>"],
+                    ['CE Sanity <sub>Cost</sub>', "<b>" + cen * cec + "</b> <sub>= " + cec + " * " + cen + "</sub>"],
                     ['Coins for Leveling', cs.toFixed(1)],
                     ['Coins for Elite', ea],
                 ], function (_, v) {
