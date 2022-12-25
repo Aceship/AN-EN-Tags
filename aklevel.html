@@ -314,10 +314,10 @@
                 let cel = val($("#celevel"));
                 let lsr = lsl - 5; 
                 if (lsr > 0) lsr = 10000;
-                if (lsr = 0) lsr = 7500;
+                if (lsr <= 0) lsr = 7500;
                 let cer = cel - 5;
                 if (cer > 0) cer = 10000;
-                if (cer = 0) cer = 7500;
+                if (cer <= 0) cer = 7500;
                 let lsc = lsl * 6;
                 let cec = cel * 6;
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
