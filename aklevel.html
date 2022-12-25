@@ -81,8 +81,8 @@
                         <div class="col">
 		                    <label for="lslevel">EXP Card Map</label>
 		                    <select id="lslevel" class="form-control form-control-sm">
-		                        <option selected>LS-6</option>
-					            <option >LS-5</option>
+		                        <option value="6" selected>LS-6</option>
+					            <option value="5">LS-5</option>
 		                        <!--<option>LS-4</option>
 		                        <option>LS-3</option>
 		                        <option>LS-2</option>
@@ -92,8 +92,8 @@
                         <div class="col">
 		                    <label for="celevel">Lungmen Coin Map</label>
 		                    <select id="celevel" class="form-control form-control-sm">
-		                        <option selected>CE-6</option>
-		                        <option>CE-5</option>
+		                        <option value=6 selected>CE-6</option>
+		                        <option value=5>CE-5</option>
 		                        <!--<option>CE-4</option>
 		                        <option>CE-3</option>
 		                        <option>CE-2</option>
@@ -310,16 +310,8 @@
                 for (let i = cev; i < te; i++) {
                     ea += evolveGoldCost[star - 1][i];
                 }
-                if (selection($("lslevel")) = ("LS-6")) {
-                    let lsl = 6;
-                }   else {
-                    lsl = 5;
-                }
-                if (selection($("celevel")) = "CE-6") {
-                    let cel = 6;
-                }   else {
-                    cel = 5;
-                }
+                let lsl = document.getElementById("lslevel").value;
+                let cel = document.getElementById("celevel").value;
                 let lsr = lsl; 
                 if (lsr = 6) lsr = 10000;
                 if (lsr = 5) lsr = 7500;
