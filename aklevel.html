@@ -83,8 +83,8 @@
 		                    <select id="lslevel" class="form-control form-control-sm">
 		                        <option value="6" selected>LS-6</option>
 					            <option value="5">LS-5</option>
-		                        <!--<option>LS-4</option>
-		                        <option>LS-3</option>
+		                        <option>LS-4</option>
+		                        <!--<option>LS-3</option>
 		                        <option>LS-2</option>
 		                        <option>LS-1</option>-->
 		                    </select>
@@ -310,8 +310,8 @@
                 for (let i = cev; i < te; i++) {
                     ea += evolveGoldCost[star - 1][i];
                 }
-                let lsl = "#lslevel";
-                let cel = "#celevel";
+                let lsl = parseInt($("#islevel").val());
+                let cel = parseInt($("#celevel").val());
                 if (lsl = 6) {let lsr = 10000};
                 if (lsl = 5) {let lsr = 7500};
                 if (lsl = 6) {let lsc = 36};
