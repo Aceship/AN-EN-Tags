@@ -83,8 +83,8 @@
 		                    <select id="lslevel" class="form-control form-control-sm">
 		                        <option selected>6</option>
 					            <option>5</option>
-		                        <!--<option>LS-4</option>
-		                        <option>LS-3</option>
+		                        <option>LS-4</option>
+		                        <!--<option>LS-3</option>
 		                        <option>LS-2</option>
 		                        <option>LS-1</option>-->
 		                    </select>
@@ -312,14 +312,38 @@
                 }
                 let lsl = parseInt($("#lslevel").val());
                 let cel = parseInt($("#celevel").val());
-                if (lsl = 6) {let lsr = 10000};
-                if (lsl = 5) {let lsr = 7500};
-                if (lsl = 6) {let lsc = 36};
-                if (lsl = 5) {let lsc = 30};
-                if (cel = 6) {let cer = 10000};
-                if (cel = 5) {let cer = 7500};
-                if (cel = 6) {let cec = 36};
-                if (cel = 5) {let cec = 30};
+                if (lsl = 6) {
+                    let lsr = 10000;
+                    return;
+                }
+                if (lsl = 5) {
+                    let lsr = 7500;
+                    return;
+                }
+                if (lsl = 6) {
+                    let lsc = 36;
+                    return;
+                }
+                if (lsl = 5) {
+                    let lsc = 30;
+                    return;
+                }
+                if (cel = 6) {
+                    let cer = 10000;
+                    return;
+                }
+                if (cel = 5) {
+                    let cer = 7500;
+                    return;
+                }
+                if (cel = 6) {
+                    let cec = 36;
+                    return;
+                }
+                if (cel = 5) {
+                    let cec = 30;
+                    return;
+                }
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
                 let eb = es - bs;
                 if (eb < 0) eb = 0;
