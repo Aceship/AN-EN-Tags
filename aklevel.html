@@ -81,20 +81,20 @@
                         <div class="col">
 		                    <label for="lslevel">EXP Card Map</label>
 		                    <select id="lslevel" class="form-control form-control-sm">
-		                        <option selected>LS-6</option>
-					<!--<option>LS-5</option>
-		                        <option>LS-4</option>
+		                        <option value="6" selected>LS-6</option>
+					            <option value="5">LS-5</option>
+		                        <!--<option>LS-4</option>
 		                        <option>LS-3</option>
 		                        <option>LS-2</option>
 		                        <option>LS-1</option>-->
 		                    </select>
 		                </div>
                         <div class="col">
-		                    <label for="lslevel">Lungmen Coin Map</label>
-		                    <select id="lslevel" class="form-control form-control-sm">
-		                        <option selected>CE-6</option>
-		                        <!--<option>CE-5</option>
-		                        <option>CE-4</option>
+		                    <label for="celevel">Lungmen Coin Map</label>
+		                    <select id="celevel" class="form-control form-control-sm">
+		                        <option value="6" selected>CE-6</option>
+		                        <option value="5">CE-5</option>
+		                        <!--<option>CE-4</option>
 		                        <option>CE-3</option>
 		                        <option>CE-2</option>
 		                        <option>CE-1</option>-->
@@ -310,20 +310,30 @@
                 for (let i = cev; i < te; i++) {
                     ea += evolveGoldCost[star - 1][i];
                 }
+                let lsl = document.getElementById("lslevel").value;
+                let cel = "celevel";
+                if (lsl = 6) {let lsr = 10000};
+                if (lsl = 5) {let lsr = 7500};
+                if (lsl = 6) {let lsc = 36};
+                if (lsl = 5) {let lsc = 30};
+                if (cel = 6) {let cer = 10000};
+                if (cel = 5) {let cer = 7500};
+                if (cel = 6) {let cec = 36};
+                if (cel = 5) {let cec = 30};
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
                 let eb = es - bs;
                 if (eb < 0) eb = 0;
                 let gs = (cs + ea).toFixed(1);
                 let gn = gs - ga;
                 if (gn < 0) gn = 0;
-                let lsn = Math.ceil((eb / 10000).toFixed(1));
-                let cen = Math.ceil((gn / 10000).toFixed(1));
+                let lsn = Math.ceil((eb / lsr).toFixed(1));
+                let cen = Math.ceil((gn / cer).toFixed(1));
                 $.each([
-                    ['Total Sanity Cost', "<b>" + (lsn + cen) * 36 + "</b> <sub>= " + lsn * 36 + " + " + cen * 36 + "</sub>"],
+                    ['Total Sanity Cost', "<b>" + ((lsn * lsc) + (cen * cec)) + "</b> <sub>= " + lsn * lsc + " + " + cen * cec + "</sub>"],
                     ['Exp', "<b>" + eb + "</b> <sub>= " + es + " - " + bs + "</sub>"],
-                    ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * 36 + "</b> <sub>= 36 * " + lsn + "</sub>"],
+                    ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * lsc + "</b> <sub>= " + lsc * lsn + "</sub>"],
                     ['Coins', "<b>" + gn + "</b> <sub>= " + gs + " - " + ga + "</sub>"],
-                    ['CE Sanity <sub>Cost</sub>', "<b>" + cen * 36 + "</b> <sub>= 36 * " + cen + "</sub>"],
+                    ['CE Sanity <sub>Cost</sub>', "<b>" + cen * cec + "</b> <sub>= " + cec * cen + "</sub>"],
                     ['Coins for Leveling', cs.toFixed(1)],
                     ['Coins for Elite', ea],
                 ], function (_, v) {
