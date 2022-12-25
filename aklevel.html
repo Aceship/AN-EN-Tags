@@ -291,7 +291,7 @@
                     return;
                 }
                 let es = cl === maxLevel[star - 1][cev] ? 0 : charExpMap[cev][cl - 1] - ce;
-                let cs = cl === maxLevel[star - 1][cev] ? 0 : math.ceil(charUpCostMap[cev][cl - 1] * es / (charExpMap[cev][cl - 1]));
+                let cs = cl === maxLevel[star - 1][cev] ? 0 : Math.round(charUpCostMap[cev][cl - 1] * es / (charExpMap[cev][cl - 1]));
                 cl++;
                 for (let i = cev, j = cl; i <= te; i++) {
                     while (i < te && j < maxLevel[star - 1][i]) {
