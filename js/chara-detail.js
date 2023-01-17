@@ -3226,10 +3226,29 @@
         // console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
         $('#name-voiceactor').html("-")
         $('#name-voiceactor-cn').html("-")
-        
-        let illustrator = currStory.drawName
+        console.log(db.skintable.charSkins[currskin+"#1"].displaySkin)
+        let illustrator = ""
+        let IllustratorList = []
+        if(db.skintable.charSkins[currskin+"#1"].displaySkin.designerList){
+             db.skintable.charSkins[currskin+"#1"].displaySkin.designerList.forEach(element => {
+                IllustratorList.push(element)
+             });
+        }
+        if(db.skintable.charSkins[currskin+"#1"].displaySkin.drawerList){
+            db.skintable.charSkins[currskin+"#1"].displaySkin.drawerList.forEach(element => {
+                IllustratorList.push(element)
+             });
+        }
+        for(var i = 0 ; i < IllustratorList.length; i++){
+            if (i > 0) 
+            {
+                illustrator += " & "
+            }
+            illustrator  += `<a href="https://www.google.com/search?q=illustrator+${IllustratorList[i]}"  target="_blank">${IllustratorList[i]}</a>`
+        }
+        console.log(illustrator)
         let voiceActor = db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName
-        $('#name-illustrator').html(`<a href="https://www.google.com/search?q=illustrator+${illustrator}"  target="_blank">${illustrator}</a>`)
+        $('#name-illustrator').html(illustrator)
         var voiceDict = db.charword.voiceLangDict[opdataFull.id]
         console.log(voiceDict)
         var jpvoice
