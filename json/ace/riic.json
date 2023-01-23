@@ -154,6 +154,16 @@
 		"desc": "When stationed at the Command Center, self mood reduction per hour +0.5. Additionally, when self mood is above 12, gain +10 Sensory Information",
 		"descformat": "When stationed at the Command Center, self mood reduction per hour <@cc.vdown>+0.5</>. Additionally, when self mood is above <@cc.kw>12</>, gain <@cc.vup>+10</> <$cc.bd_a1><@cc.rem>Sensory Information</></>"
 	},
+	"control_mp_cost&bd_up[000]": {
+		"name": "Knowing Yourself, to be Yourself",
+		"desc": "When stationed at the Command Center, self mood reduction per hour +0.5. Additionally, gain +5 Worldly Plight for every Sui operator stationed at a facility besides the Dorm (up to 5 operators)",
+		"descformat": "When stationed at the Command Center, self mood reduction per hour <@cc.vdown>+0.5</>. Additionally, gain <@cc.vup>+5</> <$cc.bd_b1><@cc.rem>Worldly Plight</></> for every <$cc.g.sui><@cc.kw>Sui</></> operator stationed at a facility besides the Dorm (up to 5 operators)"
+	},
+	"control_mp_bd_cost_expand[000]": {
+		"name": "Solitary Light Cast Wide",
+		"desc": "When stationed at the Command Center, mood recovery per hour of operators working in other facilities +0.05. Additionally, further increase mood recovery per hour by +0.05 for every 20 Worldly Plight (has Special Comparison Rules with Command Center effect)",
+		"descformat": "When stationed at the Command Center, mood recovery per hour of operators working in <$cc.c.room2><@cc.kw>other facilities</></> <@cc.vup>+0.05</>. Additionally, further increase mood recovery per hour by <@cc.vup>+0.05</> for every <@cc.vup>20</> <$cc.bd_b1><@cc.rem>Worldly Plight</></> (has <$cc.c.sui2_1><@cc.rem>Special Comparison Rules</></> with Command Center effect)"
+	},
 	"control_facCostReset[000]": {
 		"name": "Keep the Wine Flowing",
 		"desc": "When stationed at the Command Center, remove self-affecting mood reduction effects of operators belonging to Sui in the Command Center",
@@ -298,6 +308,11 @@
 		"name": "“Beep beep, activate!”",
 		"desc": "When stationed at a Power Station, production of the Craft Station Wild Mane is stationed in +5%",
 		"descformat": "When stationed at a Power Station, production of the Craft Station <@cc.kw>Wild Mane</> is stationed in <@cc.vup>+5%</>"
+	},
+	"manu_bd_to_bd[000]": {
+		"name": "Ancient Shamanism",
+		"desc": "When stationed at a Craft Station, every 5 Worldly Plight is converted into 1 Shamanic Crystal",
+		"descformat": "When stationed at a Craft Station, every <@cc.vup>5</> <$cc.bd_b1><@cc.rem>Worldly Plight</></> is converted into <@cc.vup>1</> <$cc.bd_C><@cc.rem>Shamanic Crystal</></>"
 	},
 	"manu_prod_spd&power[000]": {
 		"name": "Automation·α",
@@ -529,6 +544,16 @@
 		"desc": "When stationed at a Craft Station, production +1% for every 1 Chain of Thought",
 		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>1</> <$cc.bd_A><@cc.rem>Chain of Thought</></>"
 	},
+	"manu_prod_spd_bd[200]": {
+		"name": "Following the Reeds",
+		"desc": "When stationed at a Craft Station, production +1% for every 1 Shamanic Crystal",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>1</> <$cc.bd_C><@cc.rem>Shamanic Crystal</></>"
+	},
+	"manu_prod_spd_bd[201]": {
+		"name": "Questioning the Future",
+		"desc": "When stationed at a Craft Station, production +2% for every 1 Shamanic Crystal",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+2%</> for every <@cc.vup>1</> <$cc.bd_C><@cc.rem>Shamanic Crystal</></>"
+	},
 	"manu_formula_spd[000]": {
 		"name": "Plan to Victory",
 		"desc": "When stationed at a Craft Station, increase production of EXP cards by +25%",
@@ -593,6 +618,11 @@
 		"name": "Team Spirit",
 		"desc": "When stationed at a Craft Station, remove self-affecting mood reduction effects of all operators in the same Station",
 		"descformat": "When stationed at a Craft Station, <@cc.kw>remove self-affecting</> mood reduction effects of all operators in the same Station"
+	},
+	"trade_cost[000]": {
+		"name": "Warm-Up",
+		"desc": "When stationed at a Trade Station, mood reduction per hour of all operators -0.1",
+		"descformat": "When stationed at a Trade Station, mood reduction per hour of all operators <@cc.vup>-0.1</>"
 	},
 	"trade_ord_spd[000]": {
 		"name": "Order Distribution·α",
@@ -798,6 +828,11 @@
 		"name": "Handicrafts·β",
 		"desc": "When stationed at a Trade Station, increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
 		"descformat": "When stationed at a Trade Station, <@cc.kw>increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"trade_ord_spd&share[000]": {
+		"name": "Advocate",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +15% for every other operator working in the Trade Station",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+15%</> for every other operator working in the Trade Station"
 	},
 	"trade_ord_spd&cost_P[000]": {
 		"name": "Resentment",
@@ -1804,6 +1839,11 @@
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20% and mood reduction per hour -0.25",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</> and mood reduction per hour <@cc.vup>-0.25</>"
 	},
+	"hire_spd_cost[111]": {
+		"name": "Special Channels",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +20% and mood reduction per hour -0.25",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</> and mood reduction per hour <@cc.vup>-0.25</>"
+	},
 	"hire_spd_cost&clue[001]": {
 		"name": "Rescue Team·External Contact",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +30%",
@@ -1813,6 +1853,11 @@
 		"name": "Rescue Team·Stamina Preservation",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +35%. Additionally, mood reduction per hour -0.1 for every Open Recruitment slot (excluding the initial slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+35%</>. Additionally, mood reduction per hour <@cc.vup>-0.1</> for every Open Recruitment slot (excluding the initial slots)"
+	},
+	"hire_spd_cost&extra[000]": {
+		"name": "Meritocracy",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +10% for every Open Recruitment slot (excluding the initial slots)",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+10%</> for every Open Recruitment slot (excluding the initial slots)"
 	},
 	"hire_spd&clue[010]": {
 		"name": "Catastrophe Messenger·α",
