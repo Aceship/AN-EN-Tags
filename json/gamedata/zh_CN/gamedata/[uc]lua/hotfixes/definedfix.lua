@@ -2,9 +2,14 @@
 local list = 
 {
   
+  "HotFixes/HoleTileHotfixer",
   "HotFixes/ShopHotfixer",
   "HotFixes/Act33SignRedpackDetailViewHotfixer",
-  "HotFixes/AbilityStandardHotfixer",
+  "HotFixes/SandboxGameModeHotfixer",
+  "HotFixes/AdvancedSelectorInSandboxHotfixer",
+  "HotFixes/MultiRangedAttackHotfixer",
+  "HotFixes/SandboxHotfixer",
+  "HotFixes/StormManagerHotfixer",
 };
 
 return list;
