@@ -4465,7 +4465,7 @@
                 if(!tl){
                     tl = GetFullTraitsTranslation(desc)
                 }
-                
+
                 var traitdescription = ""
                 var traitcolor = ""
                 if(tl){
@@ -4479,6 +4479,9 @@
                     traitdescription = trait.candidates[trait.candidates.length-1].additionalDescription
                 }
 
+                if(!tl){
+                    traitdescription = desc
+                }
 
                 contents.push(`
                 <div class='tab-pane container ${num!=trait.candidates.length ? '' : 'active'}' id='trait${num}'>
