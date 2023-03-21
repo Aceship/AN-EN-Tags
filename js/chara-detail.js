@@ -71,6 +71,9 @@
         $.holdReady(false);
     });
 
+    const IMAGES_ROOT = 'https://raw.githubusercontent.com/Aceship/Arknight-Images/main'
+    const VOICES_ROOT = 'https://raw.githubusercontent.com/Aceship/Arknight-voices/main'
+
     var lang;
     var reg;
     var selectedOP;
@@ -86,7 +89,7 @@
     var charName = 'char_180_amgoat';
     var chibipers = 'front'
     var chibiName = 'char_180_amgoat'
-    var folder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/${chibitype}/${charName}/${chibipers}/`
+    var folder = `${IMAGES_ROOT}/spineassets/${chibitype}/${charName}/${chibipers}/`
     var spinewidget 
     var spinewidgetcg
     var curropname
@@ -194,7 +197,7 @@
                 loadchibi=true
                 if(bgnum==0&&$("#spine-bg").is(":hidden")){
                     bgnum=1
-                    $('#spine-bg').attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/spine/bg"+bgnum+".png");
+                    $('#spine-bg').attr("src",`${IMAGES_ROOT}/ui/spine/bg${bgnum}.png`);
                     $('#spine-bg').fadeIn('fast');
                 }
                 if(!spinewidget){
@@ -219,7 +222,7 @@
                     
                     if($("#spine-bg").is(":hidden")){
                         if (bgnum==0) bgnum=1
-                        $('#spine-bg').attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/spine/bg"+bgnum+".png");
+                        $('#spine-bg').attr("src",`${IMAGES_ROOT}/ui/spine/bg${bgnum}.png`);
                         $('#spine-bg').fadeIn('fast');
                     }
                 }
@@ -259,7 +262,7 @@
                 
                 // $('#spine-bg').fadeIn()
                 $('#spine-bg').fadeOut('fast', function () {
-                    $('#spine-bg').attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/spine/bg"+bgnum+".png");
+                    $('#spine-bg').attr("src",`${IMAGES_ROOT}/ui/spine/bg${bgnum}.png`);
                     $('#spine-bg').fadeIn('fast');
                 });
                 console.log( $('#spine-bg').attr("src") )
@@ -642,7 +645,7 @@
                     case "List":
                                 html =
                                 `<li class='selectop-list ak-shadow' onclick='selectOperator("${val.name}")'>
-                                <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${key}.png'>
+                                <img src='${IMAGES_ROOT}/avatars/${key}.png'>
                                 <div class='name ak-font-novecento'>${getENname(val.name)}</div>
                                 <div class='rarity op-rarity-${val.rarity+1}'> 
                                     ${(`<i class='fa fa-star'></i>`).repeat(val.rarity+1)}
@@ -653,12 +656,12 @@
                     case "Grid":
                                 html =
                                 `<li class='selectop-grid ak-shadow' onclick='selectOperator("${val.name}")'>
-                                <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${key}.png'>
+                                <img src='${IMAGES_ROOT}/avatars/${key}.png'>
                                 <div class='name ak-font-novecento ak-center'>${getENname(val.name)}</div>
                                 <div class='ak-rare-${val.rarity+1}'></div>
-                                <div class='ak-showsubclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/subclass/sub_${val.subProfessionId}_icon.png'></div>
-                                ${cname==""&&classlogo?`<div class='ak-showclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/class_${classlogo}.png'></div>`:""}
-                                ${showtype&&camplogo?`<div class='ak-showfaction'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/factions/${camplogo.toLowerCase()}.png' title='${db.campdata[camplogo]}' ></div>`:""}
+                                <div class='ak-showsubclass'><img src='${IMAGES_ROOT}/ui/subclass/sub_${val.subProfessionId}_icon.png'></div>
+                                ${cname==""&&classlogo?`<div class='ak-showclass'><img src='${IMAGES_ROOT}/classes/class_${classlogo}.png'></div>`:""}
+                                ${showtype&&camplogo?`<div class='ak-showfaction'><img src='${IMAGES_ROOT}/factions/${camplogo.toLowerCase()}.png' title='${db.campdata[camplogo]}' ></div>`:""}
                                 <div class='grid-box op-rarity-${val.rarity+1}'> 
                                 </div></li>
                                 `
@@ -788,12 +791,12 @@
                     // });
                     // AudioText(opdataFull)
 
-                    let image = `<img style="height:40px;padding:2px" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}.png">  `
+                    let image = `<img style="height:40px;padding:2px" src="${IMAGES_ROOT}/avatars/${result[i].img_name}.png">  `
                     // console.log(image)
                     $("#operatorsResult").removeClass("opbrowse1");
                     $("#operatorsResult").removeClass("opbrowse2");
                     if(el=="Browse3"){
-                        image = `<img class='opres-img' src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}.png">  `
+                        image = `<img class='opres-img' src="${IMAGES_ROOT}/avatars/${result[i].img_name}.png">  `
                         var charaname = `${result[i].name_readable?`[${result[i].name_readable}]`:""}${result[i].nameTL}`
                         $("#operatorsResult").css("text-align","center");
                         $("#operatorsResult").removeClass("opresult-list");
@@ -807,7 +810,7 @@
                             `);
 
                     }else if(el=="Browse2"){
-                        image = `<img class='opres-img' src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}.png">  `
+                        image = `<img class='opres-img' src="${IMAGES_ROOT}/avatars/${result[i].img_name}.png">  `
                         $("#operatorsResult").css("text-align","center");
                         $("#operatorsResult").removeClass("opresult-list");
                         $("#operatorsResult").addClass("opresult-grid");
@@ -831,14 +834,14 @@
                         $("#operatorsResult").append(
                             `${extrathing}<li class="selectop-grid2" onclick="selectOperator('${result[i].name_cn}')">
                             <div class="op-image-grid2">
-                                <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}.png">
+                                <img src="${IMAGES_ROOT}/avatars/${result[i].img_name}.png">
                             </div>
                             <div class="${opcurrname.length>12?opcurrname.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center nameshadow">${opcurrname}</div>
                             <div class='ak-rare-${result[i].rarity} selectopopgridline'></div>
                             </li>`
                         )
                     }else if(el=="Browse"){
-                        image = `<img class='opres-img' src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}.png">  `
+                        image = `<img class='opres-img' src="${IMAGES_ROOT}/avatars/${result[i].img_name}.png">  `
                         $("#operatorsResult").css("text-align","center");
                         $("#operatorsResult").removeClass("opresult-list");
                         $("#operatorsResult").addClass("opresult-grid");
@@ -848,7 +851,7 @@
                         $("#operatorsResult").append(
                             `<li class="selectop-grid3 ak-rare-${result[i].rarity}" onclick="selectOperator('${result[i].name_cn}')">
                             <div class="op-image-grid2">
-                                <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${result[i].img_name}.png">
+                                <img src="${IMAGES_ROOT}/avatars/${result[i].img_name}.png">
                             </div>
                             <div class="nametext ${opcurrname.length>12?opcurrname.length>16?"namesmaller":"name":""} ak-center blacktext">${opcurrname}</div>
                             </div>
@@ -891,7 +894,7 @@
     function getBranchclassHtml(btn) {
         function branchclassHtml(data_id, data_name) {
             return `<div class="btn btn-secondary btn-sm op-branch filter-btn-s tooltip2" onclick="toggleBtn(this)" section="branch" data-id="${data_id}">
-            <img src="${`https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/subclass/sub_${data_id}_icon.png`}" style="width:33px;height:33px;object-fit: contain;display: inline-block;" alt="${data_name}"> 
+            <img src="${IMAGES_ROOT}/ui/subclass/sub_${data_id}_icon.png" style="width:33px;height:33px;object-fit: contain;display: inline-block;" alt="${data_name}"> 
             <span class="tooltiptext tooltipstyle1 nohover">${data_name}</span>
             </div>`
         }
@@ -1244,14 +1247,14 @@
             ${extrathing}
             <li class="selectop-grid ak-shadow" onclick="selectOperator('${char.name}')">
             <div class="op-image-grid">
-                ${GetLogo(char)?`<div class="op-grid-faction"><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
-                <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${getId(char)}.png">
+                ${GetLogo(char)?`<div class="op-grid-faction"><img src="${IMAGES_ROOT}/factions/${GetLogo(char)?GetLogo(char).toLowerCase():"none"}.png" title="${GetLogo(char)?GetLogoInfo(char).powerCode:"None"}"></div>`:""}
+                <img src="${IMAGES_ROOT}/avatars/${getId(char)}.png">
             </div>
             <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${unreadable?`[${unreadable}]`:""} ${char.appellation}</div>
             <div class='selectopopgridline ak-rare-${char.rarity + 1}'></div>
             
-            ${showfaction?`<div class='ak-showclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
-            ${op_branch.length!=1?`<div class='ak-showsubclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/subclass/sub_${char.subProfessionId}_icon.png'></div>`:""}
+            ${showfaction?`<div class='ak-showclass'><img src='${IMAGES_ROOT}/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
+            ${op_branch.length!=1?`<div class='ak-showsubclass'><img src='${IMAGES_ROOT}/ui/subclass/sub_${char.subProfessionId}_icon.png'></div>`:""}
         
             </li>`
         }).join(" "));
@@ -1277,7 +1280,7 @@
         
 
         if(skinName != ''){
-            $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skinName+".png");
+            $("#charazoom").attr("src",`${IMAGES_ROOT}/characters/${skinName}.png`);
         } else {
             $("#charazoom").attr("src",src);
         }
@@ -1424,11 +1427,11 @@
             var logo = GetLogo(opdataFull)
 
             if(logo){
-                $("#op-faction").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/factions/"+logo.toLowerCase()+".png");
-                $("#op-fact-image").html(`<img id='op-fact-image2' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/factions/${logo.toLowerCase()}.png'>`)
+                $("#op-faction").attr("src",`${IMAGES_ROOT}/factions/${logo.toLowerCase()}.png`);
+                $("#op-fact-image").html(`<img id='op-fact-image2' src='${IMAGES_ROOT}/factions/${logo.toLowerCase()}.png'>`)
                 $("#op-fact-text").html(`${GetLogoInfo(opdataFull).powerCode}`)
             }else{
-                $("#op-faction").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/factions/none.png")
+                $("#op-faction").attr("src",`${IMAGES_ROOT}/factions/none.png`)
             }
 
             charName = opcode;
@@ -1438,7 +1441,7 @@
             console.log(chibipers)
             if(chibipers=='build') chibiName= "build_"+chibiName
             console.log(chibiName)
-            folder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/${chibitype}/${charName}/${chibipers}/`
+            folder = `${IMAGES_ROOT}/spineassets/${chibitype}/${charName}/${chibipers}/`
             // if(spinewidget)
 
             
@@ -1476,7 +1479,7 @@
                     `:""}
                     
                     <button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='${dynextra?"width:62px;":""}height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>
-                        <img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'>
+                        <img style='max-height:30px' src='${IMAGES_ROOT}/ui/elite/${i}-s.png'>
                     </button>
                 </li>`);
 
@@ -1484,27 +1487,27 @@
                 tabbtn2[i] = $(`
                 <li class='nav-item'>
                     <a class='btn tabbing-btns horiz-small nav-link ${i==0?"active":""} tablink' data-toggle='pill' onclick='UpdateElite(${i})'href='#elite_${i}_tab'>
-                        <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}
+                        <img src="${IMAGES_ROOT}/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}
                     </a>
                 </li>`);
 
                 // if(i == 0){
                 //     if(l == 1){
                 //         tabbtn[l] = $("<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle active' style='height:30px'>"
-                //             + "<img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>");
+                //             + `<img style='max-height:30px' src='${IMAGES_ROOT}/ui/elite/0-s.png' data-toggle='pill' href='#opCG_0_tab'></button></li>`);
                 //         tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active tablink' data-toggle='pill' onclick='UpdateElite(0)' href='#elite_0_tab'>Non-Elite</a></li>`);
                 //     } else {
                 //         tabbtn[l] = $(`<li class='nav-item'><button class='btn tabbing-btns tabbing-btns-middle active' data-toggle='pill' style='height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                //                             + "<img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/0-s.png'></button></li>");
-                //         tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active tablink' data-toggle='pill' onclick='UpdateElite(${i})'href='#elite_${i}_tab'><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/0.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite0">E0</a></li>`);
+                //                             + `<img style='max-height:30px' src='${IMAGES_ROOT}/ui/elite/0-s.png'></button></li>`);
+                //         tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link active tablink' data-toggle='pill' onclick='UpdateElite(${i})'href='#elite_${i}_tab'><img src="${IMAGES_ROOT}/ui/elite/0.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite0">E0</a></li>`);
                 //     }
                 // } else if( i == l-1 ){
                 //     tabbtn[0] = $(`<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle'  style='height:30px' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                //                             + "<img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/"+i+"-s.png'></button></li>");
-                //     tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link tablink' data-toggle='pill' style='height:30px' onclick='UpdateElite(${i})' href='#elite_${i}_tab'><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}</a></li>`);
+                //                             + `<img style='max-height:30px' src='${IMAGES_ROOT}/ui/elite/${i}-s.png'></button></li>`);
+                //     tabbtn2[i] = $(`<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link tablink' data-toggle='pill' style='height:30px' onclick='UpdateElite(${i})' href='#elite_${i}_tab'><img src="${IMAGES_ROOT}/ui/elite/${i}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite${i}">E${i}</a></li>`);
                 // } else {
                 //     tabbtn[l-i] = $(`<li class='nav-item' style='height:30px'><button class='btn tabbing-btns tabbing-btns-middle'  style='height:30px' data-toggle='pill' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>`
-                //                             + "<img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/"+i+"-s.png'></button></li>");
+                //                             + `<img style='max-height:30px' src='${IMAGES_ROOT}/ui/elite/${i}-s.png'></button></li>`);
                 //     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link tablink' data-toggle='pill' style='height:30px' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 // }
                 
@@ -1518,33 +1521,33 @@
                 }
                 if(skindata){
                     console.log(skindata)
-                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'></button>`))
+                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${skindata.portraitId}')"><img src='${IMAGES_ROOT}/ui/elite/${i}-s.png'></button>`))
                     if(i == 0){
-                        $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png");
+                        $("#charazoom").attr("src",`${IMAGES_ROOT}/characters/${skindata.portraitId}.png`);
                         $('#charazoom').modal('handleUpdate')
                         
                         tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
-                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png'>"
+                            +`<img class='chara-image' src='${IMAGES_ROOT}/characters/${skindata.portraitId}.png'>`
                             +"</div>"));
                     } else {
                         tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
-                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png'>"
+                            +`<img class='chara-image' src='${IMAGES_ROOT}/characters/${skindata.portraitId}.png'>`
                             +"</div>"));
                     }
                 }
 
                 if(opKey=="char_1001_amiya2"){
-                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('char_1001_amiya2_2')"><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'></button>`))
+                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('char_1001_amiya2_2')"><img src='${IMAGES_ROOT}/ui/elite/${i}-s.png'></button>`))
                     if(i == 0){
-                        $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1001_amiya2_2.png");
+                        $("#charazoom").attr("src",`${IMAGES_ROOT}/characters/char_1001_amiya2_2.png`);
                         $('#charazoom').modal('handleUpdate')
                         
                         tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
-                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1001_amiya2_2.png'>"
+                            +`<img class='chara-image' src='${IMAGES_ROOT}/characters/char_1001_amiya2_2.png'>`
                             +"</div>"));
                     } else {
                         tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
-                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1001_amiya2_2.png'>"
+                            +`<img class='chara-image' src='${IMAGES_ROOT}/characters/char_1001_amiya2_2.png'>`
                             +"</div>"));
                     }
                 }
@@ -1566,12 +1569,12 @@
                     console.log(extraSkin[i]);
                     console.log(currskingroup)
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('${encodeURIComponent(extraSkin[i].portraitId)}')">
-                    <img style="max-width:40px;max-height:40px;" src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
+                    <img style="max-width:40px;max-height:40px;" src='${IMAGES_ROOT}/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
                     </button>`))
 
                     tabcontent.push($(`
                     <div class='tab-pane container' id='opCG_S${i}_tab'>
-                    <img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/${encodeURIComponent(extraSkin[i].portraitId)}.png'>
+                    <img class='chara-image' src='${IMAGES_ROOT}/characters/${encodeURIComponent(extraSkin[i].portraitId)}.png'>
                     </div>
                     `))
 
@@ -1589,7 +1592,7 @@
                         
                         <a class="btn tabbing-btns tabbing-btns-middle" style="${extraSkin[i].dynIllustId?"width:62px":""}" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}","","${extraSkin[i].skinId}")'> 
                             <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-                            <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
+                            <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='${IMAGES_ROOT}/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
                         </a></li>
                         `)
                 }
@@ -1604,14 +1607,14 @@
             tabbtn.push($(`<button type="button" class="btn tabbing-btns  tabbing-btns-middle ak-btn" style="width:50px;height:50px;margin-top:5px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
             tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-middle ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opstory">
             <div>
-                <img class='audioprofilebutton' src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/story/profile.png" style="max-width:40px;max-height:40px">
+                <img class='audioprofilebutton' src="${IMAGES_ROOT}/ui/story/profile.png" style="max-width:40px;max-height:40px">
                 <div class="btn-story-header" style="border-radius:0px">Profile</div>
             </div>
             </button>`))
 
             tabbtn.push($(`<button type="button" class="btn tabbing-btns ak-btn  tabbing-btns-middle" style="width:50px;height:50px" data-toggle="modal" data-target="#opaudio" onclick="GetAudio(opdataFull)">
             <div>
-                <img class='audioprofilebutton' src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/story/audio.png" style="max-width:40px;max-height:40px">
+                <img class='audioprofilebutton' src="${IMAGES_ROOT}/ui/story/audio.png" style="max-width:40px;max-height:40px">
                 <div class="btn-story-header">Audio</div>
             </div>
             </button>`))
@@ -1661,9 +1664,9 @@
             
 
             var type = query(db.classes,"type_data",opdataFull.profession);
-            $("#op-classImage").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/black/icon_profession_"+type['type_'+lang].toLowerCase()+"_large.png")
+            $("#op-classImage").attr("src",`${IMAGES_ROOT}/classes/black/icon_profession_${type['type_'+lang].toLowerCase()}_large.png`)
             $("#op-className").html(type['type_'+lang])
-            $("#op-subclassImage").attr("src",`https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/subclass/sub_${opdataFull.subProfessionId}_icon.png`)
+            $("#op-subclassImage").attr("src",`${IMAGES_ROOT}/ui/subclass/sub_${opdataFull.subProfessionId}_icon.png`)
             var capsubclass = opdataFull.subProfessionId.charAt(0).toUpperCase()+opdataFull.subProfessionId.slice(1)
             if(db.tlsubclass.subclass[opdataFull.subProfessionId]){
                 var currsub = db.tlsubclass.subclass[opdataFull.subProfessionId]
@@ -1689,7 +1692,7 @@
             var potentialist = []
             potentialist.push(`<div style="height:4px"></div>`)
             for(i=0;i<potentials.length;i++){
-                potentialist.push(`<div style="font-size:13px;padding:1px;margin-left:-6px;color:#DDD;vertical-align:bottom"><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/potential/${i+2}.png" style="margin-top:-4px;width:20px;background:#222;border-radius:25%;padding:2px"> ${potentials[i]}</div>`)
+                potentialist.push(`<div style="font-size:13px;padding:1px;margin-left:-6px;color:#DDD;vertical-align:bottom"><img src="${IMAGES_ROOT}/ui/potential/${i+2}.png" style="margin-top:-4px;width:20px;background:#222;border-radius:25%;padding:2px"> ${potentials[i]}</div>`)
             }
             // console.log(potentials)
             if (opdataFull.talents){
@@ -1975,7 +1978,7 @@
                 var tabItem = $(`
                 <li class='nav-item'>
                     <button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')} tablink' data-toggle='pill' onclick='UpdateToken("${skilltoken}",${i},${opdataFull.skills.length})' href='#skill${i}'>
-                    <p><img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skillIcon}.png' style='width: 20px;margin:-4px 6px 0px -5px'>Skill ${i+1}</p>
+                    <p><img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='${IMAGES_ROOT}/skills/skill_icon_${skillIcon}.png' style='width: 20px;margin:-4px 6px 0px -5px'>Skill ${i+1}</p>
                     </button>
                 </li>
                 `)
@@ -1987,7 +1990,7 @@
                         <span class='custom-span skillname notclickthrough'><div>${skillname}</div></span>
                             <div class='topright'>
                                 <div style='margin-top:-10px;padding:10px'>
-                                    <img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skillIcon}.png' style='width: 100%;'>
+                                    <img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='${IMAGES_ROOT}/skills/skill_icon_${skillIcon}.png' style='width: 100%;'>
                                 </div>
                             </div>
                         
@@ -2034,9 +2037,9 @@
                         <button class='btn horiz-small nav-link ${(num!=2 ? '' : 'active')} equiplink' data-toggle='pill' href='#equip${num}'>
                             <div style = "display:inline-block;text-align:center;">
                                 <div style = "display:inline-block; height:40px">
-                                    <img class='equip-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/shining/${currequip.equipShiningColor}_shining.png' style='width: 50px; margin: 0px -5px 0px -5px'></img>
+                                    <img class='equip-image' src='${IMAGES_ROOT}/equip/shining/${currequip.equipShiningColor}_shining.png' style='width: 50px; margin: 0px -5px 0px -5px'></img>
                                     <div style = "display:inline-block; position:absolute;margin: -1px 0px 0px -35px">
-                                        <img class='equip-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/type/${currequip.typeIcon}.png' style='width: 30px; position:absolute;'></img>
+                                        <img class='equip-image' src='${IMAGES_ROOT}/equip/type/${currequip.typeIcon}.png' style='width: 30px; position:absolute;'></img>
                                     </div>
                                     <div style = "position:absolute;margin: 0px 0px 0px 0px">
                                         <div style = "width:60px;margin: 4px 0px 0px -10px;background:#222;color:#ddd;font-size:10px">${currequipEN?currequipEN.typeIcon.toUpperCase():currequip.typeIcon.toUpperCase()}</div>
@@ -2139,7 +2142,7 @@
                         if(currequip.unlockEvolvePhase >=0)
                         imagereq.push(`
                             <div style="color:#fff;font-size:13px;background:#444;display:inline-block;padding:2px;border-radius:2px">
-                                <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${currequip.unlockEvolvePhase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${currequip.unlockEvolvePhase}">
+                                <img src="${IMAGES_ROOT}/ui/elite/${currequip.unlockEvolvePhase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${currequip.unlockEvolvePhase}">
                             </div>
                         `)
                         if(currequip.unlockLevel >1)
@@ -2248,7 +2251,7 @@
                                 <div class='equipimage'>
                                     <button type="button" class="btn ak-button" style="width:90px;height:90px" data-toggle="modal" data-target="#opmodulestory" onclick="GetModuleStory('${element}')">
                                         <span style="position:absolute;font-size: 14px;bottom:4px;left:4px;color:#fff;background:#222222dd;padding:4px;border-radius:2px" class="fa fa-search-plus"> Info</span>
-                                        <img class='equip-image' id='equip${num}image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/icon/${currequip.uniEquipIcon}.png' style='width: 90px;height:90px;object-fit:contain'>
+                                        <img class='equip-image' id='equip${num}image' src='${IMAGES_ROOT}/equip/icon/${currequip.uniEquipIcon}.png' style='width: 90px;height:90px;object-fit:contain'>
                                     </button>
                                 </div>
                             
@@ -2444,7 +2447,7 @@
                 
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
-                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[4]].appellation}</>, Cast <@ba.kw><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skillId}.png" style="max-width:20px;margin:2px">${skillname} ${skillnum}</> skill <@ba.kw>${mission.paramList[3]}</> times
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[4]].appellation}</>, Cast <@ba.kw><img src="${IMAGES_ROOT}/skills/skill_icon_${skillId}.png" style="max-width:20px;margin:2px">${skillname} ${skillnum}</> skill <@ba.kw>${mission.paramList[3]}</> times
                     `
                 break;
             case "EquipmentSkillCast":
@@ -2462,7 +2465,7 @@
                 console.log(skillnum)
                 tl=`
                     Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[0]].appellation}</>
-                    </br>Cast <@ba.kw><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skillId}.png" style="max-width:20px;margin:2px"> ${skillname} ${skillnum}</> skill <@ba.kw>${mission.paramList[2]}</> times
+                    </br>Cast <@ba.kw><img src="${IMAGES_ROOT}/skills/skill_icon_${skillId}.png" style="max-width:20px;margin:2px"> ${skillname} ${skillnum}</> skill <@ba.kw>${mission.paramList[2]}</> times
                     `
                 break;
             case "EquipmentDamageTotal":
@@ -2535,7 +2538,7 @@
                         var skillnum = opdataFull.skills.findIndex(skill => skill.skillId==skillId)
                         skillnum = `(Skill ${skillnum+1})`
                         extra = `
-                        's <@ba.kw><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skillId}.png" style="max-width:20px;margin:2px"> ${skillname} ${skillnum}</>
+                        's <@ba.kw><img src="${IMAGES_ROOT}/skills/skill_icon_${skillId}.png" style="max-width:20px;margin:2px"> ${skillname} ${skillnum}</>
                         `
                     }
                 }
@@ -2596,8 +2599,8 @@
                     tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
                     </br>${objective} <@ba.kw>${mission.paramList[4]}</> <@ba.kw>${enemyName}</>
-                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/enemy/${enemyid}.png" style="max-width:50px">
-                    </br>with <@ba.kw> <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skill}.png" style="max-width:20px;margin:2px"> Skill ${skillid+1} (${skillname})</>
+                    <img src="${IMAGES_ROOT}/enemy/${enemyid}.png" style="max-width:50px">
+                    </br>with <@ba.kw> <img src="${IMAGES_ROOT}/skills/skill_icon_${skill}.png" style="max-width:20px;margin:2px"> Skill ${skillid+1} (${skillname})</>
                     </br>Using Non-Borrowed <@ba.kw>${chara.appellation}</>
                     `
                 }
@@ -2605,13 +2608,13 @@
                     tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
                     </br>${objective} <@ba.kw>${mission.paramList[4]}</> <@ba.kw>${enemyName}</>
-                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/enemy/${enemyid}.png" style="max-width:50px">
+                    <img src="${IMAGES_ROOT}/enemy/${enemyid}.png" style="max-width:50px">
                     </br>Using Non-Borrowed <@ba.kw>${chara.appellation}</>
                     `
                 }else if (skill){
                     tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
-                    </br>${objective} <@ba.kw>${mission.paramList[4]}</> enemies using <@ba.kw> <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skill}.png" style="max-width:20px;margin:2px"> Skill ${enemyid} (${skillname})</>
+                    </br>${objective} <@ba.kw>${mission.paramList[4]}</> enemies using <@ba.kw> <img src="${IMAGES_ROOT}/skills/skill_icon_${skill}.png" style="max-width:20px;margin:2px"> Skill ${enemyid} (${skillname})</>
                     
                     </br>Using Non-Borrowed <@ba.kw>${chara.appellation}</>
                     `
@@ -2667,7 +2670,7 @@
                 var skilltext = `Use at least <@ba.kw> ${mission.paramList[2]}</> times of the following skills :`
                 skills.forEach(element => {
                     console.log(element.id)
-                    skilltext += `<@ba.kw> <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${element.id}.png" style="max-width:20px;margin:2px"> Skill ${element.num} (${element.name})</> </br>`
+                    skilltext += `<@ba.kw> <img src="${IMAGES_ROOT}/skills/skill_icon_${element.id}.png" style="max-width:20px;margin:2px"> Skill ${element.num} (${element.name})</> </br>`
                 });
                 tl=`
                     Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
@@ -2703,7 +2706,7 @@
                     console.log(element)
                     var currchar = db.chars[element]
                     console.log(currchar.appellation)
-                    splitName+=  `<@ba.kw> <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${element}.png" style="max-width:50px"> ${currchar.appellation} </> </br>`
+                    splitName+=  `<@ba.kw> <img src="${IMAGES_ROOT}/avatars/${element}.png" style="max-width:50px"> ${currchar.appellation} </> </br>`
                 });
                 tl=`
                     Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
@@ -2723,7 +2726,7 @@
                 tl=`
                     Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
                     Kill at least <@ba.kw>${mission.paramList[4]}</> enemies using Non-Borrowed </br>
-                    <@ba.kw> <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${mission.paramList[2]}.png" style="max-width:50px"> ${currchar.appellation} </>, and at least deployed <@ba.kw>${mission.paramList[1]}</> times
+                    <@ba.kw> <img src="${IMAGES_ROOT}/avatars/${mission.paramList[2]}.png" style="max-width:50px"> ${currchar.appellation} </>, and at least deployed <@ba.kw>${mission.paramList[1]}</> times
                 `
                 break;
             case "EquipmentBattleCharDamage":
@@ -2731,7 +2734,7 @@
                 tl=`
                     Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
                     Deal at least <@ba.kw>${mission.paramList[2]}</> damage using Non-Borrowed </br>
-                    <@ba.kw> <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${mission.paramList[1]}.png" style="max-width:50px"> ${currchar.appellation} </>
+                    <@ba.kw> <img src="${IMAGES_ROOT}/avatars/${mission.paramList[1]}.png" style="max-width:50px"> ${currchar.appellation} </>
                 `
                 break;
         }
@@ -2845,11 +2848,11 @@
             `
             <div style='background:#333;margin:2px 0px;padding:2px 10px'>
                 <div style ="display:inline-block;margin:0px 2px;background:#222222aa">
-                    <img class='token-image notclickthrough' id='Tokenimage' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${globaltoken}.png' style='width: 60px;margin:-0px 0px 0px 0px'>
+                    <img class='token-image notclickthrough' id='Tokenimage' src='${IMAGES_ROOT}/avatars/${globaltoken}.png' style='width: 60px;margin:-0px 0px 0px 0px'>
                 </div>
                 <div style ="position:absolute;left:80px;top:7px">
                     <div class='stats'>
-                        <div class='stats-l' style="min-width:unset;width:40px;background:#3D3D3D"><img style='max-height:30px;margin:-11px -10px -9px -10px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${currelite}-s.png'></div><div class='stats-r' style="min-width:unset">Lv <span id="summon-level">${currlevel}</span></div>
+                        <div class='stats-l' style="min-width:unset;width:40px;background:#3D3D3D"><img style='max-height:30px;margin:-11px -10px -9px -10px' src='${IMAGES_ROOT}/ui/elite/${currelite}-s.png'></div><div class='stats-r' style="min-width:unset">Lv <span id="summon-level">${currlevel}</span></div>
                     </div>
                     <div>
                         ${tokenfulldata.appellation}
@@ -2870,7 +2873,7 @@
         $("#opmodulestorycontent").html(`
             <div style="background:#222;padding:6px 5px 6px 5px;font-size:20px;text-align:center">${currequipEN?currequipEN.uniEquipName:currequip.uniEquipName}</div>
             <div style="background:#333;padding:6px 5px 6px 5px;text-align:center">
-            <img class='equip-image' id='equip${i}image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/icon/${currequip.uniEquipIcon}.png' style='width:100%;max-width:500px;object-fit:contain'>
+            <img class='equip-image' id='equip${i}image' src='${IMAGES_ROOT}/equip/icon/${currequip.uniEquipIcon}.png' style='width:100%;max-width:500px;object-fit:contain'>
             </div>
             
             <div style="background:#222;padding:6px 5px 6px 5px;font-size:20px;text-align:center">Basic Information</div>
@@ -2963,7 +2966,7 @@
             var mats = $("<div class='small-container ak-shadow'>"
                         +   "<p>Elite "+i+"</p>"
                         +   "<span>Required materials</span>"
-                        +   "<img class='topright' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/"+i+".png' width='100'>"
+                        +   `<img class='topright' src='${IMAGES_ROOT}/ui/elite/${i}.png' width='100'>`
                         +   "<button class='btn btn-default btn-collapsible' data-toggle='collapse' data-target='#elite"+i+"MatsCollapsible'><i class='fa fa-sort-down'></i></button>"
                         +   "<div id='elite"+i+"MatsCollapsible' class='collapse collapsible'>"
                         +    materialist.join("")
@@ -3008,7 +3011,6 @@
         var currTL = db.voicelineTL[opdataFull.id]
         var voiceDict = db.charword.voiceLangDict[currVoiceID]
         var checkold = db.voiceold[opdataFull.id]
-        var preDir = "https://raw.githubusercontent.com/Aceship/Arknight-voices/main/"
         // console.log(db.charword)
         // console.log(currTL)
         Object.keys(db.charword.charWords).forEach(element => {
@@ -3045,11 +3047,11 @@
         $('#opaudioproofreader').empty()
         curraudiolist.forEach(element => {
             var curraudio  =`
-            JP <audio preload="metadata" controls style="margin-top:5px"> <source src="${preDir}voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
-            <a href="${preDir}voice/${element.voiceAsset}.mp3"  target="_blank">
+            JP <audio preload="metadata" controls style="margin-top:5px"> <source src="${VOICES_ROOT}/voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+            <a href="${VOICES_ROOT}/voice/${element.voiceAsset}.mp3"  target="_blank">
             <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>`
-            // if(LinkCheck(`https://raw.githubusercontent.com/Aceship/Arknight-voices/main/voice/${element.voiceAsset}.mp3`)){
-            //     curraudio= '<audio controls> <source src="https://raw.githubusercontent.com/Aceship/Arknight-voices/main/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> '
+            // if(LinkCheck(`${VOICES_ROOT}/voice/${element.voiceAsset}.mp3`)){
+            //     curraudio= `<audio controls> <source src="${VOICES_ROOT}/voice/${element.voiceAsset}.mp3" type="audio/mpeg">Your browser does not support the audio tag.</audio> `
             // }
             var voiceTL = element.voiceText
             if(currTL)voiceTL= currTL.voiceline[element.voiceTitle][lang]?currTL.voiceline[element.voiceTitle][lang]: element.voiceText
@@ -3081,8 +3083,8 @@
                             audiolist.push(`
                             <div style="display:inline-block;padding-top:15px;vertical-align:top;width:20px" >JP0</div>
                             <div style="display:inline-block">
-                            <audio preload="metadata" controls style="margin-top:10px"> <source src="${preDir}voice_old/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
-                            <a href="${preDir}voice_old/${element.voiceAsset}.mp3"  target="_blank">
+                            <audio preload="metadata" controls style="margin-top:10px"> <source src="${VOICES_ROOT}/voice_old/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+                            <a href="${VOICES_ROOT}/voice_old/${element.voiceAsset}.mp3"  target="_blank">
                             <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
                             </div>`)
                         }
@@ -3109,8 +3111,8 @@
                 audiolist.push(`
                 <div style="display:inline-block;padding-top:15px;vertical-align:top;width:20px" >${lang}</div>
                 <div style="display:inline-block">
-                <audio preload="metadata" controls style="margin-top:10px"> <source src="${preDir}${foldername.toLowerCase()}/${wordKey.toLowerCase()}/${element.voiceId}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
-                <a href="${preDir}${foldername.toLowerCase()}/${wordKey.toLowerCase()}/${element.voiceId}.mp3"  target="_blank">
+                <audio preload="metadata" controls style="margin-top:10px"> <source src="${VOICES_ROOT}/${foldername.toLowerCase()}/${wordKey.toLowerCase()}/${element.voiceId}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+                <a href="${VOICES_ROOT}/${foldername.toLowerCase()}/${wordKey.toLowerCase()}/${element.voiceId}.mp3"  target="_blank">
                 <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
                 </div>`)
                 
@@ -3564,7 +3566,6 @@
     function GetSFX(opdataFull){
         $('#opsfxcontent').empty()
         console.log(opdataFull.id)
-        var preDir = "https://raw.githubusercontent.com/Aceship/Arknight-voices/main/"
         // console.log()
         var filteredFX = []
         console.log(opdataFull)
@@ -3624,11 +3625,11 @@
             if(fxdir.includes("voice")){
                 fxExt = "mp3"
             }
-            var curraudio  =`<audio class="sfxplayer" preload="metadata" controls style="margin-top:5px"> <source src="${preDir}${fxdir}.${fxExt}" type="audio/${fxExt}">Your browser does not support the audio tag.</audio> `
+            var curraudio  =`<audio class="sfxplayer" preload="metadata" controls style="margin-top:5px"> <source src="${VOICES_ROOT}/${fxdir}.${fxExt}" type="audio/${fxExt}">Your browser does not support the audio tag.</audio> `
             var currhtml = $(`
             <table class="sfx-table">
             <th>${fxdataname}</th>
-            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="${preDir}${fxdir}.${fxExt}"  target="_blank">
+            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="${VOICES_ROOT}/${fxdir}.${fxExt}"  target="_blank">
             <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
             <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${fxname}</div>
             </td></tr>
@@ -3703,7 +3704,7 @@
             var currphase = eachcat.phase
             var imagereq =[]
             if(currphase >=0)
-                imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
+                imagereq.push(`<img src="${IMAGES_ROOT}/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
             if(currlevel >1)
                 imagereq.push(`<span style='font-size:11px;margin-left:-2px'><span style='font-size:6px'>Lv.</span>${currlevel}</span>`)
             
@@ -3763,7 +3764,7 @@
                 riicskills.push(`
                 <div class="" style="background:#444;margin:4px;padding:0px;background:#444;border-radius:2px;text-align:left">
                     <div style="background:#999;display:inline-block;padding:2px;width:100%;border-radius:2px 2px 0px 0px;position:relative;height:33px">
-                        <img id="op-riicdetail-img" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="border-radius:50%;background:#333;padding:3px;position:absolute;left:2px;top:2px;width:30px" title=""></img>
+                        <img id="op-riicdetail-img" src="${IMAGES_ROOT}/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="border-radius:50%;background:#333;padding:3px;position:absolute;left:2px;top:2px;width:30px" title=""></img>
                         <div id="op-riicdetail-name" style="display:inline-block;color:#ddd;font-size:13px;background:#333;padding:2px 5px 2px 12px;border-radius:0px 6px 6px 0px;margin:3px 2px 2px 18px;z-index:1">
                             ${currname}
                         </div>
@@ -3858,16 +3859,16 @@
                 currdesc = currdesc.replace(/\\n/g,"\n\n")
                 eachtab.push(`
                     <div style="display:inline-block;background:#444;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
-                        <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${eachbuff}','${currname.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${normdesc.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname.replace(/\"/g,"\'")}\n\n${currdesc.replace(/\"/g,"\'")}">
+                        <img src="${IMAGES_ROOT}/ui/infrastructure/skill/${currbuff.skillIcon}.png" style="" onclick="ShowRiicDetail('${eachbuff}','${currname.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${normdesc.replace(/\'/g,"\\\'").replace(/\"/g,"\\\'")}','${IMAGES_ROOT}/ui/infrastructure/skill/${currbuff.skillIcon}.png')" title="${currname.replace(/\"/g,"\'")}\n\n${currdesc.replace(/\"/g,"\'")}">
                     </div>`)
-                    // console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
+                    // console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}',${IMAGES_ROOT}/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
             });
             
             var imagereq = []
                 if(eachcat.level >1)
                 imagereq.push(`Lv.${eachcat.level}`)
                 if(eachcat.phase>=0)
-                imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${eachcat.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachcat.phase}">`)
+                imagereq.push(`<img src="${IMAGES_ROOT}/ui/elite/${eachcat.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachcat.phase}">`)
             var currinfo = `<div style="color:#999;background:#222;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">${imagereq.join("")}</div>`
             htmlcomb.push(`
             <div style="display:inline-block;background:#444;margin:0px;padding:2px;padding-top:2px;background:#444;border-radius:2px;text-align:center">${currinfo}${eachtab.join("")}</div>
@@ -3991,7 +3992,7 @@
             var elreq = `${currphase}${currlevel}`
             if(!elitelevel.includes(elreq)){
                 if(currphase >=0)
-                    imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
+                    imagereq.push(`<img src="${IMAGES_ROOT}/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
                 if(currlevel >1)
                     imagereq.push(`<span style='font-size:11px;margin-left:-2px'><span style='font-size:6px'>Lv.</span>${currlevel}</span>`)
                 
@@ -4019,7 +4020,7 @@
         potential.forEach(currpotent => {
             var imagereq = []
             if(currpotent+1 >0)
-                imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/potential/${currpotent+1}.png" style="width:18px"> ${currpotent+1}`)
+                imagereq.push(`<img src="${IMAGES_ROOT}/ui/potential/${currpotent+1}.png" style="width:18px"> ${currpotent+1}`)
             talentTab2.push(`
             <li class='nav-item' style="" title='Potential ${currpotent+1}'>                     
                 <button class='btn horiz-small nav-link talentlink talenttabpot' data-toggle='pill' id='tabtalent2${currpotent}' onclick='TalentShow(-1,-1,${currpotent})' style="padding:0px 0px;margin:0px 0px 0px 2px;background:#666;width:50px">
@@ -4160,9 +4161,9 @@
         if(eachtalent.talent.unlockCondition.level >1)
         imagereq.push(`<span style="font-size:8px">Lv.</span>${eachtalent.talent.unlockCondition.level} `)
         if(eachtalent.talent.unlockCondition.phase >=0)
-        imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
+        imagereq.push(`<img src="${IMAGES_ROOT}/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
         if(eachtalent.talent.requiredPotentialRank >0)
-        imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
+        imagereq.push(`<img src="${IMAGES_ROOT}/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
 
         var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
         var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
@@ -4249,9 +4250,9 @@
     //             if(eachtalent.talent.unlockCondition.level >1)
     //             imagereq.push(`Lv.${eachtalent.talent.unlockCondition.level}`)
     //             if(eachtalent.talent.unlockCondition.phase >0)
-    //             imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
+    //             imagereq.push(`<img src="${IMAGES_ROOT}/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
     //             if(eachtalent.talent.requiredPotentialRank >0)
-    //             imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
+    //             imagereq.push(`<img src="${IMAGES_ROOT}/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
 
     //             var currTalentName = eachtalent.talentTL?eachtalent.talentTL.name:eachtalent.talent.name
     //             var currTalentDesc = eachtalent.talentTL?eachtalent.talentTL.desc:eachtalent.talent.description
@@ -4373,9 +4374,9 @@
         (`<div class="akmat-container" style="position:relative">
             <div class="item-name" title="${itemdata.name}">${(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)}</div>
             <div class="item-image">
-                <img id="item-image" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/${itemdata.iconId}.png">
+                <img id="item-image" src="${IMAGES_ROOT}/items/${itemdata.iconId}.png">
             </div>
-            <img class="item-rarity" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-${itemdata.rarity+1}.png">
+            <img class="item-rarity" src="${IMAGES_ROOT}/material/bg/item-${itemdata.rarity+1}.png">
             <div class="item-amount">${count}x</div>
         </div>`)
         return material
@@ -4439,7 +4440,7 @@
             trait.candidates.forEach(element => {
                 var imagereq = []
                 if(element.unlockCondition.phase >=0)
-                imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${element.unlockCondition.phase}">`)
+                imagereq.push(`<img src="${IMAGES_ROOT}/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin:-12px 0px -6px 0px" title="Elite ${element.unlockCondition.phase}">`)
                 if(element.unlockCondition.level >1)
                 imagereq.push(`Lv.${element.unlockCondition.level}`)
                 // console.log(s)
@@ -4617,7 +4618,7 @@
                     if(element.unlockCondition.level >0)
                     imagereq.push(`Lv.${element.unlockCondition.level}`)
                     if(element.unlockCondition.phase >0)
-                    imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
+                    imagereq.push(`<img src="${IMAGES_ROOT}/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
     
                 // console.log(s)
                 var each = []
@@ -4817,7 +4818,7 @@
     }
 
     function SkillRankDisplay(skill_no){
-        let img = "https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/rank/"
+        let img = `${IMAGES_ROOT}/ui/rank/`
         let html =""
         if(skill_no>0&&skill_no<7){
             img += skill_no+".png"
@@ -5123,7 +5124,7 @@
       }
     
     function LoadAnimationCG(opid,dynid,isSkin = false){
-        var dynfolder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/dynchars/${opid}/`
+        var dynfolder = `${IMAGES_ROOT}/spineassets/dynchars/${opid}/`
         var splitdyn = dynid.split("_")
         var splitdynj = splitdyn.slice(0, splitdyn.length - 1).join("_")
         var skelname = `${splitdynj}`
@@ -5383,7 +5384,7 @@
         // console.log(opdataFull)
         // var tokenName =
         var tokenname = tokenkey
-        var tokenfolder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/token/${opdataFull.id}/${tokenkey}`
+        var tokenfolder = `${IMAGES_ROOT}/spineassets/token/${opdataFull.id}/${tokenkey}`
         // console.log(tokenfolder)
         // $("#loading-spine").text("Loading...")
         if(spinewidgettoken){
@@ -5565,7 +5566,7 @@
         if(pers!="")chibipers=pers
         if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
         else chibiName.includes("build")?chibiName=chibiName.split("_").slice(1).join("_"):chibiName=chibiName
-        folder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/${chibitype}/${charName}/${chibipers}/`
+        folder = `${IMAGES_ROOT}/spineassets/${chibitype}/${charName}/${chibipers}/`
         
         if($("#spine-frame-op:visible")){
             $("#spine-frame-op").fadeOut(200)
@@ -5934,7 +5935,7 @@
         $("#spine-frame").append(`<div id="spine-widget" class="top-layer" style="position:absolute;width: ${wid}px; height: ${hei}px;top:${-hei/2+150 +chibiscale[1]}px;left:-${wid/2-150}px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
         if (chibiName != null && defaultAnimationName != null) {
             var xhr = new XMLHttpRequest();
-            folder2 = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/dynchars/char_1012_skadi2/dyn_illust_char_1012_skadi2_2/dyn_illust_char_1012_skadi2`
+            folder2 = `${IMAGES_ROOT}/spineassets/dynchars/char_1012_skadi2/dyn_illust_char_1012_skadi2_2/dyn_illust_char_1012_skadi2`
             xhr.open('GET', folder2 + "." +skeletonType, true);
             xhr.responseType = 'arraybuffer';
             var array;
