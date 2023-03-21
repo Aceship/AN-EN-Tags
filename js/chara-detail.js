@@ -3628,7 +3628,7 @@
             var currhtml = $(`
             <table class="sfx-table">
             <th>${fxdataname}</th>
-            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="${fxdir}.${fxExt}"  target="_blank">
+            <tr><td style="text-align:center;background:#1a1a1a">${curraudio} <a href="${preDir}${fxdir}.${fxExt}"  target="_blank">
             <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
             <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${fxname}</div>
             </td></tr>
