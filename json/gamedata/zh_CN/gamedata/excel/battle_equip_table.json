@@ -12099,7 +12099,7 @@
               "candidates": [
                 {
                   "displayRangeId": false,
-                  "upgradeDescription": "特性消耗费用时，若费用足够则额外消耗5费用，抵消自身受到的下一次<$ba.stun>晕眩</>/<$ba.frozen>冻结</>，并使攻击来源晕眩4秒",
+                  "upgradeDescription": "特性消耗费用时，若费用足够则改为消耗5费用，抵消自身受到的下一次<$ba.stun>晕眩</>/<$ba.frozen>冻结</>，并使攻击来源晕眩4秒",
                   "talentIndex": 1,
                   "unlockCondition": {
                     "phase": 2,
@@ -12184,7 +12184,7 @@
               "candidates": [
                 {
                   "displayRangeId": false,
-                  "upgradeDescription": "特性消耗费用时，若费用足够则额外消耗4费用，抵消自身受到的下一次<$ba.stun>晕眩</>/<$ba.frozen>冻结</>，并使攻击来源晕眩4秒",
+                  "upgradeDescription": "特性消耗费用时，若费用足够则改为消耗4费用，抵消自身受到的下一次<$ba.stun>晕眩</>/<$ba.frozen>冻结</>，并使攻击来源晕眩4秒",
                   "talentIndex": 1,
                   "unlockCondition": {
                     "phase": 2,
@@ -41649,7 +41649,7 @@
               "candidates": [
                 {
                   "displayRangeId": false,
-                  "upgradeDescription": "根据已损失的生命值，提高攻击速度（损失60%生命值时达到最大可提升攻击速度120）",
+                  "upgradeDescription": "在场时，自身获得最高+120攻击速度的<$ba.berserk>坚忍</>（损失60%生命值时达到最大加成）",
                   "talentIndex": 0,
                   "unlockCondition": {
                     "phase": 2,
@@ -41666,16 +41666,8 @@
                       "value": 0.4
                     },
                     {
-                      "key": "max_hp_ratio",
-                      "value": 1.0
-                    },
-                    {
                       "key": "min_attack_speed",
                       "value": 120.0
-                    },
-                    {
-                      "key": "max_attack_speed",
-                      "value": 0.0
                     }
                   ]
                 }
@@ -41774,7 +41766,7 @@
               "candidates": [
                 {
                   "displayRangeId": false,
-                  "upgradeDescription": "根据已损失的生命值，提高攻击速度（损失50%生命值时达到最大可提升攻击速度130）",
+                  "upgradeDescription": "在场时，自身获得最高+130攻击速度的<$ba.berserk>坚忍</>（损失50%生命值时达到最大加成）",
                   "talentIndex": 0,
                   "unlockCondition": {
                     "phase": 2,
@@ -41791,16 +41783,8 @@
                       "value": 0.5
                     },
                     {
-                      "key": "max_hp_ratio",
-                      "value": 1.0
-                    },
-                    {
                       "key": "min_attack_speed",
                       "value": 130.0
-                    },
-                    {
-                      "key": "max_attack_speed",
-                      "value": 0.0
                     }
                   ]
                 }
@@ -46296,6 +46280,6031 @@
           {
             "key": "atk",
             "value": 65.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_weedy": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "weedy_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位，并返还该次部署费用的一半",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 140.0
+          },
+          {
+            "key": "atk",
+            "value": 50.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "weedy_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位，并返还该次部署费用的一半",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "weedy_equip_1_2_p2",
+            "target": "TALENT",
+            "isToken": true,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.15
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": true,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": null,
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "base_force_level",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "interval",
+                      "value": 2.5
+                    },
+                    {
+                      "key": "sp",
+                      "value": 1.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "蓄水炮普通攻击和技能的推力增加一级，且在温蒂周围4格内时令其每2.5秒获得1点技力，攻击力额外+15%",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "蓄水炮强化",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": []
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 180.0
+          },
+          {
+            "key": "atk",
+            "value": 64.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "weedy_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位，并返还该次部署费用的一半",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "weedy_equip_1_3_p2",
+            "target": "TALENT",
+            "isToken": true,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.2
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": true,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": null,
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "base_force_level",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "interval",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "sp",
+                      "value": 1.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "蓄水炮普通攻击和技能的推力增加一级，且在温蒂周围4格内时令其每2秒获得1点技力，攻击力额外+20%",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "蓄水炮强化",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": []
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 210.0
+          },
+          {
+            "key": "atk",
+            "value": 72.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_forcer": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "forcer_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位，并返还该次部署费用的一半",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 170.0
+          },
+          {
+            "key": "atk",
+            "value": 45.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "forcer_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位，并返还该次部署费用的一半",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "攻击重量大于等于3的敌人时无视目标250的防御力",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "技巧射击",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 3.0
+                    },
+                    {
+                      "key": "def_penetrate_fixed",
+                      "value": 250.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "攻击重量大于等于3的敌人时无视目标270<@ba.talpu>（+20）</>的防御力",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "技巧射击",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 3.0
+                    },
+                    {
+                      "key": "def_penetrate_fixed",
+                      "value": 270.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 215.0
+          },
+          {
+            "key": "atk",
+            "value": 54.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "forcer_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位，并返还该次部署费用的一半",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "攻击重量大于等于3的敌人时无视目标280的防御力",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "技巧射击",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 3.0
+                    },
+                    {
+                      "key": "def_penetrate_fixed",
+                      "value": 280.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "攻击重量大于等于3的敌人时无视目标300<@ba.talpu>（+20）</>的防御力",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "技巧射击",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 3.0
+                    },
+                    {
+                      "key": "def_penetrate_fixed",
+                      "value": 300.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 240.0
+          },
+          {
+            "key": "atk",
+            "value": 60.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_panda": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "panda_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "base_force_level",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>，阻挡2个及以上敌人时自身推力增加一级\\n可以放置于远程位",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 120.0
+          },
+          {
+            "key": "atk",
+            "value": 25.0
+          },
+          {
+            "key": "def",
+            "value": 25.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "panda_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "base_force_level",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>，阻挡2个及以上敌人时自身推力增加一级\\n可以放置于远程位",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "获得47%的物理闪避",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "功夫",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.47
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "获得50%<@ba.talpu>（+3%）</>的物理闪避",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "功夫",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.5
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 150.0
+          },
+          {
+            "key": "atk",
+            "value": 32.0
+          },
+          {
+            "key": "def",
+            "value": 32.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "panda_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "base_force_level",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>，阻挡2个及以上敌人时自身推力增加一级\\n可以放置于远程位",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "获得52%的物理闪避",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "功夫",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.52
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "获得55%<@ba.talpu>（+3%）</>的物理闪避",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "功夫",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.55
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 170.0
+          },
+          {
+            "key": "atk",
+            "value": 35.0
+          },
+          {
+            "key": "def",
+            "value": 35.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_sqrrel": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "sqrrel_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 40
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "base_force_level",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>，阻挡2个及以上敌人时自身推力增加一级\\n可以放置于远程位",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 130.0
+          },
+          {
+            "key": "atk",
+            "value": 21.0
+          },
+          {
+            "key": "def",
+            "value": 12.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "sqrrel_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 40
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "base_force_level",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>，阻挡2个及以上敌人时自身推力增加一级\\n可以放置于远程位",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "法术抗性+20",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 40
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "防火护服",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "magic_resistance",
+                      "value": 20.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 160.0
+          },
+          {
+            "key": "atk",
+            "value": 27.0
+          },
+          {
+            "key": "def",
+            "value": 17.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "sqrrel_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 40
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "base_force_level",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": "同时攻击阻挡的<@ba.kw>所有敌人</>，阻挡2个及以上敌人时自身推力增加一级\\n可以放置于远程位",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "法术抗性+23",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 40
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "防火护服",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "magic_resistance",
+                      "value": 23.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 190.0
+          },
+          {
+            "key": "atk",
+            "value": 33.0
+          },
+          {
+            "key": "def",
+            "value": 22.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_ifrit": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "ifrit_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "min_dist",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "max_dist",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "damage_scale",
+                      "value": 0.1
+                    }
+                  ],
+                  "overrideDescripton": "攻击造成<@ba.kw>超远距离的群体法术伤害</>，距离越远伤害越高，最高达到<@ba.kw>110%</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 50.0
+          },
+          {
+            "key": "attack_speed",
+            "value": 5.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "ifrit_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "min_dist",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "max_dist",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "damage_scale",
+                      "value": 0.1
+                    }
+                  ],
+                  "overrideDescripton": "攻击造成<@ba.kw>超远距离的群体法术伤害</>，距离越远伤害越高，最高达到<@ba.kw>110%</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "ifrit_equip_1_2_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "每6秒额外回复2点技力，有20%概率额外回复5点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "莱茵回路",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "interval",
+                      "value": 6.0
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].interval",
+                      "value": 6.0
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].sp",
+                      "value": 5.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "每5.5<@ba.talpu>（-0.5）</>秒额外回复2点技力，有20%概率额外回复5点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 5,
+                  "prefabKey": "2",
+                  "name": "莱茵回路",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "interval",
+                      "value": 5.5
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].interval",
+                      "value": 5.5
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].sp",
+                      "value": 5.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 64.0
+          },
+          {
+            "key": "attack_speed",
+            "value": 6.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "ifrit_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "min_dist",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "max_dist",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "damage_scale",
+                      "value": 0.1
+                    }
+                  ],
+                  "overrideDescripton": "攻击造成<@ba.kw>超远距离的群体法术伤害</>，距离越远伤害越高，最高达到<@ba.kw>110%</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "ifrit_equip_1_3_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "每6秒额外回复2点技力，有30%概率额外回复5点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "莱茵回路",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "interval",
+                      "value": 6.0
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].prob",
+                      "value": 0.3
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].interval",
+                      "value": 6.0
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].sp",
+                      "value": 5.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "每5.5<@ba.talpu>（-0.5）</>秒额外回复2点技力，有30%概率额外回复5点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 5,
+                  "prefabKey": "2",
+                  "name": "莱茵回路",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    },
+                    {
+                      "key": "interval",
+                      "value": 5.5
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].prob",
+                      "value": 0.3
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].interval",
+                      "value": 5.5
+                    },
+                    {
+                      "key": "ifrit_e_002[dice_sp].sp",
+                      "value": 5.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 72.0
+          },
+          {
+            "key": "attack_speed",
+            "value": 7.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_serum": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "serum_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "min_dist",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "max_dist",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "damage_scale",
+                      "value": 0.1
+                    }
+                  ],
+                  "overrideDescripton": "攻击造成<@ba.kw>超远距离的群体法术伤害</>，距离越远伤害越高，最高达到<@ba.kw>110%</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 150.0
+          },
+          {
+            "key": "atk",
+            "value": 49.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "serum_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "min_dist",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "max_dist",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "damage_scale",
+                      "value": 0.1
+                    }
+                  ],
+                  "overrideDescripton": "攻击造成<@ba.kw>超远距离的群体法术伤害</>，距离越远伤害越高，最高达到<@ba.kw>110%</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "4秒内没有主动攻击过，技力自然回复速度+0.6/秒",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "战术性调整",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "delay",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "sp_recovery_per_sec",
+                      "value": 0.6
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "4秒内没有主动攻击过，技力自然回复速度+0.65<@ba.talpu>（+0.05）</>/秒",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "战术性调整",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "delay",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "sp_recovery_per_sec",
+                      "value": 0.65
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 175.0
+          },
+          {
+            "key": "atk",
+            "value": 55.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "serum_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "min_dist",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "max_dist",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "damage_scale",
+                      "value": 0.1
+                    }
+                  ],
+                  "overrideDescripton": "攻击造成<@ba.kw>超远距离的群体法术伤害</>，距离越远伤害越高，最高达到<@ba.kw>110%</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "4秒内没有主动攻击过，技力自然回复速度+0.65/秒",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "战术性调整",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "delay",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "sp_recovery_per_sec",
+                      "value": 0.65
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "4秒内没有主动攻击过，技力自然回复速度+0.7<@ba.talpu>（+0.05）</>/秒",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "战术性调整",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "delay",
+                      "value": 4.0
+                    },
+                    {
+                      "key": "sp_recovery_per_sec",
+                      "value": 0.7
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 190.0
+          },
+          {
+            "key": "atk",
+            "value": 60.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_yato2": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "yato2_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "撤退时返还<@ba.kw>大量</>该次部署费用",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "withdraw_cost_recover_ratio",
+                      "value": 0.8
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 96.0
+          },
+          {
+            "key": "atk",
+            "value": 36.0
+          },
+          {
+            "key": "def",
+            "value": 20.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "yato2_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "撤退时返还<@ba.kw>大量</>该次部署费用",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "withdraw_cost_recover_ratio",
+                      "value": 0.8
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "yato2_equip_1_2_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能期间及技能结束后的10秒内攻击力+14%，技能期间攻击力额外+3%",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "鬼人强化状态",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.14
+                    },
+                    {
+                      "key": "duration",
+                      "value": 10.0
+                    },
+                    {
+                      "key": "yato2_e_002[atk].atk",
+                      "value": 0.03
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能期间及技能结束后的10秒内攻击力+17%<@ba.talpu>（+3%）</>，技能期间攻击力额外+3%",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "2",
+                  "name": "鬼人强化状态",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.17
+                    },
+                    {
+                      "key": "duration",
+                      "value": 10.0
+                    },
+                    {
+                      "key": "yato2_e_002[atk].atk",
+                      "value": 0.03
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 112.0
+          },
+          {
+            "key": "atk",
+            "value": 43.0
+          },
+          {
+            "key": "def",
+            "value": 25.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "yato2_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "撤退时返还<@ba.kw>大量</>该次部署费用",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "withdraw_cost_recover_ratio",
+                      "value": 0.8
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "yato2_equip_1_3_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能期间及技能结束后的10秒内攻击力+15%，技能期间攻击力额外+5%",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "鬼人强化状态",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.15
+                    },
+                    {
+                      "key": "duration",
+                      "value": 10.0
+                    },
+                    {
+                      "key": "yato2_e_002[atk].atk",
+                      "value": 0.05
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能期间及技能结束后的10秒内攻击力+18%<@ba.talpu>（+3%）</>，技能期间攻击力额外+5%",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "2",
+                  "name": "鬼人强化状态",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.18
+                    },
+                    {
+                      "key": "duration",
+                      "value": 10.0
+                    },
+                    {
+                      "key": "yato2_e_002[atk].atk",
+                      "value": 0.05
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 123.0
+          },
+          {
+            "key": "atk",
+            "value": 48.0
+          },
+          {
+            "key": "def",
+            "value": 28.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_003_shining": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "shining_equip_2_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "治疗生命值低于50%的友方单位时治疗量提升<@ba.kw>15%</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "heal_scale",
+                      "value": 1.15
+                    },
+                    {
+                      "key": "hp_ratio",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 45.0
+          },
+          {
+            "key": "def",
+            "value": 13.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "shining_equip_2_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "治疗生命值低于50%的友方单位时治疗量提升<@ba.kw>15%</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "heal_scale",
+                      "value": 1.15
+                    },
+                    {
+                      "key": "hp_ratio",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "攻击速度+15，装备技能2时获得+15%攻击力，装备技能3时技力自然回复速度+0.45/秒",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "法典",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "attack_speed",
+                      "value": 15.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "攻击速度+18<@ba.talpu>（+3）</>，装备技能2时获得+15%攻击力，装备技能3时技力自然回复速度+0.45/秒",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 2,
+                  "prefabKey": "2",
+                  "name": "法典",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "attack_speed",
+                      "value": 18.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": "shining_equip_2_2_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.15
+                    },
+                    {
+                      "key": "sp_recovery_per_sec",
+                      "value": 0.45
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 55.0
+          },
+          {
+            "key": "def",
+            "value": 17.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "shining_equip_2_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "治疗生命值低于50%的友方单位时治疗量提升<@ba.kw>15%</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "heal_scale",
+                      "value": 1.15
+                    },
+                    {
+                      "key": "hp_ratio",
+                      "value": 0.5
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "攻击速度+15，装备技能2时获得+25%攻击力，装备技能3时技力自然回复速度+0.6/秒",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "法典",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "attack_speed",
+                      "value": 15.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "攻击速度+18<@ba.talpu>（+3）</>，装备技能2时获得+25%攻击力，装备技能3时技力自然回复速度+0.6/秒",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 2,
+                  "prefabKey": "2",
+                  "name": "法典",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "attack_speed",
+                      "value": 18.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": "shining_equip_2_3_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.25
+                    },
+                    {
+                      "key": "sp_recovery_per_sec",
+                      "value": 0.6
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 63.0
+          },
+          {
+            "key": "def",
+            "value": 20.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_003_siege": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": null,
+            "target": "DISPLAY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "首次部署时部署费用-4",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "siege_equip_2_1_p1",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "20_root",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "runtime_cost",
+                      "value": -4.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 200.0
+          },
+          {
+            "key": "atk",
+            "value": 65.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": null,
+            "target": "DISPLAY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "首次部署时部署费用-4",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "siege_equip_2_2_p1",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "20_root",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "runtime_cost",
+                      "value": -4.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "周围四格内有敌人倒下时获得2点技力，场上随机另一名【先锋】职业干员获得1点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "粉碎",
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": "siege_equip_2_2_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 1.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 240.0
+          },
+          {
+            "key": "atk",
+            "value": 74.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": null,
+            "target": "DISPLAY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "首次部署时部署费用-4",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "siege_equip_2_3_p1",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "20_root",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "runtime_cost",
+                      "value": -4.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "周围四格内有敌人倒下时获得3点技力，场上随机另一名【先锋】职业干员获得1点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "粉碎",
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 3.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": "siege_equip_2_3_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 1.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 260.0
+          },
+          {
+            "key": "atk",
+            "value": 82.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_noirc2": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": null,
+            "target": "DISPLAY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "生命值低于50%时，获得25%的<$ba.protect>庇护</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 70.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "noirc2_equip_1_1_p1",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "hp_ratio",
+                      "value": 0.5
+                    },
+                    {
+                      "key": "damage_resistance",
+                      "value": 0.25
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 150.0
+          },
+          {
+            "key": "atk",
+            "value": 24.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": null,
+            "target": "DISPLAY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "生命值低于50%时，获得25%的<$ba.protect>庇护</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 70.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "noirc2_equip_1_2_p1",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "hp_ratio",
+                      "value": 0.5
+                    },
+                    {
+                      "key": "damage_resistance",
+                      "value": 0.25
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "非技能期间，连续攻击5次后自身获得攻击力+8%（最多3层）",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "练气",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.08
+                    },
+                    {
+                      "key": "hit_num",
+                      "value": 5.0
+                    },
+                    {
+                      "key": "attack@clear_attackcount_time",
+                      "value": 1.5
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 300.0
+          },
+          {
+            "key": "atk",
+            "value": 32.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": null,
+            "target": "DISPLAY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "生命值低于50%时，获得25%的<$ba.protect>庇护</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "value",
+                      "value": 70.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "noirc2_equip_1_3_p1",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "10",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "hp_ratio",
+                      "value": 0.5
+                    },
+                    {
+                      "key": "damage_resistance",
+                      "value": 0.25
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "非技能期间，连续攻击5次后自身获得攻击力+9%（最多3层）",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "练气",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.09
+                    },
+                    {
+                      "key": "hit_num",
+                      "value": 5.0
+                    },
+                    {
+                      "key": "attack@clear_attackcount_time",
+                      "value": 1.5
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 500.0
+          },
+          {
+            "key": "atk",
+            "value": 36.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_billro": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "billro_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "billro_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "billro_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 200.0
+          },
+          {
+            "key": "atk",
+            "value": 66.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "billro_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "billro_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "billro_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    },
+                    {
+                      "key": "billro_e_002[max_hp_buff].max_hp",
+                      "value": 0.3
+                    },
+                    {
+                      "key": "billro_e_002[max_hp_enhance_buff].max_hp",
+                      "value": 0.6
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能期间提高自身30%生命值上限，开启技能时立即恢复40%最大生命值；\\n<$ba.charged>蓄力</>时效果翻倍",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "生命之餐",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "heal_scale",
+                      "value": 0.4
+                    },
+                    {
+                      "key": "billro_t_1[enhance].heal_scale",
+                      "value": 0.8
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能期间提高自身30%生命值上限，开启技能时立即恢复45%<@ba.talpu>（+5%）</>最大生命值；\\n<$ba.charged>蓄力</>时效果翻倍",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "生命之餐",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "heal_scale",
+                      "value": 0.45
+                    },
+                    {
+                      "key": "billro_t_1[enhance].heal_scale",
+                      "value": 0.9
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 230.0
+          },
+          {
+            "key": "atk",
+            "value": 76.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "billro_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "billro_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "billro_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    },
+                    {
+                      "key": "billro_e_002[max_hp_buff].max_hp",
+                      "value": 0.45
+                    },
+                    {
+                      "key": "billro_e_002[max_hp_enhance_buff].max_hp",
+                      "value": 0.9
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能期间提高自身45%生命值上限，开启技能时立即恢复45%最大生命值；\\n<$ba.charged>蓄力</>时效果翻倍",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "生命之餐",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "heal_scale",
+                      "value": 0.45
+                    },
+                    {
+                      "key": "billro_t_1[enhance].heal_scale",
+                      "value": 0.9
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能期间提高自身45%生命值上限，开启技能时立即恢复50%<@ba.talpu>（+5%）</>最大生命值；\\n<$ba.charged>蓄力</>时效果翻倍",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "生命之餐",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "heal_scale",
+                      "value": 0.5
+                    },
+                    {
+                      "key": "billro_t_1[enhance].heal_scale",
+                      "value": 1.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 260.0
+          },
+          {
+            "key": "atk",
+            "value": 85.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_lin": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "lin_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "lin_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "lin_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 62.0
+          },
+          {
+            "key": "def",
+            "value": 45.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "lin_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "lin_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "lin_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "受到攻击时，有50%几率回复2点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "韬光",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.5
+                    },
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "受到攻击时，有55%<@ba.talpu>（+5%）</>几率回复2点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 2,
+                  "prefabKey": "2",
+                  "name": "韬光",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.55
+                    },
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 70.0
+          },
+          {
+            "key": "def",
+            "value": 50.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "lin_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "lin_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "lin_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "受到攻击时，有75%几率回复2点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "韬光",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.75
+                    },
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "受到攻击时，有80%<@ba.talpu>（+5%）</>几率回复2点技力",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 2,
+                  "prefabKey": "2",
+                  "name": "韬光",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.8
+                    },
+                    {
+                      "key": "sp",
+                      "value": 2.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 77.0
+          },
+          {
+            "key": "def",
+            "value": 53.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_mint": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "mint_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 130.0
+          },
+          {
+            "key": "atk",
+            "value": 40.0
+          },
+          {
+            "key": "def",
+            "value": 15.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "mint_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能未开启时，周围四格友方单位的防御力+18%；技能开启时，自身不容易受到敌人攻击",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "地质学者",
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 0.18
+                    },
+                    {
+                      "key": "atk",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "taunt_level",
+                      "value": -1.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能未开启时，周围四格友方单位的防御力+20%<@ba.talpu>（+2%）</>；技能开启时，自身不容易受到敌人攻击",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "地质学者",
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "taunt_level",
+                      "value": -1.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 150.0
+          },
+          {
+            "key": "atk",
+            "value": 47.0
+          },
+          {
+            "key": "def",
+            "value": 20.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "mint_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能未开启时，周围四格友方单位的防御力+21%；技能开启时，自身不容易受到敌人攻击",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "地质学者",
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 0.21
+                    },
+                    {
+                      "key": "atk",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "taunt_level",
+                      "value": -1.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能未开启时，周围四格友方单位的防御力+23%<@ba.talpu>（+2%）</>；技能开启时，自身不容易受到敌人攻击",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "地质学者",
+                  "description": null,
+                  "rangeId": "x-5",
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 0.23
+                    },
+                    {
+                      "key": "atk",
+                      "value": 0.0
+                    },
+                    {
+                      "key": "taunt_level",
+                      "value": -1.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 170.0
+          },
+          {
+            "key": "atk",
+            "value": 52.0
+          },
+          {
+            "key": "def",
+            "value": 23.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_beewax": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "beewax_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 150.0
+          },
+          {
+            "key": "atk",
+            "value": 55.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "beewax_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "beewax_equip_1_2_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能未开启时，最大生命值提升10%，每秒恢复4%的最大生命",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "沙原的庇护",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "hp_recovery_per_sec_by_max_hp_ratio",
+                      "value": 0.04
+                    },
+                    {
+                      "key": "max_hp",
+                      "value": 0.1
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 180.0
+          },
+          {
+            "key": "atk",
+            "value": 64.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "beewax_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "def",
+                      "value": 2.15
+                    },
+                    {
+                      "key": "magic_resistance",
+                      "value": 25.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].def",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "soil_e_002[buff].magic_resistance",
+                      "value": 10.0
+                    }
+                  ],
+                  "overrideDescripton": "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "beewax_equip_1_3_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "技能未开启时，最大生命值提升15%，每秒恢复4%的最大生命",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "沙原的庇护",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "hp_recovery_per_sec_by_max_hp_ratio",
+                      "value": 0.04
+                    },
+                    {
+                      "key": "max_hp",
+                      "value": 0.15
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 210.0
+          },
+          {
+            "key": "atk",
+            "value": 70.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_doroth": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "doroth_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 120.0
+          },
+          {
+            "key": "atk",
+            "value": 42.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "doroth_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "陷阱触发后，多萝西获得3%的攻击力，最多叠加10层",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "梦想家",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.03
+                    },
+                    {
+                      "key": "max_stack_cnt",
+                      "value": 10.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "陷阱触发后，多萝西获得3%的攻击力，最多叠加12<@ba.talpu>（+2）</>层",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "2",
+                  "name": "梦想家",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.03
+                    },
+                    {
+                      "key": "max_stack_cnt",
+                      "value": 12.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 140.0
+          },
+          {
+            "key": "atk",
+            "value": 50.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "doroth_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "陷阱触发后，多萝西获得4%的攻击力，最多叠加10层",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "梦想家",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.04
+                    },
+                    {
+                      "key": "max_stack_cnt",
+                      "value": 10.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "陷阱触发后，多萝西获得4%的攻击力，最多叠加12<@ba.talpu>（+2）</>层",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "2",
+                  "name": "梦想家",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.04
+                    },
+                    {
+                      "key": "max_stack_cnt",
+                      "value": 12.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 155.0
+          },
+          {
+            "key": "atk",
+            "value": 57.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_robin": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "robin_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 130.0
+          },
+          {
+            "key": "atk",
+            "value": 36.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "robin_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "robin_equip_1_2_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "受到攻击后获得迷彩，持续4秒",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "进阶隐蔽",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "talent_duration",
+                      "value": 4.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 160.0
+          },
+          {
+            "key": "atk",
+            "value": 39.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "robin_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "robin_equip_1_3_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "受到攻击后获得迷彩，持续6秒",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "进阶隐蔽",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "talent_duration",
+                      "value": 6.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 185.0
+          },
+          {
+            "key": "atk",
+            "value": 41.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_rfrost": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "rfrost_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 35.0
+          },
+          {
+            "key": "def",
+            "value": 21.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "rfrost_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "rfrost_equip_1_2_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "def_penetrate_fixed",
+                      "value": 80.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "可以使用8个迎宾踏垫（最多拥有10个），踩上去的第一个敌人会触发其效果；自身和迎宾踏垫无视目标80防御力",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "迎宾踏垫",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 8.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "可以使用10<@ba.talpu>（+2）</>个迎宾踏垫（最多拥有10个），踩上去的第一个敌人会触发其效果；自身和迎宾踏垫无视目标80防御力",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "迎宾踏垫",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 10.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 42.0
+          },
+          {
+            "key": "def",
+            "value": 23.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "rfrost_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "有20%概率部署造成2倍伤害的陷阱",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "prob",
+                      "value": 0.2
+                    },
+                    {
+                      "key": "atk_scale",
+                      "value": 2.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "rfrost_equip_1_3_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "",
+                  "talentIndex": -1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": null,
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "def_penetrate_fixed",
+                      "value": 120.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "可以使用8个迎宾踏垫（最多拥有10个），踩上去的第一个敌人会触发其效果；自身和迎宾踏垫无视目标120防御力",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "迎宾踏垫",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 8.0
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "可以使用10<@ba.talpu>（+2）</>个迎宾踏垫（最多拥有10个），踩上去的第一个敌人会触发其效果；自身和迎宾踏垫无视目标120防御力",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "迎宾踏垫",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "cnt",
+                      "value": 10.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 47.0
+          },
+          {
+            "key": "def",
+            "value": 25.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_cement": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "cement_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "sp_recover_ratio",
+                      "value": -0.8
+                    }
+                  ],
+                  "overrideDescripton": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 25.0
+          },
+          {
+            "key": "def",
+            "value": 50.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "cement_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "sp_recover_ratio",
+                      "value": -0.8
+                    }
+                  ],
+                  "overrideDescripton": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "自身获得14%的物理减伤；在战场停留35秒后效果翻倍",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "图纸校正",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "damage_resistance",
+                      "value": 0.14
+                    },
+                    {
+                      "key": "interval",
+                      "value": 35.0
+                    },
+                    {
+                      "key": "damage_resistance_addtion",
+                      "value": 0.14
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "自身获得17%<@ba.talpu>（+3%）</>的物理减伤；在战场停留35秒后效果翻倍",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "图纸校正",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "damage_resistance",
+                      "value": 0.17
+                    },
+                    {
+                      "key": "interval",
+                      "value": 35.0
+                    },
+                    {
+                      "key": "damage_resistance_addtion",
+                      "value": 0.17
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 42.0
+          },
+          {
+            "key": "def",
+            "value": 75.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "cement_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "sp_recover_ratio",
+                      "value": -0.8
+                    }
+                  ],
+                  "overrideDescripton": "缓慢回复技力，只有阻挡敌人时恢复技力回复速度",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "自身获得16%的物理减伤；在战场停留35秒后效果翻倍",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "图纸校正",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "damage_resistance",
+                      "value": 0.16
+                    },
+                    {
+                      "key": "interval",
+                      "value": 35.0
+                    },
+                    {
+                      "key": "damage_resistance_addtion",
+                      "value": 0.16
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "自身获得19%<@ba.talpu>（+3%）</>的物理减伤；在战场停留35秒后效果翻倍",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "图纸校正",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "damage_resistance",
+                      "value": 0.19
+                    },
+                    {
+                      "key": "interval",
+                      "value": 35.0
+                    },
+                    {
+                      "key": "damage_resistance_addtion",
+                      "value": 0.19
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "atk",
+            "value": 57.0
+          },
+          {
+            "key": "def",
+            "value": 100.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_002_morgan": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "morgan_equip_1_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "攻击被阻挡的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "atk_scale",
+                      "value": 1.15
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 250.0
+          },
+          {
+            "key": "atk",
+            "value": 65.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "morgan_equip_1_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "攻击被阻挡的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "atk_scale",
+                      "value": 1.15
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "在场时，自身获得最高+55%攻击力的<$ba.berserk>坚忍</>（损失70%生命值时达最大加成）",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "沸血先锋",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "min_atk",
+                      "value": 0.55
+                    },
+                    {
+                      "key": "min_hp_ratio",
+                      "value": 0.3
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "在场时，自身获得最高+57%<@ba.talpu>（+2%）</>攻击力的<$ba.berserk>坚忍</>（损失70%生命值时达最大加成）",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "沸血先锋",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "min_atk",
+                      "value": 0.57
+                    },
+                    {
+                      "key": "min_hp_ratio",
+                      "value": 0.3
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 310.0
+          },
+          {
+            "key": "atk",
+            "value": 74.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "morgan_equip_1_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "攻击被阻挡的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "atk_scale",
+                      "value": 1.15
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "在场时，自身获得最高+58%攻击力的<$ba.berserk>坚忍</>（损失70%生命值时达最大加成）",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "沸血先锋",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "min_atk",
+                      "value": 0.58
+                    },
+                    {
+                      "key": "min_hp_ratio",
+                      "value": 0.3
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "在场时，自身获得最高+60%<@ba.talpu>（+2%）</>攻击力的<$ba.berserk>坚忍</>（损失70%生命值时达最大加成）",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 50
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "沸血先锋",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "min_atk",
+                      "value": 0.6
+                    },
+                    {
+                      "key": "min_hp_ratio",
+                      "value": 0.3
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 350.0
+          },
+          {
+            "key": "atk",
+            "value": 82.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_003_nian": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": null,
+            "target": "DISPLAY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [],
+                  "overrideDescripton": "能够阻挡四个敌人",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 320.0
+          },
+          {
+            "key": "atk",
+            "value": 35.0
+          },
+          {
+            "key": "def",
+            "value": 21.0
+          },
+          {
+            "key": "block_cnt",
+            "value": 1.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "nian_equip_2_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "max_hp",
+                      "value": 0.03
+                    },
+                    {
+                      "key": "heal_scale",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "max_stack_cnt",
+                      "value": 3.0
+                    },
+                    {
+                      "key": "heal_scale_addition",
+                      "value": 0.03
+                    },
+                    {
+                      "key": "heal_scale_max_value",
+                      "value": 1.09
+                    }
+                  ],
+                  "overrideDescripton": "能够阻挡四个敌人",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "编入队伍时，所有【重装】职业干员的生命上限+19%；场上每有一名重装干员，自身受到治疗效果和生命上限额外提升3%，最多叠加3层",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "积甲成山",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "max_hp",
+                      "value": 0.19
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "编入队伍时，所有【重装】职业干员的生命上限+23%<@ba.talpu>（+4%）</>；场上每有一名重装干员，自身受到治疗效果和生命上限额外提升3%，最多叠加3层",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "积甲成山",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "max_hp",
+                      "value": 0.23
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 440.0
+          },
+          {
+            "key": "atk",
+            "value": 55.0
+          },
+          {
+            "key": "def",
+            "value": 26.0
+          },
+          {
+            "key": "block_cnt",
+            "value": 1.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "nian_equip_2_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": null,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "max_hp",
+                      "value": 0.04
+                    },
+                    {
+                      "key": "heal_scale",
+                      "value": 1.0
+                    },
+                    {
+                      "key": "max_stack_cnt",
+                      "value": 3.0
+                    },
+                    {
+                      "key": "heal_scale_addition",
+                      "value": 0.04
+                    },
+                    {
+                      "key": "heal_scale_max_value",
+                      "value": 1.12
+                    }
+                  ],
+                  "overrideDescripton": "能够阻挡四个敌人",
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": null,
+            "target": "TALENT_DATA_ONLY",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "编入队伍时，所有【重装】职业干员的生命上限+21%；场上每有一名重装干员，自身受到治疗效果和生命上限额外提升4%，最多叠加3层",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "1",
+                  "name": "积甲成山",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "max_hp",
+                      "value": 0.21
+                    }
+                  ]
+                },
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "编入队伍时，所有【重装】职业干员的生命上限+25%<@ba.talpu>（+4%）</>；场上每有一名重装干员，自身受到治疗效果和生命上限额外提升4%，最多叠加3层",
+                  "talentIndex": 0,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 4,
+                  "prefabKey": "1",
+                  "name": "积甲成山",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "max_hp",
+                      "value": 0.25
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 550.0
+          },
+          {
+            "key": "atk",
+            "value": 70.0
+          },
+          {
+            "key": "def",
+            "value": 30.0
+          },
+          {
+            "key": "block_cnt",
+            "value": 1.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      }
+    ]
+  },
+  "uniequip_003_cerber": {
+    "phases": [
+      {
+        "equipLevel": 1,
+        "parts": [
+          {
+            "resKey": "cerber_equip_2_1_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "普通攻击命中精英或领袖敌人时获得<@ba.kw>{sp}</>点技力",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 80.0
+          },
+          {
+            "key": "atk",
+            "value": 40.0
+          },
+          {
+            "key": "def",
+            "value": 17.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 2,
+        "parts": [
+          {
+            "resKey": "cerber_equip_2_2_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "普通攻击命中精英或领袖敌人时获得<@ba.kw>{sp}</>点技力",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "cerber_equip_2_2_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "部署时若周围四格内没有其他友方单位，攻击力+12%，攻击速度+12",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "独行长路",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.12
+                    },
+                    {
+                      "key": "attack_speed",
+                      "value": 12.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 105.0
+          },
+          {
+            "key": "atk",
+            "value": 49.0
+          },
+          {
+            "key": "def",
+            "value": 21.0
+          }
+        ],
+        "tokenAttributeBlackboard": {}
+      },
+      {
+        "equipLevel": 3,
+        "parts": [
+          {
+            "resKey": "cerber_equip_2_3_p1",
+            "target": "TRAIT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": null
+            },
+            "overrideTraitDataBundle": {
+              "candidates": [
+                {
+                  "additionalDescription": "普通攻击命中精英或领袖敌人时获得<@ba.kw>{sp}</>点技力",
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "blackboard": [
+                    {
+                      "key": "sp",
+                      "value": 1.0
+                    }
+                  ],
+                  "overrideDescripton": null,
+                  "prefabKey": null,
+                  "rangeId": null
+                }
+              ]
+            }
+          },
+          {
+            "resKey": "cerber_equip_2_3_p2",
+            "target": "TALENT",
+            "isToken": false,
+            "addOrOverrideTalentDataBundle": {
+              "candidates": [
+                {
+                  "displayRangeId": false,
+                  "upgradeDescription": "部署时若周围四格内没有其他友方单位，攻击力+15%，攻击速度+15",
+                  "talentIndex": 1,
+                  "unlockCondition": {
+                    "phase": 2,
+                    "level": 60
+                  },
+                  "requiredPotentialRank": 0,
+                  "prefabKey": "2",
+                  "name": "独行长路",
+                  "description": null,
+                  "rangeId": null,
+                  "blackboard": [
+                    {
+                      "key": "atk",
+                      "value": 0.15
+                    },
+                    {
+                      "key": "attack_speed",
+                      "value": 15.0
+                    }
+                  ]
+                }
+              ]
+            },
+            "overrideTraitDataBundle": {
+              "candidates": null
+            }
+          }
+        ],
+        "attributeBlackboard": [
+          {
+            "key": "max_hp",
+            "value": 120.0
+          },
+          {
+            "key": "atk",
+            "value": 56.0
+          },
+          {
+            "key": "def",
+            "value": 23.0
           }
         ],
         "tokenAttributeBlackboard": {}
