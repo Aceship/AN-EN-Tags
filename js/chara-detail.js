@@ -124,6 +124,17 @@
     var hei = 1800
 
     $(document).ready(function(){
+
+        Object.keys(db.chars).forEach(id =>{
+            var currentop = db.chars[id]
+            currentop.rarity = RarityConvert(currentop.rarity)
+        })
+
+        Object.keys(db.skills).forEach(id=>{
+            var currentskill = db.skills[id]
+            console.log(currentskill)
+        })
+        
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
           })
@@ -1774,7 +1785,7 @@
                         var time = opdataFull.skills[i].levelUpCostCond[i2-7].lvlUpTime
                         var condLeveling = opdataFull.skills[i].levelUpCostCond[i2-7].unlockCond
                         var condUnlocking = opdataFull.skills[i].unlockCond
-                        var phase = Math.max(condLeveling.phase,condUnlocking.phase)
+                        var phase = Math.max(PhaseConvert(condLeveling.phase),PhaseConvert(condUnlocking.phase))
                         var level = Math.max(condLeveling.level,condUnlocking.level)
                         materialHtml = `
                         <div style="text-align:center;background:#222">${(i2==0?"Unlock":"Rank Up")} Requirements</div>
@@ -1784,9 +1795,9 @@
                         </div>
                         `+(materialist.length>0?materialist.join(""):"")
                     }else{
-                        var condLeveling = (opdataFull.allSkillLvlup[i2-1]?opdataFull.allSkillLvlup[i2-1].unlockCond:{phase:0,level:0})
+                        var condLeveling = (opdataFull.allSkillLvlup[i2-1]?opdataFull.allSkillLvlup[i2-1].unlockCond:{phase:"TIER_0",level:0})
                         var condUnlocking = opdataFull.skills[i].unlockCond
-                        var phase = Math.max(condLeveling.phase,condUnlocking.phase)
+                        var phase = Math.max(PhaseConvert(condLeveling.phase),PhaseConvert(condUnlocking.phase))
                         var level = Math.max(condLeveling.level,condUnlocking.level)
                         materialHtml = `
                         <div style="text-align:center;background:#222">${(i2==0?"Unlock":"Rank Up")} Requirements</div>
@@ -1807,16 +1818,17 @@
                     }
                     
                     var spType = (v2.spData.spType)
-                    // console.log(spType)
+                    console.log(spType)
                     var spTypeHtml = ""
                     switch (spType){
-                        case 1:spTypeHtml = "Per second";break;
-                        case 2:spTypeHtml = "Attacking Enemy";break;
-                        case 4:spTypeHtml = "Getting Hit";break;
+                        case "INCREASE_WITH_TIME":spTypeHtml = "Per second";break;
+                        case "INCREASE_WHEN_ATTACK":spTypeHtml = "Attacking Enemy";break;
+                        case "INCREASE_WHEN_TAKEN_DAMAGE":spTypeHtml = "Getting Hit";break;
                         case 8:spTypeHtml = "Always On";break;
                         default:spTypeHtml = spType;break;
                     }
                     var spDuration= (v2.duration==0?"Instant Attack":v2.duration==-1?"Infinite":v2.duration + " Seconds")
+                    var spDurType = (v2.duration==0?"Instant":v2.duration==-1?"Infinite":"Number")
                     // console.log(v2)
                     var spDurationName = (v2.duration==0?"":"Duration")
                     var skilldetails =[]
@@ -1861,11 +1873,12 @@
                     // console.log(currSkill)
                     var skillType = ""
                     switch(currSkill.skillType){
-                        case 0 : skillType = "Passive" ;break;
-                        case 1 : skillType = "Manual Trigger" ;break;
-                        case 2 : skillType = "Auto Trigger" ;break;
+                        case "PASSIVE" : skillType = "Passive" ;break;
+                        case "MANUAL" : skillType = "Manual Trigger" ;break;
+                        case "AUTO" : skillType = "Auto Trigger" ;break;
                     }
-                    var skillType = titledMaker(skillType,"Skill Activation")
+                    console.log(currSkill.skillType)
+                    var skillType = titledMaker(skillType,"Skill Activation",`skillType-${currSkill.skillType}`)
                     var spTypeHtml = (currSkill.skillType==0?"":titledMaker(spTypeHtml,"SP Charge Type",`spType-${spType}`))
                     // console.log(materialList2)
                     // console.log(parseInt(v2.duration)>0)
@@ -1875,7 +1888,7 @@
                     //2 = auto
                     tables +=`<table id='skill${i}level${i2}stats' class='${lefthand=="true"?"left-hand":""} skillstats ${(i2!=0 ? '' : 'active')}'>
                              <tr >
-                                <td colspan='${grid?5:4}'>${spTypeHtml}${skillType}${titledMaker(spDuration,spDurationName)}</td>
+                                <td colspan='${grid?5:4}'>${spTypeHtml}${skillType}${titledMaker(spDuration,spDurationName,`spDuration-${spDurType}`)}</td>
                             </tr>
                             <tr style="height:10px"></tr>
                             <tr>
@@ -3677,7 +3690,7 @@
         charaRiic.buffChar.forEach(eachbuffchar => {
             everybuff.push(eachbuffchar.buffData)
             eachbuffchar.buffData.forEach(eachbuffdata => {
-                var checkphase = riicList.find(search=>search.phase==eachbuffdata.cond.phase&&search.level == eachbuffdata.cond.level)
+                var checkphase = riicList.find(search=>search.phase==PhaseConvert(eachbuffdata.cond.phase)&&search.level == eachbuffdata.cond.level)
                 if(!checkphase){
                     riicList.push({phase:eachbuffdata.cond.phase,level:eachbuffdata.cond.level,list:[]})
                 }
@@ -3690,7 +3703,7 @@
         }
         riicList = riicList.sort((a,b)=>{
             var calc = 0 
-            calc += (a.phase - b.phase)*100
+            calc += (PhaseConvert(a.phase) - PhaseConvert(b.phase))*100
             + (a.level - b.level)*1
 
             console.log(calc)
@@ -3700,7 +3713,7 @@
         riicList.forEach(eachcat =>{
             // checkphase.list.push(eachbuffdata.buffId)
             var currlevel = eachcat.level
-            var currphase = eachcat.phase
+            var currphase = PhaseConvert(eachcat.phase)
             var imagereq =[]
             if(currphase >=0)
                 imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
@@ -3939,7 +3952,7 @@
         opdataFull.talents.forEach(currTalent => {
             currTalent.candidates.forEach(currCandidate => {
                 var currlevel = parseInt(currCandidate.unlockCondition.level)
-                var currphase = parseInt(currCandidate.unlockCondition.phase)
+                var currphase = PhaseConvert(currCandidate.unlockCondition.phase)
                 var currpotent = parseInt(currCandidate.requiredPotentialRank)
                 if(!talentObject.req.includes(`${currphase}-${currlevel}-${currpotent}`,0)){
                     talentObject.req.push(`${currphase}-${currlevel}-${currpotent}`)
@@ -3975,6 +3988,7 @@
         // console.log(activeLevel)
         // console.log(activePotential)
 
+        console.log(talentObject)
         talentObject.req2 = talentObject.req2.sort((a,b)=>{
             var calc = 0
             calc =+ (a[0]-b[0])*100
@@ -4041,7 +4055,7 @@
                 var currCandidateTL = currTalentTL?currTalentTL[j]:undefined
                 // talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
                 var currlevel = parseInt(currCandidate.unlockCondition.level)
-                var currphase = parseInt(currCandidate.unlockCondition.phase)
+                var currphase = PhaseConvert(currCandidate.unlockCondition.phase)
                 var currpotent = parseInt(currCandidate.requiredPotentialRank)
                 talentObject.req2.forEach(requirements => {
                     if(requirements[0]>=currphase&&requirements[1]>=currlevel&&requirements[2]>=currpotent){
@@ -4159,8 +4173,8 @@
         var imagereq = []
         if(eachtalent.talent.unlockCondition.level >1)
         imagereq.push(`<span style="font-size:8px">Lv.</span>${eachtalent.talent.unlockCondition.level} `)
-        if(eachtalent.talent.unlockCondition.phase >=0)
-        imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${eachtalent.talent.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
+        if(PhaseConvert(eachtalent.talent.unlockCondition.phase) >=0)
+        imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${PhaseConvert(eachtalent.talent.unlockCondition.phase)}.png" style="width:20px;margin-top:-5px" title="Elite ${eachtalent.talent.unlockCondition.phase}">`)
         if(eachtalent.talent.requiredPotentialRank >0)
         imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/potential/${eachtalent.talent.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${eachtalent.talent.requiredPotentialRank+1}">`)
 
@@ -6070,6 +6084,14 @@
             };
             xhr.send()
         }
+    }
+
+    function RarityConvert(tier){
+        return tier.split("_").length>1 ? parseInt(tier.split("_")[1])-1 : tier
+    }
+
+    function PhaseConvert(phase){
+        return phase.split("_").length>1 ? parseInt(phase.split("_")[1]) : phase
     }
 
     function ObjectToArray(db){

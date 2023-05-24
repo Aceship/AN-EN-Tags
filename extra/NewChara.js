@@ -10,7 +10,6 @@ let json = []
 Object.keys(charaFile).forEach(element => {
     var currChara = charaFile[element]
     var isExist = false
-    // console.log(element)
     akhrtlFile.forEach(element2 => {
         if (element2.id == element){
             isExist = true;
@@ -26,12 +25,11 @@ Object.keys(charaFile).forEach(element => {
     });
     if(!isExist){
         var sex = getSex(element)
-        console.log(sex)
-        if(currChara.subProfessionId.startsWith("notchar")||element.startsWith("trap")||element.startsWith("token")||currChara.isNotObtainable == true || !sex){
+        if(currChara.subProfessionId.startsWith("notchar")||element.startsWith("trap")||element.startsWith("token")||currChara.isNotObtainable == true ){
 
         }else{
             var taglist = checkTag(currChara)
-            
+            console.log(currChara.appellation)
             json.push({
                 id:element,
                 name_cn:currChara.name,
@@ -44,7 +42,7 @@ Object.keys(charaFile).forEach(element => {
                 characteristic_kr: "",
                 camp: "",
                 type: getClass(currChara),
-                level: currChara.rarity+1,
+                level: RarityConvert(currChara.rarity)+1,
                 sex: sex,
                 tags:  taglist,
                 hidden: true,
@@ -55,14 +53,19 @@ Object.keys(charaFile).forEach(element => {
     }
 });
 
+function RarityConvert(tier){
+    console.log(tier)
+    return tier.split("_").length>1 ? parseInt(tier.split("_")[1])-1 : tier
+}
+
+
 function checkTag(currChara){
     var taglist = []
-
-    if(currChara.rarity==5){
+    if(RarityConvert(currChara.rarity)==5){
         taglist.push("高级资深干员")
-    }else if(currChara.rarity==4){
+    }else if(RarityConvert(currChara.rarity)==4){
         taglist.push("资深干员")
-    }else if(currChara.rarity==0){
+    }else if(RarityConvert(currChara.rarity)==0){
         taglist.push("支援机械")
     }
 
@@ -97,6 +100,7 @@ function getClass(currChara){
 
 function getSex(name){
     var currCharaBook = handbook.handbookDict[name]
+    console.log(name)
     if(currCharaBook){
         var currinfo = currCharaBook.storyTextAudio[0].stories[0].storyText.split("\n")[1].split("【性别】")[1]
         return currinfo
@@ -120,7 +124,5 @@ json.forEach(element => {
 
 
 fs.writeFile(`../json/tl-akhr.json`, JSON.stringify(akhrtlFile, null, '\t'), function (err) {
-    if (err) {
-        return console.log(err);
-    }
+    
 })
