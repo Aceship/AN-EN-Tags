@@ -129,11 +129,6 @@
             var currentop = db.chars[id]
             currentop.rarity = RarityConvert(currentop.rarity)
         })
-
-        Object.keys(db.skills).forEach(id=>{
-            var currentskill = db.skills[id]
-            console.log(currentskill)
-        })
         
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
@@ -1818,7 +1813,6 @@
                     }
                     
                     var spType = (v2.spData.spType)
-                    console.log(spType)
                     var spTypeHtml = ""
                     switch (spType){
                         case "INCREASE_WITH_TIME":spTypeHtml = "Per second";break;
@@ -4190,7 +4184,7 @@
         if(blacklist.includes(eachtalent.talent.name)){
             isTalentRange = undefined
         }
-        console.log(eachtalent)
+        // console.log(eachtalent)
         var isTalentRangeExtend 
         var talentdetails = []
         eachtalent.talent.blackboard.forEach(talentInfo=>{
