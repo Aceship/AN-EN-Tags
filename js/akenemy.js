@@ -156,8 +156,8 @@
         
         if(el.value != ""||el=="Browse"){
             var result = [];
-            $.each(db.enemy,function(_,enemy){
-                var languages = [db.enemy, db.enemyEN];
+            $.each(db.enemy.enemyData,function(_,enemy){
+                var languages = [db.enemy.enemyData, db.enemyEN];
                 var found = false;
                 var nameTL;
                 if(el=="Browse"){
@@ -189,7 +189,7 @@
                 $('#enemyResult').empty();
                 $('#enemyResult').show();
                 for (var i = 0; i < result.length; i++) {
-                    let currEnemy = query(db.enemy,"enemyId",result[i].id)
+                    let currEnemy = query(db.enemy.enemyData,"enemyId",result[i].id)
                     let image = `<img style="height:80px;padding:1px" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/enemy/${result[i].id}.png">  `
                     // console.log(currEnemy)
 
@@ -218,7 +218,7 @@
     function selectEnemy(el){
         $('#enemyResult').empty();
         $('#enemyResult').hide();
-        let currEnemy = query(db.enemy,"enemyId",el)
+        let currEnemy = query(db.enemy.enemyData,"enemyId",el)
         LoadAnimation(el)
         // console.log(el)
         let currEnemyEN = db.enemyEN[el]
@@ -237,14 +237,28 @@
             tlrace = currEnemyEN.enemyRace?currEnemyEN.enemyRace:""
             tlability = currEnemyEN.ability?currEnemyEN.ability:""
         }
+        let firstEnemyData = currEnemyDetail.Value[0].enemyData
         //Attack type
         let atktype =[]
-        currEnemy.attackType.split(" ").forEach(element => {
+        console.log(currEnemy)
+        let atkrange = ""
+        if(firstEnemyData){
+            switch(firstEnemyData.applyWay.m_value){
+                case "MELEE" : atkrange = "Melee" ;break;
+                case "RANGED" : atkrange = "Ranged" ;break;
+            }
+        }
+        currEnemy.damageType.forEach(element => {
             switch (element) {
                 case "近战": atktype.push("Melee") ;break;
                 case "远程": atktype.push("Ranged") ;break;
                 case "法术": atktype.push("Spell") ;break;
                 case "不攻击": atktype.push("No Attack") ;break;
+
+                case "PHYSIC" : atktype.push("Physical") ;break;
+                case "MAGIC" : atktype.push("Magic") ;break;
+                case "NO_DAMAGE" : atktype.push("No Attack") ;break;
+                case "HEAL" : atktype.push("Healing") ;break;
                 default: atktype.push(element) ;break;
             }
         });
@@ -270,32 +284,10 @@
             </div>
             <div>Enemy Type : ${currEnemy.enemyLevel.charAt(0) + currEnemy.enemyLevel.slice(1).toLowerCase()}</div>
             
-            <div>Attack type : ${atktype.join(" ")}</div>
+            <div>Attack type : ${atkrange? atkrange + " ": "" }${atktype.join(" ")}</div>
             </div>
             </div>
-            <div style="max-width:100%;margin-bottom:15px;margin-top:15px" >
-                <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
-                <div style="padding:0px;font-size:12px">
-                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/hp.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
-                    Health</div><div style="font-size:40px;margin-top:-5px">${currEnemy.endure}</div>
-                </div>
-                <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
-                
-                <div style="padding:0px;font-size:12px">
-                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/atk.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
-                    Attack</div><div style="font-size:40px;margin-top:-5px">${currEnemy.attack}</div>
-                </div>
-                <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
-                <div style="padding:0px;font-size:12px">
-                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/defense.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
-                    Defense</div><div style="font-size:40px;margin-top:-5px">${currEnemy.defence}</div>
-                </div>
-                <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
-                <div style="padding:0px;font-size:12px;text-align:right;margin-right:5px">
-                    <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/resistance.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
-                    Spell Resist</div><div style="font-size:40px;margin-top:-5px">${currEnemy.resistance}</div>
-                </div>
-            </div>
+            
             ${tlability ?
             `<div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:5px;background:#444">
                 <div style="color:#BBB;font-size:17px;background:#222;padding:5px;border-radius:2px">Abilities</div>
@@ -307,6 +299,29 @@
             </div>
         </div>`)
         
+        // <div style="max-width:100%;margin-bottom:15px;margin-top:15px" >
+        //         <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
+        //         <div style="padding:0px;font-size:12px">
+        //             <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/hp.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+        //             Health</div><div style="font-size:40px;margin-top:-5px">${currEnemy.endure}</div>
+        //         </div>
+        //         <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
+                
+        //         <div style="padding:0px;font-size:12px">
+        //             <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/atk.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+        //             Attack</div><div style="font-size:40px;margin-top:-5px">${currEnemy.attack}</div>
+        //         </div>
+        //         <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
+        //         <div style="padding:0px;font-size:12px">
+        //             <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/defense.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+        //             Defense</div><div style="font-size:40px;margin-top:-5px">${currEnemy.defence}</div>
+        //         </div>
+        //         <div class="col" style="border:3px solid #FFF;text-align:center;margin:5px;padding:0px;height:80px;width:100px;display:inline-block">
+        //         <div style="padding:0px;font-size:12px;text-align:right;margin-right:5px">
+        //             <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/enemy/resistance.png" style="margin-top:-5px;position:absolute;top:5px;left:0px">
+        //             Spell Resist</div><div style="font-size:40px;margin-top:-5px">${currEnemy.resistance}</div>
+        //         </div>
+        //     </div>
         if(currEnemyDetail){
             currHtml.push(`<div class="ak-c-black" style="text-align:center;margin-top:5px;background:#222"> Detail </div> <div class="ak-c-black" style="background:#222">`)
             currEnemyDetail.Value.forEach(element => {
@@ -327,7 +342,7 @@
     function enemyDetail(el,level){
         $('#enemyDetail2').empty();
         $('#enemyDetail2').hide();
-        let currEnemy = query(db.enemy,"enemyId",el)
+        let currEnemy = query(db.enemy.enemyData,"enemyId",el)
         let currEnemyDetail = db.enemyDetail.find(search=>search.Key == el)
         let firstEnemyData = currEnemyDetail.Value[0].enemyData
         let currEnemyData = currEnemyDetail.Value[level].enemyData
