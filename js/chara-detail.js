@@ -4383,7 +4383,7 @@
             <div class="item-image">
                 <img id="item-image" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/${itemdata.iconId}.png">
             </div>
-            <img class="item-rarity" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-${itemdata.rarity+1}.png">
+            <img class="item-rarity" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-${RarityConvert(itemdata.rarity)+1}.png">
             <div class="item-amount">${count}x</div>
         </div>`)
         return material
