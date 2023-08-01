@@ -1,51 +1,32 @@
--- local BaseHotfixer = require ("Module/Core/BaseHotfixer")
--- local xutil = require('xlua.util')
--- local eutil = CS.Torappu.Lua.Util
 
----@class BattleConverterHotFixer:HotfixBase
-local BattleConverterHotFixer = Class("BattleConverterHotFixer", HotfixBase)
+local eutil = CS.Torappu.Lua.Util
 
-local function _CalcSkillLevel(slot, isAssistChar)
-  if isAssistChar then
-    return
+
+local BattleConverterHotfixer = Class("BattleConverterHotfixer", HotfixBase)
+
+
+local function _ConvertToCharacterData(slot, isToken, isAssistChar, playerSide)
+  local slotType = slot:GetType();
+  local type = typeof(CS.Torappu.LevelData.PredefinedData.PredefinedCharacter);
+
+  if slotType == type then
+    if not CS.Torappu.Battle.BattleController.hasInstance
+        or CS.Torappu.Battle.BattleController.instance.levelId == nil
+        or CS.Torappu.Battle.BattleController.instance.levelId == "" then
+      CS.Torappu.Battle.BattleDataConverter.s_uniqueId = CS.Torappu.Battle.BattleDataConverter.s_uniqueId - 1;
+    end
   end
-  local instId = slot.inst.playerInstId
-  if instId <= 0 or instId > 100000 then
-    return
-  end
-  local tmplId = slot.tmplId
-  if tmplId ~= "char_002_amiya" and tmplId ~= "char_1001_amiya2" then
-    return
-  end
-  local playerChar = CS.Torappu.PlayerData.instance:GetCharInstById("char_002_amiya")
-  if playerChar == nil then
-    return
-  end
-  local skills = playerChar:GetSkills(tmplId)
-  if skills == nil or skills.Length <= 0 then
-    return
-  end
-  local skillIndex = slot.skillIndex
-  if skillIndex < 0 or skillIndex >= skills.Length then
-    return
-  end
-  local skill = skills[skillIndex]
-  slot.mainSkillLvl = skill.specializeLevel + playerChar.mainSkillLvl
+  return CS.Torappu.Battle.BattleDataConverter.ConvertToCharacterData(slot, isToken, isAssistChar, playerSide)
 end
 
--- _ConvertInternal(slot.inst.characterKey, slot, isToken, isAssistChar, slot.skinId, true /* generateUniqueId */);
-
-local function ConvertToCharacterData(slot, isToken, isAssistChar)
-  local ok = xpcall(_CalcSkillLevel, debug.traceback, slot, isAssistChar)
-  return CS.Torappu.Battle.BattleDataConverter._ConvertInternal(slot.inst.characterKey, slot, isToken, isAssistChar, slot.skinId, true)
-end
-
-function BattleConverterHotFixer:OnInit()
+function BattleConverterHotfixer:OnInit()
   xlua.private_accessible(CS.Torappu.Battle.BattleDataConverter)
-  self:Fix_ex(CS.Torappu.Battle.BattleDataConverter, "ConvertToCharacterData", ConvertToCharacterData)
+  self:Fix_ex(CS.Torappu.Battle.BattleDataConverter, "ConvertToCharacterData", function(slot, isToken, isAssistChar, playerSide)
+    return _ConvertToCharacterData(slot, isToken, isAssistChar, playerSide)
+  end)
 end
 
-function BattleConverterHotFixer:OnDispose()
+function BattleConverterHotfixer:OnDispose()
 end
 
-return BattleConverterHotFixer
+return BattleConverterHotfixer
