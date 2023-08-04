@@ -129,6 +129,11 @@
             var currentop = db.chars[id]
             currentop.rarity = RarityConvert(currentop.rarity)
         })
+
+        Object.keys(db.charpatch.patchChars).forEach(id =>{
+            var currentop = db.charpatch.patchChars[id]
+            currentop.rarity = RarityConvert(currentop.rarity)
+        })
         
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
