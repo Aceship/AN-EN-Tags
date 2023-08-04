@@ -1189,11 +1189,11 @@
         if (op_skill.length) ops = exclusive_skill ? ops.filter(char =>
                                                         char.skills.filter(skill =>
                                                             db.skills[skill.skillId].levels.filter(sp =>
-                                                                op_skill[0] == sp.spData.spType).length).length)
+                                                                op_skill[0] == SkillTypeConvert(sp.spData.spType)).length).length)
                                                    : ops.filter(char =>
                                                         char.skills.filter(skill =>
                                                             db.skills[skill.skillId].levels.filter(sp =>
-                                                                op_skill.includes(sp.spData.spType)).length).length);
+                                                                op_skill.includes(SkillTypeConvert(sp.spData.spType))).length).length);
 
         if ($("#filter-equip").hasClass("btn-primary")) ops = ops.filter(char=>Object.keys(db.uniequip.charEquip).includes(char.id))
 
@@ -6103,6 +6103,16 @@
 
     function PhaseConvert(phase){
         return phase.split("_").length>1 ? parseInt(phase.split("_")[1]) : phase
+    }
+
+    function SkillTypeConvert(sptype){
+        switch (sptype){
+            case "INCREASE_WITH_TIME" : return 1;
+            case "INCREASE_WHEN_ATTACK" : return 2;
+            case "INCREASE_WHEN_TAKEN_DAMAGE" : return 4;
+            case 8 : return 8 ;
+            default : return sptype;
+        }
     }
 
     function ObjectToArray(db){
