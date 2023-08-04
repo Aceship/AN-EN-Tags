@@ -1486,7 +1486,7 @@
                     </button>
                     `:""}
                     
-                    <button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='${dynextra?"width:62px;":""}height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>
+                    <button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='${dynextra?"width:62px;":""}height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${i}")'>
                         <img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'>
                     </button>
                 </li>`);
@@ -3075,7 +3075,7 @@
             Object.keys(voiceDict.dict).forEach(dict => {
                 var foldername = "voice"
                 var lang = ""
-                var wordKey = voiceDict.dict[dict].wordkey.replace("#","_")
+                var wordKey = encodeURIComponent(voiceDict.dict[dict].wordkey)
 
                 console.log(wordKey)
                 switch (dict) {
@@ -5573,7 +5573,19 @@
             currVoiceID = db.skintable.charSkins[id].voiceId
         else 
             currVoiceID = opdataFull.id
-        
+
+
+        var uniqueoplist= [
+            "char_4067_lolxh",
+            "char_311_mudrok"]
+        if(uniqueoplist.includes(opdataFull.id)){
+            if(currskin == 2){
+                currVoiceID = opdataFull.id + "#1"
+            }else{
+                currVoiceID = opdataFull.id
+            }
+        }
+
         if(name!="")chibiName=name
         if(pers!="")chibipers=pers
         if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
