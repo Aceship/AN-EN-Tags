@@ -129,6 +129,11 @@
             var currentop = db.chars[id]
             currentop.rarity = RarityConvert(currentop.rarity)
         })
+
+        Object.keys(db.charpatch.patchChars).forEach(id =>{
+            var currentop = db.charpatch.patchChars[id]
+            currentop.rarity = RarityConvert(currentop.rarity)
+        })
         
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
@@ -1184,11 +1189,11 @@
         if (op_skill.length) ops = exclusive_skill ? ops.filter(char =>
                                                         char.skills.filter(skill =>
                                                             db.skills[skill.skillId].levels.filter(sp =>
-                                                                op_skill[0] == sp.spData.spType).length).length)
+                                                                op_skill[0] == SkillTypeConvert(sp.spData.spType)).length).length)
                                                    : ops.filter(char =>
                                                         char.skills.filter(skill =>
                                                             db.skills[skill.skillId].levels.filter(sp =>
-                                                                op_skill.includes(sp.spData.spType)).length).length);
+                                                                op_skill.includes(SkillTypeConvert(sp.spData.spType))).length).length);
 
         if ($("#filter-equip").hasClass("btn-primary")) ops = ops.filter(char=>Object.keys(db.uniequip.charEquip).includes(char.id))
 
@@ -1481,7 +1486,7 @@
                     </button>
                     `:""}
                     
-                    <button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='${dynextra?"width:62px;":""}height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${opcode}")'>
+                    <button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='${dynextra?"width:62px;":""}height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${i}")'>
                         <img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'>
                     </button>
                 </li>`);
@@ -3070,7 +3075,7 @@
             Object.keys(voiceDict.dict).forEach(dict => {
                 var foldername = "voice"
                 var lang = ""
-                var wordKey = voiceDict.dict[dict].wordkey.replace("#","_")
+                var wordKey = encodeURIComponent(voiceDict.dict[dict].wordkey)
 
                 console.log(wordKey)
                 switch (dict) {
@@ -5568,7 +5573,19 @@
             currVoiceID = db.skintable.charSkins[id].voiceId
         else 
             currVoiceID = opdataFull.id
-        
+
+
+        var uniqueoplist= [
+            "char_4067_lolxh",
+            "char_311_mudrok"]
+        if(uniqueoplist.includes(opdataFull.id)){
+            if(currskin == 2){
+                currVoiceID = opdataFull.id + "#1"
+            }else{
+                currVoiceID = opdataFull.id
+            }
+        }
+
         if(name!="")chibiName=name
         if(pers!="")chibipers=pers
         if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
@@ -6086,6 +6103,16 @@
 
     function PhaseConvert(phase){
         return phase.split("_").length>1 ? parseInt(phase.split("_")[1]) : phase
+    }
+
+    function SkillTypeConvert(sptype){
+        switch (sptype){
+            case "INCREASE_WITH_TIME" : return 1;
+            case "INCREASE_WHEN_ATTACK" : return 2;
+            case "INCREASE_WHEN_TAKEN_DAMAGE" : return 4;
+            case 8 : return 8 ;
+            default : return sptype;
+        }
     }
 
     function ObjectToArray(db){

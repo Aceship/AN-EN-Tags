@@ -45,6 +45,12 @@
     var chosen_ops = {};
 
     $(document).ready(function(){
+
+        Object.keys(db.chars).forEach(id =>{
+            var currentop = db.chars[id]
+            currentop.rarity = RarityConvert(currentop.rarity)
+        })
+
         $('#to-tag').click(function() {      // When arrow is clicked
             $('body,html').animate({
                 scrollTop : 0                       // Scroll to top of body
@@ -636,7 +642,7 @@
             <div class="item-image">
                 <img id="item-image" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/${itemdata.iconId}.png">
             </div>
-            <img class="item-rarity" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-${itemdata.rarity+1}.png">
+            <img class="item-rarity" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-${RarityConvert(itemdata.rarity)+1}.png">
             <div class="item-amount">${count}x</div>
         </div>`)
         return material
@@ -675,6 +681,9 @@
         } else {
             return false;
         }
+    }
+    function RarityConvert(tier){
+        return tier.split("_").length>1 ? parseInt(tier.split("_")[1])-1 : tier
     }
 
     function changeUILanguage(){
