@@ -2064,31 +2064,57 @@
                         currebattequip.phases.forEach(phase => {
                             equiphtml[curreqphase] = ""
                             phase.parts.forEach(part => {
-                                if(part.target == "TRAIT"){
-                                    equiphtml[curreqphase] += 
-                                    `
-                                        <div>
-                                        ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
-                                        </div>
-                                    `
-                                }
+                                if(part.target == "TRAIT"&&part.isToken == false){
+                                    if(part.overrideTraitDataBundle.candidates[0].additionalDescription == null){
+                                        equiphtml[curreqphase] +=
+                                        `
+                                            <div>
+                                            ${GetTrait(part.overrideTraitDataBundle.candidates[0].overrideDescripton,part.overrideTraitDataBundle)}
+                                            </div>
+                                        `
+                                    } else {
+                                        equiphtml[curreqphase] +=
+                                        `
+                                            <div>
+                                            ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
+                                            </div>
+                                        `
+                                        }
+                                    }
                                 if(part.target == "TRAIT_DATA_ONLY"){
-                                    equiphtml[curreqphase] += 
-                                    `
-                                        <div>
-                                        ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle)}
-                                        </div>
-                                    `
-                                }
+                                    if(part.overrideTraitDataBundle.candidates[0].additionalDescription == null){
+                                        equiphtml[curreqphase] +=
+                                        `
+                                            <div>
+                                            ${GetTrait(part.overrideTraitDataBundle.candidates[0].overrideDescripton,part.overrideTraitDataBundle)}
+                                            </div>
+                                        `
+                                    } else {
+                                        equiphtml[curreqphase] +=
+                                        `
+                                            <div>
+                                            ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
+                                            </div>
+                                        `
+                                        }
+                                    }
                                 if(part.target == "DISPLAY"){
-                                    console.log(part.overrideTraitDataBundle.candidates[0])
-                                    equiphtml[curreqphase] += 
-                                    `
-                                        <div>
-                                        ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
-                                        </div>
-                                    `
-                                }
+                                    if(part.overrideTraitDataBundle.candidates[0].additionalDescription == null){
+                                        equiphtml[curreqphase] +=
+                                        `
+                                            <div>
+                                            ${GetTrait(part.overrideTraitDataBundle.candidates[0].overrideDescripton,part.overrideTraitDataBundle)}
+                                            </div>
+                                        `
+                                    } else {
+                                        equiphtml[curreqphase] +=
+                                        `
+                                            <div>
+                                            ${GetTrait(part.overrideTraitDataBundle.candidates[0].additionalDescription,part.overrideTraitDataBundle,"Additional Traits")}
+                                            </div>
+                                        `
+                                        }
+                                    }
                                 if(part.target == "TALENT"){
                                     //??
                                     console.log(part.rangeId)
@@ -4469,10 +4495,10 @@
                     </button>
                 </li>
                 `
-                var tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].overrideDescripton)
+                var tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].additionalDescription)
                 console.log(trait.candidates[trait.candidates.length-1])
                 if(!tl){
-                    tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].additionalDescription)
+                    tl = GetFullTraitsTranslation(trait.candidates[trait.candidates.length-1].overrideDescripton)
                 }
                 console.log(`Trait info : ${trait.candidates[trait.candidates.length-1].overrideDescripton}`)
                 if(!tl){

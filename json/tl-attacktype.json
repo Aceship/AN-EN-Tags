@@ -378,9 +378,187 @@
         "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@max_target}</>个敌人间跳跃，每次跳跃伤害<@ba.kw>不再降低</>并造成短暂的<$ba.sluggish>停顿</>":{
             "en":"Attack deals <@ba.kw>Arts Damage</> and inflicts <$ba.sluggish>Slow</> <@ba.kw>for {attack@sluggish}s</></br>Attack can chain up to <@ba.kw>{attack@max_target}</> enemies </br> <@ba.kw>Damage no longer reduced</> per jump</br>",
             "color":"magic"
+        },
+        "攻击造成法术伤害，攻击敌人时为攻击范围内一名友方干员治疗相当于50%伤害的生命值": {
+            "en": "Attacks deal <@ba.kw>Arts Damage</> and heal the HP of an ally within Attack Range for <@ba.kw>50%</> of the damage dealt",
+            "color": "magic"
+        },
+        "恢复友方单位生命，且会在<@ba.kw>3</>个友方单位间跳跃，每次跳跃治疗量降低25%": {
+            "en": "Restores HP of allies, bouncing between <@ba.kw>3</> allies. Healing reduced by 25% per bounce.",
+            "color": "heal"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，技能开启后改为治疗友方单位（治疗量相当于75%攻击力）": {
+            "en": "Deals <@ba.kw>Arts damage</> ; When skill is active, attacks instead restore the HP of allies (heal amount is equal to <@ba.kw>75%</> of ATK)",
+            "color": "magic"
+        },
+        "能够阻挡三个敌人，可以进行远程攻击": {
+            "en":"Blocks 3 enemies and attacks from long range.",
+            "color": "common"
+        },
+        "再部署时间<@ba.kw>减少</>，可使用远程攻击":{
+            "en": "Has <@ba.kw>reduced</> Redeployment Time, can use ranged attacks",
+            "color": "extra"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@chain.max_target}</>个敌人间跳跃，每次跳跃伤害降低15%并造成短暂<$ba.sluggish>停顿</>":{
+            "en":"Attack deals <@ba.kw>Arts Damage</> and inflicts <$ba.sluggish>Slow</> <@ba.kw> for {attack@sluggish}s</></br>Attack can chain up to <@ba.kw>{attack@chain.max_target}</> enemies </br> Damage reduced by 15% per jump</br>",
+            "color":"magic"
+        },
+        "受到致命伤时不撤退，切换成<替身>作战（替身阻挡数为0），持续20秒后自身再次替换<替身>": {
+            "en":"Does not retreat when receiving lethal damage</br>Instead, swaps to a [Substitute] to continue fighting ([Substitute] has 0 Block Count)</br>After a certain period, the [Substitute] will be replaced by the original",
+            "color":"extra"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，且会在<@ba.kw>{attack@chain.max_target}</>个敌人间跳跃，每次跳跃伤害<@ba.kw>不再降低</>并造成短暂的<$ba.sluggish>停顿</>":{
+            "en":"Attack deals <@ba.kw>Arts Damage</> and inflicts <$ba.sluggish>Slow</> <@ba.kw>for {attack@sluggish}s</></br>Attack can chain up to <@ba.kw>{attack@chain.max_target}</> enemies </br> <@ba.kw>Damage no longer reduced</> per jump</br>",
+            "color":"magic"
+        },
+        "无视目标<@ba.kw>{magic_resist_penetrate_fixed}</>点法术抗性": {
+            "en": "Ignore <@ba.kw>{magic_resist_penetrate_fixed}</> of target's RES",
+            "color":"magic"
+        },
+        "普通攻击命中精英或领袖敌人时获得<@ba.kw>{sp}</>点技力": {
+            "en": "Gain <@ba.kw>1</> SP when normal attacks hit an elite or leader enemy.",
+            "color":"extra"
+        },
+        "普通攻击命中精英或领袖敌人时获得<@ba.kw>1</>点技力": {
+            "en": "Gain <@ba.kw>1</> SP when normal attacks hit an elite or leader enemy.",
+            "color":"extra"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，在找不到攻击目标时可以将攻击能量<@ba.kw>储存</>起来之后一齐发射（最多4个）":{
+            "en": "Attacks deal <@ba.kw>Arts damage</>; When unable to find a target, attacks can be <@ba.kw>stored up</> and fired all at once (Up to 4 charges)",
+            "color":"magic"
+        },
+        "拥有已储存的攻击能量时，攻击速度+30":{
+            "en": "ASPD +30 when there are stored attacks",
+            "color":"extra"
+        },
+        "技能造成的伤害提升<@ba.vup>{value:0%}</>":{
+            "en": "Deals <@ba.vup>{value:0%}</> more damage with skills",
+            "color":"common"
+        },
+        "攻击时无视敌人<@ba.vup>{def_penetrate_fixed}</>点的防御力":{
+            "en": "Attacks ignore <@ba.vup>{def_penetrate_fixed}</> DEF",
+            "color":"physical"
+        },
+        "攻击被阻挡的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>":{
+            "en": "Increases ATK to <@ba.vup>{atk_scale:0%}</> when attacking blocked enemies",
+            "color":"common"
+        },
+        "被击倒时不撤退且回复所有生命但生命上限<@ba.vdown>-{value:0%}</>，攻击速度<@ba.vup>+{attack_speed}</>（单次部署只触发1次）": {
+            "en": "When defeated, does not retreat and recovers all HP instead. However, Max HP <@ba.vdown>-{value:0%}</> and ASPD <@ba.vup>+{attack_speed}</> (Can only activate once every deployment)",
+            "color": "extra"
+        },
+        "生命值低于50%时，获得25%的<$ba.protect>庇护</>": {
+            "en": "Gain 25% <$ba.protect>Sanctuary</> when HP is below 50%",
+            "color": "extra"
+        },
+        "治疗生命值低于50%的友方单位时治疗量提升<@ba.kw>15%</>":{
+            "en": "When healing allied units with less than 50% HP, increases heal amount by <@ba.kw>15%</>",
+            "color": "heal"
+        },
+        "治疗地面单位时治疗量提升<@ba.kw>15%</>": {
+            "en": "Healing increased by <@ba.kw>15%</> when healing a ground unit",
+            "color": "heal"
+        },
+        "自身获得<$ba.buffres>抵抗</>且更不容易受到敌人的攻击":{
+            "en": "Gain <$ba.buffres>status resistance</> , and become less likely to be attacked",
+            "color": "extra"
+        },
+        "拥有较大治疗范围，治疗较远目标时治疗量<@ba.kw>不再降低</>": {
+            "en": "Has a large healing range and healing is <@ba.kw>no longer reduced</> for distant targets",
+            "color": "heal"
+        },
+        "攻击空中单位时攻击力提升至<@ba.kw>{atk_scale:0%}</>": {
+            "en": "Increases ATK to <@ba.kw>{atk_scale:0%}</> when attacking aerial targets",
+            "color": "extra"
+        },
+        "范围内存在地面敌人时攻击速度<@ba.kw>+8</>": {
+            "en": "When there are ground enemies within range, ASPD <@ba.kw>+8</>",
+            "color": "extra"
+        },
+        "攻击被阻挡的敌人时攻击力提升至<@ba.kw>{atk_scale:0%}</>": {
+            "en": "Increases ATK to <@ba.kw>{atk_scale:0%}</> when attacking blocked enemies",
+            "color": "extra"
+        },
+        "再部署时间<@ba.kw>减少</>": {
+            "en": "Redeployment Time <@ba.kw>reduced</>",
+            "color": "extra"
+        },
+        "攻击正前方的敌人时攻击力提升至<@ba.kw>105%</>且无视其物理闪避":{
+            "en": "Increases ATK to <@ba.kw>105%</> when attacking enemies directly in front, and ignores their Physical Dodge",
+            "color": "extra"
+        },
+        "攻击重量较重（重量等级大于等于3）的敌人时，攻击力提升至<@ba.kw>115%</>":{
+            "en": "When attacking a heavy enemy (weight 3 or greater), ATK increased to <@ba.kw>115%</>",
+            "color": "physical"
+        },
+        "再部署时间<@ba.kw>减少</>，撤退时不返还<@ba.kw>部署费用</>，在场时每3秒消耗<@ba.kw>2</>点部署费用（不足时自动撤退）":{
+            "en": "Has <@ba.kw>reduced</> Redeployment Time, but <@ba.kw>DP Cost</> is not refunded upon retreating; While deployed, <@ba.kw>2 DP</> are consumed every 3 seconds (automatically retreats without sufficient DP)",
+            "color": "extra"
+        },
+        "拖拽期间敌人受到正比于距离的法术伤害":{
+            "en": "While being pulled, enemies take <@ba.kw>Arts damage</> proportional to the distance traveled",
+            "color": "magic"
+        },
+        "攻击范围内所有敌人移动速度<@ba.kw>-20%</>":{
+            "en": "Slows the Movement Speed of enemies within this unit's attack range by <@ba.kw>20%</>",
+            "color": "extra"
+        },
+        "对攻击范围内<@ba.kw>所有敌人</>造成伤害\\n拥有65%的物理和法术闪避且不容易成为敌人的<@ba.kw>攻击目标</>":{
+            "en": "Deals Damage to <@ba.kw>all targets</> within range<br>65% chance to dodge Physical and Arts attacks and is less likely to be <@ba.kw>targeted</> by enemies",
+            "color": "extra"
+        },
+        "受到致命伤时不撤退，切换成<替身>作战（替身阻挡数为0但攻击力<@ba.kw>提升</>），持续20秒后自身再次替换<替身>":{
+            "en": "Instead of retreating when defeated, switch to a <Substitute> (Substitute has 0 Block, but ATK is <@ba.kw>increased</>) for 20 seconds before switching back to the original",
+            "color": "extra"
+        },
+        "受到致命伤时不撤退，切换成<替身>作战（替身阻挡数为0但生命值<@ba.kw>提升</>），持续20秒后自身再次替换<替身>":{
+            "en": "Instead of retreating when defeated, switch to a <Substitute> (Substitute has 0 Block, but HP is <@ba.kw>increased</>) for 20 seconds before switching back to the original",
+            "color": "extra"
+        },
+        "攻击范围内存在敌人时技力自然恢复速度+0.2/s":{
+            "en": "SP recovery +0.2/sec when there are enemies within range",
+            "color": "extra"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，并对敌人造成<@ba.kw>较长</>的<$ba.sluggish>停顿</>":{
+            "en": "Attacks deal <@ba.kw>Arts damage</>, and <$ba.sluggish>Slow</> the enemy for a <@ba.kw>moderate</> period of time",
+            "color": "extra"
+        },
+        "阻挡敌人时防御力<@ba.kw>+20%</>":{
+            "en": "DEF <@ba.kw>+20%</> when blocking an enemy",
+            "color": "common"
+        },
+        "能够阻挡四个敌人":{
+            "en": "Blocks 4 enemies",
+            "color": "common"
+        },
+        "受到的伤害减少<@ba.kw>15%</>":{
+            "en": "Reduces damage taken by <@ba.kw>15%</>",
+            "color": "common"
+        },
+        "缓慢回复技力，只有阻挡敌人时恢复技力回复速度":{
+            "en": "SP recovery is slowed except when blocking enemies",
+            "color": "extra"
+        },
+        "不阻挡敌人时无法自我回复技力，阻挡敌人时恢复技力回复速度且攻击力+15%，防御力+15%":{
+            "en": "SP does not recover when not blocking an enemy. When blocking an enemy, gain SP recovery, ATK <@ba.kw>+15%</> , and DEF <@ba.kw>+15%</>",
+            "color": "extra"
+        },
+        "能够阻挡两个敌人，阻挡敌人时攻击力和防御力各+8％":{
+            "en": "Blocks 2 enemies; Gains +8% ATK and DEF while blocking enemies",
+            "color": "common"
+        },
+        "首次部署时部署费用-4":{
+            "en": "The first Deployment Cost -4",
+            "color": "extra"
+        },
+        "击杀敌人后获得<@ba.vup>{cost:0}</>点部署费用，撤退时返还<@ba.kw>该次</>部署费用":{
+            "en": "Generates <@ba.vup>{cost:0}</> DP after this unit defeats an enemy; Refunds the <@ba.kw>current</> DP Cost when retreated",
+            "color": "extra"
+        },
+        "攻击生命值低于<@ba.vup>{hp_ratio:0%}</>的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>":{
+            "en": "When attacking enemies with less than <@ba.vup>{hp_ratio:0%}</> of their max HP, increase ATK to <@ba.vup>{atk_scale:0%}</>",
+            "color": "extra"
         }
-
-        
     },
     "parts":[
         {
