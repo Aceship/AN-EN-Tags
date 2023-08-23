@@ -4287,7 +4287,7 @@
         var currModuleTalentName = EN?EN.name:TL?TL.name:CN.name
         var currModuleTalentDesc = EN?EN.upgradeDescription:TL?TL.upgradeDescription:CN.upgradeDescription
 
-        currModuleTalentDesc=ChangeDescriptionColor2(currModuleTalentDesc)
+        currModuleTalentDesc=ChangeDescriptionColor2(currModuleTalentDesc.replace('<Substitute>','&lt;Substitute&gt;'))
 
         var isModuleTalentRange = CN.rangeId
         var Moduletalentdetails = []
