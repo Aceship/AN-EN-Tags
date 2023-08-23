@@ -4197,21 +4197,25 @@
         var activePotential = 0
         var ModuleTalenthtml = ''
         var TalentDataBundle = null
+        var tempBlackboard=[[],[],null]
 
         for(i=0;i<DataBundle.length;i++){
-            if (DataBundle[i].target.includes('TALENT') && DataBundle[i].addOrOverrideTalentDataBundle.candidates[0].name!=null && DataBundle[i].isToken == false){
-                if(TalentDataBundle == null) {
+            if (DataBundle[i].target.includes('TALENT')){
+                for(j=0;j<DataBundle[i].addOrOverrideTalentDataBundle.candidates.length;j++){
+                    tempBlackboard[j].push(...DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].blackboard)
+                    if(DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].rangeId != null) tempBlackboard[2]=DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].rangeId
+                    if(DataBundle[i].addOrOverrideTalentDataBundle.candidates.length==1) tempBlackboard[1].push(...DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].blackboard)
+                }
+                if(DataBundle[i].addOrOverrideTalentDataBundle.candidates[0].name!=null && DataBundle[i].isToken == false && TalentDataBundle == null) {
                     TalentDataBundle=DataBundle[i].addOrOverrideTalentDataBundle.candidates
-                }else{
-                    for(j=0;j<TalentDataBundle.length;j++){
-                        TalentDataBundle[j].blackboard.push(...DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].blackboard)
-                        TalentDataBundle[j].blackboard=[...new Set(TalentDataBundle[j].blackboard)]
-                        if(DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].rangeId != null) TalentDataBundle[j].rangeId=DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].rangeId
-                    }
                 }
             }
         }
-
+        for(k=0;k<TalentDataBundle.length;k++){
+            TalentDataBundle[k].blackboard.push(...tempBlackboard[k])
+            TalentDataBundle[k].blackboard=[...new Set(TalentDataBundle[k].blackboard)]
+            if(tempBlackboard[2] != null) TalentDataBundle[k].rangeId=tempBlackboard[2]
+        }
 
         if (TalentDataBundle[0].talentIndex==-1) var upgradeTalent='Addition Talent'
         else var upgradeTalent='Talent Upgrade'
