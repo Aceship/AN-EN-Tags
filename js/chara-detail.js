@@ -2123,7 +2123,7 @@
                                 if(part.target == "TALENT"){
                                     //??
                                     console.log(part.rangeId)
-                                    if(part.addOrOverrideTalentDataBundle.candidates[0].rangeId){
+                                    if(part.addOrOverrideTalentDataBundle.candidates[0].rangeId && part.addOrOverrideTalentDataBundle.candidates[0].displayRangeId){
                                         equiphtml[curreqphase]+=`${titledMaker2(rangeMaker(part.addOrOverrideTalentDataBundle.candidates[0].rangeId,false),"")}`
                                     }
                                 }
@@ -4287,7 +4287,7 @@
         var currModuleTalentName = EN?EN.name:TL?TL.name:CN.name
         var currModuleTalentDesc = EN?EN.upgradeDescription:TL?TL.upgradeDescription:CN.upgradeDescription
 
-        currModuleTalentDesc=ChangeDescriptionColor2(currModuleTalentDesc.replace('<Substitute>','&lt;Substitute&gt;'))
+        currModuleTalentDesc=ChangeDescriptionColor2(currModuleTalentDesc.replace(/\<([A-z]+)\>/g,"&lt;"+"$1"+'&gt;'))
 
         var isModuleTalentRange = CN.rangeId
         var Moduletalentdetails = []
