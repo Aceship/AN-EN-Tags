@@ -121,7 +121,6 @@ $.each(Alllang, function (keys,val){
         });
     });
 })
-console.log(d0)
 
 console.log(materials)
         
@@ -134,7 +133,7 @@ $.when(d0[0],d0[1],d0[2],d0[3]).then(function() {
 
 /*===== Retrieve and store characters =====*/
 var charsLib = [{"path":"en_US","Lang":"en"} ,{"path":"zh_CN","Lang":"cn"}];
-var chars={'en':{},'cn':{}}
+var charsmat={'en':{},'cn':{}}
 var charparse={}
 var d1=[,]
 var d2=[,]
@@ -147,13 +146,12 @@ $.each(charsLib, function (i,val){
         $.each(data, function (key, char) {
             // retrieve E1 and E2 costs
             i = 0
-            //console.log(key)
             $.each(char.phases, function (_, phase) {
                 let elevel = "E" + i++;
                 if (phase.evolveCost) {
                     $.each(phase.evolveCost, function(_, mat) {
-                        if (!(mat.id in chars[val["Lang"]])) chars[val["Lang"]][mat.id] = [];
-                        chars[val["Lang"]][mat.id].push({
+                        if (!(mat.id in charsmat[val["Lang"]])) charsmat[val["Lang"]][mat.id] = [];
+                        charsmat[val["Lang"]][mat.id].push({
                             "class": elevel,
                             "id": key,
                             "name": val["Lang"]=='en'?char.name:char.appellation,
@@ -163,7 +161,6 @@ $.each(charsLib, function (i,val){
                         if(!(key in charparse)) {
                             charparse[key]={"name":val["Lang"]=='en'?char.name:char.appellation,
                                             "char_level":char.rarity.length>1?Number(char.rarity.slice(-1)):char.rarity + 1}}
-                        
                     });
                 }
             });
@@ -171,8 +168,8 @@ $.each(charsLib, function (i,val){
             // retrieve skills costs
             $.each(char.allSkillLvlup, function (skill_level, level) {
                 $.each(level.lvlUpCost, function (_, mat) {
-                    if (!(mat.id in chars[val["Lang"]])) chars[val["Lang"]][mat.id] = [];
-                    chars[val["Lang"]][mat.id].push({
+                    if (!(mat.id in charsmat[val["Lang"]])) charsmat[val["Lang"]][mat.id] = [];
+                    charsmat[val["Lang"]][mat.id].push({
                         "class": "Skill-up",
                         "id": key,
                         "name": val["Lang"]=='en'?char.name:char.appellation,
@@ -188,14 +185,13 @@ $.each(charsLib, function (i,val){
             s = 0;
             $.each(char.skills, function (skill_index, skill) {
                 s += 1;
-
                 /// Skill level
                 l = 0;
                 $.each(skill.levelUpCostCond, function (skill_level, level) {
                     l += 8;
                     $.each(level.levelUpCost, function (_, mat) {
-                        if (!(mat.id in chars[val["Lang"]])) chars[val["Lang"]][mat.id] = [];
-                        chars[val["Lang"]][mat.id].push({
+                        if (!(mat.id in charsmat[val["Lang"]])) charsmat[val["Lang"]][mat.id] = [];
+                        charsmat[val["Lang"]][mat.id].push({
                             "class": "Skill-up",
                             "id": key,
                             "name": val["Lang"]=='en'?char.name:char.appellation,
@@ -208,7 +204,6 @@ $.each(charsLib, function (i,val){
                 });
             });
         });
-        
     });
 })
 
@@ -222,8 +217,8 @@ $.each(charsLib, function (i,val){
                 let elevel = "E" + i++;
                 if (phase.evolveCost) {
                     $.each(phase.evolveCost, function(_, mat) {
-                        if (!(mat.id in chars[val["Lang"]])) chars[val["Lang"]][mat.id] = [];
-                        chars[val["Lang"]][mat.id].push({
+                        if (!(mat.id in charsmat[val["Lang"]])) charsmat[val["Lang"]][mat.id] = [];
+                        charsmat[val["Lang"]][mat.id].push({
                             "class": elevel,
                             "id": key,
                             "name": val["Lang"]=='en'?char.name+" (Guard)":char.appellation+" (Guard)",
@@ -240,8 +235,8 @@ $.each(charsLib, function (i,val){
             // retrieve skills costs
             $.each(char.allSkillLvlup, function (skill_level, level) {
                 $.each(level.lvlUpCost, function (_, mat) {
-                    if (!(mat.id in chars[val["Lang"]])) chars[val["Lang"]][mat.id] = [];
-                    chars[val["Lang"]][mat.id].push({
+                    if (!(mat.id in charsmat[val["Lang"]])) charsmat[val["Lang"]][mat.id] = [];
+                    charsmat[val["Lang"]][mat.id].push({
                         "class": "Skill-up",
                         "id": key,
                         "name": val["Lang"]=='en'?char.name+" (Guard)":char.appellation+" (Guard)",
@@ -257,15 +252,13 @@ $.each(charsLib, function (i,val){
             s = 0;
             $.each(char.skills, function (skill_index, skill) {
                 s += 1;
-
                 /// Skill level
                 l = 0;
                 $.each(skill.levelUpCostCond, function (skill_level, level) {
                     l += 8;
-
                     $.each(level.levelUpCost, function (_, mat) {
-                        if (!(mat.id in chars[val["Lang"]])) chars[val["Lang"]][mat.id] = [];
-                        chars[val["Lang"]][mat.id].push({
+                        if (!(mat.id in charsmat[val["Lang"]])) charsmat[val["Lang"]][mat.id] = [];
+                        charsmat[val["Lang"]][mat.id].push({
                             "class": "Skill-up",
                             "id": key,
                             "name": val["Lang"]=='en'?char.name+" (Guard)":char.appellation+" (Guard)",
@@ -278,9 +271,9 @@ $.each(charsLib, function (i,val){
                 });
             });
         });
-        
     });
 })
+
 // uniequip_table.json
 $.when(d1[0],d1[1],d2[0],d2[1]).then(function () {
     console.log(charparse)
@@ -292,8 +285,8 @@ $.when(d1[0],d1[1],d2[0],d2[1]).then(function () {
                         for(j=0;j<mod.itemCost[String(i+1)].length;j++){
                             if(mod.itemCost[String(i+1)][j].type!="GOLD"){
                                 //console.log(mod.itemCost[String(i+1)][j].id)
-                                if(!(mod.itemCost[String(i+1)][j].id in chars[val["Lang"]])) chars[val["Lang"]][mod.itemCost[String(i+1)][j].id] = [];
-                                chars[val["Lang"]][mod.itemCost[String(i+1)][j].id].push({
+                                if(!(mod.itemCost[String(i+1)][j].id in charsmat[val["Lang"]])) charsmat[val["Lang"]][mod.itemCost[String(i+1)][j].id] = [];
+                                charsmat[val["Lang"]][mod.itemCost[String(i+1)][j].id].push({
                                     "class": "Module",
                                     "id": mod.charId,
                                     "name": charparse[mod.charId]["name"],
@@ -309,11 +302,14 @@ $.when(d1[0],d1[1],d2[0],d2[1]).then(function () {
             })
         })
     })
-    console.log('Mod Ready !!!')
-    actualize()
+    $.when(d3[0],d3[1]).then(function () {
+        actualize()
+        $.holdReady(false)
+        console.log('All Ready !!!')
+    });
 })
 
-console.log(chars)
+console.log(charsmat)
 
 $(document).ready(function() {
     $.getScript("js/aknav.js", function() {
@@ -359,10 +355,7 @@ $(document).ready(function() {
 });
 
 $.when(d0[0],d0[1],d0[2],d0[3],d1[0],d1[1],d2[0],d2[1],d3[0],d3[1]).then(function () {
-    if (checkedTags.length) {
-        console.log('All Ready !!!')
-        actualize();
-    }
+    if (checkedTags.length) actualize();
     $.holdReady(false)
 });
 
@@ -410,7 +403,7 @@ function clickBtnOpt(el) {
             $(this).removeClass("btn-primary btn-secondary").addClass("btn-secondary");
         });
     }
-
+    
     actualize_optStars();
     actualize_optLevels();
     actualize();
@@ -488,9 +481,8 @@ function actualize() {
     chars_selection = {}
     $(".btn-primary.btn-tag").each(function(_, btn) {
         let mat_id = $(btn).attr("mat-id");
-        chars_selection[mat_id] = $.map($.extend(true, {}, chars[Alllang[reg]["char"]][mat_id]), val => [val]);
+        chars_selection[mat_id] = $.map($.extend(true, {}, charsmat[Alllang[reg]["char"]][mat_id]), val => [val]);
     });
-    console.log(chars_selection)
     for (let key in chars_selection) {
         // filter by stars and levels
         chars_selection[key] = chars_selection[key].filter(char =>
@@ -508,7 +500,6 @@ function actualize() {
             let s8 = a.name.localeCompare(b.name) // compare name alphabatically
 
             return s1+s2+s3+s4+s5+s6+s7+s8
-
         }); 
     } console.log(chars_selection)
     
@@ -599,6 +590,8 @@ function actualize() {
                     if (char.skill >= 7) titleimg = char.skill_level;
                     info += skill_levels[char.skill_level];
                     // info += `<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/rank/${skill_levels[char.skill_level].toLocaleLowerCase()}.png' style='width:40px;height:40px'title='Skill ${titleimg}'>`;
+                } else if (char.class == "Module"){
+                    info += `Module ${char.mod_index.slice(-1).toUpperCase()} ${char.mod_level} `
                 } else {
                     if(char.class=="E1")info += "Elite 1";
                     else info += "Elite 2";
