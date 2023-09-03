@@ -110,8 +110,7 @@ $(".btn-tag").each(function () {
 });
 
 var d0=[,,,]
-$.each(Alllang, function (keys,val){
-    var Lang=keys
+$.each(Alllang, function (Lang,val){
     d0[val["i"]] = $.getJSON("json/gamedata/"+val["path"]+"/gamedata/excel/item_table.json", function (data) {
         $.each(data.items, function (key, item) {
             if (key in materials) {
@@ -122,7 +121,7 @@ $.each(Alllang, function (keys,val){
     });
 })
 
-console.log(materials)
+console.log("materials",materials)
         
 /*===== Put names into buttons =====*/
 $.when(d0[0],d0[1],d0[2],d0[3]).then(function() {
@@ -138,10 +137,10 @@ var charparse={}
 var d1=[,]
 var d2=[,]
 var d3=[,]
+var mat_total={'en':{},'cn':{}}
 
 // character_table.json
 $.each(charsLib, function (i,val){
-    console.log(val)
     d1[i] = $.getJSON("json/gamedata/"+val["path"]+"/gamedata/excel/character_table.json", function (data) {
         $.each(data, function (key, char) {
             // retrieve E1 and E2 costs
@@ -276,7 +275,7 @@ $.each(charsLib, function (i,val){
 
 // uniequip_table.json
 $.when(d1[0],d1[1],d2[0],d2[1]).then(function () {
-    console.log(charparse)
+    console.log("charparse",charparse)
     $.each(charsLib, function (i,val){
         d3[i] = $.getJSON("json/gamedata/"+val["path"]+"/gamedata/excel/uniequip_table.json", function (data) {
             $.each(data.equipDict, function (_,mod) {
@@ -303,13 +302,23 @@ $.when(d1[0],d1[1],d2[0],d2[1]).then(function () {
         })
     })
     $.when(d3[0],d3[1]).then(function () {
+        $.each(charsmat, function (Lang,mat){
+            $.each(mat, function(matid,char){
+                $.each(char, function(_,val){
+                    if(!(matid in mat_total[Lang])) mat_total[Lang][matid]=0
+                    mat_total[Lang][matid]+=val.count
+                })
+            })
+        })
+        mat_modal()
+        console.log("mat_total",mat_total)
         actualize()
         $.holdReady(false)
         console.log('All Ready !!!')
     });
 })
 
-console.log(charsmat)
+console.log("charsmat",charsmat)
 
 $(document).ready(function() {
     $.getScript("js/aknav.js", function() {
@@ -352,11 +361,6 @@ $(document).ready(function() {
             $(el).html($(el).attr("title"));
         }
     });
-});
-
-$.when(d0[0],d0[1],d0[2],d0[3],d1[0],d1[1],d2[0],d2[1],d3[0],d3[1]).then(function () {
-    if (checkedTags.length) actualize();
-    $.holdReady(false)
 });
 
 function regDropdown(el) {
@@ -521,10 +525,10 @@ function actualize() {
             
             total_materials[mat_id] += char.count;
 
-            body.push('<button type="button"' +
-                      ' class="ak-shadow-small ak-btn btn btn-sm btn-char my-1 ak-rare-' + char.char_level + '"' +
-                      ' data-toggle="tooltip" data-placement="bottom" onclick="charSwap(this)"' +
-                      style + ' "title="' + char.name + '" mat-id="' + mat_id + '" mat-count=' + char.count + '>');
+            body.push(  '<button type="button"' +
+                        ' class="ak-shadow-small ak-btn btn btn-sm btn-char my-1 ak-rare-' + char.char_level + '"' +
+                        ' data-toggle="tooltip" data-placement="bottom" onclick="charSwap(this)"' +
+                        style + ' "title="' + char.name + '" mat-id="' + mat_id + '" mat-count=' + char.count + '>');
 
             if (showImage) {
                 if (size < 60) {
@@ -602,15 +606,75 @@ function actualize() {
         
             body.push("</button>\n")    
         }
-        body.push('<td><div class="internal-container" style="position: relative;width:100px;">' +
+        body.push(  '<td><div class="internal-container" style="position: relative;width:100px;">' +
                     '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-' + (mat_id.includes("update_token_1")?'4':mat_id.includes("mod")?'5':String(mat_id % 10)) + '.png">' +
                     '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;object-fit: contain;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/' + materials[mat_id].iconId + '.png">' +
                     '<div class="item-amount" style="font-weight: bold; bottom: 0; right: 0; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000; position: absolute;" mat-id="' + mat_id + '">' + total_materials[mat_id] + "x</div>" +
-                  "</div></td>");
+                    "</div></td>");
         $("#tbody-recommend").append(body.join(""));
     });
 
     $('[data-toggle="tooltip"]').tooltip();
+}
+
+function mat_modal(){
+    var modalhtml=[]
+    var LangLib=['en','cn']
+    var matLib=Object.keys(materials).sort()
+
+    console.log(matLib)
+
+    // Tier 5-1
+    for(var Tier = 5;Tier > 0;Tier--){
+        modalhtml.push(`<tr class="tr-matusage"><td>Tier ${Tier}</td>`)
+        LangLib.forEach(Lang => {
+            modalhtml.push('<td>')
+            matLib.forEach(id => {
+                if(id.slice(-1)==Tier && id.length==5){
+                        modalhtml.push('<div class="internal-container" style="position: relative;width:100px;display: inline-block;">' +
+                                    '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-' + (id.includes("update_token_1")?'4':id.includes("mod")?'5':String(id % 10)) + '.png">' +
+                                    '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;object-fit: contain;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/' + materials[id].iconId + `.png" title="${materials[id][Lang]}">` +
+                                    '<div class="item-amount" style="font-weight: bold; bottom: 0; right: 0; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000; position: absolute;" mat-id="' + id + '">' + mat_total[Lang][id] + 'x</div>' +
+                                    '</div>')
+                }
+            })
+            modalhtml.push('</td>')
+        })
+        modalhtml.push('</tr>')
+    }
+
+    // Skill Book
+    modalhtml.push(`<tr class="tr-matusage"><td>Skill Book</td>`)
+    LangLib.forEach(Lang => {
+        modalhtml.push('<td>')
+        matLib.forEach(id => {
+            if(id.length==4){
+                    modalhtml.push('<div class="internal-container" style="position: relative;width:100px;display: inline-block;">' +
+                                '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-' + (id.includes("update_token_1")?'4':id.includes("mod")?'5':String(id % 10)) + '.png">' +
+                                '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;object-fit: contain;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/' + materials[id].iconId + `.png" title="${materials[id][Lang]}">` +
+                                '<div class="item-amount" style="font-weight: bold; bottom: 0; right: 0; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000; position: absolute;" mat-id="' + id + '">' + mat_total[Lang][id] + 'x</div>' +
+                                '</div>')
+            }
+        })
+        modalhtml.push('</td>')
+    })
+    modalhtml.push('</tr>')
+    // Module
+    modalhtml.push(`<tr class="tr-matusage"><td>Module Material</td>`)
+    LangLib.forEach(Lang => {
+        modalhtml.push('<td>')
+        matLib.slice(-3,).forEach(id => {
+                    modalhtml.push('<div class="internal-container" style="position: relative;width:100px;display: inline-block;">' +
+                                '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-' + (id.includes("update_token_1")?'4':id.includes("mod")?'5':String(id % 10)) + '.png">' +
+                                '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;object-fit: contain;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/' + materials[id].iconId + `.png" title="${materials[id][Lang]}">` +
+                                '<div class="item-amount" style="font-weight: bold; bottom: 0; right: 0; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000; position: absolute;" mat-id="' + id + '">' + mat_total[Lang][id] + 'x</div>' +
+                                '</div>')
+        })
+        modalhtml.push('</td>')
+    })
+    modalhtml.push('</tr>')
+
+    $("#tbody-matuasge").append(modalhtml.join(""))
 }
 
 function charSwap(el) {
