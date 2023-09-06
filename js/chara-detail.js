@@ -90,6 +90,7 @@
     var spinewidget 
     var spinewidgetcg
     var curropname
+    var defaulttoken
     var globaltoken
     var globalelite = 0
     var globallevel =[1,1,1]
@@ -212,7 +213,7 @@
                     LoadAnimation()
                 }
                 if(!spinewidgettoken){
-                    if(opdataFull.tokenKey){
+                    if(globaltoken){
                         LoadAnimationToken()
                     }
                 }
@@ -307,7 +308,7 @@
                 LoadAnimation()
             }
             if(spinewidgettoken){
-                if(opdataFull.tokenKey){
+                if(globaltoken){
                     LoadAnimationToken()
                 }
             }
@@ -1352,9 +1353,17 @@
             // });
             // console.log(charalist.join("\n"))
             //
-            
+            //get globaltoken early for tokenchibi (L:1465-)
+            defaulttoken = null
+            $.each(opdataFull.talents,(_,t)=>{
+                if (!defaulttoken&&t.candidates[0].tokenKey){
+                    defaulttoken=t.candidates[0].tokenKey
+                    return false
+                }
+            })
+            globaltoken=defaulttoken?defaulttoken:opdataFull.skills[0]?opdataFull.skills[0].overrideTokenKey:null
 
-            tokenname = opdataFull.tokenKey
+            tokenname = globaltoken
             currskin =opcode
             currVoiceID = opdataFull.id
 
@@ -1981,8 +1990,7 @@
                     var skillIcon = skillData.iconId;
                 }
 
-                var skilltoken = opdataFull.skills[i].overrideTokenKey
-                if(skilltoken== null) skilltoken = opdataFull.tokenKey
+                var skilltoken = opdataFull.skills[i].overrideTokenKey?opdataFull.skills[i].overrideTokenKey:defaulttoken
                 
                 var tabItem = $(`
                 <li class='nav-item'>
@@ -2018,7 +2026,6 @@
             });
             //TOKEN SOON ??
             $("#token-contents").html("")
-            globaltoken = opdataFull.tokenKey
             globalelite = 0
             UpdateTokenContent()
             //EQUIP CHECK
@@ -2797,10 +2804,14 @@
         ChangeSkillAnim(i,skillLength,skilltoken)
         globalskill = i
         UpdateTokenContent()
+        if(loadchibi && !defaulttoken && skilltoken.includes("token_")){
+            LoadAnimationToken()
+        }
     }
 
     function UpdateTokenContent(){
         if(!globaltoken){
+            $("#token-contents").html("");
             return
         }
         var tokenfulldata = db.chars[globaltoken]
@@ -3635,7 +3646,7 @@
                     filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir,type:"3"})
                 });
             }
-            if(element.name.includes(opdataFull.tokenKey)){
+            if(element.name.includes(globaltoken)){
                 // console.log(element.name)
                 element.sounds.forEach(soundfx => {
                     var fxname = soundfx.asset.split("/")
@@ -5417,7 +5428,7 @@
     }
 
 
-    function LoadAnimationToken(tokenkey=opdataFull.tokenKey){
+    function LoadAnimationToken(tokenkey=globaltoken){
         // console.log(spinewidgettoken)
         // console.log(opdataFull)
         // var tokenName =
