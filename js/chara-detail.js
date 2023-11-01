@@ -2803,7 +2803,7 @@
 
                 splitskills.forEach(element => {
                     console.log(element)
-                    var currSkill = db.skills[element]
+                    var currSkill = db.skills[element].levels[0]
                     var skillname = db.skillsEN[element]?db.skillsEN[element].levels[0].name:db.skillsTL[element]?db.skillsTL[element].name:currSkill.name;
                     var skillnum = opdataFull.skills.findIndex(skill => skill.skillId==element)
                     skills.push({id:element,name:skillname,num:skillnum+1})
