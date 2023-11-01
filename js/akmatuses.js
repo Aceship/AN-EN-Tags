@@ -126,7 +126,7 @@ console.log("materials",materials)
 /*===== Put names into buttons =====*/
 $.when(d0[0],d0[1],d0[2],d0[3]).then(function() {
     $(".btn-tag").each(function() {
-        $(this).text(materials[$(this).attr("mat-id")][lang])
+        $(this).text(materials[$(this).attr("mat-id")][lang]?materials[$(this).attr("mat-id")][lang]:materials[$(this).attr("mat-id")]['cn'])
     });
 });
 
@@ -290,7 +290,7 @@ $.when(d1[0],d1[1],d2[0],d2[1]).then(function () {
                                     "id": mod.charId,
                                     "name": charparse[mod.charId]["name"],
                                     "count": mod.itemCost[String(i+1)][j].count,
-                                    "mod_index": (mod.typeIcon).toLowerCase(),
+                                    "mod_index": mod.typeIcon.toLowerCase(),
                                     "mod_level": i+1,
                                     "char_level": charparse[mod.charId].char_level
                                 })
@@ -479,6 +479,7 @@ function changeUILanguage() {
 var total_materials = {};
 var inverse_levels = {"Skill-up": 2, "E1": 1, "E2": 0,"Module":3};
 var skill_levels = ["0", "1", "2", "3", "4", "5", "6", "7", "M-1", "M-2", "M-3",];
+var modindex={"x":3,"y":2,"d":1}
 function actualize() {
     $("#tbody-recommend").html("");
 
@@ -493,11 +494,11 @@ function actualize() {
             optStars.includes(char["char_level"].toString()) && optLevels.includes(char["class"]));
         // sort by stars > levels > skill index (if any) > skill level (if any) > name
         chars_selection[key] = chars_selection[key].sort((a, b) => { // Positive b then a while negative a then b
-
+            
             let s1 = (b.char_level - a.char_level) * 50000 // compare rarity 6 > 1
             let s2 = (inverse_levels[b.class] - inverse_levels[a.class]) * 10000 // compare class Module > skill > E2 > E1
-            let s3 = ('mod_index' in b && 'mod_index' in a)?a.name.localeCompare(b.name)* 2500:0 // compare name alphabatically when both module 
-            let s4 = (('mod_index' in a) ? a.mod_index.slice(-1) : 'Z').localeCompare(('mod_index' in b) ? b.mod_index.slice(-1):"Z") * 1000 // compare get x > y > not module
+            let s3 = ('mod_index' in b && 'mod_index' in a)?a.name.localeCompare(b.name)* 5000:0 // compare name alphabatically when both module 
+            let s4 = ((('mod_index' in b) ? modindex[b.mod_index.slice(-1)] : 0)-(('mod_index' in a) ? modindex[a.mod_index.slice(-1)]:0)) * 1000 // compare get x > y > d > not module
             let s5 = ((('mod_level' in a) ? a.mod_level : 0) - (('mod_level' in b) ? b.mod_level : 0))* 250 // compare module lv 1 > 3 > not module
             let s6 = ((('skill_level' in a) ? a.skill_level : 0) - (('skill_level' in b) ? b.skill_level : 0)) * 20 // compare skill lv 1 > 10(M3)
             let s7 = ((('skill_index' in b) ? b.skill_index : 0) - (('skill_index' in a) ? a.skill_index : 0)) * 5 // compare skill index S1 > S3
@@ -552,7 +553,7 @@ function actualize() {
                 if (char.class == "Skill-up") {
                     var titleimg = char.skill_level?skill_levels[char.skill_level]:skill_levels[char.mod_level]
                     if (char.skill >= 7) titleimg = char.skill_level;
-                    // info += skill_levels[char.skill_level];
+                    // info += skill_levels[char.skill_level]; 
                     if (char.skill_index > 0) {
                         info = `<div style='background-color:transparent;margin:2px 0px 2px 0px;display:flex;width:100%;'>`;
                         info += `<div style='color:#ffffff;font-size:24px;font-weight:bold;background:#000;width:50%;float:left;margin-right:1px;display:flex;justify-content:center;align-items:center;padding:0px 5px 0px 5px;'>S${char.skill_index}</div>`;
@@ -565,7 +566,7 @@ function actualize() {
                 } else if (char.class == "Module") {
                     info = `<div style='background-color:transparent;margin:2px 0px 2px 0px;display:flex;width:100%;'>`;
                         info += `<div style='color:#ffffff;font-size:14px;font-weight:bold;background:#000;width:50%;float:left;margin-right:1px;display:flex;justify-content:center;align-items:center;padding:0px 5px 0px 5px;'>
-                                    <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/type/${char.mod_index}.png' style='width:40px;height:40px'title='${char.mod_index.toUpperCase()}'>
+                                    <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/type/${char.mod_index}.png' style='width:40px;height:40px'title='${char.mod_index.replace("-d","-∆").toUpperCase()}'>
                                 </div>`
                         info += `<div style="background:#222; width:50%; float:right; display:flex; justify-content:center; margin-left:1px;padding:0px 5px 0px 5px;">`
                         info += `<img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/stage/img_stg${char.mod_level}.png' style='width:40px;height:40px'title='Level ${char.mod_level}'></div>`;
@@ -577,7 +578,7 @@ function actualize() {
                 //body.push(info + `<div class="item-amount" style="font-weight: bold; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd">${char.mod_index?"["+char.mod_index.toUpperCase()+"] - ":""}${char.count}x</div>`);
                 if(char.class=="Module"){
                     body.push(info + `  <div style='background-color:transparent;margin:2px 0px 0px 0px;display:flex;width:100%;'>
-                                            <div class="mod-index" style="padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd ;width:50%; float:left; display:flex; justify-content:center;align-items:center;margin-right:1px">${char.mod_index.toUpperCase()}</div>
+                                            <div class="mod-index" style="padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd ;width:50%; float:left; display:flex; justify-content:center;align-items:center;margin-right:1px">${char.mod_index.replace("-d","-∆").toUpperCase()}</div>
                                             <div class="item-amount" style="font-weight: bold; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd ;width:50%; float:right; display:flex; justify-content:center;align-items:center;margin-left:1px">${char.count}x</div>`);
                 }else{
                     body.push(info + `<div class="item-amount" style="font-weight: bold; padding: 0px 2px 0px 2px; border-radius: 5px; z-index: 2; background-color: #000000;color:#ddd">${char.mod_index?"["+char.mod_index.toUpperCase()+"] - ":""}${char.count}x</div>`);
@@ -630,7 +631,7 @@ function mat_modal(){
         LangLib.forEach(Lang => {
             modalhtml.push('<td>')
             matLib.forEach(id => {
-                if(id.slice(-1)==Tier && id.length==5){
+                if(id.slice(-1)==Tier && id.length==5 && mat_total[Lang][id]){
                         modalhtml.push('<div class="internal-container" style="position: relative;width:100px;display: inline-block;">' +
                                     '<img class="item-rarity" width=100 height=100 style="top: 0; left: 0; z-index: 0;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-' + (id.includes("update_token_1")?'4':id.includes("mod")?'5':String(id % 10)) + '.png">' +
                                     '<img class="item-image" width=100 height=100 style="top:0; left: 0; padding: 10px; z-index: 1; position: absolute;object-fit: contain;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/items/' + materials[id].iconId + `.png" title="${materials[id][Lang]}">` +
