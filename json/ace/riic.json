@@ -4,6 +4,11 @@
 		"desc": "When stationed at the Command Center, production of all Craft Stations +2% (Only highest effect becomes active)",
 		"descformat": "When stationed at the Command Center, production of all Craft Stations <@cc.vup>+2%</> (Only highest effect becomes active)"
 	},
+	"control_prod_fraction[000]": {
+		"name": "Candle Knight's Glimmer",
+		"desc": "When stationed at the Command Center, production of all Knight operators stationed at Craft Stations +7%",
+		"descformat": "When stationed at the Command Center, production of all <$cc.tag.knight><@cc.kw>Knight</></> operators stationed at Craft Stations <@cc.vup>+7%</>"
+	},
 	"control_token_prod_spd[000]": {
 		"name": "Overclock",
 		"desc": "When stationed at the Command Center, if there are 2 or more Operation Platforms stationed in Power Stations, production of all Craft Stations +2% (Only highest effect becomes active)",
@@ -18,6 +23,11 @@
 		"name": "Secret Bargaining Tactics",
 		"desc": "When stationed at the Command Center with operators from the Monster Hunter Squad, order acquisition efficiency of all Trade Stations +7% (Only highest effect becomes active)",
 		"descformat": "When stationed at the Command Center with operators from the <$cc.tag.mh><@cc.kw>Monster Hunter Squad</></>, order acquisition efficiency of all Trade Stations <@cc.vup>+7%</> (Only highest effect becomes active)"
+	},
+	"control_bd_spd[000]": {
+		"name": "Old Friends' Reunion",
+		"desc": "When stationed at the Command Center, self mood reduction per hour +0.5. Additionally, every operator from Blacksteel stationed in a Craft Station gains production +5%",
+		"descformat": "When stationed at the Command Center, self mood reduction per hour <@cc.vdown>+0.5</>. Additionally, every operator from <$cc.g.bs><@cc.kw>Blacksteel</></> stationed in a Craft Station gains production <@cc.vup>+5%</>"
 	},
 	"control_pow_bot[000]": {
 		"name": "I think it's Possible",
@@ -116,6 +126,16 @@
 	},
 	"control_mp_cost[008]": {
 		"name": "Egocentric",
+		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
+		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
+	},
+	"control_mp_cost[009]": {
+		"name": "Sunshine Smile",
+		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
+		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
+	},
+	"control_mp_cost[010]": {
+		"name": "Marigold Poetry Club",
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
 		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
 	},
@@ -233,6 +253,11 @@
 		"name": "Leader",
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in all Dorms +0.05 (Only highest effect becomes active)",
 		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in all Dorms <@cc.vup>+0.05</> (Only highest effect becomes active)"
+	},
+	"control_tra_limit&spd[010]": {
+		"name": "Operations Expert",
+		"desc": "When stationed at the Command Center, for every 1 Glasgow Group operator stationed in the same Trade Station, order acquisition efficiency +10%",
+		"descformat": "When stationed at the Command Center, for every <@cc.vup>1</> <$cc.g.glasgow><@cc.kw>Glasgow Group</></> operator stationed in the same Trade Station, order acquisition efficiency <@cc.vup>+10%</>"
 	},
 	"power_rec_spd&cost[000]": {
 		"name": "Enthusiasm",
@@ -664,6 +689,16 @@
 		"desc": "When stationed at a Craft Station, increase production of precious metals by +35%",
 		"descformat": "When stationed at a Craft Station, increase production of <@cc.kw>precious metals</> by <@cc.vup>+35%</>"
 	},
+	"manu_formula_spd&cost[000]": {
+		"name": "Little Stray Thoughts",
+		"desc": "When stationed at a Craft Station, increase production of precious metals by +25% and mood reduction per hour +0.25",
+		"descformat": "When stationed at a Craft Station, increase production of <@cc.kw>precious metals</> by <@cc.vup>+25%</> and mood reduction per hour <@cc.vdown>+0.25</>"
+	},
+	"manu_formula_spd&cost_bd[000]": {
+		"name": "Take the Lead",
+		"desc": "When stationed at a Craft Station, increase production of precious metals by +2% and mood reduction per hour -0.15 for every Blacksteel operator stationed in the base (excluding Assistants), up to 3",
+		"descformat": "When stationed at a Craft Station, increase production of <@cc.kw>precious metals</> by <@cc.vup>+2%</> and mood reduction per hour <@cc.vup>-0.15</> for every <$cc.g.bs><@cc.kw>Blacksteel</></> operator stationed in the base (excluding Assistants), up to <@cc.kw>3</>"
+	},
 	"manu_formula_spd[200]": {
 		"name": "Originium Crafts·α",
 		"desc": "When stationed at a Craft Station, increase production of originium products by +30%",
@@ -924,6 +959,16 @@
 		"desc": "When stationed at a Trade Station, increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
 		"descformat": "When stationed at a Trade Station, <@cc.kw>increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
 	},
+	"trade_ord_wt&cost[002]": {
+		"name": "Appraiser's Insight",
+		"desc": "When stationed at a Trade Station, slightly increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, <@cc.kw>slightly increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"trade_ord_wt&cost[012]": {
+		"name": "Appraiser's Methods",
+		"desc": "When stationed at a Trade Station, increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, <@cc.kw>increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
+	},
 	"trade_ord_spd&share[000]": {
 		"name": "Advocate",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +15% for every other operator working in the Trade Station",
@@ -988,6 +1033,16 @@
 		"name": "Gang Compass",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +20% for every 1 Glasgow Group operator stationed in the same Trade Station. Additionally, order acquisition efficiency +35% if Siege is stationed in the same Trade Station",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+20%</> for every 1 <$cc.g.glasgow><@cc.kw>Glasgow Group</></> operator stationed in the same Trade Station. Additionally, order acquisition efficiency <@cc.vup>+35%</> if <@cc.kw>Siege</> is stationed in the same Trade Station"
+	},
+	"trade_ord_par&per[000]": {
+		"name": "Self-made Trader·α",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +25%. Additionally, order acquisition efficiency +5% if Ines is stationed in any Workplace (excluding Assistants)",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+25%</>. Additionally, order acquisition efficiency <@cc.vup>+5%</> if <@cc.kw>Ines</> is stationed in any <$cc.c.room3><@cc.kw>Workplace</></> (excluding Assistants)"
+	},
+	"trade_ord_par&per[001]": {
+		"name": "Self-made Trader·β",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +30%. Additionally, order acquisition efficiency +5% respectively if Ines or W are stationed in any Workplace (excluding Assistants)",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+30%</>. Additionally, order acquisition efficiency <@cc.vup>+5%</> respectively if <@cc.kw>Ines</> or <@cc.kw>W</> are stationed in any <$cc.c.room3><@cc.kw>Workplace</></> (excluding Assistants)"
 	},
 	"workshop_proc_probability[000]": {
 		"name": "Focus·α",
@@ -1139,6 +1194,21 @@
 		"desc": "When stationed at the Synthesis Station and producing skill materials, recipes which consume 2 mood will have -1 mood consumed",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>skill materials</>, recipes which consume <@cc.kw>2</> mood will have <@cc.vup>-1</> mood consumed"
 	},
+	"workshop_formula_cost3[101]": {
+		"name": "Cautious Processing",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, recipes which consume 2 mood will have -1 mood consumed",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, recipes which consume <@cc.kw>2</> mood will have <@cc.vup>-1</> mood consumed"
+	},
+	"workshop_formula_cost4[010]": {
+		"name": "Law of Asceticism",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, recipes will consume 4 mood",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, recipes will consume <@cc.vup>4</> mood"
+	},
+	"workshop_formula_cost4[011]": {
+		"name": "Law of Devotion",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, recipes will consume 3 mood",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, recipes will consume <@cc.vup>3</> mood"
+	},
 	"workshop_formula_cost&dorm[000]": {
 		"name": "Hearts Joined Together",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, for every 10 operators with 12 or less mood stationed in the Dorms, recipes which consume 4 mood will have -1 mood consumed",
@@ -1186,6 +1256,11 @@
 	},
 	"workshop_formula_probability[129]": {
 		"name": "Scholar",
+		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 80%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
+	},
+	"workshop_formula_probability[139]": {
+		"name": "Lich's Studies",
 		"desc": "When stationed at the Synthesis Station and producing elite materials, increase the rate of by-products by 80%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
 	},
@@ -1328,6 +1403,11 @@
 		"name": "DIY·Alloy",
 		"desc": "When stationed at the Synthesis Station and producing alloy-type elite materials, increase the rate of by-products by 100%",
 		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>alloy-type elite materials</>, increase the rate of by-products by <@cc.vup>100%</>"
+	},
+	"workshop_formula_device[060]": {
+		"name": "DIY·Keton·α",
+		"desc": "When stationed at the Synthesis Station and producing keton-type elite materials, increase the rate of by-products by 80%",
+		"descformat": "When stationed at the Synthesis Station and producing <@cc.kw>keton-type elite materials</>, increase the rate of by-products by <@cc.vup>80%</>"
 	},
 	"workshop_formula_rub[000]": {
 		"name": "Prevent All Wastage",
@@ -1849,6 +1929,11 @@
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.2 per hour (When stacked, only the highest effect becomes active)",
 		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.2</> per hour (When stacked, only the highest effect becomes active)"
 	},
+	"dorm_rec_all&single[000]": {
+		"name": "Have a Drink",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators below maximum mood within that dorm by a total of +0.8 per hour, evenly distributed (When stacked with skills affecting single or multiple operators, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators below maximum mood within that dorm by a total of <@cc.vup>+0.8</> per hour, evenly distributed (When stacked with skills affecting single or multiple operators, only the highest effect becomes active)"
+	},
 	"dorm_powToRecAll[000]": {
 		"name": "Gentle Shimmer·α",
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.1 per hour. Additionally, further increase mood recovery by +0.05 for every existing Power Station (When stacked, only the highest effect becomes active, based on the total recovery value after summation)",
@@ -1974,6 +2059,26 @@
 		"desc": "When stationed at a Dorm, increase the mood recovery effect of Siege on Glasgow Group operators in the same Dorm by +0.3",
 		"descformat": "When stationed at a Dorm, increase the mood recovery effect of <@cc.kw>Siege</> on <$cc.g.glasgow><@cc.kw>Glasgow Group</></> operators in the same Dorm by <@cc.vup>+0.3</>"
 	},
+	"dorm_rec_all[023]": {
+		"name": "Aromatherapy·α",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.15 per hour (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.15</> per hour (When stacked, only the highest effect becomes active)"
+	},
+	"dorm_bd_num[000]": {
+		"name": "Silent Resonance",
+		"desc": "When stationed at a Dorm, gain 1 Silent Resonance for every 1 operator in the current Dorm",
+		"descformat": "When stationed at a Dorm, gain <@cc.vup>1</> <$cc.bd_B><@cc.rem>Silent Resonance</></> for every <@cc.vup>1</> operator in the current Dorm"
+	},
+	"dorm_rec_all&bd[000]": {
+		"name": "Wordless Carols",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.2 per hour. For every 5 Silent Resonance, further increase mood recovery by +0.01 (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.2</> per hour. For every <@cc.vup>5</> <$cc.bd_B><@cc.rem>Silent Resonance</></>, further increase mood recovery by <@cc.vup>+0.01</> (When stacked, only the highest effect becomes active)"
+	},
+	"dorm_rec_all&tired[000]": {
+		"name": "Aromatherapy·β",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.15 per hour. At the same time, further increase mood recovery of operators with 18 or less mood by +0.1 per hour (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.15</> per hour. At the same time, further increase mood recovery of operators with <@cc.vup>18</> or less mood by <@cc.vup>+0.1</> per hour (When stacked, only the highest effect becomes active)"
+	},
 	"hire_spd[000]": {
 		"name": "HR Management·α",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%",
@@ -2044,6 +2149,16 @@
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20% and mood reduction per hour -0.25",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</> and mood reduction per hour <@cc.vup>-0.25</>"
 	},
+	"hire_spd_cost[101]": {
+		"name": "Court Etiquette",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +10% and mood reduction per hour -0.25",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+10%</> and mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"hire_spd_cost[120]": {
+		"name": "Authoritative Edict",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +30% and mood reduction per hour -0.25",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+30%</> and mood reduction per hour <@cc.vup>-0.25</>"
+	},
 	"hire_spd_cost&clue[001]": {
 		"name": "Rescue Team·External Contact",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +30%",
@@ -2104,10 +2219,20 @@
 		"desc": "When stationed at Human Resource, gain +10 Worldly Plight for every Open Recruitment slot (excluding the initial slots)",
 		"descformat": "When stationed at Human Resource, gain <@cc.vup>+10</> <$cc.bd_b1><@cc.rem>Worldly Plight</></> for every Open Recruitment slot (excluding the initial slots)"
 	},
+	"hire_spd_bd_n1_n1[300]": {
+		"name": "Heartfelt Performance",
+		"desc": "When stationed at Human Resource, gain +15 Silent Resonance for every Open Recruitment slot (excluding the initial slots)",
+		"descformat": "When stationed at Human Resource, gain <@cc.vup>+15</> <$cc.bd_B><@cc.rem>Silent Resonance</></> for every Open Recruitment slot (excluding the initial slots)"
+	},
 	"hire_spd_blitz[000]": {
 		"name": "Linguistics",
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Additionally, further increase accumulation of networking resources by +5% for every 1 Intelligence Reserve and +5% for every 1 Ursus Specialty Drink",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Additionally, further increase accumulation of networking resources by <@cc.vup>+5%</> for every <@cc.vup>1</> <$cc.bd_ash><@cc.rem>Intelligence Reserve</></> and <@cc.vup>+5%</> for every <@cc.vup>1</> <$cc.bd_tachanka><@cc.rem>Ursus Specialty Drink</></>"
+	},
+	"hire_spd&clue2[260]": {
+		"name": "Old Acquaintances and New Friends",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Whenever a refresh count is gained, increase the chance of obtaining clues from Glasgow Group (affected by work duration and Open Recruitment slots)",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Whenever <@cc.vup>a refresh count</> is gained, increase the chance of obtaining clues from <@cc.kw>Glasgow Group</> (affected by work duration and Open Recruitment slots)"
 	},
 	"meet_spd[000]": {
 		"name": "Clue Collection·α",
@@ -2188,6 +2313,11 @@
 		"name": "\"Professional Ethics\"·β",
 		"desc": "When stationed at Reception and only self is working, clue collection speed +35% and mood reduction per hour +1",
 		"descformat": "When stationed at Reception and only self is working, clue collection speed <@cc.vup>+35%</> and mood reduction per hour <@cc.vdown>+1</>"
+	},
+	"meet_spd&exchange[000]": {
+		"name": "Innocent Smile",
+		"desc": "When stationed at Reception and Clue Exchange is in progress, clue collection speed +30%",
+		"descformat": "When stationed at Reception and Clue Exchange is in progress, clue collection speed <@cc.vup>+30%</>"
 	},
 	"meet_team[020]": {
 		"name": "Royal Agent (Self-proclaimed)",
