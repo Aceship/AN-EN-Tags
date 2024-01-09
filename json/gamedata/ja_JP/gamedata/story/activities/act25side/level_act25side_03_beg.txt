@@ -1,0 +1,711 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[playsound(key="$d_avg_crwddiscuss_outside", loop=true, channel="bgs",volume=0)]
+[playMusic(intro="$Tremont_intro",key="$Tremont_loop", volume=0)]
+[MusicVolume(volume=0.6, fadetime=3)]
+[SoundVolume(volume=0.4, channel="bgs",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[PlaySound(key="$d_gen_walk_n", volume=0.7)]
+[charslot(slot="l",name="avg_npc_524_1#1$1",duration=0.5)]
+[charslot(slot="r",name="avg_npc_523_1#1$1",duration=0.5)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_524_1#1$1",focus="l")]
+[name="記者A"]何グズグズしてんの、急ぐわよ。どこのメディアも明日は副大統領のライン生命訪問をトップニュースで扱うでしょうし、ほかより良い写真が撮れなかったら編集長にこってり絞られちゃうわ。
+[Dialog]
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[PlaySound(key="$d_avg_clothmovement", volume=0.7)]
+[Delay(time=1)]
+[name="記者B"]待ってくれ、身分証がどっかいっちゃって……
+[charslot(slot="l",name="avg_npc_524_1#1$1",focus="l")]
+[name="記者A"]えっ！？　どうするのよ、それじゃ入れないじゃないの！
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="記者B"]とりあえず君だけでも良い場所を確保しといてくれ！　俺は戻って探してくるよ！
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.7)]
+[charslot(slot = "right",posfrom = "0,0", posto = "300,0",afrom = 1, ato = 0,duration = 1)]
+[Delay(time=1.5)]
+[charslot(duration=1)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_529_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_npc_530_1#1$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_529_1#1$1",focus="l")]
+[name="ライン生命職員A"]どうしてこんなに人が集まってるんだか……
+[name="ライン生命職員A"]下のカフェでモーニングセットを買ってきたかったのに……この感じだと入れそうもないわね。
+[charslot(slot="r",name="avg_npc_530_1#1$1",focus="r")]
+[name="ライン生命職員B"]副大統領が会社に公式訪問してくる上に、生中継までするせいで大手新聞社の記者たちも勢揃いしてるんだ。渋滞で道が通れないなんてことになってないだけマシだって。
+[Dialog]
+[charslot(duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_534_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="一般市民？"]……
+[Dialog]
+[StopSound(channel="bgs", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=0.7)]
+[charslot(slot="l",name="avg_npc_895_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_895_1#1$1",focus="l")]
+[name="イフリータ"]なあ、オマエ気付いたか？
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="ロスモンティス"]何に？
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="イフリータ"]最初は工場で、次はライン生命だろ？　トリマウンツって、何か起きたらその場所を封鎖したがるよな。
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="ロスモンティス"]ライン生命とあの工場では、理由が違うんじゃない？　今回はライン生命に繋がる主要道路の一部を通行禁止にしただけでしょ。多分副大統領の車列が通るから、安全のためにこうしてるんだと思う。
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="イフリータ"]でも、それでほかの通りは混んじまってるわけだろ。
+[name="イフリータ"]そもそも、本当に封鎖するだけで誰にも見られずに済むのかよ？　やり方雑だし、頭わりーじゃん。
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="ロスモンティス"]……うん。
+[charslot(slot="r",name="avg_391_rosmon_1#4$1",focus="r")]
+[name="ロスモンティス"]そういえば、ドクターは何を見てるの？
+[Dialog]
+[charslot(slot="l",focus="n")]
+[Decision(options="ひと雨来るかなと思ってね。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="イフリータ"]おいおい、今日は一日晴れだぜ！　出かける時ちょうど、ホテルのテレビで天気予報やってただろ？　ドクターって、意外と物覚えわりーんだな。
+[name="イフリータ"]別に今は雨期でもねーし、降らないって。
+[Dialog]
+[charslot(duration=0.5)]
+[delay(time=1)]
+確かに、今日もよく晴れてはいる。
+トリマウンツの都市建設計画は非常に緻密で、林立するビルは日差しを遮らない配置で建てられていた。おかげで、初冬の暖かな陽光がどの通りにも均一に注がれている。
+あなたは顔を上げた。遠くに黒雲がゆったりと浮かんでいる。風は雲のある方向へと吹いていて、それはこの都市から遠ざかっていくように見えた。
+けれど、それでもずっと雲は視界の中にある。
+と同時に、あなたの目に映ったのは、慌ただしい交差点と停止した車両、高所でちらつく光、そして巧妙に変装した「通行人」……
+あなたはあくまで冷静さを保ったまま、子供たちに早く行こうと促した。
+[Dialog]
+[charslot(slot="l",name="avg_npc_895_1#1$1",focus="n")]
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="ロスモンティス"]どうかしたの？　ドクター。
+[Dialog]
+[charslot(slot="l",focus="n")]
+[Decision(options="恐らくマイレンダー基金のスパイだろう。;軍の工作員らしい人物を見た。;急ごう、ミュルジスが待っている。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="n")]
+[name="イフリータ"]安心しろよ、ドクター。オレサマたちが守ってやるからさ。
+[Dialog]
+[charslot(slot="l",focus="n")]
+[Decision(options="それでも、今日の任務を忘れないように……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_npc_895_1#7$1",focus="l")]
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="n")]
+[name="イフリータ"]わかってるって。ホテルを出る前も何回も言ってたじゃねーか。
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="イフリータ"]オレサマは約束したことは絶対守るぜ。オマエの指揮にはちゃんと従うよ。
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="ロスモンティス"]着いたよ。
+[Dialog]
+[delay(time=0.5)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="29_g9_headquarter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$d_gen_walk_n",volume=0.7)]
+[charslot(slot="m",name="avg_249_mlyss_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="ミュルジス"]Dr.{@nickname}、また会ったわね。
+[name="ミュルジス"]今回も私が待つほうだったけど。
+[charslot(slot="m",focus="n")]
+[Dialog]
+[Decision(options="遅刻はしていないはずだ。;……;むしろ一分早いくらいじゃないか。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_249_mlyss_1#10$1",focus="m")]
+[name="ミュルジス"]あら、あたしのほうが早く来たんだから待たされたのは事実よ。あなたの連絡を受け取ってすぐ準備に取り掛かったんだからね。
+[charslot(slot="m",focus="n")]
+[Dialog]
+[Decision(options="そもそも、ここは君の勤め先だろう……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#9$1",focus="m")]
+[playsound(key="$d_avg_paper2")]
+[name="ミュルジス"]はいはい。あなたが欲しがってたもの揃えといたわよ……ライン生命ビルの建築図面に、あなたと小さな助手さんたちの通行証ね。
+[name="ミュルジス"]生態課のコネで一時的な権限を与えておいたから、今日一日、このビル内ならほとんどの場所は出入り自由だし、関連情報も調べ放題よ。
+[name="ミュルジス"]そうそう、地下の担当を決めておくのをお勧めするわね。この建物は実験材料輸送の利便性を上げるため、地上階と地下構造に隠しスペースがたくさんあるの。
+[charslot(slot="m",focus="n")]
+[Dialog]
+[Decision(options="君はどうするんだ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#1$1",focus="m")]
+[name="ミュルジス"]もちろん、副大統領のライン生命見学に同行するわよ。
+[name="ミュルジス"]クリステンはいないし、十課の主任も揃ってないから、これ以上人が減ったら失礼でしょ。
+[charslot(slot="m",name="avg_249_mlyss_1#9$1",focus="m")]
+[name="ミュルジス"]それじゃ、事が済んだらまた、あたし本人がお礼しに行くから。
+[Dialog]
+[Effect(name="$e_muesys_hide",layer = 1)]
+[playsound(key="$d_avg_divebubble",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=2.5)]
+[Decision(options="いつも分身を寄こして済ませるな……;イフリータ、君には単独行動を頼むことになる。", values="1;2")]
+[Predicate(references="1;2")]
+[stopmusic(fadetime=2)]
+[delay(time=0.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g2_colombiaoffice",screenadapt="coverall")]
+[playMusic(intro="$darkness01_intro",key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_893_1#9$1",duration=1)]
+[delay(time=2)]
+[name="ヤラ"]ビーバー、あなたの辞表には目を通したわ。けど、どうして急に？
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]……申し訳ありません、ヤラ主任。
+[name="エネルギー課研究員"]実は昨日あることに気付いたんです。
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="ヤラ"]あることって？
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]エネルギー課のフロアには、合計三十八個の照明と、二十一個の通気口があります。
+[name="エネルギー課研究員"]そして、この足元のカーペットは一見どれも同じに見えますが、実際には、格子の数と縁の模様が若干違う三パターンが存在するんです。
+[charslot(slot="m",name="avg_npc_893_1#11$1")]
+[name="ヤラ"]知らなかったわ。あなたいつからインテリアデザイナーに転職するつもりでいたの？
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]取り組んでいた全プロジェクトの見通しが立たなくなって、すでに書き終えた報告書を毎日見直すだけの生活を送っていたら、あなたも同じことをすると思いますよ。
+[charslot(slot="m",name="avg_npc_893_1#6$1")]
+[name="ヤラ"]苦労をかけるわね。部下へのフォローも、すべてが順調に進んでいるように見せかけるようなこともしてもらっているし。
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]実のところ、苦労自体はなんということもないんです。
+[name="エネルギー課研究員"]元々、各課はある程度独立していて、研究自体も個別で進められていますから……こうして359号基地で事故が起き、フェルディナンドさんが突然離職しても、皆自分の仕事をするだけですしね。
+[name="エネルギー課研究員"]下の人間からすれば、知りえることも少ない分、今回もこれまでと何も変わらないと思っているでしょう……ここはテクノロジー企業ですから、「科学実験中の事故」への対処法は存在しますし。
+[name="エネルギー課研究員"]ですが私には、今回は違うというのがわかるんです……
+[name="エネルギー課研究員"]統括は蒸発してしまって、主任の離職も本当に急で。エネルギー課に引き継ぎに来る人もいませんし、何が起きたのか、私はどうすべきなのかを教えてももらえず、毎日悩んでいました。
+[name="エネルギー課研究員"]そんな時に、今日は副大統領が訪問してくることになって……ラボにいた皆の、期待に満ちた目を見たら……私は胃が締めつけられるように感じたんです。
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="ヤラ"]それでヴォルヴォート・コシンスキーのヘッドハンターに連絡したわけね……その人の名前は、ソニアで合っている？
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]は……はい。
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="ヤラ"]別に責めてるわけじゃないのよ。
+[name="ヤラ"]あなたは、普通の社員よりも多くのものが見えるのに全体像を知ることはできない立場だし、私が同じ境遇だとしても焦りを感じると思うわ。それは正常な反応よ。
+[name="ヤラ"]私の配慮も足りなかったわよね。エネルギー課の皆をケアしてあげてと頼むばかりで、あなたの気持ちは気にかけなかったもの。
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]あなたのせいではありません、私の意志が弱かっただけで……
+[charslot(slot="m",name="avg_npc_893_1#2$1")]
+[name="ヤラ"]ねえビーバー、副大統領が急にライン生命訪問を決めたのはなぜだと思う？
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]それは……わかりません。ですが、副大統領が来てしまったら、今の内部事情を知られてしまうのでは……
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="ヤラ"]数日前にあった副大統領の会見は、ライン生命に関係するものだったのよ。
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]……本当ですか？
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="ヤラ"]ええ。今伝えられるのはこれくらいだけどね。
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="ヤラ"]それじゃ、こうしましょう。一ヶ月の有給休暇をあげるから、できればその間に気持ちを整理して、職場に戻ってきてちょうだい。
+[name="ヤラ"]もちろん、その時になってもまだ辞めたいと言うのなら、私は止めないわ。
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="エネルギー課研究員"]……
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="ヤラ"]ライン生命は創立以来成長を続け、十課を擁し、数百もの大規模なプロジェクトを同時進行できるほどの企業になった。そこに至るまでには、今よりもっと大変な時期もあったわ。
+[name="ヤラ"]けれど、ライン生命が潰れたことはない。
+[name="ヤラ"]だからあなたには、よく考えてみてほしいの……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[charslot(slot="m",posfrom = "0,0", posto = "-150,0",duration=1)]
+[playsound(key="$d_gen_walk_n",volume=0.7)]
+[delay(time=1.5)]
+[charslot(duration=0.5)]
+[playsound(key="$doorclosequite",volume=0.7)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_893_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$d_avg_telephonebusy")]
+[delay(time=2)]
+[name="ヤラ"]もしもし、ソニア。今回も面倒をかけて悪かったわね。
+[name="ヤラ"]本当、こういう不安が募る時には、社員にちゃんとストレス発散させてあげないと。
+[name="ヤラ"]多分ビーバーで最後だと思うわ。彼が落ち着いてくれたら、ひとまずエネルギー課にはこれ以上の問題は起こらないでしょう。
+[name="ヤラ"]ええ、今度時間のある時にでも、一緒に食事しましょうね。それとブリキにお礼を伝えておいて。
+[Dialog]
+[playsound(key="$d_avg_telephone")]
+[delay(time=1)]
+[name="ヤラ"]はぁ……
+[Dialog]
+[charslot(slot = "m", focus = "n")]
+[playsound(key="$doorknockquite",volume=0.7)]
+[delay(time=1)]
+[charslot(slot = "m", focus = "m")]
+[name="ヤラ"]はい、どうぞ。
+[Dialog]
+[charslot]
+[playsound(key="$dooropenquite",volume=0.7)]
+[charslot(slot="m",name="avg_npc_892_1#1$1",duration=1)]
+[delay(time=2)]
+[name="ジャスティンJr."]今ので今週は何人目ですか？
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="ヤラ"]あなたに心配してもらう必要はないわ。
+[charslot(slot="m",name="avg_npc_892_1#1$1")]
+[name="ジャスティンJr."]ああいう人の異動を検討する時は、商務課以外でお願いしますよ。うちには気持ちが揺らぎやすい凡人なんて必要ありませんから。
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="ヤラ"]彼らもあなたと同じ、この会社の礎となる存在なのよ。
+[name="ヤラ"]それと、確かに私は年を取ったけれど、エネルギー力学の博士をあなたの下で営業マンとして働かせるほどボケてはいないわ。
+[name="ヤラ"]副大統領の到着はもうすぐのはずだけど、私のオフィスで軽口を叩いてる暇なんてあるのかしら？
+[charslot(slot="m",name="avg_npc_892_1#1$1")]
+[name="ジャスティンJr."]アハハ、今日の予定は新しい出資者数名との顔合わせと、重要なテレビ会議がいくつか入っているだけですよ。
+[name="ジャスティンJr."]副大統領の視察は科学研究分野の見学が目的ですから、私みたいな商務の人間がお邪魔するのは遠慮しました。
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="ヤラ"]……
+[charslot(slot="m",name="avg_npc_892_1#1$1")]
+[name="ジャスティンJr."]それにしても、副大統領が公式訪問を発表した日は商務課の電話が鳴りっぱなしでしたよ。おかげでオフィスに専用回線を二本増設することになりました。
+[name="ジャスティンJr."]これは明るい兆しですよ。トリマウンツの金融業界が……
+[charslot(slot="m",name="avg_npc_892_1#3$1")]
+[name="ジャスティンJr."]いや、トリマウンツ、あるいは金融業界だけに限った話ではなく――少しでも投資をわかっている人なら、クルビア中の誰もが我々に注目しているんです。
+[name="ジャスティンJr."]先ほどのビーバーなんて、ストックオプションを結構持っていたはずですから、辞職を承認すべきでしたよ。そうすれば後々会社の株価が上がって、彼が出戻りを希望した時給料を抑えられますから。
+[charslot(slot="m",name="avg_npc_893_1#7$1")]
+[name="ヤラ"]ライン生命はあなたのマネーゲームのおもちゃじゃないのよ。
+[charslot(slot="m",name="avg_npc_892_1#9$1")]
+[name="ジャスティンJr."]そんなふうに言われるのは心外ですね。
+[name="ジャスティンJr."]私が今日連絡を取る人の中には、ベンジャミン市長にクリス議員、そしてフィル保安官やコレット中佐、さらには大法官までいるんです……
+[name="ジャスティンJr."]仮に私がこういう「お友達」への気配りを怠っていたら、クリステンがブレイク相手にこれだけ長くかくれんぼできたかどうかはわかりませんよ。
+[charslot(slot="m",name="avg_npc_893_1#2$1")]
+[name="ヤラ"]相当リソースを注ぎ込んだようね。
+[charslot(slot="m",name="avg_npc_892_1#9$1")]
+[name="ジャスティンJr."]当然のことをしたまでです。
+[charslot(slot="m",name="avg_npc_892_1#8$1")]
+[name="ジャスティンJr."]ところで、あなたのお話には一ヶ所間違いが……私は、ライン生命の礎ではありませんよ。
+[name="ジャスティンJr."]「礎」は、どれほど固く優秀であっても、結局は誰かが歩む道に敷かれるだけのものです。
+[name="ジャスティンJr."]私はクリステンに対してあなたほど真摯な感情は抱いていません。彼女を、そしてライン生命を選んだのは私のほうなのです。
+[name="ジャスティンJr."]自分とあらゆる人の運命を、この手で握るためにね。
+[charslot(slot="m",name="avg_npc_892_1#7$1")]
+[name="ジャスティンJr."]……これは、ゲームなどではない。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[charslot(slot="l",name="avg_npc_897_1#1$1")]
+[charslot(slot="r",name="avg_npc_523_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_avg_ringoff")]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_897_1#1$1",focus="l")]
+[name="ジャクソン"]マイレンダーからの連絡かい？
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="副大統領秘書"]はい。彼らはすでにこの近辺への配置を終え、副大統領の安全確保に努めているとのことです。
+[charslot(slot="l",name="avg_npc_897_1#1$1",focus="l")]
+[name="ジャクソン"]わかった。到着まではあとどれくらいかな。
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="副大統領秘書"]前方の交差点をあと二つ通過すれば、ライン生命の本部ビルにつきますよ。
+[name="副大統領秘書"]もちろん、ご心配であれば今日の訪問をキャンセルすることもできますが……
+[charslot(slot="l",name="avg_npc_897_1#5$1",focus="l")]
+[name="ジャクソン"]いいや。マイレンダーのことすら信頼できない状況になれば、そもそも予定のキャンセル程度では身を守れないだろう。
+[charslot(slot="l",name="avg_npc_897_1#1$1",focus="l")]
+[name="ジャクソン"]試験が怖いからと授業をさぼって、移動式採掘プラットフォームが夕日を追いかけるのを眺めていた若い頃のようにはいかないからね……
+[name="ジャクソン"]クルビアの副大統領ともあろうものが、そう気まぐれではいられないだろう？
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="副大統領秘書"]では、今のうちに少しお休みください。恐らく……今日はのんびりしている暇などありませんから。
+[charslot(slot="l",name="avg_npc_897_1#1$1",focus="l")]
+[name="ジャクソン"]昨日の晩餐会で、私がトリマウンツをどう表現したか、覚えているかい？
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="副大統領秘書"]「クルビアの未来の星」ですね。このクルビアという若き国家と同じくらいに、この年若い街が好きだと仰ったのも覚えていますよ。
+[charslot(slot="l",name="avg_npc_897_1#2$1",focus="l")]
+[name="ジャクソン"]ああ。だが実のところ、私はこの街が好きじゃないんだ。
+[name="ジャクソン"]ここには重荷を負う駄獣もいなければ舞い上がる砂塵もなく、「ばかばかしい」理由で起こる決闘も、開拓精神もない。
+[name="ジャクソン"]あるのはただ、コーヒーが入った袋を抱えたサラリーマンの姿や、空を切り裂く高層ビル、そして……落ち着かないほどきれいな空気だけだ。
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="副大統領秘書"]聞くところによると、トリマウンツの都市空調内循環構造は……
+[charslot(slot="l",name="avg_npc_897_1#7$1",focus="l")]
+[name="ジャクソン"]おっと、原理の説明はいらないよ、パヴァール。これから似たような話をたくさん聞かねばならないからね。
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="副大統領秘書"]もしや、科学者との交流はお嫌いですか？
+[charslot(slot="l",name="avg_npc_897_1#7$1",focus="l")]
+[name="ジャクソン"]そうとも言い切れないね。
+[name="ジャクソン"]何せ彼らは単純で、自分たちの製品やビジョンについてひたすら饒舌に語り続ける。時には大げさに聞こえるものや、突拍子もなく感じるものもあるが、ほとんどの場合私にはよくわからないし……
+[name="ジャクソン"]ただ彼らの話を聞き、話の内容が何一つ頭に入ってこなくても、最後に手を握って応援の姿勢を表明するだけで十分だ。
+[name="ジャクソン"]こういう仕事は、D.C.の老いぼれ連中とやりあうよりもずっと楽だからね。
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="副大統領秘書"]民衆はクルビアが科学を支持する様を見たがっているので、国家を代表する立場の副大統領がそうなされば喜ぶでしょう。政治的立場を強調することにも繋がり、次の選挙の役にも立つはずです。
+[charslot(slot="l",name="avg_npc_897_1#5$1",focus="l")]
+[name="ジャクソン"]確かに、副大統領選はクルビアの政界における最大級のイベントではあるが……私としては、そこまで注力すべきものでもないと思っているんだ。
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="副大統領秘書"]副大統領はここ数年で大きな成果を挙げていらっしゃいますし、世論調査の支持率も決して低くありません。
+[name="副大統領秘書"]それに、我々を支持する議員たちも、ライン生命のヴァルポの主任と接触しているとか。こうしたテクノロジー企業からの支援を得るのは容易ではありません。副大統領の優勢は確かですよ。
+[charslot(slot="l",name="avg_npc_897_1#2$1",focus="l")]
+[name="ジャクソン"]いいや、私が言っているのは、マーク・マックスに――クルビアを正しい未来へと導くという、代替不能な役割を担う大統領閣下に比べてという話さ。
+[name="ジャクソン"]副大統領選に全国的な注目が集まるのは、私からすれば恥ずかしいくらいだよ。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="29_g11_monitoringroom",screenadapt="coverall")]
+[playMusic(intro="$suspenseful_intro",key="$suspenseful_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_899_1#1$1",duration=1)]
+[delay(time=2)]
+[name="ブレイク"]このカメラはどのエリアを映しているんだ？
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]……ライン生命後方にある、緊急貨物輸送路です。
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[name="ブレイク"]であれば、画角を少し左にずらしてズームしろ……よし、これで死角はないな。
+[charslot(duration=0.5)]
+[playsound(key="$keyboard")]
+兵士は素早く操作をする。彼は少し緊張していた。先ほどから、大佐が彼の後ろに立ち、きつく眉根を寄せているからだ。
+ライン生命のビルを中心として、周辺五つのブロックはすでに軍監視下に置かれている。
+カメラに映る多くの場所は混雑していた。政府は主要道路を通行禁止にしたのだが、付近の人の流れは依然混み合っているようだ。
+当然ながら、この混雑は彼らにとっては都合が良かった。
+兵士はまばたきすらせず、一つ一つのモニターに目を走らせ続けている。
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[name="ブレイク"]配置状況はどうなってる？
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]潜伏ユニット、支援ユニット共に配置完了しています。
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[name="ブレイク"]よし。
+[name="ブレイク"]フェルディナンドはどこだ？
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]電話中です。
+[charslot(slot="m",name="avg_npc_899_1#6$1")]
+[name="ブレイク"]電話だと？
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]はい。呼んできましょうか？
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[name="ブレイク"]いや、構うな。
+[name="ブレイク"]奴が言っていた警備課の人間はどうした？
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]我々のほうで「引き継ぎ」ました。
+[charslot(slot="m",name="avg_npc_899_1#5$1")]
+[name="ブレイク"]よろしい。
+[charslot(slot = "m", focus = "n")]
+その時、小さな影が左下にある画面内を素早く通過し、その後多くの画面に同じような光景が映った。それは、車体の前方に掲揚されたクルビア国旗と……
+前後に一定の距離を保ったまま整然と走る、仕様の統一された数台の黒い車両だ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[playsound(key="$d_gen_transmissionget")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_899_1#7$1")]
+[name="ブレイク"]行動開始だ。
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]――各員に告ぐ。副大統領の車列はすでに監視圏内に入った。行動を開始せよ。
+[charslot(slot="m",name="avg_npc_899_1#5$1")]
+[name="ブレイク"]さて……楽しい時間を過ごせるといいな、ジャクソン。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[playsound(key="$d_avg_crwddiscuss_outside", loop=true, channel="bgs",volume=0)]
+[Background(image="29_g9_headquarter",screenadapt="coverall")]
+[playMusic(key="$formal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[SoundVolume(volume=0.4, channel="bgs",fadetime=2)]
+[delay(time=1)]
+[playsound(key="$d_avg_cardoorc")]
+[delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="r",name="avg_npc_897_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_524_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$skill_flash",volume=0.3,channel="x")]
+[playsound(key="$skill_flash",volume=0.3,channel="y",delay=0.15)]
+[charslot(slot="l",focus="l")]
+[name="記者"]副大統領、先日の十三区での工場爆発事件は、ライン生命と関係があると報じられていますが……
+[name="記者"]こうした世論が高まる今、ライン生命訪問をお決めになったのは、その臆測に反論するためということでしょうか？
+[Dialog]
+[charslot(slot="l",focus="a")]
+[charslot(slot="m",name="avg_npc_523_1#1$1",posfrom = "-600,0", posto = "-500,0",duration=0.6)]
+[delay(time=1)]
+[charslot(slot="l",focus="m")]
+[name="記者？"]通してください。
+[charslot(slot="l",focus="l")]
+[name="記者"]十三区は今も暫定的に軍管理下に置かれていますが、副大統領は軍の行動については事前にご存知でしたか？　あるいはご自身の指示だったのでしょうか？　十三区はいつ頃解放されるのでしょう？
+[name="記者"]今日は、クリステン統括と会われるご予定はあるのでしょうか？
+[Dialog]
+[charslot(slot="l",focus="m")]
+[charslot(slot = "m",posfrom = "-500,0", posto = "-450,0",duration = 0.5)]
+[delay(time=0.5)]
+[charslot(slot="l",focus="m")]
+[name="記者？"]あの、通してください……副大統領、今後のトリマウンツでのご予定についてですが……
+[Dialog]
+[charslot(slot="r",focus="r")]
+[name="ジャクソン"]……
+[Dialog]
+[charslot(duration=0.7)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_529_1#1$1",duration=0.5,posfrom = "-150,0", posto = "-200,0")]
+[delay(time=1)]
+[name="ライン生命職員"]皆さん、落ち着いてください。
+[Dialog]
+[StopSound(channel="bgs", fadetime=1)]
+[delay(time=1)]
+[name="ライン生命職員"]副大統領のご見学が終わり次第、インタビューの時間を設ける予定です。
+[name="ライン生命職員"]臨時の記者受付エリアとして専用の場所を設けましたので、こちらへおいでください。社員の通常業務に影響を及ぼさないように、ご協力をお願いします。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playsound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_523_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="記者？"]……誰もいない……？
+[Dialog]
+[delay(time=0.5)]
+[name="記者？"]――しまった！
+[Dialog]
+[CameraShake(duration=0.3, xstrength=20, ystrength=15, vibrato=20, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",name="avg_npc_530_1#1$1",duration=0.3,posfrom = "-100,0", posto = "0,0")]
+[charslot(slot="r",name="avg_npc_530_1#1$1",duration=0.3,posfrom = "100,0", posto = "0,0")]
+[delay(time=0.3)]
+[charslot(slot="m",action="shake", power=15, times=20,duration=0.5)]
+[playsound(key="$d_avg_clothmovement")]
+[delay(time=0.6)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",duration=0.5,posfrom = "0,0", posto = "0,-100")]
+[charslot(slot="m",duration=0.5,posfrom = "0,0", posto = "0,-100")]
+[charslot(slot="r",duration=0.5,posfrom = "0,0", posto = "0,-100")]
+[delay(time=0.3)]
+[charslot(duration=0.5)]
+[playsound(key="$bodyfalldown1")]
+[delay(time=1)]
+[charslot]
+[name="ライン生命職員？"]叫ばれないように口を押さえておけ。
+[name="記者？"]むぐっ――
+[name="ライン生命職員？"]録音機器の中に武器を隠しているとはな。取り上げておいて、ほかに武器を持っていないか調べよう。
+[name="ライン生命職員？"]これは偽の身分証だな……何か口実をつけて受付エリアにいる記者全員の身分証を確かめてくれ。あまりあからさまにはするなよ。
+[Dialog]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_530_1#1$1",duration=0.5)]
+[delay(time=1)]
+[playsound(key="$transmission")]
+[delay(time=0.5)]
+[name="ライン生命職員？"]こちらのほうは解決した。騒ぎにはなっていない。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[Background(image="38_g13_trimountlivingroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[name="狙撃手"]A1、A2、A3の信号が途絶……
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="狙撃手"]我々の配置を完全に把握されているのか！？
+[Dialog]
+[playsound(key="$d_gen_transmissionget")]
+[delay(time=0.5)]
+[name="狙撃手"]司令部に連絡、直ちに応答せよ。狙撃計画を続行するかの指示を願う――
+[Dialog]
+[charslot(slot="r",name="avg_npc_534_1#1$1",posfrom = "200,0", posto = "-50,0",duration=0.4)]
+[delay(time=0.2)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$knifegore")]
+[delay(time=0.3)]
+[charslot(slot="r",posfrom = "-50,0", posto = "0,0",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="m",afrom = 1, ato = 0,posfrom = "0,0", posto = "0,-80",duration = 0.4)]
+[delay(time=0.4)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=10, randomness=90, fadeout=true, block=false)]
+[playsound(key="$bodyfalldown3")]
+[charslot(slot="r",focus="n")]
+[name="狙撃手"]ぐっ……
+[Dialog]
+[charslot(slot="r",focus="r")]
+[playsound(key="$d_avg_clothmovement")]
+[charslot(slot="r",posfrom = "0,0", posto = "0,-50",duration=0.5)]
+[delay(time=1)]
+[charslot(slot="r",posfrom = "0,-50", posto = "0,0",duration=0.5)]
+[delay(time=1)]
+[name="市民？"]これで九ヶ所目だな。
+[name="市民？"]さすが、普段からテロリストを相手取っているだけあって、テロを起こす側に回ってもその経験が生きているらしい。
+[Dialog]
+[playsound(key="$d_gen_transmissionget")]
+[CharacterCutin(widgetID="1", name="avg_npc_900_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=-200, width=200, block=true)]
+[delay(time=1)]
+[charslot(slot="r",focus="n")]
+[name="ブリキ"]状況報告を。
+[charslot(slot="r",focus="r")]
+[name="市民？"]ライン生命を中心として、射程範囲内にある高所すべてを確認し、対処も完了しました。
+[name="市民？"]相手は計九ヶ所に狙撃手を置いており、現場でも様々な職業に扮した十一名の刺客を発見しましたが、いずれも制圧済みです。
+[charslot(slot="r",focus="n")]
+[name="ブリキ"]引き続きライン生命周辺の警戒を続けてください。道路上や車両、通行人に至るまで……不審な動きを見逃さないように。
+[charslot(slot="r",focus="r")]
+[name="市民？"]了解。
+[name="市民？"]副大統領はライン生命ビルに入られました。ビル内は我々が直接戦力を投入するには不向きですが、ご自身で対処に向かわれますか？
+[charslot(slot="r",focus="n")]
+[name="ブリキ"]……いいえ。
+[name="ブリキ"]同僚から連絡を受けたので、先にほかの場所へ向かいます。
+[name="ブリキ"]そちらで得た情報はロドスのDr.{@nickname}に共有し、必要に応じてドクターの指示に従ってください。
+[charslot(slot="r",focus="r")]
+[name="市民？"]わかりました。
+[stopmusic(fadetime=2)]
+[CharacterCutin(widgetID="1", fadetime=0.5,block=false)]
+[playsound(key="$d_gen_transmissionget")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_npc_526_1#1$1")]
+[playMusic(intro="$escape_intro",key="$escape_loop", volume=0.6)]
+[Background(image="38_g3_rhinelab_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_avg_mechadown")]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-150",afrom = 1, ato = 0,duration = 1.5)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="m",name="avg_391_rosmon_1#6$2",duration=0.5)]
+[delay(time=1)]
+[name="ロスモンティス"]これで七つ目……
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="ロスモンティス、大丈夫か？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",focus="m")]
+[charslot(slot="m",name="avg_391_rosmon_1#1$2")]
+[name="ロスモンティス"]相手はただの量産型だから……
+[name="ロスモンティス"]そこまで力は使ってないし……心配しなくていいよ。
+[dialog]
+[playsound(key="$d_avg_scan")]
+[delay(time=2)]
+[name="ロスモンティス"]……
+[name="ロスモンティス"]これ、警備課が失くした自律型パワードスーツとナンバーが一致してるね。でも、数が合わない……あと五体いるはず。
+[name="ロスモンティス"]まだ探したほうがいい？　秘密の通路から出てくる前に、全部片付けないといけないよね？
+[name="ロスモンティス"]もしも、あれが本当にみんなの前に現れたら……副大統領が無事で済んだとしても、大きな混乱が起きるよ。
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="苦労をかけるな。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",focus="m")]
+[name="ロスモンティス"]ううん。ドクター、ミュルジスのくれた権限を使ってまずは警備課の装備出入記録を調べるなんて、どうやって思いついたの？
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="総当たりするつもりだった。予想外に早く見つかったが。;刺客が研究員を装うとは思えなかったから。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_391_rosmon_1#9$2")]
+[name="ロスモンティス"]そっか。
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="だが妙だ。このパワードスーツたちは慎重すぎる。", values="1")]
+[Predicate(references="1")]
+[Decision(options="暗殺目的で動いているというより、むしろ……", values="1")]
+[Predicate(references="1")]
+[playsound(key="$d_gen_walk_n")]
+[delay(time=2)]
+[charslot(slot="m",focus="m")]
+[charslot(slot="m",name="avg_391_rosmon_1#6$2")]
+[name="ロスモンティス"]ドクター、何か物音がするよ。
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="パワードスーツか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_391_rosmon_1#7$2")]
+[name="ロスモンティス"]ううん。今秘密の通路を通ってくるとしたら……
+[Dialog]
+[charslot]
+[MusicVolume(volume=0, fadetime=1)]
+[playsound(key="$b_char_defboost")]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Decision(options="待て、ロスモンティス。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_391_rosmon_1#4$2")]
+[name="ロスモンティス"]……
+[Dialog]
+[charslot]
+[MusicVolume(volume=0.6, fadetime=2)]
+[charslot(slot="m",name="avg_npc_896_1#3$1",duration=1)]
+[delay(time=2)]
+[name="サリア"]……
+[charslot(slot="m",name="avg_npc_896_1#1$1")]
+[name="サリア"]ドクター、それにロスモンティス……なぜここに？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_896_1#5$1")]
+[name="サリア"]そういうことか……すまないな、ドクター。ケルシー医師に代わり情報を得るため、ライン生命へ潜入していたから、一時的に通信を切っていたんだ。
+[charslot(slot="m",name="avg_npc_896_1#1$1")]
+[name="サリア"]なお、ケルシー医師がどこへ行ったのかは私にもわからない。
+[charslot(slot="m",name="avg_391_rosmon_1#1$2")]
+[name="ロスモンティス"]残りのパワードスーツは……
+[charslot(slot="m",name="avg_npc_896_1#1$1")]
+[name="サリア"]合計五体処理しておいた。お前たちと会う前に、奴らの動きは察知していたのでな。警備課が失ったパワードスーツは十二体。そちらと合わせればちょうど同数だ。
+[name="サリア"]それで、こちらではある人物を訪ねていた。
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_528_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_npc_896_1#1$1")]
+[charslot(slot="r",name="avg_npc_528_1#1$1",focus="n")]
+[name="サリア"]さあ、二度とパワードスーツから無理に引き出される感覚など味わいたくないだろう、レジー。
+[charslot(slot="r",focus="r")]
+[name="警備課職員"]……
+[charslot(slot="r",focus="l")]
+[name="サリア"]フェルディナンドがお前に何を命じたのか教えろ。
+[charslot(slot="r",focus="r")]
+[name="警備課職員"]……あの人はただ、自律型パワードスーツを何体か借りられるよう便宜を図ってほしいと頼んできただけなんです。
+[charslot(slot="r",focus="l")]
+[name="サリア"]奴の言葉など信用に値しない。
+[charslot(slot="r",focus="r")]
+[name="警備課職員"]……だったら、あなたはどうなんですか？
+[name="警備課職員"]ご自分で決めたルールを何度も無視して、すべての責任を放り出したまま、ライン生命の内部に気まぐれに現れるあなたを、どう信じろと仰るんですか？
+[name="警備課職員"]あなたが去ってから数年、臨時で警備課を引き継いでくれたのはあの人で、生活ができるように面倒を見てくれたのもあの人なんですよ。
+[name="警備課職員"]あの人は我々一人一人の名前も趣味も覚えていて、プレゼントだってしてくれるんです。
+[name="警備課職員"]フェルディナンドさんは確かに悪人なのかもしれません。
+[name="警備課職員"]ですがサリア主任、これだけはどうか知っておいてください。
+[name="警備課職員"]我々が昼食代を払えるのは、彼のおかげなんですよ。
+[charslot(slot="r",focus="l")]
+[name="サリア"]――副大統領は現在、ライン生命社内にいる。何か問題が起きればどのような結果が訪れるかはわかっているだろう。
+[name="サリア"]ライン生命内で、フェルディナンドが手を付けた可能性のあるすべてのものを確かめなければならないんだ。
+[charslot(slot="r",focus="r")]
+[name="警備課職員"]この自立型パワードスーツ十体だけです。私が保証しますよ。
+[Dialog]
+[charslot]
+[Decision(options="十体？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_391_rosmon_1#10$2")]
+[name="ロスモンティス"]私が七つ壊して、サリアさんが五つ壊したのに……
+[charslot]
+[charslot(slot="l",name="avg_npc_896_1#1$1",focus="n")]
+[charslot(slot="r",name="avg_npc_528_1#1$1",focus="r")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="警備課職員"]そんなはずないでしょう！
+[name="警備課職員"]フェルディナンドさんに貸したのは十体だけです！　あの人がコマンドを入力する時も、私がこの目で見ていたんですよ！
+[Dialog]
+[charslot(slot="r",focus="n")]
+[Decision(options="サリアはフェルディナンドという人物をどう見る？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_npc_896_1#5$1",focus="l")]
+[name="サリア"]独善的で自分が他者より優れていると思い込んでいる人物だ。
+[name="サリア"]だが実際、奴には一つだけ他者より優れた部分がある。それは――
+[charslot(slot="l",name="avg_npc_896_1#1$1",focus="l")]
+[name="サリア"]机上の空論を説くだけの連中とは違い、奴はその空論を実行するというところだ。
+[Dialog]
+[charslot(slot="r",focus="n")]
+[Decision(options="予想が正しければ、恐らく……", values="1")]
+[Predicate(references="1")]
+[Decision(options="貸し出された十体の目的は、副大統領暗殺ではない。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_npc_896_1#3$1",focus="l")]
+[name="サリア"]何？
+[Dialog]
+[charslot(slot="r",focus="n")]
+[Decision(options="そして残りの二体については……;軍も彼も、互いを警戒しあっているんだろう。;彼は副大統領がライン生命で殺されるのを望んでいない。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[delay(time=0.5)]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

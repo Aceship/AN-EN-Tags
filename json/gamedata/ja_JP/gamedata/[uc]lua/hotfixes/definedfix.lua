@@ -3,12 +3,10 @@ local list =
 {
   
   "HotFixes/ShopHotfixer",
-  "HotFixes/HandbookHotfixer",
-  "HotFixes/TileHotfixer",
-  "HotFixes/MhwrctSkill_1Hotfixer",
-  "HotFixes/MhwrbgSkill_1Hotfixer",
-  "HotFixes/Yato2Skill_2Hotfixer",
-  "HotFixes/YostarSDKHotfixer"
+  "HotFixes/BattleConverterHotfixer",
+  "HotFixes/UIBattleClearStateHotfixer",
+  "HotFixes/StickerPanelHotfixer",
+  "HotFixes/TemplateShopRarityStateHotfixer"
 };
 
 return list;

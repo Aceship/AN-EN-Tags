@@ -1,0 +1,493 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="37_g7_airshipdock",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="アーミヤ"]これが……飛空船。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]これまでの我々の潜入計画はことごとく失敗し、接近を試みた者は一人残らず忽然と消えた。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]これはサルカズの巫術なのか？　魔王よ、貴様ならこれをどう突破すればいいか知っているだろう。
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="アーミヤ"]私は……
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="アーミヤ"]テレジアさん……テレジアさんも、ここにいるのでしょうか？
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="アーミヤ"]ですが感じ取れません──
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="アーミヤ"]うっ！
+[dialog]
+[charslot]
+[stopmusic(fadetime=1)]
+突如として凄まじい重圧が襲いかかってきた。
+それは言葉で表現することはおろか、声を出すことすらできない。それほどまでに強烈で、それほどまでに残酷なものだ。
+危うく立っていられないほどの衝撃だった。
+[playMusic(intro="$plot_intro", key="$plot_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="アーミヤ"]これは……何ですか……
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]何のつもりだ、魔王？　妙な真似はやめろ！
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]貴様の巫術でこれを破れ！　でなければ──
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_395_1#6$1",focus="m",duration=0.4)]
+[playsound(key="$d_avg_knife",volume=0.7)]
+[playsound(key="$knifegore",volume=0.7,delay=0.1)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=0.03, block=true)]
+[playsound(key="$swordtsing5",delay=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.01, block=true)]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]うっ──
+[dialog]
+[charslot(duration=0.5)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=10, vibrato=10, randomness=90, fadeout=true, block=false)]
+[playsound(key="$bodyfalldown2")]
+[delay(time=1)]
+[Decision(options="来たか、アスカロン。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="アスカロン"]ドクター、遅れてすまない。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]アスカロンさん、落ち着いてくれ。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]この同僚の行動は私と関係ない！　彼に言い聞かせようとしたが、聞く耳を持たなかったんだ！
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]あなたたちのドクターを傷つけるつもりはない。ただ取引を無事に進めようとしているだけだ、あの時のことはあなたも見ていただろう？
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]であれば邪魔をするな。
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]――
+[dialog]
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="r")]
+[Decision(options="どうした？;……;険しい表情をしているな。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_395_1#10$1",focus="m")]
+[name="アスカロン"]お前には理解できないだろう。お前はサルカズではないからな。
+[charslot(slot="m",name="avg_npc_395_1#10$1",focus="m")]
+[name="アスカロン"]私たちは……自らの歴史に直面している。サルカズの幾千幾万年にもわたる苦しみに直面している。
+[charslot(slot="m",name="avg_npc_395_1#2$1",focus="m")]
+[name="アスカロン"]それは怒り、訴えている。私たち一人一人にその叫びに耳を傾けるよう迫っている。
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]……なるほど。
+[name="アスカロン"]フンッ、大公爵たちは失望するだろう。これは複製可能な工業技術などではないからな。
+[name="アスカロン"]あの船……あれは「レヴァナント」だ。
+[Dialog]
+[Character(fadetime=0)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Subtitle(text="サルカズはどのように暮らしていたのだろうか？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="始まりの頃、サルカズはどのような生活を送っていたのか？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="当時、神民も先民もまだこの大地に侵入しておらず、全てが本来あるべき姿のままであった。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="その後、奴らがやって来た。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="奴らはこの地で殺戮を──虐殺を始めた。野蛮さと怒りを我々の土地に持ち込み、奴らは爪と牙を互いに向け合うだけでなく、我々に対しても向けるようになった。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="誇り高きサルカズが、奴らに屈することなどありえぬ。それゆえにサルカズは奴らに抗った。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="我々はさらに激しい怒りでもって奴らに報い、奴らに憎しみの果実を呑み込ませた！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="しかし、なぜ一瞬にしてカズデルは滅んでしまったのか？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="あの卑怯者どもだ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="奴らはあらゆる方法を用い、あらゆる策を講じた！　奴らは卑劣で狡猾で、恥知らずで残忍だ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="奴らは、何ゆえ純潔なるカズデルを踏みにじるのか？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="奴らに、何の資格があるというのだ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]うぅ──
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]この……声は……
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]アーミヤ、呑み込まれるな！
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]耐えろ、これはただの幻覚だ！
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="アーミヤ"]分かっています、分かって……
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]ううっ──あぁ──
+[Dialog]
+[Character(fadetime=0)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="カズデルは奴らに滅ぼされた。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="魔王と王庭は我らを率いてあの塵埃どもと戦った。サルカズはこのような恥ずべき敗北は認めない。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="しかし自らをサンクタと称する軟弱な一部のサルカズが、己の責任から逃れ、己の種族を裏切り、己の使命に背いたのだ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="再建したばかりの壁は再び崩れ去り、我々の夢はまたもや潰えた。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="しかし構うものか。裏切りはいずれ償われる。カズデルは必ずや再び立ち上がるだろう。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="魔王が我々を率いている限り、我々と共にある限り、カズデルに敗北はない。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]この影……
+[name="「グレーシルクハット」"]おかしい、これはイネスさんの操るアーツのようなものではない。これは何だ？
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]ドクター、飛空船の影から離れろ！
+[dialog]
+[charslot]
+飛空船の影が身をよじりながら伸びてくる。アスカロンに倒されたもう一人の「グレーシルクハット」は、一瞬にして漆黒の影の海に沈んでいった。
+[name="「グレーシルクハット」"]おいおい冗談だろ、一体何なんだ……
+深い暗黒、深い絶望、深い怒り。
+[Dialog]
+[Character(fadetime=0)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="我々を率いるは魔王。魔王さえいれば……", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="――三十四回目のカズデル滅亡。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="――六百七十五回目のカズデル滅亡。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="最終的にカズデルは三千四百二十一回滅ぼされた。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="最も滅亡までの期間が短いものだと、カズデルの城壁は再建された三日後に、ペガサスの蹄鉄によって粉砕された。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="カズデルは幾度となく滅ぼされ、幾度となく再建された。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="時間は我々の姿を変え、奴らの様相をねじ曲げた。しかし、戦争が終焉を迎えたことはなく、我々も抵抗を諦めたことなどない。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="だが、我々がカズデルの再建に要する時間も次第に伸びていった。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="我々の文明は損なわれ、芸術は忘れ去られた。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="しかし憎しみはいまだ消えない。魔王はその憎悪を武器とし、我々の敵を斬り殺したのだ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="私はそれを誇りとし、我々の不屈を誇りとしている。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="しかし今日、私が見たものは何だ？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background]
+[Image(image="37_i10",screenadapt="coverall", fadetime=0)]
+[ImageTween(xFrom=0, yFrom=30, xTo=0, yTo=0,xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=8, block=false)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=4)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="歪んだキメラだ……", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="異種族の魔王だと！？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="ハハハハ！　私の前に、異種族の魔王が立っているだと！？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="何ゆえ貴様がその王冠を持つ？　何ゆえ、サルカズに非ざる貴様などがこの苦しみと共に立っている？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様のどこがサルカズの怒りを担うに値するというのだ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="我が問いに答えよ、代替せし者！　答えよ、欺瞞せし者！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="甦りし者の──このレヴァナントの問いに答えよ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[name="アーミヤ"]レヴァナント……
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="見よ！　その目を大きく開いて見るがいい！　偽りの魔王よ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様には何が見える？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]私は……
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]見るな、アーミヤ！　それはレヴァナントの巫術だ！
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]……
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]私には、涙が見えます。
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]レヴァナント、私にはこれまでにない重い悲しみが見えます。
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]あなたはずっとこの悲しみと共にいたのですか？
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="悲しみ？　これは悲しみではない。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="悲しみなど、私はとうの昔になくした。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]あなたは怒りの炎で、血が流れないように傷口を焼いています。
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]それは……とても苦しいことです。
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="何が真実で、何が偽りか私にはよく分かっている！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様はただ我が問いに答えればいい！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様は──何ゆえ──", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様のような──忌まわしき歪んだ異種族が──", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="何の──権利があって──", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="サルカズを背負っているのだ！！！！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Image]
+[delay(time=1)]
+[charslot]
+[Background(image="37_g7_airshipdock",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+アスカロンが数歩よろめいた。
+[dialog]
+[Decision(options="大丈夫か、アスカロン？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_395_1#10$1",focus="m")]
+[name="アスカロン"]私は……平気だ……
+[charslot(slot="m",name="avg_npc_395_1#10$1",focus="m")]
+[name="アスカロン"]アーミヤは──
+[dialog]
+[charslot]
+巨大なレヴァナントの影の中、アーミヤは上を向いたままだった。
+この角度からは彼女の表情は読み取れない。唯一分かるのは、彼女がいまだ顔を上げたままであるということだけ。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]あなたの言う通りです、レヴァナント。それは、私が見るべきものです。私は、たった今――
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]――全てを見ました。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]三千四百二十一回もの破滅する様を、レンガの一つ一つが灰になるのを見ました。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]かつての魔王たちの抵抗を、彼ら一人一人の心を見ました。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]流された涙と血を、高く舞う塵と破片を見ました。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]……みなが同じような姿で折り重なって倒れゆく、似たような光景が繰り返されました。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]それが私の目に映りました。そして、私はそれを見続けることを選びました。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]レヴァナント、私は一瞬たりとも目をそらしてはいません。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]しっかりと記憶に留めておきます。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]繰り返し下された重苦しい選択を、一つまた一つ重ねられた死と犠牲を、いつもいつも最後に訪れる破滅を、全ての希望を記憶に刻み込んでおきます。
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="──私がそれを貴様に見せたのだ、キメラめ。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="私が貴様にそれを見るよう迫ったのだ！！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="代替せし者よ、私は常にそれを身をもって体験し、常にその烈火に苦しんでいるのだ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="だが貴様は？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="もちろん貴様は見ることができるだろう。地図を見るように、劇を見るように、崖の上であぐらをかき、高みの見物をする観客のように。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="偽りの魔王よ。私が貴様を批難し、憎悪するのは、貴様の愚かさのせいでも、傲慢さのせいでも、偽善めいた考えのせいでもない。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様が真に我々と共に立つことなど、未来永劫できないからだ。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="アーミヤ"]ですが、私は努力して──
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="努力？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様は目を逸らさぬよう努力することはできよう──", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="だが同様に、いつでも身を翻し、立ち去ることができる。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="アーミヤ"]私は……
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="貴様はサルカズではない。永遠にサルカズにはなり得ない。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="サルカズの魂は、貴様を受け入れない。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="我々の境遇を苦痛と呼んだな？　貴様はそれに耐えるよう、努力すると言うが──", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="我々は永遠に、その苦痛に浸る定めなのだ。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="自分に勇気があると思っているだろうが、苦痛を飲み込めなくなる日が訪れれば……", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様はやはり我々を捨てることができるのだ。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="アーミヤ"]いいえ、私はこれまでもこれからも絶対に──
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="多少の歳月を乗り越えたにすぎない。にもかかわらず「絶対」などと口にするか！？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="貴様は見捨てるだろう。貴様には力がある、それゆえにいつの日か必ずや、我々を見捨てる。", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="サルカズがそのような魔王を選ぶと思うのか？　このような魔王を受け入れると思っているのか？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]テレジアさんは、私がそうなれるよう望んだんです！　彼女はたとえ異種族であろうとも、我が事のように感じることはできると言いました！
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="それこそがあの者の愚かさだ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="では、もし貴様が本当に我が事のように感じ……そのすべてを見たのであれば……", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="なぜ、まだ私の前に立ちはだかろうとする？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="なぜまだ、この戦争を止めようとする？", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="アーミヤ"]私は……
+[dialog]
+[charslot]
+アーミヤはふと、自分が何も言えないことに気付いた。
+なぜこの戦争を止めようとしているのだろう？
+彼らの憤り、彼らの苦痛、彼らの渇望を目にしてもなお──
+自分は何のために、この戦争を止めようとしているのだろう？
+これは……この戦争は、確かにサルカズにとって唯一の選択だ。
+サルカズの一人一人が、自らを取り巻くものと直面した結果、他に選べる答えなどなかったのだ。
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]ですが……
+[dialog]
+[charslot]
+アーミヤは気付いた。ふいに彼女は、テレジアの現在の選択を理解したのだ。
+涙で涙を覆い、苦しみで苦しみを埋める。
+焼き尽くされた土地だけが、サルカズに新生をもたらす。
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]ですが……
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]……それでも私はその道を拒みます。
+[dialog]
+[charslot]
+レヴァナントの言うことは、正しかった。
+まさに、彼らの進む道を拒むからこそ、自分は未来永劫、真に彼らと共に立つことはないのだ。
+自分はいつでも、身を引いて離れることができるのだから。
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="ここから去れ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="我々同胞の前から立ち去れ！", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+影が狂ったように震えて分裂する。今にも実体化するのではという錯覚を起こさせるほどに。
+狂奔するレヴァナントの影が、がらんとしたドックから溢れ出る。
+[Dialog]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[PlaySound(key="$d_avg_deathfire", volume=1,delay=0.5)]
+[delay(time=0.3)]
+[bgeffect(name="$eb_eblana_attack",layer = 1)]
+[delay(time=1)]
+[PlayMusic(intro="$m_bat_essenceofevolution_intro", key="$m_bat_essenceofevolution_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="エブラナ"]バカでかい奴だ。
+[dialog]
+[charslot]
+紫の炎が黒い影と衝突した。
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m")]
+[name="エブラナ"]レヴァナント、私はお前たちという存在に興味がある。
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m")]
+[name="エブラナ"]もしお前が焼かれれば、どのような熾火を残すのだろうな？
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]──
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]あのドラコは……エブラナか。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]彼女がここに現れるなどという情報は、任務概要になかったぞ！
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]行くぞ！　早く！
+[dialog]
+[character]
+[Decision(options="アーミヤ！", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]私は……私なら大丈夫です……
+[dialog]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="r")]
+[Decision(options="掴まれ、肩を貸そう。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]ドクター、私は……
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]私は確かに、本当の意味で彼らと共に立つことはできません……
+[dialog]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="r")]
+[Decision(options="だから君でなければならないのかもしれない。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="アーミヤ"]……え？
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]急げ！　ドラコの火が来るぞ！
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="アスカロン"]彼女は……非常に強い。ここでやり合う必要はない！
+[charslot(slot="m",name="avg_npc_722_1#2$1",focus="m")]
+[name="エブラナ"]……
+[charslot(slot="m",name="avg_npc_722_1#6$1",focus="m")]
+[name="エブラナ"]フッ──面白い。
+[charslot(slot="m",name="avg_npc_722_1#6$1",focus="m")]
+[name="エブラナ"]ロドスか……
+[charslot(slot="m",name="avg_npc_722_1#6$1",focus="m")]
+[name="エブラナ"]最近、よくこの名を耳にするな？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[bgEffect(layer = 1)]
+[bgEffect(layer = 2)]
+[Background(image="37_g9_airshipdockcorridor",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_419_1#1$1",focus="m")]
+[name="王庭軍兵士"]しょ……将軍、あのドラコは……
+[charslot(slot="m",name="avg_npc_404_1#6$1",focus="m")]
+[name="マンフレッド"]構わずともよい。
+[name="マンフレッド"]あの炎は、自らの狭隘な野心以外に、何も燃やせはしないのだ。
+[charslot(slot="m",name="avg_npc_404_1#1$1",focus="m")]
+[name="マンフレッド"]レヴァナント閣下、我々を連れてドックからお発ちください。この狭いドックでは、あなたのお怒りを受け入れることはできません。やかましい異種族どももあなたがお時間を割くには値しません。
+[charslot(slot="m",name="avg_npc_404_1#1$1",focus="m")]
+[name="マンフレッド"]それと、テレシス殿下より連絡を受けました。あちらはすでに準備が整ったそうです。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="37_g8_airshipdock_ex",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_722_1#6$1",focus="m")]
+[name="エブラナ"]……
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="「将校」"]殿下。
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="「将校」"]サルカズの飛空船はすでに飛び立ち、ゆっくりとロンディニウムの方角へと旋回しています。
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="「将校」"]我々の高速戦艦編隊も、都市の外周にて応戦する準備が完了しております。
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="「将校」"]……その他の部隊も集結しているようです。
+[charslot(slot="m",name="avg_npc_722_1#2$1",focus="m")]
+[name="エブラナ"]ほう？
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="「将校」"]ウィンダミア公爵の艦隊は、早くからこの区画に接近していた模様です。カスター公爵の軍艦も虎視眈々と動く時を狙っています。
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m")]
+[name="エブラナ"]どうやら皆、この場所に多大な関心があるようだな。
+[dialog]
+[charslot]
+[name="？？？"]本当に関心があるのでしょうか？
+[dialog]
+[charslot(slot="m",name="avg_npc_865_1#1$1",focus="m",duration=1)]
+[delay(time=1.5)]
+[name="コルバート"]公爵たちは来るのが遅すぎるのではありませんか？
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="「将校」"]君は……あのホテルの支配人か？
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="「将校」"]なぜ君がここに？
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="「将校」"]……サルカズが元々ロンディニウムに忍ばせていたスパイか？
+[charslot(slot="m",name="avg_npc_865_1#1$1",focus="m")]
+[name="コルバート"]いいえ、コルバートは自分をヴィクトリア人だと思っている、ただのサルカズの清掃員にすぎません。
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m")]
+[name="エブラナ"]ではお前は？
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_deathfire", volume=1)]
+[bgeffect(name="$eb_eblana_attack",layer = 1)]
+[delay(time=1)]
+[PlaySound(key="$burningloop1", volume=0.7, loop=true, channel="fire")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background]
+[bgEffect(layer = 1)]
+[Image(image="37_i06",screenadapt="coverall",xScale=1.7, yScale=1.7,fadetime=0,block=true)]
+[ImageTween(xFrom=200, yFrom=130, xTo=-300, yTo=130,duration=60, block=false)]
+[bgeffect(name="$eb_deathburning",layer = 1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="変形者"]僕たちのことかな……？
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Image(image="37_i06",screenadapt="coverall",fadetime=1,block=true)]
+[ImageTween(xFrom=-50, yFrom=30, xTo=0, yTo=0,xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=20, block=false)]
+[bgeffect(name="$eb_deathburning",layer = 1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[delay(time=2)]
+[name="変形者"]僕たちは友達と楽しくおしゃべりしてる途中で、仕事に駆り出された可哀想な人だね。
+[name="変形者"]ほんとにおかげ様で興醒めだよ、ドラコ。
+[name="エブラナ"]ならば、私とおしゃべりするのはどうだ？
+[name="変形者"]……勘弁してほしいね。
+[name="変形者"]しゃべるくらいなら、さっさと全部終わらせようよ。
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[bgEffect(layer = 1)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Character]
+[Image]

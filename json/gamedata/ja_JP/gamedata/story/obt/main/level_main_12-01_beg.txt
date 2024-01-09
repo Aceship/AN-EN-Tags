@@ -1,0 +1,341 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="bg_black",screenadapt="showall")]
+[Delay(time=1)]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_transmissionget",volume=0.6)]
+[delay(time=1)]
+「ウィンダミア公爵の高速戦艦が、サルカズの用いた未知の兵器による襲撃を受けたことを確認。生存者なし。」
+「現時点では、当該兵器は以前ロンディニウムの上空に短時間出現した構造物と同一であると推測されています。」
+「遠距離観測小隊による前線の評価が行われた結果、当該兵器の強大な滞空能力および効率的なアーツ発生装置は警戒に値すると認定されました。」
+「既存の情報からでは、サルカズの製造した大型武装飛行ユニットの根底となる技術を確認することは不可能であるため、現在、より多くの情報の入手に努めております。」
+「ですが、サルカズが当該兵器の量産を可能とする技術を有していると確定するまで、この目標を最高レベルの脅威とは見なさない方がいいでしょう。すでに各種の対応は行われています。」
+[Dialog]
+[delay(time=0.1)]
+[PlaySound(key="$d_avg_devicebeep",volume=1)]
+[Image(image="37_i14", fadetime=0.3,block=false)]
+[ImageTween(image="37_i14", xScaleFrom=1.3, yScaleFrom=1.3, xScaleTo=0.8, yScaleTo=0.8,duration=20)]
+[delay(time=1)]
+「それ以外に注意が必要なのは、ノーポート区──ロンディニウムの古い物流エリアが、昨日ロンディニウム中心部から分離されたということです。」
+「当該区画は現在、各大公爵がロンディニウム外に展開中の前線と都市との間で単独停止しております。」
+「我々はサルカズがこの区画を前進基地へと改造して、この先、彼らが目論む一連の大規模な軍事行動に用いるのではないかと考えています。」
+「またこの場所はサルカズのあの大型兵器の臨時ターミナルになる可能性も十分あります。」
+「ロンディニウム都市防衛軍の現指揮官であるレト中佐が発表した声明によると、ノーポート区は何らかの『技術的理由』によって、ロンディニウム中心部から誤って離脱したとのことです。」
+「現在ノーポート区には、未だロンディニウム市民が多数残留しており、都市防衛軍は市民の『救出計画』を準備しております。」
+「遠距離観測小隊から現場の写真がいくつか送られております。」
+[Dialog]
+[PlaySound(key="$d_avg_devicebeep",volume=1)]
+[delay(time=0.1)]
+[image]
+[delay(time=0.7)]
+[PlaySound(key="$d_avg_devicebeep", volume=1, loop=false, channel="phone")]
+[Image(image="37_i02", screenadapt="coverall",x=0,fadetime=0,block=false)]
+[ImageTween(image="37_i14", xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1,duration=20)]
+[delay(time=0.4)]
+「現時点で、我々は当該区画に対して、いかなる大規模作戦も展開しておりません。」
+「しかし諜報員によると、過去八時間に行われたウィンダミア公爵の移動要塞『ガラヴァエ鉄盾』における一連の異常な人員配置は、ノーポート区の状況と関連がある可能性が高いとのことです。」
+「複数のアナリストの分析結果では、ウィンダミア公爵の当該区画に対する軍事的主張は、我々の事前予測よりも過激なものであり、具体的な原因究明には更なる詳細な調査が待たれます。」
+「今回のサルカズによる武力攻撃に対する各公爵の対応、及び今後の動向に関しては、いずれも継続的に監視中です。つきましては、本定例分析の報告周期を短縮いたします。」
+「次の指示をお待ちしております。」
+[Dialog]
+[PlaySound(key="$d_avg_devicebeep",volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image]
+[Background(image="bg_ltroom", screenadapt="coverall", block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_726_1#7$1",focus="m",duration=0.5)]
+[delay(time=1)]
+[name="カスター公爵"]……「技術的理由」ね。
+[name="カスター公爵"]随分とお粗末だこと。
+[charslot(slot="m",name="avg_npc_726_1#2$1",focus="m")]
+[name="カスター公爵"]けれどかなり効果的ね。彼らは私たちが……もれなく自分の名声を重んじていることをよく理解しているわ。特にヴィクトリアの未来という大事の前では。
+[charslot(slot="m",name="avg_npc_726_1#7$1",focus="m")]
+[name="カスター公爵"]さらには小さな餌まで撒いた……フッ、空飛ぶ要塞ですって？
+[name="カスター公爵"]確かに自分のものにしたくなっちゃうわよね。でもノーポート区が彼らの盾になっている限り、手を出すと面倒なことになるわ……
+[name="カスター公爵"]これでは、たとえウェリントンであろうと高速戦艦で直接突っ込むことはできないでしょう。でも、本心では古い物流エリアを砲弾で耕して、あの新しいおもちゃを奪い取りたくてたまらないはずよ。
+[name="カスター公爵"]彼は我慢できないわ。
+[dialog]
+[charslot(duration=0)]
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="r")]
+[charslot(slot="r",name="avg_npc_408_1#1$1",focus="r")]
+[name="上級士官"]はい、ウェリントン公爵の行軍速度は加速しています。彼もすでに飛空船の情報を掴んでいることでしょう。
+[name="上級士官"]あのような空に浮かぶ巨大な船は確かに我々の予想を超えており、将来における戦争の形を変える潜在能力があります。しかし情報にあった通り、事態はまだ手に負えないレベルではございません。
+[name="上級士官"]我々の試算によりますと、たとえサルカズが極秘の物資輸送ルートを有していたとしても、複数の飛空船を建設するために十分な資源と時間はありません。
+[name="上級士官"]あの魔族たちでは、この手の技術の真の価値を発揮させることは不可能でしょうが、我々なら可能かもしれません。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]ええ、もちろんよ。あれはとても重要なもの……たとえ私が命を下さなくても手に入れるのは当然だわ。
+[name="カスター公爵"]でも技術だけに目を向けるべきではないわね。
+[charslot(slot="l",name="avg_npc_726_1#2$1",focus="l")]
+[name="カスター公爵"]本当に頭を悩ませているのは……
+[charslot(slot="l",name="avg_npc_726_1#5$1",focus="l")]
+[name="カスター公爵"]私たちがあまりに長い間、あのサルカズたちをザ・シャードにとどまらせてしまっているということ。どれほどの愚か者であろうと、あれらのボタンが何であるかを理解したはずよ。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]アラデル……彼女を責めはしないわ。昔から迷いがちだったけれどそれは長所でもある。変えなくていいと許したのは私よ。だけど私たちの「剣の台座」は、どうやら時間通りには起動できないわね。
+[charslot(slot="r",name="avg_npc_408_1#1$1",focus="r")]
+[name="上級士官"]ご安心を。あなたを支持する公爵の皆さんとその配下の者たちは、今もなお確固たる決意を持って、あなたの味方でいます。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]私は彼らに平和と安全を与えると答えたわ。だから必ず、実現させなければならないの。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]「約定は何があろうと違えない」、これがカスター家古くからの信条よ。
+[charslot(slot="r",name="avg_npc_408_1#1$1",focus="r")]
+[name="上級士官"]「グレーシルクハット」がすでに動いております。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]ええ。彼らはいつも上手くやってくれるもの。
+[charslot(slot="r",name="avg_npc_408_1#1$1",focus="r")]
+[name="上級士官"]では、ノーポート区の市民は……
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]レト中佐が言ったでしょ、現在「救出計画」の準備中だって。
+[name="カスター公爵"]そのガリア出身の都市防衛軍指揮官を信じてみるのもいいかもね。彼には何回か会ったことがあるけど、面白い人だったわ。
+[charslot(slot="l",name="avg_npc_726_1#9$1",focus="l")]
+[name="カスター公爵"]サルカズはこれまでに、ロンディニウムを「占領した」と公言したことはないわ。ロンディニウムは、表向きずっと都市防衛軍の管理下にあるの。
+[name="カスター公爵"]そして、件の中佐は、都市防衛軍指揮官というポジションで四年間生き延び、大きな問題も起こしていない……
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]あの魔族たちの本性は誰もが知る通りなのに、ほんと感心するわ。
+[name="カスター公爵"]あるいは、彼は「救済者」になることについて、私たちよりも関心が強いかもしれないわね。
+[charslot(slot="r",name="avg_npc_408_1#1$1",focus="r")]
+[name="上級士官"]仰りたいことは分かりました。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]相応しい人を相応しい立場に適切に置き、価値ある友人に真に忠実なパートナーとなってもらう……これは私たちが初めに思っていたよりも難しいことね。
+[name="カスター公爵"]ウェリントンも私も、互いが何を欲しているかを知っているのよ。
+[name="カスター公爵"]私たちはそれについて実際に話したことはないけれど、当然お互いに助け合うし、同じようにナイフも用意しておくわ。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]だけど可哀想に。ウィンダミアはリターニア人たちとあまりに長く争いを続けたせいで、ヴィクトリアのルールを思い出すのに時間がかかるのかもしれないわね。
+[charslot(slot="r",name="avg_npc_408_1#1$1",focus="r")]
+[name="上級士官"]確かにいまだに分かりません。ウィンダミア公爵はなぜノーポート区の件でここまで焦っているのでしょう。もしかして彼女も飛空船の技術を欲しているのでしょうか？
+[name="上級士官"]あるいは彼女は、将来自分の立場がなくなってしまうということがわかっていて、手元のチップを増やしておきたいのでしょうか？
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]チャンスと欲望は常に手を携えて現れるわ。同じように甘く、同じように容易く人を深淵に堕とすのよ。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]二十六年前、私のいとこは、その点を理解できていなかったわね。だから亡くなったわ。
+[name="カスター公爵"]私は今も時々、彼の夢を見るの。
+[name="カスター公爵"]彼が好きだったとはとても言えないわ。大口ばかり叩いて、自分が正しいと思い込んでいて……
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]子供の頃の彼は、いつも王宮の廊下を走り回り、本で読んだ先王の名言を叫んでいたの。
+[name="カスター公爵"]しかも彼がよく口にしていたのは、一番分かりやすくて、薄っぺらい言葉だった。
+[name="カスター公爵"]「人民の模範」とか、「貴族の手本」とか……
+[name="カスター公爵"]彼はそういった言葉を規範として崇めたわ。本当に先王の口から出たものかも分からないのに。きっと王室の記録保管人たちが、媚びを売るために紙を無駄にしただけの代物よ。
+[name="カスター公爵"]なのに彼はそれを本当だと思い込んで、そのために代償を払った。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]だけれど、私は時々彼が懐かしくなるのよ……
+[name="カスター公爵"]彼がいる間、私たちはまだ世の中が平和だっていうふりをすることができたの。
+[name="カスター公爵"]でも今は、どれだけ鈍い人でも目を覚まして現実を見なければならないわ。
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]目を開いて焼き付けなさい。私たちの醜さ、私たちの渇望、私たちの野心を──
+[name="カスター公爵"]戦争が始まったの。戦火の訪れによって、ついに皆の願いが叶ったのよ。
+[charslot(slot="r",name="avg_npc_408_1#1$1",focus="r")]
+[name="上級士官"]これはあなたがヴィクトリアを団結させるチャンスでもあります。
+[charslot(slot="l",name="avg_npc_726_1#8$1",focus="l")]
+[name="カスター公爵"]ハッ、団結ねぇ……
+[charslot(slot="r",name="avg_npc_408_1#1$1",focus="r")]
+[name="上級士官"]ヴィクトリアはあまりにも長い間、埃にまみれたままでした。あなたにはその栄光を再び取り戻す資格があります。
+[name="上級士官"]これは、ヴィクトリアの戦争なのです。
+[charslot(slot="l",name="avg_npc_726_1#5$1",focus="l")]
+[name="カスター公爵"]いいえ、違うわ。違うの。他の何でもありえるけれど唯一「ヴィクトリアの戦争」だけは誤っているわ。
+[name="カスター公爵"]「ヴィクトリア」、私たちは祖国の名を口にするのがなんて大好きなのでしょう──
+[charslot(slot="l",name="avg_npc_726_1#5$1",focus="l")]
+[name="カスター公爵"]だけどそれは、人々が道徳を必要とした時、膿みを隠すために用いるボロきれにすぎない。人々が尊厳を必要とした時、希望を搾り取るために用いるハリボテにすぎないのよ。
+[charslot(slot="l",name="avg_npc_726_1#9$1",focus="l")]
+[name="カスター公爵"]農民や労働者、兵士に貴族……お互いに敵視し、恨み合う人たち、そんな人間の集団がなぜ偉大なるヴィクトリアと言えるのかしら？
+[name="カスター公爵"]誰もが口にするヴィクトリアは、一体何を指しているのかしら？　半生を費やして耕した田畑なのか、自らの血と涙で築き上げた工場なのか……
+[name="カスター公爵"]それとも略奪品のコレクションや、輸入カーペットの敷かれたホールかしら？　あるいは地図上に描かれた領土の色や文字に、テレビで報じられる経済指標やニュースタイトル？
+[name="カスター公爵"]もしくは誰もが夢想するような、栄誉ある無敵の巨大帝国かしら？
+[charslot(slot="l",name="avg_npc_726_1#7$1",focus="l")]
+[name="カスター公爵"]覚悟を決めて、集中するの……
+[name="カスター公爵"]見ていなさい。この戦争が……私たちをどこへ連れて行くのかを。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="37_g3_fogblockadestreet_d", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[playMusic(intro="$escape_intro", key="$escape_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_053",duration=0.3)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_177",posfrom="-200,0",posto="0,0",afrom=0,ato=1,duration=2)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="臆病な市民"]……あの、えっと──
+[charslot(slot="r",name="avg_npc_053",focus="r")]
+[name="サルカズ兵士"]何だ、お前もフェンスに吊るされてぇのか？
+[name="サルカズ兵士"]正直、この仕事はそんな面白いもんじゃねぇんだ。だからそのまま振り返って、いるべき場所に帰った方がいいぜ。
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="臆病な市民"]いいえ、違うんです！　あ、あの、兵士様！　私はただ……いえ、みんなはただ、話し合いを望んでいるだけでして……
+[name="臆病な市民"]いえ、話し合いというか、いくつか些細な質問がございまして……兵士様のお慈悲を請いたいと思った次第です……
+[charslot(slot="r",name="avg_npc_053",focus="r")]
+[name="サルカズ兵士"]お前らヴィクトリア人は、いつから俺たち魔族がそんな親切になったと勘違いしたんだ？
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="臆病な市民"]我々はただ、ノーポート区の現在の状況を知りたくてですね……
+[charslot(slot="r",name="avg_npc_053",focus="r")]
+[name="サルカズ兵士"]特に言うこともねぇよ。
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="臆病な市民"]その……ご覧ください、このようにかき集めれば価値のあるものがまだございまして……サルゴンの宝石について耳になさったことはありますでしょう？　こちらに少しばかり──
+[charslot(slot="r",name="avg_npc_053",focus="r")]
+[name="サルカズ兵士"]失せろ。
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="臆病な市民"]興味ございませんでしたか？　古いガリアの油絵もございますよ。どれも値のつけられないもので──そうだ！　いや、こ、こんな話はすべきではないかもしれません、もし知られたら私の命が……
+[name="臆病な市民"]サンクタの守護銃はいかがですか？　ひょんなことから、我が家に一丁ございまして……
+[charslot(slot="r",name="avg_npc_053",focus="r")]
+[name="サルカズ兵士"]そいつは面白い……サンクタの守護銃を持ってやがるのか？
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="臆病な市民"]いえ、持っているわけでは！　一時的に保管をしているだけで……何てことだ、公証人役場のあの天使たちに知られれば、八つ裂きにされることでしょう。ですがもしあなた様がお望みなら――
+[name="臆病な市民"]私はただ、かねてよりあなた方が──サルカズがそういったものをコレクションするのがお好きだと伺っていたので、それで……
+[charslot(slot="r",name="avg_npc_053",focus="r")]
+[name="サルカズ兵士"]いいか、よく聞け。俺は死体の山ん中から引っ張り出したばっかの新鮮な天使がらみのモンが好みなんだよ。持ってねーなら今すぐ、消えろ。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_242",focus="m")]
+[name="怒った市民"]サルカズめ！　俺たちはただ、何が起きてるのか知りたいだけだ。これは当然の要求だろ！
+[name="怒った市民"]これだけ大勢の人たちが家を追い出され、こんな狭苦しいエリアに押し込まれた。住む場所も、食べ物も、自由もない。俺たちはただ説明を求めてるだけだ！
+[charslot(slot="m",name="avg_npc_053",focus="m")]
+[name="サルカズ兵士"]こんなに家がたくさんあるのに足りねぇのか？　適当にどっかの家をノックするなりこじ開けるなりして入り込みゃいいじゃねぇか。それ以上何を望むってんだ？　マッサージ機能付きのバスタブか？
+[charslot(slot="m",name="avg_npc_242",focus="m")]
+[name="怒った市民"]そんな扱いが許されると思ってるのか？　都市防衛軍はどこだ？　俺はレトと知り合いなんだ、彼に会わせろ！　俺たちは何も規則を破ってなんかいない！
+[Dialog]
+[charslot(slot="m",name="avg_npc_242",focus="all")]
+[Delay(time=0.2)]
+[charslot(slot="r",name="avg_npc_864_1#1$1",posfrom="200,0",posto="0,0",afrom=0,ato=1,duration=0.5)]
+[Delay(time=0.8)]
+[PlaySound(key="$d_avg_clothmovementsp",volume=1)]
+[CameraShake(duration=0.3, xstrength=5, ystrength=5, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="r",name="avg_npc_864_1#1$1",posfrom="0,0",posto="60,0",afrom=1,ato=1,duration=0.6)]
+[charslot(slot="m",name="avg_npc_242",posfrom="0,0",posto="30,0",afrom=1,ato=1,duration=0.6)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_864_1#1$1",focus="r")]
+[name="フェリーンの女性"]もういいでしょ、あんた、気を付けなさい……
+[name="フェリーンの女性"]こいつら武器を持ってるのよ！
+[Dialog]
+[charslot(slot="m",name="avg_npc_242",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_clothmovement",volume=1)]
+[CameraShake(duration=0.3, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_242",posfrom="30,0",posto="0,0",afrom=1,ato=1,duration=0.3)]
+[charslot(slot="r",posfrom="60,0",posto="100,0",afrom=1,ato=1,duration=0.6)]
+[Delay(time=0.7)]
+[charslot(slot="r",name="avg_npc_864_1#1$1",focus="m")]
+[charslot(slot="m",name="avg_npc_242",focus="m")]
+[name="怒った市民"]放してくれ！　何も気を付ける必要なんてない！　言っとくがな、サルカズ、俺はここに三十年住んでる。ここは俺の都市なんだ！　俺の街なんだぞ！
+[name="怒った市民"]お前らが工場を乗っ取ったのは知ってるぞ、ロンディニウムの財産を狙ってるんだろ。持ってくがいいさ、工場をいくつか分け与えたところでヴィクトリアの栄光が損なわれることはない……
+[name="怒った市民"]だが俺は地位のある人間なんだ、たとえ国王だろう家を奪うことは許されない！
+[name="怒った市民"]教えろ！　どうしてノーポート区は一夜にしてロンディニウムから切り離された？　街の外にあるあの壁は何なんだ！？
+[charslot(slot="r",name="avg_npc_864_1#11$1",focus="r")]
+[name="フェリーンの女性"]はぁ……あんたそんなに命が惜しくないの？
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1)]
+[charslot(slot="m",name="avg_npc_053",focus="m")]
+[PlaySound(key="$d_avg_unsheathe",volume=0.6)]
+[delay(time=1)]
+[name="サルカズ兵士"]てめぇ……俺が何もできねぇとでも思ってやがるのか？
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="臆病な市民"]いえ、お待ちください兵士様！　彼にそんなつもりはないんです！
+[Dialog]
+[charslot(slot="m",name="avg_npc_242",focus="m")]
+[Delay(time=0.2)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0, block=true)]
+[Blocker(a=0.3, r=1,g=0.2, b=0.2, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$e_skill_skulsrsword", volume=0.7)]
+[PlaySound(key="$d_avg_tear", volume=0.7,delay=0.3)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0.5, block=true)]
+[delay(time=0.7)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_242",posfrom="0,0",posto="0,-50",duration=1,isblock=false)]
+[charslot(slot="m",name="avg_npc_242",afrom=1,ato=0,duration=0.5)]
+[Delay(time=0.6)]
+[name="怒った市民"]ぐ……うっ……
+[Dialog]
+[charslot]
+[playMusic(intro="$calamity_intro", key="$calamity_loop", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_053",focus="m")]
+[name="サルカズ兵士"]ったく、うぜぇな。
+[name="サルカズ兵士"]よく聞け、哀れな野郎ども。正直言やぁ、俺は今すぐてめぇら全員ぶち殺してやりてぇんだよ。てめぇらのツラ見てると吐き気がすんだ。だが、お前らにゃまだ使い道があると上官が言ってる。
+[name="サルカズ兵士"]だから俺はそれに従って──ひとまず我慢してやってんだよ。
+[name="サルカズ兵士"]こいつはお前らに施してやってる慈悲だ。だがな、慈悲っつーのはいつでも取り消せるもんだ。
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[name="フェリーンの女性"]早く！　逃げるのよ、ここから離れて！
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_416_1#1$1",focus="all")]
+[charslot(slot="r",name="avg_npc_418_1#1$1",focus="all")]
+[delay(time=0.2)]
+[playsound(key="$d_avg_broadswordblood",volume=0.7)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0, block=true)]
+[Blocker(a=0.6, r=1,g=0.2, b=0.2, fadetime=0.03, block=true)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0.5, block=true)]
+[Delay(time=0.6)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[charslot(slot="l",name="avg_npc_416_1#1$1",posfrom="0,0",posto="0,-70",duration=0.7,isblock=false)]
+[charslot(slot="l",name="avg_npc_416_1#1$1",afrom=1,ato=0,duration=0.5)]
+[charslot(slot="r",name="avg_npc_418_1#1$1",posfrom="0,0",posto="0,-50",duration=1,isblock=false)]
+[charslot(slot="r",name="avg_npc_418_1#1$1",afrom=1,ato=0,duration=0.5)]
+[delay(time=2)]
+[Dialog]
+[charslot(duration=0)]
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[charslot(slot = "m", action="shake",random=true, power=5, times=60,duration=0.3)]
+[name="臆病な市民"]た、助けて！
+[Dialog]
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$rungeneral", volume=0.6)]
+[charslot(slot="m",name="avg_npc_177",posfrom="0,0",posto="300,0",duration=1.2)]
+[charslot(slot="m",name="avg_npc_177",afrom=1,ato=0,duration=0.5)]
+[Delay(time=2)]
+[charslot(duration=0)]
+[charslot(slot="m",name="avg_npc_053",focus="m")]
+[name="サルカズ兵士"]逃げろ逃げろ、哀れなヴィクトリア野郎ども！　お前らはもう十分楽しんだ！　今度はかつての俺たちと同じ生活を味わう番だ！
+[name="サルカズ兵士"]廃墟に隠れろ！　物陰に隠れろ！　自分の道徳を揉み潰し、自分の尊厳を飲み込め！　それこそが、かつて俺たちサルカズが味わったすべてだ！　喜べ、これからはお前たちのモンでもあるんだ！
+[name="サルカズ兵士"]これを平等と呼べ、お前らがかつて理解してこなかった平等と呼ぶがいいさ！
+[name="サルカズ兵士"]説明？　理由？
+[name="サルカズ兵士"]このバカどもが、戦争はもう始まってんだよ！
+[name="サルカズ兵士"]戦争を学べ、戦争を受け入れろ！　俺たちが何千何百年にわたってそうしてきたようにな！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="21_G7_decisivebattlealley_d", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$rungeneral", volume=0.6)]
+[PlaySound(key="$d_avg_runstop", volume=1,delay=1.5)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_177",posfrom="300,0",posto="0,0",afrom=0,ato=1,duration=1,isblock=true)]
+[Delay(time=0.5)]
+[name="臆病な市民"]はぁ……はあ……
+[name="臆病な市民"]私は……ううっ──ここは……
+[Dialog]
+[charslot]
+[charslot(slot="m",bstart=0.2,bend=0.7,name="avg_npc_863_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[name="？？？"]そんなギャーギャー喚かないの。
+[name="？？？"]あなた、あいつらにピクニックに招待されてこの封鎖エリアへ来たとでも思ってるの？　ここへ来たがらない人たちが今どこにいるか考えてみなさい。
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="臆病な市民"]お前は……
+[dialog]
+[charslot(duration=0)]
+[delay(time=0.3)]
+[charslot(slot="m",name="avg_npc_863_1#1$1",duration=2)]
+[delay(time=2)]
+[name="ベアード"]私はベアード。あなた怪我してる、手当てが必要。
+[name="ベアード"]こっち。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

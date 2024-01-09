@@ -1,0 +1,485 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Subtitle(text="라테라노에 있을 때 나는 기도하는 일이 거의 없었다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="물론 그렇다고 내 신앙이 순수하지 않거나, 지금에 비해 게으르고 거만했던 것도 아니다. 나도 지금의 내가 예전보다 더 독실하고 더 부지런하다는 것을 증명할 수 없으니까.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="다만, 라테라노에 있을 땐, 당시 주변의 환경 때문에 많은 것에 필요성을 느끼지 못했을 뿐이다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="라테라노에는 모두가 추구하는 것이 있고, 신성한 도시의 축복이 있다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=720)]
+[Subtitle(text="그 어디에든.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="산크타는 이 점을 잘 알고 있다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image(image="39_i13",screenadapt="coverall",fadetime=0,block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+“주여, 부디 용서해 주시옵소서……”
+“저는 구원을 청하는 모든 사람을 소중히 여기겠다고 맹세했습니다. 누구든 평등하게, 내가 할 수 있는 모든 것으로 도와주겠다고 다짐했습니다.”
+“하지만 저는 그 맹세를 어겼습니다.”
+“저는 더 이상 구원을 청하는 사람들에게 응답할 수 없으며, 그들을 남길 수 없습니다. 그 이유는 단지 우리에게 물자가 부족하고 그 사람들을 감당할 수 없기 때문입니다.”
+“저는 어떤 사람들과 다른 사람들 사이에서 선택해야만 했습니다……”
+“……선택. 맞습니다. 저는 이러한 선택을 여러 번 해왔습니다……”
+“그러나 그 모든 것이 잘못됐습니다. 저는 이제 더 이상 잘못을 견딜 수 없습니다.”
+“저는 더 이상 신앙을 버릴 수 없고, 누군가를 구하기 위해 다른 누군가를 버리거나, 다수를 위해 소수를 포기할 수 없습니다!”
+“라테라노여…… 떠난 지 오래된 내 고향이여……”
+“어찌 라테라노만이 낙원이 될 수 있습니까?”
+“만약 신앙으로 향하기 위해 내 머릿속의 인도를 버려야 한다면…… 만약 이교의 힘을 빌려야 진정으로 장애물을 제거할 수 있다면……”
+“……얼마 지나지 않아, 모든 것이 답을 얻을 수 있을 겁니다.”
+“주여, 만약 당신이 진정으로 존재한다면, 부디 저의 죄를 용서해 주시옵소서……”
+[stopmusic(fadetime=1)]
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=0.7)]
+[Delay(time=2)]
+“——！”
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[charslot]
+[Delay(time=0.5)]
+[Background(image="39_g12_anbandonspace", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_923_1#6$1")]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_923_1#6$1",focus="m")]
+[name="수도원 주교"]누구냐!
+[Dialog]
+[PlaySound(key="$d_avg_footstep_stonestep",volume=0.6,channel="step1",loop=false)]
+[stopsound(channel="step1",fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_923_1#6$1",posfrom="0,0",posto="150,0",afrom=1,ato=1,duration=1.5)]
+[Delay(time=2)]
+[name="수도원 주교"]……
+[Dialog]
+[PlaySound(key="$d_avg_walkfast",volume=0.4,channel="step2",loop=false)]
+[stopsound(channel="step2",fadetime=1)]
+[charslot(slot="m",name="avg_npc_923_1#6$1",posfrom="150,0",posto="-150,0",afrom=1,ato=1,duration=1)]
+[Delay(time=1.1)]
+[PlaySound(key="$d_avg_clothmovementsp",volume=1)]
+[CameraShake(duration=0.8, xstrength=12, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_923_1#6$1",posfrom="-150,0",posto="60,0",afrom=1,ato=1,duration=0.6)]
+[Delay(time=0.3)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="l",name="avg_npc_372_1#1$1",bstart=0.2,bend=0.7,posfrom="-60,0",posto="0,0",duration=0.5)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_372_1#1$1",bstart=0.2,bend=0.7,focus="l")]
+[name="???"]어이쿠, 이런이런. 진정하시고, 말로 하시죠.
+[name="???"]한참을 찾았잖아요, 주교님.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_snowconutryinside", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$darkness02_intro", key="$darkness02_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",duration=0.5)]
+[charslot(slot="r",name="avg_npc_926_1#1$1",duration=0.5)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]요즘 식량 부족이 너무 심해서 손님에게 이것밖에 대접할 게 없네. 괜찮은가?
+[name="제럴드"]괜찮지 않다고 해도 별수 없어. 맛은 없지만, 배만 채울 수 있다면 충분하니까.
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="페데리코"]지금은 식사할 필요가 없습니다.
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]먹어. 이왕 가져온 거, 낭비하지 말고.
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="페데리코"]……
+[charslot(slot="l",name="avg_1032_excu2_1#10$1",focus="l")]
+[name="페데리코"]살카즈의 리더 제럴드, 당신은 그 리베리 아이들을 알고 있겠죠.
+[charslot(slot="r",name="avg_npc_926_1#7$1",focus="r")]
+[name="제럴드"]……너는 항상 이렇게 직설적인가?
+[name="제럴드"]그리고 리더라 부르지 마. 난 진정한 살카즈의 왕을 만난 적이 있지. 일개 사냥꾼인 난 그렇게 불릴 가치도 없어.
+[charslot(slot="l",name="avg_1032_excu2_1#10$1",focus="l")]
+[name="페데리코"]당신은 왜 사냥꾼이라 자칭하는 겁니까?
+[charslot(slot="r",name="avg_npc_926_1#7$1",focus="r")]
+[name="제럴드"]그게 사실이니까. 나는 사냥으로 여기 사람들을 먹여 살리고 있어.
+[name="제럴드"]오늘 막 도착하긴 했지만, 너도 여기 상황을 이미 파악했을 거라 생각해.
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="페데리코"]완전히 다 파악한 건 아닙니다.
+[name="페데리코"]당신은 살카즈들을 데리고 이곳에서 생활하고 있죠. 당신들은 후에 왔지만, 한때는 아주 잘 어울리며 살았습니다.
+[charslot(slot="r",name="avg_npc_926_1#10$1",focus="r")]
+[name="제럴드"]맞아, 한때는.
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="페데리코"]지금 당신들은 다른 사람들과 갈등이 생겼고, 현재 상황으로 판단했을 때 이 갈등은 더 심해질 것으로 보입니다.
+[charslot(slot="r",name="avg_npc_926_1#10$1",focus="r")]
+[name="제럴드"]그 판단이 맞아. 그래서 우린 떠나기로 했어.
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="페데리코"]일반적인 상황이라면, 다른 주민들과의 충돌에서 우위를 차지하는 쪽은 당신들일 텐데 말입니다.
+[name="페데리코"]이곳 원주민들 중 전투에 능한 사람은 극소수입니다. 그 사람들에게 전투력이 부족한 것도 당신들이 받아들여진 이유 중 하나라고 할 수 있죠.
+[name="페데리코"]하지만, 라테라노의 개입으로 당신들의 무력적 우위는 이미 상실되었고, 그래서 떠나는 게 타당한 판단이라 생각했겠죠.
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]합리적인 설명에 아주 능하군, 집행자.
+[name="제럴드"]하지만, 나는 아주 오래전부터…… 그리고 지금도 자주 나 자신에게 말하고 있지……
+[charslot(slot="r",name="avg_npc_926_1#4$1",focus="r")]
+[name="제럴드"]우리의 생활은 합리적인 적이 없다고 말이야.
+[Dialog]
+[charslot(slot="r",name="avg_npc_926_1#4$1",focus="none")]
+촛불이 흔들렸다.
+나이 든 살카즈의 시선이 벽에 닿았고, 그곳엔 희미한 그림자가 비쳤다. 이 순간만큼은 모든 차이가 더 이상 분명하지 않았다.
+[Dialog]
+[charslot(slot="r",name="avg_npc_926_1#4$1",focus="r")]
+[name="제럴드"]우리는 생존할 수 없어서 떠나는 게 아니야.
+[name="제럴드"]이곳에 오기 전에는 솔직히 이런 삶을 살 수 있을 거라고는 상상도 못 했어.
+[name="제럴드"]그동안 위험도 있었고 마찰도 있었지. 하지만 우리는 인정 받았고, 그들이 우리를 받아들였어. 우리는 스스로 살 곳을 마련하고, 노동하고 먹을 것을 얻었지……
+[name="제럴드"]네가 보기엔 지극히 평범한 일일지 몰라도, 우리에겐 감히 상상도 못 했던 날들이야.
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="페데리코"]그럼, 당신들이 떠나기로 한 진짜 이유는 무엇입니까?
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]간단해.
+[name="제럴드"]네 말대로, 우리가 언젠가 부딪칠 거란 걸 알아. 갈등은 이미 생겼고, 그 누구도 막을 순 없어. 나는 상황이 점점 나빠지는 걸 잠자코 볼 수밖에 없고……
+[name="제럴드"]지금이야 그냥 말다툼과 비난 정도겠지만, 앞으로는?
+[charslot(slot="l",name="avg_1032_excu2_1#6$1",focus="l")]
+[name="페데리코"]……다툼이 폭력 사건으로 번지겠죠. 그러면 일반 주민과 살카즈 사이의 원망이 더 커질 것입니다.
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]오늘 밤의 화재는 어쩌면 일종의 경고일지도 몰라.
+[name="제럴드"]지금 떠난다면, 우린 여전히 그리운 동료, 아껴야 할 친구로 남을 수 있지.
+[name="제럴드"]하지만, 서운하다는 생각에 빨리 결단을 내리지 못한다면……
+[charslot(slot="r",name="avg_npc_926_1#10$1",focus="r")]
+[name="제럴드"]우리 살카즈는 다시금 세상 사람들이 생각하는…… 분쟁만 일으키고, 어디서도 환영받지 못하는, 돌아갈 곳이 없는 방랑자 집단이 되겠지.
+[charslot(slot="l",name="avg_1032_excu2_1#10$1",focus="l")]
+[name="페데리코"]그건 단순한 선입견일 뿐입니다.
+[charslot(slot="r",name="avg_npc_926_1#4$1",focus="r")]
+[name="제럴드"]하지만, 우리에겐 그게 사실이야.
+[name="제럴드"]산크타에겐 라테라노가 있지만……
+[name="제럴드"]우리 살카즈는…… 지금까지 진정으로 어딘가에 소속된 적이 있었나?
+[charslot(slot="l",name="avg_1032_excu2_1#5$1",focus="l")]
+[name="페데리코"]……
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]그래서, 슬슬 때가 왔다고 생각한 거야.
+[name="제럴드"]아직 어린 살카즈에겐 지붕 없는 생활이 익숙하지 않겠지만…… 그것도 곧 적응되겠지.
+[name="제럴드"]그리고, 오늘 그 두 아이 말인데……
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="페데리코"]그 아이들을 알고 있군요.
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]……내력 정도는 알고 있어.
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="페데리코"]수도원 내 주민들과 라이문트는 모르는 것 같습니다만.
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]그 아이들의 존재를 아는 사람 자체가 거의 없지.
+[name="제럴드"]나도 추측이지만, 아마 밖에서 흘러들어온 아이들 같아. 가족이 불행을 당했거나, 아니면 버려졌거나. 가능성은 얼마든지 있지.
+[name="제럴드"]전에도 스테파노가 이런 떠돌이들을 받아준 적이 없는 건 아니야. 다만, 지금 상황으로 봤을 때 더 이상 외부인을 감당하기 힘들어.
+[charslot(slot="r",name="avg_npc_926_1#6$1",focus="r")]
+[name="제럴드"]하지만…… 만약 누군가가 몰래 이 두 아이를 거뒀다면?
+[charslot(slot="l",name="avg_1032_excu2_1#10$1",focus="l")]
+[name="페데리코"]그 사람이 누군지 압니까?
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]그 어떤 일이든 완벽하게 끝까지 숨길 순 없어. 특히 쌀 한 톨마저 세야 하는 지금 같은 시기에는.
+[name="제럴드"]하이먼이 그 아이들을 거뒀어. 매일 자기 몫을 아껴서 음식을 나눠줬지. 사냥감에도 몇 번 손을 댄 적이 있었는데, 내가 발견한 후에 대신 채워 넣었지.
+[name="제럴드"]그렇다고 해도, 여전히 힘든 생활이었겠지.
+[charslot(slot="l",name="avg_1032_excu2_1#10$1",focus="l")]
+[name="페데리코"]그 하이먼 씨는 지금 어디 있습니까?
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]……나도 그게 궁금해. 오늘 사냥감을 가지고 돌아왔어야 하는데, 지금까지도 소식이 없어서 말이야.
+[name="제럴드"]아무래도 실종된 것 같아. 우리도 아직 찾지 못했어.
+[name="제럴드"]어쨌든 하이먼이 어리석은 선택을 하지 말았으면 좋겠는데.
+[charslot(slot="l",name="avg_1032_excu2_1#10$1",focus="l")]
+[name="페데리코"]실종이라고요? 그건 아닐 겁니다.
+[charslot(slot="r",name="avg_npc_926_1#9$1",focus="r")]
+[name="제럴드"]무슨 뜻이지?
+[charslot(slot="l",name="avg_1032_excu2_1#6$1",focus="l")]
+[name="페데리코"]몰래 두 아이를 거뒀던 하이먼 씨는 평소에 아이들을 밖에 못 나가게 했을 겁니다. 에렌델과 에스타라가 성당에 나타난 건 절대 우연이 아닙니다.
+[charslot(slot="r",name="avg_npc_926_1#3$1",focus="r")]
+[name="제럴드"]……누가 데리고 나왔다는 건가.
+[charslot(slot="l",name="avg_1032_excu2_1#4$1",focus="l")]
+[name="페데리코"]하이먼 씨의 집은 어디입니까? 제가 직접 가서 확인해 봐야겠습니다.
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+아무리 너덜너덜한 오두막이라도 어린아이들에겐 비바람을 피할 수 있는 항구나 다름없다.
+키울 능력을 잃은 어른들에게 쓸모없는 폐품처럼 버려지고, 황야를 떠돌다 죽음을 앞둔 마지막 순간, 그들은 아무런 관계도 없는 살카즈에게 구조됐다.
+그리고 몰래 데려온 이 오두막에는 바람이 새는 판자벽과 따뜻하지 않은 이불, 낡았지만 깔끔한 옷, 맛은 없지만 배불리 먹을 수 있는 음식이 있었다.
+찬바람은 완전히 막을 수 없다. 집에 있는 천을 전부 긁어모아 덮고, 겨울옷을 아무리 꼭 껴입어도 뼈가 으스러질 듯한 한기는 꿈속에서도 몸을 움츠러들게 했다.
+하지만 이곳은 '집'이다. 집엔 엄마도 있다.
+이 집이야말로 아이들이 가장 편하게 지낼 수 있는 곳이다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Image(image="39_i05_2",screenadapt="coverall",fadetime=0,block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+작은 숨소리는 불청객의 방문에도 끊기지 않았다.
+그것은 평온하고 잔잔하게 이어졌다.
+그리고, 일그러진 그림자가 아이들의 몸에 드리워졌다.
+[name="뒤틀린 괴물"](기괴한 속삭임 소리)
+[name="뒤틀린 괴물"]……배고파, 먹어……
+[name="에렌델"]으음……
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=0.7)]
+[Delay(time=1)]
+[name="에스타라"](몸을 뒤척인다)
+[name="뒤틀린 괴물"]머, 먹어……
+[name="뒤틀린 괴물"]추워……
+[Dialog]
+이미 형체를 잃어버린 괴물은 기괴한 소리로 낮게 으르렁거렸다.
+줄곧 미동도 없던 그림자가 마침내 움직였다.
+달빛 아래, 괴물의 굵고 힘찬 꼬리가 앞을 살폈다. 축축한 기운의 꼬리 끝은 아이들의 부드러운 뺨을 쓰다듬었다. 곧이어……
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_cardboard", volume=0.6)]
+[charslot]
+[Image(image="39_i05_3",screenadapt="coverall",fadetime=0,block=true)]
+[Delay(time=3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=1)]
+꼬리는 부드럽고 힘없게, 작은 '감옥'에 살포시 내려앉았다.
+에스타라와 에렌델은 여전히 꿈속에 있었다. 그저 무의식적으로 몸을 뒤척이며 사람을 안심시키는 그 냄새를 향했을 뿐.
+[name="뒤틀린 괴물"]……추워……
+[name="에렌델"]쌔근…… 쌔근……
+[name="에스타라"]엄마……
+[name="'뒤틀린 괴물'"]아…… 배고파…… 머, 먹어…… 추워……
+[name="'뒤틀린 괴물'"]……
+[name="'뒤틀린 괴물'"]이, 이불…… 덮어……
+[name="'뒤틀린 괴물'"]추워…… 덮어……
+[Dialog]
+[Delay(time=1)]
+[name="'뒤틀린 괴물'"]에……렌…… 타라……
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[image]
+[charslot]
+[Background(image="39_g12_anbandonspace", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_npc_372_1#5$1")]
+[charslot(slot="r",name="avg_npc_923_1#6$1")]
+[delay(time=1)]
+[playMusic(intro="$darkness01_intro",key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_372_1#5$1",focus="l")]
+[name="리켈레"]주교님, 뭘 하고 계셨습니까?
+[charslot(slot="r",name="avg_npc_923_1#6$1",focus="r")]
+[name="수도원 주교"]참회하고 있었을 뿐이네. 라테라노에서 온 집행자여, 이런 걸 엿들어선 안 된다는 것쯤은 자네도 잘 알고 있을 텐데?
+[charslot(slot="l",name="avg_npc_372_1#1$1",focus="l")]
+[name="리켈레"]아, 오해하지 마세요. 저는 당연히 아무것도 듣지 못했습니다.
+[name="리켈레"]물론, 주교님도 제가 그걸 물어본 게 아니란 건 아실 겁니다. 당연히 누구를 보내 종을 울렸으며, 수도원 주민들의 식사를 어떻게 준비했는지…… 이런것도 아닙니다.
+[name="리켈레"]저는 옥상 성당에서 풍겨온 냄새를 물어본 겁니다.
+[charslot(slot="r",name="avg_npc_923_1#4$1",focus="r")]
+[name="수도원 주교"]자네는 그 조연성 물질의 냄새를 구분할 수 있나? ……그리핀 구의 총기 공장은 아직도 있는 건가?
+[charslot(slot="l",name="avg_npc_372_1#10$1",focus="l")]
+[name="리켈레"]하하, 지금도 여러 학교에 훈련용 총기를 공급하고 있는 것으로 알고 있습니다.
+[name="리켈레"]물론, 소이탄도 예외는 아니죠.
+[charslot(slot="r",name="avg_npc_923_1#7$1",focus="r")]
+[name="수도원 주교"]……천 년 동안 존속해 온 건, 그 신성한 도시뿐이지.
+[charslot(slot="l",name="avg_npc_372_1#10$1",focus="l")]
+[name="리켈레"]매우 괴로운 듯한 모습이군요. 하아, 이게 다 페데리코 그 녀석 탓이에요. 그 녀석은 일하는 방식이 너무 솔직하니까요.
+[name="리켈레"]그나마 불탄 건 건물 한구석 뿐이니 아직 돌이킬 여지는 있습니다. 지금이라면 모두 평안하게 라테라노에 돌아갈 수 있는데, 주교님은 어떻게 생각하십니까?
+[charslot(slot="r",name="avg_npc_923_1#1$1",focus="r")]
+[name="수도원 주교"]사람을 잘못 찾았군.
+[name="수도원 주교"]수도원 내 옛 무기를 해체하는 방법이라면 내가 이미 모두에게 알려줬네. 연료는 한정되고 있고 겨울은 매우 길지.
+[name="수도원 주교"]하지만, 자네가 만약 화재를 일으키게 한 사람이 나라고 생각한다면…… 나도 반박할 생각은 없네.
+[charslot(slot="l",name="avg_npc_372_1#10$1",focus="l")]
+[name="리켈레"]그렇게 말씀하지 마시고, 우리 어디 앉아서 천천히 대화를 나누는 건 어떤가요? 양측이 납득할 만한 해결책을 찾아보죠.
+[charslot(slot="r",name="avg_npc_923_1#10$1",focus="r")]
+[name="수도원 주교"]……대화? 해결책? 허.
+[name="수도원 주교"]도대체 어떤 해결책이어야만 어느 한쪽을 버리지 않아도 된다는 말인가? 나는 이미 내 신념을 얘기했거늘, 설마 자네들이 양보해 줄 셈인가?
+[name="수도원 주교"]7년 전 이 일대는 큰 가뭄을 겪었네. 그러던 중 한 무리의 난민이 이 수도원으로 와서 도움을 청했지. 하지만 나는 거절하고 대문을 닫아걸었어.
+[name="수도원 주교"]그 난민들은 비틀거리며 거의 기어 다니듯이 황야 깊숙이 사라졌지. 그런 광경을 본 게 처음이 아니야.
+[name="수도원 주교"]하지만 나는 주께 맹세했지. 그게 마지막일 거라고 말일세.
+[name="수도원 주교"]집행자, 내 신념이 틀렸는가?
+[charslot(slot="l",name="avg_npc_372_1#1$1",focus="l")]
+[name="리켈레"]아닙니다, 당연히 옳다고 생각합니다. 당신의 슬픔은 충분히 이해합니다.
+[name="리켈레"]라테라노도 힘이 미치지 못하는 부분이 있다는 걸 저도 인정하지 않을 수 없습니다.
+[name="리켈레"]혹은, 율법도 완벽하지 않다고 말할 수 있겠죠.
+[charslot(slot="r",name="avg_npc_923_1#4$1",focus="r")]
+[name="수도원 주교"]자네……
+[charslot(slot="l",name="avg_npc_372_1#1$1",focus="l")]
+[name="리켈레"]저도 생각이란 걸 하니까, 자연스럽게 의문이라는 것도 생깁니다.
+[name="리켈레"]다만…… 완벽하지 않더라도 지금의 라테라노는 제게 충분히 멋진 곳입니다. 저는 이런 평화와 화합을 위협하는 그 어떤 사람이나 일도 발생하지 않기를 바랍니다.
+[name="리켈레"]주교님도 분명 이 마음을 이해하시죠?
+[charslot(slot="r",name="avg_npc_923_1#1$1",focus="r")]
+[name="수도원 주교"]……
+[charslot(slot="l",name="avg_npc_372_1#1$1",focus="l")]
+[name="리켈레"]만약 주교님이 다른 일을 벌이지 않겠다고 약속한다면, 제가 동료들을 설득하는 것도 다소 쉬워질 겁니다.
+[name="리켈레"]누구도 일을 벌이지 않는다면, 이번 외근 임무는 원활하게 마무리되겠죠.
+[name="리켈레"]모두가 라테라노에 돌아갈 수 없다고 아무도 돌아가지 못하게 할 필요는 없다고 생각합니다.
+[charslot(slot="r",name="avg_npc_923_1#1$1",focus="r")]
+[name="수도원 주교"]라테라노의 사자여, 나에게 이곳은 자네에게 있어서의 라테라노와 마찬가지네.
+[name="수도원 주교"]우린 더 이상 대화를 이어갈 필요가 없는 것 같군.
+[charslot(slot="r",name="avg_npc_923_1#2$1",focus="r")]
+[name="수도원 주교"]……돌아가 주게. 내 참회를 방해하지 말아줬으면 좋겠군.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="39_g1_monasteryentrance", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_924_1#10$1",duration=0.5)]
+[charslot(slot="r",name="avg_npc_931_1#1$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="l",name="avg_npc_924_1#10$1",focus="l")]
+[name="클레망"]라이문트? 이렇게 늦었는데 왜 아직 쉬지 않나요?
+[charslot(slot="r",name="avg_npc_931_1#1$1",focus="r")]
+[name="라이문트"]……클레망, 너였구나.
+[name="라이문트"]아무것도 아니야. 일이 좀 있어서.
+[charslot(slot="l",name="avg_npc_924_1#5$1",focus="l")]
+[name="클레망"]오늘 일은, 정말 미안합니다……
+[charslot(slot="r",name="avg_npc_931_1#1$1",focus="r")]
+[name="라이문트"]신경 쓰지 마, 어차피 우린 떠날 건데.
+[charslot(slot="l",name="avg_npc_924_1#5$1",focus="l")]
+[name="클레망"]……네.
+[name="클레망"]언제 출발할 예정인가요……？
+[charslot(slot="r",name="avg_npc_931_1#1$1",focus="r")]
+[name="라이문트"]보스의 뜻에 달렸지만, 아무래도 내일 아침에 떠날 것 같아.
+[name="라이문트"]조회가 끝난 후가 되겠지.
+[charslot(slot="l",name="avg_npc_924_1#5$1",focus="l")]
+[name="클레망"]조회말입니까……
+[charslot(slot="r",name="avg_npc_931_1#11$1",focus="r")]
+[name="라이문트"]맞다, 클레망! 너…… 포르투나랑 델피나가 어디 있는지 알아?
+[name="라이문트"]원래는 걔네들을 부를 생각이었는데…… 아, 아니야. 아무튼 볼일이 좀 있어서.
+[charslot(slot="l",name="avg_npc_924_1#3$1",focus="l")]
+[name="클레망"]……잠깐만요. 라이문트, 제럴드에게 그 사건을 못 들었습니까?
+[charslot(slot="r",name="avg_npc_931_1#10$1",focus="r")]
+[name="라이문트"]뭐……? 무슨 사건?
+[charslot(slot="l",name="avg_npc_924_1#5$1",focus="l")]
+[name="클레망"]……
+[name="클레망"]델피나는…… 이제 없습니다.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="39_g6_villagestreet", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$doorclosequite", volume=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_930_1#1$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="m")]
+[name="'뒤틀린 괴물'"]……
+[name="'뒤틀린 괴물'"]안…… 녕……
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="none")]
+[name="???"]제 청각에 문제가 없다면…… 그건 작별 인사입니까?
+[playMusic(intro="$escape_intro",key="$escape_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="m")]
+[name="'뒤틀린 괴물'"]……!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",duration=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="페데리코"]일정한 언어 능력이 있는 걸 보니, 이전의 판단은 잘못됐던 것 같습니다.
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="m")]
+[name="'뒤틀린 괴물'"]너…… 는……
+[name="'뒤틀린 괴물'"]산크, 타.
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="페데리코"]사고 능력도 있군요. 혹은, 현 단계에서 어느 정도의 논리적 사고 및 자주적 판단 능력이 남아있는 것으로 판단해야 할까요.
+[name="페데리코"]육체는 변이했지만, 의사소통은 가능하군요.
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="m")]
+[name="'뒤틀린 괴물'"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[delay(time=0.5)]
+[playsound(key="$bullet_loading")]
+[delay(time=1)]
+[name="페데리코"]감염성 여부는 확실하지 않고, 시간의 경과에 따라 행동 패턴에 변화가 나타날 우려도 있습니다. 위험도는 미지수.
+[name="페데리코"]공증소의 관련 규정에 따르면, 공민의 권익을 보호하기 위해, 위험 레벨을 판단하기 어려운 위협은 현장에서의 사살 행위가 인정됩니다.
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="m")]
+[name="'뒤틀린 괴물'"]……
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="페데리코"]반항 행위를 보이지 않고, 생존 의욕도 없는 것 같군요.
+[name="페데리코"]결례를 용서해주십시오. 최대한 고통이 덜하도록 노력하겠습니다.
+[Dialog]
+[charslot]
+괴물은 계속 그 자리에 서 있었다.
+눈앞에는 막혀 있는 앞길이 있고, 뒤에는 돌이킬 수 없는 과거가 있다.
+변명, 포효, 고통, 후회, 이 모든 것이 표피를 뚫고 드러나기 전에, 이미 이 인간의 범주를 벗어난 육체 안에서 소화되고 말았다.
+이 변이된 괴물은 넘을 수 없는 저항 앞에서 이미 모든 기력을 잃었지만, 마지막의 존엄만큼은 놓지 않으려는 듯 버티고 있었다.
+녀석은 입을 다물고, 가만히 서 있었다.
+조각상처럼.
+[name="제럴드"]잠깐!
+[Dialog]
+[charslot(slot="l",name="avg_1032_excu2_1#4$1",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="r",name="avg_npc_926_1#10$1",duration=0.5)]
+[Delay(time=0.8)]
+[charslot(slot="r",name="avg_npc_926_1#10$1",focus="r")]
+[name="제럴드"]공격하지 마! 집행자!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="m")]
+[name="'뒤틀린 괴물'"]……
+[name="'뒤틀린 괴물'"]……제럴…… 드……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_1032_excu2_1#4$1",focus="r")]
+[charslot(slot="r",name="avg_npc_926_1#10$1",focus="r")]
+[name="제럴드"]……하이먼, 그거 알아? 나는 하마터면 스테파노처럼 기도할 뻔했어…… 집행자가 말한 그 '괴물'이 네가 아니길 바라면서.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="m")]
+[name="하이먼"]……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_1032_excu2_1#10$1",focus="l")]
+[charslot(slot="r",name="avg_npc_926_1#10$1",focus="l")]
+[name="페데리코"]이건 가장 합리적인 추측입니다. 그리고 지금 사실로도 증명됐습니다.
+[name="페데리코"]비켜주세요, 제럴드 씨.
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]안 돼.
+[charslot(slot="l",name="avg_1032_excu2_1#4$1",focus="l")]
+[name="페데리코"]……외람되지만, 이건 공무 집행 방해입니다.
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]나도 알아. 그러니까 언제든지 그 방아쇠를 당겨 나 같은 살카즈 죄인을 죽여도 돼. 절대 원망하지 않아.
+[name="제럴드"]하지만, 하이먼을 죽이게 할 수는 없어.
+[charslot(slot="l",name="avg_1032_excu2_1#4$1",focus="l")]
+[name="페데리코"]……그 이유는?
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]네게 '정당'하거나 '합리'적인 이유를 설명할 순 없어.
+[name="제럴드"]내가 말할 수 있는 건……
+[name="제럴드"]하이먼의 뒤를 봐. 저 문 뒤에는 두 아이가 잠들어 있어.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_930_1#1$1",focus="m")]
+[name="하이먼"]아…… 아이……
+[name="하이먼"]내, 아이……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_1032_excu2_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="l")]
+[name="페데리코"]……
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]저 아이들은 무슨 일이 일어났는지도 모른 채, 마냥 네가 엄마를 찾아주기만을 기다리고 있지.
+[name="제럴드"]아이들은 너를 믿고 있어.
+[Dialog]
+[charslot]
+한 살카즈가 온갖 시련을 다 겪은 거친 손으로 한 산크타의 총 잡은 손을 눌렀다.
+거기에는 형제간의 친밀함이나 의지도, 동료 간의 신뢰나 이해도 없었다.
+하지만 살카즈는 확실히 산크타의 손을 내리눌렀다.
+그리고 총구는 조금씩 아래로 내려갔다.
+[Dialog]
+[charslot(slot="l",name="avg_1032_excu2_1#5$1",focus="r")]
+[charslot(slot="r",name="avg_npc_926_1#1$1",focus="r")]
+[name="제럴드"]부탁이야, 집행자.
+[name="제럴드"]제대로 결론을 내리기 전까지, 자신을 설득하기 전까지, 제발 공격만은 멈춰주지 않겠나?
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

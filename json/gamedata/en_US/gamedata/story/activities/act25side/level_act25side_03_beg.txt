@@ -1,0 +1,711 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[playsound(key="$d_avg_crwddiscuss_outside", loop=true, channel="bgs",volume=0)]
+[playMusic(intro="$Tremont_intro",key="$Tremont_loop", volume=0)]
+[MusicVolume(volume=0.6, fadetime=3)]
+[SoundVolume(volume=0.4, channel="bgs",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[PlaySound(key="$d_gen_walk_n", volume=0.7)]
+[charslot(slot="l",name="avg_npc_524_1#1$1",duration=0.5)]
+[charslot(slot="r",name="avg_npc_523_1#1$1",duration=0.5)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_524_1#1$1",focus="l")]
+[name="Reporter A"]Hurry! All the headlines will be the Vice President's visit to Rhine tomorrow. The editor-in-chief will have our heads if we don't get a good photo.
+[Dialog]
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[PlaySound(key="$d_avg_clothmovement", volume=0.7)]
+[Delay(time=1)]
+[name="Reporter B"]Wait, I can't find my press pass...
+[charslot(slot="l",name="avg_npc_524_1#1$1",focus="l")]
+[name="Reporter A"]What? You can't go in without it!
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Reporter B"]Go find a good spot! I'll look for it.
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.7)]
+[charslot(slot = "right",posfrom = "0,0", posto = "300,0",afrom = 1, ato = 0,duration = 1)]
+[Delay(time=1.5)]
+[charslot(duration=1)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_529_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_npc_530_1#1$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_529_1#1$1",focus="l")]
+[name="Rhine Staff A"]So many people...
+[name="Rhine Staff A"]I couldn't even get to the café downstairs for breakfast.
+[charslot(slot="r",name="avg_npc_530_1#1$1",focus="r")]
+[name="Rhine Staff B"]A public visit by the Vice President, broadcasted live. Every newspaper is here. It's a wonder they didn't completely block the roads.
+[Dialog]
+[charslot(duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_534_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Ordinary citizens?"]......
+[Dialog]
+[StopSound(channel="bgs", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=0.7)]
+[charslot(slot="l",name="avg_npc_895_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_895_1#1$1",focus="l")]
+[name="Ifrit"]You see it, Rosmontis?
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="Rosmontis"]What?
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]First the factory, then Rhine Lab. Trimounts likes to block off a place when something happens.
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="Rosmontis"]Rhine Lab is different from the factory, isn't it? They blocked off some of the key roads leading in. Probably out of security concerns for the Vice President's convoy.
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]Which causes other streets to fill up.
+[name="Ifrit"]Did they think people wouldn't see if they blocked it off? That's dumb.
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="Rosmontis"]...Mm-hm.
+[charslot(slot="r",name="avg_391_rosmon_1#4$1",focus="r")]
+[name="Rosmontis"]Doctor, what are you looking at?
+[Dialog]
+[charslot(slot="l",focus="n")]
+[Decision(options="Will it rain today?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="Ifrit"]Sunny all day long! The hotel TV had the weather report on when were leaving. Guess you didn't see it.
+[name="Ifrit"]Anyway, it's not the rainy season yet.
+[Dialog]
+[charslot(duration=0.5)]
+[delay(time=1)]
+Another sunny day.
+The urban planning of Trimounts is intricate, the gaps between the staggered skyscrapers allowing sunlight to pass through, for the sun to paint each street with warm light evenly in these early days of winter.
+You look up to see a dark cloud in the distance, floating nonchalantly in the sky. The wind is blowing toward the cloud, and it looks to be moving away from the city.
+But it never disappears.
+You also see the busy streets, the parked cars, a flash of light up high in the distance, and well-disguised 'passersby'...
+You keep a poker face while urging the two girls on.
+[Dialog]
+[charslot(slot="l",name="avg_npc_895_1#1$1",focus="n")]
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="Rosmontis"]Did you find something, Doctor?
+[Dialog]
+[charslot(slot="l",focus="n")]
+[Decision(options="Could be Maylander Foundation spies.;Could be army operatives.;Let's go. Muelsyse is waiting.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="n")]
+[name="Ifrit"]Don't worry, Doctor, we'll protect you.
+[Dialog]
+[charslot(slot="l",focus="n")]
+[Decision(options="Don't forget today's mission.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_npc_895_1#7$1",focus="l")]
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="n")]
+[name="Ifrit"]I know, I know. You've said it a dozen times before we left.
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]I promised to listen to you, and I keep my promises.
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="Rosmontis"]I think we're there.
+[Dialog]
+[delay(time=0.5)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="29_g9_headquarter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$d_gen_walk_n",volume=0.7)]
+[charslot(slot="m",name="avg_249_mlyss_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="Muelsyse"]Dr. {@nickname}. We meet again.
+[name="Muelsyse"]As usual, I'm the one waiting.
+[charslot(slot="m",focus="n")]
+[Dialog]
+[Decision(options="I'm not late.;......;I'm a minute early.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_249_mlyss_1#10$1",focus="m")]
+[name="Muelsyse"]Ah, well, I got here before you. I got myself ready as soon as your message came in.
+[charslot(slot="m",focus="n")]
+[Dialog]
+[Decision(options="This is your company, after all...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#9$1",focus="m")]
+[playsound(key="$d_avg_paper2")]
+[name="Muelsyse"]Well, this is what you asked for... plans for the Rhine Lab building, and visitor's passes for you and your young assistants.
+[name="Muelsyse"]I called in a few favors to get you clearance to most of the building and data. Today only.
+[name="Muelsyse"]There are lots of hidden spaces in the building, both above and below ground. My tip is to have someone focus on the underground.
+[charslot(slot="m",focus="n")]
+[Dialog]
+[Decision(options="What about you?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#1$1",focus="m")]
+[name="Muelsyse"]I have to accompany Mr. Vice President on his Rhine tour, of course.
+[name="Muelsyse"]Kristen's not here, and we're missing a few section heads. Can't have anyone else calling out.
+[charslot(slot="m",name="avg_249_mlyss_1#9$1",focus="m")]
+[name="Muelsyse"]I'll give you a big, personal thank you when we're all done.
+[Dialog]
+[Effect(name="$e_muesys_hide",layer = 1)]
+[playsound(key="$d_avg_divebubble",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=2.5)]
+[Decision(options="It's always clones...;You may be on your own, Ifrit.", values="1;2")]
+[Predicate(references="1;2")]
+[stopmusic(fadetime=2)]
+[delay(time=0.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g2_colombiaoffice",screenadapt="coverall")]
+[playMusic(intro="$darkness01_intro",key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_893_1#9$1",duration=1)]
+[delay(time=2)]
+[name="Jara"]I read your resignation letter, Bieber. Why so sudden?
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]I'm sorry, Director Jara.
+[name="Energy Section Researcher"]I discovered something yesterday.
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="Jara"]Go on.
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]Energy's wing has 38 ceiling lamps and 21 vents.
+[name="Energy Section Researcher"]The carpet beneath our feet looks the same at first glance, but a closer look reveals that there are actually three versions, subtly different in pattern and fringes.
+[charslot(slot="m",name="avg_npc_893_1#11$1")]
+[name="Jara"]I didn't know you were planning to go into interior design, Bieber.
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]You would've done the same if all the projects you're involved in are up in the air, and the only work you have to do each day is to re-read the report that you wrote the day before.
+[charslot(slot="m",name="avg_npc_893_1#6$1")]
+[name="Jara"]I understand. It's hard work, keeping your guys calm while pretending that everything is business as usual.
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]I could live with hard work, Director.
+[name="Energy Section Researcher"]The labs have always been relatively independent of one another, and research is modular. Everybody goes about their own business, even if something happens to Site 359, even if Ferdinand quits unexpectedly.
+[name="Energy Section Researcher"]At the lower levels, people don't know much and believe this is no different from any number of 'research accidents' that have happened before, the kind that every tech company deals with every now and then.
+[name="Energy Section Researcher"]But I know this one is different...
+[name="Energy Section Researcher"]Control has virtually vanished without a trace, and Ferdinand suddenly resigned. Every day is like sitting on a fire. There's been no formal change of leadership in Energy, no one to tell me what happened, or what I should do.
+[name="Energy Section Researcher"]Now the Vice President is touring Rhine. It makes my stomach seize up when I walk into the lab and see the excitement in everybody's eyes.
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="Jara"]So you talked to Volvort Kochinski's headhunter... Sonya, right?
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]I... yes.
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]I'm not reprimanding you, Bieber.
+[name="Jara"]Your position at Rhine Lab allows you to see more than the average employee, but not the full picture. It's normal to feel anxious.
+[name="Jara"]The responsibility falls on me. I asked you to keep things calm in the Energy Section, but neglected your own emotional needs.
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]I-It's not your fault. Just weakness on my part...
+[charslot(slot="m",name="avg_npc_893_1#2$1")]
+[name="Jara"]Why do you think the Vice President is making this sudden visit?
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]I... I don't know. But he'll find out that we're...
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="Jara"]The press conference that he held a few days ago has to do with us.
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]...Really?
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="Jara"]That's all I can tell you for now.
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]How about this? Take one month off. Paid leave. Maybe it'll be enough for you to clear your head and return to your post.
+[name="Jara"]If you still insist on resigning after that, I won't stop you.
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[name="Energy Section Researcher"]......
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]Rhine Lab grew from a single lab to ten sections, running more than a hundred large-scale projects simultaneously. It has seen bigger storms.
+[name="Jara"]It has survived them all.
+[name="Jara"]Just give it a little thought.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_530_1#1$1")]
+[charslot(slot="m",posfrom = "0,0", posto = "-150,0",duration=1)]
+[playsound(key="$d_gen_walk_n",volume=0.7)]
+[delay(time=1.5)]
+[charslot(duration=0.5)]
+[playsound(key="$doorclosequite",volume=0.7)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_893_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$d_avg_telephonebusy")]
+[delay(time=2)]
+[name="Jara"]Sorry for the trouble, Sonya.
+[name="Jara"]The staff need a way to vent in times like this.
+[name="Jara"]Bieber should be the last one. If he's okay, the Energy Section is okay for now.
+[name="Jara"]Yeah, catch you for lunch or dinner one of these days. Give Tin Man my thanks.
+[Dialog]
+[playsound(key="$d_avg_telephone")]
+[delay(time=1)]
+[name="Jara"]*sigh*...
+[Dialog]
+[charslot(slot = "m", focus = "n")]
+[playsound(key="$doorknockquite",volume=0.7)]
+[delay(time=1)]
+[charslot(slot = "m", focus = "m")]
+[name="Jara"]Come in.
+[Dialog]
+[charslot]
+[playsound(key="$dooropenquite",volume=0.7)]
+[charslot(slot="m",name="avg_npc_892_1#1$1",duration=1)]
+[delay(time=2)]
+[name="Justin Jr."]How many does that make this week?
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="Jara"]Not your problem.
+[charslot(slot="m",name="avg_npc_892_1#1$1")]
+[name="Justin Jr."]Just don't send them to Business if you're reassigning them. I don't need flighty idiots like that.
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="Jara"]They're cornerstones of this company, Justin, just as you are.
+[name="Jara"]And I may be old, but I'm not senile enough to assign a PhD in Energy Mechanics to be one of your salesmen.
+[name="Jara"]The Vice President is almost here. I doubt you have the time to fool around in my office.
+[charslot(slot="m",name="avg_npc_892_1#1$1")]
+[name="Justin Jr."]Just giving you a heads-up. I'm seeing a few new investors today, and I have a number of important remote meetings to attend.
+[name="Justin Jr."]Since the Vice President is here to inspect research, I'll excuse myself.
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="Jara"]......
+[charslot(slot="m",name="avg_npc_892_1#1$1")]
+[name="Justin Jr."]None of the phones in Business stopped ringing the day the Vice President announced his visit to Rhine. I had to get someone to add two dedicated hotlines.
+[name="Justin Jr."]It's a clear signal. The world of Trimountian finance...
+[charslot(slot="m",name="avg_npc_892_1#3$1")]
+[name="Justin Jr."]No, not just Trimounts, not just finance. Every Columbian who even has a passing interest in investing has their eyes on us.
+[name="Justin Jr."]That Bieber has a lot of stock options, doesn't he? I say you just accept his resignation, then hire him back at a lower salary when the company's stock soars and he begs for it.
+[charslot(slot="m",name="avg_npc_893_1#7$1")]
+[name="Jara"]Rhine Lab is not a stock market toy, Justin.
+[charslot(slot="m",name="avg_npc_892_1#9$1")]
+[name="Justin Jr."]Now <i>that</i> is hurtful.
+[name="Justin Jr."]Mayor Benjamin, Councilman Chris, Deputy Phil, Commander Colette, even the Chief Justice... that's just a few of the people I'm talking to today.
+[name="Justin Jr."]Could Kristen have kept playing her hide-and-seek game with Blake if I hadn't continued to sweet-talk all these friends?
+[charslot(slot="m",name="avg_npc_893_1#2$1")]
+[name="Jara"]You utilized a lot of resources...
+[charslot(slot="m",name="avg_npc_892_1#9$1")]
+[name="Justin Jr."]Just doing my job.
+[charslot(slot="m",name="avg_npc_892_1#8$1")]
+[name="Justin Jr."]And one correction... I'm not a cornerstone of Rhine Lab.
+[name="Justin Jr."]A cornerstone exists for other people to build upon.
+[name="Justin Jr."]I don't have the same loyalty to Kristen as you do. I chose her and Rhine.
+[name="Justin Jr."]I helped her because I wanted to take control of my own fate, of everyone's fates.
+[charslot(slot="m",name="avg_npc_892_1#7$1")]
+[name="Justin Jr."]This isn't a game.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[charslot(slot="l",name="avg_npc_897_1#1$1")]
+[charslot(slot="r",name="avg_npc_523_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_avg_ringoff")]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_897_1#1$1",focus="l")]
+[name="Jackson"]News from Maylander?
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Vice President's Secretary"]Yes, sir. They have personnel deployed around the area to ensure your safety.
+[charslot(slot="l",name="avg_npc_897_1#1$1",focus="l")]
+[name="Jackson"]Good. How much further?
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Vice President's Secretary"]Two more blocks until Rhine Lab headquarters.
+[name="Vice President's Secretary"]Canceling today's tour is always an option, sir, if you're concerned.
+[charslot(slot="l",name="avg_npc_897_1#5$1",focus="l")]
+[name="Jackson"]If the Maylander Foundation can't be trusted, then canceling the tour won't be enough to protect me.
+[charslot(slot="l",name="avg_npc_897_1#1$1",focus="l")]
+[name="Jackson"]I can't very well skip class to see the mining platforms chase the sun because I'm scared of exams, like I did when I was young.
+[name="Jackson"]Not when I'm the Vice President of the Columbia Union.
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Vice President's Secretary"]You should get some rest while you can, sir. I doubt there will be many more chances today.
+[charslot(slot="l",name="avg_npc_897_1#1$1",focus="l")]
+[name="Jackson"]Do you remember how I described Trimounts at yesterday's banquet?
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Vice President's Secretary"]'The future of Columbia.' You said you love this youthful city, just as you love this youthful nation.
+[charslot(slot="l",name="avg_npc_897_1#2$1",focus="l")]
+[name="Jackson"]As a matter of fact, I don't like this place at all.
+[name="Jackson"]There are no burdenbeasts, no clouds of dust kicked up by their hooves, no duels for some 'dumb' reason, no pioneering spirit.
+[name="Jackson"]Only white-collar workers and their coffee, high-rise buildings that split the sky, and... *sniff* air so clean it makes your stomach squirm.
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Vice President's Secretary"]I believe the Trimountian circulation system employs—
+[charslot(slot="l",name="avg_npc_897_1#7$1",focus="l")]
+[name="Jackson"]Don't, Pavard. I'll be hearing far too many explanations like that over the next few hours.
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Vice President's Secretary"]You don't like dealing with scientists?
+[charslot(slot="l",name="avg_npc_897_1#7$1",focus="l")]
+[name="Jackson"]I won't go that far.
+[name="Jackson"]They're simple. They can go on and on about their products, blueprints or ideals, sometimes outlandish, sometimes crazy, mostly incomprehensible...
+[name="Jackson"]All I need to do is smile, nod, and shake their hands when they're done, giving them a few words of encouragement.
+[name="Jackson"]Much simpler than dealing with the old folks of the special district.
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Vice President's Secretary"]You represent the state. The people like to see Columbia support science. It's good for your image, and your odds in the next election.
+[charslot(slot="l",name="avg_npc_897_1#5$1",focus="l")]
+[name="Jackson"]The vice presidential election, Columbia's biggest political event... but I'm thinking that perhaps I shouldn't spend too much time and effort on it.
+[charslot(slot="r",name="avg_npc_523_1#1$1",focus="r")]
+[name="Vice President's Secretary"]You've achieved a lot in the past several years. The polls indicate you enjoy a high level of support...
+[name="Vice President's Secretary"]The representatives who support you have also been in contact with that influential Vulpo director of Rhine Lab. It's not easy to gain the support of big tech. You have a head start.
+[charslot(slot="l",name="avg_npc_897_1#2$1",focus="l")]
+[name="Jackson"]No, I meant in comparison with Mark Max, the President ever guiding Columbia to her promised future.
+[name="Jackson"]All that national attention surrounding the vice presidential elections just adds to the embarrassment.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="29_g11_monitoringroom",screenadapt="coverall")]
+[playMusic(intro="$suspenseful_intro",key="$suspenseful_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_899_1#1$1",duration=1)]
+[delay(time=2)]
+[name="Blake"]What is this screen showing?
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]The cargo passageway behind Rhine Lab.
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[name="Blake"]A little to the left. Zoom in... good, now there shouldn't be any dead zones.
+[charslot(duration=0.5)]
+[playsound(key="$keyboard")]
+The soldier is nervous as he operates the equipment. The Colonel has been standing behind him for some time now, his brow furrowed.
+The five blocks around Rhine Lab headquarters have all been placed under surveillance.
+Many figures are moving on the screens. Key areas have been blocked off, but there continues to be a considerable crowd nearby.
+Of course, the crowd also provides good cover for their operations.
+The soldier scans each monitor, not daring to even blink.
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[name="Blake"]What's the situation on the ground?
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]All undercover and support units are in position.
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[name="Blake"]Good.
+[name="Blake"]Where is Ferdinand?
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]He's on the phone.
+[charslot(slot="m",name="avg_npc_899_1#6$1")]
+[name="Blake"]The phone?
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Yes. Should I summon him?
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[name="Blake"]Never mind, no need to tell him.
+[name="Blake"]What about the colleagues in the Defense Section that he talked about?
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]We've 'taken over.'
+[charslot(slot="m",name="avg_npc_899_1#5$1")]
+[name="Blake"]Good.
+[charslot(slot = "m", focus = "n")]
+A shadow flashes across the display on the bottom-left, before appearing on the other screens. It is the Columbia displayed on top of a car.
+Several black vehicles maintain equal separation with it, both in front and behind, with machine-like discipline.
+[Dialog]
+[charslot(slot="m",name="avg_npc_899_1#1$1")]
+[playsound(key="$d_gen_transmissionget")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_899_1#7$1")]
+[name="Blake"]Begin.
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]The Vice President's convoy is in sight. Begin.
+[charslot(slot="m",name="avg_npc_899_1#5$1")]
+[name="Blake"]Have a nice tour, Jackson.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[playsound(key="$d_avg_crwddiscuss_outside", loop=true, channel="bgs",volume=0)]
+[Background(image="29_g9_headquarter",screenadapt="coverall")]
+[playMusic(key="$formal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[SoundVolume(volume=0.4, channel="bgs",fadetime=2)]
+[delay(time=1)]
+[playsound(key="$d_avg_cardoorc")]
+[delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="r",name="avg_npc_897_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_524_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$skill_flash",volume=0.3,channel="x")]
+[playsound(key="$skill_flash",volume=0.3,channel="y",delay=0.15)]
+[charslot(slot="l",focus="l")]
+[name="Reporter"]Mr. Vice President! There have been reports that Triton factory explosion in District 13 was linked to Rhine Lab.
+[name="Reporter"]Is your visit to Rhine Lab at this time intended to dispel such speculation?
+[Dialog]
+[charslot(slot="l",focus="a")]
+[charslot(slot="m",name="avg_npc_523_1#1$1",posfrom = "-600,0", posto = "-500,0",duration=0.6)]
+[delay(time=1)]
+[charslot(slot="l",focus="m")]
+[name="Reporter?"]Excuse me.
+[charslot(slot="l",focus="l")]
+[name="Reporter"]District 13 is still under lockdown. Did you authorize the army's actions, and how long will the lockdown remain in effect?
+[name="Reporter"]Will you be meeting with Control Wright?
+[Dialog]
+[charslot(slot="l",focus="m")]
+[charslot(slot = "m",posfrom = "-500,0", posto = "-450,0",duration = 0.5)]
+[delay(time=0.5)]
+[charslot(slot="l",focus="m")]
+[name="Reporter?"]Excuse me... Mr. Vice President, about your schedule in Trimounts...
+[Dialog]
+[charslot(slot="r",focus="r")]
+[name="Jackson"]......
+[Dialog]
+[charslot(duration=0.7)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_529_1#1$1",duration=0.5,posfrom = "-150,0", posto = "-200,0")]
+[delay(time=1)]
+[name="Rhine Staff"]Patience, please.
+[Dialog]
+[StopSound(channel="bgs", fadetime=1)]
+[delay(time=1)]
+[name="Rhine Staff"]There will be a press conference after the Vice President has concluded his tour.
+[name="Rhine Staff"]We have set aside a space to accommodate members of the press. Please, follow me, and refrain from disturbing other staff members in their work.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playsound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_523_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="Reporter?"]There's no one else?
+[Dialog]
+[delay(time=0.5)]
+[name="Reporter?"]Damn!
+[Dialog]
+[CameraShake(duration=0.3, xstrength=20, ystrength=15, vibrato=20, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",name="avg_npc_530_1#1$1",duration=0.3,posfrom = "-100,0", posto = "0,0")]
+[charslot(slot="r",name="avg_npc_530_1#1$1",duration=0.3,posfrom = "100,0", posto = "0,0")]
+[delay(time=0.3)]
+[charslot(slot="m",action="shake", power=15, times=20,duration=0.5)]
+[playsound(key="$d_avg_clothmovement")]
+[delay(time=0.6)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",duration=0.5,posfrom = "0,0", posto = "0,-100")]
+[charslot(slot="m",duration=0.5,posfrom = "0,0", posto = "0,-100")]
+[charslot(slot="r",duration=0.5,posfrom = "0,0", posto = "0,-100")]
+[delay(time=0.3)]
+[charslot(duration=0.5)]
+[playsound(key="$bodyfalldown1")]
+[delay(time=1)]
+[charslot]
+[name="Rhine Staff?"]Shut him up.
+[name="Reporter?"]Mmph—
+[name="Rhine Staff?"]Look at that, hiding weapons in recording equipment. Search him and make sure he doesn't have anything else on him.
+[name="Rhine Staff?"]There's a discrepancy in the documents... find a way to check the credentials of all the reporters in the press area. Be discreet.
+[Dialog]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_530_1#1$1",duration=0.5)]
+[delay(time=1)]
+[playsound(key="$transmission")]
+[delay(time=0.5)]
+[name="Rhine Staff?"]I got this one. No commotion.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[Background(image="38_g13_trimountlivingroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[name="Sniper"]Lost contact with A1, A2 A3...
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Sniper"]Have all our locations been compromised?!
+[Dialog]
+[playsound(key="$d_gen_transmissionget")]
+[delay(time=0.5)]
+[name="Sniper"]HQ, HQ, need immediate instruction on whether to continue operation—
+[Dialog]
+[charslot(slot="r",name="avg_npc_534_1#1$1",posfrom = "200,0", posto = "-50,0",duration=0.4)]
+[delay(time=0.2)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$knifegore")]
+[delay(time=0.3)]
+[charslot(slot="r",posfrom = "-50,0", posto = "0,0",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="m",afrom = 1, ato = 0,posfrom = "0,0", posto = "0,-80",duration = 0.4)]
+[delay(time=0.4)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=10, randomness=90, fadeout=true, block=false)]
+[playsound(key="$bodyfalldown3")]
+[charslot(slot="r",focus="n")]
+[name="Sniper"]Grgh...
+[Dialog]
+[charslot(slot="r",focus="r")]
+[playsound(key="$d_avg_clothmovement")]
+[charslot(slot="r",posfrom = "0,0", posto = "0,-50",duration=0.5)]
+[delay(time=1)]
+[charslot(slot="r",posfrom = "0,-50", posto = "0,0",duration=0.5)]
+[delay(time=1)]
+[name="Citizen?"]That's the 9th one.
+[name="Citizen?"]If you're used to dealing with terrorists, you know a thing or two about planning a terror attack.
+[Dialog]
+[playsound(key="$d_gen_transmissionget")]
+[CharacterCutin(widgetID="1", name="avg_npc_900_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=-200, width=200, block=true)]
+[delay(time=1)]
+[charslot(slot="r",focus="n")]
+[name="Tin Man"]Report.
+[charslot(slot="r",focus="r")]
+[name="Citizen?"]All potential vantage points within sniping range of Rhine Lab have been secured.
+[name="Citizen?"]We have neutralized nine snipers and eleven disguised assassins.
+[charslot(slot="r",focus="n")]
+[name="Tin Man"]Continue to monitor the area around Rhine Lab. Roads, vehicles, pedestrians... leave no stone unturned.
+[charslot(slot="r",focus="r")]
+[name="Citizen?"]Roger.
+[name="Citizen?"]The Vice President has entered the Rhine building. It will be difficult for us to deploy directly inside the building. Do you intend to be on scene personally?
+[charslot(slot="r",focus="n")]
+[name="Tin Man"]...No.
+[name="Tin Man"]I got a message from a colleague. There's somewhere else that I need to be.
+[name="Tin Man"]Share intel with Dr. {@nickname} of Rhodes Island. Follow any orders issued by the Doctor.
+[charslot(slot="r",focus="r")]
+[name="Citizen?"]Acknowledged.
+[stopmusic(fadetime=2)]
+[CharacterCutin(widgetID="1", fadetime=0.5,block=false)]
+[playsound(key="$d_gen_transmissionget")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_npc_526_1#1$1")]
+[playMusic(intro="$escape_intro",key="$escape_loop", volume=0.6)]
+[Background(image="38_g3_rhinelab_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_avg_mechadown")]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-150",afrom = 1, ato = 0,duration = 1.5)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="m",name="avg_391_rosmon_1#6$2",duration=0.5)]
+[delay(time=1)]
+[name="Rosmontis"]This one makes seven.
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Are you okay, Rosmontis?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",focus="m")]
+[charslot(slot="m",name="avg_391_rosmon_1#1$2")]
+[name="Rosmontis"]Just mass-produced power armor, Doctor.
+[name="Rosmontis"]Don't worry, it won't take too much effort.
+[dialog]
+[playsound(key="$d_avg_scan")]
+[delay(time=2)]
+[name="Rosmontis"]......
+[name="Rosmontis"]The serial numbers match the ones that the Defense Section lost, but five are still unaccounted for.
+[name="Rosmontis"]Should we keep looking? We need to eliminate them before they leave the secret passage, right?
+[name="Rosmontis"]They'll cause chaos if they get out, even if they can't get to the Vice President.
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Good work, Rosmontis.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",focus="m")]
+[name="Rosmontis"]How did you think of using the access permissions granted by Muelsyse to check the Defense Section's equipment log?
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Just going down the list of possible options. I didn't expect to strike gold on the first try.;I didn't think the assassins would throw acid at the Vice President disguised as researchers.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_391_rosmon_1#9$2")]
+[name="Rosmontis"]I see.
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Something feels off. These mechs seem cautious in their movements.", values="1")]
+[Predicate(references="1")]
+[Decision(options="It doesn't seem so much an assassination attempt as...", values="1")]
+[Predicate(references="1")]
+[playsound(key="$d_gen_walk_n")]
+[delay(time=2)]
+[charslot(slot="m",focus="m")]
+[charslot(slot="m",name="avg_391_rosmon_1#6$2")]
+[name="Rosmontis"]Movement, Doctor.
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Power armor?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_391_rosmon_1#7$2")]
+[name="Rosmontis"]No. Who could be in a secret passage at this hour...?
+[Dialog]
+[charslot]
+[MusicVolume(volume=0, fadetime=1)]
+[playsound(key="$b_char_defboost")]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Decision(options="Hold it, Rosmontis.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_391_rosmon_1#4$2")]
+[name="Rosmontis"]......
+[Dialog]
+[charslot]
+[MusicVolume(volume=0.6, fadetime=2)]
+[charslot(slot="m",name="avg_npc_896_1#3$1",duration=1)]
+[delay(time=2)]
+[name="Saria"]......
+[charslot(slot="m",name="avg_npc_896_1#1$1")]
+[name="Saria"]Doctor, Operator Rosmontis... what are you doing here?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_896_1#5$1")]
+[name="Saria"]I see... sorry, Doctor, I've been maintaining radio silence because I had infiltrated Rhine to retrieve data for Kal'tsit.
+[charslot(slot="m",name="avg_npc_896_1#1$1")]
+[name="Saria"]As for Kal'tsit's whereabouts, I have no idea either.
+[charslot(slot="m",name="avg_391_rosmon_1#1$2")]
+[name="Rosmontis"]The remaining power armor...
+[charslot(slot="m",name="avg_npc_896_1#1$1")]
+[name="Saria"]I destroyed five before running into you and the Doctor. That makes a total of twelve, which matches the number that the Defense Section lost.
+[name="Saria"]And so, I went to find someone.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_528_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_npc_896_1#1$1")]
+[charslot(slot="r",name="avg_npc_528_1#1$1",focus="n")]
+[name="Saria"]I'm guessing the feeling of being dragged out of a suit of power armor is not something you want to experience again, Reggie.
+[charslot(slot="r",focus="r")]
+[name="Defense Section Employee"]......
+[charslot(slot="r",focus="l")]
+[name="Saria"]What orders did Ferdinand give you?
+[charslot(slot="r",focus="r")]
+[name="Defense Section Employee"]He only wanted to borrow a few suits of power armor.
+[charslot(slot="r",focus="l")]
+[name="Saria"]Ferdinand can't be trusted.
+[charslot(slot="r",focus="r")]
+[name="Defense Section Employee"]What about you?
+[name="Defense Section Employee"]How do I trust someone who repeatedly ignores the rules that she set, showing up at Rhine whenever she wants, who abandoned all her responsibilities?
+[name="Defense Section Employee"]He took over Defense when you left. He paid our wages for the past few years.
+[name="Defense Section Employee"]He remembers our names, our hobbies, even gives us gifts, every once in a while.
+[name="Defense Section Employee"]Ferdinand may have been an asshole.
+[name="Defense Section Employee"]But I have to say, Director Saria—
+[name="Defense Section Employee"]That asshole paid our bills.
+[charslot(slot="r",focus="l")]
+[name="Saria"]The Vice President is still inside Rhine. You know the consequences if something happens.
+[name="Saria"]We must check everything that Ferdinand may have touched.
+[charslot(slot="r",focus="r")]
+[name="Defense Section Employee"]Just the ten suits of power armor. You have my word.
+[Dialog]
+[charslot]
+[Decision(options="Ten?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_391_rosmon_1#10$2")]
+[name="Rosmontis"]I destroyed seven, Saria destroyed five...
+[charslot]
+[charslot(slot="l",name="avg_npc_896_1#1$1",focus="n")]
+[charslot(slot="r",name="avg_npc_528_1#1$1",focus="r")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Defense Section Employee"]That's impossible!
+[name="Defense Section Employee"]Ferdinand only borrowed ten. I watched him enter the commands myself!
+[Dialog]
+[charslot(slot="r",focus="n")]
+[Decision(options="What kind of man is Ferdinand, Saria?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_npc_896_1#5$1",focus="l")]
+[name="Saria"]Proud, arrogant, thinks himself better than everyone else.
+[name="Saria"]But if there's one thing that sets him above other people...
+[charslot(slot="l",name="avg_npc_896_1#1$1",focus="l")]
+[name="Saria"]It's that he actually puts his boasts into action.
+[Dialog]
+[charslot(slot="r",focus="n")]
+[Decision(options="Unless I'm mistaken...", values="1")]
+[Predicate(references="1")]
+[Decision(options="I don't think those ten mechs are for assassinating the Vice President.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_npc_896_1#3$1",focus="l")]
+[name="Saria"]What?
+[Dialog]
+[charslot(slot="r",focus="n")]
+[Decision(options="As for the two extra ones...;Looks like he and the army are on guard against each other.;Ferdinand doesn't want the Vice President assassinated at Rhine Lab.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[delay(time=0.5)]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

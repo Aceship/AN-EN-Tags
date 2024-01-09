@@ -937,6 +937,12 @@
     "ro2.virtue": "<color=#0098dc>{0}</color>",
     "ro2.mutation": "<color=#9266b2>{0}</color>",
     "ro2.desc": "<color=#6d6d6d>{0}</color>",
+    "ro3.lose": "<color=#FF6E6E>{0}</color>",
+    "ro3.get": "<color=#9ed9fd>{0}</color>",
+    "ro3.redt": "<color=#ff4532>{0}</color>",
+    "ro3.greent": "<color=#4ffaa5>{0}</color>",
+    "ro3.bluet": "<color=#0085ff>{0}</color>",
+    "ro3.bosst": "<color=#ffffff>{0}</color>",
     "rc.title": "<color=#FFFFFF>{0}</color>",
     "rc.subtitle": "<color=#FFC90E>{0}</color>",
     "rc.em": "<color=#FF7F27>{0}</color>",
@@ -949,6 +955,7 @@
     "ga.limadgacha": "<color=#FF7E1F>{0}</color>",
     "ga.percent": "<color=#FFD800>{0}</color>",
     "ga.attention": "<color=#FF3126>{0}</color>",
+    "ga.classicgacha": "<color=#00A8FF>{0}</color>",
     "attainga.desc": "<color=#FF0000>{0}</color>",
     "attainga.desc2": "<color=#FFD800>{0}</color>",
     "attainga.attention": "<color=#E1322C>{0}</color>",
@@ -968,9 +975,13 @@
     "lv.hdbg": "<color=#7ba61f>{0}</color>",
     "tu.ht": "<color=#ff8d00>{0}</color>",
     "lv.act20side": "<color=#F7BC44>{0}</color>",
+    "lv.act20sre": "<color=#F7BC44>{0}</color>",
     "lv.mhitem": "<color=#A57F5B>{0}</color>",
     "lv.mhtx": "<color=#1B1B1B>{0}</color>",
     "lv.mhfs": "<color=#A57F5B>{0}</color>",
+    "ba.grt": "<color=#FFAB27>{0}</color>",
+    "ba.exl": "<color=#14F0AF>{0}</color>",
+    "ba.hrd": "<color=#DA2536>{0}</color>",
     "act.spreward": "<color=#FF5001>{0}</color>",
     "act.timelimit": "<color=#ffe300>{0}</color>",
     "vc.text": "<color=#898989>{0}</color>",
@@ -995,7 +1006,7 @@
   "commonPotentialLvlUpCount": 4,
   "weeklyOverrideDesc": "",
   "voucherDiv": 5,
-  "recruitPoolVersion": 11,
+  "recruitPoolVersion": 13,
   "v006RecruitTimeStep1Refresh": 1577226600,
   "v006RecruitTimeStep2Check": 1577208600,
   "v006RecruitTimeStep2Flush": 1577703600,
@@ -1068,8 +1079,12 @@
   "TSO": 1608246000,
   "isDynIllustEnabled": true,
   "isDynIllustStartEnabled": true,
+  "isClassicQCShopEnabled": true,
   "isRoguelikeTopicFuncEnabled": true,
   "isRoguelikeAvgAchieveFuncEnabled": true,
+  "isClassicPotentialItemFuncEnabled": true,
+  "isClassicGachaPoolFuncEnabled": true,
+  "isVoucherClassicItemDistinguishable": true,
   "voucherSkinRedeem": 1,
   "voucherSkinDesc": "The [Outfit Voucher] can only be used to redeem outfits currently available in the Outfit Store, and <color=#ffa633>cannot be used</color> to redeem outfits with dynamic art. [Outfit Voucher] <color=#ffa633>cannot be used</color> if you have already purchased all outfits in the Outfit Store, or if there are none available.\n\nYou will be informed if there are other outfits that <color=#ffa633>cannot be redeemed</color> using the [Outfit Voucher].",
   "charmEquipCount": 5,
@@ -1107,7 +1122,7 @@
     "ba.fragile": {
       "termId": "ba.fragile",
       "termName": "Fragile",
-      "description": "Amplifies all damage taken by the corresponding amount (only the strongest effect of this type applies)"
+      "description": "Amplifies all Physical, Arts, and True damage taken by the corresponding amount (only the strongest effect of this type applies)"
     },
     "ba.shield": {
       "termId": "ba.shield",
@@ -1228,6 +1243,31 @@
       "termId": "ba.weightless",
       "termName": "Weightless",
       "description": "Weight reduced by 1 level (effects of the same name do not stack)"
+    },
+    "ba.berserk": {
+      "termId": "ba.berserk",
+      "termName": "Tenacity",
+      "description": "Increases stats proportionally based on lost HP, reaching the maximum bonus once a certain percentage has been lost (only the strongest effect of this type applies)"
+    },
+    "ba.steal": {
+      "termId": "ba.steal",
+      "termName": "Steal",
+      "description": "Reduces the target's base stats while increasing own. The reduction and increase in stats cannot exceed the specified upper limit (only the strongest effect of this type applies)"
+    },
+    "ba.weaken": {
+      "termId": "ba.weaken",
+      "termName": "Enfeeble",
+      "description": "Reduces the target's ATK by the corresponding amount (only the strongest effect with this name applies)"
+    },
+    "ba.dt.apoptosis2": {
+      "termId": "ba.dt.apoptosis2",
+      "termName": "Necrosis Damage - Player",
+      "description": "Explodes when at max (1000 for Normal and Elite, 2000 for Leaders), inflicting 50%<$ba.weaken>Enfeeble</> that gradually recovers, and dealing 800 Elemental Damage per second. 15s cooldown."
+    },
+    "ba.epbarrier": {
+      "termId": "ba.epbarrier",
+      "termName": "Protective Barrier",
+      "description": "Absorbs a certain amount of <$ba.dt.element>Elemental Damage</>."
     },
     "cc.bd_A_1": {
       "termId": "cc.bd_A_1",
@@ -1389,6 +1429,16 @@
       "termName": "Sui",
       "description": "Includes the following Operators\nNian, Dusk, Ling, Chongyue"
     },
+    "cc.g.glasgow": {
+      "termId": "cc.g.glasgow",
+      "termName": "Glasgow Gang",
+      "description": "Includes the following Operators:\nSiege, Morgan, Dagda, Indra"
+    },
+    "cc.g.rh": {
+      "termId": "cc.g.rh",
+      "termName": "Rhine Lab",
+      "description": "Includes the following Operators:\nSilence, Ifrit, Saria, Ptilopsis, Mayer, Magallan, Dorothy, Astgenne, Muelsyse"
+    },
     "cc.c.abyssal2_1": {
       "termId": "cc.c.abyssal2_1",
       "termName": "Special Bonus",
@@ -1467,17 +1517,22 @@
     "cc.sk.manu2": {
       "termId": "cc.sk.manu2",
       "termName": "Rhine Tech-type Skill",
-      "description": "Includes the following skills\nRhine Tech α, Rhine Tech β"
+      "description": "Includes the following skills:\nRhine Tech α, Rhine Tech β, Rhine Tech γ"
     },
     "cc.sk.manu3": {
       "termId": "cc.sk.manu3",
       "termName": "Pinus Sylvestris Skills",
       "description": "Includes the following skills: \nPinus Sylvestris α, Pinus Sylvestris β"
     },
+    "cc.sk.manu4": {
+      "termId": "cc.sk.manu4",
+      "termName": "Metalwork-type Skill",
+      "description": "Includes the following skills:\nMetalwork α, Metalwork β"
+    },
     "cc.tag.op": {
       "termId": "cc.tag.op",
       "termName": "Operation Platform",
-      "description": "Includes the following Operators: \nLancet-2, Castle-3, THRM-EX, 'Justice Knight'"
+      "description": "Includes the following Operators:\nLancet-2, Castle-3, THRM-EX, Justice Knight, Friston-3"
     },
     "cc.tag.knight": {
       "termId": "cc.tag.knight",
@@ -1501,6 +1556,71 @@
     }
   },
   "storyReviewUnlockItemLackTip": "Insufficient Information Fragments. Acquire more from the Purchase Certificates Store or the Event Store.",
-  "dataVersion": "33.3.0",
-  "resPrefVersion": "36d0d0"
+  "dataVersion": "35.1.0",
+  "resPrefVersion": "39d0d0",
+  "announceWebBusType": "ak_announcement",
+  "subProfessionDamageTypePairs": {
+    "notchar1": "NONE",
+    "notchar2": "NONE",
+    "none1": "NONE",
+    "none2": "NONE",
+    "pioneer": "PHYSICAL",
+    "charger": "PHYSICAL",
+    "tactician": "PHYSICAL",
+    "bearer": "PHYSICAL",
+    "centurion": "PHYSICAL",
+    "fighter": "PHYSICAL",
+    "artsfghter": "MAGICAL",
+    "instructor": "PHYSICAL",
+    "lord": "PHYSICAL",
+    "sword": "PHYSICAL",
+    "musha": "PHYSICAL",
+    "fearless": "PHYSICAL",
+    "reaper": "PHYSICAL",
+    "librator": "PHYSICAL",
+    "protector": "PHYSICAL",
+    "guardian": "PHYSICAL",
+    "unyield": "PHYSICAL",
+    "artsprotector": "PHYSICAL",
+    "duelist": "PHYSICAL",
+    "fortress": "PHYSICAL",
+    "fastshot": "PHYSICAL",
+    "closerange": "PHYSICAL",
+    "aoesniper": "PHYSICAL",
+    "longrange": "PHYSICAL",
+    "reaperrange": "PHYSICAL",
+    "siegesniper": "PHYSICAL",
+    "bombarder": "PHYSICAL",
+    "corecaster": "MAGICAL",
+    "splashcaster": "MAGICAL",
+    "funnel": "MAGICAL",
+    "phalanx": "NONE",
+    "mystic": "MAGICAL",
+    "chain": "MAGICAL",
+    "blastcaster": "MAGICAL",
+    "physician": "HEAL",
+    "ringhealer": "HEAL",
+    "healer": "HEAL",
+    "wandermedic": "HEAL",
+    "slower": "MAGICAL",
+    "underminer": "MAGICAL",
+    "bard": "NONE",
+    "blessing": "MAGICAL",
+    "summoner": "MAGICAL",
+    "craftsman": "PHYSICAL",
+    "executor": "PHYSICAL",
+    "pusher": "PHYSICAL",
+    "stalker": "PHYSICAL",
+    "hookmaster": "PHYSICAL",
+    "geek": "PHYSICAL",
+    "merchant": "PHYSICAL",
+    "traper": "PHYSICAL",
+    "dollkeeper": "PHYSICAL",
+    "incantationmedic": "MAGICAL",
+    "agent": "PHYSICAL",
+    "shotprotector": "PHYSICAL",
+    "chainhealer": "HEAL",
+    "crusher": "PHYSICAL",
+    "ritualist": "MAGICAL"
+  }
 }

@@ -1,0 +1,658 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")] 
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[playMusic(intro="$plot_intro",key="$plot_loop", volume=0.6)]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_536_1#1$1", duration = 1.5, isblock=true)]
+[name="Ho'olheyak"]Hm, right on time.
+[dialog]
+[charslot]
+The Liberi steps out onto the rooftop of a tall tower and looks up at the sky. From this high vantage point, the faint, sharp screech is concealed by the sound of the wind, while the faint spot of light rapidly expands in her eyes.
+Her thick tail dexterously and rhythmically sweeps back and forth. A graceful measure to which the Liberi can compare the invisible grid of the city beneath her.
+[charslot(slot = "m", name = "avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]Now, let's see... Just where will this 'star' land in Trimounts?
+[charslot(slot = "m", name = "avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]Districts 2 and 5 are primarily residential. 11's new industrial campus is under construction...
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]Let's hope it won't be Central. That place is packed with office buildings like the dime a dozen canned fins you get at the supermarket. And it's a work day. Those offices are gonna be full of people... Hmph.
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]Well, you really figured out where to land this experiment of yours...
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]Or maybe you just never cared how much of a racket this might cause?
+[dialog]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_536_1#10$1")]
+[name="Ho'olheyak"]Either way, you planned this far ahead. Things are getting more and more interesting... Kristen.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[PlaySound(key="$d_avg_explosion", volume=0.8)]
+[delay(time=2.5)]
+[PlaySound(key="$transmission", volume=0.5)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_536_1#10$1")]
+[name="Ho'olheyak"]Confirmed—the Triton factory in District 13.
+[dialog]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+The Liberi leaps from the tall tower.
+[dialog]
+[StopSound(channel="a", fadetime=1)]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g13_trimountlivingroom",screenadapt="coverall")]
+[Delay(time=1)]
+[bgeffect(name="$eb_dim_openeye",layer=1)]
+[charslot(slot="m",name = "avg_249_mlyss_1#1$1",action="zoom",poszoom="0.5,0.65",scale=1.4,duration=0,isblock=true)]
+[PlaySound(key="$d_avg_femaleexhale", volume=1)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Delay(time=1)]
+[bgeffect]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Haaahhh...;......;Ufff... Who pulled the curtains open?", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]That's a big yawn. Didn't sleep well?
+[dialog]
+[Predicate(references="2")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#9$1")]
+[name="Muelsyse"]Do you usually stare at the ceiling for a while after you wake up?
+[dialog]
+[Predicate(references="3")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#8$1")]
+[name="Muelsyse"]Look at the time. The Rhiners have been at work for an hour already.
+[dialog]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Trimounts hotels really care about guest privacy, huh?;Is this how a Rhine Lab director welcomes a guest?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]I wanted to see you; that's why I'm here.
+[charslot(slot = "m", name = "avg_249_mlyss_1#8$1")]
+[name="Muelsyse"]You saved me from the power armor, and I brought you breakfast. Fair's fair, right?
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]That's the breakfast combo from the cafe at Rhine Lab HQ. They only sell a hundred of those a day.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#7$1")]
+[name="Muelsyse"]Okay, okay, don't give me that look. You're a Grumpy Gus in the morning, huh?
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="It's Saria you want to see, right?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]Well, I haven't been able to contact her, but if she isn't here, then coming to you won't help.
+[charslot(slot = "m", name = "avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]Anyway, take a look at this.
+[dialog]
+[charslot]
+[musicvolume(volume=0.2, fadetime=2)]
+[PlaySound(key="$d_avg_devicebeep", volume=1)]
+[delay(time=0.8)]
+[PlaySound(key="$transmission", volume=0.5)]
+[delay(time=2)]
+[name="News"]This just in, Trimountians. An explosion occurred this morning at the Triton Chemical Plant No. 3 in District 13.
+[name="News"]The specific cause of the explosion is still unknown, but the authorities' preliminary conclusion is that laboratory staff made a fatal error leading to the construction machinery on site exploding.
+[name="News"]A large stockpile of catalysts and reagents are stored at Triton Chemical Plant No. 3 , and to keep the chemicals from leaking out and causing more catastrophic damage, the military and government authorities are currently cleaning up the site.
+[name="News"]As of right now, all of District 13 is under temporary lockdown. Entry and exit from the district is being heavily restricted. Citizens are asked to cooperate with the ongoing work there.
+[name="News"]The government has not responded to request for comment, and it is not known at this time whether the lockdown in District 13 will affect Vice President Jackson's time in Trimounts.
+[dialog]
+[Decision(options="Is this another Site 359?;Does this have to do with Rhine Lab, too?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]I don't know the specifics.
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]But if you, or should I say Rhodes Island, are here, considering how much Saria trusts you, there's no way you would ignore big news like this.
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_249_mlyss_1#9$1")]
+[name="Muelsyse"]Okay, Doctor, you've got some new visitors... I'll see you very soon.
+[dialog]
+[PlaySound(key="$d_avg_watersubbreak", volume=1)]
+[Effect(name="$e_muesys_hide", layer = 1)]
+[charslot(duration=1.5)]
+[delay(time=4)]
+[Decision(options="So that was a clone after all.;New visitors?", values="1;2")]
+[Predicate(references="1;2")]
+[musicvolume(volume=0.6, fadetime=2)]
+[PlaySound(key="$rungeneral", volume=0.4)]
+[delay(time=2)]
+[PlaySound(key="$dooropenquite", volume=1)]
+[charslot(slot = "m", name = "avg_npc_895_1#2$1", duration=1, isblock=true)]
+[name="Ifrit"]Rise and shine, Dr. {@nickname}, ya big dumbass! Rise and shine!
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Ifrit... Who brought you here?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", posfrom="0,0", posto="100,0", afrom=1, ato=0, duration=1)]
+[delay(time=1.5)]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "char_003_kalts_1", duration = 2, isblock=true)]
+[name="Kal'tsit"]Long time no see, Dr. {@nickname}.
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="Kal'tsit"]Ptilopsis has already returned to the landship with Elena for checkup and treatment. Mechanist is currently on a new mission. From here on, I will be accompanying you.
+[charslot(slot = "m", name = "avg_npc_895_1#2$1")]
+[name="Ifrit"]And me! And also...
+[dialog]
+[charslot]
+[Decision(options="Rosmontis.;Kal'tsit, explain.", values="1;2")]
+[Predicate(references="1;2")]
+The floaty Feline girl apparently entered the room at some point. She stands next to the window and listens quietly to your conversation.
+She gazes at you and your room. Behind her, there are pure white clouds floating gently across the clear Trimountian sky.
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_042", duration=2, isblock=true)]
+[name="Rosmontis"]Don't be mad, Doctor.
+[name="Rosmontis"]I asked Dr. Kal'tsit to bring me along. I was... invited by someone.
+[dialog]
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="Kal'tsit"]I will explain more about what's going on later... Seeing as you have the TV on, it seems you already know about District 13.
+[name="Kal'tsit"]The explosion wasn't caused by some careless lab technician. Something fell from the sky.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="......;We need to get to the bottom of this.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="Kal'tsit"]Yes. Saria has already gone to investigate.
+[charslot(slot = "m", name = "char_003_kalts_1#2")]
+[name="Kal'tsit"]As for you, I need you to get out of bed and wash up.
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[PlaySound(key="$d_avg_crwddiscuss_outside", volume=0.6, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]       
+[Delay(time=2)]
+[charslot(slot = "l", name = "avg_npc_523_1#1$1", duration=1, focus = "l")]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1", duration=1, focus = "none")]
+[charslot(slot = "r", name = "avg_npc_524_1#1$1",duration=1, focus = "none")]
+[delay(time=1)]
+[name="Angry Citizen"]I live there. Who the hell are you to stop me from going home?
+[name="Angry Citizen"]What gives you the right to lock the place down, anyway? Is this even legal? Do you have anything in writing? I'm supposed to take your word that this is an emergency?
+[charslot(slot = "r", focus = "r")]
+[name="Anxious Citizen"]I'll be out in ten minutes!
+[name="Anxious Citizen"]I just need to head back for some documents. Our clients are waiting in the conference room!
+[charslot]
+[SoundVolume(volume=0.4, channel="a",fadetime=2)]
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Sorry, but I need to see your clearance.
+[dialog]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_523_1#1$1", focus = "l")]
+[charslot(slot = "r", name = "avg_npc_524_1#1$1", focus = "r")]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1", focus = "none")]
+[name="Citizen?"]......
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="Ho'olheyak"]Interesting. I was going to watch Saria, to see what she's up to. I never expected to find this little bird making her way here.
+[charslot(slot = "m", name = "avg_npc_536_1#6$1")]
+[name="Ho'olheyak"]Right... That's the little researcher from the 'Diαbolic Crisis.'
+[name="Ho'olheyak"]Scouting the area with a drone from a dead angle while hiding in the crowd, waiting for an opportunity. Not bad.
+[name="Ho'olheyak"]But the army has soldiers watching every single alley. It won't be so easy for you to break through their checkpoints.
+[name="Ho'olheyak"]That said...
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]I haven't the slightest idea what you can do, but you might just be able to give these baddies a little trouble, so I'll give you a hand.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[PlaySound(key="$transmission", volume=0.5)]
+[delay(time=1)]
+[name="???"]What are you blabbing about?
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]Nothing. The package's recovered. It'll be delivered right away.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[PlaySound(key="$d_avg_crwddiscuss_outside", volume=0.6, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]       
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]As you've no doubt heard on the news...
+[charslot]
+[charslot(slot = "l", name = "avg_npc_523_1#1$1", focus = "l")]
+[charslot(slot = "r", name = "avg_npc_524_1#1$1", focus = "none")]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1", focus = "none")]
+[name="Angry Citizen"]It's just one factory that had an accident. Why is the entire district on lockdown?!
+[name="Angry Citizen"]If you guys are actually worried about the chemicals, why aren't you wearing protective equipment? Why are you people still allowed to come and go? No one is buying your beastshit!
+[charslot(slot = "r", focus = "r")]
+[name="Anxious Citizen"]This is about the whole industrial campus upgrade project! If it falls through, who's gonna pay?
+[name="Anxious Citizen"]Hurry up and let me by!
+[dialog]
+[PlaySound(key="$d_avg_doorbreak", volume=1)]
+[PlaySound(key="$d_avg_audience_chaos", volume=1)]
+[CameraShake(duration=4, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot]
+[CameraShake(duration=0.3, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]No pushing!
+[dialog]
+[SoundVolume(volume=0.4, channel="a",fadetime=1)]
+[PlaySound(key="$d_avg_magic_1", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=0.5, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=1, block=true)]
+[charslot(slot = "m", action="shake", power=5, times=60,isblock=true,duration=0.5)]
+[name="Columbian Soldier"]My arm. Why can't I move...?
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Columbian Soldier"]Somebody broke through the cordon... How come the comms aren't working, either?
+[dialog]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1")]
+[name="Citizen?"]......
+[dialog]
+[PlaySound(key="$d_avg_walkfast", volume=1)]
+[charslot(slot = "m", posfrom="0,0", posto="300,0", afrom=1, ato=0, duration=1)]
+[delay(time=2)]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_896_1#1$1",duration=2)]
+[Delay(time=2.5)]
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Your clearance, Miss Saria?
+[charslot(slot = "m", name = "avg_npc_896_1#1$1")]
+[name="Saria"]You know me?
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Former Defense Director of Rhine Lab. Your reputation precedes you here in Trimounts.
+[charslot(slot = "m", name = "avg_npc_896_1#1$1")]
+[name="Saria"]So I can't enter District 13?
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Not just you.
+[name="Columbian Soldier"]If you don't have clearance, please leave.
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_900_1#1$1",duration=1.5)]
+[delay(time=2)]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]You—!
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="Tin Man"]Relax. Stow your weapon.
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Your face... Your hands... you...
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="Tin Man"]It's the same all over. I may look scary, but it's just an exoskeleton.
+[name="Tin Man"]I work for the Maylander Historical Association, currently part of the vice president's entourage as his secretary. Here's my authorization.
+[name="Tin Man"]Miss Saria here is the subject-matter expert we invited along.
+[charslot(slot = "m", name = "avg_npc_896_1#8$1")]
+[name="Saria"]......
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Maylander, huh? You people are always so strange.
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="Tin Man"]Go talk to your superiors. We want to get a better grasp of the situation.
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Give me a minute.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="none")]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]Looking at your attire... It seems you don't plan on bringing your shield along?
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]No, I just determined that I might need to apply full force to whatever is coming next.
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]Full force, huh...? That phrase carries a weight far heavier than usual coming from the former director of the Rhine Lab Defense Section.
+[name="Tin Man"]Seems like I did make it in time.
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]Our last meeting must have been at Haydn Pharmaceuticals, Detective.
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]We talked so much that I forgot to slide you and Muelsyse a free pint of draft beer on your last visit.
+[charslot(slot = "r", name = "avg_npc_896_1#3$1", focus="r")]
+[name="Saria"]I know just how powerful the Maylander Foundation is, but I was still surprised when I heard the news from Kal'tsit... how do the two of you know each other?
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]We're just old friends.
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]So, what role is the Maylander Foundation playing in our current situation?
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]Saria, are you interested in politics?
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]Decidedly not.
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]So do I really need to answer that question?
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name="avg_npc_901_1#1$1", duration = 1, isblock=true)]
+[name="Columbian Soldier"]The Colonel is en-route to his meeting with the Vice President. Your identities have been verified, and the Colonel has authorized your entry to District 13.
+[name="Columbian Soldier"]But we're conducting an emergency investigation to evaluate the hazard posed by the chemical leaks, so you won't be allowed near Triton Chemical Plant No. 3. That's where this all went down.
+[name="Columbian Soldier"]We'll also arrange an escort party to go with you, to provide any necessary help.
+[dialog]
+[charslot]
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="none")]
+[name="Saria"]......
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]No problem. We will go with your arrangements.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g8_alley_n",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1", posfrom="-300,0", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "m", name = "avg_108_silent_1#1$1", duration=1.5, isblock=true)]
+[name="Silence"]Phew—made it in.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[PlaySound(key="$d_avg_devicebeep", volume=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_drone", volume=1, loop=true, channel="b")]
+[delay(time=2)]
+[StopSound(channel="b", fadetime=2)]
+[charslot(slot = "m", name = "avg_108_silent_1#1$1")]
+[name="Silence"]Next, I keep two drones up in the air a hundred meters apart to survey the situation.
+[charslot(slot = "m", name = "avg_108_silent_1#1$1")]
+[name="Silence"]The Triton factory should be right up ahead. I hope the stealth combat tactics I learned at Rhodes Island will come in handy here, let's take it slow...
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_108_silent_1#10$1")]
+[name="Silence"]Will I really find any leads on the Transmitter here?
+[dialog]
+[musicvolume(volume=0.4, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="29_g5_laboratory",screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_108_silent_1#8$1", focus="l")]
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="none")]
+[name="Silence"]A batch of Transmitter has gone missing?
+[charslot(slot = "r", name = "avg_4048_doroth_1#7$1", focus="r")]
+[name="Dorothy"]That's right. To be more precise, it was a batch of experimental materials with said Transmitter included that was supposed to be shipped together to HQ. For disposal.
+[charslot(slot = "l", name = "avg_108_silent_1#7$1", focus="l")]
+[name="Silence"]So someone stole it.
+[charslot(slot = "r", name = "avg_4048_doroth_1#6$1", focus="r")]
+[name="Dorothy"]And it's very likely to be someone within Rhine Lab.
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="Dorothy"]Silence, I'd like you to head to Trimounts and help me investigate this.
+[charslot(slot = "l", name = "avg_108_silent_1#10$1", focus="l")]
+[name="Silence"]Me?
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="Dorothy"]I need to remain at Site 359 to cooperate with the military investigation, so I'll be stuck here for the time being.
+[charslot(slot = "l", name = "avg_108_silent_1#5$1", focus="l")]
+[name="Silence"]Are you going to negotiate with them?
+[charslot(slot = "r", name = "avg_4048_doroth_1#8$1", focus="r")]
+[name="Dorothy"]Don't worry, as much as I don't enjoy this stuff, I'm still capable of it. I'm a Rhine Lab director, after all.
+[charslot(slot = "r", name = "avg_4048_doroth_1#7$1", focus="r")]
+[name="Dorothy"]I'm more worried about this batch of missing Transmitter becoming the catalyst of someone else's ambitions.
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="Dorothy"]So, can you do it?
+[charslot(slot = "l", name = "avg_108_silent_1#10$1", focus="l")]
+[name="Silence"]Well...
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="Dorothy"]Silence, you're a student of Director Parvis, and yet you showed up here at Site 359.
+[charslot(slot = "r", name = "avg_4048_doroth_1#8$1", focus="r")]
+[name="Dorothy"]I had some doubts, but now I get it: You came here to ask for my help.
+[name="Dorothy"]Or maybe you wanted to know if the Director of Originium Art is trustworthy.
+[charslot(slot = "l", name = "avg_108_silent_1#6$1", focus="l")]
+[name="Silence"]...I'm sorry.
+[charslot(slot = "r", name = "avg_4048_doroth_1#8$1", focus="r")]
+[name="Dorothy"]No need for apologies. I did come close to doing something awful. I should be thanking you, Silence.
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="Dorothy"]But at the same time, this is why I'm asking for your help. You are beholden only to your own standards, and looking for your own answers.
+[charslot(slot = "l", name = "avg_108_silent_1#6$1", focus="l")]
+[name="Silence"]But...
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="Dorothy"]Even if I hadn't asked you, you still would've returned to Trimounts, right?
+[dialog]
+[charslot(slot = "l", name = "avg_108_silent_1#6$1", focus="l")]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_108_silent_1#7$1", focus="l")]
+[name="Silence"]...Yes.
+[dialog]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="29_g8_alley_n",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_108_silent_1#8$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="Silence"]...
+[dialog]
+[charslot(slot = "m", focus="none")]
+[PlaySound(key="$d_gen_soldiersrun", volume=0.6)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_108_silent_1#4$1")]
+[name="Silence"]Oh no. Why are there suddenly a lot more men on patrol?
+[dialog]
+[charslot(slot = "m", name = "avg_108_silent_1#4$1", isblock=true)]
+[charslot(slot = "m", posfrom="0,0", posto="-300,0", afrom=1, ato=0, duration=1)]
+[delay(time=2)]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", duration=1)]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", duration=1)]
+[delay(time=2)]
+[charslot(slot = "l", focus="l")]
+[name="Columbian Soldier A"]Shit. Find anything over there?
+[charslot(slot = "r", focus="r")]
+[name="Columbian Soldier B"]I searched a couple alleyways over on the side. Nothing.
+[charslot(slot = "l", focus="l")]
+[name="Columbian Soldier A"]The Colonel is about to meet the Vice President, so we had to play nice and let those two in. We were supposed to stick close to them. How did they lose us so quickly?!
+[charslot(slot = "r", focus="r")]
+[name="Columbian Soldier B"]They were walking so leisurely the whole time, then they vanished behind a fence when I blinked.
+[charslot(slot = "l", focus="l")]
+[name="Columbian Soldier A"]We really underestimated that fella all covered in iron. Maylander's people are always so tricky.
+[charslot(slot = "r", focus="r")]
+[name="Columbian Soldier B"]I'll go report the situation to the brass. Take the boys with you and continue the search.
+[name="Columbian Soldier B"]Right, send more hands over to the factory too.
+[dialog]
+[PlaySound(key="$d_gen_soldiersrun", volume=1, loop=true, channel="a")]
+[charslot(slot = "l", posfrom="0,0", posto="-200,0", afrom=1, ato=0, duration=1)]
+[delay(time=0.3)]
+[charslot(slot = "r", posfrom="0,0", posto="200,0", afrom=1, ato=0, duration=1)]
+[delay(time=2)]
+[StopSound(channel="a", fadetime=1)]
+[delay(time=2.5)]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", duration=2)]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", duration=2,isblock=true)]
+[charslot(slot = "r", name = "avg_npc_896_1#6$1", focus="r")]
+[name="Saria"]Your reflexes and stealth skills are admirable, Mr. Detective
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]You flatter me. Even if we could manage them, it's better to shake them off our tail than to outright knock these sycophants out.
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]We're here. Triton Chemical Plant No. 3 is right up front.
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g8_jail",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]    
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", duration=1.5)]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", duration=1.5, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]They've already cordoned off the perimeter, and deployed heavily armed soldiers at every possible location. Quite the impossible task to get any closer.
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]We're close enough for a clear view.
+[dialog]
+[charslot]
+[PlayMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+Saria's gaze travels over the throng of people and past the striking yellow barriers, landing on the factory behind.
+The once-smooth factory building has been demolished beyond recognition, with scorch marks scrawled by heaps of debris scattered all over. A series of explosions have eroded the facade, leaving only the interior foundations that give her a clear view—
+In the center of the factory lies a huge ring-like mechanical structure, diagonally embedded into the ground like an outrageous art installation.
+The source of the explosion.
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="none")]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]What have you found?
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]Neither the shape nor the mechanical structure of the object hints at its purpose, but it is clearly a device not meant to be used on land.
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]It fell from the sky.
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]......
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="Saria"]We're too far away to discern any concrete details. But what can be confirmed at the very least is... this thing has the mark of Rhine technology.
+[charslot(slot = "r", name = "avg_npc_896_1#10$1", focus="r")]
+[name="Saria"]To be precise, it has Kristen's handwriting all over it... I'm sure of that.
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]......
+[name="Tin Man"]'Horizon Arc Project'.
+[charslot(slot = "r", name = "avg_npc_896_1#3$1", focus="r")]
+[name="Saria"]What?
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="Tin Man"]I'm surprised you've not heard the name, given your position at Rhine and your relationship with Kristen.
+[charslot(slot = "r", name = "avg_npc_896_1#9$1", focus="r")]
+[name="Saria"]......
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g8_jail",screenadapt="coverall", xScale=1.3,yScale=1.3)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_108_silent_1#1$1", duration=1, isblock=true)]
+[name="Silence"]I'm glad I didn't get spotted...
+[dialog]
+[BackgroundTween(xFrom=0, xTo=150, duration=2,ease="OutQuad",block=false)]
+[charslot(slot = "m", posfrom="0,0", posto="300,0", afrom = 1, ato = 0, duration=2)]
+[delay(time=2.5)]
+[charslot]
+[playsound(key="$d_avg_liquidmetal")]
+[charslot(slot = "m", posfrom="0,0", posto="-250,0", duration=0)]
+[charslot(slot = "m", name = "avg_npc_533_1#1$1", duration=0.8)]
+[delay(time=2)]
+[playsound(key="$rungeneral")]
+[charslot(slot = "r", name = "avg_108_silent_1#4$1", posfrom="300,0", posto="0,0", duration=1,isblock=true)]
+[charslot(slot = "r", focus="r")]
+[name="Silence"]There really was one here!
+[dialog]
+[playsound(key="$d_avg_liquidmetalfly")]
+[charslot(slot = "m", name = "avg_npc_533_1#1$1", posfrom="-250,0", posto="-400,0", afrom=1, ato=0, duration = 1)]
+[delay(time=2)]
+[charslot(slot = "r", focus="r")]
+[name="Silence"]It's gone...
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "r", posfrom="0,0", posto="-500,0", afrom=1, ato=0, duration = 1.5)]
+[delay(time=2)]
+[charslot]
+[delay(time=1)]
+[BackgroundTween(xFrom=150, xTo=0, duration=2, ease="OutQuad",block=false)]
+[delay(time=2.5)]
+[playsound(key="$d_avg_liquidmetalfly")]
+[charslot(slot = "m", name = "avg_npc_533_1#1$1", duration = 1.5)]
+[delay(time=2)]
+[playsound(key="$d_avg_magic_1")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[charslot(duration=1.5)]
+[delay(time=2)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_108_silent_1#2$1", posfrom="-300,0", posto="0,0", duration = 2,isblock=true)]
+[name="Silence"]Dorothy was right. Transmitters react to each other, and it wasn't too difficult to catch them with the one she gave me.
+[charslot(slot = "m", name = "avg_108_silent_1#10$1")]
+[name="Silence"]But there's too few of them, Dorothy said there were more... could they be nearby?
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_108_silent_1#8$1")]
+[name="Silence"]Wait...
+[charslot(slot = "m", name = "avg_108_silent_1#8$1")]
+[name="Silence"]This is... the Triton Factory?
+[dialog]
+[charslot]
+A colossal ruin lies before her.
+Just how many injuries or casualties happened in there? Silence recalls the news not mentioning any numbers relevant to that question.
+She recalls the destruction at Site 359, it was difficult for her to even picture what it looked like before the ruins.
+[charslot(slot = "m", name = "avg_108_silent_1#4$1")]
+[name="Silence"]Was that Saria? Who was that with her...?
+[charslot(slot = "m", name = "avg_108_silent_1#4$1")]
+[name="Silence"]...
+[charslot(slot = "m", name = "avg_108_silent_1#8$1")]
+[name="Silence"]Saria, do you have something to do with this, too?
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]      
+[charslot(slot = "m", name = "avg_npc_895_1#1$1")]
+[name="Ifrit"]Do you know where we're going?
+[charslot(slot = "m", name = "avg_npc_042")]
+[name="Rosmontis"](Shakes head)
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="Kal'tsit"]We're heading to Saria's stronghold in Trimounts as part of our arrangement with her.
+[charslot(slot = "m", name = "avg_npc_895_1#8$1")]
+[name="Ifrit"]Saria! It's been ages since I saw her.
+[charslot(slot = "m", name = "avg_npc_895_1#6$1")]
+[name="Ifrit"]But if you need to talk to Saria, you two are gonna be busy, right? I guess she won't have time to talk to me?
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="Kal'tsit"]You and Rosmontis will stay with the Doctor.
+[charslot(slot = "m", name = "avg_npc_895_1#6$1")]
+[name="Ifrit"]......
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Ifrit, where were you just now?;Ifrit, tell me more about what you did on the way here.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_npc_895_1#8$1")]
+[name="Ifrit"]Oh, right... When the star came falling down, I was telling Rosmontis a story that Silence told me before.
+[charslot(slot = "m", name = "avg_npc_895_1#1$1")]
+[name="Ifrit"]You still remember it, right? You weren't writing any of it down...
+[charslot(slot = "m", name = "avg_npc_042")]
+[name="Rosmontis"]Yep, I still remember.
+[dialog]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[delay(time=2)]
+[Subtitle(text="That night, it seemed the entire city heard the queen's prayers and the sound of her tears splotching onto the sand... In the end, the queen passed out in the high tower of the palace.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="The queen's faithfulness reached the hearts of the stars. One after another, they soared through the skies and came before the old king.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="The old king was swallowed by the endless surge of brightness. Within it, he saw a sight that he had never seen nor dreamed in his entire life.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="The next morning, the queen awoke to find a huge hole had appeared on the palace's roof, and the old king, who had passed away hours ago... stood with a smile still lingering on his now stiffened lips.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Were the stars brought here by her prayers?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle]
+[delay(time=1)]
+[Subtitle(text="The stars made her wish come true, and they took her lover with them.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle]
+[Dialog]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

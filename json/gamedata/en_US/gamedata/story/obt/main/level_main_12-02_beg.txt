@@ -1,0 +1,410 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="27_g6_hideout",screenadapt="showall")]
+[Delay(time=1)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_401_1#10$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_401_1#10$1",focus="m")]
+[name="Clovisia"]Amiya, Doctor. You're here.
+[charslot(slot="m",name="avg_npc_401_1#5$1",focus="m")]
+[name="Clovisia"]Haha, as you can see, the morale here... is rather low right now.
+[name="Clovisia"]It's a mess, but please pay it no mind. Ever since Allerdale... left, our logistics have been in shambles.
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]But given the problems we face, this is the best solution we have.
+[name="Clovisia"]We lost many men in our last battle. We once thought that these sacrifices would not be in vain, and that as long as we stopped the Sarkaz's projects, everything would still be salvageable.
+[name="Clovisia"]Regrettably, they acted much faster than we anticipated.
+[charslot(slot="m",name="avg_npc_401_1#9$1",focus="m")]
+[name="Clovisia"]The Sarkaz... Not only do they have the Shard, they also built that 'airship.'
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]The report has been distributed to everyone. The airship attacked the Duke of Windermere's army out in the open. The illusion of peace has shattered.
+[charslot(slot="m",name="avg_npc_401_1#5$1",focus="m")]
+[name="Clovisia"]As for the Shard... if the Sarkaz willingly started this war, then their control of the Shard... must have proceeded much further along than we expected.
+[name="Clovisia"]I'm too afraid to make this gamble.
+[charslot(slot="m",name="avg_npc_407_1#9$1",focus="m")]
+[name="Siege"]Allerdale once told me the legend of this sword.
+[charslot(slot="m",name="avg_npc_407_1#1$1",focus="m")]
+[name="Siege"]She said that the Sighs of Kings, capable of rending Catastrophes asunder, is Victoria's strongest shield, with which the country can defend against the storms pulled toward it.
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]Then she must also have told you that the 'Stone of the Sword' beneath the palace exists precisely because there are few who can activate this power.
+[charslot(slot="m",name="avg_npc_396_1#10$1",focus="m")]
+[name="Dagda"]Siege, do you really feel nothing from the sword?
+[name="Dagda"]Maybe... I don't know, like a sense of being summoned? Or perhaps there's a low heat? Maybe you can suddenly use some really wicked Originium Arts?
+[charslot(slot="m",name="avg_npc_396_1#9$1",focus="m")]
+[name="Dagda"]You just... might actually be able to...
+[Dialog]
+[charslot(slot="m",name="avg_npc_407_1#6$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_clothmovementsp",volume=0.8)]
+[PlaySound(key="$d_avg_swordy",volume=0.5,delay=0.2)]
+[Delay(time=1.5)]
+[name="Siege"]...
+[charslot(slot="m",name="avg_npc_407_1#1$1",focus="m")]
+[name="Siege"]No, nothing.
+[name="Siege"]The sword is cold and hard. It's a little lighter to swing than a hammer, and not very easy to control your strength with.
+[charslot(slot="m",name="avg_npc_396_1#10$1",focus="m")]
+[name="Dagda"]Is there nothing else? If any part of you feels a little bit off—
+[charslot(slot="m",name="avg_npc_407_1#1$1",focus="m")]
+[name="Siege"]We should have this polished before it sees the battlefield again. It's a little rusted.
+[charslot(slot="m",name="avg_npc_401_1#7$1",focus="m")]
+[name="Clovisia"]It seems we can't count on the sword doing us much of a good turn and helping us fend off the threat from the Shard for the time being.
+[Dialog]
+[charslot(slot="m",name="avg_npc_401_1#7$1",focus="none")]
+[Decision(options="But it also won't become a bargaining chip in the dukes' internal strife.;The Sarkaz might just think twice before they activate the Shard.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]Right, Doctor of Rhodes Island. It is better for this sword to be under our control than any other faction. At the very least, being able to prevent it from becoming an accomplice to this war is important enough.
+[charslot(slot="m",name="avg_npc_407_1#1$1",focus="m")]
+[name="Siege"]Important enough...? This is important enough...
+[charslot(slot="m",name="avg_npc_407_1#2$1",focus="m")]
+[name="Siege"](Hushed) Allerdale, if only I...
+[charslot(slot="m",name="avg_npc_394_1#21$1",focus="m")]
+[name="Amiya"]Please don't get discouraged, Siege. Maybe you just haven't gotten the hang of it, or it's not time yet.
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="Siege"]......
+[charslot(slot="m",name="avg_npc_411_1#1$1",focus="m")]
+[name="Closure"]I'm just about done analyzing that supply line, Doctor.
+[name="Closure"]It's practically guaranteed that the starting point is rural Brentwood, but it's got a lot of endpoints.
+[name="Closure"]Aside from the munitions factory in Highbury, it's very likely they have a route that extends right underneath the Shard.
+[charslot(slot="m",name="avg_npc_411_1#8$1",focus="m")]
+[name="Closure"]Argh, we found out way too late. If only we'd found out a month—no, ten days sooner, things probably wouldn't have turned out the way they have.
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="Ascalon"]That said, the intel about this supply route is still meaningful, Doctor.
+[name="Ascalon"]If this route is capable of the transport of heavy supplies and leads straight to the bottom of the Shard—
+[Dialog]
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="none")]
+[Decision(options="We can transport more than supplies there.;This is an opportunity for a counter-offensive.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_395_1#9$1",focus="m")]
+[name="Ascalon"]That's right.
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="Ascalon"]With war having broken out, there may not be a lot of guards around Theresis. Each lord of the Royal Court has to command their subordinates to fend off the dukes.
+[charslot(slot="m",name="avg_npc_395_1#7$1",focus="m")]
+[name="Ascalon"]The liches joining the fray would be a problem... but from what I know about them, they wouldn't truly pick a side. Besides, I'm sure Dame Kal'tsit talked to their Messenger before.
+[name="Ascalon"]I just hope that they opted to follow her advice.
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="Ascalon"]Now, we'd best—
+[musicvolume(volume=0.3, fadetime=1)]
+[charslot(slot="m",name="avg_155_tiger_1#7$1",focus="m")]
+[CameraShake(duration=0.3, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Indra"]Vina, you ought to at least bring up what happened in Norport!
+[charslot(slot="m",name="avg_155_tiger_1#9$1",focus="m")]
+[name="Indra"]It's our turf that those Sarkaz arseholes gutted out! Baird is still there!
+[name="Indra"]Bloody bastards! Instead of a counter-offensive on their supply line, we should be helping them!
+[charslot(slot="m",name="avg_npc_396_1#9$1",focus="m")]
+[name="Dagda"]Calm down. We must think about the whole situation...
+[charslot(slot="m",name="avg_155_tiger_1#7$1",focus="m")]
+[name="Indra"]You little twat, you think being a knight gives you the right to teach me to look at the big picture? I don't give a shite about wiping out some old Sarkaz monsters. My friends are in danger. My home is in danger!
+[name="Indra"]And you want me to bloody stand aside and do nothing?!
+[charslot(slot="m",name="avg_npc_396_1#9$1",focus="m")]
+[name="Dagda"]No, I know you're restless, but we must consider all possibilities.
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]I do not recommend splitting up. Until we are certain the ones who attempted to take the Realmblade have given up, you'd best...
+[charslot(slot="m",name="avg_155_tiger_1#9$1",focus="m")]
+[name="Indra"]Best cower underground like cowards? Give me a break! We can take care of those sneaky bastards! What we have to do now is—
+[charslot(slot="m",name="avg_npc_407_1#1$1",focus="m")]
+[name="Siege"]Enough, Indra.
+[charslot(slot="m",name="avg_155_tiger_1#2$1",focus="m")]
+[multiline(name="Indra")]I...
+[charslot(slot="m",name="avg_155_tiger_1#8$1",focus="m")]
+[multiline(name="Indra")]Fine.
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot(slot="m",name="avg_npc_407_1#5$1",focus="m")]
+[name="Siege"]When will the operation targeting Theresis commence?
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="Ascalon"]Not very soon. We need time to observe the supply line's specific situation.
+[name="Ascalon"]The Shard's internal structure needs to be investigated too. Theresis... He's powerful. Letting our guards down would only spell our doom.
+[charslot(slot="m",name="avg_npc_407_1#5$1",focus="m")]
+[name="Siege"]How long will it take more specifically?
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="Ascalon"]Less than half a month. I hope to put a stop to all this before he truly activates the Shard.
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="Siege"]That's good enough.
+[charslot(slot="m",name="avg_npc_407_1#1$1",focus="m")]
+[name="Siege"]Dr. {@nickname}, I am requesting a temporary leave before this operation. Please rest assured that I will be back before the operation is to commence.
+[charslot(slot="m",name="avg_npc_401_1#7$1",focus="m")]
+[name="Clovisia"]So you insist on going to Norport.
+[charslot(slot="m",name="avg_npc_407_1#9$1",focus="m")]
+[name="Siege"]I've lost enough friends already, Clovisia.
+[charslot(slot="m",name="avg_npc_407_1#1$1",focus="m")]
+[name="Siege"]I can't just do nothing over and over again.
+[name="Siege"]I am making this request out of my personal feelings, yes. I won't try to hide this.
+[name="Siege"]But at the same time, I think this is an opportunity. Before our normal operation officially begins, we can first remove certain hidden threats.
+[charslot(slot="m",name="avg_npc_407_1#10$1",focus="m")]
+[name="Siege"]For example... those who hurt Allerdale and those who want the Sighs of Kings.
+[name="Siege"]That's without a doubt a duke. No matter what position he is planning to take, I think... I should have a... conversation with him.
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]Ascalon said this already, but time is not on our side.
+[charslot(slot="m",name="avg_npc_407_1#1$1",focus="m")]
+[name="Siege"]I understand.
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="Siege"]I will handle this properly.
+[charslot(slot="m",name="avg_npc_401_1#9$1",focus="m")]
+[name="Clovisia"]Doctor, what do you think?
+[Dialog]
+[charslot]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[Decision(options="There are still things worthy of our attention on that plate.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#19$1",focus="m")]
+[name="Amiya"]Right... The Sarkaz airship is very likely docked in Norport.
+[name="Amiya"]And this also implies...
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]She... Theresa might be there.
+[name="Amiya"]In this war, we will have to face her sooner or later.
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]There is another thing. Logos mentioned to me—
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_transmissionget",volume=1)]
+[delay(time=0.3)]
+[name="Self-Salvation Corps Fighter"]Emergency... ission... Emergency...
+[name="Self-Salvation Corps Fighter"]The Sarkaz ambushed... the Camden Borough safe house... We.... Their forces...
+[name="Self-Salvation Corps Fighter"]Urghh—
+[Dialog]
+[PlaySound(key="$transmission",volume=0.6)]
+[delay(time=1.5)]
+[PlayMusic(intro="$calamity_intro", key="$calamity_loop", volume=0.6)]
+[charslot(slot="m",name="avg_4040_rockr_1#10$1",focus="m")]
+[name="Rockrock"]Camden? What's going on?
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_transmissionget",volume=1)]
+[CharacterCutin(widgetID="2", name="avg_npc_398_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=300, width=200, block=true)]
+[name="Self-Salvation Corps Fighter"]Alert... The safe house at Auchterigg...
+[name="Self-Salvation Corps Fighter"]...being ambushed...
+[Dialog]
+[PlaySound(key="$transmission",volume=0.6)]
+[CharacterCutin(widgetID="2",fadetime=0.2,block=true)]
+[delay(time=1.5)]
+[Dialog]
+[PlaySound(key="$d_gen_transmissionget",volume=1)]
+[CharacterCutin(widgetID="3", name="avg_npc_648_1#3$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=-300, width=200, block=true)]
+[name="Catherine"]Feist! The safe house in Highbury is under attack!
+[charslot(slot="r",name="avg_4072_ironmn_1#6$1",focus="r")]
+[name="Feist"]What's the situation over there?
+[charslot(slot="r",name="avg_4072_ironmn_1#6$1",focus="none")]
+[name="Catherine"]We're mounting a counter attack and are evacuating underground. The situation's dire. It's likely that the Sarkaz have...
+[name="Catherine"]This is not a simple annihilation. They are planning to...
+[name="Catherine"]...must...
+[Dialog]
+[PlaySound(key="$transmission",volume=0.6)]
+[CharacterCutin(widgetID="3",fadetime=0.2,block=true)]
+[delay(time=0.6)]
+[charslot(slot="r",name="avg_4072_ironmn_1#6$1",focus="r")]
+[name="Feist"]Granny? Granny, do you hear me?
+[name="Feist"]Drat, the transmission's cut off!
+[charslot(slot="r",name="avg_4072_ironmn_1#10$1",focus="r")]
+[name="Feist"]What's going on? We have three safe houses under attack by the Sarkaz!
+[name="Feist"]Their communications have been cut off. We must back them up immediate—
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_401_1#6$1",focus="m")]
+[name="Clovisia"]......
+[name="Clovisia"]No, it's not just the three safe houses.
+[name="Clovisia"]<i>Our</i> communications have been cut off.
+[charslot(slot="m",name="avg_npc_407_1#7$1",focus="m")]
+[name="Siege"]Get down, Doctor!
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_grenadethrow")]
+[playsound(key="$d_gen_explo_n",delay=1)]
+[delay(time=1)]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_battlefield_environment", volume=0.4, loop=true, channel="warn")]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_4040_rockr_1#10$1",duration=0.3)]
+[charslot(slot="r",name="avg_npc_401_1#7$1",duration=0.3)]
+[delay(time=0.5)]
+[charslot(slot="l",name="avg_4040_rockr_1#10$1",focus="l")]
+[name="Rockrock"]Clovisia, what's going on?!
+[name="Rockrock"]How can this be? Here...? This place is top-secret within the Self-Salvation Corps!
+[charslot(slot="r",name="avg_npc_401_1#7$1",focus="r")]
+[name="Clovisia"]Logos mentioned to me that it's possible the Sarkaz have infiltrated our intelligence network.
+[name="Clovisia"]Based on the situation we now find ourselves in, I can only assume that the failure of our confidentiality far exceeds what we anticipated.
+[charslot(slot="r",name="avg_npc_401_1#6$1",focus="r")]
+[name="Clovisia"]It's very likely that all Self-Salvation Corps bases are under attack.
+[charslot(slot="l",name="avg_4040_rockr_1#3$1",focus="l")]
+[name="Rockrock"]We must evacuate!
+[charslot(slot="r",name="avg_npc_401_1#6$1",focus="r")]
+[name="Clovisia"]......
+[charslot(slot="r",name="avg_npc_401_1#5$1",focus="r")]
+[name="Clovisia"]Where can we go, though...?
+[Dialog]
+[charslot]
+[PlaySound(key="$grenade_explosion",volume=0.7)]
+[CameraShake(duration=3, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_explosion", volume=0.7, loop=false, channel="explo",delay=1)]
+[PlaySound(key="$d_gen_explo_n", volume=0.7, loop=false, channel="explo1",delay=2)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="Horn"]Everyone, the Sarkaz assault is fierce. They've had their eyes on this place for a long time, and the routes on the surface have already fallen.
+[name="Horn"]They—
+[Dialog]
+[charslot]
+[PlaySound(key="$e_atk_magic_m", volume=1)]
+[playsound(key="$p_atk_elecball_n", volume=1,delay=0.2)]
+[playsound(key="$d_avg_explosion_stone", volume=1,delay=0.6)]
+[delay(time=0.8)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[CameraShake(duration=1,xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_235",focus="m")]
+[name="Misery"]The mid-level buffer zone has been breached, too.
+[name="Misery"]Doctor, the enemy is using a new Sarkaz witchcraft device. With their numbers and strength... Our Defense Forces and Self-Salvation Corps friends won't be able to withstand this assault.
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="Horn"]Truth be told, we have no chance of winning. Robben, who's in charge of organizing defense, won't last very long.
+[charslot(slot="m",name="avg_npc_401_1#6$1",focus="m")]
+[name="Clovisia"]How much time can they buy us?
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="Horn"]Fifteen minutes... No, half an hour.
+[name="Horn"]That's all the time we have.
+[charslot(slot="m",name="avg_npc_401_1#3$1",focus="m")]
+[name="Clovisia"]Evacuate? Where are we supposed to run? There isn't anywhere safe for the Self-Salvation Corps to go in Londinium!
+[charslot(slot="m",name="avg_npc_401_1#9$1",focus="m")]
+[name="Clovisia"]The equipment factory's third warehouse? The carpark at the Four Seasons Department Store? Maybe Viscount Byrne's mansion...?
+[charslot(slot="m",name="avg_npc_401_1#8$1",focus="m")]
+[name="Clovisia"]No, they're all too risky.
+[charslot(slot="m",name="avg_npc_401_1#9$1",focus="m")]
+[name="Clovisia"]There has to be somewhere else...
+[Dialog]
+[charslot(slot="m",name="avg_npc_401_1#9$1",focus="none")]
+[Decision(options="If it's dangerous everywhere in Londinium, we can evacuate the city for the time being.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_401_1#4$1",focus="m")]
+[name="Clovisia"]Evacuate Londinium?
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]But...
+[charslot(slot="m",name="avg_npc_411_1#1$1",focus="m")]
+[name="Closure"]Right! The Sarkaz supply line!
+[name="Closure"]We can use the supply line in Highbury and get the hell out of Londinium!
+[name="Closure"]We've got too many wounded men and non-combatants. Taking an underground route will help us avoid most of the fighting!
+[charslot(slot="m",name="avg_4072_ironmn_1#8$1",focus="m")]
+[name="Feist"]But all our work in Londinium...
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="Horn"]The onslaught we are facing tells us that they simply thought they had no need to wipe us out before.
+[name="Horn"]Now that war has broken out, the Military Commission has started to truly see the Self-Salvation Corps as a threat.
+[Dialog]
+[charslot(slot="m",name="avg_npc_229_1#1",focus="none")]
+[PlaySound(key="$d_gen_explo_n", volume=0.7)]
+[CameraShake(duration=1,xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=true)]
+[PlaySound(key="$d_avg_crowdrun", volume=0.8)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="Horn"]We have no time to hesitate.
+[name="Horn"]I need to head out immediately to back Robben up. We will try to draw the Sarkaz main force's attention the best we can to cover your evacuation.
+[charslot(slot="m",name="avg_npc_401_1#9$1",focus="m")]
+[name="Clovisia"]Very well.
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]Amiya, Doctor. The Self-Salvation Corps will need your assistance in this evacuation.
+[charslot(slot="m",name="avg_npc_394_1#21$1",focus="m")]
+[name="Amiya"]We will never abandon our allies.
+[Dialog]
+[charslot]
+[Decision(options="Ascalon, mount a breakout.;Misery, destroy all files.", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="Ascalon"]Understood.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_235",focus="m")]
+[name="Misery"]I am on it.
+[Predicate(references="1;2")]
+[Dialog]
+[charslot]
+[Decision(options="Logos.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_650_1#1$1",focus="m")]
+[name="Logos"]I'm here.
+[Dialog]
+[charslot(slot="m",name="avg_npc_650_1#1$1",focus="none")]
+[Decision(options="Help Horn and her team buy us time.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_650_1#1$1",focus="m")]
+[name="Logos"]Rest assured, Doctor.
+[name="Logos"]I will guarantee your safety.
+[name="Logos"]Before we could finalize plans to relocate and secure our communications... The Royal Court picked the perfect time for this annihilation operation.
+[Dialog]
+[charslot(slot="m",name="avg_npc_650_1#1$1",focus="none")]
+[Decision(options="It seems they know us better than we ever imagined.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_650_1#2$1",focus="m")]
+[name="Logos"]Theresis has also gotten sharper... not like when he was simply pretending.
+[name="Logos"]If it's certain that this place will fall, I guess... it won't matter if we go all out.
+[charslot(slot="m",name="avg_4040_rockr_1#4$1",focus="m")]
+[name="Rockrock"]Logos, we will be back!
+[charslot(slot="m",name="avg_npc_650_1#1$1",focus="m")]
+[name="Logos"]You can rebuild this place.
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.6)]
+[charslot(slot="m",name="avg_npc_650_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=3)]
+[charslot(slot="m",name="avg_npc_401_1#1$1",focus="m")]
+[name="Clovisia"]Next, we need to find the entrance to the Highbury supply route.
+[Dialog]
+[charslot]
+[Decision(options="Feist, this is where you come in.;Rockrock, you know the underground passages better than anyone.", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_4072_ironmn_1#1$1",focus="m")]
+[name="Feist"]Understood. Everyone, come with me.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_4040_rockr_1#1$1",focus="m")]
+[name="Rockrock"]Rest assured, I will evacuate safely with the wounded.
+[Predicate(references="1;2")]
+[Dialog]
+[charslot]
+[Decision(options="Closure, take all the wounded and non-combatants and go with them.", values="1")]
+[Predicate(references="1")]
+[Decision(options="I'm counting on you and Shining to take care of Kal'tsit.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_411_1#6$1",focus="m")]
+[name="Closure"]Wha? Huh?
+[charslot(slot="m",name="avg_npc_411_1#11$1",focus="m")]
+[name="Closure"]Hey, Dr. {@nickname}, what kind of sick joke is this?! If I'm supposed to be a non-combatant, then so are you!
+[name="Closure"]You bet your ass I can beat the crap out of you! It's <i>you</i> who should be evacuating with the rest of them!
+[Dialog]
+[charslot(slot="m",name="avg_npc_411_1#11$1",focus="none")]
+[Decision(options="Amiya and Ascalon will make sure I will be safe.;We will hold the Sarkaz pursuers. This is the safest way.", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#21$1",focus="m")]
+[name="Amiya"]Doctor... I won't let you get hurt.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_411_1#6$1",focus="m")]
+[name="Closure"]Tsk, crafty dipshit.
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",name="avg_npc_411_1#8$1",focus="m")]
+[name="Closure"]So, we've got three teams.
+[name="Closure"]Horn, Misery, and Logos will lead the primary operation to resist the Sarkaz assault. Doctor, you go with Amiya and Siege's gang to hold the other Sarkaz pursuers.
+[name="Closure"]Shining and I will follow the rest of the Self-Salvation Corps and evacuate this place without making any noise.
+[name="Closure"]Where are we gonna meet up in the end?
+[charslot(slot="m",name="avg_npc_394_1#19$1",focus="m")]
+[name="Amiya"]The small town outside Londinium... Brentwood.
+[charslot(slot="m",name="avg_npc_411_1#8$1",focus="m")]
+[name="Closure"]Alright, objective confirmed.
+[charslot(slot="m",name="avg_npc_394_1#19$1",focus="m")]
+[name="Amiya"]We're now in war.
+[name="Amiya"]It won't spare any one of us.
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="Amiya"]But we also... mustn't lose hope.
+[Dialog]
+[StopSound(channel="warn", fadetime=2)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

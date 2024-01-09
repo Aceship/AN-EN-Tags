@@ -1,0 +1,618 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")] 
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[delay(time=1)]
+1099년 11월 21일
+7:11 P.M. 초점 발생기 이륙 3분 후
+[dialog]
+[Background(image="38_g12_trimountrestarea",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$Tremont_intro",key="$Tremont_loop", volume=0)]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_npc_223", duration=1, isblock=true)]
+[name="연구원"]어…… 음……
+[name="연구원"]후, 너무 춥다. 또 난방을 껐나 보군.
+[name="연구원"]대체 몇 번이나 민원을 더 넣어야 밤중에도 실험실에 야근하는 사람이 있다는 걸 기억할까……
+[dialog]
+[PlaySound(key="$d_avg_telephonering", volume=0.6, loop=true, channel="a")]
+[delay(time=2)]
+[playsound(key="$d_avg_telephone")]
+[StopSound(channel="a", fadetime=0.5)]
+[delay(time=1)]
+[name="연구원"]여보세요, 여보, 무슨 일이야?
+[name="연구원"]잠깐만…… 밖에 나가서 다시 통화할게.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall",xScale=1.3,yScale=1.3,y=80)]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="a")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="연구원"]오늘이 무슨 날이냐고?
+[name="연구원"]음…… 프로젝트 마감 9일 전인데, 진도가 너무 안 나가서 말이야.
+[name="연구원"]오늘도 집에 못 갈 것 같아.
+[dialog]
+[delay(time=1)]
+[name="연구원"]뭐? 결혼기념일? 이런.
+[name="연구원"]미안해, 요새 너무 바빠서…… 나도 알지, 우리 여보가 그 레스토랑을 얼마나 오래 기대했는데…… 나도 다 알아, 미안해.
+[name="연구원"]최근 부통령이 공개적으로 라인 랩에 방문한 일 때문에 이사회의 멍청한 대머리들이 아주 정신이 나갔나 봐.
+[name="연구원"]지금 모든 프로젝트에 당장 중간 성과를 내놓으라는 지시가 떨어졌어. 아니면 회사를 나가래.
+[name="연구원"]핑계가 아니라…… 여보, 이건…… 내 말 좀 들어 봐. 오늘은 정말 안 돼. 다음에 꼭 제대로 보상할게.
+[name="연구원"]여보세요? 여보?
+[dialog]
+[PlaySound(key="$d_avg_phonestop", volume=1)]
+[delay(time=2)]
+[name="연구원"]……제기랄.
+[name="연구원"]……무슨 일이라도 벌어졌으면 좋겠네.
+[name="연구원"]사무실이 폭발한다든지, 강도들이 은행을 턴다든지, 아니면 트리마운츠의 캐터필러가 갑자기 끊어진다든지.
+[name="연구원"]뭐라도 좋으니까.
+[dialog]
+[charslot(slot = "m", focus = "n")]
+밤은 점점 더 깊어졌고 사무실의 불빛은 더 밝아졌다. 그러나 연구원의 얼굴은 더 어두워졌다.
+그는 으스스 몸을 떨었다. 몇 주 뒤면 곧 눈이 올 것이다.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_223")]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[delay(time=0.5)]
+[charslot(slot = "m", action="jump", posto="20,0", power=10, times=1, duration=0.5)]
+[playsound(key="$bodyfalldown3")]
+[delay(time=1.5)]
+[name="연구원"]하아, 역시 아무 일도 없네.
+[dialog]
+[charslot(duration=0.5)]
+[stopmusic(fadetime=3)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+결국 그는 밖에서 더 있고 싶은 충동을 억누르고 사무실을 향해 터벅터벅 걸어갔다. 그런데 이때, 멀리서 짜증 나는 경보음이 들려왔다.
+[PlaySound(key="$d_avg_airdefensealert", volume=1, loop=true, channel="b")]
+재앙 경보가 아무런 예고도 없이 울렸고, 대피하라는 방송이 거리에 울려 퍼지자 연구원은 무심코 발걸음을 재촉했다.
+하지만 그는 문득 주위 사람들이 걸음을 멈추고 약속이나 한 듯 하늘을 쳐다보는 것을 발견했다.
+연구원도 의아해하며 고개를 들었다.
+[dialog]
+[backgroundtween(yFrom=80,  yTo=-80, duration=2, block=false)]
+[delay(time=1.5)]
+[Image(image="38_i10", fadetime=1, screenadapt="coverall", xScale=1.1, yScale=1.1)]
+[ImageTween(xScaleFrom=1.05, yScaleFrom=1.05, xScaleTo=1, yScaleTo=1, duration=10, block=false)]
+[delay(time=1)]
+[background]
+[charslot(slot = "m", name = "avg_npc_223")]
+[name="연구원"]……저게…… 뭐지?
+[charslot]
+[StopSound(channel="a", fadetime=1)]
+[PlaySound(key="$d_avg_airshiptakeoff", volume=0, loop=true, channel="c")]
+[SoundVolume(volume=1, channel="c",fadetime=2)]
+느릿느릿 회전하는 거대한 고리 모양의 물체가 건물 뒤에서 서서히 떠올랐다.
+어둠 속에서, 기계 장치들이 펼쳐지기 시작하자, 거기에 반사된 도시의 네온 불빛과 금속의 광택이 아무도 눈을 뜰 수 없게 만들었다.
+매우 웅장하고 우아하며 꿈속에서만 존재할 것 같은 그것은, 지금 구름을 헤치며 계속…… 상승하고 있었다.
+[SoundVolume(volume=0, channel="c",fadetime=5)]
+[name="연구원"]고, 고리?
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[StopSound(channel="b", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+7:13 P.M. 초점 발생기 비행 중
+[dialog]
+[Background(image="38_g1_rhinemeetingroom",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="none")]
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]아주 흥미롭군요. 물론, 저도 관심이 많습니다.
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]정말요? 다행이네요! 라인 랩에서 우리 프로젝트를 후원해 주신다면……
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]앉으시죠. 마실 것 좀 드릴까요?
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]아, 네…… 물이면 됩니다, 저스틴 피츠로이 씨.
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]그렇게 서먹서먹하게 굴지 말고 그냥 저스틴이라고 부르세요.
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]술은 어떻습니까? 가울은 전쟁의 불길에 멸망했지만, 감사하게도 참전한 장군들이 우리를 위해 최고의 포도 산지를 남겼죠.
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]자.
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]네, 네, 감사합니다.
+[dialog]
+[charslot(slot = "r",  focus="none")]
+[PlaySound(key="$doorknockquite", volume=1)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]들어와요.
+[dialog]
+[charslot]
+[PlaySound(key="$dooropenquite", volume=1)]
+[charslot(slot = "m", name = "avg_npc_529_1#1$1", duration=1, isblock=true)]
+[name="비즈니스과 사무원"]주임님, 사무실 전화가 계속 울리고 있습니다.
+[charslot(slot = "m", name = "avg_npc_892_1#2$1")]
+[name="저스틴"]지금 바쁘다고 전해주세요.
+[charslot(slot = "m", name = "avg_npc_529_1#1$1")]
+[name="비즈니스과 사무원"]그리고…… 친구분들도 주임님을 찾고 계신데요.
+[charslot(slot = "m", name = "avg_npc_892_1#2$1")]
+[name="저스틴"]벤저민 시장, 크리스 시의원, 필 보안관, 콜레트 중령, 그리고 또 누가 있죠?
+[charslot(slot = "m", name = "avg_npc_529_1#1$1")]
+[name="비즈니스과 사무원"]공업단지의 안보를 담당하는 루이스 씨도 있어요.
+[charslot(slot = "m", name = "avg_npc_892_1#7$1")]
+[name="저스틴"]흥.
+[charslot(slot = "m", name = "avg_npc_529_1#1$1")]
+[name="비즈니스과 사무원"]그분들 말로는…… 어, 이분은 누구시죠?
+[charslot(slot = "m", name = "avg_npc_524_1$1")]
+[name="긴장한 창업자"]아, 죄송합니다! 밖에서 기다리고 있겠습니다!
+[charslot(slot = "m", name = "avg_npc_892_1#7$1")]
+[name="저스틴"]괜찮습니다. 피하지 않으셔도 돼요.
+[name="저스틴"]계속하시죠.
+[charslot(slot = "m", name = "avg_npc_529_1#1$1")]
+[name="비즈니스과 사무원"]앗, 알겠습니다.
+[name="비즈니스과 사무원"]……그분들이 저번에 7번 섹터에 보관한 물건에 매우 불만이 많다고 밝혔습니다. 원래는 더 '평범한' 프로젝트인 줄 알았다면서요.
+[name="비즈니스과 사무원"]콜레트 중령이 루이스 씨한테 갔으니 아마 내일이면 7번 섹터의 모든 감시 파일이 사라질 겁니다.
+[name="비즈니스과 사무원"]시장과 시의원도 최근 몇 년간 저희가 보냈던 모든 슈트케이스를 다시 돌려보내며, 앞으로의 경선 활동에서 더는 주임님의 도움을 받지 않을 거라고 밝혔습니다.
+[name="비즈니스과 사무원"]보안관의 태도는…… 매우 과격했습니다. 이미 주 지방 검사에게 긴급 구속 영장을 받았다고 하니, 지금쯤 이쪽으로 오고 있을 겁니다.
+[name="비즈니스과 사무원"]방위과에 이미 알리긴 했지만, 시간을 얼마 끌지 못할 것 같습니다.
+[charslot]
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="none")]
+[charslot(slot = "l", name = "avg_npc_892_1#2$1", focus="l")]
+[name="저스틴"]이런, 그래도 우리가 충분히 좋은 관계를 맺고 있다 생각했는데요.
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="저스틴"]하아, 우정이란 참 나약한 거네요, 그렇죠?
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]저스틴 씨, 저, 저는 그저 투자받으러 온 거라 이런 일에 참견하는 건 아닌 것 같습니다만……
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="저스틴"]궁금하지 않습니까? 이런 엘리트, 관료, 군인이나 뒷세계 사람들이, 대체 라인 랩에 뭐가 있길래 이렇게 놀라서 오밤중에 일어나서 일을 하게 만드는 걸까요?
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]그건…… 저도 모르겠네요. 새, 생명을 무한 연장할 수 있는 나노 로봇…… 같은 걸까요?
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="저스틴"]좋은 아이디어네요. 투자 설명서와 기술 프로토타입만 있다면 저는 무조건 투자할 겁니다.
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]하…… 하하……
+[name="긴장한 창업자"]그런데 정말 궁금하긴 하네요……
+[name="긴장한 창업자"]저스틴 씨가 왜 먼저 절 찾으셨는지요……
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]스테이드 신드롬에 대해 들어보셨습니까?
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]네? 자, 자료에서 본 적은 있습니다. 희귀한 혈액 유전병으로 알고 있어요.
+[name="긴장한 창업자"]매우 희귀하고 매우 치명적이죠. 이 병에 걸린 사람은 대개 45세를 넘기기 어렵고, 게다가 후대에 유전될 확률도 높죠.
+[name="긴장한 창업자"]설마 라인 랩에서 그 특효약을……
+[charslot(slot = "l", name = "avg_npc_892_1#2$1", focus="l")]
+[name="저스틴"]벌써 잠재적인 투자자에게 잘 보이려고 노력하지 않으셔도 됩니다.
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]하지만, 맞습니다. 마치 동화처럼 스테이드 신드롬 특효약이 세상에 나왔거든요. 라인 랩과 무관한 연구지만, 많은 사람이 그것 때문에 득을 본 건 사실이죠.
+[charslot(slot = "l", name = "avg_npc_892_1#8$1", focus="l")]
+[name="저스틴"]안타까운 건 그래도 이미 늦었다는 겁니다. 특효약이 나오기 3일 전에 우리 저스틴 시니어가 스테이드 신드롬으로 인한 다발성 장기 부전으로 사망했으니까요.
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]저스틴 시니어요? 그 말씀은……
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]네, 맞습니다. 그분의 아들인 저스틴 피츠로이는 10여 년간 공포 속에서 발버둥 치다가, 어느 날 갑자기 평범한 사람처럼 살 수 있다는 통보를 받았죠.
+[name="저스틴"]짠, 그렇게 우리 가문을 괴롭히던 악몽이 사라졌답니다. 마치 존재하지 않았던 것처럼요.
+[name="저스틴"]여담이지만, 이 약물의 중요 성분은 한 인턴 연구원의 실수로 만들어진 거라더군요.
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="저스틴"]운명이죠, 하하, 이런 게 운명이에요.
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]하지만…… 적어도 저스틴 씨는 그 질병에서 벗어났군요.
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]우연히 일어난 실수 때문일까요?
+[name="저스틴"]무능한 자들은 이걸 '운명의 장난'이라 부르며 심지어 마음속으로 기뻐하고 우쭐해 했어요.
+[name="저스틴"]그 자들은 이걸 우연의 선물이라 여겼겠지만……
+[charslot(slot = "l", name = "avg_npc_892_1#7$1", focus="l")]
+[name="저스틴"]저는……
+[charslot(slot = "l", name = "avg_npc_892_1#4$1", focus="l")]
+[name="저스틴"]용납할 수도, 허락할 수도 없습니다.
+[name="저스틴"]저는 이걸 제 손에 꼭 잡고, 통제하고 그걸 지배할 겁니다.
+[name="저스틴"]저는 그것이 나아갈 방향을 가르쳐 줄 거예요.
+[dialog]
+[stopmusic(fadetime=1)]
+[charslot(slot = "r", focus="n")]
+[PlaySound(key="$d_avg_airdefensealert", volume=1, loop=true, channel="b")]
+[delay(time=2)]
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]재앙 경보? 왜 하필 이럴 때……
+[name="긴장한 창업자"]저스틴 씨, 얼른 대피해야 합니다!
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]훗, 드디어.
+[dialog]
+[charslot]
+[StopSound(channel="b", fadetime=3)]
+[playMusic(key="$formal_loop", volume=0.6)]
+[PlaySound(key="$d_avg_telephonering", volume=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_telephone", volume=1)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_892_1#1$1", focus="none")]
+[name="???"]저스틴 피츠로이.
+[charslot(slot = "m", name = "avg_npc_892_1#1$1")]
+[name="저스틴"]드디어 연락하셨군요, 대법관님.
+[charslot(slot = "m", focus="none")]
+[name="???"]자네의 약속은 뭔가?
+[charslot(slot = "m", name = "avg_npc_892_1#1$1")]
+[name="저스틴"]컬럼비아를 발전시킬 겁니다.
+[charslot(slot = "m", focus="none")]
+[name="???"]어떻게 보증할 거지?
+[charslot(slot = "m", name = "avg_npc_892_1#1$1")]
+[name="저스틴"]제가 참여하는 것으론 부족한가요?
+[charslot(slot = "m", focus="none")]
+[name="???"]자네의 많은 '친구'들이 내게 경고하더군.
+[name="???"]자네 같은 사람이 계속 멋대로 구는 걸 컬럼비아의 법이 허용해서는 안 된다고 말이야.
+[charslot(slot = "m", name = "avg_npc_892_1#7$1")]
+[name="저스틴"]만약 돈다발이 든 슈트케이스를 선물하는 게 멋대로 구는 거라면, 크리스틴의 행동은 어떻게 설명해야 합니까?
+[name="저스틴"]대법관님, 저한테 그러셨죠. 컬럼비아의 법은 가식적인 '도덕'을 지키기 위해 존재하는 게 아니라고.
+[charslot(slot = "m", focus="none")]
+[name="???"]법은 앞으로 나아가는 사람을 위해 난관을 헤쳐내는 것이지.
+[charslot(slot = "m", name = "avg_npc_892_1#7$1")]
+[name="저스틴"]그렇다면 대법관님의 결론은 뭐죠?
+[dialog]
+[charslot(slot = "m", focus="none")]
+[delay(time=1)]
+[name="???"]만약 컬럼비아 법원이 나약해진다면, 나도 더 이상 남아있을 가치가 없어.
+[charslot(slot = "m", name = "avg_npc_892_1#1$1")]
+[name="저스틴"]감사합니다.
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_telephone", volume=1)]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="none")]
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]방금 통화하신 분이…… 진짜 대, 대법관님이신가요?
+[name="긴장한 창업자"]당신은…… 아니, 라인 랩은 대체 어떤 연구를 하는 겁니까?
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]걱정하지 마세요. 라인 랩엔 법적 위험이 없어요. 신뢰할 만한 회사라 약속드리겠습니다.
+[charslot(slot = "r", name = "avg_npc_524_1$1", focus="r")]
+[name="긴장한 창업자"]하지만……
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="저스틴"]음, 아까 얘기를 계속하죠. 과연, 제가 그 '친구'들의 구역에 뭘 숨겼을까요?
+[name="저스틴"]커튼을 열어 보세요. 오늘 밤을 놓쳐서는 안 됩니다.
+[dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1.5)]
+[charslot(slot = "r", posfrom="0,0", posto="300,0", focus="r", afrom=1, ato=0, duration=1.5, isblock=true)]
+[charslot(slot = "r", focus="none")]
+[PlaySound(key="$d_avg_pullcurtain", volume=1)]
+[delay(time=2)]
+[PlaySound(key="$d_avg_airshiptakeoff", volume=0, loop=true, channel="c")]
+[SoundVolume(volume=1, channel="c",fadetime=2)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_524_1$1")]
+[name="긴장한 창업자"]저게…… 뭐죠?
+[name="긴장한 창업자"]저렇게 거대한 게…… 날고 있는 건가요?
+[name="긴장한 창업자"]저것도…… 라인 랩의 프로젝트인가요?
+[StopSound(channel="c", fadetime=5)]
+[charslot(slot = "m", name = "avg_npc_892_1#2$1")]
+[name="저스틴"]솔직히 말해서 당신은 자격을 갖춘 창업자가 아닙니다. 여리고 소심하며 자신감도 부족하고 너무 신중해요. 단어를 선택하는 데 너무 많은 시간을 쓰죠.
+[name="저스틴"]트리마운츠의 투자 업계가 당신에게 눈길을 주지 않는 것도 당연하다고 할 수 있어요.
+[charslot(slot = "m", name = "avg_npc_892_1#1$1")]
+[name="저스틴"]하지만 다행히, 저에겐 그런 게 중요하지 않죠.
+[name="저스틴"]라인 랩이 당신의 동력 실험실을 전액 매입할 겁니다. 제가 충분한 연구 경비를 제공할 것이며, 앞으로의 모든 연구도 전폭 지원하겠습니다.
+[name="저스틴"]운이 좋으면 훗날 라인 랩의 주임이 되어 당신만의 과를 만드는 것도 불가능한 일이 아니죠.
+[name="저스틴"]그 젊은 도로시 씨처럼 말입니다.
+[charslot(slot = "m", name = "avg_npc_524_1$1")]
+[name="긴장한 창업자"]아니…… 전 이해가 잘 안 갑니다. 오늘 너무 많은 일이 일어나서……
+[charslot(slot = "m", name = "avg_npc_892_1#1$1")]
+[name="저스틴"]받아들이세요. 이건 우연이 아니라 제 판단이니까요.
+[charslot(slot = "m", name = "avg_npc_892_1#9$1")]
+[name="저스틴"]제가 섭렵할 수 있는 영역에 우연이란 없습니다.
+[name="저스틴"]저는 미치광이들의 성공을 돕고 있죠.
+[charslot(slot = "m", name = "avg_npc_524_1$1")]
+[name="긴장한 창업자"]……알겠습니다, 저스틴 주임님.
+[name="긴장한 창업자"]앞으로 잘 부탁드립니다.
+[charslot(slot = "m", name = "avg_npc_892_1#9$1")]
+[name="저스틴"]라인 랩에 합류한 걸 환영합니다. 자, 건배하시죠.
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+7:25 P.M. 초점 발생기 비행 중
+[dialog]
+[Background(image="38_g2_colombiaoffice",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",duration=1)]
+[charslot(slot = "l", name = "avg_npc_897_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="none")]
+[charslot(slot = "l", name = "avg_npc_897_1#1$1",focus="l")]
+[name="잭슨"]드디어 찾은 것 같군요, 대령.
+[name="잭슨"]정말 쉽지 않았습니다, 그렇죠?
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]……
+[name="블레이크"]크리스틴이 초점 발생기를 위해 또 다른 추진 장치를 준비했을 줄은 정말 예상하지 못했습니다.
+[name="블레이크"]크리스틴은 초점 발생기를 쓰레기 더미에 숨겼고, 이제는 떳떳하게 트리마운츠 상공을 지나고 있습니다.
+[name="블레이크"]……이건 제 불찰입니다.
+[charslot(slot = "l", name = "avg_npc_897_1#2$1",focus="l")]
+[name="잭슨"]이제 와서 책임을 논해봤자 의미가 없습니다, 대령.
+[name="잭슨"]일이 결국 최악의 방향으로 가버렸군요.
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]초점 발생기는 아직 에너지 우물을 향해 날아가고 있습니다. 20분 뒤에 에너지 우물 상공에 도착할 것으로 예상됩니다.
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]기술 설명서에 따르면 초점 발생기는 에너지 우물 상공 5천 미터 높이에 멈출 겁니다. 그렇게 해야 편향된 각도에 있는 지면 목표를 최대한 공격할 수 있습니다.
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]물론 현재 '아크 1호'는 공격하거나 적을 반격하기에 적절한 위치가 아닙니다. 원래 저희는 트리마운츠에서 실행 가능성만 논증할 계획이었으니까요.
+[charslot(slot = "l", name = "avg_npc_897_1#2$1",focus="l")]
+[name="잭슨"]5천 미터 높이면 일반적인 공중 유닛은 거의 도달할 수가 없어요. 이번 사고만 아니었으면, 확실히 주도면밀하게 고려했다 할 수 있었겠죠.
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]지금 특별구에서 더 높이 운행할 수 있는 특수 드론을 조달하고 있습니다만, 시간이 조금 더 필요합니다.
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]현재 트리마운츠에 있는 일반 전투 드론도 모두 출격시켰으니, 초점 발생기의 고도가 계속 높아지는 걸 최대한 저지할 겁니다.
+[charslot(slot = "l", name = "avg_npc_897_1#5$1",focus="l")]
+[name="잭슨"]아무래도 효과에 한계가 있어 보이는군요.
+[name="잭슨"]장군들은 저 고리를 위해 매우 견고한 장갑을 준비했나 보군요. 컬럼비아에선 메이랜더의 드론이 가장 최첨단이라 생각했는데요.
+[charslot(slot = "l", name = "avg_npc_897_1#2$1",focus="l")]
+[name="잭슨"]참으로 훌륭합니다. 장군들은 표창을 받아도 되겠어요.
+[name="잭슨"]아무래도 국방부는 큰 투자를 했나 봅니다.
+[charslot(slot = "r", name = "avg_npc_899_1#2$1",focus="r")]
+[name="블레이크"]……“이제 와서 책임을 논해봤자 의미가 없습니다”, 부통령님.
+[name="블레이크"]중요한 건 다시 일을 부통령님의 통제하에 두는 것입니다.
+[charslot(slot = "l", name = "avg_npc_897_1#2$1",focus="l")]
+[name="잭슨"]정확히는 '우리'의 통제하에 둬야지요, 대령. 개인적으로 난 군부의 요구를 이해합니다. 볼리바르에서 실패한 뒤로 군부는 다시 전면에 나서기를 원했으니까요.
+[name="잭슨"]하지만 우리는 모두 컬럼비아의 일원입니다, 아닌가요?
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]물론입니다. 제가 입대할 때 충성을 맹세한 대상은 컬럼비아니까요.
+[name="블레이크"]현재 크리스틴은 여전히 우리에게 연락하지 않고 있습니다. 우리의 통신에도 응답이 없고요.
+[name="블레이크"]이건 절대로 투기꾼이나 납치범이 할 만한 행동이 아닙니다. 그렇다고 이번 일을 군사적인 위협으로 보는 것도 말이 안 되죠.
+[name="블레이크"]다행인 건…… 크리스틴이 뭘 하든 에너지 우물은 우리의 통제하에 있다는 겁니다. 크리스틴은 절대……
+[dialog]
+[PlaySound(key="$transmission", volume=1)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_ringoff", volume=1)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]죄송합니다, 부통령님. 계속 말씀드리겠습니다.
+[dialog]
+[PlaySound(key="$transmission", volume=1)]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_npc_897_1#2$1",focus="l")]
+[name="잭슨"]대령, 급한 소식이 있나 보군요.
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]……
+[dialog]
+[PlaySound(key="$d_gen_transmissionget", volume=1)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]나다, 지금 부통령님과……
+[charslot(slot = "r", name = "avg_npc_899_1#6$1",focus="r")]
+[name="블레이크"]……뭐? 에너지?
+[charslot(slot = "r", name = "avg_npc_899_1#6$1",focus="r")]
+[name="블레이크"]우리가 이미 에너지 우물을 통제한 거 아니었나? 그런데 어떻게…… 당장 에너지 우물을 꺼!
+[charslot(slot = "r", name = "avg_npc_899_1#7$1",focus="r")]
+[name="블레이크"]안 꺼진다고? 그게 무슨 소리야? 그 빌어먹을 스위치든 뭐든 찾아서 누르면 끝나는 거 아니야?
+[name="블레이크"]코드를 뽑든지 에너지원을 멈추든지, 어떻게든 방법을 찾으라고! 설비가 망가지든 말든!
+[charslot(slot = "r", name = "avg_npc_899_1#6$1",focus="r")]
+[name="블레이크"]……
+[name="블레이크"]……뭐?
+[name="블레이크"]할 수 있는 모든 걸 다 했지만, 에너지 우물은 꺼지지도 않고 오히려 에너지 수치만 계속 올라간다고?
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]……
+[name="블레이크"]……트리마운츠에 있는 모든 폭약을 가져가서 폭파시켜.
+[charslot(slot = "l", name = "avg_npc_897_1#2$1",focus="l")]
+[name="잭슨"]이미 에너지를 저장하고 있으니 폭파하면 도시 전체가 파괴될 겁니다, 대령. 메이랜더 쪽에서 방금 내게 그런 가능성을 보고했죠.
+[charslot(slot = "l", name = "avg_npc_897_1#5$1",focus="l")]
+[name="잭슨"]번거롭게 됐군요.
+[charslot(slot = "r", name = "avg_npc_899_1#7$1",focus="r")]
+[name="블레이크"]크리스틴 그 미친 여자가 정말 이 나라를 그렇게 증오한다는 건가?! 대체 뭘 하려는 거지?
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]잠깐만요…… 한 가지 가능성이 있습니다.
+[name="블레이크"]……특별구.
+[charslot(slot = "r", name = "avg_npc_899_1#3$1",focus="r")]
+[name="블레이크"]특별구입니다. 초점 발생기가 충분히 각도를 조절하면 특별구가 위협받을 겁니다!
+[name="블레이크"]우리의 존경하는 대통령님께서 아직 거기 계시잖습니까. 크리스틴은…… 컬럼비아의 대뇌와 심장을 파괴하려는 겁니다.
+[name="블레이크"]즉시 특별구의 모든 인원을 대피시켜야 합니다.
+[dialog]
+[charslot(slot = "l", name = "avg_npc_897_1#1$1",focus="l")]
+[name="잭슨"]걱정 마세요. 방금 대통령님께서 아무 일도 없을 거라고 연락하셨습니다.
+[name="잭슨"]특별구 군대도 이미 출동했고 베리 장군이 특별구의 방어 임무를 맡을 겁니다. 목숨 걸고 대통령님을 안전하게 지키겠다고 내게 약속했죠.
+[charslot(slot = "r", name = "avg_npc_899_1#6$1",focus="r")]
+[name="블레이크"]베리…… 장군 말입니까?
+[charslot(slot = "l", name = "avg_npc_897_1#1$1",focus="l")]
+[name="잭슨"]아, 아직 소식을 못 들었나 보군요. 방금 진급했습니다.
+[name="잭슨"]임무를 계속하세요, 대령. 우리 조국은 여전히 그대가 필요합니다.
+[dialog]
+[delay(time=1.5)]
+[name="잭슨"]더 할 말이 남았습니까?
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]……
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]아니요, 없습니다.
+[charslot(slot = "r", name = "avg_npc_899_1#3$1",focus="r")]
+[name="블레이크"]걱정 마십시오, 제가 직접 이 소동을 멈추겠습니다.
+[charslot(slot = "l", name = "avg_npc_897_1#5$1",focus="l")]
+[name="잭슨"]무리할 필요는 없습니다.
+[charslot(slot = "r", name = "avg_npc_899_1#1$1",focus="r")]
+[name="블레이크"]……이만 물러가겠습니다.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", focus="r", afrom=1, ato=0, duration=1.5, isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l",focus="l")]
+[PlaySound(key="$d_gen_transmissionget", volume=1)]
+[delay(time=2)]
+[charslot(slot = "l", name = "avg_npc_897_1#2$1",focus="l")]
+[name="잭슨"]이렇게 명령하면 되겠습니까, 대통령님?
+[name="잭슨"]솔직히 아직 안심하긴 이르지만, 대통령님의 판단이니 전적으로 믿겠습니다……
+[name="잭슨"]……
+[charslot(slot = "l", name = "avg_npc_897_1#4$1",focus="l")]
+[name="잭슨"]알겠습니다, 즉시 출발하시죠.
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[dialog]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall")]
+[playMusic(intro="$tense_intro", key="$tense_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="l")]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="none")]
+[name="컬럼비아 병사 A"]봤어? 저게 뭐지?
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="r")]
+[name="컬럼비아 병사 B"]그 높으신 분들이 계속 찾던 거?
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="l")]
+[name="컬럼비아 병사 A"]진짜 높이 나네……
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="l")]
+[name="컬럼비아 병사 A"]어디로 날아가는 거지?
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m",bstart=0.2,bend=0.7, name = "avg_1031_slent2_1#1$1", duration=1, isblock=true)]
+[name="???"]……도시 밖으로.
+[dialog]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1", duration=1, isblock=true)]
+[name="사일런스"]아무래도 저게 에너지 집중 장치 같네.
+[charslot]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="none")]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="l")]
+[name="컬럼비아 병사 A"]도시 밖이면, 에너지 우물?
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="r")]
+[name="컬럼비아 병사 B"]대령께서 저걸 뭐라고 부르더라? '아크 1호'? 초점 발생기?
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="r")]
+[name="컬럼비아 병사 B"]저 미친 과학자는 대체 뭘 하려는 걸까?
+[charslot]
+저 미친 과학자는 대체 뭘 하려는 걸까?
+이상, 집착, 호기심, 향상심.
+과학자들은 늘 이러한 것들과 연관되어 있다.
+사일런스는 인정했다. 한 과학자로서, 전 라인 랩 직원으로서, 하늘에 떠오르는 거대한 물체를 보았을 때, 마음속의 은은한 흥분을 인정했다.
+그리고 말할 수 없는 자부심도.
+그녀가 분투했던 회사가 지금, 아니, 이미 이 땅에…… 이 하늘에 기적을 만들어냈다. 하지만 사일런스는 이걸 영광스럽게 생각해야…… 할까?
+기만, 계략, 희생, 음모.
+사일런스는 바로 알았다. 이 기적이 어떠한 대가로 만들어졌는지.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$1")]
+[name="사일런스"]총괄, 크리스틴 라이트……
+[charslot(slot = "m", focus = "n")]
+일반 연구원인 사일런스는 사실 크리스틴과의 접점이 많지 않았다. 연말 종무식 때나 가끔 총괄의 얼굴을 보는 게 전부였으니.
+하지만 사리아는 그녀의 눈빛을 아직도 기억하고 있었다.
+크리스틴의 눈에는 오직 한 가지 일만 존재한다.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1")]
+[name="사일런스"]과학자가 고려해야 하는 건 오직 하나…… “어떻게 목표를 달성하느냐, 그것뿐이지”.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1")]
+[name="사일런스"]과학자는 과학의 발전을 책임지기만 하면 돼. “그거 하나만으로도 우리에게는 충분히 버거우니까”.
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$1")]
+[name="사일런스"]……
+[name="사일런스"]……하지만 어디로 향해야 발전이라고 할 수 있을까?
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1")]
+[name="사일런스"]컬럼비아의 황무지는 비가 내리고 나면 식물이 미친 듯이 자라. 하지만 나는 사람들이 잘난 척하면서 어떤 식물이 유용하고 어떤 식물이 잡초인지를 판단하는 게 너무 싫어.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$1")]
+[name="사일런스"]그런 걸 '발전'이라 표현해서는 안 된다는 것도 인정해야 해.
+[dialog]
+[charslot]
+크리스틴, 크리스틴과 비슷한 사람들, 크리스틴과 똑같은 겉옷을 걸친 사람들……
+다들 자신이 바라보는 방향이 과학이 발전하는 방향이라고 주장한다.
+사일런스는 자신과 거의 접점이 없는 총괄을 이해한다 할 수는 없었지만, 그와 비슷한 다른 사람들이나…… 발전하는 과정에서 따라오는 대가를 알고 있다.
+누가 발전을 정의하는 걸까? 누가 그 발전에…… 얼마나 많은 희생이 수반되는지 신경 쓸까?
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1")]
+[name="사일런스"]물론 과학은 발전해야 하지.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1")]
+[name="사일런스"]연구자로서 난 충분히 공감해.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$1")]
+[name="사일런스"]하지만 그 대가가 무엇인지도 반드시 알아야 해.
+[name="사일런스"]그리고……
+[name="사일런스"]과학은 개인의 꿈이나 집착을 위한 게 아니라는 것도.
+[dialog]
+[PlaySound(key="$d_avg_attack_ready", volume=1)]
+[delay(time=2)]
+[PlaySound(key="$d_avg_drone", volume=1)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", duration=1)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="l")]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="none")]
+[name="컬럼비아 병사 A"]드론?
+[name="컬럼비아 병사 A"]이봐 연구원, 뭘 어쩌려는 거야?
+[name="컬럼비아 병사 A"]미안하지만 더 이상 네게 시킬 건 없어. 상부에서도 필요 없다고……
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="r")]
+[name="컬럼비아 병사 B"]야! 지금 너한테 말하고 있잖아!
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2")]
+[delay(time=1)]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(duration=1, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="l")]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="none")]
+[name="컬럼비아 병사 A"]대체 뭘 하려는 거지?
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="r")]
+[name="컬럼비아 병사 B"]야, 네 차 키!
+[dialog]
+[charslot(slot = "r", focus="none")]
+[PlaySound(key="$sportscarstart", volume=0.8)]
+[delay(time=2)]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="l")]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="none")]
+[name="컬럼비아 병사 A"]우리 차를 훔친 건가? 미친 거 아니야?
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="r")]
+[name="컬럼비아 병사 B"]제기랄, 빨리 쫓아가야……
+[dialog]
+[charslot]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot = "m", name = "avg_npc_895_1#3$1", duration=1, isblock=true)]
+[name="이프리트"]사일런스! 사일런스!
+[charslot]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="none")]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", focus="r")]
+[name="컬럼비아 병사 B"]이 꼬마는 또 뭔데? 야, 여기는 군사 구역이야!
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", focus="l")]
+[name="컬럼비아 병사 A"]너 뭐 하는 짓이야!
+[charslot]
+[charslot(slot = "m", name = "avg_npc_895_1#4$1")]
+[name="이프리트"]저리 비켜!
+[dialog]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1")]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch02", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.3, block=true)]
+[Dialog]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Dialog]
+[delay(time=0.5)]
+[charslot(slot = "l", posfrom="0,0", posto="0,-100", afrom=1, ato=0, duration=1)]
+[playsound(key="$bodyfalldown2")]
+[delay(time=0.2)]
+[charslot(slot = "r", posfrom="0,0", posto="0,-100", afrom=1, ato=0, duration=1)]
+[playsound(key="$bodyfalldown2")]
+[delay(time=1.5)]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[delay(time=1)]
+[playsound(key="$d_avg_clothmovement", volume=1)]
+[name="컬럼비아 병사 B"]윽!
+[name="이프리트"]네 차 키도 이리 내!
+[charslot(slot = "m", focus="none")]
+[name="컬럼비아 병사 B"]윽, 우, 운전은 할 줄 아는 거야?
+[name="컬럼비아 병사 B"]아니면 내가……
+[dialog]
+[charslot]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch02", volume=1)]
+[delay(time=1)]
+[playsound(key="$bodyfalldown1")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_895_1#1$1",duration=1, isblock=true)]
+[charslot(slot = "m", name = "avg_npc_895_1#4$1")]
+[name="이프리트"]닥쳐, 이 몸이 알아서 한다고!
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_895_1#9$1")]
+[name="이프리트"]……근데 왼쪽이 브레이크였나?
+[dialog]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

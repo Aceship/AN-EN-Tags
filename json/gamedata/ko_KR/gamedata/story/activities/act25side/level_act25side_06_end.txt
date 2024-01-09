@@ -1,0 +1,688 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[playMusic(intro="$act25side_01_intro",key="$act25side_01_loop", volume=0.6)]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=2, block=true)]
+[Delay(time=2)]
+[playsound(key="$d_avg_rosoutofcontrol", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.2, fadetime=3,channel="bgs")]
+[PlaySound(key="$d_avg_broadswordblood")]
+[CameraShake(duration=0.8, xstrength=50, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+절단. 감자를 하나씩 잘라 끓는 물에 넣는다. 메스로 자른 두개골은 이보다 훨씬 더 단단하다.
+찢기. 인체에서 가장 부드러운 조직은 솜사탕과도 같아서 라텍스 장갑을 낀 손으로 가볍게 찢으면 온 바닥에 흩어진다.
+[PlaySound(key="$d_avg_tear")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=20, randomness=90, fadeout=true, block=false)]
+으깨기. 떨리는 손으로 꽃을 움켜쥐면 화사한 즙이 손바닥에서 끈적거린다. 새로 산 구두마저 더럽혀졌다.
+비명. 기기로 신경을 빠르게 절단하면 어마어마한 양의 마취제처럼 눈치채지 못하는 사이에 목숨을 앗아갈 수 있다.
+울음. 죽어간 내 형제는 수술대 위에서 울었다. 왜 그들은 죽어야만 했나? 왜 나만 살아남았나?
+아니, 아니야.
+그들은 죽지 않았다. 그들은 내 뒤에 서서 필사적으로 땅을 치며 고함치고 있다.
+애초에 정원 따윈 없었다. 있는 건 오직 잔인하게 우리의 생명을 가두고 잘라내고 희롱하는 새장뿐.
+오빠들은 이 새장을 파괴하고 싶어 했다.
+나도 마찬가지다.
+[Dialog]
+[SoundVolume(volume=0, fadetime=2,channel="bgs")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[CameraShake(duration=3.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_collapse")]
+[delay(time=2)]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="뮤엘시스"]실험실 외벽이…… 찢어지고 있잖아? 가장 단단한 최신식 재료로 만든 건데 어떻게…… 마치 감자처럼……
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="로즈몬티스야.;로즈몬티스가 폭주했어.;내가 가장 원치 않던 일이야.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m",name="avg_249_mlyss_1#7$1")]
+[name="뮤엘시스"]으아앗! 저쪽 바닥도 사과 껍질처럼 말리고 있어!
+[name="뮤엘시스"]이대로는 우리 모두 납작한 과일퓌레가 되겠어!
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="누군가 로즈몬티스를 진정시켜야 돼.", values="1")]
+[Predicate(references="1")]
+[Decision(options="아미야라면 할 수 있지만, 지금 여기에 없고.;내가 해 볼게……", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="뮤엘시스"]박사, 설마……
+[charslot(slot = "m",name="avg_249_mlyss_1#5$1")]
+[name="뮤엘시스"]아까 못 봤어? 기동 장갑도 종이 쪼가리처럼 로즈몬티스 손에 갈기갈기 찢어졌는데. 당신은 그냥 평범한 인간이잖아! 그냥 인간 맞지?
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="당연하지.;……;그래도 로즈몬티스를 이대로 둘 순 없어.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_895_1#9$1",duration=0.5)]
+[delay(time=1)]
+[name="이프리트"]……내가 갈게.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="이프리트?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="뮤엘시스"]이건 장난이 아니야, 이프!
+[name="뮤엘시스"]네 안에 있는 다이아볼릭이…… 어, 그러니까 네 힘도 매우 위험한데……
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="이프리트"]아니.
+[name="이프리트"]그 힘은 쓰지 않아. 내 힘으로 할 거야.
+[name="이프리트"]이건…… 나와 로즈몬티스의 약속이니까.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[charslot]
+[SoundVolume(volume=0.2, fadetime=3,channel="bgs")]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_526_1#1$1")]
+[name="기동 장갑 병사"]지원…… 요청……
+[dialog]
+[PlaySound(key="$d_avg_maskbreakk")]
+[delay(time=1)]
+[name="기동 장갑 병사"]통신기가…… 부서졌나……?
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="기동 장갑 병사"]너는……
+[charslot(slot = "m",name="avg_npc_895_1#4$1")]
+[name="이프리트"]조용히 해.
+[charslot(slot = "m",name="avg_npc_526_1#1$1")]
+[name="기동 장갑 병사"]뭐?
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="이프리트"]네가 무슨 말을 하려는지 아는데, 그냥 하지 말라고.
+[dialog]
+[charslot(slot = "m",name="avg_npc_895_1#4$1")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[PlaySound(key="$fireburst")]
+[Effect(name="$e_magic_fire_01",y=-650,x=300,layer = 2,delay=0.2)]
+[Effect(name="$e_magic_fire_01",y=-650,x=-300,layer = 5,delay=0.2)]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=1.5, block=false)]
+[Effect(name="$e_magic_fire_01",y=-550,x=450,layer = 3,delay=0.4)]
+[Effect(name="$e_magic_fire_01",y=-550,x=-450,layer = 6,delay=0.4)]
+[Effect(name="$e_magic_fire_01",y=-450,x=650,layer = 4,delay=0.6)]
+[Effect(name="$e_magic_fire_01",y=-450,x=-650,layer = 7,delay=0.6)]
+[CameraShake(duration=2, xstrength=18, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=2.5)]
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="이프리트"]쟤는 내 친구야, 내가 정말 아끼는 친구라고.
+[name="이프리트"]아니, 그냥 친구가 아니라 동료이기도 해. 어깨동무하고 함께 걸으며 모든 적을 두들겨 팰 수 있는 동료.
+[name="이프리트"]로즈몬티스……
+[dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=15, ystrength=10, vibrato=40, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_391_rosmon_1#3$2",duration=1.5,action="shake", power=10, times=100)]
+[delay(time=2)]
+[name="로즈몬티스"]……옳지 않은 건 내가 다 부숴버릴 거야.
+[name="로즈몬티스"]이런 실험실은 애초에……
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="이프리트"]애초에 존재하지 말았어야 해.
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="이프리트"]네가 무슨 말을 하고 싶은지 나도 알아.
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="이프리트"]빌어먹을 연구, 거지 같은 실험실, 우릴 불행하게 만든 것들은 진작에 죄다 불태웠어야 해!
+[name="이프리트"]우리는 분노할 자격이 있어. 욕할 자격이 있어. 모든 걸 부숴버릴 자격도 있고!
+[name="이프리트"]하지만 그러지 않아도 돼!
+[charslot(slot="m",name="avg_391_rosmon_1#3$2")]
+[name="로즈몬티스"]왜?
+[name="로즈몬티스"]너도…… 옳은 길을 막으려는 거야?
+[dialog]
+[charslot(duration=0.5)]
+[CameraShake(duration=3.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$p_skill_asyouwish",volume=0.3)]
+[delay(time=2.5)]
+[charslot(slot = "m",name="avg_npc_895_1#6$1")]
+[name="이프리트"]너무 강해…… 하지만…… 이 정도는!
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="이프리트"]로즈몬티스! 너도 달리아처럼 내 앞에서, 그런 건…… 로즈몬티스, 우리 함께 이 도시를 여행하고 함께 로도스 아일랜드에 돌아가기로 약속했잖아!
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="이프리트"]인정하긴 싫지만, 넌 언제나 나보다 훨씬 뛰어났어! 넌 이미 로도스 아일랜드의 정예 오퍼레이터고 수많은 대단한 일을 했어.
+[name="이프리트"]아미야랑, 그 블레이즈라는 큰 고양이, 그리고 박사를 생각해! 그들의 손바닥은 아주 보드랍고 옷에서는 깨끗한 냄새가 나. 그 사람들의 포옹은 가장 포근한 담요 같잖아!
+[charslot(slot="m",name="avg_391_rosmon_1#6$2")]
+[name="로즈몬티스"]담요……?
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="이프리트"]우리도 사랑해 주는 사람이 있어. 삶이 불공평하지만, 그 빌어먹을 사고로 결국 우리는 좋은 사람들을 만나게 됐잖아.
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="이프리트"]사일런스의 이야기는 언제나 해피엔딩으로 끝나. 가끔은 사일런스가 멋대로 지어낸 이야기라는 거 나도 알아.
+[name="이프리트"]사리아는 내 숙제를 엄격하게 검사하지만, 내가 넘어질 때마다 계속해서 일으켜 세워줘.
+[name="이프리트"]이런 아름다운 추억까지 망가지면 안 되잖아.
+[charslot(slot = "m",name="avg_npc_895_1#6$1")]
+[name="이프리트"]그러니까 로즈몬티스…… 멈춰도 돼.
+[charslot(slot="m",name="avg_391_rosmon_1#10$2")]
+[name="로즈몬티스"]멈추…… 라고?
+[charslot(slot="m",name="avg_391_rosmon_1#5$2")]
+[name="로즈몬티스"]이…… 프……
+[dialog]
+[StopSound(channel="bgs", fadetime=2)]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[charslot(slot="l",posfrom = "0,0", posto = "200,0",duration=0.1)]
+[charslot(slot="m",afrom = 1, ato = 0,duration=2.5)]
+[charslot(slot="l",name="avg_391_rosmon_1#5$1",duration=2.5)]
+[delay(time=3)]
+[charslot(slot = "m", focus = "n")]
+진동이 약해졌다.
+이프리트는 로즈몬티스의 손을 잡았다.
+[charslot]
+[playMusic(intro="$warm_intro",key="$warm_loop", volume=0.6)]
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[charslot(slot="r",name="avg_391_rosmon_1#5$1",focus="n")]
+[name="이프리트"]응, 이프리트야. 날 기억하는구나. 하하, 네가 날 잊을 리가 없지. 네가 숨긴 과자를 내가 몰래 훔쳐먹었는데 넌 아직도 모르잖아.
+[charslot(slot="r",name="avg_391_rosmon_1#7$1",focus="r")]
+[name="로즈몬티스"]응…… 알았어.
+[name="로즈몬티스"]과자가 줄어들었다. 박사가 훔친 게 아니다. 단말의 기록을 수정해야겠어.
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="이프리트"]아하…… 하하하!
+[charslot(slot="r",name="avg_391_rosmon_1#5$1",focus="r")]
+[name="로즈몬티스"]너 엄청 아파 보이는데, 왜…… 웃고 있어?
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="이프리트"]웃고 싶으니까.
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[name="이프리트"]너는 폭주한 게 아니야, 맞지? 박사도 네가 폭주할까 봐 걱정했어. 그런데 너는 그저 네 방식대로 네가 하고 싶은 일을 하려던 거잖아.
+[charslot(slot="r",name="avg_391_rosmon_1#4$1",focus="r")]
+[name="로즈몬티스"]……응.
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[name="이프리트"]괜찮아, 사리아도 내가 맨날 폭주할까 봐 걱정하거든. 그건 날 믿지 못해서가 아니라, 쓸데없는 걱정이 많아서 그런 것뿐이야.
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="이프리트"]그리고 그 나쁜 놈들…… 녀석들이 우리 몸 안에 심은 힘과 남긴 상처 같은 걸론 우리를 조종할 수 없어.
+[name="이프리트"]우리를 조종할 수 있는 건 우리 자신뿐이야.
+[name="이프리트"]반대로 우리가 놈들을 크게 비웃어 주자.
+[charslot(slot="r",name="avg_391_rosmon_1#9$1",focus="r")]
+[name="로즈몬티스"]응…… 이렇게 하면 돼?
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="이프리트"]맞아, 입꼬리를 올리고 로켄을 찾아가서 그 사람은 너한테 아무것도 아니라고 말해줘!
+[charslot(slot="r",name="avg_391_rosmon_1#7$1",focus="r")]
+[name="로즈몬티스"]……로켄.
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="로즈몬티스"]응, 그 사람을 찾아갈게. 어떻게 해야 할지 알겠어.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="뮤엘시스"]……조용해졌네.
+[charslot(slot = "m",name="avg_249_mlyss_1#1$1")]
+[name="뮤엘시스"]이프리트가 로즈몬티스를 진정시키는 데 성공했나 봐. 휴우…… 하마터면 큰일 날 뻔했다.
+[charslot]
+로즈몬티스 '덕분'에 주위 벽에 대량의 틈이 생겼다.
+미궁의 벽이 깨지면서 건물 더 깊숙한 곳에 복도 하나가 나타났다.
+[dialog]
+[Decision(options="뮤엘시스, 저기 앞에 있는 방은 뭐야?;저쪽에……", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#8$1")]
+[name="뮤엘시스"]어라?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g10_ecolab",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[delay(time=1)]
+[Decision(options="여기는…… 생태원이네.;너의 생태원이네.", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="뮤엘시스, 왜 초점 발생기 안에 생태원이 있지?;여기는 로켄의 실험실과 연결되어 있어.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#4$1")]
+[name="뮤엘시스"]……
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="뮤엘시스"]크리스틴…… 잊지 않았나 보네.
+[Dialog]
+[charslot]
+[Decision(options="그리고 가장 안쪽에 있는 건……", values="1")]
+[Predicate(references="1")]
+[Stopmusic(fadetime=2)]
+'석관'.
+당신이 본 건, 석관이 확실했다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="bg_graduate",screenadapt="coverall")]
+[playMusic(intro="$act19side_intro",key="$act19side_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+잘못 봤을 리가 없다. 그건 지금 당신이 가진 기억의 시작점이니까……
+심지어 지금 느끼는 어지러움도 똑같았다.
+[Dialog]
+[Decision(options="로켄이 크리스틴을 도와 석관을 연구하는 건가?;크리스틴은 석관으로 뭘 하려는 거지?", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="자멸할 셈인가?;흰 털이 난 이상한 생물로 변해버릴 텐데!", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="아니……;뮤엘시스?", values="1;2")]
+[Predicate(references="1;2")]
+뮤엘시스는 대답이 없었다.
+[dialog]
+[playsound(key="$d_avg_divebubble",volume=0.7)]
+손을 뻗었지만, 아무것도 만져지지 않았다.
+당신 곁에는 작은 물보라와 부드러운 물거품만 남아 있을 뿐이었다.
+진짜 뮤엘시스는 이미 생태원의 가장 깊숙한 곳에 서 있었다.
+[Dialog]
+[Decision(options="날 두고 떠나려는 거야?;우릴 두고 떠나려는 거야?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="뮤엘시스"]박사…… 당신과 로즈몬티스에게 로켄을 만나게 해주겠다고 약속했잖아.
+[name="뮤엘시스"]그 목적을 달성했으니 우리 협력도 이젠 끝이야.
+[name="뮤엘시스"]여기서 더 가면 안 돼. 우리는 여기서 작별 인사를 할 거야.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="처음부터 이럴 계획이었구나.", values="1")]
+[Predicate(references="1")]
+[Decision(options="그래서 이 장소를 알 수 있었구나.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="뮤엘시스"]……아니.
+[charslot(slot = "m",name="avg_249_mlyss_1#6$1")]
+[name="뮤엘시스"]사실은 나, 속인 사람이 또 있어, 하하. 나 진짜 못됐지?
+[charslot(slot = "m",name="avg_249_mlyss_1#1$1")]
+[name="뮤엘시스"]내스티는 성격이 대쪽 같고 융통성이 부족해…… 그때 난 결정했다고 내스티를 속였지만, 사실 아니야.
+[charslot(slot = "m",name="avg_249_mlyss_1#3$1")]
+[name="뮤엘시스"]그러다 방금 이 생태원을 보고 나서야 결정했지.
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="뮤엘시스"]미안해.
+[name="뮤엘시스"]난 그저 단 한 가지만 확인하고 싶었을 뿐이야…… 맞아, 내 꿈은 여기 있어. 이 생태원에 담긴 미래가…… 바로 내 꿈이야.
+[name="뮤엘시스"]나와 내 종족의 삶에 대한 답이 다 여기 있어.
+[name="뮤엘시스"]크리스틴이 약속했어. 함께 데려가겠다고.
+[name="뮤엘시스"]크리스틴은 날 속이지 않았어. 그저 말해 주지 않았을 뿐…… 어쩌면 이중적이고 다른 데 정신이 팔린 나한테 질렸을 수도 있고, 아니면 우리 사이의 믿음이 변하지 않을 거라 믿어준 걸 수도 있고……
+[name="뮤엘시스"]하지만 크리스틴은 정말 그렇게 해줬어……
+[charslot(slot = "m",name="avg_249_mlyss_1#4$1")]
+[name="뮤엘시스"]그럼 나도 크리스틴과의 약속을 지켜야지.
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="뮤엘시스"]사리아한테 전해줘…… 미안하다고.
+[dialog]
+[playsound(key="$watergunbuff")]
+[charslot(duration=1)]
+[bgeffect(name="$eb_dim_closeeye",layer=1)]
+갑자기 물이 몰려들며 당신을 밀어냈다. 여전히 부드럽지만, 거절은 허용하지 않았다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[bgeffect]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+당신은 바깥의 복도로 밀려났고, 생태 실험실의 문은 천천히 닫혔다.
+물은 사라졌고 그 어떤 흔적도 남기지 않았다. 당신의 손은 다시 한번 비어버렸다. 다만 이번에는 무도곡이 바뀌는 사이의, 아름답던 그 순간이 아니었다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Background(image="29_g11_monitoringroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="오올헤약"]시간도 거의 다 됐는데, 이제 가도 될까?
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="크리스틴"]거래는 끝났으니 언제든지.
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="오올헤약"]당신이 약속한 건……
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="크리스틴"]네 단말기에 보냈어.
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="오올헤약"]이게…… 로켄의 모든 연구 성과인가?
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="오올헤약"]아니, 주소가 하나 더 있네…… 모호한 주소. 후훗, 그런데 왠지 눈에 익네. 당신, 정말 많이도 메이랜더 모르게 일을 했네. 점점 더 대단해 보이는걸.
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="크리스틴"]아쉽네.
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="오올헤약"]뭐가?
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="크리스틴"]원래는 너도 하늘을 볼 수 있었을 텐데.
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="오올헤약"]그 별들? 우리 일족은 이미 충분히 오래 별을 상대했어. 줘야 할 정보도 다 줬는데, 아직도 그 뒤틀린 빛이 볼만한 가치가 있다고 생각하는 거야?
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="크리스틴"]아니, 지금의 하늘을 말하는 게 아니야.
+[name="크리스틴"]하늘의 미래, 진정한 모습.
+[charslot(slot="m",name="avg_npc_536_1#4$1")]
+[name="오올헤약"]그만해. 당신의 위대한 계획은 알지만, 그런 미래는 나와 상관없어. 당신이 준 자료가 믿을만하다면, 난 당장이라도 선조들의 큰 뜻을 이루고 진정한 내 힘을 되찾을 수 있으니까……
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="크리스틴"]네가 원하는 힘은 시간조차 막아내지 못했어. 너도 잘 알 거야. 훗날 하늘을 나는 건 기계일 수도, 끊임없이 진화하는 다른 생명일 수도 있지만……
+[name="크리스틴"]만 년 전의 그 환영은 아닐 거야.
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="오올헤약"]지금 날…… 내 혈통과 기억, 사명을 비웃는 거야?
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_536_1#10$1")]
+[name="오올헤약"]당신……
+[charslot(slot="m",name="avg_npc_537_1#8$1")]
+[name="크리스틴"]단지 과거로 돌아가기 위해 일족의 모든 목숨을 희생하다니…… 정말 그럴 가치가 있을까?
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="오올헤약"]……
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="오올헤약"]됐어. 어차피 받아야 할 건 다 받았으니, 우린 이쯤에서 우아하게 작별이나 하자고.
+[dialog]
+[charslot(duration=0.5)]
+오올헤약은 감시 플랫폼에서 가볍게 뛰어내렸다.
+그녀는 크리스틴의 얼굴을 뒤돌아보지 않았다. 자신의 표정을 들키고 싶지 않았기 때문에.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="38_g3_rhinelab_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",posfrom = "-150,0", posto = "0,0",duration=1.5)]
+[charslot(slot="r",name="avg_npc_536_1#1$1",posfrom = "150,0", posto = "0,0",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",focus="l")]
+[name="뮤엘시스"]……너구나.
+[charslot(slot="r",name="avg_npc_536_1#6$1",focus="r")]
+[name="오올헤약"]또 만났네.
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",focus="l")]
+[name="뮤엘시스"]……
+[charslot(slot="r",name="avg_npc_536_1#1$1",focus="r")]
+[name="오올헤약"]……
+[charslot(slot="r",focus="n")]
+두 사람은 잠시 침묵했다.
+과거와 미래는 늘 스치듯 지나가지만, 절대 뒤얽히지 않는다.
+[stopmusic(fadetime=3)]
+[charslot(duration=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="5분.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_aircraft_2",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$loading_intro",key="$loading_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1031_slent2_1#5$1")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_doorclose",volume=1)]
+[delay(time=1)]
+[name="사일런스"]문…… 윽, 문이 안 열려요!
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="자라"]이렇게 하면 되지.
+[charslot]
+[dialog]
+[PlaySound(key="$d_avg_funnel",volume=0.5)]
+[delay(time=1)]
+[CameraShake(duration=2, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_sundries",volume=0.7)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="사일런스"]어라?
+[name="사일런스"]그건…… 제게 빌려준 무기잖아요?
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="자라"]빌려준 게 아니라 이미 네 거야. 조금만 더 연습하면 되겠네.
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="사일런스"]연습…… 음……
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="자라"]여기로 나가면 넌 자유야. 특수요원과 병사들은 지금 딴 데 신경 쓸 겨를이 없으니까. 초점 발생기를 찾았고 목적도 달성했으니 더는 널 곤란하게 할 일도 없고.
+[name="자라"]그대로 트리마운츠 쪽으로 가. 거기 가면 넌 계속해서 연구원 사일런스로 있을 수 있어.
+[charslot(slot="m",name="avg_1031_slent2_1#4$1")]
+[name="사일런스"]어……
+[charslot(slot="m",name="avg_npc_893_1#2$1")]
+[name="자라"]아직도 위험한 곳에 가고 싶니? 그러면 네 목숨이 위험해지는 건 물론이고, 다시는 메이랜더의 시야에서 벗어날 수 없게 된단다.
+[name="자라"]이건 평생의 싸움이 될 거야. 어쩌면 넌 자유와 삶, 가족과 친구의 절대적인 믿음, 햇살을 누릴 권리조차 영영 잃게 될지도 몰라. 그리고 너 자신까지도.
+[name="자라"]정말 그런 삶에 몸을 던지고 싶어?
+[charslot(slot="m",name="avg_1031_slent2_1#6$1")]
+[name="사일런스"]모르겠어요. 아직 제 눈으로…… 문제가 해결된 걸 못 봤어요. 전 도중에 포기하고 싶지 않아요.
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="자라"]너는 유능한 학자고 착한 의사야. 이제 전사가 되는 법을 배우기로 결심한 거니?
+[charslot(slot="m",name="avg_1031_slent2_1#5$1")]
+[name="사일런스"]어쩌면…… 전 평생 전사가 될 수 없을 거예요.
+[name="사일런스"]하지만 필요하다면 당신이 준 이 무기를 꽉 잡고 싶어요.
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="자라"]그래, 얘야. 내 축복과 함께 앞으로 나아가렴.
+[charslot(slot="m",name="avg_1031_slent2_1#7$1")]
+[name="사일런스"]감사합니다, 자라 주임.
+[dialog]
+[playsound(key="$d_gen_walk_n",loop=true, channel="bgs")]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 1)]
+[delay(time=1)]
+[StopSound(channel="bgs", fadetime=0.5)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_1031_slent2_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="사일런스"]그러고 보니, 총괄…… 크리스틴이 바로 앞에 있는데.
+[name="사일런스"]만나고 싶지 않아요?
+[charslot(slot="m",name="avg_npc_893_1#6$1")]
+[name="자라"]만나고 싶지 않다니…… 그럴 리가 있겠니?
+[name="자라"]다만, 난 이제 그 아이를 쫓아갈 수 없을 것 같아.
+[dialog]
+[charslot(duration=0.5)]
+자라는 멀지 않은 곳에 있는 실험실을 바라보았다.
+그리고 잠시 뒤, 자라는 시선을 하늘로 옮겼다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="38_g17_corridor_symmetry",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_899_1#3$1")]
+[name="블레이크"]찾았나?
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="컬럼비아 병사"]아직입니다!
+[charslot(slot="m",name="avg_npc_899_1#3$1")]
+[name="블레이크"]계속 찾아. 초점 발생기의 핵심 장치는 분명히 이 안에 있어.
+[name="블레이크"]그리고 크리스틴…… 또 우리 눈앞에서 도망가게 할 수는 없다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[charslot]
+[Subtitle(text="3분.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "right", name = "avg_npc_896_1#8$1",focus="r")]
+[name="사리아"]……이프리트?
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",focus="l")]
+[name="이프리트"]사리아! 어때, 들어갈 방법을 찾았어?
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",focus="r")]
+[name="사리아"]아직이다.
+[charslot(slot = "left", name = "avg_npc_895_1#7$1",focus="l")]
+[name="이프리트"]여기는 정말 이상해. 로즈몬티스가 과자 부수듯이 실험실 외벽을 대부분 무너뜨렸는데도, 안쪽은 여전히 조금도 드러나지 않았어.
+[charslot(slot = "right", name = "avg_npc_896_1#5$1",focus="r")]
+[name="사리아"]……이건 완전한 건물이 아니다.
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",focus="l")]
+[name="이프리트"]뭐?
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",focus="r")]
+[name="사리아"]이프리트, 네 말이 맞다. 이건 실험실이 아니야.
+[charslot(slot = "right", name = "avg_npc_896_1#9$1",focus="r")]
+[name="사리아"]이건…… 이건……
+[charslot(slot = "right", name = "avg_npc_896_1#10$1",focus="r")]
+[name="사리아"]설마 크리스틴이 부모님의 추진기를……? 말도 안 돼. 내가 왜…… 왜 이제야 그걸 생각했지?!
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "right",posfrom = "0,0", posto = "250,0",afrom = 1, ato = 0,duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_npc_895_1#3$1",focus="l")]
+[name="이프리트"]사리아! 어디 가?
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[playMusic(intro="$drift_intro",key="$drift_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="사리아"]……
+[name="사리아"]만약…… 이 벽을 뚫고 지나간다면……
+[charslot(slot="m",name="avg_npc_896_1#5$1")]
+[name="사리아"]아니야, 크리스틴도 내가 올 걸 예측했을 거다. 이건 의미가 없어.
+[charslot(slot = "left",focus="n")]
+그럼 어떻게 해야 의미 있지?
+넌 아무것도 바꿀 수 없어.
+이미 너무 늦은 건 아닐까?
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="사리아"]……안 돼.
+[name="사리아"]난 반드시……
+[charslot(slot = "left",focus="n")]
+반드시 뭘 어쩌겠다는 건데?
+[charslot]
+[name="???"]사리아.
+[charslot(slot="m",name="avg_npc_896_1#3$1")]
+[name="사리아"]사일…… 런스?
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="사리아"]여기서 떠나라…… 여기는……
+[charslot]
+[dialog]
+[charslot(slot="m",name="avg_1031_slent2_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="사일런스"]아니.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Image(image="38_i06", screenadapt="coverall", xScale=1.1, yScale=1.1)]
+[ImageTween(xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=20, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="사일런스"]사리아, 너의 그런 말을 들으려고 여기 온 게 아니야.
+[name="사리아"]……
+[name="사일런스"]난 한 과학자가 자신의 꿈을 위해 어디까지 할 수 있는지 알아. 그런 미쳐버린 것 같은 감정을 느낀 뒤에야, 도덕으로 이에 맞서려면 얼마나 큰 힘이 필요한지 나도 알았으니까.
+[name="사일런스"]사리아, 지금까지 넌 과학 연구와 질서 사이에서 균형을 찾아왔고, 정말 잘했어. 어쩌면 너무 지나쳤을 수도 있어.
+[name="사일런스"]너의 질서는 지금 무너지고 있어. 다만, 균형을 포기한다면…… 어쩌면 혼란 속에서 너의 근원을 되찾을지도 몰라.
+[name="사리아"]근원을…… 되찾는다고?
+[name="사일런스"]넌 할 수 있을 거라고 믿어.
+[name="사일런스"]우린 각자 해야 할 일이 있으니 여기서 이만 헤어지자.
+[name="사리아"]……
+[name="사일런스"]참, 사리아, 이제 너한테 말해줄 수 있겠네.
+[dialog]
+[delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="예전에 난, 진심으로 너를 동경했어.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1.5)]
+[Subtitle(text="예전에 난, 진심으로 너와 나란히 걷고 싶었어.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Subtitle(text="1분.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[charslot]
+[Background(image="38_g10_ecolab",screenadapt="coverall")]
+[image]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="뮤엘시스"]……
+[name="뮤엘시스"]하, 모처럼 대화가 통화는 친구를 만났는데 이렇게 사라져 버렸네.
+[charslot(slot = "m",name="avg_249_mlyss_1#3$1")]
+[name="뮤엘시스"]크리스틴, 나한테 어떻게 보상할 거야?
+[playsound(key="$d_gen_walk_n")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Subtitle(text="30초.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_894_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="로즈몬티스"]……
+[charslot(slot = "right", name = "avg_npc_894_1#8$1",focus="r")]
+[name="로켄"]나르시사…… 내게 다시 돌아왔구나. 판결을 할 준비가 됐니?
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="로즈몬티스"]맞아, 난 당신을 죽이고 싶어.
+[name="로즈몬티스"]복수 때문이 아니야. 난 당신이 미워. 하지만 복수한다고, 이미 사라진 사랑하는 사람들이 다시 돌아오지 않는다고 아미야랑 박사가 말했어.
+[name="로즈몬티스"]파괴를 위해서가 아니야. 당신은 내 손을 빌려 자신을 파괴하려고 하지만, 난 싫어. 난 당신의 무기가 아니야.
+[charslot(slot = "left", name = "avg_391_rosmon_1#6$1",focus="l")]
+[name="로즈몬티스"]당신은 나한테 아무것도 아니야. 그냥 범죄자야.
+[name="로즈몬티스"]그러니까 법도 감옥도 할 수 없는 일을, 내가 할 뿐이야.
+[name="로즈몬티스"]난, 당신에게 사형을 선고하겠어.
+[charslot(slot = "right", name = "avg_npc_894_1#9$1",focus="r")]
+[name="로켄"]그렇구나…… 그렇다면 다행이구나.
+[charslot(slot = "right", name = "avg_npc_894_1#8$1",focus="r")]
+[name="로켄"]그 노래를 어떻게 부르더라…… 그렇지.
+[name="로켄"]시골로 가는 길♪ 날 집으로 데려가 주오♪
+[name="로켄"]날 고향에 돌아가게 해 주오♪
+[charslot(slot = "right", name = "avg_npc_894_1#9$1",focus="r")]
+[name="로켄"]이제 곧…… 거의 다 됐군.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[CameraShake(duration=5, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$smallearthquake")]
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+격렬한 진동이 발밑에서 전해졌다.
+마치 엄청나게 강렬한 생명이 바닥을 뚫고 나올 것만 같았다.
+안쪽에 있던 복도는 계속 상승하고 있었고, 당신은 창가에 서 있는 한 사람을 봤다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g3_rhinelab_corridor",screenadapt="coverall")]
+[charslot]
+[charslot(slot="m",name="avg_npc_537_1#8$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[name="크리스틴"]……
+[charslot(slot="m",focus="n")]
+크리스틴.
+요즘 계속해서 언급되는 이름이다.
+미치광이. 천재. 적. 친구.
+또는…… 시대를 잘못 태어난 어리석은 이.
+당신이 크리스틴을 보는 건 처음이다. 그녀는 여전히 고개를 들어 하늘을 바라보고 있었다. 마치 아무것도 없는 그 공백이 그녀가 신경 쓰는 유일한 것인 것처럼.
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playMusic(intro="$act19side_01_intro",key="$act19side_01_loop", volume=0.6)]
+[CameraShake(duration=-1, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=false, block=false)]
+[delay(time=1)]
+[Decision(options="어떻게…… 된 거지?;똑바로 설 수가 없어!", values="1;2")]
+[Predicate(references="1;2")]
+익숙한 모습이 앞에 나타났다.
+[charslot(slot="m",name="char_003_kalts_1#3")]
+[name="켈시"]Mon3tr!
+[dialog]
+[charslot]
+[charslot(slot="m",name="npc_10002",duration=0.5)]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"]크르르르릉!
+[charslot(duration=0.3)]
+Mon3tr가 순간 몸을 일으켜 날카로운 앞발로 당신의 어깨를 가볍게 잡자, 거대한 몸이 당신을 완전히 뒤덮었다.
+곧이어, 더 거대한 그림자가 Mon3tr 뒤에서 나타났다.
+초점 발생기.
+당신은 이제야 확신했다. 눈앞의 이 미스터리한 고리 모양 복도와 뮤엘시스의 생태원은 모두 초점 발생기의 한 부분이었다.
+메이랜더와 군부는 이것을 위해 끊임없이 싸우다가 또 협력하기도 했지만, 초점 발생기가 이런 방식으로 모두의 앞에 나타날 거라고는 아무도 상상하지 못했다.
+추진기의 화염에 두 눈은 가시에 찔리듯이 아팠고, 격렬한 기류에 중심마저 잡기 힘들었다.
+켈시와 Mon3tr가 없었다면 당신은 아마 주변에 있는 다른 사람과 너덜너덜해진 실험실처럼 모질게 내던져졌을 것이다.
+[dialog]
+[Decision(options="켈시……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_003_kalts_1#3")]
+[name="켈시"]꽉 잡아, 박사.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="'석관'을 봤어.;크리스틴의 실험실이 날 수 있을 줄은 몰랐네.", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="진실에 거의 접근했는데……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_003_kalts_1#1")]
+[name="켈시"]알아.
+[charslot]
+허공에 떠오른 그녀는 당신들에게 시선을 옮겼다.
+아니, 당신들이 아니다. 그녀가 바라보는 건 당신을 보호하는 검은 괴물이었다.
+[charslot(slot="m",name="npc_10002")]
+[name="Mon3tr"](무언가를 느낀 듯) 크르르르르!
+[charslot]
+크리스틴은 입술을 움직이며 뭔가 질문하는 것 같았다.
+그러자, 켈시가 아까 당신에게 했던 것과 똑같은 말을 하는 것이 들려왔다.
+[dialog]
+[charslot(slot="m",name="char_003_kalts_1#1",duration=0.5)]
+[delay(time=1)]
+[name="켈시"]……알아.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[CameraShake(duration=0.1, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

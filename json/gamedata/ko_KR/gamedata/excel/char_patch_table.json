@@ -16,11 +16,11 @@
       "canUseActivityPotentialItem": false,
       "potentialItemId": "p_char_002_amiya",
       "activityPotentialItemId": null,
+      "classicPotentialItemId": null,
       "nationId": "rhodes",
       "groupId": null,
       "teamId": null,
       "displayNumber": "R001",
-      "tokenKey": null,
       "appellation": "Amiya",
       "position": "MELEE",
       "tagList": [
@@ -33,7 +33,7 @@
       "isNotObtainable": false,
       "isSpChar": false,
       "maxPotentialLevel": 5,
-      "rarity": 4,
+      "rarity": "TIER_5",
       "profession": "WARRIOR",
       "subProfessionId": "artsfghter",
       "trait": null,
@@ -265,7 +265,7 @@
           "levelUpCostCond": [
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 28800,
@@ -289,7 +289,7 @@
             },
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 57600,
@@ -313,7 +313,7 @@
             },
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 86400,
@@ -337,7 +337,7 @@
             }
           ],
           "unlockCond": {
-            "phase": 0,
+            "phase": "PHASE_0",
             "level": 1
           }
         },
@@ -348,7 +348,7 @@
           "levelUpCostCond": [
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 28800,
@@ -372,7 +372,7 @@
             },
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 57600,
@@ -396,7 +396,7 @@
             },
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 86400,
@@ -420,62 +420,69 @@
             }
           ],
           "unlockCond": {
-            "phase": 1,
+            "phase": "PHASE_1",
             "level": 1
           }
         }
       ],
+      "displayTokenDict": null,
       "talents": [
         {
           "candidates": [
             {
               "unlockCondition": {
-                "phase": 1,
+                "phase": "PHASE_1",
                 "level": 1
               },
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": "푸른 분노",
-              "description": "전장에 있을 때 모든 아군 유닛의 공격력 및 방어력 +4%, 스킬 발동 중에는 효과 2배",
+              "description": "배치되어 있을 때, 모든 아군 유닛의 공격력 및 방어력 +4%, 스킬 발동 중에는 효과 2배",
               "rangeId": null,
               "blackboard": [
                 {
                   "key": "atk",
-                  "value": 0.04
+                  "value": 0.04,
+                  "valueStr": null
                 },
                 {
                   "key": "def",
-                  "value": 0.04
+                  "value": 0.04,
+                  "valueStr": null
                 }
-              ]
+              ],
+              "tokenKey": null
             },
             {
               "unlockCondition": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "requiredPotentialRank": 0,
               "prefabKey": "1",
               "name": "푸른 분노",
-              "description": "전장에 있을 때 모든 아군 유닛의 공격력 및 방어력 +7%, 스킬 발동 중에는 효과 2배",
+              "description": "배치되어 있을 때, 모든 아군 유닛의 공격력 및 방어력 +7%, 스킬 발동 중에는 효과 2배",
               "rangeId": null,
               "blackboard": [
                 {
                   "key": "atk",
-                  "value": 0.07
+                  "value": 0.07,
+                  "valueStr": null
                 },
                 {
                   "key": "def",
-                  "value": 0.07
+                  "value": 0.07,
+                  "valueStr": null
                 }
-              ]
+              ],
+              "tokenKey": null
             }
           ]
         }
       ],
       "potentialRanks": [
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "최대 HP +200",
           "buff": {
             "attributes": {
@@ -486,8 +493,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 0,
-                  "formulaItem": 0,
+                  "attributeType": "MAX_HP",
+                  "formulaItem": "ADDITION",
                   "value": 200.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -498,7 +505,7 @@
           "equivalentCost": null
         },
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "배치 코스트 -1",
           "buff": {
             "attributes": {
@@ -509,8 +516,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 4,
-                  "formulaItem": 0,
+                  "attributeType": "COST",
+                  "formulaItem": "ADDITION",
                   "value": -1.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -521,7 +528,7 @@
           "equivalentCost": null
         },
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "공격력 +28",
           "buff": {
             "attributes": {
@@ -532,8 +539,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 1,
-                  "formulaItem": 0,
+                  "attributeType": "ATK",
+                  "formulaItem": "ADDITION",
                   "value": 28.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -544,7 +551,7 @@
           "equivalentCost": null
         },
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "배치 코스트 -1",
           "buff": {
             "attributes": {
@@ -555,8 +562,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 4,
-                  "formulaItem": 0,
+                  "attributeType": "COST",
+                  "formulaItem": "ADDITION",
                   "value": -1.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -567,7 +574,7 @@
           "equivalentCost": null
         },
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "방어력 +22",
           "buff": {
             "attributes": {
@@ -578,8 +585,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 2,
-                  "formulaItem": 0,
+                  "attributeType": "DEF",
+                  "formulaItem": "ADDITION",
                   "value": 22.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -649,7 +656,7 @@
       "allSkillLvlup": [
         {
           "unlockCond": {
-            "phase": 0,
+            "phase": "PHASE_0",
             "level": 1
           },
           "lvlUpCost": [
@@ -662,7 +669,7 @@
         },
         {
           "unlockCond": {
-            "phase": 0,
+            "phase": "PHASE_0",
             "level": 1
           },
           "lvlUpCost": [
@@ -680,7 +687,7 @@
         },
         {
           "unlockCond": {
-            "phase": 0,
+            "phase": "PHASE_0",
             "level": 1
           },
           "lvlUpCost": [
@@ -698,7 +705,7 @@
         },
         {
           "unlockCond": {
-            "phase": 1,
+            "phase": "PHASE_1",
             "level": 1
           },
           "lvlUpCost": [
@@ -716,7 +723,7 @@
         },
         {
           "unlockCond": {
-            "phase": 1,
+            "phase": "PHASE_1",
             "level": 1
           },
           "lvlUpCost": [
@@ -734,7 +741,7 @@
         },
         {
           "unlockCond": {
-            "phase": 1,
+            "phase": "PHASE_1",
             "level": 1
           },
           "lvlUpCost": [
@@ -763,7 +770,7 @@
       "conds": [
         {
           "stageId": "main_08-16",
-          "completeState": 2
+          "completeState": "PASS"
         }
       ]
     }

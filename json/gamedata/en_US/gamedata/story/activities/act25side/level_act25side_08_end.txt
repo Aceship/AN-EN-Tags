@@ -1,0 +1,480 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")] 
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[delay(time=1)]
+[playMusic(intro="$act17_intro", key="$act17_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_energybody", volume=1)]
+[delay(time=1.5)]
+[name="???"]I order you to answer me, attendant.
+[dialog]
+[Decision(options="A—Attendant...?;......;I am <i>not</i> Kal'tsit's attendant...",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1", duration=1, isblock=true)]
+[name="Kal'tsit"]...Dr. {@nickname} is an amnesiac. The Doctor is not one among those you recognize—not anymore.
+[name="Kal'tsit"]The Doctor is now one of Terra. One of Rhodes Island.
+[name="Kal'tsit"]And we have experienced a great deal together, up to this very day.
+[charslot]
+[name="???"]...Rhodes Island?
+[name="???"](Unknown language) Rhodes Island?
+[name="???"]I see.
+[name="???"]Fine, then, 'amnesiac.' So why did not you relate everything once again to this... 'Doctor'?
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]......
+[charslot]
+[name="???"]Ah, I see now.
+[name="???"]You've always had your doubts about this 'Doctor's' true nature. You'd rather trust one relearning about the world, when the alternative is to recover a stretch of memories you deem unreliable.
+[name="???"]Yes... quite understandable. None of what's happened on the ground can be forgery, and if there had been sufficient intervention, Terra wouldn't be in the state it is now.
+[name="???"]It seems not a thing has gone as we hoped. Even if you don't remember that... Dr. {@nickname}.
+[name="???"]What a rare chance this is. To meet the two of you, here. Yet under these conditions...
+[dialog]
+[Decision(options="......",values="1")]
+[Predicate(references="1")]
+[name="???"]Well, then. 'Dr. {@nickname}' the amnesiac, and AMa-10 claiming the name Kal'tsit. What did you come here for?
+[name="???"]Has Kristen put nerves in you? Has all this flown beyond your grasp?
+[dialog]
+[Decision(options="I don't think you've answered me yet.;Quit posturing at us like that!;Level discussions start with self-introductions.",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="???"]......
+[name="???"]I am a devised personality simulation. For tens of thousands of years I have guarded this dark hall, and the ice cold bodies of hundreds of thousands of our people.
+[name="???"]I once was our last hope, a pessimistic attempt, a synonym for nihilism.
+[name="???"]But right now, perhaps to you insignificantly miniscule two... I am the accessory to and the invisible hand behind Kristen's mad plan.
+[name="???"]I am the 'Preserver' with a foot in the grave. Revere all that lies before you. I am the dying of Civilization itself.
+[dialog]
+[musicvolume(volume=0.2, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g15_energywell_glowed",screenadapt="coverall")]
+[delay(time=1)]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", duration=1.5, isblock=true)]
+[name="Silence"]Position correct, Transmitter response... extremely strong...
+[charslot(slot = "m", name = "avg_1031_slent2_1#4$2")]
+[name="Silence"]I—
+[dialog]
+[charslot(slot = "m", posfrom="0,0", posto="0,-80", duration=0.5)]
+[charslot(slot = "l",  name = "avg_npc_893_1#9$1", posfrom="-300,0", posto="0,-50", duration=0.5, isblock=true)]
+[PlaySound(key="$bodyfalldown3", volume=1)]
+[delay(time=1)]
+[charslot(slot = "m", posfrom="0,-80", posto="0,0", duration=1.5)]
+[charslot(slot = "l", posfrom="0,-50", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "m", posfrom="0,0", posto="250,0", duration=2, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#9$2", focus="m")]
+[name="Silence"]Director Jara...?
+[name="Silence"]Why are you here?
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]You made it here by my blessing. Such is life.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]...
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]You... came to stop me.
+[charslot(slot = "l", name = "avg_npc_893_1#10$1", focus="l")]
+[name="Jara"]You haven't let go of that weapon I gave you. I'm delighted.
+[name="Jara"]It doesn't seem like you're here on some hot-headed impulse, either.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]Correct.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]This is your very last chance, child.
+[name="Jara"]Withdraw, or continue?
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]I will... learn to be the warrior you described, Director Jara.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]......
+[name="Jara"]Silence, you're fully aware that Kristen is not about to target any town in the land with H.A.M.H.R.R.'s received energy.
+[name="Jara"]You have no need to stop her.
+[name="Jara"]Like any scientist would, she is preparing to go where none have set foot before, and that's all.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]Perhaps so, Director Jara.
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="Silence"]I certainly don't know Control like you do, but if you say so, I am willing to believe it.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]However, I will continue to attempt to bring a stop to all this, and I will make no exception, even if you're the one that stands in my way.
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="Jara"]Why?
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]Because—whatever this experiment is, if Control freely conducts it, and succeeds in it—
+[name="Silence"]And this being the Control of Rhine Lab, we all know, whether out of emotional confidence or rational judgment, that she is very likely to succeed—
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]—What do you think the researchers of Columbia are going to see in her?
+[name="Silence"]After holding your job in Rhine Lab Human Resources Investigation for so long, you would know the people here inside and out.
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="Jara"]...A hero.
+[name="Jara"]Kristen would become a hero and an idol throughout all of Columbian science.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]Yes. She'll become the scientist's paragon, the benchmark of a researcher.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]And then, the floodgates will be open forever.
+[name="Silence"]Item after item, project after project, researchers will be in perpetual delight.
+[name="Silence"]But, Director Jara, only she is Kristen Wright. Only her.
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="Silence"]And the others? The ones bragging about themselves as geniuses and leaders? The ones inspired by this 'pioneer spirit by any means necessary?'
+[name="Silence"]The ones who'll put their own obsessions and ideals into practice, all without the slightest apprehension?
+[name="Silence"]The greedy, the egotistical, the overreaching, the stubborn, the ones like us?
+[name="Silence"]If they take the conduct of Rhine Lab's Control to be a virtue—
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]Then that—is a future I am sure you can imagine the shape of.
+[charslot(slot = "m", name = "avg_1031_slent2_1#4$2", focus="m")]
+[name="Silence"]Perhaps we don't even need to imagine...
+[name="Silence"]With the research you yourself conducted on Rhine Lab, you've never been in the dark.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]I know very well, Silence.
+[name="Jara"]I know very well how much of that kind of thing has happened, and is happening inside Trimounts—no, within the borders of Columbia.
+[name="Jara"]There have been plenty of insane and alluring projects placed before me, their owners starry-eyed, their smiles sincere.
+[name="Jara"]They wholeheartedly believe they serve 'pure science.' They're the Pioneers of the wilds that we know.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]While all you and your colleagues have to do is evaluate whether inside their experimental plans, their grand blueprints, there lies even the off-chance it might incur the slightest 'cost' or 'waste.'
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]'Cost.'
+[name="Jara"]Sometimes it comes in the form of a fertile field, and sometimes it's some number of terminal patients or death row inmates. Sometimes it's a village or a town, and sometimes it's some specific race or even nation.
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="Jara"]And as I see it, sometimes, it's their own selves too.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]Are you scared of that, Director Jara? Or do the possibilities for science's forward progress excite even you to no end?
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="Silence"]Director Jara, never upon this earth has there existed a specimen of 'pure science' in a glass bell.
+[name="Silence"]Science lies in our hands, in the people's hands. You have to know its temperature, its weight, whether it burns people, whether it will bring suffering or if it will console.
+[name="Silence"]Those people forever claim that they're the way forward, but all they do is set foot with wild abandon in whichever direction they wish to.
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="Jara"]But, Silence, that is what progress is.
+[name="Jara"]Nobody knows where the path lies. This is the walk they must take.
+[name="Jara"]The fortunate will find the right place, and enter the light. The misfortunate will run into dead ends, and spin in circles.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]But there is no way you can make them stop.
+[name="Jara"]You're a researcher yourself. You know what's most unstoppable of all.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]......
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="Jara"]—It is craving.
+[name="Jara"]Matter can't bind it, morality can't bind it, and rules can't bind it all the same.
+[name="Jara"]Across this land, all throughout history, before Kristen, there were those greedy, egotistical, overreaching, stubborn people you speak of, and when did they ever stop?
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]And so, from now on, they must stop.
+[name="Silence"]At the very least, they must stop, before stooping to see just what sits beneath their feet.
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="Silence"]Director Jara, I feel—scientist's fuel should not derive from cravings and ideals, nor should it come from calculations and choices.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]Science is a clear, incisive look at every one of us.
+[charslot(slot = "l", name = "avg_npc_893_1#2$1", focus="l")]
+[name="Jara"]......
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="Jara"]Silence, you've said something very beautiful. Fit to be hung in the corridors of a university library.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]But I'm afraid not one researcher is willing to see that quote on the walls of their lab.
+[name="Jara"]It is lip service.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]And so, I will make it practice, Director Jara.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]I don't want to give up midway, and I still have your blessing.
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="Jara"]......
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]Silence, Kristen has spent a very long time readying this plan. I don't know how much she's poured into it.
+[name="Jara"]But her determination can't be any less than her parents' was.
+[charslot(slot = "l", name = "avg_npc_893_1#11$1", focus="l")]
+[name="Jara"]You're—
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="Jara"]Fine... this isn't you, it's me.
+[name="Jara"]I can't even watch this. I don't want it all to melt into thin air again.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]In which case, Director Jara, what is it exactly that you hope for? To see Kristen succeed, or to bring her back safe and sound?
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="Jara"]......
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]I know a researcher who goes by Ruby. Her greatest wish is to clock out on time and retire without hassle.
+[name="Silence"]I just ran across a soldier. I imagine his only wish right now is to get out of this out-of-control S.H.A.F.T. without incident, and then flee the clutches of Trimounts and its scientific loons together with his family.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]Is Control's wish any more lofty, compared to theirs?
+[name="Silence"]Because the thing she wants—makes sufficient 'progress?'
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="Silence"]Or is this simply because the feelings between you, and her—are sufficiently close?
+[name="Silence"]Director Jara, you know this isn't fair.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]You can't be this selfish.
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="Jara"]I...
+[name="Jara"]......
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]I... am this selfish. I can't use morality and justice to fool myself in order to let you pass.
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="Jara"]We must concede what emotions weigh. Kristen has this dream. I can't just stand here and fold my arms.
+[name="Jara"]Silence, you would understand this, wouldn't you?
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="Silence"]But if we can stop Control, she could very well still—
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="Jara"]She won't.
+[name="Jara"]She won't, child.
+[name="Jara"]I know full well... when she set this project into motion, she never planned to return.
+[name="Jara"]Since long ago—even, since we first met, there has been no... taking back any of this.
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="Jara"]Silence, it makes me very happy that you could stand in my way here. I can even say that I support your viewpoint.
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="Jara"]But, as Kristen's...
+[name="Jara"]......
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]...family, I still won't let you through.
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="Jara"]Go on and show me. Are you really... prepared to bear every word you've said?
+[name="Jara"]What you face from hereon is more than a single Parvis, or a lone Kristen.
+[name="Jara"]What you face—is every person that attempts to forge forward.
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="Silence"]...
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="Silence"]I will. I must be ready. I promise you this.
+[name="Silence"]A scientist must press forth, and is bound to press forth.
+[name="Silence"]Perhaps, some—like Control, will be more proficient at the 'forward' portion.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="Silence"]But there must be someone to step up, and ensure that science—
+[PlaySound(key="$d_avg_drone", volume=1)]
+[name="Silence"]—remains in the people's hands.
+[dialog]
+[charslot(slot = "m", posfrom="250,0", posto="50,0", duration=0.3)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[delay(time=0.2)]
+[PlaySound(key="$swordtsing4", volume=1)]
+[charslot(slot = "l", action="shake", power=5, times=60, duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[delay(time=3)]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="Kal'tsit"]...'Preserver'...
+[name="Kal'tsit"]I never thought it would truly be you.
+[name="Kal'tsit"]But if it is, then how can you be...
+[charslot]
+[name="'Preserver'"]Aiding in a little animal's mad schemes?
+[name="'Preserver'"]Or witnessing a young civilization take its first step beyond the cradle?
+[name="'Preserver'"]You came too late, 'Doctor.'
+[name="'Preserver'"]My wait... has lost all meaning.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Compared to... this, Trimounts has been a drop in the bucket.;......;...I need more explanation.",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="Kal'tsit"]It's you helping Kristen. She used some means to get in contact with you.
+[charslot]
+[name="'Preserver'"]Terra's history, civilizations, languages, races, technological attainments—I have come to know it all through Columbia's networks.
+[name="'Preserver'"]Hilariously, modern surface information transmission isn't even able to cover the globe, but your methods of mutually assured destruction happen to have evolved with competent efficiency.
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]Terra's methods are too primal and reliant on Originium, and with such conversion rates, realizing Kristen's attempt... The energy source required would be outlandish.
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="Kal'tsit"]It's near to impossible that Terra could have the technology to solve this enigma. Save for—
+[charslot]
+[name="'Preserver'"]Correct.
+[name="'Preserver'"]I gave her the last of my blood. May as well supply a new heart than watch over a dying light, perhaps.
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="Kal'tsit"]......
+[name="Kal'tsit"]You actually, honestly—
+[name="Kal'tsit"]—Why do you not regret it? All your efforts over such an immense amount of time... all gone to waste.
+[charslot]
+[name="'Preserver'"]Yes. Gone to waste.
+[name="'Preserver'"]I shut the project down personally. The orders were input by myself.
+[name="'Preserver'"]It's a decision I cannot under any circumstances regret.
+[name="'Preserver'"]It'll be soon, now. Very soon.
+[dialog]
+[charslot]
+[CameraShake(duration=5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=0.9, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[delay(time=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+A giant tremor ripples out from somewhere far away. The lights within this subterranean space give a few flickers.
+This being, calling itself the 'Preserver,' falls silent for a while, then seems to let out a deep breath.
+[dialog]
+[Decision(options="Wh-What's going on?!;......;Could that be the S.H.A.F.T.?",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="'Preserver'"]It's only an infant's curious glance—
+[name="'Preserver'"]Yet what obstructions is it tasked to overcome?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[delay(time=2)]
+8:11 P.M., S.H.A.F.T. energy accumulation abnormal
+[dialog]
+[Background(image="38_g15_energywell_glowed",screenadapt="coverall")]
+[delay(time=2)]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[delay(time=0.8)]
+[PlaySound(key="$swordtsing5", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_ftrub", volume=1)]
+[charslot(slot = "r", name = "avg_1031_slent2_1#9$2", posfrom="-600,0", posto="40,-20", duration=1, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "r", posfrom="40,-20", posto="0,0", duration=1.5, isblock=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", posfrom="-300,0", posto="0,0", duration=2.5, isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="Jara"]That Rhodes Island corporation has trained you well.
+[charslot(slot = "r", name = "avg_1031_slent2_1#9$2", focus="r")]
+[name="Silence"]Huff... hff....
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="Jara"]Can you still lift your arms?
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="Silence"]I'm fine.
+[name="Silence"]What about yours?
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="Jara"]Relax, I buy my health insurance.
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="Jara"]Are we going to keep doing this?
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="Silence"]If you're still going to block my way, yes.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="Jara"]Alright, let's keep at it.
+[dialog]
+[PlaySound(key="$d_avg_energywell", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=0.4, channel="a",fadetime=2)]
+[delay(time=1.5)]
+[playMusic(intro="$act25side_intro",key="$act25side_loop", volume=0.6)]
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="Jara"]Wait, something's not right.
+[name="Jara"]The temperature... Even if the S.H.A.F.T.'s preparing to fire, the temperature here shouldn't have risen this high.
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="Silence"]The army has cut off practically every power source in an effort to stop it charging.
+[charslot(slot = "l", name = "avg_npc_893_1#3$1", focus="l")]
+[name="Jara"]Including every security alarm and control system? Those morons—
+[name="Jara"]Quick! We have to get out of here!
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="Silence"]There are still some troops stationed up above, Director Jara. I'm counting on you to get them away.
+[charslot(slot = "l", name = "avg_npc_893_1#4$1", focus="l")]
+[name="Jara"]Where are you headed?
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="Silence"]Power to the control systems has been cut. Why does Control still have remote operation of this place?
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="Silence"]Transmitter response is still strengthening. I... still have a chance.
+[dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot = "r", afrom=1, ato=0, duration=1, focus="r", isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l", focus="l")]
+[name="Jara"]Silence!
+[dialog]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[Image(image="38_i15_1", screenadapt="coverall", fadetime=2)]
+[CameraShake(duration=-1, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[PlaySound(key="$d_avg_energywell", volume=0.8, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+A heatwave washes with a burn past Jara's face. The Liberi researcher she'd never paid particular mind to before now continues straight inward, running deeper into the S.H.A.F.T.'s layers.
+Jara is suddenly struck by a feeling that there is nothing, not one thing, that could get in that silhouette's way.
+Perhaps, she really can make good on what she promised herself.
+She imagines, come that time, that maybe she can be of a little help.
+[dialog]
+[PlaySound(key="$d_avg_energywell", volume=1, loop=true, channel="a")]
+[CameraShake(duration=-1, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[Image(image="38_i15_2", screenadapt="coverall", fadetime=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=3.5)]
+[name="Jara"]Looks like prep work on the emitter has wrapped up.
+[name="Jara"]'Science is a clear, incisive look at every one of us.'
+[name="Jara"]Hah. I'm no scientist.
+[dialog]
+[PlaySound(key="$d_avg_energygather", volume=1)]
+[delay(time=1.5)]
+[name="Jara"]Kristen, you'll fly for outer space just like you've been dreaming of...
+[name="Jara"]I'm sure of it.
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[CameraShake(duration=0.1, xstrength=0, ystrength=0, vibrato=30, randomness=90, fadeout=false, block=false)]
+[image]
+[charslot]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "r", name = "avg_npc_891_1#1$1", duration=1, isblock=true)]
+[name="Nasti"]......
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="Justin Jr."]Nasti, couldn't you choose someplace with a better view?
+[charslot(slot = "r", name = "avg_npc_891_1#6$1", focus="r")]
+[name="Nasti"]At what point can you finally stop ragging on me?
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="Justin Jr."]When I went to observe in Leithanien, I once saw a local fireworks show. They invited the best composers, just to write for the occasion.
+[charslot(slot = "l", name = "avg_npc_892_1#3$1", focus="l")]
+[name="Justin Jr."]As the first firework went off, all the musicians started playing in unison. That, my, my, that was a scene of beauty.
+[charslot(slot = "r", name = "avg_npc_891_1#6$1", focus="r")]
+[name="Nasti"]Your figures of speech are too deficient. Leithanians wouldn't like you.
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="Justin Jr."]True, and true. But still, we're here today in Trimounts seeing a sight that glitters just as gold.
+[name="Justin Jr."]A ring floating in the air, drone bullets drawing out raindrops of pure light, splashes of sparks off armor plating...
+[name="Justin Jr."]Just as good as a fireworks show.
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="Justin Jr."]Looking at the clock, it's about time for the climax of the performance.
+[name="Justin Jr."]Here comes the thrilling, stirring sforzando—
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[background]
+[charslot]
+[Image(image="38_i10", xScale=1.8, yScale=1.8, x=50,y=200, screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[CameraShake(duration=-1, xstrength=2, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_energybeamfire", volume=0.6)]
+[Image(image="38_i16", screenadapt="coverall", xScale=1.8, yScale=1.8, x=50,y=200,fadetime=0.2)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=false)]
+[ImageTween(xTo=50,yTo=-180,duration=3.5)]
+[delay(time=3)]
+[PlaySound(key="$d_avg_beamamb", volume=1)]
+[delay(time=0.5)]
+[CameraShake(duration=1.5, xstrength=4, ystrength=30, vibrato=50, randomness=90, fadeout=true, block=false)]
+[ImageTween(xScaleFrom=1.8, yScaleFrom=1.8, xScaleTo=1.2, yScaleTo=1.2, duration=0.2, ease="InOutCubic", xTo=0,yTo=0,block=true)]
+[Image(image="38_i16", screenadapt="coverall", xScale=2.5, yScale=2.5, fadetime=0.1)]
+[ImageTween(xScaleFrom=2.5, yScaleFrom=2.5, xScaleTo=1.2, yScaleTo=1.2, duration=0.1, ease="InOutCubic", xTo=0,yTo=0,block=true)]
+[delay(time=1)]
+[CameraShake(duration=6, xstrength=30, ystrength=30, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$glass", volume=1)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[PlaySound(key="$d_gen_thunders_amb", volume=0.7)]
+[ImageTween(xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, duration=20)]
+[delay(time=3.5)]
+[name="Justin Jr."]......
+[name="Nasti"]......
+[name="Justin Jr."]It's... prettier than I imagined. Rhine Lab ought to be charging all the city-siders enjoying the show.
+[name="Nasti"]It's a success. H.A.M.H.R.R.'s materials and structure have withstood the shock from the energy beam for the time being.
+[name="Nasti"]Next comes the charging and focus phase. As long as we can collect the readings from such high-pressure conditions...
+[name="Justin Jr."]I'm afraid at this point, the army and Maylander guys grab their last chance to stop it from fully focusing.
+[name="Justin Jr."]Aren't you worried about Control?
+[name="Nasti"]Like she ever needed us to worry.
+[name="Nasti"]We're going the same way. And that's all we are.
+[name="Nasti"]We can only play our own parts well, and then... pray she's lucky.
+[name="Nasti"](Sarkaz language) If one day, Kazdel too hangs from the firmament, then I'll engrave your name into my stoves.
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,480 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")] 
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[delay(time=1)]
+[playMusic(intro="$act17_intro", key="$act17_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_energybody", volume=1)]
+[delay(time=1.5)]
+[name="???"]명령이다. 대답해라, 하인이여.
+[dialog]
+[Decision(options="하, 하인……?;……;난 켈시의 하인이 아니야……",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1", duration=1, isblock=true)]
+[name="켈시"]……{@nickname} 박사는 기억을 잃었습니다. 박사는 당신이 아는 사람 중 그 누구도 아닙니다. 더는 아니죠.
+[name="켈시"]박사는 현재 테라의 일원이자 로도스 아일랜드의 일원입니다.
+[name="켈시"]우리는 지금까지 수많은 일을 함께 겪었습니다.
+[charslot]
+[name="???"]……로도스 아일랜드?
+[name="???"](미지의 언어) 로도스 아일랜드라?
+[name="???"]……그랬군.
+[name="???"]그래서, '기억'을 잃었다면 왜 모든 일을 다시 이…… '박사'에게 알려주지 않았나?
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="켈시"]……
+[charslot]
+[name="???"]음, 그렇군.
+[name="???"]자넨 결국 저 '박사'의 진정성을 의심하고 있군. 더는 신뢰할 수 없는 옛 기억을 회복시키느니, 세상을 다시 알게 된 그를 더 믿기로 한 건가.
+[name="???"]음…… 이상한 것도 아니지. 땅 위에서 일어나는 모든 걸 거짓으로 꾸밀 순 없으니. 정말 충분한 간섭이 있었다면 테라는 지금의 형태가 아니겠지.
+[name="???"]우리 뜻대로 되는 건 하나도 없는 것 같군. 자네가 기억하지 못한다고 해도 말이야…… {@nickname} 박사.
+[name="???"]이 얼마나 귀한 기회인가, 여기서 자네를 만난 게. 그런데 이런 상황이라니……
+[dialog]
+[Decision(options="......",values="1")]
+[Predicate(references="1")]
+[name="???"]그렇다면, 기억을 잃은 '{@nickname} 박사'와 자칭 켈시라는 AMa-10, 여기는 또 뭘 위해 왔는가?
+[name="???"]크리스틴 때문에 긴장하는 건가? 모든 것이 자네들의 통제를 벗어나서?
+[dialog]
+[Decision(options="아직 내 질문에 대답하지 않은 것 같은데.;잘난 척하지 마!;자기소개는 평등한 대화의 시작이다.",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="???"]......
+[name="???"]나는 계획의 인격 시뮬레이션이라네. 수만 년 동안, 이 어두운 곳에서 수십만 동포들의 차가운 몸을 지키고 있었지.
+[name="???"]나는 마지막 희망이자 비관적인 시도였으며, 허무주의의 대명사였지.
+[name="???"]하지만 지금, 보잘것없는 자네들에겐…… 어쩌면 나는 크리스틴의 정신 나간 계획의 공범이자 배후가 될지도 모르겠군.
+[name="???"]난 죽을 날이 머지않은 '보존자'이자, 자네가 경외하는 모든 것이며, 문명의 소멸 그 자체라네.
+[dialog]
+[musicvolume(volume=0.2, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g15_energywell_glowed",screenadapt="coverall")]
+[delay(time=1)]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", duration=1.5, isblock=true)]
+[name="사일런스"]위치는 맞아. 전달물질의 반응도…… 아주 강렬하고……
+[charslot(slot = "m", name = "avg_1031_slent2_1#4$2")]
+[name="사일런스"]이제……
+[dialog]
+[charslot(slot = "m", posfrom="0,0", posto="0,-80", duration=0.5)]
+[charslot(slot = "l",  name = "avg_npc_893_1#9$1", posfrom="-300,0", posto="0,-50", duration=0.5, isblock=true)]
+[PlaySound(key="$bodyfalldown3", volume=1)]
+[delay(time=1)]
+[charslot(slot = "m", posfrom="0,-80", posto="0,0", duration=1.5)]
+[charslot(slot = "l", posfrom="0,-50", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "m", posfrom="0,0", posto="250,0", duration=2, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#9$2", focus="m")]
+[name="사일런스"]자라 주임……?
+[name="사일런스"]왜 여기 계세요?
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]내 축복을 갖고 여기까지 왔구나. 뭐, 그것도 좋아.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]……
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]저를…… 막으려고 여기까지 오셨군요.
+[charslot(slot = "l", name = "avg_npc_893_1#10$1", focus="l")]
+[name="자라"]내가 준 무기를 놓치지 않아서 정말 기쁘구나.
+[name="자라"]순간적인 감정으로 여기에 서 있는 건 아닌 것 같네.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]맞아요.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]이건 네 마지막 기회란다, 얘야.
+[name="자라"]돌아갈래, 아니면 계속할래?
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]전…… 당신이 말한 전사가 될 거예요.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]……
+[name="자라"]사일런스, 크리스틴이 초점 발생기로 받은 에너지를 대지의 그 어떤 곳으로도 겨냥하지 않을 거라는 걸 너도 잘 알잖니.
+[name="자라"]넌 그 아이를 막을 필요가 없어.
+[name="자라"]크리스틴은 그저 다른 모든 과학자처럼 아무도 발을 내딛지 않은 곳을 향해 가는 거란다.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]아마도 그렇겠죠, 자라 주임.
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="사일런스"]전 당신처럼 총괄을 잘 알지 못하지만, 당신의 말이라면 전 믿고 싶습니다.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]그래도 전 계속해서 이 모든 걸 멈추려고 노력할 거예요. 당신이 제 앞을 막는다고 해도요.
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="자라"]……왜지?
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]왜냐하면, 총괄이 하는 실험이 무엇이든, 그리고 그게 성공한다면……
+[name="사일런스"]뭐, 라인 랩의 총괄로서 감정적인 믿음이든 이성적인 판단이든, 그 사람은 성공할 가능성이 커요.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]하지만 그렇게 되면, 컬럼비아의 연구자들이 크리스틴을 어떻게 생각할 것 같나요?
+[name="사일런스"]라인 랩의 인적자원조사과에서 오랫동안 일하셨으니, 그 누구보다도 잘 이해하시겠죠.
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="자라"]……영웅으로 생각하겠지.
+[name="자라"]크리스틴은 컬럼비아 과학계의 영웅이자 우상이 될 거야.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]맞아요. 총괄은 과학자의 본보기이자 연구자의 모범이 되겠죠.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]……그리고, 이런 일도 끊임없이 일어나겠죠.
+[name="사일런스"]연구자들은 지칠 줄 모르고 계속 시도할 거예요.
+[name="사일런스"]하지만 자라 주임, 크리스틴 라이트는 그 사람 한 명뿐이에요.
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="사일런스"]그렇다면 스스로 선도자, 천재라고 자부하는 사람들은요? 소위 말하는 '수단과 방법을 가리지 않고 개척하는 정신'에 고무된 사람들은요?
+[name="사일런스"]본인의 고집 또는 이상을 실현하기 위해 거리낌이 없는 사람들은요?
+[name="사일런스"]탐욕스럽고 오만하며 무모하고 고집스러운, 우리 같은 사람들은요?
+[name="사일런스"]그런 사람들이 라인 랩 총괄이 한 일을 미덕으로 여긴다면……
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]당신이라면 그게 어떤 미래일지 상상하실 수 있잖아요.
+[charslot(slot = "m", name = "avg_1031_slent2_1#4$2", focus="m")]
+[name="사일런스"]어쩌면 상상할 필요도 없을 거예요……
+[name="사일런스"]라인 랩이 지금까지 진행한 연구를 당신도 다 알고 있을 테니까요.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]그래, 잘 알고 있단다, 사일런스.
+[name="자라"]트리마운츠, 아니 컬럼비아 내에서 이런 일이 지금까지 얼마나 많이, 그리고 지금도 일어나고 있다는 걸 나도 잘 알지.
+[name="자라"]전에도 이런 광적이고 사람을 홀리는 수많은 계획이 내 앞에 있었단다. 그걸 가져온 사람들은 눈빛이 반짝였고 웃음이 진지했어.
+[name="자라"]그들은 진심으로 '순수한 과학'을 위해 일한다고 생각하며, 자신이 인지의 황야를 개척하는 사람이라 생각하지.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]하지만 당신과 당신의 동료들은 그 실험 계획에, 그 위대한 청사진에 가끔 '대가'나 '손해'가 생기지는 않을지 평가만 내리죠.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]'대가'라.
+[name="자라"]그 대가는 가끔 비옥한 땅이 될 수도, 불치병 환자나 사형수가 될 수도 있어. 또 가끔은 한 마을이나 도시, 심지어 특정 종족 내지는 한 나라가 될 수도 있고.
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="자라"]내가 볼 때는 그들 스스로가 될 때도 있지.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]그런 게 두렵지 않으세요? 아니면 과학의 발전 때문에 흥분되나요?
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="사일런스"]자라 주임, 이 세상에 유리장 안에 든 '순수한 과학'이란 절대 없어요.
+[name="사일런스"]과학은 우리의 손에, 사람들의 손에 있어요. 사람들은 과학의 온도와 무게를 반드시 알아야 하고, 그게 따가운지 고통스러운지, 아니면 위로가 될지 알아야 해요.
+[name="사일런스"]사람들은 늘 발전하고 있다고 말하지만, 그저 본인이 짓밟고 싶은 곳에 멋대로 발을 뻗은 것뿐이라고요.
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="자라"]하지만 사일런스, 그게 바로 발전이란다.
+[name="자라"]아무도 길이 어디 있는지 모르니, 그렇게 갈 수밖에 없지.
+[name="자라"]운이 좋으면 옳은 곳을 찾아 빛을 향해 걸어가고, 그렇지 않으면 막다른 골목에 빠져 돌고 도는 거야.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]그래도 그걸 멈출 방법은 없는 거야.
+[name="자라"]너도 연구자니까 그걸 막을 수 없다는 걸 더 잘 알겠지.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]……
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="자라"]……그건 갈망이야.
+[name="자라"]물질과 도덕은 갈망은 속박할 수 없어. 규칙도 마찬가지고.
+[name="자라"]이 땅에서, 예로부터 지금까지, 크리스틴 이전에, 네가 말한 탐욕스럽고 오만하며 무모하고 고집스러운 사람들이 멈춘 적이 있었니?
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]그렇다면 이제부터는 반드시 멈춰야 할 거예요.
+[name="사일런스"]적어도 본인 발밑에 무엇이 있는지 진심으로 몸을 숙여 제대로 바라보기 전까지는 반드시 멈춰야 해요.
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="사일런스"]자라 주임, 제 생각에는…… 욕망과 꿈이 과학의 연료가 되어서는 안 돼요. 계산이나 선택이 되어서도 안 되고요.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]과학은 모두를 진지하게 바라보고 있어요.
+[charslot(slot = "l", name = "avg_npc_893_1#2$1", focus="l")]
+[name="자라"]……
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="자라"]사일런스, 아주 멋진 말이야. 대학교 도서관에 걸면 딱 좋겠네.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]하지만 이 말을 실험실에 걸 연구자는 없을 것 같구나.
+[name="자라"]이건 알맹이가 없는 말이야.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]그렇다면 제가 그걸 확실하게 만들 거예요, 자라 주임.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]도중에 포기하고 싶진 않아요. 전 아직 당신의 축복도 가지고 있으니까요.
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="자라"]……
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]사일런스, 크리스틴은 아주 오랫동안 이 계획을 준비했단다. 얼마나 많은 걸 바쳤는지 나도 몰라.
+[name="자라"]하지만 크리스틴의 각오는 그 아이의 부모보다 절대 덜하지는 않을 거야.
+[charslot(slot = "l", name = "avg_npc_893_1#11$1", focus="l")]
+[name="자라"]넌……
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="자라"]아니지…… 네가 아니라, 내 얘기야.
+[name="자라"]……난 또다시 희망이 물거품이 되는 걸 그냥 지켜볼 수만은 없어.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]그럼 자라 주임, 당신이 바라는 건 뭔가요? 크리스틴이 성공하는 건가요? 아니면 무사히 돌아오는 건가요?
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="자라"]……
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]제가 아는 루비라는 연구원의 가장 큰 바람은 정시에 퇴근하고 무사히 정년퇴임 하는 거예요.
+[name="사일런스"]아까 한 병사를 만났는데, 지금 그 사람의 유일한 바람은 이 폭주한 에너지 우물에서 무사히 벗어나, 가족들을 데리고 트리마운츠의 미친 과학자들 손에서 도망치는 걸 거예요.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]그 사람들과 비교했을 때, 총괄의 바람이 과연 더 고귀한가요?
+[name="사일런스"]총괄이 원하는 게 더 '진보'적이니까?
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="사일런스"]아니면, 그저 당신과 총괄의 사이가 아주 가까워서요?
+[name="사일런스"]자라 주임, 이건 불공평하다는 거 당신도 잘 알잖아요.
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]그렇기에 더욱 이기적으로 굴면 안 돼요.
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="자라"]난……
+[name="자라"]……
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]난…… 이렇게 이기적이란다. 난 도덕이나 정의로 자신을 속인 채 널 보내줄 수가 없구나.
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="자라"]우리는 감정의 무게를 반드시 인정해야 해. 크리스틴의 그 꿈은 내가 관여하지 않을 수 없어.
+[name="자라"]……사일런스, 너도 그걸 잘 알잖니.
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="사일런스"]하지만 우리가 총괄을 막으면 분명 다시……
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="자라"]아니.
+[name="자라"]그럴 일은 없어, 얘야.
+[name="자라"]나는 잘 안단다…… 크리스틴은 이 계획을 시작할 때부터 돌아올 생각이 없었어.
+[name="자라"]더 오래전에, 심지어 우리가 처음 만났을 때부터 이 모든 것은…… 이미 돌이킬 수 없었어.
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="자라"]사일런스, 네가 내 앞을 막을 수 있다는 것에 난 정말 기쁘단다. 심지어 네 주장을 응원한다고 말할 수도 있지.
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="자라"]하지만 크리스틴의……
+[name="자라"]……
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]……가족으로서, 난 여전히 널 보내줄 수 없구나.
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="자라"]내게 보여주렴, 정말로…… 네가 한 말을 감당할 준비가 됐는지.
+[name="자라"]네가 앞으로 마주하게 될 건 파르비스나 크리스틴 한 명이 아니야.
+[name="자라"]네가 마주해야 하는 건 앞으로 나아가려는 모든 사람이란다.
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="사일런스"]……
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="사일런스"]그럴 거예요. 반드시 준비할 거예요. 약속해요.
+[name="사일런스"]과학은 반드시 발전하고, 기필코 발전할 거예요.
+[name="사일런스"]어쩌면 누군가는, 예를 들어 총괄 같은 사람들은 '발전'이라는 부분에 더 어울리겠죠.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="사일런스"]하지만 누군가는 반드시 나서서 과학이……
+[PlaySound(key="$d_avg_drone", volume=1)]
+[name="사일런스"]계속해서 사람의 손 안에 있도록 해야 해요.
+[dialog]
+[charslot(slot = "m", posfrom="250,0", posto="50,0", duration=0.3)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[delay(time=0.2)]
+[PlaySound(key="$swordtsing4", volume=1)]
+[charslot(slot = "l", action="shake", power=5, times=60, duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[delay(time=3)]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="켈시"]……'보존자'……
+[name="켈시"]정말 당신일 줄은 몰랐군요.
+[name="켈시"]하지만 당신이라면 어떻게……
+[charslot]
+[name="'보존자'"]한 작은 동물의 정신 나간 계획을 도와주냐는 건가?
+[name="'보존자'"]아니면, 어린 문명이 요람 밖으로 내딛는 첫걸음을 지켜보고만 있냐는 건가?
+[name="'보존자'"]자넨 너무 늦었네, '박사'.
+[name="'보존자'"]내 기다림은…… 이미 의미를 잃었지.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="지금에 비하면 트리마운츠에서 일어난 일은 아무것도 아니야.;……;……설명이 더 필요해.",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="켈시"]당신이 크리스틴을 돕고 있었군요. 크리스틴이 어떠한 수단으로 당신과 접촉한 거겠죠.
+[charslot]
+[name="'보존자'"]테라의 역사와 문화, 언어, 종족, 기술 수준은 컬럼비아의 네트워크를 통해 다 알고 있네.
+[name="'보존자'"]웃긴 건 현재 지상의 정보 전달 기술은 전 세계를 커버할 수 없지만, 자네들이 서로를 파멸시키는 수단은 적합한 진화 효율을 갖고 있다는 것이야.
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="켈시"]테라의 방식은 너무 원시적이고 아직 오리지늄에 의지하고 있습니다. 이런 전환율로 크리스틴의 시도를 실현하려면…… 상상하기 어려울 정도의 에너지원이 필요하죠.
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="켈시"]테라에는 그 난제를 해결할 기술 수단이 있을 리가 없습니다. 혹시……
+[charslot]
+[name="'보존자'"]그렇네.
+[name="'보존자'"]내 마지막 피를 그 아이에게 줬지. 새로운 심장에 바치는 것이 곧 꺼질 등불을 지키는 것보다 나을 테니까.
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="켈시"]……
+[name="켈시"]당신이……
+[name="켈시"]……어떻게 그걸 흔쾌히? 긴 시간 동안의 모든 노력이…… 수포가 되는 건데도.
+[charslot]
+[name="'보존자'"]그렇지, 수포가 됐지.
+[name="'보존자'"]계획은 내가 직접 끝냈고 지령도 내가 직접 입력했네.
+[name="'보존자'"]이건 후회를 용납할 수 없는 판단일세.
+[name="'보존자'"]금방이야, 금방이라고.
+[dialog]
+[charslot]
+[CameraShake(duration=5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=0.9, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[delay(time=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+멀리서부터 어마어마한 진동이 울려 퍼졌고, 지하 공간의 등불은 몇 번이나 깜빡거렸다.
+자칭 '보존자'라는 존재는 순간 침묵하더니, 이내 깊은 한숨을 내쉬었다.
+[dialog]
+[Decision(options="무, 무슨 일이지?!;……;설마 에너지 우물?",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="'보존자'"]그저 호기심에 찬 아기의 눈길일 뿐이거늘……
+[name="'보존자'"]대체 어떠한 장애물을 극복해야 하는 것인가?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[delay(time=2)]
+8:11 P.M. 에너지 우물의 에너지 저장 이상 발생
+[dialog]
+[Background(image="38_g15_energywell_glowed",screenadapt="coverall")]
+[delay(time=2)]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[delay(time=0.8)]
+[PlaySound(key="$swordtsing5", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_ftrub", volume=1)]
+[charslot(slot = "r", name = "avg_1031_slent2_1#9$2", posfrom="-600,0", posto="40,-20", duration=1, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "r", posfrom="40,-20", posto="0,0", duration=1.5, isblock=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", posfrom="-300,0", posto="0,0", duration=2.5, isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="자라"]로도스 아일랜드라는 기업이 널 아주 잘 훈련시켰구나.
+[charslot(slot = "r", name = "avg_1031_slent2_1#9$2", focus="r")]
+[name="사일런스"]하아…… 하아……
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="자라"]아직 팔을 들 수 있겠니?
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="사일런스"]괜찮아요.
+[name="사일런스"]당신의 팔은요?
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="자라"]괜찮아, 의료 보험을 들었거든.
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="자라"]계속할 거니?
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="사일런스"]……여전히 제 앞을 막으시겠다면요.
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="자라"]좋아, 그럼 계속하자.
+[dialog]
+[PlaySound(key="$d_avg_energywell", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=0.4, channel="a",fadetime=2)]
+[delay(time=1.5)]
+[playMusic(intro="$act25side_intro",key="$act25side_loop", volume=0.6)]
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="자라"]……잠깐, 상황이 뭔가 이상한데.
+[name="자라"]여기 온도가…… 에너지 우물이 발사 준비를 한다 해도 이 정도로 온도가 올라갈 리 없을 텐데.
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="사일런스"]군부가 에너지 저장을 멈추기 위해 이곳의 모든 에너지원을 끊었어요.
+[charslot(slot = "l", name = "avg_npc_893_1#3$1", focus="l")]
+[name="자라"]안전 경보와 통제 시스템도? 이 멍청이들……
+[name="자라"]여기서 나가야 해! 서둘러!
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="사일런스"]위에 아직 병사들이 있어요. 자라 주임, 부탁이니 모두 데리고 떠나주세요.
+[charslot(slot = "l", name = "avg_npc_893_1#4$1", focus="l")]
+[name="자라"]넌 어디 가려고?
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="사일런스"]통제 시스템의 에너지원이 끊어졌는데 어떻게 총괄은 이곳을 원격으로 조종하는 거죠?
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="사일런스"]전달물질의 반응이 계속 강해지고 있어요. 제겐…… 아직 기회가 있어요.
+[dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot = "r", afrom=1, ato=0, duration=1, focus="r", isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l", focus="l")]
+[name="자라"]사일런스!
+[dialog]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[Image(image="38_i15_1", screenadapt="coverall", fadetime=2)]
+[CameraShake(duration=-1, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[PlaySound(key="$d_avg_energywell", volume=0.8, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+뜨거운 바람에 얼굴은 타버릴 것만 같았지만, 그녀가 예전에는 별 신경도 쓰지 않았던 작은 연구원은 에너지 우물의 더 깊은 곳을 향해 꿋꿋이 달려가고 있었다.
+자라는 문득 아무것도 그녀의 방해물이 될 수 없다는 것을 느꼈다.
+어쩌면 사일런스는 자신이 한 약속을 정말 해낼지도 모른다.
+자라는 그때가 되면 자신도 조금이나마 힘이 되어줘야겠다고 다짐했다.
+[dialog]
+[PlaySound(key="$d_avg_energywell", volume=1, loop=true, channel="a")]
+[CameraShake(duration=-1, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[Image(image="38_i15_2", screenadapt="coverall", fadetime=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=3.5)]
+[name="자라"]발사 준비는 끝난 것 같네.
+[name="자라"]“과학은 모두를 진지하게 바라보고 있어요”라니.
+[name="자라"]하, 난 과학자가 아닌데 말이지.
+[dialog]
+[PlaySound(key="$d_avg_energygather", volume=1)]
+[delay(time=1.5)]
+[name="자라"]크리스틴, 넌 네가 꿈꾸는 높은 하늘로 날아가렴……
+[name="자라"]반드시 말이야.
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[CameraShake(duration=0.1, xstrength=0, ystrength=0, vibrato=30, randomness=90, fadeout=false, block=false)]
+[image]
+[charslot]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "r", name = "avg_npc_891_1#1$1", duration=1, isblock=true)]
+[name="내스티"]……
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="저스틴"]내스티, 이왕이면 전망이 더 좋은 곳을 고르지 그랬나요?
+[charslot(slot = "r", name = "avg_npc_891_1#6$1", focus="r")]
+[name="내스티"]……언제까지 날 계속 귀찮게 할 건데?
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="저스틴"]라이타니엔에 탐사하러 갔을 때, 라이타니엔 사람의 불꽃 축제를 본 적이 있거든요. 최고의 작곡가를 초빙해 축제를 위한 곡까지 만들더군요.
+[charslot(slot = "l", name = "avg_npc_892_1#3$1", focus="l")]
+[name="저스틴"]첫 번째 불꽃이 터지는 순간 음악가들이 일제히 연주하는데, 그 장면이 정말 아름다웠죠.
+[charslot(slot = "r", name = "avg_npc_891_1#6$1", focus="r")]
+[name="내스티"]네 비유는 너무 빈약해서 라이타니엔 사람들이 싫어할 거야.
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="저스틴"]맞습니다. 하지만 우리는 오늘 트리마운츠에서 마찬가지로 찬란한 경치를 보게 됐죠.
+[name="저스틴"]공중에 떠 있는 커다란 고리, 드론의 사격으로 인한 반짝이는 비, 장갑에서 튀는 불꽃까지……
+[name="저스틴"]그야말로 불꽃 축제 못지않네요.
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="저스틴"]슬슬 연주도 클라이맥스에 이르렀겠군요.
+[name="저스틴"]사람의 마음을 뒤흔드는 악센트가 있어야 하는데……
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[background]
+[charslot]
+[Image(image="38_i10", xScale=1.8, yScale=1.8, x=50,y=200, screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[CameraShake(duration=-1, xstrength=2, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_energybeamfire", volume=0.6)]
+[Image(image="38_i16", screenadapt="coverall", xScale=1.8, yScale=1.8, x=50,y=200,fadetime=0.2)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=false)]
+[ImageTween(xTo=50,yTo=-180,duration=3.5)]
+[delay(time=3)]
+[PlaySound(key="$d_avg_beamamb", volume=1)]
+[delay(time=0.5)]
+[CameraShake(duration=1.5, xstrength=4, ystrength=30, vibrato=50, randomness=90, fadeout=true, block=false)]
+[ImageTween(xScaleFrom=1.8, yScaleFrom=1.8, xScaleTo=1.2, yScaleTo=1.2, duration=0.2, ease="InOutCubic", xTo=0,yTo=0,block=true)]
+[Image(image="38_i16", screenadapt="coverall", xScale=2.5, yScale=2.5, fadetime=0.1)]
+[ImageTween(xScaleFrom=2.5, yScaleFrom=2.5, xScaleTo=1.2, yScaleTo=1.2, duration=0.1, ease="InOutCubic", xTo=0,yTo=0,block=true)]
+[delay(time=1)]
+[CameraShake(duration=6, xstrength=30, ystrength=30, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$glass", volume=1)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[PlaySound(key="$d_gen_thunders_amb", volume=0.7)]
+[ImageTween(xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, duration=20)]
+[delay(time=3.5)]
+[name="저스틴"]……
+[name="내스티"]……
+[name="저스틴"]이건…… 제가 상상한 것보다 아름답군요. 라인 랩은 지금 이 경치를 감상하는 모든 사람에게 돈을 받아야 한다니까요.
+[name="내스티"]……성공이다. 초점 발생기의 재료와 구조가 에너지 다발의 충격을 일단 버텨냈어.
+[name="내스티"]이제 에너지 충전과 초점 맞추는 단계야. 이런 고압 조건에서 수치를 수집할 수만 있다면……
+[name="저스틴"]이제 군부와 메이랜더는 마지막 기회를 잡아서 초점이 완성되는 걸 막으려고 하겠죠.
+[name="저스틴"]총괄은 걱정되지 않나요?
+[name="내스티"]언제 우리가 총괄을 걱정할 필요가 있었나?
+[name="내스티"]우리는 동행자야. 그저 동행자일 뿐.
+[name="내스티"]우리는 우리 일만 잘하면 돼. 그리고…… 행운을 빌어주는 거지.
+[name="내스티"](살카즈어) 언젠가 카즈델도 하늘에 올라간다면, 화로에 네 이름을 새겨 줄게.
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

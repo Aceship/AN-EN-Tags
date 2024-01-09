@@ -1,0 +1,493 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="37_g7_airshipdock",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]So this is the airship...
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]All our attempts to infiltrate it ended in failure. Anyone who approached simply vanished into thin air.
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Is that some kind of Sarkaz witchcraft? Surely the Lord of Fiends would know how to neutralize it.
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]I...
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="Amiya"]Is Theresa here?
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="Amiya"]But I can't feel—
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]Urgh!
+[dialog]
+[charslot]
+[stopmusic(fadetime=1)]
+A heavy pressure comes over her.
+It is far too thick, far too cruel, to be described or spoken of.
+Amiya can hardly stand.
+[playMusic(intro="$plot_intro", key="$plot_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]What... is this...?
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]What are you doing, Lord of Fiends? Don't try anything funny!
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Neutralize it with your witchcraft! Or else...
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_395_1#6$1",focus="m",duration=0.4)]
+[playsound(key="$d_avg_knife",volume=0.7)]
+[playsound(key="$knifegore",volume=0.7,delay=0.1)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=0.03, block=true)]
+[playsound(key="$swordtsing5",delay=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.01, block=true)]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Ugh—
+[dialog]
+[charslot(duration=0.5)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=10, vibrato=10, randomness=90, fadeout=true, block=false)]
+[playsound(key="$bodyfalldown2")]
+[delay(time=1)]
+[Decision(options="Ascalon.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="Ascalon"]Sorry I'm late.
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Calm down, Ascalon.
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]This was all my colleague's plan! I tried to talk him out of it!
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]I don't intend to harm your Doctor. We're just getting a deal done. You'll be the witness.
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]Then get out of my way.
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]—
+[dialog]
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="r")]
+[Decision(options="What is it?;......;You're really pale.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_395_1#10$1",focus="m")]
+[name="Ascalon"]You can't feel it because you're not Sarkaz.
+[charslot(slot="m",name="avg_npc_395_1#10$1",focus="m")]
+[name="Ascalon"]We're coming face to face with our history. The sum of the Sarkaz's millennia of suffering.
+[charslot(slot="m",name="avg_npc_395_1#2$1",focus="m")]
+[name="Ascalon"]It's angry. It's screaming, and it's making all of us listen to it.
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]No wonder.
+[name="Ascalon"]Ha, the dukes are going to be disappointed. This is no engineering or technology that can be copied.
+[name="Ascalon"]The ship itself is a revenant.
+[Dialog]
+[Character(fadetime=0)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Subtitle(text="How did the Sarkaz live?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="How did the Sarkaz live in the beginning?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="The Elders and the Ancients had not come upon the land yet. All things were how they should be.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Then they came.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="They killed and slaughtered. They brought barbarism and rage upon the land. Their fangs and claws were not pointed at just each other, but at us as well.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="The proud Sarkaz never surrendered. We fought back.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="We fought rage with rage. They will taste the fruit of vengeance!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="But Kazdel was destroyed in the blink of an eye.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Despicable!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="They stopped at nothing. They were cunning, shameless, cruel.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="How dare they trample upon pure Kazdel?!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="How dare they?!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]Argh—
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]I... the voices...
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]Don't let it affect you, Amiya!
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]Resist the illusion!
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]I know, I'm trying...
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]Argh—Aah—
+[Dialog]
+[Character(fadetime=0)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="Kazdel was destroyed.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="The King of Sarkaz and the Royal Court led us in the fight against the scum. The Sarkaz will not permit such shameful failure.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="But those cowardly Sarkaz, who call themselves the Sankta, deserted their duty. They betrayed their people, betrayed themselves!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="The walls fell again, and with it our dream.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="No matter. The traitors will be purged. Kazdel will stand again.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="As long as the King of Sarkaz still stands, we will never fall.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]The shadows...
+[name="'Trilby Asher'"]No, it's not like the shadows from Ines's Arts. What is it?
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]Get out of the airship's shadow, Doctor!
+[dialog]
+[charslot]
+The airship's shadow wriggles, stretches. The other 'Trilby Asher' whom Ascalon knocked to the ground disappears in the dark ocean.
+[name="'Trilby Asher'"]What the hell is this...?
+Suffocating black, suffocating despair, suffocating fury.
+[Dialog]
+[Character(fadetime=0)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="The King of Sarkaz will lead us. The King of Sarkaz.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Thirty-four times did Kazdel fall.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Six hundred and seventy-five times did Kazdel fall.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Three thousand four hundred and twenty-one times did Kazdel fall.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="The shortest it took was three days, between the rebuilding of Kazdel's walls, and the hoofs of pegasi trampling it to dust.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Time and again Kazdel was destroyed. Time and again, it was rebuilt.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Time has changed our faces and theirs. But the way has never ended. Our resistance never wavered.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="But each rebuilding of Kazdel took longer than the previous one.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Our civilization was devastated. Our arts were forgotten.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="But we still have our hatred. The King of Sarkaz will slay our foes with it!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="I am proud of this, of our unwavering resolve.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="But what do I see?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background]
+[Image(image="37_i10",screenadapt="coverall", fadetime=0)]
+[ImageTween(xFrom=0, yFrom=30, xTo=0, yTo=0,xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=8, block=false)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=4)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="A twisted chimera...", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="An Outblood King?!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="The King of Sarkaz who stands before me is an Outblood?!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="This crown is not yours to wear! This pain is not yours to stand with!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="This fury is not yours to stand for!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Answer me, impostor! Answer me, fraud!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Answer the revenant's question!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[name="Amiya"]The revenant...
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="Open your eyes and see, False King!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="What do you see?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]I see...
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]Don't look, Amiya! It's the revenant's witchcraft!
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]......
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]I saw tears.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]I saw deep, heavy sorrow.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]Has this sorrow always been with you?
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="Sorrow? This is no sorrow.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="I feel no sorrow anymore.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]You have scorched your wound with the flames of rage.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]It's... painful.
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="I know what is real and what is false!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Answer my question!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="How—dare you—", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Twisted—Outblood—", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="How—dare—you—", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Carry the burden of the Sarkaz!!!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Image]
+[delay(time=1)]
+[charslot]
+[Background(image="37_g7_airshipdock",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+Ascalon stumbles.
+[dialog]
+[Decision(options="Are you ok, Ascalon?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_395_1#10$1",focus="m")]
+[name="Ascalon"]I... I'm fine...
+[charslot(slot="m",name="avg_npc_395_1#10$1",focus="m")]
+[name="Ascalon"]Amiya—
+[dialog]
+[charslot]
+Amiya looks up towards the great shadow of the revenant.
+You cannot see her face. You only know she is looking up.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]You're right, Revenant. I should see. I have seen.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]I have seen it all.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]All three thousand four hundred and twenty-one destructions, every brick that turned to ash.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]I saw the resistance of every King of Sarkaz. I saw their hearts, each and every one of them.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]I saw the tears and blood swallowed. I saw the dust and broken pieces.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]Familiar silhouettes fall, overlapping with one another. Familiar scenes replay themselves.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]I have seen. I see. I will see.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]I never averted my eyes, Revenant.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]I will remember.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]Every hard decision, every death and sacrifice, every destruction, every hope.
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="—I made you see, Chimera.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="I made you see!!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Impostor! There is not a single moment that I do not experience it, feel the burning flames!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="But you?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Yes, you could see it, like a map, like a play, a mere passerby watching from above the cliffs.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="I denounce you, False King, I despise you, not because of your foolishness, not because of your arrogance, not because of your conceit.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="It's because you can never truly stand with us.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]But I've tried—
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="Tried?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="You could try to not avert your eyes—", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="But you can still turn away any time you choose.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="Amiya"]I...
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="You're not Sarkaz. You will never be.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="The souls of the Sarkaz reject you.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="You call our fate 'pain?' You say you try to endure it—", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="But we are fated to be buried by it for eternity.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="You say you have the courage. But if the day comes that you can take it no more...", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="You can abandon us.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]I won't—
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="How many seasons have you seen? How dare you promise that you won't?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="No, you will. You will, because you can.", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="How could Sarkaz pick such a king? How could Sarkaz accept such a king?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]Theresa wanted me to be... she said we can share in the same feelings, even if we're not of the same blood!
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="Then she was a fool!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="If you truly share the same feelings... now that you have seen it all...", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Why do you come before me?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Why do you try to stop this war?", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="Amiya"]I...
+[dialog]
+[charslot]
+Amiya finds herself at a loss for words.
+Why does she want to stop this war?
+She has seen the anger, the pain, the longing.
+Why does she want to stop this war?
+There is no other way for the Sarkaz.
+No Sarkaz could come to any other answer, after coming face to face with it all.
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]But...
+[dialog]
+[charslot]
+Amiya realizes that, for an instant, she understood Theresa's choice.
+Drown tears with tears, and bury suffering with suffering.
+Only scorched earth will bring new life to the Sarkaz.
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]But...
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]Still... I renounce this path.
+[dialog]
+[charslot]
+The revenant was right.
+She renounced it. She can never truly stand with them.
+She can leave.
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="Get out!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Get out of us!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+The shadow wriggles furiously, splitting apart, growing so thick it seems to take physical form.
+The chaotic shadow of the revenant emerges from the empty shipyard.
+[Dialog]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[PlaySound(key="$d_avg_deathfire", volume=1,delay=0.5)]
+[delay(time=0.3)]
+[bgeffect(name="$eb_eblana_attack",layer = 1)]
+[delay(time=1)]
+[PlayMusic(intro="$m_bat_essenceofevolution_intro", key="$m_bat_essenceofevolution_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="Eblana"]Hello there, big one.
+[dialog]
+[charslot]
+The purple flame impacts the black shadow.
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m")]
+[name="Eblana"]You interest me, Revenant.
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m")]
+[name="Eblana"]What ember will you leave behind when you burn?
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]—
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]That Draco... Eblana.
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Nothing in the mission brief said she would show up!
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Go! Hurry!
+[dialog]
+[character]
+[Decision(options="Amiya!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]I... I'm fine...
+[dialog]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="r")]
+[Decision(options="Here, hold onto me.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]Doctor, I...
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]They're right... I can't stand with them...
+[dialog]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="r")]
+[Decision(options="Maybe that's why it has to be you.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]...Huh?
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]The Draco's fire is getting closer!
+[charslot(slot="m",name="avg_npc_395_1#3$1",focus="m")]
+[name="Ascalon"]She's strong! We shouldn't try to fight her here!
+[charslot(slot="m",name="avg_npc_722_1#2$1",focus="m")]
+[name="Eblana"]......
+[charslot(slot="m",name="avg_npc_722_1#6$1",focus="m")]
+[name="Eblana"]Hmph... interesting.
+[charslot(slot="m",name="avg_npc_722_1#6$1",focus="m")]
+[name="Eblana"]Rhodes Island...
+[charslot(slot="m",name="avg_npc_722_1#6$1",focus="m")]
+[name="Eblana"]I seem to hear that name often lately.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[bgEffect(layer = 1)]
+[bgEffect(layer = 2)]
+[Background(image="37_g9_airshipdockcorridor",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_419_1#1$1",focus="m")]
+[name="Royal Court Soldier"]G-General... the Draco...
+[charslot(slot="m",name="avg_npc_404_1#6$1",focus="m")]
+[name="Manfred"]Pay no heed.
+[name="Manfred"]Her flames burn nothing but her own short-sighted ambition.
+[charslot(slot="m",name="avg_npc_404_1#1$1",focus="m")]
+[name="Manfred"]Lead us away from here, Great Revenant. This shipyard is too small for your fury. The noises of those Outblood are not worth your time.
+[charslot(slot="m",name="avg_npc_404_1#1$1",focus="m")]
+[name="Manfred"]I have heard from the Regent. He is ready.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="37_g8_airshipdock_ex",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_722_1#6$1",focus="m")]
+[name="Eblana"]......
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="'The Brigadier'"]Your Royal Highness.
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="'The Brigadier'"]The Sarkaz airship has taken off and is slowly turning towards Londinium.
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="'The Brigadier'"]Battleship squadrons are ready to intercept on the perimeter.
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="'The Brigadier'"]Other regiments are also assembling.
+[charslot(slot="m",name="avg_npc_722_1#2$1",focus="m")]
+[name="Eblana"]Oh?
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="'The Brigadier'"]The Duke of Windermere's fleet is already deployed near the plate. The Duke of Caster's ships are also in movement and will likely approach in short order.
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m")]
+[name="Eblana"]Looks like everyone cares a lot about this place.
+[dialog]
+[charslot]
+[name="???"]Do they?
+[dialog]
+[charslot(slot="m",name="avg_npc_865_1#1$1",focus="m",duration=1)]
+[delay(time=1.5)]
+[name="Colbert"]Aren't the dukes are little late?
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="'The Brigadier'"]You're... the manager of that hotel?
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="'The Brigadier'"]What are you doing here?
+[charslot(slot="m",name="avg_npc_723_1$1",focus="m")]
+[name="'The Brigadier'"]You're a Sarkaz mole in Londinium?
+[charslot(slot="m",name="avg_npc_865_1#1$1",focus="m")]
+[name="Colbert"]No, Colbert is just a Sarkaz cleaner who thinks he's Victorian.
+[charslot(slot="m",name="avg_npc_722_1#1$1",focus="m")]
+[name="Eblana"]What about you?
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_deathfire", volume=1)]
+[bgeffect(name="$eb_eblana_attack",layer = 1)]
+[delay(time=1)]
+[PlaySound(key="$burningloop1", volume=0.7, loop=true, channel="fire")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background]
+[bgEffect(layer = 1)]
+[Image(image="37_i06",screenadapt="coverall",xScale=1.7, yScale=1.7,fadetime=0,block=true)]
+[ImageTween(xFrom=200, yFrom=130, xTo=-300, yTo=130,duration=60, block=false)]
+[bgeffect(name="$eb_deathburning",layer = 1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="Damazti Cluster"]We...?
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Image(image="37_i06",screenadapt="coverall",fadetime=1,block=true)]
+[ImageTween(xFrom=-50, yFrom=30, xTo=0, yTo=0,xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=20, block=false)]
+[bgeffect(name="$eb_deathburning",layer = 1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[delay(time=2)]
+[name="Damazti Cluster"]Just some poor souls made to come out and work while having a chat with a friend.
+[name="Damazti Cluster"]You're such a spoilsport, Draco.
+[name="Eblana"]Why not have a chat with me?
+[name="Damazti Cluster"]Give us a break.
+[name="Damazti Cluster"]Let's get this over with.
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[bgEffect(layer = 1)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Character]
+[Image]

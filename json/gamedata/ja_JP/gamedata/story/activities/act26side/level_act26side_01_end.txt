@@ -1,0 +1,431 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="39_g10_monasterycorridor_d",screenadapt="coverall")]
+[playMusic(intro="$darkness02_intro", key="$darkness02_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "m", name = "avg_npc_927_1#1$1",duration=1)]
+[delay(time=2)]
+[name="フォルトゥナ"]（ライムントの奴、どういうつもりなんだろ……）
+[name="フォルトゥナ"]（夜まで待たないと話せないようなことって、一体どんな話？）
+[charslot(slot = "m", name = "avg_npc_927_1#7$1")]
+[name="フォルトゥナ"]（んー、分かんないや。まあいいか。とりあえず置いとこ。）
+[charslot(slot = "m", name = "avg_npc_927_1#5$1")]
+[name="フォルトゥナ"]（今日は食事を届けるのがこんなに遅くなっちゃった。レミュアンさん、きっとお腹空かせてるだろうな……はぁ、それに量だってもうこれだけしかないし。）
+[PlaySound(key="$d_avg_hungry")]
+[charslot(slot = "m", name = "avg_npc_927_1#3$1")]
+[name="フォルトゥナ"]（……）
+[charslot(slot = "m", name = "avg_npc_927_1#6$1")]
+[name="フォルトゥナ"]（しっかりしなさい、私のお腹！　泣き声上げちゃダメ……さっき食べたばっかりでしょ！）
+[charslot(slot = "m", name = "avg_npc_927_1#5$1")]
+[name="フォルトゥナ"]（はぁ……）
+[name="フォルトゥナ"]（いつか、ご飯をたらふく食べられる日が来ればいいなぁ……）
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_cloakmovement")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_927_1#6$1")]
+[name="フォルトゥナ"]……！
+[name="フォルトゥナ"]だ、誰？
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="フォルトゥナ"]そこにいるのは誰？　もうバレてるんだからね……！
+[name="フォルトゥナ"]……
+[name="フォルトゥナ"]出てきて。一体何者なの？
+[name="フォルトゥナ"]声を出さなくたって、いるのは分かってるんだよ。す、姿が見えたんだから！　あなた、修道院の人じゃないでしょ！
+[dialog]
+[PlaySound(key="$bullet_loading",volume=0.8)]
+[delay(time=1)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="フォルトゥナ"]早く出てきなさい！　で、出てこないなら人を……いや、今すぐ引き金を引くからね！
+[charslot]
+[name="？？？"]はいはーい。出てきてあげたよ。
+[name="？？？"]はあ、やっちゃったな……
+[dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "m", name = "avg_4015_spuria_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="スプリア"]ずいぶん勘が良いのね。ひょっとして翼が見えちゃってた？　だからあれほど言ったのに……私たちサンクタの光輪と光の翼はそれぞれ形が違うんだから、見分けなんてすぐに付いちゃうってさ……
+[name="スプリア"]まったく、この辺ならそんなに慎重に動く必要もないと思ってたんだけどな。
+[charslot(slot = "m", name = "avg_npc_927_1#6$1")]
+[name="フォルトゥナ"]……初めて見る顔だね。あなた誰？
+[charslot(slot = "m", name = "avg_4015_spuria_1#1$1")]
+[name="スプリア"]こんにちは、お嬢さん。銃を下ろしてくれるかしら。それって、良い子が同族に向けていいものじゃないよ。
+[name="スプリア"]あなたもサンクタなら、分かるはずだよね？　私に悪意なんて全くないってことが。
+[charslot(slot = "m", name = "avg_4015_spuria_1#10$1")]
+[name="スプリア"]私は、うーん……今回は正義の使者、と言えなくもないかな？　まあそんなとこ。人助けに来たってことに変わりはないわけだし……
+[charslot(slot = "m", name = "avg_npc_927_1#6$1")]
+[name="フォルトゥナ"]……話す気がないならいいよ。今すぐ人を呼んで──
+[charslot]
+[dialog]
+[PlaySound(key="$d_avg_clothmovementsp")]
+[charslot(slot = "r",name = "avg_npc_927_1#6$1",posfrom = "0,0", posto = "0,0",duration = 0)]
+[charslot(slot = "l",name = "avg_4015_spuria_1#1$1",posfrom = "50,0", posto = "200,0",duration = 0.5)]
+[delay(time=0.5)]
+[charslot(slot ="r", action="shake", power=10, times=50, duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_927_1#6$1",focus="l")]
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]まあまあ、そう焦らないで。
+[charslot(slot ="r", action="shake", power=10, times=50, duration=0.5)]
+[charslot(slot = "r", name = "avg_npc_927_1#6$1",focus="r")]
+[name="フォルトゥナ"]むぐぐっ！
+[name="フォルトゥナ"]（放して！）
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]オッケー。でも絶対に叫んだりしないでね。
+[dialog]
+[PlaySound(key="$d_avg_clothmovement", volume=0.6)]
+[charslot(slot = "l",posfrom = "200,0", posto = "0,0",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "r", name = "avg_npc_927_1#5$1",focus="r")]
+[name="フォルトゥナ"]……ゲホッ……ゲホゲホッ！
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]ごめんなさい、少し力の加減を間違えちゃったかも。大丈夫？
+[charslot(slot = "r", name = "avg_npc_927_1#6$1",focus="r")]
+[name="フォルトゥナ"]ふぅ……はぁ……あなた、何者なの？　何が目的！？　答えて！
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]別に教えてあげてもいいよ。人を捜しに来たの。
+[name="スプリア"]私たちと同じサンクタで、ピンク色の髪をしてて、今はまだ車椅子に乗ってるはずかな。見た目はすごく優しそうだけど、実際はそれほどお優しいってわけでもなくて……
+[charslot(slot = "r", name = "avg_npc_927_1#3$1",focus="r")]
+[name="フォルトゥナ"]（もしかして、レミュアンさんのこと！？）
+[charslot(slot = "l", name = "avg_4015_spuria_1#7$1",focus="l")]
+[name="スプリア"]おっ、その表情……知ってるみたいだね？　私ってばツイてる～。
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]さっき食事を運んでたけど、誰に届けるつもりだったのかな？　当ててみよっか。まさかレミュアン先輩？
+[charslot(slot = "r", name = "avg_npc_927_1#4$1",focus="r")]
+[name="フォルトゥナ"]（なっ！？）
+[name="フォルトゥナ"]（どうして分かったの？）
+[charslot(slot = "l", name = "avg_4015_spuria_1#7$1",focus="l")]
+[name="スプリア"]あははっ、また当たっちゃったっぽいね。あなた、すぐに顔に出るタイプでしょ！
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]じゃあもう一つ教えてもらえるかな？　レミュアン先輩はここにいる間元気にしてた？
+[charslot(slot = "r", name = "avg_npc_927_1#6$1",focus="r")]
+[name="フォルトゥナ"]……
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]言いたくないの？　それとも言えないの？　迷いと、それから少し怖がってるような感じがするけど……
+[charslot(slot = "r", name = "avg_npc_927_1#6$1",focus="r")]
+[name="フォルトゥナ"]て、適当なこと言わないで！
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]私が適当なこと言ってるかどうかは、あなたが一番よく分かってるはずでしょ。
+[name="スプリア"]何だかずいぶん悩みが多いみたいね。変だなぁ、こういう世間から隔絶された場所に住んでる人って、悩み事とはあんまり縁がないものだとばかり思ってたけど。
+[name="スプリア"]原因は何なんだろ？　ここには同族が少ないから、他の人とケンカしちゃったとか？
+[charslot(slot = "r", name = "avg_npc_927_1#4$1",focus="r")]
+[name="フォルトゥナ"]……あなたには関係ないでしょ。
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]違うの？　じゃあ、あなたが持ってる銃のせい？　長いこと手入れがされてなさそうだし、サビついてきちゃったとか？
+[name="スプリア"]もしそうだったら、力になれるかも。私、銃のメンテは得意なの。お礼はレミュアン先輩がどこにいるかだけ教えてくれればいいからさ。割に合う取引じゃない？
+[name="スプリア"]さ、教えてよ。実際のとこ、私の正体も見当ついてるんでしょ？　あなた、とっても賢そうだもの。
+[charslot(slot = "r", name = "avg_npc_927_1#6$1",focus="r")]
+[name="フォルトゥナ"]……
+[charslot(slot = "r", name = "avg_npc_927_1#4$1",focus="r")]
+[name="フォルトゥナ"]レミュアンさんと同じ、ラテラーノから派遣されてきた人でしょ？
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]大正解。
+[charslot(slot = "l", name = "avg_4015_spuria_1#12$1",focus="l")]
+[name="スプリア"]じゃ、お喋りはここまでにしよっか。これでも結構急いでてさ……
+[name="スプリア"]レミュアン先輩の居場所、本当に教えるつもりはないわけ？
+[charslot(slot = "r", name = "avg_npc_927_1#4$1",focus="r")]
+[name="フォルトゥナ"]……
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]うーん、言いたくないならしょうがないか。
+[name="スプリア"]そうだ。
+[dialog]
+[charslot(slot = "l",posfrom = "0,0", posto = "150,0",duration = 0.5)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_glassclink", volume=0.6)]
+[delay(time=1)]
+[charslot(slot = "l",posfrom = "150,0", posto = "0,0",duration = 0.8)]
+[delay(time=1.2)]
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]食事は私が届けておくよ。
+[charslot(slot = "r", name = "avg_npc_927_1#3$1",focus="r")]
+[name="フォルトゥナ"]あっ……！
+[charslot(slot = "l", name = "avg_4015_spuria_1#1$1",focus="l")]
+[name="スプリア"]じゃ、そういうことで。またね。
+[dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot = "l",posfrom = "0,0", posto = "-200,0",duration = 1.5)]
+[charslot(slot = "l",afrom= 1, ato = 0,duration = 1)]
+[delay(time=2)]
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="39_g4_gatheringplace_d",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$ponder_intro",key="$ponder_loop", volume=0.6)]
+[delay(time=1)]
+[playsound(key="$d_avg_revolver")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[playsound(key="$bodyfalldown1")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_372_1#6$1",duration=0.5)]
+[delay(time=1)]
+[name="リケーレ"]最後の一人だ。これで片付いたな。
+[charslot(slot = "m", name = "avg_npc_372_1#5$1")]
+[name="リケーレ"]こいつら……盗賊か？　なかなか厄介な相手だったな。
+[name="リケーレ"]フェデリコ、そっちはどうだ？　なんかでかい物音が聞こえた気がするが、建物を壊したりしてないだろうな？
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]いいえ、壊してはいません。
+[charslot(slot = "m", name = "avg_npc_372_1#1$1")]
+[name="リケーレ"]そりゃよかった。お疲れさん、こっちも全部片付いたぜ。
+[charslot(slot = "m", name = "avg_npc_924_1#8$1")]
+[name="クレマン"]本当にありがとうございます。お強いですね……
+[name="クレマン"]これであの盗賊たちもしばらくはおとなしくしてくれるでしょう。
+[charslot(slot = "m", name = "avg_npc_372_1#8$1")]
+[name="リケーレ"]その口ぶり、ちょっかい出されたのはこれが初めてじゃないみたいですね？
+[name="リケーレ"]こういうことは結構多いんですか？
+[charslot(slot = "m", name = "avg_npc_931_1#1$2")]
+[name="ライムント"]ラテラーノから来たんなら、ここまでの道がどれだけ険しいかは、よく分かるはずだろ。
+[charslot(slot = "m", name = "avg_npc_372_1#1$1")]
+[name="リケーレ"]確かに、移動手段がなかったら、俺たちも簡単には入れませんでしたよ。
+[charslot(slot = "m", name = "avg_npc_931_1#8$2")]
+[name="ライムント"]こんな場所をうろつきたがるような奴は、行き場のない連中くらいしかいねぇんだよ。
+[charslot(slot = "m", name = "avg_npc_931_1#1$2")]
+[name="ライムント"]お前らも見ただろ。この荒野にゃ修道院以外に何もありゃしねぇ。盗賊どもが数少ない獲物を、見逃すはずがないんだよ。
+[charslot(slot = "m", name = "avg_npc_924_1#1$1")]
+[name="クレマン"]ええ、それにもうすぐ冬になりますし、ますます頻繁に略奪しに来ることでしょう。
+[charslot(slot = "m", name = "avg_npc_924_1#11$1")]
+[name="クレマン"]そういえば、確か前回はベニーが右脚を負傷しましたね。彼の容態はどうですか？
+[charslot(slot = "m", name = "avg_npc_931_1#1$2")]
+[name="ライムント"]まだうまく動かねぇが、我慢するしかねぇみてぇだ。
+[charslot(slot = "m", name = "avg_npc_924_1#1$1")]
+[name="クレマン"]……
+[name="クレマン"]ああ、それで、そこのお二方は……
+[charslot(slot = "m", name = "avg_npc_372_1#1$1")]
+[name="リケーレ"]俺たちはラテラーノから来ました。まあ、使者みたいな者です。
+[charslot(slot = "m", name = "avg_npc_924_1#10$1")]
+[name="クレマン"]おお、ラテラーノからのお客人ですか……では何とお呼びすれば？
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]ラテラーノ公証人役場から参りました、執行人のフェデリコと申します。
+[charslot(slot = "m", name = "avg_npc_372_1#1$1")]
+[name="リケーレ"]同じく執行人のリケーレです。あと一人同行者が来てるんですが、先に中へ入ってしまったみたいで。
+[charslot(slot = "m", name = "avg_npc_924_1#1$1")]
+[name="クレマン"]フェデリコさんに、リケーレさんですか。
+[charslot(slot = "m", name = "avg_npc_372_1#5$1")]
+[name="リケーレ"]まったく驚いていないように見えますね。
+[charslot(slot = "m", name = "avg_npc_924_1#1$1")]
+[name="クレマン"]ええ。ラテラーノからまた使者がやって来るであろうことは、皆も分かっていたことですからね。ただ、どのような方が訪れるかは、定かではありませんでしたが。
+[charslot(slot = "m", name = "avg_npc_924_1#7$1")]
+[name="クレマン"]私はてっきり……
+[charslot(slot = "m", focus="n")]
+痩せぎすで背の高い中年男は、ラテラーノから来た二人の来訪者が持つ銃に、無意識に目をやった。
+[charslot(slot = "m", name = "avg_npc_924_1#1$1")]
+[name="クレマン"]ラテラーノからの使者は、我々の罪を裁きに来るものかと……
+[charslot(slot = "m", name = "avg_1032_excu2_1#10$1")]
+[name="フェデリコ"]罪？　あなた方はどんな罪を犯したのですか？
+[name="フェデリコ"]大多数の犯罪者は、中庭公証人役場で自首及び被害者との示談を成立させることで、減刑を求めることが可能です。
+[charslot(slot = "m", name = "avg_npc_924_1#3$1")]
+[name="クレマン"]じ、自首？　減刑？
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_931_1#7$2")]
+[name="ライムント"]はぁ？　てめぇ、何言ってやがんだ！？
+[charslot(slot = "m", name = "avg_npc_372_1#6$1")]
+[name="リケーレ"]待てって、フェデリコ！　まだ状況が不透明なんだ。そういう話はレミュアンとオレンを見つけてからにしよう。
+[charslot(slot = "m", name = "avg_npc_372_1#5$1")]
+[name="リケーレ"]すみません、俺たちはここの責任者の方にお会いしたいのですが、そのように伝えていただいても構いませんか？
+[charslot(slot = "m", name = "avg_npc_924_1#10$1")]
+[name="クレマン"]ええ、分かりました！　少々お待ちください、今呼びに行きますので……
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "left", name = "avg_npc_926_1#1$2",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_923_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "right", name = "avg_npc_923_1#1$1",focus="r")]
+[name="修道院司教"]その必要はない。
+[name="修道院司教"]ご協力、大変感謝する。お二方が探しておられるのは、この私だ。
+[charslot(slot = "left", name = "avg_npc_926_1#1$2",focus="l")]
+[name="ジェラルド"]すまない、一足遅かったようだ。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_924_1#3$1")]
+[name="クレマン"]司教！　それにジェラルドも……
+[charslot(slot = "m", name = "avg_npc_931_1#11$2")]
+[name="ライムント"]ジェラルドの旦那！
+[charslot(slot = "m", name = "avg_npc_372_1#1$1")]
+[name="リケーレ"]あなたがこの修道院の司教様ですか？　ええと、そこのジェラルドさんも、ここの責任者の方でしょうか？
+[charslot(slot = "m", name = "avg_1032_excu2_1#6$1")]
+[name="フェデリコ"]……いえ。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]彼は違います。
+[charslot(slot = "m", name = "avg_npc_926_1#10$2")]
+[name="ジェラルド"]はは、確かに俺は、そんな大層な立場じゃあない。
+[charslot(slot = "m", name = "avg_npc_923_1#1$1")]
+[name="修道院司教"]……
+[charslot(slot = "m", name = "avg_npc_923_1#10$1")]
+[name="修道院司教"]訊きたいことが色々とあるのは承知しているよ。
+[name="修道院司教"]場所を変えよう。もっと話し合いに相応しい所へ。
+[StopMusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=2)]
+[Background(image="39_g7_chapel",screenadapt="coverall")]
+[playMusic(key="$monastery_sad_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_923_1#1$1")]
+[name="修道院司教"]クレマン、門を閉じてくれたまえ。ひとまず誰もここに近づかせんようにな。
+[charslot(slot = "m", name = "avg_npc_924_1#10$1")]
+[name="クレマン"]ですが、司教……
+[charslot(slot = "m", name = "avg_npc_926_1#1$2")]
+[name="ジェラルド"]俺がついている。
+[name="ジェラルド"]ライムント、お前は自分の仕事を続けろ。
+[charslot(slot = "m", name = "avg_npc_931_1#1$2")]
+[name="ライムント"]……ああ。旦那も気をつけろよ。
+[dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "200,0",duration = 1)]
+[PlaySound(key="$d_gen_walk_n",volume=1)]
+[charslot(duration=1)]
+[delay(time=1.8)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_924_1#1$1")]
+[name="クレマン"]では私は入口で待ちましょう……何かありましたら、いつでもお申しつけください。
+[dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "200,0",duration = 1)]
+[PlaySound(key="$d_gen_walk_n",volume=1)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$doorclosequite",volume=1)]
+[delay(time=2)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_923_1#1$1")]
+[name="修道院司教"]さて、これなら邪魔は入らんだろう。
+[name="修道院司教"]私はここの司教、ステファノ・トレグロッサだ。修道院の院長も兼任している。
+[name="修道院司教"]お二方、遠路はるばるここまでたどり着くのは大変だっただろう。大したもてなしもできんが……
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]無意味な挨拶は必要ありません。
+[name="フェデリコ"]私は同僚らと共に、教皇聖下イヴァンジェリスタⅪ世の命を受け、ラテラーノ特使二名の捜索に参りました。レミュアン及びオレン・アルジオラスはどこにいるのでしょうか？　お答えください。
+[charslot(slot = "m", name = "avg_npc_923_1#7$1")]
+[name="修道院司教"]……
+[charslot(slot = "m", name = "avg_npc_923_1#1$1")]
+[name="修道院司教"]私に言えることは、ただ一つだけだ……
+[name="修道院司教"]レミュアン特使は、現在修道院に客人として滞在している。
+[name="修道院司教"]案ずるな、我々は客人に不義を働いたりはしない。彼女はつつがなく過ごしているよ。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]オレン・アルジオラスに関しての言及がないようですが。
+[charslot(slot = "m", name = "avg_npc_923_1#4$1")]
+[name="修道院司教"]オレン特使の行方に関しては……私の方が尋ねたいほどでね。
+[name="修道院司教"]オレン特使がラテラーノに連絡を取ったからこそ、あなた方二人は迅速にここまで辿り着くことができたのではないのかね？
+[charslot(slot = "m", name = "avg_1032_excu2_1#9$1")]
+[name="フェデリコ"]……どういう意味ですか？
+[charslot(slot = "m", name = "avg_npc_372_1#5$1")]
+[name="リケーレ"]申し訳ありませんが、司教。それは我々が受け取った情報とはいささか乖離があるようですね。
+[name="リケーレ"]我々の受けた情報によると、荒野に位置するアンブロシウス修道院からラテラーノに救援を要請する旨の手紙が一通届いた。その後、我々は特使二名をこの地に派遣したが連絡が途絶えてしまった。
+[name="リケーレ"]そこで教皇聖下は、二人の捜索及び状況調査のため、俺たちを特別に遣わされた……
+[name="リケーレ"]ここまでで、あなたの知る情報と矛盾する点は何かありますか？
+[charslot(slot = "m", name = "avg_npc_923_1#1$1")]
+[name="修道院司教"]……オレン特使を留め置くことは叶わなかった。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]つまり、オレンは行動制限を受けたわけではないのですね？
+[charslot(slot = "m", name = "avg_npc_926_1#1$2")]
+[name="ジェラルド"]その点は保証しよう。あの特使の警戒心の強さは折り紙付きでね。
+[name="ジェラルド"]客人として留まっていただくようレミュアンさんを「お誘い」した時に、彼は俺たちの隙を突いて包囲から逃れたよ。
+[name="ジェラルド"]その後どこへ行ったのかは、俺たちにも分からない。
+[charslot(slot = "m", name = "avg_npc_372_1#1$1")]
+[name="リケーレ"]フェデリコ。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]はい？
+[charslot(slot = "m", name = "avg_npc_372_1#1$1")]
+[name="リケーレ"]オレンが逃げた。だが奴は姿を現さず、連絡すら寄越さない。
+[name="リケーレ"]何か嫌な予感がしてこないか？
+[charslot(slot = "m", name = "avg_1032_excu2_1#6$1")]
+[name="フェデリコ"]はい。
+[charslot(slot = "m", name = "avg_npc_372_1#5$1")]
+[name="リケーレ"]いや、「はい」じゃなくてさ……
+[name="リケーレ"]それと、そこのマントのお方。俺が思うに、一般の住民はそこまで事情に詳しくはないはずですが、あなたはどういったご身分で？
+[charslot(slot = "m", name = "avg_npc_926_1#1$2")]
+[name="ジェラルド"]ここの猟師代表、兼用心棒と言ったところだ。俺のことは気にしないでくれ。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]……
+[charslot(slot = "m", name = "avg_npc_372_1#1$1")]
+[name="リケーレ"]分かりました。ひとまずはそういうことにしておきましょう……
+[charslot(slot = "m", name = "avg_1032_excu2_1#10$1")]
+[name="フェデリコ"]オレンのことについては一旦保留します。レミュアン特使の件について、納得のいく説明をください。
+[name="フェデリコ"]修道院は如何なる理由で、ラテラーノから救援にやって来た特使の行動を制限するのでしょうか？　あなたの回答次第で、我々が今後どういった行動を取るべきかを判断します。
+[charslot(slot = "m", name = "avg_npc_923_1#1$1")]
+[name="修道院司教"]……あなた方もラテラーノの使者なら、この修道院の素性はよくご存じのはずだ。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]任務の資料に記載された事柄以外は存じ上げません。
+[charslot(slot = "m", name = "avg_npc_923_1#7$1")]
+[name="修道院司教"]十年以上前のこと……我々は天災を避けるために誤って荒野に迷い込んだ末、燃料を使い果たし、この地に閉じ込められた。
+[name="修道院司教"]外界との交流手段を持たぬ我々は、自分たちの手で農業を試みる他なかった。だがこの地の土壌はもともと痩せており、今となっては畑で穫れる食糧もごくわずかだ。
+[name="修道院司教"]それだけでなく、荒野に蔓延る野獣や、野獣よりも凶悪な略奪者などといった、甚大な脅威にまで晒される有様だ。
+[name="修道院司教"]当時の我々に、選択の余地はなかったのだ……
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]それであなた方は、荒野をさすらう流浪者を取り込んだというわけですか。
+[charslot(slot = "m", name = "avg_npc_926_1#6$2")]
+[name="ジェラルド"]……
+[charslot(slot = "m", name = "avg_npc_923_1#2$1")]
+[name="修道院司教"]「取り込んだ」という表現は、あまりに傲慢だろう。そうではない……決して、そうではないのだ。
+[charslot(slot = "m", name = "avg_npc_923_1#1$1")]
+[name="修道院司教"]我々はただ、行き場のない人々を受け入れたに過ぎないのだ。彼らが何かしらの理由で帰る場所を失くしたというのなら、我々が再び居場所を与えてやるべきだ。
+[charslot(slot = "m", name = "avg_npc_926_1#4$2")]
+[name="ジェラルド"]ステファノ……
+[stopmusic(fadetime=2)]
+[charslot(slot = "m", name = "avg_1032_excu2_1#3$1")]
+[name="フェデリコ"]少しよろしいでしょうか。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]一つ確認すべき事項があります。
+[charslot(slot = "m", name = "avg_npc_372_1#7$1")]
+[name="リケーレ"]おいフェデリコ、何をするつもりだ……
+[dialog]
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[Delay(time=1)]
+[playsound(key="$knifegore")]
+[PlaySound(key="$d_avg_ftrub", volume=0.9,delay=0.6)]
+[Blocker(a=0.6, r=1, g=1, b=1, fadetime=0.03, block=true)]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.52", scale=1.05,duration = 0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=false)]
+[charslot(duration=0.3)]
+[Delay(time=1)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_926_1#5$2")]
+[name="ジェラルド"]──！　やめろ！
+[dialog]
+[playMusic(intro="$suspenseful_intro",key="$suspenseful_loop", volume=0.6)]
+[playsound(key="$d_avg_clothmovement", volume=0.7)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_926_1#5$1",bstart=0.05,bend=0.13,duration=0.5)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_923_1#10$1")]
+[name="修道院司教"]執行人！　何をする！
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]確認は済みました。
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_926_1#6$1",duration=1)]
+[Delay(time=2)]
+[name="ジェラルド"]……
+[charslot(slot = "m", name = "avg_npc_372_1#8$1")]
+[name="リケーレ"]無茶しやがって……
+[name="リケーレ"]だが、こいつは確かに驚きだ。司教、説明していただけますか？
+[name="リケーレ"]なぜ、ラテラーノの修道院の中に──
+[charslot(slot = "m", name = "avg_npc_372_1#5$1")]
+[name="リケーレ"]サルカズがいるのでしょうか？
+[charslot(slot = "m", name = "avg_npc_923_1#7$1")]
+[name="修道院司教"]……
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_926_1#1$1")]
+[name="ジェラルド"]……やれやれ……
+[charslot(slot = "m", name = "avg_1032_excu2_1#10$1")]
+[name="フェデリコ"]不快にさせたのでしたら、謝罪いたします。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]あなたは一体何者ですか？
+[charslot(slot = "m", name = "avg_npc_926_1#1$1")]
+[name="ジェラルド"]さっきも言ったはずだがな。俺はただの猟師さ。猟師のジェラルドだよ。
+[charslot(slot = "m", name = "avg_npc_926_1#4$1")]
+[name="ジェラルド"]……残念ながら、信じてはもらえないようだな。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

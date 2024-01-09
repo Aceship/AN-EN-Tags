@@ -1,0 +1,688 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[playMusic(intro="$act25side_01_intro",key="$act25side_01_loop", volume=0.6)]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=2, block=true)]
+[Delay(time=2)]
+[playsound(key="$d_avg_rosoutofcontrol", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.2, fadetime=3,channel="bgs")]
+[PlaySound(key="$d_avg_broadswordblood")]
+[CameraShake(duration=0.8, xstrength=50, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+Cut. Cut the potato open, and put it into the water piece by piece. Skulls are much harder to cut.
+Tear. The softest tissues in the human body are like cotton candy, easily scattered by a gloved hand.
+[PlaySound(key="$d_avg_tear")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=20, randomness=90, fadeout=true, block=false)]
+Crush. Flowers are crushed in the trembling palm, the juices sticking to the skin, dripping onto new leather shoes.
+Scream. The instruments sever the nerves so quickly that it can take a life without its owner noticing, just like the use of anesthetics.
+Cry. My dead brothers cry on the operating table. Why were they the ones who had to be killed? Why was I the one who was made to live?
+No. No.
+They are not dead yet. They are behind me, hammering and crying.
+There was never a garden. There was only cruel imprisonment and cutting, the cage that treated our lives like toys.
+They want to destroy the cage.
+As do I.
+[Dialog]
+[SoundVolume(volume=0, fadetime=2,channel="bgs")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[CameraShake(duration=3.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_collapse")]
+[delay(time=2)]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="Muelsyse"]The lab walls are being torn apart? They're made of advanced reinforced materials... how they be sliced apart like potatoes?
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Rosmontis.;She's lost control.;That's what I was most afraid of.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m",name="avg_249_mlyss_1#7$1")]
+[name="Muelsyse"]Th-The ground is being peeled like an apple!
+[name="Muelsyse"]We'll be crushed into pulp!
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Someone needs to stop her.", values="1")]
+[Predicate(references="1")]
+[Decision(options="Amiya could calm Rosmontis down. But she's not here.;I'll try...", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="Muelsyse"]You don't mean you're going by yourself, do you?
+[charslot(slot = "m",name="avg_249_mlyss_1#5$1")]
+[name="Muelsyse"]Did you see how she shredded that power armor like paper? You're just a regular human! You <i>are</i> human, right?
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="True blue flesh and blood.;......;Then I won't leave Rosmontis behind.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_895_1#9$1",duration=0.5)]
+[delay(time=1)]
+[name="Ifrit"]...I'll go.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Ifrit?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="Muelsyse"]This is no time for jokes, Iffy!
+[name="Muelsyse"]The Diαblo within you... well, your power is plenty dangerous too. Don't tell me you mean to...
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="Ifrit"]No.
+[name="Ifrit"]I won't use its power. I'll do it myself.
+[name="Ifrit"]That's a promise between me and Rosmontis.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[charslot]
+[SoundVolume(volume=0.2, fadetime=3,channel="bgs")]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_526_1#1$1")]
+[name="Power Armor Operator"]Requesting... support...
+[dialog]
+[PlaySound(key="$d_avg_maskbreakk")]
+[delay(time=1)]
+[name="Power Armor Operator"]The communicator... it's crushed?
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Power Armor Operator"]What the heck are...
+[charslot(slot = "m",name="avg_npc_895_1#4$1")]
+[name="Ifrit"]Don't.
+[charslot(slot = "m",name="avg_npc_526_1#1$1")]
+[name="Power Armor Operator"]What?
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="Ifrit"]I know what you want to say. Don't say it.
+[dialog]
+[charslot(slot = "m",name="avg_npc_895_1#4$1")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[PlaySound(key="$fireburst")]
+[Effect(name="$e_magic_fire_01",y=-650,x=300,layer = 2,delay=0.2)]
+[Effect(name="$e_magic_fire_01",y=-650,x=-300,layer = 5,delay=0.2)]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=1.5, block=false)]
+[Effect(name="$e_magic_fire_01",y=-550,x=450,layer = 3,delay=0.4)]
+[Effect(name="$e_magic_fire_01",y=-550,x=-450,layer = 6,delay=0.4)]
+[Effect(name="$e_magic_fire_01",y=-450,x=650,layer = 4,delay=0.6)]
+[Effect(name="$e_magic_fire_01",y=-450,x=-650,layer = 7,delay=0.6)]
+[CameraShake(duration=2, xstrength=18, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=2.5)]
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="Ifrit"]She's my friend. My good friend.
+[name="Ifrit"]We're more than friends. We work together and fight together.
+[name="Ifrit"]Rosmontis...
+[dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=15, ystrength=10, vibrato=40, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_391_rosmon_1#3$2",duration=1.5,action="shake", power=10, times=100)]
+[delay(time=2)]
+[name="Rosmontis"]...I'll destroy everything that's not right.
+[name="Rosmontis"]A lab like this...
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="Ifrit"]It should never have existed.
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="Ifrit"]I get it.
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="Ifrit"]Damned lab coats, damned labs, all those damned things that tormented us should have been burned to ashes a long time ago!
+[name="Ifrit"]Of course we have the right to be angry, to yell, to destroy it all!
+[name="Ifrit"]But we don't have to do it!
+[charslot(slot="m",name="avg_391_rosmon_1#3$2")]
+[name="Rosmontis"]Why?
+[name="Rosmontis"]Are you going to stand in the way of what's right?
+[dialog]
+[charslot(duration=0.5)]
+[CameraShake(duration=3.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$p_skill_asyouwish",volume=0.3)]
+[delay(time=2.5)]
+[charslot(slot = "m",name="avg_npc_895_1#6$1")]
+[name="Ifrit"]You're tough... but it'll take more than that to stop me!
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="Ifrit"]I won't let you become like Darya, Rosmontis... we promised to see the city together, and go back to Rhodes Island together!
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="Ifrit"]I don't want to admit it, but you've always been better than I am! You're an elite operator, and you've done so many amazing things.
+[name="Ifrit"]Think of Amiya, think of Blaze the big cat, think of the Doctor! They have soft palms, their clothes smell clean, and they hug like warm blankets!
+[charslot(slot="m",name="avg_391_rosmon_1#6$2")]
+[name="Rosmontis"]Blankets...?
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="Ifrit"]There are people who love us. Life isn't fair, but after all the scum we had to put up with, we still ended up meeting some really good people.
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="Ifrit"]Silence's stories always have a happy ending. I know, she made up a bunch of them.
+[name="Ifrit"]Saria is always strict about my homework, but she helps me up when I fall down.
+[name="Ifrit"]Don't destroy these memories.
+[charslot(slot = "m",name="avg_npc_895_1#6$1")]
+[name="Ifrit"]You can stop now, Rosmontis.
+[charslot(slot="m",name="avg_391_rosmon_1#10$2")]
+[name="Rosmontis"]Stop...?
+[charslot(slot="m",name="avg_391_rosmon_1#5$2")]
+[name="Rosmontis"]I-Ifri...
+[dialog]
+[StopSound(channel="bgs", fadetime=2)]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[charslot(slot="l",posfrom = "0,0", posto = "200,0",duration=0.1)]
+[charslot(slot="m",afrom = 1, ato = 0,duration=2.5)]
+[charslot(slot="l",name="avg_391_rosmon_1#5$1",duration=2.5)]
+[delay(time=3)]
+[charslot(slot = "m", focus = "n")]
+The vibrations weaken.
+Ifrit grabs Rosmontis' hand.
+[charslot]
+[playMusic(intro="$warm_intro",key="$warm_loop", volume=0.6)]
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[charslot(slot="r",name="avg_391_rosmon_1#5$1",focus="n")]
+[name="Ifrit"]Yes, Ifrit. You remember me. No way you could forget. You didn't find out I ate those cookies you hid yet.
+[charslot(slot="r",name="avg_391_rosmon_1#7$1",focus="r")]
+[name="Rosmontis"]Yes... I think you're right.
+[name="Rosmontis"]It wasn't the Doctor who ate the cookies. I should correct the terminal entry.
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="Ifrit"]Hahah... hahahaha!
+[charslot(slot="r",name="avg_391_rosmon_1#5$1",focus="r")]
+[name="Rosmontis"]You look like you're hurting. Why are you laughing?
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="Ifrit"]I want to laugh.
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[name="Ifrit"]You didn't lose control, right? Even the Doctor was worried about it. But you just wanted to do what you wanted to do in your own way.
+[charslot(slot="r",name="avg_391_rosmon_1#4$1",focus="r")]
+[name="Rosmontis"]...Yeah.
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[name="Ifrit"]It's okay, Saria's worried that I'll lose control too. It's not a lack of trust. They just worry too much.
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]As for the bad guys... the power they planted in us, the scars they left behind, none of that can control us.
+[name="Ifrit"]We're the only ones who can.
+[name="Ifrit"]We can turn the tables and laugh in their faces.
+[charslot(slot="r",name="avg_391_rosmon_1#9$1",focus="r")]
+[name="Rosmontis"]Like... like this?
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="Ifrit"]Yes. Lift the corners of your mouth, find that Loken, and tell him he's nothing to you!
+[charslot(slot="r",name="avg_391_rosmon_1#7$1",focus="r")]
+[name="Rosmontis"]...Loken.
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="Rosmontis"]Alright, I'll find him. I know what to say now.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="Muelsyse"]...Things have calmed down.
+[charslot(slot = "m",name="avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]Ifrit did it. She calmed Rosmontis down. Talk about a close one...
+[charslot]
+Rosmontis's Arts left cracks in the walls around you.
+The walls of the maze have been destroyed, revealing a hallway deeper into the building.
+[dialog]
+[Decision(options="What is that room for, Muelsyse?;I see...", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#8$1")]
+[name="Muelsyse"]Huh?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g10_ecolab",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[delay(time=1)]
+[Decision(options="This is... a vivarium.;Your vivarium.", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="Why is there a vivarium in H.A.M.H.R.R.?;It's connected to Loken's lab.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#4$1")]
+[name="Muelsyse"]......
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]Kristen remembered...
+[Dialog]
+[charslot]
+[Decision(options="And in the deepest reaches...", values="1")]
+[Predicate(references="1")]
+[Stopmusic(fadetime=2)]
+'Sarcophagus.'
+You are sure you saw the Sarcophagus.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="bg_graduate",screenadapt="coverall")]
+[playMusic(intro="$act19side_intro",key="$act19side_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+It is unmistakable. It is the starting point of all memories you have.
+Even the dizziness is exactly the same.
+[Dialog]
+[Decision(options="Loken is helping Kristen study the sarcophagus?;What does Kristen need the sarcophagus for?", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="Does she want to destroy herself?;She'll turn into a strange, white-furred creature!", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="No...;Muelsyse?", values="1;2")]
+[Predicate(references="1;2")]
+Muelsyse does not answer.
+[dialog]
+[playsound(key="$d_avg_divebubble",volume=0.7)]
+You reach out and touch nothing.
+There is only a small splash, the reflection of bubbles.
+The real Muelsyse stands at the heart of the vivarium.
+[Dialog]
+[Decision(options="You're leaving me?;You're leaving us?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]Doctor... I promised to take you and Rosmontis to see Loken.
+[name="Muelsyse"]Our cooperation is over, now that its goal is complete.
+[name="Muelsyse"]You can't go any further. We say goodbye here.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="You planned this from the beginning.", values="1")]
+[Predicate(references="1")]
+[Decision(options="That's how you got the address.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]...No.
+[charslot(slot = "m",name="avg_249_mlyss_1#6$1")]
+[name="Muelsyse"]I lied again. I really am evil, aren't I?
+[charslot(slot = "m",name="avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]That hard-head, Nasti... I told her I made my choice, when I really hadn't.
+[charslot(slot = "m",name="avg_249_mlyss_1#3$1")]
+[name="Muelsyse"]I only just now made it, the moment I saw this vivarium.
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]I'm sorry.
+[name="Muelsyse"]I came only to confirm one thing... yes, this is where my dreams are. The vivarium and the future it carries... this is my dream.
+[name="Muelsyse"]It's the answer for me and my people.
+[name="Muelsyse"]Kristen promised to take it with her.
+[name="Muelsyse"]She didn't lie to me. She just didn't tell me... maybe she got tired of my cloaks and daggers, how a part of me never seems to be there. Maybe she never stopped believing in the trust between us.
+[name="Muelsyse"]She really did it...
+[charslot(slot = "m",name="avg_249_mlyss_1#4$1")]
+[name="Muelsyse"]So I should keep my promise.
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]Tell Saria... I'm sorry.
+[dialog]
+[playsound(key="$watergunbuff")]
+[charslot(duration=1)]
+[bgeffect(name="$eb_dim_closeeye",layer=1)]
+The water pushes you away. It is soft, but irresistible.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[bgeffect]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+You return to the outer hallway, the lab doors closing before you.
+The water disappears, leaving no trace behind. Your hand is empty again, but this is no longer just an intermission in the middle of a dance.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Background(image="29_g11_monitoringroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]It's time. Can I go now?
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="Kristen"]The deal is done. You can leave at any time.
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]You promised me...
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="Kristen"]You'll find it on your terminal.
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="Ho'olheyak"]Is this the entirety of Loken's research?
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]No, there's another address... a blurred one. It looks familiar. You've really done a lot right under Maylander's nose. I'm starting to actually respect you.
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="Kristen"]What a shame.
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]What's that?
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="Kristen"]You won't see the sky that you should have gotten to see.
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]The stars? My people have played with them long enough. I've given you all the information I should. Do you really think those twisted spots of light are worth looking at?
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="Kristen"]No, not the sky we see today.
+[name="Kristen"]Its true aspect, in the future.
+[charslot(slot="m",name="avg_npc_536_1#4$1")]
+[name="Ho'olheyak"]Enough. I know about your great plans, but that future doesn't belong to me. As long as your data is legit, I'll be able to fulfill my ancestors' dream and recover my true power—
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="Kristen"]The power that you desire could not even overcome time. You understand that it could be machines that fly the skies of the future, or other evolving lifeforms...
+[name="Kristen"]But not a shadow from ten thousand years ago.
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="Ho'olheyak"]Are you mocking me... mocking my blood, my memory, my destiny?
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_536_1#10$1")]
+[name="Ho'olheyak"]You—
+[charslot(slot="m",name="avg_npc_537_1#8$1")]
+[name="Kristen"]Sacrificing your entire race just to return to the past... is it really worth it?
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="Ho'olheyak"]......
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]Whatever. I've got what I wanted. Let's say goodbye in peace.
+[dialog]
+[charslot(duration=0.5)]
+Ho'olheyak jumps down the monitoring platform.
+She does not turn around to look at Kristen. She does not want Kristen to see the look on her face.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="38_g3_rhinelab_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",posfrom = "-150,0", posto = "0,0",duration=1.5)]
+[charslot(slot="r",name="avg_npc_536_1#1$1",posfrom = "150,0", posto = "0,0",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",focus="l")]
+[name="Muelsyse"]You.
+[charslot(slot="r",name="avg_npc_536_1#6$1",focus="r")]
+[name="Ho'olheyak"]We meet again.
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",focus="l")]
+[name="Muelsyse"]......
+[charslot(slot="r",name="avg_npc_536_1#1$1",focus="r")]
+[name="Ho'olheyak"]......
+[charslot(slot="r",focus="n")]
+They are silent for a moment.
+Past and future pass by each other, without making contact.
+[stopmusic(fadetime=3)]
+[charslot(duration=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="Five minutes.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_aircraft_2",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$loading_intro",key="$loading_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1031_slent2_1#5$1")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_doorclose",volume=1)]
+[delay(time=1)]
+[name="Silence"]I can't get the door open!
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]Here.
+[charslot]
+[dialog]
+[PlaySound(key="$d_avg_funnel",volume=0.5)]
+[delay(time=1)]
+[CameraShake(duration=2, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_sundries",volume=0.7)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="Silence"]Huh?
+[name="Silence"]It's... the weapon you lent me?
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]Not lent. Gave. It's yours. You just need practice.
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="Silence"]Practice... er...
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="Jara"]You're free, once you go out from here. The agents and soldiers are too busy to bother. They've found H.A.M.H.R.R. and achieved their goal. They won't bother you anymore.
+[name="Jara"]Run to Trimounts. There, you'll still be Researcher Silence.
+[charslot(slot="m",name="avg_1031_slent2_1#4$1")]
+[name="Silence"]Um...
+[charslot(slot="m",name="avg_npc_893_1#2$1")]
+[name="Jara"]You want to go in the most dangerous direction, don't you? You could put your life in danger. You may never be able escape Maylander's gaze ever again.
+[name="Jara"]It'll be a struggle of a lifetime. You may lose some things forever. Freedom, the life you know, the trust of your family and friends, the right to live under the sun, and yourself.
+[name="Jara"]Are you sure you want a life like that?
+[charslot(slot="m",name="avg_1031_slent2_1#6$1")]
+[name="Silence"]I don't know. I haven't seen the problem resolved with my own eyes. I don't want to give up halfway.
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="Jara"]You're a talented scholar, a good doctor. Have you made up your mind to become a warrior?
+[charslot(slot="m",name="avg_1031_slent2_1#5$1")]
+[name="Silence"]Maybe I'll never be a warrior.
+[name="Silence"]But I'll grasp the weapon you gave me tight, if necessary.
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]Very well, child. Go forth with my blessing.
+[charslot(slot="m",name="avg_1031_slent2_1#7$1")]
+[name="Silence"]Thank you, Director Jara.
+[dialog]
+[playsound(key="$d_gen_walk_n",loop=true, channel="bgs")]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 1)]
+[delay(time=1)]
+[StopSound(channel="bgs", fadetime=0.5)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_1031_slent2_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="Silence"]By the way, Control... Kristen could be just ahead.
+[name="Silence"]Don't you want to see her?
+[charslot(slot="m",name="avg_npc_893_1#6$1")]
+[name="Jara"]Do I? Of course I do.
+[name="Jara"]But I doubt I can catch her.
+[dialog]
+[charslot(duration=0.5)]
+Jara gazes at the laboratory.
+Then, she turns her gaze toward the sky.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="38_g17_corridor_symmetry",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_899_1#3$1")]
+[name="Blake"]You got it yet?
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="Columbian Soldier"]Not yet!
+[charslot(slot="m",name="avg_npc_899_1#3$1")]
+[name="Blake"]Keep going. The core of H.A.M.H.R.R. should be in here.
+[name="Blake"]And Kristen... she couldn't have escaped right under our noses.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[charslot]
+[Subtitle(text="Three minutes.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "right", name = "avg_npc_896_1#8$1",focus="r")]
+[name="Saria"]...Ifrit?
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]Saria! Did you find a way in?
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",focus="r")]
+[name="Saria"]Not yet.
+[charslot(slot = "left", name = "avg_npc_895_1#7$1",focus="l")]
+[name="Ifrit"]This place is weird. Even after Rosmontis crushed most of the outer wall like a cookie, it's not revealing any of the stuff inside.
+[charslot(slot = "right", name = "avg_npc_896_1#5$1",focus="r")]
+[name="Saria"]...It's not a complete building.
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]What?
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",focus="r")]
+[name="Saria"]You're right, Ifrit. It's not a lab.
+[charslot(slot = "right", name = "avg_npc_896_1#9$1",focus="r")]
+[name="Saria"]This is... it's...
+[charslot(slot = "right", name = "avg_npc_896_1#10$1",focus="r")]
+[name="Saria"]Did she install her parents' propulsion device on... how could it be? No... how did I not think of it until now?
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "right",posfrom = "0,0", posto = "250,0",afrom = 1, ato = 0,duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_npc_895_1#3$1",focus="l")]
+[name="Ifrit"]Saria! Where are you going?
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[playMusic(intro="$drift_intro",key="$drift_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="Saria"]......
+[name="Saria"]If I break the wall...
+[charslot(slot="m",name="avg_npc_896_1#5$1")]
+[name="Saria"]She must have expected me. It's pointless.
+[charslot(slot = "left",focus="n")]
+Then what has a point?
+You can't change anything.
+Would we be too late?
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="Saria"]No.
+[name="Saria"]I have to...
+[charslot(slot = "left",focus="n")]
+Have to what?
+[charslot]
+[name="???"]Saria.
+[charslot(slot="m",name="avg_npc_896_1#3$1")]
+[name="Saria"]Si...lence?
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="Saria"]You need to get out of here... it could be...
+[charslot]
+[dialog]
+[charslot(slot="m",name="avg_1031_slent2_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="Silence"]No.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Image(image="38_i06", screenadapt="coverall", xScale=1.1, yScale=1.1)]
+[ImageTween(xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=20, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="Silence"]Saria, I didn't come here to listen to you talk like that.
+[name="Saria"]......
+[name="Silence"]I know how far a scientist would go for her dream. I know that feeling of rapture, which is why I know the strength it takes to fight it with morality.
+[name="Silence"]You've long been seeking a balance between science and order. You do well; perhaps too well.
+[name="Silence"]Your order is falling apart. But if you're willing to let balance go... perhaps you'll find your roots amidst the chaos.
+[name="Saria"]Find my... roots?
+[name="Silence"]I believe you can.
+[name="Silence"]We have all things to do. Let's part here.
+[name="Saria"]......
+[name="Silence"]I can tell you now, Saria.
+[dialog]
+[delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="How much I looked up to you.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1.5)]
+[Subtitle(text="How much I wanted to walk by your side.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Subtitle(text="One minute.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[charslot]
+[Background(image="38_g10_ecolab",screenadapt="coverall")]
+[image]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]......
+[name="Muelsyse"]Well, there goes a rare friend.
+[charslot(slot = "m",name="avg_249_mlyss_1#3$1")]
+[name="Muelsyse"]How do you plan on making it up to me, Kristen?
+[playsound(key="$d_gen_walk_n")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Subtitle(text="Thirty seconds.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_894_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="Rosmontis"]......
+[charslot(slot = "right", name = "avg_npc_894_1#8$1",focus="r")]
+[name="Loken"]Narcissa... You've returned. Are you ready to pronounce judgment?
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="Rosmontis"]Yes, I want to kill you.
+[name="Rosmontis"]Not for revenge. I hate you, but Amiya and the Doctor both say that revenge won't bring back the ones I love.
+[name="Rosmontis"]Not for destruction. You want to use me to destroy you. I won't. I'm not your weapon.
+[charslot(slot = "left", name = "avg_391_rosmon_1#6$1",focus="l")]
+[name="Rosmontis"]You're just a criminal. You're nothing to me.
+[name="Rosmontis"]I'll do what the law and prison could not do.
+[name="Rosmontis"]I hereby sentence you to death.
+[charslot(slot = "right", name = "avg_npc_894_1#9$1",focus="r")]
+[name="Loken"]Good... good.
+[charslot(slot = "right", name = "avg_npc_894_1#8$1",focus="r")]
+[name="Loken"]How does that song go again?
+[name="Loken"]Country roads♪ Take me home♪
+[name="Loken"]To the place I belong♪
+[charslot(slot = "right", name = "avg_npc_894_1#9$1",focus="r")]
+[name="Loken"]Soon. Very soon.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[CameraShake(duration=5, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$smallearthquake")]
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+Severe tremors shake the earth.
+Like something very strong and resilient is about to break out.
+You gaze at the rising inner corridor, and see a figure through the windows.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g3_rhinelab_corridor",screenadapt="coverall")]
+[charslot]
+[charslot(slot="m",name="avg_npc_537_1#8$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[name="Kristen"]—
+[charslot(slot="m",focus="n")]
+Kristen.
+A name that has been on many lips these days.
+Lunatic. Genius. Foe. Friend.
+Or perhaps a dreamer who does not belong to this time.
+You see her with your own eyes for the first time. She continues to look up at the sky, as though the blank emptiness is the only thing she should care about.
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playMusic(intro="$act19side_01_intro",key="$act19side_01_loop", volume=0.6)]
+[CameraShake(duration=-1, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=false, block=false)]
+[delay(time=1)]
+[Decision(options="What is going on?;You cannot remain on your feet!", values="1;2")]
+[Predicate(references="1;2")]
+A familiar silhouette appears.
+[charslot(slot="m",name="char_003_kalts_1#3")]
+[name="Kal'tsit"]Mon3tr!
+[dialog]
+[charslot]
+[charslot(slot="m",name="npc_10002",duration=0.5)]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"](Screeches)
+[charslot(duration=0.3)]
+It unfolds in an instant, grabbing your shoulders lightly with sharp claws, the massive figure covering you fully.
+Then, an even more massive shadow rises behind Mon3tr.
+H.A.M.H.R.R..
+Now you can see that the mysterious ring corridor and Muelsyse's vivarium are both part of H.A.M.H.R.R..
+Maylander and the military fought over it, then made peace over it, but no one could have predicted that it would reveal itself in this way.
+The bright flames of the thrusters feel blinding. The blast throws you off your feet.
+If not for Kal'tsit and Mon3tr, you would have been cast to the winds, like those around you, and the broken remains of the lab.
+[dialog]
+[Decision(options="Kal'tsit...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_003_kalts_1#3")]
+[name="Kal'tsit"]Hang on, Doctor.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="I saw the 'Sarcophagus.';I didn't know Kristen's lab could fly.", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="We were so close to the truth...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_003_kalts_1#1")]
+[name="Kal'tsit"]I know.
+[charslot]
+The figure in the air casts her gaze at you.
+No, not at you. The dark monster that is protecting you.
+[charslot(slot="m",name="npc_10002")]
+[name="Mon3tr"](Growls)
+[charslot]
+Kristen moves her lips, seemingly inquiringly.
+You hear Kal'tsit repeat her answer to you.
+[dialog]
+[charslot(slot="m",name="char_003_kalts_1#1",duration=0.5)]
+[delay(time=1)]
+[name="Kal'tsit"]—I know.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[CameraShake(duration=0.1, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

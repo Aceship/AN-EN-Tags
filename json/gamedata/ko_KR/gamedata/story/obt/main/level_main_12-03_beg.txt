@@ -1,0 +1,424 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="21_G7_decisivebattlealley_d",screenadapt="showall")]
+[Delay(time=1)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'회색 모자'"]아주 시원시원하군, 로도스 아일랜드의 박사.
+[name="'회색 모자'"]알렉산드리나의 단말기로 이미 안전한 곳의 위치를 보냈으니 거기서 대기해. 계획을 벗어난 행동은 내가 안전을 책임질 수 없으니까.
+[charslot(slot="m",name="avg_npc_407_1#5$1",focus="m")]
+[name="시즈"]단말기에? 언제……?!
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'회색 모자'"]여러분 중에도 실력이 뛰어난 친구들이 있잖아, 아주 훌륭해. 그게 우리의 협력을 파괴하는 장애물이 아닌 우리의 목표를 이루기 위한 도움이 될 거라고 믿어.
+[name="'회색 모자'"]그렇지?
+[Dialog]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="none")]
+[Decision(options="그건 우리한테만 달린 게 아니야.;……;협박을 협력이라고 부르는 건 빅토리아 사람의 전통인가?", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'회색 모자'"]물론 천천히 신뢰를 쌓아가야겠지.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'회색 모자'"]신중한 침묵이라, 아주 마음에 들어.
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'회색 모자'"]유감스럽게도, 그래.
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'회색 모자'"]다음 연락을 기다려.
+[Dialog]
+[PlaySound(key="$d_avg_walk_stage",channel="n",loop=false)]
+[stopsound(channel="n",fadetime=2.5)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="아스카론"]……
+[name="아스카론"]박사, 난 클로저한테 연락해야겠어. 로도스 아일랜드의 통신 안전성을 다시 평가해야 할 것 같아. 그전까지 조용히 무전을 유지하고.
+[charslot(slot="m",name="avg_npc_395_1#7$1",focus="m")]
+[name="아스카론"]그리고…… 빅토리아 내에 본함이 정박하는 수속 문제도 처리해야 해.
+[Dialog]
+[charslot(slot="m",name="avg_npc_395_1#7$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1)]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#21$1",focus="m")]
+[name="아미야"]이네스 씨, 고마워요.
+[Dialog]
+[charslot]
+[Decision(options="안녕, 이네스. 우리 초면인가?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="이네스"]아닐걸.
+[Dialog]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="none")]
+[Decision(options="내가…… 기억을 좀 잃었거든.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="이네스"]……나도 알아.
+[name="이네스"]지금의 당신한테는 첫 만남이겠지.
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="이네스"]정말…… 기억을 잃은 거 맞아? 아니면 이것도 당신 계획의 일부분인가?
+[Dialog]
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="none")]
+[Decision(options="정말로 많은 일을 잊었어.;……;넌 어떻게 생각해?", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="이네스"]……
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="이네스"]난 쉽게 판단하지 않아, {@nickname} 박사. 하지만 당신이 좀 변했다는 건…… 확실하게 느껴져.
+[name="이네스"]앞으로 우리는 함께할 시간이 많을 거야.
+[name="이네스"]입으로만 내뱉는 말을 듣기보다, 난 직접 눈으로 확인하는 편이거든.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="아미야"]이네스 씨, 박사님한테……
+[charslot(slot="m",name="avg_4087_ines_1#11$1",focus="m")]
+[name="이네스"]걱정하지 마, 아미야. 편견은 내려놓을게.
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="이네스"]당분간은 말이지.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g7_subway", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_npc_229_1#1")]
+[charslot(slot="r",name="avg_npc_398_1#1$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_398_1#1$1",focus="r")]
+[name="자경단 전사"]철수가 거의 끝났어!
+[charslot(slot="l",name="avg_npc_229_1#6",focus="l")]
+[name="혼"]좋아, 우리도 여길 떠나야 해.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[PlaySound(key="$p_aoe_nmag_h", volume=1,delay=0.6)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.1, block=true)]
+[Blocker(a=0.7, r=0.95, g=0.95, b=0.95, fadetime=0.2, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=0.2)]
+[musicvolume(volume=0, fadetime=0.5)]
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_419_1#1$1",focus="all")]
+[charslot(slot="r",name="avg_npc_419_1#1$1",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",name="avg_npc_419_1#1$1",afrom=1,ato=0,duration=0.5)]
+[charslot(slot="r",name="avg_npc_419_1#1$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot]
+[charslot(slot="m",name="avg_npc_414_1#1$1",focus="m")]
+[name="로벤"]그 로도스 아일랜드 살카즈의 이름이 로고스라고 했나요?
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="혼"]미저리 씨와 오랫동안 함께 작전했으니 더는 로도스 아일랜드의 작전 방식에 놀랄 일이 없을 줄 알았어.
+[charslot(slot="m",name="avg_npc_414_1#1$1",focus="m")]
+[name="로벤"]그러게 말입니다. 로고스 씨의 신분이 무엇이든 그 사람의 주술이 우리에게 큰 도움이 되었어요.
+[charslot(slot="m",name="avg_npc_398_1#1$1",focus="m")]
+[name="자경단 전사"]……하, 게다가 다트를 날리는 솜씨도 최고였어.
+[name="자경단 전사"]몇 번 겨뤄봤는데 정확도가 그 아츠만큼이나 무시무시하더라니까.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=0.6)]
+[charslot(slot="m",name="avg_npc_650_1#1$1",duration=1)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_650_1#1$1",focus="m")]
+[name="로고스"]……어떤 친구가 소소한 기술을 가르쳐 줬을 뿐이다.
+[name="로고스"]원형 의자 레이싱 대회에서는 나한테 못 이겼지만 다트 실력은…… 제법인 녀석이었다.
+[name="로고스"]혼 씨, 살카즈의 부대가 잠시 퇴각했으니 이 기회를 잡아야 해.
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="혼"]계획에 따르면 로도스 아일랜드와 자경단은 보급 경로를 통해 운송 통로의 출발 지점인 브렌트우드라는 마을 근처로 철수해 안전가옥을 다시 지을 거예요.
+[name="혼"]우리는 그쪽으로 가서 합류할 겁니다.
+[name="혼"]제 생각에 성벽 쪽으로 돌파하는 것이 좋을 것 같아요. 노포트 구가 분리된 뒤로 살카즈가 성벽을 닫기는 했지만 그곳을 메울 새 구역을 세우지는 못했거든요.
+[name="혼"]드러난 지하 구조가 우리한테 도움이 될 겁니다.
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",posfrom="200,0",posto="0,0",afrom=0,ato=1,duration=1,isblock=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",posfrom="0,0",posto="-300,0",duration=0.7)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",afrom=1,ato=0,duration=0.4,isblock=true)]
+[Delay(time=1)]
+[Dialog]
+[charslot]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_650_1#4$1",focus="m")]
+[name="로고스"]......
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[name="……"]아무래도 또 옛 친구를 만난 것 같군.
+[charslot(slot="m",name="avg_npc_398_1#1$1",focus="m")]
+[name="자경단 전사"]그 다트를 가르쳐준 친구요?
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[name="로고스"]아쉽지만 아니다.
+[name="로고스"]여기 있는 옛 친구와 달리 내 친구들은 죽을 때까지 변하지 않거든.
+[name="로고스"]여러분, 난 도시에서 아직 처리해야 할 일이 남은 것 같다. 혼 씨라면 너희를 데리고 런디니움을 떠날 수 있을 테지. 내 동료인 미저리도 필요한 순간에 너희를 지원할 거고.
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="혼"]……알겠습니다.
+[name="혼"]다들 최대한 들키지 않게 날 따라와.
+[Dialog]
+[playsound(key="$d_gen_soldiersrun",volume=0.7)]
+[charslot(slot="m",name="avg_npc_229_1#1",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="27_g7_subway", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_npc_650_1#1$1")]
+[charslot(slot="r",name="avg_npc_657_1#8$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_650_1#1$1",focus="l")]
+[name="로고스"]지난날의 산꼭대기가 그렇게 그리워할 만한 곳인가? 눈물과 피에 네가 매료될 가치는 없다.
+[charslot(slot="r",name="avg_npc_657_1#8$1",focus="r")]
+[name="'몰리'"]인정해요. 저도 그런 것들에 큰 흥미는 없어요.
+[name="'몰리'"]하지만 만약에 산꼭대기에서만 살 수 있고 영광이 있어야만 따뜻함을 느낄 수 있다면요?
+[charslot(slot="l",name="avg_npc_650_1#1$1",focus="l")]
+[name="로고스"]......
+[name="……"]이미 너를 충분히 사냥했다 생각했거늘.
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="r")]
+[name="'몰리'"]31명의 '몰리'죠. 정말 애썼어요, 밴시.
+[charslot(slot="l",name="avg_npc_650_1#2$1",focus="l")]
+[name="로고스"]그래도 결국 네 뜻대로 됐군. 테레시스를 도와서 자경단을 와해시켰으니까.
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="r")]
+[name="'몰리'"]그저 일일 뿐이에요.
+[charslot(slot="l",name="avg_npc_650_1#2$1",focus="l")]
+[name="로고스"]……난 런디니움의 모든 타일을 뜯어서라도 어둠 속에 숨은 네 조각을 다 찾아낼 거다, 다마즈티.
+[name="로고스"]넌 여전히 변화의 가능성을 믿지 않으려고 한다. 여태껏 이게 네 선택이었지.
+[Dialog]
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="all")]
+[delay(time=0.2)]
+[charslot(slot="r",name="avg_npc_657_1#6$1",afrom=1,ato=0,duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$d_avg_humanchange")]
+[charslot(slot="r",name="avg_npc_426_1#1$1",afrom=0,ato=1,duration=1)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_426_1#1$1",focus="r")]
+[name="다마즈티"]너무 자신만만한 거 아닌가, 젊은 밴시? 우리는 변화를 이해하고 그 변화에서 왔어.
+[name="다마즈티"]하지만 변화는 적응하는 수단일 뿐이고, 그 어떤 변화든 최종 목적이 있는 법이야.
+[name="다마즈티"]살카즈가 아직 지금 모습이 되지 않았을 때, 우리는 대지를 누비고 다녔어.
+[name="다마즈티"]이념, 신앙, 취지, 구호, 그 어느 것도 세월을 비켜 갈 수는 없지.
+[charslot(slot="r",name="avg_npc_426_1#10$1",focus="r")]
+[name="다마즈티"]네가 참신하다고 생각하는 아이디어는 진작 누군가 떠올렸던 거고, 네가 고상하다고 생각하는 길은 이미 누군가 지나왔어.
+[charslot(slot="r",name="avg_npc_426_1#1$1",focus="r")]
+[name="다마즈티"]그런데 지금 그 사람들은 어디에 있지?
+[name="다마즈티"]우리는 여전히 네 앞에 서 있잖아.
+[name="다마즈티"]이게 바로 최고의 증명이야.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="37_g1_glasgowboxinggym", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[PlayMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_punchsp2")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+'펑!'
+[Dialog]
+[PlaySound(key="$d_avg_punchsp1", volume=0.3)]
+[PlaySound(key="$d_avg_punch02", volume=0.4,delay=0.2)]
+[CameraShake(duration=0.6, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+'쿵, 쿵!'
+[Dialog]
+[charslot(slot="l",name="avg_npc_862_1#11$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_863_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="카도르"]후우……
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="베어드"]체력 좀 아껴, 카도르. 그리고 너무 많이 먹잖아.
+[name="베어드"]델핀이 벌써 몇 번이나 네 식사량 문제를 얘기했어. 지금은 예전이랑 비교도 안 된다니까.
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="카도르"]좀 여유를 가져, 베어드. 아직 그렇게 최악의 상황은 아니잖아.
+[name="카도르"]마족 놈들은 보기보다 강한 것 같지 않아. 우리가 무방비한 틈을 타서 공격한 것뿐이지.
+[name="카도르"]운송 조합의 마셜이 찾아와서 한번 얘기해 봤는데 거기도 꽤 많은 사람이 뭉쳤더라고. 우리가 사람만 좀 더 끌어모으면 살카즈와 싸워 이기는 건 불가능한 건 아니야.
+[name="카도르"]예전에 우리 몇몇 패거리들이 뭉쳐서 경찰들을 상대했던 것처럼 말이야.
+[name="카도르"]뒤에서 습격해서 깔끔하고 빠르게, '휙휙', '탁'!
+[charslot(slot="l",name="avg_npc_862_1#4$1",focus="l")]
+[name="카도르"]주먹 몇 방이면 쓰러질 거야. 아주 간단해.
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="베어드"]살카즈 군대는 경찰이 아니야.
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="카도르"]알아, 엄청 대단한 놈들이지.
+[name="카도르"]하지만 우리는 피를 흘리는 것도, 희생도 두려워하지 않아! 쓰러진 동료를 뛰어넘어 놈들의 얼굴에 무자비한 주먹을 날려 줄 거라고……
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="카도르"]우리 복싱장 이름인 '어퍼컷'처럼 말이지!
+[name="카도르"]나랑 마셜이 상정해 봤는데 무조건 우리가 이겨!
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="베어드"]네가 수집한 그 용문의 수준 낮은 비디오에 나오는 것처럼 말이지?
+[charslot(slot="l",name="avg_npc_862_1#10$1",focus="l")]
+[name="카도르"]난 지금 진지해. 내가 노포트 구 거리에서 굴러먹은 시간도 너 못지않게 길다고.
+[name="카도르"]우리는 스스로 살길을 찾아야 해, 예전처럼.
+[name="카도르"]그때 너희의 시즈가 그렇게 글래스고를 떠나버리면서 우리 구역도 다른 사람에게 바쳐야 했지. 너랑 내가 온갖 방법을 써서 다시 여기에 자리 잡은 거잖아.
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="카도르"]지금도 마찬가지야. 예전처럼 똘똘 뭉쳐서 준비하고 놈들을 때려눕히면 돼. 여태 그래왔던 것처럼.
+[name="카도르"]바깥 상황이 어떻든 거리에는 언제나 거리의 방식이 있는 거니까.
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="카도르"]이제 타이밍만 잡으면 돼……
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="none")]
+[PlaySound(key="$d_avg_knockdoorfast", volume=0.5)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="베어드"]델핀이 돌아왔나 보네.
+[Dialog]
+[charslot]
+[PlaySound(key="$dooropenquite", volume=1)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_866_1#6$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_177",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_866_1#6$1",focus="l")]
+[name="델핀"]……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_862_1#1$1",focus="m")]
+[name="카도르"]대머리 펠이 허락했어? 요즘 같은 상황에서도 우리가 꽤 높은 값을 쳐줬으니 당연히……
+[charslot(slot="m",name="avg_npc_862_1#5$1",focus="m")]
+[name="카도르"]뭐야? 이건…… 피잖아?
+[playMusic(intro="$calamity_intro", key="$calamity_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="델핀"]대머리 펠이 죽었어.
+[charslot(slot="m",name="avg_npc_862_1#5$1",focus="m")]
+[name="카도르"]!
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="카도르"]살카즈……
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="겁에 질린 시민"]사, 살카즈가 아니야! 빌어먹을, 누구인지도 모르겠어. 우리가 가게에 도착했을 때 이미 싸우고 있었다고!
+[name="겁에 질린 시민"]아주 혈안이 돼서 사람을 죽였어! 내가 똑똑히 봤다고, 쇠몽둥이를 든 녀석이 한 사람을 바닥으로 누르고는……
+[CameraShake(duration=0.3, xstrength=12, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="겁에 질린 시민"]우웩…… 쿨럭쿨럭쿨럭!
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="델핀"]상황이 아주 참담해. 아무래도 어느 굶주림에 미쳐버린 부랑자가 펠의 가게를 노렸나 봐. 그 멍청한 녀석이 빵을 유리 진열장에 넣어뒀더라.
+[name="델핀"]무슨 일이 벌어질지 뻔하지.
+[name="델핀"]생각해 봐. 지금 봉쇄된 이 구역에 그런 '부랑자'가 얼마나 되겠어?
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="카도르"]……
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="카도르"]정신 나간 빌어먹을 놈들, 금지품인가 하는 것 때문에 머리가 다 망가진 것 같아!
+[charslot(slot="m",name="avg_npc_866_1#7$1",focus="m")]
+[name="델핀"]……그 쇠몽둥이를 들었다는 녀석을 알고 있어. 꼬리털 트리트먼트 크림을 파는 세일즈맨인데 평소에는 늘 웃는 모습이었어.
+[name="델핀"]나도 몇 번 제품을 구매했었는데 할인도 해 줬고. 쓰기 좋은 편은 아니었지만.
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="델핀"]아까…… 그 사람의 새빨개진 두 눈을 봤어. 입가에서 피가 흐르고 하도 내려쳐서 쇠몽둥이가 찌그러졌었지. 하마터면…… 못 알아볼 뻔했어.
+[name="델핀"]공포가 퍼지고 있어, 카도르.
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="카도르"]……운송 조합 사람한테 그런 상황을 들었어. 정신을 놓아버린 겁쟁이일 거라고 했는데, 어떻게……
+[Dialog]
+[charslot]
+[PlaySound(key="$bottlebroken", volume=0.6)]
+[PlaySound(key="$d_avg_glass_break", volume=1,delay=0.4)]
+[PlaySound(key="$d_avg_windowbreak", volume=1,delay=0.9)]
+[CameraShake(duration=1.5, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_knockdoorfast", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_866_1#3$1",focus="m")]
+[name="델핀"]문을 막아!
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="겁에 질린 시민"]나, 난……
+[charslot(slot="m",name="avg_npc_863_1#7$1",focus="m")]
+[name="베어드"]멍하니 있지 말고 어서 도와줘! 카도르, 가서 소파 좀 이쪽으로 밀어!
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="카도르"]망할 자식, 죽고 싶어? *빅토리아 욕설*, 이게 무슨 짓이야?
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="문밖의 목소리"]……
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="카도르"]당장 꺼져. 여기 아직 *빅토리아 욕설* 사람이 살고 있어. 여긴 글래스고의 구역이라고!
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="문밖의 목소리"]……
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="카도르"]베어드, 조심해!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_axeimp", volume=1)]
+[PlaySound(key="$d_avg_doorbreak", volume=1,delay=0.4)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.1, block=true)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.3, block=true)]
+[Delay(time=1.2)]
+소방 도끼가 복싱장의 육중한 문을 내려찍자 틈이 벌어졌고, 날카로운 도끼날이 베어드의 머리끝을 스쳐 지나갔다.
+머리카락 몇 가닥이 후두둑 떨어졌다.
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=12, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="카도르"]내가 말했지. 여기에 아직 *빅토리아 욕설* 사람이 살고 있다고!
+[Dialog]
+[PlaySound(key="$d_avg_woodenladder", volume=0.4)]
+[PlaySound(key="$d_gen_doorclose", volume=0.6,delay=0.3)]
+[CameraShake(duration=0.7, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.2)]
+문을 막은 카도르는 틈 사이로 들어온 도끼날을 양손으로 꽉 붙잡았다. 문밖의 사람이 몇 번 시도했으나 도끼를 빼지 못했다.
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="카도르"]네가 누구든 당장 꺼져! 아니면 이 도끼로 네 머리를 찍어버릴 테니까! 난 한다면 하는 사람이다!
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="문밖의 목소리"]……
+[Dialog]
+[charslot]
+[PlaySound(key="$gavel1",volume=0.5)]
+[PlaySound(key="$sheildimpact", volume=0.6,delay=0.3)]
+[PlaySound(key="$d_gen_doorclose", volume=0.6,delay=0.8)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=true)]
+또다시 도끼가 몇 번 흔들렸다. 몇 차례 문을 걷어차는 소리가 들린 뒤, 문밖의 사람은 마침내 포기했고, 어수선한 발소리가 점차 멀어졌다.
+[Dialog]
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="겁에 질린 시민"]소…… 손가락이……
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="카도르"]……
+[charslot(slot="m",name="avg_npc_862_1#3$1",focus="m")]
+[name="카도르"]복싱장에 가장 넘쳐나는 게 붕대라서 참 다행이야.
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="카도르"]베어드, 델핀, 모든 물자를 다시 확인해 봐야겠어.
+[name="카도르"]내가 모래주머니를 몇 개 내릴 테니까 대문을 다시 보강하자.
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="겁에 질린 시민"]이…… 이 사람들 미친 건가?!
+[name="겁에 질린 시민"]저 사람들은…… 노포트 구에는 모범 시민들 뿐일 텐데. 기본적으로…… 경찰은? 평소에 과태료 딱지는 빛의 속도로 끊잖아!
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="카도르"]만약 내가 구역에서 도망치지 못한 재수 없는 경찰이라면 지금쯤 무기를 품은 채 문을 꼭 잠그고 집에 틀어박혀 있겠지.
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="카도르"]난…… 운송 조합에 한 번 더 다녀와야겠어. 여기에 사는 사람들이라면 마셜의 말을 믿어줄 거야.
+[name="카도르"]그 자식이라면…… 평소에 다들 마셜의 말을 들으니 그라면 방법을 생각해 낼 거야.
+[name="카도르"]빌어먹을…… 젠장! 살카즈가 아직 밖에 있는데 이 녀석들은 눈이 뒤집혀서, 어떻게……
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_862_1#12$1",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_npc_177",duration=0.5,focus="l")]
+[charslot(slot="r",name="avg_npc_863_1#7$1",duration=0.5,focus="l")]
+[Delay(time=0.6)]
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="겁에 질린 시민"]이제…… 우리는 어떻게 해야하지? 카도르가 전에 말한 것처럼 타이밍을……
+[charslot(slot="r",name="avg_npc_863_1#7$1",focus="r")]
+[name="베어드"]기다리라고?
+[name="베어드"]'차기 회원'님, 15년 전에 노포트 구에서 일어난 대형 화재에 대해 알고 있어?
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="겁에 질린 시민"]아, 들은 적이 있어. 아마 부두 쪽에서……
+[charslot(slot="r",name="avg_npc_863_1#7$1",focus="r")]
+[name="베어드"]부두 전체를 태워버리는 건 어렵지 않아.
+[name="베어드"]한껏 달궈진 날씨, 대팻밥이 가득 쌓인 창고, 제대로 끄지 않은 담배꽁초, 이거면 충분해.
+[charslot(slot="r",name="avg_npc_863_1#8$1",focus="r")]
+[name="베어드"]이런 불은 아무도 못 꺼.
+[name="베어드"]우리는 모든 것이 타서 재가 되어 버릴 때까지 멀뚱멀뚱 바라만 볼 수밖에 없거든.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=3)]
+[charslot]
+[Image]

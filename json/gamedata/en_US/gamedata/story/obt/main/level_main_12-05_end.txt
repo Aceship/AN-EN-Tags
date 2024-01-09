@@ -1,0 +1,581 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="bg_indoor_u",screenadapt="showall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_416_1#1$1",duration=0.5)]
+[charslot(slot="r",name="avg_npc_242",duration=0.5)]
+[Delay(time=0.6)]
+[PlaySound(key="$d_avg_punch",volume=0.6)]
+[CameraShake(duration=0.8, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l",posfrom="0,0",posto="100,0",afrom=1,ato=1,duration=0.2)]
+[charslot(slot = "r", action="jump",posfrom="0,0",posto="200,0",power=2,times=2,afrom=1,ato=1,duration=0.4,isblock=true)]
+[delay(time=0.2)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.2)]
+[charslot(slot="r",name="avg_npc_242",focus="r")]
+[name="Infected"]Guh... Urgh...
+[name="Infected"]I really... don't have anything here.
+[charslot(slot="l",name="avg_npc_416_1#1$1",focus="l")]
+[name="Starving Thug"]Bollocks! We saw it with our own eyes. You used your stove. Where did you get food?
+[name="Starving Thug"]How come you have something to eat every day?!
+[charslot(slot="r",name="avg_npc_242",focus="r")]
+[name="Infected"]I... I just found it by chance...
+[charslot(slot="l",name="avg_npc_416_1#1$1",focus="l")]
+[name="Starving Thug"]Found it?
+[Dialog]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=0.6)]
+[PlaySound(key="$d_avg_runstop", volume=0.5,delay=0.2)]
+[charslot(slot = "l", action="jump",posfrom="100,0",posto="130,0",power=2,times=1,afrom=1,ato=1,duration=0.1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.3, block=true)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot = "l", afrom=1,ato=0,duration=0.3)]
+[charslot(slot = "r", afrom=1,ato=0,duration=0.3)]
+[delay(time=0.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_417_1#1$1",focus="m")]
+[name="Calm Thug"]Don't go overboard with him. If this guy gets an Oripathy attack, we'll all be dead.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_416_1#1$1",posfrom="130,0",posto="130,0",afrom=1,ato=1,duration=0)]
+[charslot(slot="r",name="avg_npc_242",posfrom="95,0",posto="95,0",afrom=1,ato=1,duration=0)]
+[charslot(slot="l",name="avg_npc_416_1#1$1",focus="l")]
+[name="Starving Thug"]Where's your storeroom? Spill it!
+[charslot(slot="r",name="avg_npc_242",focus="r")]
+[name="Infected"]I really... Just found them... Someone has been leaving things on my windowsill...
+[charslot(slot="l",name="avg_npc_416_1#1$1",focus="l")]
+[name="Starving Thug"]Still trying to hide—
+[Dialog]
+[charslot]
+[charslot(slot="m",bstart=0.2,bend=0.7,name="avg_npc_334",duration=0.7)]
+[Delay(time=1)]
+[name="???"]Are his words really so untrustworthy?
+[name="???"]Even the Infected get lucky sometimes and find food, right? What's so strange about that?
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="Starving Thug"]And who are you? Here to rob him, too?
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="???"]Hello. My name is Red.
+[name="Red"]Back in my Ursus days, they all called me 'Redblade.'
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g15_customs", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_npc_419_1#1$1")]
+[charslot(slot="r",name="avg_npc_419_1#1$1")]
+[delay(time=0.5)]
+[PlayMusic(intro="$warchaos_intro", key="$warchaos_loop", volume=0.6)]
+[PlaySound(key="$d_avg_battlefield_environment", volume=0.4, loop=true, channel="war")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_daggerexsheath", volume=0.6)]
+[PlaySound(key="$d_avg_knife",delay=0.2,channel="left",volume=1,block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_knife",delay=0.4,channel="right",volume=1,block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[charslot(slot="l",name="avg_npc_419_1#1$1",posfrom="0,0",posto="0,-150",duration=0.5,isblock=false)]
+[charslot(slot="l",name="avg_npc_419_1#1$1",afrom=1,ato=0,duration=0.5)]
+[charslot(slot="r",name="avg_npc_419_1#1$1",posfrom="0,0",posto="0,-50",duration=1.5,isblock=false)]
+[charslot(slot="r",name="avg_npc_419_1#1$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=2)]
+[playsound(key="$d_gen_soldiersrun", volume=0.7)]
+[charslot(slot="m",name="avg_npc_235",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_235",focus="m")]
+[name="Misery"]Pick up the pace. Stay close.
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="Horn"]Hang in there! We're almost there!
+[charslot(slot="m",name="avg_npc_398_1#1$1",focus="m")]
+[name="Self-Salvation Corps Fighter"]Drat! There's more and more of them.
+[name="Self-Salvation Corps Fighter"]White Wolf, I've heard about you and your family.
+[name="Self-Salvation Corps Fighter"]I'm glad to have the opportunity to fight alongside you today.
+[name="Self-Salvation Corps Fighter"]For Londinium, and for Victoria.
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="Horn"]What are you trying to—
+[Dialog]
+[charslot]
+[PlaySound(key="$rungeneral", volume=0.6)]
+[PlaySound(key="$d_avg_runstop", volume=1,delay=1.5)]
+[Delay(time=0.8)]
+[charslot(slot="r",name="avg_npc_419_1#1$1",focus="all")]
+[Delay(time=0.2)]
+[CameraShake(duration=1, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",name="avg_npc_398_1#1$1",posfrom="-200,0",posto="150,0",afrom=0,ato=1,duration=0.4,isblock=true)]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_ftrub")]
+[PlaySound(key="$d_avg_clothmovement", volume=0.6,delay=0.2)]
+[Delay(time=0.5)]
+[CameraShake(duration=1,xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_explosion", volume=0.8)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[charslot]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_229_1#8",focus="m")]
+[name="Horn"]......
+[charslot(slot="m",name="avg_npc_235",focus="m")]
+[name="Misery"]Don't stop! Keep moving!
+[charslot(slot="m",name="avg_npc_419_1#1$1",focus="m")]
+[name="Sarkaz Soldier"]Sarkaz traitor and Victorian insects, it's high time we brought an end to this game of hide-and-seek.
+[name="Sarkaz Soldier"]Where do you want to run? Is it death that you want to escape?
+[name="Sarkaz Soldier"]You and your friends who are hiding in the shadows will all be torn to shreds. It's what you owe us!
+[name="Sarkaz Soldier"]This is what everyone in Londinium, Victoria, and across the lands owe us!
+[name="Sarkaz Soldier"]Run. Run! The storm will still arrive. You can't outrun war!
+[charslot(slot="m",name="avg_npc_229_1#8",focus="m")]
+[name="Horn"]Shut your bloody gob!
+[charslot(slot="m",name="avg_npc_229_1#2",focus="m")]
+[name="Horn"](Gah, too many people. We need to find a way to break through here!)
+[name="Horn"](I only have one grenade left...)
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="Horn"]Robben, take this grenade. Head down, and blow up the bottom deck of power layer.
+[name="Horn"]Misery, protect them. The rest of you need to keep moving forward.
+[charslot(slot="m",name="avg_npc_235",focus="m")]
+[name="Misery"]You—
+[name="Misery"]Got it. Don't worry.
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="Horn"]We'll leave the rest to luck.
+[charslot(slot="m",name="avg_npc_414_1#1$1",focus="m")]
+[name="Robben"]Horn... You—
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="Horn"]Shut up. I don't have time to pummel you again.
+[CameraShake(duration=0.3, xstrength=12, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Horn"]Hurry!
+[Dialog]
+[charslot(slot="m",name="avg_npc_229_1#7",afrom=1,ato=0,duration=0.7)]
+[delay(time=1)]
+[charslot]
+Horn turns around and faces a wave of enemies surging on her position.
+She smirks a little. It is high time this all came to an end.
+All this fleeing, the battles, and these sleepless nights.
+Soldiers are meant to die in war.
+[Dialog]
+[charslot(slot="m",name="avg_npc_229_1#6",focus="m")]
+[name="Horn"]I wonder... what Bagpipe is up to right now.
+[Dialog]
+[charslot]
+She tightens her grip on her weapon and prepares to charge.
+Under the dark, cloudy sky, a strange sound can be heard zooming in ever closer from afar.
+[Dialog]
+[musicvolume(volume=0.3, fadetime=2)]
+[SoundVolume(volume=0.2, fadetime=2,channel="war")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_steamrelease", volume=0.3)]
+[delay(time=2)]
+[PlaySound(key="$d_avg_steamrelease", volume=0.5, loop=false, channel="knight1")]
+[PlaySound(key="$d_avg_steamrelease", volume=0.8, loop=false, channel="knight2",delay=1.5)]
+[delay(time=1.5)]
+[CameraShake(duration=3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=true)]
+A familiar sound, although it has been a long time since it was last heard in Londinium.
+It is only in their distant memories and fuzzy rumors that people can find that sound's source—
+[Dialog]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$e_atk_stmwpn_n", volume=1)]
+[PlaySound(key="$e_atk_stmwpn_n", volume=1, loop=false, channel="atkstm",delay=0.3)]
+[Blocker(a=0,r=0.9, g=0.25, b=0.2, fadetime=0, block=true)]
+[Blocker(a=0.7,r=0.9, g=0.25, b=0.2, fadetime=0.1, block=true)]
+[Blocker(a=0,r=0.9, g=0.25, b=0.2, fadetime=0.2, block=true)]
+[Blocker(a=0.7,r=0.9, g=0.25, b=0.2, fadetime=0.1, block=true)]
+[Blocker(a=0,r=0.9, g=0.25, b=0.2, fadetime=0.5, block=true)]
+[CameraShake(duration=1, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_explosion_stone", volume=1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=1)]
+[musicvolume(volume=0.6, fadetime=2)]
+[SoundVolume(volume=0.4, fadetime=2,channel="war")]
+[charslot(slot="m",name="avg_npc_414_1#1$1",focus="m")]
+[name="Robben"]That's—
+[charslot(slot="m",name="avg_npc_229_1#4",focus="m")]
+[name="Horn"]!
+[charslot(slot="m",name="avg_npc_235",focus="m")]
+[name="Misery"]Horn, run! Take this chance!
+[Dialog]
+[playsound(key="$d_gen_soldiersrun", volume=0.7)]
+[charslot(slot="m",name="avg_npc_235",afrom=1,ato=0,duration=1)]
+[delay(time=3)]
+[charslot(slot="l",name="avg_npc_419_1#1$1",focus="all")]
+[charslot(slot="r",name="avg_npc_419_1#1$1",focus="all")]
+[name="Sarkaz Soldier"]—
+[name="Sarkaz Soldier"]You're...
+[Dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_mechawalk",channel="a", loop=true)]
+[Delay(time=0.8)]
+[stopsound(channel="a", fadetime=0.5)]
+[Delay(time=0.01)]
+[charslot(slot="m",name="avg_npc_651_1#1$1",duration=1.5)]
+[CameraShake(duration=0.3, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_mechawalk",channel="b", loop=true)]
+[Delay(time=0.8)]
+[stopsound(channel="b", fadetime=0.5)]
+[Delay(time=0.01)]
+[CameraShake(duration=0.3, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_mechawalk",channel="c", loop=true)]
+[Delay(time=0.8)]
+[stopsound(channel="c", fadetime=0.5)]
+[Delay(time=1)]
+[bgeffect(name="$eb_steamrelease",layer=2)]
+[PlaySound(key="$d_avg_steamrelease")]
+[bgeffect(layer=2)]
+[Delay(time=2.5)]
+[name="'The Last Steam Knight'"](Heavy gushing)
+[name="'The Last Steam Knight'"]'Victoria.'
+[Dialog]
+[stopmusic(fadetime=2)]
+[StopSound(channel="war", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g7_subway", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[playMusic(intro="$escape_intro", key="$escape_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_soldiersrun", volume=0.7)]
+[delay(time=2)]
+[PlaySound(key="$d_gen_doorclose", volume=0.6)]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_4040_rockr_1#10$1",focus="m")]
+[name="Rockrock"]Drat, these doors—
+[name="Rockrock"]They're too thick. They can't hear us on the other side!
+[name="Rockrock"]Grr, they took Clovisia and Catherine. Are they trying to use them as bargaining chips with the Sarkaz?
+[charslot(slot="m",name="avg_4040_rockr_1#3$1",focus="m")]
+[name="Rockrock"]These despicable traitors—
+[charslot(slot="m",name="avg_4072_ironmn_1#1$1",focus="m")]
+[name="Feist"]Shining, can you open them?
+[charslot(slot="m",name="avg_4072_ironmn_1#10$1",focus="m")]
+[name="Feist"]We can't delay any longer. We don't know when the Sarkaz will make it here.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="char_147_shining_1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="char_147_shining_1",focus="m")]
+[name="Shining"]I will give it a try.
+[charslot(slot="m",name="avg_npc_411_1#11$1",focus="m")]
+[name="Closure"]No! Don't! Don't make a big show like that! That's only going to draw the enemy here faster!
+[name="Closure"]We have a bunch of critically wounded and non-combatants here. If we actually start fighting the Royal Court guys, even if <i>we</i> can get away, what about them?
+[charslot(slot="m",name="avg_4072_ironmn_1#10$1",focus="m")]
+[name="Feist"]We'd only be waiting to meet our maker by remaining here. I don't know what my friends are scheming, but my guys is they have more in mind than keeping us here.
+[charslot(slot="m",name="avg_npc_411_1#8$1",focus="m")]
+[name="Closure"]My drone has a small laser cutting device. These steel plates may be thick, but if you give me some time...
+[charslot(slot="m",name="avg_4072_ironmn_1#8$1",focus="m")]
+[name="Feist"]How long will it take?
+[charslot(slot="m",name="avg_npc_411_1#11$1",focus="m")]
+[name="Closure"]Oh, keep your pants on! I need to test the output first...
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_4040_rockr_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_4072_ironmn_1#1$1",focus="l")]
+[name="Rockrock"]Feist, do you remember what happened to Old Bill?
+[charslot(slot="l",name="avg_4040_rockr_1#10$1",focus="l")]
+[name="Rockrock"]It has to be... One of those monsters has got to have infiltrated us again. He fooled us again!
+[name="Rockrock"]We were too careless. We should've noticed sooner!
+[charslot(slot="l",name="avg_4040_rockr_1#4$1",focus="l")]
+[name="Rockrock"]Feist... Are those Sarkaz who can change their faces here too?
+[name="Rockrock"]When those <i>things</i> exist, how... how can we trust anyone?
+[charslot(slot="r",name="avg_4072_ironmn_1#1$1",focus="r")]
+[name="Feist"]......
+[charslot(slot="r",name="avg_4072_ironmn_1#9$1",focus="r")]
+[name="Feist"]What if... that's not what this is?
+[charslot(slot="l",name="avg_4040_rockr_1#8$1",focus="l")]
+[name="Rockrock"]They're our allies! They're Londinium workers, too!
+[charslot(slot="r",name="avg_4072_ironmn_1#1$1",focus="r")]
+[name="Feist"]I know. I grew up with them.
+[charslot(slot="r",name="avg_4072_ironmn_1#9$1",focus="r")]
+[name="Feist"]But what if...
+[name="Feist"]What if this is their decision. This is the choice that Tommy, Patto, and Day made with everybody else?
+[charslot(slot="l",name="avg_4040_rockr_1#8$1",focus="l")]
+[name="Rockrock"]But why...? We're supposed to be on the same side!
+[charslot(slot="r",name="avg_4072_ironmn_1#3$1",focus="r")]
+[name="Feist"]It's easier to believe that your allies were replaced than to accept that they've betrayed us.
+[charslot(slot="r",name="avg_4072_ironmn_1#1$1",focus="r")]
+[name="Feist"]But that's exactly what happened.
+[name="Feist"]I can tell what they were thinking, more or less. Once the rage-induced fervor dissipates, it's not so easy to choose to keep fighting.
+[name="Feist"]Clovisia said as much before too. In the end, we're just a bunch of normal people.
+[charslot(slot="r",name="avg_4072_ironmn_1#9$1",focus="r")]
+[name="Feist"]I have to admit that... even I fear leaving, just like them.
+[name="Feist"]Fleeing and cowering... is the most instinctive choice that all normal people make when they are confronted with war.
+[charslot(slot="l",name="avg_4040_rockr_1#10$1",focus="l")]
+[name="Rockrock"]Then <i>you</i> stay! Stay here with your friends!
+[charslot(slot="r",name="avg_4072_ironmn_1#4$1",focus="r")]
+[name="Feist"]I won't do that, Rockrock.
+[charslot(slot="r",name="avg_4072_ironmn_1#1$1",focus="r")]
+[name="Feist"]I have to face my fear. That's the only way I can remind myself... of the worth of bravery.
+[name="Feist"]I have faith that they haven't crossed that line. I have faith that they were only sucked into this choice by fear.
+[name="Feist"]But none of it matters now.
+[charslot(slot="r",name="avg_4072_ironmn_1#4$1",focus="r")]
+[name="Feist"]I will save Granny and Clovisia, just like I did last time.
+[charslot(slot="r",name="avg_4072_ironmn_1#1$1",focus="r")]
+[name="Feist"]But our wounded can't wait much longer.
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_drone")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_411_1#1$1",focus="m")]
+[name="Closure"]The drone's laser's working on the door already! It'll take... uh, twenty minutes, maybe?
+[charslot(slot="m",name="avg_4040_rockr_1#12$1",focus="m")]
+[name="Rockrock"]I'll help, too. I have tools on me!
+[charslot(slot="m",name="avg_npc_411_1#8$1",focus="m")]
+[name="Closure"]Your hammer and wrench aren't gonna come in handy here.
+[name="Closure"]Be patient. Just hold on a little longer, and we can leave this place safe and...
+[Dialog]
+[charslot(slot="m",name="avg_npc_411_1#8$1",focus="none")]
+[PlaySound(key="$d_sp_ballista")]
+[CameraShake(duration=1, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_explosion_stone", volume=1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_411_1#5$1",focus="m")]
+[name="Closure"]Wh-What? I didn't catch any Sarkaz movement!
+[charslot(slot="m",name="avg_4072_ironmn_1#7$1",focus="m")]
+[name="Feist"]Shining—
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1)]
+[charslot(slot="l",name="char_147_shining_1",posfrom="-100,0",posto="0,0",afrom=0,ato=1,duration=0.5)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_swordexsheath")]
+[delay(time=1)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="r",name="avg_npc_412_1#10$1",bstart=0.2,bend=0.7,posfrom="200,0",posto="0,0",afrom=0,ato=1,duration=1)]
+[delay(time=2)]
+[charslot(slot="r",name="avg_npc_412_1#10$1",bstart=0.2,bend=0.7,focus="r")]
+[name="???"]Oh, hey, Shining. Been a while. I heard you went to a family reunion?
+[charslot(slot="l",name="char_147_shining_1",focus="l")]
+[name="Shining"]W, you're here.
+[Dialog]
+[charslot]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_411_1#11$1",focus="m")]
+[name="Closure"]W! Half of Londinium heard that just now!
+[Dialog]
+[charslot]
+[charslot(slot="l",name="char_147_shining_1",focus="r")]
+[charslot(slot="r",name="avg_npc_412_1#1$1",focus="r")]
+[name="W"]The curtain's drawn, right? I've always been pretty accurate with my explosives. Just the right amount.
+[charslot(slot="r",name="avg_npc_412_1#10$1",focus="r")]
+[name="W"]I heard Kal'tsit got beat up real bad, so I thought I'd find some time to come take a look.
+[Dialog]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_412_1#12$1",focus="r")]
+[name="W"]Whoa, she did really did take a beating. Theresis doesn't know how to hold back, huh?
+[name="W"]And here I thought the guy would go gentler on his 'old friend.'
+[charslot(slot="l",name="char_147_shining_1",focus="l")]
+[name="Shining"]She's still unconscious.
+[charslot(slot="r",name="avg_npc_412_1#1$1",focus="r")]
+[name="W"]Well, shit, that's too bad. For me, that is. Should I shed a few tears for her?
+[charslot(slot="r",name="avg_npc_412_1#10$1",focus="r")]
+[name="W"]Or maybe I oughta take this chance to make sure the old hag never crosses me again?
+[Dialog]
+[charslot]
+[playsound(key="$Mon3tr_n")]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[name="Mon3tr"](Muffled braying)
+[Dialog]
+[charslot]
+[charslot(slot="l",name="char_147_shining_1",focus="r")]
+[charslot(slot="r",name="avg_npc_412_1#2$1",focus="r")]
+[name="W"]Ugh, that little shit's not dead either?
+[Dialog]
+[PlaySound(key="$d_avg_walk_stage",channel="n",loop=false)]
+[stopsound(channel="n",fadetime=4)]
+[charslot(slot="r",posfrom="0,0",posto="300,0",afrom=1,ato=0,duration=0.7)]
+[delay(time=1.5)]
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_412_1#10$1",posfrom="-200,0",posto="150,0",afrom=0,ato=1,duration=1)]
+[charslot(slot="r",name="npc_10002",posfrom="200,0",posto="0,0",afrom=0,ato=1,duration=0.3)]
+[delay(time=1.5)]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[charslot(slot="r",name="npc_10002",focus="r")]
+[name="Mon3tr"](Menacing growl)
+[Dialog]
+[charslot(slot="r",name="npc_10002",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_runstop")]
+[charslot(slot="l",name="avg_npc_412_1#10$1",posfrom="150,0",posto="0,0",afrom=1,ato=1,duration=0.6)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_412_1#8$1",focus="l")]
+[name="W"]Hmph, still so nasty.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="char_147_shining_1",focus="m")]
+[name="Shining"]Mon3tr was very heavily damaged. It wasn't until two hours ago that it recovered its motor functions. I suggest you avoid provoking it.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_412_1#1$1",focus="l")]
+[charslot(slot="r",name="npc_10002",focus="l")]
+[name="W"]I'm saving its master's life. At the very least, it's gotta learn to treat me with a bit more respect.
+[name="W"]Otherwise, hehe—
+[charslot(slot="r",name="npc_10002",focus="r")]
+[name="Mon3tr"]......
+[playsound(key="$Mon3tr_n")]
+[name="Mon3tr"](Compromising low roar)
+[charslot(slot="l",name="avg_npc_412_1#10$1",focus="l")]
+[name="W"]Now that's more like it.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_411_1#4$1",focus="m")]
+[name="Closure"]The Royal Court fighters are heading this way! Quick, we gotta get out of here before they...
+[charslot(slot="m",name="avg_npc_412_1#8$1",focus="m")]
+[name="W"]Oh, quit your yapping, Closure. It hurts my ears.
+[charslot(slot="m",name="avg_npc_411_1#4$1",focus="m")]
+[name="Closure"]Whose fault do you think that is?!
+[charslot(slot="m",name="avg_npc_412_1#1$1",focus="m")]
+[name="W"]If you're so worried, get your men to move double time already.
+[name="W"]I know a couple good spots outside the city. Wanna take a look?
+[Dialog]
+[musicvolume(volume=0.3, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="37_g1_glasgowboxinggym", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_866_1#1$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_863_1#1$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_866_1#1$1",focus="l")]
+[name="Delphine"]With the supplies we have on hand, best-case scenario, we should be able to last another week.
+[charslot(slot="r",name="avg_npc_863_1#6$1",focus="r")]
+[name="Baird"]What about worst-case scenario?
+[charslot(slot="l",name="avg_npc_866_1#8$1",focus="l")]
+[name="Delphine"]......
+[charslot(slot="r",name="avg_npc_863_1#6$1",focus="r")]
+[name="Baird"]Alright, I get it.
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]Cador and I will keep trying to come up with something.
+[charslot(slot="l",name="avg_npc_866_1#5$1",focus="l")]
+[name="Delphine"]What is the situation like outside?
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="Baird"]A borough that normally has less than ten thousand residents suddenly finds its population surging multiple times over. No additional supplies. No police. No law and order.
+[name="Baird"]We're still alive even after the last several days. We should be thankful that the citizens still have a shred of morality.
+[charslot(slot="l",name="avg_npc_866_1#10$1",focus="l")]
+[name="Delphine"]It could also be because Cador's fists pack a punch.
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="Baird"]I don't deny that.
+[charslot(slot="l",name="avg_npc_866_1#5$1",focus="l")]
+[name="Delphine"]Have you heard anything about what the dukes' plans are? I heard... Duke Windermere's barracks aren't far from here.
+[name="Delphine"]I'm sure... they won't turn a blind eye to our predicament.
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]I've heard rumors... Some have said they saw a blaze surge through the night sky.
+[charslot(slot="r",name="avg_npc_863_1#8$1",focus="r")]
+[name="Baird"]We all saw that flying thing the Sarkaz had... On the day we were cast out of Londinium, its shadow swept through the entire plate.
+[name="Baird"]My guess is that the dukes are all very fearful of that, and they're only probing how to attack it right now.
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]Of course, it's also possible that the outside world has gone to hell, and Londinium has been bombed to smithereens. Who knows?
+[charslot(slot="l",name="avg_npc_866_1#6$1",focus="l")]
+[name="Delphine"]Maybe the dukes don't know that there are still people alive here?
+[name="Delphine"]Maybe... they thought all of us... died.
+[charslot(slot="l",name="avg_npc_866_1#8$1",focus="l")]
+[name="Delphine"]If only we had a way to get word out...
+[charslot(slot="r",name="avg_npc_863_1#6$1",focus="r")]
+[name="Baird"]What way? The intercity net is completely paralyzed.
+[name="Baird"]Hapless sods trapped in the lockdown zone like us should just worry about whether we'll have anything to eat tomorrow.
+[charslot(slot="l",name="avg_npc_866_1#1$1",focus="l")]
+[name="Delphine"]It's hard to believe that just a few days ago, we were still watching that awful Wrankwood movie in the video shop.
+[name="Delphine"]What was that movie called again? <i>War of the Mutant Geeks?</i>
+[name="Delphine"]The ending was actually pretty touching, though.
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]I wouldn't know. I fell asleep. All I saw was the nomadic city getting blown up in the explosion at the very end.
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="Baird"]All I remember is that Mr. McClaren was awfully generous with his money. After all, we helped him deal with the video shop's troubles plenty of times.
+[name="Baird"]I only hope that he is doing well. The situation outside wouldn't do his neurasthenia any favors.
+[charslot(slot="l",name="avg_npc_866_1#1$1",focus="l")]
+[name="Delphine"]I stopped by the video shop for a look. His door was sealed shut.
+[charslot(slot="l",name="avg_npc_866_1#5$1",focus="l")]
+[name="Delphine"]Why did you always sleep in the video shop, though? I remember we met each other because...
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]Because your laughter woke me up.
+[charslot(slot="l",name="avg_npc_866_1#10$1",focus="l")]
+[name="Delphine"]Sorry, but that movie was really funny.
+[charslot(slot="l",name="avg_npc_866_1#1$1",focus="l")]
+[name="Delphine"]But to start, it was your fault for falling asleep there.
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="Baird"]There is no better place to sleep than there.
+[charslot(slot="l",name="avg_npc_866_1#1$1",focus="l")]
+[name="Delphine"]That comedy director is really famous. I have all her—
+[Dialog]
+[playsound(key="$d_avg_hungry", volume=1)]
+[delay(time=1)]
+An untimely growl that signifies hunger can suddenly be heard, shattering the easygoing atmosphere that the two finally managed to build.
+[charslot(slot="l",name="avg_npc_866_1#6$1",focus="l")]
+[name="Delphine"]Sorry.
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]You've been eating too little. Your stamina won't last if you keep this up.
+[charslot(slot="l",name="avg_npc_866_1#6$1",focus="l")]
+[name="Delphine"]It's okay. We need to carry on.
+[charslot(slot="r",name="avg_npc_863_1#6$1",focus="r")]
+[name="Baird"]The lives we had came to an end just like that. In an instant, this is what it all turned into.
+[name="Baird"]There are lunatics and dead bodies everywhere. There are the blockade walls that the Sarkaz built... There have been men attempting to break through them the past couple days. Their brains are still hanging on the walls.
+[name="Baird"]I still don't understand. How did it—
+[charslot(slot="l",name="avg_npc_866_1#1$1",focus="l")]
+[name="Delphine"]War has broken out, Baird.
+[charslot(slot="r",name="avg_npc_863_1#7$1",focus="r")]
+[name="Baird"]I know. I know! But just because of those few weightless words...
+[name="Baird"]Everyone's past disappeared without a trace in the blink of an eye.
+[charslot(slot="r",name="avg_npc_863_1#10$1",focus="r")]
+[name="Baird"]Whose war is this?
+[charslot(slot="l",name="avg_npc_866_1#8$1",focus="l")]
+[name="Delphine"]The dukes are trying to protect Victoria...
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]All I know is that this war is not mine.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_cardboard", volume=1)]
+[delay(time=1)]
+A small, broken stir as well as the clanging of multiple cans can be heard from the shadows.
+[Dialog]
+[charslot(slot="m",name="avg_npc_863_1#10$1",focus="m")]
+[name="Baird"]What are you doing?
+[Dialog]
+[charslot]
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="avg_npc_177",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="Timid Citizen"]I... I...
+[charslot(slot="m",name="avg_npc_863_1#10$1",focus="m")]
+[name="Baird"]It isn't your turn to stand watch tonight.
+[charslot(slot="m",name="avg_npc_866_1#7$1",focus="m")]
+[name="Delphine"]What's that you're hiding underneath your coat?
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[charslot(slot = "m", action="shake",random=true, power=5, times=60,duration=0.3)]
+[name="Timid Citizen"]S-Stay back!
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Image]

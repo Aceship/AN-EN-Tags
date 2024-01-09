@@ -1,0 +1,688 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[playMusic(intro="$act25side_01_intro",key="$act25side_01_loop", volume=0.6)]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=2, block=true)]
+[Delay(time=2)]
+[playsound(key="$d_avg_rosoutofcontrol", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.2, fadetime=3,channel="bgs")]
+[PlaySound(key="$d_avg_broadswordblood")]
+[CameraShake(duration=0.8, xstrength=50, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+「切る」。ジャガイモをスライスして、一つ、また一つと沸騰した湯に投げ入れていく。こんなものより、メスで切り開かれた頭蓋骨のほうがずっと硬かった。
+「裂く」。人体で一番柔らかい組織は、ゴム手袋をつけた手でそっと引き裂けばマシュマロのように地面へ散らばる。
+[PlaySound(key="$d_avg_tear")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=20, randomness=90, fadeout=true, block=false)]
+「潰す」。花は震える手の上でぐしゃりと丸められ、鮮やかな汁がべたりと手を流れて、新品の革靴を汚した。
+「叫ぶ」。神経を素早く切断すれば、大量の麻酔薬を使うように、気付かれずに命を奪うことができる。
+「泣く」。死んだ兄弟たちは手術台の上で泣いていた。どうして彼らが殺されて、どうして私が生かされたの？
+違う。違う……
+お兄ちゃんたちはまだ死んでない。私の後ろに立っていて、必死に叩いて叫んでるんだ。
+庭園なんて初めからなかった。ここにあるのは、私たちの命を閉じ込め、切り裂き、もてあそぶ残酷な檻だけ。
+お兄ちゃんたちはこの檻を壊したがってる。
+私もそうだ。
+[Dialog]
+[SoundVolume(volume=0, fadetime=2,channel="bgs")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[CameraShake(duration=3.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_collapse")]
+[delay(time=2)]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="ミュルジス"]実験室の壁が……引き裂かれてる？　最新鋭の一番硬い材質が使われてるのに、こんな……簡単に？
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="ロスモンティスだ。;恐らく彼女が暴走したんだろう。;一番目の当たりにしたくなかった事態だ。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m",name="avg_249_mlyss_1#7$1")]
+[name="ミュルジス"]うわあ。向こうの床なんて、リンゴの皮みたいにめくれてるわ！
+[name="ミュルジス"]このままだと、こっちまでぺしゃんこのフルーツピューレになりそうね！
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="彼女を何とか止めないと。", values="1")]
+[Predicate(references="1")]
+[Decision(options="アーミヤがいれば落ち着かせることができるんだが。;とにかくやってみよう……", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="ミュルジス"]ドクター、本気じゃないわよね……？
+[charslot(slot = "m",name="avg_249_mlyss_1#5$1")]
+[name="ミュルジス"]パワードスーツでさえ、紙切れみたいに引き裂かれてるのよ！　生身の人間が行って無事で済むはずないわ！　あなた、普通の人間なんでしょう？
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="ああ、正真正銘の。;……;それでも彼女を見捨てるわけにはいかない。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_895_1#9$1",duration=0.5)]
+[delay(time=1)]
+[name="イフリータ"]……オレサマが行く。
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="イフリータ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="ミュルジス"]ちょっとイフ、これは冗談で済む話じゃないのよ！
+[name="ミュルジス"]あなたの身体の中の炎魔が……じゃなくて、あなたの力だって危険なのよ、まさかそれを使うつもりじゃ……
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="イフリータ"]いいや。
+[name="イフリータ"]あれの力は使わねー。自分でやるよ。
+[name="イフリータ"]これは……ロスモンティスとの約束だからな。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[charslot]
+[SoundVolume(volume=0.2, fadetime=3,channel="bgs")]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_526_1#1$1")]
+[name="パワードスーツ兵"]支援を……頼む……
+[dialog]
+[PlaySound(key="$d_avg_maskbreakk")]
+[delay(time=1)]
+[name="パワードスーツ兵"]通信機が……潰され、た……？
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="パワードスーツ兵"]この、怪……
+[charslot(slot = "m",name="avg_npc_895_1#4$1")]
+[name="イフリータ"]口閉じてろ。
+[charslot(slot = "m",name="avg_npc_526_1#1$1")]
+[name="パワードスーツ兵"]何……？
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="イフリータ"]オマエが何を言いたいかはわかるけど、黙ってろ。
+[dialog]
+[charslot(slot = "m",name="avg_npc_895_1#4$1")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[PlaySound(key="$fireburst")]
+[Effect(name="$e_magic_fire_01",y=-650,x=300,layer = 2,delay=0.2)]
+[Effect(name="$e_magic_fire_01",y=-650,x=-300,layer = 5,delay=0.2)]
+[Blocker(a=0.3, r=0.4, g=0.1, b=0.1, fadetime=1.5, block=false)]
+[Effect(name="$e_magic_fire_01",y=-550,x=450,layer = 3,delay=0.4)]
+[Effect(name="$e_magic_fire_01",y=-550,x=-450,layer = 6,delay=0.4)]
+[Effect(name="$e_magic_fire_01",y=-450,x=650,layer = 4,delay=0.6)]
+[Effect(name="$e_magic_fire_01",y=-450,x=-650,layer = 7,delay=0.6)]
+[CameraShake(duration=2, xstrength=18, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=2.5)]
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="イフリータ"]こいつはオレサマの――大好きな友達なんだ。
+[name="イフリータ"]いや、ただの友達でもねーな。友達で大事な仲間だ。肩並べて同じ道歩いて、一緒に敵をぶっ飛ばす。そういう仲間なんだよ。
+[name="イフリータ"]ロスモンティス……
+[dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=15, ystrength=10, vibrato=40, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_391_rosmon_1#3$2",duration=1.5,action="shake", power=10, times=100)]
+[delay(time=2)]
+[name="ロスモンティス"]……間違ってるものは、全部壊さないと。
+[name="ロスモンティス"]こんな実験室だって、最初から……
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="イフリータ"]作られるべきじゃなかった。
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="イフリータ"]そうだよな。オマエの言いたいことはよーくわかるよ。
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="イフリータ"]このムカつく白衣も、クソみたいな実験室も、オレサマたちを不幸にした機械も、とっくの昔にケシズミにされてるべきだった！
+[name="イフリータ"]オレサマたちには当然怒る資格があるし、罵る資格も、全部ブッ壊す資格もある！
+[name="イフリータ"]けどさ、そうしないことだってできんだよ！
+[charslot(slot="m",name="avg_391_rosmon_1#3$2")]
+[name="ロスモンティス"]どうして？
+[name="ロスモンティス"]あなたまで……正しい道の邪魔をするの？
+[dialog]
+[charslot(duration=0.5)]
+[CameraShake(duration=3.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$p_skill_asyouwish",volume=0.3)]
+[delay(time=2.5)]
+[charslot(slot = "m",name="avg_npc_895_1#6$1")]
+[name="イフリータ"]強えな……けど……こんなん大したことねぇ！
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="イフリータ"]ロスモンティス！　オマエまでダリアみたいに、オレサマの前で、なんて……そんなことさせねーぞ！　一緒にこの街を見ようって、それに一緒にロドスに帰ろうって約束しただろーが！
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="イフリータ"]あんまり認めたくねーけど、オマエはオレサマよりずっとすげー奴なんだぞ！　だってオマエはもうエリートオペレーターになってるし、これまでもたくさんすげーことしてきたんだから！
+[name="イフリータ"]アーミヤのこと、ブレイズのこと、それからドクターのことを思い出せ！　みんな手が柔らかくて、服はせっけんのにおいがして、抱きしめられると分厚い毛布に包まれたみたいだったろ！
+[charslot(slot="m",name="avg_391_rosmon_1#6$2")]
+[name="ロスモンティス"]毛、布……？
+[charslot(slot = "m",name="avg_npc_895_1#3$1")]
+[name="イフリータ"]オレサマたちは誰にも愛されてないわけじゃないんだ。人生はちっとも公平じゃねーけど、あのクソみたいな境遇を乗り越えたからこそ、すげーいい人たちに会えたんだよ。
+[charslot(slot = "m",name="avg_npc_895_1#9$1")]
+[name="イフリータ"]サイレンスはいつだって、ハッピーエンドのお話を聞かせてくれるけど、たまにサイレンスが自分で結末を変えてること、オレサマは知ってんだ。
+[name="イフリータ"]そんでサリアは、オレサマの宿題を厳しくチェックしてくれるし、転んだらそのたび支えてくれるんだよ。
+[name="イフリータ"]こういう大事な思い出まで一緒に壊しちゃいけねーだろ。
+[charslot(slot = "m",name="avg_npc_895_1#6$1")]
+[name="イフリータ"]だからさ、ロスモンティス……やめようぜ。
+[charslot(slot="m",name="avg_391_rosmon_1#10$2")]
+[name="ロスモンティス"]やめ……る？
+[charslot(slot="m",name="avg_391_rosmon_1#5$2")]
+[name="ロスモンティス"]イフ……リ……
+[dialog]
+[StopSound(channel="bgs", fadetime=2)]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[charslot(slot="l",posfrom = "0,0", posto = "200,0",duration=0.1)]
+[charslot(slot="m",afrom = 1, ato = 0,duration=2.5)]
+[charslot(slot="l",name="avg_391_rosmon_1#5$1",duration=2.5)]
+[delay(time=3)]
+[charslot(slot = "m", focus = "n")]
+続いていた震動が弱まる。
+イフリータはロスモンティスの手を掴んだ。
+[charslot]
+[playMusic(intro="$warm_intro",key="$warm_loop", volume=0.6)]
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[charslot(slot="r",name="avg_391_rosmon_1#5$1",focus="n")]
+[name="イフリータ"]うん、イフリータだよ。覚えてるだろ？　オマエがオレサマを忘れるわけないしな、ははっ！　……オマエが隠したクッキー食べたのはオレサマなんだけど、まだ気付いてないだろ？
+[charslot(slot="r",name="avg_391_rosmon_1#7$1",focus="r")]
+[name="ロスモンティス"]うん……知らなかった。
+[name="ロスモンティス"]クッキーが減ってたのはわかったけど、ドクターがやったんじゃないんだね。端末のメモを書き換えておかないと。
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="イフリータ"]はは……あははっ！
+[charslot(slot="r",name="avg_391_rosmon_1#5$1",focus="r")]
+[name="ロスモンティス"]痛そうなのに……どうして笑ってるの？
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="イフリータ"]笑いたいからだよ。
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[name="イフリータ"]オマエは暴走なんてしてなかったんだろ？　ドクターまでそれを心配してたけど、本当はただ自分のやり方で、やりたいことをしようとしただけなんだよな。
+[charslot(slot="r",name="avg_391_rosmon_1#4$1",focus="r")]
+[name="ロスモンティス"]……うん。
+[charslot(slot="l",name="avg_npc_895_1#8$1",focus="l")]
+[name="イフリータ"]まあ、あんま気にすんなよ。サリアもオレサマが暴走しないか一日中心配してるしな。こういうのは信用されてないからじゃなくて、みんながお節介焼いてくれてるからだって思っときゃいいんだ。
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="イフリータ"]あの悪者たちのことだってさ……あいつらが、オレサマたちの身体に植え付けてった力とか、残してった傷痕じゃ、オレサマたちをコントロールすることなんかできないだろ。
+[name="イフリータ"]それができるのは、自分だけなんだ。
+[name="イフリータ"]だから逆に、あいつらのことなんかでっかい声で笑い飛ばしてやろうぜ。
+[charslot(slot="r",name="avg_391_rosmon_1#9$1",focus="r")]
+[name="ロスモンティス"]うん……こういう感じでいい？
+[charslot(slot="l",name="avg_npc_895_1#2$1",focus="l")]
+[name="イフリータ"]そうそう、口をにーっと吊り上げてさ。ローキャンに言ってやれ。オマエなんか、何とも思ってない、って！
+[charslot(slot="r",name="avg_391_rosmon_1#7$1",focus="r")]
+[name="ロスモンティス"]……ローキャン。
+[charslot(slot="r",name="avg_391_rosmon_1#1$1",focus="r")]
+[name="ロスモンティス"]そうだね。あの人のところに行ってくる。なんて言うべきかわかったから。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m",name="avg_249_mlyss_1#11$1")]
+[name="ミュルジス"]……静かになったわね。
+[charslot(slot = "m",name="avg_249_mlyss_1#1$1")]
+[name="ミュルジス"]イフがロスモンティスを落ち着かせてくれたんでしょう。ふー……何とか大惨事は免れたわね。
+[charslot]
+ロスモンティスのアーツは、周囲の壁に大量の亀裂を残していた。
+迷路の壁は砕かれて、建物の奥にもう一つの廊下が現れた。
+[dialog]
+[Decision(options="ミュルジス、あの部屋は……;あれは……", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#8$1")]
+[name="ミュルジス"]えっ？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g10_ecolab",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[delay(time=1)]
+[Decision(options="……生態研究園だ。;君の生態研究園だな。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="なぜフォーカスジェネレーターの中にもこの場所が？;ローキャンの実験室と繋がっていたようだが。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#4$1")]
+[name="ミュルジス"]……
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="ミュルジス"]クリステン……忘れてなんかなかったのね。
+[Dialog]
+[charslot]
+[Decision(options="それに……一番奥にあるのは……", values="1")]
+[Predicate(references="1")]
+[Stopmusic(fadetime=2)]
+「石棺」だ。
+あなたはそれが石棺だと確信した。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="bg_graduate",screenadapt="coverall")]
+[playMusic(intro="$act19side_intro",key="$act19side_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+見間違いではない。それは今のあなたが持つ記憶の始まりであり……
+今感じためまいさえも、あの時とまるで同じだった。
+[Dialog]
+[Decision(options="ローキャンはクリステンのために石棺の研究を？;クリステンはなぜ石棺を必要としているんだ？", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="彼女は自らを滅ぼすつもりなのか？;これでは彼女は、白い奇怪な生物に変わってしまうぞ！", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="いいや……;ミュルジス？", values="1;2")]
+[Predicate(references="1;2")]
+彼女は答えない。
+[dialog]
+[playsound(key="$d_avg_divebubble",volume=0.7)]
+あなたは手を伸ばしたが、触れることはできなかった。
+そばに残っているのは、小さな水しぶきと柔らかな泡だけだ。
+本物のミュルジスは、すでに生態研究園の最深部に立っていた。
+[Dialog]
+[Decision(options="行くのか？;我々のもとを離れるのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="ミュルジス"]ドクター……あなたとロスモンティスを、ローキャンに会わせてあげるっていう約束は果たしたわよね。
+[name="ミュルジス"]目標を達成した以上、あたしたちの協力はここまでよ。
+[name="ミュルジス"]これ以上先には、あなたは進めない。ここでお別れしましょ。
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="初めからそのつもりだったのか。", values="1")]
+[Predicate(references="1")]
+[Decision(options="だからこの場所を知ることができたのか。", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="ミュルジス"]……違うわ。
+[charslot(slot = "m",name="avg_249_mlyss_1#6$1")]
+[name="ミュルジス"]実はあたし、また人を騙したの。あはは、あたしってほんとに悪い人よね。
+[charslot(slot = "m",name="avg_249_mlyss_1#1$1")]
+[name="ミュルジス"]ナスティ……頑固で真っすぐな彼女に、もう決心したって嘘をついたのよ。実際はそうじゃなかったのにね。
+[charslot(slot = "m",name="avg_249_mlyss_1#3$1")]
+[name="ミュルジス"]でも、たった今……この生態研究園を見た瞬間に心が決まったわ。
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="ミュルジス"]ごめんなさい、ドクター。
+[name="ミュルジス"]あたしがここに来たのは確かめたいことがあったからよ……そう、あたしの夢はここにあるの。この生態研究園が担う未来こそが……あたしの夢なのよ。
+[name="ミュルジス"]あたしと一族の命の答え、すべてがここにある。
+[name="ミュルジス"]クリステンは、これも一緒に連れて行くって約束してくれてたの。彼女はあたしを騙してなんかなくて、ただ黙ってただけだった……
+[name="ミュルジス"]それはあたしの二面性や移り気な態度に嫌気が差したからかもしれないし、あるいは、あたしたちの信頼関係がずっと変わらないものだって信じてくれているからかもしれない。
+[name="ミュルジス"]なんにせよ、彼女は本当にやってくれたんだから……
+[charslot(slot = "m",name="avg_249_mlyss_1#4$1")]
+[name="ミュルジス"]あたしも、彼女との約束を守らないと。
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="ミュルジス"]悪いけど、サリアにも伝えておいて……ごめんね、って。
+[dialog]
+[playsound(key="$watergunbuff")]
+[charslot(duration=1)]
+[bgeffect(name="$eb_dim_closeeye",layer=1)]
+水があなたに向かって押し寄せ、あなたを押し出していく。それは今もなお優しく、しかし抗うことを許さない。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[bgeffect]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+外層の廊下まで戻されたところで、生態研究園の扉がゆっくりと閉じられていく。
+水の流れは消え去り、痕跡一つ残さなかった。あなたの手はまた空を切ったが、今度のこれはダンスの曲の合間を繋ぐ優美なあの瞬間とは違っていた。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Background(image="29_g11_monitoringroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]そろそろ時間でしょ、出て行っていいかしら？
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="クリステン"]ええ。取引は終えたことだし、いつでも行って構わないわ。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]約束のものは……
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="クリステン"]あなたの端末に送られてるはずよ。
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]これが……ローキャンの研究成果のすべて？
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]いいえ、それに住所も……曖昧な住所ね。あはっ、なんだか見覚えがあるわ。あなたって、マイレンダーの目がある中で本当にたくさんのことをやってのけたのね。ますます尊敬しちゃう。
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="クリステン"]……残念ね。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]何か言った？
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="クリステン"]本来見られたはずの空を、あなたは見られないんだもの。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]あの星のことを言ってるの？　私たちの一族は死ぬほど星をいじくり回してきたのよ。必要な情報は全部あなたに与えてきたのに、それでもなお、あのねじ曲がった光のことをありがたがってるの？
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="クリステン"]今ある空のことではないわ。
+[name="クリステン"]未来に広がる、本当の姿のことよ。
+[charslot(slot="m",name="avg_npc_536_1#4$1")]
+[name="ホルハイヤ"]あなたの壮大な計画は知っているけど、そんな未来は私のものにはならないわ。あなたの資料が信頼できるものであれば、私はすぐにも先祖たちの大願を叶え、本当の力を取り戻せるんだから――
+[charslot(slot="m",name="avg_npc_537_1#1$1")]
+[name="クリステン"]あなたの求める力では、時間に抗うことすらできないのよ。本当はわかっているでしょう？　未来の空を駆けるものは、機械かもしれないし、あるいはほかの進化し続ける生命かもしれないけれど……
+[name="クリステン"]一万年以上前からの幻影ではありえないのよ。
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]それは私を……私の血を、記憶を、使命をバカにしているの？
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_536_1#10$1")]
+[name="ホルハイヤ"]あなた――
+[charslot(slot="m",name="avg_npc_537_1#8$1")]
+[name="クリステン"]過去の姿に戻るためだけに、一族の寿命すら犠牲にするのを厭わないなんて……本当に、そこまでする価値があるの？
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]……
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]いいわ。必要なものは手に入れたわけだし、お互い気持ちよくさよならしましょ。
+[dialog]
+[charslot(duration=0.5)]
+ホルハイヤは監視用プラットフォームを軽やかに降りていく。
+彼女はそのまま振り返らなかった。今の自分の表情を、相手に見せたくなかったのだ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="38_g3_rhinelab_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",posfrom = "-150,0", posto = "0,0",duration=1.5)]
+[charslot(slot="r",name="avg_npc_536_1#1$1",posfrom = "150,0", posto = "0,0",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",focus="l")]
+[name="ミュルジス"]……あなたなのね。
+[charslot(slot="r",name="avg_npc_536_1#6$1",focus="r")]
+[name="ホルハイヤ"]また会ったわね。
+[charslot(slot = "l",name="avg_249_mlyss_1#2$1",focus="l")]
+[name="ミュルジス"]……
+[charslot(slot="r",name="avg_npc_536_1#1$1",focus="r")]
+[name="ホルハイヤ"]……
+[charslot(slot="r",focus="n")]
+しばらくの沈黙が落ちる。
+今まで交わることなどなかった過去と未来がすれ違う。
+[stopmusic(fadetime=3)]
+[charslot(duration=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="あと5分。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_aircraft_2",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$loading_intro",key="$loading_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1031_slent2_1#5$1")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_doorclose",volume=1)]
+[delay(time=1)]
+[name="サイレンス"]ドアが……ッ、開かない……！
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="ヤラ"]こうしてみて。
+[charslot]
+[dialog]
+[PlaySound(key="$d_avg_funnel",volume=0.5)]
+[delay(time=1)]
+[CameraShake(duration=2, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_sundries",volume=0.7)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="サイレンス"]え……？
+[name="サイレンス"]これは……お借りした武器ですよね？
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="ヤラ"]貸したんじゃなくて、あげたのよ。だからあなたの物。もう少し練習すれば使いこなせるようになるわ。
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="サイレンス"]練習、ですか……ええと……
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="ヤラ"]ここを出たらあなたは自由よ。エージェントも兵士たちも自分のことで手いっぱいだもの。フォーカスジェネレーターを見つけるという目的を果たした以上、彼らがあなたを阻むことはないわ。
+[name="ヤラ"]トリマウンツの街に向かって逃げなさい。そこまで行けば、あなたはまだ研究員のサイレンスでいられるわ。
+[charslot(slot="m",name="avg_1031_slent2_1#4$1")]
+[name="サイレンス"]ですが……
+[charslot(slot="m",name="avg_npc_893_1#2$1")]
+[name="ヤラ"]それでも、一番危険な場所を目指したいのでしょう？　そんなことをしたら、命の危険にさらされるだけじゃ済まないのよ。二度とマイレンダーの目を逃れられなくなるかもしれないわ。
+[name="ヤラ"]これは一生を懸けた戦いになるでしょう。もしかすると、何かを永久に失うことになるかもしれないわ。自由と生活、家族や友人からの絶対的な信頼、太陽の下で生活する権利、そしてあなた自身を。
+[name="ヤラ"]本当に、そんな人生へ身を投じるつもりなの？
+[charslot(slot="m",name="avg_1031_slent2_1#6$1")]
+[name="サイレンス"]わかりません。私は……まだ解決されていない問題を、途中で諦めたくないだけなんです。
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="ヤラ"]あなたは才能ある学者であり、善良な医者でもある。けれどこの先一人の戦士になる覚悟はできているの？
+[charslot(slot="m",name="avg_1031_slent2_1#5$1")]
+[name="サイレンス"]もしかすると……戦士には、永遠になれないかもしれません。
+[name="サイレンス"]ですが必要とあれば、あなたがくれた武器を握ろうと思います。
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="ヤラ"]いいでしょう。私の祝福を携えて進みなさい、お嬢さん。
+[charslot(slot="m",name="avg_1031_slent2_1#7$1")]
+[name="サイレンス"]ありがとうございます、ヤラ主任。
+[dialog]
+[playsound(key="$d_gen_walk_n",loop=true, channel="bgs")]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 1)]
+[delay(time=1)]
+[StopSound(channel="bgs", fadetime=0.5)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_1031_slent2_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="サイレンス"]そういえば、統括……クリステンはこの先にいるかもしれません。
+[name="サイレンス"]会いたくはないですか？
+[charslot(slot="m",name="avg_npc_893_1#6$1")]
+[name="ヤラ"]会いたくない……なんて、そんなはずないでしょう？
+[name="ヤラ"]でも、私はきっと彼女には追いつけないわ。
+[dialog]
+[charslot(duration=0.5)]
+ヤラはほど近いラボを見つめ……
+しばらくして、視線を空へと移した。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="38_g17_corridor_symmetry",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_899_1#3$1")]
+[name="ブレイク"]まだ見つからんのか？
+[charslot(slot="m",name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]申し訳ありません！
+[charslot(slot="m",name="avg_npc_899_1#3$1")]
+[name="ブレイク"]捜索を続けろ。フォーカスジェネレーターのコアはこの中だ。
+[name="ブレイク"]それと、クリステンもな……もう逃がさんぞ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[charslot]
+[Subtitle(text="あと3分。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "right", name = "avg_npc_896_1#8$1",focus="r")]
+[name="サリア"]……イフリータ。
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",focus="l")]
+[name="イフリータ"]サリア！　どうだ、入る方法は見つかったか？
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",focus="r")]
+[name="サリア"]いや、まだだ。
+[charslot(slot = "left", name = "avg_npc_895_1#7$1",focus="l")]
+[name="イフリータ"]ここってマジで変な場所だよな。さっきロスモンティスが実験室の外壁をクッキーでも砕くみたいにバラバラにしちまったのに、中身は少しも見えねーしさ。
+[charslot(slot = "right", name = "avg_npc_896_1#5$1",focus="r")]
+[name="サリア"]……この建物はまだ完全ではない。
+[charslot(slot = "left", name = "avg_npc_895_1#9$1",focus="l")]
+[name="イフリータ"]えっ、どういうことだ？
+[charslot(slot = "right", name = "avg_npc_896_1#1$1",focus="r")]
+[name="サリア"]お前の言う通りだ、イフリータ。これは単なる実験室ではない。
+[charslot(slot = "right", name = "avg_npc_896_1#9$1",focus="r")]
+[name="サリア"]これは……ッ……
+[charslot(slot = "right", name = "avg_npc_896_1#10$1",focus="r")]
+[name="サリア"]彼女は両親の推進器を使ったのか？　……そんな。なぜ私は思い付かなかった。なぜ今になって！
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "right",posfrom = "0,0", posto = "250,0",afrom = 1, ato = 0,duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_npc_895_1#3$1",focus="l")]
+[name="イフリータ"]サリア！　どこ行くんだよ！
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[playMusic(intro="$drift_intro",key="$drift_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="サリア"]……
+[name="サリア"]仮に……この壁を破ることができたら……
+[charslot(slot="m",name="avg_npc_896_1#5$1")]
+[name="サリア"]いや、私が来ることを彼女が予測していないはずもない。こんなことをしても無意味だ。
+[charslot(slot = "left",focus="n")]
+では、どうすれば意味のある行動になるのだろう？
+――お前には何一つ変えることなどできない。
+もはや手遅れなのだろうか？
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="サリア"]……ダメだ。
+[name="サリア"]私は必ず……
+[charslot(slot = "left",focus="n")]
+必ず、どうするというのだろう？
+[charslot]
+[name="？？？"]サリア。
+[charslot(slot="m",name="avg_npc_896_1#3$1")]
+[name="サリア"]サイ……レンス？
+[charslot(slot="m",name="avg_npc_896_1#10$1")]
+[name="サリア"]ここから離れたほうがいい……この場所は、恐らく……
+[charslot]
+[dialog]
+[charslot(slot="m",name="avg_1031_slent2_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="サイレンス"]ううん。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Image(image="38_i06", screenadapt="coverall", xScale=1.1, yScale=1.1)]
+[ImageTween(xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=20, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="サイレンス"]私はあなたのそんな言葉を聞くために来たわけじゃない。
+[name="サリア"]……
+[name="サイレンス"]科学者が自分の夢のためにどこまでするかはわかってる。私もその狂気に近い感覚を味わったから、道徳でそれに抗うにはどれだけ力が必要なのかは知っている。
+[name="サイレンス"]サリア、あなたは科学研究と秩序の均衡をずっと探し求めてきたんでしょう。本当によくやってきたと思うし、やりすぎなくらいだったかもしれない。
+[name="サイレンス"]あなたの秩序は崩壊し始めているけど、その均衡を手放してしまえば……あるいは、混乱の中から自分自身の根源を取り戻すこともできるかもしれない。
+[name="サリア"]根源を……取り戻す？
+[name="サイレンス"]あなたならできるって、信じてるから。
+[name="サイレンス"]それぞれの成すべきことのために、ここで別れよう。
+[name="サリア"]……
+[name="サイレンス"]そうだ。今なら、あなたに伝えられるよ。
+[dialog]
+[delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="私は、心の底からあなたに憧れていた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1.5)]
+[Subtitle(text="私は、心の底からあなたと肩を並べたいと思っていた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Subtitle(text="あと1分。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[charslot]
+[Background(image="38_g10_ecolab",screenadapt="coverall")]
+[image]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m",name="avg_249_mlyss_1#2$1")]
+[name="ミュルジス"]……
+[name="ミュルジス"]はぁ、せっかく気の合う友達ができたのに、こんなにあっさり失うなんてね。
+[charslot(slot = "m",name="avg_249_mlyss_1#3$1")]
+[name="ミュルジス"]どう償ってくれるわけ？　クリステン。
+[playsound(key="$d_gen_walk_n")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Subtitle(text="あと30秒。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_894_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="ロスモンティス"]……
+[charslot(slot = "right", name = "avg_npc_894_1#8$1",focus="r")]
+[name="ローキャン"]ああ、ナルシッサ……戻ってきてくれたんだね。裁きの準備は整ったのかい？
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="ロスモンティス"]うん。私は、あなたを殺したいと思う。
+[name="ロスモンティス"]これは復讐のためじゃない。私はあなたを憎んでるけど、アーミヤとドクターが言ってたんだ。復讐をしても、いなくなってしまった大事な人たちは戻ってこないんだ、って。
+[name="ロスモンティス"]そしてこれは、破壊を目的としたことでもない。あなたは、私の手で自分を壊すつもりみたいだけど、私はそんなの嫌なの。私はあなたの兵器じゃないから。
+[charslot(slot = "left", name = "avg_391_rosmon_1#6$1",focus="l")]
+[name="ロスモンティス"]あなたなんて、何とも思ってない。ただの犯罪者だよ。
+[name="ロスモンティス"]だから、法律にも監獄にもできないことを、私がやる。
+[name="ロスモンティス"]あなたは死刑だって、宣言する。
+[charslot(slot = "right", name = "avg_npc_894_1#9$1",focus="r")]
+[name="ローキャン"]そうか……よかった。
+[charslot(slot = "right", name = "avg_npc_894_1#8$1",focus="r")]
+[name="ローキャン"]……あの歌はどんな歌詞だったかな……ああ、そうだ。
+[name="ローキャン"]遥けき故郷……♪　我が家への道よ……♪
+[name="ローキャン"]どうか私をふるさとへ……♪
+[charslot(slot = "right", name = "avg_npc_894_1#9$1",focus="r")]
+[name="ローキャン"]うん、もうすぐだ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[CameraShake(duration=5, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$smallearthquake")]
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+激しい振動が、地の底から足元へと伝わってくる。
+何かとてつもなく強大な生命が地面から出てこようとしているかのように。
+あなたは、ほど近い内層の廊下が上昇していくその様に視線を向けた時、窓越しにある人物を見た。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="38_g3_rhinelab_corridor",screenadapt="coverall")]
+[charslot]
+[charslot(slot="m",name="avg_npc_537_1#8$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[name="クリステン"]――
+[charslot(slot="m",focus="n")]
+クリステン。
+このところ繰り返し耳にし続けた名前だ。
+狂人。天才。敵。友人。
+あるいは……この時代に属さぬ愚者として。
+彼女を見るのはこれが初めてだった。一方で、彼女はなおも空を見上げている。何もないその空白こそ、彼女が唯一気にかけるべきものであるかのように。
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="29_g4_corridor",screenadapt="coverall")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playMusic(intro="$act19side_01_intro",key="$act19side_01_loop", volume=0.6)]
+[CameraShake(duration=-1, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=false, block=false)]
+[delay(time=1)]
+[Decision(options="どういう……ことなんだ？;立っていられない……！", values="1;2")]
+[Predicate(references="1;2")]
+その時、見慣れた姿が目の前に現れた。
+[charslot(slot="m",name="char_003_kalts_1#3")]
+[name="ケルシー"]Mon3tr！
+[dialog]
+[charslot]
+[charslot(slot="m",name="npc_10002",duration=0.5)]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"]（鋭い雄たけび）
+[charslot(duration=0.3)]
+それは瞬時に身体を広げ、鋭い爪で優しくあなたの肩を掴むと、その巨体であなたをすっぽりと包み込んだ。
+そうしてすぐに、それよりさらに巨大な影がMon3trの背後で上昇していく。
+フォーカスジェネレーターだ。
+その時、あなたはようやく気付いた。目の前の神秘的な円形の廊下とミュルジスの生態研究園は、すべてフォーカスジェネレーターの一部だったのだということに。
+マイレンダーと軍はこのために争い、また手を取り合いもしたが、それがこんな形で人々の目の前に姿を現すことなど誰も予想だにしていなかった。
+眩しく輝く推進器の炎は激しい気流を生み出して、あなたはバランスを失ってしまう。
+ケルシーとMon3trがいなければ、あなたは即座に吹き飛ばされていただろう――周囲にいたほかの人間や崩壊した実験室が、容赦なく吹き飛ばされていくのと同じように。
+[dialog]
+[Decision(options="ケルシー……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_003_kalts_1#3")]
+[name="ケルシー"]掴まっていろ、ドクター。
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="「石棺」を見たんだ。;まさかクリステンのラボが飛ぶとは。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="真相は目の前だというのに……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_003_kalts_1#1")]
+[name="ケルシー"]わかっている。
+[charslot]
+あなたはふと、空中にいるクリステンがこちらに視線を向けたことに気付いた。
+――いや、正確に言えば、彼女が見ているのはあなたを守っている黒い怪物だ。
+[charslot(slot="m",name="npc_10002")]
+[name="Mon3tr"]（何かを感じたような雄たけび）
+[charslot]
+まるで何かを問うように、クリステンが唇を動かした。
+すると、ケルシーが先ほどあなたにした回答と同じ言葉を繰り返すのが聞こえてきた。
+[dialog]
+[charslot(slot="m",name="char_003_kalts_1#1",duration=0.5)]
+[delay(time=1)]
+[name="ケルシー"]――わかっている。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[CameraShake(duration=0.1, xstrength=3, ystrength=8, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

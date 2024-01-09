@@ -1,0 +1,19 @@
+[HEADER(is_tutorial=true, is_skippable=true, is_autoable=false)] 活动25side教学关_c
+[Battle.Pause]
+[InputBlocker(blockInput=true, black=0.2)]
+[Tutorial(dialogHead="$avatar_jesica", black="$f_tut_black")] The floor's spinning! Now the enemies are speeding up! What's going on?
+[Tutorial(dialogHead="$avatar_doberm", black="$f_tut_black")] Analysis complete.
+[InputBlocker(blockInput=true, black=0)]
+[Tutorial(focusX=0, focusY=130, focusWidth=100, focusHeight=100, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black="$f_tut_black", \
+          protectTime=2, dialogHead="$avatar_doberm",dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]An enemy with <@tu.kw>Weight 3 or higher</> has stepped on an <@tu.kw>Up</> <@tu.kw>Attitude Switch</>, causing the floor to rotate and tilting it up.
+[Tutorial(dialogHead="$avatar_doberm", black="$f_tut_black")] Enemies move slower upslope, but faster downslope. The effect on our side has also been reversed.
+[Tutorial(focusX=200, focusY=-40, focusWidth=100, focusHeight=100, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black="$f_tut_black", \
+          protectTime=2, dialogHead="$avatar_doberm",dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]On the other hand, operators with <@tu.kw>Block 1 or higher</> can also step on a switch.
+[InputBlocker(blockInput=true, black=0.2)]
+[Tutorial(dialogHead="$avatar_jesica", black="$f_tut_black")] I see! It's like a see-saw, falling toward the side that's stepped on!
+[Tutorial(dialogHead="$avatar_doberm", black="$f_tut_black")]Exactly. Step on the switch and delay the attack before more enemies arrive!
+[InputBlocker(blockInput=false, black=0)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_nblade", animStyle="Drag", \
+          startX=-60, startY=60, startAnchor="BottomRight",endAnchor="BottomRight", endX=-414, endY=350)] Leave it to me.

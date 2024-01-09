@@ -1,0 +1,19 @@
+[HEADER(is_tutorial=true, is_skippable=true, is_autoable=false)] 活动25side教学关_c
+[Battle.Pause]
+[InputBlocker(blockInput=true, black=0.2)]
+[Tutorial(dialogHead="$avatar_jesica", black="$f_tut_black")] どうしたんでしょう？　傾斜の方向が変わりました！　敵の移動速度が速くなってます！
+[Tutorial(dialogHead="$avatar_doberm", black="$f_tut_black")] 分析結果が出た。
+[InputBlocker(blockInput=true, black=0)]
+[Tutorial(focusX=0, focusY=130, focusWidth=100, focusHeight=100, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black="$f_tut_black", \
+          protectTime=2, dialogHead="$avatar_doberm",dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]<@tu.kw>重量ランクが3以上</>の敵が「UP」と書かれた<@tu.kw>上向き</>の<@tu.kw>重力誘導装置</>を踏んだことで、傾斜が上向きになったようだ。
+[Tutorial(dialogHead="$avatar_doberm", black="$f_tut_black")] 傾斜を登る形になれば敵が減速し、傾斜を下る形になれば敵が加速する。敵と向き合っている場合、我々にかかる影響はその逆となる。
+[Tutorial(focusX=200, focusY=-40, focusWidth=100, focusHeight=100, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black="$f_tut_black", \
+          protectTime=2, dialogHead="$avatar_doberm",dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]敵が装置を踏むのと同様に、<@tu.kw>ブロック数1以上</>のオペレーターも装置を踏むことができる。要するに……
+[InputBlocker(blockInput=true, black=0.2)]
+[Tutorial(dialogHead="$avatar_jesica", black="$f_tut_black")] なるほど、シーソーと同じで、踏んだほうへ沈むんですね！
+[Tutorial(dialogHead="$avatar_doberm", black="$f_tut_black")]そういうことだ。向こうが攻勢をかけてくる前に、「DOWN」と書かれた下向きの装置に人員を配置しよう。敵の進攻を遅らせるぞ！
+[InputBlocker(blockInput=false, black=0)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_nblade", animStyle="Drag", \
+          startX=-60, startY=60, startAnchor="BottomRight",endAnchor="BottomRight", endX=-414, endY=350)] ならば私に任せてくれ。

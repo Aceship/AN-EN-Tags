@@ -1,0 +1,14 @@
+[HEADER( is_tutorial=true, is_skippable=false, is_autoable=false)] 拉特兰圣像栈道教学_g
+[Battle.Pause]
+[Battle.UnlockFunction(mask="CHARACTER_INFO")]
+[Battle.UnlockFunction(mask="CHARACTER_MENU")]
+[Battle.UnlockFunction(mask="CARD_LIST")]
+[Tutorial( focusX=-59, focusY=66, focusWidth=100, focusHeight=100, anchor="BottomRight",\
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5,  dialogHead="$avatar_amiya")] \
+걱정하지 마세요. 저희가 <@tu.kw>비상용 목재</>를 이용해 구덩이를 막을 수 있어요.
+[Battle.LockFunction(mask="SYSTEM_MENU")]
+[InputBlocker(blockInput=false)]
+[Tutorial(waitForSignal="put_down",animStyle="Drag", startX=-59, startY=66, endX=54, endY=-136, dialogY=50, startAnchor="BottomRight", endAnchor="Center", dialogHead="$avatar_amiya")]
+[InputBlocker(blockInput=true)]
+[Battle.UnlockFunction(mask="SYSTEM_MENU")]

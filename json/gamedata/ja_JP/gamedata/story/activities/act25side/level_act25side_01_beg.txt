@@ -1,0 +1,658 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")] 
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[playMusic(intro="$plot_intro",key="$plot_loop", volume=0.6)]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_536_1#1$1", duration = 1.5, isblock=true)]
+[name="ホルハイヤ"]うん、時間ぴったりね。
+[dialog]
+[charslot]
+リーベリは、高層ビルの屋上から空を見上げる。高い場所に吹く風はかすかに響く甲高い音を覆い隠し、ぼんやりとした一つの光が彼女の瞳の中で急速に大きくなっていく。
+軽く規則的に動かした太い尻尾を美しい定規として、彼女は足元の街に見えないグリッド線を引いた。
+[charslot(slot = "m", name = "avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]さあて、この「星」はトリマウンツのどこに落ちるのかしら？
+[charslot(slot = "m", name = "avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]三区と五区はほとんどが住宅街だし、十一区では新しい工業団地を建設中……
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="ホルハイヤ"]まさか中央区じゃないわよね。あそこは商業用のオフィスビルがまるでスーパーの缶詰みたいに密集してるし、平日となればどれだけの人が詰め込まれてることか……
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="ホルハイヤ"]あなたは、実験道具の落下点計算によっぽど自信があるのか……
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="ホルハイヤ"]それとも、自分の実験がどんな騒ぎを起こすかなんて気にも留めてないのか。どちらかしら？
+[dialog]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_536_1#10$1")]
+[name="ホルハイヤ"]いずれにせよ、あなたの計画はここにきてますます面白くなってきたわね……クリステン。
+[dialog]
+[charslot(slot = "m", focus="none")]
+[PlaySound(key="$d_avg_explosion", volume=0.8)]
+[delay(time=2.5)]
+[PlaySound(key="$transmission", volume=0.5)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_536_1#10$1")]
+[name="ホルハイヤ"]あれが落ちるのは、十三区にあるトリトンの工場だとわかっていたんでしょう。
+[dialog]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+彼女はビルを飛び降りた。
+[dialog]
+[StopSound(channel="a", fadetime=1)]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g13_trimountlivingroom",screenadapt="coverall")]
+[Delay(time=1)]
+[bgeffect(name="$eb_dim_openeye",layer=1)]
+[charslot(slot="m",name = "avg_249_mlyss_1#1$1",action="zoom",poszoom="0.5,0.65",scale=1.4,duration=0,isblock=true)]
+[PlaySound(key="$d_avg_femaleexhale", volume=1)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Delay(time=1)]
+[bgeffect]
+[charslot(slot = "m", focus="none")]
+[Decision(options="（あくびをする）;……;うっ……誰だ、カーテンを開けたのは……", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="ミュルジス"]あら、大きなあくび。昨日はあんまり眠れなかったの？
+[dialog]
+[Predicate(references="2")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#9$1")]
+[name="ミュルジス"]あなたも起き抜けは天井を眺めてぼーっとしたりするのね。
+[dialog]
+[Predicate(references="3")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#8$1")]
+[name="ミュルジス"]この時間だと、ライン生命の社員だったらもう出社して一時間経ってるわよ。
+[dialog]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", focus="none")]
+[Decision(options="トリマウンツのホテルの警備はどうなってるんだ？;これがライン生命の主任の訪問スタイルなのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="ミュルジス"]会いたかったから、来ちゃったの。
+[charslot(slot = "m", name = "avg_249_mlyss_1#8$1")]
+[name="ミュルジス"]パワードスーツから救い出してくれた恩人に朝食を持ってきてあげるのが、そんなにおかしなことかしら？
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="ミュルジス"]はい、これ。ライン生命の下にあるカフェのモーニングセットよ。一日限定百食なんだからね。
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#7$1")]
+[name="ミュルジス"]もう、そんな目で見ないでってば。あなたって、寝起きは不機嫌なのね。
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="サリアを探しに来たのか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="ミュルジス"]彼女と連絡つかなくなったのは事実だけど、サリアがいないなら、あなたに頼んでも一緒かなって。
+[charslot(slot = "m", name = "avg_249_mlyss_1#2$1")]
+[name="ミュルジス"]とりあえず、これを見てちょうだい。
+[dialog]
+[charslot]
+[musicvolume(volume=0.2, fadetime=2)]
+[PlaySound(key="$d_avg_devicebeep", volume=1)]
+[delay(time=0.8)]
+[PlaySound(key="$transmission", volume=0.5)]
+[delay(time=2)]
+[name="ニュースキャスター"]今朝、十三区にあるトリトン第三化学工場で爆発が起きました。
+[name="ニュースキャスター"]具体的な原因については確認が取れていませんが、関連部門によりますと、実験担当者の操作ミスで作業機械が爆発したのでは、とのことです。
+[name="ニュースキャスター"]この工場では、大量の触媒や中間剤が保管されており、こうした化学原料の漏洩による二次被害を防ぐため、軍が政府と協力体制を取り対応にあたっています。
+[name="ニュースキャスター"]このため現在、十三区は一時的に軍の管理下に置かれ、出入りは厳しく制限されております。関係住民の皆様にはご理解とご協力をお願いいたします。
+[name="ニュースキャスター"]また、今回のトリマウンツ訪問におけるジャクソン副大統領の今後のスケジュールが影響を受けるかどうかについては、関係部門に問い合わせていますが、今のところ回答は得られておりません。
+[dialog]
+[Decision(options="また359号基地みたいなことでも起きたのか？;まさかこれもライン生命と関係が？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_249_mlyss_1#2$1")]
+[name="ミュルジス"]あたしにも詳しいことはさっぱりよ。
+[charslot(slot = "m", name = "avg_249_mlyss_1#1$1")]
+[name="ミュルジス"]でも、あなたたちロドスがトリマウンツにいるからには、こんな大きなニュースを見逃すはずがないわよね。だって、サリアはあなたたちをとっても信頼してるわけだし。
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_249_mlyss_1#9$1")]
+[name="ミュルジス"]さてと、別のお客さんが来たみたいだから、あたしはそろそろお暇するわね……きっとまたすぐに会えると思うわ。
+[dialog]
+[PlaySound(key="$d_avg_watersubbreak", volume=1)]
+[Effect(name="$e_muesys_hide", layer = 1)]
+[charslot(duration=1.5)]
+[delay(time=4)]
+[Decision(options="やはり分身か。;別のお客さん……？", values="1;2")]
+[Predicate(references="1;2")]
+[musicvolume(volume=0.6, fadetime=2)]
+[PlaySound(key="$rungeneral", volume=0.4)]
+[delay(time=2)]
+[PlaySound(key="$dooropenquite", volume=1)]
+[charslot(slot = "m", name = "avg_npc_895_1#2$1", duration=1, isblock=true)]
+[name="イフリータ"]朝だぞドクター、起きてるかー！？
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="イフリータ……なぜここに？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", posfrom="0,0", posto="100,0", afrom=1, ato=0, duration=1)]
+[delay(time=1.5)]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "char_003_kalts_1", duration = 2, isblock=true)]
+[name="ケルシー"]久しぶりだな、Dr.{@nickname}。
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="ケルシー"]フィリオプシスはすでにエレナを伴い、機能検査と治療のため本艦へ戻った。Mechanistも新たな任務に向かっている。今後は、私が君に同行しよう。
+[charslot(slot = "m", name = "avg_npc_895_1#2$1")]
+[name="イフリータ"]オレサマもついてるぜ！　それに……
+[dialog]
+[charslot]
+[Decision(options="ロスモンティス……;ケルシー、説明してもらおうか。", values="1;2")]
+[Predicate(references="1;2")]
+雲を思わせるフェリーンの少女はいつの間にやら室内にいて、窓辺にもたれて静かに話を聞いていた。
+彼女はあなたとあなたの部屋を眺めており、その後ろには真っ白な雲がトリマウンツの青空を流れていた。
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_042", duration=2, isblock=true)]
+[name="ロスモンティス"]怒らないで、ドクター。
+[name="ロスモンティス"]私がケルシー先生にお願いしたの。連れて行ってほしい、って……ある人から、招待状をもらったから。
+[dialog]
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="ケルシー"]詳細は後程説明しよう。テレビをつけているのなら、十三区の状況はすでに把握しているだろう。
+[name="ケルシー"]あの爆発を起こしたのは不注意な研究員などではなく、上空からの落下物だ。
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="……;確かめなければならないな。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="ケルシー"]ああ。サリアはすでに事件現場へ向かい、調査にあたっている。
+[charslot(slot = "m", name = "char_003_kalts_1#2")]
+[name="ケルシー"]今の君が何よりも先にすべきことは、起きて顔を洗うことだ。
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[PlaySound(key="$d_avg_crwddiscuss_outside", volume=0.6, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]       
+[Delay(time=2)]
+[charslot(slot = "l", name = "avg_npc_523_1#1$1", duration=1, focus = "l")]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1", duration=1, focus = "none")]
+[charslot(slot = "r", name = "avg_npc_524_1#1$1",duration=1, focus = "none")]
+[delay(time=1)]
+[name="怒る市民"]この中に家があるんだぞ！　どうして入れてくれないんだ！？
+[name="怒る市民"]だいたい、頭ごなしに封鎖だなんて言って、これは法に則ったやり方なのか？　承認書類は通したのか？　あんたらが緊急事態だって言ったら、はいそうですかってなるのかよ？
+[charslot(slot = "r", focus = "r")]
+[name="焦る市民"]お願いです、10分で戻ってくるので通してください！
+[name="焦る市民"]急いで資料を取ってこないといけないんです……！　先方を会議室で待たせてるんですよ！
+[charslot]
+[SoundVolume(volume=0.4, channel="a",fadetime=2)]
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]申し訳ないのですが、臨時電子通行証のご提示をお願いします。
+[dialog]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_523_1#1$1", focus = "l")]
+[charslot(slot = "r", name = "avg_npc_524_1#1$1", focus = "r")]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1", focus = "none")]
+[name="市民？"]……
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="ホルハイヤ"]あら、面白いじゃない。もう少し残ってサリアの動きでも見ていくつもりだったけど、まさか小鳥が飛び込んでくるとは思わなかったわ。
+[charslot(slot = "m", name = "avg_npc_536_1#6$1")]
+[name="ホルハイヤ"]……そういえば、あの子って「炎魔事件」の時の研究員よね。
+[name="ホルハイヤ"]ドローンで死角から偵察して、自分は人混みに紛れたままチャンスを伺うやり方は悪くないわ。
+[name="ホルハイヤ"]だけど、軍は道という道に見張りの兵士を置こうとしてるし、非常線を突破するのは簡単じゃないわよ。
+[name="ホルハイヤ"]とはいえ……
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="ホルハイヤ"]あなたに何ができるかはともかく、このお邪魔虫たちを困らせるくらいはしてくれるかもしれないし、ちょっと手伝ってあげようかしら。
+[dialog]
+[charslot(slot = "m", focus="none")]
+[PlaySound(key="$transmission", volume=0.5)]
+[delay(time=1)]
+[name="？？？"]何をぶつぶつ言っているんだ？
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="ホルハイヤ"]何でもないわ。物は回収しておいたから、すぐに届けてあげる。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[PlaySound(key="$d_avg_crwddiscuss_outside", volume=0.6, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]       
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]すでに報道されている通りですが……
+[charslot]
+[charslot(slot = "l", name = "avg_npc_523_1#1$1", focus = "l")]
+[charslot(slot = "r", name = "avg_npc_524_1#1$1", focus = "none")]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1", focus = "none")]
+[name="怒る市民"]工場の事故くらいで、どうして十三区全体を封鎖しないといけないんだ？
+[name="怒る市民"]化学原料の漏洩がどうとか言うなら、あんたらが防護服を着てないのも、軍の連中は自由に出入りできるのも説明がつかないだろ！　そんなの誰が信じるか！
+[charslot(slot = "r", focus = "r")]
+[name="焦る市民"]このプロジェクトは、ハイテクノロジー工業区画全体の発展計画に関わるものなんですよ！　ダメになったら、責任を取ってくれるんですか！？
+[name="焦る市民"]いいから早く入れてください！
+[dialog]
+[PlaySound(key="$d_avg_doorbreak", volume=1)]
+[PlaySound(key="$d_avg_audience_chaos", volume=1)]
+[CameraShake(duration=4, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot]
+[CameraShake(duration=0.3, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]それ以上進まないで！
+[dialog]
+[SoundVolume(volume=0.4, channel="a",fadetime=1)]
+[PlaySound(key="$d_avg_magic_1", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=0.5, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=1, block=true)]
+[charslot(slot = "m", action="shake", power=5, times=60,isblock=true,duration=0.5)]
+[name="クルビア兵"]っ、なんだ！？　腕が、急に動かなく……
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="クルビア兵"]まずい、誰かが非常線を抜けて――通信がダウンしてる……！？
+[dialog]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1")]
+[name="市民？"]……
+[dialog]
+[PlaySound(key="$d_avg_walkfast", volume=1)]
+[charslot(slot = "m", posfrom="0,0", posto="300,0", afrom=1, ato=0, duration=1)]
+[delay(time=2)]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g6_mainstreet",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_896_1#1$1",duration=2)]
+[Delay(time=2.5)]
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]通行証をご提示ください、サリアさん。
+[charslot(slot = "m", name = "avg_npc_896_1#1$1")]
+[name="サリア"]私を知っているのか？
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]元ライン生命の警備課主任ともなれば、トリマウンツでは有名人ですから。
+[charslot(slot = "m", name = "avg_npc_896_1#1$1")]
+[name="サリア"]それで、十三区には入れない、と？
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]あなたに限った話ではありませんよ。
+[name="クルビア兵"]通行証がないのなら、お引き取りください。
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_900_1#1$1",duration=1.5)]
+[delay(time=2)]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]ッ、止まれ――！
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="ブリキ"]落ち着いて、武器を下ろしてください。
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]その顔に手……あなたは……
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="ブリキ"]ああ、服の下も同じようなものですよ。見た目は恐ろしいかもしれませんが、これは単なる外骨格ですのでお気になさらず。
+[name="ブリキ"]私はマイレンダー歴史協会の者でして、今はジャクソン副大統領の随行秘書を務めております。認証コードはこちらです。
+[name="ブリキ"]サリアさんは事態解決のため我々が招いた専門家ですので、同行の許可を。
+[charslot(slot = "m", name = "avg_npc_896_1#8$1")]
+[name="サリア"]……
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]マイレンダー基金ですか……あなた方はつくづく変わってますね。
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="ブリキ"]さあ、そちらの上司に確認を取っていただけますか。状況把握のため十三区に入れていただきたいので。
+[Character(slot = "m", name="avg_npc_901_1#1$1")]
+[name="クルビア兵"]少々お待ちください。
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="none")]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]その装いを見るに……盾を使わないつもりですか？
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]今後の状況を鑑みて、手足の自由が利くようにしたほうがいいと判断しただけのことだ。
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]手足の自由……ですか。元警備課主任の口から聞くと、一般人が口にするのとは段違いの凄味がありますね。
+[name="ブリキ"]どうやら私は、悪くないタイミングで滑り込めたようだ。
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]あなたに会うのは、ハイドン製薬の件以来だな。
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]あの時はおしゃべりに夢中で、あなたとミュルジスさんにビールをご馳走し忘れてしまってすみません。
+[charslot(slot = "r", name = "avg_npc_896_1#3$1", focus="r")]
+[name="サリア"]マイレンダー基金が多方面に影響力のある組織だということは知っていたが、ケルシー医師から知らせを受けた時は驚いた。あなたたちはどう知り合ったんだ？
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]単に古い友人だというだけのことですよ。
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]この件で、マイレンダー基金はどういった役割を担っている？
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]政治はお好きですか？　サリアさん。
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]……好んでいるとは言えないな。
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]であれば、その質問に答える必要はあるでしょうか？
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name="avg_npc_901_1#1$1", duration = 1, isblock=true)]
+[name="クルビア兵"]大佐は今、副大統領に会いに行くところとのことで……そちらの身元の確認及び、お二人が十三区にお入りになることへの同意も取れました。
+[name="クルビア兵"]とはいえ、目下こちらでは化学原料の漏洩リスクについて緊急調査を行っておりますため、事故の中心地であるトリトン第三化学工場に近づくことはできません。
+[name="クルビア兵"]加えて、お二人の身辺警護とサポートのため、何人かこちらの人間をつけさせていただきます。
+[dialog]
+[charslot]
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="none")]
+[name="サリア"]……
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]わかりました。問題ありません。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g8_alley_n",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", bstart=0.2,bend=0.7, name = "avg_108_silent_1#1$1", posfrom="-300,0", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "m", name = "avg_108_silent_1#1$1", duration=1.5, isblock=true)]
+[name="サイレンス"]ふぅ……なんとか潜り込めた。
+[dialog]
+[charslot(slot = "m", focus="none")]
+[PlaySound(key="$d_avg_devicebeep", volume=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_drone", volume=1, loop=true, channel="b")]
+[delay(time=2)]
+[StopSound(channel="b", fadetime=2)]
+[charslot(slot = "m", name = "avg_108_silent_1#1$1")]
+[name="サイレンス"]次は、ドローン二台で偵察してみよう。100メートルくらいの距離でいいかな。
+[charslot(slot = "m", name = "avg_108_silent_1#1$1")]
+[name="サイレンス"]目の前に見えるのが、トリトンの工場のはず。ロドスで学んだ隠密行動をうまく活かせるといいけど……とにかく、慎重に行こう。
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_108_silent_1#10$1")]
+[name="サイレンス"]本当に、ここに伝達物質の手がかりがあるのかな？
+[dialog]
+[musicvolume(volume=0.4, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="29_g5_laboratory",screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_108_silent_1#8$1", focus="l")]
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="none")]
+[name="サイレンス"]伝達物質の一部が行方不明になってる？
+[charslot(slot = "r", name = "avg_4048_doroth_1#7$1", focus="r")]
+[name="ドロシー"]そうなの。正確には、伝達物質を含む実験用物資ごと行方がわからなくなってしまって……本来は整理のためにほかの物とまとめて本部に輸送する予定だったんだけど。
+[charslot(slot = "l", name = "avg_108_silent_1#7$1", focus="l")]
+[name="サイレンス"]つまり、誰か盗んだ人がいるんだ。
+[charslot(slot = "r", name = "avg_4048_doroth_1#6$1", focus="r")]
+[name="ドロシー"]それも、高確率でライン生命内部にね。
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="ドロシー"]そこでお願いなんだけど、この件の調査を手伝ってくれない？　あなたに、トリマウンツへ行って調べてみてほしいの。
+[charslot(slot = "l", name = "avg_108_silent_1#10$1", focus="l")]
+[name="サイレンス"]私に？
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="ドロシー"]ええ。私は、359号基地に残って軍の調査に協力しないといけなくて、しばらく動けそうにないから。
+[charslot(slot = "l", name = "avg_108_silent_1#5$1", focus="l")]
+[name="サイレンス"]軍と交渉するつもり？
+[charslot(slot = "r", name = "avg_4048_doroth_1#8$1", focus="r")]
+[name="ドロシー"]心配しないで。こういうやり取りは好きじゃないけれど、できないわけでもないから。だって私も、ライン生命の主任なのよ？
+[charslot(slot = "r", name = "avg_4048_doroth_1#7$1", focus="r")]
+[name="ドロシー"]私のことよりも、伝達物質が誰かの野望のために悪用されることのほうがずっと心配だわ。
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="ドロシー"]それで……お願いしてもいいかしら？
+[charslot(slot = "l", name = "avg_108_silent_1#10$1", focus="l")]
+[name="サイレンス"]……でも……
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="ドロシー"]――あなたはパルヴィス主任の教え子であるにもかかわらず、359号基地に現れた。
+[charslot(slot = "r", name = "avg_4048_doroth_1#8$1", focus="r")]
+[name="ドロシー"]初めは少し戸惑ったけれど、今ではもうわかってるわ。あなたは助けを求めて私の元へ来たのよね。
+[name="ドロシー"]あるいは、アーツ応用課主任が信頼に足る人物かどうかを確かめに来たと言うべきかしら。
+[charslot(slot = "l", name = "avg_108_silent_1#6$1", focus="l")]
+[name="サイレンス"]……ごめん。
+[charslot(slot = "r", name = "avg_4048_doroth_1#8$1", focus="r")]
+[name="ドロシー"]謝らないで。実際、私は危うく悲惨な結果を生み出すところだったんだから……あなたには感謝しないとね。
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="ドロシー"]それにこれは、あなたにお願いしたいと思った理由でもあるのよ。あなたは自分の基準を持っていて、自分の中の答えを探している人だから。
+[charslot(slot = "l", name = "avg_108_silent_1#6$1", focus="l")]
+[name="サイレンス"]だけど……
+[charslot(slot = "r", name = "avg_4048_doroth_1#1$1", focus="r")]
+[name="ドロシー"]それ以前に、私に頼まれなくたって、あなたはトリマウンツに戻るつもりだったんでしょう？
+[dialog]
+[charslot(slot = "l", name = "avg_108_silent_1#6$1", focus="l")]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_108_silent_1#7$1", focus="l")]
+[name="サイレンス"]……うん。
+[dialog]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="29_g8_alley_n",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_108_silent_1#8$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="サイレンス"]……
+[dialog]
+[charslot(slot = "m", focus="none")]
+[PlaySound(key="$d_gen_soldiersrun", volume=0.6)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_108_silent_1#4$1")]
+[name="サイレンス"]まずい……どうして急に巡回兵が増えたんだろう？
+[dialog]
+[charslot(slot = "m", name = "avg_108_silent_1#4$1", isblock=true)]
+[charslot(slot = "m", posfrom="0,0", posto="-300,0", afrom=1, ato=0, duration=1)]
+[delay(time=2)]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", name = "avg_npc_901_1#1$1", duration=1)]
+[charslot(slot = "l", name = "avg_npc_901_1#1$1", duration=1)]
+[delay(time=2)]
+[charslot(slot = "l", focus="l")]
+[name="クルビア兵A"]クソッ、こっちはいない。そっちはどうだ？
+[charslot(slot = "r", focus="r")]
+[name="クルビア兵B"]この辺の路地は全部探したが見当たらなかった。
+[charslot(slot = "l", focus="l")]
+[name="クルビア兵A"]確かに今は副大統領との関係を悪くするわけにいかないし、あの二人を入れるしかなかったとはいえ、きちんとついてないとまずいだろう……！　どうして見失ったんだ！？
+[charslot(slot = "r", focus="r")]
+[name="クルビア兵B"]二人とものんびり歩いてるだけだったのに、俺が靴ひもを結んでる間に角を曲がったと思ったら、姿が消えてたんだ……
+[charslot(slot = "l", focus="l")]
+[name="クルビア兵A"]あのブリキ男を甘く見すぎてたらしいな。マイレンダーの連中は神出鬼没の奴ばかりだってのに。
+[charslot(slot = "r", focus="r")]
+[name="クルビア兵B"]とにかく、俺は上に状況を報告してくる。そっちは引き続き何人か連れて捜索に当たってくれ。
+[name="クルビア兵B"]そうだ、工場のほうに人員を多めに割くんだぞ。
+[dialog]
+[PlaySound(key="$d_gen_soldiersrun", volume=1, loop=true, channel="a")]
+[charslot(slot = "l", posfrom="0,0", posto="-200,0", afrom=1, ato=0, duration=1)]
+[delay(time=0.3)]
+[charslot(slot = "r", posfrom="0,0", posto="200,0", afrom=1, ato=0, duration=1)]
+[delay(time=2)]
+[StopSound(channel="a", fadetime=1)]
+[delay(time=2.5)]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", duration=2)]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", duration=2,isblock=true)]
+[charslot(slot = "r", name = "avg_npc_896_1#6$1", focus="r")]
+[name="サリア"]あなたの反射神経と隠密能力には感服するな。
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]過分なお言葉です。彼らを排除するのは容易かろうとも、必要がなければ実力行使をしないに越したことはありません。
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]さて……ここが第三化学工場か。
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g8_jail",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]    
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", duration=1.5)]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", duration=1.5, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]周りに非常線が張られていますね。どこもかしこも完全武装の兵士が配備されていますし、これ以上は近付けないでしょう。
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]この場所からでも十分よく見えるさ。
+[dialog]
+[charslot]
+[PlayMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+サリアの視線は群衆の向こう、目を引く黄色いテープを越えて、後ろの工場へと向けられた。
+並んでいた建物は無残な姿になっていて、無数の破片が床に焦げ跡とへこみを残していた。相次ぐ爆発は外壁を吹き飛ばしたようで、基礎構造のみが残されており、外からは中が丸見えだ。
+建物の中央には、まるで大がかりなインスタレーションアートのように、巨大なリング状の機械が地面に斜めに突き刺さっていた。
+爆発の原因はこれなのだろう。
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="none")]
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]収穫はありましたか？
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]落下物の形状や機械構造から用途を特定することはできないが、地上施設に用いられる装置ではなさそうだな。
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]あれは空から落ちてきましたからね。
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]……
+[charslot(slot = "r", name = "avg_npc_896_1#1$1", focus="r")]
+[name="サリア"]遠すぎて細かいところまでは確かめられないが……あれには、ライン生命の技術が関わっただろう痕跡がある。
+[charslot(slot = "r", name = "avg_npc_896_1#10$1", focus="r")]
+[name="サリア"]正確には……間違いなく、クリステンが関与していると考えていいだろうな。
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]……
+[name="ブリキ"]「ホライズンアーク計画」。
+[charslot(slot = "r", name = "avg_npc_896_1#3$1", focus="r")]
+[name="サリア"]なに？
+[charslot(slot = "l", name = "avg_npc_900_1#1$1", focus="l")]
+[name="ブリキ"]ライン生命におけるあなたの立場を、そしてクリステンとの関係を考えれば、この名をご存じないというのは驚きです。
+[charslot(slot = "r", name = "avg_npc_896_1#9$1", focus="r")]
+[name="サリア"]……
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g8_jail",screenadapt="coverall", xScale=1.3,yScale=1.3)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_108_silent_1#1$1", duration=1, isblock=true)]
+[name="サイレンス"]気付かれてはいないみたい……
+[dialog]
+[BackgroundTween(xFrom=0, xTo=150, duration=2,ease="OutQuad",block=false)]
+[charslot(slot = "m", posfrom="0,0", posto="300,0", afrom = 1, ato = 0, duration=2)]
+[delay(time=2.5)]
+[charslot]
+[playsound(key="$d_avg_liquidmetal")]
+[charslot(slot = "m", posfrom="0,0", posto="-250,0", duration=0)]
+[charslot(slot = "m", name = "avg_npc_533_1#1$1", duration=0.8)]
+[delay(time=2)]
+[playsound(key="$rungeneral")]
+[charslot(slot = "r", name = "avg_108_silent_1#4$1", posfrom="300,0", posto="0,0", duration=1,isblock=true)]
+[charslot(slot = "r", focus="r")]
+[name="サイレンス"]伝達物質……！　本当にここにあった！
+[dialog]
+[playsound(key="$d_avg_liquidmetalfly")]
+[charslot(slot = "m", name = "avg_npc_533_1#1$1", posfrom="-250,0", posto="-400,0", afrom=1, ato=0, duration = 1)]
+[delay(time=2)]
+[charslot(slot = "r", focus="r")]
+[name="サイレンス"]消えた……
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "r", posfrom="0,0", posto="-500,0", afrom=1, ato=0, duration = 1.5)]
+[delay(time=2)]
+[charslot]
+[delay(time=1)]
+[BackgroundTween(xFrom=150, xTo=0, duration=2, ease="OutQuad",block=false)]
+[delay(time=2.5)]
+[playsound(key="$d_avg_liquidmetalfly")]
+[charslot(slot = "m", name = "avg_npc_533_1#1$1", duration = 1.5)]
+[delay(time=2)]
+[playsound(key="$d_avg_magic_1")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[charslot(duration=1.5)]
+[delay(time=2)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_108_silent_1#2$1", posfrom="-300,0", posto="0,0", duration = 2,isblock=true)]
+[name="サイレンス"]ドロシーの言った通りだ。伝達物質はお互いに反応し合うから、彼女にもらった伝達物質を利用すれば、見つけるのはそう難しくない……
+[charslot(slot = "m", name = "avg_108_silent_1#10$1")]
+[name="サイレンス"]だけど、どう見ても少なすぎて、聞いてた数とは合わないな。まだほかにも近くにいるってこと……？
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_108_silent_1#8$1")]
+[name="サイレンス"]……待って。ここって……
+[charslot(slot = "m", name = "avg_108_silent_1#8$1")]
+[name="サイレンス"]トリトンの工場？
+[dialog]
+[charslot]
+そこには巨大な廃墟があった。
+この場所で一体どれだけの死傷者が出たのだろうか？　ニュースではその数字への言及はなかったことがサイレンスの脳裏によぎる。
+そうして彼女は、破壊された359号基地のことを思い返した。目の前の光景と同様、あの場所も原形をとどめておらず、以前の様子など想像もつかない状況だった。
+[charslot(slot = "m", name = "avg_108_silent_1#4$1")]
+[name="サイレンス"]あれは……サリア？　隣にいるのは誰だろう……
+[charslot(slot = "m", name = "avg_108_silent_1#4$1")]
+[name="サイレンス"]……
+[charslot(slot = "m", name = "avg_108_silent_1#8$1")]
+[name="サイレンス"]サリア……この件にも、あなたが関わっているの？
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]      
+[charslot(slot = "m", name = "avg_npc_895_1#1$1")]
+[name="イフリータ"]なあ、これってどこに向かってんだ？
+[charslot(slot = "m", name = "avg_npc_042")]
+[name="ロスモンティス"]わからない……
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="ケルシー"]トリマウンツの拠点へ向かっている。サリアと会う約束を取り付けたのでな。
+[charslot(slot = "m", name = "avg_npc_895_1#8$1")]
+[name="イフリータ"]サリア！？　もうずっと会ってねーけど、会えるのか！？
+[charslot(slot = "m", name = "avg_npc_895_1#6$1")]
+[name="イフリータ"]でも、ケルシーがサリアに会いに行くってことは、きっと忙しくなるはずだし、オレサマと話す時間なんかねーかな？
+[charslot(slot = "m", name = "char_003_kalts_1")]
+[name="ケルシー"]君とロスモンティスは、ひとまずドクターのそばを離れないようにするのが得策だ。
+[charslot(slot = "m", name = "avg_npc_895_1#6$1")]
+[name="イフリータ"]……
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="イフリータ、さっきはどこまで話したっけ？;イフリータ、道中の話の続きを頼めるか。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_npc_895_1#8$1")]
+[name="イフリータ"]あっ、そうだった……あの星が落ちてきた時、ロスモンティスに昔サイレンスが聞かせてくれた話をしてやってたんだ。
+[charslot(slot = "m", name = "avg_npc_895_1#1$1")]
+[name="イフリータ"]オマエあの時メモしてなかったけど、ちゃんと覚えてるだろーな？
+[charslot(slot = "m", name = "avg_npc_042")]
+[name="ロスモンティス"]うん、覚えてるよ。
+[dialog]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[delay(time=2)]
+[Subtitle(text="その夜、街中の誰もが王妃のつぶやくような祈りの言葉と、砂へ滴る涙の音を聞いたような気がしました。そうしてついに……王妃は宮殿の高台で気を失ってしまいました。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="すると、王妃の思いが星を動かし、一つの星が広大な空を突き抜けて老いた王様のもとへやってきました。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="王様は無限の光に飲まれ、その生涯で見たことも想像したこともないような光景を目にしました。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="翌朝、王妃が目覚めると、そこには大きな穴の空いた宮殿と、とうにこと切れた王様の姿だけがありました。王様の硬直した口元には笑みが浮かんだままだったそうです。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="あの星だけが、王妃への見返りだというのでしょうか？", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle]
+[delay(time=1)]
+[Subtitle(text="星は王妃の願いを叶えました。そして、同時に彼女の愛する人を連れて行ってしまったのです。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle]
+[Dialog]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

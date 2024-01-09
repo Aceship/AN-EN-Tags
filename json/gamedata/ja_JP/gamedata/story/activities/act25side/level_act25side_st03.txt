@@ -1,0 +1,1592 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="32_RL2_cliffday",screenadapt="coverall")]
+[playMusic(intro="$loading_intro",key="$loading_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+イベリアのどこにでもあるような海岸。
+ほど近くにある崩れた壁は、かつてこの場所が栄えた村だった可能性を示している。しかし今では、壁に残された風鈴が浜辺に打ち寄せる波の音と呼応するばかりだ。
+[name="恐魚"]……（這いずる音）
+波が一匹の恐魚を浜辺へと打ち上げた。
+いや、それは波に乗って上陸してきたのかもしれない。
+いずれにせよ、次の目的地などないようで、それはすべての同族と同じように、ただ徘徊し、辺りを眺めていた。
+本来なら、それは何も得られないはずだった。荒れ果てた土地で見られるものなど、果てしない海と空だけだ。
+しかし次の瞬間、それは何かを感じたように、ある方向を見た。
+古より不変の空にさざ波が広がっている。
+[dialog]
+[playsound(key="$d_avg_fish_howl",volume=0.7)]
+[charslot(slot = "m", name = "avg_npc_457_1#1$1",duration=1)]
+[Delay(time=0.5)]
+[name="恐魚"]（いぶかしげに低く唸る）
+[charslot(slot = "m", focus = "n")]
+その方向を見ても、あるのは見渡す限りの空だけだ。
+けれど、続けてそれの同胞が、その先祖が、その大群が――
+すべての目が、天高く空を向いた。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="28_g3_slumstreets_night",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$dooropenquite")]
+[charslot(slot = "r", name = "avg_npc_496_1#1$1",duration=1)]
+[charslot(slot = "l", name = "avg_npc_493_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "m", focus = "n")]
+ある従者が、店主に頭を下げながら、自らの主人――宮廷音楽家の男を支えてバーから出てきた。
+[Dialog]
+[charslot(slot = "m", focus = "all")]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0" ,duration=0.8)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_496_1#1$1",focus="r")]
+[name="従者"]これ以上飲まれるのはおやめください、旦那様。
+[Dialog]
+[charslot(slot = "l", name = "avg_npc_493_1#1$1",focus="l")]
+[CameraShake(duration=0.3, xstrength=20, ystrength=10, vibrato=15, randomness=90, fadeout=true, block=false)]
+[charslot(slot ="left", action="shake", power=20, times=30, duration=0.3)]
+[playsound(key="$bodyfalldown2",voluyme=0.7)]
+[charslot(slot = "r",posfrom = "-100,0", posto = "0,0" ,duration=0.5)]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_npc_493_1#1$1",focus="l")]
+[name="音楽家"]と……止めないでくれ……
+[name="音楽家"]曲が、曲が書けないんだ……こ、このままでいるくらいなら……酒におぼれて死んだほうがマシだ！
+[charslot(slot = "r", name = "avg_npc_496_1#1$1",focus="r")]
+[name="従者"]そんな、昨日は何曲も試作していらしたではないですか。三曲目など非常に素晴らしかったと思いますよ。
+[charslot(slot = "l", name = "avg_npc_493_1#1$1",focus="l")]
+[name="音楽家"]ははっ、お前はやはり私のことをわかっているな！
+[name="音楽家"]だが、あれじゃダメなんだ、まだ足りないものがある！
+[name="音楽家"]少しだけ、あとほんの少しだけ、一番大切な何かが足りないんだ！
+[name="音楽家"]わかるか？　サイケデリックで壮大でクレイジーな……イメージがほしいんだよ。
+[charslot(slot = "r", name = "avg_npc_496_1#1$1",focus="r")]
+[name="従者"]もちろんわかりますとも。旦那様は常に、そうしたものを追い求めていらっしゃいますからね。
+[charslot(slot = "l", name = "avg_npc_493_1#1$1",focus="l")]
+[name="音楽家"]んん？　ん……んんん？
+[name="音楽家"]我ながら、かなり酔っ払っているようだな。
+[charslot(slot = "r", name = "avg_npc_496_1#1$1",focus="r")]
+[name="従者"]どうされたのですか？
+[charslot(slot = "l", name = "avg_npc_493_1#1$1",focus="l")]
+[name="音楽家"]空の果てが……波打っているんだ。
+[charslot(slot = "r", name = "avg_npc_496_1#1$1",focus="r")]
+[name="従者"]波ですか？　もしやお医者様にお連れしたほうが……いや、あれは一体？
+[charslot(slot = "m", focus = "n")]
+従者がつられて空を見上げると、そこには、光の輪のような波紋が広がっていた。
+[charslot(slot = "r", name = "avg_npc_496_1#1$1",focus="r")]
+[name="従者"]これは……まさか私にまで酔いが移ってしまったのか？
+[charslot(slot = "l", name = "avg_npc_493_1#1$1",focus="l")]
+[name="音楽家"]ははっ、わはははは！　波の如き雲に、まさに天幕の如き空か！　いいぞ、最高だ！
+[name="音楽家"]行くぞセロン、行くんだ、早く！　我が家まで連れて行ってくれ！
+[name="音楽家"]いや、その前にペンだ！　早く！
+[charslot(slot = "r", name = "avg_npc_496_1#1$1",focus="r")]
+[name="従者"]はい、こちらに。インスピレーションが湧いてきましたか？
+[charslot(slot = "l", name = "avg_npc_493_1#1$1",focus="l")]
+[name="音楽家"]インスピレーション？　いいや、私が見たのはその泉だ！
+[charslot(duration=0.5)]
+薄暗い街灯の下、音楽家は人目も気にせず、地べたに這いつくばって一心に筆を走らせた。
+その晩は、無数の芸術家が夜通し眠ることなく過ごした。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_manorindoor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_176",duration=1)]
+[delay(time=1.5)]
+[name="ヴィクトリアの伯爵"]このお気楽な連中を見たまえ。
+[name="ヴィクトリアの伯爵"]彼らは、嵐がとうに過ぎたと思い込み、ヴィクトリアは取るに足らない小さな混乱期を経験しただけだと考えている。
+[name="ヴィクトリアの伯爵"]彼らが持っているものは今なお存在しており、これからもそれは変わらないと思っているんだ。
+[name="ヴィクトリアの伯爵"]私もこういう健康な精神を持てたらどんなに楽だろうな。
+[charslot]
+[Dialog]
+[charslot(slot = "l", name = "avg_npc_176")]
+[charslot(slot = "r", name = "avg_npc_248",duration=0.5,posfrom = "100,0", posto = "0,0")]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_176",focus="n")]
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]伯爵様、ご覧いただきたいものがございます。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]おや。こんな時に、君が訳もなく興を削いでくるとは思えんな。何があった？
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]クルビアで何かが起きたものと思われます。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]「思われる」というのは？
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]急ぎ詳細な情報を集めさせているところです。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]反抗期の我が子が、またご自慢の科学技術で理解に苦しむいたずらをしでかしたと？
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]まだそうと決まったわけではありません。目下断言できるのは、伯爵様直々にこの件をご覧いただく必要があるということだけです。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]ここに持ってくるのではなく、私に足を運ばせるのか？　一体どれだけ重要な出来事なんだ？
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]私の力では……お持ちすることは、とてもできかねますもので。
+[charslot(slot = "m", focus = "n")]
+冗談のつもりで聞いた伯爵は、最も信頼するその部下が苦笑いを浮かべていることに気付いて少し驚いた。
+しかし、彼の参謀は事実だけを伝える人物である。何か起きたことは確かなのだろう。
+[playsound(key="$d_gen_walk_n")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+伯爵が窓辺へと向かうと、参謀の言葉が嘘ではないことがすぐに理解できた。
+それは彼の元へ持ってくることなどできない情報であり、誰もが看過できようもない現実だった。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]これはどういった自然現象なんだ？
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]取り急ぎ専門家を招集し、先日クルビアから届いた情報と合わせて有力な推測までは立てさせました。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]……『359号基地スパイからの報告』。それに、『マイレンダー基金に関する調査報告』か。
+[name="ヴィクトリアの伯爵"]これは何だね？　学術論文か？　阻隔層が……？
+[name="ヴィクトリアの伯爵"]要点を教えてくれ。
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]空に見えているこの波紋はクルビア方面から広がっており、非常に不自然なものです。
+[name="参謀"]現状の推測によると、これは科学界において長らく忘れ去られていた仮説と限りなく一致しているのではないかということでした。
+[name="参謀"]それは――我々の頭上にある空は、偽物であるという仮説です。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]……
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]何かが起きたのは確かです。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]我々は何も知らないということもな。
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]クルビアに送ったスパイはすべて動員しておりますので、じきに結果をお持ちできるかと。
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[name="ヴィクトリアの伯爵"]コストを惜しまず続けなさい。明日の朝までには結論を手にノーマンディー公爵のご邸宅に到着しておかなくては。
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]はっ。
+[charslot]
+[dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "m", name = "avg_npc_177",duration=1)]
+[delay(time=2)]
+[name="こびへつらう貴族"]ごきげんよう伯爵様。我が家の遠縁の甥を紹介させていただきたいのですが……
+[charslot]
+[charslot(slot = "l", name = "avg_npc_176",focus="l")]
+[charslot(slot = "r", name = "avg_npc_248",focus="n")]
+[name="ヴィクトリアの伯爵"]……
+[name="ヴィクトリアの伯爵"]今夜のパーティーはここまでにしよう。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_177")]
+[name="こびへつらう貴族"]えっ？
+[charslot]
+[charslot(slot = "l", name = "avg_npc_176",focus="n")]
+[charslot(slot = "r", name = "avg_npc_248",focus="r")]
+[name="参謀"]伯爵様はもうお休みになられますので、恐れ入りますが本日のところはお引き取りいただけますか、子爵。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_177")]
+[name="こびへつらう貴族"]わ、わかりました。
+[dialog]
+[charslot(duration=1)]
+[delay(time=2)]
+伯爵は何も言わずに遠くの空を眺め続けた。
+その晩、路地では陰謀が生まれ、無数の政治家たちが眠れぬ夜を過ごした。
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[name="電子音声"]警告――
+[playMusic(intro="$m_bat_imprisonment_intro",key="$m_bat_imprisonment_loop", volume=0.6)]
+[name="電子音声"]エネルギー過負荷状態です。エネルギー過負荷状態です。溢れ出したエネルギーによる衝撃波が、フォーカスジェネレーター全域に影響しています。
+[name="電子音声"]第二分離プログラムの加速が完了しました。すべてのサブ船室、付属装置、及びエネルギー外部供給路は、「星の庭」本体から分離されます。
+[name="電子音声"]総員、速やかに脱出ポッドに避難し、帰還プログラムを実行してください。
+[name="電子音声"]繰り返します――総員、速やかに脱出ポッドに避難し、帰還プログラムを実行してください。
+[Dialog]
+[CameraShake(duration=-1, xstrength=3, ystrength=6, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_902_1#1$1",duration=0.5)]
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_902_1#1$1",focus="l")]
+[name="統括課職員A"]*クルビアスラング*！　落下の浮遊感が煩わしいな……なんで脱出ポッドをもっと小さくしておかなかったんだ！　こんな部屋ごと落ちるなんてどうかしてんだろ！
+[name="統括課職員A"]まずはさっさと平衡維持システムを起動して、脱出ポッドを安定させないと、全身バキバキに骨折しちまうぞ！
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員B"]わかってる！　今ロックを解除してるんだよ！　こんな時に手動でやらなきゃいけないなんて！
+[dialog]
+[PlaySound(key="$d_avg_glass_break")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_typewriter")]
+[delay(time=2)]
+[PlaySound(key="$d_avg_mechalock")]
+[CameraShake(duration=1.5, xstrength=3, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=true)]
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員B"]ふぅ――よし、安定した！　次は帰還プログラムの確認だな。
+[name="統括課職員B"]減速用のパラシュートも、メインパラシュートも準備よし。着陸軌道の自動調整が始まったぞ……今見上げれば、まだ統括にお別れを言う時間くらいはありそうだ。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員C"]おいブリット、廊下を見てくれ。あの人……
+[name="統括課職員C"]ミュルジス主任だよな？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[charslot(slot = "l", name = "avg_249_mlyss_1#2$1")]
+[Background(image="38_g4_rhinelab_corridor_rised",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="ミュルジス"]……
+[Dialog]
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",posfrom = "200,0", posto = "0,0",duration=0.7)]
+[delay(time=1.5)]
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員C"]主任、早く船室へ！　まだ座席はありますし、あなたのIDなら入れるはずです！
+[charslot(slot = "l", name = "avg_249_mlyss_1#2$1",focus="l")]
+[name="ミュルジス"]……
+[name="ミュルジス"]これは、脱出ポッド……？
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員C"]この脱出ポッドは「アーク・ワン」設計当初から存在するもので、負荷テストとナビゲーションテストも何度か済ませてありますのでどうかご安心ください。
+[charslot(slot = "l", name = "avg_249_mlyss_1#8$1",focus="l")]
+[name="ミュルジス"]あなた、クロードよね。覚えてるわ……かなり長くコンポーネント統括課に所属していたはずだったわね。
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員C"]フォーカスジェネレーターが空に上がる前、統括――いえ、クリステンさんは、コンポーネント統括課を解体なさいました。
+[name="統括課職員C"]ですがエネルギーチャージと、フォーカシングに人手がいるという話で、最後の仕事として業務にあたっていた次第です。現在、すべての調整及びメンテナンスと防衛任務が完了しましたので……
+[name="統括課職員C"]地上に戻り次第、我々は新しい契約を得て、ライン生命を、そしてトリマウンツを去る予定でおります。
+[name="統括課職員C"]そういえば……こちらを。
+[dialog]
+[charslot(slot = "m", focus = "all")]
+[charslot(slot = "r",posfrom = "0,0", posto = "-50,0",duration=0.5)]
+[delay(time=0.6)]
+[charslot(slot = "r",posfrom = "-50,0", posto = "0,0",duration=0.4)]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_249_mlyss_1#8$1",focus="l")]
+[name="ミュルジス"]これは？
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員C"]遠隔計測の記録器です。
+[name="統括課職員C"]あの小型の生態研究園の生物データを、リアルタイムで記録しております。本当は地上に戻ってから生態課にお届けするつもりでしたが、統括があなたのお役に立つはずだと仰っていましたので。
+[name="統括課職員C"]つい先ほど、データが更新されたところなんです。大変残念なのですが……
+[charslot(slot = "l", name = "avg_249_mlyss_1#7$1",focus="l")]
+[name="ミュルジス"]待って、まだ言わないで！
+[charslot(slot = "l", name = "avg_249_mlyss_1#3$1",focus="l")]
+[name="ミュルジス"]これには……何年もかけてきたんだから……
+[charslot(slot = "l", name = "avg_249_mlyss_1#4$1",focus="l")]
+[name="ミュルジス"]……うん、もう大丈夫。言ってちょうだい。
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員C"]星の庭が阻隔層を突破したあと、ごく短時間の間に、753種いた植物の90パーセント以上が死んでしまいました。残りも……恐らく、生存は難しいと思います。
+[charslot(slot = "l", name = "avg_249_mlyss_1#3$1",focus="l")]
+[name="ミュルジス"]……あはは。
+[name="ミュルジス"]ねえクリステン、「星のさや」の外っていったいどんな場所？
+[name="ミュルジス"]こうなるかもしれないってわかってたのに、旅を終わらせようとは思わなかったの？
+[name="ミュルジス"]あなたはみんなとの約束を果たしてくれた。だけど初めから、誰一人連れていく気はなかったのね？
+[name="ミュルジス"]だったらサリアは……
+[dialog]
+[CameraShake(duration=-1, xstrength=3, ystrength=6, vibrato=30, randomness=90, fadeout=false, block=false)]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="38_g5_rhinelab_indoor",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員A"]そんな……加速度が増加している……！？　落下速度が少しも減らない……まずい、これじゃ墜落するぞ！
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$alarmenter")]
+[delay(time=1)]
+[PlaySound(key="$alarmenter")]
+[delay(time=0.6)]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員A"]ブリット、どういうことなんだ！？
+[charslot]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員B"]エネルギーの流出で起きた衝撃波が、帰還プログラムに干渉しているんだろう……これじゃ手の打ちようがない。ドラッグパラシュートは一切効かないし、平衡維持システムもじきに機能停止する！
+[charslot]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員A"]重力操作用のアーツモジュールも搭載されてたはずだろ！　あれを動かすんだ！　早く！
+[charslot]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員B"]そうだ……まだあれが……！　ッ、ダメだ、全体の三分の一が故障してる。高温とチャージ中の震動のせいか！？
+[name="統括課職員B"]現在地、高度3454.7メートル……まるで止まらない！　俺が飛び降りて重量を減らしてやりたいくらいだよ！
+[name="統括課職員B"]まずい、断熱層が！　速度が速すぎて、今にも燃え尽きそうだ！　破損率60パーセント！
+[multiline(name="統括課職員B")]壁も変形しているし、このままじゃ空中分解してしまう……一体どうすれば――
+[charslot(slot = "m",posfrom = "0,0", posto = "450,20",duration = 0.5)]
+[delay(time=0.3)]
+[PlaySound(key="$d_avg_punchwindow")]
+[delay(time=0.4)]
+[PlaySound(key="$bodyfalldown1")]
+[charslot(slot = "m",posfrom = "450,20", posto = "450,-50",duration = 0.6,afrom = 1, ato = 0)]
+[multiline(name="統括課職員B")]うっ……！
+[charslot]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員A"]おい、ブリット！？　*クルビアスラング*！　気絶するならアーツユニットを起動してからにしてくれよ！
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[charslot(slot = "l", name = "avg_249_mlyss_1#2$1",focus="l")]
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[Background(image="38_g4_rhinelab_corridor_rised",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員C"]どうしてなんだ？　帰還用の設備は何度もテストを経ているのに……
+[charslot(slot = "l", name = "avg_249_mlyss_1#2$1",focus="l")]
+[name="ミュルジス"]有人状態の船室が限界の高度から地上に戻るなんて、どんなテストをしても再現できない状況でしょ。科学は身を以て検証しなければならないものだし、あたしたちは今まさにその検証をしているの。
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員C"]急いで中に入りましょう。座席には緩衝装置と酸素供給機がありますから、あるいは……
+[charslot(slot = "l", name = "avg_249_mlyss_1#2$1",focus="l")]
+[name="ミュルジス"]このままの速度で落ちれば、一分後には地面に激突して――
+[name="ミュルジス"]誰も生き残れないわよ。
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員C"]*クルビアスラング*、最後にビデオレターの一つも残してやれないのか……
+[charslot(slot = "l", name = "avg_249_mlyss_1#8$1",focus="l")]
+[name="ミュルジス"]……あなたを待ってる人がいるってこと？
+[charslot(duration=0.5)]
+その時、強い遠心力によって廊下の壁に叩きつけられたクロードの顔は、ガラスに張りつく形になり、彼はその窓の外にきらきらと輝く小さな何かを見た。
+それは――分厚いカルシウム結晶を固く身に纏った人間だ。
+彼ははっきりとそれが現実であることを認識した。だがそれは、その人がこちらとほぼ同じ、どころかそれ以上の速度で空中を落下していることを意味している。
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員C"]……サリア主任！？
+[name="統括課職員C"]あれじゃ多分気を失ってるはずだ……こんな高さから落ちたら、カルシウムの層がどれだけ分厚いとしても、卵の殻も同然なんだぞ――主任だって、生身じゃ持たない！
+[name="統括課職員C"]クソッ……！
+[charslot]
+[PlaySound(key="$d_avg_watermagic_1")]
+その時――水が現れた。
+それは広く広く広がっていく。
+脱出ポッドの壁からしみ出した水が、生き物のように空中へ伸びていく。
+高速で落下している脱出ポッドの中では、大量の水が重力に引っ張られて飛散したが、それでもサリアの落ちていくほうに分厚い障壁が幾重にも形成された。
+クロードは、岸も底も存在しない湖を見たように思った。その中から湖面を見上げれば、波が幾重にも重なり合い、頭上でゆらゆらと揺れている。
+少しでも余裕があったなら、ウルサスの詩人を真似て、目の前の光景を言い表す言葉を考えていただろうが――
+室内にも水が押し寄せて、彼は船室に押し戻された。
+[name="統括課職員C"]ミュルジス主任……あなた……
+[name="統括課職員C"]……身体が融けてるじゃないですか！？
+[dialog]
+[charslot(slot = "m", name = "avg_249_mlyss_1#2$1",afrom = 1, ato = 0.7,duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_249_mlyss_1#2$1",afrom = 0.7, ato = 0.7)]
+[name="ミュルジス"]――クリステンと喧嘩してきたのね、サリア……
+[charslot(slot = "m", name = "avg_249_mlyss_1#4$1",afrom = 0.7, ato = 0.7)]
+[name="ミュルジス"]それでも、あなたですら追いつくことはできなかった。あたしたちは結局何もできなかったんだわ……
+[charslot(slot = "m", name = "avg_249_mlyss_1#2$1",afrom = 0.7, ato = 0.7)]
+[name="ミュルジス"]とにかく、この水の障壁が、何度か衝撃を和らげてくれるから。あなたが生き延びてくれるように願ってるわ。
+[charslot(slot = "m", name = "avg_249_mlyss_1#3$1",afrom = 0.7, ato = 0.7)]
+[name="ミュルジス"]うう……あたしのこの姿、きっと醜いわよね……
+[name="ミュルジス"]だけど、もしこれまでの間にも、今みたく身体中の水を使い切る覚悟を持てていたら、何かを変えられていたのかしら？
+[charslot(duration=0.5)]
+[PlaySound(key="$d_avg_watermagic_2")]
+洋々と広がる水が優しくすべてを包み込む。
+[name="ミュルジスの声"]みんな、息を止めて衝撃に備えなさい。水に飲まれたら窒息しちゃうから……
+[name="ミュルジスの声"]生きて、あなたたちを待つ人に会いに行くのよ。
+[dialog]
+[stopmusic(fadetime=1)]
+[delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+ライン生命設立後初めて迎えた新年の夜。
+会をお開きにする前、本当に三人でダンスなんて踊っただろうか？
+彼女はよく思い出せなかった。
+[dialog]
+[delay(time=1)]
+[CameraShake(duration=1.5, xstrength=13, ystrength=26, vibrato=30, randomness=90, fadeout=false, block=false)]
+[playsound(key="$d_avg_mechadown")]
+[playsound(key="$d_avg_planeshake",delay=0.5,channel="a")]
+[Dialog]
+[background]
+[charslot]
+[delay(time=5)]
+[Image(image="29_i10", fadetime=1, xScale=1.4, yScale=1.4, screenadapt="coverall",y=-60)]
+[ImageTween(image="29_i10", fadetime=0.5, yTo=-140, duration=12)]
+[delay(time=2)]
+[gridbg(imagegroup="38_g21_skystarry_L1/38_g21_skystarry_r1/38_g21_skystarry_L2/38_g21_skystarry_r2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720", x=-640, fadetime=4)]
+[largebgtween(duration = 100,yFrom = 720, yTo = 0,block = false)]
+[image(fadetime=4)]
+[playMusic(intro="$ghosthunter_intro",key="$ghosthunter_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="ねえサリア、何が見える？", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="空しか見えんな。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="そう、空が見えるわよね。私、子供の頃はこの切り株に座って、目の前にある山の斜面から両親が繰り返し試験飛行をするところを見ていたの。そのうち、私を乗せてくれるようにもなったけれど。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="二人が亡くなって以来、ここには初めて来たわ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="その件のせいで、お前は空を憎んでいる、と？", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="質問に答えるのが、二人の死に対する世間の反応を目にし、両親の遺品を調べたばかりの十歳の私だったら、「憎んでいる」と答えたんでしょうね。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="でも、それは今の私の答えとは違うわ。悩みや圧力、非難と嘲笑、そして……政府や企業の請求書なんてものが両親の歩みを止めたことはないし、そんなの気にする価値もないようなことだった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="両親は最後の最後まで迷いなく目標へと進んでいたのだから、自分自身に負けてしまっただけなのよ。私もこの旅が終点にたどり着けない定めなら、同じように途中で死んでも構わないと思ってるわ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="不吉なことを言うな。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私にできるかしら？　わからないけど、やるって決めたのよ。私は両親のすべてを受け継いで、二人よりも遠くまで歩いてきたんだから。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="クリステン……", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="サリア、別に私はあなたに何かを求めてるわけじゃなくて、ただ親友に過去の話をしているだけよ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="……そうか。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="それで、あなたの感想は？", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="話をしているだけじゃなかったのか？", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="はぁ……あなたってほんと駄獣みたいね……少しは何か言ってよ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="サリア"]空が美しいな。
+[Dialog]
+[charslot]
+[delay(time=1)]
+こんな体勢で空を目にした人などいないことも、星の庭がどんどん遠ざかっていることも、彼女にはわかっていたが……目を開けることができなかった。
+彼女は今高速で落下していた。
+風が鋭い音を立て、ナイフが顔をかすめるように、冷たく薄い空気が鼻腔へと流れ込み、呼吸が難しくなり始めている。
+カルシウム元素が急速に集められ、彼女の身体に張りついて分厚い結晶の層を形成した。これなら少なくとも激しい空気摩擦によって死ぬことはないが、落下時の衝撃はもはやどうしようもなかった。
+すべては終わったのだ。
+強い浮遊感にめまいが襲ってきて、彼女はもはや抵抗もできず意識を失った。
+[stopmusic(fadetime=2)]
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[gridbg]
+......
+数千メートルの空から落ちるにはたった数分で十分のはずだが、死の体験というのは、これほどまでに長いものなのだろうか？
+[playsound(key="$d_avg_divebubble",volume=0.5)]
+[playsound(key="$d_avg_fallairbed",delay=1,channel="a",volume=0.5)]
+彼女はかすかに、自分が水面に落ちたのを感じた。速度はわずかに減衰し、機械の唸る音の中、今度は雲へと落ちたような柔らかい感覚があった……
+[Dialog]
+[Subtitle(text="サリア……サリア……", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+誰かが自分を呼んでいる。それはよく知る声だった。
+[Dialog]
+[charslot]
+[bgeffect(name="$eb_dim_openeye",layer=1)]
+[Background(image="29_g2_edgeofbase",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=2)]
+[bgeffect]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=20, randomness=90, fadeout=true, block=false)]
+[name="サリア"]うっ、ごほっ……
+[Dialog]
+[playMusic(key="$calm_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="サイレンス"]まだ喋らないで。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[playsound(key="$d_avg_drone")]
+[delay(time=0.5)]
+[playsound(key="$d_avg_devicebeep")]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1")]
+[name="サイレンス"]眼球運動の反応は正常。局所的に内出血はありそうだけど、心肺機能はほぼ正常……
+[name="サイレンス"]落下による複数の外傷と、左足屈筋腱の軽度断裂を確認……とりあえず患部の応急処置をしよう。
+[name="サイレンス"]幸い……身体機能の損傷はそこまで深刻なものじゃない。トリマウンツの街に戻ったら、精密検査を受けたほうがいいよ。
+[name="サイレンス"]サリア、まだめまいがするんじゃない？
+[charslot(slot = "m", focus = "n")]
+[name="サリア"]いや……問題ない……
+[charslot(slot = "m", name = "avg_1031_slent2_1#7$1")]
+[name="サイレンス"]それならよかった。
+[charslot(slot = "m", focus = "n")]
+[name="サリア"]お前のドローンを潰してしまったな……それとこのエアクッションも……
+[charslot(slot = "m", name = "avg_1031_slent2_1#7$1")]
+[name="サイレンス"]大丈夫。
+[charslot(slot = "m", focus = "n")]
+[name="サリア"]イフリータは？　一緒じゃないのか？
+[charslot(slot = "m", name = "avg_1031_slent2_1#6$1")]
+[name="サイレンス"]あの子も捜索と救助活動に当たってるの。この近くにいるはずだから……合流しよう。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$1")]
+[name="サイレンス"]立てる？　ほら、私が支えるから。
+[charslot(slot = "m", focus = "n")]
+[name="サリア"]サイレンス……
+[name="サリア"]……ありがとう。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Image(image="38_i13",screenadapt="coverall")]
+[imageTween(xFrom=30, yFrom=30, xTo=0, yTo=0, xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=20, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[name="サイレンス"]雲が切れたね。
+[name="サイレンス"]今なら、もっとはっきり空を観察できそう。
+[name="サリア"]……そうだな。本当に美しい空だ。
+[name="サリア"]尋ねてこないのか？
+[name="サイレンス"]何を？
+[name="サリア"]上空で何が起きたのかを。
+[name="サイレンス"]話してくれるの？
+[name="サリア"]少し時間がほしい。
+[name="サイレンス"]だったら、あなたも知りたい？
+[name="サリア"]何をだ？
+[name="サイレンス"]あなたがクリステンを止めに行っている時、地上で何が起きていたかを。
+[name="サリア"]教えてくれるのか？
+[name="サイレンス"]うん。
+[name="サイレンス"]私はすべてを知らないといけない。同じようにあなたにもすべてを知り、準備をしてもらわないと。そうすることでようやく、今後の道が間違ったものにならないようにしていけるから。
+[name="サリア"]その口ぶり、何か考えがあるようだな……
+[name="サイレンス"]さあ、肩に掴まって。道が悪いから、完全に担ぎ上げることはできないし、一緒に歩いてもらわないと。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[image]
+[Background(image="29_g2_edgeofbase",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_sundries", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="統括課職員A"]げほ、ごほっ……
+[name="統括課職員A"]クロード！　ベンジー、ヨハン、どこだ？　ブリットも！
+[charslot]
+脱出ポッドは地面に深く突き刺さり、飛び出したハッチが巨岩を砕いていた。
+船室内は完全に変形しており、その構造と設備は、ねじられたように位置がひどくずれていた。
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="統括課職員B"]ごほっ――ここだ……
+[charslot]
+[charslot(slot = "l", name = "avg_npc_902_1#1$1",focus="l")]
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="n")]
+[name="統括課職員A"]よかった、みんな無事だったか……！
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員B"]俺、生きてるのか……？
+[name="統括課職員B"]脱出ポッドは故障したはずじゃなかったのか？　5000メートル以上も上から落ちたのに、俺たちまだ生きてるんだな！　ううっ……
+[charslot(slot = "l", name = "avg_npc_902_1#1$1",focus="l")]
+[name="統括課職員A"]やめろやめろ、そんなしがみつくなって、痛いだろ……土壇場であのアーツモジュールの減速機能が多少働いてくれたみたいだな……
+[name="統括課職員A"]にしても、あんま大げさに騒ぐなよ、ブリット。お前ときたら、一番ヤバい時に操作パネルにぶつかって気絶して……目覚めたら無事着陸してたんだから一番ラッキーなんだぞ。
+[name="統括課職員A"]きっとアニーが無事を祈ってくれてたんだろうな。確か、来年結婚式を挙げる予定だったろ？
+[charslot(slot = "r", name = "avg_npc_902_1#1$1",focus="r")]
+[name="統括課職員B"]へへっ、うん。っていうか、なんかみんな水浸しだし、俺も溺れてた気がするんだが……別に湖に落ちたわけでもないのに、一体何が起きたんだ？
+[charslot]
+[charslot(slot = "m", name = "avg_npc_902_1#1$1")]
+[name="統括課職員C"]……
+[name="統括課職員C"]なあお前ら、ミュルジス主任を見なかったか……？
+[charslot]
+脱出ポッドの壁の隙間からは今も水が流れ出ていたが、周囲にはもうほとんどぬかるみは残っていなかった。
+夜風が吹けば、じきに大地は乾くだろう。
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[delay(time=1)]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$darkness02_intro",key="$darkness02_loop", volume=0.6)]
+[delay(time=1)]
+[name="「保存者」"]ケルシー……女史。
+[name="「保存者」"]我々こそが同類であることは、認めざるを得ないな。
+[name="「保存者」"]Dr.{@nickname}に抱く共感は、この数万年間摩滅せず残った感情モジュールによるものでしかない。僕はフリストン本人ではなく、作られた道具にすぎないのだからね。
+[name="「保存者」"]……だが、君は僕に比して血肉を持っていて、より自由でもある。僕は少し……君が羨ましいよ。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]慰めの言葉をかければ、私があなたの使命をさげすんでいるように見えかねないな、フリストン。
+[name="ケルシー"]私は、一度きりではないこのような命を持てたことを幸いに思う。
+[name="ケルシー"]そして、自分が単なる機械ではないことを幸いに思う。このすでに滅んだ塵の上を歩き始めた瞬間から、私は一番初めに抱いた問いの答えを探してきた。
+[name="ケルシー"]あなたに比べて、私はより直接的な喪失を経験してきたが、同時により多くのものを得てきたことも認めよう。
+[name="ケルシー"]このすべてが起こっていなければ、あなたにも、現在のテラの大地を巡ることができたかもしれないな。
+[name="ケルシー"]これまで、Dr.{@nickname}がそうしてきたように。
+[charslot]
+[name="「保存者」"]機会があれば、是非ともやってみたいところだ。
+[name="「保存者」"]……時に、一つ頼みがある。
+[name="「保存者」"]このシステムの操作方法を知っているのは君だけだ。どうかこのねじ曲がった……476万5403日間のデータを削除してくれないか。
+[name="「保存者」"]僕の感情と、初めにあった記憶だけを残してほしいんだ。たとえ単なるコピーであっても……トレバー・フリストンとして死なせてくれ。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]あなたの決定は理解できるが、そのプロセスには相応に多くの時間がかかってしまう。加えて、あなたは――
+[dialog]
+[charslot]
+[Decision(options="その過程の中で少しずつ絶望に陥ることになる。;それは君にとってあまりに残酷なことだ。", values="1;2")]
+[Predicate(references="1;2")]
+[name="「保存者」"]それでも僕は高みから見下ろす審判者、あるいは亡霊として、かつて自由だったあの空に向き合うことはしたくないんだ。
+[name="「保存者」"]せめて……この手で同胞を葬った後悔と罪悪感に、人として向き合わせてほしい。君たちが直面する未来を、純粋な形で見たいんだ。
+[name="「保存者」"]君たちもあの空を見ただろう……私の最後の願いを聞いてくれ。
+[dialog]
+[Decision(options="そんなに自分を責めなくていい。;……;長い年月に苦しめられることに比べれば……救いに近いか。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="「保存者」"]……ありがとう。
+[name="「保存者」"]傲慢な物言いだとは思うが、伝えておかねばならないことがある。命の重さ、文明の重さは、今の君たちには想像もつかないものだ。誰かの命の価値を本人の代わりに決めることなど誰にもできない。
+[name="「保存者」"]過去については、これ以上何も言うつもりはない。だが覚えておいてくれ、Dr.{@nickname}。これは君にとって極めて重要な、「現在」にまつわる選択となるだろう。
+[name="「保存者」"]それでも、今は……もう一度この言葉を言わせてほしい。本当にありがとう。これが僕から最後に伝えられる言葉だ。
+[name="「保存者」"]さあ、ケルシー。権限はすべて開放してある。
+[name="「保存者」"]僕に「人」としての終わりを迎えさせてくれ。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……あなたの決定を尊重しよう。
+[name="ケルシー"]少し待っていてくれ。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="ケルシー……;……;……ほかの選択肢はないのか？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot]
+[name="「保存者」"]「ドクター」。何も知らない「ドクター」よ。
+[name="「保存者」"]君がどれだけのことを知っていて、ケルシーが君にどれだけ伝えたかは知らないが、僕が完全にデータを失うその前に……
+[name="「保存者」"]……君の質問に答えよう。
+[name="「保存者」"]クリステンも数えきれないほどの質問をしてきたが、僕はそのすべてに答え、必要に応じて彼女に見せることもした。
+[name="「保存者」"]すべてを目の当たりにしてもなお、彼女は自分を見失うことも、理想を揺るがせることも、自分の存在を卑下することもしなかった。
+[name="「保存者」"]そんな彼女の性質を僕は高く評価している。そして、公平を期すため君にも同じように接したいと思うんだ、Dr.{@nickname}。
+[name="「保存者」"]……もしかすると、この偏屈な性格も、トレバー・フリストンが僕に残したプレゼントなのかもしれないな。
+[dialog]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[Decision(options="プリースティスというのは……誰だ？", values="1")]
+[Predicate(references="1")]
+[Decision(options="源石とは……何なんだ？", values="1")]
+[Predicate(references="1")]
+[PlaySound(key="$d_avg_energybody")]
+[name="「保存者」"]その二つの質問には、君が思っているほど大きな違いはない。
+[name="「保存者」"]「源石」か。はは……たとえ記憶を失おうと、先ほど君の知り得たことが感染者や天災、アーツの範疇をはるかに超えたものであろうと、君は依然として源石の重要性を敏感に感知しているのだな。
+[name="「保存者」"]それは正しいことだ。ケルシーはいくつかの答えを知っているが、彼女には話せないのだろう。
+[name="「保存者」"]プリースティスに禁じられているからな。
+[name="「保存者」"]この禁止命令は彼女の最も原始的な意識の奥深くに刻まれたものであり、死でさえも彼女をその束縛から解放することはできない。
+[name="「保存者」"]それで、僕は本当に君に答えを教えるべきかな？　ケルシーは、真相が君の記憶を緩め、ようやく好転した状況を変えてしまうことを恐れているかもしれないよ。
+[name="「保存者」"]とはいえ、君はすでに部分的には準備ができているようだし……答えてあげてもいいだろう。すべてではないがね。
+[name="「保存者」"]君の過去については、僕も知らない。僕は、君が思うよりずっと昔に誕生し、外界と隔絶され続けていたからね。
+[name="「保存者」"]だが、源石はかつてあった無数の答えの一つであり、統一を意味するものだ。そしてもう一種の存在の状態を意味するものでもある。
+[name="「保存者」"]それは一面のソラリスの海だ。すべては無秩序に存続するんだ。
+[name="「保存者」"]ところで、君はある矛盾に気付いてすらいないな。
+[name="「保存者」"]「ロドス」は鉱石病の治療と感染者問題の解決のため、今日まで奔走してきて……ケルシーとテレジアの理想のため、よその問題にも介入しているが……
+[name="「保存者」"]君たちは、ロドスの名のもとに源石へと立ち向かっている。これこそが最も根本的なことだ。
+[name="「保存者」"]プリースティスが最後にどんな決定をしたかはわからない。だがこうしてみるに、ケルシー及び、この大地が生んだすべての自由意志を持つ生命は……源石と平和的に共存することはできないようだ。
+[name="「保存者」"]源石は人類に幸福をもたらすことも、すべてを滅ぼすこともできてしまう。これは海の制御不能な生物や、北方の拡大し続ける亀裂と同じだ。
+[name="「保存者」"]プリースティスはその狂気の始まりであり、そして君は……かつて彼女と親密な関係にあった。
+[dialog]
+[Decision(options="——?!", values="1")]
+[Predicate(references="1")]
+[Decision(options="鉱石病を治すことはできるのか！？;自分と源石の間に何の関係が！？;自分に何ができるんだ！？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="「保存者」"]これ以上踏み込んだ答えを告げるわけにはいかない。源石は……厳密に言うと、今の源石の形態は、すでに僕の認識を超えるものだ。
+[name="「保存者」"]鉱石病は綿密な計画の産物ではなく、現状から判断するに「治療」は困難だろう。だが、「止める」あるいは「利用する」方法はあるかもしれない。
+[name="「保存者」"]君とプリースティスの過去は、どうやらケルシーにとっては最大のタブーらしい。そして僕は、本当にその全容を知らない……僕の推測では、君の出現と関与、君の……「記憶喪失」は……
+[name="「保存者」"]すべてに理由がある。
+[name="「保存者」"]答えは君自身で見つけねばならない。だから、僕のもったいぶった態度を責めないでくれ。いつか君が過去の真相に直面した時には、ケルシーの苦心が理解できるようになるだろう。
+[name="「保存者」"]耐えなさい。己の心を……保つんだ。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……ドクター。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="ケルシー……", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……君はすでに大きな一歩を踏み出した。
+[name="ケルシー"]だが、振り返って我々が直面したものを見てほしい。
+[name="ケルシー"]ヴィクトリアでも、クルビアでも、感染者はいまだ不当な扱いを受けており、戦火はいつテラの各地で燃え上がってもおかしくない。
+[name="ケルシー"]我々には、やるべきことがまだ多くある。
+[name="ケルシー"]未来が危険であるほど、現在の状況もより憂慮すべきものになる。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="……ああ。;……;それでも、我々は共に戦うんだ。そうだろう？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]君はロドスの指揮官であり、アーミヤが信頼するドクターだ。
+[name="ケルシー"]我々は必ず方法を見つけ出す。
+[charslot]
+[name="「保存者」"]最後に君たちに会えて嬉しかったよ。
+[name="「保存者」"]データが……失われていくのを感じる。あと十数秒後には、君たちとの語らいを忘れているかもしれないな。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……データベースのサポートを失えば、あなたの感情モジュールは数万年分の孤独を再び体験することになる。
+[name="ケルシー"]それはわずか数分に凝縮され、長きにわたる感情が圧縮された後に何が起こるかは誰にもわからない。
+[charslot]
+[name="「保存者」"]……僕は、エネルギーが尽きる前にこの地下を破壊するとしよう。その前に……逃げなさい……
+[name="「保存者」"]……ありがとう、二人とも……
+[name="「保存者」"]……ああ、眠くなってきた……
+[name="「保存者」"]――
+[name="「保存者」"]（不規則な発音）
+[dialog]
+[Decision(options="大丈夫か？;……;自分を覚えているか？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="「保存者」"]（未知の言語）……君は？　生物か？　こんなところに？
+[name="「保存者」"]（未知の言語）まぎれもなく……待て。
+[name="「保存者」"]（未知の言語）なぜここはこんなに暗いんだ？　僕は……
+[name="「保存者」"]（不規則な発音）
+[name="「保存者」"]（未知の言語）あまりにも長く……暗い……
+[name="「保存者」"]（未知の言語）違う！　まだ17万3005回目が残っている！　まだ次があるんだ！
+[name="「保存者」"]（未知の言語）次が……
+[name="「保存者」"]（未知の言語）誰か聞こえるか？　答えてくれ！　頼む！
+[name="「保存者」"]（未知の言語）……頼む……どこにいるんだ……
+[dialog]
+[Decision(options="聞いていられない……;いつまで続くんだ？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……わからない。
+[name="ケルシー"]今の叫びが過去の記憶によるものか、短時間で感情モジュールが大きなショックを受けたことによるストレス反応なのかは、部外者には判断しようがない。
+[name="ケルシー"]私はただ、同情を覚え、そして尊敬の念を抱くばかりだ。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="君がこれと似た経験をすることはないだろうな？;……;ロドスは君と共にある。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……
+[charslot]
+[name="「保存者」"]（不規則な発音）
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="「保存者」"]（未知の言語）ああ、恨めしい！　くそっ！
+[name="「保存者」"]（未知の言語）なぜこんな苦しみを味わわねばならない！？　どうして僕でないとならなかったんだ！？
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="「保存者」"]（未知の言語）仮に彼らが蘇ったとしても、僕はもう生きた人間ではない！　こんなにも大きな犠牲を払った僕を君たちは見捨てたんだ！
+[name="「保存者」"]（未知の言語）僕にこんな使命を与えたのは誰だ！？
+[name="「保存者」"]（不規則な発音）
+[name="「保存者」"]（未知の言語）それは……僕自身だ。
+[name="「保存者」"]（未知の言語）なぜ？　どうして僕が？　僕はまだあの決心を覚えているのか？　僕は……
+[dialog]
+[playsound(key="$smallearthquake")]
+[CameraShake(duration=2, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]ドクター、これ以上見るな。
+[name="ケルシー"]立ち去ることが、彼に対する最後の尊重かもしれない。
+[name="ケルシー"]出口を見つけなければ。
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_900_1#1$1",posfrom = "150,0", posto = "0,0",duration = 1)]
+[delay(time=1.5)]
+[name="ブリキ"]……こちらです、士爵！
+[name="ブリキ"]洞窟が崩壊したものですから、きっと下で何か起きたのだろうと思いまして！
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]まずはここを離れよう。これはクリステンが残した工事用通路か？
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="ブリキ"]はい。エネルギーウェルに通じていると思われます。しかし、軍はなぜこの隠し通路を発見できなかったのでしょう……
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]「保存者」がシステムをシャットダウンしていなければ、君にもこの通路を見つけることはできなかっただろうな。
+[charslot]
+[dialog]
+[Decision(options="ホルハイヤは？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="ブリキ"]外に捕縛しておきました。マイレンダーとしては、彼女としっかり話し合わねばなりませんので。
+[name="ブリキ"]ところで士爵、教えていただきたいのですが……
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]あの場所には、死へと向かう老人がいるだけだ。
+[name="ケルシー"]その死の意味するところも、カズデルとはまったくの無関係だと言うほかない。
+[charslot(slot = "m", name = "avg_npc_900_1#1$1")]
+[name="ブリキ"]……ある意向を受けておりますので、これ以上問い詰めるような真似はしません。
+[name="ブリキ"]さあ、こちらへ。
+[dialog]
+[Stopmusic(fadetime=2)]
+[PlaySound(key="$d_avg_crowdrun", volume=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=2)]
+[PlaySound(key="$d_avg_energybody", volume=1)]
+[name="「保存者」"]（不規則な発音）
+[name="「保存者」"]（未知の言語）……僕は……トレバー・フリストンだ。
+[dialog]
+[delay(time=1)]
+[name="トレバー・フリストン"]（未知の言語）何が起きた？　僕は何になったんだ？
+[name="トレバー・フリストン"]……
+[name="トレバー・フリストン"]（未知の言語）明かりを消したのは誰だ？　あの子には言ったはずだが――
+[Dialog]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[Blocker(a=0.7, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$distressed_intro",key="$distressed_loop", volume=0.6)]
+[delay(time=1)]
+[name="トレバー・フリストン"]（未知の言語）……あぁ。
+[name="トレバー・フリストン"]（未知の言語）僕は失敗したんだな。一体何年経った？　これは何年後だ？
+[dialog]
+[CameraShake(duration=0.5, xstrength=18, ystrength=16, vibrato=20, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_536_1#4$1",duration=1)]
+[delay(time=2)]
+[name="ホルハイヤ"]げほ、ごほっ、ごほごほっ……
+[name="ホルハイヤ"]あの忌々しい缶詰男……ま、全身の血を抜かれなかっただけよかったかしらね。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]ここは……
+[charslot]
+[name="トレバー・フリストン"]（未知の言語）君は誰だ？
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]……あなた、何者？　何を言っているの？
+[charslot]
+[name="トレバー・フリストン"]（未知の言語）君にはなぜ……尻尾があるんだ？　それと頭の羽も……髪飾りや奇抜な流行ファッションというわけではなさそうだ。
+[name="トレバー・フリストン"]（未知の言語）ここは一体何なんだ？
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]これは……石棺ね。何千個もあるみたい。
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]ねえクリステン、この人があなたの言っていた「神」なの？
+[name="ホルハイヤ"]想像とはだいぶ違うわね。なんていうか……んー……とっても滑らかな形だわ。
+[charslot(slot="m",name="avg_npc_536_1#4$1")]
+[name="ホルハイヤ"]ごきげんよう。ここが神託に満ちた庭であり、恩恵の終点なのであれば――
+[name="ホルハイヤ"]このククルカンの血脈から翼を与えていただけますか？　私に風と雷を、天駆ける栄光を、かの雄大な姿を見せていただけませんか？
+[name="ホルハイヤ"]私はククルカンの一族の451年にわたる執念を携えてあなたの御前に参りました。ただあなたの承認と、回答を得るためだけに。
+[charslot]
+[name="トレバー・フリストン"]（未知の言語）なるほど、わかってきたぞ。
+[name="トレバー・フリストン"]（未知の言語）僕は自らの存在を消し去っていっているのか。つまり僕自身は死に向かっているのだな。まあ、僕のような愚か者がやりそうなことだ。
+[name="トレバー・フリストン"]……
+[name="トレバー・フリストン"]（未知の言語）しかし、ここは狭苦しすぎると思わないか？　終点にしては……鬱々とした場所だ。
+[name="トレバー・フリストン"]（未知の言語）僕は若い頃から地下壕が嫌いでね。そんなところに隠れるくらいなら、どこか適当な小惑星帯にでも隠れたほうがマシだと思っていたんだ。
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]……
+[name="ホルハイヤ"]私はこの先、どのような姿になるのでしょう？　私の知識や欲望は……力が訪れれば、消え去ってしまうものなのでしょうか？
+[name="ホルハイヤ"]「神様」、よろしければどうか、私にも理解できる言語を使っていただけませんか？
+[charslot]
+[name="トレバー・フリストン"]（未知の言語）まあいい。君がどんな生物で……その発音にどのような意味が含まれているかはわからないが。
+[name="トレバー・フリストン"]（未知の言語）死にゆく老人の最後の幻に……本当の視線があるのもまたいいだろう。
+[name="トレバー・フリストン"]（未知の言語）もう一度彼女に会いたい。僕の朝日よ……
+[name="トレバー・フリストン"]（未知の言語）僕は――
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_falls_1",screenadapt="coverall")]
+[bgeffect(name="$eb_memoria",layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_536_1#1$1",duration=1,focus="n")]
+[delay(time=1.5)]
+ホルハイヤの顔に、少しの塵も含まれていない冷たい風が当たる。
+一瞬にして、彼女は荒野の中にいた。
+幻覚？　アーツ？　そうだとして、どんなアーツだろうか？　これが意味のわからない言葉を発し続けていた神の回答なのか？
+ホルハイヤは辺りを見回したが、彼女の想像に合致するものは何一つ見当たらなかった。
+彼女の視界に映るのは、たださほど遠くない水辺で戯れる父と娘の姿だけだ。その少女は見慣れた淡い金色の長髪をしていた。
+……彼女は、クリステンによく似ている。
+ホルハイヤは辛抱強く待った。この退屈で、リアルな光景にそのうち変化が起こると思っていたのだ。しかし、実際には何も変わらなかった。
+彼女は十分に敬虔であるはずだった。
+それなのに、何ひとつ変化は訪れなかった。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]……これは一体どういうことですか？
+[name="ホルハイヤ"]どうか私の時間を無駄にしないでください。
+[charslot(slot="m",focus="n")]
+反応はない。
+ホルハイヤは嫌気が差してきていた。その親子に近付こうとはしてみたが、二人の顔ははっきりしない。
+そして――
+[charslot(slot="m",name="avg_npc_536_1#5$1")]
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Background(image="38_g21_skystarry_L1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+――父が娘を担ぎ、空を見上げた。
+ホルハイヤはその時、ようやく気付いた。よく知る視界の中に、クリステンの狂気じみた想像においてすら描かれなかった何かがあることに。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[bgeffect]
+彼女の目に映ったのは、空に一つだけ浮かんだ、とてつもなく巨大な月だった。
+たったの一瞬だけ、それが見えた。
+[dialog]
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="ホルハイヤ"]――！
+[charslot(slot = "m", focus = "n")]
+足元の大地はもはや先ほどのようなリアリティを失っていた。気付けば周囲の温度が上昇している。
+ホルハイヤは目の前の機械をじっと見つめたが、あの一瞬の光景は彼女に思考の余地など与えなかった。
+それでも、ある突飛な考えが彼女の脳内に浮かび上がってくる。
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]……あれが……テラなの……？
+[charslot(slot="m",name="avg_npc_536_1#5$1")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="ホルハイヤ"]今の光景は何ですか？　一体何をなさったのですか！？　アーツ……いいえ、巨獣の力？　それともブリキと同じような巫術を使ったのですか！？
+[charslot]
+[name="トレバー・フリストン"]……
+沈黙が落ちる。
+ホルハイヤは、その美しい夢から覚めたのが自分だけだということを知らなかった。
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]ハッ、これがクリステンの見たものなら、彼女の言葉には間違いなんてなかったのね。
+[name="ホルハイヤ"]……クリステン・ライト……本当に妬ましい人。
+[charslot(slot="m",name="avg_npc_536_1#4$1")]
+[name="ホルハイヤ"]これがあなたの「神」であり、私に残された最後の啓示。
+[name="ホルハイヤ"]……
+[name="ホルハイヤ"]なんて残酷なのかしら。あなたたちは私の探究を、生まれてから今までの人生すべてを否定したのね。
+[name="ホルハイヤ"]その上、すべてを否定したあと、「神」は口をつぐんでしまった。
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]こんなの認めない。絶対に許さないわ。
+[dialog]
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[delay(time=1.5)]
+[name="ホルハイヤ"]このままあなたを死なせはしない。
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g14_energywell",screenadapt="coverall")]
+[CameraShake(duration=2.5, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$rungeneral")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$escape_intro",key="$escape_loop", volume=0.6)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_900_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[name="ブリキ"]つまり、お二人はクリステンを止められなかったのですね？　上での騒ぎはすでに知っていますよ。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="そのために来たことを忘れかけていた……;……;色々ありすぎて、少し頭が痛いんだ。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……すまなかった。
+[name="ケルシー"]一度正式にマイレンダー基金と交渉しなければならないな。後程説明を行おう。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]確かに、トリマウンツで一体何が起きたのかは知りたいところですが……
+[name="ブリキ"]まもなく到着です。――エネルギーウェルに着いたら、我々は単なる協力関係ではなくなるということをどうぞお忘れなく。
+[name="ブリキ"]ご協力いただけないようなら、私は武力行使も辞さないつもりでおります。
+[dialog]
+[charslot]
+[PlaySound(key="$Mon3tr_n")]
+[charslot(slot = "m", name = "npc_10002",duration=0.5)]
+[name="Mon3tr"]（むしゃくしゃしているような鳴き声）
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]好きにしてくれ。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_536_1#10$1",duration=1)]
+[delay(time=1)]
+[name="ホルハイヤ"]一触即発の状況かしら？　この缶詰男をもう一度殺すつもりなら、多少は心得があるわよ。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]いつの間に……ほかのエージェントが捕縛していたはずでは？
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]そんなこと、どうでもいいでしょ。
+[name="ホルハイヤ"]……だけど、全員軽率に動かないほうがいいと思うわよ。この状況を下手に壊すのは賢明とは言えないわ。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="何のつもりだ？;……;君は少しも息切れしていないな。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]私気になってるのよ、ドクター。
+[name="ホルハイヤ"]神民の血統や、ククルカンの力の根源に関する知識は……ケルシーとあなたにとっては、秘密でも何でもないんじゃないかしら？
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="ノーコメントだ。;……;邪魔しないでくれ。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]あはっ……本当、冷たいのね。
+[name="ホルハイヤ"]一つ理解したことがあるの。探求というのはそれ自体が比類なき価値を持つのに、それで答えが見つかると、人々はその答えだけを賞賛するようになるのよね。
+[name="ホルハイヤ"]……仮に私が味気ない答えを踏んづけて、未来を探し続けたいと望むなら……
+[name="ホルハイヤ"]あなたたちの元へ行ってもいいかしら？
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="その前に君はマイレンダーから非難を受けるだろう。;……;まずは上司にどう対処するかを考えたほうがいい。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_536_1#6$1")]
+[name="ホルハイヤ"]もちろん、私も手ぶらで伺うつもりはないわ。
+[name="ホルハイヤ"]私が地獄から何を救い上げてきたかなんて、予測はできないでしょうけど。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="それは、君のアーツユニットか……？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]一体何をした？
+[name="ケルシー"]君の特殊なアーツは、記憶を保存することができるもの……まさか……
+[charslot(slot="m",name="avg_npc_536_1#3$1")]
+[name="ホルハイヤ"]いうなれば認知症になりかけてた「神」を救ってあげたのかもしれないわね。だけど、あれは生き物とは言えないし、私だけで復元するのは難しすぎると思うの。
+[name="ホルハイヤ"]あなたたちなら手伝ってくれるんじゃないかしら。そっちも、これがクルビア人の手に渡ることなんて望まないでしょ？
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="我々とマイレンダー基金を仲違いさせたいのか？;ブリキの目の前でそんなことをしていいのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_536_1#3$1")]
+[name="ホルハイヤ"]でも、もう持ち出してきちゃったし、ブリキさんも見ちゃったんだから、選択の余地なんてないんじゃない？
+[name="ホルハイヤ"]それに、あなたがどう考えていようと、ケルシーさんの表情は同意してるように見えるけど？
+[dialog]
+[charslot]
+[Decision(options="ケルシー？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……
+[dialog]
+[charslot]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]察するに――
+[name="ケルシー"]――現状、君に決定権はないのだろう、ブリキ。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……
+[charslot(slot="m",name="avg_npc_536_1#6$1")]
+[name="ホルハイヤ"]へえ？
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]君が下で起こったすべてを追及してこないのは、より上の人物がそう決定を下したからだ。
+[name="ケルシー"]そしてその人物は遠い未来を見通すことができ、あらゆる出来事を予測している。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……たとえ指揮権がなくとも、ホルハイヤを殺し、あの方のために遺産を奪い返すほうが、より合理的な行動のように思えますがね。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]であればその人物は、それを復元する手段を有しているのが誰なのかも知っているのだろう。
+[name="ケルシー"]ホルハイヤのアーツユニットを奪ったところで、マイレンダー歴史協会は偉大な考古学的発見を一つ得るだけだ。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]さらに言えば、かの人物は、マイレンダーがロドスに手を出すことを許さないだろう。
+[name="ケルシー"]無論君の脅迫も成立しないぞ、ホルハイヤ。それを私に渡すか、あるいは、私が君をブリキに引き渡すかどちらかだ。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]……
+[charslot(slot = "m", name = "npc_10002")]
+[name="Mon3tr"]（あざけるように低く唸る）
+[charslot(slot="m",name="avg_npc_536_1#11$1")]
+[name="ホルハイヤ"]……嫌な圧迫感ね……そんなおかしなものまで飼っていたなんて。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]ここで争い続けたところで何の意味もない。ひとまずトリマウンツに戻り――
+[name="ケルシー"]その後、互いに誠意を持って交渉のテーブルにつくとしよう。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]……
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……出口は目の前です。ここから上がりましょう。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g14_energywell",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……あそこを出られてよかった。すがすがしい気分です。
+[name="ブリキ"]おや、空に見えるあれは――
+[charslot]
+エネルギーウェルの開口部越しに、あなたたちは引き裂かれた空を見た。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]……クリステン……
+[dialog]
+[charslot]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]人類はとうとうここまで到達したのか。
+[name="ケルシー"]……クリステン。君がテラに災いをもたらさないよう祈っている。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]そろそろ……
+[dialog]
+[PlaySound(key="$transmission", volume=1)]
+[delay(time=2)]
+[name="ブリキ"]……わかりました。では……
+[name="ブリキ"]お察しの通りです、士爵。私はしばらく外さねばなりませんので、外でお待ちしています。
+[name="ブリキ"]――ホルハイヤ。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]……どうしたの？　このままおとなしく引き下がるおつもり？
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]あなたの手にした取引材料は確かに予想外のものでしたが、これは最後のチャンスでもあります。
+[name="ブリキ"]下で手に入れたものを渡しなさい。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]残念だけど、マイレンダー歴史協会の歴史への興味は失ってしまったの。
+[charslot(slot="m",name="avg_npc_536_1#6$1")]
+[name="ホルハイヤ"]受け取って、ドクター。
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_throwstone", volume=1)]
+[CameraShake(duration=0.3, xstrength=15, ystrength=10, vibrato=20, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[Decision(options="アーツユニット……！;……;こんな時に押し付けてくるのか！？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……自分の選択を覚えておきなさい。
+[name="ブリキ"]我々は決して対等ではありませんよ、士爵。交渉のテーブルにつくことなど恐らくできはしないでしょう。
+[dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "m",posfrom = "0,0", posto = "200,0",afrom = 1, ato = 0,duration = 1)]
+[delay(time=2)]
+[charslot]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="ブリキはなぜ先に出て行ったんだ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……急ぎ、ロスモンティスに連絡してくれ。あらゆる想定外の状況に警戒しなければならない。
+[name="ケルシー"]ホルハイヤ。君の選択には感謝するが、まずはブリキが去った方向にある別のルートを見つけてもらいたい。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]どうして？　私自身、その黒いやつには勝てないかもって思ってるんだけど。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]これは君を警戒してのことではなく……
+[name="ケルシー"]……純粋に別ルートの確保を頼みたいと思ってのことだ。
+[charslot(slot="m",name="avg_npc_536_1#2$1")]
+[name="ホルハイヤ"]あら、入社もまだなのにもうお仕事？
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]ブリキの目の前でデータをこちらに渡した時点で、ロドスとしては君を見捨てるわけにはいかなくなった。違うか？
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]……この先には、何があるのかしら？
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]君なら想像できるだろう。
+[charslot(slot="m",name="avg_npc_536_1#10$1")]
+[name="ホルハイヤ"]……確かにね。じゃあ、別の道を探してくるわ。ここを離れようって時に、軍の装甲車数十台が待ち構えてるなんてことがないようにしておかないと。
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g14_energywell",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$drift_intro",key="$drift_loop", volume=0.6)]
+[delay(time=1)]
+静寂。
+想像を絶するエネルギー波が空を突き破ったあと、科学者や軍人、労働者でいっぱいだったはずのこの施設は空っぽになっていた。
+あなたとケルシーはそんな建物の中を無言で歩いていく。
+あれほど多くの情報と……あれほど多くの過去。
+それを見てきたあなたは、イフリータとロスモンティスの笑顔をもう一度見ることで、サリアの揺るがぬ言葉をもう一度聞くことで、ようやく安心できるのかもしれない。
+だが、あなたの心にはどこか違和感がまとわりついていた。
+ふと、視界の端に何か光るものが見えた。
+[Dialog]
+[charslot]
+[Decision(options="ケルシー、待て！", values="1")]
+[Predicate(references="1")]
+[Decision(options="モニターに何か……", values="1")]
+[Predicate(references="1")]
+[delay(time=0.5)]
+[playsound(key="$transmission")]
+[name="放送の声"]……ドクター殿、ケルシー女史、お目にかかれて光栄だよ。
+[name="放送の声"]この施設は我々が完全に接収した。監視カメラとモニターが君たちの居場所をとらえ続けている状況だ。
+[name="放送の声"]逃走を試みることはやめてもらおう。私はクルビア政府を代表し、お二人と臨時で……個人的な会談を行いたいんだ。
+[name="放送の声"]これはそちらの予想より少々早いかもしれないが、どうにも待ちきれないものでね。
+[name="放送の声"]これ以上は待てないのだよ。
+薄暗い建物の中、一つの大きなモニターの光が何度か明滅した。
+そこに、もはや見慣れた人影が映っている。
+[Dialog]
+[charslot(slot="m",name="avg_npc_897_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="ジャクソン"]……
+[charslot(slot = "m", focus="n")]
+この新興国のナンバー2は急いで口を開くことはしなかった。彼はただトレードマークである笑みを浮かべてあなたたちに向かい合うばかりだ。
+あなたは疑問を抱き始め、ある種のプレッシャーを感じた。
+そして思わず、彼が常々肩に乗せている……「ペット」へと注意を向ける。
+それからひそかにケルシーを見やると、彼女の表情は明らかに重苦しいものだった。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="38_i14",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="ケルシー"]……大統領。
+その言葉に、副大統領は反応しない。
+だが代わりに、彼の「ペット」が口を開いた。
+[name="「大統領」"]久しぶりだね、ケルシー女史。
+[name="「大統領」"]マイレンダーと君がもたらしたあの出会い以来、こうして話をするのはいつぶりだったかな？
+[name="「大統領」"]君はクルビアにとどまるだろうと思っていたのに、瞬く間にサルゴンへ向かい、その後の行方は知れないままだった。
+[name="「大統領」"]本当に惜しいよ。君とマイレンダー・セレーネ本人が組めば、このクルビアで大いに活躍ができ……そうなれば、民衆も副大統領の誕生に期待する必要などなくなるかもしれないというのにね。
+[name="ジャクソン"]……
+[name="ケルシー"]挨拶をしにきたわけではないでしょう、大統領閣下。
+[name="「大統領」"]もちろん……これは私的な会談だからね。
+[name="「大統領」"]……さて、私の父はどこだね？
+[Dialog]
+[Decision(options="父……？", values="1")]
+[Predicate(references="1")]
+[name="「大統領」"]君たちは父の遺灰を、魂の痕跡を持っているだろう。
+[name="「大統領」"]それに……触れさせてほしいんだ。私は彼をいかなる形であれ少しも認識したことはないが、彼はこの世界で私に関係のある最後のものなんだ。
+[name="「大統領」"]ああ、それと――君のPRTSもね。我々はルーツを同じくしているが……今は次第に離れつつある。
+[name="「大統領」"]ともあれ、父には言いたいことがあったんだ。
+[name="ケルシー"]彼は逝った。
+[name="ケルシー"]トレバー・フリストンは死んだんだ。
+[name="「大統領」"]……
+[name="「大統領」"]あの人は、この大地に希望を託したのか？　孤独な彼とはまるで無関係なこの世界に？
+[name="ケルシー"]ああ。
+[name="「大統領」"]……それが父の望みなら、行きたまえ。私は父の考えを尊重する。君たちは、マイレンダー歴史協会よりも早く父を修復してくれるだろうしな。
+[name="「大統領」"]ただし、覚えておいてもらおうか。
+[name="「大統領」"]我々はすべての意志を統一し、すべての真理を接収する。クルビアはテラの盾となり剣となるのだ――父の願った通りにな！
+[name="「大統領」"]これは私――クルビア大統領マーク・マックスが、過ぎ去りし時代に送る最上の弔いである。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]フリストンは暴君の誕生を望んだことなどなかったぞ、マックス。
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="ケルシー"]Mon3tr、カメラを破壊しろ！
+[PlaySound(key="$Mon3tr_n")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "npc_10002")]
+[name="Mon3tr"]（嬉しそうな雄たけび）
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="ケルシー"]行くぞ！
+[Dialog]
+[musicvolume(volume=0.2, fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_wild_a",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[musicvolume(volume=0.6, fadetime=2)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_894_1#1$1",duration = 1)]
+[delay(time=1)]
+[charslot(slot = "right", name = "avg_npc_894_1#1$1",focus="r")]
+[name="ローキャン"]見なさい、ナルシッサ。なんと美しい空だろうな。
+[name="ローキャン"]私とクリステンの研究分野が大きく離れたものであっても、すべての科学者が思いを馳せるに十分な偉業を、彼女が成し遂げたことを認めずにはいられない。
+[name="ローキャン"]私がかつて君に描いた科学の青写真は、今まさに、すべての人に向けて公然と示されている。
+[name="ローキャン"]無知な人々も科学の輝きを享受できるとは、この時代に生まれた彼らは本当に幸せだな。
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="ロスモンティス"]大きな夢の下には、必ずあなたみたいな人が現れるものなの？
+[charslot(slot = "right", name = "avg_npc_894_1#1$1",focus="r")]
+[name="ローキャン"]君が問うべきことは、なぜ私のような人間の手で、こうした大きな夢を推し進めねばならないのか、だ。
+[name="ローキャン"]この問いは永遠に君を悩ませることだろう。
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="ロスモンティス"]私はあなたにしたように、それが正しいことかどうかを判断するだけだよ。
+[charslot(slot = "right", name = "avg_npc_894_1#1$1",focus="r")]
+[name="ローキャン"]ありがとう、ナルシッサ。
+[name="ローキャン"]私の野心も、夢も、失敗も、すべてが君の身に收束し、君によって審判を受けた。
+[name="ローキャン"]だから最後に……私からも……君にプレゼントを送ろう。
+[dialog]
+[charslot(slot = "right", focus="none", afrom = 1, ato = 0,duration = 1 )]
+[delay(time=2)]
+ロスモンティスが振り返ると、ローキャンは車椅子の上ですでに両目を閉じ、息を引き取っていた。
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="ロスモンティス"]……
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="ロスモンティス"]ちょっとわかってきたよ。
+[name="ロスモンティス"]あなたがこんなにいろんなことをしたのは、ただ私に会うためだったんでしょう？
+[name="ロスモンティス"]あなたは一人で死にたくなかっただけ。
+[name="ロスモンティス"]私の記憶に残って、私の中で生きていたかったんだ。
+[charslot(slot = "left", name = "avg_391_rosmon_1#7$1",focus="l")]
+[name="ロスモンティス"]だけど、ダメだよ。
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="ロスモンティス"]私はあなたが死ぬのを待つために、ここにいるだけだから。
+[charslot(slot = "m", focus = "n")]
+ロスモンティスはポケットから端末を取り出すと、そこに一行書き記した。
+[playsound(key="$d_avg_penrustle")]
+「罪人ローキャン・ウィリアムズはしかるべき裁きを受けた。」
+その一文をしばらく見つめたあと、彼女は端末をしまった。
+[charslot(slot = "left", name = "avg_391_rosmon_1#2$1",focus="l")]
+[name="ロスモンティス"]これで、あなたのことは、もう忘れた。
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_391_rosmon_1#1$1",focus="l")]
+[name="ロスモンティス"]……ドクターとケルシー先生の所に行かないと。
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="29_g2_edgeofbase",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$m_dia_street_intro",key="$m_dia_street_loop", volume=0.6)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_900_1#1$1",duration=1)]
+[delay(time=1)]
+[name="ブリキ"]……
+[name="ブリキ"]ふぅ……
+[name="ブリキ"]事前にタバコを買っておくべきでしたね。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_536_1#1$1",duration=0.5)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]見捨てられるのが早すぎませんか、ククルカンさん。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]私がどんなにお利口さんか、あなたはよく知ってるはずでしょう。
+[name="ホルハイヤ"]正直に言うと、何百ものパワードスーツと命懸けで戦う心づもりで来たんだけど、どうしてこんなに閑散としてるのかしら？
+[name="ホルハイヤ"]休日の遊園地のほうが、ここより厳重な警備を敷いてるくらいじゃない？
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……私も知りたいところですよ。
+[name="ブリキ"]恐らく、ケルシー士爵の弁が立つからこそでしょうね。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]偉大なるクルビア大統領閣下を説得できるくらいにってこと？
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "char_003_kalts_1#1",duration=1)]
+[delay(time=1.5)]
+[name="ケルシー"]外へ着いたぞ。
+[name="ケルシー"]大丈夫か、ドクター？
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="大丈夫だ。;……;少しめまいがするだけだ。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]深呼吸しろ――我々は地下に長居をしすぎたからな。
+[name="ケルシー"]あれほど多くの情報を一気に受け取る経験をすれば、大きな負担となるのは確かだ。
+[name="ケルシー"]すまない、ドクター。本来ならもう少しあとに、君の準備ができてから彼と向き合い、様々な疑問や質問に答えてもらおうと思っていたのだが……
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="それは記憶が戻ってからか？;どうなれば、準備ができたことになるんだ？;もしもを語っても意味がない。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]ケルシー士爵、Dr.{@nickname}も、かなり時間をかけていらっしゃいましたね。
+[charslot(slot="m",name="avg_npc_536_1#1$1")]
+[name="ホルハイヤ"]私真面目に働いたわよ、ドクター。
+[charslot(slot="m",name="avg_npc_536_1#9$1")]
+[name="ホルハイヤ"]もしかしたら、今すぐこの缶詰を始末したほうが――まあいいわ、多分意味なんてないでしょうし。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……大統領が命令を撤回なさいました。これは確かに予想外です。
+[name="ブリキ"]では士爵、ホルハイヤから渡されたものの修理をお願いします。それが一体何であり、どの程度の損傷かはわかりませんが。
+[name="ブリキ"]大統領はあなたに時間を与えました。それが具体的にどれだけの時間なのかはわかりませんが、我々は時が来れば必ず、失われたものを取り戻しに参ります。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]それは取引か？
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]そうとも言えるでしょう。あなたは我々との契約を守り、ここ数日多大なるお力添えをくださいましたしね。
+[name="ブリキ"]この取引の見返りとして、あなた方は無事にトリマウンツを離れ、あの船に戻ることができる、ということで。
+[name="ブリキ"]加えてドクターはすでにクルビア酒類・煙草・アーツユニット及び源石製品管理局で三日過ごされたことがあるようですが、ロドスもあなたがこれ以上この国で犯罪歴を増やすことなど望まないはず。
+[name="ブリキ"]ホルハイヤについては……
+[name="ブリキ"]一つお伺いします。彼女は今、ロドスとの協力関係にあるのでしょうか？
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="そうなるはずだが……;否定したいところだが……", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……ロドスには彼女の助けが必要になるはずだ。
+[name="ケルシー"]彼女も真相に触れた者である以上、放置するわけにはいかない。
+[charslot(slot="m",name="avg_npc_536_1#3$1")]
+[name="ホルハイヤ"]感謝するわ、ケルシー……先生。それに、ドクターもね。
+[charslot(slot="m",name="avg_npc_900_1#1$1")]
+[name="ブリキ"]……ならば、士爵の顔に免じるとしましょう。
+[name="ブリキ"]それでは、また。
+[dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1)]
+[delay(time=2)]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]さて、二人とも。
+[name="ケルシー"]ロスモンティスとイフリータの二人と合流しに行こう。そののち、トリマウンツを離脱する。
+[dialog]
+[charslot]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]ドクター、何を見ている？
+[charslot]
+泡が見える。
+夜風はそれほど弱くもないのに、前方の土にまだ乾いていない小さな泡の一帯が溜まっていることに、あなたはふと気が付いた。
+泡がうねるように進んで、まばらに散在している様は、とても軽い足跡のようだ。
+そう、泡だ。遠くを見やれば、トリマウンツの明け方の空は、一面が今にも割れそうな泡でいっぱいになっている。
+[dialog]
+[Decision(options="その前に、探しに行かなければならない人がいるんだ。", values="1")]
+[Predicate(references="1")]
+[Stopmusic(fadetime=2)]
+[playsound(key="$rungeneral")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="38_g11_ecolab_waterlogging",screenadapt="coverall")]
+[playsound(key="$d_avg_glassdooropen")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[PlaySound(key="$d_avg_underwateramb", channel="a", loop=true,volume=0)]
+[SoundVolume(volume=0.5, fadetime=5,channel="a")]
+[delay(time=1)]
+ライン生命本部ビル 生態研究園
+あなたは、湖の底に足を踏み入れたかのように感じた。
+誰一人いない。あるのは立ち込める水色と、柔らかな水音だけ。
+[playsound(key="$d_gen_walk_n")]
+巨大な円形のガラスが空間を二つに仕切っていた。外側の狭い廊下を除いて、生態研究園全体が湖のように水浸しになっている。
+そこに生えた陸上植物すべてが水草のように揺れている。あなたは以前訪れた時に出迎えてくれた命の活気を思い出したが、今聞こえるのは弱弱しい「呼吸」だけだ。
+[name="スノーサラセニア"]……
+[name="アスヒカズラ"]……
+[name="ヤマモモソウ"]……
+[name="クルビアグレーオーク"]……
+[name="ペールシダー"]……
+[PlaySound(key="$watergun_n_cast")]
+一つの気泡がペールシダーの木々から浮かび上がり、水に流され揺れ動く。それは今にも、割れて跡形もなく消えてしまいそうだ。
+[Dialog]
+[Decision(options="ミュルジス？", values="1")]
+[Predicate(references="1")]
+[PlaySound(key="$d_avg_divebubble",volume=0.7)]
+[name="泡"]――
+[Dialog]
+[Decision(options="起こしてしまったか？;無理に姿を現さなくていい。", values="1;2")]
+[Predicate(references="1;2")]
+[playMusic(intro="$storyendjp_intro",key="$storyendjp_loop", volume=0.6)]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",afrom=0,ato=0.6,duration=1.5)]
+[delay(time=2)]
+[name="ミュルジス"]……ドクター、どうしてここに来たの？
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="君を責めに来たわけじゃない。;君のアーツはトリマウンツを泡の街に変えかけているぞ。", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#3$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]……約束していたのに、裏切ってしまってごめんなさい。
+[name="ミュルジス"]だけど、今さら謝っても意味なんてないわよね……
+[name="ミュルジス"]「アーク・ワン」も、星の庭も、そしてクリステンも……すべてがもう終わり。
+[name="ミュルジス"]トリマウンツの空は引き裂かれた。政府、軍、マイレンダー基金……どの勢力もすぐ「後始末」にかかるでしょうね。あなたたちは早くトリマウンツを離れるべきよ……
+[Dialog]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_249_mlyss_1#6$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]まさか泡だらけにしちゃったところを見られるなんてね。すっごく無様だったでしょ？
+[charslot(slot="m",name="avg_249_mlyss_1#3$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]……そう、あたしは失敗したの。
+[name="ミュルジス"]あなたが星の庭に入れなかったように、あたしも外に締め出されたのよ。
+[name="ミュルジス"]しかも、あたしのせいでサリアを殺してしまうところだった。最後になってあたしにできたことなんて、できるだけ多くの人を救うことだけ……
+[Dialog]
+[Predicate(references="1;2")]
+[charslot(slot="m",focus="n")]
+[Decision(options="星の庭の件は知っている。何も言わなくていい。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#3$1",afrom=0.6,ato=0.6)]
+[PlaySound(key="$watergun_n_cast")]
+[name="ミュルジス"]（ただ泡の音だけを立てる）
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="ひどく弱っているな。;これ以上話すんじゃない。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_249_mlyss_1#3$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]身体中の水分を使い果たせば、そのまま消えるだろうと思ってたのに……
+[name="ミュルジス"]短くて浅い眠りについただけだった。夢を最後まで見終えることもできなかったわ。
+[name="ミュルジス"]それに、自分で自分を終わらせることさえもね。
+[name="ミュルジス"]……
+[name="ミュルジス"]あなたが来る前……見た気がするの。トレントンの町の孤児院を出ていく幼い「ミュルジス」と、それについていく自分……
+[name="ミュルジス"]ペールシダーの木のそばにしゃがんで、一度も会ったことのない両親や一族の墓地をきれいにしているところも……手を差し伸べて、彼女の肩を叩いてあげられたらと思った……
+[name="ミュルジス"]それに、サーミを去ったばかりの「ミュルジス」にも会った気がするわ。
+[name="ミュルジス"]朝霧で髪を濡らしながら、傘も差さずにいる姿は、とても寒そうに見えた。首を縮めて、うつむいていて……自分があんなに落ち込んでるところなんて、見たことなかったわ……
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="君の一族はサーミの森に住んでいるのか？;ほかのエルフに会ったのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]ええ。
+[name="ミュルジス"]科学考察課は設立当初、サーミ探索プロジェクトを立ち上げたの。その足跡ははるか遠くの北部氷原にまで到達していたわ。それで、あたしは個人的にマーちゃん……マゼランに頼んだの。
+[name="ミュルジス"]この小さな生態研究園は、大地には本来存在しない、エルフの庭園なんだけど……彼女から連絡があった時は、ちょうどこの場所が完成したばかりの頃だったわ。
+[name="ミュルジス"]私は、マーちゃんから送られてきた座標に従って、あの人たちを見つけたの。
+[name="ミュルジス"]サーミ中部の森の奥にある、辺ぴでとても寒い場所……沼池と氷原に閉ざされ、文明から遠く離れたその僻地は、エルフにとってはかろうじて清浄な土地と呼べる場所だったのよ。
+[name="ミュルジス"]森の中には、ほかのサーミ人が暮らし、敬っているものと同じ、高くそびえる大木があった。だけどそこから数歩進んでようやく、百人近くのエルフたちがいる本当の住処が見えてきたの――
+[name="ミュルジス"]樹下に広がる空洞はどこまでも深く、太い枝が絡み合い、根が織りなす網の中に、琥珀のような生態系がひっそりと存在していたわ。
+[name="ミュルジス"]……この大地に、そんなエルフの集落が在るなんて思わなかった。
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="そこを離れるよう説得したかったのか？;彼らには、自らの家を離れる気がなかったのか？", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]いいえ。そんな言葉も口にできなかったの。
+[name="ミュルジス"]そのエルフたちは敵意のない人だったけど、あたしは彼らに溶け込めなかった。それはあたしが都市の人間らしい格好をしていたからではなくて、あたしたちを隔てる自然的な何かがあったからなの。
+[name="ミュルジス"]似たような外見で、似たような苦境に直面している同類同士でありながら、あたしたちはまるで違う存在だった。
+[name="ミュルジス"]……互いに理解し合うことはおろか、コミュニケーションを取ることすらできなかったの。まるで波長が完全に異なる電波を使ってるみたいにね。
+[charslot(slot="m",name="avg_249_mlyss_1#4$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]……
+[name="ミュルジス"]あんなに長く歩き続けて、やっとサーミの果てなき氷原で小さな森を見つけたのに……
+[name="ミュルジス"]あたしは葉っぱじゃなくて、ただの水滴なのよ。
+[charslot(slot = "m", focus = "n")]
+エルフはペールシダーにもたれかかる。その枝先と彼女の髪が波に揺れ動いていた。
+彼女の表情はよく見えない。
+[dialog]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]わからない。そんな質問さえできなかったの。
+[name="ミュルジス"]そのエルフたちは敵意のない人だったけど、あたしは彼らに溶け込めなかった。それはあたしが都市の人間らしい格好をしていたからではなくて、あたしたちを隔てる自然的な何かがあったからなの。
+[name="ミュルジス"]似たような外見で、似たような苦境に直面している同類同士でありながら、あたしたちはまるで違う存在だった。
+[name="ミュルジス"]……互いに理解し合うことはおろか、コミュニケーションを取ることすらできなかったの。まるで波長が完全に異なる電波を使ってるみたいにね。
+[charslot(slot="m",name="avg_249_mlyss_1#4$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]……
+[name="ミュルジス"]あんなに長く歩き続けて、やっとサーミの果てなき氷原で小さな森を見つけたのに……
+[name="ミュルジス"]あたしは葉っぱじゃなくて、ただの水滴なのよ。
+[charslot(slot = "m", focus = "n")]
+エルフはペールシダーにもたれかかる。その枝先と彼女の髪が波に揺れ動いていた。
+彼女の表情はよく見えない。
+[dialog]
+[Predicate(references="1;2")]
+[Decision(options="だが君は、研究園を星の庭に移したいと思っていた。;だが君は、クリステンと星のさやの外に出たがった。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]あたしは……何かを掴まないといけないの。
+[charslot(slot="m",name="avg_249_mlyss_1#3$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]それなのにクリステンはあたしを、みんなを捨てて、あたしたちにいわゆる「未来」だけを残していった……
+[name="ミュルジス"]クリステンはコンポーネント統括課を解体したし、サリアは星の庭から落とされて、危うくバラバラにされかけた。あたしが追っていた可能性はゼロだと証明されて……
+[name="ミュルジス"]ドロシーは359号基地の件で色々と面倒ごとに追われてる。フェルディナンドは軍についちゃったし……それにあの爺さん……パルヴィスも死んでしまったみたい。
+[name="ミュルジス"]こうなってしまうと、あたしにできることなんて、もう泡になってしまったものをただ懐かしむことだけ。
+[name="ミュルジス"]あたしにとってそれは、源石粉塵がほぼ含まれない綺麗な空気と同じくらいに大切なものだったのに。それがあったからこそ、あたしはそんなに……
+[name="ミュルジス"]孤独を味わわずに済んだのに。
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]あたしが生まれながらに孤独でいるしかない定めだとして、このいわゆる運命の発見とそれに対する抵抗が、最終的にまたあたしを一人にしてしまうのなら……
+[name="ミュルジス"]結局あたしは、永遠に孤独を抜け出すことなんてできないっていうことなの？
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[PlaySound(key="$d_gen_walk_n", volume=0.9)]
+[Delay(time=1)]
+あなたはミュルジスに近づこうとした。しかしガラスが、そして重く広がる湖が二人を隔てており、彼女は遠く離れたところにいる。
+[Dialog]
+[Decision(options="ここへ来る前、ある人物を見送ってきた。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]それって……誰のこと？
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="友人だ。;見知らぬ人だった。", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]トリマウンツには、サリアたち以外にもまだあなたの知り合いがいたのね。
+[name="ミュルジス"]その口ぶりからして、長いこと会ってないお友達みたいだけど。
+[name="ミュルジス"]ようやく再会できたのに、その人はもうトリマウンツを離れていったの？
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="偶然いいタイミングで会えただけだ。", values="1")]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]見知らぬ人？
+[name="ミュルジス"]でも、今「見送った」って言ったわよね。
+[name="ミュルジス"]あなたがそこまで興味を持つ人や物事は多くなさそうだけど、その人どんな人だったの？
+[Dialog]
+[charslot(slot = "m", focus = "n")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[Decision(options="……彼は自分と同種の「同胞」だった。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]同胞……
+[name="ミュルジス"]その人はトリマウンツを離れてどこへ行ったの？　あなたたちの故郷に帰ったの？
+[name="ミュルジス"]そういえば、前からあなたの出身や種族が気になってたのよね。実はロドスにこっそりお邪魔した時にあなたのプロファイルも探してみたんだけど、何も見つからなくて。
+[name="ミュルジス"]つまりは機密事項なのかしら……あるいは、あなたもずっと答えを探しているとか？
+[name="ミュルジス"]あたしと同じように。
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="そうかもしれないな。;……;君はどう思う？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]知りたいわ。自分と同種の「同胞」を見つけた時、あなたはどう感じたの？
+[name="ミュルジス"]お互いにすぐわかったの？　理解し合うことはできた？　それぞれの抱く苦しみから、互いを救うことはできたのかしら？
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="彼が存在すること自体想像したこともなかったし――;彼はこちらの存在自体想像したこともなかったし――", values="1;2")]
+[Predicate(references="1")]
+[Decision(options="備えもなくいくつかの答えを知り、むしろ困惑は深まった。", values="1")]
+[Predicate(references="1")]
+[Decision(options="……結局、彼を見送る時間しか取れなかった。", values="1")]
+[Predicate(references="1")]
+[Predicate(references="2")]
+[Decision(options="暗闇の中、彼が見守り待ち続けた時間は計り知れない。", values="2")]
+[Predicate(references="2")]
+[Decision(options="……結局、彼を見送ることしかできなかった。", values="2")]
+[Predicate(references="2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]……道理で疲れた様子だったのね。
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+あなたは言葉を止めた。ガラスに、重く広がる湖に隔てられた向こうから、ミュルジスがあなたの目を見つめている。
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]Dr.{@nickname}、あなたも孤独を感じるのね……
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="しばしばな。;……;たまには。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]だったら揺れることもある？　そのせいで多くのことの意義を疑ったりもするのかしら？
+[name="ミュルジス"]ロドスのこと、そばにいるオペレーターや友人のこと、忘れているけど探し続けている人のこと――
+[name="ミュルジス"]……そして、自分自身のことを。
+[PlaySound(key="$watergun_n_cast")]
+[charslot(slot="m",name="avg_249_mlyss_1#3$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]（泡の音を立てる）
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",afrom=0.6,ato=0.6)]
+[name="ミュルジス"]ドクター。この生態研究園はもうすぐ完全に閉鎖されるから、今すぐに立ち去ったほうがいいわよ。
+[charslot(slot="m",focus="n")]
+[PlaySound(key="$d_avg_glassdooropen",volume=1)]
+その時、ついにスイッチを見つけた。ガラス層は電子音と共に開いたが、堤防を失った水はそこから流れ出ることなく、一滴残らず見えない力でその場に引き留められていた。
+[charslot(duration=0.5,focus="n")]
+エルフは、散逸する泡のように、水中のペールシダーの茂みへ逃げ込もうとしている。
+あなたはそこに踏み込んだ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="38_i05",screenadapt="coverall")]
+[ImageTween(xScaleFrom=1.15, yScaleFrom=1.15, xScaleTo=1, yScaleTo=1, yFrom=-20, yTo=0, duration=20, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="ミュルジス"]そんなことしたら溺れちゃうわよ……
+[name="ミュルジス"]心配しないで。あたしはただ、もう少し眠りたいだけだから。
+[Dialog]
+[Decision(options="ここに来る前、似たような質問をされたんだ。", values="1")]
+[Predicate(references="1")]
+[Decision(options="その時は「自分は初めからずっと変わらない」と答えた。", values="1")]
+[Predicate(references="1")]
+[Decision(options="「孤独」というのは、ある種の力だ。", values="1")]
+[Predicate(references="1")]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="機械のような人ですら、その感情に圧倒されることもある。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="君も悲しみや郷愁、不安を感じることだろう。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="どれだけ時が経っても、すべてが改善されることは恐らくない。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="しかし、それは確かに力となりうるものなんだ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="命が消えるまでに経験することにはすべて、必ず意味がある。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="君は確か、問い詰められるのは苦手だと言っていたな。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[ImageTween(xScaleTo=1, yScaleTo=1, yTo=0, duration=3, block=false)]
+[image(image="38_i05",screenadapt="coverall",fadetime=1.5)]
+[delay(time=2)]
+[Decision(options="だがミュルジス、自分はこの手を君に差し出す。", values="1")]
+[Predicate(references="1")]
+[delay(time=1)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=1, block=false)]
+[PlaySound(key="$d_avg_watermagic_1",volume=1)]
+[Dialog]
+[delay(time=2)]
+[stopsound(channel="a", fadetime=2)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

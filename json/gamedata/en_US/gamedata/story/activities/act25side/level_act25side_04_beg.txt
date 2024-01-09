@@ -1,0 +1,555 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="38_g13_trimountlivingroom",screenadapt="coverall")]
+[playMusic(intro="$lab_intro",key="$lab_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_391_rosmon_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_npc_894_1#8$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_391_rosmon_1#7$1",focus="l")]
+[name="Rosmontis"]You wrote the letter? You wanted me to come here?
+[charslot(slot="r",name="avg_npc_894_1#8$1",focus="r")]
+[name="Loken"]Yes, my child. I even wanted to go looking for you myself.
+[name="Loken"]But time is short, so I had no choice but to have a friend deliver that letter to... Rhodes Island. Yes, Rhodes Island, that's what it was.
+[name="Loken"]And after the disaster... I heard that organization took you in. Have they been treating you well?
+[charslot(slot="l",name="avg_391_rosmon_1#1$1",focus="l")]
+[name="Rosmontis"]They are... my family.
+[charslot(slot="l",name="avg_391_rosmon_1#9$1",focus="l")]
+[name="Rosmontis"]Dr. Kal'tsit, Amiya, the Doctor, Blaze, Radian... and everyone in the squad, they're all my family.
+[charslot(slot="r",name="avg_npc_894_1#8$1",focus="r")]
+[name="Loken"]So you mean... you've found a new family...*cough* *cough*
+[charslot(slot="l",focus="n")]
+The frail man coughs violently, and his naturally crooked body seems to droop even lower.
+He stares at Rosmontis, as if wanting to go move to her, but a thin wall of water stops him in his tracks.
+Muelsyse knows who he is, and so do you. This is the very same name that cropped up many times in Rosmontis's files.
+The criminal that should have been well behind bars has suddenly appeared before you, acting as a grandparent rushing to visit his grandchild after work.
+[dialog]
+[Decision(options="You came alone?;You came here alone... to find Rosmontis?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="r",name="avg_npc_894_1#1$1",focus="r")]
+[name="Loken"]This is what I wanted. Nothing to do with anyone else.
+[name="Loken"]Let me... let me get a good look at you...
+[charslot(slot="l",name="avg_391_rosmon_1#1$1",focus="l")]
+[name="Rosmontis"]......
+[charslot(slot="r",name="avg_npc_894_1#8$1",focus="r")]
+[name="Loken"]You've grown up, girl.
+[name="Loken"]Over the past four years... no, it should be five soon enough...? I've thought of you so many times while we've been apart.
+[charslot(slot="r",name="avg_npc_894_1#5$1",focus="r")]
+[name="Loken"]Whenever I think about the time we were separated from each other, I just feel so... sorry.
+[charslot(slot="r",name="avg_npc_894_1#1$1",focus="r")]
+[name="Loken"]*cough* *cough*...... *cough* *cough* *cough*...
+[charslot(slot="r",name="avg_npc_894_1#5$1",focus="r")]
+[name="Loken"]I'm sorry... that I couldn't protect you from them. Those mediocre hacks with their superficial goals... they destroyed the future we could have had together.
+[charslot(slot="l",name="avg_391_rosmon_1#4$1",focus="l")]
+[name="Rosmontis"]A future? Were we supposed to live together?
+[charslot(slot="l",name="avg_391_rosmon_1#7$1",focus="l")]
+[name="Rosmontis"]But I don't remember you.
+[charslot(slot="l",name="avg_391_rosmon_1#2$1",focus="l")]
+[name="Rosmontis"]Um... should I have remembered this? I record everything I don't want to forget in my terminal.
+[charslot(slot="r",name="avg_npc_894_1#10$1",focus="r")]
+[name="Loken"]You've forgotten who I am? Have you lost all your memories, and forgotten the wrongs I've done?
+[charslot(slot="l",name="avg_391_rosmon_1#10$1",focus="l")]
+[name="Rosmontis"]Are you a bad man? Did you do something bad to me?
+[charslot(slot="r",name="avg_npc_894_1#2$1",focus="r")]
+[name="Loken"]That's not for me to answer, my child. It would make this meeting meaningless.
+[charslot(slot="r",name="avg_npc_894_1#10$1",focus="r")]
+[name="Loken"]Your memory loss... it should not have been an effect of the experiments. Could there have been another party? Maylander, or perhaps Rhine?
+[charslot]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1")]
+[name="Muelsyse"]Don't aim those eyes my way, Mr. Williams. I'm just the teensy weensy Director of Ecological.
+[name="Muelsyse"]Besides, even if the old goat was here, his precarious code of ethics wouldn't be any worse than yours, right?
+[charslot]
+[charslot(slot="l",name="avg_391_rosmon_1#10$1",focus="n")]
+[charslot(slot="r",name="avg_npc_894_1#6$1",focus="r")]
+[name="Loken"]This has nothing to do with ethics.
+[name="Loken"]Rhodes Island, did you wipe the girl's memories and manipulate her emotions?
+[charslot(slot="l",focus="n")]
+[dialog]
+[Decision(options="I won't dignify that with a response.;It's not something Rhodes Island would do.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="r",name="avg_npc_894_1#2$1",focus="r")]
+[name="Loken"]Yes, you couldn't have done that. It was my work after all... I was so meticulous that no one could have possibly stripped away such an important part of her when her vitals were functioning normally.
+[charslot(slot="r",name="avg_npc_894_1#5$1",focus="r")]
+[name="Loken"]Oh, I see now... it was me after all? Perhaps I didn't make enough observations... Yes... We didn't have the luxury of time... The pressure of consciousness is honestly beyond anything a layman could comprehend...
+[charslot(slot="r",name="avg_npc_894_1#7$1",focus="r")]
+[name="Loken"]Or could it be... that you passed your memories onto your sibling?
+[charslot(slot="l",name="avg_391_rosmon_1#2$1",focus="l")]
+[name="Rosmontis"]Um...
+[charslot(slot="l",name="avg_391_rosmon_1#1$1",focus="l")]
+[name="Rosmontis"]I... don't know how to answer you.
+[charslot(slot="r",name="avg_npc_894_1#2$1",focus="r")]
+[name="Loken"]There must be a way, let me think...
+[name="Loken"]Any fragment of that incident is beyond meaningless, same as the records and data, they all belong in the garbage dump. But emotions, shapes, scents... oh yes, smells, that's it.
+[charslot(slot="r",name="avg_npc_894_1#1$1",focus="r")]
+[dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0",duration = 1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_391_rosmon_1#4$1",focus="l")]
+[name="Rosmontis"]A... floral scent?
+[name="Rosmontis"]This smells like... crushed juice... smeared on the walls, and on my hands...
+[dialog]
+[delay(time=1)]
+[charslot(slot="l",name="avg_391_rosmon_1#5$1",focus="l")]
+[charslot(slot="l",focus="l",posfrom = "0,0", posto = "-50,0",duration=1)]
+[name="Rosmontis"]No... no...
+[CameraShake(duration=0.3, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Rosmontis"]Stop, stop thinking about it! I don't want this!
+[charslot(slot="r",name="avg_npc_894_1#4$1",focus="r")]
+[name="Loken"]Yes, I knew it! I'm still somewhere in your memories!
+[CameraShake(duration=0.3, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Loken"]Please, child, bring out those memories, remember your hatred for me, let your anger fill your body, your mind, your omnipresent spirit!
+[dialog]
+[charslot(slot ="l", action="shake", power=15, times=30, duration=0.5)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_391_rosmon_1#2$1",focus="l")]
+[name="Rosmontis"]Ugh...
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_894_1#1$1",focus="n")]
+[Decision(options="Stop.", values="1")]
+[Predicate(references="1")]
+[charslot]
+[charslot(slot="m",name="avg_npc_894_1#1$1",focus="n")]
+[Decision(options="Get out of here.;You're hurting Rosmontis.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_894_1#10$1")]
+[name="Loken"]Hurting her?
+[name="Loken"]No, her pain comes from the past, not the present. I only want to give her the gift she's been longing for.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="This is not a gift.;This is torture.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_894_1#7$1")]
+[name="Loken"]Do you actually understand her pain?
+[charslot(slot="m",name="avg_npc_894_1#6$1")]
+[name="Loken"]Everything you know about her and her experiences is second-hand information from Maylander. Don't you think she has the right to be angry, to hold resentment?
+[charslot(slot="m",name="avg_npc_894_1#10$1")]
+[name="Loken"]Oh, I know. Haha, both you and Maylander are walking the same path. You want her easy to control, because you're afraid of her, afraid of...
+[charslot(slot="m",name="avg_npc_894_1#6$1")]
+[name="Loken"]...A weapon of reignited anger.
+[charslot(slot="m",focus="n")]
+'Weapon.'
+Everything you experienced with Rosmontis in Chernobog comes flooding back before your eyes. The fights desperate with determination to live alongside the pain of farewells.
+Yes, you've heard the term used many a time in the past to describe the Feline girl by your side. She felt it was harsh before, but this time it's unbearable.
+Because it came out of Loken Williams's mouth, the root cause that led Rosmontis here in the first place.
+You have many ideas on how to refute his claims. It also occurs to you that if Kal'tsit were here, she would be capable of coming up with an even more extensive response.
+But another thought comes to mind before your words.
+[dialog]
+[Decision(options="(Punch him);(Kick him);(Slap him)", values="1;2;3")]
+[Predicate(references="1;2")]
+[PlaySound(key="$d_avg_punch")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="avg_npc_894_1#5$1")]
+[name="Loken"]Gah...*cough*...haha...
+[name="Loken"]I see you're outraged by my words, that's fine. You're not willing to think of her as a 'weapon.' But, just look at her... She's standing in front of you, even wielding a sword for you.
+[dialog]
+[charslot]
+[Predicate(references="3")]
+[PlaySound(key="$d_avg_slap")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="avg_npc_894_1#5$1")]
+[name="Loken"]Gah...*cough*...haha...
+[name="Loken"]I see you're outraged by my words, that's fine. You're not willing to think of her as a 'weapon.' But, just look at her... She's standing in front of you, even wielding a sword for you.
+[dialog]
+[charslot]
+[Predicate(references="1;2;3")]
+[playMusic(intro="$act19side_01_intro",key="$act19side_01_loop", volume=0.6)]
+[CameraShake(duration=0.3, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, afrom=0, rfrom=0, gfrom=0, bfrom=0, fadetime=0.1, block=true)]
+[playsound(key="$p_skill_asyouwish",volume=0.4)]
+[Blocker(a=0, fadetime=2, block=false)]
+[charslot(slot="m",name="avg_391_rosmon_1#6$2",duration=1)]
+[CameraShake(duration=1, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=1)]
+[name="Rosmontis"]......
+[name="Rosmontis"]Doctor, please get behind me.
+[name="Rosmontis"]My sword might be about to pierce through the building's outer wall.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Rosmontis, you...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_391_rosmon_1#6$2")]
+[name="Rosmontis"]Enemies.
+[name="Rosmontis"]There are enemies closing in quickly.
+[name="Rosmontis"]I will protect you, Doctor. My mind still feels like... it's a mess. up. But Dr. Kal'tsit and Amiya told me my mental state is a lot more stable now. They allowed me to protect you.
+[name="Rosmontis"]And this is one thing I can definitely do.
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Thank you.;......;I know.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_894_1#7$1")]
+[name="Loken"]Doctor... of Rhodes Island.
+[name="Loken"]If you truly care for her, then you should know what she really needs.
+[name="Loken"]Just ask yourself this... what are you trying to protect? A soldier that would die for you, or a child with a traumatic past?
+[dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[charslot]
+The question is not difficult to answer, but it is obvious that Loken is not interested in your reply.
+From the moment he stepped into the room, he has been staring directly at the white Feline girl next to you, his turbid gaze full of enthusiasm, sorrow, and a certain kind of anticipation.
+[dialog]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=20, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$glass")]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_mechawalk")]
+[CameraShake(duration=0.5, xstrength=10, ystrength=30, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l", name = "avg_npc_526_1#1$1",duration = 1.5)]
+[delay(time=1)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=30, vibrato=10, randomness=90, fadeout=true, block=false)]
+[delay(time=1.2)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=30, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "r", name = "avg_npc_526_1#1$1",duration = 1.5)]
+[delay(time=1)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=30, vibrato=10, randomness=90, fadeout=true, block=false)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="m",name="avg_391_rosmon_1#6$2")]
+[name="Rosmontis"]They're here!
+[charslot(slot="m",name="avg_npc_894_1#2$1")]
+[name="Loken"]Such a pity that this is the end of our meeting.
+[charslot(slot="m",name="avg_npc_894_1#8$1")]
+[name="Loken"]You're not ready yet, my child... but I know you will be.
+[name="Loken"]I'll be waiting for you at 'home.'
+[dialog]
+[PlaySound(key="$d_avg_clothmovementsp")]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",duration=0.5)]
+[delay(time=1)]
+[name="Muelsyse"]Hold it.
+[charslot(slot="m",name="avg_npc_894_1#7$1")]
+[name="Loken"]You actually caught up... no, you were waiting for me.
+[name="Loken"]Which one of you is your true self? The silent one in the room earlier, or the one right here?
+[charslot(slot="m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]That's not important.
+[charslot(slot="m",name="avg_npc_894_1#8$1")]
+[name="Loken"]Your Originium Arts are quite interesting, or perhaps... no, forget it, I don't have time for this curiosity.
+[name="Loken"]Do you have business with me, Director of Rhine Lab?
+[charslot(slot="m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]......
+[name="Muelsyse"]Where's Kristen?
+[charslot(slot="m",name="avg_npc_894_1#10$1")]
+[name="Loken"]Ah...... but <i>you're</i> the Rhine one here. Are you sure you should be asking me that?
+[charslot(slot="m",name="avg_249_mlyss_1#11$1")]
+[name="Muelsyse"]The only way you could have gotten out of prison is with her help.
+[name="Muelsyse"]Your being here means the work she entrusted to you is already complete.
+[name="Muelsyse"]She's done preparing, right? She's really planning to...
+[charslot(slot="m",name="avg_npc_894_1#1$1")]
+[name="Loken"]Pitiful girl.
+[charslot(slot="m",name="avg_249_mlyss_1#11$1")]
+[name="Muelsyse"]Hey...
+[name="Muelsyse"]I'm not about to let a rotten geezer who looks like he hasn't showered in three days call me pitiful.
+[charslot(slot="m",name="avg_npc_894_1#7$1")]
+[name="Loken"]Astonished, unwilling, and anxious... you're afraid, little girl. You're afraid of being betrayed by those you trust, and of being abandoned by others.
+[name="Loken"]Well, the worst is your confusion... You're at such a complete loss that you have no choice but to ask an 'outsider' like me.
+[charslot(slot="m",name="avg_npc_894_1#2$1")]
+[name="Loken"]Such a familiar feeling it is...*cough*, *cough* *cough*...
+[charslot(slot="m",name="avg_npc_894_1#1$1")]
+[name="Loken"]When my teacher handed all my research to Maylander, when he expelled me from the academy...
+[name="Loken"]When my students submitted all my data to the military before I did, and I had to speed up my experiments, leading to that ultimate failure...
+[name="Loken"]When my family sold everything we had in D.C. and disappeared...
+[name="Loken"]I saw that very same look in the mirror.
+[charslot(slot="m",name="avg_249_mlyss_1#8$1")]
+[name="Muelsyse"]...My eye bags can't be <i>that</i> bad?
+[name="Muelsyse"]I just don't get it... why would she trust that wretched woman from Maylander and you over Saria, or... ugh....
+[charslot(slot="m",name="avg_249_mlyss_1#7$1")]
+[name="Muelsyse"]Are you stalling for time here? If you're waiting for Ho'olheyak to pick you up, I won't necessarily lose, you know?
+[charslot(slot="m",name="avg_npc_894_1#7$1")]
+[name="Loken"]You don't want me for an enemy, girl.
+[charslot(slot="m",name="avg_249_mlyss_1#8$1")]
+[name="Muelsyse"]...Huh?
+[charslot(slot="m",name="avg_npc_894_1#7$1")]
+[name="Loken"]Do you really think you could stop Kristen and I just by catching up to me?
+[name="Loken"]Or, maybe...
+[charslot(slot="m",name="avg_npc_894_1#10$1")]
+[name="Loken"]You want to catch me, to catch... Kristen?
+[charslot(slot="m",name="avg_249_mlyss_1#11$1")]
+[name="Muelsyse"]......
+[charslot(slot="m",name="avg_249_mlyss_1#3$1")]
+[name="Muelsyse"]I...
+[charslot(slot="m",focus="n")]
+Muelsyse falls into a daze. Loken turns his back and yet she still doesn't act.
+[PlaySound(key="$d_avg_wind", volume=0.9)]
+Only when the familiar wind caresses her face so mockingly does she realize that Loken is no longer anywhere to be seen on the streets.
+[charslot(slot="m",name="avg_249_mlyss_1#4$1")]
+[name="Muelsyse"]I let him go... what am I doing...?
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g13_trimountlivingroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$nervous_intro",key="$nervous_loop", volume=0.6)]
+[delay(time=1)]
+[Effect(name="$e_muesys_show",y=-650,layer = 1)]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",duration=1)]
+[delay(time=1.5)]
+[name="Muelsyse"]......
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Muelsyse?;You listening?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]Oh, Doctor.
+[name="Muelsyse"]I'm... I'm right here, heard everything you said crystal clear, yessiree.
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="Did your clone manage to stop Loken?;Is your clone in danger?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1")]
+[name="Muelsyse"]Clone...
+[charslot(slot="m",name="avg_249_mlyss_1#7$1")]
+[name="Muelsyse"]My... *ahem* Yes, my clone outside.
+[charslot(slot="m",name="avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]Doctor, you guessed right. They couldn't have let such a terminally ill old man come here by himself.
+[name="Muelsyse"]Before his assistants got him away, I only managed to get one thing—Loken Williams is definitely involved in Kristen's plans.
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="The 'home' that Loken spoke of...;The secret that Maylander and the army are scrambling for.", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="The puzzle pieces are overlapping.", values="1")]
+[Predicate(references="1")]
+[Decision(options="And they're pointing right at Kristen Wright's hideout.", values="1")]
+[Predicate(references="1")]
+[charslot]
+[delay(time=1)]
+[playsound(key="$phonevibration")]
+[delay(time=2)]
+[charslot(slot="m",name="avg_391_rosmon_1#1$1")]
+[name="Rosmontis"]Doctor, your terminal... there's a new message?
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="It's from Maylander.;Maylander has some new information to share with us.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_249_mlyss_1#9$1")]
+[name="Muelsyse"]What a coinkydink, I was just wondering when we were gonna see the Tin Man again.
+[name="Muelsyse"]You got roughed up by the army because of him, so it's only right that he should make it up to you, isn't it?
+[Dialog]
+[charslot(slot="m",name="avg_391_rosmon_1#1$1",focus="n")]
+[Decision(options="Rosmontis, are you ready to proceed with the mission?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_391_rosmon_1#9$1")]
+[name="Rosmontis"]Yeah, I'm fine.
+[Dialog]
+[charslot(slot="m",name="avg_249_mlyss_1#2$1",focus="n")]
+[Decision(options="Muelsyse.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1")]
+[name="Muelsyse"]...Huh?
+[Dialog]
+[charslot(slot="m",name="avg_249_mlyss_1#8$1",focus="n")]
+[Decision(options="Thanks for standing with us.;Thank you for helping Rosmontis.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_249_mlyss_1#6$1")]
+[name="Muelsyse"]Ah... haha... our cooperation is far from over, so you're going to wear out those words if keep standing on ceremony, you know?
+[charslot(slot="m",name="avg_249_mlyss_1#3$1")]
+[name="Muelsyse"]......
+[name="Muelsyse"]Doctor... do you really trust me so much?
+[Dialog]
+[charslot(slot="m",name="avg_249_mlyss_1#3$1",focus="n")]
+[Decision(options="What did you say?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_249_mlyss_1#1$1")]
+[name="Muelsyse"]Nothing. Alright, let's get moving.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="29_g3_cottage",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$d_avg_firemagic",volume=0.5)]
+[charslot(slot="l",name="avg_npc_895_1#9$1",duration=1)]
+[charslot(slot="r",name="avg_1031_slent2_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]Silence, is the temperature okay... not too hot?
+[charslot(slot="r",name="avg_1031_slent2_1#1$1",focus="r")]
+[name="Silence"]You're controlling it very well.
+[name="Silence"]Saria's body temperature has stabilized, and she should be out of danger.
+[name="Silence"]Ifrit, you should rest for a bit. Using Originium Arts for a long time will wear you out.
+[charslot(slot="l",name="avg_npc_895_1#7$1",focus="l")]
+[name="Ifrit"]No, I'm staying with Saria.
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]I still remember back in the white room... she kept me company when I was stuck in that bed.
+[name="Ifrit"]I was always in pain, my mind was totally messed up, and I couldn't stop myself from burning everything I saw.
+[name="Ifrit"]I don't even have a clear picture of every visit, I just know that every time I opened my eyes, she would there at my bedside, and I felt so relieved.
+[charslot(slot="l",name="avg_npc_895_1#6$1",focus="l")]
+[name="Ifrit"]So now I want to stay here and keep her company. Even though she won't open her eyes... I'm sure she can feel that I'm here.
+[charslot(slot="r",name="avg_1031_slent2_1#1$1",focus="r")]
+[name="Silence"]...I'm sure she can.
+[charslot(slot="r",name="avg_1031_slent2_1#4$1",focus="r")]
+[name="Silence"]She just needs... a bit more sleep.
+[charslot(slot="l",name="avg_npc_895_1#9$1",focus="l")]
+[name="Ifrit"]Um...
+[name="Ifrit"]Something still feels off.
+[charslot(slot="r",name="avg_1031_slent2_1#9$1",focus="r")]
+[name="Silence"]What's wrong?
+[charslot(slot="l",name="avg_npc_895_1#1$1",focus="l")]
+[name="Ifrit"]I just realized Saria isn't that much taller than I am. And also... her palms are soft, with such pretty nails too. Just like your hands, Silence.
+[charslot(slot="r",name="avg_1031_slent2_1#6$1",focus="r")]
+[name="Silence"]Yes.
+[charslot(slot="r",name="avg_1031_slent2_1#2$1",focus="r")]
+[name="Silence"]Saria is... of course, an ordinary human.
+[charslot(slot="r",focus="n")]
+[name="???"]I'm afraid she's quite far from 'ordinary.'
+[charslot(slot="r",name="avg_1031_slent2_1#3$1",focus="r")]
+[name="Silence"]Director Jara...
+[charslot]
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]She prefers to solve problems by herself, without a word. She always keeps a straight face that deters people from voicing their opinions.
+[name="Jara"]Would you like to make a guess just how many employees from Defense I had to offer psychological counseling year after year?
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="Silence"]Are you... unhappy with Saria?
+[charslot(slot="m",name="avg_npc_893_1#8$1")]
+[name="Jara"]Unhappy? Hmph.
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="Jara"]One year I asked Kristen if she was set on transferring a researcher to make the head of the Defense Section—Guess what the woman there did when she found out?
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]She threw three dozen listening devices onto my desk, and right in my face, shattered them to pieces with her newly developed Arts.
+[name="Jara"]An unfortunate thing, as a couple of them were operating on behalf of some of our dear government departments.
+[name="Jara"]They were just a little wary of such a rapidly-progressing tech company.
+[name="Jara"]I was happy to share some 'controllable' information with them, to get them to ease up a little.
+[name="Jara"]I spent some time dealing with the trouble that came with the incident... but who could deny the determination and skill of that young Vouivre?
+[charslot(slot="m",name="avg_1031_slent2_1#6$1")]
+[name="Silence"]I guess... Saria has always been like that.
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]Sure enough, many years have come and gone, and if you compare her then and now, it doesn't seem like there's been much development.
+[charslot(slot="m",name="avg_1031_slent2_1#2$1")]
+[name="Silence"]She's the most resolute and determined woman I know.
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]Who ever said she wasn't? I've watched she and Kristen walk their paths, and I'm well aware just how decisive and strong she is.
+[charslot(slot="m",name="avg_npc_893_1#2$1")]
+[name="Jara"]But even such an outstanding individual can't stand against... the whole damned country. If you let her take on these obstacles she hasn't overcome in all this time, she'll only be smashed to bits.
+[charslot(slot="m",name="avg_1031_slent2_1#1$1")]
+[name="Silence"]......
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]Here.
+[playsound(key="$d_avg_key")]
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="Silence"]Car keys...?
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]Take Saria and Ifrit and leave, before it's too late.
+[charslot(slot="m",name="avg_1031_slent2_1#1$1")]
+[name="Silence"]Saria... wouldn't want that.
+[charslot(slot="m",name="avg_npc_893_1#1$1")]
+[name="Jara"]No, she wouldn't. But I'm not talking to Saria right now.
+[name="Jara"]Aren't you the type to go 'innocent lives shouldn't be put at risk?' This girl shouldn't be involved, and neither should you. No one needs to die here.
+[charslot(slot="m",name="avg_1031_slent2_1#4$1")]
+[name="Silence"]...
+[name="Silence"]I need... a bit more time.
+[dialog]
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[playsound(key="$phonevibration")]
+[delay(time=2)]
+[name="Jara"]......
+[charslot(slot="m",name="avg_1031_slent2_1#9$1")]
+[name="Silence"]Director Jara?
+[charslot(slot="m",name="avg_npc_893_1#7$1")]
+[name="Jara"]I'm afraid we're all out of time. Take the secret passageway out, now.
+[charslot(slot="m",name="avg_1031_slent2_1#1$1")]
+[name="Silence"]What's wrong?
+[playMusic(intro="$ponder_intro",key="$ponder_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_893_1#9$1")]
+[name="Jara"]An old friend has come knocking.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="38_g1_rhinemeetingroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_893_1#9$1",duration=1)]
+[charslot(slot="r",name="avg_npc_890_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="r",name="avg_npc_890_1#1$1",focus="r")]
+[name="Ferdinand"]This conference room...
+[name="Ferdinand"]Whenever we had meetings, Parvis would sit by the window, Muelsyse likes to sit in the middle, and you... Director Jara, you sit here, furthest from Kristen.
+[charslot(slot="l",name="avg_npc_893_1#9$1",focus="l")]
+[name="Jara"]And you're the same as before, always standing behind somebody else's seat.
+[charslot(slot="r",name="avg_npc_890_1#2$1",focus="r")]
+[name="Ferdinand"]Hm... how nostalgic.
+[charslot(slot="l",name="avg_npc_893_1#9$1",focus="l")]
+[name="Jara"]Would you like something to drink? Red wine, or should we pop open the champagne?
+[charslot(slot="r",name="avg_npc_890_1#7$1",focus="r")]
+[name="Ferdinand"]Is there an occasion?
+[charslot(slot="l",name="avg_npc_893_1#1$1",focus="l")]
+[name="Jara"]Of course. Mr. Ferdinand Clooney is enjoying a career upgrade, and also returned to Rhine Lab... Sounds like a cause for celebration?
+[charslot(slot="r",name="avg_npc_890_1#1$1",focus="r")]
+[name="Ferdinand"]You think I'm here as the army's guide?
+[name="Ferdinand"]No, they have their own plans for Rhine, and I don't approve at all. Because I know that if something happens to the Vice President while he's here, that's the end of the company.
+[name="Ferdinand"]Kristen can ignore the existence of Rhine Lab, but not me.
+[charslot(slot="l",name="avg_npc_893_1#1$1",focus="l")]
+[name="Jara"]The event today went off without a hitch.
+[charslot(slot="r",name="avg_npc_890_1#6$1",focus="r")]
+[name="Ferdinand"]Don't play dumb with me, Jara.
+[name="Ferdinand"]You may not know just what kind of people run the army. They could repeat today's adventure anytime they want.
+[name="Ferdinand"]So before those savages rip a dozen years' worth of time and effort to shreds, can you just tell me the truth—what exactly is Kristen doing?
+[charslot(slot="l",name="avg_npc_893_1#11$1",focus="l")]
+[name="Jara"]Did Colonel Blake not tell you?
+[name="Jara"]The very first day Dr. Wright disappeared, I handed every document about Control and her projects right over to them.
+[name="Jara"]And for the record, it happened more than once. I worked days of overtime just for this.
+[charslot(slot="r",name="avg_npc_890_1#1$1",focus="r")]
+[name="Ferdinand"]Heh, 'Dr. Wright,' as if you two have the most ordinary collaborative relationship.
+[name="Ferdinand"]Should I show Blake the picture hidden in the darkest corner of your office drawer?
+[name="Ferdinand"]Or has our dear HR Director already come up with an explanation for why she's hidden the New Year's card little Kristen wrote her two decades ago?
+[charslot(slot="l",name="avg_npc_893_1#2$1",focus="l")]
+[name="Jara"]...That's just an old photo.
+[charslot(slot="l",name="avg_npc_893_1#1$1",focus="l")]
+[name="Jara"]Kids aren't as cute and well-behaved after they grow up. Ferdinand, you know that better than me. That sock in the jaw at Site 359 still smarting?
+[charslot(slot="r",name="avg_npc_890_1#6$1",focus="r")]
+[name="Ferdinand"]...Heh.
+[name="Ferdinand"]She's gone into hiding, like a child clinging to her favorite toy. Except it's not a toy, it's a goddamned superweapon, with some real forbidden secrets behind it.
+[name="Ferdinand"]So you should find and drag her out, if you still care about her.
+[name="Ferdinand"]Or would you rather watch her die for the vaguest of ideals?
+[charslot(slot="l",name="avg_npc_893_1#9$1",focus="l")]
+[name="Jara"]......
+[charslot(slot="l",name="avg_npc_893_1#7$1",focus="l")]
+[name="Jara"]Even if... I couldn't bear to watch her go that far ahead, how do you suppose that stopping her is within my power?
+[name="Jara"]This is Kristen we're talking about, Ferdinand. She'll take everything you have.
+[name="Jara"]Do you think she would ever leave such a major weakness—if you really want to treat the relationship between me and her as a vulnerability—so easily within your grasp?
+[charslot(slot="r",name="avg_npc_890_1#7$1",focus="r")]
+[name="Ferdinand"]Good... great. You refuse to cooperate.
+[name="Ferdinand"]And what about the others? For example...
+[dialog]
+[delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_890_1#7$1",focus="r")]
+[name="Ferdinand"]Saria.
+[charslot(slot="r",name="avg_npc_890_1#6$1",focus="r")]
+[name="Ferdinand"]You rescued her, and you've hidden her somewhere around here.
+[name="Ferdinand"]You're so willing to talk to me, just to buy her more time to escape.
+[name="Ferdinand"]Let's say she manages to escape. Who could she even go to?
+[name="Ferdinand"]Rhodes Island, caught up in the same mess, or that group of Maylander agents who love spinning webs just as much as you do?
+[charslot(slot="l",name="avg_npc_893_1#2$1",focus="l")]
+[name="Jara"]...I have no idea what you're talking about.
+[dialog]
+[PlaySound(key="$transmission", volume=0.7)]
+[charslot(slot="r",name="avg_npc_890_1#1$1",focus="r")]
+[delay(time=1.5)]
+[name="Ferdinand"]The military just picked up a new piece of intelligence.
+[name="Ferdinand"]Saria... as well as the company behind her, Rhodes Island, are suspected of helping Kristen steal classified information pertaining to national security.
+[charslot(slot="l",name="avg_npc_893_1#9$1",focus="l")]
+[name="Jara"]......
+[charslot(slot="r",name="avg_npc_890_1#1$1",focus="r")]
+[name="Ferdinand"]Maybe working at Rhine Lab for more than a decade has made you naive enough to... assume your old boss was some hero of justice?
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

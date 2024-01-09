@@ -1,0 +1,553 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")] 
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Dialog]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[playMusic(intro="$mist_intro",key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]Doctor, we need to leave immediately.
+[name="Kal'tsit"]I've found Kristen's energy source.
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="Kal'tsit"]Things aren't yet irredeemable. The worst-case possibility I anticipate has not yet come to pass...
+[name="Kal'tsit"]We still have a chance to stop her.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="What's a Sarcophagus doing here?",values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]Kristen's plan requires mass amounts of energy, the scale and purity of which are both beyond any modern Terran's grasp, or even their imagination.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="So, she's exploiting the Sarcophagus's tech?",values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]The sheer vastness of this energy is more than a Sarcophagus can provide, too.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="So, why is she...",values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]I said, more than 'a' Sarcophagus.
+[name="Kal'tsit"]I hadn't anticipated... their being in Columbia.
+[name="Kal'tsit"]Buried right beneath these wastes.
+[name="Kal'tsit"]Doctor, I need your help.
+[name="Kal'tsit"]And your help... is all I have.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Uh, but Rosmontis?;I'm worried about Rosmontis.",values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]......
+[name="Kal'tsit"]Combat has concluded. She won't be in danger.
+[name="Kal'tsit"]I ask you have faith in her. She may still be a child, but she is nevertheless a Rhodes Island Elite Operator.
+[name="Kal'tsit"]And I ask you have faith... in the time you've spent with her.
+[name="Kal'tsit"]Whether the operation in Chernobog, or her days aboard Rhodes Island, not one past moment has been for naught, and these experiences likewise mold her even now.
+[name="Kal'tsit"]She will make her own choice, and we can only respect that choice.
+[name="Kal'tsit"]But... right now, as it falls to her, so it falls to us too.
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+7:45 P.M., H.A.M.H.R.R. now at upper S.H.A.F.T.
+[dialog]
+[Background(image="38_g2_colombiaoffice",screenadapt="coverall")]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_526_1#1$1")]
+[charslot(slot = "l", name = "avg_npc_526_1#1$1")]
+[PlaySound(key="$d_gen_surfacefrozen", volume=1, loop=false, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[dialog]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.03, block=true)]
+[Effect(name="$e_fist_hit_02",x=180,layer = 1)]
+[Effect(name="$e_fist_hit_02",x=-180,layer = 1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[StopSound(channel="a", fadetime=2)]
+[charslot(slot = "l", posfrom="0,0", posto="0,-100", afrom=1, ato=0, duration=1)]
+[charslot(slot = "r", posfrom="0,0", posto="0,-100", afrom=1, ato=0, duration=1)]
+[CameraShake(duration=0.8, xstrength=60, ystrength=60, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_mechadown")]
+[delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_896_1#10$1",duration=1.5, isblock=true)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_896_1#10$1",focus="n")]
+[PlayMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[PlaySound(key="$d_avg_strangeclap", volume=1)]
+[delay(time=1.5)]
+[charslot]
+[name="???"]Incredible.
+[name="???"]I've always wondered how you learned to fight so well, busy with all those research projects.
+[name="???"]And I thought I made efficient use of my time. Do you never sleep?
+[charslot(slot = "m", name = "avg_npc_896_1#1$1")]
+[name="Saria"]What are you doing here?
+[charslot(slot = "m", name = "avg_npc_896_1#1$1")]
+[name="Saria"]Ferdinand.
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_890_1#6$1",duration=1.5)]
+[delay(time=2)]
+[name="Ferdinand"]You took the words right out of my mouth, Saria. After forcibly entering a Trimountian military spec ops bureau, what could <i>you</i> possibly be doing?
+[charslot(slot = "m", name = "avg_npc_896_1#1$1")]
+[name="Saria"]......
+[charslot(slot = "m", name = "avg_npc_890_1#2$1")]
+[name="Ferdinand"]Let me guess. You want to find something to chase after that airborne gizmo.
+[name="Ferdinand"]Maybe hijack a heavy duty army drone and tie yourself onto it, for example?
+[charslot(slot = "m", name = "avg_npc_890_1#1$1")]
+[name="Ferdinand"]Or is that thinking a little too simple, Director Saria? I never took you for the impulsive type.
+[charslot(slot = "m", name = "avg_npc_896_1#10$1")]
+[name="Saria"]Out of the way, Ferdinand. I have no time to argue with you right now.
+[charslot(slot = "m", name = "avg_npc_890_1#2$1")]
+[name="Ferdinand"]Would you look at that, how sad. The only three... well, fine, Scientific Investigation's doesn't count. The only two Directors Control left out of her incredible master plan just happen to have gathered here.
+[charslot(slot = "m", name = "avg_npc_896_1#10$1")]
+[name="Saria"]......
+[charslot(slot = "m", name = "avg_npc_890_1#2$1")]
+[name="Ferdinand"]What do you want to do? Stop the madwoman?
+[charslot(slot = "m", name = "avg_npc_890_1#1$1")]
+[name="Ferdinand"]Or... save her?
+[charslot(slot = "m", name = "avg_npc_896_1#10$1")]
+[name="Saria"]I have no need to tell you anything.
+[charslot(slot = "m", name = "avg_npc_890_1#1$1")]
+[name="Ferdinand"]I assure you, I don't mean to criticize your relationship with Kristen.
+[name="Ferdinand"]I was just waiting for you.
+[name="Ferdinand"]Listen, Saria. I'm not here to get in your way.
+[charslot(slot = "m", name = "avg_npc_896_1#2$1")]
+[name="Saria"]I said, out of the way.
+[charslot(slot = "m", name = "avg_npc_890_1#6$1")]
+[name="Ferdinand"]And I said, 'listen.'
+[dialog]
+[PlaySound(key="$d_avg_plane", volume=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Image(image="38_i01", xScale=1.3, yScale=1.3, screenadapt="coverall")]
+[ImageTween(xScaleFrom=1.15, yScaleFrom=1.15, xScaleTo=1, yScaleTo=1, duration=60, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="Saria"]...That's the sound of an aircraft.
+[name="Saria"]Ferdinand, where is that one from?
+[name="Ferdinand"]The 'Horizon Arc Project' isn't just that superweapon Kristen's floating through the air. It's a complete strategic program.
+[name="Ferdinand"]I tapped into some connections to borrow an aircraft they use to service 'Arc-01,' and blew up the rest while I was at it.
+[name="Ferdinand"]Let me be clear. Look across all of Columbia, and you'll find very few passenger aircraft safely able to fly near barrier altitude.
+[name="Ferdinand"]They won't need much time to scramble high-altitude craft from the District, but for you, and for me, that time is more than enough.
+[name="Saria"]You're proposing a collaboration.
+[name="Saria"]You believe—that you're seriously qualified for this?
+[name="Ferdinand"]There's the same old Saria I know.
+[name="Ferdinand"]As though you'd have the ability to quell every single problem, even if I wasn't there to help.
+[name="Ferdinand"]But I don't have a single shred of doubt about this.
+[name="Ferdinand"]In your own words, there is no reason we should clash.
+[name="Ferdinand"]H.A.M.H.R.R. has reached the S.H.A.F.T.'s aerial space, and the S.H.A.F.T. has begun accumulating energy.
+[name="Ferdinand"]If we let this situation unfold as is, then no matter what Kristen's up to, this <i>will</i> end with the Department of Defense exposed to the winds of scrutiny.
+[name="Ferdinand"]And I'm sure we all know how Rhine Lab, as an 'accessory' to it, will end up.
+[name="Saria"]And whether it be as a clandestine military proxy, or a former Director of Rhine Lab, you'll be finished, Ferdinand.
+[name="Ferdinand"]Exactly.
+[name="Ferdinand"]But I'm not about to give in.
+[name="Ferdinand"]We can still make it in time.
+[name="Ferdinand"]We can bring H.A.M.H.R.R. back down again in a safe descent before the energy excitation, and then there will be room to pull everything back.
+[name="Saria"]And is it your life you're looking to redeem, or Rhine Lab?
+[dialog]
+[delay(time=1.5)]
+[name="Ferdinand"]Does it matter?
+[name="Saria"]You'll have to be franker than that, Ferdinand.
+[name="Saria"]You've been ready with this aircraft. You've been anticipating that Kristen could get this far.
+[name="Ferdinand"]Here I'd thought the busywork at Defense had ground away all your researcher's insight.
+[name="Ferdinand"]Still, I've been ready for less time than you think.
+[name="Saria"]Do you honestly believe this adventure of yours will rescue anything?
+[name="Ferdinand"]If you didn't think so, then why would you be here?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[Background(image="38_g2_colombiaoffice",screenadapt="coverall")]
+[charslot(slot = "r", name = "avg_npc_890_1#1$1")]
+[charslot(slot = "l", name = "avg_npc_896_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "r", name = "avg_npc_890_1#1$1", focus="r")]
+[name="Ferdinand"]Do you know what feeling has struck me deeper than anything else lately?
+[name="Ferdinand"]I feel like nobody cares about Rhine Lab's reputation.
+[name="Ferdinand"]Everyone else is either out to see what research funds Rhine can get them, or their only interest is in what Kristen's doing.
+[charslot(slot = "r", name = "avg_npc_890_1#7$1", focus="r")]
+[name="Ferdinand"]You may have considered how Kristen leaves the picture, but have you considered what will become of the company afterwards?
+[charslot(slot = "l", name = "avg_npc_896_1#1$1", focus="l")]
+[name="Saria"]......
+[charslot(slot = "r", name = "avg_npc_890_1#7$1", focus="r")]
+[name="Ferdinand"]Yes, I know, you've all been captured by her charm and charisma.
+[name="Ferdinand"]With a little soul-searching, I have to wonder if I wasn't too? Of course I was.
+[charslot(slot = "r", name = "avg_npc_890_1#1$1", focus="r")]
+[name="Ferdinand"]But Rhine Lab is ours, of the blood <i>we</i> shed. I can't accept her setting fire to everything that I gave the sweat of my brow for.
+[charslot(slot = "r", name = "avg_npc_890_1#6$1", focus="r")]
+[name="Ferdinand"]No matter what reason drives it.
+[name="Ferdinand"]So I can swallow being a tuskbeast of the military, because I want to pull Rhine back from the brink. Is that so wrong?
+[charslot(slot = "l", name = "avg_npc_896_1#9$1", focus="l")]
+[name="Saria"]I never thought I'd see you telling me this sort of thing.
+[charslot(slot = "r", name = "avg_npc_890_1#2$1", focus="r")]
+[name="Ferdinand"]They're very Director of Defense-like words, aren't they?
+[name="Ferdinand"]Frankly, I should be getting a cut of your salary for it.
+[charslot(slot = "l", name = "avg_npc_896_1#1$1", focus="l")]
+[name="Saria"]I am no longer the Director of Defense.
+[charslot(slot = "r", name = "avg_npc_890_1#2$1", focus="r")]
+[name="Ferdinand"]Fine. Once the dust settles on all this, I'll talk with Jara about getting a raise.
+[charslot(slot = "l", name = "avg_npc_896_1#1$1", focus="l")]
+[name="Saria"]You'll need to be reemployed first.
+[charslot(slot = "r", name = "avg_npc_890_1#1$1", focus="r")]
+[name="Ferdinand"]Still, you were right about one thing.
+[name="Ferdinand"]Rescuing Rhine... is far from my only aim.
+[name="Ferdinand"]I need Rhine, and Rhine needs me. That's my assessment, borne of reason and emotion.
+[charslot(slot = "r", name = "avg_npc_890_1#1$1", focus="r")]
+[name="Ferdinand"]However—
+[charslot(slot = "r", name = "avg_npc_890_1#6$1", focus="r")]
+[name="Ferdinand"]To put it bluntly, I'm curious.
+[name="Ferdinand"]This is Kristen we're talking about. We know Kristen. The army wants to think she's out to blow something up, which is stupid.
+[name="Ferdinand"]After working with her for so long, we know what kind of woman she is, and of course, you would understand her better than I ever could.
+[name="Ferdinand"]Saria, tell me straight. What's going on in that brain of hers?
+[name="Ferdinand"]How far is she going to take this?
+[charslot(slot = "l", name = "avg_npc_896_1#1$1", focus="l")]
+[name="Saria"]I can conjecture.
+[charslot(slot = "r", name = "avg_npc_890_1#1$1", focus="r")]
+[name="Ferdinand"]Conjecture. Very cautious terminology.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_890_1#6$1", focus="r")]
+[name="Ferdinand"]Go on, then. Are you conjecturing or not?
+[charslot(slot = "l", name = "avg_npc_896_1#1$1", focus="l")]
+[name="Saria"]......
+[charslot(slot = "l", name = "avg_npc_896_1#1$1", focus="l")]
+[name="Saria"]Those drones currently on the attack may be unable to pierce H.A.M.H.R.R.'s armor for the time being, and cannot reach its altitude of hover.
+[name="Saria"]But shooting down this maintenance aircraft of yours would be simple enough for them.
+[name="Saria"]My guess is, the military and Maylander are deploying even greater firepower right now. Specialist drones capable of even higher altitudes. Even landing craft to convey troops. Their involvement in the front line is only a matter of time.
+[charslot(slot = "l", name = "avg_npc_896_1#10$1", focus="l")]
+[name="Saria"]We need to get your little craft, with near to no armor and not a single weapon installed, straight through a net of drone fire.
+[charslot(slot = "r", name = "avg_npc_890_1#1$1", focus="r")]
+[name="Ferdinand"]This definitely carries a little risk.
+[charslot(slot = "l", name = "avg_npc_896_1#1$1", focus="l")]
+[name="Saria"]I'll pilot.
+[charslot(slot = "r", name = "avg_npc_890_1#1$1", focus="r")]
+[name="Ferdinand"]Suit yourself.
+[charslot(slot = "r", name = "avg_npc_890_1#6$1", focus="r")]
+[name="Ferdinand"]Are you actually able to run this thing, though?
+[charslot(slot = "l", name = "avg_npc_896_1#6$1", focus="l")]
+[name="Saria"]...I learned, once. In college.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+7:50 P.M., H.A.M.H.R.R. altitude 3000 meters
+[dialog]
+[Background(image="38_g14_energywell",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", posfrom="300,0", posto="0,0", duration=1.5, isblock=true)]
+[name="Silence"]Ungh...
+[name="Silence"]It seems like... the Transmitter response... has started growing stronger.
+[name="Silence"]It should be... right around here.
+[dialog]
+[charslot(slot = "m", name = "avg_1031_slent2_1#6$2")]
+[delay(time=1)]
+[charslot(slot = "m", posfrom="0,0", posto="100,0", afrom=1, ato=0, duration=1)]
+[charslot(slot = "m", action="zoom", poszoom = "0.5,0.5", scale=0.95,  duration=1, isblock=true)]
+[delay(time=1)]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", posfrom="-600,0", posto="0,0", duration=1.5)]
+[delay(time=1)]
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", posfrom="-300,0", posto="0,0", duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]Still no good!
+[name="Researcher"]Energy readout's completely blanked!
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]You can't stop it?
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]Not that! The thing's blown past max display capacity!
+[name="Researcher"]There's nothing in the manuals for this!
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]Then to hell with the manual! I want solutions, dammit!
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]No, no, no, the entire facility's energy supply lines should be cut by now, all of them...
+[name="Researcher"]This energy... where the heck it coming from?
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]So you're telling me, this energy is enough to turn us to ash with just one lick, but it's just coming out of thin air?
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]Uh, the burden is on you to prove that hypothesis...
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]Shut up, and keep giving me solutions, or I'll hurl you straight in there!
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]Let me just give it another once-over, pipelines... switches... energy nodes...
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]Is this... Is this son of a bitch gonna explode on us?
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]The manual says... uh, I think, in general terms, current accumulated energy is now beyond the structure's theoretical safe capacity.
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]If it explodes, what happens?
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]I... I don't know...
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]Hey... Okay. Run me some analysis.
+[name="Columbian Soldier"]If something does go wrong... will it hit Yorktown? That's not far from here!
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]Y—Yorktown? I'm not sure...
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]Tell me how big it'll blow, for Pete's sake!
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Columbian Soldier"]I told my brother-in-law it was a bad idea to pioneer out near Trimounts! It's a city of headcases!
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]I-I'm calculating now!
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]To hell with this, I'm surrounded by science nuts! Crazy poindexters!
+[name="Columbian Soldier"]Don't any of you have even a <i>single</i> breaker in your brains? Every day with your million fricking amazing projects and you never just, uh, WONDER what happens if you screw up?
+[name="Columbian Soldier"]The minds behind Trimountian science! And you build this giant bomb that activates itself and you literally can't even shut it down?!
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Researcher"]I wasn't on this project! I got temp assigned to work on this by your colonel!
+[name="Researcher"]I—I would've definitely tested this thing a few more times myself...
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]Zip it! I know you people too well. One little teensy-weensy hint of success and it's like you all go goddamn blind!
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]But... wasn't this project led by the DOD?
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]Okay, then they're ALL insane! I warned my meemaw when she said her folks were coming to pioneer in Columbia! Nation built of goddamn nutcases!
+[name="Columbian Soldier"]Dammit, are you done calculating?! Shit, this won't work, I need to make a call...
+[dialog]
+[PlaySound(key="$d_avg_phonestop", volume=1)]
+[delay(time=1.5)]
+[name="Columbian Soldier"]Why can't I dial out?
+[charslot(slot = "r", name = "avg_npc_530_1#1$1", focus="r")]
+[name="Researcher"]Energy concentrations are too high, probably, uh, thus impacting signal transmission...
+[charslot(slot = "l",  name = "avg_npc_901_1#1$1", focus="l")]
+[name="Columbian Soldier"]Dammit! God—DAMMIT!
+[name="Columbian Soldier"]Is there anywhere with better signal? Some other corridor?
+[dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot = "l", posfrom="0,0", posto="-300,0", afrom=1, ato=0, duration=1, isblock=true)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#9$2", focus="none", duration = 1)]
+[charslot(slot = "m", action="zoom", poszoom = "0.5,0.5", scale=0.95, duration=0)]
+[charslot(slot = "m", posfrom="100,0", posto="0,0", duration = 2, isblock=true)]
+[delay(time=1)]
+[name="Silence"]...
+[dialog]
+[charslot(slot = "m", posfrom="0,0", posto="-300,0", focus="r", afrom = 1, ato = 0, duration=0.5, isblock=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_crwddiscuss_inside", volume=0.6, loop=true, channel="a")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[StopSound(channel="a", fadetime=2)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2",  posfrom="300,0", posto="0,0", duration = 1, isblock=true)]
+[name="Silence"]This has all fallen into chaos.
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2")]
+[name="Silence"]Energy transmission... can't be halted? Just what is Kristen trying to do?
+[name="Silence"]Mmm...
+[name="Silence"]Transmitter response is still growing stronger...
+[name="Silence"]It should be that the Transmitter Professor Parvis tuned is all aboard H.A.M.H.R.R., so why is there such a strong reaction here too?
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2")]
+[name="Silence"]Ugh... I have to...
+[dialog]
+[PlaySound(key="$d_avg_energywell", volume=0, loop=true, channel="b")]
+[SoundVolume(volume=0.8, channel="b",fadetime=1)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2")]
+[name="Silence"]Is there a passage anywhere? I need to keep heading down.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5, isblock=true)]
+[delay(time=2)]
+[StopSound(channel="b", fadetime=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_893_1#6$1", duration=1.5)]
+[delay(time=2)]
+[name="Jara"]......
+[charslot(slot = "m", name = "avg_npc_893_1#6$1")]
+[name="Jara"]*sigh*. Silence.
+[name="Jara"]So you came. You chose this path to move forward.
+[charslot(slot = "m", name = "avg_npc_893_1#2$1")]
+[name="Jara"]Whenever Parvis recruited for his places, he'd always tell me that the trait he most valued was a researcher's perseverance for 'progress.'
+[name="Jara"]No wonder he graded you well.
+[name="Jara"]......
+[charslot(slot = "m", name = "avg_npc_893_1#1$1")]
+[name="Jara"]What... What could be on your mind right now?
+[name="Jara"]Kristen.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[dialog]
+[Background(image="bg_cave_2",screenadapt="coverall")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[PlaySound(key="$d_avg_cavewaterdrop", volume=1, loop=true, channel="a")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", focus="none")]
+[Decision(options="So this is our destination?;Kristen, she've kept her secrets so very well.",values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]......
+[dialog]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]For the past while, I investigated several former Trimounts locations surveyed by Rhine Lab, until finally I found this place.
+[name="Kal'tsit"]And the reality was little removed from what I imagined.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "char_003_kalts_1#1", focus = "n")]
+Kal'tsit gives the rock face beside her a few knocks.
+[charslot(slot = "m", name = "char_003_kalts_1#1", focus = "m")]
+[name="Kal'tsit"]We're separated from the 'Horizon Arc Project' S.H.A.F.T. by only a few hundred meters. I'm afraid Kristen has the way laid out there too, should you want to go sightseeing.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5, isblock=true)]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Kal'tsit.",values="1")]
+[Predicate(references="1")]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[BackgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.15, yScaleTo=1.15, duration=20)]
+[delay(time=3)]
+[dialog]
+[name="Kal'tsit"]...Dr. {@nickname}.
+[name="Kal'tsit"]I presume you've gathered that there is much more driving Rhodes Island to intervene so actively in the Trimounts affair, beyond simply who and what you've seen.
+[dialog]
+[Decision(options="Who...?;What...?",values="1;2")]
+[Predicate(references="1;2")]
+[name="Kal'tsit"]Silence, Ifrit and Saria, Loken and Rosmontis—even the revenant calling himself the Tin Man. All of them are simply ordinary people, far separated from the truth.
+[name="Kal'tsit"]With regards to the Rhine Lab commotion and Kristen going out of control, the military and the Maylander Foundation are like weights once again placed on the scales, trying to preserve the semblance of a civilized nation.
+[name="Kal'tsit"]But none of that is what matters most, what should concern most.
+[name="Kal'tsit"]From the very beginning, Kristen has been brushing against something far beyond anyone's imaginations, and with that as a focus, has launched a charge against the sky.
+[name="Kal'tsit"]I worry her actions will bring unexpected things to bear upon Terra. My intent was to stop her before then... but we were one step too slow.
+[name="Kal'tsit"]On Terra today, interfering in such things is no longer easy. Civilization is much more expansive than I thought.
+[name="Kal'tsit"]There'll come a day when people step far enough again.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Why not share what you know with anyone else?;Isn't Kristen just trying to break through the sky?",values="1;2")]
+[Predicate(references="1")]
+[name="Kal'tsit"]It's not as if I haven't before, but the end result is never ideal.
+[name="Kal'tsit"]You may suggest those aboard Rhodes Island today, Amiya, Closure, the hunters with ties to Ægir... They know a great deal already, which has helped to resolve their own issues.
+[name="Kal'tsit"]But when you plough the fields, you never pay mind to why the horizons form as clouds, rain and lightning, yet perhaps you may want to know when the next storm will come.
+[name="Kal'tsit"]The arrogant acts of noble politicians versus repeated Catastrophe, the forecasted yield of crops versus new tax levies, these are things that ground life. The reality is, countless have no regard for even that much.
+[name="Kal'tsit"]They simply do not care for the fates of others.
+[name="Kal'tsit"]From a Terran's point of view, even if they did choose to believe such far-flung knowledge and information, what could they do about it? What use would it be?
+[name="Kal'tsit"]The wise that take note of all around them, those bare few, are the only ones able to maintain their thought.
+[name="Kal'tsit"]And the rest, when faced with things that outstrip their comprehension, more than often opt to laugh it off or persecute it, so as to protect their comfortable bubbles of ignorance from any outside challenge.
+[name="Kal'tsit"]They are no more than 'lamentable,' but the truth grows ever further because of them.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Predicate(references="2")]
+[name="Kal'tsit"]'Breakthrough.' A neutral descriptor, but you still unconsciously believe that the 'sky' is something that should have no limit.
+[name="Kal'tsit"]To any scholar across the land, all that happens high in the sky is unsolved natural phenomena, just as Catastrophe and the ocean are.
+[name="Kal'tsit"]They will puzzle, probe at its inner workings, use their knowledge and philosophies to dissect it all—they will research all the phenomena of the sky, never considering that 'the sky should not be this way.'
+[name="Kal'tsit"]Countless children have flown for it in their dreams, and they too quickly realize, the sky is not something that can be freely soared through.
+[name="Kal'tsit"]Drones and vehicle altitudes have been rigorously restricted, and the spreading of every fowlbeast's wings is constrained by instinct.
+[name="Kal'tsit"]This is the state of common sense upon this land. No one has ever questioned the rising of the sun and setting of the moon, and no one has ever questioned how it is all that all beings come to grow.
+[name="Kal'tsit"]But Kristen has steadfastly chosen 'not to believe,' just as poets do not believe that dreams are fiction.
+[dialog]
+[Predicate(references="1;2")]
+[charslot(slot = "m", focus="none")]
+[Decision(options="You've been pushed to explain to me before.;......;I'm starting to wonder just what's ahead of us.",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Background(image="bg_cave_2",screenadapt="coverall", xScale=1.15, yScale=1.15,fadetime=1)]
+[playsound(key="$d_gen_walk_n")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "char_003_kalts_1#1",duration=1.5, isblock=true)]
+[name="Kal'tsit"]Just promise me one thing, Doctor.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Go on.;......;As if I have a choice?",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]No matter what it is you find next, and think next, do not let it shake you. I am by your side.
+[name="Kal'tsit"]If you choose to... No. No, you won't.
+[name="Kal'tsit"]I trust the you that accompanied Amiya and Rhodes Island to today, and I trust that you're prepared in your own way.
+[name="Kal'tsit"]Despite how inescapably scarce our remaining time is.
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="......",values="1")]
+[Predicate(references="1")]
+[stopmusic(fadetime=1)]
+[charslot(slot = "m", focus="all")]
+[name="Kal'tsit"]—Wait.
+[name="Kal'tsit"]Fall back, Doctor. What I just said will take some explaining.
+[dialog]
+[charslot]
+You follow Kal'tsit's gaze far, to where a dangerous silver glint perches atop the rock.
+A woman clings to the stalactite wall with nothing but her tail, almost like she's floating in the air, taking in the two of you with great amusement.
+You feel uneasy.
+It isn't Ho'olheyak's sudden appearance before you, rather that you realize how Kal'tsit, of prudence comparable to an automated machine, has made a mistake so rudimentary, even to you.
+Ho'olheyak gently lands beside the two of you. Her mirthful smile draws scratches across your beating heart.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_536_1#1$1",duration=1.5, isblock=true)]
+[name="Ho'olheyak"]I thought you were more cautious than that, Rhodes Island physician.
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]But to be fair, mm-hmm... I'm surprised you two managed to find this place. Kristen never even told me its exact location.
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]K'uk'ulkan.
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]......
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]Betraying the Maylander Foundation is tantamount to funeralizing your future in Columbia. What Kristen promised must be far more generous than what Maylander could give you.
+[name="Kal'tsit"]You and your clan chose a path of no return. And you're trying to find the source of your race's power from Control and Loken's research.
+[name="Kal'tsit"]I advise you to stop. This is not pursuit of the historical self, it is simply self-destruction. A vast time has elapsed in which the Elders have lost their legendary powers, and now compared to the remaining Ancient races, have no—
+[dialog]
+[charslot]
+[PlayMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+Kal'tsit's speech is interrupted.
+[dialog]
+[PlaySound(key="$d_avg_bldwhoosh", volume=1)]
+Ho'olheyak's tail has quietly pressed against your throat.
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]......
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]Yes. There's a sort of pressure your calm expression and tone of voice wreak. One that makes your database of a brain capable of turning words into weapons.
+[charslot(slot = "m", name = "avg_npc_536_1#2$1")]
+[name="Ho'olheyak"]But you know that sometimes... speechcraft just doesn't work.
+[name="Ho'olheyak"]The Sarcophagus from Loken and the files Kristen got from who-knows-where are enough to round off this dream we've had for a long time, a dream filled to bursting with power and might.
+[name="Ho'olheyak"]Look at this now... look at me. My plumage, my flesh, my tail. Memory tells me how it's all begotten by my blood, a high blood by any other name. The K'uk'ulkan blood.
+[charslot(slot = "m", name = "avg_npc_536_1#7$1")]
+[name="Ho'olheyak"]I'm very strong, aren't I, 'Doctor?'
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="Can't deny it.;Please loosen your tail when you speak.",values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]Hahah... I don't mind your composure one bit. But, you see, if I felt like snapping your neck, then it wouldn't take much effort to do it.
+[charslot(slot = "m", name = "avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]I remember it happening just like this before. Without all that fantastical equipment, Kristen's hardly stronger than the average person, and I could've just as easily throttled her.
+[name="Ho'olheyak"]But she downplayed, minimized. Rejected 'power.'
+[name="Ho'olheyak"]I don't really like the oddball scientist type, but she made me realize—outside of my lineage, what do I even have?
+[name="Ho'olheyak"]It's a cruel irony. The words she says cling to you. She humiliated the calling and the memories I succeeded. I wanted so badly to return the favor—
+[charslot(slot = "m", name = "avg_npc_536_1#4$1")]
+[name="Ho'olheyak"]—but she seemed so impossible to strike at. The placidity, like she'd gotten everything life had to offer.
+[charslot(slot = "m", name = "avg_npc_536_1#10$1")]
+[name="Ho'olheyak"]So placid, it made me... envious. Made me want to claw myself apart, it shook me so badly.
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="Kal'tsit"]She... won you over?
+[name="Kal'tsit"]What is it you want?
+[charslot(slot = "m", name = "avg_npc_536_1#1$1")]
+[name="Ho'olheyak"]I want to see how she ends, to guess her true intentions, to unearth her legacy. And then, I'll snatch away every last little thing that made up her mind when she ridiculed me.
+[charslot(slot = "m", name = "avg_npc_536_1#4$1")]
+[name="Ho'olheyak"]Maybe I'll find the answer, just like that. Before I return to my longed-for age of the K'uk'ulkan's unrivaled dominance, I want to know, in our modern sense, what worth that has—
+[name="Ho'olheyak"]—what worth I have.
+[charslot(slot = "m", name = "avg_npc_536_1#3$1")]
+[name="Ho'olheyak"]That's what I, Ho'olheyak, want to do. I hope you won't get in the way, 'Doctor,' Dame Kal'tsit.
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

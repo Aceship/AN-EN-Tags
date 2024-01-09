@@ -937,6 +937,12 @@
     "ro2.virtue": "<color=#0098dc>{0}</color>",
     "ro2.mutation": "<color=#9266b2>{0}</color>",
     "ro2.desc": "<color=#6d6d6d>{0}</color>",
+    "ro3.lose": "<color=#FF6E6E>{0}</color>",
+    "ro3.get": "<color=#9ed9fd>{0}</color>",
+    "ro3.redt": "<color=#ff4532>{0}</color>",
+    "ro3.greent": "<color=#4ffaa5>{0}</color>",
+    "ro3.bluet": "<color=#0085ff>{0}</color>",
+    "ro3.bosst": "<color=#ffffff>{0}</color>",
     "rc.title": "<color=#FFFFFF>{0}</color>",
     "rc.subtitle": "<color=#FFC90E>{0}</color>",
     "rc.em": "<color=#FF7F27>{0}</color>",
@@ -949,6 +955,7 @@
     "ga.limadgacha": "<color=#FF7E1F>{0}</color>",
     "ga.percent": "<color=#FFD800>{0}</color>",
     "ga.attention": "<color=#FF3126>{0}</color>",
+    "ga.classicgacha": "<color=#00A8FF>{0}</color>",
     "attainga.desc": "<color=#FF0000>{0}</color>",
     "attainga.desc2": "<color=#FFD800>{0}</color>",
     "attainga.attention": "<color=#E1322C>{0}</color>",
@@ -968,9 +975,13 @@
     "lv.hdbg": "<color=#7ba61f>{0}</color>",
     "tu.ht": "<color=#ff8d00>{0}</color>",
     "lv.act20side": "<color=#F7BC44>{0}</color>",
+    "lv.act20sre": "<color=#F7BC44>{0}</color>",
     "lv.mhitem": "<color=#A57F5B>{0}</color>",
     "lv.mhtx": "<color=#1B1B1B>{0}</color>",
     "lv.mhfs": "<color=#A57F5B>{0}</color>",
+    "ba.grt": "<color=#FFAB27>{0}</color>",
+    "ba.exl": "<color=#14F0AF>{0}</color>",
+    "ba.hrd": "<color=#DA2536>{0}</color>",
     "act.spreward": "<color=#FF5001>{0}</color>",
     "act.timelimit": "<color=#ffe300>{0}</color>",
     "vc.text": "<color=#898989>{0}</color>",
@@ -995,7 +1006,7 @@
   "commonPotentialLvlUpCount": 4,
   "weeklyOverrideDesc": "",
   "voucherDiv": 5,
-  "recruitPoolVersion": 11,
+  "recruitPoolVersion": 13,
   "v006RecruitTimeStep1Refresh": 1577169000,
   "v006RecruitTimeStep2Check": 1577151000,
   "v006RecruitTimeStep2Flush": 1577646000,
@@ -1064,8 +1075,12 @@
   "TSO": 1608188400,
   "isDynIllustEnabled": true,
   "isDynIllustStartEnabled": true,
+  "isClassicQCShopEnabled": true,
   "isRoguelikeTopicFuncEnabled": true,
   "isRoguelikeAvgAchieveFuncEnabled": true,
+  "isClassicPotentialItemFuncEnabled": true,
+  "isClassicGachaPoolFuncEnabled": true,
+  "isVoucherClassicItemDistinguishable": true,
   "voucherSkinRedeem": 1,
   "voucherSkinDesc": "【コーデ交換券】は使用時に発売中のコーデのみ交換することができます。また、立ち絵アニメーションが実装されるコーデとは<color=#ffa633>交換できません</color>。発売中のコーデを全て購入済みの場合、【コーデ交換券】は<color=#ffa633>使用できません</color>。\n\nまた、今後【コーデ交換券】<color=#ffa633>使用不可</color>のコーデが実装される場合は、随時告知を行ってまいります。",
   "charmEquipCount": 5,
@@ -1103,12 +1118,12 @@
     "ba.fragile": {
       "termId": "ba.fragile",
       "termName": "脆弱",
-      "description": "被ダメージが効果値分上昇（同名の状態は効果値が高いほうのみ適用）"
+      "description": "物理・術・確定の被ダメージが効果値分上昇する（同名の状態は効果値が高いほうのみ適用）"
     },
     "ba.shield": {
       "termId": "ba.shield",
       "termName": "シールド",
-      "description": "ダメージを受けるとき、シールドを1枚消耗することによってダメージを1回ガード可能"
+      "description": "ダメージを受けるとき、シールドを1枚消耗することによって被ダメージを1回無効化できる"
     },
     "ba.protect": {
       "termId": "ba.protect",
@@ -1118,7 +1133,7 @@
     "ba.cold": {
       "termId": "ba.cold",
       "termName": "寒冷",
-      "description": "攻撃速度-30、効果時間内にもう一度寒冷状態を付与されると<$ba.frozen>凍結</>状態になる"
+      "description": "攻撃速度-30、スキル発動中にもう一度寒冷状態を付与されると<$ba.frozen>凍結</>状態になる"
     },
     "ba.frozen": {
       "termId": "ba.frozen",
@@ -1142,8 +1157,8 @@
     },
     "ba.dt.neural": {
       "termId": "ba.dt.neural",
-      "termName": "神経ダメージ",
-      "description": "神経ダメージの蓄積値が1000になると、1000の確定ダメージを受けて10秒間<$ba.stun>スタン</>状態になる"
+      "termName": "神経損傷",
+      "description": "神経損傷の蓄積値が1000になると、1000の確定ダメージを受けて10秒間<$ba.stun>スタン</>状態になる"
     },
     "ba.charged": {
       "termId": "ba.charged",
@@ -1153,17 +1168,17 @@
     "ba.strong": {
       "termId": "ba.strong",
       "termName": "勇猛",
-      "description": "HPが最大値の一定比率以上である時、攻撃力が効果値分増加（同名の状態は効果値が高いほうのみ適用）"
+      "description": "HPが最大値の一定割合以上である時、攻撃力が効果値分増加（同名の状態は効果値が高いほうのみ適用）"
     },
     "ba.dt.erosion": {
       "termId": "ba.dt.erosion",
-      "termName": "侵蝕ダメージ",
-      "description": "侵蝕ダメージの蓄積値が1000になると、800の物理ダメージを受けて、退場まで防御力-100"
+      "termName": "侵蝕損傷",
+      "description": "侵蝕損傷の蓄積値が1000になると、800の物理ダメージを受けて、退場まで防御力-100"
     },
     "ba.dt.burning": {
       "termId": "ba.dt.burning",
-      "termName": "灼熱ダメージ",
-      "description": "灼熱ダメージの蓄積値が1000になると、1200の術ダメージを受けて10秒間術耐性-20"
+      "termName": "灼熱損傷",
+      "description": "灼熱損傷の蓄積値が1000になると、1200の術ダメージを受けて10秒間術耐性-20"
     },
     "ba.float": {
       "termId": "ba.float",
@@ -1177,8 +1192,8 @@
     },
     "ba.dt.element": {
       "termId": "ba.dt.element",
-      "termName": "元素ダメージ",
-      "description": "以下のダメージ種類を含む：<$ba.dt.neural>神経ダメージ</>、<$ba.dt.erosion>侵蝕ダメージ</>、<$ba.dt.burning>灼熱ダメージ</>、<$ba.dt.apoptosis>壊死ダメージ</>"
+      "termName": "元素損傷",
+      "description": "以下のダメージ種類を含む：<$ba.dt.neural>神経損傷</>、<$ba.dt.erosion>侵蝕損傷</>、<$ba.dt.burning>灼熱損傷</>、<$ba.dt.apoptosis>壊死損傷</>"
     },
     "ba.overdrive": {
       "termId": "ba.overdrive",
@@ -1187,8 +1202,8 @@
     },
     "ba.dt.apoptosis": {
       "termId": "ba.dt.apoptosis",
-      "termName": "壊死ダメージ",
-      "description": "壊死ダメージが累計1000に達すると、15秒間スキルが発動できなくなり、1秒ごとにSPを1失い、100の術ダメージを受ける"
+      "termName": "壊死損傷",
+      "description": "壊死損傷の蓄積値が1000になると、15秒間スキルが発動できなくなり、1秒ごとにSPを1失い、100の術ダメージを受ける"
     },
     "ba.debuff": {
       "termId": "ba.debuff",
@@ -1203,7 +1218,7 @@
     "ba.physhield": {
       "termId": "ba.physhield",
       "termName": "対物理シールド",
-      "description": "ダメージを受けるとき、対物理シールドを1枚消耗することによって物理ダメージを1回ガード可能"
+      "description": "ダメージを受けるとき、対物理シールドを1枚消耗することによって物理の被ダメージを1回無効化できる"
     },
     "ba.magicfragile": {
       "termId": "ba.magicfragile",
@@ -1218,12 +1233,37 @@
     "ba.barrier": {
       "termId": "ba.barrier",
       "termName": "バリア",
-      "description": "被ダメージを一定値まで無効化可能"
+      "description": "被ダメージを一定値まで無効化できる"
     },
     "ba.weightless": {
       "termId": "ba.weightless",
       "termName": "反重力",
       "description": "重量が1ランクダウン（重複不可）"
+    },
+    "ba.berserk": {
+      "termId": "ba.berserk",
+      "termName": "不屈",
+      "description": "失ったHP量に応じて、異なる割合のステータス上昇効果を得る。HPが一定割合まで低下すると、最大値に達する（同類のステータス上昇効果は効果値が高いほうのみ適用）"
+    },
+    "ba.steal": {
+      "termId": "ba.steal",
+      "termName": "奪取",
+      "description": "対象のステータスを低下させ、自身のステータスを上昇させる。対象のステータス低下、および自身のステータス上昇には上限がある（同類のステータス上昇効果は効果値が高いほうのみ適用）"
+    },
+    "ba.weaken": {
+      "termId": "ba.weaken",
+      "termName": "虚弱",
+      "description": "対象の攻撃力が効果値分低下（同名の状態は効果値が高いほうのみ適用）"
+    },
+    "ba.dt.apoptosis2": {
+      "termId": "ba.dt.apoptosis2",
+      "termName": "壊死損傷・味方",
+      "description": "損傷が一定値（通常の敵、【エリート】は1000、敵【ボス】は2000）蓄積すると爆発し、対象が50%の<$ba.weaken>虚弱</>状態（効果値は時間経過で徐々に低下）になり、1秒ごとに800の元素ダメージを受ける。効果発動後、15秒後再発動可能になる"
+    },
+    "ba.epbarrier": {
+      "termId": "ba.epbarrier",
+      "termName": "損傷バリア",
+      "description": "自身が受ける<$ba.dt.element>元素損傷</>を一定値まで無効化可能"
     },
     "cc.bd_A_1": {
       "termId": "cc.bd_A_1",
@@ -1308,7 +1348,7 @@
     "cc.bd_felyne": {
       "termId": "cc.bd_felyne",
       "termName": "マタタビ",
-      "description": "スキル<$cc.bd_felyne_1><@cc.rem>愛らしきアイルー</></>、<$cc.bd_felyne_2><@cc.rem>頼もしきオトモたち</></>に影響を及ぼす\n以下のオペレーターが持つ基地スキルにより付与可能：\nレウスSノイルホーン、キリンRヤトウ"
+      "description": "スキル<$cc.bd_felyne_1><@cc.rem>愛らしきアイルー</></>、<$cc.bd_felyne_2><@cc.rem>頼もしきオトモたち</></>に影響を及ぼす\n以下のオペレーターが持つ基地スキルにより付与可能\nレウスSノイルホーン、キリンRヤトウ"
     },
     "cc.bd_felyne_1": {
       "termId": "cc.bd_felyne_1",
@@ -1384,6 +1424,16 @@
       "termId": "cc.g.sui",
       "termName": "歳",
       "description": "対象オペレーター：\nニェン、シー、リィン、チョンユエ"
+    },
+    "cc.g.glasgow": {
+      "termId": "cc.g.glasgow",
+      "termName": "グラスゴー",
+      "description": "対象オペレーター：\nシージ、モーガン、ダグザ、インドラ"
+    },
+    "cc.g.rh": {
+      "termId": "cc.g.rh",
+      "termName": "ライン生命",
+      "description": "対象オペレーター：\nサイレンス、イフリータ、サリア、フィリオプシス、メイヤー、マゼラン、ドロシー、アステジーニ、ミュルジス"
     },
     "cc.c.abyssal2_1": {
       "termId": "cc.c.abyssal2_1",
@@ -1463,17 +1513,22 @@
     "cc.sk.manu2": {
       "termId": "cc.sk.manu2",
       "termName": "ラインテク系スキル",
-      "description": "対象スキル：\nラインテクα 、ラインテクβ "
+      "description": "対象スキル：\nラインテクα、ラインテクβ、ラインテクγ"
     },
     "cc.sk.manu3": {
       "termId": "cc.sk.manu3",
       "termName": "レッドパイン系スキル",
       "description": "対象スキル：\nレッドパインα、レッドパインβ"
     },
+    "cc.sk.manu4": {
+      "termId": "cc.sk.manu4",
+      "termName": "金属工芸系スキル",
+      "description": "対象スキル：\n金属工芸α、金属工芸β"
+    },
     "cc.tag.op": {
       "termId": "cc.tag.op",
       "termName": "作業用プラットフォーム",
-      "description": "対象オペレーター：\nLancet-2、Castle-3、THRM-EX、ジャスティスナイト"
+      "description": "対象オペレーター：\nLancet-2、Castle-3、THRM-EX、ジャスティスナイト、Friston-3"
     },
     "cc.tag.knight": {
       "termId": "cc.tag.knight",
@@ -1497,6 +1552,71 @@
     }
   },
   "storyReviewUnlockItemLackTip": "事象の欠片の数が足りません。購買資格証ショップあるいはイベントショップで購入してください",
-  "dataVersion": "33.3.0",
-  "resPrefVersion": "36d0d0"
+  "dataVersion": "35.1.0",
+  "resPrefVersion": "39d0d0",
+  "announceWebBusType": "ak_announcement",
+  "subProfessionDamageTypePairs": {
+    "notchar1": "NONE",
+    "notchar2": "NONE",
+    "none1": "NONE",
+    "none2": "NONE",
+    "pioneer": "PHYSICAL",
+    "charger": "PHYSICAL",
+    "tactician": "PHYSICAL",
+    "bearer": "PHYSICAL",
+    "centurion": "PHYSICAL",
+    "fighter": "PHYSICAL",
+    "artsfghter": "MAGICAL",
+    "instructor": "PHYSICAL",
+    "lord": "PHYSICAL",
+    "sword": "PHYSICAL",
+    "musha": "PHYSICAL",
+    "fearless": "PHYSICAL",
+    "reaper": "PHYSICAL",
+    "librator": "PHYSICAL",
+    "protector": "PHYSICAL",
+    "guardian": "PHYSICAL",
+    "unyield": "PHYSICAL",
+    "artsprotector": "PHYSICAL",
+    "duelist": "PHYSICAL",
+    "fortress": "PHYSICAL",
+    "fastshot": "PHYSICAL",
+    "closerange": "PHYSICAL",
+    "aoesniper": "PHYSICAL",
+    "longrange": "PHYSICAL",
+    "reaperrange": "PHYSICAL",
+    "siegesniper": "PHYSICAL",
+    "bombarder": "PHYSICAL",
+    "corecaster": "MAGICAL",
+    "splashcaster": "MAGICAL",
+    "funnel": "MAGICAL",
+    "phalanx": "NONE",
+    "mystic": "MAGICAL",
+    "chain": "MAGICAL",
+    "blastcaster": "MAGICAL",
+    "physician": "HEAL",
+    "ringhealer": "HEAL",
+    "healer": "HEAL",
+    "wandermedic": "HEAL",
+    "slower": "MAGICAL",
+    "underminer": "MAGICAL",
+    "bard": "NONE",
+    "blessing": "MAGICAL",
+    "summoner": "MAGICAL",
+    "craftsman": "PHYSICAL",
+    "executor": "PHYSICAL",
+    "pusher": "PHYSICAL",
+    "stalker": "PHYSICAL",
+    "hookmaster": "PHYSICAL",
+    "geek": "PHYSICAL",
+    "merchant": "PHYSICAL",
+    "traper": "PHYSICAL",
+    "dollkeeper": "PHYSICAL",
+    "incantationmedic": "MAGICAL",
+    "agent": "PHYSICAL",
+    "shotprotector": "PHYSICAL",
+    "chainhealer": "HEAL",
+    "crusher": "PHYSICAL",
+    "ritualist": "MAGICAL"
+  }
 }

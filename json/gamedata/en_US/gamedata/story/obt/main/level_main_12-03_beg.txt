@@ -1,0 +1,424 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="21_G7_decisivebattlealley_d",screenadapt="showall")]
+[Delay(time=1)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]How quick to answer, Doctor of Rhodes Island.
+[name="'Trilby Asher'"]A safe location has been sent to Alexandrina's terminal. Please stand by there. I cannot guarantee your safety for any actions you take outside of our arrangement.
+[charslot(slot="m",name="avg_npc_407_1#5$1",focus="m")]
+[name="Siege"]My terminal? When did...?!
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]You have some impressive talents among your ranks. That's very good. This should contribute to our common goal instead of becoming an obstacle to our cooperation.
+[name="'Trilby Asher'"]Right?
+[Dialog]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="none")]
+[Decision(options="This isn't completely up to us.;......;Is it a Victorian thing to call threats cooperation?", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Of course. We must slowly build our trust.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]A cautious silence. How admirable.
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Regrettably, yes.
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="'Trilby Asher'"]Please await our next communication.
+[Dialog]
+[PlaySound(key="$d_avg_walk_stage",channel="n",loop=false)]
+[stopsound(channel="n",fadetime=2.5)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="Ascalon"]......
+[name="Ascalon"]Doctor, I need to contact Closure and reevaluate the safety of Rhodes Island's communications. Until then, maintain radio silence.
+[charslot(slot="m",name="avg_npc_395_1#7$1",focus="m")]
+[name="Ascalon"]Of course, we also need to... take care of the issues regarding the landship's calling procedures.
+[Dialog]
+[charslot(slot="m",name="avg_npc_395_1#7$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1)]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#21$1",focus="m")]
+[name="Amiya"]Thank you, Ines.
+[Dialog]
+[charslot]
+[Decision(options="Hello, Ines. Is this the first time we've met?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="Ines"]I'm afraid not.
+[Dialog]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="none")]
+[Decision(options="I've lost... some of my memories.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="Ines"]I'm aware.
+[name="Ines"]This is our first meeting, for this version of you.
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="Ines"]Have you really lost your memories...? Or is this part of your plan?
+[Dialog]
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="none")]
+[Decision(options="I forgot about lots of things, indeed.;......;What makes you ask that?", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="Ines"]......
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="Ines"]I've never been quick to judge, Dr. {@nickname}. I can sense that you've gone through some... changes.
+[name="Ines"]We'll have a lot of time to get reacquainted in the future.
+[name="Ines"]Rather than trusting verbal statements, I prefer to see things for myself.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]Ines, the Doctor...
+[charslot(slot="m",name="avg_4087_ines_1#11$1",focus="m")]
+[name="Ines"]Relax, Amiya. My prejudices won't be a factor.
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="Ines"]For now.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g7_subway", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_npc_229_1#1")]
+[charslot(slot="r",name="avg_npc_398_1#1$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_398_1#1$1",focus="r")]
+[name="Self-Salvation Corps Fighter"]The evacuation's almost complete!
+[charslot(slot="l",name="avg_npc_229_1#6",focus="l")]
+[name="Horn"]Good, we need to get out of here ASAP.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[PlaySound(key="$p_aoe_nmag_h", volume=1,delay=0.6)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.1, block=true)]
+[Blocker(a=0.7, r=0.95, g=0.95, b=0.95, fadetime=0.2, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=0.2)]
+[musicvolume(volume=0, fadetime=0.5)]
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_419_1#1$1",focus="all")]
+[charslot(slot="r",name="avg_npc_419_1#1$1",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",name="avg_npc_419_1#1$1",afrom=1,ato=0,duration=0.5)]
+[charslot(slot="r",name="avg_npc_419_1#1$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot]
+[charslot(slot="m",name="avg_npc_414_1#1$1",focus="m")]
+[name="Robben"]That Sarkaz from Rhodes Island. Is his name Logos?
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="Horn"]And I thought we'd seen all the surprises Rhodes Island's fighting style had to offer, having fought alongside Misery all this time.
+[charslot(slot="m",name="avg_npc_414_1#1$1",focus="m")]
+[name="Robben"]Right. It doesn't matter who exactly he is. His cursecraft has been a great help.
+[charslot(slot="m",name="avg_npc_398_1#1$1",focus="m")]
+[name="Self-Salvation Corps Fighter"]Hah... and he's a great darts player, too.
+[name="Self-Salvation Corps Fighter"]I played against him for a couple rounds. His accuracy might just be as terrifying as those Arts of his.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=0.6)]
+[charslot(slot="m",name="avg_npc_650_1#1$1",duration=1)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_650_1#1$1",focus="m")]
+[name="Logos"]A friend of mine taught me a couple tricks before, that's all.
+[name="Logos"]He's no match for me in a chair sliding match, but when it comes to darts... He's not so bad.
+[name="Logos"]Horn, the Sarkaz forces have retreated. We should seize this opportunity.
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="Horn"]According to the plan, Rhodes Island and the Self-Salvation Corps will take the supply route, head toward the exit, and make their way to a town called Brentwood to build a new safe house there.
+[name="Horn"]We will regroup with them there.
+[name="Horn"]I suggest we charge toward the city walls. Norport Borough is gone, and even though the Sarkaz have patched up the walls, they wouldn't have had enough time to build new plates to fill the hole there.
+[name="Horn"]The exposed underground structure might just help us somehow.
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",posfrom="200,0",posto="0,0",afrom=0,ato=1,duration=1,isblock=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",posfrom="0,0",posto="-300,0",duration=0.7)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",afrom=1,ato=0,duration=0.4,isblock=true)]
+[Delay(time=1)]
+[Dialog]
+[charslot]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_650_1#4$1",focus="m")]
+[name="Logos"]......
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[name="Logos"]Looks like I've met another old friend.
+[charslot(slot="m",name="avg_npc_398_1#1$1",focus="m")]
+[name="Self-Salvation Corps Fighter"]The one who taught you to play darts.
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[name="Logos"]Regrettably, no.
+[name="Logos"]Unlike this old friend, my friends are loyal to one another until our deaths.
+[name="Logos"]Everyone, I'm afraid I still have matters to attend to within the city. Horn is more than capable of leading you outside Londinium, and my coworker Misery will also lend you his assistance should the need arise.
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="Horn"]Understood.
+[name="Horn"]Stay hidden, everyone. Follow me.
+[Dialog]
+[playsound(key="$d_gen_soldiersrun",volume=0.7)]
+[charslot(slot="m",name="avg_npc_229_1#1",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="27_g7_subway", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_npc_650_1#1$1")]
+[charslot(slot="r",name="avg_npc_657_1#8$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_650_1#1$1",focus="l")]
+[name="Logos"]Are the mountains of the past really so worthy of reminiscing? Blood and tears are nothing to be obsessed with.
+[charslot(slot="r",name="avg_npc_657_1#8$1",focus="r")]
+[name="'Molly'"]I must say I'm not entirely fascinated by them.
+[name="'Molly'"]But what if the mountains are the only place there is left to stay? What if only the light of glory there can give us warmth?
+[charslot(slot="l",name="avg_npc_650_1#1$1",focus="l")]
+[name="Logos"]......
+[name="Logos"]And here I thought I'd hunted enough of you.
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="r")]
+[name="'Molly'"]This is the thirty-first 'Molly.' You are a hardworking one, Banshee.
+[charslot(slot="l",name="avg_npc_650_1#2$1",focus="l")]
+[name="Logos"]But you prevailed nonetheless. You helped Theresis decimate the Self-Salvation Corps.
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="r")]
+[name="'Molly'"]That's business.
+[charslot(slot="l",name="avg_npc_650_1#2$1",focus="l")]
+[name="Logos"]I would pry up every tile in Londinium to find the last of your hidden shards, Damazti.
+[name="Logos"]You yet refute the possibility of change. This has always been your choice.
+[Dialog]
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="all")]
+[delay(time=0.2)]
+[charslot(slot="r",name="avg_npc_657_1#6$1",afrom=1,ato=0,duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$d_avg_humanchange")]
+[charslot(slot="r",name="avg_npc_426_1#1$1",afrom=0,ato=1,duration=1)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_426_1#1$1",focus="r")]
+[name="Damazti Cluster"]A little arrogant, aren't we, young Banshee? We understand change. We come from change itself.
+[name="Damazti Cluster"]But change is merely a means to adaptation. All change has a final objective.
+[name="Damazti Cluster"]Even before the Sarkaz found themselves in this state, we had long been walking upon the lands.
+[name="Damazti Cluster"]Ideologies, faiths, missions, slogans. None of them can escape the sands of time.
+[charslot(slot="r",name="avg_npc_426_1#10$1",focus="r")]
+[name="Damazti Cluster"]Those ideas you mistake as novel have been conceived long ago. The paths you deem noble have been paved time and again.
+[charslot(slot="r",name="avg_npc_426_1#1$1",focus="r")]
+[name="Damazti Cluster"]And where are they now?
+[name="Damazti Cluster"]We yet still before you.
+[name="Damazti Cluster"]And that is the greatest proof.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="37_g1_glasgowboxinggym", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[PlayMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_punchsp2")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+(Bang!)
+[Dialog]
+[PlaySound(key="$d_avg_punchsp1", volume=0.3)]
+[PlaySound(key="$d_avg_punch02", volume=0.4,delay=0.2)]
+[CameraShake(duration=0.6, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+(Bang, bang!)
+[Dialog]
+[charslot(slot="l",name="avg_npc_862_1#11$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_863_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="Cador"]Phew—
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]You should save some strength, Cador. You've eaten more than enough.
+[name="Baird"]Delphine has talked to you about your appetite problem already. We're much worse off than we used to be now.
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="Cador"]Relax, Baird. Things haven't completely gone to shit yet.
+[name="Cador"]Them devils aren't nearly as strong as they look. All they did was catch us off-guard.
+[name="Cador"]I had a chat with Marshall from the transport union. They have a group of men over there. Once we rope in more people on our end, we might just stand a chance to defeat the Sarkaz.
+[name="Cador"]Just like how we joined forces with those other gangs to take the cops down.
+[name="Cador"]Jump them from behind, get the job done clean. 'Pow pow,' 'bam!'
+[charslot(slot="l",name="avg_npc_862_1#4$1",focus="l")]
+[name="Cador"]A couple punches. That's all it takes.
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="Baird"]The Sarkaz army isn't cops.
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="Cador"]I know. They're a force to be reckoned with.
+[name="Cador"]But we aren't afraid of blood. We aren't afraid of sacrifices! We will walk over our fallen comrades, and smash their faces in with our fists—
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="Cador"]Like our gym's name, 'Slobberknocker!'
+[name="Cador"]Marshall and I worked it out. We will definitely win!
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="Baird"]Just like those bootleg Lungmen videos you collect, hm?
+[charslot(slot="l",name="avg_npc_862_1#10$1",focus="l")]
+[name="Cador"]I'm serious, I've been around the block in Norport not much shorter than you.
+[name="Cador"]We need to find a way out of this mess ourselves just like before.
+[name="Cador"]That Siege of yours just up and left Glasgow all those years ago, and our turf got handed over, just like that. It was you and I who racked our brains to figure out how to gain a foothold here again.
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="Cador"]This is nothing different than before. We stand together, get prepared, and beat them all up. That's how we've made it this far.
+[name="Cador"]It doesn't matter how things are outside. Out on the streets, we do things the street way.
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="Cador"]Next, we just gotta find ourselves the right moment...
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="none")]
+[PlaySound(key="$d_avg_knockdoorfast", volume=0.5)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="Baird"]Looks like Delphine's back.
+[Dialog]
+[charslot]
+[PlaySound(key="$dooropenquite", volume=1)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_866_1#6$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_177",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_866_1#6$1",focus="l")]
+[name="Delphine"]......
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_862_1#1$1",focus="m")]
+[name="Cador"]Did Ol' Baldy Per finally give in? Given the circumstances, we're paying a pretty decent price. I'm sure he—
+[charslot(slot="m",name="avg_npc_862_1#5$1",focus="m")]
+[name="Cador"]What's this? Is that... blood?
+[playMusic(intro="$calamity_intro", key="$calamity_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="Delphine"]Ol' Baldy Per is dead.
+[charslot(slot="m",name="avg_npc_862_1#5$1",focus="m")]
+[name="Cador"]!
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="Cador"]The Sarkaz—
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="Timid Citizen"]No, not the Sarkaz! Dammit, I have no idea who they were, but they were already at it when we got to the store!
+[name="Timid Citizen"]They were a bloodthirsty bunch! I saw with my own eyes there was this man with a crowbar, pinning another man on the floor. That man even—
+[CameraShake(duration=0.3, xstrength=12, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Timid Citizen"]*cough* *cough*, *cough* *cough*!
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="Delphine"]The situation's bad. My guess is some starving bum set his sights on Per's shop. The idiot still had bread in his glass showcase.
+[name="Delphine"]And it went as you'd expect.
+[name="Delphine"]You can more or less guess just how many of these 'bums' there are in this locked-down district.
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="Cador"]......
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="Cador"]Bloody idiots... Whatever they have been sniffing must've finally got to their heads!
+[charslot(slot="m",name="avg_npc_866_1#7$1",focus="m")]
+[name="Delphine"]I know the man with the crowbar. He's a tail hair product salesman. Always had a smile on his face.
+[name="Delphine"]I bought from him a number of times since he gave me discounts. They aren't all that good, though.
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="Delphine"]I saw him just now... His eyes were deep red, there was blood on his lips. That crowbar was completely bent. I... I almost didn't recognize him.
+[name="Delphine"]Fear is spreading, Cador.
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="Cador"]The transport union guys did say there could be cowards going nuts, but how could...
+[Dialog]
+[charslot]
+[PlaySound(key="$bottlebroken", volume=0.6)]
+[PlaySound(key="$d_avg_glass_break", volume=1,delay=0.4)]
+[PlaySound(key="$d_avg_windowbreak", volume=1,delay=0.9)]
+[CameraShake(duration=1.5, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_knockdoorfast", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_866_1#3$1",focus="m")]
+[name="Delphine"]Barricade the door!
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="Timid Citizen"]I... I...
+[charslot(slot="m",name="avg_npc_863_1#7$1",focus="m")]
+[name="Baird"]What are you spacing out for? Make yourself useful! Cador, push that sofa over here!
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="Cador"]Bloody bastards, what do the lot of you want?!
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="Voice Outside the Door"]......
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="Cador"]Now piss off, we've got people alive in here. This is Glasgow's territory!
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="Voice Outside the Door"]......
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="Cador"]Baird, watch out!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_axeimp", volume=1)]
+[PlaySound(key="$d_avg_doorbreak", volume=1,delay=0.4)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.1, block=true)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.3, block=true)]
+[Delay(time=1.2)]
+A fire axe smashes through the gym's thick door and breaks open a hole. The sharp axe brushes past Baird's hair.
+A few strands of her hair flutter in the air.
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=12, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Cador"]I said it already. We've got people still bloody alive in here!
+[Dialog]
+[PlaySound(key="$d_avg_woodenladder", volume=0.4)]
+[PlaySound(key="$d_gen_doorclose", volume=0.6,delay=0.3)]
+[CameraShake(duration=0.7, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.2)]
+Cador presses against the door with his body and grabs the axe peeking through the hole back with his two hands. The man outside makes several attempts to pull the axe back in vain.
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="Cador"]I don't care who the hell you are, but get out of my sight, or I'll have this axe in your brain!
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="Voice Outside the Door"]......
+[Dialog]
+[charslot]
+[PlaySound(key="$gavel1",volume=0.5)]
+[PlaySound(key="$sheildimpact", volume=0.6,delay=0.3)]
+[PlaySound(key="$d_gen_doorclose", volume=0.6,delay=0.8)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=true)]
+The axe wobbles a few times, and after a few heavy kicking sounds on the door, the men outside finally gives up, their chaotic footsteps slowly growing quieter.
+[Dialog]
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="Timid Citizen"]Your hand... Your fingers...
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="Cador"]......
+[charslot(slot="m",name="avg_npc_862_1#3$1",focus="m")]
+[name="Cador"]Good thing that bandages are the last thing we'll run out of in a gym.
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="Cador"]Baird, Delphine. We need to take inventory of all our resources again.
+[name="Cador"]I'll take down a couple sandbags to reinforce our front door.
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="Timid Citizen"]Th-These people... Have they gone mad?!
+[name="Timid Citizen"]They... The citizens of Norport Borough were all upstanding men, basically... What about the police? They were always so quick to write tickets!
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="Cador"]If I were a cop so unlucky as to not make it out of this plate in time, I would definitely have locked myself in my home with my weapon at the ready by now.
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="Cador"]I... I need to head on over to the transport union later. The people here still trust Marshall.
+[name="Cador"]He—Everyone always listens to him. He'll find a way.
+[name="Cador"]Dammit... Bloody hell! The Sarkaz are still out there. These people are out of their minds. How could they—
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_862_1#12$1",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_npc_177",duration=0.5,focus="l")]
+[charslot(slot="r",name="avg_npc_863_1#7$1",duration=0.5,focus="l")]
+[Delay(time=0.6)]
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="Timid Citizen"]What... What should we do now? Cador said we just had to wait for...
+[charslot(slot="r",name="avg_npc_863_1#7$1",focus="r")]
+[name="Baird"]An opportunity?
+[name="Baird"]Mr. 'Next Academician,' are you aware of the great fire in Norport fifteen years ago?
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="Timid Citizen"]Oh, yes, I've heard. It was in the port, if I recall...
+[charslot(slot="r",name="avg_npc_863_1#7$1",focus="r")]
+[name="Baird"]It doesn't actually take very much to burn down a port.
+[name="Baird"]All you need is scorching hot weather, a warehouse full of wood shavings, and a cigarette butt not fully extinguished.
+[charslot(slot="r",name="avg_npc_863_1#8$1",focus="r")]
+[name="Baird"]No one can put out a fire like that.
+[name="Baird"]All we can do is watch everything burn to ashes.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=3)]
+[charslot]
+[Image]

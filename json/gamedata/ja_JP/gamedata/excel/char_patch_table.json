@@ -16,11 +16,11 @@
       "canUseActivityPotentialItem": false,
       "potentialItemId": "p_char_002_amiya",
       "activityPotentialItemId": null,
+      "classicPotentialItemId": null,
       "nationId": "rhodes",
       "groupId": null,
       "teamId": null,
       "displayNumber": "R001",
-      "tokenKey": null,
       "appellation": "Amiya",
       "position": "MELEE",
       "tagList": [
@@ -32,7 +32,7 @@
       "isNotObtainable": false,
       "isSpChar": false,
       "maxPotentialLevel": 5,
-      "rarity": 4,
+      "rarity": "TIER_5",
       "profession": "WARRIOR",
       "subProfessionId": "artsfghter",
       "trait": null,
@@ -264,7 +264,7 @@
           "levelUpCostCond": [
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 28800,
@@ -288,7 +288,7 @@
             },
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 57600,
@@ -312,7 +312,7 @@
             },
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 86400,
@@ -336,7 +336,7 @@
             }
           ],
           "unlockCond": {
-            "phase": 0,
+            "phase": "PHASE_0",
             "level": 1
           }
         },
@@ -347,7 +347,7 @@
           "levelUpCostCond": [
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 28800,
@@ -371,7 +371,7 @@
             },
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 57600,
@@ -395,7 +395,7 @@
             },
             {
               "unlockCond": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "lvlUpTime": 86400,
@@ -419,17 +419,18 @@
             }
           ],
           "unlockCond": {
-            "phase": 1,
+            "phase": "PHASE_1",
             "level": 1
           }
         }
       ],
+      "displayTokenDict": null,
       "talents": [
         {
           "candidates": [
             {
               "unlockCondition": {
-                "phase": 1,
+                "phase": "PHASE_1",
                 "level": 1
               },
               "requiredPotentialRank": 0,
@@ -440,17 +441,20 @@
               "blackboard": [
                 {
                   "key": "atk",
-                  "value": 0.04
+                  "value": 0.04,
+                  "valueStr": null
                 },
                 {
                   "key": "def",
-                  "value": 0.04
+                  "value": 0.04,
+                  "valueStr": null
                 }
-              ]
+              ],
+              "tokenKey": null
             },
             {
               "unlockCondition": {
-                "phase": 2,
+                "phase": "PHASE_2",
                 "level": 1
               },
               "requiredPotentialRank": 0,
@@ -461,20 +465,23 @@
               "blackboard": [
                 {
                   "key": "atk",
-                  "value": 0.07
+                  "value": 0.07,
+                  "valueStr": null
                 },
                 {
                   "key": "def",
-                  "value": 0.07
+                  "value": 0.07,
+                  "valueStr": null
                 }
-              ]
+              ],
+              "tokenKey": null
             }
           ]
         }
       ],
       "potentialRanks": [
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "最大HP+200",
           "buff": {
             "attributes": {
@@ -485,8 +492,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 0,
-                  "formulaItem": 0,
+                  "attributeType": "MAX_HP",
+                  "formulaItem": "ADDITION",
                   "value": 200.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -497,7 +504,7 @@
           "equivalentCost": null
         },
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "配置コスト-1",
           "buff": {
             "attributes": {
@@ -508,8 +515,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 4,
-                  "formulaItem": 0,
+                  "attributeType": "COST",
+                  "formulaItem": "ADDITION",
                   "value": -1.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -520,7 +527,7 @@
           "equivalentCost": null
         },
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "攻撃力+28",
           "buff": {
             "attributes": {
@@ -531,8 +538,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 1,
-                  "formulaItem": 0,
+                  "attributeType": "ATK",
+                  "formulaItem": "ADDITION",
                   "value": 28.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -543,7 +550,7 @@
           "equivalentCost": null
         },
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "配置コスト-1",
           "buff": {
             "attributes": {
@@ -554,8 +561,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 4,
-                  "formulaItem": 0,
+                  "attributeType": "COST",
+                  "formulaItem": "ADDITION",
                   "value": -1.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -566,7 +573,7 @@
           "equivalentCost": null
         },
         {
-          "type": 0,
+          "type": "BUFF",
           "description": "防御力+22",
           "buff": {
             "attributes": {
@@ -577,8 +584,8 @@
               "abnormalComboImmunes": null,
               "attributeModifiers": [
                 {
-                  "attributeType": 2,
-                  "formulaItem": 0,
+                  "attributeType": "DEF",
+                  "formulaItem": "ADDITION",
                   "value": 22.0,
                   "loadFromBlackboard": false,
                   "fetchBaseValueFromSourceEntity": false
@@ -648,7 +655,7 @@
       "allSkillLvlup": [
         {
           "unlockCond": {
-            "phase": 0,
+            "phase": "PHASE_0",
             "level": 1
           },
           "lvlUpCost": [
@@ -661,7 +668,7 @@
         },
         {
           "unlockCond": {
-            "phase": 0,
+            "phase": "PHASE_0",
             "level": 1
           },
           "lvlUpCost": [
@@ -679,7 +686,7 @@
         },
         {
           "unlockCond": {
-            "phase": 0,
+            "phase": "PHASE_0",
             "level": 1
           },
           "lvlUpCost": [
@@ -697,7 +704,7 @@
         },
         {
           "unlockCond": {
-            "phase": 1,
+            "phase": "PHASE_1",
             "level": 1
           },
           "lvlUpCost": [
@@ -715,7 +722,7 @@
         },
         {
           "unlockCond": {
-            "phase": 1,
+            "phase": "PHASE_1",
             "level": 1
           },
           "lvlUpCost": [
@@ -733,7 +740,7 @@
         },
         {
           "unlockCond": {
-            "phase": 1,
+            "phase": "PHASE_1",
             "level": 1
           },
           "lvlUpCost": [
@@ -762,7 +769,7 @@
       "conds": [
         {
           "stageId": "main_08-16",
-          "completeState": 2
+          "completeState": "PASS"
         }
       ]
     }

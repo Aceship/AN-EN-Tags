@@ -1,0 +1,424 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="21_G7_decisivebattlealley_d",screenadapt="showall")]
+[Delay(time=1)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]随分と思い切りがいいな、ロドスのドクター。
+[name="「グレーシルクハット」"]安全な場所の位置をアレクサンドリナ殿下の端末に送っておいた。そこで指示を待て。指示の範囲を超えたいかなる行動の安全も保証することはできない。
+[charslot(slot="m",name="avg_npc_407_1#5$1",focus="m")]
+[name="シージ"]端末？　いつの間に……！？
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]あなた方の中には、何人か腕の立つ者がいる。実に素晴らしいな。それが、我々の協力関係を壊す切っ掛けではなく、共通の目的を達成する力になってくれると信じているよ。
+[name="「グレーシルクハット」"]同意を得られるものと思うが？
+[Dialog]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="none")]
+[Decision(options="それは我々だけで決めることではない。;……;脅迫を協力と呼ぶのはヴィクトリア人の伝統か？", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]もちろん、我々はゆっくりと信頼を築いていく必要がある。
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]用心深い沈黙だな、称賛に値する。
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]非常に残念ながら、その通りだ。
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]次の連絡を待っていてくれ。
+[Dialog]
+[PlaySound(key="$d_avg_walk_stage",channel="n",loop=false)]
+[stopsound(channel="n",fadetime=2.5)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_395_1#1$1",focus="m")]
+[name="アスカロン"]……
+[name="アスカロン"]ドクター、私はクロージャに報告に行かなければならない。ロドスの通信セキュリティを見直す必要がある。それまで無線封鎖の状態を保て。
+[charslot(slot="m",name="avg_npc_395_1#7$1",focus="m")]
+[name="アスカロン"]もちろん、それに加え……ヴィクトリアにおける本艦の停泊手続きの処理もな。
+[Dialog]
+[charslot(slot="m",name="avg_npc_395_1#7$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1)]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#21$1",focus="m")]
+[name="アーミヤ"]イネスさん、ありがとうございます。
+[Dialog]
+[charslot]
+[Decision(options="こんにちは、イネス。初めましてかな？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="イネス"]恐らく違うわ。
+[Dialog]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="none")]
+[Decision(options="記憶を一部……失っているんだ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="イネス"]……知ってるわ。
+[name="イネス"]今のあなたにとっては、初対面なのよね。
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]あなた本当に……記憶を失っているの？　それとも、これもあなたの計画の一部かしら。
+[Dialog]
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="none")]
+[Decision(options="本当に多くのことを忘れてしまっている。;……;君はどう思う？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]……
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="イネス"]返答は保留するわ。Dr.{@nickname}、軽はずみな判断を下さないようにしてるの。今のあなたに感じるのは、確かに少し……変化が見られることね。
+[name="イネス"]今後、私たちが共に行動する時間はたくさんあるわ。
+[name="イネス"]口先だけの言葉に耳を傾けるくらいなら、自分の目で確かめる方が好きよ。
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]イネスさん、ドクターに対して……
+[charslot(slot="m",name="avg_4087_ines_1#11$1",focus="m")]
+[name="イネス"]安心して、アーミヤ。偏見は心にしまっておくから。
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="イネス"]ひとまずはね。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g7_subway", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_npc_229_1#1")]
+[charslot(slot="r",name="avg_npc_398_1#1$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_398_1#1$1",focus="r")]
+[name="自救軍戦士"]撤退がほぼ完了した！
+[charslot(slot="l",name="avg_npc_229_1#6",focus="l")]
+[name="ホルン"]了解、私たちもここから退却しないと。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[PlaySound(key="$p_aoe_nmag_h", volume=1,delay=0.6)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.1, block=true)]
+[Blocker(a=0.7, r=0.95, g=0.95, b=0.95, fadetime=0.2, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=0.2)]
+[musicvolume(volume=0, fadetime=0.5)]
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_419_1#1$1",focus="all")]
+[charslot(slot="r",name="avg_npc_419_1#1$1",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",name="avg_npc_419_1#1$1",afrom=1,ato=0,duration=0.5)]
+[charslot(slot="r",name="avg_npc_419_1#1$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot]
+[charslot(slot="m",name="avg_npc_414_1#1$1",focus="m")]
+[name="ロッベン"]あのロドスのサルカズが、Logosと呼ばれている方ですか？
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]Miseryさんとしばらく共闘した経験もあるし、もうロドスの戦い方に驚くことはないだろうと思ってたけど……勘違いだったわね。
+[charslot(slot="m",name="avg_npc_414_1#1$1",focus="m")]
+[name="ロッベン"]そうですね。あのLogosさんが何者であれ、彼の呪術のおかげで我々は大いに助かりました。
+[charslot(slot="m",name="avg_npc_398_1#1$1",focus="m")]
+[name="自救軍戦士"]ハッ、それに彼はダーツの腕も相当だしな。
+[name="自救軍戦士"]何回か勝負をさせてもらったが、あの正確さは彼の術と同じくらい恐るべきものだぞ。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=0.6)]
+[charslot(slot="m",name="avg_npc_650_1#1$1",duration=1)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_650_1#1$1",focus="m")]
+[name="Logos"]……ある友が、伝授してくれた小技にすぎぬ。
+[name="Logos"]スツール滑走競技においては我に敵わぬが、ことダーツに関しては……あやつも我に引けを取らなんだ。
+[name="Logos"]ホルン女史、サルカズの部隊はすでに一時退却したと見える。急ぐとしよう。
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]計画では、ロドスと自救軍は補給ルートを通って輸送路の出発点、ブレントウードの町辺りまで撤退し、そこに新たなセーフハウスを設置するはずです。
+[name="ホルン"]そこでみんなと合流しましょう。
+[name="ホルン"]城壁の方面を突破するのが上策でしょうね。ノーポート区が切り離されて以降、サルカズは城壁を封鎖していますが、その穴を埋める区画の建設にはまだ手が回っていません。
+[name="ホルン"]露出している地下構造は我々にとって有利に働きます。
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",posfrom="200,0",posto="0,0",afrom=0,ato=1,duration=1,isblock=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",posfrom="0,0",posto="-300,0",duration=0.7)]
+[charslot(slot="m",name="avg_npc_657_1#1$1",afrom=1,ato=0,duration=0.4,isblock=true)]
+[Delay(time=1)]
+[Dialog]
+[charslot]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_650_1#4$1",focus="m")]
+[name="Logos"]......
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[name="Logos"]どうやら、また一人古い馴染みに再会したようだ。
+[charslot(slot="m",name="avg_npc_398_1#1$1",focus="m")]
+[name="自救軍戦士"]そのダーツを教えてくれたご友人ですか？
+[charslot(slot="m",name="avg_npc_650_1#3$1",focus="m")]
+[name="Logos"]生憎と、異なる。
+[name="Logos"]我の友垣らは、この旧知の者と違い、死して変じることなどない。
+[name="Logos"]皆の者、聞くがよい。我は都市にて対処せねばならぬ些事がある。ホルン女史であればうぬらを連れてロンディニウムから撤退できよう。我が同僚Miseryも必要に応じてうぬらを支援する。
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]……わかりました。
+[name="ホルン"]総員、隠密行動を維持しつつ、私に続け。
+[Dialog]
+[playsound(key="$d_gen_soldiersrun",volume=0.7)]
+[charslot(slot="m",name="avg_npc_229_1#1",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="27_g7_subway", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_npc_650_1#1$1")]
+[charslot(slot="r",name="avg_npc_657_1#8$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_650_1#1$1",focus="l")]
+[name="Logos"]昔日の山の頂は、真実斯くも偲ぶべきものであろうか？　涙も血もうぬが魅入られるには値せぬぞ。
+[charslot(slot="r",name="avg_npc_657_1#8$1",focus="r")]
+[name="「モリー」"]そうしたものにさほど興味がないことは認めます。
+[name="「モリー」"]ですがもし、山の頂だけが住処を与えてくれるなら？　栄光によってのみ温かさを得られるなら？
+[charslot(slot="l",name="avg_npc_650_1#1$1",focus="l")]
+[name="Logos"]......
+[name="Logos"]もう十分な数のうぬを狩ったはずだと思っておったが。
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="r")]
+[name="「モリー」"]三十一人の「モリー」でしょう。あなたはよく頑張りましたよ、バンシー。
+[charslot(slot="l",name="avg_npc_650_1#2$1",focus="l")]
+[name="Logos"]それでもうぬにはしてやられた。うぬはテレシスのために自救軍を瓦解させたのだからな。
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="r")]
+[name="「モリー」"]それが僕たちの仕事だから。
+[charslot(slot="l",name="avg_npc_650_1#2$1",focus="l")]
+[name="Logos"]……変形者よ、ロンディニウムのタイル一つ一つをこじ開け、暗がりに潜むうぬの破片を余さず見つけ出してやろうぞ。
+[name="Logos"]うぬは変化する可能性を信じることを、今もって拒絶しておろう。それがかねてより変わらぬうぬの選択である。
+[Dialog]
+[charslot(slot="r",name="avg_npc_657_1#6$1",focus="all")]
+[delay(time=0.2)]
+[charslot(slot="r",name="avg_npc_657_1#6$1",afrom=1,ato=0,duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$d_avg_humanchange")]
+[charslot(slot="r",name="avg_npc_426_1#1$1",afrom=0,ato=1,duration=1)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_426_1#1$1",focus="r")]
+[name="変形者"]若きバンシー、君ちょっとうぬぼれすぎやしないかい？　僕たちは変化を理解し、変化の中からやってきたんだけど。
+[name="変形者"]でも変化って所詮は適応の手段にすぎないんだ。どんな変化も最終的な目的があるんだよ。
+[name="変形者"]サルカズが今の姿を得るよりも前から、僕たちは大地を歩いていたんだ。
+[name="変形者"]理念、信仰、主義、スローガン……歳月の洗礼を逃れられるものは一つもなかったね。
+[charslot(slot="r",name="avg_npc_426_1#10$1",focus="r")]
+[name="変形者"]君が新鮮だと思ってる発想は、とっくに誰かが考えてたものだし、君が高尚だと思ってる道は、とっくに誰かが実践したことがあるんだよね。
+[charslot(slot="r",name="avg_npc_426_1#1$1",focus="r")]
+[name="変形者"]でさ、その人たちは今どこにいると思う？
+[name="変形者"]だけど僕たちは、今も君の前に立ってるんだよ。
+[name="変形者"]これこそが一番の証拠でしょ。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="37_g1_glasgowboxinggym", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[PlayMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_punchsp2")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+バシッ！
+[Dialog]
+[PlaySound(key="$d_avg_punchsp1", volume=0.3)]
+[PlaySound(key="$d_avg_punch02", volume=0.4,delay=0.2)]
+[CameraShake(duration=0.6, xstrength=30, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+バシッ、ビシッ！
+[Dialog]
+[charslot(slot="l",name="avg_npc_862_1#11$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_863_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="カドール"]ふぅ……
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="ベアード"]体力を温存して、カドール。あなた食べ過ぎ。
+[name="ベアード"]デルフィーンから何度もあなたの食事量について抗議されてる。今はもう前とは違うのを理解して。
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="カドール"]安心しろ、ベアード。状況はそこまでひどかねぇ。
+[name="カドール"]あの魔族どもは見た目ほど強いわけじゃねぇ、あいつらはただオレらに不意打ちを食らわしただけだ。
+[name="カドール"]運輸組合のマーシャルが話をしに来たんだが、あいつらの方も団結したってよ。もっと仲間を増やせば、あんなサルカズどもなんざ敵じゃなくなるさ。
+[name="カドール"]前にオレらといくつかのギャングで組んで、ポリ公どもとやり合った時とおんなじさ。
+[name="カドール"]背後から連中を奇襲して「シュシュッ」、「バシッ」ってな具合で終わりだ！
+[charslot(slot="l",name="avg_npc_862_1#4$1",focus="l")]
+[name="カドール"]数発ぶん殴りゃノックダウンさ、超簡単だよ。
+[charslot(slot="r",name="avg_npc_863_1#1$1",focus="r")]
+[name="ベアード"]サルカズの軍隊は警察じゃない。
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="カドール"]わかってるさ、ポリ公よか手ごわいだろうよ。
+[name="カドール"]だがオレらは血を流すことも犠牲も恐れやしねぇ！　倒れた仲間を踏み越えて、この拳を奴らの顔面に思い切りぶち込んで──
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="カドール"]「スロバーノッカー」っつーこのジムの名前の通り、顎に強烈な一発をお見舞いしてやるさ！
+[name="カドール"]マーシャルとシミュレーション済みだ、オレらなら絶対に勝てる！
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="ベアード"]あなたのあの、くだらない龍門ビデオ集みたいにってこと？
+[charslot(slot="l",name="avg_npc_862_1#10$1",focus="l")]
+[name="カドール"]真剣に言ってんだぜ。オレだって伊達にノーポート区のストリートでやってきてねぇよ。荒波渡ってきた時間はオマエにも劣らねぇ。
+[name="カドール"]オレらは、自分たちのために活路を見出さなきゃならねぇんだ。昔みてぇにな。
+[name="カドール"]あん時、シージの奴があっさりグラスゴーからいなくなったせいでオレらはおめおめと他人にシマを渡すことになった。で、オマエとオレでどうにかして足場をここに再建したんじゃねぇか。
+[charslot(slot="l",name="avg_npc_862_1#1$1",focus="l")]
+[name="カドール"]今だって前と同じだ。みんなで一丸となって、準備して、あいつらをぶっ飛ばす。オレらはこれまでずっとそうしてきたんだ。
+[name="カドール"]外がどんな状況だろうが、ストリートにゃストリートのやり方ってモンがあんだよ。
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="l")]
+[name="カドール"]あとは、チャンスさえありゃ……
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="l",name="avg_npc_862_1#11$1",focus="none")]
+[PlaySound(key="$d_avg_knockdoorfast", volume=0.5)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_863_1#9$1",focus="r")]
+[name="ベアード"]デルフィーンたちが帰ってきたようね。
+[Dialog]
+[charslot]
+[PlaySound(key="$dooropenquite", volume=1)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_866_1#6$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_177",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_866_1#6$1",focus="l")]
+[name="デルフィーン"]……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_862_1#1$1",focus="m")]
+[name="カドール"]ハゲ頭のペアの野郎は首を縦に振ったか？　こんな状況でも、オレらの提示した金額は相当おいしいはずだ、きっと──
+[charslot(slot="m",name="avg_npc_862_1#5$1",focus="m")]
+[name="カドール"]これは……血か？　どういうことだ？
+[playMusic(intro="$calamity_intro", key="$calamity_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="デルフィーン"]ペアは死にました。
+[charslot(slot="m",name="avg_npc_862_1#5$1",focus="m")]
+[name="カドール"]！
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="カドール"]サルカズか──
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="臆病な市民"]い、いや、あれはサルカズじゃなかった！　クソッ、あれが何者か知らないが、俺たちがあの店に着いた時は、もう修羅場の真っ最中だったんだ！
+[name="臆病な市民"]奴らは殺人鬼だ！　この目で見たんだ、バールを持った奴が一人を地面に押さえつけて、そいつを──
+[CameraShake(duration=0.3, xstrength=12, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="臆病な市民"]おえっ──ゴホゴホゴホッ！
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="デルフィーン"]状況は良くありません。おそらく空腹で気が立った浮浪者がペアのお店を狙ったのだと思います。あのおバカときたら、パンをショーケースに入れていましたから。
+[name="デルフィーン"]結果がどうなるかなんて、簡単に想像つくでしょうに。
+[name="デルフィーン"]だって今現在、この封鎖されたエリアで、そういった「浮浪者」がどれくらいいると思いますか？
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="カドール"]……
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="カドール"]クソったれの狂人どもめ、禁制品か何かで頭がイカれちまったか！
+[charslot(slot="m",name="avg_npc_866_1#7$1",focus="m")]
+[name="デルフィーン"]……バールを持っていた人は知っています。尻尾のトリートメントクリームを売る販売員で、いつも笑顔の方でした。
+[name="デルフィーン"]何度か商品を買ったことがありますし、割引もしてくれましたよ。クリーム自体は微妙でしたけど。
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="デルフィーン"]だけど……さっき見かけた時、彼の目は血走っていました。口からは血が流れて、バールは殴りすぎて変形していて……あれが彼だと気づかないところでした。
+[name="デルフィーン"]街ではパニックが広がっています、カドール。
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="カドール"]運輸組合の奴も同じようなことを言ってたぜ。ちょっと臆病なら気が狂っちまうかもしれないってな。だがどうして……
+[Dialog]
+[charslot]
+[PlaySound(key="$bottlebroken", volume=0.6)]
+[PlaySound(key="$d_avg_glass_break", volume=1,delay=0.4)]
+[PlaySound(key="$d_avg_windowbreak", volume=1,delay=0.9)]
+[CameraShake(duration=1.5, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_knockdoorfast", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_866_1#3$1",focus="m")]
+[name="デルフィーン"]ドアを押さえて！
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="臆病な市民"]わ、私が……？
+[charslot(slot="m",name="avg_npc_863_1#7$1",focus="m")]
+[name="ベアード"]ぼさっとしないで、手伝って！　カドール、ソファを持ってきて！
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="カドール"]バカが、オマエら死にてぇのか？　*ヴィクトリアスラング*、一体どういうつもりだよ？
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="ドアの外の音"]……
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="カドール"]失せやがれ、ここはグラスゴーのシマなんだぞ！　こちとら、まだテメェらみたいな*ヴィクトリアスラング*にどうこうされるほど落ちぶれちゃいねぇ！
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="ドアの外の音"]……
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="カドール"]ベアード、危ねぇ！
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_axeimp", volume=1)]
+[PlaySound(key="$d_avg_doorbreak", volume=1,delay=0.4)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.1, block=true)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.3, block=true)]
+[Delay(time=1.2)]
+一本の消防斧がボクシングジムの分厚い扉を突き破り、鋭い刃先がベアードの毛先を掠めた。
+髪の毛が数本、はらりと落ちる。
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=12, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="カドール"]言っただろうが！　*ヴィクトリアスラング*！　ここにはな、まだグラスゴーがいるんだよ！
+[Dialog]
+[PlaySound(key="$d_avg_woodenladder", volume=0.4)]
+[PlaySound(key="$d_gen_doorclose", volume=0.6,delay=0.3)]
+[CameraShake(duration=0.7, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.2)]
+カドールはドアを押さえ、突き破ってきた斧の刃を両手でがっしりと掴んだ。扉の外にいた者は何度か斧を引き抜こうとしたが、それはかなわなかった。
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="m")]
+[name="カドール"]オマエが誰かは知らねぇが、とっとと消えろ！　さもなきゃこの斧をオマエの脳天に突き立ててやる！　冗談なんかじゃねぇぞ！
+[charslot(slot="m",name="avg_npc_862_1#7$1",focus="none")]
+[name="ドアの外の音"]……
+[Dialog]
+[charslot]
+[PlaySound(key="$gavel1",volume=0.5)]
+[PlaySound(key="$sheildimpact", volume=0.6,delay=0.3)]
+[PlaySound(key="$d_gen_doorclose", volume=0.6,delay=0.8)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=true)]
+斧がまた何度か動き、ドアが数回激しく蹴られた後、外の者はとうとう諦めたのか、足音をバタバタと響かせて徐々に遠ざかっていった。
+[Dialog]
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="臆病な市民"]君、手が……君の指が……
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="カドール"]……
+[charslot(slot="m",name="avg_npc_862_1#3$1",focus="m")]
+[name="カドール"]ありがてぇことに、ジムってのは包帯にだけは事欠くことはねぇからな。
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="カドール"]ベアード、デルフィーン、もう一回全部の物資を確認するぞ。
+[name="カドール"]オレはサンドバッグを何個か下ろして、扉を補強する。
+[charslot(slot="m",name="avg_npc_177",focus="m")]
+[name="臆病な市民"]こ……ここの人たちは、みんな狂ってしまったのか！？
+[name="臆病な市民"]彼らは……ノーポート区民はみんな善良な市民だったはずなのに……警察は？　普段は誰よりも熱心に切符を切っているだろう！
+[charslot(slot="m",name="avg_npc_862_1#8$1",focus="m")]
+[name="カドール"]もしオレが区画から逃げ遅れたツイてねぇポリ公だったら、今頃は武器を握りしめて家に閉じこもってるだろうな。
+[charslot(slot="m",name="avg_npc_862_1#12$1",focus="m")]
+[name="カドール"]もう一度……運輸組合に行かなくちゃな。ここの連中はマーシャルの話なら一応は聞いてくれる。
+[name="カドール"]あいつなら──普段からみんな、あいつの言葉には耳を傾ける。あいつなら何か考えがあるかもしれねぇ。
+[name="カドール"]クソッ……クソったれめ！　サルカズがまだ外にいるってのによ、トチ狂いやがってこいつら、なんで身内同士で──
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_862_1#12$1",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_npc_177",duration=0.5,focus="l")]
+[charslot(slot="r",name="avg_npc_863_1#7$1",duration=0.5,focus="l")]
+[Delay(time=0.6)]
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="臆病な市民"]我々は……これからどうすればいいんだ？　カドールが言っていただろう……
+[charslot(slot="r",name="avg_npc_863_1#7$1",focus="r")]
+[name="ベアード"]チャンスさえ来れば？
+[name="ベアード"]あのさ「次期会員」さん、十五年前に発生した、ノーポート区の大火事は知ってる？
+[charslot(slot="l",name="avg_npc_177",focus="l")]
+[name="臆病な市民"]ああ、聞いたことがある。たしか埠頭で……
+[charslot(slot="r",name="avg_npc_863_1#7$1",focus="r")]
+[name="ベアード"]埠頭を丸ごと火の海にすることは別に難しくない。
+[name="ベアード"]猛暑日、木屑で満たされた倉庫、火の消え切っていない吸い殻……それだけでも十分火災は起こり得る。
+[charslot(slot="r",name="avg_npc_863_1#8$1",focus="r")]
+[name="ベアード"]だけどそうした火は、誰にも消し止めることができない。
+[name="ベアード"]私たちは、目の前のものが燃え尽きて灰になるのを、何もできずに見てるしかない。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=3)]
+[charslot]
+[Image]

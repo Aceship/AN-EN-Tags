@@ -1,0 +1,480 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")] 
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[delay(time=1)]
+[playMusic(intro="$act17_intro", key="$act17_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_energybody", volume=1)]
+[delay(time=1.5)]
+[name="？？？"]僕の質問に答えるんだ。
+[dialog]
+[Decision(options="し、しもべ？;……;ケルシーのしもべになった覚えはないんだが……",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#1", duration=1, isblock=true)]
+[name="ケルシー"]……Dr.{@nickname}は記憶を失っており、あなたの知るあの者たちの誰でもありません。もはやそうではなくなったのです。
+[name="ケルシー"]今のドクターはテラの一員であり、ロドスの一員です。
+[name="ケルシー"]我々は今日まで、共に多くを経験してきました。
+[charslot]
+[name="？？？"]……ロドス？
+[name="？？？"]（未知の言語）ロドスか。
+[name="？？？"]……なるほど。
+[name="？？？"]それで「記憶喪失」というわけか。なぜ君はこの……「ドクター」にすべてを話さなかったんだ？
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]……
+[charslot]
+[name="？？？"]ああ、わかったぞ。
+[name="？？？"]君は、過去の「ドクター」の実在性を疑っているのだな。もはや信用できない昔の記憶を復元するよりも、新たに世界を認識したこのドクターを信じることにしたわけか。
+[name="？？？"]ふむ……それも無理もない話だ。地上で発生するすべては偽れぬ事実であり、十分な介入があればテラは今のようにはなっていないだろうからな。
+[name="？？？"]どうやら、何一つ我々の望んだ通りにはなっていないようだね。君は覚えていないようだが……Dr.{@nickname}。
+[name="？？？"]ここで君たちに出会えるとは、まったく貴重な機会だ。しかしこの状況を思うと……
+[dialog]
+[Decision(options="......",values="1")]
+[Predicate(references="1")]
+[name="？？？"]記憶を失くした「Dr.{@nickname}」と、ケルシーを名乗るAMa-10よ。君たちがここへ来た理由は何かな？
+[name="？？？"]クリステンが君たちを焦らせたからか？　あるいは、すべてが君たちに制御可能な範囲を超えたからか？
+[dialog]
+[Decision(options="こちらの質問に答えてもらっていないようだが。;偉そうにするのはやめてくれ！;自己紹介は対等な会話の前提だろう。",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="？？？"]......
+[name="？？？"]僕はある計画において、人格を模倣して作られたシミュレーションシステムだ。これまで数万年、この暗い広間を――そして、数十万人の同胞の冷たい身体を見守ってきた。
+[name="？？？"]かつての僕は最後の希望であり、悲観的な試みであり、ニヒリズムの代名詞でもあった。
+[name="？？？"]だが今は、ちっぽけな君たちからすれば……クリステンの狂った計画の共犯者であり、その黒幕とでもいうべきだろう。
+[name="？？？"]僕は瀕死の「保存者」であり、君の目に映るすべてに畏敬の念を抱いている、文明の滅びそのものなのだよ。
+[dialog]
+[musicvolume(volume=0.2, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="38_g15_energywell_glowed",screenadapt="coverall")]
+[delay(time=1)]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", duration=1.5, isblock=true)]
+[name="サイレンス"]ここで間違いない。伝達物質の反応も……強く出ているし……
+[charslot(slot = "m", name = "avg_1031_slent2_1#4$2")]
+[name="サイレンス"]私は――
+[dialog]
+[charslot(slot = "m", posfrom="0,0", posto="0,-80", duration=0.5)]
+[charslot(slot = "l",  name = "avg_npc_893_1#9$1", posfrom="-300,0", posto="0,-50", duration=0.5, isblock=true)]
+[PlaySound(key="$bodyfalldown3", volume=1)]
+[delay(time=1)]
+[charslot(slot = "m", posfrom="0,-80", posto="0,0", duration=1.5)]
+[charslot(slot = "l", posfrom="0,-50", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "m", posfrom="0,0", posto="250,0", duration=2, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#9$2", focus="m")]
+[name="サイレンス"]ヤラ主任……？
+[name="サイレンス"]どうしてここに？
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]……あなたは私の祝福を携えて、ここまでたどり着いたのね。それもいいでしょう。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]……
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]私を……止めに来たんですね。
+[charslot(slot = "l", name = "avg_npc_893_1#10$1", focus="l")]
+[name="ヤラ"]渡しておいたその武器、まだ持っていてくれて嬉しいわ。
+[name="ヤラ"]一時の衝動でここに立ってるわけじゃなさそうね。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]はい。
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]最後のチャンスよ、お嬢さん。
+[name="ヤラ"]逃げるか、それとも続けるか。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]私は……あなたの仰る「戦士」になってみせます。
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]……
+[name="ヤラ"]サイレンス、あなたはわかっているでしょう。クリステンはフォーカスジェネレーターに集めたエネルギーを、大地にあるどの都市にも向けるつもりはないの。
+[name="ヤラ"]だから、止める必要なんてないのよ。
+[name="ヤラ"]彼女はただ、すべての科学者と同じように、誰も足を踏み入れたことのない場所へ前進しようとしているだけなのだから。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]あるいはそうかもしれませんね。
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="サイレンス"]私はあなたほど統括を理解してはいませんが、あなたの言うことなら喜んで信じます。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]ですがそれでも、すべてを止めに行きます。たとえ私の前にあなたが立ちはだかるとしても。
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="ヤラ"]……なぜなの？
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]これがどのような実験であれ、統括がこのまま実行し、成功してしまえば――
+[name="サイレンス"]あの人はライン生命の統括ですから、感情的な信頼にせよ理性的な判断にせよ、成功する確率が高いということは私たち皆が知ることですが。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]とにかくその時、クルビアの研究者たちが彼女をどう見ると思いますか？
+[name="サイレンス"]ライン生命の人事調査課主任をこれほど長く務めていらっしゃるあなたなら、ここの人たちを誰よりも理解していますよね。
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="ヤラ"]……彼女は英雄になるでしょうね。
+[name="ヤラ"]彼女は、クルビア科学界の英雄に、そして理想になる。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]そう、あの人は科学者の理想、研究者たちの模範となるんです。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]……そうなれば、こういうことは後を絶たなくなるでしょう。
+[name="サイレンス"]一つ一つの物事に対して、研究者たちは飽きることなく夢中になるものです。
+[name="サイレンス"]けれど、クリステン・ライトは一人しかいない。彼女だけしかいないんです。
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="サイレンス"]一方で、そのほかのリーダーや天才を自称する人たち――このいわゆる「手段を選ばぬ開拓精神」に触発された人たちは……
+[name="サイレンス"]自らの執着や理想をためらいなく実践に移す人たちは……
+[name="サイレンス"]私たちと同じように、貪欲で、傲慢で、向こう見ずで、頑固な人たちはどうでしょうか？
+[name="サイレンス"]そんな人たちが、統括の行いを美徳と見なしてしまったら――
+[dialog]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]どんな未来が訪れるのか、あなたなら想像に難くないでしょう。
+[charslot(slot = "m", name = "avg_1031_slent2_1#4$2", focus="m")]
+[name="サイレンス"]いえ、想像する必要すらないかもしれません……
+[name="サイレンス"]あなたも、ライン生命が行ってきた研究を知らなかったわけではないでしょうから。
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]ええ、よくわかっているわ。
+[name="ヤラ"]私はよくわかっている……トリマウンツで、いいえ、クルビア国内でこれまでに、そして今この時に、こんなことがどれほど多く起きているのかを。
+[name="ヤラ"]これまで私の前には、無数の狂気じみた魅力的な計画が並べられてきた。それを差し出す人の目は輝いていて、皆心からの笑顔を浮かべていたわ。
+[name="ヤラ"]彼らは本気で「純粋な科学のために」尽くしているつもりでいて、自分こそが認知の荒野を開拓する者だと思っているのよ。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]そしてそれを受けたあなたやその同僚たちは、彼らの実験計画と壮大な青写真に基づいて、多少の「代償」や「コスト」を支払うべきかどうかを判断するだけでいいでしょうからね。
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]「代償」。
+[name="ヤラ"]それは時に肥沃な土地であり、数名の不治の病を患う人や死刑囚であり、一つの村や町であり、特定の種族や国家であり……
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="ヤラ"]私に言わせれば、時折、彼ら自身であることすらあったわ。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]あなたには、それを恐れる気持ちがありますか？　それとも、科学の進歩の可能性に興奮していますか？
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="サイレンス"]ヤラ主任、この大地にはガラスケースに収められた「純粋な科学」など存在しません。
+[name="サイレンス"]科学は私たちの――人間の手中にあるべきものです。その温度を、重さを、そしてそれが人を焼いてしまうものでないか、どんな苦しみや慰めをもたらすものかを知る必要があるんです。
+[name="サイレンス"]ああいう人たちはいつまでも、前進を叫んでいます。でもその実、ただ自分が踏み出したい方向へとむやみに足を踏み入れているだけなんですよ。
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="ヤラ"]だけど、それこそが前進というものよ。
+[name="ヤラ"]どこに道があるかなんてわからない以上、そうして歩くしかないのだから。
+[name="ヤラ"]運の良い人は正しい方向を見つけ出し、光の中に辿り着く。運の悪い人は行き止まりへと迷い込み、さまよい続けることになる……
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]それでも彼らを立ち止まらせることなんてできないの。
+[name="ヤラ"]あなたも研究者であるのなら、一番止められようもないことが何なのかはわかっているでしょう。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]……
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="ヤラ"]――それは渇望よ。
+[name="ヤラ"]物質的にも、道徳的にも、たとえ規則を用いても縛りようのないものなの。
+[name="ヤラ"]この大地において、古から今、クリステンの時より前に、あなたの言う貪欲で、傲慢で、向こう見ずで、頑固な人たちが、立ち止まったことなどあると思うの？
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]それならば、彼らはこれから立ち止まるべきです。
+[name="サイレンス"]少なくとも、身をかがめて自分の足元を確かめることになる前に、立ち止まらなければなりません。
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="サイレンス"]ヤラ主任。私は――科学の燃料となるものは、欲望や理想、計算や取捨選択によるものであってはならないと思います。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]科学とは、あらゆる人に真摯に向き合うことですから。
+[charslot(slot = "l", name = "avg_npc_893_1#2$1", focus="l")]
+[name="ヤラ"]……
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="ヤラ"]それは大学図書館の廊下に掛けておくには相応しい、素晴らしい言葉だと思うわ。
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]けれど、それをラボの壁に掛けておきたがる研究者はいないでしょうね。
+[name="ヤラ"]そんなのは空論だもの。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]だったら、私が実現させます。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]途中で諦めたくないんです。私はまだ、あなたの祝福を携えていますから。
+[charslot(slot = "l", name = "avg_npc_893_1#8$1", focus="l")]
+[name="ヤラ"]……
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]クリステンは長い時間をかけてこの計画の準備を整えてきたの。あの子がこのために、どれだけのものを差し出してきたかわからないくらいにね。
+[name="ヤラ"]だけど、彼女の覚悟は両親に勝るとも劣らないものよ。
+[charslot(slot = "l", name = "avg_npc_893_1#11$1", focus="l")]
+[name="ヤラ"]あなたは――
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="ヤラ"]いいえ……あなたじゃなくて、これは私の気持ちね。
+[name="ヤラ"]……私は、希望が再び泡と消えるのを黙って見ていられないの。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]では、あなたは何を望んでいらっしゃるんですか？　クリステンの成功を見届けることですか？　それとも、彼女が無事に帰ってくることですか？
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="ヤラ"]……
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]――私の知り合いには、ルビーという研究員がいます。彼女の一番の望みは毎日定時に退社することと、いずれ無事に定年退職することです。
+[name="サイレンス"]そして、先ほど出会った兵士の、恐らく今唯一の望みはというと、この制御不能なエネルギーウェルから無事に脱出し、親族を連れてトリマウンツの狂った科学者から逃げることだと思います。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]こういう人たちの望みよりも、統括の「希望」のほうが崇高だなんてことあるんでしょうか？
+[name="サイレンス"]彼女の望むものが、それに足るほど「進歩的」だから……
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="サイレンス"]あるいは単に、あなたと彼女がそれに足るほど親密な関係を築いているからと言って、それが正当だと言えるでしょうか？
+[name="サイレンス"]これは不公平なことだと、あなたはおわかりのはずです。
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]こんな身勝手、許されることではありません。
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="ヤラ"]私は……
+[name="ヤラ"]……
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]私は……あなたの言う通り、身勝手なのよ。だから道徳や正義を理由に自分を騙して、あなたを行かせるなんてことはできないわ。
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="ヤラ"]――感情の重さを、私たちは認めなければならない。私は、クリステンのあの夢を何もせずにただ見ていることなんてできないのよ。
+[name="ヤラ"]……サイレンス、あなたならわからないはずがないでしょう。
+[charslot(slot = "m", name = "avg_1031_slent2_1#10$2", focus="m")]
+[name="サイレンス"]ですが、私たちが統括を止めることさえできれば、きっとまた――
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="ヤラ"]いいえ。
+[name="ヤラ"]そうはならないわ、お嬢さん。
+[name="ヤラ"]私にはよくわかっているの……この計画に着手した時から、あの子は後戻りするつもりなんてないのよ。
+[name="ヤラ"]ずっと昔、私たちが初めて会った時には、すべては……とっくに取り返しがつかなくなっていたの。
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="ヤラ"]サイレンス。あなたが立ちはだかってくれることを嬉しく思うわ。私としては、あなたの主張を支持するとさえ言ってもいいくらい。
+[charslot(slot = "l", name = "avg_npc_893_1#6$1", focus="l")]
+[name="ヤラ"]だけど、クリステンの……
+[name="ヤラ"]……
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]……家族として、あなたを行かせるわけにはいかないの。
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="ヤラ"]だから、見せてちょうだい。あなたが本当に……自分の言葉に責任を負う準備ができているのかどうかを。
+[name="ヤラ"]この先、あなたが相対することになるのは、もはやパルヴィスやクリステンといった単なる個人ではなく――
+[name="ヤラ"]前進を試みるすべての人になるのだから。
+[charslot(slot = "m", name = "avg_1031_slent2_1#2$2", focus="m")]
+[name="サイレンス"]……
+[charslot(slot = "m", name = "avg_1031_slent2_1#1$2", focus="m")]
+[name="サイレンス"]わかりました。必ずそれに備えておくと、お約束します。
+[name="サイレンス"]科学は進歩しなければならず、また必然的にそうなるもの。
+[name="サイレンス"]あるいは統括のように「前進」を得意とする人も現れるでしょう。
+[charslot(slot = "m", name = "avg_1031_slent2_1#5$2", focus="m")]
+[name="サイレンス"]ですが誰かが立ち上がり――
+[PlaySound(key="$d_avg_drone", volume=1)]
+[name="サイレンス"]科学を、人の手中に収めておかねばなりませんから。
+[dialog]
+[charslot(slot = "m", posfrom="250,0", posto="50,0", duration=0.3)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[delay(time=0.2)]
+[PlaySound(key="$swordtsing4", volume=1)]
+[charslot(slot = "l", action="shake", power=5, times=60, duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="38_g8_storage",screenadapt="coverall")]
+[delay(time=3)]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="ケルシー"]……「保存者」。
+[name="ケルシー"]よもや、本当にあなただったとは。
+[name="ケルシー"]ですが、あなたであったなら、なぜ……
+[charslot]
+[name="「保存者」"]なぜ一匹の小動物の狂った計画に協力するのか、かな？
+[name="「保存者」"]それとも、なぜ幼い文明が揺りかごから足を踏み出す第一歩をただ眺めているのか、かな？
+[name="「保存者」"]いずれにせよ、君は来るのが遅すぎたな、「ドクター」。
+[name="「保存者」"]僕は……すでに待つ意味を失ってしまった。
+[dialog]
+[charslot(slot = "m", focus="none")]
+[Decision(options="この状況に比べれば、上で起きていることは些事にすら思える。;……;……説明がほしい。",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="ケルシー"]クリステンを助けているのはあなたです。つまり、彼女は何らかの手段であなたと接触したことになります。
+[charslot]
+[name="「保存者」"]僕はクルビアのネットワークを通じて、テラの歴史と文化、言語に種族、そして科学技術のレベルについてはすべてを知り尽くしている。
+[name="「保存者」"]実に皮肉なことだが、地上における現在の情報伝達技術は全世界をカバーすることさえできないものだというのに、互いを滅ぼす手段だけは、進化の効率に見合ったものになっているようだ。
+[charslot(slot = "m", name = "char_003_kalts_1#1")]
+[name="ケルシー"]テラで取られている方式はあまりにも原始的かつ、源石に依存したもの。この程度の変換効率でクリステンの試みを実現するには――必要なエネルギーもまた想像を絶するものになるでしょう。
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="ケルシー"]この難題を解決する方法など、テラには存在しえないものです。とある手段を除いては。
+[charslot]
+[name="「保存者」"]そうとも。
+[name="「保存者」"]僕は最後の血を彼女に与えたのだ。消えゆく灯火を見守るよりも、新たな心臓を動かすほうがマシかもしれないからね。
+[charslot(slot = "m", name = "char_003_kalts_1#3")]
+[name="ケルシー"]……
+[name="ケルシー"]あなたは、本気で――
+[name="ケルシー"]……なぜそこまでなさったのですか？　長きにわたるあなたの努力すべてが……無駄になってしまうというのに。
+[charslot]
+[name="「保存者」"]確かに、無駄になってしまったな。
+[name="「保存者」"]計画は僕の手で終止符を打たれ、コマンドも僕自身によって入力された。
+[name="「保存者」"]後悔など許されない判断をしたんだ。
+[name="「保存者」"]もうすぐ、もうすぐさ。
+[dialog]
+[charslot]
+[CameraShake(duration=5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=0.9, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[delay(time=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+巨大な震動が遠くから広がってきて、地下空間の明かりが何度か明滅した。
+「保存者」と名乗る存在は暫し沈黙し、そして深いため息をついたように思えた。
+[dialog]
+[Decision(options="な、何が起きた！？;……;まさか、エネルギーウェルが？",values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="「保存者」"]赤子が好奇心に満ちた眼差しを未知へと向ける、それだけのために――
+[name="「保存者」"]どれほどの障害を乗り越えねばならぬのやら。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[delay(time=2)]
+p.m.8:11 エネルギーウェル異常充填状態
+[dialog]
+[Background(image="38_g15_energywell_glowed",screenadapt="coverall")]
+[delay(time=2)]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[delay(time=0.8)]
+[PlaySound(key="$swordtsing5", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_ftrub", volume=1)]
+[charslot(slot = "r", name = "avg_1031_slent2_1#9$2", posfrom="-600,0", posto="40,-20", duration=1, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "r", posfrom="40,-20", posto="0,0", duration=1.5, isblock=true)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", posfrom="-300,0", posto="0,0", duration=2.5, isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="ヤラ"]あのロドスという企業は、あなたに素晴らしい訓練を施してくれたようね。
+[charslot(slot = "r", name = "avg_1031_slent2_1#9$2", focus="r")]
+[name="サイレンス"]はぁ……はぁ……
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="ヤラ"]腕はまだ上がる？
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="サイレンス"]大丈夫です。
+[name="サイレンス"]そちらの腕はどうですか？
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="ヤラ"]大丈夫よ、医療保険には入っているから。
+[charslot(slot = "l", name = "avg_npc_893_1#1$1", focus="l")]
+[name="ヤラ"]さて、まだ続けるの？
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="サイレンス"]……あなたがなおも行く手を阻むおつもりなら。
+[charslot(slot = "l", name = "avg_npc_893_1#9$1", focus="l")]
+[name="ヤラ"]いいわ、それなら続けましょう。
+[dialog]
+[PlaySound(key="$d_avg_energywell", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=0.4, channel="a",fadetime=2)]
+[delay(time=1.5)]
+[playMusic(intro="$act25side_intro",key="$act25side_loop", volume=0.6)]
+[charslot(slot = "l", name = "avg_npc_893_1#7$1", focus="l")]
+[name="ヤラ"]……待って。何か妙だわ。
+[name="ヤラ"]この辺り、温度が上がりすぎている……エネルギーウェルが発射準備をしていたとしても、ここまで高温にはならないはずよ。
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="サイレンス"]軍の人たちは、エネルギーの充填を止めるために、ここにあるエネルギー源はほぼすべて遮断したと言っていました。
+[charslot(slot = "l", name = "avg_npc_893_1#3$1", focus="l")]
+[name="ヤラ"]ということは、警報システムや制御システムへの供給も？　あの愚か者たちときたら――！
+[name="ヤラ"]早く！　ここを離れましょう！
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="サイレンス"]上にまだ兵士が残っていますから、ヤラ主任は彼らを連れて逃げてください。
+[charslot(slot = "l", name = "avg_npc_893_1#4$1", focus="l")]
+[name="ヤラ"]あなたはどうするの？
+[charslot(slot = "r", name = "avg_1031_slent2_1#1$2", focus="r")]
+[name="サイレンス"]制御システムのエネルギー源が遮断されているのなら、統括がこの場所を遠隔操作できているのはなぜだと思いますか？
+[charslot(slot = "r", name = "avg_1031_slent2_1#5$2", focus="r")]
+[name="サイレンス"]伝達物質の反応は今も強まっています。私にはまだ、チャンスが残されているんです。
+[dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot = "r", afrom=1, ato=0, duration=1, focus="r", isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l", focus="l")]
+[name="ヤラ"]サイレンス！
+[dialog]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[Image(image="38_i15_1", screenadapt="coverall", fadetime=2)]
+[CameraShake(duration=-1, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[PlaySound(key="$d_avg_energywell", volume=0.8, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+熱気がヤラの顔をじりじりと焼く。それまで特別目を向けたことのなかったリーベリの研究員は今、エネルギーウェルのさらなる深層へと駆け出していた。
+ヤラはふと、彼女を妨げられるものなど何もないように感じた。
+もしかすると、彼女が約束してくれたことは、本当に成されるのかもしれない。
+ヤラは思った。その時が来たら、自分も多少は力になれるかもしれない、と。
+[dialog]
+[PlaySound(key="$d_avg_energywell", volume=1, loop=true, channel="a")]
+[CameraShake(duration=-1, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[Image(image="38_i15_2", screenadapt="coverall", fadetime=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=3.5)]
+[name="ヤラ"]発射の準備は整ったみたいね。
+[name="ヤラ"]「科学とは、あらゆる人に真摯に向き合うこと」……ね。
+[name="ヤラ"]ふっ、私は科学者じゃないのに。
+[dialog]
+[PlaySound(key="$d_avg_energygather", volume=1)]
+[delay(time=1.5)]
+[name="ヤラ"]クリステン、あなたは夢見た空の高くまで飛んで行くでしょう……
+[name="ヤラ"]必ずね。
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[CameraShake(duration=0.1, xstrength=0, ystrength=0, vibrato=30, randomness=90, fadeout=false, block=false)]
+[image]
+[charslot]
+[Background(image="29_g7_mainstreet_n",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "r", name = "avg_npc_891_1#1$1", duration=1, isblock=true)]
+[name="ナスティ"]……
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="ジャスティンJr."]ナスティさん、もっと見やすい場所を選ぼうとは思わなかったんですか？
+[charslot(slot = "r", name = "avg_npc_891_1#6$1", focus="r")]
+[name="ナスティ"]……君はいつまで付きまとってくるつもりだ？
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="ジャスティンJr."]そういえば、以前調査でリターニアへ行った時、彼らの花火の祭典を見たことがありましてね。リターニア人はその祭典のために、最高の作曲家を招いて曲を作らせるんですよ。
+[charslot(slot = "l", name = "avg_npc_892_1#3$1", focus="l")]
+[name="ジャスティンJr."]最初の花火が上がった時、音楽家たちが一斉に演奏を始めるのですが……あの光景はまったく、それはもう美しいものでした。
+[charslot(slot = "r", name = "avg_npc_891_1#6$1", focus="r")]
+[name="ナスティ"]君のように語彙力の乏しい人間は、リターニア人には嫌われるだろうな。
+[charslot(slot = "l", name = "avg_npc_892_1#1$1", focus="l")]
+[name="ジャスティンJr."]ははっ、確かに。それにしても、まさか今日トリマウンツであの時さながらの華やかな景色を見られるとは思いませんでした。
+[name="ジャスティンJr."]空に浮かぶリングに、ドローンが放つ弾丸という光の雨、そして装甲から散る火花……
+[name="ジャスティンJr."]かの花火の祭典にも劣りませんよ。
+[charslot(slot = "l", name = "avg_npc_892_1#9$1", focus="l")]
+[name="ジャスティンJr."]時間的に、この演奏はそろそろクライマックスですね。
+[name="ジャスティンJr."]人心震わすフォルティシモが響き渡るはず――
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[background]
+[charslot]
+[Image(image="38_i10", xScale=1.8, yScale=1.8, x=50,y=200, screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[CameraShake(duration=-1, xstrength=2, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_energybeamfire", volume=0.6)]
+[Image(image="38_i16", screenadapt="coverall", xScale=1.8, yScale=1.8, x=50,y=200,fadetime=0.2)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=false)]
+[ImageTween(xTo=50,yTo=-180,duration=3.5)]
+[delay(time=3)]
+[PlaySound(key="$d_avg_beamamb", volume=1)]
+[delay(time=0.5)]
+[CameraShake(duration=1.5, xstrength=4, ystrength=30, vibrato=50, randomness=90, fadeout=true, block=false)]
+[ImageTween(xScaleFrom=1.8, yScaleFrom=1.8, xScaleTo=1.2, yScaleTo=1.2, duration=0.2, ease="InOutCubic", xTo=0,yTo=0,block=true)]
+[Image(image="38_i16", screenadapt="coverall", xScale=2.5, yScale=2.5, fadetime=0.1)]
+[ImageTween(xScaleFrom=2.5, yScaleFrom=2.5, xScaleTo=1.2, yScaleTo=1.2, duration=0.1, ease="InOutCubic", xTo=0,yTo=0,block=true)]
+[delay(time=1)]
+[CameraShake(duration=6, xstrength=30, ystrength=30, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$glass", volume=1)]
+[PlaySound(key="$d_avg_collapse", volume=1)]
+[PlaySound(key="$d_gen_thunders_amb", volume=0.7)]
+[ImageTween(xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, duration=20)]
+[delay(time=3.5)]
+[name="ジャスティンJr."]……
+[name="ナスティ"]……
+[name="ジャスティンJr."]これは……想像以上に美しい光景ですね。ライン生命としては、この一幕を目にした市内の全員から見物料をとってもいいくらいですよ。
+[name="ナスティ"]……ひとまず成功だな。フォーカスジェネレーターの材質及び構造はエネルギービームの衝撃に耐えることができた。
+[name="ナスティ"]次はチャージとフォーカシングだ。負荷が高い条件下での測定値を収集することさえできれば……
+[name="ジャスティンJr."]その前に、軍とマイレンダーの人間が最後のチャンスを逃すまいとして、フォーカシングを阻止しようとしてくるでしょうね。
+[name="ジャスティンJr."]統括のことは心配なさらないんですか？
+[name="ナスティ"]彼女がいつ、我々の心配などを必要とした？
+[name="ナスティ"]我々は単なる同行者でしかないんだ。
+[name="ナスティ"]ただ自分たちの仕事をして、あとは……彼女の幸運を祈ればそれでいい。
+[name="ナスティ"]（サルカズ語）いつか、カズデルもまた空に浮かぶ時が来たら、その炉には君の名を刻もう。
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]
