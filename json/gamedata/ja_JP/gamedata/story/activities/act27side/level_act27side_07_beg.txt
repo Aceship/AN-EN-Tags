@@ -1,0 +1,674 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_cave_2",screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.8, block=true)]
+[Delay(time=0.5)]
+[playMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[name="困惑した青年"]やっぱり分かりません。あんたみたいないいところの夫人が、どうして毎日坑道に来て、嫌な顔一つせず感染者とやり取りしてるんです？
+[name="優しい学者"]感染者の皆さんも、不幸な事故に遭ってしまっただけの一般の方々でしょう？
+[name="優しい学者"]たとえばわたくしの子、いまだ生まれていないこの子にしても同じこと。将来この子は感染者になるかもしれませんし、幸運な普通の人として、感染者と友人になる可能性もありますわ。
+[name="優しい学者"]いずれにしても、この子には愛と優しさに満ちた都市で生きてほしいと願っていますけれどね。
+[name="困惑した青年"]もしここで採掘を続けることが環境に害しか及ぼさないなら、俺たちはやめるべきなんですかね？
+[name="優しい学者"]今のこの都市は自然の施しに頼るしかありません。ですが将来ここの方たちは必ずその両手で自分たちの家を切り開くことができるはずですわ。
+[name="優しい学者"]その時、わたくしや貴方、そして彼らの一人一人――全員がシエスタで自分の好きなことを見つけられることを願っています。
+[name="優しい学者"]たとえ老いても心配する必要がなく、病になっても絶望する必要がない場所。これこそわたくしの想像するシエスタ……我が子に見せたいシエスタですわ。
+[name="困惑した青年"]本当にそんなの実現できるんですか……
+[name="優しい学者"]夢を現実にするために、まずはこの採掘場から始めるのですわ！
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="41_g7_siestahightechtouristzone", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, amount=0, block=true)]
+[Delay(time=1)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",duration=0.7)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="r")]
+[name="アデル"]ちびめーちゃん、どうしてあなただけが残ってるんでしょう？　ほかの子がどこへ行ったか知ってますか？
+[name="アデル"]それと、古い標識とか手紙の住所をずっと食べてますけど、それはあなたが迷子になって、道を探しているからですか？
+[charslot(slot="r",name="avg_180_amgoat_1#9$1",focus="r")]
+[name="アデル"]ちびめーちゃん……私の言ってること、分かりますか……？
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+[name="迷子の生物"]……
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="none")]
+[PlaySound(key="$d_avg_catsmell", volume=1)]
+もこもこの生き物は答えることなく、くんくんと嗅ぎ回り、口に入れるのに適した標識を選んでいる。
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="r")]
+[name="アデル"]シエスタが移転したせいで、あなたは採掘場までどう行けばいいか分からなくなっちゃったんですか？
+[name="アデル"]それとも採掘場じゃなくて、建設中の区画にあるおうちに帰りたいんですか？
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_sandftsingle",volume=0.7)]
+[PlaySound(key="$d_avg_sandftsingle", volume=0.7, loop=false, channel="bgs1",delay=0.5)]
+[PlaySound(key="$d_avg_sandftsingle", volume=0.7, loop=false, channel="bgs2",delay=1)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="none")]
+少し焦ったように、もこもこがひづめで地面を掘る。アデルはその後ろに立って静かに待っていた。
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="r")]
+[name="アデル"]……どこに行きたいんですか？
+[Dialog]
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="l")]
+[Delay(time=0.2)]
+[charslot(slot = "l", action="jump",posfrom="0,0",posto="100,0",power=5,times=0,duration=1.5,focus="l",isblock=false)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="l")]
+[PlaySound(key="$d_gen_heartbeat", channel="hb",volume=0.6)]
+[stopsound(channel="hb",fadetime=4)]
+[Delay(time=2.5)]
+ふわふわの生き物は、ためらいがちに近寄っていくと、頭をアデルの胸に当てた。どうやら彼女の鼓動を聞いているようだ。
+トトン、トトン、トトン……
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+[name="迷子の生物"]……
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="none")]
+この音じゃない、この音じゃない。
+[Dialog]
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_pawfootstep_1",loop=true, channel="sfoot2", volume=0.7)]
+[StopSound(channel="sfoot2", fadetime=3)]
+[charslot(slot = "l", action="jump",posfrom="0,0",posto="-200,0",power=0,times=1,duration=1.5)]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="none")]
+もこもこはうなだれて、目の前の道に沿って歩き続ける。
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="r")]
+[name="アデル"]昔のおうちを探してるんですか？　それとも昔の家族や友人？
+[name="アデル"]どこを探せばいいかわかっていますか？
+[Dialog]
+[charslot]
+もこもこが振り返り、興味深そうに彼女を見つめた。
+[Dialog]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_transmissionget",volume=0.6)]
+[CharacterCutin(widgetID="1", name="avg_npc_999_1#1$1",style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=0, width=200, block=true)]
+[name="ケラー"]アデル、今どこだ？
+[name="ケラー"]一緒に処理してほしいデータがいくつかあるんだが、すぐに博物館に来ることはできるか？
+[Dialog]
+[CharacterCutin(widgetID="1",fadetime=0,block=true)]
+アデルは目の前の期待を抱いている生物を見やった。
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[name="アデル"]あっ……ケラー先生、すみません、き、今日は……今日は体調が悪いんです！
+[name="アデル"]頭がくらくらして、ちょっと痛みもあるんです。足もだるくて……少し気持ちが悪いです……！
+[Dialog]
+[charslot]
+[CharacterCutin(widgetID="2", name="avg_npc_999_1#5$1",style="cutin", fadestyle= "horiz_expand_center", fadetime=0, offsetx=0, width=200, block=true)]
+[name="ケラー"]気持ちが悪い？　アデル、大丈夫か？
+[name="ケラー"]病院で診てもらうか？　今どこにいるんだ？　様子を見に行く必要はあるか？　手元に薬はあるか？　そうだな……体温はどうだ、熱はないか？
+[Dialog]
+[CharacterCutin(widgetID="2",fadetime=0,block=true)]
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[name="アデル"]いえ、ケラー先生、大丈夫です……今病院にいますから！
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="none")]
+[PlaySound(key="$d_avg_sheeprun", volume=0.8)]
+[Delay(time=0.8)]
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_walkfast", volume=0.7)]
+[charslot(duration=1)]
+[Delay(time=1.5)]
+もこもこは返事を貰えずに苛立った様子で地団駄を踏むと、身を翻して去ろうとした。アデルが急いで後を追う――
+一台の車が猛スピードで通り、運転手は歩き出したアデルを見て、慌ててクラクションを鳴らした。
+[Dialog]
+[CameraShake(duration=1, xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_carhorn", volume=1)]
+[PlaySound(key="$drift", volume=0.7,delay=0.2)]
+プップーー！
+[Dialog]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_999_1#5$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="ケラー"]うぅ、耳が……
+[charslot(slot="m",name="avg_npc_999_1#10$1",focus="m")]
+[name="ケラー"]アデル？　どうしてここに？　君は……？
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[name="アデル"]け、ケラー先生、あの、えと……
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="ケラー"]……
+[name="ケラー"]（やはりアデルに負担をかけ過ぎていたか。彼女のような子が仮病を使ってまで仕事を休もうとするとは……）
+[name="ケラー"]アデル……
+[name="ケラー"]もし最近負担が大きいと感じているのなら、一日休むか？
+[Dialog]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_throwstone", volume=0.8)]
+[charslot(slot = "m", action="jump",posfrom="0,0",posto="-200,0",power=10,times=1,duration=1)]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",afrom=1,ato=0,duration=0.4)]
+[Delay(time=1.5)]
+[charslot]
+ふわふわの生き物が振り返り、アデルがもうついてこないことを確認すると軽やかに飛び跳ねて、その通りを去っていった。
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="アデル"]ケラー先生、私この辺で気晴らしがしたいです……！
+[Dialog]
+[musicvolume(volume=0, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="41_g5_siestaunbuiltland_d", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_1003_1#11$1")]
+[Delay(time=1)]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]では、もしわたくしが貴方たちのような方々に、収入が保証され、病状も急速に悪化することのない仕事を提供したいと言ったら？　専用の住居も提供いたしますわ。
+[name="セイロン"]ご安心ください。生活のために必要な環境や適正な給与、それと治療に関しては絶対に保証いたしますし、給料の一部を家賃として政府に支払いさえすれば……
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="落胆した労働者"]ハッ、自分で言ってて嘘をつき通せなくなったのかよ？　政府がどう考えてるかは知らんが、それだけのもんを揃えるには大金が必要だってのはわかる。百金券でも千金券でも足りねぇ。
+[name="落胆した労働者"]その金があったら、そこそこ快適なベッドを買えて、いつもなら食えねぇもんを食えるかもしれん。いざという時には命が救われるかもしれねぇ。だがお前が今言ったそれらを実現するのは無理だ。
+[charslot(slot="m",name="avg_npc_1003_1#6$1",focus="m")]
+[name="セイロン"]……わたくしならできますわ。
+[charslot(slot="m",name="avg_npc_998_1#1$1",focus="m")]
+[name="意気消沈した労働者"]お医者の先生よ、安く治療できる病院を建てるって言うなら、俺たちは本当に感謝するし、できると信じるよ。けど仕事に家、治療まで提供するっていうのは……
+[name="意気消沈した労働者"]この場所を見てみろよ。これだけ経って、ここの区画さえまだ完成してないんだぞ……
+[charslot(slot="m",name="avg_npc_1003_1#6$1",focus="m")]
+[name="セイロン"]とにかくまずは信じてください。言ったからには、必ずやり遂げますわ。
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]それで、もし本当に先ほどお伝えしたような場所があれば、貴方がたはそこに引っ越してくださる？　満足するかしら？
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="落胆した労働者"]……
+[Dialog]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_gen_heartbeat",channel="ht",loop=false, volume=0.8)]
+[stopsound(channel="ht",fadetime=2)]
+[Delay(time=1.5)]
+セイロンは自分が急激に緊張するのを感じた。心臓が激しく跳ね、血液までもが耳の中で鳴り響いている。
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]何ですの？　申し訳ありません、よく聞こえませんでしたわ……
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="落胆した労働者"]だから、俺たちが前の採掘場で働いてた時の社長さんは良い人だったんだ。ペリペさんみたいな良い社長が、その財力で俺たちを助けてくれても、感染者の俺ら相手じゃ現状が精一杯なんだよ。
+[name="落胆した労働者"]先生よ、俺たちはお前と仲良いわけでもねぇし、お前を助けたこともねぇんだ。もし今後も俺たちの病気を診に来てくれるんなら、それで十分お前には感謝するぜ。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="41_g3_siestanewstreet_d", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+もこもこが前を歩く。アデルはその後ろをついていき、ケラーは少し申し訳なさそうな顔で彼女のそばを歩いていた。
+何度かためらった後、ケラーは見計らうように口を開いた。
+[Dialog]
+[charslot(slot="m",name="avg_npc_999_1#5$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="ケラー"]アデル、知っているか、シエスタが移転してからも、街のつくりは以前と変わらない……この通りに沿って行くと、コーヒーを出すカフェがある。
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="none")]
+何かを追うようなアデルの足取りは慌ただしく、その言葉を聞いても立ち止まることはない。
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="ケラー"]……カティアとマグナとは、そのカフェで初めて会ったんだ。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_runstop")]
+アデルは足を止めて目を細めると、遠くのカフェを見ようとした。
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="アデル"]前の方にある……あのカフェでしょうか？　ここからだと看板がよく見えません。カフェ・モ……？
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="ケラー"]カフェ・モッキンバードだ。
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="none")]
+ケラーは安堵のため息をつき、口調を変えた。
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="ケラー"]当時の私はまだ学生でな、本の中でしか生活以外の知識を得たことがなかった。
+[name="ケラー"]カティアとマグナは、まるで二つの火のようだったよ……若い二つの火、黒曜石の輝きでも二人の目の光には敵わなかったさ。
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="アデル"]私の両親はその時……どんな人たちだったんですか？
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="ケラー"]とても眩しくて……面白くて、魅力的だった。
+[name="ケラー"]もちろん、二人を変人だと思う者もいた。教授や学者というより、あの二人は火山に夢中な浮浪者のように見えるだろうから。
+[name="ケラー"]二人は明るい色の服やアクセサリーが好きでな。経験も豊富だったから、すごく勇気があった。溶岩の流れを感じるために、流れる溶岩のそばでテントを張ることもあったよ。
+[charslot(slot="m",name="avg_180_amgoat_1#13$1",focus="m")]
+[name="アデル"]えっ？　ぷっ、そういうことは厳しく禁じるような人たちだと思ってました！
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="ケラー"]その通りだ、現に二人は私がそういうことをするのを禁止した。以前二人について硫酸池の液体を採取しに行った時、私はうかつにも熱い湯だまりに足を突っ込んでしまったことがあるからな。
+[name="ケラー"]カティアが引き上げてくれたんだが、痛みを感じる前に、自分の靴がニンニクのように割れていることに気付いた……
+[name="ケラー"]マグナはひどく驚いてな。ただのハプニングではあったが、私が不注意でまたどこかに落ちてしまうのではないかと心配して、彼女はそれ以降、私にピタリとついて離れなくなった。
+[Dialog]
+[charslot]
+ふわふわの生き物は何かを聞き取れたのか、振り返ってケラーの上から下までを見た。
+もこもこは、まるで心配するように、ケラーの足首に頭をコツンと当てると、歩きにくさを取り除こうと彼女のヒールを食べようとした。
+[charslot(slot="m",name="avg_180_amgoat_1#8$1",focus="m")]
+[name="アデル"]……私がまた怪我しないようにお母さんが心配してる時みたい。
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="ケラー"]マグナのことか？　彼女の私への心配が、君に向けていたものと同じわけないだろう。
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="アデル"]ごめんなさい……ちょっと違うことを考えてました。
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="ケラー"]君が生まれてから、私もたまに君に会いに行っていた。君は二人と本当によく似ているよ……
+[charslot(slot="m",name="avg_npc_999_1#9$1",focus="m")]
+[name="ケラー"]そして今二人と同じ仕事をしている。これはまるで……二人の一部がずっと残っているかのようだ。
+[charslot(slot="m",name="avg_180_amgoat_1#2$1",focus="m")]
+[name="アデル"]……二人がずっといてくれたらいいな。
+[Dialog]
+[charslot]
+空気に潮の匂いが漂い、ふわふわの生き物が勢いよく駆け出した。建設中の区画のクレーンの先端が地平線に現れ、ケラーは足早に前へ進むと、振り返った。
+[charslot(slot="m",name="avg_npc_999_1#1$1",focus="m")]
+[name="ケラー"]アデル！
+[name="ケラー"]マグナはかつて私にこう言った。我々は山河の上に立ち、それを征服しようと偉そうに言い放つ小さな虫けらのようであると。
+[name="ケラー"]アデル、今の我々を見るんだ。虫ほどに小さな存在が、ここに立って我々よりも何十倍も大きい建物に向かい合っている。
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="ケラー"]……以前と同じように自分がちっぽけで、取るに足らないものだと感じるかもしれないと考えていたが、そうでもなかったな。
+[name="ケラー"]（小声）しかし今になってようやく、口に出すことがこんなにも難しいこともあると気付いた。
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="none")]
+[name="アデル"]……ケラー先生、何ておっしゃったんですか――？
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="ケラー"]……何でもない……
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=1)]
+[name="ケラー"]……アデル、私はどう君に伝えればいい？
+[Dialog]
+[Background(image="41_g5_siestaunbuiltland_d", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlaySound(key="$beach", channel="siesta", loop=true, volume=0.4)]
+[playMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[name="ケラー"]ここから旧シエスタがまだ少し見えるな。さらに向こうにいくと、シエスタ火山だ。
+[name="アデル"]あれが本当に噴火するのは一体いつになるんでしょうか？
+鉱山用ランプを背負った生物も歩みを止め、旧シエスタの方向をぼんやりと眺めている。
+波が遠くの砂利を繰り返し叩く。海面はきらきらと光り、まるで宝石のようだ。
+[Dialog]
+[Delay(time=1)]
+[name="ケラー"]火山が噴火し、博物館が完成したら、私の仕事も終わりだな。
+[name="ケラー"]すまないな、アデル、こんなに時間を取らせてしまって……
+[name="アデル"]全然そんなことありませんよ、ケラー先生。両親のことはケラー先生以外に、誰も教えてくれる人はいませんから。
+[name="アデル"]私も知れて嬉しいです……
+[Dialog]
+[stopsound(channel="siesta", fadetime=1)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_clothmovement", volume=0.7)]
+[charslot(slot="m",name="avg_npc_999_1#8$1",posfrom="0,-20",posto="0,0",afrom=0,ato=1,duration=1)]
+[Delay(time=1.5)]
+ケラーは立ち上がり、体に付いた土を払った。
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="none")]
+[name="アデル"]もう行くんですか？
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="ケラー"]君が話してくれたあの夢のように、私もどこかのお店へ勇気を買いに行かないといけないかもしれない。
+[name="ケラー"]もう行くよ、アデル、また明日。
+[name="ケラー"]ゆっくり休むといい、あまり無理しないようにな。
+[Dialog]
+[charslot]
+旧シエスタをぼんやりと見つめる羊の方に、アデルがちらりと視線を向ける。
+[name="アデル"]また明日、ケラー先生！
+[Dialog]
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[Delay(time=1.5)]
+[name="アデル"]……
+もこもこは砂浜に立ち、微動だにしない。
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_footstep_stonestep",volume=0.6,channel="step1",loop=false)]
+[stopsound(channel="step1",fadetime=1.5)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="r")]
+[name="アデル"]探してる場所は見つかりましたか？
+[Dialog]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+立ったまま動かないもこもこの隣にアデルは座った。
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="none")]
+[name="アデル"]私ね、思うんですけど……あなたは鉱山労働者で、ここに帰ってきたかったんじゃないんですか？
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+立ったままの生き物は首を横に振ると、海に向けていた視線を動かして、そばにいるアデルを見上げた。それは澄み切った目だった。
+その生き物は古い標識をかじりながら、ひづめでリズミカルに地面を蹴っている。
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_pawfootstep_1",loop=true, channel="sfootn", volume=0.7)]
+[StopSound(channel="sfootn", fadetime=3.5)]
+[charslot(slot="l",posfrom="0,0",posto="-200,0",duration=2,isblock=false)]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+トトン、トトン、トトン……
+そしてゆっくりと、身を翻しこの場所を離れた。
+[Charslot]
+[name="アデル"]違うの……？
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="41_g12_obsidianhotspringshotel", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[playMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_995_1#7$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_1003_1#7$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_995_1#7$1",focus="l")]
+[name="ペリペ"]いやいやいや！　俺は黒曜石をコレクションするのが好きなおっさんにすぎないよ。このホテルの番をしてるだけで、あんたの言ったことはできないし、力にもなれねぇよ！
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[name="セイロン"]労働者の方たちが言っていましたわ。採掘場の経営者であるお父様の下で働いていた縁で、移転後も貴方は陰からずっと彼らがより良く暮らしていけるよう手を貸していたと――
+[charslot(slot="l",name="avg_npc_995_1#7$1",focus="l")]
+[name="ペリペ"]そう、そうだよ。俺の親父の採掘場のせいで、あいつらは鉱石病にかかっちまって、俺はというとあいつらが危険を冒して採ってきた石を家の中で並べてるだけさ。
+[charslot(slot="l",name="avg_npc_995_1#8$1",focus="l")]
+[name="ペリペ"]だが助けてるだと？　んなわけあるかよ。今でも良い暮らししてるとは言えねぇんだぞ、せいぜい仕事があるってくらいだ。
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="セイロン"]つまり、わたくしの話を認めるのですね？
+[charslot(slot="l",name="avg_npc_995_1#7$1",focus="l")]
+[name="ペリペ"]どこが！　おいおいマジかよ、話し合いだろうが、ビビらせようと俺のコレクションを壊そうとすんじゃねぇよ！
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[name="セイロン"]分かりましたわ、ではコレクションに話を戻すといたしましょう。
+[name="セイロン"]黒曜石というのはシエスタ移転前は極めて貴重な鉱石でしたが、高値で売れるのは純度の高いものであるか、様々な色の輝きを放つものだけです。こういうことは、きっとご存知のはずですわね。
+[Dialog]
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[Delay(time=0.2)]
+[charslot(slot="r",name="avg_npc_1003_1#7$1",afrom=1,ato=0,duration=0.7,focus="r",isblock=true)]
+[Delay(time=0.3)]
+[playsound(key="$d_avg_dragsofa",volume=0.8,loop=true, channel="bgs")]
+[StopSound(channel="bgs", fadetime=2)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_npc_1003_1#7$1",afrom=0,ato=1,duration=1,focus="r",isblock=true)]
+セイロンは腰をかがめ、棚の奥から鉱石の入った箱を二つ引っ張り出した。
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[name="セイロン"]ではこれらは何ですの？
+[name="セイロン"]コレクターの方が、なぜこのように粗く純度の低い石を持っているのでしょう。わたくしが労働者の家に訪ねた時に見た違法採掘の黒曜石そのものですわ。
+[charslot(slot="l",name="avg_npc_995_1#4$1",focus="l")]
+[name="ペリペ"]ふんっ、あんたに俺のお宝たちが理解できるかよ。黒曜石は、どんなものだって俺からすりゃ素晴らしいんだよ！
+[charslot(slot="r",name="avg_npc_1003_1#4$1",focus="r")]
+[name="セイロン"]それだけ黒曜石を求めていながら、なぜ労働者たちに死ぬまで掘り続けさせず、むしろ彼ら一人一人に、ドライバーやチケット売り、警備員などの仕事をあてがっていますの？
+[charslot(slot="l",name="avg_npc_995_1#4$1",focus="l")]
+[name="ペリペ"]それはあいつらが自分で見つけた生きる道だ！
+[charslot(slot="r",name="avg_npc_1003_1#4$1",focus="r")]
+[name="セイロン"]そうですの。でしたら仕事のあっせんは事のついでに行っただけであり、遠回しに彼らからお金をせしめているということかしら？
+[charslot(slot="l",name="avg_npc_995_1#4$1",focus="l")]
+[name="ペリペ"]そうだ、その通りだ！
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[name="セイロン"]……なぜ貴方は助けていることを認めないのですか？
+[name="セイロン"]鉱山労働者の方々は、今だって良い暮らしをしているとは言えませんわ。彼らの掘った黒曜石はシエスタを支えてきました、けれど今は――
+[charslot(slot="l",name="avg_npc_995_1#7$1",focus="l")]
+[name="ペリペ"]……
+[Dialog]
+[Charslot(duration=0.3)]
+[Delay(time=0.5)]
+ペリペはため息をつき、椅子に座った。
+[charslot(slot="m",name="avg_npc_995_1#6$1",focus="m")]
+[name="ペリペ"]嬢ちゃん、一都市の政策を変えることが、そんなに簡単だと思ってんのか？
+[name="ペリペ"]今のあいつらを、それから今の俺を見てみろよ。
+[name="ペリペ"]俺のことを「ブラウンさん」と呼んでいるのを聞いたんだろ。ブラウン鉱業が俺の手の中にあってもよ、あいつらのために工場を作って、そん中で良い暮らしさせてやることは俺にはできねぇんだ。
+[name="ペリペ"]政府の役人が俺を訪ねるだろうよ、同業者が俺を陥れるだろうよ。シエスタの外にはクルビア、それにヴィクトリアもいる。シエスタで縮こまってるだけでも、十分よくやってる方さ。
+[name="ペリペ"]あんた……クルビアが感染者に法外な額の保険を支払わせ、その後に荒野の開拓に行かせてるのを知らないはずないよな？
+[charslot(slot="m",name="avg_npc_1003_1#6$1",focus="m")]
+[name="セイロン"]もちろんです！
+[name="セイロン"]だからこそ、貴方に助けを求めに来たのですわ！　貴方はわたくしよりも多くの知識を持ち、見識が広いですもの。
+[name="セイロン"]クルビアが感染者問題でわたくしたちを攻撃してくるのなら、先に自分たちの感染者区画を建設すればいいのですわ。そして、同業者が陥れてくるのなら、その方たちと交渉をするのです。
+[name="セイロン"]きっとなんとかなるはずですわ。いつまでも、このように温泉ホテルに閉じこもっているわけにはいきません。それで何かを変えられますの？
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_heartbeat",channel="heart",loop=false, volume=0.6)]
+[stopsound(channel="heart",fadetime=1)]
+[Delay(time=1.5)]
+セイロンは感情が高ぶり、自分の心臓が胸から飛び出そうになるのを感じた。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.3, fadetime=2)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.8, block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="優しい学者"]これこそ今のシエスタにとって、クルビアとの交渉材料を得られる最善の方法ですわ……
+[name="困惑した青年"]けどあんたは……
+[name="優しい学者"]ええ、もう五ヶ月ですわ。お医者様が、女の子だとおっしゃっていました。
+[name="困惑した青年"]そいつはめでたい！　でも、妊婦ならなおさらどうして……？
+[name="優しい学者"]シエスタは発展する必要があります。これ以上は待てませんのよ。ですからわたくしは労働者たちを助け、教えに来たのですわ……
+[name="優しい学者"]危険を回避する方法や、環境を観察する方法、災害が起こった後にできるだけ自らを守る方法を、彼らには知っていただきたいのですわ。これまで経験頼りでしたが、知識を教えることができますわ。
+[name="困惑した青年"]でもそれで役に立つのか？　採掘場はこんなにでかいし、字も読めない奴ばかり。金を稼ぐことしか知らん。親父は災害が起こるのは当然で、労働者もたくさんいるし、気にしなくていいって……
+[name="優しい学者"]それは違いますわ。
+[name="優しい学者"]トムさんも、ハンクさんも、ビルさんも、多くの労働者たちが気にされますわ。
+[name="優しい学者"]わたくしは労働者の現状を改善する法案の成立を後押しするつもりですのよ。黒曜石採掘によって鉱石病に感染した方々には、より適切な支援がなされるべきですもの。
+[name="困惑した青年"]だけどうちの親父が、今の政府はそんなことに構ってる暇なんざないだろうって言ってましたよ。あいつらは、シエスタを発展させるためだけに、もっと金を稼ぎたいだけだって。
+[name="優しい学者"]わたくしが政府の目をここに向けさせます。知識を抱えてオフィスに座ったまま、労働者たちが負傷したり病にかかるのをただ見ているなどわたくしにはできません。それで何を成せると言いますの？
+女性は自らの膨らんだお腹を優しく撫でる。その中では命が安らかに育まれている。彼女にはその小さな鼓動を感じ取れた。
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart0",loop=false, volume=0.4)]
+[stopsound(channel="heart0",fadetime=2)]
+トトン、トトン、トトン……
+[Dialog]
+[name="困惑した青年"]あの……お名前を教えてくれませんか？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="41_g12_obsidianhotspringshotel", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, amount=0, block=true)]
+[charslot(slot="m",name="avg_npc_995_1#1$1")]
+[Delay(time=1)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_995_1#1$1",focus="m")]
+[name="ペリペ"]嬢ちゃん、あんた名前は？
+[name="ペリペ"]……今後またどこかで会うかもしれないな。もしあんたが本当に何かできるなら、手伝ってやるよ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.8, block=true)]
+[Delay(time=0.5)]
+[musicvolume(volume=0.3, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="優しい学者"]バーバラ・ドルクスと申します。
+[name="優しい学者"]バーバラと呼んでいただいて構いませんわ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="41_g12_obsidianhotspringshotel", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, amount=0, block=true)]
+[charslot(slot="m",name="avg_npc_1003_1#1$1")]
+[Delay(time=0.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1003_1#1$1",focus="m")]
+[name="セイロン"]セイロン。セイロン・ドルクスですわ。
+[charslot(slot="m",name="avg_npc_995_1#1$1",focus="m")]
+[name="ペリペ"]そうか、覚えた。
+[Dialog]
+[stopmusic(fadetime=3)]
+[Delay(time=0.8)]
+[charslot(slot="m",name="avg_npc_995_1#5$1",focus="m")]
+[name="ペリペ"]待て……ドルクス？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="41_g1_siestacommercialstreet_d", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="アデル"]ここはもう商店街の近くですけど、どこへ行くんですか？
+[name="アデル"]ちびめーちゃん、あなたの背中の鉱山用ランプは一体何を表してるんですか……？
+[Dialog]
+[charslot]
+もこもこはもぐもぐと口を動かしながら、のんびりと進む。耳元では風の音、人波の音が流れ、遠くからは、火山活動の音が響く。
+[PlaySound(key="$d_gen_heartbeat",channel="heartw",loop=false, volume=0.3)]
+[stopsound(channel="heartw",fadetime=6)]
+トトン、トトン、トトン……！
+何かの音が耳をつんざく雷のようにその生物の耳に響き、地質活動や流れるマグマの音を覆い隠した。
+トトン……！　トトン……！　トトン……！
+[Dialog]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",duration=0.3)]
+[Delay(time=0.7)]
+[PlaySound(key="$d_avg_sheeprun", volume=1)]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",posfrom="0,0",posto="-200,0",duration=0.8)]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",afrom=1,ato=0,duration=0.5,isblock=true)]
+[delay(time=1.5)]
+[charslot]
+もこもこは、呆然と道の真ん中で止まった。それから何度か辺りを振り返った後に、突然四肢を大きく広げて走り出した。
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="アデル"]待ってください……どこへ行くんです？
+[name="アデル"]見つけましたか？　この場所なんですか？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="41_g12_obsidianhotspringshotel", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_995_1#5$1")]
+[Delay(time=1)]
+[PlayMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_995_1#5$1",focus="m")]
+[name="ペリペ"]バーバラはあんたの母親か？
+[name="ペリペ"]――待て！
+[Dialog]
+[charslot(slot="m",name="avg_npc_995_1#5$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=0.7)]
+[PlaySound(key="$d_avg_chairrub", volume=1)]
+[PlaySound(key="$d_avg_cardboard", volume=1,delay=0.8)]
+[Delay(time=1.5)]
+[name="ペリペ"]待て、これは……これは……
+ペリペは椅子の上に立ち、棚の上に載っている精巧な入れ物を取り出した。ガラスカバーの中には、加工の施されていない大きな晶洞が静かに置かれ、黒曜石の結晶がきらきらと輝いている。
+[Dialog]
+[charslot(slot="m",name="avg_npc_995_1#5$1",afrom=0,ato=1,duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_995_1#5$1",focus="m")]
+[name="ペリペ"]いや、待て、あいつらも呼ばないと、これはあいつらから預かったもんだ……トム、ハンク、それとビル、あの老いぼれたちを全員呼ばないと……！
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]バーバラは確かにわたくしの母ですわ……でもブラウンさん、これは何ですの？　トム、ハンク、ビルとは誰ですの？
+[charslot(slot="m",name="avg_npc_995_1#1$1",focus="m")]
+[name="ペリペ"]セイロン・ドルクス……
+[name="ペリペ"]これはずっと前に、労働者たちがあんたの母親に送ろうとしていたプレゼントだ。あんたの誕生を祝うため、それに彼女の助けに感謝するためにな。
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]お母様へのプレゼント？　わたくしのお母様に……？
+[charslot(slot="m",name="avg_npc_995_1#9$1",focus="m")]
+[name="ペリペ"]だが結局渡せずじまいだった……
+[charslot(slot="m",name="avg_npc_995_1#1$1",focus="m")]
+[name="ペリペ"]あの老いぼれたちが来たら、あいつらに教えてやらないとな。そんであいつらと一緒にこれをあんたに渡すんだ――あんたの母親は……！
+[musicvolume(volume=0.3, fadetime=1)]
+[Dialog]
+[Charslot]
+[PlaySound(key="$d_gen_heartbeat",channel="heart1",loop=false, volume=0.4)]
+[stopsound(channel="heart1",fadetime=2)]
+[Delay(time=2)]
+トトン、トトン、トトン……！
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart2",loop=false, volume=0.6)]
+[stopsound(channel="heart2",fadetime=2)]
+[Delay(time=2)]
+トトン……！　トトン……！　トトン……！
+[Dialog]
+[PlaySound(key="$d_avg_runstop")]
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="アデル"]ちびめーちゃん――！
+[Dialog]
+[charslot]
+もこもこが何かの音に導かれ、ホテルに入った。
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart3",loop=false, volume=0.7)]
+[stopsound(channel="heart3",fadetime=2)]
+[Delay(time=2)]
+トトン……！　トトン……！　トトン……！
+その音は感情の高ぶりによって起伏するある女性の胸から聞こえてきていた。
+心臓が跳ねている。何度も繰り返される鼓動は、人体の隅々にまで血液を送り、母の体から、お腹の中で静かに眠る小さな赤子にまで栄養を送る。
+その小さな鼓動は成長していた。
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart4",loop=false, volume=0.7)]
+[stopsound(channel="heart4",fadetime=2)]
+[Delay(time=2)]
+トトン……！　トトン……！　トトン……！
+[Dialog]
+もこもこの生き物は頭をセイロンの胸に当てた。
+セイロンには何も見えていない。しかし彼女は突如訪れた温かさを感じた。
+ずっしりと、何かが彼女の胸の中に落ちたようだった。
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="アデル"]セイロンさん？
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]……エイヤフィヤトラさん？
+[Dialog]
+セイロンは突然何かが見えたような気がした。ずっしりとした重さがますますはっきりと感じられる。
+[Dialog]
+[musicvolume(volume=0.6, fadetime=3)]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="all")]
+[Delay(time=0.3)]
+[PlaySound(key="$d_gen_heartbeat",channel="heart5",loop=false, volume=0.7)]
+[stopsound(channel="heart5",fadetime=2)]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",posfrom="-50,130",posto="-50,130",afrom=0,ato=0,duration=0,isblock=true)]
+[Delay(time=0.2)]
+[charslot(slot="l",afrom=0,ato=1,duration=2,isblock=false)]
+[Delay(time=3)]
+一匹のふわふわの生き物が視界の中に徐々に現れた――それは頭を彼女の胸に押し当て、静かに何かを聞いている。
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart4",loop=false, volume=0.9)]
+[stopsound(channel="heart4",fadetime=2)]
+[Delay(time=2)]
+ドクン！　ドクン！　セイロンの心臓は早鐘のように暴れて、彼女と小さな羊にしか聞こえない大きな音を発している。
+羊は鼻先で晶洞に優しく触れ、そして今度は自らの額を彼女の額に押し当てた。
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]これは……？
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#8$1",focus="m")]
+[name="アデル"]……ちびめーちゃん……もう迷子じゃなくなったんですね。
+[name="アデル"]彼女は探してたものを見つけたみたいです。
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",posfrom="-50,130",posto="-50,130",afrom=1,ato=1,duration=0,focus="m")]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]迷子……？
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_995_1#5$1",focus="m")]
+[name="ペリペ"]おおっと――この晶洞を倒したら大変だ――割っちまったら誰にも会わせる顔がねぇ――
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",posfrom="-50,130",posto="-50,130",afrom=1,ato=1,duration=0,focus="all")]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_throwstone",volume=0.8)]
+[PlaySound(key="$d_avg_sheeprun", volume=0.4,delay=0.5)]
+[charslot(slot = "l", action="jump",posfrom="0,0",posto="-100,-70",power=5,focus="l" ,times=1,duration=1,isblock=false)]
+[charslot(slot="l",afrom=1,ato=0,ocus="l" ,duration=0.5)]
+[Delay(time=1)]
+羊は軽やかにセイロンの胸から飛び降りると、さっと煙の中に消えていった。
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="セイロン"]エイヤフィヤトラさん……あれは何ですの？
+[charslot(slot="m",name="avg_180_amgoat_1#8$1",focus="m")]
+[name="アデル"]セイロンさんにも見えましたか？
+[name="アデル"]……お別れだと思います。
+[charslot(slot="m",name="avg_180_amgoat_1#12$1",focus="m")]
+[name="アデル"]……お別れですし……再会でもありますね！
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=3)]
+[charslot]
+[Image]

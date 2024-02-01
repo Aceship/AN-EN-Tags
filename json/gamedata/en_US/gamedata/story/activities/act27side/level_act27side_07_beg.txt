@@ -1,0 +1,674 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_cave_2",screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.8, block=true)]
+[Delay(time=0.5)]
+[playMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[name="Bewildered Youth"]I still don't get it. Why would a lady like you choose to spend your days in a hole like this? Aren't you afraid of the Infected?
+[name="Gentle Scholar"]Are the Infected not but normal people saddled with misfortune?
+[name="Gentle Scholar"]Just like this child of mine, yet unborn. Maybe she'll become Infected herself, or remain a lucky one who just makes friends with them.
+[name="Gentle Scholar"]Either way, I wish for her to live in a city full of love and goodness.
+[name="Bewildered Youth"]If continuing to mine here will harm the environment, shouldn't we stop?
+[name="Gentle Scholar"]For now, this city can only rely on nature's bounty. Even so, our descendants will definitely carve out a home with their own hands.
+[name="Gentle Scholar"]I hope then that you and I, and all of them—that all of us will find our own place in Siesta.
+[name="Gentle Scholar"]The elderly unhindered by age, the sickly unburdened by despair, that is the Siesta of my dreams... That is the Siesta I wish for my child to see.
+[name="Bewildered Youth"]Could that really ever happen?
+[name="Gentle Scholar"]Well, let's start with the mines!
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="41_g7_siestahightechtouristzone", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, amount=0, block=true)]
+[Delay(time=1)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",duration=0.7)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="r")]
+[name="Adele"]Little Black Sheep, why are you all alone? Do you know where the rest went?
+[name="Adele"]Also, you keep eating these old signposts and addresses on letters. Is it because you're lost?
+[charslot(slot="r",name="avg_180_amgoat_1#9$1",focus="r")]
+[name="Adele"]You... can you understand me...?
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+[name="Lost Creature"]......
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="none")]
+[PlaySound(key="$d_avg_catsmell", volume=1)]
+The fluffy creature remains silent as it sniffs about, picking the next signpost to be devoured.
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="r")]
+[name="Adele"]Did you get lost when Siesta moved?
+[name="Adele"]Or is your home on the undeveloped plate instead of the mines?
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_sandftsingle",volume=0.7)]
+[PlaySound(key="$d_avg_sandftsingle", volume=0.7, loop=false, channel="bgs1",delay=0.5)]
+[PlaySound(key="$d_avg_sandftsingle", volume=0.7, loop=false, channel="bgs2",delay=1)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="none")]
+The fluffy creature paws the ground urgently as Adele stands, silently looking at it.
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="r")]
+[name="Adele"]Where does it want to go?
+[Dialog]
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="l")]
+[Delay(time=0.2)]
+[charslot(slot = "l", action="jump",posfrom="0,0",posto="100,0",power=5,times=0,duration=1.5,focus="l",isblock=false)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="l")]
+[PlaySound(key="$d_gen_heartbeat", channel="hb",volume=0.6)]
+[stopsound(channel="hb",fadetime=4)]
+[Delay(time=2.5)]
+Hesitantly, it approaches Adele, pressing its head to Adele's chest as if listening to her heartbeat.
+Ba-dump, ba-dump, ba-dump...
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+[name="Lost Creature"]......
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="none")]
+Not this sound, not this sound.
+[Dialog]
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_pawfootstep_1",loop=true, channel="sfoot2", volume=0.7)]
+[StopSound(channel="sfoot2", fadetime=3)]
+[charslot(slot = "l", action="jump",posfrom="0,0",posto="-200,0",power=0,times=1,duration=1.5)]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="none")]
+The fluffy creature lowers its head and continues following the path ahead.
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="r")]
+[name="Adele"]Are you looking for your home, or your friends and family?
+[name="Adele"]Do you know where to find them?
+[Dialog]
+[charslot]
+The fluffy creature turns its head, staring inquisitively at Adele.
+[Dialog]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_transmissionget",volume=0.6)]
+[CharacterCutin(widgetID="1", name="avg_npc_999_1#1$1",style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=0, width=200, block=true)]
+[name="Keller"]Adele, where are you?
+[name="Keller"]I need to you help me with some data, can you come to the museum now?
+[Dialog]
+[CharacterCutin(widgetID="1",fadetime=0,block=true)]
+Adele looks at the expectant creature in front of her.
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[name="Adele"]Ah... Professor Keller, I-I... I'm sick today!
+[name="Adele"]I feel dizzy, and I have a headache too. Also my legs hurt... I feel terrible...!
+[Dialog]
+[charslot]
+[CharacterCutin(widgetID="2", name="avg_npc_999_1#5$1",style="cutin", fadestyle= "horiz_expand_center", fadetime=0, offsetx=0, width=200, block=true)]
+[name="Keller"]Terrible? Adele, what's wrong?
+[name="Keller"]Do you need to go to the hospital? Do you need my help? Do you have medicine on hand? I... How's your body temperature, are you feverish?
+[Dialog]
+[CharacterCutin(widgetID="2",fadetime=0,block=true)]
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[name="Adele"]No, Professor Keller, I'll be fine... I'm at the hospital right now!
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="none")]
+[PlaySound(key="$d_avg_sheeprun", volume=0.8)]
+[Delay(time=0.8)]
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_walkfast", volume=0.7)]
+[charslot(duration=1)]
+[Delay(time=1.5)]
+With no reply forthcoming, the fluffy creature stomps the ground impatiently and turns to leave. Adele rushes to keep up with it—
+A car speeds by, frantically honking at Adele who's just taken a step forward.
+[Dialog]
+[CameraShake(duration=1, xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_carhorn", volume=1)]
+[PlaySound(key="$drift", volume=0.7,delay=0.2)]
+Honk~~ Honk~~!
+[Dialog]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_999_1#5$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="Keller"]Ugh, my ears...
+[charslot(slot="m",name="avg_npc_999_1#10$1",focus="m")]
+[name="Keller"]Adele? What are you doing here? Weren't you...?
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[name="Adele"]P-Professor Keller... I-I...
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="Keller"]......
+[name="Keller"](I must have been pushing her too hard, if a girl like Adele feels the need to fake an illness to rest...)
+[name="Keller"]Adele...
+[name="Keller"]If you're feeling overwhelmed, you could take a day off to rest.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_throwstone", volume=0.8)]
+[charslot(slot = "m", action="jump",posfrom="0,0",posto="-200,0",power=10,times=1,duration=1)]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",afrom=1,ato=0,duration=0.4)]
+[Delay(time=1.5)]
+[charslot]
+Turning its head to confirm that Adele is no longer following, the fluffy creature skips off and leaves the street.
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="Adele"]Professor Keller, I want to take some time to relax here...!
+[Dialog]
+[musicvolume(volume=0, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="41_g5_siestaunbuiltland_d", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_1003_1#11$1")]
+[Delay(time=1)]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]What if I told you that I want to offer you a job with stable pay that isn't detrimental to your health? I'll even provide special lodgings for you.
+[name="Ceylon"]Don't worry, I can guarantee the working environment and conditions, as well as medical services. You just need to pay a portion of the rent to the government...
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="Discouraged Worker"]Heh, even you can't go on, can you? I don't know what those government people are on about, but I know this much at least. These things take a lot of money, not a mere hundred or thousand gold certificates.
+[name="Discouraged Worker"]With this money, I might be able to buy a decently comfortable bed, eat a nice meal, and it may even save my life if it comes to it. But it can't build what you're promising.
+[charslot(slot="m",name="avg_npc_1003_1#6$1",focus="m")]
+[name="Ceylon"]...I can do it.
+[charslot(slot="m",name="avg_npc_998_1#1$1",focus="m")]
+[name="Dispirited Worker"]Doctor, if you were to say you'd build us a cheaper hospital. Frankly, I'd be really grateful, and I'd actually believe you could do it. But saying that you'll provide jobs, homes and healthcare...
+[name="Dispirited Worker"]Just look around you. It's been so long and this place is still undeveloped.
+[charslot(slot="m",name="avg_npc_1003_1#6$1",focus="m")]
+[name="Ceylon"]I beg you to place your trust in me. I'll stand by my words.
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]So, if there really was a place like that, would you be willing to move there? Would you be happy with it?
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="Discouraged Worker"]......
+[Dialog]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_gen_heartbeat",channel="ht",loop=false, volume=0.8)]
+[stopsound(channel="ht",fadetime=2)]
+[Delay(time=1.5)]
+Frustrated, Ceylon feels her heart hammering in her chest, its beat pounding in her ears.
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]What was that? Sorry, I missed what you said...
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="Discouraged Worker"]I said, even Mr. Pelipper, our boss back at the old mines, only got us so far with all of his wealth and power.
+[name="Discouraged Worker"]Doctor, we don't know you, and you don't owe us anything. We'll be grateful even if you just come to treat us once in a while.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="41_g3_siestanewstreet_d", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+The fluffy creature trots ahead, Adele following closely behind while Keller walks apologetically beside her.
+After hesitating several times, she slowly opens her mouth.
+[Dialog]
+[charslot(slot="m",name="avg_npc_999_1#5$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="Keller"]Did you know, Adele, Siesta's layout remained the same even after it moved... There's a coffee shop down this street.
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="none")]
+Adele continues hurrying along the path without stopping, as if chasing after something.
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="Keller"]...Katia, Magna and I met at that coffee shop.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_runstop")]
+Adele stops moving and squints into the distance, trying to spot the shop.
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="Adele"]Is it... that one over there? I can't see the sign clearly, Mock...?
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="Keller"]Mockingbird Café.
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="none")]
+Keller sighs in relief and changes her tone.
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="Keller"]I was just a student back then, knowing little about the world besides what I read in books.
+[name="Keller"]Katia and Magna burned... Two young flames, with eyes even brighter than obsidian.
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="Adele"]My parents... What were they like back then?
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="Keller"]Brilliant... Interesting, and very attractive.
+[name="Keller"]Of course, some people thought they were weird. Not professors or scholars, they were more like two vagrants chasing after volcanoes.
+[name="Keller"]They liked bright clothes and accessories, believing that they granted courage. They would sometimes camp beside lava flows just to feel the movement.
+[charslot(slot="m",name="avg_180_amgoat_1#13$1",focus="m")]
+[name="Adele"]Eh? Pfft, I thought they'd have banned that kind of thing!
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="Keller"]They did. They banned me from doing it. Because I once followed them to collect some liquid from a sulfuric acid pool and accidentally stepped in a pit of boiling water.
+[name="Keller"]Katia managed to drag me out. I hadn't even felt the pain yet but my shoes had already split like garlic cloves...
+[name="Keller"]I gave Magna quite a fright. Even though it was an accident, she kept trailing after me from then on, fearing that I'd just fall into another hole somewhere when she wasn't looking.
+[Dialog]
+[charslot]
+The fluffy creature seems to realize something, turning its head to look Keller up and down.
+As if worrying for her, it butts her ankles and even tries to eat her shoe heels, so that she can walk more comfortably.
+[charslot(slot="m",name="avg_180_amgoat_1#8$1",focus="m")]
+[name="Adele"]Just like Mutti worrying about me getting hurt.
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="Keller"]Magna? You couldn't compare her care for me to what she felt for you.
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="Adele"]Sorry... I was lost in thought.
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="Keller"]After you were born, I came to visit you occasionally. I thought you looked so much like your parents...
+[charslot(slot="m",name="avg_npc_999_1#9$1",focus="m")]
+[name="Keller"]You doing the same work as them now feels like... It feels like a part of them has never left, that they still remain here.
+[charslot(slot="m",name="avg_180_amgoat_1#2$1",focus="m")]
+[name="Adele"]...If only they were still here.
+[Dialog]
+[charslot]
+Following the salty scent of the sea carried on the breeze, the fluffy creature begins scampering away. The towering cranes of the undeveloped plate peak over the horizon as Keller hurries forward and turns her head.
+[charslot(slot="m",name="avg_npc_999_1#1$1",focus="m")]
+[name="Keller"]Adele!
+[name="Keller"]Magna once said we are like tiny little ants standing on this vast landscape, talking big about how we plan to conquer it.
+[name="Keller"]Look at the both of us now, Adele. Two little ants standing here, facing this building dozens of times bigger than us.
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="Keller"]I used to think I would be just like before, feeling infinitesimally small and amounting to nothing.
+[name="Keller"](Whisper) But it's only now do I realize some things are too hard to say aloud.
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="none")]
+[name="Adele"]Professor Keller, what do you—?
+[charslot(slot="m",name="avg_npc_999_1#5$1",focus="m")]
+[name="Keller"]Nothing...
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=1)]
+[name="Keller"]Adele, how can I tell you...?
+[Dialog]
+[Background(image="41_g5_siestaunbuiltland_d", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlaySound(key="$beach", channel="siesta", loop=true, volume=0.4)]
+[playMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[name="Keller"]You can still see a little bit of the old Siesta from here. Mount Siesta is over that side.
+[name="Adele"]Who knows when it will really erupt?
+The creature carrying a miner's lamp slows down and stares blankly in the direction of Old Siesta.
+The waves wash over the distant gravel, the surface sparkling like brilliant gems.
+[Dialog]
+[Delay(time=1)]
+[name="Keller"]Once it erupts, once the museum is ready, my work will finally be done.
+[name="Keller"]I'm sorry, I've taken up so much of your time, Adele...
+[name="Adele"]It's alright, Professor Keller. There's no one else who can tell me about my parents anyway.
+[name="Adele"]I'm really happy to know these things...
+[Dialog]
+[stopsound(channel="siesta", fadetime=1)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_clothmovement", volume=0.7)]
+[charslot(slot="m",name="avg_npc_999_1#8$1",posfrom="0,-20",posto="0,0",afrom=0,ato=1,duration=1)]
+[Delay(time=1.5)]
+Keller stands and brushes the dirt off herself.
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="none")]
+[name="Adele"]Are you leaving now?
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[name="Keller"]Maybe I need to buy some courage, like in that dream you mentioned.
+[name="Keller"]Goodbye, Adele. See you tomorrow.
+[name="Keller"]Rest well and don't tire yourself.
+[Dialog]
+[charslot]
+Adele glances at the creature still staring blankly at old Siesta.
+[name="Adele"]Bye, Professor Keller!
+[Dialog]
+[charslot(slot="m",name="avg_npc_999_1#8$1",focus="m")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[Delay(time=1.5)]
+[name="Adele"]......
+The fluffy creature stands motionless on the beach.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_footstep_stonestep",volume=0.6,channel="step1",loop=false)]
+[stopsound(channel="step1",fadetime=1.5)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="r")]
+[name="Adele"]Did you find the place you were looking for?
+[Dialog]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+Adele sits down next to the motionless creature.
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="none")]
+[name="Adele"]Let me guess... You're a miner who wanted to return here?
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+The creature shakes its head from side to side, pulling its gaze from the ocean to Adele opposite itself. Its clear eyes look up at her.
+It chews on an old signpost as it steadily paws at the ground.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",focus="l")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_pawfootstep_1",loop=true, channel="sfootn", volume=0.7)]
+[StopSound(channel="sfootn", fadetime=3.5)]
+[charslot(slot="l",posfrom="0,0",posto="-200,0",duration=2,isblock=false)]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+Ba-dump, ba-dump, ba-dump...
+Slowly, it turns to leave the area.
+[Charslot]
+[name="Adele"]No...?
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="41_g12_obsidianhotspringshotel", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[playMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_995_1#7$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_1003_1#7$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_995_1#7$1",focus="l")]
+[name="Pelipper"]No no no! I'm just an old man who likes collecting pretty rocks. I can't do what you want or help you at all!
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[name="Ceylon"]Mr. Brown, those workers said that your father owned the mine, and that they all worked for you for many years. Even after the move, you still helped make their lives better, under the table—
+[charslot(slot="l",name="avg_npc_995_1#7$1",focus="l")]
+[name="Pelipper"]Yes, that's right. My father's mine made them into Infected, while I decorate my house with rocks they risked their lives to dig out.
+[charslot(slot="l",name="avg_npc_995_1#8$1",focus="l")]
+[name="Pelipper"]Am I helping them? As if. They're barely surviving as it is, at most they're not jobless.
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Ceylon"]So you admit it?
+[charslot(slot="l",name="avg_npc_995_1#7$1",focus="l")]
+[name="Pelipper"]No! My god, calm down, woman! Don't you go breaking my collection!
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[name="Ceylon"]Well then, let's talk about your collection.
+[name="Ceylon"]Before Siesta moved, this obsidian was an extremely precious ore. However, only obsidian that was pure enough or which reflected the colors of the rainbow could fetch a good price. I'm sure you're aware.
+[Dialog]
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[Delay(time=0.2)]
+[charslot(slot="r",name="avg_npc_1003_1#7$1",afrom=1,ato=0,duration=0.7,focus="r",isblock=true)]
+[Delay(time=0.3)]
+[playsound(key="$d_avg_dragsofa",volume=0.8,loop=true, channel="bgs")]
+[StopSound(channel="bgs", fadetime=2)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_npc_1003_1#7$1",afrom=0,ato=1,duration=1,focus="r",isblock=true)]
+Ceylon bends down and drags out two boxes of ore from behind the cabinet.
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[name="Ceylon"]So, what are these?
+[name="Ceylon"]Why would a collector like you have crude, impure obsidian like this? Exactly like the obsidian the workers squirreled away?
+[charslot(slot="l",name="avg_npc_995_1#4$1",focus="l")]
+[name="Pelipper"]Hmph, what would you know? All obsidian is precious to me!
+[charslot(slot="r",name="avg_npc_1003_1#4$1",focus="r")]
+[name="Ceylon"]Then why did you stop the workers from mining? What stopped you from working them to death, instead arranging gainful employment for them as drivers, ticket sellers, and security guards?
+[charslot(slot="l",name="avg_npc_995_1#4$1",focus="l")]
+[name="Pelipper"]Those are lifelines they found for themselves!
+[charslot(slot="r",name="avg_npc_1003_1#4$1",focus="r")]
+[name="Ceylon"]Oh? So you just helped them along while indirectly earning money off them?
+[charslot(slot="l",name="avg_npc_995_1#4$1",focus="l")]
+[name="Pelipper"]Yes, that's absolutely right!
+[charslot(slot="r",name="avg_npc_1003_1#7$1",focus="r")]
+[name="Ceylon"]Why do you refuse to admit it?
+[name="Ceylon"]They're not living well right now. The obsidian that they mined propped up Siesta, but now—
+[charslot(slot="l",name="avg_npc_995_1#7$1",focus="l")]
+[name="Pelipper"]......
+[Dialog]
+[Charslot(duration=0.3)]
+[Delay(time=0.5)]
+Pelipper heaves a great sigh and sinks back onto his seat.
+[charslot(slot="m",name="avg_npc_995_1#6$1",focus="m")]
+[name="Pelipper"]Missy, do you think it's that easy changing the policies of an entire city?
+[name="Pelipper"]Look at them now, look at me.
+[name="Pelipper"]You've heard them call me 'Mr. Brown.' Brown Mines, the entire company is in my hands, but even I can't build a factory for them to make a living in.
+[name="Pelipper"]The government will harass me, my peers will plot against me, and that's not even considering Columbia and Victoria. Just keeping to ourselves here in Siesta isn't that bad.
+[name="Pelipper"]You do know... Columbia has Infected pay sky-high insurance premiums and then sends them to mine in the wastelands?
+[charslot(slot="m",name="avg_npc_1003_1#6$1",focus="m")]
+[name="Ceylon"]I know that!
+[name="Ceylon"]That's why I came to you for help! You have far more knowledge and experience with the situation than me.
+[name="Ceylon"]If Columbia uses the Infected question to attack us, we can just build our own place for Infected first. If your peers begin plotting, we can try to negotiate with them.
+[name="Ceylon"]There must be something we can do. You can't just hide away in this hot spring hotel forever. What would that accomplish?
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_heartbeat",channel="heart",loop=false, volume=0.6)]
+[stopsound(channel="heart",fadetime=1)]
+[Delay(time=1.5)]
+Getting increasingly agitated, Ceylon feels as if her heart is about to leap out of her chest.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.3, fadetime=2)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.8, block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="Gentle Scholar"]This is the best leverage for Siesta to negotiate with Columbia right now...
+[name="Bewildered Youth"]But, you seem...
+[name="Gentle Scholar"]Yes, I'm five months along now. The doctor says it's a girl.
+[name="Bewildered Youth"]Congratulations! But, then you...?
+[name="Gentle Scholar"]Siesta needs to develop, it can't wait any longer. That's why I want to help these workers, I want to teach them...
+[name="Gentle Scholar"]I want them to learn how to avoid danger, how to observe the environment, how best to protect themselves after a Catastrophe. They have only gotten by with experience so far, but I can give them knowledge.
+[name="Bewildered Youth"]Will that work? The mine is huge and there's so many illiterate people who only know how to earn money. Father says things like that are very common, and that there are always many workers so we don't need to care too much...
+[name="Gentle Scholar"]That's different.
+[name="Gentle Scholar"]Tom cares, Hank cares, Bill cares, many workers will care.
+[name="Gentle Scholar"]I also want to push a new policy regarding the current state of these workers. These workers who've contracted Oripathy due to Obsidian mining should be taken better care of.
+[name="Bewildered Youth"]But Father tells me that the government will never have time for this. They only want to earn more and more money to develop Siesta.
+[name="Gentle Scholar"]Then I will bring their attention here. I can't just sit in an office all day with the knowledge that they're getting hurt and sick. What would that do?
+The lady gently caresses her pregnant belly, feeling the little heartbeat of the life growing peacefully inside.
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart0",loop=false, volume=0.4)]
+[stopsound(channel="heart0",fadetime=2)]
+Ba-dump, ba-dump, ba-dump...
+[Dialog]
+[name="Bewildered Youth"]Miss... May I have your name?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="41_g12_obsidianhotspringshotel", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, amount=0, block=true)]
+[charslot(slot="m",name="avg_npc_995_1#1$1")]
+[Delay(time=1)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_995_1#1$1",focus="m")]
+[name="Pelipper"]Young lady, what's your name?
+[name="Pelipper"]...Who knows, I might see you again in the future. If you really manage to do something, I'll lend you my help.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.8, block=true)]
+[Delay(time=0.5)]
+[musicvolume(volume=0.3, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="Gentle Scholar"]Barbara Doykos.
+[name="Gentle Scholar"]You can call me Barbara.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="41_g12_obsidianhotspringshotel", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, amount=0, block=true)]
+[charslot(slot="m",name="avg_npc_1003_1#1$1")]
+[Delay(time=0.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1003_1#1$1",focus="m")]
+[name="Ceylon"]Ceylon. Ceylon Doykos.
+[charslot(slot="m",name="avg_npc_995_1#1$1",focus="m")]
+[name="Pelipper"]Alright, I'll remember.
+[Dialog]
+[stopmusic(fadetime=3)]
+[Delay(time=0.8)]
+[charslot(slot="m",name="avg_npc_995_1#5$1",focus="m")]
+[name="Pelipper"]Wait, Doykos?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="41_g1_siestacommercialstreet_d", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="Adele"]We're near Fashion Street already, where are you actually going?
+[name="Adele"]Little Black Sheep, what does the mining lamp on your back really mean...?
+[Dialog]
+[charslot]
+The fluffy creature continues forward leisurely, searching and chewing. Sounds pass by its twitching ears, the sound of wind, people, and in the far distance, the rumblings of volcanic activity.
+[PlaySound(key="$d_gen_heartbeat",channel="heartw",loop=false, volume=0.3)]
+[stopsound(channel="heartw",fadetime=6)]
+Ba-dump, ba-dump, ba-dump...!
+Sounds like sparking thunder resound in its ears, overwhelming the sounds of geologic activity and flowing magma.
+Ba-dump...! Ba-dump...! Ba-dump...!
+[Dialog]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",duration=0.3)]
+[Delay(time=0.7)]
+[PlaySound(key="$d_avg_sheeprun", volume=1)]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",posfrom="0,0",posto="-200,0",duration=0.8)]
+[charslot(slot="m",name="avg_npc_1013_1#1$1",afrom=1,ato=0,duration=0.5,isblock=true)]
+[delay(time=1.5)]
+[charslot]
+It stops in the middle of the street, blankly looking from side to side before it breaks into a sudden run, sprinting away on all fours.
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="Adele"]Wait... Where are you going?
+[name="Adele"]Did you find it? It's here?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="41_g12_obsidianhotspringshotel", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_995_1#5$1")]
+[Delay(time=1)]
+[PlayMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_995_1#5$1",focus="m")]
+[name="Pelipper"]Barbara was your mother?
+[name="Pelipper"]—Hold on!
+[Dialog]
+[charslot(slot="m",name="avg_npc_995_1#5$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=0.7)]
+[PlaySound(key="$d_avg_chairrub", volume=1)]
+[PlaySound(key="$d_avg_cardboard", volume=1,delay=0.8)]
+[Delay(time=1.5)]
+[name="Pelipper"]Wait, this... this...
+Standing on a chair, Pelipper retrieves a delicate box from the top of the cabinet. Behind the glass cover, a large, uncut geode lays there, obsidian crystals sparkling.
+[Dialog]
+[charslot(slot="m",name="avg_npc_995_1#5$1",afrom=0,ato=1,duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_995_1#5$1",focus="m")]
+[name="Pelipper"]No, wait, I should call them over. They were the ones who left me with this... Tom, Hank, and Bill, I need to get them all here...!
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]Yes, Barbara was my mother... Mr. Brown, what is this? Who are Tom, Hank, and Bill?
+[charslot(slot="m",name="avg_npc_995_1#1$1",focus="m")]
+[name="Pelipper"]Ceylon Doykos...
+[name="Pelipper"]This is a gift that those workers prepared for your mother, a long time ago. To celebrate your birth and express their gratitude.
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]A gift for mother? My mother...?
+[charslot(slot="m",name="avg_npc_995_1#9$1",focus="m")]
+[name="Pelipper"]In the end, she wasn't able to receive the gift...
+[charslot(slot="m",name="avg_npc_995_1#1$1",focus="m")]
+[name="Pelipper"]I'll explain to the old men when they get here. I want them to see me hand this over to you—Your mother...!
+[musicvolume(volume=0.3, fadetime=1)]
+[Dialog]
+[Charslot]
+[PlaySound(key="$d_gen_heartbeat",channel="heart1",loop=false, volume=0.4)]
+[stopsound(channel="heart1",fadetime=2)]
+[Delay(time=2)]
+Ba-dump, ba-dump, ba-dump...!
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart2",loop=false, volume=0.6)]
+[stopsound(channel="heart2",fadetime=2)]
+[Delay(time=2)]
+Ba-dump...! Ba-dump...! Ba-dump...!
+[Dialog]
+[PlaySound(key="$d_avg_runstop")]
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="Adele"]Little Black Sheep—!
+[Dialog]
+[charslot]
+A fluffy creature steps into the hotel, as if guided by a sound.
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart3",loop=false, volume=0.7)]
+[stopsound(channel="heart3",fadetime=2)]
+[Delay(time=2)]
+Ba-dump...! Ba-dump...! Ba-dump...!
+This sound is coming from a lady, her chest heaving from agitation.
+The heart is beating. With each beat, it transports blood across all four limbs, it carries nutrition from the mother's body, all the way to the slumbering little infant.
+That tiny little heartbeat has grown up.
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart4",loop=false, volume=0.7)]
+[stopsound(channel="heart4",fadetime=2)]
+[Delay(time=2)]
+Ba-dump...! Ba-dump...! Ba-dump...!
+[Dialog]
+The fluffy creature rests its head on Ceylon's chest.
+Ceylon doesn't see anything, but she feels a sudden warmth.
+It's heavy, as if something has fallen into her lap.
+[charslot(slot="m",name="avg_180_amgoat_1#1$1",focus="m")]
+[name="Adele"]Ceylon?
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]...Eyjafjalla?
+[Dialog]
+Ceylon suddenly feels as if she can see something, something growing heavier in her lap.
+[Dialog]
+[musicvolume(volume=0.6, fadetime=3)]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="all")]
+[Delay(time=0.3)]
+[PlaySound(key="$d_gen_heartbeat",channel="heart5",loop=false, volume=0.7)]
+[stopsound(channel="heart5",fadetime=2)]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",posfrom="-50,130",posto="-50,130",afrom=0,ato=0,duration=0,isblock=true)]
+[Delay(time=0.2)]
+[charslot(slot="l",afrom=0,ato=1,duration=2,isblock=false)]
+[Delay(time=3)]
+A little sheep gradually appears before her—It's head leaning against her chest, as if listening to something.
+[Dialog]
+[PlaySound(key="$d_gen_heartbeat",channel="heart4",loop=false, volume=0.9)]
+[stopsound(channel="heart4",fadetime=2)]
+[Delay(time=2)]
+Ba-dump! Ba-dump! Ceylon's heart is beating violently, making thundering sounds that only she and the little sheep can hear.
+She sees the little sheep lightly nose the geode, before bumping her forehead with its own.
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]This is...?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#8$1",focus="m")]
+[name="Adele"]...The Little Black Sheep... She's no longer lost.
+[name="Adele"]She seems to have found what she's looking for.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",posfrom="-50,130",posto="-50,130",afrom=1,ato=1,duration=0,focus="m")]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]Lost...?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_995_1#5$1",focus="m")]
+[name="Pelipper"]Argh—Don't drop that geode—If it shatters I'll be done for—
+[Dialog]
+[charslot(slot="l",name="avg_npc_1013_1#1$1",posfrom="-50,130",posto="-50,130",afrom=1,ato=1,duration=0,focus="all")]
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_throwstone",volume=0.8)]
+[PlaySound(key="$d_avg_sheeprun", volume=0.4,delay=0.5)]
+[charslot(slot = "l", action="jump",posfrom="0,0",posto="-100,-70",power=5,focus="l" ,times=1,duration=1,isblock=false)]
+[charslot(slot="l",afrom=1,ato=0,ocus="l" ,duration=0.5)]
+[Delay(time=1)]
+The little sheep nimbly leaps from Ceylon's lap and disappears into the mist.
+[charslot(slot="m",name="avg_npc_1003_1#11$1",focus="m")]
+[name="Ceylon"]Eyjafjalla... what was that?
+[charslot(slot="m",name="avg_180_amgoat_1#8$1",focus="m")]
+[name="Adele"]You saw it, didn't you?
+[name="Adele"]It's a farewell, I guess.
+[charslot(slot="m",name="avg_180_amgoat_1#12$1",focus="m")]
+[name="Adele"]A farewell... and a reunion!
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=3)]
+[charslot]
+[Image]

@@ -1,0 +1,672 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="41_g5_siestaunbuiltland_d",screenadapt="showall")]
+[Delay(time=1)]
+[playMusic(intro="$farce_intro", key="$farce_loop", volume=0.6)] 
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_1014_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_180_amgoat_1#6$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[name="ドリー"]うん、片づけ終わったみたいだね。偉いじゃん。
+[charslot(slot="r",name="avg_180_amgoat_1#6$1",focus="r")]
+[name="アデル"]ドリーさん！　自分の分身たちを、もっとちゃんと管理すべきだと思わないんですか？
+[charslot(slot="r",name="avg_180_amgoat_1#10$1",focus="r")]
+[name="アデル"]こんなふうに好き勝手させたら、ここの人たちにどれだけ迷惑をかけるか分かってますか？
+[Dialog]
+[charslot]
+もこもこした生き物はコンテナの上に立ち、頭を低く下げて、目の前にいる人に謝罪の意を示しているかのようだった。
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_180_amgoat_1#10$1",focus="l")]
+[name="ドリー"]言ったでしょ。厳密に言えば、彼らはわたしじゃないんだってば。
+[name="ドリー"]確かに彼らをここに連れてきたのはわたしだけど……これは間接責任にしかならないよね？
+[name="ドリー"]だから、まあ……ごめんね？
+[charslot(slot="r",name="avg_180_amgoat_1#10$1",focus="r")]
+[name="アデル"]ごめんの一言で済む話じゃありませんよ！
+[charslot(slot="r",name="avg_180_amgoat_1#6$1",focus="r")]
+[name="アデル"]商品が傷ついちゃったら、店主さんたちは一体どうすればいいんですか？　めーちゃんたちが住民の方たちの平穏な暮らしを乱したんですよ。あの子たちを止める方法はないんですか？
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[name="ドリー"]方法はあるよ……えっとね、いつもなら、わたしは「呼ぶ」かな。
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="r")]
+[name="アデル"]「呼ぶ」？
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[name="ドリー"]こんなふうに、海でも荒野でもどこに向かってでもいいんだけど、両手を口元に持ってきて、それから大声で、「おーい、キミたちどこにいるの！　早くこっちにおいで！」って言うんだ。
+[name="ドリー"]アデル、キミも手伝ってくれないと。わたしはもう何回も呼んでるから、時々聞こえないふりをされちゃうんだ。
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="r")]
+[name="アデル"]……こっちに来てって呼べばいいんですか？
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[name="ドリー"]もうちょこっと魅力的なもので誘導しないといけないかな。たとえばさ、「ここにアイスクリームがあるよ！」とか、「ここに風船とスケボーがあるよ！」とかね。
+[name="ドリー"]でも、呼ぶときに「ちびめーちゃん」とかめーちゃんとかをつけないこと。誰のこと呼んでるのかわからないからね。
+[Dialog]
+[charslot(slot="l",action="jump",power=2,times=4,duration=4,isblock=false)]
+[Delay(time=1.5)]
+ドリーはそばにいるアデルに期待の眼差しを向けた。
+[Dialog]
+[charslot(slot="l",posfrom="0,0",posto="-200,0",afrom=1,ato=0,duration=2,isblock=false)]
+[charslot(slot="r",posfrom="0,0",posto="-200,0",duration=1.5,isblock=true)]
+[Delay(time=2.2)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",posfrom="-200,0",posto="-200,0",focus="r")]
+[name="アデル"]コホン……
+[name="アデル"]おーい！　ここにアイスクリームがあるよー！
+[name="アデル"]おーい！　ここに風船とスケボーがあるよー！　早くおいでー！
+[Dialog]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",posfrom="-200,0",posto="-200,0",focus="none")]
+[name="女性観光客"]え？　アイスクリーム？　タダなの？
+[name="小さな観光客"]お姉ちゃん、本当に？　僕イチゴ味がいい！
+[name="男性観光客"]何かのイベント？　風船がもらえるのか？
+[Dialog]
+[PlaySound(key="$rungeneral", volume=1,channel="1")]
+[PlaySound(key="$runsand", volume=1,channel="2")]
+[CameraShake(duration=2.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+[charslot(slot="r",name="avg_180_amgoat_1#9$1",posfrom="-200,0",posto="-200,0",focus="r")]
+[name="アデル"]え？　違うんです……
+[Dialog]
+[charslot]
+アデルは振り返って、全ての元凶を指さそうとした。ドリーはすでに隣のコンテナに飛び移り、空気の漏れた風船のように人々の周りをぐるぐる回っている。
+しかし通行人にそれは見えない。
+[charslot(slot="m",name="avg_npc_1014_1#1$1",focus="m")]
+[name="ドリー"]あちゃー、大変なことになったね。
+[name="ドリー"]それじゃ、とりあえずこの人たちを連れてアイスクリームを食べに行かなきゃね。あと風船を買いに行ったり、街をぶらぶらしたり、シエスタの日差しを浴びたりしないといけないかもね。
+[name="ドリー"]どうする？　ちょうどいいことに、わたしはとっても美味しいアイスクリーム屋さん知ってるんだ。
+[name="ドリー"]連れて行ってあげよっか？
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",focus="m")]
+[name="アデル"]……ドリーさん！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g3_siestanewstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="女性観光客"]これってヴォルケーノミュージアムの宣伝かしら？　道行く人にアイスをあげるの？　私そういうの好きよ！
+[name="女性観光客"]ねぇダーリン、午後は博物館を見に行きましょうよ？
+[name="男性観光客"]よし、じゃあ博物館を見終わったらバーベキューに行くか！
+[name="女性観光客"]行きましょ行きましょ！
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[name="アデル"]はい、ありがとうございます。
+[Dialog]
+[charslot]
+アデルは数人が去っていくのを見送ると、辺りを見渡して、ドリーを探した。
+[Dialog]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",duration=1.5)]
+[Delay(time=2)]
+通りには人々が行き交い、ドリーはとっくに姿を消していた。一匹の黒い羊だけが、観光客の手の中にあるお金が「出現」する財布をじっと見つめていた。
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="アデル"]（……何しようとしてるんだろう？）
+[Dialog]
+[charslot]
+[stopmusic]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",posfrom="900,0",posto="900,0",isblock=false)]
+[charslot(slot="r",name="avg_npc_021",posfrom="-200,0",posto="-200,0",duration=0)]
+[Delay(time=0.3)]
+[PlaySound(key="$d_avg_blcksheepborn", volume=1,channel="1")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[charslot(slot="m",action="jump",posto="-1900,0",power=65,times=2,duration=1.5,isblock=false)]
+[PlaySound(key="$d_avg_slip", volume=1,channel="2")]
+[Delay(time=1.5)]
+観光客が店主と値引き交渉をしていると、羊が飛び上がり――
+観光客が持っていた財布をくわえて去ってしまった。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="アデル"]（えぇ！？）
+[Dialog]
+[charslot]
+[playMusic(intro="$dontmaketrouble_intro", key="$dontmaketrouble_loop", volume=0.6)]//之后换成夏活战斗音乐
+[charslot(slot="m",name="avg_npc_021",focus="m")]
+[name="男性観光客"]え？　俺の財布は！？　誰だ俺の財布を盗んだのは！
+[Dialog]
+[charslot]
+[name="シエスタ市民"]は？　どんな財布だ？　黒色か白色か？
+[name="シエスタ市民"]たった今盗まれたのか？　でも誰もいなかったぞ？
+[charslot(slot="m",name="avg_180_amgoat_1#3$1",focus="m")]
+[name="アデル"]（まずい。ドリーさんもいないし、早く捕まえないと！）
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_sheeprun", volume=1,channel="1")]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",duration=1.5)]
+[Delay(time=2)]
+財布をくわえた羊はアデルに気付くと、口を開け、財布を落とした――
+[Dialog]
+[PlaySound(key="$d_avg_blcksheepborn",channel="2",volume=0.4)]
+[charslot(slot="m",action="jump",posto="50,0",power=50,times=2,duration=0.3,isblock=false)]
+続けて、ひづめを伸ばして軽やかに蹴り上げると、財布は空中で弧を描き、ちょうど羊の毛の中に落ちたのだった。
+[Dialog]
+[charslot(slot="m",action="jump",power=10,times=3,duration=0.5)]
+[name="もこもこした生物"]（嬉しそうに跳ねる）
+[Dialog]
+[PlaySound(key="$gavel2", volume=0.5,channel="1")]
+[CameraShake(duration=0.3, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=true)]
+財布は何かに当たったようで、「ゴン」と音が鳴ったかと思うと、小さな穴だらけの石が羊の毛の中から転がり落ちた。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="アデル"]あれは、サウンドストーン！
+[Dialog]
+[charslot]
+羊は振り返ると、石が地面に着く前に、慌ててひづめでそれを毛の中に蹴り戻した。
+そして、アデルの方へと舌を出しおどけた顔を見せると、くるりと身を翻して商店街の方へと走っていった。
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="アデル"]ちょっと！　待って！
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",focus="m")]
+[name="アデル"]返して――
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_1005_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_070",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="古銭商人"]三セントのエラー金券はうちでは珍しいな、博覧会が始まったら高値で売れるかもしれねぇ！　嬢ちゃん、ほんとに売るのを検討してくれねぇのか？　この額出すぜ！
+商人がある数字を示した。
+[charslot(slot="l",name="avg_npc_1005_1#1$1",focus="l")]
+[name="スノーズント"]ほんとですか？　では、これなんかどうですか？
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="古銭商人"]極東の旧硬貨か、買った、この値段でどうだ！
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[name="スノーズント"]ではこちらは？
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="古銭商人"]ガリアのリーア銅貨、これも買ったぞ！　嬢ちゃん、あと何を持ってんだ、全部出してみな！
+[Dialog]
+[charslot(slot="l",name="avg_npc_1005_1#1$1",focus="l")]
+[PlaySound(key="$gavel1",channel="1",volume=1)]
+[PlaySound(key="$aluminum",channel="2", volume=1)]
+[PlaySound(key="$d_avg_axehitscrape",channel="3", volume=1)]
+[PlaySound(key="$d_avg_metalcollar",channel="4", volume=1)]
+[CameraShake(duration=1.5, xstrength=0, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=true)]
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="古銭商人"]嬢ちゃん、あんた一体どれだけ持ってきたんだ？　最後の一個、本当に最後の一個だぜ……それを買い取ったら、オレはもう帰るからな！
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[name="スノーズント"]な、ならこれを見てください！　そしたら、新しいマシンを買えるだけ貯まります！
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="古銭商人"]おお、オレたちサルゴンのコインか……どれどれ、これは……
+[Dialog]
+[PlaySound(key="$bodyfalldown2",channel="1",volume=1)]
+[charslot(slot="r",posfrom="0,0",posto="80,-50",duration=0.5,isblock=false,focus="r")]
+[CameraShake(duration=0.5, xstrength=45, ystrength=45, vibrato=20, randomness=70, fadeout=true, block=false,focus="r")]
+[name="古銭商人"]――ガヴィル！！？
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[name="スノーズント"]はい！　価値はありますか？
+[Dialog]
+[charslot(slot="r",posfrom="80,-50",posto="-20,0",duration=0.5,isblock=true,focus="all")]
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="古銭商人"]価値があるかって？　いんや！　取引はやめだ！　細い尻尾の奴なんて話にならん！　これも全部持って帰りな！　オレはもう行く！
+[Dialog]
+商人はコインを掴み取ると、怒りながらスノーズントに押し付けて立ち去ろうとした。
+[Dialog]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",posfrom="900,0",posto="900,0",isblock=false)]
+[Delay(time=0.3)]
+[PlaySound(key="$d_avg_blcksheepborn", volume=1,channel="1")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[charslot(slot="m",action="jump",posto="-1900,0",power=65,times=2,duration=1.5,isblock=false)]
+[PlaySound(key="$d_avg_slip", volume=1,channel="2")]
+[charslot(slot="r",posfrom="-20,0",posto="0,0",duration=0.5,isblock=false,focus="all")]
+[PlaySound(key="$gavel1",channel="3", volume=1)]
+[PlaySound(key="$aluminum",channel="4", volume=1)]
+[Delay(time=1.5)]
+突然、何かが駆け抜け、コインを握る彼の手を弾き飛ばした。
+ピカピカのお金の雨が商店街の一角に降り、スノーズントが驚きの声を上げる前に、見知った女の子が遠くへ駆けていった。
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[charslot(slot="r",name="avg_npc_070",focus="l")]
+[name="スノーズント"]あ……あれ、エイヤフィヤトラさん？
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="アデル"]ごめんなさい、スノーズントさん……！
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#6$1",focus="m")]
+[Delay(time=1)]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-200,0",duration=2.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=2)]
+[Delay(time=2.5)]
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="r")]
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="古銭商人"]わっ！　何だ一体！
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[name="スノーズント"]待って。わたしのコイン……二枚足りません！
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="古銭商人"]お、オレじゃねぇぞ！
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",action="jump",power=20,times=1,duration=0.4)]
+[PlaySound(key="$d_avg_slip", volume=0.5,channel="2")]
+チャリン！　もこもこした生き物は、ピカピカのコインをもふもふの毛の中に隠した。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot="m",name="avg_4106_bryota_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="エニス"]イーストマンさん！　プリントしたもの取りに来ました！
+[charslot(slot="m",name="avg_4106_bryota_1#1$1",focus="none")]
+[name="印刷屋店主"]はいよ、こんなにチラシを刷るなんて、自分ちのバーを宣伝するためにお前さんも苦労してるな。
+[charslot(slot="m",name="avg_4106_bryota_1#1$1",focus="m")]
+[name="エニス"]二百九十八、二百九十九……数に間違いないな、これ代金っす！
+[charslot(slot="m",name="avg_4106_bryota_1#1$1",focus="none")]
+[name="印刷屋店主"]これっぽっちにお代はいらんよ。次ホワイト・ヴォルケーノに行った時、カルダモンパウダーたっぷりの「オアシス」スペシャルを一杯くれればいいさ。
+[name="印刷屋店主"]それと、うちの看板を替えるのを手伝ってくれるかい？
+[charslot(slot="m",name="avg_4106_bryota_1#3$1",focus="m")]
+[name="エニス"]もちろんオッケーっすよ、ありがとうございます！
+[Dialog]
+[charslot]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="アデル"]――エニスさん！
+[charslot(slot="m",name="avg_4106_bryota_1#8$1",focus="m")]
+[multiline(name="エニス")]アデルさん……？　
+[charslot(slot="m",name="avg_4106_bryota_1#3$1",focus="m")]
+[multiline(name="エニス")]そんな急いで走ってどうしたんすか？
+[Dialog]
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",focus="m")]
+[name="アデル"]危ない……危ないです！
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_sheeprun", volume=1,channel="5")]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",posfrom="-900,0",posto="-900,0",isblock=false)]
+[charslot(slot="r",name="avg_4106_bryota_1#3$1",posfrom="-200,0",posto="-200,0",duration=0)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_singleblunt", volume=1,channel="2")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[charslot(slot="m",action="jump",posto="1900,0",power=65,times=2,duration=1.5,isblock=false)]
+[Delay(time=0.2)]
+[Effect(name="$e_slash_cross_hit",  x = 21.2 ,y = -6.7, rox = -26.23, roy = 0, roz = -67.48,layer = 1)]
+[PlaySound(key="$d_avg_hammer",channel="5", volume=1)]
+[charslot(slot="r",name="avg_4106_bryota_1#4$1",posfrom="-200,0",posto="-200,0",duration=0)]
+[CameraShake(duration=2.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="r",posfrom="-200,0",posto="250,1400",duration=0.5)]
+[Delay(time=2)]
+[charslot]
+[PlaySound(key="$d_avg_animal_loop", volume=1,channel="3")]
+[PlaySound(key="$d_avg_paper2", volume=1,channel="1")]
+[PlaySound(key="$d_avg_paper1", volume=1,channel="2")]
+エニスが反応するよりも早く、彼は何かに突き飛ばされて、大きな衝撃を受けた。宙に浮かんだその瞬間にエニスは傾いたシエスタを目にし、紙がそこら中に散らばった。
+[Dialog]
+[StopSound(channel="3")]
+[PlaySound(key="$bodyfalldown1",channel="1",volume=1)]
+[CameraShake(duration=0.3, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=0.5)]
+[name="エニス"]うぅ……いたた……何なんだよ……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1008_1#1$1")]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_sheeprun", volume=1,channel="5")]
+[charslot(slot="m",posfrom="0,0",posto="200,0",duration=1.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=2.5)]
+羊がその中の一枚をくわえ、そのまま走っていく。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#3$1",focus="m")]
+[name="アデル"]あっ、エニスさん！　ご――ごめんなさい！
+[Dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(duration=1.5)]
+[Delay(time=2.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m",name="avg_4106_bryota_1#9$1",posfrom="0,-50",posto="0,0",duration=2)]//暂定这个表情
+[charslot(slot="m",afrom=0,ato=1,duration=1)]
+[Delay(time=1.5)]
+[name="エニス"]何だ……？
+[Dialog]
+[charslot]
+周囲の人々が注目する中で、アデルは「風に飛ばされた」紙を追って走っていった。
+[name="印刷屋店主"]ふぅ、時代だねぇ、今時の若者はみんな時間に追われてさ。
+[charslot(slot="m",name="avg_4106_bryota_1#20$1",focus="m")]
+[name="エニス"]おっかしいな、俺は何に突き飛ばされたんだ……？　人生でこれ以上奇妙なことに遭遇したことはないぞ……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_drawbridge",channel="1",volume=1)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_bodyfallvalley",channel="2",volume=0.5)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_smashtable",channel="3",volume=1)]
+[CameraShake(duration=1, xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=true)]
+[StopSound(channel="1")]
+ドスン――！
+イーストマン印刷屋の看板が落ちてきた。そこはまさにエニスが衝撃波に突き飛ばされる前に立っていた位置だった。
+[charslot(slot="m",name="avg_4106_bryota_1#8$1",focus="m")]
+[name="エニス"]……うわっ！
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[playmusic(intro="$farce_intro", key="$farce_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",posfrom="900,0",posto="900,0",isblock=false)]
+[Delay(time=0.3)]
+[charslot(slot="m",action="jump",posto="-1900,0",power=50,times=3,duration=6.5,isblock=false)]
+[Delay(time=0.4)]
+[PlaySound(key="$d_avg_slip", volume=0.6,channel="2")]
+[Delay(time=0.9)]
+[PlaySound(key="$d_avg_slip", volume=0.6,channel="2")]
+[Delay(time=3.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=0)]
+[Delay(time=0.5)]
+[charslot(slot="m",posfrom="0,0",posto="0,0",duration=0)]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#2$1",posfrom="0,0",posto="0,0",duration=2)]
+[Delay(time=2.5)]
+[name="アデル"]どこ行っちゃったんだろう……
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]かくれんぼみたいだね！
+[charslot(slot="m",name="avg_180_amgoat_1#10$1")]
+[name="アデル"]ドリーさん、今は遊んでる場合じゃありません！　ちびめーちゃんたちを急いで捕まえないと、もっと色んな人のものがなくなっちゃいますよ！
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]いやいや、ものはなくならないさ。ただ少しの間借りて遊ぶだけだから、彼らはちゃんと返すよ。
+[name="ドリー"]でもキミはどうしていつもほかの同年代の子と遊ばないの？　こんなにご機嫌な夏でも実験室に引きこもってばかりだよね？
+[charslot(slot="m",name="avg_180_amgoat_1#6$1")]
+[name="アデル"]ドリーさん、私はもう子供じゃないんですよ。シエスタ火山の研究はとても重要な仕事だから、それに集中すべきなんです。
+[charslot(slot="m",name="avg_180_amgoat_1#10$1")]
+[name="アデル"]ですが、今は、あのちびめーちゃんたちを見つけてこれ以上騒ぐのを止めることも重要です！
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]寂しがり屋の子は、みーんな仕事が忙しいことを言い訳にしたがるんだよね～。
+[charslot(slot="m",name="avg_180_amgoat_1#2$1")]
+[name="アデル"]……
+[name="アデル"]このお店は人がいなさそうなのに、ちびめーちゃんがたった今……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_997_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot]
+[PlayMusic(key="$normal_loop", volume=0.6)]
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]えーと……あなたは？
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="アデル"]すみません、えっーと……私のペットが、いなくなってしまったんです！　さっきその子が、このカフェに入っていくのを見た気がして……
+[Dialog]
+アデルはそう言いながら顔を上げた。店のドアには、おしゃれな字体で「カフェ・モッキンバード」と書かれていた。
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]このカフェは一年前から営業していなくて、ドアはずっと閉まっています。
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="アデル"]でも確かに見たんです、このドアの中に入ったのを……
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]……いなくなったのは、何のペットですか？
+[charslot(slot="l",name="avg_180_amgoat_1#9$1",focus="l")]
+[name="アデル"]えーっと……循獣です。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]ちょっと、やめて！　わたしの分身をあんな動物と一緒にしないでほしいな……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_180_amgoat_1#9$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#2$1",focus="r")]
+[name="コスタ"]……そうですか、循獣ですか。
+[Dialog]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[charslot(slot="r",posfrom="0,0",posto="100,0",duration=2,isblock=true,focus="r")]
+[charslot(slot="r",action="jump",power=0.5,times=3,duration=2,isblock=true,focus="r")]
+コスタはポケットから鍵を取り出すと、鍵穴に差し込む。何度か年季の入った摩擦音がした後、ドアがゆっくりと開いた。
+[Dialog]
+[PlaySound(key="$dooropenquite", volume=1)]
+[Delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_black",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Dialog]
+[charslot]
+部屋はとても暗く、カーテンは一つ残らず下ろされていて、日差しはほとんど入ってこない。
+空気は埃っぽく、染み付いたコーヒー豆の匂いが混じっていた。
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_997_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]探している循獣はいますか？
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="アデル"]うーん、いなさそうです……
+[name="アデル"]本当にごめんなさい！　お邪魔しました……
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]構いません、ちょうど私も取りに来たいものがありましたから。
+[Dialog]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]所有権証明書はたしか……ないのか……
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="アデル"]あの、ここの店主さんですか？
+[charslot(slot="r",name="avg_npc_997_1#2$1",focus="r")]
+[name="コスタ"]まもなく、そうではなくなります。この店、そしてこの通りの他の店は、もうすぐ取り壊されますから。
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="アデル"]すごく残念ですね……
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]いいえ、前々から取り壊しは通知されていたので……ん？　どうして棚の中にもないんだ……
+[charslot(slot="l",name="avg_180_amgoat_1#8$1",focus="l")]
+[name="アデル"]店主さん、何を探しているんですか？　私も手伝いますよ？
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]赤い冊子なのですが……
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#9$1",focus="l")]
+[name="アデル"]うぅ、暗いですね……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]ねぇ、アデル。こんな場所で物が見えるの？
+[Dialog]
+[charslot]
+[PlaySound(key="$bodyfalldown3",channel="1",volume=0.7)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=10, vibrato=10, randomness=50, fadeout=true, block=true)]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="l")]
+[charslot(slot="l",name="avg_180_amgoat_1#3$1",focus="l")]
+[name="アデル"]うっ！
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]ここはもう長い間営業していなかったので、明かりをつけるのが少し面倒かもしれません。
+[name="コスタ"]見つからないならいいです。そこまで急いではいませんし、あなたは先にペットを探してください。私も……循獣がいないか注意しておきます。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]ねぇもう行こうよ！　キミが探してるなんちゃらストーンと分身はここにいないよ、次の場所に行こ！
+[name="ドリー"]ここ暗すぎて……何も見えない。前にシエスタでサーフィンした時に見たのとは全然違うや！
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]それで、そのペットは、どんな見た目をしているのですか？
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="アデル"]えーっと、薄いピンクの循獣で風が吹いたら音が鳴る石を持ってるんです。火山でしか採れない石です。
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]風が吹いたら音が鳴る石……「サウンドストーン」ですか？
+[charslot(slot="l",name="avg_180_amgoat_1#5$1",focus="l")]
+[name="アデル"]え？　そうです。「サウンドストーン」です。どうして知ってるんですか？
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[CameraShake(duration=1.5, xstrength=5, ystrength=5, vibrato=10, randomness=50, fadeout=true, block=true)]
+コスタはそのまま店の中を漁り続け、ある埃塗れの棚を開けると、古いギターがちょうど彼の足元に落ちてきた。
+ドン――！
+[Dialog]
+[PlaySound(key="$d_avg_guitarfallground", volume=1)]
+[CameraShake(duration=0.4, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_180_amgoat_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="l")]
+[name="アデル"]わっ！　店主さん、大丈夫ですか？
+[Dialog]
+[charslot]
+まるで誰かに奏でられたかのように、ギターはぶつかった震動で音を発した。
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#5$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]――あの石は風が吹くとこのような音を出します。楽器を鳴らした時のような音だ。
+[charslot(slot="r",name="avg_npc_997_1#6$1",focus="r")]
+[name="コスタ"]いや、話がそれてしまいました。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]わーお、ロマンティックじゃない。サウンドストーンがギターみたいだって？　どうして今まで気付かなかったんだろう？
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]あなたのペットはあの石を持っているのですか？　贅沢なことだ。なかなか珍しいものだったと記憶していますが……
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="アデル"]こっそり持って行っちゃったんです……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]……恥ずかしすぎてどうにかなりそうだよ。わたしの分身が勝手にものを持って行っちゃうことまで人間に言わないでよ……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]分かりました、もし見つけたら連絡しますよ。どう連絡すればいいでしょうか……？
+[charslot(slot="l",name="avg_180_amgoat_1#13$1",focus="l")]
+[name="アデル"]ありがとうございます！　できればヴォルケーノミュージアムまで伝言をお願いできますか。私はそこのスタッフで、アデルと言います。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_chairrub",channel="1",volume=1)]
+[PlaySound(key="$d_avg_metalcollar",channel="2",volume=1)]
+[PlaySound(key="$aluminum",channel="3",volume=1)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.8)]
+今度は何がぶつかったのか、戸棚の中に積まれていた古いものもがらがらと地面に落ち、ギターにかぶさった。
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#13$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#3$1",focus="r")]
+[name="コスタ"]くそっ……
+[charslot(slot="l",name="avg_180_amgoat_1#3$1",focus="l")]
+[name="アデル"]店主さん、本当に手伝わなくて大丈夫ですか？　なんだか……
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="アデル"]機嫌が悪そうですけど……
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+一冊の本がアデルの視界に入り、外から差し込む光に照らされて偶然にもタイトルが読み取れた。
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="アデル"]『テラ火山地誌』？　店主さんも、火山に興味があるんですか？
+[charslot(slot="r",name="avg_npc_997_1#6$1",focus="r")]
+[name="コスタ"]いえ……いや、嫌いというわけでもないのですが。
+[charslot(slot="r",name="avg_npc_997_1#4$1",focus="r")]
+[name="コスタ"]えーと、つまり、これは私の本ではないんです。
+[charslot(slot="r",name="avg_npc_997_1#6$1",focus="r")]
+[name="コスタ"]……とりあえずここを出ましょう。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1")]
+[charslot(slot="r",name="avg_npc_997_1#1$1")]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]ヴォルケーノミュージアムで働いているということは、あなたは……ケラーをご存知ですか？
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="アデル"]ケラー先生ですか？　お二人はお知り合いなんですか？
+[charslot(slot="r",name="avg_npc_997_1#5$1",focus="r")]
+[name="コスタ"]彼女は以前……ここの常連でした。
+[name="コスタ"]でもある年の夏、彼女は二人のリターニア人と共に、突然シエスタを去りました。それからというもの、私とは連絡を取っていません……
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]彼女は今、どうしていますか？　博物館で……うまくやっているのでしょうか？
+[charslot(slot="l",name="avg_180_amgoat_1#8$1",focus="l")]
+[name="アデル"]はい、ケラー先生は最近ずっとシエスタ火山の観測準備に奔走しています。博物館もまだ未完成なので、とても忙しくしていますよ。
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]ケラーもあなたと同じく、博物館で仕事をしているんですか？
+[charslot(slot="l",name="avg_180_amgoat_1#8$1",focus="l")]
+[name="アデル"]ん？　ケラー先生はヴォルケーノミュージアムの館長ですよ。
+[charslot(slot="r",name="avg_npc_997_1#5$1",focus="r")]
+[name="コスタ"]館長……すごいですね。
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="コスタ"]では……もしよければ、この本をケラー……館長に返しておいていただけますか。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]どこに隠れた、どこに隠れた、早く探して♪
+[name="ドリー"]花の形を覚えておいて、その後ろに隠れてるかもよ♪
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_sheeprun", volume=1,channel="1")]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",duration=1.5)]
+[Delay(time=2)]
+ふわふわの生き物がはぴょんぴょんと飛び跳ねて、最終的に街灯の上で止まった。
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]ポン！
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1008_1#1$1")]
+[charslot(slot="m",action="zoom",poszoom="0.5,0.2",scale=1.5,afrom=1,ato=0,duration=0.7,isblock=false)]
+[PlaySound(key="$d_avg_blcksheepborn", volume=1,channel="1")]
+[CameraShake(duration=0.3, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+その声と共に、ジャンプした羊が風に吹き飛ばされた雲のように、アデルの目の前で消えた。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_chairrub",channel="1",volume=0.5)]
+[PlaySound(key="$aluminum",channel="3",volume=0.5)]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=2.5)]
+じゃらじゃらっと、小さな石、数枚のコイン、一枚の紙、そして財布が一つ、地面に落ちた。
+[Dialog]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]かくれんぼ♪
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",focus="m")]
+[name="アデル"]ドリーさん！
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]わたしじゃないよ！
+[name="ドリー"]でも今日のキミは、博物館に閉じこもらなかったよね。お外に出てたくさん歩いて、アイスを食べて、風船も買った。太陽はキラキラで、優しい人に会って、しかも新しいお友達もできた、でしょ？
+[name="ドリー"]これこそが、人生ってやつだよ！
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="アデル"]ドリーさんが探してる種って一体、何を指しているんですか？　この石ですか？
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]ゆっくり探すんだよ。焦らないで大丈夫。明日の太陽もキラキラだからね！
+[name="ドリー"]どこに隠れた、どこに隠れた、早く探して♪
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="アデル"]このコインですか？　それとも、この紙に書いてある……「移転同意書」？
+[name="アデル"]種ってコーヒー豆のことですか、ドリーさん？
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="ドリー"]花の形を覚えておいて、その後ろに隠れてるかもよ♪
+[name="ドリー"]ポン！
+[Dialog]
+[PlaySound(key="$d_avg_blcksheepborn", volume=1,channel="1")]
+[charslot(slot="m",action="zoom",poszoom="0.5,0.5",scale=0.5,afrom=1,ato=0,duration=0.3,isblock=false)]
+[CameraShake(duration=0.4, xstrength=20, ystrength=20, vibrato=30, randomness=50, fadeout=true, block=false)]
+[bgeffect(name="$eb_sheepshow",layer=1)]
+[Delay(time=1.5)]
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,672 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="41_g5_siestaunbuiltland_d",screenadapt="showall")]
+[Delay(time=1)]
+[playMusic(intro="$farce_intro", key="$farce_loop", volume=0.6)] 
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_1014_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_180_amgoat_1#6$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[name="돌리"]아, 벌써 다 치웠나 보네, 좋았어.
+[charslot(slot="r",name="avg_180_amgoat_1#6$1",focus="r")]
+[name="아델"]돌리 씨! 당신의 분신들을 좀 관리해야겠다는 생각은 안 하시나요?
+[charslot(slot="r",name="avg_180_amgoat_1#10$1",focus="r")]
+[name="아델"]이렇게 소란을 피우게 내버려두면, 이곳 사람들에게 얼마나 큰 폐를 끼치는지 아세요?
+[Dialog]
+[charslot]
+털이 복슬복슬한 생물이 컨테이너 위에 서 있었고, 고개를 숙이고 있는 모습은 마치 앞에 있는 사람한테 사과를 하는 것만 같았다.
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_180_amgoat_1#10$1",focus="l")]
+[name="돌리"]내가 말했잖아. 제대로 따지면, 저들은 내가 아니라고.
+[name="돌리"]내가 저들을 이곳에 데려온 건 사실이지만…… 그래도 내겐 간접적인 책임밖에 없잖아?
+[name="돌리"]그러니까……미안하다 해야하나?
+[charslot(slot="r",name="avg_180_amgoat_1#10$1",focus="r")]
+[name="아델"]이건 미안하다는 말 한마디로 해결될 수 있는 일이 아니잖아요!
+[charslot(slot="r",name="avg_180_amgoat_1#6$1",focus="r")]
+[name="아델"]저 상품들이 손상되면 가게의 주인들은 어떡해요? 분신들이 주민들의 생활을 방해하는데, 어떻게 막을 방법은 없나요?
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[name="돌리"]방법은 있지…… 음, 일반적인 상황이라면, 난 '부르는' 방법을 택해.
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="r")]
+[name="아델"]'부른다'고요?
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[name="돌리"]바다나 황무지 같은 데 아무 곳이나 대고 두 손을 모아서 입에다 대고 “어이…… 너희들 어디에 있어? 빨리 와!” 이렇게 부르는 거야.
+[name="돌리"]아델, 너도 나를 도와줘야 해. 난 이미 너무 많이 불러서 녀석들이 가끔 못 들은 척 하거든.
+[charslot(slot="r",name="avg_180_amgoat_1#11$1",focus="r")]
+[name="아델"]그럼…… 저 분신들을 부르기만 하면 되나요?
+[charslot(slot="l",name="avg_npc_1014_1#1$1",focus="l")]
+[name="돌리"]유혹할만한 물건도 있어야 해. 예를 들면 “여기에 아이스크림이 있어!”라던가, “여기에 풍선과 서프보드가 있어!” 이렇게.
+[name="돌리"]절대 '쪼꼬미양'이라던가 '어린 양'이라고 부르면 안 돼. 그렇게 불러선 자기를 부르는지 모르니까.
+[Dialog]
+[charslot(slot="l",action="jump",power=2,times=4,duration=4,isblock=false)]
+[Delay(time=1.5)]
+돌리는 기대하는 눈빛으로 옆에 있는 아델을 바라보았다.
+[Dialog]
+[charslot(slot="l",posfrom="0,0",posto="-200,0",afrom=1,ato=0,duration=2,isblock=false)]
+[charslot(slot="r",posfrom="0,0",posto="-200,0",duration=1.5,isblock=true)]
+[Delay(time=2.2)]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",posfrom="-200,0",posto="-200,0",focus="r")]
+[name="아델"]크흠……
+[name="아델"]얘들아……! 여기에 아이스크림 있어!
+[name="아델"]얘들아……! 여기에 풍선과 서프보드가 있어! 빨리 와 봐!
+[Dialog]
+[charslot(slot="r",name="avg_180_amgoat_1#1$1",posfrom="-200,0",posto="-200,0",focus="none")]
+[name="여성 관광객"]뭐라고? 아이스크림? 무료야?
+[name="꼬마 관광객"]언니, 정말이야? 나는 딸기 맛 먹을래!
+[name="남성 관광객"]이벤트라도 하는 거야? 풍선을 받을 수 있을까?
+[Dialog]
+[PlaySound(key="$rungeneral", volume=1,channel="1")]
+[PlaySound(key="$runsand", volume=1,channel="2")]
+[CameraShake(duration=2.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+[charslot(slot="r",name="avg_180_amgoat_1#9$1",posfrom="-200,0",posto="-200,0",focus="r")]
+[name="아델"]어? 그게 아니라……
+[Dialog]
+[charslot]
+아델이 고개를 돌려 이 일의 장본인을 가리키려 했으나, 돌리는 이미 옆에 있는 컨테이너 위에 뛰어 올라가 공기가 새는 풍선처럼 여러 사람을 둘러싸고 빙빙 돌고 있었다.
+하지만 행인들은 돌리를 볼 수 없었다.
+[charslot(slot="m",name="avg_npc_1014_1#1$1",focus="m")]
+[name="돌리"]아이고, 큰일 났네.
+[name="돌리"]그럼, 넌 일단 저 사람들과 아이스크림을 먹으러 가야겠네. 아마 풍선도 사고, 쇼핑도 하고, 시에스타의 태양을 쬐러도 가야 할 거야.
+[name="돌리"]어떡하지? 내가 마침 아주 맛있는 아이스크림 가게를 한 집 아는데.
+[name="돌리"]내가 안내해줄까?
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",focus="m")]
+[name="아델"]……돌리 씨!
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g3_siestanewstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="여성 관광객"]그래서, 행인들에게 아이스크림을 사주는 게 화산박물관의 호객 수단인 건가? 그렇다면, 난 좋아!
+[name="여성 관광객"]자기야, 우리 오후에는 박물관 좀 둘러볼까?
+[name="남성 관광객"]좋아, 박물관 관람을 마친 후에 바비큐 먹으러 가자!
+[name="여성 관광객"]가자, 가!
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#9$1",focus="m")]
+[name="아델"]그럼, 고마워요.
+[Dialog]
+[charslot]
+아델은 몇 사람을 배웅한 후 주위를 둘러보며 돌리의 모습을 찾으려 했다.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",duration=1.5)]
+[Delay(time=2)]
+거리는 사람들로 붐볐고 돌리는 진즉에 자취를 감췄다. 쪼꼬미양 한 마리만이, 오가는 관광객의 손에 쥐어진, 지폐가 '나올 수 있는' 지갑을 꼼짝하지 않고 주시하고 있었다.
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="아델"](……뭘 하려는 거지?)
+[Dialog]
+[charslot]
+[stopmusic]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",posfrom="900,0",posto="900,0",isblock=false)]
+[charslot(slot="r",name="avg_npc_021",posfrom="-200,0",posto="-200,0",duration=0)]
+[Delay(time=0.3)]
+[PlaySound(key="$d_avg_blcksheepborn", volume=1,channel="1")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[charslot(slot="m",action="jump",posto="-1900,0",power=65,times=2,duration=1.5,isblock=false)]
+[PlaySound(key="$d_avg_slip", volume=1,channel="2")]
+[Delay(time=1.5)]
+관광객이 사장과 가격을 흥정하고 있을 때, 쪼꼬미양이 훌쩍 앞으로 뛰어들어……
+관광객 손에 쥔 지갑을 냉큼 물고 도망갔다.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="아델"](어?!)
+[Dialog]
+[charslot]
+[playMusic(intro="$dontmaketrouble_intro", key="$dontmaketrouble_loop", volume=0.6)]//之后换成夏活战斗音乐
+[charslot(slot="m",name="avg_npc_021",focus="m")]
+[name="남성 관광객"]내 지갑이?! 누가 내 지갑을 훔쳐갔어!
+[Dialog]
+[charslot]
+[name="시에스타 시민"]어? 어떻게 생긴 지갑이야? 검은색이야, 흰색이야?
+[name="시에스타 시민"]방금 잃어버린 거야? 하지만 아무도 못 봤는데?
+[charslot(slot="m",name="avg_180_amgoat_1#3$1",focus="m")]
+[name="아델"](큰일이야, 돌리 씨도 안 계시고, 내가 빨리 저 쪼꼬미양을 붙잡아야겠어!)
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_sheeprun", volume=1,channel="1")]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",duration=1.5)]
+[Delay(time=2)]
+지갑을 물고 있던 쪼꼬미양은 아델을 발견하고는 입을 벌리며 지갑이 떨어뜨렸다……
+[Dialog]
+[PlaySound(key="$d_avg_blcksheepborn",channel="2",volume=0.4)]
+[charslot(slot="m",action="jump",posto="50,0",power=50,times=2,duration=0.3,isblock=false)]
+그리고 발굽을 내밀어 살짝 걷어차자 지갑이 허공에 곡선을 그리며 그의 솜털 위에 떨어졌다.
+[Dialog]
+[charslot(slot="m",action="jump",power=10,times=3,duration=0.5)]
+[name="털이 복슬복슬한 생물"](즐겁게 팔짝팔짝 뛴다)
+[Dialog]
+[PlaySound(key="$gavel2", volume=0.5,channel="1")]
+[CameraShake(duration=0.3, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=true)]
+지갑이 무언가에 부딪힌 듯 '턱'하는 소리와 함께, 작은 구멍이 가득한 돌멩이가 쪼꼬미양 몸에서 굴러 떨어졌다.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="아델"]저건, 사운드 스톤이잖아!
+[Dialog]
+[charslot]
+쪼꼬미양이 고개를 돌려 쳐다보더니 돌멩이가 땅에 떨어지기 전에 발굽으로 다시 돌을 솜털 안으로 걷어차 넣었다.
+그리고는 아델에게 혀를 내밀어 익살스러운 표정을 짓더니, 돌아서서 패션가로 뛰어갔다.
+[charslot(slot="m",name="avg_180_amgoat_1#5$1",focus="m")]
+[name="아델"]잠깐! 거기 서!
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",focus="m")]
+[name="아델"]다른 사람들 물건을 돌려줘……
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_1005_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_070",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="구권 화폐 상인"]3센트짜리 불량 수표는 여기에서 희귀한 소장품이야. 박람회가 시작되면 높은 가격에 팔 수 있거든! 아가씨, 정말 한번 고려해 보지 않을래? 내가 이 정도까지 줄 수 있다니까.
+상인이 손짓으로 금액을 제시했다.
+[charslot(slot="l",name="avg_npc_1005_1#1$1",focus="l")]
+[name="스노우상트"]그래요? 그럼, 이건요?
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="구권 화폐 상인"]극동의 구권 화폐네. 이것도 받아, 이 가격에!
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[name="스노우상트"]그럼, 이건요?
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="구권 화폐 상인"]이건 가울의 리브르 동전이군. 이것도 받아! 아가씨, 또 어떤 물건들이 있어? 다 꺼내 봐!
+[Dialog]
+[charslot(slot="l",name="avg_npc_1005_1#1$1",focus="l")]
+[PlaySound(key="$gavel1",channel="1",volume=1)]
+[PlaySound(key="$aluminum",channel="2", volume=1)]
+[PlaySound(key="$d_avg_axehitscrape",channel="3", volume=1)]
+[PlaySound(key="$d_avg_metalcollar",channel="4", volume=1)]
+[CameraShake(duration=1.5, xstrength=0, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=true)]
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="구권 화폐 상인"]아가씨, 대체 물건을 얼마나 많이 가져온 거야? 이제 마지막, 진짜 마지막이야…… 마지막 이것만 받고, 난 이만 돌아가 봐야 할 것 같아.
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[name="스노우상트"]이, 이것도 좀 봐주세요! 그럼 제가 가진 돈으로 새 기계를 살 수 있을 것 같거든요!
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="구권 화폐 상인"]아아, 이건 우리 사르곤의 동전이군…… 어디 보자, 이건……
+[Dialog]
+[PlaySound(key="$bodyfalldown2",channel="1",volume=1)]
+[charslot(slot="r",posfrom="0,0",posto="80,-50",duration=0.5,isblock=false,focus="r")]
+[CameraShake(duration=0.5, xstrength=45, ystrength=45, vibrato=20, randomness=70, fadeout=true, block=false,focus="r")]
+[name="구권 화폐 상인"]……가비알?!!
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[name="스노우상트"]어! 가치가 좀 있나요?
+[Dialog]
+[charslot(slot="r",posfrom="80,-50",posto="-20,0",duration=0.5,isblock=true,focus="all")]
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="구권 화폐 상인"]값이 나가냐고? 아니, 너랑 거래 안 할래. 가는 꼬리랑은 할 말 없어! 이 물건들 다 가져가! 난 이만 갈 테니까!
+[Dialog]
+상인은 자잘한 동전 한 움큼을 움켜쥐고 화를 내면서 스노우상트의 품에 안겨주고는 떠나려 했다.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",posfrom="900,0",posto="900,0",isblock=false)]
+[Delay(time=0.3)]
+[PlaySound(key="$d_avg_blcksheepborn", volume=1,channel="1")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[charslot(slot="m",action="jump",posto="-1900,0",power=65,times=2,duration=1.5,isblock=false)]
+[PlaySound(key="$d_avg_slip", volume=1,channel="2")]
+[charslot(slot="r",posfrom="-20,0",posto="0,0",duration=0.5,isblock=false,focus="all")]
+[PlaySound(key="$gavel1",channel="3", volume=1)]
+[PlaySound(key="$aluminum",channel="4", volume=1)]
+[Delay(time=1.5)]
+갑자기 무언가가 쏜살같이 지나가며 동전을 움켜쥔 그의 손에 부딪쳤다.
+반짝반짝 빛나는 돈 비가 상가 한편에 내렸고, 스노우상트가 놀란 목소리를 내기도 전에 핑크빛 그림자 하나도 그 뒤를 따라 멀리 달려갔다.
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[charslot(slot="r",name="avg_npc_070",focus="l")]
+[name="스노우상트"]아…… 어, 에이야퍄들라 씨?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="아델"]죄송해요. 스노우상트 씨…… 전……!
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#6$1",focus="m")]
+[Delay(time=1)]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-200,0",duration=2.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=2)]
+[Delay(time=2.5)]
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="r")]
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="구권 화폐 상인"]와! 뭐야 대체?!
+[charslot(slot="l",name="avg_npc_1005_1#4$1",focus="l")]
+[name="스노우상트"]잠깐만요, 내 동전…… 두 개가 부족해요!
+[charslot(slot="r",name="avg_npc_070",focus="r")]
+[name="구권 화폐 상인"]내, 내가 가져간 거 아니야!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",action="jump",power=20,times=1,duration=0.4)]
+[PlaySound(key="$d_avg_slip", volume=0.5,channel="2")]
+짤랑, 털이 복슬복슬한 생물이 반짝반짝 빛나는 작은 동전을 자신의 솜털 속에 숨겼다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot="m",name="avg_4106_bryota_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="에니스"]이스트먼 씨! 프린트 맡겼던 거 가지러 왔어요.
+[charslot(slot="m",name="avg_4106_bryota_1#1$1",focus="none")]
+[name="프린트샵 사장"]그래, 프린트는 다 했어. 그런데 전단지를 이렇게나 많이 찍다니, 가게 홍보하느라 네가 고생이 많구나.
+[charslot(slot="m",name="avg_4106_bryota_1#1$1",focus="m")]
+[name="에니스"]298, 299…… 수량이 맞네요. 여기 돈이요!
+[charslot(slot="m",name="avg_4106_bryota_1#1$1",focus="none")]
+[name="프린트샵 사장"]이 정도는 돈을 안 받아도 되니까, 다음에 내가 순백의 화산에 가면 카다멈 가루를 듬뿍 넣은 '오아시스' 스페셜이나 한 잔 줘.
+[name="프린트샵 사장"]그리고, 우리 집 간판 좀 갈아줄 수 있을까?
+[charslot(slot="m",name="avg_4106_bryota_1#3$1",focus="m")]
+[name="에니스"]물론이죠. 감사합니다!
+[Dialog]
+[charslot]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="아델"]……에, 에니스 씨!
+[charslot(slot="m",name="avg_4106_bryota_1#8$1",focus="m")]
+[multiline(name="에니스")]아델 씨……?
+[charslot(slot="m",name="avg_4106_bryota_1#3$1",focus="m")]
+[multiline(name="에니스")]왜 그렇게 빨리 뛰어가세요?
+[Dialog]
+[Dialog]
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",focus="m")]
+[name="아델"]조…… 조심하세요!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_sheeprun", volume=1,channel="5")]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",posfrom="-900,0",posto="-900,0",isblock=false)]
+[charslot(slot="r",name="avg_4106_bryota_1#3$1",posfrom="-200,0",posto="-200,0",duration=0)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_singleblunt", volume=1,channel="2")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[charslot(slot="m",action="jump",posto="1900,0",power=65,times=2,duration=1.5,isblock=false)]
+[Delay(time=0.2)]
+[Effect(name="$e_slash_cross_hit",  x = 21.2 ,y = -6.7, rox = -26.23, roy = 0, roz = -67.48,layer = 1)]
+[PlaySound(key="$d_avg_hammer",channel="5", volume=1)]
+[charslot(slot="r",name="avg_4106_bryota_1#4$1",posfrom="-200,0",posto="-200,0",duration=0)]
+[CameraShake(duration=2.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="r",posfrom="-200,0",posto="250,1400",duration=0.5)]
+[Delay(time=2)]
+[charslot]
+[PlaySound(key="$d_avg_animal_loop", volume=1,channel="3")]
+[PlaySound(key="$d_avg_paper2", volume=1,channel="1")]
+[PlaySound(key="$d_avg_paper1", volume=1,channel="2")]
+에니스가 채 반응하기도 전에 엄청난 충격이 그를 덮쳤다. 허공에 떠 있는 순간, 기울어진 시에스타가 보이며, 전단지가 여기저기 흩어졌다.
+[Dialog]
+[StopSound(channel="3")]
+[PlaySound(key="$bodyfalldown1",channel="1",volume=1)]
+[CameraShake(duration=0.3, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=0.5)]
+[name="에니스"]으악…… 아파…… 뭐야……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1008_1#1$1")]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_sheeprun", volume=1,channel="5")]
+[charslot(slot="m",posfrom="0,0",posto="200,0",duration=1.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=2.5)]
+쪼꼬미양이 그중 종이 한 장을 물고 계속 앞을 향해 달려갔다.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#3$1",focus="m")]
+[name="아델"]아, 에니스 씨! 죄…… 죄송해요!
+[Dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(duration=1.5)]
+[Delay(time=2.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m",name="avg_4106_bryota_1#9$1",posfrom="0,-50",posto="0,0",duration=2)]//暂定这个表情
+[charslot(slot="m",afrom=0,ato=1,duration=1)]
+[Delay(time=1.5)]
+[name="에니스"]뭐야……?
+[Dialog]
+[charslot]
+몇 사람이 지켜보는 가운데 아델은 '바람에 날려가는' 종이를 따라 달려갔다.
+[name="프린트샵 사장"]휴, 시대가 정말 달라졌군. 요즘 젊은이들은 다들 이렇게 시간에 쫓겨 사는구나.
+[charslot(slot="m",name="avg_4106_bryota_1#20$1",focus="m")]
+[name="에니스"]이상한데, 방금 뭐가 나랑 부딪친 거지……? 살면서 이보다 더 이상한 일은 없었던 것 같아……!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_drawbridge",channel="1",volume=1)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_bodyfallvalley",channel="2",volume=0.5)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_smashtable",channel="3",volume=1)]
+[CameraShake(duration=1, xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=true)]
+[StopSound(channel="1")]
+쿠웅……!
+이스트먼 프린트샵 간판이 떨어졌다. 그곳은 바로 에니스가 충격에 밀려나기 전에 서 있던 위치였다.
+[charslot(slot="m",name="avg_4106_bryota_1#8$1",focus="m")]
+[name="에니스"]……우와!
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[playmusic(intro="$farce_intro", key="$farce_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",posfrom="900,0",posto="900,0",isblock=false)]
+[Delay(time=0.3)]
+[charslot(slot="m",action="jump",posto="-1900,0",power=50,times=3,duration=6.5,isblock=false)]
+[Delay(time=0.4)]
+[PlaySound(key="$d_avg_slip", volume=0.6,channel="2")]
+[Delay(time=0.9)]
+[PlaySound(key="$d_avg_slip", volume=0.6,channel="2")]
+[Delay(time=3.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=0)]
+[Delay(time=0.5)]
+[charslot(slot="m",posfrom="0,0",posto="0,0",duration=0)]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#2$1",posfrom="0,0",posto="0,0",duration=2)]
+[Delay(time=2.5)]
+[name="아델"]어디 간 거지……
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]꼭 숨바꼭질하는 것 같네!
+[charslot(slot="m",name="avg_180_amgoat_1#10$1")]
+[name="아델"]돌리 씨, 지금은 놀 때가 아니에요! 쪼꼬미양을 제때 잡아오지 않으면, 또 다른 사람이 물건을 잃어버릴 거라고요!
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]아니, 아니. 물건을 잃어버리진 않을 거야. 잠깐 빌려 가서 가지고 놀다가 돌려줄 거니까.
+[name="돌리"]그런데 넌 왜 항상 다른 또래 아이들과 같이 안 노는 거야? 이런 여름에도 자신을 실험실에 가둬 두고 말이야?
+[charslot(slot="m",name="avg_180_amgoat_1#6$1")]
+[name="아델"]돌리 씨, 저는 더 이상 어린아이가 아니에요. 시에스타 화산 연구는 매우 중요한 일이거든요. 한눈팔 시간은 없어요.
+[charslot(slot="m",name="avg_180_amgoat_1#10$1")]
+[name="아델"]하지만, 지금은 저 쪼꼬미양들을 찾아 계속 장난치지 못하도록 막는 것도 중요해요!
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]외로움을 타는 애들은 다들 일이 바쁘다는 걸 핑계로 삼고 싶어하지.
+[charslot(slot="m",name="avg_180_amgoat_1#2$1")]
+[name="아델"]……
+[name="아델"]이 가게엔 사람이 없어 보이는데, 왜 방금 쪼꼬미양이……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_997_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot]
+[PlayMusic(key="$normal_loop", volume=0.6)]
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]어…… 당신은?
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="아델"]죄송해요…… 제, 제가 키우던 애완동물을 잃어버렸어요! 방금 이 카페에 들어가는 걸 본 것 같아서……
+[Dialog]
+아델이 대답하며 고개를 들어보니 가게 문에는 예쁜 글씨로 '카페 모킹버드'라고 쓰여 있었다.
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]이 카페는 1년 전부터 영업을 하지 않아서, 문이 계속 잠겨 있었어요.
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="아델"]하지만 제가 방금 그 녀석이 이 문으로 들어가는 걸 확실히 봤어요……
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]……잃어버린 게 무슨 애완동물이죠?
+[charslot(slot="l",name="avg_180_amgoat_1#9$1",focus="l")]
+[name="아델"]배…… 백비스트예요.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]아니지! 내 분신을 그런 동물과 비교하지 말라고……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_180_amgoat_1#9$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#2$1",focus="r")]
+[name="코스타"]……네, 백비스트였군요.
+[Dialog]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[charslot(slot="r",posfrom="0,0",posto="100,0",duration=2,isblock=true,focus="r")]
+[charslot(slot="r",action="jump",power=0.5,times=3,duration=2,isblock=true,focus="r")]
+코스타가 주머니에서 열쇠를 하나 꺼내 자물쇠에 끼워 넣자 마찰음이 몇 번 들리더니 낡은 문이 천천히 열렸다.
+[Dialog]
+[PlaySound(key="$dooropenquite", volume=1)]
+[Delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_black",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Dialog]
+[charslot]
+방안은 매우 어두웠다. 커튼을 모두 쳐 놓아서 햇빛이 많이 들어오지 않았다.
+공기 중엔 먼지가 자욱했고 묵은 원두 냄새가 섞여 있었다.
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_997_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]당신이 찾는 백비스트가 이 안에 있나요?
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="아델"]어, 없는 것 같아요……
+[name="아델"]폐를 끼쳐서 죄송해요……
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]괜찮습니다, 마침 저도 물건을 가지러 왔거든요.
+[Dialog]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]재산소유권 증명서를 여기 뒀었는데…… 왜 없지……
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="아델"]당신이 이 가게의 사장인가요?
+[charslot(slot="r",name="avg_npc_997_1#2$1",focus="r")]
+[name="코스타"]곧 아니게 될 겁니다. 이 가게, 이 거리의 다른 가게들도 곧 철거될 테니까요.
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="아델"]정말 안타깝네요……
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]아닙니다. 여긴 철거된다고 진즉에 공지했었거든요…… 음, 왜 수납장 안에도 없지……
+[charslot(slot="l",name="avg_180_amgoat_1#8$1",focus="l")]
+[name="아델"]사장님, 어떤 물건을 찾으세요? 제가 찾는 걸 도와드릴까요?
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]빨간색 책자입니다만……
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#9$1",focus="l")]
+[name="아델"]어, 여기 정말 어둡네요……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]얘, 너 여기서 정말 뭐가 보여?
+[Dialog]
+[charslot]
+[PlaySound(key="$bodyfalldown3",channel="1",volume=0.7)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=10, vibrato=10, randomness=50, fadeout=true, block=true)]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="l")]
+[charslot(slot="l",name="avg_180_amgoat_1#3$1",focus="l")]
+[name="아델"]으악!
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]이곳은 오랫동안 영업을 하지 않아서, 불을 켜려면 좀 번거로울 거예요.
+[name="코스타"]못 찾으면 됐어요, 그리 급한 건 아니니까요. 먼저 당신의 애완동물을 찾으러 가보세요. 저도…… 신경 쓰도록 하죠.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]자, 가자! 분신과 네가 찾는 무슨 돌인지 하는 것은 모두 이곳에 없어, 다른 데로 가자!
+[name="돌리"]여긴 너무 어두워서…… 아무것도 안 보여. 내가 전에 시에스타에서 서핑할 때 봤던 거랑 완전 다르네!
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]그래서, 그 애완동물은 어떻게 생겼나요?
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="아델"]어, 핑크색…… 백비스트예요. 그리고 화산에만 있는, 바람이 불면 소리가 나는 돌을 지니고 있어요.
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]바람이 불면 소리가 나는 돌이라면…… 혹시 '사운드 스톤'이요?
+[charslot(slot="l",name="avg_180_amgoat_1#5$1",focus="l")]
+[name="아델"]어? 네, '사운드 스톤'이 맞아요. 그걸 어떻게 아시나요?
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[CameraShake(duration=1.5, xstrength=5, ystrength=5, vibrato=10, randomness=50, fadeout=true, block=true)]
+계속 뒤적거리던 코스타가 먼지가 잔뜩 쌓인 수납장을 잡아당기자 낡은 기타가 마침 그의 발밑으로 떨어졌다.
+쿵……!
+[Dialog]
+[PlaySound(key="$d_avg_guitarfallground", volume=1)]
+[CameraShake(duration=0.4, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_180_amgoat_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="l")]
+[name="아델"]아! 사장님, 괜찮으세요?
+[Dialog]
+[charslot]
+연주라도 하듯이 기타는 부딪힌 뒤 진동의 여음으로 윙윙 소리를 냈다.
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#5$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]……그 돌은 바람이 불면 이런 소리를 내죠, 마치 악기 연주 소리처럼요.
+[charslot(slot="r",name="avg_npc_997_1#6$1",focus="r")]
+[name="코스타"]음, 말이 딴 데로 샜네요.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]우와, 로맨틱하다. 사운드 스톤에서 기타 소리가 난다고? 난 왜 그 생각을 못했지?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]당신의 애완동물이 이런 돌을 지니고 있다고요? 엄청 사치스럽네요. 그 돌은 꽤 희귀하다고 알고 있었는데……
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="아델"]그 아이가 몰래 가져갔어요……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]……아이고, 창피해라. 인간에게 내 분신이 함부로 남의 물건을 가져간다는 것까진 말하지 말라고……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]알겠습니다. 혹시 보면 된다면 연락 드리죠. 연락처가……?
+[charslot(slot="l",name="avg_180_amgoat_1#13$1",focus="l")]
+[name="아델"]감사합니다! 괜찮으시면 화산박물관으로 연락주세요. 저는 그곳의 직원이고, 이름은 아델이라고 해요.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_chairrub",channel="1",volume=1)]
+[PlaySound(key="$d_avg_metalcollar",channel="2",volume=1)]
+[PlaySound(key="$aluminum",channel="3",volume=1)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.8)]
+또 무엇을 건드렸는지 캐비닛 속의 고물 더미도 와르르 바닥에 떨어지며, 바닥에 있는 기타를 덮쳤다.
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#13$1",focus="r")]
+[charslot(slot="r",name="avg_npc_997_1#3$1",focus="r")]
+[name="코스타"]빌어먹을……
+[charslot(slot="l",name="avg_180_amgoat_1#3$1",focus="l")]
+[name="아델"]사장님, 정말 안 도와드려도 괜찮을까요? 제가 보기에 사장님은……
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+[name="아델"]기분이 별로 안 좋아 보여요……
+[Dialog]
+[charslot(slot="l",name="avg_180_amgoat_1#2$1",focus="l")]
+책 한 권이 아델의 시야에 들어왔고, 바깥의 하늘빛을 통해 책 이름을 읽을 수 있었다.
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="아델"]《테라 화산 지명록》? 사장님도 화산에 관심이 있으세요?
+[charslot(slot="r",name="avg_npc_997_1#6$1",focus="r")]
+[name="코스타"]아니요…… 아니, 안 좋아하는 것도 아니지만요.
+[charslot(slot="r",name="avg_npc_997_1#4$1",focus="r")]
+[name="코스타"]어, 그러니까 제 말은, 이건 제 책이 아닙니다.
+[charslot(slot="r",name="avg_npc_997_1#6$1",focus="r")]
+[name="코스타"]……일단 여기에서 나가죠.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_180_amgoat_1#1$1")]
+[charslot(slot="r",name="avg_npc_997_1#1$1")]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]화산박물관에서 일한다면…… 혹시 켈러라고 아시나요?
+[charslot(slot="l",name="avg_180_amgoat_1#1$1",focus="l")]
+[name="아델"]켈러 선생님이요? 두 분은 친구신가요?
+[charslot(slot="r",name="avg_npc_997_1#5$1",focus="r")]
+[name="코스타"]예전에…… 여기 단골이었죠.
+[name="코스타"]어느 해 여름, 켈러가 두 명의 라이타니엔인과 함께 갑자기 시에스타를 떠나더니, 그 뒤로는 연락이 없더라고요……
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]켈러는 요즘은 어떻게 지내나요? 박물관에서는…… 잘하고 있는 거죠?
+[charslot(slot="l",name="avg_180_amgoat_1#8$1",focus="l")]
+[name="아델"]네, 켈러 선생님은 요즘 시에스타 화산의 관측을 준비 중인데다, 박물관도 아직 보완 중이라 바쁘세요.
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]켈러도 당신처럼 박물관에서 일하나요?
+[charslot(slot="l",name="avg_180_amgoat_1#8$1",focus="l")]
+[name="아델"]네? 켈러 선생님은 관장님이세요.
+[charslot(slot="r",name="avg_npc_997_1#5$1",focus="r")]
+[name="코스타"]관장이라…… 정말 대단하네요.
+[charslot(slot="r",name="avg_npc_997_1#1$1",focus="r")]
+[name="코스타"]그럼…… 괜찮다면, 이 책을 켈러…… 관장한테 돌려줄 수 있을까요?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="41_g1_siestacommercialstreet_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]어디 숨었어, 어디 숨었을까, 빨리 찾아보자♪
+[name="돌리"]꽃 모양을 잘 기억해, 내가 꽃 뒤에 숨어 있을지도 모르니까♪
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_sheeprun", volume=1,channel="1")]
+[charslot(slot="m",name="avg_npc_1008_1#1$1",duration=1.5)]
+[Delay(time=2)]
+쪼꼬미양이 깡충깡충 뛰다가, 마침내 한 가로등 위에 멈춰 섰다.
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]펑!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1008_1#1$1")]
+[charslot(slot="m",action="zoom",poszoom="0.5,0.2",scale=1.5,afrom=1,ato=0,duration=0.7,isblock=false)]
+[PlaySound(key="$d_avg_blcksheepborn", volume=1,channel="1")]
+[CameraShake(duration=0.3, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+쪼꼬미양은 펄쩍 뛰더니 바람에 흩어지는 구름처럼 아델의 눈앞에서 사라졌다.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_chairrub",channel="1",volume=0.5)]
+[PlaySound(key="$aluminum",channel="3",volume=0.5)]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=2.5)]
+짤랑하고 돌멩이 하나, 동전 몇 닢, 백지 한 장, 지갑 하나가 땅에 떨어졌다.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]숨바꼭질♪
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_180_amgoat_1#10$1",focus="m")]
+[name="아델"]돌리 씨!
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]내가 그런 거 아니야!
+[name="돌리"]그런데 너, 오늘은 하루 종일 박물관에 틀어박혀 있지 않았어. 밖에 나와서 걷기도 하고, 아이스크림도 먹고, 풍선도 샀지. 햇빛도 좋고, 사람도 착하고, 새로운 친구도 사귀었어, 맞지?
+[name="돌리"]그런 게 바로 삶이야!
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="아델"]당신이 찾는 씨앗이 대체 뭐죠? 이 돌멩이인가요?
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]천천히 찾아봐, 조급해하지 말고, 내일도 햇빛이 좋을 거야!
+[name="돌리"]어디 숨었어, 어디 숨었을까, 빨리 찾아보자♪
+[charslot(slot="m",name="avg_180_amgoat_1#11$1",focus="m")]
+[name="아델"]그럼 이 동전들인가요? 아니면 이 종이에 써있는 건가요……? '이주 의향서'?
+[name="아델"]씨앗은 원두를 말하는 건가요, 돌리 씨?
+[charslot(slot="m",name="avg_npc_1014_1#1$1")]
+[name="돌리"]꽃 모양을 잘 기억해, 내가 꽃 뒤에 숨어 있을지도 모르니까♪
+[name="돌리"]펑!
+[Dialog]
+[PlaySound(key="$d_avg_blcksheepborn", volume=1,channel="1")]
+[charslot(slot="m",action="zoom",poszoom="0.5,0.5",scale=0.5,afrom=1,ato=0,duration=0.3,isblock=false)]
+[CameraShake(duration=0.4, xstrength=20, ystrength=20, vibrato=30, randomness=50, fadeout=true, block=false)]
+[bgeffect(name="$eb_sheepshow",layer=1)]
+[Delay(time=1.5)]
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]
