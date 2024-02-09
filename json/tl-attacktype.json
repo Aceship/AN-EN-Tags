@@ -508,11 +508,11 @@
             "color": "extra"
         },
         "受到致命伤时不撤退，切换成<替身>作战（替身阻挡数为0但攻击力<@ba.kw>提升</>），持续20秒后自身再次替换<替身>":{
-            "en": "Instead of retreating when defeated, switch to a <Substitute> (Substitute has 0 Block, but ATK is <@ba.kw>increased</>) for 20 seconds before switching back to the original",
+            "en": "Instead of retreating when defeated, switch to a &lt;Substitute&gt; (Substitute has 0 Block, but ATK is <@ba.kw>increased</>) for 20 seconds before switching back to the original",
             "color": "extra"
         },
         "受到致命伤时不撤退，切换成<替身>作战（替身阻挡数为0但生命值<@ba.kw>提升</>），持续20秒后自身再次替换<替身>":{
-            "en": "Instead of retreating when defeated, switch to a <Substitute> (Substitute has 0 Block, but HP is <@ba.kw>increased</>) for 20 seconds before switching back to the original",
+            "en": "Instead of retreating when defeated, switch to a &lt;Substitute&gt; (Substitute has 0 Block, but HP is <@ba.kw>increased</>) for 20 seconds before switching back to the original",
             "color": "extra"
         },
         "攻击范围内存在敌人时技力自然恢复速度+0.2/s":{
@@ -558,6 +558,94 @@
         "攻击生命值低于<@ba.vup>{hp_ratio:0%}</>的敌人时攻击力提升至<@ba.vup>{atk_scale:0%}</>":{
             "en": "When attacking enemies with less than <@ba.vup>{hp_ratio:0%}</> of their max HP, increase ATK to <@ba.vup>{atk_scale:0%}</>",
             "color": "extra"
+        },
+        "攻击对小范围的<@ba.kw>地面</>敌人造成<@ba.kw>两次</>物理伤害（第二次为余震，伤害降低至攻击力的一半），且不受<@ba.kw>部署数量</>限制，但再部署时间极长": {
+            "en":"Attacks deal <@ba.kw>two instances</> of Physical damage to <@ba.kw>ground</> enemies in a small area (The second instance is a shockwave that has half the normal ATK)</br>ignores <@ba.kw>Deployment Limit</>, but has a long Redeployment Time",
+            "color": "physical"
+        },
+        "不攻击，持续恢复范围内所有友军<@ba.kw>生命</>（每秒恢复相当于自身攻击力10%的生命），自身不受<$ba.inspire>鼓舞</>影响，且不受<@ba.kw>部署数量</>限制，但再部署时间极长":{
+            "en":"Does not attack but continuously restores the <@ba.kw>HP</> of all allies within range (the HP restored per second is equal to <@ba.kw>{atk_to_hp_recovery_ratio:0%}</> of self ATK). Self is unaffected by <$ba.inspire>Inspiration</></br>ignores <@ba.kw>Deployment Limit</>, but has a long Redeployment Time",
+            "color":"heal"
+        },
+        "能够阻挡三个敌人，且不受<@ba.kw>部署数量</>限制，但再部署时间极长": {
+            "en": "Blocks 3 enemies</br>ignores <@ba.kw>Deployment Limit</>, but has a long Redeployment Time",
+            "color": "physical"
+        },
+        "通常时<@ba.kw>不攻击</>且防御力和法术抗性更大幅度<@ba.kw>提升</>，技能开启时保留部分效果且攻击造成<@ba.kw>群体法术伤害</>": {
+            "en": "Normally <@ba.kw>does not attack</>, but has <@ba.kw>greatly increased</> DEF and RES; when skill is active, retains some of the bonus and attacks deal <@ba.kw>AoE Arts Damage</>",
+            "color": "magic"
+        },
+        "攻击造成<@ba.kw>超远距离的群体法术伤害</>，距离越远伤害越高，最高达到<@ba.kw>110%</>": {
+            "en": "Deals <@ba.kw>AOE Arts damage in a long line</> , Damage increase based on distance to target up to <@ba.kw>110%</>",
+            "color": "magic"
+        },
+        "同时攻击阻挡的<@ba.kw>所有敌人</>，攻击被阻挡的敌人攻击力提升至<@ba.kw>{atk_scale:0%}</>": {
+            "en": "Attacks <@ba.kw>all blocked enemies</>, when attack blocked enemies attack increase to <@ba.kw>{atk_scale:0%}</>",
+            "color": "physical"
+        },
+        "生命值高于50%时受到的物理伤害降低<@ba.kw>{damage_resistance:0%}</>": {
+            "en": "When HP below 50% reduces Physical damage taken by <@ba.kw>{damage_resistance:0%}</>",
+            "color": "common"
+        },
+        "被击倒时不撤退且回复<@ba.kw>{hp_ratio:0%}</>生命（单次部署只触发1次）": {
+            "en": "When defeated, does not retreat and recovers <@ba.kw>{hp_ratio:0%}</> HP instead (Can only activate once every deployment)",
+            "color": "extra"
+        },
+        "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位，并返还该次部署费用的一半": {
+            "en": "Can attack <@ba.kw>all blocked enemies</></br>Can be deployed on Ranged Tiles</br>Refunds <@ba.kw>50%</> of the current DP Cost when retreated",
+            "color": "extra"
+        },
+        "同时攻击阻挡的<@ba.kw>所有敌人</>，阻挡2个及以上敌人时自身推力增加一级\\n可以放置于远程位": {
+            "en": "Can attack <@ba.kw>all blocked enemies</>, when blocks 2 or more enemies increases the shift level by 1</br>Can be deployed on Ranged Tiles",
+            "color": "extra"
+        },
+        "有20%概率部署造成2倍伤害的陷阱": {
+            "en": "Has 20% chance to deploy a trap that deals double damage",
+            "color": "extra"
+        },
+        "生命值高于80%时，技力自然回复速度+0.25/秒": {
+            "en": "When HP higher than 80%, increases the SP recovery rate by +0.25/second",
+            "color": "extra"
+        },
+        "并对目标造成10％<$ba.weaken>虚弱</>效果，持续2秒": {
+            "en": "Inflict 10% <@ba.weaken>Weaken</> for 2 seconds",
+            "color": "magic"
+        },
+        "<支援装置>的持有上限<@ba.kw>+{cnt}</>且部署费用<@ba.kw>减少</>": {
+            "en": "Can hold <@ba.kw>+{cnt}</> additional &lt;Support Devices&gt; and &lt;Support Devices&gt; deployment costs are <@ba.kw>reduced</>",
+            "color": "extra"
+        },
+        "技能发动期间阻挡数变为0，但使身前一名干员阻挡数<@ba.kw>+1</>":{
+            "en": "Cannot block enemies and operator on frontal tile block count <@ba.kw>+1</> during the skill duration",
+            "color": "extra"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，可以造成<@ba.kw>元素损伤</>": {
+            "en": "Deals <@ba.kw>Arts damage</>, can inflicts <@ba.kw>Elemental Damage</>",
+            "color": "magic"
+        },
+        "攻击时需要消耗子弹且攻击力提升至<@ba.kw>120%</>，不攻击时会缓慢地装填子弹（最多8发）":{
+            "en": "When attacking, consumed ammo and increase ATK to <@ba.kw>120%</>. When not attacking, reload ammo slowly (up to 8 rounds)",
+            "color": "physical"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，技能开启后改为治疗友方单位（治疗量相当于<@ba.kw>{heal_scale:0%}</>攻击力）":{
+            "en": "Deals <@ba.kw>Arts damage</> ; When skill is active, attacks instead restore the HP of allies (heal amount is equal to <@ba.kw>{heal_scale:0%}</> of ATK)",
+            "color": "magic"
+        },
+        "造成法术伤害时附带相当于<@ba.vup>8%</>伤害的<$ba.dt.apoptosis2>凋亡损伤</>":{
+            "en": "When Deals <@ba.kw>Arts damage</> , Inflict <$ba.dt.apoptosis2>Apoptosis</> damage by <@ba.vup>8%</> of damage dealt",
+            "color": "magic"
+        },
+        "受到来自自身阻挡单位的伤害降低<@ba.kw>15%</>":{
+            "en": "<@ba.kw>Cannot</> be healed by allies, Reduces damage taken by blocked enemies by <@ba.kw>15%</>",
+            "color":"physical"
+        },
+        "攻击造成<@ba.kw>法术伤害</>，可以造成<@ba.kw>元素伤害</>": {
+            "en": "Deals <@ba.kw>Arts damage</>, can deals <@ba.kw>Elemental Damage</>",
+            "color": "magic"
+        },
+        "持有<@ba.kw>回旋投射物</>时才能够攻击（投射物需要时间回收）":{
+            "en": "Only attack when has <@ba.kw>Throwing Projectile</> (Projectile take time to return)",
+            "color":"physical"
         }
     },
     "parts":[
