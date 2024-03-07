@@ -179,6 +179,11 @@
 		"desc": "When stationed at the Command Center, for every operator from Team Rainbow in the Command Center, mood recovery per hour of all operators in the Command Center +0.05",
 		"descformat": "When stationed at the Command Center, for every operator from <$cc.g.R6><@cc.kw>Team Rainbow</></> in the Command Center, mood recovery per hour of all operators in the Command Center <@cc.vup>+0.05</>"
 	},
+	"control_clue_cost&faction[990]": {
+		"name": "Rebel",
+		"desc": "When stationed at the Command Center, it becomes easier to obtain clues that are not currently possessed on the Clue Board, however mood reduction per hour of all operators in the Command Center except self +0.25",
+		"descformat": "When stationed at the Command Center, it becomes easier to obtain clues that are not currently possessed on the Clue Board, however mood reduction per hour of all operators in the Command Center except self <@cc.vdown>+0.25</>"
+	},
 	"control_mp_cost&bd1[000]": {
 		"name": "\"Unstirred by Gain\"",
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in the Command Center +0.05. Additionally, when self mood is 12 or below, gain +15 Worldly Plight",
@@ -473,6 +478,11 @@
 		"name": "Consciousness Synchronization",
 		"desc": "When stationed at a Craft Station, all Rhine Technology and Pinus Sylvestris-type skills in the Craft Station are also treated as Standardization-type skills",
 		"descformat": "When stationed at a Craft Station, all <$cc.sk.manu2><@cc.kw>Rhine Technology</></> and <$cc.sk.manu3><@cc.kw>Pinus Sylvestris</></>-type skills in the Craft Station are also treated as <@cc.kw>Standardization</>-type skills"
+	},
+	"manu_prod_bd[000]": {
+		"name": "Man of Few Words",
+		"desc": "When stationed at a Craft Station, production +20%. Additionally, storage capacity +2 for every 1 Ursus Specialty Drink",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+20%</>. Additionally, storage capacity <@cc.vup>+2</> for every <@cc.vup>1</> <$cc.bd_tachanka><@cc.rem>Ursus Specialty Drink</></>"
 	},
 	"manu_prod_spd_addition[030]": {
 		"name": "Impatient",
@@ -1514,6 +1524,26 @@
 		"desc": "When stationed at the Training Station, every Knight operator in the base (excluding Assistants) increases the skill training speed by +5% (caps at 8 operators)",
 		"descformat": "When stationed at the Training Station, every <$cc.tag.knight><@cc.kw>Knight</></> operator in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+5%</> (caps at <@cc.kw>8</> operators)"
 	},
+	"train_spd_tag[020]": {
+		"name": "Tactical Instruction·Defender",
+		"desc": "When stationed at the Training Station, every operator from R6S Defenders in the base (excluding Assistants) increases the skill training speed by +10% (caps at 4 operators)",
+		"descformat": "When stationed at the Training Station, every operator from <$cc.g.Defence><@cc.kw>R6S Defenders</></> in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+10%</> (caps at <@cc.kw>4</> operators)"
+	},
+	"train_spd_tag[1020]": {
+		"name": "Tactical Instruction·Defender",
+		"desc": "When stationed at the Training Station, every operator from R6S Defenders in the base (excluding Assistants) increases the skill training speed by +10% (caps at 4 operators)",
+		"descformat": "When stationed at the Training Station, every operator from <$cc.g.Defence><@cc.kw>R6S Defenders</></> in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+10%</> (caps at <@cc.kw>4</> operators)"
+	},
+	"train_spd_tag[030]": {
+		"name": "Tactical Instruction·Attacker",
+		"desc": "When stationed at the Training Station, every operator from R6S Attackers in the base (excluding Assistants) increases the skill training speed by +10% (caps at 4 operators)",
+		"descformat": "When stationed at the Training Station, every operator from <$cc.g.Attack><@cc.kw>R6S Attackers</></> in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+10%</> (caps at <@cc.kw>4</> operators)"
+	},
+	"train_spd_tag[1030]": {
+		"name": "Tactical Instruction·Attacker",
+		"desc": "When stationed at the Training Station, every operator from R6S Attackers in the base (excluding Assistants) increases the skill training speed by +10% (caps at 4 operators)",
+		"descformat": "When stationed at the Training Station, every operator from <$cc.g.Attack><@cc.kw>R6S Attackers</></> in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+10%</> (caps at <@cc.kw>4</> operators)"
+	},
 	"train_spd_doubleProf[000]": {
 		"name": "Blade and Gun",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard and Sniper operators by +30%",
@@ -2164,6 +2194,11 @@
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.15 per hour (When stacked, only the highest effect becomes active)",
 		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.15</> per hour (When stacked, only the highest effect becomes active)"
 	},
+	"dorm_rec_all[026]": {
+		"name": "Altruism",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.2 per hour (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.2</> per hour (When stacked, only the highest effect becomes active)"
+	},
 	"dorm_bd_num[000]": {
 		"name": "Silent Resonance",
 		"desc": "When stationed at a Dorm, gain 1 Silent Resonance for every 1 operator in the current Dorm",
@@ -2553,6 +2588,11 @@
 		"name": "Conspicuous Investigator",
 		"desc": "When stationed at Reception, it becomes easier to obtain clues that are already possessed on the Clue Board",
 		"descformat": "When stationed at Reception, it becomes easier to obtain clues that are already possessed on the Clue Board"
+	},
+	"meet_spd_bd[000]": {
+		"name": "Intelligence Expert",
+		"desc": "When stationed at Reception, clue collection speed +5%. Additionally, further increase clue collection speed by +5% for every 1 Intelligence Reserve",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+5%</>. Additionally, further increase clue collection speed by <@cc.vup>+5%</> for every <@cc.vup>1</> <$cc.bd_ash><@cc.rem>Intelligence Reserve</></>"
 	},
 	"meet_spd_hast[000]": {
 		"name": "Shadow Gathering",
