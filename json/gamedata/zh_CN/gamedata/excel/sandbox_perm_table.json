@@ -32312,6 +32312,79 @@
               }
             ]
           },
+          "sandbox_1_monthly_1": {
+            "id": "sandbox_1_monthly_1",
+            "points": 0.0,
+            "mutexGroupKey": null,
+            "description": "敌人隐匿时移动速度上升，我方干员阻挡数+1",
+            "runes": [
+              {
+                "key": "env_gbuff_new_with_verify",
+                "selector": {
+                  "professionMask": "NONE",
+                  "buildableMask": "NONE",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "key",
+                    "value": 0.0,
+                    "valueStr": "enemy_attribute_final[when_invisible]"
+                  },
+                  {
+                    "key": "move_speed",
+                    "value": 2.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              },
+              {
+                "key": "char_blockcnt_add",
+                "selector": {
+                  "professionMask": 639,
+                  "buildableMask": "ALL",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "value",
+                    "value": 1.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  }
+                ]
+              }
+            ]
+          },
           "sandbox_1_warrior_lv01": {
             "id": "sandbox_1_warrior_lv01",
             "points": 0.0,
@@ -35650,6 +35723,102 @@
                   {
                     "key": "stun",
                     "value": 25.0,
+                    "valueStr": null
+                  }
+                ]
+              }
+            ]
+          },
+          "normal_mode_buff1": {
+            "id": "normal_mode_buff1",
+            "points": 0.0,
+            "mutexGroupKey": null,
+            "description": "资源最大生命值降低25%",
+            "runes": [
+              {
+                "key": "char_attribute_mul",
+                "selector": {
+                  "professionMask": 1023,
+                  "buildableMask": "ALL",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "filter_tag",
+                    "value": 0.0,
+                    "valueStr": "SANDBOX_RES"
+                  },
+                  {
+                    "key": "max_hp",
+                    "value": 0.75,
+                    "valueStr": null
+                  }
+                ]
+              }
+            ]
+          },
+          "normal_mode_buff3": {
+            "id": "normal_mode_buff3",
+            "points": 0.0,
+            "mutexGroupKey": null,
+            "description": "敌袭敌人最大生命值，攻击力降低50%",
+            "runes": [
+              {
+                "key": "env_gbuff_new_with_verify",
+                "selector": {
+                  "professionMask": 639,
+                  "buildableMask": "ALL",
+                  "charIdFilter": null,
+                  "enemyIdFilter": null,
+                  "enemyIdExcludeFilter": null,
+                  "enemyLevelTypeFilter": null,
+                  "skillIdFilter": null,
+                  "tileKeyFilter": null,
+                  "groupTagFilter": null,
+                  "filterTagFilter": null,
+                  "filterTagExcludeFilter": null,
+                  "subProfessionExcludeFilter": null,
+                  "mapTagFilter": null
+                },
+                "blackboard": [
+                  {
+                    "key": "key",
+                    "value": 0.0,
+                    "valueStr": "enemy_attribute_modify[in_rush]"
+                  },
+                  {
+                    "key": "char",
+                    "value": 0.0,
+                    "valueStr": "null"
+                  },
+                  {
+                    "key": "disable_in_sandbox_build",
+                    "value": 1.0,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "max_hp",
+                    "value": 0.5,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "atk",
+                    "value": 0.5,
+                    "valueStr": null
+                  },
+                  {
+                    "key": "def",
+                    "value": 1.0,
                     "valueStr": null
                   }
                 ]
@@ -47272,7 +47441,49 @@
           "sandbox_1_craft_16": "LONG",
           "sandbox_1_craft_17": "LONG"
         },
-        "monthRushData": [],
+        "monthRushData": [
+          {
+            "monthlyRushId": "sandbox_1_challenge_01",
+            "startTime": 1709236800,
+            "endTime": 1711915199,
+            "isLast": false,
+            "sortId": 1,
+            "rushGroupKey": "monthly_1",
+            "monthlyRushName": "迷雾巡猎",
+            "monthlyRushDes": "其实，迷雾已经是旷野探险中最不危险的天气，但总有人会躲在后面给敌人一击。掀开帷幕，会让彼此心惊肉跳。",
+            "weatherId": "weather_normal",
+            "nodeId": "n12B9",
+            "conditionGroup": "server_sandbox_1_monthly_1",
+            "conditionDesc": "我方干员阻挡数+1\n敌人隐匿时移动速度上升",
+            "rewardItemList": [
+              {
+                "id": "mod_unlock_token",
+                "count": 1,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "32001",
+                "count": 1,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "2004",
+                "count": 20,
+                "type": "CARD_EXP"
+              },
+              {
+                "id": "3303",
+                "count": 20,
+                "type": "MATERIAL"
+              },
+              {
+                "id": "4001",
+                "count": 30000,
+                "type": "GOLD"
+              }
+            ]
+          }
+        ],
         "riftTerrainParamData": {
           "sandbox_1_landscape_01": {
             "id": "sandbox_1_landscape_01",
@@ -51122,7 +51333,7 @@
       "itemId": "sandbox_1_wood",
       "itemType": "BUILDINGMAT",
       "itemName": "木材",
-      "itemUsage": "高强度的建筑材料，广泛应用于高级建筑建造。",
+      "itemUsage": "最基础的建筑材料，广泛应用于建筑建造。",
       "itemDesc": "之前有人把未脱水的木材当柴火烧，浓烟环绕了整个部落，白天犹如黑夜。",
       "itemRarity": 1,
       "sortId": 9020001,
@@ -51142,7 +51353,7 @@
       "itemId": "sandbox_1_iron",
       "itemType": "BUILDINGMAT",
       "itemName": "铁矿石",
-      "itemUsage": "最基础的建筑材料，广泛应用于建筑建造。",
+      "itemUsage": "高强度的建筑材料，广泛应用于高级建筑建造。",
       "itemDesc": "采矿时一定要注意避免吸入粉尘和有害气体，确保自身安全。",
       "itemRarity": 3,
       "sortId": 9020003,
@@ -51216,7 +51427,7 @@
       "itemDesc": "口感柔滑细腻，滋味醇和浓郁，十分受高档餐厅追捧。",
       "itemRarity": 3,
       "sortId": 9010006,
-      "obtainApproach": "击败<落沙晶蹄兽>获得\n兽栏产出"
+      "obtainApproach": "击败<落沙晶蹄兽>获得"
     },
     "sandbox_1_ttlmeat": {
       "itemId": "sandbox_1_ttlmeat",
@@ -51226,7 +51437,7 @@
       "itemDesc": "肉块与软骨紧密贴合，软硬一体，滋味别具一格，是荒地人最爱的食材。",
       "itemRarity": 3,
       "sortId": 9010007,
-      "obtainApproach": "击败<刺棱壳兽>获得\n兽栏产出"
+      "obtainApproach": "击败<刺棱壳兽>获得"
     },
     "sandbox_1_water": {
       "itemId": "sandbox_1_water",
@@ -51746,7 +51957,7 @@
       "itemDesc": "烹饪失败多次后命运给予的馈赠。\n它可以带你去另一片大地，一片时间或快或慢、感觉或有或无的大地。",
       "itemRarity": 4,
       "sortId": 5000054,
-      "obtainApproach": "<烹饪台>获得"
+      "obtainApproach": "探索获得"
     },
     "sandbox_1_building_1": {
       "itemId": "sandbox_1_building_1",
@@ -52462,7 +52673,7 @@
       "itemId": "sandbox_1_tactical_20",
       "itemType": "TACTICAL",
       "itemName": "捕猎笼",
-      "itemUsage": "捕获攻击范围内一只生命值低于一定额度的狩猎物",
+      "itemUsage": "捕获攻击范围内一只生命值低于一定额度的常见狩猎物",
       "itemDesc": "用特殊金属制成的笼子，足以抵挡荒地猛兽的全力一击。\n将它放在兽群出没的地方，打开笼门，放上诱饵，等上一段时间便能获得一些不错的猎获。",
       "itemRarity": 3,
       "sortId": 1020021,
@@ -52532,7 +52743,7 @@
       "itemId": "sandbox_1_tactical_27",
       "itemType": "TACTICAL",
       "itemName": "高级捕猎笼",
-      "itemUsage": "捕获攻击范围内一只狩猎物",
+      "itemUsage": "捕获攻击范围内一只常见狩猎物",
       "itemDesc": "用特殊金属制成的笼子，足以抵挡荒地猛兽的全力一击。\n将它放在兽群出没的地方，打开笼门，放上诱饵，等上一段时间便能获得一些不错的猎获。",
       "itemRarity": 4,
       "sortId": 1020028,

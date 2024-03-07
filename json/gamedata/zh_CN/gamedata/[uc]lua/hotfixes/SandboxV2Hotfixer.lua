@@ -1,3 +1,5 @@
+local SandboxV2ModeModule = require("Feature/SandboxV2/SandboxV2ModeModule")
+
 local SandboxV2Hotfixer = Class("SandboxV2Hotfixer", HotfixBase);
 
 
@@ -26,6 +28,33 @@ local function _FixApplyEquipId(self,equipId)
   end
 end
 
+local function _SandboxV2HomeController_InitIfNot(self)
+  local isFirstInit = not self.m_isInited
+  self:_InitIfNot()
+
+  local ok, ret = xpcall(function()
+    if isFirstInit then
+      SandboxV2ModeModule.InitModeOnEntry(self.m_topicId, UIBase.GetLuaLayout(self.gameObject))
+    else
+      SandboxV2ModeModule.NotifyRefresh(self.m_topicId)
+    end
+  end, debug.traceback)
+  if not ok then
+    LogError("[SandboxV2HomeController] _InitIfNot: ".. ret)
+  end
+end
+
+local function _SandboxV2CookDrinkViewOnValueChanged(self, prop)
+  local panelModel = prop.Value
+  if (panelModel ~= nil) then
+    local model = panelModel.drinkModel
+    if (model ~= nil and model.initialRender) then
+      self.m_cachedSelectMode = model.selectMode
+    end
+  end
+  self:OnValueChanged(prop)
+end
+
 function SandboxV2Hotfixer:OnInit()
   xlua.private_accessible(CS.Torappu.UI.SandboxPerm.SandboxPermUtil);
   self:Fix_ex(CS.Torappu.UI.SandboxPerm.SandboxPermUtil, "CheckIfSandboxInPlayerData", function(topicId)
@@ -45,6 +74,15 @@ function SandboxV2Hotfixer:OnInit()
     return value;
   end);
 
+  self:Fix_ex(CS.Torappu.UI.SandboxPerm.SandboxV2.SandboxV2HomeController, "_InitIfNot", _SandboxV2HomeController_InitIfNot)
+
+  xlua.private_accessible(CS.Torappu.UI.SandboxPerm.SandboxV2.SandboxV2CookDrinkView)
+  self:Fix_ex(CS.Torappu.UI.SandboxPerm.SandboxV2.SandboxV2CookDrinkView, "OnValueChanged", function(self, arg1)
+    local ok, errorInfo = xpcall(_SandboxV2CookDrinkViewOnValueChanged, debug.traceback, self, arg1)
+    if not ok then
+      LogError("[SandboxV2CookDrinkView] fix" .. errorInfo)
+    end
+  end)
 end
 
 function SandboxV2Hotfixer:OnDispose()
