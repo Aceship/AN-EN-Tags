@@ -1,5 +1,5 @@
     $.holdReady(true);
-    
+
     const jsonList = {
 
         //CN
@@ -29,6 +29,7 @@
         item_tableEN    :"./json/gamedata/en_US/gamedata/excel/item_table.json",
         enemyEN         :"./json/gamedata/en_US/gamedata/excel/enemy_handbook_table.json",
         uniequipEN      :"./json/gamedata/en_US/gamedata/excel/uniequip_table.json",
+        battle_equipEN  :"./json/gamedata/en_US/gamedata/excel/battle_equip_table.json",
 
         //Utilities
         attacktype      :"./json/tl-attacktype.json",
@@ -62,9 +63,12 @@
         //extra
         extra_range       :"./json/ace/extra_range.json",
         voiceold          :"./json/ace/oldvoice.json",
-        sanitygone        :"https://sanitygone.help/aceship.json"
+        sanitygone        :"https://sanitygone.help/aceship.json",
+
+        //TEMPModuleTalent
+        TempModuletalentsTL :"./json/TempModuletalentsTL.json"
     };
-    
+
     var db = {}
     LoadAllJsonObjects(jsonList).then(function(result) {
         db = result
@@ -87,23 +91,24 @@
     var chibipers = 'front'
     var chibiName = 'char_180_amgoat'
     var folder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/${chibitype}/${charName}/${chibipers}/`
-    var spinewidget 
+    var spinewidget
     var spinewidgetcg
     var curropname
     var globaltoken
     var globalelite = 0
     var globallevel =[1,1,1]
     var globalskill = 0
-    var israritygrouped 
+    var israritygrouped
     var talentValue = [0,0,0]
     var talentLimit = []
+    var ModuletalentValue
 
-    var currskin 
+    var currskin
     var currVoiceID
     var spinewidgettoken
     var animIndex = 0;
     var animations
-    var tokenname 
+    var tokenname
     var tokenanimations
     var animationqueue
     var defaultAnimationName = "Default";
@@ -134,7 +139,7 @@
             var currentop = db.charpatch.patchChars[id]
             currentop.rarity = RarityConvert(currentop.rarity)
         })
-        
+
         $(function () {
             $('[data-toggle="tooltip"]').tooltip()
           })
@@ -199,8 +204,8 @@
             // console.log($("#spine-widget"))
             var isvisible = $("#spine-frame").is(":visible")
             $("#spine-frame").fadeToggle(100);
-            
-            
+
+
             if(!loadchibi){
                 loadchibi=true
                 if(bgnum==0&&$("#spine-bg").is(":hidden")){
@@ -227,7 +232,7 @@
                 else {
                     spinewidget.play()
                     loadchibi=true
-                    
+
                     if($("#spine-bg").is(":hidden")){
                         if (bgnum==0) bgnum=1
                         $('#spine-bg').attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/spine/bg"+bgnum+".png");
@@ -235,7 +240,7 @@
                     }
                 }
             }
-            
+
             if(spinewidgettoken){
                 if(isvisible){
                     spinewidgettoken.pause()
@@ -244,7 +249,7 @@
                 else {
                     spinewidgettoken.play()
                     $("#spine-frame-token").fadeIn(100);
-                    
+
                 }
             }
             var sticky = $('#ak-bottom-allnav')
@@ -267,17 +272,17 @@
 
             if(bgnum==0) $('#spine-bg').fadeOut('fast')
             else {
-                
+
                 // $('#spine-bg').fadeIn()
                 $('#spine-bg').fadeOut('fast', function () {
                     $('#spine-bg').attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/spine/bg"+bgnum+".png");
                     $('#spine-bg').fadeIn('fast');
                 });
                 console.log( $('#spine-bg').attr("src") )
-            
+
             }
 
-            
+
         });
         $("#Chibi-Perspective").click(function(){
             chibiperscurr++
@@ -287,17 +292,17 @@
             console.log(chibiperscurr)
             console.log(chibiperslist[chibiperscurr])
             ChangeSkin(currskin,chibiperslist[chibiperscurr])
-            
+
         });
         $("#Chibi-Show-menu").click(function(){
             $('#Chibi-menu').toggleClass("chibi-menu-closed")
-            
+
         });
         $("#Chibi-frameSize").click(function(){
             // $('#Chibi-menu').toggleClass("chibi-menu-closed")
             canvasNum++
 
-            
+
             if(canvasNum>=canvasSize.length)canvasNum=0
             else if(canvasNum<0)canvasNum=canvasSize.length
 
@@ -314,16 +319,16 @@
         });
 
         $("#Chibi-Scale").click(function(){
-            
+
             // chibiscaleweb++
 
-            
+
             // if(chibiscaleweb>=chibiscaleweblist.length)chibiscaleweb=0
             // else if(chibiscaleweb<0)chibiscaleweb=chibiscaleweblist.length
             // console.log(chibiscaleweb)
             // console.log(chibiscaleweblist)
 
-            
+
             // var currscale = chibiscaleweblist[chibiscaleweb]
             // console.log(currscale)
             $('#chibizoomslider').val(0)
@@ -333,14 +338,14 @@
             // $("#spine-widget").css("top",`-775px`)
             // $("#spine-widget-token").css("transform",`scale(0.5)`)
             // $("#spine-widget-token").css("top",`-775px`)
-            
 
-            
+
+
         });
 
         $('#Chibi-download').click(function(event){
             // var canvas = spinewidget.canvas
-            
+
             var checkdiv = $("#spine-widget").children()[0]
             // console.log($("#spine-widget").children())
             // console.log(canvas)
@@ -356,7 +361,7 @@
             savenum++
             link.href = img;
             link.click();
-            
+
             // CreateAnimation(spinewidget,["Skill_2_Begin",["Skill_2_Loop",20],"Skill_2_Loop_End"],false,false,true)
             // console.log(spinewidget)
             // var dataURL = $("#spine-widget")[0].toDataURL('image/png');
@@ -411,7 +416,7 @@
 
         if(lefthand)
         $('#lefthandtoggle').css("background-color","#0077AA")
-        else 
+        else
         $('#lefthandtoggle').css("background-color","#222")
 
         $('#opname').bind("enterKey",function(e){
@@ -424,7 +429,7 @@
                  $(this).trigger("enterKey");
              }
          });
-        
+
         if(!localStorage.getItem('gameRegion') || !localStorage.getItem('webLang')){
             localStorage.setItem("gameRegion", 'cn');
             localStorage.setItem("webLang", 'en');
@@ -461,7 +466,7 @@
             console.log("selected OP defined");
             var vars = getUrlVars();
             // curpath.forEach(element => {
-                
+
             // });
             if(vars.has("opname")){
                 var char = {};
@@ -479,14 +484,14 @@
                     var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):v.appellation.replace(/ /g,"_"))
                     opapp = correctname
                 })
-                
+
             } else {
                 selectedOP = localStorage.getItem('selectedOPDetails');
                 var opname = db.chars[selectedOP].name;
             }
-            
+
             selectOperator(opname);
-           
+
             if(vars.has("story")){
                 $('#opstory').modal('show')
             }else if(vars.has("voice")){
@@ -497,7 +502,7 @@
                 GetSFX(opdataFull)
                 $('#opsfx').modal('show')
             }
-        
+
         }
         if (window.history && window.history.pushState) {
             $(window).on('popstate', function() {
@@ -525,7 +530,7 @@
                 }
             //   alert('Back button was pressed.');
             });
-        
+
         }
 
         $('#opstory').on('shown.bs.modal', function(){
@@ -580,11 +585,11 @@
     });
 
     const root = document.documentElement;
- 
+
     document.addEventListener('mousemove', evt => {
         let x = evt.clientX / innerWidth;
         let y = evt.clientY / innerHeight;
-     
+
         root.style.setProperty('--mouse-x', x);
         root.style.setProperty('--mouse-y', y);
     });
@@ -600,18 +605,18 @@
         $('#operatorsResult').empty();
         $('#operatorsResult').hide();
         localStorage.removeItem('selectedOPDetails');
-        history.pushState(null, '', window.location.pathname); 
+        history.pushState(null, '', window.location.pathname);
     }
 
     function selOpClass(cname){
         $("#selectedopclass").empty();
-        
-        var result 
+
+        var result
         if(cname!=""){
             result= query(db.chars,"profession",cname,false,true);
         }else{
             result= ObjectToArray(db.chars)
-            
+
         }
         // console.log(result.length);
 
@@ -639,7 +644,7 @@
         })
         var listtype = "Grid"
         var showtype = "a"
-    
+
         for (var i = 0; i < result.length; i++) {
             var html;
             // console.log(result[i])
@@ -649,13 +654,13 @@
                 var classlogo = type?type.type_en.toLowerCase():""
                 var camplogo = val.displayLogo
                 switch (listtype) {
-                    
+
                     case "List":
                                 html =
                                 `<li class='selectop-list ak-shadow' onclick='selectOperator("${val.name}")'>
                                 <img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${key}.png'>
                                 <div class='name ak-font-novecento'>${getENname(val.name)}</div>
-                                <div class='rarity op-rarity-${val.rarity+1}'> 
+                                <div class='rarity op-rarity-${val.rarity+1}'>
                                     ${(`<i class='fa fa-star'></i>`).repeat(val.rarity+1)}
                                 </div></li>
                                 `
@@ -670,7 +675,7 @@
                                 <div class='ak-showsubclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/subclass/sub_${val.subProfessionId}_icon.png'></div>
                                 ${cname==""&&classlogo?`<div class='ak-showclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/class_${classlogo}.png'></div>`:""}
                                 ${showtype&&camplogo?`<div class='ak-showfaction'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/factions/${camplogo.toLowerCase()}.png' title='${db.campdata[camplogo]}' ></div>`:""}
-                                <div class='grid-box op-rarity-${val.rarity+1}'> 
+                                <div class='grid-box op-rarity-${val.rarity+1}'>
                                 </div></li>
                                 `
 
@@ -700,7 +705,7 @@
         }
     }
 
-    
+
 
     // function populateOperators(el,isenter = false){
     //     let inputs
@@ -714,7 +719,7 @@
     //         console.log(char.appellation)
     //         console.log(unreadable)
     //     })
-        
+
     // }
     function populateOperators(el,isenter = false){
         // console.log(el)
@@ -723,7 +728,7 @@
             inputs = el
         else
             inputs = el.value
-        if(($('#operatorsResult').css("display") == "block") && 
+        if(($('#operatorsResult').css("display") == "block") &&
             ((el=="Browse"&& $("#operatorsResult").hasClass("opbrowse1"))||
              (el=="Browse2"&& $("#operatorsResult").hasClass("opbrowse2")))){
             // console.log($('#operatorsResult').css("display") == "none" )
@@ -757,16 +762,16 @@
                     var name = char['name_'+reg];
                     var unreadable = query(db.unreadNameTL,"name",char.name_en).name_en
                     var nameTL = char['name_'+lang];
-                    var img_name = query(db.chars,"name",char.name_cn,true,true); 
+                    var img_name = query(db.chars,"name",char.name_cn,true,true);
 
                     var img_key = Object.keys(img_name)
                     console.log(img_key)
-                    
+
                     var rarity = img_name[img_key] ? img_name[img_key].rarity + 1 : 0;
                     if(img_key[0] == "char_512_aprot"){
                         img_key[0] = "char_4025_aprot2"
                     }
-                        
+
                     // console.log(rarity);
                     if(rarity!=0)
                     result.push({'name':name,'name_cn':name_cn,'name_readable':unreadable,'nameTL':nameTL,'img_name':img_key,rarity});
@@ -902,7 +907,7 @@
     function getBranchclassHtml(btn) {
         function branchclassHtml(data_id, data_name) {
             return `<div class="btn btn-secondary btn-sm op-branch filter-btn-s tooltip2" onclick="toggleBtn(this)" section="branch" data-id="${data_id}">
-            <img src="${`https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/subclass/sub_${data_id}_icon.png`}" style="width:33px;height:33px;object-fit: contain;display: inline-block;" alt="${data_name}"> 
+            <img src="${`https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/subclass/sub_${data_id}_icon.png`}" style="width:33px;height:33px;object-fit: contain;display: inline-block;" alt="${data_name}">
             <span class="tooltiptext tooltipstyle1 nohover">${data_name}</span>
             </div>`
         }
@@ -955,7 +960,7 @@
     function actualizeSubclass() {
         $("#subclass-container").html($(".op-class.btn-primary").map((_, btn) => getSubclassHtml(btn)).get().join(""));
     }
-    
+
     function actualizeBranch(){
         $("#branch-container").html($(".op-class.btn-primary").map((_, btn) => getBranchclassHtml(btn)).get().join(""));
     }
@@ -1047,7 +1052,7 @@
                                    char.rarity == 1 ? ["新手"] : [],                                        // Starter
                                    char.rarity == 0 ? ["支援机械"] : []);                                    // Robot
     }
-    
+
     function getBranchClass(char){
         return char.subProfessionId
     }
@@ -1056,9 +1061,9 @@
         let tags = getTags(char);
 
 
-        //Handpicked subclass check 
+        //Handpicked subclass check
         let sub = db.subclass[char.profession]
-        
+
         if(sub){
             var subclasses = []
             $.each(sub,function(key,v){
@@ -1090,7 +1095,7 @@
             case "SPECIAL":     // SPECIALIST (PUSH, PULL, FAST-REDEPLOY, SPIKE)
                 return tags.includes("快速复活") ? "SPECIAL-REDEPLOY" :
                        // same dirty hack as above
-                       char.description == "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位" ? "SPECIAL-PUSH" : 
+                       char.description == "同时攻击阻挡的<@ba.kw>所有敌人</>\\n可以放置于远程位" ? "SPECIAL-PUSH" :
                        char.description == "技能可以使敌人产生<@ba.kw>位移</>\\n可以放置于远程位" ? "SPECIAL-PULL" :
                        "SPECIAL-SPIKES";
             case "SUPPORT":     // SUPPORTER (SLOW, SUMMON, DEBUFF, BUFF)
@@ -1148,7 +1153,7 @@
             curops.id = id
             if(curops.profession != "TOKEN" && curops.profession != "TRAP"){
                 if(id=="char_512_aprot"){
-                    
+
                 }else{
                     ops.push(curops)
                 }
@@ -1161,7 +1166,7 @@
         if (op_class.length) ops = exclusive_class ? ops.filter(char => op_class[0] == char.profession)
                                                    : ops.filter(char => op_class.includes(char.profession));
         if (op_branch.length) ops = ops.filter(char => {
-            //add support for multiple subclass per operator 
+            //add support for multiple subclass per operator
 
             var checksubclass = getBranchClass(char)
             if(Array.isArray(checksubclass)){
@@ -1231,8 +1236,8 @@
 
             isgrouped = false
         }
-        
-        
+
+
         console.log(totalRarity)
         $("#selectedopclass").html(ops.map(char =>{
             var extrathing = ""
@@ -1260,14 +1265,14 @@
             </div>
             <div class="${char.appellation.length>12?char.appellation.length>16?"namesmaller":"namesmall":"name"} ak-font-novecento ak-center">${unreadable?`[${unreadable}]`:""} ${char.appellation}</div>
             <div class='selectopopgridline ak-rare-${char.rarity + 1}'></div>
-            
+
             ${showfaction?`<div class='ak-showclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/class_${db.classes.find(search=>search.type_data==char.profession).type_en.toLowerCase()}.png'></div>`:""}
             ${op_branch.length!=1?`<div class='ak-showsubclass'><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/subclass/sub_${char.subProfessionId}_icon.png'></div>`:""}
-        
+
             </li>`
         }).join(" "));
 
-            // 
+            //
     }
 
     function openOPZOOMmodal(){
@@ -1284,8 +1289,8 @@
         ChangeZoomChara('',image);
     }
     function ChangeZoomChara(skinName, src=''){
-        
-        
+
+
 
         if(skinName != ''){
             $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skinName+".png");
@@ -1303,7 +1308,7 @@
         if(opname != ""){
             $("#chara-detail-container").show();
             console.log("SELECT OPERATOR");
-            console.log(opname);   
+            console.log(opname);
             $("#opname").val("");
             $('#operatorsResult').empty();
             $('#operatorsResult').hide();
@@ -1314,10 +1319,10 @@
             curropname = opname
             var opcode2 = ""
             // console.log(opdata3)
-            
+
             if (opdata2)
             var opcode = Object.keys(opdata2)[0]
- 
+
             var opKey =""
             $.each(opdata2,function(key,v){
                 v['id'] = key;
@@ -1343,8 +1348,8 @@
                 'event_category' : 'Operator Details',
                 'event_label' : opdataFull.appellation ,
                 'value' : from
-            });              
-            
+            });
+
             //test
             // var charalist = []
             // $.each(db.chars,(key,chara) => {
@@ -1352,7 +1357,7 @@
             // });
             // console.log(charalist.join("\n"))
             //
-            
+
 
             tokenname = opdataFull.tokenKey
             currskin =opcode
@@ -1363,10 +1368,10 @@
             var correctname = (unreadable?unreadable.name_en.replace(/ /g,"_"):opdataFull.appellation.replace(/ /g,"_"))
             opapp = correctname
             if(url.searchParams.get("opname")===correctname){
-                
+
             }else{
                 url.searchParams.set("opname", correctname);
-                history.pushState(null, '', url); 
+                history.pushState(null, '', url);
             }
 
             if(opKey=="char_002_amiya"){
@@ -1409,19 +1414,19 @@
                     if(db.skintable.charSkins[element].displaySkin.skinName){
                         extraSkin.push(db.skintable.charSkins[element])
                     }
-                    
+
                 }
             });
             // console.log(extraSkin)
             // console.log(skinList);
-            
+
 
             var tabbtn = [];
             var tabbtn2 = [];
             var tabcontent = [];
             var tabcontent2 = [];
             var zoombtn = [];
-            
+
             $("#spine-frame-op").fadeOut(10)
             $("#tabs-opCG").fadeIn(10)
             $("#elite-sidenav").empty();
@@ -1452,19 +1457,19 @@
             folder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/${chibitype}/${charName}/${chibipers}/`
             // if(spinewidget)
 
-            
+
             if(loadchibi){
                 LoadAnimation()
                 LoadAnimationToken()
                 // $("#spine-frame").fadeIn(10)
             }
             else $("#spine-frame").hide()
-            
+
 
             for (var i = 0; i < opdataFull.phases.length; i++) {
                 var l = opdataFull.phases.length;
 
-                var dynextra 
+                var dynextra
                 if(skinList){
                     if(skinList[i]){
                         var currentskin = db.skintable.charSkins[skinList[i]]
@@ -1472,7 +1477,7 @@
                         if(currentskin&&currentskin.dynIllustId){
                             dynextra=currentskin.dynIllustId
                         }
-                            
+
                     }
                 }
                 tabbtn[l-i] = $(`
@@ -1485,7 +1490,7 @@
                         <i class="far fa-star"></i>
                     </button>
                     `:""}
-                    
+
                     <button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='${dynextra?"width:62px;":""}height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${i}")'>
                         <img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'>
                     </button>
@@ -1518,7 +1523,7 @@
                 //                             + "<img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/"+i+"-s.png'></button></li>");
                 //     tabbtn2[i] = $("<li class='nav-item'><a class='btn tabbing-btns horiz-small nav-link tablink' data-toggle='pill' style='height:30px' onclick='UpdateElite("+i+")' href='#elite_"+i+"_tab'>Elite "+i+"</a></li>");
                 // }
-                
+
                 var skindata;
                 if(skinList){
                     if(!(skinList[i] in db.skintable.charSkins)){
@@ -1533,7 +1538,7 @@
                     if(i == 0){
                         $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png");
                         $('#charazoom').modal('handleUpdate')
-                        
+
                         tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
                             +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png'>"
                             +"</div>"));
@@ -1549,7 +1554,7 @@
                     if(i == 0){
                         $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1001_amiya2_2.png");
                         $('#charazoom').modal('handleUpdate')
-                        
+
                         tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
                             +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1001_amiya2_2.png'>"
                             +"</div>"));
@@ -1559,8 +1564,8 @@
                             +"</div>"));
                     }
                 }
-                
-                
+
+
                 var elitehtml = getEliteHTML(i,opdataFull);
                 tabcontent2.push(elitehtml);
             }
@@ -1568,9 +1573,9 @@
 
             if(extraSkin.length>0){
                 let dropdowntab = []
-                
+
                 for(var i=0;i<extraSkin.length;i++){
-                    
+
                     // var currskingroupsplit = extraSkin[i].displaySkin.skinGroupId.split("#")
                     // var currskingroup = `${currskingroupsplit[0]}#${currskingroupsplit[1]}`
                     var currskingroup = extraSkin[i].displaySkin.skinGroupId
@@ -1597,20 +1602,20 @@
                                 <i class="far fa-star"></i>
                             </button>
                         `:""}
-                        
-                        <a class="btn tabbing-btns tabbing-btns-middle" style="${extraSkin[i].dynIllustId?"width:62px":""}" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}","","${extraSkin[i].skinId}")'> 
+
+                        <a class="btn tabbing-btns tabbing-btns-middle" style="${extraSkin[i].dynIllustId?"width:62px":""}" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}","","${extraSkin[i].skinId}")'>
                             <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
                             <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
                         </a></li>
                         `)
                 }
-                
+
                 tabbtn.push(`
-         
+
                     ${dropdowntab.join("")}
-                    
+
                 `)
-                
+
             }
             tabbtn.push($(`<button type="button" class="btn tabbing-btns  tabbing-btns-middle ak-btn" style="width:50px;height:50px;margin-top:5px;" onclick="openOPZOOMmodal()"><span style="font-size: 1.5em" class="fa fa-search-plus"></span></button>`))
             tabbtn.push($(`<button type="button" class="btn tabbing-btns tabbing-btns-middle ak-btn" style="width:50px;height:50px" data-toggle="modal" data-target="#opstory">
@@ -1669,7 +1674,7 @@
             var position = query(db.tags,"tag_cn",opdataFull.position);
             $("#op-position").html(position['tag_'+lang],`Position`)
 
-            
+
 
             var type = query(db.classes,"type_data",opdataFull.profession);
             $("#op-classImage").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/classes/black/icon_profession_"+type['type_'+lang].toLowerCase()+"_large.png")
@@ -1691,7 +1696,7 @@
 
             //TRAIT MAKING
             $("#op-atktype").html(GetTrait(opdataFull.description,opdataFull.trait))
-        
+
             $("#op-rarity").empty();
             $("#op-rarity").attr("class","op-rarity-"+(opdataFull.rarity+1))
             $("#op-trust").html(GetTrust(opdataFull))
@@ -1708,7 +1713,7 @@
             }else{
                 $("#op-talentlist").html("")
             }
-            
+
             if(potentials.length>0){
                 $("#op-potentialist").html(titledMaker(potentialist.join(""),"Potentials"))
             }else{
@@ -1737,8 +1742,8 @@
 
             GetRiic2(opdata2)
             // console.log(charaRiic)
-            
-            
+
+
             //Story
 
             if(db.handbookInfo.handbookDict[opdataFull.id]|| opdataFull.id == "char_1001_amiya2"){
@@ -1747,7 +1752,7 @@
                 $('#info-illustrator').html("")
                 $('#info-voiceactor').html("")
             }
-            
+
             $('#opaudiocontent').empty()
             $('#opsfxcontent').empty()
             $('#opaudiotranslator').empty()
@@ -1806,7 +1811,7 @@
                         </div>
                         `+(materialist.length>0?materialist.join(""):"")
                     }
-                    
+
                     if(v2.rangeId)grid = rangeMaker(v2.rangeId)
 
                     var skillblacklistrange = [
@@ -1816,7 +1821,7 @@
                     if(skillblacklistrange.includes(v2.prefabId)){
                         grid = ""
                     }
-                    
+
                     var spType = (v2.spData.spType)
                     var spTypeHtml = ""
                     switch (spType){
@@ -1881,9 +1886,9 @@
                     var spTypeHtml = (currSkill.skillType==0?"":titledMaker(spTypeHtml,"SP Charge Type",`spType-${spType}`))
                     // console.log(materialList2)
                     // console.log(parseInt(v2.duration)>0)
-                    //skilltype 
+                    //skilltype
                     //0 = on deploy
-                    //1 = manual 
+                    //1 = manual
                     //2 = auto
                     tables +=`<table id='skill${i}level${i2}stats' class='${lefthand=="true"?"left-hand":""} skillstats ${(i2!=0 ? '' : 'active')}'>
                              <tr >
@@ -1893,21 +1898,21 @@
                             <tr>
                                 <td colspan='${grid?3:2}' class='skilldesc'>${skilldesc}</td>
                             </tr>
-                            `       
+                            `
 
                     var detailtable = []
                     if(skilldetails.length>0){
                         var skillhtmldetail = ""
-                        
+
                         skilldetails.forEach(currdetails => {
-                            
+
                             skillhtmldetail+=`
                             <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
                                     ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
                             </div>`
                         });
-                        detailtable = `<button id='skilldetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler("skilldetailcontent")'style="color:#fff;text-align:center;background:#222;padding:2px">Skill Details <i class="fas fa-caret-down"></i></button> 
-                            <div id='skilldetailcontent' class="ak-shadow skilldetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
+                        detailtable = `<button id='skilldetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler("skilldetailcontent")'style="color:#fff;text-align:center;background:#222;padding:2px">Skill Details <i class="fas fa-caret-down"></i></button>
+                            <div id='skilldetailcontent' class="ak-shadow skilldetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
                                 ${skillhtmldetail}
                             </div>
                         </div>`
@@ -1916,7 +1921,7 @@
                     }
 
                     if(grid){
-                        tables+= 
+                        tables+=
                         `
                             <tr>
                                 <td>
@@ -1965,7 +1970,7 @@
                                     ${force!=undefined?`${titledMaker(force,"Force Level")}`: ""}
                                 </td>
                             </tr>
-                            
+
                             ${detailtable==""?"":`<tr><td colspan=4>${detailtable}</td></tr>`}
                             <tr>
                                 <td colspan=4>${materialHtml} </td>
@@ -1983,7 +1988,7 @@
 
                 var skilltoken = opdataFull.skills[i].overrideTokenKey
                 if(skilltoken== null) skilltoken = opdataFull.tokenKey
-                
+
                 var tabItem = $(`
                 <li class='nav-item'>
                     <button class='btn tabbing-btns horiz-small nav-link ${(i!=0 ? '' : 'active')} tablink' data-toggle='pill' onclick='UpdateToken("${skilltoken}",${i},${opdataFull.skills.length})' href='#skill${i}'>
@@ -2002,7 +2007,7 @@
                                     <img class='ak-shadow skill-image notclickthrough' id='skill${i}image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skillIcon}.png' style='width: 100%;'>
                                 </div>
                             </div>
-                        
+
                     </div>
                     <div class='dividerdark'> </div>
                     <div id='skill${i}StatsCollapsible' class='collapse collapsible notclickthrough ak-shadow show' >
@@ -2024,11 +2029,11 @@
             //EQUIP CHECK
             $("#equip-tabs").html("");
             $("#equip-contents").html("");
-            
+
             if(db.uniequip.charEquip[opKey]){
                 var equiplist = db.uniequip.charEquip[opKey]
-                
-                
+
+                ModuletalentValue = Array.from({ length: db.uniequip.charEquip[opKey].length-1 }, () => [0, 0])
                 var num = 1
                 var tabhtml = ""
                 var contenthtml = ""
@@ -2042,7 +2047,7 @@
                         currebattequip = db.battle_equip[currequip.uniEquipId]
                     }
                     tabhtml =`
-                    <li class='nav-item'>                     
+                    <li class='nav-item'>
                         <button class='btn horiz-small nav-link ${(num!=2 ? '' : 'active')} equiplink' data-toggle='pill' href='#equip${num}'>
                             <div style = "display:inline-block;text-align:center;">
                                 <div style = "display:inline-block; height:40px">
@@ -2058,7 +2063,7 @@
                         </button>
                     </li>
                     `
-                    
+
                     if(currebattequip){
                         var curreqphase = 0
                         currebattequip.phases.forEach(phase => {
@@ -2118,20 +2123,19 @@
                                 if(part.target == "TALENT"){
                                     //??
                                     console.log(part.rangeId)
-                                    if(part.addOrOverrideTalentDataBundle.candidates[0].rangeId){
-                                        equiphtml[curreqphase]+=
-                                    `<div>
-                                        ${titledMaker2(rangeMaker(part.addOrOverrideTalentDataBundle.candidates[0].rangeId,false),"")}
-                                    </div>`
+                                    if(part.addOrOverrideTalentDataBundle.candidates[0].rangeId && part.addOrOverrideTalentDataBundle.candidates[0].displayRangeId){
+                                        equiphtml[curreqphase]+=`${titledMaker2(rangeMaker(part.addOrOverrideTalentDataBundle.candidates[0].rangeId,false),"")}`
                                     }
                                 }
-
                             });
+                            //insert Module Talent with potentials
+                            if(curreqphase>0) equiphtml[curreqphase]+=`${GetModuleTalent(phase.parts,element,num,curreqphase,opKey)}`
+
                             if(phase.attributeBlackboard.length>0){
                                 var statcontent = ''
                                 phase.attributeBlackboard.forEach(stat => {
                                     var tlstat = db.effect[stat.key]
-                                    statcontent += 
+                                    statcontent +=
                                         `
                                             <div class="stats">
                                                 <div class="stats-l">${tlstat?tlstat:stat.key}</div><div class="stats-r" >${stat.value}</div>
@@ -2140,7 +2144,7 @@
                                 });
                                 equiphtml[curreqphase] += `
                                 <div style='margin:12px;width:100%'> </div>
-                                ${titledMaker(statcontent,"Additional Stats","","","padding:6px 10px 6px 10px;margin-bottom:6px;width:100%")}
+                                ${titledMaker(statcontent,"Additional Stats","","","padding:6px 10px 6px 10px;margin-bottom:6px;width:100%;white-space:initial")}
                                 `
                             }
                             // console.log(Object.keys(phase.tokenAttributeBlackboard))
@@ -2152,7 +2156,7 @@
                                     var statcontent = ''
                                     curtoken.forEach(stat => {
                                         var tlstat = db.effect[stat.key]
-                                        statcontent += 
+                                        statcontent +=
                                             `
                                                 <div class="stats">
                                                     <div class="stats-l">${tlstat?tlstat:stat.key}</div><div class="stats-r" >${stat.value}</div>
@@ -2161,17 +2165,17 @@
                                     });
                                     equiphtml[curreqphase] += `
                                     <div style='margin:12px;width:100%'> </div>
-                                    ${titledMaker(statcontent,`Additional Summon Stats (${tokenfulldata?tokenfulldata.appellation:token})`,"","","padding:3px 10px 6px 10px;width:100%")}
+                                    ${titledMaker(statcontent,`Additional Summon Stats (${tokenfulldata?tokenfulldata.appellation:token})`,"","","padding:3px 10px 6px 10px;width:100%;white-space:initial")}
                                     `
                                 });
-                                
+
                             }
                             curreqphase += 1
                         });
-                        
-                        
+
+
                     }
-                    
+
                     if(currequip.itemCost){
                         var imagereq = []
                         if(currequip.unlockEvolvePhase >=0)
@@ -2196,11 +2200,11 @@
                             </div>
                             `)
                         }
-                        
+
                         var curreqphase = 0
-                        
+
                         $.each(currequip.itemCost,function(key,v){
-                            
+
                             if(curreqphase==0){
                                 equiphtml[curreqphase] += `
                                 <div style="text-align:center;background:#222;color:#fff;margin-top:5px">Unlock Requirements</div>
@@ -2225,7 +2229,7 @@
                             equiphtml[curreqphase] += `
                             </div>
                             <div style="text-align:center;background:#222;color:#fff">Unlock Mission</div>
-                            
+
                             `
                             var missionnum = 1
                             var missionhtml = ``
@@ -2244,19 +2248,19 @@
                             `
                             curreqphase +=1
                         })
-                        
+
                     }
-                    
+
                     if(currequip.typeIcon=="original"){
                         equiphtml[0] = titledMaker(currequipEN?currequipEN.uniEquipDesc:currequip.uniEquipDesc,`Basic Information`,``,``,"margin:8px 0px 4px 0px;white-space:initial;")
                     }
-                    
+
 
                     leveltabhtml = ``
                     equiptabhtml = ``
                     for(i=0 ; i<equiphtml.length;i++){
                         leveltabhtml += `
-                        <li class='nav-item'>                     
+                        <li class='nav-item'>
                             <button class='btn horiz-small nav-link ${(i!=0 ? '' : 'active')} equiplevel' data-toggle='pill' href='#equip${num}level${i}' style ='padding:0;border-radius:0px'>
                                 <div style = "display:inline-block;text-align:center;">
                                     <div style = "width:50px;margin: 2px;color:#ddd;font-size:10px">
@@ -2266,7 +2270,6 @@
                                         <div style="font-size:8px;margin:0px;padding:0px">
                                             Stage
                                         </div>
-                                          
                                     </div>
                                 </div>
                             </button>
@@ -2289,25 +2292,21 @@
                                         <img class='equip-image' id='equip${num}image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/icon/${currequip.uniEquipIcon}.png' style='width: 90px;height:90px;object-fit:contain'>
                                     </button>
                                 </div>
-                            
                         </div>
                             <ul class='nav nav-pills' id='equip-tabs' style="background:#222">
                                 ${leveltabhtml}
                             </ul>
-                        
                         <div class="tab-content" id="equip-phases" style="margin: 0px 0px 0px 0px;padding:15px 5px 10px 5px">${equiptabhtml}</div>
-                        
-                    <div>
                     `
-                    
+
                     //${currequip.uniEquipDesc}
                     $("#equip-tabs").append(tabhtml);
                     $("#equip-contents").append(contenthtml)
                     num +=1
                 });
                 //${equiphtml}
-                
-                
+
+
             }
             $('[data-toggle="tooltip"]').tooltip()
         }
@@ -2388,7 +2387,7 @@
                 });
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
-                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</> 
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</>
                     </br>Other <@ba.kw>${squads.join(", ")}</> not allowed in party
                     `
                 break;
@@ -2479,7 +2478,7 @@
                 }
                 console.log(opdataFull.skills)
                 console.log(skillnum)
-                
+
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
                     Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[4]].appellation}</>, Cast <@ba.kw><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skillId}.png" style="max-width:20px;margin:2px">${skillname} ${skillnum}</> skill <@ba.kw>${mission.paramList[3]}</> times
@@ -2513,7 +2512,7 @@
                 var stage = db.stage.stages[mission.paramList[1]].code
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
-                    </br>Kill <@ba.kw>${mission.paramList[3]}</> enemies 
+                    </br>Kill <@ba.kw>${mission.paramList[3]}</> enemies
                     Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</>
                     `
                 break;
@@ -2577,12 +2576,12 @@
                         `
                     }
                 }
-                
+
                 tl=`
                     ${objective} <@ba.kw>${mission.paramList[2]}</> <@ba.kw>${enemytype}</>
                     ${wordtype} Non-Borrowed <@ba.kw>${db.chars[mission.paramList[0]].appellation}</>${extra}
                     `
-                break; 
+                break;
             case "EquipmentEventStageMore" :
                 var stage = db.stage.stages[mission.paramList[1]].code
                 var splitreq = mission.paramList[3].split(",")
@@ -2597,8 +2596,8 @@
                 }
                 var enemycn = db.enemy[enemyid]
                 var enemyen = db.enemyEN[enemyid]
-                var enemyName 
-                
+                var enemyName
+
                 var chara = db.chars[mission.paramList[2]]
                 console.log(enemycn)
                 var skill = chara.skills[skillid]
@@ -2618,7 +2617,7 @@
                     skill = skill.skillId
                     skillname = db.skillsTL[skill]?db.skillsTL[skill].name:currSkill.name;
                 }
-                
+
                 switch (splitreq[0]) {
                     case "DEATHDETAIL":
                         objective = "Kill"
@@ -2650,7 +2649,7 @@
                     tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
                     </br>${objective} <@ba.kw>${mission.paramList[4]}</> enemies using <@ba.kw> <img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skill}.png" style="max-width:20px;margin:2px"> Skill ${enemyid} (${skillname})</>
-                    
+
                     </br>Using Non-Borrowed <@ba.kw>${chara.appellation}</>
                     `
                 }else if(chara2){
@@ -2659,7 +2658,7 @@
                             tl=`
                                 Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
                                 </br>${objective} <@ba.kw>${mission.paramList[4]}</> enemies
-                                using any skills of Non-Borrowed <@ba.kw>${chara.appellation}</> 
+                                using any skills of Non-Borrowed <@ba.kw>${chara.appellation}</>
                             `
                     }
                 }
@@ -2674,20 +2673,20 @@
             case "EquipmentEventBattleMore" :
                 var splitreq = mission.paramList[2].split(",")
 
-                var enemytype 
+                var enemytype
 
                 switch (splitreq[2]) {
                     case "drone":
                         enemytype = "Drones"
                         break;
-                
+
                     default:
                         break;
                 }
                 tl=`
                     Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
                     Kill At least <@ba.kw>${mission.paramList[3]}</> <@ba.kw>${enemytype}</> </br>
-                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[1]].appellation}</> 
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[1]].appellation}</>
                     `
                 break;
             case "EquipmentSkillCastBattle" :
@@ -2710,7 +2709,7 @@
                 tl=`
                     Complete <@ba.kw>${mission.paramList[0]}</> stages </br>
                     ${skilltext}
-                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[3]].appellation}</> 
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[3]].appellation}</>
                     `
                 break;
             case "EquipmentDeployCharOrder" :
@@ -2810,8 +2809,8 @@
         //skin problem
         // console.log(currskin)
         // var skinname = currskin.split(opdataFull.id)[1]?currskin.split(opdataFull.id)[1]:""
-        // // var skinicon = 
-        
+        // // var skinicon =
+
         // console.log(tokenname+skinname)
         console.log(tokenfulldata)
         var currlevel = globallevel[globalelite]
@@ -2837,7 +2836,7 @@
                     }
                 }
             }
-            
+
         }
 
         console.log(`Elite : ${globalelite} - Level : ${currlevel}`)
@@ -2849,14 +2848,14 @@
             <div class='stats'>
                 <div class='stats-l'>Redeploy Time</div><div class='stats-r' id='summon-respawnTime'>${statsInterpolation(tokenfulldata,'respawnTime',currlevel,currelite)} <div style='display:inline;font-size:10px'> Sec</div></div>
             </div>
-            
+
             <div class='stats'>
                 <div class='stats-l'>Attack Power</div><div class='stats-r' id='summon-atk'>${statsInterpolation(tokenfulldata,'atk',currlevel,currelite)}</div>
             </div>
             <div class='stats'>
                 <div class='stats-l'>Cost</div><div class='stats-r' id='summon-cost'>${statsInterpolation(tokenfulldata,'cost',currlevel,currelite)}</div>
             </div>
-            
+
             <div class='stats'>
                 <div class='stats-l'>Defense</div><div class='stats-r' id='summon-def'>${statsInterpolation(tokenfulldata,'def',currlevel,currelite)}</div>
             </div>
@@ -2910,7 +2909,7 @@
             <div style="background:#333;padding:6px 5px 6px 5px;text-align:center">
             <img class='equip-image' id='equip${i}image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/equip/icon/${currequip.uniEquipIcon}.png' style='width:100%;max-width:500px;object-fit:contain'>
             </div>
-            
+
             <div style="background:#222;padding:6px 5px 6px 5px;font-size:20px;text-align:center">Basic Information</div>
             <div style="background:#333;padding:6px 5px 6px 5px;">${currequipEN?currequipEN.uniEquipDesc.replace(/\n/g,"</br>"):currequip.uniEquipDesc.replace(/\n/g,"</br>")}</div>
         `)
@@ -2936,7 +2935,7 @@
         var statsCollapsible = $("<div id='elite"+i+"StatsCollapsible' class='eliteStatsContainer ak-shadow greybackground'></div>");
         var eliteCost = GetEliteCost(i,opdataFull)
         var materialist = []
-        
+
         if(eliteCost){
             eliteCost.forEach(materials => {
                 if (materials){
@@ -2959,7 +2958,7 @@
         // var statsLevelHeader = $(`<span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>`)
         // var statsLevelSlider = $(`<input type='range' value='1' min='1' max='${keyframes[1].level}' name='levelStats' id='elite${i}LevelSlider' oninput='changeEliteLevel(this,${i},${keyframes[1].level})' style='margin-top:20px;width:60%;' class='statlevelInput ${lefthand=="true"?"lefthand-statlevelInput":"righthand-statlevelInput"}'></input>`);
         // var statsLevelDisplay = $(`<div class='form-group stat-input ${lefthand=="true"?"lefthand-stat-input":"righthand-stat-input"}' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite${i}LevelDisplay' onchange='changeEliteLevel(this,${i},${keyframes[1].level})' style='line-height:1.1' type='number' value='1' min='1' max='${keyframes[1].level}'></div>`)
-        
+
         var statsLevelAll = $(`
         <div style='text-align:center'>
         <span class='stat-level-header ${lefthand=="true"?"lefthand-stat-level-header":"righthand-stat-level-header"} ' style=''>Level</span>
@@ -2967,7 +2966,7 @@
         <div class='form-group stat-input ${lefthand=="true"?"lefthand-stat-input":"righthand-stat-input"}' style='display:inline-block;vertical-align:middle;'><input class='form-control' id='elite${i}LevelDisplay' onchange='changeEliteLevel(this,${i},${keyframes[1].level})' style='line-height:1.1' type='number' value='1' min='1' max='${keyframes[1].level}'></div>
         </div>
         `)
-        
+
         var statsTable = $(`
         <div id='elite${i}Stats' class='${lefthand=="true"?"left-hand":"right-hand"} statlevelcontainer'>
             <table id='elite${i}StatsTable'>
@@ -2975,10 +2974,10 @@
 
                     <div class='stats'><div class='stats-l'>Maximum HP</div><div class='stats-r' id='elite${i}maxHp'></div></div>
                     <div class='stats'><div class='stats-l'>Redeploy Time</div><div class='stats-r' id='elite${i}respawnTime'></div></div>
-                    
+
                     <div class='stats'><div class='stats-l'>Attack Power</div><div class='stats-r' id='elite${i}atk'></div></div>
                     <div class='stats'><div class='stats-l'>Cost</div><div class='stats-r' id='elite${i}cost'></div></div>
-                    
+
                     <div class='stats'><div class='stats-l'>Defense</div><div class='stats-r' id='elite${i}def'></div></div>
                     <div class='stats'><div class='stats-l'>Block</div><div class='stats-r' id='elite${i}blockCnt'></div></div>
 
@@ -2992,7 +2991,7 @@
                 </div>
                 </div>
         `);
-        
+
         statsCollapsible.append(statsLevelAll);
         statsCollapsible.append(statsTable);
 
@@ -3027,7 +3026,7 @@
     //     Object.keys(db.charword).forEach(element => {
     //         if(db.charword[element]){
     //             var curraudio = db.charword[element]
-                
+
     //             if(curraudio.charId&&curraudio.charId == opdataFull.id){
     //                 curraudiolist.push(curraudio)
     //                 puretextlist.push(`${curraudio.charId},${opdataFull.appellation},${curraudio.voiceTitle},${db.storytextTL[curraudio.voiceTitle]?db.storytextTL[curraudio.voiceTitle]:""},"${curraudio.voiceText}"`)
@@ -3060,10 +3059,10 @@
             // }
             // else if(db.charword[element]){
             //     var curraudio = db.charword[element]
-                
+
             // }
             if(curraudio){
-                
+
                 if(curraudio.charId&&curraudio.wordKey == currVoiceID){
                     if(db.charwordEN.charWords[element]){
                         curraudio = db.charwordEN.charWords[element]
@@ -3083,7 +3082,7 @@
         $('#opaudioproofreader').empty()
         curraudiolist.forEach(element => {
             var curraudio  =`
-            JP <audio preload="metadata" controls style="margin-top:5px"> <source src="${preDir}voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+            JP <audio preload="metadata" controls style="margin-top:5px"> <source src="${preDir}voice/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio>
             <a href="${preDir}voice/${element.voiceAsset}.mp3"  target="_blank">
             <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>`
             // if(LinkCheck(`https://raw.githubusercontent.com/Aceship/Arknight-voices/main/voice/${element.voiceAsset}.mp3`)){
@@ -3095,7 +3094,7 @@
             // console.log(currTL)
             // console.log(currTL.voiceline[element.voiceTitle])
             // console.log(voiceTL)
-            
+
 
             var audiolist = []
             Object.keys(voiceDict.dict).forEach(dict => {
@@ -3119,7 +3118,7 @@
                             audiolist.push(`
                             <div style="display:inline-block;padding-top:15px;vertical-align:top;width:20px" >JP0</div>
                             <div style="display:inline-block">
-                            <audio preload="metadata" controls style="margin-top:10px"> <source src="${preDir}voice_old/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+                            <audio preload="metadata" controls style="margin-top:10px"> <source src="${preDir}voice_old/${element.voiceAsset}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio>
                             <a href="${preDir}voice_old/${element.voiceAsset}.mp3"  target="_blank">
                             <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
                             </div>`)
@@ -3143,34 +3142,34 @@
                         lang = dict
                         break;
                 }
-                
+
                 audiolist.push(`
                 <div style="display:inline-block;padding-top:15px;vertical-align:top;width:20px" >${lang}</div>
                 <div style="display:inline-block">
-                <audio preload="metadata" controls style="margin-top:10px"> <source src="${preDir}${foldername.toLowerCase()}/${wordKey.toLowerCase()}/${element.voiceId}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio> 
+                <audio preload="metadata" controls style="margin-top:10px"> <source src="${preDir}${foldername.toLowerCase()}/${wordKey.toLowerCase()}/${element.voiceId}.mp3" type="audio/mp3">Your browser does not support the audio tag.</audio>
                 <a href="${preDir}${foldername.toLowerCase()}/${wordKey.toLowerCase()}/${element.voiceId}.mp3"  target="_blank">
                 <i class='fa fa-download' style='font-size:30px;vertical-align:top;padding-top:17px'></i></a>
                 </div>`)
-                
+
             });
 
             var currhtml = $(`
             <table class="story-table">
             <th>${db.storytextTL[element.voiceTitle]?db.storytextTL[element.voiceTitle]:element.voiceTitle}</th>
             <tr><td style="text-align:center;background:#1a1a1a;vertical-align:middle"><div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:0px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${element.voiceAsset.split("_").slice(-1)[0] }</div>
-            
-            ${audiolist.join(`<tr><td style="text-align:center;background:#1a1a1a;vertical-align:middle">`)} 
-            
+
+            ${audiolist.join(`<tr><td style="text-align:center;background:#1a1a1a;vertical-align:middle">`)}
+
             </td></tr>
             <tr><td style="height:10px"></td></tr>
             <tr><td>${voiceTL}</td></tr>
             <tr><td style="height:10px"></td></tr>
             </table>
-            
+
             `)
             $('#opaudiocontent').append($(currhtml))
         });
-        
+
         if(currTL){
             if(currTL.translator){
                 $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">${currTL.translator}</div>`)
@@ -3182,7 +3181,7 @@
         if(isEN){
             $('#opaudiotranslator').html(`<div class="btn-infoleft">Voiceline Translation</div><div class="btn-inforight">Official EN Arknight</div>`)
         }
-        
+
         Object.keys(voiceDict.dict).forEach(dict => {
             var lang = ""
             var content = voiceDict.dict[dict].cvName
@@ -3228,11 +3227,11 @@
             return "logo_"+opdataFull.groupId
         else if(opdataFull.nationId)
             return "logo_"+opdataFull.nationId
-        
+
         return null
     }
     function GetLogoInfo (opdataFull){
-        var faction 
+        var faction
         if(opdataFull.teamId)
             faction= opdataFull.teamId
         else if(opdataFull.groupId)
@@ -3241,17 +3240,17 @@
             faction= opdataFull.nationId
 
         // console.log(faction)
-        
+
         var factionname = db.handbookTeam[faction]
-        // console.log(factionname)    
+        // console.log(factionname)
         if (factionname) return factionname
-        
+
         return null
     }
     function GetStory (opdataFull){
         // console.log(opdataFull)
         let currStory = db.handbookInfo.handbookDict[opdataFull.id]
-        var isEN 
+        var isEN
         if(db.handbookInfoEN.handbookDict[opdataFull.id]){
             currStory = db.handbookInfoEN.handbookDict[opdataFull.id]
             isEN = true
@@ -3278,7 +3277,7 @@
              });
         }
         for(var i = 0 ; i < IllustratorList.length; i++){
-            if (i > 0) 
+            if (i > 0)
             {
                 illustrator += " & "
             }
@@ -3290,7 +3289,7 @@
         var voiceDict = db.charword.voiceLangDict[opdataFull.id]
         console.log(voiceDict)
         var jpvoice
-        var cnvoice 
+        var cnvoice
         if (voiceDict.dict.JP){
             $('#voiceactor-1').html(` JP`)
             jpvoice = voiceDict.dict.JP.cvName
@@ -3308,7 +3307,7 @@
         if(voiceActor !="Unknown"){
             $('#name-voiceactor').html(`<a href="https://www.google.com/search?q=Voice+Actor+${voiceActor}"  target="_blank">${voiceActor}</a>`)
         }
-        
+
         let puretext = []
         let textTL = []
         let islong =false
@@ -3320,15 +3319,15 @@
 
         var recruitcheck = db.charsEN[opdataFull.id]
         if(!recruitcheck) recruitcheck = opdataFull
-        
+
         //check potential token
         var tokencheck
         var tokencheck = db.item_tableEN.items[opdataFull.potentialItemId]
         if(!tokencheck) tokencheck = db.item_table.items[opdataFull.potentialItemId]
         console.log(tokencheck)
 
-        
-        // post both 
+
+        // post both
         textTL.push(`<div class="col-12 ${(!tokencheck?"col-sm-12":"col-sm-6")} top-buffer storysplit">
                         <table class="story-table"><th colspan=2>Recruitment Contract</th>
                         <tr>
@@ -3350,7 +3349,7 @@
                     </table>
                     </div>`)
         }
-        
+
 
 
         if(currStory.storyTextAudio){
@@ -3372,7 +3371,7 @@
                             var infoTitle = check.exec(info)
                             if(infoTitle){
                                 var title = db.storytextTL[infoTitle[2]]?db.storytextTL[infoTitle[2]]:infoTitle[2]
-                                
+
                                 var content = infoTitle[4]
                                 // console.log(infoTitle)
                                 switch (infoTitle[2]) {
@@ -3416,7 +3415,7 @@
                                             // console.log(num)
                                             count++
                                         });
-                                        
+
                                         if(num% 1 != 0){
                                             if(num<1){
                                                 num = "Half a"
@@ -3430,10 +3429,10 @@
 
                                     case "出厂日":
                                     case "生日":content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:BirthdayText(content);break;
-                                    case "矿石病感染情况": 
-                                    
+                                    case "矿石病感染情况":
+
                                     if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id]["originiumInfection"]&&content){
-                                        
+
                                         content = db.charastoryTL[opdataFull.id]["originiumInfection"]
                                     }else if(content){
                                         var datasplit = content.split("，")
@@ -3444,14 +3443,14 @@
                                         });
                                         content = arraycontent.join(", ")
                                     }else {
-                                        
+
                                         content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content.replace("约","Approximately ");
                                     }
-                                    
+
                                     ;break;
-                                    default: 
+                                    default:
                                     // console.log("WEEI" +titlebefore)
-                                    
+
                                         content = db.storytextTL[content.trim()]?db.storytextTL[content.trim()]:content.replace("约","Approximately ");
                                 }
                                 // console.log(title)
@@ -3473,7 +3472,7 @@
                                     datasplit.forEach(originiumdesc => {
                                         content.push(db.storytextTL[originiumdesc]?db.storytextTL[originiumdesc]:originiumdesc)
                                     });
-                                    
+
                                     webTL.push(`<tr><td colspan=2>${content.join(", ")}</td> </tr>`)
                                 }
                                 // else{
@@ -3518,12 +3517,12 @@
                     // console.log(basicInfoTL.join("\n"))
                     ;break;
                 default:
-                    var currstory 
+                    var currstory
                     // console.log(storySection.storyTitle)
                     // console.log(db.charastoryTL[opdataFull.id])
-                    if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id][storySection.storyTitle]) 
+                    if(db.charastoryTL[opdataFull.id]&&db.charastoryTL[opdataFull.id][storySection.storyTitle])
                         currStory = db.charastoryTL[opdataFull.id][storySection.storyTitle].split("\n").join("</br>")
-                    else 
+                    else
                         currStory = (storySection.stories[0].storyText.replace(/■/g,"■ ")).split("\n").join("</br>")
                     // console.log(currstory)
                     textTL.push(`
@@ -3532,12 +3531,12 @@
                     <th colspan=2>${db.storytextTL[storySection.storyTitle]?db.storytextTL[storySection.storyTitle]:storySection.storyTitle}</th>
                     <tr><td>${currStory}</td></tr></table>
                     </div>`)
-                    // textTL.push(`<h2>${storySection.storyTitle}</h2>`) 
-                    // textTL.push(`</br>`) 
+                    // textTL.push(`<h2>${storySection.storyTitle}</h2>`)
+                    // textTL.push(`</br>`)
                     // textTL.push()
                     // console.log(`---------${storySection.storyTitle}-----------`)
                     // console.log(storySection.stories[0].storyText)
-                    
+
                 }
             });
         }
@@ -3629,7 +3628,7 @@
             if(element.name.includes("_chr_"+opdataFull.id.split("_")[2])){
                 element.sounds.forEach(soundfx => {
                     var fxname = soundfx.asset.split("/")
-                    
+
                     var fxdir = soundfx.asset.split("/").splice(2,2).join("/").toLowerCase()+"/"+fxname[fxname.length-1]
                     console.log(fxdir)
                     filteredFX.push({name:fxname[fxname.length-1],dataname:element.name,dir:fxdir,type:"3"})
@@ -3644,7 +3643,7 @@
                 });
             }
 
-            
+
         });
         console.log(filteredFX)
         filteredFX =filteredFX.sort(function(a,b){
@@ -3671,7 +3670,7 @@
             <div id="audio-displaynum" style="position: absolute;font-weight: 700;font-size:10px;margin-top:-50px;color:#999;background:#222;padding:0px;padding-left:2px;padding-right:2px;right:18px">${fxname}</div>
             </td></tr>
             </table>
-            
+
             `)
             $('#opsfxcontent').append($(currhtml))
             sfxnum +=1
@@ -3727,7 +3726,7 @@
             return
         }
         riicList = riicList.sort((a,b)=>{
-            var calc = 0 
+            var calc = 0
             calc += (PhaseConvert(a.phase) - PhaseConvert(b.phase))*100
             + (a.level - b.level)*1
 
@@ -3744,9 +3743,9 @@
                 imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
             if(currlevel >1)
                 imagereq.push(`<span style='font-size:11px;margin-left:-2px'><span style='font-size:6px'>Lv.</span>${currlevel}</span>`)
-            
+
                 riicTab.push(`
-            <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} '>                     
+            <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} '>
                 <button class='btn horiz-small nav-link talentlink' data-toggle='pill' id='tabriic${currphase}-${currlevel}' href="#riic${currphase}-${currlevel}" style="padding:0px 0px;margin:0px 2px 0px 0px;background:#666;width:50px">
                 ${imagereq.join("")}
                 </button>
@@ -3769,7 +3768,7 @@
                     activeLevel= currlevel
                 }
             }
-            
+
 
 
             everybuff.forEach(eachbuff => {
@@ -3815,14 +3814,14 @@
                 `)
             });
             riiccontent.push(`
-                <div class='tab-pane container' id='riic${currphase}-${currlevel}'>     
+                <div class='tab-pane container' id='riic${currphase}-${currlevel}'>
                     ${riicskills.join("")}
                 </div>
             `)
         })
 
         var combinehtml =`
-            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Infrastructure Skills</div> 
+            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Infrastructure Skills</div>
                 <div class="ak-shadow" style="margin-bottom:8px;padding:0px;padding-bottom:2px;background:#666">
                     <div style="width:100%;background:#444;display:inline-flex;justify-content:space-between">
                         <ul class='nav nav-pills' id='riic-tabs' style="margin: 0px 0px 0px 0px;width:unset">
@@ -3855,11 +3854,11 @@
             });
         });
 
-        
-        
+
+
         riicList.forEach(eachcat =>{
             // checkphase.list.push(eachbuffdata.buffId)
-            
+
             everybuff.forEach(eachbuff => {
                 var sortedbuff = eachbuff.sort((a,b)=>{
                     if(a.cond.phase<b.cond.phase) return 1
@@ -3882,7 +3881,7 @@
         })
         console.log(riicList)
         var htmlcomb = []
-        
+
         riicList.forEach(eachcat => {
             var eachtab = []
             eachcat.list.forEach(eachbuff => {
@@ -3900,7 +3899,7 @@
                     </div>`)
                     // console.log(`onclick="ShowRiicDetail('${currname}','${currdesc}','https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/infrastructure/skill/${currbuff.skillIcon}.png')"`)
             });
-            
+
             var imagereq = []
                 if(eachcat.level >1)
                 imagereq.push(`Lv.${eachcat.level}`)
@@ -3923,22 +3922,22 @@
                     <div id="op-riicdetail-name" style="display:inline-block;color:#ddd;font-size:13px;background:#333;padding:4px 5px 4px 12px;border-radius:0px 6px 6px 0px;margin:7px 2px 2px 30px;z-index:1"></div>
                 </div>
                 <div style="display:inline-block;margin:4px">
-                    
+
                     <div id="op-riicdetail-desc" style="font-size:11px;"></div>
                 </div>
             </div>
             </div>
-            
+
         </div>
         `
         console.log()
-        
+
         // console.log(htmlcomb.join(""))
         if (riicList.length>0)
         return combinehtml
         else
         return ""
-        
+
     }
 
     function ShowRiicDetail(id,title,desc,img){
@@ -4033,9 +4032,9 @@
                     imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${currphase}.png" style="width:18px;margin-top:-5px">`)
                 if(currlevel >1)
                     imagereq.push(`<span style='font-size:11px;margin-left:-2px'><span style='font-size:6px'>Lv.</span>${currlevel}</span>`)
-                
+
                 talentTab.push(`
-                <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} '>                     
+                <li class='nav-item' style="" title='Elite ${currphase} | Level ${currlevel} '>
                     <button class='btn horiz-small nav-link talentlink' data-toggle='pill' id='tabtalent${currphase}-${currlevel}' onclick='TalentShow(${currphase},${currlevel},-1)' style="padding:0px 0px;margin:0px 2px 0px 0px;background:#666;width:50px">
                     ${imagereq.join("")}
                     </button>
@@ -4043,11 +4042,11 @@
                 `)
                 elitelevel.push(elreq)
             }
-            
+
 
             var imagereq = []
             if(!potential.includes(currpotent)){
-                
+
                 potential.push(currpotent)
             }
         });
@@ -4060,7 +4059,7 @@
             if(currpotent+1 >0)
                 imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/potential/${currpotent+1}.png" style="width:18px"> ${currpotent+1}`)
             talentTab2.push(`
-            <li class='nav-item' style="" title='Potential ${currpotent+1}'>                     
+            <li class='nav-item' style="" title='Potential ${currpotent+1}'>
                 <button class='btn horiz-small nav-link talentlink talenttabpot' data-toggle='pill' id='tabtalent2${currpotent}' onclick='TalentShow(-1,-1,${currpotent})' style="padding:0px 0px;margin:0px 0px 0px 2px;background:#666;width:50px">
                 ${imagereq.join("")}
                 </button>
@@ -4076,7 +4075,7 @@
             // var talentGroup = []
             talentObject.talents[talenttype]=[]
             for(j=0;j<currTalent.candidates.length;j++){
-                var currCandidate = currTalent.candidates[j] 
+                var currCandidate = currTalent.candidates[j]
                 var currCandidateTL = currTalentTL?currTalentTL[j]:undefined
                 // talentGroup.push({talent:currCandidate,talentTL:currCandidateTL})
                 var currlevel = parseInt(currCandidate.unlockCondition.level)
@@ -4087,7 +4086,7 @@
                         talentObject.html[`${requirements[0]}-${requirements[1]}-${requirements[2]}`].talents[talenttype]={talent:currCandidate,talentTL:currCandidateTL}
                     }
                 });
-                
+
             }
             talenttype+=1
             // combTalents.push(talentGroup)
@@ -4097,7 +4096,7 @@
         Object.keys(talentObject.html).forEach(key => {
             var currhtml = talentObject.html[key]
             talenthtml += `
-            <div class='tab-pane container alltalentinfo' id='talent${key}'>    
+            <div class='tab-pane container alltalentinfo' id='talent${key}'>
             `
             Object.keys(currhtml.talents).forEach(eachtalent => {
                 var currtalent = currhtml.talents[eachtalent]
@@ -4116,7 +4115,7 @@
         // console.log(talentObject)
         $("#op-talentlist").html(`
         <div style="padding-top:10px">
-            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talents</div> 
+            <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talents</div>
                 <div class="ak-shadow" style="margin-bottom:8px;padding:0px;padding-bottom:2px;background:#666">
                     <div style="width:100%;background:#444;display:inline-flex;justify-content:space-between">
                         <ul class='nav nav-pills' id='talent-tabs' style="margin: 0px 0px 0px 0px;width:unset">
@@ -4131,9 +4130,9 @@
                     </div>
                 </div>
         </div>
-        `) 
+        `)
 
-        //check  active 
+        //check  active
         TalentShow(activeElite,activeLevel,activePotential)
         $(`#tabtalent${activeElite}-${activeLevel}`).toggleClass("active")
         $(`#tabtalent2${activePotential}`).toggleClass("active")
@@ -4147,7 +4146,7 @@
         if(potential == -1) {
             potential = talentValue[2]
         }
-        
+
         // console.log(talentLimit)
         // console.log(`${elite}-${level}-${potential}`)
         // console.log(talentLimit.includes(`${elite}-${level}-${potential}`))
@@ -4180,17 +4179,196 @@
 
             }
         }
-        
 
-        
 
-        
+
+
+
         // $(`#tabtalent${elite}-${level}`).toggleClass("active")
-        
 
-        
+
+
 
         talentValue = [elite,level,potential]
+    }
+
+    function GetModuleTalent(DataBundle,moduleKey,modulenum,phase,id){
+        var potentialTab = []
+        var activePotential = 0
+        var ModuleTalenthtml = ''
+        var TalentDataBundle = null
+        var tempBlackboard=[[],[],null]
+
+        for(i=0;i<DataBundle.length;i++){
+            if (DataBundle[i].target.includes('TALENT')){
+                for(j=0;j<DataBundle[i].addOrOverrideTalentDataBundle.candidates.length;j++){
+                    tempBlackboard[j].push(...DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].blackboard)
+                    if(DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].rangeId != null) tempBlackboard[2]=DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].rangeId
+                    if(DataBundle[i].addOrOverrideTalentDataBundle.candidates.length==1) tempBlackboard[1].push(...DataBundle[i].addOrOverrideTalentDataBundle.candidates[j].blackboard)
+                }
+                if(DataBundle[i].addOrOverrideTalentDataBundle.candidates[0].name!=null && DataBundle[i].isToken == false && TalentDataBundle == null) {
+                    TalentDataBundle=DataBundle[i].addOrOverrideTalentDataBundle.candidates
+                }
+            }
+        }
+        for(k=0;k<TalentDataBundle.length;k++){
+            TalentDataBundle[k].blackboard.push(...tempBlackboard[k])
+            TalentDataBundle[k].blackboard=[...new Set(TalentDataBundle[k].blackboard)]
+            if(tempBlackboard[2] != null) TalentDataBundle[k].rangeId=tempBlackboard[2]
+        }
+
+        if (TalentDataBundle[0].talentIndex==-1) var upgradeTalent='Addition Talent'
+        else var upgradeTalent='Talent Upgrade'
+
+        for(i=0;i<TalentDataBundle.length;i++) {
+            var imagereq = []
+            var currpotent = parseInt(TalentDataBundle[i].requiredPotentialRank)
+            activePotential = currpotent
+            if(currpotent+1 >0)
+                imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/potential/${currpotent+1}.png" style="width:18px"> ${currpotent+1}`)
+            potentialTab.push(`
+            <li class='nav-item' style="" title='Potential ${currpotent+1}'>
+                <button class='btn horiz-small nav-link talentlink Moduletalenttabpot ${(currpotent!=0 ? '' : 'active')}' data-toggle='pill' id='Modtabtalent-${modulenum}-${phase}-${currpotent}' onclick='ModuleTalentShow(${modulenum},${phase},${currpotent})' style="padding:0px 0px;margin:0px 0px 0px 2px;background:#666;width:50px">
+                ${imagereq.join("")}
+                </button>
+            </li>
+            `)
+
+            var currTalent = TalentDataBundle[i]
+            var currTalentTL = db.TempModuletalentsTL[moduleKey]?db.TempModuletalentsTL[moduleKey][phase-1][i]:undefined
+            var currTalentEN = undefined
+
+            if(moduleKey in db.battle_equipEN){
+                for(part=0;part<db.battle_equipEN[moduleKey].phases[phase].parts.length;part++){
+                    var EN =db.battle_equipEN[moduleKey].phases[phase].parts[part]
+                    if(phase>0  &&EN.addOrOverrideTalentDataBundle.candidates!==null&& EN.isToken==false&&part.target != "DISPLAY"){
+                        if(EN.addOrOverrideTalentDataBundle.candidates[0].name!==null){
+                         currTalentEN = db.battle_equipEN[moduleKey].phases[phase].parts[part].addOrOverrideTalentDataBundle.candidates[i]
+                         break
+                         }
+                    }
+                }
+            }
+
+            console.log(currTalent)
+            console.log(currTalentTL)
+            console.log(currTalentEN)
+
+            ModuleTalenthtml += `
+                <div class='tab-pane container ModuleTalentinfo ${(currpotent==0?'active':'')}' id='ModuleTalent-${modulenum}-${phase}-${currpotent}'>
+                    ${ModuleTalentParse(currTalent,currTalentTL,currTalentEN,modulenum,phase,currpotent)}
+                </div>
+            `
+        }
+
+        return `
+            <div style="padding-top:10px">
+                <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">
+                    ${upgradeTalent}
+                </div>
+                <div class="ak-shadow" style="margin-bottom:8px;padding:0px;padding-bottom:2px;background:#666">
+                    <div style="width:100%;background:#444;display:inline-flex;justify-content:space-between">
+                        <ul class='nav nav-pills' id='potential-tabs' style="margin: 0px 0px 0px 0px;width:unset;justify-content:right">
+                            ${potentialTab.join("")}
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="ModuleTalent-contents-${modulenum}-${phase}" style="margin: 2px 0px 2px 0px;">
+                        ${ModuleTalenthtml}
+                    </div>
+                </div>
+            </div>
+            `
+    }
+
+    function ModuleTalentParse(CN,TL,EN,modulenum,phase,currpotent){
+        var imagereq = []
+        if(CN.requiredPotentialRank+1>0)
+            imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/potential/${CN.requiredPotentialRank+1}.png" style="width:20px" title="Potential ${CN.requiredPotentialRank+1}">`)
+        var currModuleTalentName = EN?EN.name:TL?TL.name:CN.name
+        var currModuleTalentDesc = EN?EN.upgradeDescription:TL?TL.upgradeDescription:CN.upgradeDescription
+
+        currModuleTalentDesc=ChangeDescriptionColor2(currModuleTalentDesc.replace(/\<([A-z]+)\>/g,"&lt;"+"$1"+'&gt;'))
+
+        var isModuleTalentRange = CN.rangeId
+        var Moduletalentdetails = []
+        CN.blackboard.forEach(Stat=>{
+            var Moduletalentjson={}
+            Moduletalentjson.name = db.effect[Stat.key]?db.effect[Stat.key]:Stat.key
+            Moduletalentjson.key = Stat.key
+            Moduletalentjson.value = Stat.value
+            Moduletalentdetails.push(Moduletalentjson)
+        })
+
+        var Moduledetailtable = []
+        var ModuledetailHeader = ''
+
+        if(Moduletalentdetails.length>0){
+            var Moduletalenthtmldetail = ""
+
+            Moduletalentdetails.forEach(currdetails => {
+                Moduletalenthtmldetail+=`
+                <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
+                        ${titledMaker2(currdetails.name,currdetails.key)}
+                        ${currdetails.value}
+                </div>`
+            });
+
+            ModuledetailHeader = `<button id='Moduletalentdetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler2("Moduletalentdetailcontent-${modulenum}-${phase}-${currpotent}")'style="display:inline-block;color:#aaa;text-align:center;background:#333;padding:2px;font-size:12px">
+                                    "Talent Details"
+                                    <i class="fas fa-caret-down">
+                                    </i>
+                                  </button>`
+            Moduledetailtable = `
+                <div id='Moduletalentdetailcontent-${modulenum}-${phase}-${currpotent}' class="ak-shadow Moduletalentdetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
+                    ${Moduletalenthtmldetail}
+                </div>
+            `
+        }
+        else Moduledetailtable=""
+
+
+        var info = `<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px">
+                        ${imagereq.join("")}
+                    </div>`
+        if(imagereq.length==0) info = ""
+
+        return (`
+        <div style="background:#444;margin:4px;padding:2px;padding-top:2px;background:#444;border-radius:2px;">
+            <div style="vertical-align:top;${isModuleTalentRange?`width:71%;display:inline-block;padding-right:0px;margin-right:-6px;height:100%`:""}">
+                <div style="color:#222;font-size:13px;background:#999;display:inline-block;padding:2px;border-radius:2px">
+                    ${currModuleTalentName}
+                    ${info}
+                </div>
+                <div style="font-size:13px; font-family:'Source Sans Pro'">
+                    <div class="ak-line" style="color:#999">
+                        ${currModuleTalentDesc.replace(/<\/br>/g, '<div class="ak-newline"></div>')}
+                    </div>
+                    ${ModuledetailHeader}
+                    ${Moduledetailtable}
+                </div>
+            </div>
+            ${isModuleTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">
+                                        ${rangeMaker(CN.rangeId,false)}
+                                   </div>`:""}
+        </div>
+        `)
+    }
+
+    function ModuleTalentShow(modulenum,phase,potential){
+
+         $(`.Moduletalentdetailcontent`).removeClass("active")
+
+        if (ModuletalentValue[modulenum-2][phase-1]!=potential){
+
+            $(`#Modtabtalent-${modulenum}-${phase}-${ModuletalentValue[modulenum-2][phase-1]}`).removeClass("active")
+            $(`#ModuleTalent-${modulenum}-${phase}-${ModuletalentValue[modulenum-2][phase-1]}`).removeClass("active")
+
+            $(`#Modtabtalent-${modulenum}-${phase}-${potential}`).addClass("active")
+            $(`#ModuleTalent-${modulenum}-${phase}-${potential}`).addClass("active")
+
+            ModuletalentValue[modulenum-2][phase-1]=potential
+            }
+
     }
 
     function TalentParse2(eachtalent,talentnum){
@@ -4210,20 +4388,20 @@
         })
         // console.log(eachtalent.talent.name)
         var isTalentRange = eachtalent.talent.rangeId
-        var blacklist = 
+        var blacklist =
         ["新人教官"]
         if(blacklist.includes(eachtalent.talent.name)){
             isTalentRange = undefined
         }
         // console.log(eachtalent)
-        var isTalentRangeExtend 
+        var isTalentRangeExtend
         var talentdetails = []
         eachtalent.talent.blackboard.forEach(talentInfo=>{
             var talentjson={}
             talentjson.name = db.effect[talentInfo.key]?db.effect[talentInfo.key]:talentInfo.key
             talentjson.key = talentInfo.key
             talentjson.value = talentInfo.value
-            if(talentInfo.key=="ability_range_forward_extend"){      
+            if(talentInfo.key=="ability_range_forward_extend"){
                 isTalentRangeExtend = rangeMaker(opdataFull.phases[0].rangeId,true,talentjson.value)
             }
             talentdetails.push(talentjson)
@@ -4232,20 +4410,20 @@
         var detailtable = []
         var detailHeader = ''
         // console.log(talentdetails)
-        
+
         if(talentdetails.length>0){
             var talenthtmldetail = ""
-            
+
             talentdetails.forEach(currdetails => {
-                
+
                 talenthtmldetail+=`
                 <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
                         ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
                 </div>`
             });
             detailHeader = `<button id='talentdetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler2("talentdetailcontent${talentnum}")'style="display:inline-block;color:#aaa;text-align:center;background:#333;padding:2px;font-size:12px">Talent Details <i class="fas fa-caret-down"></i></button>`
-            detailtable = ` 
-                <div id='talentdetailcontent${talentnum}' class="ak-shadow talentdetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
+            detailtable = `
+                <div id='talentdetailcontent${talentnum}' class="ak-shadow talentdetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
                     ${talenthtmldetail}
                 </div>
             `
@@ -4266,10 +4444,10 @@
             <div class="ak-line">
             ${currTalentDesc.replace(/<\/br>/g, '<div class="ak-newline"></div>')}
             </div>
-            ${detailHeader} 
+            ${detailHeader}
             ${detailtable}
             </div>
-            
+
         </div>
             ${isTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
             ${isTalentRangeExtend?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${isTalentRangeExtend}</div>`:""}
@@ -4281,8 +4459,8 @@
     //     var talent = []
     //     var talentnum = 0
     //     combTalents.forEach(combcandidate => {
-    //         let talentlist = [] 
-            
+    //         let talentlist = []
+
     //         combcandidate.forEach(eachtalent => {
     //             var imagereq = []
     //             if(eachtalent.talent.unlockCondition.level >1)
@@ -4313,20 +4491,20 @@
     //             var detailtable = []
     //             var detailHeader = ''
     //             // console.log(talentdetails)
-                
+
     //             if(talentdetails.length>0){
     //                 var talenthtmldetail = ""
-                    
+
     //                 talentdetails.forEach(currdetails => {
-                        
+
     //                     talenthtmldetail+=`
     //                     <div style="background:#444;margin:4px;padding:2px;padding-top:8px;background:#444;border-radius:2px;color: #999999">
     //                             ${titledMaker2(currdetails.name,currdetails.key)}  ${currdetails.value}
     //                     </div>`
     //                 });
     //                 detailHeader = `<button id='talentdetailtitle' class='btn btn-sm btn-block ak-btn' onclick='SlideToggler2("talentdetailcontent${talentnum}")'style="display:inline-block;color:#aaa;text-align:center;background:#333;padding:2px;font-size:12px">Talent Details <i class="fas fa-caret-down"></i></button>`
-    //                 detailtable = ` 
-    //                     <div id='talentdetailcontent${talentnum}' class="ak-shadow talentdetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">    
+    //                 detailtable = `
+    //                     <div id='talentdetailcontent${talentnum}' class="ak-shadow talentdetailcontent" style="display:none;margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
     //                         ${talenthtmldetail}
     //                     </div>
     //                 `
@@ -4345,18 +4523,18 @@
     //                 <div class="ak-line">
     //                 ${currTalentDesc.replace(/<\/br>/g, '<div class="ak-newline"></div>')}
     //                 </div>
-    //                 ${detailHeader} 
+    //                 ${detailHeader}
     //                 ${detailtable}
     //                 </div>
-                    
+
     //             </div>
     //                 ${isTalentRange?`<div style="display:inline-block;width:28%;padding:0px;margin:auto;padding-top:4px">${rangeMaker(eachtalent.talent.rangeId,false)}</div>`:""}
     //             </div>
     //             `)
 
-                
-                
-                
+
+
+
     //         });
     //         talent.push(`
     //             <div class="ak-shadow" style="margin-bottom:8px;padding-top:10px;padding:2px;background:#666">
@@ -4364,9 +4542,9 @@
     //             </div>`)
     //     });
     //     return `
-        
+
     //         <div style="padding-top:10px">
-    //         <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div> 
+    //         <div style="color:#fff;text-align:center;background:#333;padding-bottom:0px">Talent</div>
     //             ${talent.join("")}
     //         </div>`
     // }
@@ -4376,7 +4554,7 @@
         if(i2!=0&&i2<7){
             // console.log(opdataFull.allSkillLvlup[i2])
             reqmats = opdataFull.allSkillLvlup[i2-1].lvlUpCost
-        
+
         }else if(i2>=7){
             // console.log(opdataFull.skills[i])
             reqmats = opdataFull.skills[i].levelUpCostCond[i2-7].levelUpCost
@@ -4408,7 +4586,7 @@
     function CreateMaterial(id,count){
         var itemdata = db.item_table.items[id];
         var itemdataTL = query(db.itemstl,"name_cn",itemdata.name);
-        var material = 
+        var material =
         (`<div class="akmat-container" style="position:relative">
             <div class="item-name" title="${itemdata.name}">${(itemdataTL.name_en?itemdataTL.name_en:itemdata.name)}</div>
             <div class="item-image">
@@ -4474,7 +4652,7 @@
             var num = 1
             var tabs = []
             var contents = []
-            var color 
+            var color
             trait.candidates.forEach(element => {
                 var imagereq = []
                 if(element.unlockCondition.phase >=0)
@@ -4489,7 +4667,7 @@
                 console.log(num)
                 //<div style="color:#999;background:#222;display:inline-block;padding:1px;padding-left:3px;padding-right:3px;border-radius:2px;margin-right:3px;margin-bottom:2px;margin-top:2px">${each.join("</br>")}</div>
                 var info =`
-                <li class='nav-item' style="background:#444;">                     
+                <li class='nav-item' style="background:#444;">
                     <button class='btn horiz-small nav-link ${(num!=trait.candidates.length ? '' : 'active')} equiplink' data-toggle='pill' href='#trait${num}' style="padding:0px 4px">
                     ${imagereq.join(" ")}
                     </button>
@@ -4527,7 +4705,7 @@
                     ${ChangeDescriptionColor(ChangeDescriptionContent(traitdescription,element.blackboard),true)}
                 </div>
                 `)
-                
+
                 num +=1
                 if(tl&&!color){
                     color = traitcolor
@@ -4555,7 +4733,7 @@
                 var content = curspec.en
                 var text = `
                 ${ChangeDescriptionColor(content,true)}</br>
-                
+
                 `
                 return titledMaker(text,traitname,`ak-trait ak-trait-${curspec.color}`,"","white-space:initial;")
             }
@@ -4595,7 +4773,7 @@
         });
         // console.log(splitdesc)
         // console.log("===========================")
-        
+
         return SpecialityHtml(splitdesc,opdataFull)
     }
 
@@ -4645,7 +4823,7 @@
                 // console.log(element.join(""))
 
                 // console.log(typetl)
-                
+
                 if(typetl&&!color) color = typetl.type_color?typetl.type_color:undefined
                 splitdescTL.push(typetl?typetl.type_en:element[0])
             }
@@ -4657,7 +4835,7 @@
                     imagereq.push(`Lv.${element.unlockCondition.level}`)
                     if(element.unlockCondition.phase >0)
                     imagereq.push(`<img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${element.unlockCondition.phase}.png" style="width:20px;margin-top:-5px" title="Elite ${element.unlockCondition.phase}">`)
-    
+
                 // console.log(s)
                 var each = []
                 element.blackboard.forEach(eachbb => {
@@ -4677,7 +4855,7 @@
 
     function titledMaker (content,title,extraClass="",extraId="",extraStyle=""){
         let titledbutton = `
-        
+
         <div class=\"ak-btn-non btn-sm ak-shadow-small ak-btn ak-btn-bg btn-char  ${extraClass}\" style="text-align:left;min-width:80px;${extraStyle}" data-toggle=\"tooltip\" data-placement=\"top\" id="${extraId}">
         ${(title==""?"":`<a class="ak-subtitle2" style="font-size:11px;margin-left:-9px;margin-bottom:-15px">${title}</a>`)}${content}</div>
         `
@@ -4710,7 +4888,7 @@
             // console.log(rangeDataOrigin.grids)
             if(rangeDataOrigin){
                 if(extend>0){
-                    
+
                 }
                 rangeData = Object.assign({},rangeDataOrigin)
                 rangeData.grids = []
@@ -4734,7 +4912,7 @@
                      }else{
                         rangeData.grids.push({row:element.row,col:element.col})
                      }
-                    
+
                 });
                 if(extend>0){
                     maxCol +=extend
@@ -4744,7 +4922,7 @@
                         for(j=1;j<=extend;j++){
                             // console.log(`${i} : ${j}`)
                             rangeData.grids.push({row:i,col:j+getcol,special:true})
-                            
+
                         }
                    }
                 }
@@ -4752,7 +4930,7 @@
             }
             console.log(rangeData.grids)
             table.push(`<div class="rangeTableContainer"><table class='rangeTable' style="table-layout: fixed;border-spacing:0 15px;padding:4px; border-collapse:separate; border-spacing:2px;width:${(maxCol+minCol+1)*17}px;">`)
-            
+
             for(r=0;r+minRow<maxRow+1;r++){
                 table.push(`<tr style="height:17px">`)
                 // if(extend>0&&r>1){
@@ -4775,7 +4953,7 @@
                             }
                         });
                     }
-                    
+
                     table.push(`"></td>`)
                 }
             }
@@ -4805,9 +4983,9 @@
         $("#elite"+elite_no+"cost").html(statsInterpolation(opdataFull,'cost',level,elite_no));
         $("#elite"+elite_no+"blockCnt").html(statsInterpolation(opdataFull,'blockCnt',level,elite_no));
         $("#elite"+elite_no+"baseAttackTime").html(statsInterpolation(opdataFull,'baseAttackTime',level,elite_no,false)+`<div style='display:inline;font-size:10px'> Sec</div>`);
-    
+
         var tokenfulldata = db.chars[globaltoken]
-        
+
         if(tokenfulldata){
             console.log("Update Token")
             var currlevel = globallevel[globalelite]
@@ -4845,7 +5023,7 @@
                 else
             return parseFloat(Math.round(pol*100))/100;
         }
-        
+
     }
 
     function changeSkillLevel(el,skill_no){
@@ -4864,12 +5042,12 @@
         }else if(skill_no>=7){
             let imgM = img +"m-"+ (skill_no-7)+".png"
             img += "7.png"
-             
+
             html = `<img src="${img}" style="width:40px"><div class="akrankmastery"><img src="${imgM}" style="width:40px"></div>`
         }
         return html
     }
-      
+
     function getSkillDesc(skillId,level){
         var skill = db.skills[skillId].levels[level];
         var skillTL = db.skillsTL[skillId];
@@ -4903,7 +5081,7 @@
                 } else {
                     if(returnKey){
                         var obj = {};
-                        obj[key2] = v; 
+                        obj[key2] = v;
                         result.push(obj);
                     } else {
                         result.push(v);
@@ -4978,7 +5156,7 @@
                     return rich.replace('{0}', text)
                 }
             } else if (rich2) {
-                return `<span class="stathover" data-toggle="tooltip" data-html="true" data-delay='{ "show": 0, "hide": 500 }' data-placement="bottom" 
+                return `<span class="stathover" data-toggle="tooltip" data-html="true" data-delay='{ "show": 0, "hide": 500 }' data-placement="bottom"
                 title='
                 <span class="tooltiptext" style="display:inline-block">
                     <div class="tooltipHeader">${rich2.termName.replace(/\'/g,"&apos;")}</div>
@@ -5002,7 +5180,7 @@
                 rich2 = db.dataconst.termDescriptionDict[rtf]
             }
             if (rich2) {
-                return `<span class="stathover" data-toggle="tooltip" data-html="true" data-delay='{ "show": 0, "hide": 500 }' data-placement="bottom" 
+                return `<span class="stathover" data-toggle="tooltip" data-html="true" data-delay='{ "show": 0, "hide": 500 }' data-placement="bottom"
                 title='
                 <span class="tooltiptext" style="display:inline-block">
                     <div class="tooltipHeader">${rich2.termName.replace(/\'/g,"&apos;")}</div>
@@ -5016,7 +5194,7 @@
 
     function ChangeDescriptionContent(desc,blackboard,getNum = false){
         var num = 0
-        var skill 
+        var skill
         if(blackboard.blackboard){
             skill = blackboard
             blackboard = skill.blackboard
@@ -5058,7 +5236,7 @@
             return {desc:desc,num:num}
         }
         return desc
-        
+
     }
 
     function ChangeSkillAnim(skillnum,skillmax,token){
@@ -5086,11 +5264,11 @@
                     if(a>b)return -1
                     return 0
                 })
-                
+
                 if(animlist&&animlist.length>0){
                     // console.log(animlist)
                     // console.log(skillmax-skillnum-1)
-                    
+
                     if(animlist[skillmax-skillnum-1]){
                         $("#spine-text").text(`Skill ${skillnum+1}`)
                         // console.log()
@@ -5111,7 +5289,7 @@
         });
         return combined
     }
-    
+
     function ParseAtlas(texts){
         var json = {parts:[]}
         var eachlines = texts.split(/\n/g)
@@ -5122,7 +5300,7 @@
         eachlines.forEach(line => {
             // console.log(line)
             if(line=="\r"){
-                
+
             }
             else if(line!=""){
                 if(!isheaderfinished){
@@ -5160,7 +5338,7 @@
         }
         return {key:content[0],value:splitvalue}
       }
-    
+
     function LoadAnimationCG(opid,dynid,isSkin = false){
         var dynfolder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/dynchars/${opid}/`
         var splitdyn = dynid.split("_")
@@ -5233,7 +5411,7 @@
                                     animation: defaultAnimationName,
                                     backgroundColor: "#00000000",
                                     // debug: true,
-                                    // imagesPath: chibiName + ".png", 
+                                    // imagesPath: chibiName + ".png",
                                     premultipliedAlpha: true,
                                     fitToCanvas : false,
                                     loop:true,
@@ -5331,15 +5509,15 @@
                                 defaultskin = Object.keys(parsedskeljson.skins)[0]
                             }
                         }
-                        
-                        
-                        
+
+
+
                         // var test = new TextDecoder("utf-8").decode(array);
                         // console.log(JSON.parse(test))
                         // console.log(JSON.stringify(skelBin.json, null, "\t"));
                         var spineX = parseFloat($("#spine-widget").width())/2
                         var spineY = parseFloat($("#spine-widget").height())/2 -200
-    
+
                         // console.log(spineX)
                         // console.log(spineY)
                         new spine.SpineWidget("spine-widget", {
@@ -5348,7 +5526,7 @@
                             animation: defaultAnimationName,
                             backgroundColor: "#00000000",
                             // debug: true,
-                            // imagesPath: chibiName + ".png", 
+                            // imagesPath: chibiName + ".png",
                             premultipliedAlpha: true,
                             fitToCanvas : false,
                             loop:true,
@@ -5359,7 +5537,7 @@
                             //0.5 for normal i guess
                             scale:1,
                             success: function (widget) {
-                                
+
                                 animIndex=0
                                 spinewidget = widget
                                 $("#spine-text").text(widget.skeleton.data.animations[0].name)
@@ -5375,24 +5553,24 @@
                                     CreateAnimation(spinewidget,"Relax")
                                     $("#spine-text").text("Relax")
                                 }
-    
+
                                 // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
                                 // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Loop_End","Idle"],true)
-    
+
                                 widget.customanimation = CheckAnimationSet(animations)
                                 // console.log(widget)
-    
-    
+
+
                                 //ange skill 2
                                 // CreateAnimation(["Skill1_Begin",["Skill1_Loop",15],"Skill1_End",["Idle_Charge",2]],true)
-    
+
                                 //ange skill 3 (is weird)
                                 // CreateAnimation(["Skill2_Begin",["Skill2_Loop",15],"Skill2_End",["Idle_Charge",2]],true)
-    
+
                                 // Normal skill loop with begin and idle i guess (nian skill 2)
                                 // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Idle"],true,true)
-    
-    
+
+
                                 // console.log(widget.state)
                                 // console.log(widget.state.trackEntry)
                                 $("#spine-toolbar-next").onclick = function () {
@@ -5439,7 +5617,7 @@
 
         $("#spine-widget-token").remove()
         $("#spine-frame-token").append(`<div id="spine-widget-token" class="top-layer" style="position:absolute;width: ${wid}px; height: ${hei}px;top:${-hei/2+100 +chibiscale[1]}px;left:-${wid/2-150}px;pointer-events: none;z-index: 20;transform: scale(${chibiscale[0]});"></div>`)
-            
+
         if (chibiName != null && defaultAnimationName != null) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', tokenfolder +"."+skeletonType, true);
@@ -5447,7 +5625,7 @@
             var array;
             $("#spine-widget-token").hide()
             var defaultskin ='default'
-            
+
             // $("#loading-spine").fadeIn(200)
             // console.log(chibiName)
             xhr.onloadend = function (e) {
@@ -5483,8 +5661,8 @@
                             defaultskin = Object.keys(parsedskeljson.skins)[0]
                         }
                     }
-                    
-                    
+
+
                     var spineX = parseFloat($("#spine-widget-token").width())/2
                     var spineY = parseFloat($("#spine-widget-token").height())/2 -300
                     // var test = new TextDecoder("utf-8").decode(array);
@@ -5498,7 +5676,7 @@
                         animation: defaultAnimationName,
                         backgroundColor: "#00000000",
                         // debug: true,
-                        // imagesPath: chibiName + ".png", 
+                        // imagesPath: chibiName + ".png",
                         premultipliedAlpha: true,
                         fitToCanvas : false,
                         loop:true,
@@ -5507,7 +5685,7 @@
                         //0.5 for normal i guess
                         scale:1,
                         success: function (widget) {
-                            
+
                             animIndex=0
                             spinewidgettoken = widget
                             $("#spine-text2").text(widget.skeleton.data.animations[0].name)
@@ -5547,7 +5725,7 @@
         animIndex += num;
         // console.log(animIndex)
         // console.log(curranimation)
-        
+
         if (animIndex >= curranimation.length) animIndex = 0;
         else if (animIndex < 0) animIndex = curranimation.length-1;
         // spinewidget.state.setDefaultMix(0.1);
@@ -5572,7 +5750,7 @@
         animIndex += num;
         // console.log(animIndex)
         // console.log(curranimation)
-        
+
         if (animIndex >= curranimation.length) animIndex = 0;
         else if (animIndex < 0) animIndex = curranimation.length-1;
         // spinewidget.state.setDefaultMix(0.1);
@@ -5597,7 +5775,7 @@
         console.log(db.skintable.charSkins[id])
         if(db.skintable.charSkins[id]&&db.skintable.charSkins[id].voiceId)
             currVoiceID = db.skintable.charSkins[id].voiceId
-        else 
+        else
             currVoiceID = opdataFull.id
 
 
@@ -5617,7 +5795,7 @@
         if(chibipers=='build') {chibiName.includes("build")?chibiName=chibiName:chibiName= "build_"+chibiName}
         else chibiName.includes("build")?chibiName=chibiName.split("_").slice(1).join("_"):chibiName=chibiName
         folder = `https://raw.githubusercontent.com/Aceship/Arknight-Images/main/spineassets/${chibitype}/${charName}/${chibipers}/`
-        
+
         if($("#spine-frame-op:visible")){
             $("#spine-frame-op").fadeOut(200)
             $("#tabs-opCG").fadeIn(200)
@@ -5655,10 +5833,10 @@
                     LoadAnimationCG(name,currentskin.dynIllustId)
                     return
                 }
-                    
+
             }
         }
-        
+
         $("#spine-frame-op").fadeOut(200)
         $("#tabs-opCG").fadeIn(200)
     }
@@ -5670,9 +5848,9 @@
     }
 
     function PlayPause(widget){
-        if(widget=="token") 
+        if(widget=="token")
             widget=spinewidgettoken
-        else 
+        else
             widget=spinewidget
         if(widget.isPlaying()){
             console.log("Playing")
@@ -5684,7 +5862,7 @@
     }
 
     function Mirror(el){
-        var currcss 
+        var currcss
         // if($(el).hasClass("MirrorDiv")){
         //     curcss = $(el).css('transform')
         //     var changex = curcss.split(",")
@@ -5703,20 +5881,20 @@
         changex1[0] = changex1[0]*-1
         $(el).css('transform','matrix('+changex1.join(",")+')')
         console.log(changex)
-        $(el).toggleClass("MirrorDiv") 
-        
-        
+        $(el).toggleClass("MirrorDiv")
+
+
     }
 
-    
+
 
     function CreateAnimation(chibiwidget,animArray,endloop = false,skipStart = false,isendstop=false){
         // console.log(animArray)
-        
+
         // console.log(Array.isArray(animArray))
         // console.log(animArray.length>1)
         // console.log(Array.isArray(animArray[0]))
-        
+
         if((Array.isArray(animArray)&&animArray.length>1)){
             // console.log("ayyyyyy")
             var delay = 0
@@ -5730,7 +5908,7 @@
                 var curranim = element
                 var animTimes = 1
                 var isloop = animNum==animArray.length-1
-                
+
                 if(Array.isArray(element)){
                     curranim = element[0]
                     animTimes = element[1]
@@ -5763,7 +5941,7 @@
                             isloop = true
                         }
                         if(animNum==0)chibiwidget.state.setAnimation(0,curranim,Array.isArray(animArray[0])&&animArray[0].length>1?true:false)
-                        
+
                         else chibiwidget.state.addAnimation(animNum,curranim,isloop,delay)
                         delay +=curranimations[GetAnimationIndex(curranimations,curranim)].duration*animTimes
                         animNum++
@@ -5774,14 +5952,14 @@
         }else{
             // chibiwidget.state.setAnimation(animArray)
             // console.log("WEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
-            
+
             if(animationqueue!=undefined)clearInterval(animationqueue)
             // console.log(animArray)
 
             var curranimplay = Array.isArray(animArray[0])?animArray[0][0]:animArray
             if(chibiwidget.loaded)chibiwidget.setAnimation(curranimplay)
             chibiwidget.state.clearTracks()
-            
+
             chibiwidget.state.setAnimation(0,curranimplay,!isendstop)
         }
     }
@@ -5789,7 +5967,7 @@
     function CheckChibi(){
         console.log(spinewidget)
     }
-    
+
     function CheckAnimationSet(anim){
         // console.log(anim)
         var curranimlist = {}
@@ -5803,7 +5981,7 @@
             anim.forEach(curranim => {
                 var numberregx = /(\d)/
                 var currsplit = curranim.name.split("_")[0]
-                
+
                 if(currsplit)
                 var splitnum = numberregx.exec(curranim.name)
                 if(splitnum){
@@ -5822,7 +6000,7 @@
                 if(!curranim.name.includes("Down")){
                     curranimlist[`${currsplit}${splitnum}`].push(curranim.name)
                 }
-                
+
             });
             Object.keys(curranimlist).forEach(keys => {
                 curranimlist[keys]= curranimlist[keys].sort((a,b)=>{
@@ -5857,7 +6035,7 @@
                         }
                     }
                     return anum - bnum
-                    
+
                 })
                 // curranimlist[keys].forEach(element => {
                 //     if(curranimlist[keys].length>=2&&(element.includes("Loop")||element.includes("Idle"))){
@@ -5900,19 +6078,19 @@
                         }else if(currvariable.duration!=0){
                             curranimlist[keys][i] = [curranimlist[keys][i],Math.round(8/currvariable.duration)]
                         }
-                        
+
                     }
                 }
             });
 
-            
+
         }
         console.log(curranimlist)
         return curranimlist
     }
 
     function GetAnimationIndex(anim,name){
-        
+
         return anim.map(function(e) { return e.name; }).indexOf(name)
     }
 
@@ -5996,8 +6174,8 @@
                 console.log('LOADING: ', xhr.status);
                 $("#loading-spine").fadeIn(200)
             };
-            
-            
+
+
             console.log(chibiName)
             xhr.onloadend = function (e) {
                 console.log(xhr.status)
@@ -6038,15 +6216,15 @@
                                 defaultskin = Object.keys(parsedskeljson.skins)[0]
                             }
                         }
-                        
-                        
-                        
+
+
+
                         // var test = new TextDecoder("utf-8").decode(array);
                         // console.log(JSON.parse(test))
                         // console.log(JSON.stringify(skelBin.json, null, "\t"));
                         var spineX = parseFloat($("#spine-widget").width())/2
                         var spineY = parseFloat($("#spine-widget").height())/2 -200
-    
+
                         // console.log(spineX)
                         // console.log(spineY)
                         new spine.SpineWidget("spine-widget", {
@@ -6055,7 +6233,7 @@
                             animation: defaultAnimationName,
                             backgroundColor: "#00000000",
                             // debug: true,
-                            // imagesPath: chibiName + ".png", 
+                            // imagesPath: chibiName + ".png",
                             premultipliedAlpha: true,
                             fitToCanvas : false,
                             loop:true,
@@ -6066,7 +6244,7 @@
                             //0.5 for normal i guess
                             scale:1,
                             success: function (widget) {
-                                
+
                                 animIndex=0
                                 spinewidget = widget
                                 $("#spine-text").text(widget.skeleton.data.animations[0].name)
@@ -6082,24 +6260,24 @@
                                     CreateAnimation(spinewidget,"Relax")
                                     $("#spine-text").text("Relax")
                                 }
-    
+
                                 // CreateAnimation(["Skill_Begin",["Skill_Loop",5],"Skill_End","Idle"],true)
                                 // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Loop_End","Idle"],true)
-    
+
                                 widget.customanimation = CheckAnimationSet(animations)
                                 // console.log(widget)
-    
-    
+
+
                                 //ange skill 2
                                 // CreateAnimation(["Skill1_Begin",["Skill1_Loop",15],"Skill1_End",["Idle_Charge",2]],true)
-    
+
                                 //ange skill 3 (is weird)
                                 // CreateAnimation(["Skill2_Begin",["Skill2_Loop",15],"Skill2_End",["Idle_Charge",2]],true)
-    
+
                                 // Normal skill loop with begin and idle i guess (nian skill 2)
                                 // CreateAnimation(["Skill_2_Begin",["Skill_2_Loop",5],"Skill_2_Idle"],true,true)
-    
-    
+
+
                                 // console.log(widget.state)
                                 // console.log(widget.state.trackEntry)
                                 $("#spine-toolbar-next").onclick = function () {
@@ -6147,7 +6325,7 @@
         $.each(db,function(key2,v){
             console.log(v)
             var obj = {};
-            obj[key2] = v; 
+            obj[key2] = v;
             result.push(obj);
         });
         if(found){
@@ -6156,7 +6334,7 @@
             return false;
         }
     }
-    
+
     function changeUILanguage(){
         reg = localStorage.getItem('gameRegion');
         lang = localStorage.getItem('webLang');
@@ -6169,7 +6347,7 @@
             case "jp":$('#display-lang').text("Japanese");break;
             case "kr": $("#display-lang").text("Korean"); break;
         }
-        
+
         getJSONdata("ui",function(data){
             if(data.length != 0){
                 $.each(data, function(i,text){
@@ -6197,7 +6375,7 @@
         return new URL(window.location.href).searchParams;
     }
 
-    
+
 
     function dragElement(elmnt,elmnt2 =elmnt.id+ "header") {
         var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -6281,7 +6459,7 @@
     }
     function LoadAllJsonObjects(obj) {
         var result = {}
-        
+
         var promises = Object.entries(obj).map(function(url){
             return $.getJSON(url[1]).then(function (res) {
                 result[url[0]] = res
@@ -6290,7 +6468,7 @@
                 result[url[0]] = {}
             });
         })
-    
+
         return Promise.all(promises).then(function(){
             return result
         })
