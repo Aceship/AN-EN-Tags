@@ -80,7 +80,7 @@
     var opapp;
     var classfilter;
     var sort;
-    var opSType;
+    var opSType = 0;
     var skeletonType = "skel"
     var chibitype = 'character'
     var charName = 'char_180_amgoat';
@@ -1310,7 +1310,6 @@
             var opdata = query(db.chars2,"name_cn",opname);
             var opclass = query(db.classes,"type_cn",opdata.type);
             var opdata2 = query(db.chars,"name",opdata.name_cn,true,true);
-            var opdata3 = db.charpatch.patchChars.char_1001_amiya2
             curropname = opname
             var opcode2 = ""
             // console.log(opdata3)
@@ -1371,11 +1370,18 @@
 
             if(opKey=="char_002_amiya"){
                 $('#class-change').show();
-                if(opSType){
+                if(opSType == 1){
                     opcode = "char_1001_amiya2"
                     opcode2 = "char_002_amiya"
                     opKey=opcode
-                    opdataFull = opdata3
+                    opdataFull = db.charpatch.patchChars.char_1001_amiya2
+                    opdataFull.id = opcode
+                }
+                if(opSType == 2){
+                    opcode = "char_1037_amiya3"
+                    opcode2 = "char_002_amiya"
+                    opKey=opcode
+                    opdataFull = db.charpatch.patchChars.char_1037_amiya3
                     opdataFull.id = opcode
                 }
             }else{
@@ -1559,7 +1565,21 @@
                             +"</div>"));
                     }
                 }
-                
+                if(opKey=="char_1037_amiya3"){
+                    zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('char_1037_amiya3_2')"><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'></button>`))
+                    if(i == 0){
+                        $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3.png");
+                        $('#charazoom').modal('handleUpdate')
+                        
+                        tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
+                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3.png'>"
+                            +"</div>"));
+                    } else {
+                        tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
+                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3.png'>"
+                            +"</div>"));
+                    }
+                }
                 
                 var elitehtml = getEliteHTML(i,opdataFull);
                 tabcontent2.push(elitehtml);
@@ -1741,7 +1761,7 @@
             
             //Story
 
-            if(db.handbookInfo.handbookDict[opdataFull.id]|| opdataFull.id == "char_1001_amiya2"){
+            if(db.handbookInfo.handbookDict[opdataFull.id]|| opdataFull.id == "char_1001_amiya2" ||  opdataFull.id == "char_1037_amiya3" ){
                 GetStory(opdataFull)
             }else{
                 $('#info-illustrator').html("")
@@ -3256,9 +3276,10 @@
             currStory = db.handbookInfoEN.handbookDict[opdataFull.id]
             isEN = true
         }
-        if(opdataFull.id=="char_1001_amiya2"){
+        if(opdataFull.id=="char_1001_amiya2" || opdataFull.id=="char_1037_amiya3"){
             currStory = db.handbookInfoEN.handbookDict["char_002_amiya"]?db.handbookInfoEN.handbookDict["char_002_amiya"]:db.handbookInfo.handbookDict["char_002_amiya"]
         }
+        
         // console.log(currStory)
         // console.log(currStory.drawName)
         // console.log(db.vaTL[currStory.infoName]?db.vaTL[currStory.infoName]:currStory.infoName)
@@ -5664,7 +5685,11 @@
     }
 
     function ChangeSType(){
-        opSType= !opSType
+        opSType+=1
+
+        if(opSType >=3){
+            opSType = 0
+        }
         selectOperator(curropname)
         console.log(opSType)
     }
