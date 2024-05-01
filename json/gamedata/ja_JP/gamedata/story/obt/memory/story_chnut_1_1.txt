@@ -1,0 +1,700 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_sunnytown_1",screenadapt="coverall")]
+[Delay(time=0.5)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=0.5)]
+[name="忙しそうな店主"]黒曜石を買いたいって？
+[Dialog]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]うん！　ここには色んな鉱石が置いてあるみたいだけど……黒曜石だけ見当たらなくって。
+[name="チェストナット"]前にチラシでここで黒曜石祭が開かれてる情報を見かけたんだ。つまり黒曜石はシエスタの特産品なんでしょ？
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_paper1")]
+[PlaySound(key="$d_avg_paper2",delay=0.5)]
+[PlaySound(key="$d_avg_paper1",delay=1)]
+[Delay(time=1.5)]
+小柄な男は地質学ハンドブックのページをパラパラとめくると、中に挟んであったチラシを店主に見せた。
+しわくちゃのチラシの余白には、黒曜石のスケッチが描き足されている。
+店主は陳列待ちの商品を整理する手を止めるどころか、顔を上げようとさえしなかった。
+[name="忙しそうな店主"]オブフェスが開催されなくなって以来、黒曜石はもう表立って取引きできるものじゃなくなったんだ。
+[name="忙しそうな店主"]だからうちには置いてないよ。他んとこにあたりな！
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="チェストナット"]オブフェス？　そんなイベントもあったんだ……今まで黒曜石祭しか聞いたことがなかったよ。
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]でも黒曜石祭は、黒曜石を売るためのイベントじゃないの？
+[Dialog]
+[charslot]
+[name="忙しそうな店主"]ああ違う違う、あれは音楽バカどもが己を解き放つためのイベントだよ。
+[name="忙しそうな店主"]ったく、毎日やかましくてしょうがなかった……やめてくれてせいせいしたよ。
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]それじゃあ……店主さんはどこなら黒曜石が置いてあるのか、知ってたりする？
+[Dialog]
+[charslot]
+作業に追われていた店主はようやく顔を上げ、目の前にいる小柄な男を見た。
+そして一瞬だけ驚いた表情を浮かべたかと思うと、すぐさま少し不快そうな顔になった。
+[name="忙しそうな店主"]なんだ、ガキンチョじゃないか……お遊びに付き合ってる暇はないんだよ。
+[name="忙しそうな店主"]ここには黒曜石なんて置いてないんだ！　分かったらとっととママンとこに帰りな！
+[Dialog]
+[PlaySound(key="$d_gen_doorclose", volume=0.6)]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_pick_lock", volume=1, loop=false, channel="a")]
+[StopSound(channel="a", fadetime=2)]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_pullcurtain", volume=1)]
+[Delay(time=1)]
+店主は扉を乱暴に閉めると、内側から鍵をかけ、さらにカーテンまで閉めてしまった。
+小柄な男は困惑した表情を浮かべながら、ポリポリと頭を掻いた。
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="チェストナット"]えっと……僕、何か失礼なことを言っちゃったのかな？
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="m",name="avg_npc_022",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_022",focus="m")]
+[name="観光客"]きっと「黒曜石」のせいよ。
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]……
+[charslot(slot="m",name="avg_npc_022",focus="m")]
+[name="観光客"]シエスタ人の中には「黒曜石」って言葉を聞いた途端に、自分が何かしらの厄介事に巻き込まれるんじゃないかって、急にピリピリしだしちゃう人がいるのよ。
+[name="観光客"]噂によれば、ある天災トランスポーターが火山の状況を隠蔽して、大勢の人たちを騙したらしいの。
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="チェストナット"]天災トランスポーターが……隠蔽を？　どうして？
+[charslot(slot="m",name="avg_npc_022",focus="m")]
+[name="観光客"]フン、利益に目がくらんだのよ。黒曜石を乱採取したせいで、火山の自然環境がめちゃくちゃになって、その結果シエスタは移転を迫られることになったわ……
+[name="観光客"]あーあ、近い将来にはこの美しいビーチも溶岩に呑み込まれてしまうかと思うと……悲しくなっちゃうよ！　でもたぶんこれはシエスタ人にとって避けられない宿命なのかもね。
+[name="観光客"]黒曜石のことなんて忘れて、早くここを離れたほうがいいわ。爆発する火山から逃げることより大切なことなんてないでしょ？
+[Dialog]
+[playsound(key="$rungeneral", volume=0.9)]
+[charslot(duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="チェストナット"]……
+[name="チェストナット"]環境を破壊し、人の心を惑わせ、災厄をもたらす……
+[name="チェストナット"]チラシに書いてあった内容と全然違うじゃないか。黒曜石ってそんなに恐ろしい鉱物だったの？
+[charslot(slot="m",name="avg_4041_chnut_1#2$1",focus="m")]
+[name="チェストナット"]それに……シエスタ人たちは火山がもうすぐ噴火することを知っていて、早々に避難のための準備まで始めているのに……
+[name="チェストナット"]何をそんなに焦る必要があるんだろう？
+[Dialog]
+[charslot]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="謎の人物"]ヒヒヒヒ……若者よ、変えることのできない未来と直面した時、誰しもが焦燥感に駆られ、苦しみ、神経が逆立つもの、どれだけ万全な準備を整えていたとしてもね。
+[name="謎の人物"]いわゆる準備など、所詮は偽りの慰めに過ぎないのだから……ヒヒヒヒヒ。
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="チェストナット"]だ、誰！？
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="謎の人物"]おやおや、私が何者かはどうでもいい。大切なのは、私が君の過去を知り、現在を理解し、未来までをも垣間見ることができるという事実のみ。
+[Dialog]
+[charslot(duration=0.3)]
+[PlaySound(key="$d_avg_clothmovement", volume=0.7)]
+[delay(time=1.5)]
+その袖から伸びている皺だらけの手には、骨でできた小皿が乗っていた。
+[Dialog]
+[PlaySound(key="$d_avg_marblecollide", volume=1)]
+[PlaySound(key="$d_avg_metalroll",volume=0.4,delay=0.3)]
+[delay(time=1)]
+謎の男が皿を揺らすと、金属の球が中で回転しぶつかり合い、名状しがたい奇妙な音を立てる
+男は奇妙な姿勢を取りながら首を垂れ、皿に耳を近づけさせる。恐らく音が伝えるメッセージを聞き取ろうとしているのだろう。
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="謎の人物"]おおお……聞こえるぞ。
+[name="謎の人物"]哀れな子だ……空より降りかかりし災いが君の「巣穴」を壊し、君を苦難に満ちた地上へと追いやったのだな？
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]巣穴？　それってもしかして僕たちの街……地下都市のこと？　あなたはドゥリンを知ってるの？
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="謎の人物"]ドゥリン？　彼らも我々と何一つ変わりない。苦悩と苦痛に生涯苛まれ続ける定めにあるのだ。
+[name="謎の人物"]君が何を探しているのか、何を救おうとしているのか、私には全て分かっている。他人の言葉に耳を貸す必要はない。ただ己の本心に耳を傾け、その願望のままに突き進むがいい。
+[Dialog]
+[charslot(duration=0.3)]
+[PlaySound(key="$d_avg_clothmovementsp",volume=0.8)]
+[delay(time=1)]
+男は空いているもう片方の手をポケットに入れると、石を一つ取り出した。
+その真っ黒な結晶は、注がれる日光をことごとく呑み込み、自身の光沢へと換えていく。
+[charslot(slot="m",name="avg_4041_chnut_1#5$1",focus="m")]
+[name="チェストナット"]うわぁ……きれい。
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="謎の人物"]災厄に備えるよりも、災厄が二度と起こらぬように、加護を求めるべきなのだよ。
+[name="謎の人物"]ヒヒヒ、この黒曜石は君を守ってくれるだろう。ただ……ちょっとした「代価」を支払ってくれればの話だがね。
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]……
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="チェストナット"]（確かにこの黒い石はすごくきれいだ……だけど、鉱物としての特徴が全く見られないな。）
+[name="チェストナット"]（本当に黒曜石なの？）
+[name="チェストナット"]（むしろ普通のガラス玉にしか見えないけど。）
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]あの、これって――
+[Dialog]
+[charslot]
+[delay(time=0.5)]
+[musicvolume(volume=0.3, fadetime=1)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="l",name="avg_npc_204",duration=0.5)]
+[charslot(slot="r",name="avg_npc_205",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="l",name="avg_npc_204",focus="l")]
+[name="観光客A"]あそこだ！　見つけたぞ！
+[charslot(slot="r",name="avg_npc_205",focus="r")]
+[name="観光客B"]ここにいやがったのか――この骨皿の詐欺師め！
+[name="観光客B"]よくも大層なことをほざいて偽物を売りつけやがったな！　これのどこが黒曜石だってんだ？
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="謎の人物"]偽物などではない、それは正真正銘の「黒曜石」！　人々を守ってくれる「霊石」だ！　一度そちらの手に渡ったのなら、もう返品は受け付けない！
+[name="謎の人物"]だが、もしそちらが探し求めていたのが災厄をもたらす黒曜石だとすれば、自分で火山洞窟まで行って掘ってくるしかないだろうさ！
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_204",focus="l")]
+[charslot(slot="r",name="avg_npc_205",focus="l")]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="観光客A"]てめぇ……今すぐ俺らの金を返しやがれ！
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$runsand")]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,posfrom="0,0",posto="200,0",duration=1,isblock=false)]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,afrom=1,ato=0,duration=0.7)]
+[delay(time=1)]
+[charslot]
+[charslot(slot="l",name="avg_npc_204",focus="all")]
+[charslot(slot="r",name="avg_npc_205",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$rungeneral", volume=0.9, loop=false, channel="run1")]
+[PlaySound(key="$rungeneral", volume=0.8, loop=false, channel="run2",delay=0.4)]
+[charslot(slot="l",name="avg_npc_204",posfrom="0,0",posto="400,0",duration=0.8,isblock=false)]
+[charslot(slot="l",name="avg_npc_204",afrom=1,ato=0,duration=0.4)]
+[charslot(slot="r",name="avg_npc_205",posfrom="0,0",posto="300,0",duration=1,isblock=false)]
+[charslot(slot="r",name="avg_npc_205",afrom=1,ato=0,duration=0.6)]
+[delay(time=1)]
+[charslot]
+[PlaySound(key="$fightgeneral", volume=0.7)] 
+[PlaySound(key="$d_avg_punchsp5",delay=0.5)]
+[PlaySound(key="$d_avg_punch",volume=0.9,delay=0.9)]
+[CameraShake(duration=0.5, xstrength=25, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=true)]
+[CameraShake(duration=0.5, xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=true)]
+[CameraShake(duration=1, xstrength=45, ystrength=45, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_vallyrck", volume=0.7)]
+小柄な男の目の前で、数人が取っ組み合いを始めてしまった。
+観光客のサイフ、謎の男の骨皿、そしてどちらの服から千切れたのか分からないボタン……色んなものがあたりに散らばる。
+そしてあの「黒い石」も、そうやって彼の足元へと転がってきた。
+[Dialog]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",posfrom="0,0",posto="0,-50",duration=1.5,isblock=false)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",afrom=1,ato=0,duration=1)]
+[delay(time=1.5)]
+彼は身をかがめ、それを拾い上げた。
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(key="$formal_loop", volume=0.6)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]うーん……
+[name="チェストナット"]進めば進むほどに暗くなっていくな……
+[Dialog]
+[charslot(duration=0.5)]
+[PlaySound(key="$d_avg_open_box", volume=1)]
+[delay(time=2)]
+小柄な男は標本ケースからつい先ほど手に入れた「黒い石」を取り出す。
+真っ黒なガラス玉は、洞窟の暗闇に呑み込まれ、その輪郭すら背景に溶け込み曖昧と化していた。
+[Dialog]
+[PlaySound(key="$d_avg_throwstone",volume=0.4)]
+[PlaySound(key="$d_avg_throwstone", volume=0.4, loop=false, channel="cast",delay=0.4)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+彼はアーツユニットを小さく揺らし、明かりを強めた。
+[name="チェストナット"]あの観光客たちを引きはがしてあげただけで、この石をくれて、さらに本物の黒曜石がある坑道への行き方まで教えてくれるなんて。
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]着いた。きっとここだ。
+[name="チェストナット"]かなり古い坑道だけど、鉱業会社が長期に渡って採掘していたそうだから、浅い表層部分の鉱石はもう取り尽くされてるかもしれないね。
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="チェストナット"]だけどここは火山からは少し距離があるから、安全性は保証されているはず……黒曜石が見つかるかどうかは運次第かな。
+[Dialog]
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_sandstone",volume=0.5)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="チェストナット"]ふむ……ここの地質構造については、もう少し詳しく調べたほうがよさそうだね。この等間隔に細い溝は……溶岩が通った跡かな？　細い線がここで折れ曲がって、今度は下に向かって伸びていってる……
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]……もう少し奥まで行ってみる必要がありそうだ。鉱石が眠っている鉱脈は、もっと深い場所にあるはず。
+[Dialog]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="none")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_vallyrck", volume=0.8)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4041_chnut_1#6$1",focus="m")]
+[name="チェストナット"]……
+[name="チェストナット"]これは……水の音？　……いや、違う。
+[charslot(slot="m",name="avg_4041_chnut_1#3$1",focus="m")]
+[name="チェストナット"]そこの石柱の後ろに誰かいるんでしょう？　こんなところで何してるの？
+[Dialog]
+[charslot]
+[name="慎重な男"]……
+[name="慎重な男"]なんだよ、ただのガキか。
+[charslot(slot="m",name="avg_4041_chnut_1#3$1",focus="m")]
+[name="チェストナット"]ガキじゃない、僕はもう成人してるんだ！
+[Dialog]
+[charslot]
+男は眉をひそめた。
+[name="慎重な男"]お前、ここに何しにきた？　この黒曜石の坑道は危険だ。
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]僕は黒曜石の鉱脈を探しにきたんだ……地質調査員のようなものだと思ってくれればいいよ。
+[Dialog]
+[charslot]
+[name="慎重な男"]ふぅん、調査員ね。
+[name="慎重な男"]どこから来たんだ？　ヴィクトリア？　それともクルビアか？　どこの地質研究所に所属してる？　それともお高くとまってるどっかの環境保護組合のメンバーか？
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="チェストナット"]ええと、何か勘違いしているみたいだね……僕はどこの組織にも所属していないよ。黒曜石を探しているのも、きれいな石を集めているのも、ただの個人的な趣味だよ。
+[Dialog]
+[charslot]
+[name="慎重な男"]……
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",duration=1)]
+[PlaySound(key="$d_avg_kneelsnow_s", volume=0.8)]
+[delay(time=1.5)]
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="r")]
+[name="慎重な男"]な、なんだ！？　クッ……眩しい！　なんのつもりだ！？
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="チェストナット"]……爪に縦線が入っているし、目も少し黄ばんでいる。消化器官に問題があるのか、長期間何も食べていないかのどちらかだ。
+[name="チェストナット"]しかも……
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_originiumcastshort", volume=0.7)]
+[Blocker(a=0.7, r=0.95, g=0.95, b=0.95, fadetime=0.7, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="none")]
+小柄な男がアーツユニットを掲げると、その先端から柔らかな光が放たれた。
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="r")]
+[name="慎重な男"]な、なんだこれは？　あれ……体がじんわりと温かくなってきたような……
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]足の筋肉が肉離れを起こしている。でも心配しないで。今、筋肉の疲れを取り除いて、傷付いた細胞組織を修復してるから。
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="r")]
+[name="慎重な男"]……
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="チェストナット"]どう？
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="r")]
+[name="慎重な男"]ああ、確かに痛みが消えたみたいだ。チビ、お前医者だったのか？
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="チェストナット"]簡単な治療アーツが使えるだけで、本物の医者ではないよ。
+[name="チェストナット"]今の光は一時的に症状を和らげる効果しかない。今後も痛みがぶり返したり、ひどくなるようなことがあったら、ちゃんと専門の診療所に行ったほうがいい。
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="r")]
+[name="慎重な男"]ああ……ありがとな。
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="チェストナット"]ほら、僕に掴まって。
+[Dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=10, ystrength=10, vibrato=30, randomness=50, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[delay(time=1)]
+小柄な男は岩壁の隅で横たわっていた男に手を伸ばしたが、彼の身体は想像していたより重かった。
+[Dialog]
+男は伸ばされた手を支えに勢いのまま立ち上がるが、小柄な男は前に引っ張られ、危うく転びそうになってしまう。
+[PlaySound(key="$d_avg_vallyrck", volume=0.6)]
+よろけた拍子に、黒いガラス玉がポケットの中から滑り落ち、「コンコン」と音を立てなが地面を何度か小さく跳ねた。
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#5$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="l")]
+[name="チェストナット"]あっ！　僕の「黒い石」が！
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]……
+[name="慎重な男"]「黒い石」？
+[name="慎重な男"]そいつは……シエスタの商人が観光客を騙して売りつけてるニセモンに見えるが。
+[name="慎重な男"]お前、あいつらにこれが黒曜石だって言われたんだろ？
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="チェストナット"]はは……これが偽物だってことは最初から気付いてたよ。
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="none")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_marblecollide", volume=0.7)]
+[PlaySound(key="$d_avg_marblecollide", volume=0.6, loop=false, channel="ro",delay=0.4)]
+男はしゃがみ込み「黒い石」を拾い上げ、それを親指と人差し指の間に挟むと、石壁に何度も軽く打ち付ける。石は再び「コンコン」と乾いた音を立てた。
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="チェストナット"]えっと、できれば乱暴に扱わないでほしいんだけど……
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]どうした？　ただの黒いガラス球だろ？　金になりもしない。
+[name="慎重な男"]ほら、返すよ。
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]本物の黒曜石じゃなくても、きれいな「石」に変わりはないから。
+[name="チェストナット"]きれいな「石」には、それだけで価値があるものなんだ。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]……
+[name="慎重な男"]変わったヤツだな。
+[name="慎重な男"]ほら、本当に価値のあるモンを見せてやる。
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="none")]
+男は腰に下げた袋を外すと、袋口を縛っていた縄を解く。その中には黒い石がパンパンに詰まっていた。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]ほら、黒曜石だ。全部お前にやる。
+[charslot(slot="l",name="avg_4041_chnut_1#5$1",focus="l")]
+[name="チェストナット"]わぁ！　これ……全部本物の黒曜石だ！　でも……
+[name="チェストナット"]僕にくれるって、どうして？
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]さっきの治療の礼だよ。
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="チェストナット"]うーん……でもこんなにたくさんはいらないかな。保管用と研究用にほんの少しあれば足りるから……うん、この小さい石を一個もらうことにするよ。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]……
+[name="慎重な男"]お前、そんなちっぽけな黒曜石の欠片のためだけに、わざわざこの坑道に来たのかよ。保管？　研究？　頭おかしいのか？
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="チェストナット"]これだけあれば、洞窟内に残っている溶岩の跡と照らし合わせて、黒曜石の鉱脈の在り処を突き止められる。だから十分なんだよ。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]なぜそうしてまで鉱脈を探す必要があるんだ？　この一袋じゃ満足できないってか？
+[name="慎重な男"]ほら、滅多にないチャンスだぞ。俺の気が変わる前に、全部持ってけよ。
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]でも……この黒曜石をもっと必要としているのは君のほうなんじゃないの？　危険を冒してまでこっそり、こんなところにまで黒曜石を採りに来たわけだし――
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]……
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="チェストナット"]あっ！　その……君のことを誰かに言うつもりはないから！　黒曜石の違法採取を取り締まる監査員に、報告しようとかも考えてないからね！
+[name="チェストナット"]もう本物の黒曜石を手に入れたんだ……僕はすぐにシエスタを離れるよ。だから安心して。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男"]おいおい、こんな黒曜石の袋一つで、俺を違法採掘者だって決めつけるのかよ。
+[name="慎重な男"]黒曜石を探しにここに来る人はたくさんいる。火山学者に環境管理の作業員、政府職員……それとお前のような、趣味で訪れる地質調査員とかな。
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]もし、君が本当に単純に火山の研究のためにここに来たのなら……どうして誰かが洞窟に入ってきたのに気付いた時、すぐに助けを求めなかったの？
+[name="チェストナット"]足を怪我して動けないし、食料もない状況でもう何日もここで遭難しているのにだよ？
+[name="チェストナット"]それに僕に見つかった時だって、警戒した様子で僕の正体を探ろうとしていたよね。
+[name="チェストナット"]どう考えても、違法採掘者以外の答えが出ないんだけど……
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="慎重な男？"]……
+[name="黒曜石坑夫"]何が「違法採掘」だ……俺の親父も、俺の兄弟もみんな黒曜石の採掘で生計を立てていた。もちろん俺自身もな。
+[name="黒曜石坑夫"]家族代々続けていた仕事を、なぜ「違法」呼ばわりされなきゃならんのだ？
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]ごめん……別に非難するつもりで「違法採掘」だと言ったわけじゃないよ。それに、シエスタの政策や君の行為を非難する資格も僕にはない。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]気にしちゃいないさ。
+[name="黒曜石坑夫"]たとえお前が警察やシティホールの連中にチクったって俺は別に構いやしない。俺にはこうすることでしか家族を養えないからな。
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="チェストナット"]でも、もし火山が予定より早く噴火したりしたら……
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]そんな先のこと、知ったこっちゃないな。どうせ今すぐ噴火するわけでもあるまいし。
+[name="黒曜石坑夫"]それにシエスタ人はもう引っ越しの準備を始めている。すべて間に合うはずだ。
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="チェストナット"]……もし本当に災害が目の前に迫ってきていたら、まだ今と同じことが言えるのかな？
+[name="チェストナット"]僕の故郷はね、突然襲い掛かってきた災害によって滅んでしまったんだ。たった一晩で、みんなで頑張って築き上げた全てがめちゃくちゃにされてしまった。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]……
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="チェストナット"]僕たちが地質学を研究しているのは、故郷を破壊した災害の原因を探るため。そして、僕が地上にやって来たのは、他の場所で暮らす人々がどうやって災害と向き合っているのかを知るためだ。
+[name="チェストナット"]危険を予め知らせてくれる天災トランスポーターや、人々を災害リスクのあるエリアから遠ざけてくれる移動都市の存在を知った時は……その「柔軟性」を羨ましく思ったよ。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]「柔軟性」？　どういう意味だ？
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]うーん……突発的な災害に対して臨機応変に対策が取れるってことかな？
+[name="チェストナット"]大きな「湖」みたいなものだよ。湖は河が大雨で氾濫しないように溢れた水を溜めておくこともできるし、干ばつの時は今度は河が干上がらないように溜めた水を戻すこともできる。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]だったらお前たちだって、シエスタみたいに移動都市に移り住めばいいじゃないか。
+[name="黒曜石坑夫"]他の奴らもお前みたいに洞察力が強いんなら、優秀な奴を何人か選び出して天災トランスポーターに育て上げるのもそう難しくないだろ。
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]うーん……正直な話、まだ分からないことがたくさんあるんだ。
+[name="チェストナット"]僕の故郷と比べれば、シエスタはずっと運がいいよ。火山はまだ噴火していないからね。君たちにはまだ火山の被害から逃げる時間がたっぷりある。
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="チェストナット"]でも……
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_sunnytown_1", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[delay(time=0.5)]
+[musicvolume(volume=0.3, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="忙しそうな店主"]ここには黒曜石なんて置いてないんだ！　分かったらとっととママンとこに帰りな！
+[charslot(slot="m",name="avg_npc_022",focus="m")]
+[name="観光客"]きっとこれはシエスタ人にとって避けられない宿命なのかもね……爆発する火山から逃げることより大切なことなんてないでしょ？
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="謎の人物"]いわゆる準備など、所詮は偽りの慰めに過ぎないのだから……ヒヒヒヒヒ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1")]
+[charslot(slot="r",name="avg_npc_998_1#1$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="チェストナット"]災害は予期できているはずなのに、シエスタの人たちはちっとも気が楽になったようには見えなかった……
+[name="チェストナット"]だったら突然襲い掛かって来る災厄と直面した時、僕たちには……僕にはこれ以上何ができるんだろう？
+[Dialog]
+[stopmusic(fadetime=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="none")]
+[delay(time=0.2)]
+[PlaySound(key="$smallearthquake")]
+[CameraShake(duration=2.5, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=3)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]な、なんだ！？　この激しい揺れ……まさかマジで火山が噴火しようとしてんじゃ……
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="l")]
+[name="チェストナット"]……
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]噂をすればなんとかやら……こんな偶然ってありなのかよ？
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="l")]
+[name="チェストナット"]いや、今の揺れは噴火にしては小さすぎる……
+[name="チェストナット"]でもこの洞窟の構造はかなり脆いから、ほんのちょっとした火山活動でも崩壊してしまうかもしれない。
+[name="チェストナット"]急いでここから出なきゃ。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]ここを出る、か……ハハッ、そいつは無理かもしれないな。
+[Dialog]
+[playMusic(intro="$escape_intro",key="$escape_loop", volume=0.6)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="none")]
+[playsound(key="$e_atk_airshipvibe")]
+[playsound(key="$e_atk_vibe_n",delay=0.4)]
+[delay(time=1.5)]
+いつの間にか洞窟の入り口のほうから、オリジムシの群れが押し寄せてきていた。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]あっちに行ったら、骨まで食い尽くされちまう！
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="l")]
+[name="チェストナット"]下に降りよう！　ついてきて！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1")]
+[charslot(slot="r",name="avg_npc_998_1#1$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]クソ……下の方にもオリジムシがわんさか湧いてるぜ。やっぱり上にあるあの通路を目指そう！
+[name="黒曜石坑夫"]あの道で何度も黒曜石を採ったことがあるから少し詳しいんだ！　お前、黒曜石の鉱脈を探してんだろ？　ついでに見学もできるぜ！
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="l")]
+[name="チェストナット"]いや、やっぱりこのまま下に降りよう。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]ふざけんな！　お前と一緒に洞窟の奥で死ぬなんてごめんだね！
+[name="黒曜石坑夫"]俺は上をい――
+[Dialog]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="none")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_icebrk", volume=0.8)]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=false, block=false)]
+[delay(time=1)]
+[playsound(key="$e_atk_airshipvibe")]
+[playsound(key="$e_atk_vibe_n",delay=0.4)]
+[delay(time=1.5)]
+坑夫の言葉を遮るかのように、高所にあった通路に亀裂が走り、割れた壁から大量のオリジムシが姿を現した。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]……
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="all")]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",posfrom="0,0",posto="-50,0",afrom=1,ato=1,duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="l",name="avg_4041_chnut_1#6$1",focus="l")]
+[name="チェストナット"]ほら、こっち！　ぼうっとしてる場合じゃないよ！
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]あ、あぁ……
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1")]
+[charslot(slot="r",name="avg_npc_998_1#1$1")]
+[delay(time=0.2)]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",posfrom="-50,0",posto="-300,0",duration=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",afrom=1,ato=0,duration=0.5,isblock=false)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",posfrom="0,0",posto="-200,0",duration=1.2)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",afrom=1,ato=0,duration=0.7,isblock=false)]
+[delay(time=1.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_4041_chnut_1#9$1")]
+[charslot(slot="r",name="avg_npc_998_1#1$1")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_walkfast", volume=0.7)]
+[PlaySound(key="$d_avg_runstop", volume=1,delay=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]お前、どの道が危険なのか見ただけで分かるのか？
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]確かに今は下に向かって降りていってるけど、岩壁の模様の入り方からして、しばらく進めば上り坂になるはずだ。それに……オリジムシもこっちには来ていない。
+[name="チェストナット"]上にあったあの通路……あそこで何回も黒曜石を掘ってたって言ってたよね？
+[name="チェストナット"]長期に渡る採掘は地層の安定性を損ねてしまうから、もう一度揺れが起きたら崩れてしまう可能性が高いんだ――それに採掘後に残った空洞は、オリジムシにとっては最高の巣穴となる。
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="黒曜石坑夫"]……
+[name="黒曜石坑夫"]地底から来たおチビさんよ、お前って本当に不思議な奴だな。
+[name="黒曜石坑夫"]治療ができて、観察力もある。その上、脱出の手引きまでできるときた……突然襲い掛かってきた「オリジムシの災害」に対して、お前はずいぶんとたくさんのことができたじゃないか。
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="チェストナット"]……
+[charslot(slot="l",name="avg_4041_chnut_1#1$1",focus="l")]
+[name="チェストナット"]光が見えた！　きっと出口だよ！
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_beach_1", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[PlaySound(key="$beach", channel="beach", loop=true, volume=0.7)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+坑道を脱出した後、チェストナットは坑夫と別れを告げた。
+「ずいぶんとたくさんのことができた」……か。
+それでも災厄は……人々が準備を終えていない時に襲い掛かってくるものなんだ。
+これ以上自分にできることはあるのだろうか？　小柄な男はそう考えずにはいられなかった。だが、今の彼はまだその答えに辿り着くことはできない。
+しかし、彼の標本ケースには二つのきれいな「黒い石」を新たに加えられた。これだけでも十分励みになれる喜ばしいことだ。
+[Dialog]
+[delay(time=1)]
+シエスタでの最後の日。チェストナットはビーチへやって来て、露店で買ったキンキンに冷えたサイダーを飲みながら、海風と押し寄せる波の音を全身に感じていた。
+石段に腰かけハンドブックを開く。やっとの思いで手に入れられた鉱石をスケッチしつつ、彼はいつもと同じようにこの特別な休暇を書き記した。
+[stopSound(channel="beach", fadetime=1)]
+ふと耳に届いた泣き声が、波の引き際に訪れる短い沈黙を破った。
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="チェストナット"]子供の泣き声だ……
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]ビーチのほうから聞こえてくる。
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_beach_1", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="女の子"]うえーん……
+[name="男の子"]だからもう泣くなって！　大したことじゃないんだから！
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]……君、どうしたの？
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="none")]
+[name="女の子"]うぅ……グスッ……
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="none")]
+[name="男の子"]さっき来た大きな波が、二人でがんばって描いたお兄ちゃんの絵をめちゃくちゃにしちゃったんだ！
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]お兄ちゃんの絵？　どこにあるの？
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="none")]
+[name="男の子"]きみが踏んでるとこだよ。
+[Dialog]
+[charslot]
+足元に視線を向けたチェストナットは、初めて自分が砂に描かれた絵を踏んづけてしまっていたことに気付いた。
+波にさらわれ形が崩れてはいるものの、それが大きな顔であることが辛うじて見て取れる。
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="チェストナット"]それじゃあ……もう一回描いたらいいんじゃないかな？　僕も手伝うからさ。
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+[name="女の子"]うわああああん！！
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="チェストナット"]えぇ……もっと泣かせちゃった……
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="none")]
+[name="男の子"]もう描けないよ！　お兄ちゃんの目が波に流されちゃったから！
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="チェストナット"]目？　それももう一回描けばいいんじゃないの？
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="none")]
+[name="男の子"]石ころを目にしてたんだよ。妹がビーチで拾ってきたまん丸で真っ黒な二つの石！　ビーチ中を探し回ってやっと見つけた石なのに、波に流されちゃったんだ！
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="none")]
+[name="女の子"]うぅ……
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="チェストナット"]黒い石？
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="チェストナット"]この二つじゃダメかな？
+[Dialog]
+[charslot]
+本物と偽物の黒曜石を手のひらに乗せると、二人の子供はぐっと顔を近づけ、二つの石をまじまじと観察した。
+[name="男の子"]うーん……たぶん大丈夫だと思う。
+[name="女の子"]だめ……
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="チェストナット"]えっ、ダメなの？
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="none")]
+[name="女の子"]だって丸くないもん！
+[charslot(slot="m",name="avg_4041_chnut_1#1$1",focus="m")]
+[name="チェストナット"]フフッ、そっかそっか、分かったよ。
+[Dialog]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=0.95, g=0.95, b=0.95, fadetime=0.6, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_4041_chnut_1#1$1",focus="none")]
+アーツユニットから放たれた光が二つの「黒い石」を包み込む。
+[charslot(slot="m",name="avg_4041_chnut_1#1$1",focus="none")]
+[name="女の子"]えっ？
+[name="女の子"]石が……丸くなった？
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="チェストナット"]ほら、これで丸いおめめができたよ。次は何をすればいいの？
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+[name="男の子"]顔を描こう！
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+[name="女の子"]あたしが耳を描いて、お兄ちゃんが口を描くから……あなたは石を目の位置に置いて！
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="チェストナット"]僕がそんな大役でいいの？
+[name="チェストナット"]二つの石は……大体ここかな？
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+小柄な男が「黒い石」を砂に描かれた顔の上に置くと、子供たちから歓声が上がった。
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="チェストナット"]太陽に照らされると……どちらの輝きも大して変わらないんだね。
+[Dialog]
+[charslot]
+でも、そんなことはもどうでもいい――
+二つの石は今、どちらも輝く瞳なのだから。
+[Dialog]
+[name="女の子&男の子"]かんぺきだね！
+砂の絵がどんどん完成に近づいていく。どうやら二人の目に映る兄は……少々面白い顔をしているようだ。
+[Dialog]
+[delay(time=1)]
+ふぅ――
+そろそろ帰るべきだろうか……あの地底へ、一族の元へ。そしてみんなで一緒に頑丈な家を建てるのだろう。
+きっと波はまたなんの前触れもなく砂浜に押し寄せ、自分たちの力作を無情にも壊してしまう。
+だけど、絵なんてもう一回描けばいいし、「黒い石」もまた探せばいい。
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="チェストナット"]……
+[name="チェストナット"]今回こそ……正しい答えを出せたよね？
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

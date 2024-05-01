@@ -1,0 +1,746 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Background(image="bg_iceforest_2",screenadapt="coverall")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="bg_cher_9",screenadapt="coverall")]
+[playMusic(key="$saferoom_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[Blocker(a=0.3, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="They say there's gonna be another attack in about half an hour. You want some water?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Never mind. Look how tense you are. You'd just throw it up anyway... Breathe, breathe... Relax... Where are you from, girl?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1.5)]
+[Subtitle(text="Columbia, huh...? Ever heard of Davistown?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1.5)]
+[Subtitle(text="No? That's a shame. It's a pretty neat place. Its route takes it around the eastern forests, and the winters are long and cold, but its plate is home to a mine. Keeps its core's energy tower burning the whole time.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Just the heat generated from that keeps everyone warm all winter.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="It can get pretty hot indoors, but it's also cold outside, so no matter where you go, as soon as you open the door you get puffs of white steam gushing out toward you. Which condenses on your eyelashes like teardrops.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="You have to wipe them off quick, or the kids inside will laugh at you. But that's okay. That's when you fight back. Lift 'em by the armpits and toss them into the thick snowdrifts outside.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Now you get to laugh at all the snow on their faces.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1.5)]
+[Subtitle(text="Oh... Piqued your interest?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Yeah, it's a great place. Everyone wants to go see it for themselves. And I...", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=false)]
+[delay(time=3)]
+[Sticker(id="st1", text="I really want to go back and have a look, too.", alignment="center", x=300,y=370,size=24,delay=0, width=700,block = true,duration=1)]
+[Sticker(id="st1",duration=3,block = false)]
+[delay(time=2)]
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="42_g1_mine",screenadapt="coverall")]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="bgs")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "m", name = "avg_npc_1035_1#1$1",duration=1.5)]
+[delay(time=2.5)]
+[name="Leone"]Hfff—How is it so damn cold here? I don't get it!
+[charslot(slot = "m", name = "avg_npc_1035_1#7$1")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Leone"]How the hell does this even happen? So goddamned cold!
+[dialog]
+[charslot]
+[PlaySound(key="$dooropenquite")]
+[delay(time=1.5)]
+[name="Helena"]Get your ass inside then! If you know it's cold, why're you complaining about it with the door open?
+[stopsound(channel="bgs",fadetime=2)]
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="42_g3_diner",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_avg_doorbell")]
+[delay(time=1)]
+[PlayMusic(intro="$bar_intro", key="$bar_loop", volume=0.6)]
+[charslot(slot = "r", name = "avg_npc_1035_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="Leone"]I don't want to get the floor dirty.
+[dialog]
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "m", focus = "l")]
+[name="Helena"]You say that like you can wipe your feet on the snow... Here, hot tea.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1035_1#10$1",focus="r")]
+[CameraShake(duration=0.1, xstrength=15, ystrength=10, vibrato=15, randomness=90, fadeout=false, block=false)]
+[multiline(name="Leone",delay=0.01,end=true)] Pff... That's hot!
+[name="Leone"]...The floor's pretty dirty in the diner today, huh? If I'd known, I would've just walked in.
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="Helena"]We got some heavy snow. Every time someone steps inside, it just gets dirty again. I'll clean it up after closing.
+[name="Helena"]So what're you having? Beans? Bread?
+[charslot(slot = "r", name = "avg_npc_1035_1#9$1",focus="r")]
+[name="Leone"]What kinda choice is that?
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="Helena"]It's all we have. If you'd rather have nothing, suit yourself.
+[charslot(slot = "r", name = "avg_npc_1035_1#9$1",focus="r")]
+[name="Leone"]Can I get a little of both?
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="Helena"]Fine, seeing how you're my first customer without a few screws loose. I'll even throw in a scoop of butter, on the house.
+[dialog]
+[charslot(slot = "l",posfrom = "0,0", posto = "-150,0",duration = 1,afrom=1,ato=0)]
+[delay(time=2)]
+[charslot(slot = "r", name = "avg_npc_1035_1#10$1",focus="r")]
+[name="Leone"]Helena...
+[charslot(slot = "r", name = "avg_npc_1035_1#10$1",focus="l")]
+[name="Helena"]Now what?
+[charslot(slot = "r", name = "avg_npc_1035_1#1$1",focus="r")]
+[multiline(name="Leone")]Why do you have mud on your chairs—
+[charslot(slot = "r", name = "avg_npc_1035_1#7$1",focus="r")]
+[multiline(name="Leone",end=true)]Hey you two, this ain't your home. Put your feet down!
+[dialog]
+[charslot]
+[playsound(key="$d_avg_smashtable")]
+[delay(time=0.5)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",duration = 0.3)]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",duration = 0.3)]
+[delay(time=0.5)]
+[charslot(slot = "r", name = "avg_npc_1044_1#1$1",focus="r")]
+[name="Rude Ruffian"]You talking to us, old man?
+[charslot]
+[charslot(slot = "m", name = "avg_4104_coldst_1#2$1")]
+[name="Helena"]*sigh*... Settle down, you two.
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus="l")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus="l")]
+[name="Boorish Brute"]You stay out of this.
+[charslot]
+[charslot(slot = "m", name = "avg_4104_coldst_1#1$1")]
+[name="Helena"]Don't be like that. Everyone's here for a hot meal. No need to get physical.
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus="r")]
+[name="Rude Ruffian"]Hey, why're you taking his side?
+[charslot]
+[charslot(slot = "m", name = "avg_4104_coldst_1#1$1")]
+[name="Helena"]Because I'd rather not see every little quarrel in this joint end in a knife fight.
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus="r")]
+[name="Rude Ruffian"]Shut up, or I'll knife you too.
+[charslot]
+[charslot(slot = "m", name = "avg_4104_coldst_1#9$1")]
+[name="Helena"]For the love of—
+[charslot(slot = "m", name = "avg_npc_1035_1#7$1")]
+[name="Leone"]Stay out of this, Helena. I'll teach these hoodlums a lesson.
+[charslot]
+[charslot(slot = "r", name = "avg_npc_1044_1#1$1")]
+[name="Rude Ruffian"]Heh, your funeral!
+[dialog]
+[playsound(key="$d_avg_knifeplank",delay=0.7)]
+[charslot(slot = "r",posfrom = "0,0", posto = "-150,0",duration = 0.5)]
+[delay(time=0.6)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=0.05, block=true)]
+[CameraShake(duration=0.3, xstrength=25, ystrength=20, vibrato=25, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[charslot(slot ="r", action="jump", posto = "180,0",power=20,times=1,duration = 0.35)]
+[delay(time=0.6)]
+[charslot(slot = "m", focus = "n")]
+The ruffian takes his knife and steps forward, only for a dinner knife to fly at him from the opposite side and embed itself in the ground near his feet.
+[charslot(slot = "r", focus = "r")]
+[name="Rude Ruffian"]You?!
+[charslot]
+[charslot(slot = "l", name = "avg_4104_coldst_1#11$1")]
+[name="Helena"]Not another inch, boy. It's late. Go home to your mommy.
+[charslot]
+[charslot(slot = "r",posfrom = "80,0", posto = "80,0",duration = 0)]
+[charslot(slot = "r", name = "avg_npc_1044_1#1$1")]
+[name="Rude Ruffian"]Right back at you, woman—
+[dialog]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=0.05, block=true)]
+[playsound(key="$d_avg_knifeplank")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[delay(time=0.3)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=25, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", focus = "n")]
+Before he can take another step, a second knife brushes past his cheek and lodges itself in the wall behind him.
+A few drops of fresh blood drip to the ground.
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1044_1#1$1")]
+[charslot(slot ="r", action="shake", power=10, times=50, duration=0.3)]
+[name="Rude Ruffian"]My ear?!
+[charslot]
+[charslot(slot = "l", name = "avg_4104_coldst_1#2$1")]
+[name="Helena"]Stop whining. It's still attached.
+[charslot(slot = "l", name = "avg_4104_coldst_1#6$1")]
+[name="Helena"]But I can't promise it'll stay that way unless you scram. Now.
+[charslot(slot = "l", focus = "n")]
+The restaurant's proprietor turns around and takes a cloth off the rack to start wiping the bar.
+There is another knife wedged between her fingers.
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus="r")]
+[name="Rude Ruffian"]Shit...
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus="l")]
+[name="Boorish Brute"]Forget it, let's go. We can get them back for this later.
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "r",posfrom = "0,0", posto = "200,0",afrom = 1, ato = 0,duration = 0.6)]
+[delay(time=0.3)]
+[charslot(slot = "l",posfrom = "0,0", posto = "350,0",afrom = 1, ato = 0,duration = 1)]
+[delay(time=1)]
+[CameraShake(duration=0.5, xstrength=20, ystrength=15, vibrato=10, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_closedoorheavy",volume=0.6)]
+[delay(time=2)]
+[charslot]
+[charslot(slot = "r", name = "avg_npc_1035_1#1$1")]
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 0.7)]
+[delay(time=1.5)]
+[playsound(key="$d_avg_glassclink")]
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="Helena"]Here, your meal.
+[charslot(slot = "r", name = "avg_npc_1035_1#9$1",focus="r")]
+[multiline(name="Leone")]Thanks...
+[charslot(slot = "r", name = "avg_npc_1035_1#6$1",focus="r")]
+[CameraShake(duration=0.1, xstrength=15, ystrength=10, vibrato=15, randomness=90, fadeout=false, block=false)]
+[multiline(name="Leone",delay=0.01,end=true)]Yowch! It's hot!
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="Helena"]You're about the only person who can burn his tongue twice in one visit.
+[charslot(slot = "r", name = "avg_npc_1035_1#9$1",focus="r")]
+[name="Leone"]Hey, I was starving. Haven't had a good meal all day. Anyhow, don't you think we've been getting more and more of these thugs in town?
+[charslot(slot = "l", name = "avg_4104_coldst_1#4$1",focus="l")]
+[name="Helena"]Probably because Woodrow's out searching for Miles... So they think nobody's gonna stop them.
+[charslot(slot = "r", name = "avg_npc_1035_1#8$1",focus="r")]
+[name="Leone"]Hmph... Miles sure knows how to be a pain in the neck. He left the plate without a word to look for fuel, only to disappear without a trace. And now Woodrow's gotta go look for him.
+[charslot(slot = "l", name = "avg_4104_coldst_1#2$1",focus="l")]
+[name="Helena"]What choice did he have? We don't have enough fuel to go around. Besides, it don't matter what he ran into. He can deal with anything, man or beast, in three seconds flat.
+[charslot(slot = "r", name = "avg_npc_1035_1#8$1",focus="r")]
+[name="Leone"]But what if Woodrow's too late—
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="Helena"]Alright, enough yapping. Finish your bean stew.
+[charslot(slot = "r", name = "avg_npc_1035_1#1$1",focus="r")]
+[name="Leone"]*sigh* I'm just worried...
+[charslot(slot = "l", name = "avg_4104_coldst_1#10$1",focus="l")]
+[name="Helena"]Here, it's my last bit of butter. Now shut your trap, will you?
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="bg_black",screenadapt="coverall")]
+[PlaySound(key="$d_avg_strangeclap")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="Lethargic Female Voice"]Kids, you awake?
+[name="Lethargic Female Voice"]There may be ambushers in the forest. The recon team has gone ahead to scout the area, and if they need any fire support, we can't just be napping in the transport.
+[name="No-Longer-Lethargic Female Voice"]So get off your butts, pick up your gear, and cover yourselves. On the count of three.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="24_g1_snowyforest",screenadapt="coverall")]
+[playsound(key="$d_avg_cardoorc")]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=1, block=true)]
+[playMusic(intro="$m_dia_street_intro",key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2.5, block=false)]
+[name="No-Longer-Lethargic Female Voice"]Ugh, my eyes...
+[playsound(key="$transmission")]
+[name="Comms"]What's wrong?
+[dialog]
+[charslot(slot="m",name="avg_106_franka_1#9$1",duration=1)]
+[delay(time=2)]
+[name="Franka"]It's the glare from the snow.
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]I'm pretty sure I gave you a reminder of what to look out for when fighting in a snowfield. Where are your sunglasses?
+[charslot(slot="m",name="avg_106_franka_1#3$1")]
+[name="Franka"]Guess I didn't think it through. Whatever, I'll have to make do with what I have on hand.
+[name="Franka"]How are things looking up ahead?
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]Patience. The situation's a little tricky right now. The snow's too thick, so it's hard to spot any enemies in hiding. It'll take some time to pinpoint their location.
+[charslot(slot="m",name="avg_106_franka_1#10$1")]
+[name="Franka"]*sigh* This was supposed to be a power plant repair job, and now we've gotta clear out bandits, too? Guess I'll just think of it as charity work.
+[charslot(slot="m",name="avg_106_franka_1#3$1")]
+[name="Franka"]What do you say, kids?
+[dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1045_1#1$1",duration=0.5)]
+[charslot(slot="r",name="avg_npc_1045_1#1$1",duration=0.5)]
+[delay(time=1)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Blacksteel Operator"]Ready to go.
+[charslot]
+[charslot(slot="m",name="avg_106_franka_1#7$1")]
+[name="Franka"]Seems my lackeys can't wait anymore, Captain. Can we get in touch with the Davistown officers?
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]They said they'll send someone to meet us at the entrance to the plate, but there's not much they can do in the way of combat support outside.
+[charslot(slot="m",name="avg_106_franka_1#3$1")]
+[name="Franka"]Wow, such hospitality. Good to know I won't be getting lost in town, at any rate.
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]It's a nearly bankrupt mining platform. We can't ask too much of them.
+[name="Comms"]They reported the power plant explosion and subsequent fuel leakage to the state government at the start of the year, but nobody cared.
+[name="Comms"]All things considered, they've dealt with it pretty well. So the pollution hasn't spread much, but the plant itself is almost beyond repair. Certainly more than the locals can handle.
+[charslot(slot="m",name="avg_106_franka_1#9$1")]
+[name="Franka"]Hold up. The start of the year? How come they're only contacting us now?
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]You think a tiny municipality has the budget for that? They never spend a dime until they're out of options.
+[name="Comms"]At the time, the plant could still barely support the platform's movements. A few months ago, it stopped working entirely. Now, I doubt it can provide its most basic function, heating.
+[charslot(slot="m",name="avg_106_franka_1#5$1")]
+[name="Franka"]It's minus 14 degrees here...
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]And colder at night.
+[charslot(slot="m",name="avg_106_franka_1#9$1")]
+[name="Franka"]So, is it all bad news, or...?
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]Based on the map, Davistown is just up ahead. You should see it as soon as you get out of the woods.
+[charslot(slot="m",name="avg_106_franka_1#3$1")]
+[name="Franka"]Anything more exciting?
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]...Perfect timing. We've located all our targets. You can start clearing them out.
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="avg_106_franka_1#7$1")]
+[name="Franka"]Lovely.
+[charslot(slot="m",name="avg_106_franka_1#10$1")]
+[dialog]
+[Blocker(a=0.3, r=0.6, g=0, b=0.2, fadetime=0.05, block=true)]
+[playsound(key="$d_avg_drawfiresword")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[delay(time=1.3)]
+[charslot(slot="m",name="avg_106_franka_1#3$1")]
+[name="Franka"]One last thing before I hop to it. Where are Jessica and Laura? You send them somewhere?
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]The enemy camp. There's a local being held captive there, without too many guards. It wasn't a good idea to send too big of a force.
+[charslot(slot="m",name="avg_106_franka_1#1$1")]
+[name="Franka"]Okay, gotcha. I'll clean this up ASAP.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="bg_iceforest_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$mist_intro",key="$mist_loop", volume=0.6)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",duration = 0.5)]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot = "l", focus = "l")]
+[name="Cruel Snowfield Bandit"]Hey. We've been hanging you here for an hour, old man. You thirsty? Need a sip of water?
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1038_1#7$1",duration=1)]
+[delay(time=2)]
+[name="Miles"]......
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus = "l")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus = "l")]
+[name="Cruel Snowfield Bandit"]If you ain't saying nothing, that means yes, right?
+[dialog]
+[charslot(slot = "l",posfrom = "0,0", posto = "0,-60",duration = 0.5)]
+[delay(time=0.6)]
+[charslot(slot = "l",posfrom = "0,-60", posto = "0,0",duration = 0.3)]
+[CameraShake(duration=0.3, xstrength=10, ystrength=10, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus = "l")]
+[name="Cruel Snowfield Bandit"](Picks up a handful of snow from the ground)
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus = "l")]
+[name="Cruel Snowfield Bandit"]Here, have as much as you want. No need to thank me.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.3, block=false)]
+[charslot(slot = "left",action="zoom", poszoom = "0.5,0.5", scale=1.05,duration = 0.3)]
+[charslot(duration=0.3)]
+[delay(time=0.31)]
+[charslot(slot="m",name="avg_npc_1038_1#7$1")]
+[PlaySound(key="$fightgeneral",volume=0.6)]
+[CameraShake(duration=0.5, xstrength=18, ystrength=16, vibrato=20, randomness=90, fadeout=true, block=false)]
+[delay(time=0.4)]
+[name="Miles"]*cough* *cough*, *cough* *cough*...
+[name="Miles"]Please, let me go. I have nothing on me... *cough* *cough*!
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus = "l")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus = "l")]
+[name="Cruel Snowfield Bandit"]What're you saying? It's so boring out here in the snow, and we finally run into <i>you</i>! Been a while since I had some fun.
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus = "r")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus = "r")]
+[name="Indifferent Snowfield Bandit"]Enough messing around. I'd like some peace and quiet, so hurry up and deal with him.
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus = "l")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus = "l")]
+[name="Cruel Snowfield Bandit"]You hear that, old man? You're so loud, you're bothering my buddy here. We gotta shut you up—
+[dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=18, ystrength=16, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral",volume=0.6,channel="b")]
+[delay(time=0.6)]
+[CameraShake(duration=0.2, xstrength=28, ystrength=26, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral",delay=,volume=0.6)]
+[delay(time=0.21)]
+[CameraShake(duration=0.3, xstrength=28, ystrength=26, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch",channel="a")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1038_1#2$1")]
+[name="Miles"]Ugh...!
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus = "r")]
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus = "r")]
+[name="Indifferent Snowfield Bandit"]...Freak.
+[charslot(slot = "left", name = "avg_npc_1044_1#1$1",focus = "l")]
+[name="Cruel Snowfield Bandit"]Everyone else's out ambushing the caravan, and we're stuck here guarding the camp.
+[name="Cruel Snowfield Bandit"]And when they get back, they'll be loaded with loot, and we'll have to settle for the scraps. You telling me you're okay with that?
+[charslot(slot = "right", name = "avg_npc_1044_1#1$1",focus = "r")]
+[name="Indifferent Snowfield Bandit"]Tch... If you aren't going to, I'll take care of him myself.
+[charslot]
+[charslot(slot="m",name="avg_npc_1038_1#6$1")]
+[name="Miles"]Wh-What are you going to do?!
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1044_1#1$1")]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.51", scale=1.05,duration = 1)]
+[delay(time=1)]
+[name="Indifferent Snowfield Bandit"]Quiet. It'll be over soon.
+[charslot]
+[CameraShake(duration=0.5, xstrength=28, ystrength=26, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_1038_1#7$1")]
+[name="Miles"]No!
+[dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Effect(name="$e_slash_01_s",x = 250,y=0,rox=265,roy=78,roz=0,layer = 1)]
+[charslot(slot="m",name="avg_4105_almond_1#1$1",posfrom = "-400,-30", posto = "-200,0",duration=0.3,bstart=0.1,bend=0.7)]
+[PlaySound(key="$d_avg_hookropehit")]
+[delay(time=0.3)]
+[charslot(slot = "m",posfrom = "-200,0", posto = "-400,-30",afrom = 1, ato = 0,duration = 0.5)]
+[delay(time=0.5)]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Background(image="bg_iceforest_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Effect(name="$e_fist_hit_01",layer = 1,x=50,xTo=100,movetime=0.3)]
+[CameraShake(duration=0.3, xstrength=28, ystrength=16, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1044_1#1$1",duration=0.2)]
+[charslot(slot = "m",posfrom = "0,0", posto = "150,0",duration = 0.3)]
+[delay(time=0.5)]
+[CameraShake(duration=0.5, xstrength=18, ystrength=16, vibrato=20, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m",posfrom = "150,0", posto = "150,-50",duration = 0.5)]
+[PlaySound(key="$bodyfalldown1")]
+[charslot(duration=0.5)]
+[name="Indifferent Snowfield Bandit"]Ngh—
+[dialog]
+[delay(time=0.6)]
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1044_1#1$1")]
+[name="Cruel Snowfield Bandit"]Who's there?!
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.3, block=false)]
+[CameraShake(duration=0.3, xstrength=18, ystrength=16, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_hookropehit")]
+[delay(time=0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",afrom = 1, ato = 0,duration = 0.5)]
+[delay(time=0.3)]
+[PlaySound(key="$bodyfalldown1")]
+[CameraShake(duration=0.3, xstrength=18, ystrength=16, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1038_1#7$1",duration=0.5)]
+[delay(time=1)]
+[name="Miles"]Wh-Who are you?
+[dialog]
+[charslot]
+[delay(time=1)]
+[charslot(slot="m",name="avg_4105_almond_1#5$1",duration=1)]
+[delay(time=1)]
+[name="Blacksteel Operator"]Shh! Quiet!
+[name="Blacksteel Operator"]I'm gonna untie you. Keep your voice down and follow me. Can you do that?
+[charslot(slot="m",name="avg_npc_1038_1#1$1")]
+[name="Miles"]Mm.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_gen_transmissionget")]
+[charslot(slot="m",name="avg_4105_almond_1#2$1",duration=0.5)]
+[delay(time=1)]
+[name="Blacksteel Operator"]This is Laura. I've secured the hostage. How are things on your end?
+[charslot(slot = "m", focus = "n")]
+[name="Jessica"]All done, but...
+[charslot(slot="m",name="avg_4105_almond_1#7$1")]
+[name="Laura"]Are you hurt?
+[charslot(slot = "m", focus = "n")]
+[name="Jessica"]N-No... but my comms... *bzzt*... broke... It's fine. I can deal with it...
+[name="Jessica"]*bzzt*... Thanks.
+[charslot(slot="m",name="avg_4105_almond_1#11$1")]
+[name="Laura"]No need to thank me.
+[charslot(slot = "m", focus = "n")]
+[name="Jessica"]*bzzt*... Okay.
+[charslot(slot="m",name="avg_4105_almond_1#1$1")]
+[name="Laura"]I'll take the hostage to the rendezvous point. See you later.
+[charslot(slot = "m", focus = "n")]
+[name="Jessica"]*bzzt*... later.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_iceforest_2",screenadapt="coverall")]
+[PlaySound(key="$d_avg_bulletshotair")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[CameraShake(duration=0.5, xstrength=28, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1044_1#1$1")]
+[name="Stubborn Snowfield Rioter"]I'm taking you with me!
+[charslot(slot = "m", name = "avg_106_franka_1#3$1")]
+[name="Franka"]Coming at me head on? You're one brave fella.
+[dialog]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[CameraShake(duration=0.3, xstrength=28, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_106_franka_1#8$1")]
+[charslot(slot = "m",action="zoom", poszoom = "0.53,0.53", scale=1.05,duration = 0.3)]
+[PlaySound(key="$d_avg_spear")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.2, block=false)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1044_1#1$1")]
+[name="Stubborn Snowfield Rioter"]Urgh—!
+[dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",afrom = 1, ato = 0,duration = 0.5)]
+[delay(time=0.3)]
+[CameraShake(duration=0.3, xstrength=18, ystrength=16, vibrato=15, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$bodyfalldown1")]
+[charslot]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "m", name = "avg_106_franka_1#1$1")]
+[name="Franka"]That was the last one.
+[dialog]
+[PlaySound(key="$d_avg_exsheath")]
+[delay(time=1)]
+[PlaySound(key="$d_gen_transmissionget")]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_106_franka_1#3$1")]
+[name="Franka"]Reporting in, Captain. All targets neutralized.
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[name="Comms"]Okay. We're getting ready to leave too. We should be rendezvousing with you in a few minutes. Wait there for Jessica and Laura—
+[dialog]
+[PlaySound(key="$d_avg_gunsingle",volume=0.3)]
+[delay(time=0.5)]
+[PlaySound(key="$transmission")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_106_franka_1#5$1")]
+[name="Franka"]Hey. Hello? What's going on over there?!
+[stopmusic(fadetime=2)]
+[dialog]
+[charslot]
+[delay(time=1)]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot="m",name="avg_107_liskam_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Liskarm"]There's no need for comms at this distance.
+[charslot(slot = "m", name = "avg_106_franka_1#9$1")]
+[name="Franka"]You just had to come early, huh?
+[charslot(slot="m",name="avg_107_liskam_1#2$1")]
+[name="Liskarm"]Someone once told me that playing pranks after combat can help alleviate stress.
+[charslot(slot = "m", name = "avg_106_franka_1#4$1")]
+[name="Franka"]...Wow, you're getting better at this.
+[charslot(slot="m",name="avg_107_liskam_1#1$1")]
+[name="Liskarm"]I learned from the best.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="bg_iceforest_1",screenadapt="coverall")]
+[playMusic(intro="$darkness01_intro",key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_106_franka_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="Franka"]The weather here's real temperamental, huh? It was all clear just earlier, but it's already starting to fog up.
+[charslot(slot="m",name="avg_107_liskam_1#1$1")]
+[name="Liskarm"]We've checked all your injuries, Mr. Miles. The bruise on your abdomen doesn't seem serious, but I suggest you visit the hospital as soon as can.
+[charslot(slot="m",name="avg_npc_1038_1#6$1")]
+[name="Miles"]Hospital...? Davistown ain't had a hospital in a long, long time.
+[charslot(slot = "m", name = "avg_106_franka_1#1$1")]
+[name="Franka"]Uh... Good. We're heading to Davistown too. We can take you back.
+[charslot(slot="m",name="avg_npc_1038_1#6$1")]
+[name="Miles"]What are you folks up to <i>there</i>?
+[charslot(slot="m",name="avg_107_liskam_1#1$1")]
+[name="Liskarm"]Relax, sir. We were dispatched to help the plate restart its operations.
+[name="Liskarm"]We brought some fuel and supplies. They should be enough for the residents to last until the power plant is repaired.
+[charslot(slot="m",name="avg_npc_1038_1#1$1")]
+[name="Miles"]But... y'all bring any technicians?
+[charslot(slot="m",name="avg_npc_1038_1#3$1")]
+[name="Miles"]The plant was already on its last legs. Without any technicians, the blasted weather will kill us the moment it goes out for good.
+[charslot(slot="m",name="avg_4105_almond_1#11$1")]
+[name="Laura"]Calm down, sir. I'm the lead technician on the team. Call me Laura. Nice to meet ya.
+[charslot(slot="m",name="avg_npc_1038_1#1$1")]
+[name="Miles"]I'm Miles... a Davistown boiler worker.
+[name="Miles"]Thank you... thank you...
+[charslot(slot = "m", name = "avg_106_franka_1#1$1")]
+[name="Franka"]So, why'd you leave the plate? It's dangerous out here.
+[charslot(slot="m",name="avg_npc_1038_1#1$1")]
+[name="Miles"]We're almost completely out of fuel, so I came out to try my luck... But if y'all are here to fix the plant, can we get going now?
+[charslot(slot="m",name="avg_4105_almond_1#10$1")]
+[name="Laura"]One second. Let me ask Jessica where she is.
+[dialog]
+[playsound(key="$d_gen_transmissionget")]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_4105_almond_1#11$1")]
+[name="Laura"]Hey, Jessica? It's Laura. You done there?
+[charslot(slot = "m", focus = "n")]
+[name="Jessica"]*bzzt*... I'm all finished— *bzzt*...
+[charslot(slot="m",name="avg_4105_almond_1#11$1")]
+[name="Laura"]Then hurry up and get over here—
+[dialog]
+[playsound(key="$transmission")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_4105_almond_1#5$1")]
+[name="Laura"]Hey? Jessica?
+[charslot(slot="m",name="avg_4105_almond_1#6$1")]
+[name="Laura"]Jessica?!
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_iceforest_2",screenadapt="coverall")]
+[playsound(key="$d_avg_snowstormflp", loop=true, channel="bgs",volume=0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Jessica"]Laura, where are you? I'll head over right now—
+[dialog]
+[playsound(key="$transmission")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1034_jesca2_1#10$1")]
+[name="Jessica"]Laura? Hello? Hello?
+[charslot(slot="m",name="avg_1034_jesca2_1#16$1")]
+[name="Jessica"]Why did the communicator have to break down now of all times...?
+[name="Jessica"]Let me check the coordinates... Where's the camp?
+[charslot(slot="m",name="avg_1034_jesca2_1#14$1")]
+[name="Jessica"]How come there isn't so much as a marker? Where am I? I... I'm not lost, am I?
+[charslot(slot="m",name="avg_1034_jesca2_1#11$1")]
+[name="Jessica"]Calm down. Calm down... You're near Davistown. You aren't far from the plate...
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[SoundVolume(volume=0.7, fadetime=1,channel="a")]
+[PlaySound(key="$d_avg_wind")]
+[delay(time=2)]
+[charslot(slot="m",name="avg_1034_jesca2_1#9$1")]
+[name="Jessica"]I... I guess I'll have to wait for the wind to stop.
+[SoundVolume(volume=1, fadetime=1,channel="a")]
+[name="Jessica"]Brr... So cold.
+[charslot(slot = "m", focus = "n")]
+Jessica breathes a sigh and puts her hand in her pocket.
+Her fingers feel the velvet pouch in her bag, as well as the small, hard object inside.
+She takes out the pouch and pours out its contents.
+[MusicVolume(volume=0.3, fadetime=2)]
+[Dialog]
+[StopSound(channel="bgs", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="42_g9_modernoffice",screenadapt="coverall")]
+[playsound(key="$d_avg_glassdooropen")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[name="Jessica"]Reporting.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1036_1#1$1",duration=1)]
+[delay(time=2)]
+[name="'Clip' Cliff"]You, huh?
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1")]
+[name="Jessica"]Captain Liskarm encountered a windstorm on her way back and hasn't been able to return to the landship. I'm standing in for her for debriefing.
+[charslot(slot="m",name="avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Have you received the Davistown mission notice?
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1")]
+[name="Jessica"]Yes, sir.
+[charslot(slot="m",name="avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]What about the details? Have you read it over yet?
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1")]
+[name="Jessica"]We will be heading to Davistown, a mining platform with a small residential area.
+[name="Jessica"]The platform is currently stranded in the forests of eastern Columbia due to a power plant explosion. Our mission is to repair the plant and restore the plate's mobility.
+[charslot(slot="m",name="avg_npc_1036_1#8$1")]
+[name="'Clip' Cliff"]Good. If I remember correctly, the supplies were issued today. What about the follow-up arrangements?
+[charslot(slot="m",name="avg_1034_jesca2_1#14$1")]
+[name="Jessica"]That's all it said in our orders.
+[charslot(slot="m",name="avg_npc_1036_1#7$1")]
+[name="'Clip' Cliff"]Never mind... There's no harm in telling you. As soon as Davistown returns to its original route, Fort Barron will be there to tow it to a nearby nomadic city for merging and salvage.
+[charslot(slot="m",name="avg_1034_jesca2_1#16$1")]
+[name="Jessica"]Why are you telling me this?
+[charslot(slot="m",name="avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Jessica, ever since you got back from Victoria, you haven't been putting in as much effort as before.
+[charslot(slot="m",name="avg_1034_jesca2_1#10$1")]
+[name="Jessica"]Sir... I'm not sure that's a fair appraisal.
+[name="Jessica"]I've been giving it my all in every mission, and have... fulfilled every mission objective.
+[charslot(slot="m",name="avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Just last month, you refused an order to evacuate an area polluted with Originium dust.
+[charslot(slot="m",name="avg_1034_jesca2_1#10$1")]
+[name="Jessica"]There was someone nearby who needed rescuing...
+[charslot(slot="m",name="avg_npc_1036_1#2$1")]
+[name="'Clip' Cliff"]Half a year ago, during an assault operation, you violated your superior's order and specifically chose a route away from the residential areas. Your entire team almost got caught up in an unnecessary battle.
+[charslot(slot="m",name="avg_1034_jesca2_1#9$1")]
+[name="Jessica"]The original plan would have caused significant damage to the local residences... I... I...
+[charslot(slot="m",name="avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]A year ago, when you had just returned from Victoria, you immediately charged into the command center. If you'd been carrying a firearm, I would've thought you were mutinying.
+[charslot(slot="m",name="avg_1034_jesca2_1#14$1")]
+[name="Jessica"]S-Sorry, sir... I wasn't able to control my emotions... but hundreds of Victorian citizens were—
+[charslot(slot="m",name="avg_npc_1036_1#6$1")]
+[name="'Clip' Cliff"]I understand your anger, but have you ever considered what would've happened if we hadn't evacuated as soon as possible? If a duke were to find out that Blacksteel, a Columbian company, was in the area?
+[name="'Clip' Cliff"]To the countries involved, this would've sparked a 'conflict.' But to normal folks, we'd call that a 'disaster.'
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1")]
+[name="Jessica"]That does make sense when you put it like that, but... What does this have to do with our upcoming mission?
+[charslot(slot="m",name="avg_npc_1036_1#6$1")]
+[name="'Clip' Cliff"]I'm just trying to remind you to avoid making the same mistake you made in Victoria.
+[charslot(slot="m",name="avg_1034_jesca2_1#14$1")]
+[name="Jessica"]The same mistake... What do you mean, exactly?
+[charslot(slot="m",name="avg_npc_1036_1#7$1")]
+[name="'Clip' Cliff"]......
+[dialog]
+[playsound(key="$d_avg_open_box")]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]And while you're at it, take this pouch. Give what's inside to a man from Davistown named Woodrow Bianchi.
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1")]
+[name="Jessica"]Could you describe him at all? Like, his features or race—
+[charslot(slot="m",name="avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]No need. You'll know who he is the moment you see him.
+[charslot(slot="m",name="avg_1034_jesca2_1#10$1")]
+[name="Jessica"]Sir... I still don't understand. It's just a power plant repair. Why—
+[charslot(slot="m",name="avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Let me remind you, Jessica. You're a mercenary. This is about business, not duty.
+[name="'Clip' Cliff"]Now go.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1",focus="n")]
+[Background(image="bg_iceforest_2",screenadapt="coverall")]
+[MusicVolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_onebulletland")]
+Jessica picks up the bullet that fell from the pouch, and holds it under the sunlight to examine it.
+[charslot(slot="m",name="avg_1034_jesca2_1#1$1")]
+[name="Jessica"]Rimmed cartridge, .44... There's a pattern etched into the bottom.
+[charslot(slot="m",name="avg_1034_jesca2_1#16$1")]
+[name="Jessica"]No... It's too faint. I can't make it out.
+[name="Jessica"]Sankta ammo... looks pretty much like the etched ammo we use at Blacksteel.
+[charslot(slot = "m", focus = "n")]
+The casing is rusted, and the surface's copper has browned. Even under the direct sunlight, there is hardly any luster.
+Jessica breathes a sigh and puts it back inside the pouch.
+[charslot(slot="m",name="avg_1034_jesca2_1#14$1")]
+[name="Jessica"]'Make the same mistake I made in Victoria'...?
+[charslot(slot="m",name="avg_1034_jesca2_1#9$1")]
+[name="Jessica"]What's going on in Davistown?
+[charslot(duration=0.5)]
+[stopmusic(fadetime=2)]
+Suddenly, she hears a sound that isn't the wind.
+[dialog]
+[playsound(key="$d_avg_gunload")]
+[delay(time=1.5)]
+[name="???"]Don't move, girl.
+[name="???"]Not unless you want a bullet through the chest.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[charslot]
+[Image]

@@ -1,0 +1,39 @@
+[HEADER(is_tutorial=true, is_skippable=false)] 2023愚人节教学关1_a
+[Battle.LockFunction(mask="BATTLE_STATUS")]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_cammou", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+配信のネタっていうのは、実際に自分で探しに行ってみるのが一番だよ！　あたしが以前行ったカジミエーシュの大騎士領は、ネタに困らない場所だったね。
+[PopupDialog(dialogHead="$avatar_ulika")] 大騎士領にはイケメンがたくさんいるって聞きましたけど……ホントですか？
+[Battle.Pause(pause=false)]
+[Delay(time=1)]
+[Battle.Pause(pause=true)]
+[Battle.UnlockFunction(mask="CHARACTER_INFO")]
+[Battle.UnlockFunction(mask="CHARACTER_MENU")]
+[Battle.EnsureMinCost(cost=5)]
+[Tutorial(focusX=220, focusY=90, focusWidth=150, focusHeight=150, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_cammou", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+イケメンの話はまた後にしよっか。まずは<@tu.kw>自分</>をここに配置して、通行人を含めた街の情景を写真に収めてみよう。
+[Battle.Pause(pause=false)]
+[Delay(time=3)]
+[Battle.EnsureMinSp(charId="trap_116_stdurk", sp=5)]
+[Battle.Pause(pause=true)]
+[InputBlocker(blockInput=false)]
+[InputBlocker(blockInput=true, validX=188, validY=100, validWidth=150, validHeight=150)]
+[Tutorial(waitForSignal="char_info", focusX=225, focusY=130, focusWidth=150, focusHeight=150, \
+          animStyle="Click", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_cammou", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+ここを押して<@tu.kw>撮影</>の準備を完了してね。
+[InputBlocker(blockInput=false)]
+[Battle.EnsureMinSp(charId="trap_116_stdurk", sp=12)]
+[Tutorial(waitForSignal="use_skill", focusX=200, focusY=-85, focusWidth=150, focusHeight=150, \
+          animStyle="Click", focusStyle="HighlightCircle", black="$f_tut_black", \
+          protectTime=0.5, dialogHead="$avatar_cammou")] \
+スキルの準備が整ったら、この後の配信でリスナーとシェアできるネタとして、範囲内にいる<@tu.kw>通行人</>を写真に収めることができるよ。
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=2)]
+[Battle.Pause(pause=true)]
+[PopupDialog(dialogHead="$avatar_cammou")] 今撮ったのは競技騎士だね。すごくかっこいい甲冑だけど、ちょっとありきたりかな。リスナーの興味を引くことはできないかも。
+[PopupDialog(dialogHead="$avatar_ulika")] それって有名人だけ選んで撮るってことですか？ 私そんなコネないですよ……
+[PopupDialog(dialogHead="$avatar_cammou")] 大丈夫、有名人だって街ブラくらいはするよ。

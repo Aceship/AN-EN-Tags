@@ -1,0 +1,832 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=2)] 
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="イグゼキュター"]……その過程で一名のオペレーターが足首に軽度の捻挫を負ったものの、ターゲットの確保には成功し、持ち出された薬品もすべて奪還いたしました。
+[name="イグゼキュター"]今回の共同任務に関する報告は以上となります。また、本件からは逸れますが、こちらの上層部より、在外ラテラーノ公民に対するロドスのご厚遇に感謝すると言付かっております。
+[name="イグゼキュター"]加えて、ロドスのラテラーノ近郊停泊中は、いつでもドクターの来訪を歓迎し、その際は公証人役場が手厚くおもてなしをさせていただくとのことです。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="大したことじゃない。当然のことをしたまでだ。;時間があったら行かせてもらおう、フェデリコ。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]では、そのように伝えておきます。他にご用件がなければ、これにて失礼いたします。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="……ちょっと待ってくれ、フェデリコ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]はい。他に何か任務でしょうか？
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="このところ、容態が安定した子供たちも随分増えた。;そこで医療部はお祝いのパーティーを開くつもりらしい。;「ドクターは面白い格好で出席するように」、とのことだ。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]「面白い」という表現は……曖昧すぎます。詳しくご説明いただければ、私もサポートできるかと。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="この服装では地味すぎると思われたのかもしれない。;もっと色彩豊かな服を着る必要がありそうだ。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="バイビークから被り物をもらったけど、どれが似合うかな？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="m")]
+[name="イグゼキュター"]どれも同じ円錐形のパーティーハットですね。異なるのは色だけのようです。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="none")]
+[Decision(options="そうだな、フェデリコ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]誠に申し訳ありませんが、助言はできかねます。私からすれば、色が異なっても受ける印象は変わりませんので。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="だが、君のカラーコーディネートを褒める人は大勢いる。;君は色彩豊かなファッションをしているようだが？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]この服装は、公証人役場から支給されている業務用の制服です。私がコーディネートしたわけではありません。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="じゃあ、まさか君は普段も……？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ええ、この制服を着用しています。
+[name="イグゼキュター"]私はこちらと同規格の制服を計七着所持しておりますので、日常生活や仕事のシチュエーションを問わず、常に着用可能なのです。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]表情に少々失望が見受けられますね、ドクター。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="誤解だ、フェデリコ。;少しだけな、フェデリコ。", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_corridor",screenadapt="showall")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=3.5)]
+[charslot]
+[charslot(slot="r",name="avg_npc_970_1#1$1",duration=1)]
+[charslot(slot="l",name="avg_npc_973_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_973_1#1$1",focus="l")]
+[name="後方支援オペレーター"]イグゼキュターさん、もうずっとあそこに座ってる気がするけど……目の錯覚かな……あの人、ピクリとも動いてなくない？
+[charslot(slot="r",name="avg_npc_970_1#1$1",focus="r")]
+[name="エンジニアオペレーター"]メジャーで測ってみたけど、一センチたりとも動いてないな。あんなに大人しいサンクタなんて珍しい……
+[charslot(slot="l",name="avg_npc_973_1#1$1",focus="l")]
+[name="後方支援オペレーター"]いやいや、あの人は……あなたは入職したばかりだから何も知らないのね……
+[charslot(slot="r",name="avg_npc_970_1#1$1",focus="r")]
+[name="エンジニアオペレーター"]知らないって何を？
+[charslot(slot="l",name="avg_npc_973_1#1$1",focus="l")]
+[name="後方支援オペレーター"]思い出すだけでも震えが来る……逃げ惑う一人の犯罪者、設置された二つの地雷、ぽっかりと空いた三つの大きな穴、そして……水漏れが滴る幾晩もの夜をよ。
+[Dialog]
+[charslot]
+[name="？？？"]もしも～し、二人とも、どういうつもりかなー？　勤務中に同僚の悪口なんて、あたしにバレたら減給ものなんだけどなー。
+[Dialog]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_411_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_973_1#1$1",focus="m")]
+[name="後方支援オペレーター"]うっ……クロージャさん、どうしてここに？
+[charslot(slot="m",name="avg_npc_411_1#1$1",focus="m")]
+[name="クロージャ"]あはは、ビビらせてごめんね。ちょっとドクターの様子を見に来ただけだよ。あの人、パーティーで被る帽子の色が決まらないって昨日からお悩み中でね。まだ悩んでるのかなーって気になってさ。
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]……
+[charslot(slot="m",name="avg_npc_411_1#6$1",focus="m")]
+[name="クロージャ"]あのサンクタ、なんであんなとこに居座ってるの？　ロドスはこんなに広いんだから、ぼーっとするなら他の場所にしてよね。
+[Dialog]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_1032_excu2_1#6$1")]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_411_1#1$1",posfrom="100,0",posto="0,0",duration=1.5)]
+[charslot(slot="r",afrom=0,ato=1,duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_411_1#7$1",focus="r")]
+[name="クロージャ"]おーい、そこのサンクタ！　そんな所に座り込まないの。もうすぐ雨らしいから、ラテラーノへ戻るなら急いだ方がいいよ。君だってずぶ濡れはごめんでしょ？
+[Dialog]
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_1032_excu2_1#3$1",focus="l")]
+[name="イグゼキュター"]……ブラッドブルード・クロージャ、ロドスのチーフエンジニア。危険レベル、一年前に「最高」から「低」へと調整済み。
+[name="イグゼキュター"]特別な対処は不要。
+[charslot(slot="r",name="avg_npc_411_1#6$1",focus="r")]
+[name="クロージャ"]（小声）……なんか舐められてる気がするなー。
+[charslot(slot="r",name="avg_npc_411_1#8$1",focus="r")]
+[name="クロージャ"]それで、なんで君はこんなところでぼーっとしてるの？
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="イグゼキュター"]「ぼーっとしてる」のではなく、ドクターが被るパーティーハットの色について思案しているのです。
+[charslot(slot="r",name="avg_npc_411_1#5$1",focus="r")]
+[name="クロージャ"]えーっ、ドクターってば君にアドバイスを求めたの？　そうだなぁ……じゃあ答えて！　あたしが今身につけてるのは何色？
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="イグゼキュター"]黒と赤のコートが目に付きます。
+[name="イグゼキュター"]ですがそれに答えたところで、私の疑問は解消されません。あなたのコーディネートが、最適な帽子の色を選択するためのヒントになるとは思えませんので。
+[charslot(slot="r",name="avg_npc_411_1#1$1",focus="r")]
+[name="クロージャ"]そっか。もしかしたら、君には色彩センサーパーツを組み込んで、色の違いを理解するためのアルゴリズムを追加する必要があるのかも。
+[charslot(slot="r",name="avg_npc_411_1#7$1",focus="r")]
+[name="クロージャ"]今なら特別にお安くしとくよ～！
+[charslot(slot="l",name="avg_1032_excu2_1#2$1",focus="l")]
+[name="イグゼキュター"]実現可能性は極めて低いと思われます。現行の技術では人間の脳内に機械部品を組み込むことは非常に困難であり、何より……
+[charslot(slot="r",name="avg_npc_411_1#1$1",focus="r")]
+[name="クロージャ"]何より？
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="イグゼキュター"]あなたの開頭手術に関する経験は、信頼に値するレベルに達しておりません。
+[name="イグゼキュター"]ブラッドブルード・クロージャの信頼度を「最低」に調整。また、当人物による発言の不確実性を「最高」に調整。
+[charslot(slot="r",name="avg_npc_411_1#6$1",focus="r")]
+[name="クロージャ"]……はいはい、悪かったよ。君をからかったあたしが悪うございました。
+[Dialog]
+[charslot(slot="r",name="avg_npc_411_1#1$1",focus="all")]
+[Delay(time=0.3)]
+[charslot(slot="r",posfrom="0,0",posto="-50,0",duration=1.5,isblock=true)]
+[playsound(key="$d_avg_clothmovement")]
+[charslot(slot="r",posfrom="-50,0",posto="0,0",duration=1.5,isblock=true)]
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="イグゼキュター"]これは……？
+[charslot(slot="r",name="avg_npc_411_1#1$1",focus="r")]
+[name="クロージャ"]今週末にラテラーノ大聖堂で匿名画家の個展が開かれるんだけど、その主催者がチケットを何枚かロドスへ贈ってくれたの。
+[name="クロージャ"]もともと子供のオペレーターたちに配るつもりだったんだけど、君も見に行ってみたらどうかなーと思ってさ。
+[Dialog]
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[Delay(time=1.5)]
+[name="イグゼキュター"]……感謝いたします。
+[charslot(slot="r",name="avg_npc_411_1#7$1",focus="r")]
+[name="クロージャ"]じゃあこれであたしの評価を……上方修正してくれるかな？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="26_g9_laterano_street",screenadapt="showall")]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="クロージャの言っていた秘密の同行者とはまさか……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ええ。ロドスのオペレーターでありラテラーノ公民でもある私が同行することに関して、特に意外性はないと思われますが。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="いや、君も休暇中に絵画を見るとは意外だ。;てっきり芸術鑑賞になんて興味ないと思っていた。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]合理的な推察です。普段の空き時間であれば、私はそれを武器の調整やメンテナンス、睡眠等に充てるでしょう。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="それでも来ることにしたんだな、フェデリコ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ええ、昨日ドクターから受けた任務のため、色彩の知識を身につける必要性が生じたのです。ドクターはどうしてこちらに？　公証人役場からは、訪問の知らせを受けておりませんが。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="フェデリコ、あれは任務なんかじゃない。;公式訪問で来たわけじゃない。;子供たちに付き添いを頼まれただけだ。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="活発なオペレーター"]うおっ、サンクタのお兄ちゃんも期末試験に向けて美術のお勉強？
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]私の年末業績評定に美術の項目はありません。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[name="憂鬱そうなオペレーター"]えーっ！　そんなの不公平だよドクター。なんで僕たちだけ美術の試験があるの？
+[Dialog]
+[Decision(options="えーっと……そうだ、何か食べたい物でもある？;アイスを買ってあげるからそのことは忘れるように。", values="1;2")]
+[Predicate(references="1;2")]
+[name="憂鬱そうなオペレーター"]じゃあいちご味のアイスがいい。
+[name="活発なオペレーター"]俺はパイン味！
+[Dialog]
+[Decision(options="フェデリコ、君は？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]私は必要ありませんが、アイスクリーム屋のVIPカードを所持しておりますので、どうぞお使いください。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="ありがとう。", values="1")]
+[Predicate(references="1")]
+[Decision(options="では後ほど展示ホールで落ち合おう。;食べたら行くから先に入っててくれ。", values="1;2")]
+[Predicate(references="1;2")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="26_g2_laterano_cathedralhall",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="イグゼキュター"]ずいぶん長い間眺めておられますね。この絵画がドクターにとって極めて魅力的であると解釈してよろしいでしょうか。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="その通りだ、フェデリコ。", values="1")]
+[Predicate(references="1")]
+[Decision(options="画家の色使いがとても興味深い。;描かれている絵の形状や立体感がとても興味深い。", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]こちらの絵画は青色の比率が最も高く、全体の71％を占めております。次いで多く見られるのが緑と白です。
+[name="イグゼキュター"]それ以外の色彩の比率は1％に満たないため、無視してもよいものと思われます。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="それが君の目に映る全てか、フェデリコ？", values="3")]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]こちらの絵画に使われている色はどれも図形の中に規則正しく収められています。私が読んだ大量の文献に基づくならば、おそらくこの画家は秩序やポリシーを重んじる方でしょう。
+[Dialog]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]角ばった図形パターンはほとんど見られず、円や楕円、波線などが大部分を占め、どの線も滑らかに描かれています。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="こういう要素の組み合わせに何か感じるものはある？", values="4")]
+[Predicate(references="4")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]かつて私は、他者の感情を理解するために、図形の視覚効果を研究したことがあります。そして多くの事例が、人が無意識に選ぶ図形と、本人の心理的傾向に密接な関係があることを示していました。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="なるほど、面白い……詳しく聞かせて。", values="5")]
+[Predicate(references="5")]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="m")]
+[name="イグゼキュター"]秩序立って均整のとれた構成を見るに、画家がこの絵画を制作した際の感情は穏やかなものであったと推察されます。
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="none")]
+[Dialog]
+[Predicate(references="3;4;5")]
+[charslot]
+[name="憂鬱そうなオペレーター"]この絵……なんていうか……
+[name="憂鬱そうなオペレーター"]うーん、青い絵の具で目が爆撃されちゃったみたいな感じがする……
+[name="活発なオペレーター"]めちゃくちゃ興奮しながら描いたんだろうな。
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]……興奮？　私はこの絵画の色と図形から、興奮とは相反する結論を導き出しました。どちらも正しいと仮定する場合、落ち着きながらも興奮した心理状態となりますが――
+[name="イグゼキュター"]そのような感情はあり得るのでしょうか？　合理的な解釈を導き出せません。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="人というのは複雑なんだ、フェデリコ。;あり得ないことなんてないんだ、フェデリコ。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot]
+[Delay(time=0.3)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="教皇騎士"]これはこれは聖徒閣下、ご無沙汰しております。まさか閣下がお越しくださるとは。スタッフからあなたを見かけたと聞いた時は耳を疑いましたぞ。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]御機嫌よう、シメオネさん。教皇聖下もおいでですか？
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]いえ、私一人です。そちらの方は？
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]こちらはロドスのDr.{@nickname}です。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]お会いできて光栄です、Dr.{@nickname}。
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="こちらこそ、シメオネさん。", values="1")]
+[Predicate(references="1")]
+[charslot]
+[Delay(time=0.1)]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="イグゼキュター"]本日こちらへいらしたのは、ご公務のためですか？
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]聖徒閣下、今日はなんと言っても日曜日です。仕事の話はやめておきましょう。
+[name="教皇騎士"]実はここだけの話、この個展を開いた画家というのは私なのです。まだ引退前ですし、銃騎士が個展を開いたなどという宣伝文句は避けたいと思い、匿名でやらせていただいております。
+[name="教皇騎士"]それで聖徒閣下はどうしてこちらに？　まさか本当に絵を見に来たわけではないのでしょう？
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]いえ、おっしゃる通り絵を見に来たのです。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]ハハッ、ご冗談を。きっと公証人役場の任務かなにかでしょう？
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="いや、目的は至って単純で――", values="1")]
+[Predicate(references="1")]
+[charslot]
+[Delay(time=0.1)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ここへ来たのは、色彩に関する知識を身につけるためです。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]なんと、色彩の知識と来ましたか……そういった話であれば、私以上の相談役はいないでしょうな。少々語らせていただいても？
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="興味が湧いてきた。;ご教示いただければ幸いです。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]ふむ。まずもって認めるべきは、人々の色彩感覚にはある程度の主観性こそあれ、一定の共通認識も形成されているという点です。
+[name="教皇騎士"]例えば赤色は刺激的なイメージを持ち、一般的に興奮や激情、情熱といった感情を表します。
+[name="教皇騎士"]ですが、私は自分の作品には滅多にこの色を使いません。聖徒閣下もご存知の通り、私は生来、温厚で優雅な性格ですからな。
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="イグゼキュター"]しかし、あなたは五年前に……
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]（大声）ウォッホン！　それでは、私が最も好む色についてお話いたしましょう。
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="ツッコまずに話を聞いた方が良さそうだ、フェデリコ。;（小声）たしかになんとなく矛盾している気はするけど。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]あなたの作品には、広い範囲に青い絵の具が使われています。おそらくあなたは青色を好んでいるのでしょう。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]いやはや、素晴らしい観察眼ですな。青が表す静けさ、理性、そして奥深さは、私が一生をかけて追い求めているものなのです。
+[name="教皇騎士"]さらに、青色は目にした者の感情を安定させ、心を落ち着かせる効果もあり……いや待たれよ、なんだあのフラッシュは？
+[name="教皇騎士"]こらっ！　そこの鼻たれ、何をしとるか！
+[name="教皇騎士"]なーにをキョロキョロしとる、おのれのことを言っとるんだ！　どこの誰がフラッシュを焚いていいと言ったんだ！　私の作品から離れんか！　もっとだ！！
+[name="教皇騎士"]さて、どこまで話したんでしたかな……
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]青は見る者の心を落ち着かせるという話でした。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]そうでしたな。つまり青とは……我が魂の眠る場所であり、永遠の象徴なのです……ああ、何と美しい色なのでしょう――
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[name="個展スタッフ"]シメオネさーん！　早急にお伝えすべきことがございますので、こちらに来ていただけますでしょうか！
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]むっ、皆さん、しばしお待ちを。ちょっと様子を見て参ります。
+[Dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[charslot]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]シメオネさんの言動は矛盾に満ちています。彼が語った青色に関する情報の信憑性には、いささか疑問が残ります。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="それはどうかな、フェデリコ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ドクターは、シメオネさんの話に合理性があるとお考えですか？
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="色彩がもたらす感覚は複雑だ。結論を出すにはまだ早い。;色彩は変わりゆく感情を取り巻く一要素に過ぎない。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="多くの要素を総合的に見て、色彩の影響を考えるべきだ。", values="3")]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="イグゼキュター"]私には生理的欠陥があるため、当該目標の達成には相当の時間が必要かと思われます。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="none")]
+[Decision(options="むしろそのおかげで、君はどんなことにも物怖じしない。;しかし君は恐れ知らずのフェデリコだ。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#7$1",focus="m")]
+[name="イグゼキュター"]ええ、その通りですドクター。
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="教皇騎士"]聖徒閣下、ちょっとこちらまで来ていただけますかな。お力添えをいただきたく。
+[Dialog]
+[stopmusic(fadetime=1)]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="シメオネさん？　どうしましたか。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]その、聖徒閣下、少々お耳を拝借……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="何があったんだ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ドクター、あなたと子供たちの安全のため、速やかにこの場を離れてください。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="君は？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]緊急任務の対応に当たります。
+[Dialog]
+[charslot]
+[name="館内放送"]ご来場の皆様にお知らせ申し上げます。ただいま非常事態が発生いたしました。どうか慌てずに、避難標識に従って速やかに会場をご退出されるようお願い申し上げます。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_towerinside",screenadapt="showall")]
+[PlayMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]なぜこんなところに爆弾があるのですか？
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[name="個展スタッフ"]昨日、大聖堂で銃撃事件があったのですが、その時に運び込まれたようです。犯人が残した爆発物は全て処理したものと思っていたのですが……
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]……
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[name="個展スタッフ"]聖徒閣下、何か手立てはないでしょうか……
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]仮に爆弾がここで爆発したとしても、死傷者は出ないものと思われますが。
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[name="個展スタッフ"]ですが……そうなれば、真上にある展示ホールの作品はすべて……
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]了解しました。任務の目標に、展示物の保護を追加いたします。
+[Dialog]
+[playsound(key="$d_avg_warning",volume=0.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[delay(time=1.5)]
+[name="イグゼキュター"]残された時間は僅かです。直ちに行動を開始いたします。
+[Dialog]
+[playsound(key="$rungeneral")]
+[charslot(duration=1)]
+[Delay(time=2)]
+[name="個展スタッフ"]ちょっ、どこへ行かれるのですか？　ちょっと、聖徒閣下！
+[name="イグゼキュター"]誰も私を追ってこないようにしてください。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="26_g10_laterano_roof",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$rungeneral")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1")]
+[name="イグゼキュター"]付近の人々、及び会場の作品から十分な距離を確保。この屋上ならば遮蔽物も十分にあり、爆発の影響範囲は半径三メートル以内と推定。
+[name="イグゼキュター"]爆弾の起爆場所として適切と判断。
+[Dialog]
+[playsound(key="$d_avg_clothmovement")]
+[Delay(time=1.5)]
+[name="イグゼキュター"]設置完了。カウントダウン……十、九、八、七……
+[Dialog]
+[Charslot(slot="m",posfrom="0,0",posto="50,0",duration=1.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[name="イグゼキュター"]五、四、三、二、一。
+[Dialog]
+[playsound(key="$d_avg_button",channel="1",volume=1)]
+[Delay(time=0.1)]
+[stopmusic]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n",channel="2",volume=1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=2.5)]
+[Charslot(slot="m",name="avg_1032_excu2_1#1$1",posfrom="50,0",posto="0,0",duration=1.5)]
+[charslot(slot="m",afrom=0,ato=1,duration=1)]
+[Delay(time=2)]
+[Charslot(slot="m",name="avg_1032_excu2_1#1$1")]
+[name="イグゼキュター"]起爆成功。爆発範囲はほぼ予測通り。現場には建築物の残骸がごく少量と、面積約1.75平方メートルの空洞が残るのみ。死傷者、展示物の損失なし。
+[name="イグゼキュター"]爆発物処理任務、完了。速やかに報告を――
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="26_g2_laterano_cathedralhall",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=2)]
+[name="イグゼキュター"]爆弾は屋上で起爆させました。人員の避難も抜かりなく、展示物も無傷です。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1")]
+[name="イグゼキュター"]危険は排除されました。個展も再開可能です。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[name="個展スタッフ"]……聖徒閣下、すぐにここから離れてください。早くしないと……まずいことになります。
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="m")]
+[name="イグゼキュター"]不安と、恐怖……そして自責の念を抱いておられるご様子ですね。
+[name="イグゼキュター"]任務達成後の感情変化としては、私の予測に反するものです。何か問題でもありましたか？
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="none")]
+[name="個展スタッフ"]聖徒閣下が爆弾を抱えて出て行くのがあまりに速すぎて、大切なことを伝えそびれてしまって……実は、今回のイベントで一番重要な展示物は……
+[Dialog]
+[charslot]
+[playsound(key="$rungeneral")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="教皇騎士"]止めてくれるな！　聖徒だろうがなんだろうが、拳骨を叩き落としてやらにゃあ気が済まんのだ！
+[playMusic(intro="$farce_intro", key="$farce_loop", volume=0.6)]
+[name="教皇騎士"]一年以上も苦心して描き上げた天井画が、あの大穴で台無しにされたんだぞ！　納得のいく説明を求めて何が悪い！？
+[name="教皇騎士"]そこを動くな小僧！　逃がしゃせんぞ！！
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="m")]
+[name="イグゼキュター"]シメオネさん、私はこの場から動いてなどおりませんが。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]……ふん、いい度胸だな。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]作品を破壊してしまい、誠に申し訳ございません。任務の達成状況を再評価した後、あなたが被った損害を弁償いたします。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]……弁償だと？　私があの天井画に注いだ心血が、金なんぞで補えると思っておるのか？
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]お望みであれば、私が寸分の狂いもなく復元して差し上げることも可能です。
+[name="イグゼキュター"]私は天井も含めて、展示場を隅々まで観察済みです。描かれていた作品は記憶の中にありますので、復元するのはさほど難しいことではないかと。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]小僧、その言葉は侮辱も同然だ。
+[name="教皇騎士"]仮に貴様が私の筆遣いまでをも再現できたとしても、筆を手にした私の心中に渦巻いていた激情や、脳内に湧き起こったインスピレーションはどう再現するつもりだ？
+[name="教皇騎士"]「寸分の狂いもなく」などと……まったく戯言も甚だしい。身の程をわきまえよ。
+[name="教皇騎士"]ふん、何をいっちょ前に眉をひそめておる？　貴様への物言いに不満があるというわけか。聖徒閣下？
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]いえ、他の補償方法を考えているのです。
+[name="イグゼキュター"]現在、記憶に残った絵画より、あなたが当時抱いていた感情を推測しているところです。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]推測できたとしてそれが何になる？　そんなものは当時の記憶とともに薄れてしまっておるし、天井の崩落とともに瓦礫の山と化したわ。
+[name="教皇騎士"]今ここに残ったのは……穴の中に広がる空だけよ。
+[charslot(slot="m",name="avg_1032_excu2_1#5$1",focus="m")]
+[stopmusic(fadetime=1)]
+[name="イグゼキュター"]空……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#5$1",focus="m")]
+執行人は天井を仰ぎ見た。ぽっかりと空いた穴から、柔らかな日差しが降り注いできている。
+[charslot(slot="m",name="avg_1032_excu2_1#3$1",focus="m")]
+彼は、顔に微かな温もりを感じた。
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[Delay(time=2)]
+[playMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Decision(options="大雨続きでここの青空をまじまじと見るのは初めてだ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="イグゼキュター"]……ドクター、子供たちを連れて本艦へ戻ったのでは？
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="none")]
+[Decision(options="子供たちは近くの事務所に預けたから大丈夫だ。;心配だったから様子を見に戻ってきたんだ。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]トラブルに巻き込んでしまい申し訳ございません。急ぎ今回の訪問プランを練り直さねば。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="いいや、フェデリコ……ほら、空を見てみて。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[Delay(time=1.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_infirmary",screenadapt="showall")]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$dooropenquite")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="イグゼキュター"]おや、ドクター。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="負傷した子供たちの様子が気になってね。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="イグゼキュター"]任務終了後に確認を行った限りでは、地下牢の子供たちは全員栄養失調状態にあり、そのうち四名が重病を罹患、一名が危篤状態にあるという状況でした。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]もし一日でも早く到着できていれば、子供たちの生存確率は大幅に上昇したものと思われます。
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="ケガをしたのか？;その肩はどうした？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="m")]
+[name="イグゼキュター"]肩甲部を一箇所、負傷しました。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="none")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[Decision(options="フェデリコ、何を持っているんだ？", values="2")]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]絵画です。子供の一人から手渡されました。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="ロドスにも随分と絵の才能に恵まれた子がいるんだな。", values="1")]
+[Predicate(references="1")]
+[Decision(options="フェデリコ、君はその絵に何を見た？", values="2")]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="イグゼキュター"]空。青い空です。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]この絵の作者は真っ暗な場所に閉じ込められていたそうです。しかし完全に希望を失ったその瞬間、一面の青を目にした――彼はそう語りました。
+[name="イグゼキュター"]そして、それにとても安心感を覚えたと言っていました。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="君の報告ではそんなものは聞いてないし、幻覚だろうか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]いえ、幻覚ではないと思われます。私は地下牢の天井部を爆破して突入しましたので、その際に目に入った青空のことを指している可能性が高いかと。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="たしかに青空を見ると心が落ち着くな、フェデリコ。;そうだな。空のような青色には安心感を覚える。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+フェデリコはあなたに肩をポンと叩かれたのを感じると、再び目線を落として、絵に描かれた青空を眺めた。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="26_g2_laterano_cathedralhall",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2.5, block=true)]
+[Delay(time=2)]
+[name="個展スタッフA"]いやぁ、やっと雨も止んでくれましたね。こう何日も雨雲が垂れ込めてると、身体からカビが生えちゃいそうでしたよ。
+[name="個展スタッフB"]あったかい日差しだなぁ……このままここに寝転んで、ぼーっと日向ぼっこでもしたくなってきますね。
+[name="個展スタッフA"]なんだか、雨のせいで塞ぎ込んでた気分もすっかり晴れたみたい……
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]……
+[Dialog]
+[Charslot]
+[name="個展スタッフB"]ほら、シメオネさんまで日差しの中でうっとりしてますよ。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]なんと綺麗な青色なんだ……まるで夢の中にいるようだ。
+[name="教皇騎士"]そればかりか、私の作品とも完璧に調和している……天井画に用いた青など、この美しさの引き立て役に過ぎなかったのだな。
+[Dialog]
+[charslot]
+連日におよぶ大雨の洗礼を経て、今この頭上に広がった大空は、青い絵の具によるぼかし染めを思わせた。
+風が絵の具を、あちらからこちらへ、深いところから浅いところへと塗り広げる。色は幾度となく重なり、混ざり合い、最後には空を青とも緑ともつかぬような美しい色に染め上げていた。
+会場の人々は次々と空を見上げ、陶酔した表情を見せる。彼らの胸中は甘美で穏やかな感覚で満たされていた。
+たちまち、その感情は街中にまで広がっていった。道行く人々は歩みを緩め、食事をしていた者はナイフとフォークを置いた……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="危機は去ったようだ、フェデリコ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#3$1",focus="m")]
+[name="イグゼキュター"]ええ、仰る通り、事態は収束しました。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#3$1",focus="none")]
+[Decision(options="「任務完了」ではなく「事態は収束した」か。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="イグゼキュター"]はい。起爆の過程で一部の作品に被害を与えた以上、任務を達成したとは言えませんので。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="none")]
+[Decision(options="でも、皆嬉しそうだ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]それはおそらく、この空の色のおかげでしょう。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]……本日は日曜日、見上げれば快晴の空にコバルトブルーとスカイブルーの中間ほどの、滅多に見られない青色が広がっている――
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]観察の結果、あの空を目にした人々には、瞳孔が広がり、目を細めて口角を吊り上げる傾向が認められました。これは愉快な感情が生じたことを表しています。
+[name="イグゼキュター"]人々のポジティブな感情と、あの青色との関連性を裏付けるために……更なる情報が必要です。
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="教皇騎士"]はぁ……何をぶつぶつ言っておる。よさんか。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]……承知いたしました。
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]…………
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="（肩をぽんと叩く）;（目を見つめる）;（何もしない）", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ドクター、今の肉体的接触が何を表しているのか、私には理解しかねます。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="特に意味はないよ、フェデリコ。", values="4")]
+[Predicate(references="4")]
+[Decision(options="ただ、もうしばらく君と一緒に空を眺めていたいんだ。", values="5")]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="m")]
+[name="イグゼキュター"]……何がおっしゃりたいのですか、ドクター？
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="none")]
+[Decision(options="フェデリコ、何もかも記録しなくたっていい。", values="6")]
+[Predicate(references="6")]
+[Decision(options="今はただ、あの空の色だけを覚えておけばいいんだ。", values="7")]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+しばしの沈黙の後、執行人は再び顔を上げると、穴の奥に広がる澄み渡った青空を眺めた。
+周囲の人々のリラックスした様子とは異なり、彼の表情は極めて冷静であった。
+あなたは何も言わずに、彼と一緒に空を見つめた。
+[Dialog]
+[Predicate(references="5;7;3")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+[Background(image="26_g2_laterano_cathedralhall",screenadapt="showall")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="フェデリコ？　おーい、もうそろそろ行こうか。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]……
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ドクター……我々はどれほど空を眺めていたのでしょうか？
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="一時間半だ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]一時間半……ですが、それほど長い時間が流れたようには感じませんでした。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="職員も皆帰ったし、残ったのは自分と君の二人だけだ。;時計を見てみるといい。機械は嘘をつかない。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]確認できました。正確には一時間三十七分十六秒もの時間が経過していたようです。私の脳の知覚とは大きくかけ離れています。
+[charslot(slot="m",name="avg_1032_excu2_1#3$1",focus="m")]
+[name="イグゼキュター"]……時間知覚の歪みなど……
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="m")]
+[name="イグゼキュター"]……これまでになかったことです。
+[name="イグゼキュター"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="none")]
+[Decision(options="大丈夫か？;ずいぶん顔色が悪いぞ。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="イグゼキュター"]ドクター、総合的な精密検査を実施する必要がありますので、医療部までご同行願えますでしょうか。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="none")]
+[Decision(options="何があったんだ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="イグゼキュター"]ああいった稀有な青色が……私の体に影響を及ぼす因子である可能性が極めて高いのです。今後の任務に与えるリスクを確かめねばなりません。
+[Dialog]
+[stopmusic(fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+[Background(image="bg_rhodescom",screenadapt="showall")]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+三日後
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m",duration=1.5)]
+[Delay(time=2)]
+[name="イグゼキュター"]突発的な検査依頼により、医療部のオペレーターの皆様にご迷惑をおかけしてしまいました。申し訳ありません、ドクター。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="迷惑なんてとんでもない。;大丈夫だ、気にしないでくれ。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="そうだ、クロージャから君にメッセージを預かっている。", values="3")]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="イグゼキュター"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="none")]
+[Decision(options="「後でエンジニア部に来るように」、とのことだ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="イグゼキュター"]……承知いたしました。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]それは、コサージュを選んでいるのですか？
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="ああ、もうすぐ大事な式典があって。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]でしたら、空のような青色は如何でしょうか。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="いや、今回は亡くなった学者さんの追悼式で……;青色？　でも今回は葬儀なんだ。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="イグゼキュター"]……
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]なるほど、そのような場で青色は不適切なのですね。
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="イグゼキュター"]ありがとうございます、ドクター。他に任務がなければ、私はこれにて失礼いたします。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="お疲れ様、フェデリコ。;……じゃあまた今度。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",posfrom="0,0",posto="50,0",duration=1.5,isblock=true)]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",posfrom="50,0",posto="50,0",focus="m")]
+[name="イグゼキュター"]ドクター、一つ気付いたことがあります。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",posfrom="50,0",posto="50,0",focus="none")]
+[Decision(options="えっ、何に気付いたんだ？;教えてくれ。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#7$1",posfrom="50,0",posto="50,0",focus="m")]
+[name="イグゼキュター"]あなたのコートは紺色、すなわち深い青色ですね。
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#7$1",posfrom="50,0",posto="50,0",focus="none")]
+[Decision(options="えっ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#7$1",posfrom="50,0",posto="50,0",focus="m")]
+[name="イグゼキュター"]それではまた、ドクター。
+[Dialog]
+[playsound(key="$doorclosequite")]
+[charslot(slot="m",posfrom="50,0",posto="100,0",duration=1.5,isblock=false)]
+[Charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[Decision(options="このコートは……ずっとこの色だけど……？;……ははっ。", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

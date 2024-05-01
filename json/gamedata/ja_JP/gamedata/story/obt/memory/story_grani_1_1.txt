@@ -1,0 +1,663 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="21_G7_decisivebattlealley_d",screenadapt="showall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_240",duration=1.5)]
+[delay(time=2)]
+[name="焦る子供"]ディディー！　どこに隠れてるのー？
+[name="焦る子供"]ほら、ここに大好きなジャーキーがあるよ！
+[Dialog]
+[charslot(slot="m",name="avg_npc_240",focus="none")]
+[name="？？？"]エリック！　ディディーいたよ！
+[charslot(slot="m",name="avg_npc_240",focus="m")]
+[name="エリック"]えっ、本当に！？　どこなの、グラニお姉ちゃん？
+[Dialog]
+[charslot]
+[playsound(key="$rungeneral")]
+[charslot(slot="m",name="avg_220_grani_1#8$1",duration=1)]
+[delay(time=2)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=10, fadeout=true, block=true)]
+[name="グラニ"]わわっ、逃げられちゃった！　早く手伝いに来て！　このままじゃ見失っちゃう！
+[charslot(slot="m",name="avg_npc_240",focus="m")]
+[name="エリック"]ディディー、いい子だからこっちにおいで。ほら、ジャーキーだよ……捕まえた！　もう勝手にどっか行っちゃだめだからね。
+[Dialog]
+[CameraShake(duration=0.3, xstrength=10, ystrength=10, vibrato=30, randomness=10, fadeout=true, block=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[delay(time=1)]
+[name="エリック"]グラニお姉ちゃん、どこでこの子を見つけたの？
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="m")]
+[name="グラニ"]下水道に潜り込もうとしてた姿が偶然目に入ったの。その子がしっぽをフリフリさせてたおかげよ。
+[name="グラニ"]もうディディーを逃がしちゃだめだよ。あたしはもう騎馬警官じゃないんだから、これからはパトロール中に一緒に探してあげることもできないんだからね。
+[charslot(slot="m",name="avg_npc_240",focus="m")]
+[name="エリック"]うん、ありがとうお姉ちゃん。でもおかしいなぁ……ディディー、普段はすごく大人しくて、こんな風に逃げ回ったりしないはずなのに、どうして下水道になんて入ろうとしたんだろう……
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="m")]
+[name="グラニ"]言われてみればそうだね。ディディー、下水道に何か気になるものでもあったの？
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="m")]
+[name="グラニ"]あれ、ディディーの体に汚れがついてる。なんだろうこれ……真っ黒で――あっちょっと！　汚れたまま乗っかろうとしないで！
+[charslot(slot="m",name="avg_220_grani_1#3$1",focus="m")]
+[name="グラニ"]あぁー！　そういえば、病院に行く途中だったんだ！
+[Dialog]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_ri_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n")] 
+[charslot(slot="m",name="avg_220_grani_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="グラニ"]遅れちゃってごめんね。感染者地区を通った時にちょっとトラブルに出くわしちゃって……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]どうせまたいつもの人助けだろ、グラニちゃん。
+[charslot(slot="l",name="avg_220_grani_1#5$1",focus="l")]
+[name="グラニ"]えへへ……そうだ、カーターさんの息子さんは？　まだここで入院してるの？
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]右側の二つ目のベッドで寝てるよ。あっ、でも……
+[charslot(slot="l",name="avg_220_grani_1#5$1",focus="l")]
+[name="グラニ"]サンキュー！　ちょっとお見舞いに行ってくる！
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_cloakmovement")] 
+[charslot(slot="m",name="avg_220_grani_1#4$1",duration=1.5)]
+[delay(time=2)]
+[name="グラニ"]あっ……
+[charslot(slot="m",name="avg_npc_005",focus="m")]
+[name="？？？"]今は質問をされたって何も話せないよ。さっき先生に注射を打ってもらって、ようやく眠ったところだ。
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_220_grani_1#4$1",focus="l")]
+[charslot(slot="r",name="avg_npc_005",focus="l")]
+[name="グラニ"]その、息子さんは……ジュニアさんは大丈夫なんですか？
+[charslot(slot="r",name="avg_npc_005",focus="r")]
+[name="カーター"]先生が言うには、病状は落ち着いてきてるらしい。だけどいつも夜中になるとパニックを起こしてしまうんだ。
+[name="カーター"]この前なんか、起きた途端に悲鳴を上げて「痛いよ、父さん」って叫びながら私の手を掴んできたんだ。私には先生が注射を打ちにきてくれるのを待つことしかできなかった。
+[name="カーター"]だけどほとんどの場合、息子はただベッドの上で目を大きく見開いたまま、何も言わずに私をじっと見つめているだけ。あの目は……まるで心を見透かされているような気分になるよ。
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]ロドスの医者は鉱石病の治療経験がすごく豊富なんです。時間をかけて治療をすれば、絶対にジュニアさんは良くなりますよ。
+[charslot(slot="r",name="avg_npc_005",focus="r")]
+[name="カーター"]あぁ……
+[charslot(slot="l",name="avg_220_grani_1#9$1",focus="l")]
+[name="グラニ"]……大丈夫です、たとえ騎馬警察がなくなっても、事件の真相を突き止めるまで、あたしは調査をし続けます。ジュニアさんのためにも。
+[charslot(slot="r",name="avg_npc_005",focus="r")]
+[name="カーター"]グラニ、君は素晴らしい騎馬警官だ。ずっとそう思っているよ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_220_grani_1#1$1")]
+[charslot(slot="r",name="avg_npc_012")]
+[Background(image="bg_ri_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]グラニちゃん、頼まれた源石探知機はこれで全部だ。少し重たいけど一人で運べるかい？
+[charslot(slot="l",name="avg_220_grani_1#5$1",focus="l")]
+[name="グラニ"]うん、大丈夫。ありがとね、いつも手伝ってもらって申し訳ないや……
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]気にすんなって、俺と君の仲じゃないか。
+[name="ロドスオペレーター"]そういえば、ジュニアの件はまだ解決してなかったんだな。工場側から何も賠償はないのか？
+[charslot(slot="l",name="avg_220_grani_1#2$1",focus="l")]
+[name="グラニ"]そうなんだよ。騎馬警察の解散直前に、工場の怪しい場所は隅々まで調べたんだけどね。
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]証言によれば、ジュニアさんは蒸留塔の爆発に巻き込まれて、鉱石病に感染しちゃったらしいの。
+[name="グラニ"]でも爆発現場である三号作業エリアから、爆発や汚染物質が発生した証拠は出てこなかった。それどころか、現場を清掃した痕跡も全くなかったんだよ。
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]そいつは妙な話だな……
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]工場の責任者は最初から事故の発生を否認していたから、騎馬警察が証拠を見つけられなかったのを理由に、警察局に圧力をかけてあたしたちの捜索を打ち切らせたの……
+[charslot(slot="l",name="avg_220_grani_1#2$1",focus="l")]
+[name="グラニ"]騎馬警察がなくなって、事件は警備隊に引き継がれたけど、あの人たちがまともな捜査をするとは思えない。
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]そこの隊長はわざとらしい口調で「あれはボルトン化学工業内部の問題だろう」しか言わないからね。
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]ジュニアは今もずっと入院しているのに、それを見て見ぬふりするなんて……これが警察のやることかよ。
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]だからあたしが調査を続けなきゃいけないの。
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]だけど今のグラニちゃんは、警備隊から任務を振り分けてもらえてないんだろ？　うちから探知機を借りられたとしても、工場の中には入れてもらえるのか？
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]難しいだろうね。
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]そうだよな……個人的に捜索を続けるだなんて、想像しただけでも大変だし……
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]でも安心して。これでもずっと騎馬警察をやって来たんだ。それなりに人脈もあるんだから、きっと方法は見つかるよ。
+[charslot(slot="l",name="avg_220_grani_1#6$1",focus="l")]
+[name="グラニ"]そうだ、ジュニアさんの具合って実際のところどんな感じなの？　ただの勘だけど、カーターさんに本当のこと話してないよね。
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]ったく……やっぱりグラニちゃんの目はごまかせないか。でも別に嘘を吐いているわけじゃない。ただ……ショックすぎる部分をあえて話してないだけだ。
+[name="ロドスオペレーター"]ジュニアの容態は安定してきてはいるが、源石融合率がかなり高くてね。それに加えて長期間の重労働による身体の損傷もある。今後の治療効果は……あまり期待できない。
+[name="ロドスオペレーター"]良くて、これから一生寝たきりの生活だろうな……
+[charslot(slot="l",name="avg_220_grani_1#2$1",focus="l")]
+[name="グラニ"]ジュニアさんってまだ二十六歳になったばかりだったよね。確かにそれはカーターさんに言えないのも無理ないか……
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]グラニちゃん、俺たちはちゃんとジュニアの治療に全力を尽くす。それは保証するよ。
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]そんなこと、言われなくたって分かってるよ。
+[charslot(slot="l",name="avg_220_grani_1#5$1",focus="l")]
+[name="グラニ"]さて、あたしはそろそろ帰ろうかな。この件が片付いたら、また遊びに来るからね！
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]グラニちゃん、待って。
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]なに？
+[charslot(slot="r",name="avg_npc_012",focus="r")]
+[name="ロドスオペレーター"]俺たちは鉱石病の治療以外にも、源石汚染に関連する問題なら、なんでもそれなりに経験がある。もし助けが必要なら、いつでも連絡してくれ。
+[charslot(slot="l",name="avg_220_grani_1#1$1",focus="l")]
+[name="グラニ"]うん、分かった。だけど……これでもあたしは騎馬警官のグラニだからね。甘く見てもらっちゃ困るよ。
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_bar_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Delay(time=1)]
+[PlaySound(key="$dooropenquite")] 
+[charslot(slot="m",name="avg_220_grani_1#2$1",duration=1.5)]
+[delay(time=2)]
+[name="グラニ"]「ビッグジョン・スペシャル」を二杯……いや、一杯でいいや。それとドライマティーニを一杯お願い。
+[charslot(slot="m",name="avg_220_grani_1#1$1")]
+[name="グラニ"]よし、次は……
+[Dialog]
+[charslot]
+[PlaySound(key="$dooropenquite")] 
+[charslot(slot="m",name="avg_npc_242",duration=1.5)]
+[delay(time=2)]
+[name="？？？"]......
+[charslot(slot="m",name="avg_220_grani_1#1$1")]
+[name="グラニ"]こっちだよ！
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[charslot(slot="r",name="avg_220_grani_1#1$1",focus="l")]
+[name="？？？"]人目の多い場所を選ぶ癖は相変わらずだな、警官さん……いや、今はただのグラニか。
+[charslot(slot="r",name="avg_220_grani_1#1$1",focus="r")]
+[name="グラニ"]いつもの場所だし問題はないでしょ。
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]俺がどれだけのリスクを冒して君に会いに来ているのか分かってるだろ……
+[charslot(slot="r",name="avg_220_grani_1#1$1",focus="r")]
+[name="グラニ"]はいはい、ほら、きみの一番好きなドライマティーニ。これはあたしの奢りだよ。
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]……
+[charslot(slot="r",name="avg_220_grani_1#6$1",focus="r")]
+[name="グラニ"]それで、頼んでいた例の物は持ってきてくれた……？
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]ほらよ。ボルトン化学工業の直近一年の発注書だ。
+[name="謎の情報提供者"]直接結論を聞くか？
+[charslot(slot="r",name="avg_220_grani_1#1$1",focus="r")]
+[name="グラニ"]お願い。
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]君の予想通りだったよ。ボルトン化学工業はこの一年、精錬源石や加工設備、原材料の購入を強化している。生産力を高めようとしているのは明らかだ。
+[charslot(slot="r",name="avg_220_grani_1#10$1",focus="r")]
+[name="グラニ"]ボルトンの生産量は元々限界に近い状態だったよね……どうしてこんなことをするの？
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]ロンディニウムはもう長いこと治安が悪かったからな。親愛なる公爵様たちがそろそろ我慢の限界だってことは、誰の目から見ても明らかだろうよ。
+[name="謎の情報提供者"]高速戦艦のメンテナンスに、軍隊の補給。今後へ向けての準備のためにも、今が生産量を増加させる絶好のタイミングだ。
+[charslot(slot="r",name="avg_220_grani_1#6$1",focus="r")]
+[name="グラニ"]でもボルトン化学工業はライデルシティの主要産業でしょう？　増産したければ直接政府に申請すればいいのに……
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]奴らの目的は金を稼ぐことなのに、そんなことをしては余計な金を払う羽目になるだろ。生産力を最もコスパよく高める方法はな……とりあえず先に高めちまうことさ。
+[charslot(slot="r",name="avg_220_grani_1#2$1",focus="r")]
+[name="グラニ"]だから汚染処理設備の発注書がどこにもないんだね。処理設備や輸送パイプは古い物を使い続けてるってことか……きっともうとっくに劣化しきっているのに。
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]その結果が……ドッカーンってわけだ。
+[charslot(slot="r",name="avg_220_grani_1#1$1",focus="r")]
+[name="グラニ"]ありがとう、本当に助かったよ。この資料は必ず役に立たせてみせるね。それで次のお願いなんだけど――
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]グラニ。
+[charslot(slot="r",name="avg_220_grani_1#1$1",focus="r")]
+[name="グラニ"]なに？
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]もうこれ以上、君に協力することはできない。
+[charslot(slot="r",name="avg_220_grani_1#10$1",focus="r")]
+[name="グラニ"]ちょっと……面白くない冗談はやめなよ。あたしたち、今までずっと上手くやってきたじゃない。あたしがきみの助けをどれだけ必要としているのか、分かってるでしょ？
+[name="グラニ"]じゃあこうしよっか。ジュニアさんの事件が解決したら「ローリンロタンダ」でご飯を奢ってあげる。今回のお礼ってことで、どうかな？
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]グラニ、俺は真面目に言ってんだよ。君がもう騎馬警官でなくなった以上、俺たちの協力関係もここで終わりだ。
+[name="謎の情報提供者"]君だって分かってるだろ。この事件は「些細な事故の責任を企業が逃れようとしている」なんて単純な話じゃない。これは大企業の今後の発展に関わる問題なんだ。君が首を突っ込む必要は全くない。
+[charslot(slot="r",name="avg_220_grani_1#2$1",focus="r")]
+[name="グラニ"]ダニー、説得しようとしても無駄だよ……
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]これは説得じゃなくて警告だ。君を友人だと思っているからこそ、こうして言ってやってんだよ。これ以上深追いせず、自然と解決するのを待つんだ。それが誰にとっても一番いい結末になる。
+[charslot(slot="r",name="avg_220_grani_1#2$1",focus="r")]
+[name="グラニ"]……分かった。手を引きたいのなら止めたりはしない。でも、きみにきみの考えがあるように、あたしにもあたしの考えがある。
+[charslot(slot="r",name="avg_220_grani_1#9$1",focus="r")]
+[name="グラニ"]これは騎馬警察が担当した最後の事件なんだ。あたしたちはこれまでにたくさんの事件を解決してきた。ボルトンとだって何回もやり合ったことがある。
+[name="グラニ"]ジュニアさんがあんな風に一生寝たきりでいるのを、黙って見過ごすことなんてできないよ。あたしにはこの事件を最後まで追い続ける責務があるの。
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]グラニ、これは警察学校のテストじゃないんだぞ。この場所で何年暮らしてんだ？　余計な正義感がどれだけ命取りになるのかまだ分からないのかよ。
+[name="謎の情報提供者"]ボルトンがまだ昔と同じように、表面上だけでも騎馬警察に頭を下げて、金で事態を丸く収めてくれるとでも思ってるのか？　本気になった奴らを見たことすらない癖に。
+[charslot(slot="r",name="avg_220_grani_1#1$1",focus="r")]
+[name="グラニ"]そうやって脅せば、あたしが怖がるとでも思ったの？　あの人たちがどんな手段を使おうと、あたしのこの槍を止めるのは無理だよ。
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]奴らの標的が自分だけだとでも思ってんのか？　ハハッ、あいつらもうとっくに動いてるぜ。
+[name="謎の情報提供者"]このバーに入った瞬間から、大勢の人が君を見てることに気付いていなかったのか？
+[charslot(slot="r",name="avg_220_grani_1#9$1",focus="r")]
+[name="グラニ"]ここのお客さんは近所に住んでるか、働いてる人たちばかりだよ。パトロールの後によく来てたから、みんなのことはよく知ってる。
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]これを見ろ、グラニ。
+[charslot(slot="r",name="avg_220_grani_1#10$1",focus="r")]
+[name="グラニ"]この通知は……？
+[stopmusic(fadetime=1.5)]
+[charslot(slot="r",name="avg_220_grani_1#1$1",focus="r")]
+[name="グラニ"]「騎馬警察の捜索の影響により、ライデルシティの工場に経済的損失が生じたため、本社より以下の決定が下された……」
+[name="グラニ"]「今季の従業員の給与及び補助金は、役職ごとに一定割合の減額を行うものとする。詳細については下記に……」
+[charslot(slot="r",name="avg_220_grani_1#8$1",focus="r")]
+[name="グラニ"]何これ！？　なんでこんなことをする必要があるの！？
+[charslot(slot="l",name="avg_npc_242",focus="l")]
+[name="謎の情報提供者"]グラニ、今日の店はやけに静かだと思わないか……？
+[Dialog]
+[charslot]
+グラニはハッと顔を上げた。今頃になって、四方八方から突き刺さる視線を痛いほどに感じる。グラニは自分が、枯れ枝に一羽で取り残された羽獣になったような錯覚に陥った。
+まるで荒野にでもいるかのような静けさだ。周りからの視線すらも静寂に包まれている。
+喉がつっかえて息が上手くできない。
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="m")]
+[name="グラニ"]あの、みんな……
+[Dialog]
+[charslot]
+[PlaySound(key="$glass",channel="1")] 
+[PlaySound(key="$d_avg_sundries",channel="2")] 
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=true)]
+[PlayMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+突如、ゴンという鈍い音と共にカウンターに石が叩きつけられ、なみなみと注がれた「ビッグジョン・スペシャル」のグラスをひっくり返した。
+割れた窓ガラスからして、石は明らかに外から投げ込まれた物だ。それはグラニの頭すれすれを掠り、彼女の目の前に落ちてきた。
+グラニは勢いよくバーを飛び出た。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="25_mini02_victoria_street_n",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$rungeneral")]
+[charslot(slot="m",name="avg_220_grani_1#7$1",duration=1)]
+[delay(time=2)]
+[name="グラニ"]誰！？
+[name="グラニ"]誰の仕業なの！？　出てきなさい！
+[Dialog]
+[charslot]
+彼女の声が夜の街道に反響する。
+人の気配はどこにもなかった。
+[Dialog]
+[stopmusic(fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+[Background(image="bg_indoor_u",screenadapt="showall")]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="m")]
+[name="グラニ"]ごめんね、騎馬警察はもう解散したのに、またみんなを集めちゃったりして。
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="m")]
+[name="グラニ"]みんな、カーター・ジュニアさんの事件は覚えてるよね。その新しい証拠を見つけたんだ。ボルトン化学工業が安全性を無視して、違法に生産量を高めようとしていたことを証明できるかもしれない。
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="m")]
+[name="グラニ"]だけど、爆発が起きたことを裏付ける確かな証拠がまだないの。これじゃあ、ジュニアさんの怪我の責任がボルトンにあることを証明するにはまだまだ足りない。
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="m")]
+[name="グラニ"]みんなの中にはもう警備隊に配属された人もいるはずだよね？　だからちょっと力を貸してほしいの……
+[name="グラニ"]実はね、高性能の源石探知機を借りてきたんだ。それでもう一回工場の内部調査ができないかなって。
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="m")]
+[name="グラニ"]……だめかな？
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="none")]
+[name="警備隊員A"]リーダー……
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="m")]
+[name="グラニ"]その呼び方はやめて。グラニでいいから。
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="none")]
+[name="警備隊員B"]グラニ……今ボルトンを調査するのは賢明な判断じゃないわ。
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="m")]
+[name="グラニ"]そうだね、みんなだってまだ配属されたばかりで動きづらいし、リスクも高いことくらいちゃんと分かってるよ。
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="m")]
+[name="グラニ"]だけど……ジュニアさんの容態は一向に良くならない上に、工場の上層部は従業員に圧力までかけ始めた。事態は一刻を争うの。
+[name="グラニ"]騎馬警察の最後の日のこと、まだ覚えてる？　証拠が見つけられなくて泣く泣く捜索を打ち切ったよね。あたしもみんなもすごく悔しかった。でも今、それを挽回するチャンスが巡ってきたんだよ！
+[name="グラニ"]もしかして、目立たないようにするためにも、あたしは待機してたほうがいいかも。誰かが何かしら理由をつけて中に入って、証拠を見つけさえすればいいんだから。
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="none")]
+[name="警備隊員A"]グラニさん……
+[charslot(slot="m",name="avg_220_grani_1#5$1",focus="m")]
+[name="グラニ"]ジュニアさんが回復したら、またみんなで一緒にアップルパイを食べに行こうよ。想像しただけでウキウキしない？
+[charslot(slot="m",name="avg_220_grani_1#5$1",focus="none")]
+[name="警備隊員B"]リーダー、もう正直に話すわ。実は元騎馬警官である私たちは、ボルトン化学工業に関連する調査に参加することを、警備隊長から禁じられたの。
+[name="警備隊員B"]それと……リーダーと接触することもね。
+[stopmusic(fadetime=1)]
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="m")]
+[name="グラニ"]どうして……
+[playMusic(intro="$drift_intro", key="$drift_loop", volume=0.6)]
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="none")]
+[name="警備隊員B"]みんな、規則を破ってまでリーダーに会いに来てるの。だって私たちのリーダーは、警備隊長のクズ野郎なんかじゃなくて……目の前にいるあなただから。
+[name="警備隊員B"]昔も今も、そしてこれからも。
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="m")]
+[name="グラニ"]リリー……みんな……
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="none")]
+[name="警備隊員B"]リーダーと肩を並べて戦った日々を恋しく思わない日なんてない。余計なことを心配せずとも、前を走る小さな背中に続いて突き進みさえすれば、どんな困難だって切り抜けられた。
+[name="警備隊員B"]だけど騎馬警察を離れてから、ようやく気付いたの――終わりの見えない戦いと事件以外にも、私には自分の人生があったのだって。
+[name="警備隊員B"]……だからごめんなさい、リーダー。
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="m")]
+[name="グラニ"]あきらめないで、きっと何か方法はあるはず……もう一度話し合ってみよ？　騎馬警察にいた頃みたいにさ、ね？
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="none")]
+[name="警備隊員A"]ボルトン化学工業は大勢の運命を握っています。その中には、私たちのご近所さんや友人、愛する人もいるんです。
+[name="警備隊員A"]今回のボルトンは本気です。我々がまだ騎馬警官だったとしても、あの規模の大企業と正面から立ち向かうことは不可能なのに、今の私たちはもう……
+[name="警備隊員A"]ジュニアさんの件はもう忘れてください、リーダー！
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="m")]
+[name="グラニ"]だからこそ、あたしたちが立ち向かうべきなんじゃない！　あたしたちがあきらめちゃったら、誰が次の被害者を守るの？
+[name="グラニ"]みんな――
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="none")]
+[name="警備隊員B"]グラニ！　私たちの街の騎馬警察が一番最初に解散させられた理由について、考えたことある？
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="m")]
+[name="グラニ"]それはただの人員調整で――あっ……
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="none")]
+[name="警備隊員B"]あの時の私たちにできなかったことは、今の私たちにもできっこなんてない。他の人を守るなんて立派なことは……どこかの英雄にでも任せておけばいい。これは私たちの仕事じゃないわ。
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="m")]
+[Dialog]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="m")]
+[name="グラニ"]……そっか、ごめん、あたしみんなに申し訳ないことしちゃった。みんなはもう帰って。後のことは自分でなんとかするから。
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="none")]
+[name="警備隊員A"]リーダー……ドルン郡警備隊のほうにまだポジションが空いてますから、リーダーを推薦しておきますね。
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="m")]
+[name="グラニ"]サンキュー。でも……あたしのことはみんなが一番よく分かってるでしょ？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[stopmusic(fadetime=1)]
+[Delay(time=3)]
+[Background(image="bg_hotel",screenadapt="showall")]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="m")]
+[name="グラニ"]捜査ファイルをこんだけかき集めても、本当に手がかりが一つも見つからないわけ？
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="m")]
+[name="グラニ"]いや……筋道を立ててよく考えてみよう……
+[name="グラニ"]工場内から汚染漏洩の証拠が出て来なかったってことは、何かしらの方法で汚染物質を運び出したってことだよね。
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="m")]
+[name="グラニ"]……
+[charslot(slot="m",name="avg_220_grani_1#9$1",focus="m")]
+[name="グラニ"]そうだよ！　外に運び出したんだ！
+[name="グラニ"]もしボルトンが汚染物質を外に廃棄している証拠が見つかれば、鉱石病予防部門に工場の閉鎖を要求できる……そんなことになれば損失は計り知れない！
+[charslot(slot="m",name="avg_220_grani_1#9$1",focus="m")]
+[name="グラニ"]そうすれば、ボルトンはきっと損失をできるだけ抑えるために事故の発生を認め、汚染処理システムの改善に動いてくれるはず。
+[name="グラニ"]でも、ボルトンはどうやって汚染物質を運び出してるんだろう？
+[name="グラニ"]情報屋はもう使えないし、工場の中にも入れない。源石探知機を担いで街中の通りを調べるのは……どう考えても現実的じゃないや。うーん……他に何か方法はないかな……
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="m")]
+[name="グラニ"]はあ……とりあえず街の外周を調べてみるか。その前にまずは装置の使い方を把握しとこう――高そうな機械……流石ロドスだね。起動ボタンはここかな？
+[Dialog]
+[playsound(key="$d_avg_button",volume=0.6)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="none")]
+[name="システム音声"]ピッ――活性源石粒子を検出。危険レベル：低……
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="m")]
+[name="グラニ"]えっ、あたしの部屋から！？
+[name="グラニ"]（装置の検出器を自分に向ける）
+[Dialog]
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="none")]
+[name="システム音声"]ピッ――源石粒子濃度：上昇……
+[Dialog]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_220_grani_1#4$1",focus="m")]
+[name="グラニ"]服に付いた汚れに反応してる？　これって……ディディーに付けられた泥だよね？
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="m")]
+[name="グラニ"]まさか……！？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+[Background(image="21_G7_decisivebattlealley_d",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n")] 
+[charslot(slot="m",name="avg_220_grani_1#9$1",duration=1.5)]
+[delay(time=2)]
+[name="グラニ"]下水道……
+[name="グラニ"]最初から捜査の方向性が間違ってたんだ。てっきり汚染物質をこっそり処理してから運び出していたかと思ったのに――
+[name="グラニ"]まさか、そのまま感染者区域の排水管に流し込んでいたなんて！　これで万が一感染が急に広がったとしても、感染者に責任を擦り付けるつもりだったんだ！
+[charslot(slot="m",name="avg_220_grani_1#7$1")]
+[name="グラニ"]こんなことすら思い付くなんて、人の心がないわけ！？
+[charslot(slot="m",name="avg_220_grani_1#9$1")]
+[name="グラニ"]前に見た黒い泥がなくなってる。探知機の数値も正常だ……きっと片付けたんだね。
+[name="グラニ"]でも……三号作業エリアの排水設備を調べた時は、パイプを交換した痕跡なんてなかった……
+[name="グラニ"]いや、それは後で考えよう！　とにかく汚染物質を排出したルートを突き止めて、そこを掘り進めていけば証拠も見つけられるし、汚染が感染者区域で広まるのも阻止できる！
+[name="グラニ"]ロドスに協力を求めてみるか……
+[Dialog]
+[PlaySound(key="$transmission")] 
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_220_grani_1#6$1")]
+[name="グラニ"]ん？　リリー？　こんなタイミングで……
+[Dialog]
+[PlaySound(key="$d_gen_transmissionget")] 
+[stopmusic(fadetime=1)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_220_grani_1#1$1")]
+[name="グラニ"]もしもし、どうしたの……
+[charslot(slot="m",name="avg_220_grani_1#8$1")]
+[name="グラニ"]えっ！？　事件が和解したってどういうこと！？　カーターさんが合意書へのサインを了承したの？
+[charslot(slot="m",name="avg_220_grani_1#7$1")]
+[name="グラニ"]今工場にいるんだよね？　分かった、すぐに行く！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+[Background(image="bg_offce",screenadapt="showall")]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="工場の警備員"]待て！　君は中に入っては――
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="グラニ"]どいて！　それとも痛い目に遭いたいの？
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_223")]
+[name="雇われ弁護士"]例の元騎馬警官ですか？　中に入れてあげなさい。
+[Dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_doorbreak")] 
+[charslot(slot="m",name="avg_220_grani_1#9$1",duration=1)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot="r",name="avg_npc_223",focus="r")]
+[charslot(slot="l",name="avg_220_grani_1#9$1",focus="r")]
+[name="雇われ弁護士"]ごきげんよう、元騎馬警官の……グラニさん。
+[name="雇われ弁護士"]双方ともすでに合意書にサインをされましたよ。警備隊の皆さんの処理はとてもスムーズでした。ああ、もちろん騎馬警官とのお仕事も有意義なものばかりでしたよ。
+[name="雇われ弁護士"]……握手はお嫌ですか？　なら結構。
+[charslot(slot="l",name="avg_220_grani_1#9$1",focus="l")]
+[name="グラニ"]きみたち……自分が何をしたのか分かってるの？
+[charslot(slot="r",name="avg_npc_223",focus="r")]
+[name="雇われ弁護士"]落ち着きなさい。私はただ、いただいた報酬に見合う仕事をしたまでです。私に当たり散らすのは筋違いでしょう。
+[charslot(slot="l",name="avg_220_grani_1#9$1",focus="l")]
+[name="グラニ"]それじゃあきみの上司にこう伝えて――工場が汚染物質を下水道に流している証拠をつかんだって。法の裁きからは逃れられないよ！
+[charslot(slot="r",name="avg_npc_223",focus="r")]
+[name="雇われ弁護士"]はい、お伝えしましょう……ですが、この事件は法律上ではすでに終審しております。
+[name="雇われ弁護士"]あなたを尊敬しているからこそ、忠告させてください。あなたはもう騎馬警官ではないのです。助けてくれる仲間もいませんし、武器を振るったところで不利になるだけでしょう。
+[name="雇われ弁護士"]あなたが何をしようと、法的な支持を得るのは難しいかと。
+[charslot(slot="l",name="avg_220_grani_1#9$1",focus="l")]
+[name="グラニ"]……あの人たちは今すぐにでも自首した方がいい。このままじゃ、いずれその傲慢さのツケが自分たちに跳ね返ってくるからね！
+[charslot(slot="r",name="avg_npc_223",focus="r")]
+[name="雇われ弁護士"]今までライデルシティへの献身的なサポート、誠にありがとうございました。新しい環境での益々のご活躍をお祈り申し上げます。これは私の心よりの願いです。
+[name="雇われ弁護士"]それから、今後お仕事に取り組む際には、作業エリアの番号が入れ替わっていないのか、くれぐれもご注意くださいね。
+[charslot(slot="l",name="avg_220_grani_1#7$1",focus="l")]
+[name="グラニ"]なっ――！？
+[charslot(slot="r",name="avg_npc_223",focus="r")]
+[name="雇われ弁護士"]それではお先に失礼いたします。ああカーターさん、補償金はすぐに口座へ送金させていただきますので、確認の上ご査収ください。
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_005",focus="m")]
+[name="カーター"]ああ……
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="m")]
+[name="グラニ"]カーターさん！　どうして！？　あともう少しで息子さんをあんな風にした人たちを追い詰められたのに！　あんな紙にサインする必要なんてないんですよ！
+[charslot(slot="m",name="avg_npc_005",focus="m")]
+[name="カーター"]……グラニ、君は本当に優しい子で、素晴らしい騎馬警官だ。
+[name="カーター"]だがな……君はライデルシティの労働者ではない。私も息子も一生工場で働いてきた。
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="m")]
+[name="グラニ"]あたしならカーターさんと息子さんの力にきっとなれます！　絶対に最後まであきらめたりしません！　どうか信じてください！
+[charslot(slot="m",name="avg_npc_005",focus="m")]
+[name="カーター"]息子はもう……亡くなったんだ。
+[Dialog]
+[charslot(slot="m",name="avg_220_grani_1#8$1",focus="m")]
+グラニは呆然とその場に立ち尽くした。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+[Background(image="21_G7_decisivebattlealley_d",screenadapt="showall")]
+[playMusic(intro="$drift_intro", key="$drift_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n")] 
+[charslot(slot="m",name="avg_220_grani_1#2$1",duration=1.5)]
+[delay(time=2)]
+グラニはフラフラと通りを歩いていた。
+息を深く吸う度に、工場の煙の臭いが入り混じった空気が鼻を通って肺に入り込んだ。
+彼女は指先が白くなるほど握りしめていた拳をそっと緩めると、背中に背負った槍袋を軽く叩いた。
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="m")]
+[name="グラニ"]……もうあたしたちだけになっちゃったね。
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="m")]
+[name="グラニ"]とりあえずご飯でも食べよっか。あきらめさえしなければ、きっとなんとかなる！
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="m")]
+[name="グラニ"]なんならあたし一人でも……
+[Dialog]
+[charslot]
+サァーっと強い風が吹き、ゴミ箱のそばに積まれていた紙の山がパラパラと巻き上げられ、道路一面に飛ばされる。
+足元に飛んできた新聞紙をなんとなく手に取ると、一番下の目立たない場所に書かれていた記事が目に飛び込んできた。
+グラニは思わず息を飲んだ。
+[charslot(slot="m",name="avg_220_grani_1#9$1",focus="m")]
+[name="グラニ"]「サードアヴェニューで……交通事故……」
+[name="グラニ"]「ボルトン化学工業に勤めるダニー・コールマンが意識不明の重傷を負い、現在も病院で治療中……」
+[Dialog]
+[charslot]
+グラニは新聞紙をクシャクシャに丸めた。その小さな体がわなわなと震えていた。
+足を止め空を見上げても、目に映るのは薄暗く分厚い雲だけ。
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="m")]
+[name="グラニ"]ああ……
+[Dialog]
+[charslot]
+[name="？？？"]ううっ――
+[charslot(slot="m",name="avg_220_grani_1#1$1",focus="m")]
+[name="グラニ"]泣き声？　あっちの方かな……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n")] 
+[charslot(slot="m",name="avg_npc_240",duration=1.5)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot="l",name="avg_220_grani_1#4$1",focus="l")]
+[charslot(slot="r",name="avg_npc_240",focus="l")]
+[name="グラニ"]エリック？
+[charslot(slot="r",name="avg_npc_240",focus="r")]
+[name="エリック"]ヒック……ううっ……
+[charslot(slot="l",name="avg_220_grani_1#4$1",focus="l")]
+[name="グラニ"]エリック、大丈夫？　何があったの？
+[charslot(slot="r",name="avg_npc_240",focus="r")]
+[name="エリック"]グラニお姉ちゃん……ディディーが……ディディーが……
+[name="エリック"]お姉ちゃんが見つけてくれたあの日から、元気が無くなっちゃって……ご飯をあげても食べてくれないの……
+[Dialog]
+[charslot(slot="l",name="avg_220_grani_1#4$1",focus="l")]
+エリックの腕の中では、小さな獣が赤ん坊のように体を縮こませていた。
+[charslot(slot="l",name="avg_220_grani_1#6$1",focus="l")]
+その爪はビクビクと震えていたが、不意に引きつるような強い痙攣を起こしたかた思うと、空気が抜けた風船のようにぐにゃりと力なくへたり込んでしまった。
+グラニが鼻に手をやると、もう息はしていなかった。
+[charslot(slot="r",name="avg_npc_240",focus="r")]
+[name="エリック"]ディディー、どうしたの？　ディディーってば。
+[charslot(slot="l",name="avg_220_grani_1#4$1",focus="l")]
+グラニはまだほんのりと温もりが残る小さな爪をそっと掴む。
+彼女の予想通り、肉球の辺りに固い粒のような感触があった。
+[charslot(slot="l",name="avg_220_grani_1#2$1",focus="l")]
+皮膚を突き破った結晶粒子が、再び音もなく命を奪い去っていったのだ。
+[charslot(slot="r",name="avg_npc_240",focus="r")]
+[name="エリック"]ディディーは疲れて寝ちゃっただけだよ！　きっとすぐに起きてくれるはず。だってこんなにいい子で、人のことが大好きで、絶対に誰も噛まないディディーだもん……
+[name="エリック"]そうだよね、グラニお姉ちゃん？　ねぇ、そうだって言ってよ！
+[charslot(slot="l",name="avg_220_grani_1#2$1",focus="l")]
+[name="グラニ"]エリック、ディディーはね……
+[name="グラニ"]ここよりもずっと素敵で遠い場所に行ったの。
+[charslot(slot="r",name="avg_npc_240",focus="r")]
+[name="エリック"]そんな……なんでディディーが……なんで……
+[Dialog]
+[charslot]
+エリックはもう動くことのない小さな獣を抱きしめ、声を上げて泣いた。
+そしてグラニはそんな彼をぎゅっと抱きしめる。
+[charslot(slot="m",name="avg_220_grani_1#2$1",focus="m")]
+[name="グラニ"]そうだよ。ジュニアさんだって、ディディーだって、誰だってこんな目にあっていいはずがない。
+[Dialog]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$transmission")] 
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_220_grani_1#6$1",focus="m")]
+[name="グラニ"]……もしもし？　グラニだけど。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+五日後。
+[Dialog]
+[Background(image="bg_wild_a",screenadapt="showall")]
+[playMusic(intro="$distressed_intro", key="$distressed_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_005",duration=1)]
+[Delay(time=1.5)]
+[name="カーター"]息子よ……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n")] 
+[charslot(slot="m",name="avg_220_grani_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="グラニ"]カーターさん。
+[charslot(slot="m",name="avg_npc_005")]
+[name="カーター"]グラニ……もう街から出て行ったんじゃなかったのか？
+[charslot(slot="m",name="avg_220_grani_1#1$1")]
+[name="グラニ"]これ、息子さんへのお花です。
+[charslot(slot="m",name="avg_npc_005")]
+[name="カーター"]ありがとう。
+[charslot(slot="m",name="avg_220_grani_1#1$1")]
+[name="グラニ"]ジュニアさんのことを考えていたんですか？
+[charslot(slot="m",name="avg_npc_005")]
+[name="カーター"]……息子が生きていた頃は、喧嘩ばかりしていたよ。よく汚い言葉で罵っては、家から追い出したもんさ。
+[name="カーター"]だけど最近夢に出てくるのは、子供の頃の息子ばかりなんだ。「お父さん、お父さん」って私の後を追いかけて来るんだよ……
+[charslot(slot="m",name="avg_220_grani_1#2$1")]
+[name="グラニ"]合意書にサインしたあの日も、ジュニアさんの夢を見ましたか？
+[charslot(slot="m",name="avg_npc_005")]
+[name="カーター"]それは……
+[charslot(slot="m",name="avg_220_grani_1#9$1")]
+[name="グラニ"]あたしは見ましたよ。
+[name="グラニ"]夢の中ではあたしと騎馬警官のみんな、それとライデルシティの住民に工場の労働者が「ローリンロタンダ」に集まって、ジュニアさんの二十七歳の誕生日を祝っていました。
+[name="グラニ"]ロウソクに照らされながら歌い踊るジュニアさんの笑顔は、すごく楽しそうだったな……
+[name="グラニ"]カーターさん、あたしが五日前に街を離れたのは、とある企業に会いに行くためだったんです……
+[name="グラニ"]そして今こうして戻ってきたのは、約束を果たすためです。
+[Dialog]
+その時になってようやく、カーターは隣に立っているこの若者の手に冷たい輝きを放つ槍が握られていることに気付いた。
+その手はこれでもかというほど、槍の柄を固く握りしめている。
+[charslot(slot="m",name="avg_220_grani_1#9$1")]
+[name="グラニ"]あたしは悪いことも、弱い者いじめも、誰かの手の中で踊らされて生きるのも大嫌いなんです。
+[name="グラニ"]約束します。あたしがこの槍をまだ握っていられる限り、あきらめたりしません。あいつらを必ず最後まで追い詰めてみせます。
+[name="グラニ"]言ったからには、絶対に成し遂げますよ。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

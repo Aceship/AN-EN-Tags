@@ -1,0 +1,796 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[playMusic(intro="$mist_intro",key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1",duration=0.5)]
+[Delay(time=1)]
+[name="'Clip' Cliff"]...What's the situation?
+[charslot(slot = "m", focus = "n")]
+[name="Secretary"]We've already tracked down Miss Brynley, but... the mercenaries are understandably not giving this their best. However, going by how long it's been, she should be almost out of ammunition.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Any news on Tila's end?
+[charslot(slot = "m", focus = "n")]
+[name="Secretary"]Helena and the miner took the money into the energy tower, and... neither of them came out.
+[charslot(slot = "m", name = "avg_npc_1036_1#7$1")]
+[name="'Clip' Cliff"]So they disappeared without a trace, right in front of everyone? There must be another exit. Tell Tila to keep looking.
+[charslot(slot = "m", focus = "n")]
+[name="Secretary"]Yes, sir.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]What about Woody? Has he left yet?
+[charslot(slot = "m", focus = "n")]
+[name="Secretary"]Mr. Bianchi... hasn't left the plate. It seems he's effectively given up on their initial escape plan.
+[name="Secretary"]After all, according to Tila's report, he was planning to hide in the mountains with the miner once everything was over.
+[charslot(slot = "m", name = "avg_npc_1036_1#10$1")]
+[name="'Clip' Cliff"]Where did you go, Woody...
+[charslot(slot = "m", focus = "n")]
+[name="Secretary"]He... He's heading toward us.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]......
+[charslot(slot = "m", focus = "n")]
+[name="Secretary"]Should we send someone to intercept him?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Forget it. Let him come. If he insists on coming, no one can stop him.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[playsound(key="$d_avg_woodcracle", loop=true, channel="a")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "left", name = "avg_106_franka_1#1$1",duration=0.5)]
+[charslot(slot = "right", name = "avg_107_liskam_1#1$1",duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_106_franka_1#1$1",focus="l")]
+[name="Franka"]Liskarm, there's a burning roadblock up ahead. I can't drive past it. We'll have to walk.
+[charslot(slot = "right", name = "avg_107_liskam_1#7$1",focus="r")]
+[name="Liskarm"]Are those... Blacksteel transports?
+[charslot(slot = "left", name = "avg_106_franka_1#5$1",focus="l")]
+[name="Franka"]Was it Woodrow... or Jessica...?
+[charslot(slot = "right", name = "avg_107_liskam_1#4$1",focus="r")]
+[name="Liskarm"]At the very least, that tells us that not everyone was inside when the energy tower exploded.
+[charslot(slot = "left", name = "avg_106_franka_1#8$1",focus="l")]
+[name="Franka"]Wait, Liskarm... There's news from command.
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[playsound(key="$d_gen_transmissionget")]
+[delay(time=1.5)]
+[name="Communicator"]Warning, all fireteams. The current situation is that, after the recent explosion, the target engineer's status is unknown and Target Helena is missing.
+[charslot(slot = "left", name = "avg_106_franka_1#5$1",focus="l")]
+[name="Franka"]God...
+[charslot(slot = "m", focus = "n")]
+[name="Communicator"]HQ's orders are to give up on Target Woodrow and focus on capturing Target Jessica. The target is currently in an abandoned alley on the eastern side of the mine.
+[charslot(slot = "left", name = "avg_106_franka_1#11$1",focus="l")]
+[name="Franka"]Liskarm... What do we do...?
+[charslot(slot = "right", name = "avg_107_liskam_1#4$1",focus="r")]
+[name="Liskarm"]There has to be <i>something</i> we can do... Our team knows the mine better than anybody else. Let's just try to make it to her side ASAP.
+[Dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=0.7)]
+[charslot(slot = "m", name = "avg_npc_1034_1#1$1",duration=1)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="r")]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'Clip' Cliff"]You got here much sooner than I expected... Woody.
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="Woodrow"]Every last building on the way was empty. Wasn't much to do but come find you.
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="'Clip' Cliff"]Are you blaming me for it?
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="Woodrow"]Anyone else more deserving? Sometimes, a man bears sin not 'cause of something he's done, but 'cause of something he didn't.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'Clip' Cliff"]Then you should've shot that bullet of yours decades ago.
+[name="'Clip' Cliff"]But you chose to flee. Why?
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="Woodrow"]Because after a long silence, my godforsaken empathy finally realized that another Sankta had showed up by my side again. It was you.
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="'Clip' Cliff"]I was a mess, Woody. Empathizing with me must've felt terrible.
+[charslot(slot = "l", name = "avg_npc_1034_1#2$1",focus="l")]
+[name="Woodrow"]What was I supposed to do? It's the nature of all Sankta. We share everything, always.
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="Woodrow"]And compared to what I read from your brain? What I had to go through at that POW camp might've been a walk in the park.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'Clip' Cliff"]What a cruel fate. You despise me so much, yet not even my pain can bring you joy.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g8_abandonedblock",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_avg_drone")]
+[delay(time=1)]
+[playsound(key="$transmission")]
+[name="Communicator"]Reporting. Jessica spotted. Sharing coordinates.
+[name="Communicator"]The target is heading outside the mines. She has a heavy energy cannon, a semi-auto assault rifle... and a handgun of unknown make.
+[name="Communicator"]She's carrying all that by herself?
+[name="Communicator"]Oh, right. She also has a heavy shield on her back. The kind that can be used as carriage if necessary.
+[name="Communicator"]Well, that's something. Looks like after all these years, our princess has gotten pretty... remarkable.
+[name="Communicator"]How's she doing? Does she look like she could put up a huge fight? It's easy to spook a cornered thief. They get jumpy if you pull anything.
+[name="Communicator"]Hm... She seems kinda calm. She's just walking straight ahead, not doing anything.
+[dialog]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot="m",name="avg_1034_jesca2_1#1$2",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "m", focus = "n")]
+In the alley, the girl carries her weapons and advances arduously through the blizzard. The dilapidated walls on the sides of the streets slowly pass her by.
+That is, until she reaches a fork. She freezes there for a brief moment, then tugs her collar and turns onto the path where she must walk against the wind to proceed.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1")]
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1")]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="Woodrow"]Time was frozen in that POW camp. But outside, the war kept raging.
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="'Clip' Cliff"]That's right. After you two were taken prisoner, I took even more men to even vaster battlefields.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'Clip' Cliff"]In January, we had to cross the river against heavy cannon fire. In August, we had to defend our position in a scorching hot desert, ceding not even an inch to the enemy.
+[name="'Clip' Cliff"]Sometimes, we proved victorious, and we stepped forward over the bodies of our enemies. Other times, we found ourselves on the back foot, and we retreated past the bodies of our friends.
+[charslot(slot = "r", name = "avg_npc_1036_1#7$1",focus="r")]
+[name="'Clip' Cliff"]And sometimes, things got even worse. Sometimes, I had to sacrifice some to save the others.
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="Woodrow"]Just like what you did to me and him.
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="'Clip' Cliff"]Right, I've done it plenty of times. Not just to you two, but to who-knows-how-many.
+[name="'Clip' Cliff"]That's the dilemma war always puts in front of me. It may seem like a choice, but it's not. It's an inviolable rule.
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="Woodrow"]But you still made the call.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'Clip' Cliff"]I had no choice. If I didn't, all our efforts would've gone to waste. We would've faced defeat. That's why I chose to accept the rules.
+[charslot(slot = "l", name = "avg_npc_1034_1#2$1",focus="l")]
+[name="Woodrow"]......
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="Woodrow"]It's a sad thing, seeing a man you used to admire get reshaped by the rules and logic of war.
+[name="Woodrow"]You even remember what you used to be like? Before you had any part in the Revolutionary War?
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="Woodrow"]Do you remember the man who was always carrying the scriptures as he travelled everywhere, promising to use the gun in his hand to end all conflict and injustice?
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="'Clip' Cliff"]Of course I do, Woody. I remember what I was like, and I remember what you were like, too.
+[name="'Clip' Cliff"]You always had a brush with you. You wanted to have one of your paintings decorate a chapel dome one day.
+[name="'Clip' Cliff"]Have you so much as touched a brush these past years?
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="Woodrow"]No... Not since I had to get four fingers reattached.
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$transmission")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_snowrun", volume=0.8)]
+[name="Communicator"]The target is turning left. She's walking pretty slow. Nearby members, prepare to take her in.
+[charslot(slot = "m", name = "avg_106_franka_1#8$1")]
+[name="Franka"]These coordinates... They're just up ahead. Hurry, Liskarm.
+[charslot(slot = "m", name = "avg_107_liskam_1#7$1")]
+[name="Liskarm"]Phew... W-Wait.
+[charslot]
+The two turn into an alley and stop in their tracks. The girl's lonely back suddenly appears before them.
+[playMusic(intro="$distressed_intro",key="$distressed_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="Liskarm"]Jessica...
+[charslot]
+Hearing her name, the girl turns around.
+When she notices who they are, a hint of joy appears on her face, only to be quickly replaced by a sense of helplessness and panic.
+[Dialog]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#1$2",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#3$2")]
+[name="Jessica"]C-Captain... You two came?
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="Liskarm"]Yeah, we got your coordinates, so we rushed over here.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]I'm sorry, Captain... I'm not sure there's any cleaning up this mess I made.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="Liskarm"]I approved your application to withdraw from the team, so strictly speaking, I'm not your captain anymore.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]Right... I guess that's true. You two must be here to capture me, then.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="Liskarm"]No... We're here as your friends.
+[name="Liskarm"]I got a transmission on our way here. Supposedly, during the explosion, Leone... Well, I'm not sure if you knew, but regardless, I thought you'd probably want someone at your side.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]Yeah... I knew. I was on a call with him right until the moment it blew up... Thanks. Thanks for coming. It's just...
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="Franka"]Are you okay, Jessica?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]I...
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="Jessica"]I'm not okay. I'm awful.
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="Franka"]Do you want us to come over and give you a hug?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="Jessica"]No... don't. If you have anything to say, you can say it from there... I can hear you clearly from this distance.
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_106_franka_1#11$1",duration=1)]
+[PlaySound(key="$d_avg_snowbootwalk")]
+[delay(time=1.5)]
+[name="Franka"]Jessica...
+[charslot(slot = "m", name = "avg_1034_jesca2_1#6$2")]
+[name="Jessica"]Stay there and don't move, Franka.
+[charslot(slot = "m", focus = "n")]
+Flustered, Jessica pulls her gun from her waist to stop Franka from advancing.
+[charslot(slot = "m", name = "avg_106_franka_1#5$1")]
+[name="Franka"]Are... Are you going to point your gun at me?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="Jessica"]S-Sorry... I... I just... Franka, don't... Just leave me alone.
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="Franka"]Jessica...
+[charslot(slot = "m", name = "avg_107_liskam_1#1$1")]
+[name="Liskarm"]Let me talk to her.
+[dialog]
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[delay(time=1)]
+[name="Liskarm"]Is there anywhere you want to go, Jessica? After this is all over?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]Where <i>could</i> I go...? Those drones have been following me this whole time. You two shouldn't have come... Once you get back, you'll have to explain all these things you won't be able to answer. I'm scared. I'm terrified.
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="Liskarm"]Don't worry about that. If I can't explain it, then so be it. As long as we're all together, there's nothing to worry about. Don't be afraid.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]But I am... I'm so, so afraid.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="Liskarm"]What are you afraid of?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="Jessica"]That the pristine pool of water could be too warm, too wonderful.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="Liskarm"]Uh... I'm not sure I'm following you there...
+[dialog]
+[charslot]
+[playsound(key="$d_avg_truckengine", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=1, fadetime=1.5,channel="a")]
+[Blocker(a=0.6, r=1, g=1, b=1, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+Suddenly, the headlights of a transport point straight at Jessica, and she is enveloped and imprisoned by a number of giant halos.
+The girl's eyes are unable to bear such intense light. All she can do is hold her gun with one arm, and shield her eyes with the other.
+After a short while, she seems to have adjusted to the brightness. She puts her arm down, and stares into the distance at the convoy of cars driving toward her.
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[Dialog]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1")]
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1")]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'Clip' Cliff"]How's life treated you all these years?
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="Woodrow"]In my decades on the frontier, I kept my distance from crowds and wandered around alone a herd of burdenbeasts.
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="'Clip' Cliff"]Why didn't you go back to the Holy City?
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="Woodrow"]Didn't want to. What about you? Why didn't <i>you</i> go back?
+[charslot(slot = "r", name = "avg_npc_1036_1#7$1",focus="r")]
+[name="'Clip' Cliff"]I'm a mercenary. Laterano has no place for me. So why didn't you want to go?
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="Woodrow"]Hah...
+[name="Woodrow"]Ain't nothing so unpleasant it can't be forgotten in Laterano.
+[name="Woodrow"]But most of the POWs died in that camp. Hardly anyone still remembers. But someone's gotta.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'Clip' Cliff"]Yet here you are, living the kind of peaceful life you say you reject. Day after day, year after year.
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="Woodrow"]But I ain't never forgot. I still remember them, to this day.
+[charslot(slot = "r", name = "avg_npc_1036_1#8$1",focus="r")]
+[name="'Clip' Cliff"]I've always known there would come a day when you came settle the score.
+[name="'Clip' Cliff"]I just never thought it would take so long.
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1",duration=0.5)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_gunload")]
+[delay(time=1.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[PlaySound(key="$d_avg_driveincar", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=1, fadetime=2,channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[StopSound(channel="a", fadetime=3)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_drone")]
+[delay(time=1)]
+[dialog]
+[PlaySound(key="$d_gen_soldiersrun")]
+[charslot(slot = "left", name = "avg_npc_1045_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1045_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot]
+[playsound(key="$transmission")]
+[name="Communicator"]We've surrounded the target. Repeat, we've surrounded the target.
+[dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1",focus="m",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_mictest")]
+[delay(time=1)]
+[name="Calm Blacksteel Mercenary"]Drop your weapon, Miss Brynley... weapons. This is the end of the road.
+[name="Calm Blacksteel Mercenary"]Look around you. There's nowhere to run. This charade is over. The snowstorm is only going to get stronger... Dammit, I was supposed to get off work early today, and catch up on my beauty sleep.
+[charslot]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]...I do want to apologize to everybody again, but after everything I've said today... it would probably come across as disingenuous.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]Don't worry, you'll be fine. The company's making a huge ruckus out of this, but everyone here knows that nothing's going to happen to you.
+[name="Calm Blacksteel Mercenary"]I heard about you not long after I joined the company, Miss Brynley. Everyone warned me not to get on your bad side, because your family has more lawyers than we've got mercs here today.
+[charslot]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="Jessica"]...Probably even more than you're thinking.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]See? You even realize it yourself. Worst case, you'll get maybe a year or two of jail time. Then you'll be released, and get to live the kinda life you want to again.
+[charslot]
+[charslot(slot = "m", name = "avg_107_liskam_1#1$1")]
+[name="Liskarm"]Could you put down the amplifier? It's unnecessary at this distance.
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[PlaySound(key="$d_avg_doorknob")]
+[delay(time=0.5)]
+[name="Calm Blacksteel Mercenary"]What, after I brought it all this way?
+[charslot(slot = "m", name = "avg_107_liskam_1#3$1")]
+[name="Liskarm"]I'm begging you. Shut up.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]Sure, if you've got a better idea for how to persuade her.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]It's fine, Liskarm. You don't need to defend me. I know how everyone sees me.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="Jessica"]Right. It seems like ever since I was a kid, I've never thought about the consequences before I did anything. Because no matter what, my family would take care of the mess. That's probably why I come off as selfish.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]But that's not how it's supposed to go. There's always a price. And when you make a hasty, rash decision, you have to bear the consequences.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="Liskarm"]Jessica... You said you'd thought this all through when you asked to leave the team.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]No. I'm not talking about tonight. I'm talking about when I arrived at Fort Barron seven years ago. When I first walked through those huge doors.
+[name="Jessica"]At first, I only wanted to be a tester at the Equipment and Applied Technology Department. I never imagined that one day I'd be standing on a real battlefield, pointing my weapon at a real person.
+[name="Jessica"]Right, that's where the root of the problem lies. We often pick up our weapons without considering the price that needs to be paid.
+[name="Jessica"]Take this little handgun for example. I can hold it up with just two hands. I can pull the trigger with just one finger. I learned how to use it in less than a month.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="Jessica"]What's even more scary is that... I'd need only a second to take somebody's life with it.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]But it would take me a lifetime to forget that one second.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="Jessica"]See? That's how foolish I was. Before I picked it up, I never even considered who I would point it at in the future.
+[name="Jessica"]...But I'd already fired my first shot. Not fully thinking this through would be unforgivable.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]Have you thought it through, then?
+[name="Calm Blacksteel Mercenary"]Because you've been holding your gun up this whole time. Hell, you haven't lowered it for even a second.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_npc_1034_1#10$1")]
+[name="Woodrow"]How arrogant. When did I ever say I came to settle a score with you?
+[name="Woodrow"]You think I brought this bullet here for <i>revenge</i>?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Are you telling me you're not stuck in the past?
+[charslot(slot = "m", name = "avg_npc_1034_1#5$1")]
+[name="Woodrow"]No. You're the one who's stuck.
+[name="Woodrow"]You lived to your nineties as a merc. Can you really adjust to any kinda life outside the battlefield?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Woody. The reason I'm still unwilling to leave the battlefield is because war never ends.
+[charslot(slot = "m", name = "avg_npc_1034_1#1$1")]
+[name="Woodrow"]Columbia's war ended a long time ago.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]It did, but then Bolívar's war began right on its heels. Victoria's war may have calmed down for the moment, but there's no stopping the fallout it's started.
+[name="'Clip' Cliff"]War is always here. It merely takes a break every now and then, before erupting somewhere else.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="Woodrow"]Then why stay on the battlefield? To be continually baptized by the flames of war?
+[charslot(slot = "m", name = "avg_npc_1036_1#2$1")]
+[name="'Clip' Cliff"]Because if I can never end war, I have to settle for the next best thing. To hold its on-off switch in my hands.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]That's why I started Blacksteel.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="Woodrow"]But can you really control it?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]I've tried plenty of times, and I paid a dear price. But I did it in the end.
+[charslot(slot = "m", name = "avg_npc_1034_1#5$1")]
+[name="Woodrow"]Was it worth it?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Even if all I can manage is to put it on pause for a few seconds, that's more than enough time for countless people like you to pick up their brushes again.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="Woodrow"]Then why can't you put what you're doing here on pause too?
+[name="Woodrow"]I'm sure a few seconds to breathe would be plenty for folks like me, gasping for air. Sure beats getting pathetically run off to the frontier.
+[charslot(slot = "m", name = "avg_npc_1036_1#5$1")]
+[name="'Clip' Cliff"]Because Davistown is no battlefield.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#11$2")]
+[name="Jessica"]I can't put it down, because... this is the only thing I have left that still has power.
+[name="Jessica"]All these years, I've thought of myself as something like a blank white symbol...
+[name="Jessica"]The wealth, family, and influence it represents... mean nothing. They have no use in the face of the problems I want to solve.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]But with this in my hand... at least I accomplished something.
+[name="Jessica"]With this in my hand, at least I'm not a completely useless symbol.
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="Liskarm"]Nonsense.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="Jessica"]Captain...?
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="Liskarm"]Jessica, it's been five years. In these five years, have you ever once thought about why I picked you as my assistant?
+[name="Liskarm"]This is Blacksteel we're talking about... There are all kinds of amazing people here. But I still chose <i>you</i>. And not because of that gun you're holding, but because of your tears.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#14$2")]
+[name="Jessica"]Tears... but tears of weakness can't protect the people behind me.
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="Liskarm"]Tears don't imply weakness. The work we do at B.P.R.S is dirty, tiresome, and dangerous. No one does this kind of work just for the money.
+[name="Liskarm"]Only someone who's able to empathize with the pain of others can throw herself into a cause for a group of strangers, or a place she barely knows.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]Captain... Just when I thought I was completely useless, you brought me into your team.
+[name="Jessica"]That was the first time in my life I ever felt appreciated, and I still remember that feeling.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#13$2")]
+[name="Jessica"]To repay your trust, I would willingly brave hell and high water.
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="Liskarm"]But you shouldn't... You shouldn't walk that path. No one's journey should be to earn someone's else's recognition.
+[charslot(slot = "m", name = "avg_107_liskam_1#5$1")]
+[name="Liskarm"]Do whatever it is that you yourself really want to do. Do what truly makes you happy. You don't need anybody's recognition except your own, deep in your heart.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#8$2")]
+[name="Jessica"]Captain... I... I really want to cry right now...
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="Liskarm"]Then cry. Let your tears flow. No need to hold back.
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[playMusic(intro="$epic_intro",key="$epic_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'Clip' Cliff"]Woody, your halo is flashing.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="Woodrow"]You're goddamn right it is. I want to kill you.
+[name="Woodrow"]You keep saying that war never ends, that all you can do is control it.
+[name="Woodrow"]But you're wrong. War <i>can</i> be ended. Just not by you.
+[name="Woodrow"]War is ended by countless ordinary folks. Folks who've been encroached on by it, but like weeds try their hardest to survive.
+[name="Woodrow"]Everywhere that's ever burned down in the flames of war has always been fixed up by untold numbers of normal folks, trying their best to get back the lives they used to live. Even in the most dire of circumstances.
+[charslot(slot = "m", name = "avg_npc_1034_1#3$1")]
+[name="Woodrow"]You should've died on the battlefield. Would've been a much better fate than becoming the war-obsessed madman you are now.
+[name="Woodrow"]At first, I just wanted to return the bullet to you. But now, I really wanna kill you.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[image(image="42_i11",screenadapt="coverall",xScale=1.2, yScale=1.2)]
+[ImageTween(image="42_i11",xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, xFrom=80, xTo=0, duration=9)]
+[bgeffect(name="$eb_glow_42i11_01",layer=2)]
+[bgeffect(name="$eb_glow_42i11_02",layer=3)]
+[cgitem(image="cgitem_42_i11", style="cg",pfrom = "-200,0",pto = "0,0",pduration = 10,layer = 4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[playsound(key="$d_avg_snowstormflp", loop=true, channel="bgs")]
+[StopSound(channel="bgs", fadetime=3)]
+[delay(time=7)]
+A strong gale lifts up the old man's hat and tosses it into the air.
+But he neither looks up nor moves to grab it.
+His eyes, not blinking for even a moment, are fixed on the man standing opposite him. All his muscles, from his cheek to his neck, are as tense as can be.
+And above his head, his halo is flashing rapidly.
+The man opposite him keeps silent for a time, then gradually takes a deep breath. As though it is only through the sound of the roaring winds that he can understand the old man's words.
+[name="'Clip' Cliff"]Well then. Do you know who it is you're going to kill?
+[name="'Clip' Cliff"]Your nemesis? Your friend who betrayed you? Or a complete madman?
+[name="Woodrow"]None of the above. It's an arrogant dick who looks down on everything.
+[name="Woodrow"]In his eyes, everything can be weighed on scales. And to achieve his goals, he's capable of sacrificing anything.
+[name="'Clip' Cliff"]...What about you, then? What kind of man will shoot me with that bullet?
+[name="Woodrow"]An ordinary man.
+[name="Woodrow"]A ordinary man who lost everything except his anger when you looked down on him.
+[name="'Clip' Cliff"]Very good.
+[name="Woodrow"]What's so funny?
+[name="'Clip' Cliff"]That finger of yours always yearned to hold a brush, but in the end, you'll use it to pull the trigger. My hands yearned to hold scriptures, but in the end, they'll be drenched in blood.
+[name="'Clip' Cliff"]It's just funny how fate makes fools of us all.
+The wind lifts Cliff's coat, revealing both the firearm on his waist and the hand reaching for it.
+Through the flurry of snow, he sees Woodrow doing the same.
+He suddenly remembers how, all those years ago in Laterano, on the way back to the dorm, a gust of wind blew Woodrow's hat away and carried it into the sky. And for a very long time, it stayed up there.
+Years have come and gone, and now that hat in the wind has finally landed back on the ground.
+[Stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[hidecgitem]
+[Background(image="bg_black",screenadapt="coverall")]
+[bgeffect]
+[image]
+[delay(time=1)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[PlaySound(key="$d_avg_gunshot")]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[PlaySound(key="$d_avg_gunsingle",channel="a",delay=0.3)]
+[delay(time=0.16)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.5, block=false)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[delay(time=2.5)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[name="Jessica"]You can see <i>my</i> tears...
+[name="Jessica"]But what about them?
+[charslot(slot = "m", name = "avg_107_liskam_1#3$1")]
+[name="Liskarm"]......
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]Them? Who?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2",focus="n")]
+Jessica doesn't give him an answer. She merely looks back at the desolate mine. After the explosion, it looks all the more devastated.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]Sir, do you know what that used to look like?
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]I don't.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]Well, I do...
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="Jessica"]I know there was a time when the energy tower burned endlessly to bring warmth to the residents here.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#2$2")]
+[name="Jessica"]I know there was a time when that diner never closed. Everyone would gather around the tables over beer and sing to their hearts' content.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="Jessica"]I know the winters here are long and cold, but with their dedication and hard work, every last person who lived here filled this place with light and warmth.
+[name="Jessica"]Their fierce, brilliant light enveloped every inch of this place to drive out the frigid cold and darkness of the winter nights.
+[name="Jessica"]They turned their bustling everyday life into burning red blood, and injected it into this plate frozen by the long winter, giving it life and vitality.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#11$2")]
+[name="Jessica"]They were people whose path was uncertain, but insisted on walking it nonetheless.
+[name="Jessica"]They were people who were cruelly tormented by life here, their necks bent under its weight. Even then, they lived here amid the snowstorm.
+[name="Jessica"]They... were people who shed tears, but no one ever noticed.
+[name="Jessica"]My tears... can't stand in for their sadness.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[image(image="42_i09",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+The girl raises her gun, and through its sight she sees an array of faces.
+Some look confused, some disapproving, some stunned, some dazed. Some are chuckling, some are lamenting.
+But their faces are not important. They quickly enter the girl's eyes, and exit them just as fast, never stopping in her heart for a moment.
+Instead, a few other faces appear in her mind.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect]
+[image]
+[Background(image="34_g9_tent",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+The girl who prayed in the tent.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[Background(image="bg_iceforest_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+The woman who scampered away in the snowfield.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+The old man who drew his gun in the dark night.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[image]
+[image(image="42_i09",screenadapt="coverall")]
+[delay(time=0.5)]
+The man who departed in flames.
+[dialog]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[name="Jessica"]But my gun will cry for their sorrow.
+[dialog]
+[MusicVolume(volume=0.3, fadetime=2)]
+[delay(time=3)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="2")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="3")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="4")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="5")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="6")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="7")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="8")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_ejectempaty",channel="x")]
+[delay(time=2.5)]
+[MusicVolume(volume=0.6, fadetime=2)]
+She raises her arm up high toward the sky, and fires all her bullets in one go.
+[PlaySound(key="$d_avg_bulltdrpsnw")]
+[PlaySound(key="$d_avg_bulltdrpsnw",channel="a",delay=0.3,volume=0.5)]
+[PlaySound(key="$d_avg_bulltdrpsnw",channel="b",delay=0.45,volume=0.3)]
+As the snow thrashes through the air, the empty casings fall to the ground, melting the snowdrifts away with their lingering heat.
+The gunshots reverberate in the air for a long time. Before silence returns to her surroundings, the girl's ears catch a faint, feeble sound.
+It's the sound of her tears smashing into the earth.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[bgeffect]
+[charslot]
+[image]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1036_1#5$2",duration=1.5)]
+[delay(time=2)]
+[name="'Clip' Cliff"]Huff...
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'Clip' Cliff"]Ugh......
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1034_1#1$2",duration=1)]
+[delay(time=1.5)]
+[name="Woodrow"]You lose.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'Clip' Cliff"]Sorry, Woody. I chose war. I chose never-ending war.
+[name="'Clip' Cliff"]So... my life is like a bullet. An explosion that can't be stopped. A siege and a defense with no end in sight.
+[name="'Clip' Cliff"]I can't end war, but you can end me.
+[name="'Clip' Cliff"]Only when the last soldier fighting it falls, can the war finally end.
+[charslot(slot = "m", name = "avg_npc_1034_1#5$2")]
+[name="Woodrow"]Rupert...
+[charslot(slot = "m", name = "avg_npc_1036_1#8$2")]
+[name="'Clip' Cliff"]Now there's a name I haven't heard... in a long time.
+[name="'Clip' Cliff"]Thanks, Woody, for still being willing to say that name. Aside from you, there's not a single person who remembers it.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="Woodrow"]Goodbye...
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+Cliff closes his eyes and waits for the bullet to tear his forehead apart.
+[playsound(key="$phonevibration")]
+But before that, he hears a ringtone.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+He pulls out his communicator, takes a look, and chuckles. Then he puts it back into his pocket.
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="Woodrow"]Who was it?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'Clip' Cliff"]The military.
+[name="'Clip' Cliff"]Don't worry about it. Go on.
+[dialog]
+[charslot]
+[playsound(key="$phonevibration")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="Woodrow"]Is it Bolívar... or Victoria?
+[charslot(slot = "m", name = "avg_npc_1036_1#6$2")]
+[name="'Clip' Cliff"]Nothing you need to worry about, Woody.
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="Woodrow"]Is it Columbia?
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1036_1#3$2")]
+[name="'Clip' Cliff"]Do it!
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="Woodrow"]Another war is about to start, isn't it?
+[name="Woodrow"]...Where will it affect this time?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'Clip' Cliff"]A forewarning, perhaps. It's not set in stone.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="Woodrow"]Give it to me.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'Clip' Cliff"]Woody, a lot of the things I have on here are just trivial, everyday matters to me. But to you...
+[charslot(slot = "m", name = "avg_npc_1036_1#7$2")]
+[name="'Clip' Cliff"]They'd be a whole new nightmare.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="Woodrow"]...Hand it over.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'Clip' Cliff"]If you insist. Feast your eyes on them.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="Woodrow"]......
+[name="Woodrow"]Who'll take all this over once you're dead?
+[charslot(slot = "m", name = "avg_npc_1036_1#2$2")]
+[name="'Clip' Cliff"]Someone.
+[charslot(slot = "m", name = "avg_npc_1034_1#7$2")]
+[name="Woodrow"]...They shouldn't.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="Woodrow"]There shouldn't be nobody else like you.
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_revolver",volume=0.7)]
+He throws the communicator to the ground and shoots it full of holes.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="Woodrow"]......
+[charslot(slot = "m", name = "avg_npc_1034_1#1$2")]
+[name="Woodrow"]I can't kill you.
+[name="Woodrow"]This sin is yours to bear.
+[charslot(duration=0.5)]
+[PlaySound(key="$d_gen_soldiersrun",volume=0.7)]
+Woodrow sets his gun down on the floor and raises his hands.
+Behind him, attracted by the sound of gunfire, a crowd of mercenaries surges into the area with frantic footsteps and moves to surround him.
+In the sky, the last few snowflakes of the night are fluttering down.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[playsound(key="$d_avg_snowstormflp", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.8, fadetime=3,channel="bgs")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="Jessica"]Okay guys, take me away. I'm ready.
+[charslot(slot = "m", focus = "n")]
+The girl holsters her firearm, and lifts her hands above her head.
+[charslot]
+[charslot(slot = "m", name = "avg_106_franka_1#1$1")]
+[name="Franka"]Put your hands behind your back.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]...Handcuffs don't feel as cold as I thought they would.
+[charslot(slot = "m", name = "avg_106_franka_1#3$1")]
+[name="Franka"]Because I've been keeping them warm this whole time.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="Jessica"]Thank you...
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]Can I have a word with you before we go?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#15$2")]
+[name="Jessica"]I should thank you too, sir. Thanks for listening to all that.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]It's fine... Before you, there was another guy who jabbered away just as much, if not more.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="Jessica"]......
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]I'm sure... he'd be happy that you remembered what he said.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#3$2")]
+[name="Jessica"]Oh... You knew him, too.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="Calm Blacksteel Mercenary"]He was a good kid. Hard to forget once you've met him... Goodbye, Jessica.
+[PlaySound(key="$d_avg_cloakmovement")]
+[charslot(duration=1)]
+The mercenary taps the girl's shoulder, raising a cloud of dust as the sun rises, and turns around to leave.
+As Jessica gazes at the floating dust under the sunlight, she suddenly realizes that the night has already passed.
+Likewise, the snowstorm had subsided at some point.
+[dialog]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#15$2",duration=1)]
+[delay(time=2)]
+[name="Jessica"]♪She spread her arms, spread her heart, showed me that pretty face♪
+[name="Jessica"]♪And from that moment on, I found my dreams in her embrace♪
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[StopSound(channel="bgs", fadetime=3)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

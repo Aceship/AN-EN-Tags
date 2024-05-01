@@ -1,0 +1,509 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_black",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[playMusic(intro="$drift_intro", key="$drift_loop", volume=0.6)]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[interlude(maskid = "ui_cutin_mask_horizon", style = 1, size = "1500, 420",offset = "20,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_lungmen_n", afrom = 0, ato = 1, aduration = 3, sfrom = "1.6,1.6", sto = "1.6,1.6", sduration = 0,block=true)]
+[interlude(channel = 2, type = 2, name = "bg_lungmen_n", pfrom="0,0",pto="-80,0", duration =30,block=false)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="まだ龍門近衛局にいた頃、私は時折午後を丸ごと使って、街中をぶらつくことがあった。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n自分の職務を果たすために、何に立ち向かうべきか、私にはよく分かっていた。",block = true)]
+[Sticker(id="st1", multi = true, text="\n我々は秩序を己の武器とし、混乱を収め、紛争を罰し、犯罪を取り締まり、過ちを正す。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="その時、私はいつもこう思うんだ……人々は、あまりにたやすく腐敗してしまうと。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n我々は皆生まれつき純真無垢だ。だが歳を重ねるにつれ、悪意はまるでカビが生えるように、枝葉の一本一本を侵蝕していく。",block = true)]
+[Sticker(id="st1")]
+[interlude(channel = 2, type = 1, slot = "m", offset = "-170,50", name = "cutin_char_15",sfrom = "1,1", sto = "1,1",  aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "-170,50", pto = "-120,50", duration = 40)]
+[delay(time=1)]
+[Sticker(id="st1", multi = true, text="我々に十分な強さが、献身の心があれば、この大地から罪悪はなくなると、かつては考えていたこともあった。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n私が感染者となるまでは。そして、龍門のスラム街を訪れるまでは。",block = true)]
+[Sticker(id="st1", multi = true, text="\nその時、私はようやく身をもって知ったんだ。「公正」という言葉は、人よりもさらに脆弱なものだと。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="汚れた土壌から芽生えた奇形の植物の歪みを、温室で育った草花が責める資格はあるのか？　その枝と蔓を剪定する権利はあるのか？", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n同じ土壌を分かち合ったことがなければ、同じ公正さを論じ合うことなど不可能だ。",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[stopmusic(fadetime=4)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=4, block=true)]
+[interlude(channel = 2,clear = true)]
+[Delay(time=2)]
+[Background(image="43_g11_breweryinforest_b",screenadapt="coverall")]
+[playMusic(intro="$tense_intro", key="$tense_loop", volume=0.8)]
+[playsound(key="$d_avg_churchfire", loop=true, channel="bgs",volume=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_labber")]
+[delay(time=2)]
+[PlaySound(key="$d_avg_statuecollapse",volume=0.9,delay=0.5)]
+[CameraShake(duration=2, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=3)]
+[PlaySound(key="$d_avg_riot",volume=0.9,delay=0.5)]
+[Delay(time=5)]
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m",duration=1)]
+[delay(time=2)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false)]
+[name="ナイン"]急げ！　全員を外へ避難させるんだ！　建物からなるべく離れたところまで行け！
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="絶望した難民"]まだこの中に俺の荷物があるんだ！　俺の全財産が！
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]どんな物だ？
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="絶望した難民"]枕と……布団だよ！　あれが家から持ってきた最後のものなんだ！
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false)]
+[name="パーシヴァル"]バカ言わないで！　後方へ避難しますから、ついてきてください！
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[name="パーシヴァル"]まだ感染してないんでしょう？　だったらその幸運を大切にすることですね！
+[charslot(slot="m",name="avg_npc_1066_1#7$1",focus="m")]
+[name="ノウエル"]群衆が混乱しすぎているね。かなりの数の避難者の中に感染者と非感染者が入り混じっているし、無法者もいるだろう。ここに住んでた人がどういう出自なのかがはっきりしない。
+[charslot(slot="m",name="avg_npc_1066_1#7$1",focus="m")]
+[name="ノウエル"]それに、この炎……ここは戦場からそう離れていない。誰の注意を引いてしまうか分かったものじゃないぞ。
+[charslot(slot="m",name="avg_npc_1066_1#3$1",focus="m")]
+[name="ノウエル"]そのまま離れるという選択肢だってある！　この火災に我々が責任を負う必要はないんだ！
+[charslot(slot="m",name="avg_npc_1066_1#3$1",focus="m")]
+[name="ノウエル"]ナインさん！　決断してくれ！
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="叫び声、泣き声、ぬかるみに倒れ込み、また立ち上がる人々。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n彼らの背後で、炎が真っ赤に燃え盛っている。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]感染者だ……これは奴らが放った火だ！　奴らの誰かが爆発したせいで、この工場は――
+[charslot(slot="m",name="avg_npc_329_1$1",focus="m")]
+[name="緊張する感染者"]俺たちとは何の関係もねぇだろ！
+[charslot(slot="m",name="avg_npc_329_1$1",focus="m")]
+[name="緊張する感染者"]お前らがあのサルカズを引き寄せてきたんじゃねぇのかよ？
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]そんなことはしてない！
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]全部お前ら感染者のせいだ！　お前らさえいなけりゃ、もっと長くここに隠れていられたのに！
+[charslot(slot="m",name="avg_npc_329_1$1",focus="m")]
+[name="緊張する感染者"]*ヴィクトリアスラング*、てめぇ、何言ってやがる？
+[charslot(slot="m",name="avg_npc_329_1$1",focus="m")]
+[PlaySound(key="$fightgeneral")]
+[CameraShake(duration=0.3, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false)]
+[name="緊張する感染者"]誰がてめぇらをここに受け入れてやったと思ってんだ！？
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false)]
+[name="取り乱す難民"]殴りやがったな！
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]この野郎――
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]もうやめろ！
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="止まることのない責任の押し付け合い。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n終わることのない罵り合い。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]そんなに逃げるのが嫌なんだったら、私が火の中に送り返してやってもいいぞ。
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]レ……レユニオン、メイズとグルなんだな！
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]感染者さえ、感染者さえいなけりゃ……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]いなければ、なんだ？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]目を覚ませ。お前がこんな目に遭っているのも、廃棄された醸造所でこそこそと暮らすしかないのも、すべてを失ったのも、感染者のせいではないはずだ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]身体に石が生えていない以外に、お前と我々に違いなどない。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]我々は病にすべてを奪われた。だが我々と同じ苦難を経験してもいないのに、同じところまで落ちぶれたお前はどうなんだ？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ハッ。
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]お前に――お前なんかに何が分かるってんだ！？
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]お前は生産ラインの機械に指を切断されたことがあるか？　工場の門から放り出されたことは？　領主に家を燃やされたことは？
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]そうやって自分が受けた理不尽を嘆いてるけど、理不尽な目に遭ったのは、お前らだけじゃないんだよ！
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]俺の家を燃やした子爵は、実は息子が感染者だなんて噂が流れてたけどよ、それがどうしたってんだ！　奴ほどの権力者なら、息子をクルビアの大病院にだって連れていけるじゃないか！
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]だが俺たちは？　俺はどうだ？　税金を支払えずに奴に楯突いたってだけの理由で、俺の家は燃やされて、二人の子供が焼き殺されたんだぞ！
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]誰も奴に口出しなんかしなかったさ！　奴は領主で、片や俺は障碍持ちの貧乏人だからな！
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]搾取されてるのはお前らだけじゃないってのに、どうしてお前らだけが、堂々と立ち上がって加害者どもを殺す権利があるみたいに振舞うんだ！？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]どうしてだと？　我々が搾取され続けることを望まないからだ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]それに、誰もお前に抗ってはいけないなどとは言っていない。
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]お……俺は――
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="取り乱す難民"]俺は……どうしようもないんだ。俺にはお前らみたいなアーツがないから……
+[charslot(slot="m",name="avg_npc_864_1#7$1",focus="m")]
+[name="パーシヴァル"]自分に言い訳するのはやめてください。感染者全員がすごいアーツを持ってるわけじゃないんですよ。
+[charslot(slot="m",name="avg_npc_864_1#7$1",focus="m")]
+[name="パーシヴァル"]ナイン、今部隊は再編中です。これから撤退しますか？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]……何部隊か連れて周囲を厳重に警戒するよう、レイドに伝えろ。戦線が膠着しているなら、どの勢力も遠方で起きた火災調査などに人員を割く余裕はないかもしれない。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]パーシヴァル、逃げてきた人々を落ち着かせ、治療、検査、及び登録の手配をしてくれ。大事を取って、この場所に留まるのは長くとも一日までとする。
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[name="パーシヴァル"]分かりました！
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]……
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="ノウエル"]私も手伝おう。火傷と気道に入り込んだ粉塵の処置には慣れているからね。
+[charslot(slot="m",name="avg_npc_864_1#7$1",focus="m")]
+[name="パーシヴァル"]それと、まだGuardと連絡がつかないんです！
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[name="パーシヴァル"]彼が無事に逃げ出せたかどうか、まだ確認が取れていません！
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]……安心しろ、私が彼を探し出す。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]我々はあのチェルノボーグから抜け出してきたんだ。
+[charslot(slot="m",name="avg_npc_1066_1#8$1",focus="m")]
+[name="ノウエル"]ナインさん、源石粉塵の濃度が――
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私はすでに燃え盛る醸造所に向けて駆け出していた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n龍門で似たような火災現場に踏み入ったのも、一度や二度じゃない。",block = true)]
+[Sticker(id="st1", multi = true, text="\n近衛局警察官として、スラム街の住人として。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[stopmusic(fadetime=3)]
+[stopsound(channel="bgs",fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="bg_lungmen_b",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="火災とは、喪失と破滅を意味する。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nそのたびに、焼け焦げた残骸の前で涙を流す人々を、いつも目にしていた。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそれはある時は感染者だったり、またある時はごく普通の住民だったりした。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="そういう時には、決まって野次馬たちの間で噂が広まるものだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n何人の感染者が死んだのか、何人の一般人が死んだのか。これは近所の奴にイジメを受けた感染者の報復だ。あれは病人だらけの環境に耐えかねた近所の奴の仕業だ。",block = true)]
+[Sticker(id="st1", multi = true, text="\nだが、誰一人としてこう問いただす者はいない。なぜアップタウンの火事はいつもすぐに消火されるのだろうか。",block = true)]
+[Sticker(id="st1", multi = true, text="\n数棟が焼け落ちるような大火事は、何人死んだかも分からないような大火事は、なぜいつもスラム街で起こるのだろうかと。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="43_g11_breweryinforest_b",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私は醸造所の扉の中に飛び込んだ。出口から遠くないところで、激しい崩落が起きていた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n金属の残骸と瓦礫の中から、一本の腕が伸びている。",block = true)]
+[Sticker(id="st1", multi = true, text="\nその手に握られていたのは、Guardの録音機だった。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=4, block=true)]
+[Character(fadetime=0)]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=2)]
+[playMusic(intro="$distressed_intro", key="$distressed_loop", volume=0.6)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="「それとも、こう言うべきか……俺たちが団結すべき人々は、共に肩を並べ、いばらの道を切り拓かんと望む人々は――」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n「感染者だけなのか？」",block = true)]
+[Sticker(id="st1", multi = true, text="\n「彼ら……だけなのか？」",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="「感染者はいつだって……あらゆるものが最後に落ちていく先だった……俺たちは、似たような境遇を理由に共に集まった。」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n「だが、俺たちが共に立ち向かう相手は……病だけじゃないはずだ。」",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="「もしも、どこかの……貴族に出会ったとして、そいつが権力を笠に着て他者を搾取していたら、俺たちはそいつをどう思う？」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n「もしも……そいつが感染者だったら？」",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="「感染者か否かだけを……唯一の基準に、スローガンにしてちゃダメだ。」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n「俺たちの仲間に必要なのは、信念を同じくすることだ……かつて受けた迫害への報復だけじゃなく、俺たちと同じ苦しみを味わう者を皆、苦難から解放してやるべきだ。」",block = true)]
+[Sticker(id="st1", multi = true, text="\n「この大地で搾取されているのは俺たちだけじゃない……俺たちは彼らと、共に立たねばならない。」",block = true)]
+[Sticker(id="st1", multi = true, text="\n「彼らに……俺たちと共に立ってもらわねばならない。」",block = true)]
+[Sticker(id="st1", multi = true, text="\n「俺たちは……病に抗ってばかりではいけないんだ。」",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="「俺たちは一体何に抗えばいいんだろう？」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n「一体……何を築き上げればいいんだろう？」",block = true)]
+[Sticker(id="st1", multi = true, text="\n「俺――」",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="*ザザッ――*", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="「何年も前、まだ感染したばかりの頃、俺は……酒が好きだった。あの頃、Ace隊長に言われたよ。それ以上……そんな風に飲み続けていたら、いつか酒で溺れ死ぬぞってな。」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n「……ははっ。」",block = true)]
+[Sticker(id="st1", multi = true, text="\n「確かにここは……酒の醸造所だ。」",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="「——」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m",duration=1)]
+[delay(time=1)]
+[name="ナイン"]……
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="タルラ"]ナイン、お前、もう何度も繰り返しそれを聞いているな。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ああ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]タルラ……もし私たちが本当に感染者の都市を築き上げたら、それはどんな街になるんだろうな？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]そこは本当に……単なるホスピスではないのか？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]その時は、我々はそんな街で、崩壊後の源石粉塵があらゆるものを覆い尽くすのを……次々に死が訪れるのを待つしかないだろう。
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="タルラ"]……
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="タルラ"]ああ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]私たちは……行き着く先で、ただ待っているだけじゃダメなんだ。
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m",duration=1)]
+[delay(time=2)]
+[name="ノウエル"]ナインさん、タルラさん。お話中失礼する。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]どうしました？
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]私は……しばらくこの部隊を離れようと思う。昨日、難民の中にロンディニウムから逃れてきたという者が何人かいてね。
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]彼らが……気にかかることを口にしたんだ。あの街にはもしかしたら私の探し求める人が潜んでいるのかもしれない。
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="ノウエル"]私はロンディニウムへ旅立つことにするよ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ロンディニウムですか、あそこは危険です。
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="ノウエル"]君もタルラさんから私の正体については聞いていると思う。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]「長命者」ですか。
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]そうだ、私は死ねない身でね。
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]もう……この事実に耐えられなくなってきているんだ。
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="タルラ"]……自殺をするつもりですか？
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="タルラ"]あなたは一体、どうやって「不死」を得たのです？
+[charslot(slot="m",name="avg_npc_1066_1#9$1",focus="m")]
+[name="ノウエル"]……「不死」か、フッ。
+[charslot(slot="m",name="avg_npc_1066_1#9$1",focus="m")]
+[name="ノウエル"]初めの頃は、運命が私に仕掛けてきたいたずらの正体に気づくことなど、できようはずもなかったんだ。
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]私もかつては幸福な日々を過ごしていた。
+[name="ノウエル"]生涯に唯一の妻と出会い、子を持ち、家庭を築き、アーツの研究に没頭する日々を……もちろん、研究対象は主に自分自身だったけどね。
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]子は育ち、私たちは老いていった。何もかもが自然なことだった。
+[charslot(slot="m",name="avg_npc_1066_1#6$1",focus="m")]
+[name="ノウエル"]妻が不慮の事故により命を落とし、戦火が広がって子供との離別を余儀なくされるまではね。各地を転々としていたあの頃に、自分がほとんど変化していないことにふと気づいたんだ。
+[charslot(slot="m",name="avg_npc_1066_1#6$1",focus="m")]
+[name="ノウエル"]君主たちは戦争を始め、何年かすると国王が絞首台に吊るされ、公爵たちの陰謀が明るみに出た。そして、サルカズ……
+[charslot(slot="m",name="avg_npc_1066_1#6$1",focus="m")]
+[name="ノウエル"]私は今日に至るまで、何一つ変わらなかった。
+[charslot(slot="m",name="avg_npc_1066_1#6$1",focus="m")]
+[name="ノウエル"]毎日、悪夢を見るんだ。夢の中では聞き覚えのない声が……あるいは私の知るあらゆる声が、一斉に私にこう呼びかけてくる。
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]「苦痛がキミに不死を与えた。キミに死をもたらし得るのは、ただ幸福だけだ。」
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="ノウエル"]そんなことはとうの昔に気づいていたさ。だが一体どうすれば、幸福を感じることが、解放されたと感じることができるのかな？
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="ノウエル"]次々に繰り返される死を、悲劇を目の当たりにしてなお、そんな感覚を得るには、一体どうすればいい？
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="ノウエル"]今が苦痛と絶望に満ちた時代だと言うのなら……私はその時代の背後に潜む者たちを探し出してみせる。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]あなたを引き留める権利は私にはありません。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ですが別れを急ぐこともないでしょう。あなたが戦争の中心地に戻りたがっているなら……我々と道を違える必要もないかと思われます。
+[charslot(slot="m",name="avg_npc_1066_1#4$1",focus="m")]
+[name="ノウエル"]そうなのか？　君たちは十分なメンバーを集め終えたら、クルビアへ戻るものと思っていたが……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]どこかに逃げ続けたところで、キリがないだけです。
+[charslot(slot="m",name="avg_npc_1066_1#10$1",focus="m")]
+[name="ノウエル"]……それもそうだね。我々が抗おうとしているのは、そもそも同じものなのかもしれない。
+[charslot(slot="m",name="avg_npc_1066_1#10$1",focus="m")]
+[name="ノウエル"]それと……Guardさんに花を手向けておいてくれないか。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]約束します。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_864_1#6$1",focus="m")]
+[name="パーシヴァル"]ナイン……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]パーシヴァル、お前……
+[charslot(slot="m",name="avg_npc_864_1#3$1",focus="m")]
+[name="パーシヴァル"]平気です！　ただ、少し……目に煙が染みただけです。
+[charslot(slot="m",name="avg_npc_864_1#8$1",focus="m")]
+[name="パーシヴァル"]三陣目の感染者たちの登録が終わりました。計七名で、全員その工場で薬を受け取ったことがあるそうです。
+[charslot(slot="m",name="avg_npc_864_1#3$1",focus="m")]
+[name="パーシヴァル"]彼らの話によれば、その工場のおかげで、付近の森には多くの感染者たちが集まって小さな集落ができていたこともあるとか。
+[charslot(slot="m",name="avg_npc_864_1#3$1",focus="m")]
+[name="パーシヴァル"]それから工場は潰され、ほとんどの人は出て行ったか、命を落として……それでも何人かはその付近に留まっていたようです。
+[charslot(slot="m",name="avg_npc_864_1#3$1",focus="m")]
+[name="パーシヴァル"]彼らは皆、この大火事に引き寄せられたんです。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ああ、そうだな。彼らはこの大火事に引き寄せられた。
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私は目の前の花びらを見つめた。あのメイズという女性から渡されたものだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nこの地のレユニオンの医師は、これらの薬草に一生分の時間を費やした。彼女いわく、Guardもこの薬草のために死んだらしい。",block = true)]
+[Sticker(id="st1", multi = true, text="\n私はこの薬草のほとんどを知っていた。現代の製薬会社ができる前は、感染者たちはこれを咀嚼することで苦痛を和らげていた。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそれを参考にすれば、我々の粗悪な薬品も少しは効果が増すかもしれない。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="行き着く先で誰かが落ちてくるのを、ただ待っているわけにはいかない。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n私たちが成すべきことは、それだけではないのだから。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]Guard……我々の討論は、まともな結論が出ていない。このあとは私の一存で動くことになる。
+[charslot(slot="m",name="avg_npc_864_1#1$1",focus="m")]
+[name="パーシヴァル"]ナイン、あの……
+[charslot(slot="m",name="avg_npc_864_1#6$1",focus="m")]
+[name="パーシヴァル"]あたしたちでGuardのために、簡単な告別式を挙げたいと思ってるんです。あまり時間はかからないようにしますから。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ああ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]この地に花を咲かせてやろう。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="炎は一晩中燃え盛っていた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n結局我々は、Guardの遺体の救出を諦めた。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="レイドが一本の樹木を見つけた。真っすぐで、美しく、天に向かってたくましくそびえ立つやつを。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n彼はそこに穴を掘り、Guardの持っていた可愛らしいタオルを埋めた。",block = true)]
+[Sticker(id="st1", multi = true, text="\n掘ったばかりの穴の周りに、花が咲き始めていた。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそのタオルの花柄はあまりにお粗末な出来だったから、花壇の方が、あいつにはずっとお似合いだろう。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]……
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]尋問は終わった。工場から逃げてきた人全員に話を聞いてみたよ。
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]地下倉庫で死んでいたあのサルカズは……例のバイク乗りだった。
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]彼は殺意を持った誰かに殺された。犯人は――ヴィクトリアの感染者たち数名だ。
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]彼らはサルカズに故郷を追い出された身で、中には家族を失った者もいるようだ。義憤に駆られた彼らについては……その、おとなしくさせておいた。
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]それで、どうしようか？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ウルサスにいた頃のレユニオンは、監視隊や、徴収官、採掘場の警備員と戦っていた。それこそがすなわち団結であると、誰もが思っていた。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]だが実際はそうじゃない。あれは、単に他に選択肢がなかっただけで喉元に突きつけられた刃を折る必要に迫られたに過ぎない。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]レユニオンはかつて、憎しみを原動力に行動していた。だが憎むべき目標は、段々と曖昧で広範なものへと変わっていった。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]感染者には祖国も……身分も、血統もない。これはもはや、単なる扇動目的のスローガンに留まるわけにはいかない。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]我々に必要なのは、より明確な行動規範であり、より正確な行動方針だ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]Guardとは……かつてそんなことを議論し合っていた。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]あいつはこう言っていた……もし地位や策略に溺れる者が感染者だとしたら、我々はそいつを見捨てる。なぜなら奴らは搾取という名の権力を享受し続け、病を道具と見なす者たちだからだ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]抑圧を受けているのが鉱石病に侵された感染者だけではないなら、そんな人々を、苦境から救い出す。なぜなら彼らには我々と共に戦えるだけの力があり、反抗にはより多くの力がいるからだ、とな。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]……チェルノボーグは、教訓としては十分だった。
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]……彼はいつも、本当に多くのことを考えてくれていた。俺は……
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]俺は、彼ならば俺たちを率いて、何か大きなことを成し遂げてくれると思っていたよ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]成し遂げるさ、たとえ奴が死んだとしても……まだほんの取るに足らない、唾棄されるような存在のまま死んでしまったとしてもな。
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]あの犯人たちはどうするつもり？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]無闇に暴力を振るう者を我々の仲間に加えるわけにはいかない。たとえヴィクトリア人の彼らをそうさせたのは、この戦争だとしてもな。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]今回それを黙認してしまったら……我々の部隊はこの先どうなる？
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ウルサス人に、クルビア人、ヴィクトリア人、リターニア人。そしてフェリーン、ペッロー、リーベリ、キャプリニー、サルカズ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]力とは、共通の目標に対して明確に向けられるべきだ。恨みや亀裂となり、我々を内部から瓦解させる機会を他者に与えるものであってはならない。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]ボジョカスティとウルサスから、それを教わったはずだ。
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="タルラ"]……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]奴らは追放に処すこととする。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]行くべき先は、自分たちで決めてもらおう。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]レユニオンは一度決めたことは必ず実行する。
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]……了解。
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="レイド"]さっきの話は全員に伝えておく。それとあの犯人たちの処遇は……俺が済ませておくよ。
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=1)]
+[charslot(duration=1)]
+[delay(time=2)]
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="タルラ"]……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]……タルラ。私はある感染者を一人知っている。彼女は名誉ある血統と、権威ある肩書を持っていた。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]だが彼女はそれらを捨て去った。「公平」を求めたがゆえにだ。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]お前も彼女を知っているだろう。
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="タルラ"]……
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]たとえこの地に住む人々であっても、その多くがお前の考えを……レユニオンが最初に描いていた理想を、その後誇張され、誤って伝えられた理想を耳にしていた。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]しかし我々が求めるのは、感染者たちが暮らす移動都市ではない。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]我々が成すべきは、すべての王侯貴族たちに、高慢な加害者たちに……我々を分断させ、抑圧し、消滅させようと企むあらゆる者たちに、知らしめてやることだ――
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]お前らが蔑んでいた刃は、今まさにお前らの頭上高くから突きつけられているのだと。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]告別式は……これで終わりだ。別れを告げるのはこれが最初ではないし、これで最後になることもない。
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="ナイン"]行こう。我々がヴィクトリアで成すべきことは、まだ終わっていないのだから。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Character]
+[Image]

@@ -1,0 +1,796 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[playMusic(intro="$mist_intro",key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1",duration=0.5)]
+[Delay(time=1)]
+[name="「クリップ」クリフ"]……今の状況は？
+[charslot(slot = "m", focus = "n")]
+[name="秘書"]ジェシカさんの位置はマークしていますが……無傷で捕らえろとのご命令でしたので下の者たちも強硬手段には出られないようです。とはいえ、時間からして恐らく彼女の弾薬も尽きる頃かと。
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]ティラから報告はあったか？
+[charslot(slot = "m", focus = "n")]
+[name="秘書"]はい、ヘレナ氏と採掘労働者の一人が現金を持ってタワー内に入ったそうですが……二人とも出てくるところを確認していないとのことです。
+[charslot(slot = "m", name = "avg_npc_1036_1#7$1")]
+[name="「クリップ」クリフ"]多くの監視がある中で消えたというのか？　であれば、必ずほかの出口があるはずだ。引き続き捜索するようティラに伝えろ。
+[charslot(slot = "m", focus = "n")]
+[name="秘書"]承知しました。
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]ウッディは？　ここを出たのか？
+[charslot(slot = "m", focus = "n")]
+[name="秘書"]ウッドロウ氏は……区画から離れていません。どうやら彼は当初の脱出計画を放棄したようです。
+[name="秘書"]最初にティラが報告してきた内容によると、ウッドロウ氏はタワーの爆破実行後に、例の採掘労働者を連れて山奥へと身を隠す算段をしていたようなので。
+[charslot(slot = "m", name = "avg_npc_1036_1#10$1")]
+[name="「クリップ」クリフ"]なら一体どこへ……
+[charslot(slot = "m", focus = "n")]
+[name="秘書"]どうやら……こちらへ向かって来ているようです。
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]……
+[charslot(slot = "m", focus = "n")]
+[name="秘書"]人員を差し向けて止めますか？
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]いや、いい……好きにさせよう。あいつがどうしてもそうするつもりなら、誰だろうと止められやしないからな。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[playsound(key="$d_avg_woodcracle", loop=true, channel="a")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "left", name = "avg_106_franka_1#1$1",duration=0.5)]
+[charslot(slot = "right", name = "avg_107_liskam_1#1$1",duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_106_franka_1#1$1",focus="l")]
+[name="フランカ"]リスカム、前方に燃えてる障害物があるから車じゃ通れないわ。ここからは徒歩で行くしかないようね。
+[charslot(slot = "right", name = "avg_107_liskam_1#7$1",focus="r")]
+[name="リスカム"]あれは……BSWの車両？
+[charslot(slot = "left", name = "avg_106_franka_1#5$1",focus="l")]
+[name="フランカ"]ウッドロウさん……それともジェシカがやったのかしら……
+[charslot(slot = "right", name = "avg_107_liskam_1#4$1",focus="r")]
+[name="リスカム"]少なくともさっきの爆発の時、全員がエネルギータワー内にいたわけじゃないってことになるね。
+[charslot(slot = "left", name = "avg_106_franka_1#8$1",focus="l")]
+[name="フランカ"]待って、リスカム……上からの通信よ。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[playsound(key="$d_gen_transmissionget")]
+[delay(time=1.5)]
+[name="通信音"]各小隊に現状を告ぐ。先ほどの爆発事故によりターゲットの技士は生死不明、また、ターゲットであるヘレナも行方不明となっており……
+[charslot(slot = "left", name = "avg_106_franka_1#5$1",focus="l")]
+[name="フランカ"]嘘でしょ……
+[charslot(slot = "m", focus = "n")]
+[name="通信音"]ウッドロウの追跡は放棄、ジェシカを全力で捕らえろとの命令だ。現在、ターゲットは採掘工場東の廃坑道の中におり、大量の武器を所持している模様。
+[charslot(slot = "left", name = "avg_106_franka_1#11$1",focus="l")]
+[name="フランカ"]……リスカム……どうする……？
+[charslot(slot = "right", name = "avg_107_liskam_1#4$1",focus="r")]
+[name="リスカム"]……何かできることはあるはず。この採掘工場に関しては、ほかの小隊よりもわたしたちの方が詳しい。どうすれば……最速で彼女のもとに行けるか考えよう。
+[Dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=0.7)]
+[charslot(slot = "m", name = "avg_npc_1034_1#1$1",duration=1)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="r")]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]思っていたよりも早く来たな……ウッディ。
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="ウッドロウ"]ここまで来る途中、どの建物もすっからかんだったもんでな。直接お前を訪ねるより他ないだろう。
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="「クリップ」クリフ"]私を責めているのか？
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="ウッドロウ"]意外か？　人は時に、何かしたことではなく、何もしていないことを理由に罪を背負うこともあるものだ。
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]であれば、数十年前に私を撃っておくべきだったな。
+[name="「クリップ」クリフ"]にもかかわらずお前は狼狽えながらその場を逃げ出した。何故だ？
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="ウッドロウ"]何故かって？　あの時は長いこと静まり返ってた俺の共感が、久々に近くにサンクタがいると告げてきたんだ。それがまさかクソったれのお前だったとはな。
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="「クリップ」クリフ"]あの時の私はひどい有様だったな。私との共感はきっと心地のよいものではなかっただろう。
+[charslot(slot = "l", name = "avg_npc_1034_1#2$1",focus="l")]
+[name="ウッドロウ"]仕方ないさ、サンクタの性（さが）だ……俺たちは常にすべてを共有することになる。
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="ウッドロウ"]お前から受けた共感の内容に比べれば、俺の捕虜収容所での境遇は確かに大したことではなかったかもな。
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]なんと残酷なことだろうな、ウッディ。お前はこうも私を憎んでいるのに、私の苦しみではお前の憂さを晴らすこともできないのだから。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g8_abandonedblock",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_avg_drone")]
+[delay(time=1)]
+[playsound(key="$transmission")]
+[name="通信音"]報告。ジェシカを発見、座標はすでに共有した。
+[name="通信音"]ターゲットは採掘工場の外に向けて移動中。装備している武器は、大型エネルギー砲、セミオート短機関銃……加えてモデル不明の拳銃を所持している。
+[name="通信音"]一人でそんなにたくさんの武器を？
+[name="通信音"]おっと、それと盾も背負っているようだ。必要に応じて銃架に改装できるタイプのな。
+[name="通信音"]こりゃたまげた。我らがお嬢様もこれだけの歳月を経れば、なかなか……手ごわくなるみたいだな。
+[name="通信音"]で、今どんな様子だ？　攻撃的になってるか？　追い詰められた強盗というのは、大半は精神が過敏になり、些細なことで逆上してくると言うが。
+[name="通信音"]どうだろう……見た感じ、わりと落ち着いているようだ。ひたすら前に歩くだけで、何かしでかしそうな気配はない。
+[dialog]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot="m",name="avg_1034_jesca2_1#1$2",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "m", focus = "n")]
+吹雪の中、少女は武器を背負い懸命に路地を進んでいた。両脇にある無惨な壁の残骸は、彼女の歩調に合わせてゆっくりと視野から消えていく。
+分岐に差し掛かった彼女はしばらくそこで立ち尽くした。そして襟を併せ、風に逆らわなくては進めない道へと足を向けた。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1")]
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1")]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="ウッドロウ"]捕虜収容所内では時間が止まっていたが、外では依然として戦争が続いていた。
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="「クリップ」クリフ"]その通りだ、ウッディ。お前とあいつが捕虜になった後、私はさらに多くの兵を連れて、より広大な戦場へと向かったよ。
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]冬は砲火の中を突き進んで寒い川を渡り、夏は焼けつくような砂漠の中で守りを固め、一歩たりとも引くことはできなかった。
+[name="「クリップ」クリフ"]勝利をもぎ取り、敵兵の死体を踏み越えて前進することがあれば、戦況が悪化し、戦友の死体を踏み越えて撤退することもあった。
+[charslot(slot = "r", name = "avg_npc_1036_1#7$1",focus="r")]
+[name="「クリップ」クリフ"]さらに状況がひどい時などは、一方を守るために、他方を犠牲にしなくてはならなかった。
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="ウッドロウ"]俺とあいつにしたようにか。
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="「クリップ」クリフ"]ああ。私は数え切れないほどそうしてきた。お前たちだけでなく、ほかの奴らにも。
+[name="「クリップ」クリフ"]これこそ戦争が私の目の前に突きつけたものだ。一見選択肢のように見えて、実は逆らうことのできないルールだった。
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="ウッドロウ"]だがそれでもお前は自分で選んだ。
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]仕方がなかった。そうしなければこれまでのすべてが無駄になり、大敗を喫することになる。だから私はそのルールを受け入れることを選択した。
+[charslot(slot = "l", name = "avg_npc_1034_1#2$1",focus="l")]
+[name="ウッドロウ"]……
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="ウッドロウ"]本当に悲しいものだな。かつて尊敬していた人間が戦争のルールとロジックによって新たに作り変えられるさまを見るのは。
+[name="ウッドロウ"]お前はあの頃の自分をまだ覚えているか？　独立戦争を経験する前の自分の姿を。
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="ウッドロウ"]常に経典を持ち歩き、握り締めた銃ですべての不公平と紛争を終わらせると誓い、一心に旅して回った男のことをまだ覚えているか？
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="「クリップ」クリフ"]もちろんだとも、ウッディ。自分だけでなく、お前の姿もはっきり覚えている。
+[name="「クリップ」クリフ"]昔のお前は絵筆をひと時も手放さず、いつか自分の作品を教会の天井に描き残すことを日がな一日考えていた。
+[name="「クリップ」クリフ"]あれ以来、絵筆を取ることはまだあるか？
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="ウッドロウ"]……いや。俺の指のうちの四本は繋げ直したものだ。もう昔のようには動かせない。
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$transmission")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_snowrun", volume=0.8)]
+[name="通信音"]ターゲットが左折した。移動速度は速くはない。付近のメンバーは捕縛準備をせよ。
+[charslot(slot = "m", name = "avg_106_franka_1#8$1")]
+[name="フランカ"]座標は……この先ね。急いで……リスカム。
+[charslot(slot = "m", name = "avg_107_liskam_1#7$1")]
+[name="リスカム"]ハァハァ……ま、待って。
+[charslot]
+路地を曲がったところで、二人は足を止めた。不意に一人の少女の背中が彼女たちの目の前にぽつんと現れたからだ。
+[playMusic(intro="$distressed_intro",key="$distressed_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="リスカム"]ジェシカ……
+[charslot]
+その声を聞いて、少女は振り返る。
+来訪者の姿を見て、その顔にわずかな喜びが浮かんだものの、束の間に消え去り、当惑と狼狽が取って代わった。
+[Dialog]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#1$2",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#3$2")]
+[name="ジェシカ"]た、隊長、先輩……お二人も来たんですか？
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="リスカム"]君の座標を受け取って、全力で駆け付けたんだ……
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]申し訳ありません、隊長……今回わたしが引き起こした問題は、本当に収拾がつかないことかもしれません。
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="リスカム"]君の脱退申請はすでに承認した。厳密に言えば、わたしはもう君の隊長じゃないよ、ジェシカ。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]そうでしたね……どう考えても、お二人はわたしを捕まえるために来たんですよね。
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="リスカム"]ううん……わたしたちは友人としてここに来たんだ。
+[name="リスカム"]来る途中で通信があったよ。エネルギータワーの爆発事故でレオーネさんが……ともかく、君が詳しい状況を知っているかどうかはわからないけど、誰かそばにいてほしいだろうと思って。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]はい……状況は知っています。爆発の直前、レオーネさんと通話をしていましたから……ありがとうございます、来てくれて。ただ……
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="フランカ"]大丈夫なの、ジェシカ？
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]それは……
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="ジェシカ"]大丈夫じゃないです。最悪です。
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="フランカ"]そっちに行って抱きしめてもいい？
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="ジェシカ"]ダメです……来ないでください。このまま話しましょう……この距離で十分聞こえますから。
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_106_franka_1#11$1",duration=1)]
+[PlaySound(key="$d_avg_snowbootwalk")]
+[delay(time=1.5)]
+[name="フランカ"]ジェシカ……
+[charslot(slot = "m", name = "avg_1034_jesca2_1#6$2")]
+[name="ジェシカ"]そこを動かないでください、フランカ先輩。
+[charslot(slot = "m", focus = "n")]
+ジェシカは取り乱した様子で、腰から銃を抜いて構え、フランカがさらに近づこうとするのを止めた。
+[charslot(slot = "m", name = "avg_106_franka_1#5$1")]
+[name="フランカ"]あたしに……銃口を向けるの？
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="ジェシカ"]ご、ごめんなさい……わ、わたしはただ……や、やめてほしかっただけで……お願いですから、一人にしてください。
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="フランカ"]ジェシカ……
+[charslot(slot = "m", name = "avg_107_liskam_1#1$1")]
+[name="リスカム"]フランカ、わたしが話すから……
+[dialog]
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[delay(time=1)]
+[name="リスカム"]ジェシカ、どこか行きたいところはない？　このすべてが終わった後で。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]どこへ行けるというんですか……？　ドローンが今もずっとわたしを追ってきてますし、お二人は来るべきじゃありませんでした……これじゃ戻った時にちゃんとした釈明ができないじゃないですか。
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="リスカム"]それが何だっていうの……釈明できなくたって構わない。わたしたちが一緒にいられさえすれば、怖いことなんて何もないよ。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]ですがわたしは怖いんです……怖くてたまらない……
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="リスカム"]何が怖いの？
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="ジェシカ"]きれいな温水が……暖かすぎて、心地良すぎるのが怖いんです。
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="リスカム"]それは……どういう意味……？
+[dialog]
+[charslot]
+[playsound(key="$d_avg_truckengine", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=1, fadetime=1.5,channel="a")]
+[Blocker(a=0.6, r=1, g=1, b=1, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+車のヘッドライトがジェシカを照らし、いくつかの巨大な光の円錐が少女をその中に閉じ込めた。
+少女の目はその強烈な光に耐え切れず、銃を片手で持ちながら、もう一方の手で目を覆うしかなかった。
+ほどなくして目が慣れたのか、彼女は腕を下ろし、遠くから近づいてくる車列を目を細めて見た。
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[Dialog]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1")]
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1")]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]ウッディ、お前はその後どう過ごしていた？
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="ウッドロウ"]開拓地での数十年間、俺はずっと他人から遠ざかり、駄獣の群れを連れて一人放浪していた。
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="「クリップ」クリフ"]なぜ聖都へ戻らなかった？
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="ウッドロウ"]戻りたくなかったからだ。そう言うお前はどうなんだ？　なぜ戻らなかった？
+[charslot(slot = "r", name = "avg_npc_1036_1#7$1",focus="r")]
+[name="「クリップ」クリフ"]私は傭兵だ。ラテラーノに私の居場所はない。お前の方こそ、なぜ戻りたくなかったんだ？
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="ウッドロウ"]フッ……
+[name="ウッドロウ"]一度ラテラーノに戻ってしまえば、つらい出来事などすべて忘れてしまうだろう。
+[name="ウッドロウ"]だが、捕虜収容所にいた奴はほとんどが死んでいった。そのことを覚えている奴などほぼいない。誰かが覚えておかなければならん。
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]それでも、お前はここへ来て、かつて拒んでいた平穏な日々を過ごしたのだろう。何日も、何年も。
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="ウッドロウ"]それでも俺は忘れちゃいない。ずっと覚えているんだ――今日この日までな。
+[charslot(slot = "r", name = "avg_npc_1036_1#8$1",focus="r")]
+[name="「クリップ」クリフ"]ああ。お前がいつか、過去の借りを返しに訪ねてくることはわかっていた。
+[name="「クリップ」クリフ"]その日がこんなに遅くなるとは思わなかったが。
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1",duration=0.5)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_gunload")]
+[delay(time=1.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[PlaySound(key="$d_avg_driveincar", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=1, fadetime=2,channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[StopSound(channel="a", fadetime=3)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_drone")]
+[delay(time=1)]
+[dialog]
+[PlaySound(key="$d_gen_soldiersrun")]
+[charslot(slot = "left", name = "avg_npc_1045_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1045_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot]
+[playsound(key="$transmission")]
+[name="通信音"]ターゲットを包囲した。繰り返す、ターゲットはすでに包囲した。
+[dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1",focus="m",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_mictest")]
+[delay(time=1)]
+[name="冷静な傭兵"]ジェシカ、武器を置け。もう終わりだ。
+[name="冷静な傭兵"]周りを見ろ、もうどこにも逃げられない。茶番は終わりにしよう。もう少ししたら雪がさらに強まる……くそっ、今日はさっさと仕事を終えて布団にもぐれるはずだったのに。
+[charslot]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]……本当なら、もう一度謝りたいところですが、今日は何度も何度も謝っているので、これ以上言うと……形だけの言葉に聞こえてしまいそうで。やめておきます。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]いいさ。まあ、心配するな。お前の立場なら大丈夫だろう。今は大ごとに見えるが、ここにいる全員がわかってるんだ。お前に何か起こることはないってことくらいな。
+[name="冷静な傭兵"]入社した時からお前の存在を知っていたよ、ジェシカ。絶対に怒らせてはいけないと皆が言っていた。お前の家のお抱え弁護士は、今日この場にいる傭兵くらいいるんだからってな。
+[charslot]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="ジェシカ"]……もっとたくさんいるかもしれません。
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]ほらな、お前もわかってるだろ。最悪の場合でも、二年ほど監獄にいれば釈放されて、また自分の望む生活を送れるんだってことが。
+[charslot]
+[charslot(slot = "m", name = "avg_107_liskam_1#1$1")]
+[name="リスカム"]拡声器を置いてもらえる？　この距離なら使う必要ないでしょ。
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[PlaySound(key="$d_avg_doorknob")]
+[delay(time=0.5)]
+[name="冷静な傭兵"]そう言うなよ、せっかく持ってきたんだから。
+[charslot(slot = "m", name = "avg_107_liskam_1#3$1")]
+[name="リスカム"]頼むから、あなたはもう黙って。
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]彼女を説得できるもっといい言葉があるんなら、喜んで口を閉じてやるぜ？
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]いいんです、先輩。庇ってくれなくても大丈夫です。みなさんがわたしのことをどう思っているかなんて、よくわかってますから。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="ジェシカ"]わたしは幼い頃から、自分がその行動を取ったらどうなるかをきちんと考えもせずに動く節がありました。何をしても家族が後始末をしてくれたから、いまだにわがままを通そうとしてしまうんです。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]ですが、世の中はそう甘くはありません……何事にも代償はつきものです。軽率な行動を取るからには、その結果を担う義務があります。
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="リスカム"]ジェシカ……隊を去ると言い出した時点で、そうした覚悟はもうできてると思ったのだけど。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]違います、リスカム先輩。わたしが言っているのは今夜のことではなく、七年前に、バロン基地の扉をくぐった時のことです。
+[name="ジェシカ"]わたしは当時、ただ装備・応用技術部のテスターになりたいと思っていただけで、将来実際の戦場で武器を手にし、それを他人に向けるとは想像もしていませんでした。
+[name="ジェシカ"]そう――それこそが問題なんです。人々は容易く武器を手に取りますが、その代償についてはよく考えようとはしません。
+[name="ジェシカ"]この小さな銃を、わたしは両手で簡単に構え、指一本で引き金を引くことができます。一ヶ月も経たないうちに、わたしはこれの使い方を覚えました。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="ジェシカ"]もっと恐ろしいのは……これを使って人の命を奪うのに、たったの一秒しか掛からないことです。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]しかし、その一秒を忘れるためには、おそらく一生を費やすことになるでしょう。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="ジェシカ"]あの時のわたしは、どれほど愚かだったのか。銃を手に取る時、将来それを何に向けて使うのかさえ考えなかったなんて。
+[name="ジェシカ"]……ですが一発目の銃弾はすでに放たれてしまった。何もわかっていなかったなんて言い訳は許されません。
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]だったら、今はもうわかったんだな？
+[name="冷静な傭兵"]お前はさっきからその銃を構えたまま、一瞬たりとも手放していないが。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_npc_1034_1#10$1")]
+[name="ウッドロウ"]自惚れるな。俺がいつ過去の借りを返すために来たと言った？
+[name="ウッドロウ"]俺がこの弾を持ってお前を訪ねて来たのは、過去の因縁を終わらせるためだとでも思ってるのか？
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]過去に囚われているお前なら、そうしたがるはずだろう？
+[charslot(slot = "m", name = "avg_npc_1034_1#5$1")]
+[name="ウッドロウ"]違うな。過去から抜け出せていないのはお前の方だ。
+[name="ウッドロウ"]九十過ぎまで傭兵稼業をやってるのを見るに、もはや戦場以外の生活に順応できないんだろう？
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]私が戦場に留まり、いまだ去ろうとしないのは、戦争が終わらないからだ。
+[charslot(slot = "m", name = "avg_npc_1034_1#1$1")]
+[name="ウッドロウ"]クルビアの戦争はとっくに終わった。
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]ああ。だが今度はボリバルの戦争が始まった。今ヴィクトリアの戦火は一時的に収まっているが、その余波を鎮めるのはまだまだ時間がかかる……
+[name="「クリップ」クリフ"]戦争は常にどこかに存在するんだ、ウッディ。たまに止むことがあるだけで、いずれ再び勃発する。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="ウッドロウ"]ならお前が戦場に留まる理由はなんだ？　戦火の洗礼を浴び続けていたいからか？
+[charslot(slot = "m", name = "avg_npc_1036_1#2$1")]
+[name="「クリップ」クリフ"]戦争を終わらせることができないなら、次善策を講じるしか――そのコントロールスイッチを掌握しようと試みるしかないんだ。
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]それこそ、私がBSWという傭兵企業を設立した理由でもある。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="ウッドロウ"]そんなこと本当にできるのか？
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]何度も試み、おびただしい代償を払ったが、最終的には成功した。
+[charslot(slot = "m", name = "avg_npc_1034_1#5$1")]
+[name="ウッドロウ"]それに値する成果は得られたのか？
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]ほんの数秒だけの中断であっても、世の中にたくさんいるお前のような者に再び絵筆を取らせるには十分だ。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="ウッドロウ"]だったらなぜ、ここでの作戦を数秒も止めてくれないんだ？
+[name="ウッドロウ"]ほんの数秒さえあれば、俺みたいな奴らの多くが一息つけるチャンスを得られる。落ちぶれた姿のまんまで開拓地に行かずに済むというのに。
+[charslot(slot = "m", name = "avg_npc_1036_1#5$1")]
+[name="「クリップ」クリフ"]デイヴィスタウンは戦場ではないからだ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#11$2")]
+[name="ジェシカ"]この銃は手放せません。これは……わたしの手に残された、唯一力を持つものですから。
+[name="ジェシカ"]わたしはもう何年も、自分のことを色のない記号のようなものだと考えてきました……
+[name="ジェシカ"]その記号が表す富や家柄や権力は、今までわたしが必死に解決しようとしてきた問題の前では……何の意味も持たず、何の役にも立ちません。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]ですが少なくとも、わたしは今手にしているもので……いくつかの任務を遂行し、いくつもの目標を達成してきました。
+[name="ジェシカ"]少なくともこれを持っている時のわたしは、完全に無能な記号ではないんです。
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="リスカム"]なに馬鹿なことを。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="ジェシカ"]隊長……？
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="リスカム"]あれから五年も経ってるんだよ、ジェシカ。この五年間、わたしが君を副官に選んだ理由を考えたことはなかったの？
+[name="リスカム"]ここはBSW……凄腕の人なんていくらでもいる。それでもわたしは君を選んだ。その理由は、君の持っている銃なんかじゃなくて、君の流す涙にあるんだよ。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#14$2")]
+[name="ジェシカ"]涙なんて……そんな弱い人間が流すようなもので、後ろにいる人たちを守れるわけないじゃないですか……
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="リスカム"]涙は弱い人のものなんかじゃないよ。そもそも、B.P.R.S.に必要なのはまさにそんな人間なんだ。関わりのない人や見知らぬ土地のために、危険も顧みず頑張れるのはそういう人だから。
+[name="リスカム"]ジェシカ、わたしたちは劣悪な環境できつくて危険な仕事をしてるけど、お金のためだけにこんなことしてる人なんていないでしょ？
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]隊長……わたしが自分に何一つ取り柄がないと落ち込んでいた時、あなたはわたしを小隊に加えてくれましたよね。
+[name="ジェシカ"]わたしが人生で初めて認めてもらえたのはあの時でしたから、今でもずっと心に残っています。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#13$2")]
+[name="ジェシカ"]隊長の信頼に応えるためなら、わたしはどんな危険な場所にだって突撃しますし、何だって喜んでやります。
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="リスカム"]でもそれは君が歩むべき道じゃない……人が前へと進むのは、他人に認めてもらうためであってはならないんだよ。
+[charslot(slot = "m", name = "avg_107_liskam_1#5$1")]
+[name="リスカム"]ジェシカ、自分が本当にやりたいことを、心から喜びを感じることをするんだ。他人から認めてもらう必要なんてない、大切なのは君自身が認めることだけなんだから。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#8$2")]
+[name="ジェシカ"]隊長、わたし今……思いっきり泣きたいです……
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="リスカム"]それなら泣けばいい。涙を流せばいい。何も遠慮することなんてないんだよ。
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[playMusic(intro="$epic_intro",key="$epic_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]ウッディ、お前の光輪はさっきから明滅を繰り返しているな。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="ウッドロウ"]ああ、そうだろうな。なんせ俺は今お前に対して本物の殺意を抱いているから。
+[name="ウッドロウ"]戦争を終わらせることは不可能で、コントロールすることしかできないとお前は言うが――
+[name="ウッドロウ"]そんなの間違いだ。戦争は終わらせることができる。ただお前にその力がないだけさ。
+[name="ウッドロウ"]戦争は、それによる侵害を受けながらも、雑草の如くしぶとく生きる無数の人々によって終結する。
+[name="ウッドロウ"]そして戦火に焼かれた場所も、絶望の中で生活を取り戻そうとする無数の人々によって再建される。
+[charslot(slot = "m", name = "avg_npc_1034_1#3$1")]
+[name="ウッドロウ"]お前は戦場で死んでおくべきだった。その方が、今みたく戦争についてべらべら語る狂人になるよりはるかにマシだったはずだ。
+[name="ウッドロウ"]元々はただ、お前に弾を返したいと思って来ただけだったが、今、俺は本気でお前に殺意を抱いている。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[image(image="42_i11",screenadapt="coverall",xScale=1.2, yScale=1.2)]
+[ImageTween(image="42_i11",xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, xFrom=80, xTo=0, duration=9)]
+[bgeffect(name="$eb_glow_42i11_01",layer=2)]
+[bgeffect(name="$eb_glow_42i11_02",layer=3)]
+[cgitem(image="cgitem_42_i11", style="cg",pfrom = "-200,0",pto = "0,0",pduration = 10,layer = 4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[playsound(key="$d_avg_snowstormflp", loop=true, channel="bgs")]
+[StopSound(channel="bgs", fadetime=3)]
+[delay(time=7)]
+狂風が老人の帽子をさらい、空高く飛ばした。
+しかし彼にはそれをわざわざ見上げる余裕も、拾いに行こうとする気もなかった。
+彼の目は、対峙する男へと瞬きもせずまっすぐ向けられ、頬から首にかけての筋肉はすべて張り詰めている。
+その頭上の光輪は狂ったように明滅していた。
+向かいに立つ男の方はというと、長い沈黙の後、長いため息をついていた。まるで吹きすさぶ風の中でようやく老人の言葉を聞き取れたかのように。
+[name="「クリップ」クリフ"]お前が殺そうとしているのが何者か、わかっているのか？
+[name="「クリップ」クリフ"]仇敵か、自分を裏切った友人か、それとも単なる狂人か？
+[name="ウッドロウ"]どれも違うな。そいつはただの傲慢極まりない野郎だ。
+[name="ウッドロウ"]そいつの目から見れば、全ては天秤の上で比較することができる。己の目的のためなら、何もかもが犠牲の代償となり得る。
+[name="「クリップ」クリフ"]……ならお前はどうだ？　どんな立場でそいつに弾を撃ち込もうとしている？
+[name="ウッドロウ"]凡人だ。
+[name="ウッドロウ"]お前のその見下すような視線の中で、すべてを失い、ただ怒りだけを抱いた凡人だ。
+[name="「クリップ」クリフ"]いいだろう。
+[name="ウッドロウ"]なにを笑っている？
+[name="「クリップ」クリフ"]いやなに、絵筆を握りたかった指は最終的に引き金を引こうとし、経典を持ちたかった両手は最終的に血に染まってしまっていることが可笑しくなってな。
+[name="「クリップ」クリフ"]運命って奴は人をもてあそぶのが大好きらしい。
+風がクリフのコートをはためかせ、腰の銃とそれに伸びる手が露わになった。
+乱れ舞う雪の中、彼の目に映ったのは、鏡写しのように同じ動作をしているウッドロウの姿だった。
+彼はぼんやりと思い出した……大昔に、ラテラーノの学生寮に帰る道で、夜風に吹き飛ばされたウッドロウの帽子が、空中を漂いいつまでも落ちてこなかったことを。
+数え切れぬ年月を経た今、風の中の帽子はついに地へ落ちた。
+[Stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[hidecgitem]
+[Background(image="bg_black",screenadapt="coverall")]
+[bgeffect]
+[image]
+[delay(time=1)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[PlaySound(key="$d_avg_gunshot")]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[PlaySound(key="$d_avg_gunsingle",channel="a",delay=0.3)]
+[delay(time=0.16)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.5, block=false)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[delay(time=2.5)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[name="ジェシカ"]あなたたちには……わたしの涙は見えるでしょう。
+[name="ジェシカ"]ですが、彼らのはどうですか？
+[charslot(slot = "m", name = "avg_107_liskam_1#3$1")]
+[name="リスカム"]……
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]彼ら？　誰のことだ？
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2",focus="n")]
+ジェシカは答えない。ただ振り返り、さびれた工場地帯の方に目を向けた。そこは爆発を経て、さらに無残な姿に変わり果てていた。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]あなたは、あそこの以前の様子を知っていますか？
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]知らないな。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]わたしは知っています……
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="ジェシカ"]あのエネルギータワーはかつて絶えず稼働し、ここの住民たちに暖かさをもたらし続けていました。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#2$2")]
+[name="ジェシカ"]あそこのレストランは夜通し店を開け、人々がテーブルを囲み、皆でビールを飲みながら思う存分歌っていました。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="ジェシカ"]この地の冬は長くて寒いですが、ここで暮らしていた誰もが自らの努力と勤勉さで熱と光を放っていました。
+[name="ジェシカ"]その輝く熱い光がこの地の隅々にまで広がり、冬の夜の寒さと暗闇を追い払っていました。
+[name="ジェシカ"]彼らは自分たちの賑やかな日常を、赤く熱い血液に変えて、冬の寒さで凍りついたこの区画に注ぎ、命と活力を与えてきました。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#11$2")]
+[name="ジェシカ"]彼らは、目の前の道に希望が見えないのに、それでも歩き続けることを貫いた人たちです。
+[name="ジェシカ"]彼らは、頭を押さえつけられて生活に苦しみながらも、吹雪に立ち向かって生き続けた人たちです。
+[name="ジェシカ"]彼らは……涙を流しても、誰からも見向きもしてもらえない人たちです。
+[name="ジェシカ"]わたしの涙では……彼らに代わってその悲しみを表すことなどできません。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[image(image="42_i09",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+銃を構えた少女は、スコープを通して前方のさまざまな顔を見た。
+そこにあるのは、理解に苦しんでいる顔、軽蔑している顔、当惑する顔、気が抜けた顔、ひそかに笑っている顔、悲しみ嘆いている顔だった。
+しかし、その顔はどれも少女にとって重要ではなかった。彼女の視界に素早く飛び込み、同じ速さで消えていったそれらは、一瞬も彼女の心に留まることはなかった。
+その時、彼女の脳裏には別の顔が浮かんでいた。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect]
+[image]
+[Background(image="34_g9_tent",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+テントの中で祈る女性。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[Background(image="bg_iceforest_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+雪原の中を必死に走る女性。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+夜闇の中で銃を抜く老人。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[image]
+[image(image="42_i09",screenadapt="coverall")]
+[delay(time=0.5)]
+炎と共に去った男性。
+[dialog]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[name="ジェシカ"]ですが、わたしの銃は彼らの悲しみのために鳴きます。
+[dialog]
+[MusicVolume(volume=0.3, fadetime=2)]
+[delay(time=3)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="2")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="3")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="4")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="5")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="6")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="7")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="8")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_ejectempaty",channel="x")]
+[delay(time=2.5)]
+[MusicVolume(volume=0.6, fadetime=2)]
+彼女は腕を高く掲げると、はるか遠くの空に向かって何発も銃を撃ち続け、やがてすべての弾を撃ち尽くした。
+[PlaySound(key="$d_avg_bulltdrpsnw")]
+[PlaySound(key="$d_avg_bulltdrpsnw",channel="a",delay=0.3,volume=0.5)]
+[PlaySound(key="$d_avg_bulltdrpsnw",channel="b",delay=0.45,volume=0.3)]
+薬莢は空一面を舞う雪に交じって一斉に落ち、その余熱で積もった雪が溶け、いくつもの穴ができた。
+銃声は長い間こだまを響かせていた。周囲が再び静寂に帰る直前、少女の耳は、か細い音を捉えた。
+それは彼女の涙が大地にぶつかる音だった。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[bgeffect]
+[charslot]
+[image]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1036_1#5$2",duration=1.5)]
+[delay(time=2)]
+[name="「クリップ」クリフ"]ふぅ……
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="「クリップ」クリフ"]くっ…………
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1034_1#1$2",duration=1)]
+[delay(time=1.5)]
+[name="ウッドロウ"]お前の負けだ……
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="「クリップ」クリフ"]すまない、ウッディ。私は戦争を選んだ。終わりなき戦争を選んでしまったのだ。
+[name="「クリップ」クリフ"]だから……私の生き方はまさに折り返せない銃弾に、止めることのできない爆発に、永遠にやまぬ攻防そのものになった。
+[name="「クリップ」クリフ"]私には戦争を終わらせることはできない。だがウッディ、お前なら私を終わらせることはできるだろう。
+[name="「クリップ」クリフ"]最後の兵士が倒れることで、戦争はようやく終わるのだ。
+[charslot(slot = "m", name = "avg_npc_1034_1#5$2")]
+[name="ウッドロウ"]ルパート……
+[charslot(slot = "m", name = "avg_npc_1036_1#8$2")]
+[name="「クリップ」クリフ"]そう呼ばれるのは……本当に久しぶりだな。
+[name="「クリップ」クリフ"]またその名で呼んでくれたことに感謝しよう。お前以外に、その名を知る者はもういない。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="ウッドロウ"]さらばだ……
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+クリフは両目を閉じ、その弾が自らの額を引き裂くのを待った。
+[playsound(key="$phonevibration")]
+しかしその前に、着信音が鳴った。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+彼はポケットから通信機を取り出し、横目で画面を見て皮肉めいた笑みを浮かべると、それを再びポケットに押し込んだ。
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="ウッドロウ"]誰だ？
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="「クリップ」クリフ"]軍の人間だ。
+[name="「クリップ」クリフ"]気にしなくていい。やってくれ、ウッディ。
+[dialog]
+[charslot]
+[playsound(key="$phonevibration")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="ウッドロウ"]……ボリバルか、それともヴィクトリア？
+[charslot(slot = "m", name = "avg_npc_1036_1#6$2")]
+[name="「クリップ」クリフ"]気にするな。
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="ウッドロウ"]もしやクルビアか？
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1036_1#3$2")]
+[name="「クリップ」クリフ"]いいからやれっ！
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="ウッドロウ"]また戦争が始まる、そうなんだな？
+[name="ウッドロウ"]……今度はどこを巻き込む？
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="「クリップ」クリフ"]ただの前兆だ、起こるとは限らない。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="ウッドロウ"]それを貸せ。
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="「クリップ」クリフ"]ウッディ、この中に入っているもののほとんどは私にとっては些細な日常にすぎないが、お前にとっては……
+[charslot(slot = "m", name = "avg_npc_1036_1#7$2")]
+[name="「クリップ」クリフ"]また別の悪夢になるだろう。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="ウッドロウ"]……貸せ。
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="「クリップ」クリフ"]それでも見たいと言うなら、好きにするといい。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="ウッドロウ"]……
+[name="ウッドロウ"]……ここに並んでいる仕事は、お前が死んだら誰が引き継ぐ？
+[charslot(slot = "m", name = "avg_npc_1036_1#2$2")]
+[name="「クリップ」クリフ"]さてな。だが、誰かはいるだろうさ。
+[charslot(slot = "m", name = "avg_npc_1034_1#7$2")]
+[name="ウッドロウ"]……そんなことがあってはならない。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="ウッドロウ"]お前のような人間がこれ以上現れるべきではないんだ。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_revolver",volume=0.7)]
+彼は通信機を地面に投げ捨てると、銃口を向け、蜂の巣にした。
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="ウッドロウ"]……
+[charslot(slot = "m", name = "avg_npc_1034_1#1$2")]
+[name="ウッドロウ"]お前を殺すわけにはいかん。
+[name="ウッドロウ"]この罪はやはりお前が背負うべきだ。
+[charslot(duration=0.5)]
+[PlaySound(key="$d_gen_soldiersrun",volume=0.7)]
+ウッドロウは銃を地面に置き、両手を挙げた。
+彼の背後では、銃声を聞きつけた傭兵たちが続々と駆け付け、足音が慌ただしく彼を取り囲む。
+空を見上げると、今夜最後の雪が舞い落ちているところだった。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[playsound(key="$d_avg_snowstormflp", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.8, fadetime=3,channel="bgs")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="ジェシカ"]みなさん、わたしを連行してください。覚悟はできています。
+[charslot(slot = "m", focus = "n")]
+少女は銃を腰に戻し、両手を頭の上に挙げた。
+[charslot]
+[charslot(slot = "m", name = "avg_106_franka_1#1$1")]
+[name="フランカ"]腕を背中に回して。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]……手錠って思ってたより、冷たくないんですね。
+[charslot(slot = "m", name = "avg_106_franka_1#3$1")]
+[name="フランカ"]ずっと温めてあげてたからね。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="ジェシカ"]ありがとうございます……
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]行く前に少し話してもいいか？
+[charslot(slot = "m", name = "avg_1034_jesca2_1#15$2")]
+[name="ジェシカ"]ええ。わたしからもお礼を言おうと思っていたんです。あんなにたくさん話を聞いてくれて、ありがとうございました。
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]構わないさ……前にも、そういう話ばかりする奴がいたからな。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="ジェシカ"]……
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]きっと喜ぶと思うぜ……お前があいつの話したことを覚えててくれてるなんてな。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#3$2")]
+[name="ジェシカ"]あっ……あなたも彼のことを知っているんですね……
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="冷静な傭兵"]あいつは立派な奴だった。忘れられるはずがないさ……それじゃあ元気でな、ジェシカ。
+[PlaySound(key="$d_avg_cloakmovement")]
+[charslot(duration=1)]
+傭兵は少女の肩を優しく叩き、舞い上がったほこりは朝日の中で輝いた。そうして彼は身を翻し、去っていった。
+一筋の日差しの下で舞うほこりを見つめながら、ジェシカはふと、すでに夜が明けていることに気付いた。
+昨夜の大雪もいつの間にか、ひっそりと止んでいる。
+[dialog]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#15$2",duration=1)]
+[delay(time=2)]
+[name="ジェシカ"]♪彼女は両腕を広げ、僕を迎え入れた♪
+[name="ジェシカ"]♪僕の家も夢も、すべてはその腕の中♪
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[StopSound(channel="bgs", fadetime=3)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

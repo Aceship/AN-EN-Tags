@@ -1,0 +1,493 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_ltroom",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)] 
+1098年
+リターニア アインヴァルト管区 グリンデン
+[Dialog]
+[charslot(slot="m",name="avg_499_kaitou_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]はあ……
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]ようやく目の痛みが治まってきました。これでやっと安らかに眠れるというものです……
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_doorbreak")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[Delay(time=1)]
+[playsound(key="$rungeneral")]
+[charslot(slot="m",name="avg_npc_498_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="伯爵の御付き"]隅々まで探せ！　そいつのデスクに置いてあるものは特にだ！
+[name="伯爵の御付き"]グズグズすんじゃねぇ。鍵のかかってる箱は爆弾でもなんでも使ってこじ開けろ！　本棚も全部ひっくり返すんだ！　その蓄音機もバラして中身を調べろ！　躊躇わなくていい、さっさとやれ！
+[name="伯爵の御付き"]それと、そこのお前――
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Dialog]
+[delay(time=0.51)]
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]大人しく知ってることを全部吐け。
+[charslot(slot="m",name="avg_499_kaitou_1#4$1")]
+[name="ハインツ"]……すみません、一体何を話せばよいのでしょうか？　先ほどあなたの部下が壊したあの箱の中身が、顧客から販売を委託された相当高価なものであることくらいしかお伝えできませんが。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]サクソン伯爵様のせいで損害を被ったとでも言いてぇのか？
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]いえ、とんでもない。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]とぼけた顔をしたって無駄だぜ。目の奥から小賢しさが透けて見えらあ。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]……つまり、伯爵様自らが高塔を下りられ、このような奥まった物陰に建っているようなみすぼらしい小屋にわざわざ来られるほどの事態が起きている、ということですね？
+[name="ハインツ"]であれば、こちらとしても喜んでお力添えいたしましょう。
+[Dialog]
+[charslot]
+[name="伯爵の用心棒"]報告します。怪しいトラップの類いは見つかりませんでした。
+[name="伯爵の用心棒"]こちらもです。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]フンッ……物分かりがよくて助かるよ。
+[name="伯爵の御付き"]全員、部屋を出ろ。
+[Dialog]
+[playsound(key="$d_gen_soldiersrun",channel="1")]
+[charslot(duration=1.5)]
+[Delay(time=2.5)]
+[stopsound(channel="1")]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_492_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="サクソン伯爵"]君と顔を合わせをするのに、こんな乱暴な手順を踏まないといけないなんて本当に残念だよ、ハインツ。あまり気を悪くしないでくれると嬉しいのだが。
+[Dialog]
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[Delay(time=0.5)]
+[charslot(slot="m",posfrom="0,0",posto="50,0",duration=1.5,isblock=true)]
+[playsound(key="$doorclosequite")]
+[charslot(slot="m",posfrom="50,0",posto="0,0",duration=1.5,isblock=true)]
+[name="ハインツ"]とんでもございません、伯爵様。当店は本日これにて閉店いたしましたので、誰もここには近づかないでしょう。どうぞ安心してお話しください。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]……君は察しが良くて助かるよ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="44_g6_towerterrace",screenadapt="showall")]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[playsound(key="$rungeneral")]
+[charslot(slot="m",name="avg_npc_498_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="伯爵の御付き"]は、伯爵様……
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]イーヴェグナーデ様は今年、四年に一度開催される女帝の祭典での献上品として、唯一無二の宝石をご所望になられた。この詔令が下されてから、どれだけの者が血眼になって探し回っているのか。
+[name="サクソン伯爵"]我がグリンデン領が必ずやご希望にお応えすると、私も陛下に約束をしたものでな。
+[name="サクソン伯爵"]あのバイカラーの宝石を手に入れるのに、どれだけの心血を注いだことか！
+[name="サクソン伯爵"]濃密な黒と透き通るような金が互いを引き立てるような輝きを持った宝石だ。どちらかの色が悪目立ちすることもなければ、僅かな不純物すら含んでいない。
+[name="サクソン伯爵"]完璧な比率と色、そして光沢……それはまさにリターニアの「永遠なる恩寵」と「情なき大権」を象徴する一品だ。
+[name="サクソン伯爵"]私はそれを「双塔の夢」と名付けた。あの宝石のほかに、両陛下に相応しい献上品など存在しないだろう！
+[name="サクソン伯爵"]七日後には、宝石を受け取りに女帝の声がグリンデンに到着する。そんな肝心な時に宝石が盗まれるとは何事だ。なんのために貴様らに厳重警備させていたと思っている？
+[name="サクソン伯爵"]そのコソ泥は瞬間移動か、もしくは自分を空気に変えられるアーツでも使っていたというのかね？
+[name="サクソン伯爵"]それとも、私が今まで養っていた部下は全員、ただの役立たずだったというわけか？
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]直ちに宝石の在り処を突き止めて参ります！　たとえ移動都市を丸ごとひっくり返したとしても必ずや……
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]相手が何者なのかも、どんな手段を使ったのかも分からないのに、よくそんなことを豪語できたものだな？
+[name="サクソン伯爵"]……ハインツのところへ行け。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="bg_ltroom",screenadapt="showall")]
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]つまり、伯爵様の依頼というのは……
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]これは依頼ではなく命令だ。
+[name="サクソン伯爵"]お前は以前「双塔の夢」を鑑定したことがある。ならばあの幻想的な色合いと唯一無二の光沢を必ず覚えているはず。あの宝石の美しさは一度見れば忘れられん、誰であってもだ。
+[name="サクソン伯爵"]そこでお前にその宝石を再現してほしいのだよ。あの目を奪うほどの輝きを新たにもう一度造り出してみせよ！
+[charslot(slot="m",name="avg_499_kaitou_1#4$1")]
+[name="ハインツ"]し、しかし僕は宝石鑑定の知識しか持ち合わせていませんよ。この研磨機も研究のために用意したものでして、旦那様方の楽器やアーツユニットに装飾用の宝石を取り付けるくらいしかできません。
+[name="ハインツ"]そんな僕が恐れ多くもマイマスターの真似をして、無から至宝を作り出すことなど、とてもじゃありませんが不可能です。
+[name="ハインツ"]何よりも、よくある模造技術では、女帝御用達の宝石学者の目を欺くのは困難かと。万が一このことが露呈してしまえば僕は……
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]御託はもういい。
+[name="サクソン伯爵"]私がお前に資金を援助しているのは、お前の精密なカッティングと加工技術の才能を見込んでいるからだ。
+[name="サクソン伯爵"]よく聞け。もし宝石界隈にも音楽界と同様に「首席」という概念が存在するのなら、少なくとも現時点のグリンデンにおいてその称号に一番近い人物はお前だ。
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]……伯爵様からそのような栄誉あるお言葉をいただけるとは、感激の極みです。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]当然、今のその知名度があるのは誰のおかげなのか、決して忘れぬように。
+[name="サクソン伯爵"]他人を欺くあまりに本当の自分も忘れたのか？　贋作を造るのは今回が初めてというわけでもあるまい。こちらは下請けを一人失おうと痛くも痒くもないが、お前は違うだろ？
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]忘れてなどいません。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]忘れることなどありませんとも、伯爵様。
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="28_g2_slumstreets",screenadapt="showall")]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]おや……
+[name="ハインツ"]――これはこれは、このような場所でお会いするとは。その服についている明るい色のボタンは、雲間から差し込まれる日の光に照らされると、とても目を引く輝きを放ちますね。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_498_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]ハハーン、こんな薄暗く曲がりくねった路地で、ボタンの光の反射だけで気付かれちまうとはな……へッ、だけどちょいと警戒しすぎなんじゃねぇか？
+[charslot(slot="m",name="avg_499_kaitou_1#4$1")]
+[name="ハインツ"]伯爵様の護衛に意見するつもりはありませんよ。
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]ただ宝石の模造に使うかもしれない材料を持った状態で、高塔の庇護を受けられない平民区を歩いているとなれば、いささか警戒せずにはいられません。
+[name="ハインツ"]もちろん、これから欺くお方の姿が頭をよぎる度に……背筋が凍るほどのうしろめたさを感じてしまうのも当然でしょう。
+[name="ハインツ"]せっかく伯爵様の御付きが、こんな場所までお越しになったのですから、ここにある材料が「双塔の夢」に使われているものと近しいかどうか、確認してもらえませんか？
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]ふむ……
+[name="伯爵の御付き"]お前、伯爵様に重用されるだけのことはあるみてぇだな。
+[name="伯爵の御付き"]今回のチャンスを無駄にするんじゃねぇぞ。ことが上手く運び、伯爵様が双子の寵愛を受けられれば、お前もそのおこぼれに預かれるんだからよ。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]チャンス、ですか……
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]大変ありがたい話ではあるのですが、あまりにも恐れ多いチャンスですね。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]僕はただ宝石の虜になってしまっている一平民に過ぎません。本来なら僕は……偽物造りなどとは無縁であったはずでしたから。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]だけど、そんなお前を伯爵様がどうして目をつけたのか、自分でもよく分かっているはずだ。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]……僕からしてみれば、あれは単なる偶然が重なった結果に過ぎません。
+[name="ハインツ"]初めて作ったフェイク品のことは今でも覚えています。いや、あんな粗末なもの、フェイクとすら呼べませんね。
+[name="ハインツ"]あの頃はいい原料を使う度胸もなければ、鉛ガラスと樹脂で亀裂を修繕する技量もありませんでした。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]ただあの宝石店で働くしがない見習いとして、鑑定に通すことなくそれをショーケースに陳列することを黙認……あるいは許されていたと言ってもいいでしょう。
+[name="ハインツ"]あの頃はきっと今以上に挙動不審でしたね。いつでも逃げられるよう荷造りをし、自首すべきかどうか毎晩悩みながら夜を明かしたものです。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]だけど結局バレることはなかった。でなきゃ、ここに立って俺と話しができてるはずねぇからな。
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]……あの宝石はすぐにとある男爵が大金を積んで買い取っていきました。ほどなくして、僕もあの宝石店を辞めたのです。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]あとから聞いた話ですが、その男爵の家は財政がかなり厳しい状況にあったそうで、貴族としてあるべき暮らしを取り戻すために、あの宝石に賭けていたのだとか。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]ですが、僕が造った粗末なフェイク品はすぐにその道に明るい者に見破られてしまったそうで。男爵もそのせいで発狂してしまい、それっきり姿を消したのです。
+[name="ハインツ"]僕は本当に運がよかっただけなのでしょう。いなくなったところで誰も気にすることすらない貴族の手にアレが落ちたおかげで、僕は殺されずに済んだのですから。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]ブハハハ！　そりゃただの男爵だしな！　旦那様方の足についておぼこれを預かってるだけの小貴族なんざ、誰も気にしねぇに決まってるよ。
+[name="伯爵の御付き"]だが俺の聞いた話じゃ、あんた、ある学者のために、そいつのライバルをおちょくったんだってな？
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]あぁ……その件については致し方なかったというべきか……いや、あれも僕が犯した過ちの一つですね。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]ご存じの通り、僕のアーツユニットの動力源は宝石の破片です。贅沢だなんてとんでもない。そういった欠片はカッティングの際に出る屑石として廃棄されてしまうものですからね。
+[name="ハインツ"]だから毎月定期的に屑石が届くようになっていたのですが、ある時なぜか傷一つない宝石が丸ごと入った箱が届いたのです。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]それ、なんでなのか本当に分かんねぇのか？
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]詮索できるはずないじゃないですか。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]人体切断のイリュージョンを演じるマジシャンが、パフォーマンス中に仕掛けの故障に気付き、このままでは助手が真っ二つになってしまうのだと悟っても、恐らく目をつぶり手を下すだけでしょう。
+[name="ハインツ"]後になって知った話ですが、ある書記官が保管していた宝石をこっそり売り払い、取り戻せなかったせいで厳罰に処されてしまったのだとか。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]しかしその時……宝石はすでに僕の試験管の中の粉末と化していたのです。
+[name="ハインツ"]加えて……
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]お前のあの偽造鑑定書に伯爵様が気付いちまった、だろ。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]サクソン伯爵様の使者がやってきた時は、てっきり尊き子爵様である甥っ子が失った名誉を、僕に償わせるためだと思っていました。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]お前はただ子爵の要求通り、完璧な鑑定書を書き上げ、平凡な宝石をあたかも世にも珍しいお宝に仕立て上げただけだろ？
+[name="伯爵の御付き"]悪いのは身の程知らずなのはサクソン子爵のほうだ。宝石にニセモンの鑑定書をくっつけて、あちこちに見せびらかすとは、とんだお笑い者だぜ。
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]ええ、僕はただ……要望にお応えしただけです。
+[name="ハインツ"]その一件で伯爵様は怒るどころか、むしろ理解を示し、なんと今日に至るまで僕を重用してくださいました。このご厚意をどうやってお返しすればいいのか……
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]俺たちの言う通りにしてりゃいいんだよ。
+[name="伯爵の御付き"]お前のそういう臆病なとこも伯爵様から気に入られてる理由のひとつだ。ハインツ、小賢しい考えは持つな。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]ええ。
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="伯爵の御付き"]無駄話はこんくらいにしとこう。
+[name="伯爵の御付き"]三日後には女帝の声がグリンデンに到達する。もし俺たちの献上品に少しでもキズがついてりゃ、伯爵様が住まう塔であっても更地にされちまうだろうよ。
+[name="伯爵の御付き"]つーわけで、そろそろ作業に戻ってくれや、ハインツ。
+[Dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]……
+[name="ハインツ"]今の僕があるのは、伯爵様のおかげでもありますが、実はもう一つ宝石にまつわる出来事も関係してましてね。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]ある採掘場が原因不明の爆発によって崩落してしまった話なのですが――
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]だけど、貴族ですら生死を気に留めてもらえないのであれば、哀れな一般人についての話など……口にする価値がどこにありましょうか？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="44_g6_towerterrace",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_499_kaitou_1#7$1",duration=1.5)]
+[Delay(time=2)]
+[name="ハインツ"]（口笛）♪
+[name="ハインツ"]（口笛）♪♪
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_492_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="サクソン伯爵"]その粗末な口笛を今すぐやめろ、ハインツ。少なくとも私の高塔において、そのような下品な行為は許されていない。
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]申し訳ございません、伯爵様。つい。
+[name="ハインツ"]なにせ、このような高い場所、それも伯爵様の高塔に立ったのは初めてでしたので。ここからグリンデンを見下ろすと、どの建物も背筋が折れ曲がってしまった老人のように見えますね。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]……
+[name="サクソン伯爵"]ハインツ、お前を呼んだのはそんな感嘆を聞くためではない。女帝の声はまもなく到着される……それで「双塔の夢」は？
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]すでに机に置いておきましたよ、伯爵様。
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_open_box")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]子供の頃、僕はいつも汚くみすぼらしい掘っ立て小屋の前に立って上を見上げていました。
+[name="ハインツ"]そして、いつの日かあの高塔のてっぺんに立って風に当たれるのかなとか、高い場所で感じられる風はきっと澄んでいるのだろうなとか、そんな取り止めのない空想を膨らませていたのです……
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[stopmusic(fadetime=1.5)]
+[name="サクソン伯爵"]黙れと言っている！　それに何なんだこれは！？
+[name="サクソン伯爵"]これが私が依頼していた宝石の完成品だと？　こんなものが「双塔の夢」だというのか！
+[Dialog]
+[charslot]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+伯爵は宝石の入った木箱を床に投げ捨てると、親指と人差し指でバイカラーの宝石をつまみ上げ、ハインツにつき出しながら怒号を浴びせた。
+その声はあまりもの怒りで割れており、とても教養を身につけている伯爵とは思えない姿だ。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]床に落としてしまわないよう、くれぐれもお気をつけください。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]貴様には七日間も時間を与えた。それに、その才能を十分に発揮できるよう、人手も物資も十分に提供してやったというのに。
+[charslot(slot="m",name="avg_499_kaitou_1#4$1")]
+[name="ハインツ"]え、ええ、そちらがその完成品ですが。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]「完成品」だとぉ？　笑わせてくれるな！
+[name="サクソン伯爵"]ハインツ、貴様はグリンデンで最も優れた宝石鑑定士だろう。それなのに、これが市場で叩き売りされているガラス玉にすら劣っていることが分からんのか！？
+[name="サクソン伯爵"]このくすんだ金色を見てみろ。少し近づいただけで、内部が不均一なことがはっきりと肉眼で見える。光の屈折も入り組んだ迷路のようにぐちゃぐちゃだ。
+[name="サクソン伯爵"]それと反対側の黒も、荒野に転がっている石ころと何が違う？　貧乏人が泊まる宿屋に使われてる安っぽい遮光カーテンのようだ。
+[name="サクソン伯爵"]そして極めつけには二つの色の相性。なんと薄っぺらく、ちぐはぐな組み合わせだろう。
+[name="サクソン伯爵"]あの幻想的な色彩はどこへいった？　あの眩いきらめきは？　二つの色が照らし合う唯一無二の美しさは？
+[name="サクソン伯爵"]私からの依頼を引き受けておきながら、なんの悪びれた様子もなくこのような粗悪な石を渡してきおって。これをどう女帝に献上しろと？
+[name="サクソン伯爵"]両陛下が私の頭を踏みつぶすところが見たいのか！？　この高塔を更地にしていいのか！
+[name="サクソン伯爵"]答えろハインツ！　なぜこのように私を愚弄する！？
+[Dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=true)]
+――パリン。
+伯爵の怒号が途切れるよりも早く、乾いた音と共に「双塔の夢」に亀裂が走った。バイカラーのその宝石は、伯爵の指の間で砕け散ったのだ。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]おのれぇ、ハインツ！！
+[charslot(slot="m",name="avg_499_kaitou_1#4$1")]
+[name="ハインツ"]ああ、伯爵様、誤解ですよ！　どうか弁明させてくださいませ！
+[Dialog]
+[charslot]
+ハインツは、アーツユニットに取り付けられているバルブをそっとひねると、腰をかがめ、床に散らばった宝石の欠片を拾い上げ、中に装填した。
+そして何やら角度を調節するかのように、数歩後ずさる。やがて彼が指をパチンと鳴らすと、その音に応えるかのようにアーツユニットの先端が光り出した。
+[Dialog]
+[playsound(key="$e_atk_magic_m")]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+幽遠な黒と荘厳な金が放つ澄んだ輝きは、さながら夕焼けに照らされる湖畔のごとくであった。
+[Dialog]
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]なっ……
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]もちろん、これを女帝に献上することは可能です。なぜなら、これこそが本来の「双塔の夢」なのですから。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]あり得ん！
+[name="サクソン伯爵"]先ほどあれだけ近くで観察したのだぞ……
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]簡単な話ですよ、伯爵様。「双塔の夢」はもともと、至って普通のクリスタルなのです。
+[name="ハインツ"]あの宝石を鑑定したのが僕だったのをお忘れで？　あの時、宝石は精巧なケースに入れられ、僕のアーツユニットに照らされていました。こうして角度を合わせて、光の強さを調節すれば……
+[name="ハインツ"]ほら、この通り……幻想的な色合いと眩い輝きの完成です。
+[name="ハインツ"]「屈折」を上手く操れば、たとえ粗悪なダイヤであっても、本物に引けを取らない輝きを放つ――ちょっとした僕の専門スキルです。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]き、貴様……
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]あなたは宝石の素人だ。プロとしての僕の腕に疑問を抱くべきではありませんでしたね？
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]……私に陛下の御前で大風呂敷を広げさせてから宝石を盗み、挙句わざととぼけたフリをして、私自らの手でそれを破壊させたというわけか？
+[name="サクソン伯爵"]貴様のその行為はサクソン伯爵の高塔を死地へ追いやっているようなものだぞ！　そんなことをして一体なんのメリットがある！？
+[name="サクソン伯爵"]誰のおかげで今の自分があると思っている！　誰が貴様を重用し、この塔のための宝石業を任せたと思っているのだ！？
+[name="サクソン伯爵"]よく考えてみるといい！　何一つ成し遂げていないどころか、他人の恨みばかり買ってきた貴様の滑稽な経歴を片手に、グリンデンで生き残れたと思うのか？
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]伯爵様より受けた御恩を忘れたことはありません。
+[charslot(slot="m",name="avg_499_kaitou_1#2$1")]
+[name="ハインツ"]僕はただの普通の人間です。あの頃は何もかもあきらめかけていました。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]書記官が秘密裏に販売していた宝石を盗み、さらに砕いて粉末にした夜は、彼が行政の力を利用して僕のところまでたどり着くんじゃないか、怯えて一晩中眠りにつけませんでした。
+[name="ハインツ"]それから偽の宝石鑑定書を発行し、サクソン子爵に恥をかかせ官職への道を途絶えさせてしまった時も……
+[name="ハインツ"]自分の計画が、あなたのような陰謀に長けた者にとっては、易々と見破られてしまうような稚拙な計画だったのではないかと、気が気ではありませんでした。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]幸い、ことがうまく運び、僕はあなたの目に留まり、そしてあなたは僕の利用価値にしか関心がなかった
+[charslot(slot="m",name="avg_499_kaitou_1#5$1")]
+[name="ハインツ"]破産してしまったあの男爵や、投獄されてしまった書記官をろくに調べもせずに信用してくださったとは。
+[name="ハインツ"]確かに……あの事件が起きてからもう二十年も経っているのです。どうしてあなたが覚えていましょう？　僕たちのような小物は、あまりにも取るに足らない存在です。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]一体……何が言いたい？
+[charslot(slot="m",name="avg_499_kaitou_1#5$1")]
+[name="ハインツ"]ですから、僕の目的は最初から伯爵様、あなただったのですよ。
+[name="ハインツ"]一年半前グリンデンに戻り、例の粗末なフェイク品を男爵に売りつけた瞬間からずっと、僕の目的はあなたでした、サクソン伯爵。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]……なぜだ？
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]フフ、話したって思い出せないでしょう？
+[name="ハインツ"]そうそう、女帝の声ならすでに高塔の下に到着しているはずです。金色の女帝に唯一無二の宝石を祭典の献上品として捧げると豪語していたようですが……
+[name="ハインツ"]どうやって場を収めるんですかね？
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="サクソン伯爵"]誰か！
+[name="サクソン伯爵"]この痴れ者を捕えろ！
+[Dialog]
+[charslot]
+[playsound(key="$e_atk_magic_n")]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+パチン――再び指を鳴らす音が響く。
+アーツユニットから光が放たれ、それがバルコニーに入り組んだ光線を描き出す。伯爵はそこでようやく、いつの間にかバルコニーの至るところに鏡が大量に仕込まれていたことに気付いた。
+[Dialog]
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[delay(time=0.5)]
+[playsound(key="$e_atk_magic_n")]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[charslot(duration=0.5)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+光は伯爵の視界を奪い、ハインツの元へ集まっていく。
+そうして、宝石職人は伯爵の前から忽然と姿を消したのであった。
+最後に伯爵に笑みを一つ残して。
+あれほど謙虚で臆病で可愛げのあった彼からは想像もつかないような大袈裟な笑み……
+嘲弄と憎しみが込められた笑みだった。
+[name="ハインツ"]幸運をお祈りしています、伯爵様。
+[charslot(slot="m",name="avg_npc_492_1#1$1")]
+[name="サクソン伯爵"]……
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[playsound(key="$doorknockquite")]
+[Delay(time=1.5)]
+[name="伯爵の御付き"]は、伯爵様、女帝の声が到着されました。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_ltroom",screenadapt="showall")]
+[playMusic(intro="$path_intro",key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$doorknockquite")]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]……
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_4109_baslin_1#1$2",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]そこの少年、ここは楽器工房ではありませんよ。その楽器を修理してくれる人を探しているのなら、ここに来ても無駄です。
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="？？？"]グリンデンの伯爵を弄んでおいて、そのまま責任逃れするおつもりですか？
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]……
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="？？？"]ハインツさんですね？
+[charslot(slot="m",name="avg_4109_baslin_1#2$2")]
+[name="？？？"]ツヴィリングトゥルムから参りました、ミヒャエルと申します。
+[charslot(slot="m",name="avg_499_kaitou_1#4$1")]
+[name="ハインツ"]まさか女帝の声ですか？　こんな子供もいたとは……
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="ミヒャエル"]いいえ、僕はただ陛下に代わってそのご意思を伝達するための密偵に過ぎません。
+[name="ミヒャエル"]サクソン伯爵の高塔はすでに差し押さえられました。今後、陛下の裁きを受けるべく、ツヴィリングトゥルムへ護送される予定です。そしてあなたの処置についてですが……
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]なるほど……
+[charslot(slot="m",name="avg_4109_baslin_1#10$2")]
+[name="ミヒャエル"]あっ、そう緊張なさらずとも結構です。どうかアーツユニットを降ろしてください。
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="ミヒャエル"]ここに来たのはいくつか確認したいことがあるだけです。
+[name="ミヒャエル"]この一年半の間で、様々な「不幸」に見舞われたあなたの顧客たちには一つの共通点がありました。
+[name="ミヒャエル"]破産した例の男爵はとある採掘所の監督でした。さらに、内密で宝石を売り払ったがゆえに投獄されてしまった書記官は、以前とある採掘所の報告書の草案を起こした者です。
+[name="ミヒャエル"]……そしてサクソン子爵とサクソン伯爵は、その採掘所のオーナーでした。
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]どうして一日経っても誰も僕を捕まえに来ないのか不思議に思っていたのですが、どうやらそちらはこの間にかなり色々調べ上げたようですね。
+[charslot(slot="m",name="avg_4109_baslin_1#10$2")]
+[name="ミヒャエル"]一連の事件を起こしたのはすべて復讐のため、そうですね？
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="ミヒャエル"]二十数年前、サクソン伯爵は巫王のために方陣装置を製造すべく、グリンデンで秘密裏に源石鉱脈を採掘していた。
+[charslot(slot="m",name="avg_4109_baslin_1#7$2")]
+[name="ミヒャエル"]しかし双子の女帝のクーデターが成功し、リターニアの情勢は一夜にして激変、新たな二つの高塔が首都にそびえ立った。
+[name="ミヒャエル"]そこでサクソン伯爵は「帰順」を図るため、内密に源石採掘場を爆破し、そこで働いていた労働者も全員生き埋めとなったのです……
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="ミヒャエル"]彼はこの件をツヴィリングトゥルムへ提出する報告書で、「異種結晶の採掘場で崩落事故が発生した」と記述し、事実を隠蔽した。
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]……ええ、僕の両親はまさしくその採掘所で働いていたのです。
+[name="ハインツ"]そして僕の人生はあの瞬間から変わってしまいました。
+[name="ハインツ"]その日に僕はグリンデンを離れ、様々な人や出来事に遭遇し、そして鉱石病を患い、このアーツユニットを手に入れたがゆえに、再びこの光彩を放つ石ころと関わる羽目になったのです。
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]とまあ、大体こんなところでしょうか、敬愛なる若き密使様。あなたはまだお若いでしょうから、全てを理解してくれるとは期待していません。
+[name="ハインツ"]もし僕の犯行について調べに来たのなら、本来ならば爆破事故を起こし、サクソン伯爵を粉々に砕かれた宝石もろとも土の中に埋めてやるつもりだったのだとだけ、お伝えしておきましょう。
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="ミヒャエル"]……
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]僕は金色の女帝へ献上する宝石を壊したんです。逃げられるとは端から思っていません。さあ密使様、どうぞ僕に刑罰を言い渡してください。
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="ミヒャエル"]今回のことであなたに責任を追及するつもりはありません、ハインツさん。僕にとって、今回の宝石事件はただのプレリュードに過ぎません。
+[charslot(slot="m",name="avg_499_kaitou_1#4$1")]
+[name="ハインツ"]えっ？
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="ミヒャエル"]これまでずっと、サクソン伯爵は女帝に媚びを売りながら、裏では巫王派の残党を援助していたんです。近年起きた反乱事件の全てに伯爵が関わっていました。
+[name="ミヒャエル"]僕はグリムマハトに仕える密偵です。今回グリンデンへ来たのも、名利を貪る害虫をツヴィリングトゥルムへ連行するためです。
+[charslot(slot="m",name="avg_4109_baslin_1#7$2")]
+[name="ミヒャエル"]イーヴェグナーデが祭典のために探されていた宝石を壊した件ですが……あのような浮ついた宝石など、グリムマハトはちっとも興味を抱かないでしょう。
+[name="ミヒャエル"]復讐を終えたあなたがこれからどうするのか、僕が気になることはただそれだけです。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]……
+[charslot(slot="m",name="avg_4109_baslin_1#1$2")]
+[name="ミヒャエル"]どうやらあなたはかなりの有名人のようですね。玄関のポストに招待状が入っているのがたまたま目に入ったので、ついでに持って来ましたよ。
+[name="ミヒャエル"]それと、伯爵の塔に仕掛けたアーツギミックも調べさせてもらいました。あなたは優秀な宝石鑑定かであると同時に、腕のいい怪盗でもあるのですね。
+[charslot(slot="m",name="avg_4109_baslin_1#2$2")]
+[name="ミヒャエル"]それなら宝石鑑定所でも構えたらいいのではないでしょうか？　ここリターニアにいる限りは「商売」に困ることはないはずです。
+[Dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+ハインツは、ミヒャエルが作業台に置いた招待所の封を切った。
+封筒に施された金の封蝋に見覚えがある。これは別の高塔の主を表す印だ。
+[charslot(slot="m",name="avg_499_kaitou_1#1$1")]
+[name="ハインツ"]「マイルズ伯爵は自身の所有する採掘所から発掘した貴重な宝石――『天空の涙』をリターニア内で巡回展示をしており、近々グリンデンへ訪れる予定である。」
+[name="ハインツ"]「つきましては、その際の鑑定において素晴らしい腕を披露していただきたい。」
+[charslot(slot="m",name="avg_499_kaitou_1#6$1")]
+[name="ハインツ"]僕の記憶が正しければ、マイルズ伯爵の採掘場も昨年、防護措置が不十分だったせいで十数名もの感染者を出し、採掘停止令が出されていたはず……
+[charslot(slot="m",name="avg_499_kaitou_1#7$1")]
+[name="ハインツ"]ハッ、もう一人の「サクソン」というわけか。
+[name="ハインツ"]もしかしたら、あの少年のアイディアもなかなか悪くないのかもしれない。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

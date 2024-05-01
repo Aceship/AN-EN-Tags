@@ -1,0 +1,607 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[stopmusic]
+[Dialog]
+[delay(time=2)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[interlude(maskid = "ui_cutin_mask_vertical", style = 1, size = "450, 720",offset = "-100,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_ltroom", afrom = 0, ato = 1, aduration = 3, sfrom = "1.3,1.3", sto = "1.3,1.3", sduration = 0)]
+[delay(time=2)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "-100,-20", name = "cutin_char_16",sfrom = "0.9,0.9", sto = "0.9,0.9",  aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "-100,-20", pto = "-140,-20", duration = 40)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="내 옷장에는, 훈장만을 보관하기 위한 서랍이 하나 있다.", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="씰 군사 학교를 졸업하면서 받은 기념장, 방위군 15년 복무 훈장, 그리고 4년 전 도시 내의 혼란이 가라앉은 뒤 시의회에서 수여한 런디니움 자유 훈장.", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="서랍의 더욱 깊은 곳에는 가문에서 전해 내려오는 구시대의 유물들이 있다. 베테랑 근위군의 코케이드, 링고네스의 벽돌 조각, 코르시카 1세 폐하께서 직접 하사하신 황금 잔.",x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n그 황금 잔은 반으로 조각났고, 양각된 무늬도 흐릿해졌지만 나는 아직도 꽃무늬 하나하나의 모양과 조각된 사람 하나하나의 표정을 기억한다.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="그것은 나의 부모님, 나의 숙부와 숙모들이 항상 마음에 품고 있던 영광이다. 가울의 영광, 결코 빼앗길 수도, 빛바래지도 않을 찬란함.", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[interlude(channel = 2,clear = true,duration=2)]
+[delay(time=1)]
+[charslot]
+[Background(image="bg_offce", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_649_1#8$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="레토 중령"]……그 황금 잔은 무게가 꽤 나가니, 아마 가져다 팔면 돈을 꽤 만질 수 있을 거야. 가울의 예술품은 항상 시세가 괜찮았으니까.
+[name="레토 중령"]그냥 녹여서 금덩이로 만들어 팔더라도, 어느 도시에서든 가장 비싼 지역에 집 한 채 사기엔 충분할 테지.
+[Dialog]
+[playsound(key="$d_avg_key")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_649_1#6$1",focus="m")]
+[name="레토 중령"]이건 내 숙소의 열쇠니까 잘 챙겨두도록. 물건들은 장롱 안에 있다.
+[name="레토 중령"]다른 곳에 가서 새로운 삶을 시작하도록 해. 올해 있었던 일들은 그저 어쩌다 꾼 악몽 정도로 치부해도 되니까.
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="전 방위군 병사"]중령님, 살카즈에게 쫓겼을 때 저를 도와준 것도, 방위군의 집무실에 저를 숨겨준 것도, 모두 당신입니다.
+[name="전 방위군 병사"]저야말로 감사합니다. 진작에 방위군 소속도 아닌 데다가, 당신과 같은 가울인도 아닌데……
+[name="전 방위군 병사"]중령님께서 굳이 이렇게……
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]받아.
+[name="레토 중령"]방에서 다른 괜찮은 물건이 보이면 다 가져가도 좋다. 그런 기념품들은, 이제 내게 더는 의미가 없으니까.
+[name="레토 중령"]상황이 안정되기 전까진 계속 여기에 숨어 있는 게 좋을 거다.
+[name="레토 중령"]군사위원회에선 이미 방위군의 무장을 해제했으니, 그 살카즈들이 보기에 넌 빅토리아의 시민과 별 차이가 없을 테지.
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="전 방위군 병사"]하지만 제 전우들이 아직 밖에 있습니다. 조금, 음, 불온한 녀석들이라서, 될 수 있으면 구해오고 싶은데……
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="레토 중령"]그들이라면 전부 잡혔다.
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="전 방위군 병사"]……
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="레토 중령"]내가 직접 잡아서 군사위원회에 넘겼지.
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="전 방위군 병사"]당신……
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="그의 눈 속에서 끓어오르던 분노는, 끝까지 차오르기도 전에 맥없이 식어갔다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n내가 옛적에 내린 평가처럼, 그는 겁쟁이었다. 전투 중에는 용기가 아주 조금이라도 샘솟았을지 몰라도, 결국엔 겁쟁이일 뿐이다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n여기서 나와 함께 구차하게 목숨을 부지하는 그는, 살카즈에게 맞서는 전사들에겐 영원히 비할 수 없을 것이다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n영원토록.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n나는, 비할 수 있을까?",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="하하.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n나는…… 신경 쓰지 않는다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n진작부터, 신경 쓰지 않았다.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="전 방위군 병사"]중령님, 이젠…… 어디로 가실 예정이십니까?
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]나?
+[name="레토 중령"]뱀파이어 생귀나르가 이미 오래전부터 날 기다리고 있다.
+[name="레토 중령"]여기서 머무르다가, 모든 게 끝나면 그때 떠나도록 해.
+[name="레토 중령"]살고 싶다면, 나중에 문을 열었을 때 밖에서 환호하는 이들이 마족 놈들이 아닌 빅토리아인이기를 기도해야 할 거야.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n환호하는 빅토리아인이라……",block = true)]
+[Sticker(id="st1", multi = true, text="\n가장 먼저 떠오른 게 그래도 빅토리아의 승리라니.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="아니, 그저 타성에 젖었기 때문일 것이다. 물론 난 테레시스가 이기길 바란다, 그것이 그가 내건 가울 재건의 전제조건이니까.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n내 모든 희생과 배반, 그리고 결코 용서받을 수 없는 죄악들은, 전부 가울을 위해서다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n그래, 가울을…… 위해서다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n부디 그랬기를.",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="32_g1_lentiavenue", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_soldiersstep",volume=0.5)]
+[PlaySound(key="$d_avg_autocannon", volume=0.9)]
+[PlaySound(key="$d_avg_wellwheel",volume=0.4)]
+[delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="한 무리의 사람들이 살카즈 군대에게 압송되어, 멀리 보이는 성벽을 향해 간다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n살카즈들이 런디니움을 그들의 요새로서 공고히 굳히려는 것을 보니, 아무래도 마지막 결전이 목전에 다가온 것 같다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n이 빅토리아의 수도를 사수해낼 생각인가? 어쩌면 그럴 수도.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="사람들 중 일부가 내게 증오의 눈빛을 보내왔다. 아는 이들이다. 한때…… 서로 술잔을 주고받았던 자들이다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n아무도 날 막지 않았다. 살카즈들은 내가 어디로 가든 딱히 신경을 쓰지 않는 모양이다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n사육되던 파울비스트에게 새장 문을 열어준다 해서, 과연 어디로 날아갈 수 있을까?",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="25_mini02_victoria_street_n", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$darkness02_intro", key="$darkness02_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_401_1#1$1",bstart=0.2,bend=0.7,duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_401_1#1$1",bstart=0.2,bend=0.7,focus="m")]
+[name="???"]르네 레토?
+[name="???"]이렇게 당신과 만날 수 있을 거라곤 생각도 못했는데.
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_401_1#1$1",bstart=0.2,bend=0.7,focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",posfrom = "0,0", posto = "200,0",focus="n")]
+[charslot(slot = "m", name = "avg_npc_401_1#1$1",bstart=0,bend=0,duration=2,focus="m")]
+[delay(time=2)]
+[name="클로비시아"]괜찮은 조짐일 수도 있겠어, 적어도 당신이 아직 살카즈한테 살해당하지는 않았으니까.
+[name="클로비시아"]잠깐, 얘기 괜찮을까?
+[Dialog]
+[charslot(duration=0.2)]
+[delay(time=0.3)]
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="레토 중령"]……
+[name="레토 중령"]그래, 알겠군…… 자네는, 자경단의 그 꼬마 리더 클로비시아였나?
+[charslot(slot="r",name="avg_npc_649_1#5$1",focus="r")]
+[name="레토 중령"]자경단의 거점은 이미 우리가 깔끔히 소탕했고, 남은 사람들도 아마 전부 런디니움에서 철수했을 텐데, 자네는 왜 아직도 여기에 남아 있지?
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="클로비시아"]방위군이 사정을 봐준 덕분에. 캐스터가 약속을 지켜 준 덕도 있고.
+[name="클로비시아"]곧 죽게 될 이 도시에서 자경단이 순조롭게 철수할 수 있도록, 캐스터의 '회색 모자'들이 보장을 해 주더라고.
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="레토 중령"]캐스터 공작이라……
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="레토 중령"]……진작부터 자네의 신분에 대해선 짐작이 가는 바가 있었다만, 이제 와선 자네가 어느 귀족님의 하인이든 꼭두각시든 내 알 바 아니지.
+[name="레토 중령"]자네가 믿는 구석이 얼마나 든든할지는 몰라도, 지금의 런디니움은 반항기 넘치는 어린아이가 노닐기에 좋은 곳이 아니야.
+[name="레토 중령"]전에 숨었던 곳으로 돌아가. 아직 살카즈에게 잡히지 않은 지금이라면 못 본 척 해 줄 수 있으니까.
+[charslot(slot = "l", name = "avg_npc_401_1#9$1",focus="l")]
+[name="클로비시아"]……레토.
+[name="클로비시아"]런디니움에 숨어있은 지 충분히 오래됐잖아.
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="레토 중령"]……
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="클로비시아"]자경단이랑 흩어진 뒤에, 난 최대한 빠르게 런디니움에서 새로운 작전 목표를 찾아냈어.
+[name="클로비시아"]우리도…… 배신을 겪었지. 심지어 아직 누가 배신자인지도 모르는 상황이고.
+[name="클로비시아"]하지만 그런 것들을 생각할 시간도 없어. 도시 내의 상황은 '이동 도시의 점령'에 대한 우리의 이해를 아득히 벗어났으니까.
+[name="클로비시아"]지금 일어나고 있는 일은, 역사책을 뒤져봐도 전례를 찾을 수 없을 정도야.
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="레토 중령"]잘 알고 있어, 그 누구보다도.
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="클로비시아"]바깥의 상황을 본 적이 있어?
+[name="클로비시아"]나는 살카즈의 마법진에서 붉은 빛이 하늘로 치솟는 걸 봤어. 다른 나라들의 제식 장비와는 비교할 수 없을 수준의, 수많은 종류의 전쟁 장치들도.
+[name="클로비시아"]주술사들이 공중에 뜬 채로, 모든 드론과 오리지늄 아츠를 무효화시키고 하늘을 지배하는 것도 봤지.
+[name="클로비시아"]예전에는 살카즈 군대와 그 소위 '나흐체러르'에 관한 전설들은, 그저 공포감을 키우기 위한 문학적인 과장이 들어간 것이라고 생각했었어.
+[name="클로비시아"]더는 아니야.
+[name="클로비시아"]죽음 그 자체가 문을 활짝 열 때, 우리는 어떠한 지옥을 맞이하게 될까?
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="레토 중령"]공작들은?
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="클로비시아"]……공작들의 군대는 굳건하고 강력해. 하지만……
+[charslot(slot = "l", name = "avg_npc_401_1#8$1",focus="l")]
+[name="클로비시아"]공작들은 지평선 저 너머에 있으니, 여기에는 닿지 않지.
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="레토 중령"]……
+[charslot(slot = "l", name = "avg_npc_401_1#9$1",focus="l")]
+[name="클로비시아"]내가 맞춰볼게. 지금 이 순간, 당신은 슬프고 괴롭지만, 또 조금은 자랑스럽기도 하겠지?
+[name="클로비시아"]수많은 잔인한 선택을 내렸지만, 지금 이 순간 자신의 사명을 완수했다고 생각하고 있을 거야.
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="레토 중령"]……
+[charslot(slot = "l", name = "avg_npc_401_1#9$1",focus="l")]
+[name="클로비시아"]테레시스에게 거래를 제안했겠지, 테레시스는 수락했을 테고. 한때 가울의 것이었던 이동도시와 관련해서 말이야.
+[name="클로비시아"]런디니움은 너무 작아, 살카즈의 야심을 담기엔 부족하지. 테레시스는 그저 이곳을 이용해 테라 각국들의 야심을 자극할 뿐이야.
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="클로비시아"]테레시스가 정말로 당신과 당신의 가울에 신경 쓸 거라고 생각해?
+[name="클로비시아"]런디니움은 지금 완전히 함락되었지만, 당신도 멍청이가 아니니 알아챘을 거야.
+[name="클로비시아"]카즈델 군사위원회는 애초에 빅토리아를 점령할 계획 같은 게 없었단 걸.
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="레토 중령"]물론이지. 나는 단 한 순간도 테레시스의 약속에 희망을 건 적이 없다.
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="클로비시아"]그럼에도 불구하고 그토록 많은 동족상잔의 비극에 몸을 담았고.
+[name="클로비시아"]기회를 만들고 싶었던 거야, 지금 살카즈들이 카즈델을 위해 하는 것처럼?
+[name="클로비시아"]어쩌면, 모든 공작들의 힘을 쭉 빼놓을 이 전쟁이 바로 가울의 유령이 다시 이 세상으로 돌아올 기회일 수도 있겠지.
+[name="클로비시아"]하지만 중요한 건 그게 아니야……
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="클로비시아"]……중요한 건 당신, 르네 레토가 정말로 그걸 믿느냐지.
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="레토 중령"]……
+[charslot(slot="r",name="avg_npc_649_1#5$1",focus="r")]
+[name="레토 중령"]내가 그럼 뭘 더 믿을 수 있지?
+[name="레토 중령"]나는 이미 내 나약함을 인정했다. 자네는 여기에 더해 내 우둔함, 절망, 무의미함까지도 인정하라는 건가?
+[name="레토 중령"]내게 뭘 원하는 거지?
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="클로비시아"]협력.
+[name="클로비시아"]자경단, 그리고 살카즈에 맞서, 빅토리아의 웃기지도 않는 귀족들 틈바구니에서 삶을 거머쥐고자 노력하는 자들. 모두에게 아직 기회는 있어.
+[name="클로비시아"]그리고 당신이 추구하고 있는 그 '가울' 조차도, 어쩌면 그 기회 속에 있을 수도 있다고.
+[charslot(slot="r",name="avg_npc_649_1#6$1",focus="r")]
+[name="레토 중령"]……가울, 가울이라.
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="레토 중령"]자네는 아직도 맞서 싸우려는 부류의 사람인가 보군.
+[name="레토 중령"]자네 같은 사람들에겐, 먼지 속에 파묻힌 폐허라도 요새의 주춧돌이 될 수 있는 법이지.
+[name="레토 중령"]모두 그런 사람들이야. 자네, 그리고 군사위원회……
+[charslot(slot="r",name="avg_npc_649_1#6$1",focus="r")]
+[name="레토 중령"]그토록 강대하니, 국가를 뒤흔들고, 역사를 갈아엎을 수 있을 정도로 힘이 있으니…… 나 같은 사람의 운명 하나 정도야 따로 논할 것도 없겠지.
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="클로비시아"]자학은 그만둬. 지옥이 강림하기 전까진 아직 할 일이 많으니까.
+[name="클로비시아"]이걸 속죄로 여기든, 또 다른 항쟁의 시작으로 여기든 나는 신경 안 써.
+[name="클로비시아"]레토, 나는 우리가……
+[charslot(slot="r",name="avg_npc_649_1#9$1",focus="r")]
+[name="레토 중령"]그럼, 대단하신 자네에게 하나 묻지. 도대체 어떻게 해야……
+[name="레토 중령"]내가 스스로를 구원할 수 있을까?
+[charslot(slot = "l", name = "avg_npc_401_1#5$1",focus="l")]
+[name="클로비시아"]……
+[charslot(slot="r",name="avg_npc_649_1#9$1",focus="r")]
+[name="레토 중령"]거 봐, 자네도 모르잖아.
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="레토 중령"]이만 비켜 줘.
+[charslot(slot = "l", name = "avg_npc_401_1#7$1",focus="l")]
+[name="클로비시아"]정말 돌아가지 않을 생각이야?
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="레토 중령"]그래.
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="클로비시아"]……그럼 나도 당신을 축복하지 않겠어.
+[name="클로비시아"]그토록 많은 사람들의 죽음을, 내 동료들의 죽음을 짊어지고 있으면서도 그런 끔찍한 결정을 내릴 줄이야.
+[charslot(slot = "l", name = "avg_npc_401_1#3$1",focus="l")]
+[name="클로비시아"]르네 레토!
+[charslot(slot="r",name="avg_npc_649_1#5$1",focus="r")]
+[name="레토 중령"]됐어. 어서 도망이나 쳐, 살카즈가 곧 올 테니까.
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="레토 중령"]나는 아직…… 작별 인사도 못했으니까.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="32_g11_victoriaroom_n", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[Sticker(id="st1", multi = true, text="링고네스가 우리의 눈물에 스며드네♪", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n전장에는 땀과 눈물이 가득하지만♪",block = true)]
+[Sticker(id="st1", multi = true, text="\n그날은 결국 찾아온다네♪",block = true)]
+[Sticker(id="st1", multi = true, text="\n침략자에게 사형을 선고할 그날이♪",block = true)]
+[Sticker(id="st1", multi = true, text="\n침략자에게 사형을 선고할 그날이♪",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlaySound(key="$doorknockquite", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[PlaySound(key="$dooropenquite")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]……
+[Dialog]
+[Charslot]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="도시 안에서 살고 있는 한 '베테랑 근위군'.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n이 순간, 어째서 그가 가장 먼저 생각난 것일까?",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[musicvolume(volume=0, fadetime=1)]
+[charslot(slot="m",name="avg_npc_649_1#5$1",focus="m")]
+[delay(time=0.3)]
+[PlaySound(key="$d_avg_punchsp1",volume=0.8)]
+[CameraShake(duration=0.7, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="r",name="avg_npc_081", posfrom = "-60,0", posto = "-60,0",bstart=0.2,bend=0.7,afrom=0,ato=0,duration=0,focus="m")]
+[charslot(slot="r",name="avg_npc_081",action="zoom",poszoom="0.5,0.5",scale=0.95,duration=0,focus="m",bstart=0.2,bend=0.7,isblock=true)]
+[charslot(slot="r",afrom=0,ato=1,duration=1,focus="m",bstart=0.2,bend=0.7,isblock=true)]
+[charslot(slot="m",name="avg_npc_649_1#5$1",focus="n")]
+[name="???"]……관등성명을 대라!
+[charslot(slot="m",name="avg_npc_649_1#5$1",focus="m")]
+[name="레토 중령"]허리춤에 들이댄 곤봉에 여전히 힘이 넘치시는군요, 장관님.
+[charslot(slot="m",name="avg_npc_649_1#5$1",focus="n")]
+[name="???"]닥, 쳐라! 관……등 성명을 대라! 병사!
+[charslot(slot="m",name="avg_npc_649_1#2$1",focus="m")]
+[name="레토 중령"]……
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]링고네스 청년 근위군 제2 근위 도약군단, 레토 하사입니다!
+[Dialog]
+[PlaySound(key="$d_avg_runstop", volume=0.4)]
+[charslot(slot="r", posfrom = "-60,0", posto = "60,0",afrom=1,ato=1,duration=0.5,focus="m")]
+[charslot(slot="r",afrom=1,ato=1,action="zoom",poszoom="0.5,0.5",scale=1,focus="m",duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_081",bstart=0.2,bend=0.7,focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[delay(time=0.2)]
+[charslot(slot = "l", name = "avg_npc_081",posfrom = "0,0", posto = "460,0",focus="n")]
+[charslot(slot = "r", name = "avg_npc_081",bstart=0,bend=0,duration=1,focus="r")]
+[delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_081",focus="r")]
+[name="노망난 노인"]내, 부대인가?
+[Dialog]
+[charslot(slot="r",name="avg_npc_081",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_cloakmovement", volume=0.7)]
+[charslot(slot="m", posfrom = "0,0", posto = "-200,0",afrom=1,ato=1,duration=1.5)]
+[delay(time=2)]
+[musicvolume(volume=0.6, fadetime=2)]
+[charslot(slot="m",name="avg_npc_649_1#9$1",focus="m")]
+[name="레토 중령"]그렇습니다.
+[charslot(slot="r",name="avg_npc_081",focus="r")]
+[name="노망난 노인"]본, 적이 없는, 얼굴인데.
+[charslot(slot="m",name="avg_npc_649_1#9$1",focus="m")]
+[name="레토 중령"]분명 본 적이 있으십니다, 장관님, 그저 잊으셨을 뿐이죠.
+[charslot(slot="r",name="avg_npc_081",focus="r")]
+[name="노망난 노인"]그런가……
+[name="노망난 노인"]황제 폐하께서, 여기서 요양을 하라고, 명령하셨지만, 그래도 전황을, 알고 싶군.
+[name="노망난 노인"]사악한, 위치킹은 우리의 함대가, 해치웠는가?
+[name="노망난 노인"]TV에서, 빅토리아의 터, 터, 털보 공작의 군대를 보았다!
+[name="노망난 노인"]노, 놈들도 이 틈을 타, 황제 폐하에게 거역하려는 것인가!
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="레토 중령"]아닙니다, 런디니움은 이미 함락되었습니다.
+[charslot(slot="r",name="avg_npc_081",focus="r")]
+[name="노망난 노인"]좋군!
+[name="노망난 노인"]나는…… 베테랑, 근위군에, 발탁되겠지! 자네는 아, 아직 아니야! 스, 스스로를 증명, 해야 해!
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="곧 90살이 되어가는 그는, 진작에 거의 모든 걸 잊어버렸을 정도로 정신이 흐려졌다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n수십 년 동안, 그의 기억은 가울인들이 코르시카 1세를 따라 라이타니엔을 정벌하던 황금기에 머물러 있다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n요양사는 늘 그가 내년이면 목숨이 다할 것이라고 얘기했지만, 그는 지금까지 버텨 왔다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n가울이 역사가 되어버린 지금까지.",block = true)]
+[Sticker(id="st1", multi = true, text="\n런디니움이 무덤 속으로 들어갈 지금까지.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n내가 방위군에서 떠나기 전, 마지막으로 내린 명령은 이 요양원의 안전을 확보하라는 것이었다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n이는 내 기나긴 방위군 복무 동안, 나 스스로를 위해 행한 단 하나의 일이었다.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_649_1#9$1",focus="m")]
+[name="레토 중령"]당신이 가장 좋아하는 링고네스산 랭스 샴페인을 가져왔습니다. 앉으시죠.
+[Dialog]
+[charslot(slot="m",name="avg_npc_081",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_chairrub")]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[name="노망난 노인"]음……
+[name="노망난 노인"]훌륭한, 술이군. 하사. 으음……
+[name="노망난 노인"]링고네스가 우리의 눈물에 스며드네♪
+[name="노망난 노인"]\n전장에는 땀과 눈물이 가득하지만♪
+[name="노망난 노인"]침략자에게 사형을 선고할 그날이♪
+[charslot(slot="m",name="avg_npc_649_1#9$1",focus="m")]
+[name="레토 중령"]그 노래를 부르실 때면, 마치 그 모든 고통과 노환이 애초에 없었던 것만 같아 보이십니다.
+[Dialog]
+[charslot]
+[name="노망난 노인"]……우리의 깃발은 영원히 찬란하리♪
+[Dialog]
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]저는 링고네스를 본 적이 없습니다.
+[name="레토 중령"]저한테 수십 번은 말씀하셨던 그 위대한 궁전도, 그 발전한 도로망도……
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="레토 중령"]……혹시 골딩을 기억하십니까? 꽤 오래 전에, 저와 함께 여기에 찾아왔었던 여자아이 말입니다.
+[name="레토 중령"]죽었습니다.
+[name="레토 중령"]이 잔혹하고, 냉혹한, 피투성의의 시대를 위해서요.
+[charslot(slot="m",name="avg_npc_649_1#6$1",focus="m")]
+[name="레토 중령"]그리고 저는, 이 모든 걸 야기한 범인 중 하나입니다.
+[name="레토 중령"]저는 골딩을…… 아니, 모르겠습니다.
+[name="레토 중령"]하지만 골딩은 이미 죽었습니다. 제 시야에서 사라졌고, 다시는 절 바라보지 않게 됐습니다.
+[name="레토 중령"]저는…… 두렵습니다, 장관님.
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]아미야라는 이름을 가진 아이가 제게 말하더군요, 제가 저지른 모든 일들은 나약함 때문이었다고.
+[name="레토 중령"]예전에 저는 골딩에게 자백했습니다. 전 그저 잇달아 닥쳐오는 파멸 속에서 살아남고 싶었을 뿐이라고.
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="레토 중령"]하지만 그래도 저는……
+[name="레토 중령"]그저 변명일 뿐일지라도, 저는 바라고 있습니다……
+[name="레토 중령"]그 폐허 속에서, 새로운 가울인이 일어나기를……
+[charslot(slot="m",name="avg_npc_649_1#6$1",focus="m")]
+[name="레토 중령"]아니, 아닙니다.
+[name="레토 중령"]저는 골딩이 햇빛과, 꽃향기 속에서 계속 그 아이들을 가르칠 수 있길 바랐습니다.
+[name="레토 중령"]그 신념은 참으로 아름다웠죠.
+[name="레토 중령"]그러나, 그러나 저는 결국…… 저는……
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]제가 할 수 있는 모든 것들을 다 했습니다. 너무 힘이 들었습니다, 장관님.
+[name="레토 중령"]저희에게, 아직 미래가 있는 것일까요?
+[Dialog]
+[charslot]
+[delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n……",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="그는, 이미 잠든 지 오래였다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n그 또한 나쁘지 않았다.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlaySound(key="$d_avg_drawsword")]
+[PlaySound(key="$d_avg_exsheath",delay=0.3)]
+[delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="나는 검을 뽑아들었다. 한때 가울인의 것이었던 검을.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n어쩌면…… 살카즈가 이곳까지 쳐들어오기 전에, 꿈속에서 눈을 감도록 해 주는 게 더 나을 수도 있겠다는 생각이 들었다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n적어도 그 꿈은 찬란한 꿈일 테니.",block = true)]
+[Sticker(id="st1", multi = true, text="\n……하지만 나처럼 비열한 인간에게, 이를 더럽힐 자격이 있을까……",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1.5)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_avg_broadswordblood",volume=0.7)]
+[delay(time=1.5)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n늙어버린 청년 근위군의 피가, 내 두 손에 가득 묻었다.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_victoria", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$plot_intro", key="$plot_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="피를 다스리는 군주, 뱀파이어 생귀나르. 그는 빅토리아 궁전의 호화로운 장식을 조용히 바라보고 있다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n그의 얼굴에 떠오른 표정은…… 고요하다고까지 표현할 수 있다.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_410_1#1$1",focus="m")]
+[name="뱀파이어 생귀나르"]왔군요, 레토.
+[name="뱀파이어 생귀나르"]어딘가에 숨을 줄 알았는데 말이죠.
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",duration=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]아닙니다, 그럴 리가요.
+[name="레토 중령"]당연히 당신을 찾아뵈어야죠, 생귀나르 공.
+[charslot(slot="m",name="avg_npc_410_1#1$1",focus="m")]
+[name="뱀파이어 생귀나르"]오늘은 꽤나 기운차게 차려 입었군요, 좋아요. 당신은 알고 지내던 그 가울 교사가 죽은 뒤로 항상 우울한 모습이었거든요.
+[name="뱀파이어 생귀나르"]제 아이들과 내기까지 했었지요, 아이들은 당신이 곧 죽을 거라고 말하더군요.
+[name="뱀파이어 생귀나르"]하지만 저는 당신을 믿었답니다, 레토.
+[name="뱀파이어 생귀나르"]저랑 한잔 하시죠. 당신의 숙적, 빅토리아라고 불리는 이 국가의 죽음을 축하하며.
+[name="뱀파이어 생귀나르"]제가 직접 의식을 거행할 예정이랍니다. 빅토리아에게 가장 오래된 저주, 가장 비극적인 결말을 선사하기 위해서.
+[name="뱀파이어 생귀나르"]이제 곧 출발할 예정입니다. 제 후예들에게도 주어지지 않았던 영광이니, 그대는 참으로 운이 좋군요.
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="레토 중령"]……
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]생귀나르 공, 당신도 아실 겁니다.
+[name="레토 중령"]제가 태어났을 때, 가울의 수도는 이미 웰링턴 공작과 그의 비열한 공모자들에 의해 완전히 멸망했습니다.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="한 도시가 멸망했다, 마치 한 번의 탄식과도 같이.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]그리고 지금, 당신은 런디니움에 같은 일을 저지르려고 하시는 것 같군요.
+[charslot(slot="m",name="avg_npc_410_1#7$1",focus="m")]
+[name="뱀파이어 생귀나르"]그게 당신에게 슬픈 일인가요?
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="레토 중령"]전 그저…… 생각지 못했을 뿐입니다.
+[charslot(slot="m",name="avg_npc_410_1#1$1",focus="m")]
+[name="뱀파이어 생귀나르"]웰링턴 공작은 링고네스를 해체하고, 도시의 섹터들을 나누어 가졌지요. 하, 우스꽝스러우면서도 재미없는 빅토리아인들.
+[name="뱀파이어 생귀나르"]당신은 원수를 직접 갚고싶은 건가요? 훌륭하네요, 그 집착.
+[name="뱀파이어 생귀나르"]물론 당신에게 그러한 기회를 줄 수 있습니다.
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="레토 중령"]감사드립니다, 생귀나르 공.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="나는 깊게 고개를 숙였다. 하지만 그의 시선이 내 위에 머무르는 것을 느낄 수 있었다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_410_1#5$1",focus="m")]
+[name="뱀파이어 생귀나르"]아아…… 이 얼마나 슬픈 일인지.
+[name="뱀파이어 생귀나르"]비열하고, 줏대 없고, 독선적이면서도 나약한.
+[name="뱀파이어 생귀나르"]공포에 휩싸여 자비를 빌더니, 이젠 또 절망에 빠져 자멸을 택하다니.
+[name="뱀파이어 생귀나르"]하지만 그래도 당신이 궁금하답니다. 레토, 나의 친구여.
+[name="뱀파이어 생귀나르"]당신의 티끌같은 삶 속에서, 우리도 벌써 적잖은 시간을 함께해 왔군요.
+[charslot(slot="m",name="avg_npc_410_1#9$1",focus="m")]
+[name="뱀파이어 생귀나르"]……정말 나를 죽일 수 있을 거라고 생각하나요, 레토?
+[name="뱀파이어 생귀나르"]아니요, 그럴 수 있을 리가요.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="내 피가, 내 심장을 움켜쥐었다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_649_1#7$1",focus="m")]
+[name="레토 중령"]……
+[charslot(slot="m",name="avg_npc_410_1#7$1",focus="m")]
+[name="뱀파이어 생귀나르"]어쩌면 이 살카즈는 어찌 이리 오만한지, 어찌 이리 자신을 멸시하는지라는 생각을 할 수도 있겠죠.
+[name="뱀파이어 생귀나르"]실은 그 반대랍니다…… 레토.
+[name="뱀파이어 생귀나르"]제가 곧 보게 될 것 때문에, 저는 당신을, 무척이나 사랑스럽게 여기고 있답니다.
+[name="뱀파이어 생귀나르"]당신은 확실히 우둔하고, 비열하지요. 자신의 피를 소중히 여기세요.
+[name="뱀파이어 생귀나르"]원래는 말이죠, 좀 더 재밌는 곳에 쓰일 수 있겠다고 생각했었거든요.
+[charslot(slot="m",name="avg_npc_410_1#5$1",focus="m")]
+[name="뱀파이어 생귀나르"]하아, 우리의 인연이, 이토록 다급하게 끝을 맺게 되다니.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="가울인의 검…… 나는 그것을 필사적으로 찾고 있었다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n비열한 자의 검을.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_410_1#5$1",focus="m")]
+[name="뱀파이어 생귀나르"]불쌍한 사람. 좀 더 노력하세요, 좀 더 발버둥치세요. 곧 검자루가 손에 잡힐 테니.
+[charslot(slot="m",name="avg_npc_649_1#7$1",focus="m")]
+[name="레토 중령"]……내가……
+[name="레토 중령"]내…… 하사하마……
+[charslot(slot="m",name="avg_npc_410_1#1$1",focus="m")]
+[name="뱀파이어 생귀나르"]무슨 말을 하고 싶은 거죠?
+[charslot(slot="m",name="avg_npc_649_1#7$1",focus="m")]
+[name="레토 중령"]내 말은……
+[stopmusic(fadetime=1)]
+[Dialog]
+[delay(time=1)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0, block=true)]
+[Blocker(a=0.3, r=1,g=0.2, b=0.2, fadetime=0.03, block=true)]
+[PlaySound(key="$d_avg_bldwhoosh", volume=1)]
+[PlaySound(key="$d_avg_tear", volume=1,delay=0.2)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="칼날이 내 목을 그었다. 차갑고, 시렸다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n내 더러운 피가 목에서 뿜어져 나오는 것이 보였다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n진홍빛 액체가 그의 옷자락에, 얼굴에 튀었다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n하.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_649_1#3$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=12, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="레토 중령"]네놈에게, 내 피를 네게 '하사'하겠다는 거다, 이 더러운 거머리 같은 놈아!
+[name="레토 중령"]이제 다시는 네놈의 순결한 피를 자랑할 수 없을 거다!
+[charslot(slot="m",name="avg_npc_649_1#3$1",focus="m")]
+[name="레토 중령"]왜냐하면, 이 비열한 르네 레토가 그 피를 더럽혔으니까!
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,870 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[gridbg(imagegroup="44_g13_afterglow_L1/44_g13_afterglow_R1/44_g13_afterglow_L2/44_g13_afterglow_R2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720",x=-1280,fadetime=0)]
+[largebgtween(duration = 60,yFrom = 560, yTo = 460,block = false)]
+[playMusic(intro="$distressed_intro",key="$distressed_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="위치킹의 탑에 들어갔을 때, 난 겨우 열다섯 살이었다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="아인게바이데 주의 평범한 가정에서 태어나, 원래는 대귀족을 섬길 자격조차 없었다. 하지만 들은 바에 따르면 헤르쿤프트쇼른에겐 평민과 귀족의 구분이 없었다고 한다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="딱히 헤르쿤프트쇼른이 평민을 우대했다기보다는, 너무 거만했기에 옥좌 밑에 엎드린 모두를 동등하게 내려다봤기 때문이다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="내가 처음 맡은 일은 그의 악기를 닦는 것이었다. 그러나 헤르쿤프트쇼른은 이미 평범한 악곡을 연주하지 않았기에, 그 악기들도 기능을 잃은 셈이었다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="나중에 나는 탑 꼭대기의 공명 파이프 청소를 맡게 되었다. 어렵지 않은 일이었으나 헤르쿤프트쇼른은 파이프 안에 먼지 한 톨이라도 쌓이는 것을 용납하지 않았다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="내 동료는 자주 바뀌었고 대부분 비참한 결말을 맞이했다. 결국 탑 꼭대기에 남아 묵묵히 청소하는 사람은 나뿐이었다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="천여 번의 낮과 밤을 보낸 후, 위치킹의 탑이 드디어 무너졌다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[gridbg]
+[Background(image="44_g5_spiralstairs",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$m_avg_goldenrulesymphony_intro", key="$m_avg_goldenrulesymphony_loop", volume=0.6)]
+[playsound(key="$d_gen_soldiersrun", volume=0.4)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="여황의 캐스터"]아래층으로 향하는 길을 봉쇄해라.
+[name="여황의 캐스터"]각 소대는 전력을 다해 산크타를 수색한다. 그 여자가 포타워 극장에 들어가서 귈데네스게사츠의 연주를 방해하지 못하게 해.
+[name="여황의 캐스터"]명심해, 목표의 오리지늄 아츠는 매우 특별하다. 여황의 명령에 따라, 여자를 발견한 즉시 중상을 입히거나, 또는 사살해도 상관없다……
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="아르투리아"]안녕, 나를 찾고 있었어?
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]……배리어!
+[name="여황의 캐스터"]전열을 갖춰라, 저 여자를 잡아!
+[Dialog]
+[charslot]
+[charslot(slot = "r",name = "avg_npc_1135_1#1$1",posfrom = "100,0", posto = "0,0",duration = 0.5)]
+[charslot(slot = "l",name = "avg_npc_1135_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 0.5)]
+[delay(time=0.6)]
+[charslot(duration=0.3)]
+[PlaySound(key="$d_avg_magic_4",volume=0.8)]
+[PlaySound(key="$d_avg_magic_5",volume=0.8,channel="1")]
+[CameraShake(duration=1, xstrength=30, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_245_cello_1#5$1")]
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[delay(time=0.3)]
+[name="아르투리아"]윽……
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]아르투리아 잘로.
+[name="여황의 캐스터"]너는 라테라노 사람이지만, 라테라노에 지명수배당하고 있지. 그런 너를 라이타니엔이 받아주었다. 네 비범한 음악적 재능 덕분에 무수한 귀족들이 너를 빈객으로 초대했지.
+[name="여황의 캐스터"]라이타니엔에서 너는 거의 고탑 귀족과도 같은 권리를 가지고 있다. 이 모든 건 여황들이 너에게 베푼 은혜다.
+[name="여황의 캐스터"]그러니 돌아가서, 여황들을 거스르는 일을 그만둔다면 네 목숨은 살려줄 수 있을지도 모른다.
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="아르투리아"]그건 애초부터…… 선택지가 아니었어.
+[name="아르투리아"]살아 있어도 자유롭게 연주할 수 없다면, 그게 죽은 거랑 뭐가 다를까?
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]그렇다면 죽음을 받아들여라.
+[Dialog]
+[PlaySound(key="$d_avg_spellattack_1",volume=0.8)]
+[charslot(duration=0.3)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_245_cello_1#7$1")]
+[name="아르투리아"]아츠가…… 강해졌네.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]너는 탈옥 시기를 잘못 잡았다, 산크타.
+[name="여황의 캐스터"]귈데네스게사츠가 울려 퍼졌다. 바깥의 성대한 광경이 보이나? 라이타니엔의 찬란한 황금빛 아래, 혼란이나 일으키는 네 그 얄팍한 재주는 아무 소용 없다.
+[charslot(slot = "m", name = "avg_245_cello_1#11$1")]
+[name="아르투리아"]그래, 나도 느꼈어. 너희들의 의지가 이렇게 확고한 적은 없었지.
+[name="아르투리아"]그런데…… 과연 네가 자발적인 의지로 이 곡을 연주하는 걸까? 아니면 네가 본 것이 네 생각과 일치한다고 믿도록 선율이 너를 설득한 걸까?
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]그건 중요하지 않아. 황금 선율이 나를 인도하고 내 의지는 선율과 공명하니까!
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="여황의 캐스터"]하지만 넌, 우리의 적, 너는 필시 라이타니엔의 빛 속에서 녹아 버……
+[Dialog]
+[charslot(slot = "m", name = "avg_245_cello_1#11$1")]
+[charslot(duration=0.5)]
+[delay(time=0.8)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]……사라졌어?
+[name="여황의 캐스터"]환각인가? 첼로 소리는 나지 않았는데!
+[charslot(slot = "m", focus = "n")]
+[name="아르투리아"]하아, 너희들은 왜 항상 내가 환각을 만든다고 생각하는 걸까?
+[name="아르투리아"]분명 말했을 텐데. 네 감정이 자발적인 것이 아닌 선율에 지배된 것이라면, 눈앞의 진실을 쉽게 무시해 버리게 된다고…… 이를테면, 내가 '빛' 속에서 어디까지 걸어갔는지.
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]뒤다……!
+[name="여황의 캐스터"]배리어! 늦었나……!
+[Dialog]
+[MusicVolume(volume=0.2, fadetime=1)]
+[charslot]
+[playsound(key="$d_avg_cellodoubth")]
+[delay(time=2)]
+[MusicVolume(volume=0.6, fadetime=2)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="아르투리아"]마침 잘됐네. 안 그래도 내 첼로에 붙은 그 아츠를 풀어줬으면 했는데.
+[name="아르투리아"]드디어 깔끔해졌네, 고마워.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]우리가…… 너 따위에게 질 리가……
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="아르투리아"]사실 나 혼자 너희들을 상대하긴 무리였을 거야. 하지만, 너희들의 마음은 귈데네스게사츠의 속박으로 경직되어 있고, 오리지늄 아츠에도 빈틈이 가득해.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]어…… 째서? 이런 오리지늄 아츠를 갖고 있으면서, 자신의 운명을 바꾸고, 끝없는 명예와 최고의 은총도 받을 수 있었는데…… 여황을 적으로 돌리는 게 대체 무슨 의미가……
+[Dialog]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="아르투리아"]의미…… 말이야? 네가 이해하는 의미는 아마 내가 원하는 것과 전혀 다를걸.
+[charslot(slot = "m", name = "avg_245_cello_1#3$1")]
+[name="아르투리아"]부, 명예, 지위? 이런 것들은 모두 마음을 둘러싼 가죽에 불과해. 시간이 지나면 반드시 썩어버리고 말지.
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="아르투리아"]하지만 내가 보기에 선제후든 거지든, 아니면 나 자신이든…… 우리의 차이는 오직 마음의 소리라는 것뿐이야.
+[name="아르투리아"]내가 탑 꼭대기에 가고 싶어 하는 건 어떤 선율, 어떤 마음, 어떤 미래를 위해서야.
+[charslot(slot = "m", name = "avg_245_cello_1#2$1")]
+[name="아르투리아"]그리고…… 어떤 친구와의 약속 때문이기도 하고.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="44_g8_towersquare",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="위치킹이 죽고 나서 또 십여 년이 지난 뒤, 나는 옛 친구의 장례식에 참석했다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="장례식이 끝나고 나는 쌍둥이 탑 밑에서 한 사람을 만났다. 그건 첼로를 든 산크타였다. 포타워 극장에는 사람들이 오갔고, 그녀는 인파 속에서 점심부터 해가 질 때까지 서 있었다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="아르투리아"]소문에 따르면 위치킹이 탑 꼭대기에서 연주할 때, 하늘의 구름조차도 그 아츠에 걸음을 멈추었다고 해.
+[name="아르투리아"]하지만 계속 이런 생각이 들었어…… 과연 구름은 그 탑의 모습을 기억할까?
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="분명 어렵겠지. 구름은 시시각각 변하니까.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="아르투리아"]선생님이 예전에 자주 얘기해 주었어. 위치킹의 탑이 아직 있었을 때, 선생님은 왕실악단의 첼로 연주자로서 탑 밑에 서서 라이타니엔의 유일한 군주를 위해 악곡을 연주했다고.
+[name="아르투리아"]그때 황금빛 노을이 칠흑 같은 탑을 둘러싸 마치 가장 화려한 로브를 걸쳐준 것 같다고 했지.
+[charslot(slot = "m", name = "avg_245_cello_1#8$1")]
+[name="아르투리아"]선생님은 이곳에 돌아와 그 아름다운 광경을 다시 보고 싶었지만, 유감스럽게도…… 여황 축제에 참석할 자격은 고사하고 거처에서 쉽게 나올 수도 없었어.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="잠깐이었지만, 엠마누엘 씨는 확실히 과거 위치킹의 악사였어. 위치킹이 죽고 난 후에 그 사람은 아주 힘든 시기를 보냈지.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#8$1")]
+[name="아르투리아"]선생님과 작별 인사를 하러 온 사람은 거의 없었고, 진심으로 선생님을 위해 눈물을 흘린 건…… 당신뿐이었어.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="장례식에서 네 연주를 들었어. 정말 감동적이었지.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="아르투리아"]고마워.
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="아르투리아"]하지만 그런 악기 소리는 여전히 선생님께 그 어떤 위로도 되지 못했어.
+[name="아르투리아"]선생님 생전에 내가 연주를 해드리겠다고 한 적도 있었지만, 선생님은 거절했어. 가장 고통스럽고 우울한 세월 속에서 선생님은 지난 즐거움을 추억하길 거부했고, 그 어떤 변화도 요구하지 않았지.
+[name="아르투리아"]그저 자신을 방안에 가두고 계속해서 귈데네스게사츠만 연주했어.
+[name="아르투리아"]그 변치 않는 선율 속에서 선생님은 라이타니엔의 웅장함과 숭고함을 느꼈고, 마침내 사랑과 원한, 그리고 자신마저도 잊어버렸어.
+[name="아르투리아"]하지만 죽음 앞에서 선생님의 마음에도…… 역시 아쉬움이 가득했던 거야.
+[Dialog]
+[charslot(duration=1.5)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="오랜 세월 동안 나는 너무나 많은 아쉬움을 들어왔어.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="내 기억 속 엠마누엘은 늙어서도 여전히 정정했고, 악기를 받을 때 호탕하게 웃으며 고맙다고 인사하는 어르신이었는데.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그가 죽었을 땐 이미 활도 들지 못할 정도로 초췌해졌다고 들었어.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="위치킹의 탑이 사라지면 라이타니엔의 하늘이 많이 달라질 줄 알았는데.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="베두니엔에서 츠빌링슈튀르메가 되고, 위치킹의 탑이 쌍둥이 여황 탑이 되면 노을 속에서 메아리치는 선율이 달라질 줄 알았는데.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="하지만 우리는 모두 구름처럼, 그때의 구름이든 지금의 구름이든, 떠돌아다닐 방향마저 결정할 수 없더구나.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[MusicVolume(volume=0.3, fadetime=3)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[CameraShake(duration=3, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_magic_5")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.2, block=true)]
+[playsound(key="$d_avg_spelldfns_1",channel="a",delay=0.1)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[playsound(key="$d_avg_spellattack_2",channel="b",delay=0.2)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]너……
+[name="여황의 캐스터"]왜…… 밑으로 내려가지 않지?
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="아르투리아"]나는 이런 '연주회'에 관심이 없으니까.
+[name="아르투리아"]의도적으로 청중의 의지를 구속하는 이런 선율은, 그저 다른 형태의 율법일 뿐이야.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="여황의 캐스터"]그걸 어떻게……
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="아르투리아"]너희들의 술식은 복잡하긴 하지만, 오리지늄 아츠와 음악에 정통한 사람들이 보면 확실히 알 수 있어. 이 점은 라테라노의 율법과 다르지만.
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="아르투리아"]음악이란 본디 사람들의 마음이 자유롭게 숨 쉴 때 내는 울림이어야 해. 하지만 너희들은 반대로 음악을 질서의 한 부분으로 만들어, 사람들의 의지를 지배하고 사람들의 감정을 약화하는 데 사용했어.
+[charslot(slot = "m", name = "avg_245_cello_1#9$1")]
+[name="아르투리아"]덕분에 마음과 마음 사이의 진정한 연결이…… 점점 약해지고 있지만. 그렇게 되면 사람들은 점점 서로를 이해할 수 없고, 더더욱 상대의 감정을 존중하지 않으며, 나아가 서로에게 상처마저 주게 되지.
+[name="아르투리아"]이런 딱딱한 선율은 악곡이라고 불릴 자격도 없어.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[name="여황의 캐스터"]윽……!
+[Dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 0.5,afrom=1,ato=0)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[CameraShake(duration=0.3, xstrength=5, ystrength=20, vibrato=15, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=2)]
+[name="아르투리아"]탑 꼭대기에 거의 다 도착했네. 이 곡이 끝나기 전에 다음 곡을 맞이할 준비나 해볼까.
+[name="아르투리아"]우리의 약속도 곧 실현되겠지?
+[charslot(slot = "m", name = "avg_245_cello_1#2$1")]
+[name="아르투리아"]당신이 알려준 것처럼, 이 자리가 확실히 좋네. 연주하기에도…… 경청하기에도.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[MusicVolume(volume=0.6, fadetime=3)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="이게…… 내 마음속 가장 깊이 새겨진 기억인가?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=false)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[name="아르투리아"]맞아.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="미안해.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#5$1")]
+[name="아르투리아"]왜 사과하는 거야?
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="아르투리아"]본인의 마음속 소리를 연주해 달라고 직접 요청하는 사람은 거의 없어. 다들 피하기 바쁘지. 하지만 당신은 내게 마음을 열어줬어…… 정말 기쁘고, 너무 고마워.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="다만…… 원래대로라면 내 기억 속에서 위치킹이 죽는 모습을 볼 수 있을 줄 알았는데.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="아르투리아"]봐, 내 첼로 소리는 이미 당신의 마음속 소리에 따라 움직이고 있고, 당신이 어떤 기억을 떠올릴지 결정할 수 없어. 내가 할 수 있는 건 당신의 감정을 느끼고 그걸 우리 앞에 드러내는 것뿐이야.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="왠지 동상을 조각하는 거랑 비슷하네.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="아르투리아"]맞아…… 조각이랑 큰 차이가 없어. 나는 사람의 진실된 모습을 발견하고 기록하는 것이지, 바꾸지는 못해.
+[name="아르투리아"]우리가 당신의 기억 속에 있는 위치킹의 탑에 들어갈 수 없는 이유는 단 하나야.
+[charslot(slot = "m", name = "avg_245_cello_1#3$1")]
+[name="아르투리아"]당신이 위치킹의 죽음을 떠올릴 때마다, 당신의 감정을 가장 크게 자극하는…… 손이 있기 때문이야.
+[name="아르투리아"]당신을 잡고 아츠의 파도를 뚫고 나오는 손.
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="아르투리아"]그건 누구의 손일까?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Sticker(id="st1", text="누구의 손일까?", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=1)]
+[Sticker(id="st1")]
+[delay(time=1)]
+[Sticker(id="st2", text="그건……", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,block = true,duration=1)]
+[Sticker(id="st2",duration=1,block = false)]
+[charslot]
+[delay(time=2)]
+[MusicVolume(volume=0, fadetime=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="44_g8_towersquare",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="비비아나"]……조심하세요!
+[name="비비아나"]적들이 계속 나타나고 있어요. 저랑 페데리코 씨가 최대한 막아볼게요.
+[name="비비아나"]코라 씨는 눈이 안 보여서 자칫 전투에 휘말릴 수 있어요. 그러니까 제 곁을 떠나지 말고, 제 손을 꼭 잡아주세요. 아셨죠?
+[Dialog]
+[charslot]
+[MusicVolume(volume=0.6, fadetime=2)]
+[charslot(slot = "m", name = "avg_npc_1113_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="코라"]……넌 그 사람과 너무나 닮았구나.
+[charslot(slot = "m", name = "avg_4098_vvana_1#10$1")]
+[name="비비아나"]아버지…… 말인가요?
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="코라"]그때 위치킹의 탑 밑에서, 그 사람도 이렇게 날 잡아줬어…… 생전 처음 보는 어린 시종의 손을 잡고 한차례 또 한차례 아츠 공격으로부터 나를 지켜주었지.
+[charslot(slot = "m", name = "avg_4098_vvana_1#10$1")]
+[name="비비아나"]……위치킹이 죽던 그날 밤, 당신도 탑에 있었군요.
+[name="비비아나"]아버지랑 어떻게 만난 건지는 알려주지 않으셨어요.
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="코라"]맞아.
+[name="코라"]그때 나는…… 막 시력을 잃은 상태였어. 반쯤 무너진 계단 밑에 깔려 있었고, 위치킹의 금위군은 쌍둥이의 군대를 쫓아가느라…… 일개 시종인 내 생사 따위는 신경도 쓰지 않았지.
+[name="코라"]그리고 슈투름란트에서 온 부대가 마침 나를 발견했어.
+[name="코라"]그 부대를 이끌던 사람이 베르너였어. 위치킹의 탑에서 실종된 아버지와 형을 찾으러 온 거였지.
+[name="코라"]그렇게 다급한 상황에서도 베르너는 벌벌 떨고 있는 나를 지나치지 않고, 직접 폐허 속에서 나를 꺼내줬어.
+[charslot(slot = "m", name = "avg_4098_vvana_1#1$1")]
+[name="비비아나"]……아버지라면 분명 그렇게 하셨을 거예요.
+[name="비비아나"]저도 그렇게 할 겁니다.
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="코라"]두 사람은 다 좋은 사람이야. 너무나도 좋은 사람.
+[name="코라"]다만 안타깝게도……
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4098_vvana_1#1$1")]
+[MusicVolume(volume=0.4, fadetime=3)]
+[charslot(slot = "l",name = "avg_npc_1113_1#8$1",posfrom = "0,0", posto = "100,0",duration = 0.5,focus="m")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_clothmovement")]
+[charslot(slot = "l",afrom=1,ato=0,duration = 0.5,focus="m")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_4098_vvana_1#4$1")]
+[name="비비아나"]왜 손으로…… 제 귀를 막으시나요?
+[charslot(slot = "m", focus = "n")]
+[name="코라"]비비아나, 겁내지 마.
+[name="코라"]두려워하지 마…… 지나갈 거야. 모든 게 다.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[PlaySound(key="$d_avg_tinnitus")]
+[PlaySound(key="$d_avg_tinnitus",delay=0.1,channel="a")]
+[PlaySound(key="$d_avg_tinnitus",delay=0.2,channel="b")]
+[Background(image="44_g8_towersquare",screenadapt="coverall",duration=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#3$1")]
+[name="에벤홀츠"]무슨 일이…… 일어났지?
+[name="에벤홀츠"]악장이 변했어…… 변했나?
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#6$1")]
+[name="에벤홀츠"]왜 이렇게…… 귀에 거슬리는 거야?!
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="젊은 귀족"]머리…… 내 머리, 누가 공격하고 있나?! 시끄러운 파울비스트를 내 머릿속에 잔뜩 집어넣은 놈이 누구야!
+[name="젊은 귀족"]그리고 이 불꽃, 제기랄, 알록달록한 게 너무 상스러워!
+[name="젊은 귀족"]이게 아니야, 이러면 안 돼. 내가 잘못 연주했나? 아니면 모두가 다 틀렸나?
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#3$1")]
+[name="에벤홀츠"]슈투름란트 씨, 괜찮아?
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[name="젊은 귀족"]거, 건드리지 마! 난 네가 누군지 몰라, 알고 싶지도 않아! 너지, 잘못 연주한 게? 네가 파괴…… 파괴하려는 게 뭐야?
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[name="젊은 귀족"]우웩…… 우웩!
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#6$1")]
+[name="에벤홀츠"]선율이 잘못됐나?
+[name="에벤홀츠"]말이 안 되잖아. 이 많은 사람이 다 같이 틀린다고?
+[name="에벤홀츠"]그냥 단순한 실수라면…… 왜 다들 이렇게 고통스러워하는 거지?
+[charslot]
+[charslot(slot = "m", name = "avg_4011_lessng_1#1$1")]
+[name="레싱"]쌍둥이 여황 탑 쪽을 봐.
+[Dialog]
+[charslot]
+[playMusic(intro="$rebel_intro",key="$rebel_loop", volume=0.6)]
+[PlaySound(key="$d_avg_drkcludsthdr")]
+[Background(image="44_g9_towersquare_arrived",screenadapt="coverall",fadetime=3)]
+[delay(time=5)]
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#9$1",focus="l")]
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="에벤홀츠"]……
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#8$1",focus="l")]
+[name="에벤홀츠"]그자야, 헤르쿤프트쇼른. 내가 잘못 봤을 리가 없어. 그자의 힘이 귈데네스게사츠를 잠식하고 있어!
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="에벤홀츠"]위치킹의 잔당…… 위치킹의 잔당은 어디 있지?! 놈들이 살아있을 줄 알았어. 하하하, 레싱, 싸우러 가자!
+[charslot(slot = "r", name = "avg_4011_lessng_1#2$1",focus="r")]
+[name="레싱"]……너는 아무 영향도 없어?
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#8$1",focus="l")]
+[name="에벤홀츠"]이 정도 먹구름에? 내가 그동안 매일 뭘 견뎌왔는지 알고는 있어?
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#9$1",focus="l")]
+[name="에벤홀츠"]……그것보다 난 귈데네스게사츠가 더 의심스러워.
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#5$1",focus="l")]
+[name="에벤홀츠"]저것 때문에 갑자기 우르티카가 그리워졌어. 너무 이상한데……
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="레싱"]그게 바로 악장의 힘이야.
+[name="레싱"]악장은 라이타니엔을 정의했고…… 라이타니엔 사람들의 미적 기준을 결정했으니까.
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#13$1",focus="l")]
+[name="에벤홀츠"]내가 뭘 그리워하든, 뭘 좋아하든, 뭘 칭송하든, 그건 남이 정해줄 게 아니야.
+[name="에벤홀츠"]다만 악장의 연주를 망치려는 놈들이 그저 소란을 피워서, 탑 위의 여황들이나 츠빌링슈튀르메 밖에 있는 대귀족들의 웃음이나 자아내려는 건 아닐 거 아냐?
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="레싱"]조심해, 왼쪽에 적이야.
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#1$1",focus="l")]
+[name="에벤홀츠"]알려줄 필요 없어. 네 쪽이나 조심해.
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="레싱"]함께 처리하자.
+[Dialog]
+[playsound(key="$d_avg_clothmovementsp")]
+[charslot(slot = "r",posfrom = "0,0", posto = "-200,0",duration = 0.5)]
+[charslot(slot = "l",posfrom = "0,0", posto = "200,0",duration = 0.5)]
+[delay(time=0.3)]
+[charslot(slot = "r",duration = 0.3,afrom=1,ato=0)]
+[charslot(slot = "l",duration = 0.3,afrom=1,ato=0)]
+[delay(time=0.5)]
+[CameraShake(duration=1, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=0.6, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=true)]
+[playsound(key="$d_avg_swrdclave",channel="2")]
+[Blocker(a=0, r=0, g=0, b=0, afrom=0.6, rfrom=0, gfrom=0, bfrom=0, fadetime=0.3, block=true)]
+[playsound(key="$p_skill_darkholespell",channel="1")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="'위치킹의 여음'"]……설마 아직도 의식을 유지한 녀석이 있다니.
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#13$1")]
+[name="에벤홀츠"]이거 고마워서 어쩌나. 너희가 나한테 억지로 집어넣은 쓰레기 덕분에 혼란과 고통은 이미 내 머리와 떼려야 뗄 수 없는 사이가 됐거든.
+[Dialog]
+[charslot(duration=0.5)]
+[playsound(key="$p_skill_darkholeborn")]
+[CameraShake(duration=1.5, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.3, r=0.2, g=0, b=0, fadetime=1.5, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 0.5)]
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#1$1",posfrom = "100,0", posto = "0,0",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="레싱"]……잘했어.
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#13$1",focus="r")]
+[name="에벤홀츠"]너도 제법인데.
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#5$1",focus="r")]
+[name="에벤홀츠"]그것보다, 다른 사람은 고통스러워하는데 넌 왜 평소처럼 멀쩡하지? 레싱 마이어 씨, 설마 너도 리치가 만들어 낸 벽창호가 아닌지 의심되는걸.
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="레싱"]내가 어릴 때부터 받아온 훈련은 이런 상황에 대처하기 위한 것이니까.
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#3$1",focus="r")]
+[name="에벤홀츠"]무슨 상황?
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="레싱"]귈데네스게사츠의 붕괴.
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#3$1",focus="r")]
+[name="에벤홀츠"]……설마 그 진지한 표정으로 농담하는 건 아니지?
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="레싱"]저기 극장 가장자리에…… 피어오르는 금빛이 보여?
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#9$1",focus="r")]
+[name="에벤홀츠"]……
+[name="에벤홀츠"]이렇게 많은 게사츠슈베이터가 한자리에 있는 건 처음 보네.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_armour", volume=1)]
+[charslot(slot = "left", name = "avg_npc_1117_1#2$1",duration = 1)]
+[delay(time=0.5)]
+[charslot(slot = "right", name = "avg_npc_1117_1#2$1",duration = 1)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1")]
+[name="게사츠슈베이터"]여황의 명령이다……
+[name="게사츠슈베이터"]은총대로와 권위대로를 포위하라.
+[name="게사츠슈베이터"]오염된 귈데네스게사츠가 확산되지 못하게 막아라.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_soldiersrun", volume=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="비비아나"]저렇게 많은 게사츠슈베이터가…… 게다가 헌병까지.
+[name="비비아나"]쌍둥이 탑 구역 전체가 곧 봉쇄될 거예요.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1125_1#1$1")]
+[name="'위치킹의 여음'"]하하하하, 소용없어. 늦었어, 이미 늦었다!
+[name="'위치킹의 여음'"]헤르쿤프트쇼른이 돌아왔다. 우리의 유일한 폐하께서 다시 그의 라이타니엔에 강림하셨다!
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#6$1",focus="r")]
+[name="비비아나"]조용히 좀 해 줄래요?
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1125_1#1$1")]
+[PlaySound(key="$d_avg_shdwspllshrt", volume=0.5)]
+[delay(time=1)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[PlaySound(key="$bodyfalldown1", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=8, ystrength=16, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="비비아나"]여기서 떠나죠.
+[charslot(slot = "l", name = "avg_npc_1113_1#2$1",focus="l")]
+[name="코라"]비비아나……
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="비비아나"]코라 씨, 약속해 주세요…… 일단 아무 말도 하지 말고, 아무것도 하지 마세요.
+[name="비비아나"]수가 너무 많아요. 게사츠슈베이터는 챔피언 기사 못지않게 강해요. 브란트 씨 혼자라면 제가 어떻게든 할 수 있을지도 몰라요.
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="코라"]……
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1")]
+[name="'위치킹의 여음'"]왜 말이 없으십니까? 곧 장막이 열릴 텐데 이젠 숨을 필요가 없잖습니까?
+[name="'위치킹의 여음'"]우리의 염원, 우리의 갈망, 우리가 피와 마음을 바쳐 바랐던 이 순간이…… 오고 있습니다!
+[name="'위치킹의 여음'"]얼굴에 왜…… 조금의 기쁨도 보이지 않습니까?
+[name="'위치킹의 여음'"]수……
+[Dialog]
+[PlaySound(key="$d_avg_shdwspllshrt", volume=0.5)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1")]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[PlaySound(key="$bodyfalldown1", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=8, ystrength=16, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="비비아나"]더 이상 말하지 마세요.
+[Dialog]
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="코라"]……
+[charslot(slot = "l", name = "avg_npc_1113_1#8$1",focus="l")]
+[name="코라"]너…… 알고 있었구나.
+[name="코라"]언제부터?
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="비비아나"]아르투리아 씨를 찾아가기 전에 금잔화 골목에 갔었어요.
+[charslot(slot = "right", name = "avg_4098_vvana_1#2$1",focus="r")]
+[name="비비아나"]원래는 다시 그 그림을 보고 싶었거든요. 그림에 그려져 있던…… 과거의 광경이 저게 따뜻함을 느끼게 해줬으니까요.
+[charslot(slot = "right", name = "avg_4098_vvana_1#2$1",focus="r")]
+[name="비비아나"]하지만 저는 아무것도 찾지 못했어요.
+[name="비비아나"]모든 그림이, 금잔화의 그림, 위치킹의 정보가 남은 그림이 전부 사라졌더군요.
+[name="비비아나"]당신이 가져간 거죠?
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="코라"]정보가 있는 것만 가져갈 걸 그랬네.
+[name="코라"]하지만…… 나도 금잔화와 관련된 과거를 놓을 수가 없더구나.
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="비비아나"]……위치킹이 죽던 그날 밤, 당신도 현장에 있었다고 했을 때 제 추측이 맞았다는 확신이 들었어요.
+[name="비비아나"]그때, 당신은 그림 전체를 덮고 있던 오리지늄 물감을 깨끗이 제거하지 않았어요. 완전히 드러나지 않은 그림에는 사실 당신의 모습도 남아 있었을 테죠.
+[name="비비아나"]위치킹의 잔당들이 위치킹의 죽음을 목격한 자들을 쫓고 있었어요.
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="비비아나"]그리고 당신도…… 그중 한 명이었고요.
+[name="비비아나"]하지만 당신은 그 죽은 무고한 사람과는 달라요.
+[name="비비아나"]저는…… 이런 말을 하고 싶지 않았어요. 심지어 묻고 싶지도 않았어요.
+[name="비비아나"]이번만큼은, 왜 제가…… 멋대로 하게 두지 않았나요?
+[charslot(slot = "l", name = "avg_npc_1113_1#8$1",focus="l")]
+[name="코라"]……미안해.
+[name="코라"]정말 미안하다, 비비아나.
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="비비아나"]왜죠?
+[name="비비아나"]왜…… 얻은 지 얼마 안 됐는데, 또 잃어버리게 하는 거죠?
+[Dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1125_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1127_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[name="'위치킹의 여음'"]싸울 때가 왔습니다, 수석님.
+[name="'위치킹의 여음'"]게사츠슈베이터가 모두 도착했습니다. 우리가 어떻게 여기까지 왔는데, 여기서 놈들 손에 죽기에는 너무 분합니다.
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="코라"]……
+[Dialog]
+[charslot(duration=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="극장은 아수라장이 되었다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="조율은 아직도 계속되고 있었지만, 루트비히스 대학 사건에서 증명되었듯, 여황을 제외하면 아무도 헤르쿤프트쇼른의 아츠에 대항할 수 없다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="두 사람…… 그 쌍둥이가 내 작은 사심과 배신을 어떻게 생각할지는……", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="사실 그렇게까지 관심이 없다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_487_1#9$1")]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="에비게그나데"]……귈데네스게사츠가 완전히 변조될 거라고 믿어?
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="그리마흐트"]난 결과에만 관심 있어.
+[charslot(slot = "right", name = "avg_npc_487_1#8$1",focus="r")]
+[name="에비게그나데"]마지막으로 귈데네스게사츠를 각색한 건…… 헤르쿤프트쇼른이야.
+[name="에비게그나데"]하지만 그자도 악장을 망칠 생각은 하지 않았어.
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="그리마흐트"]귈데네스게사츠는 라이타니엔 질서의 기반이다.
+[name="그리마흐트"]개개인의 미적 기준에 대한 느낌, 오리지늄 아츠를 사용하는 습관이나 방법부터 선제후 제도, 황제의 권력에 이르기까지…… 악장이 망하면 이 모든 전제가 뒤집힐 우려가 있어.
+[charslot(slot = "left", name = "avg_npc_1115_1#3$1",focus="l")]
+[name="그리마흐트"]그때가 되면 라이타니엔은 유례없는 변화를 맞이하게 되겠지.
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="에비게그나데"]하지만 변화가…… 변화라고 꼭 나쁜 것만은 아니잖아. 아니면 우리는 태어나지도 못했으니까.
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="그리마흐트"]술식에서 태어난 한 쌍의 아이가 어긴 건 자연의 규칙뿐이다.
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="에비게그나데"]“이건 시작에 불과해.”
+[name="에비게그나데"]당시 프레몬트가 레오폴트한테 이렇게 말했어. 그때 우리는 아직 포대기 속에 있었지만, 너도 나와 마찬가지로 두 사람의 대화를 알아들었다는 걸 알고 있어.
+[name="에비게그나데"]우리는 사명을 갖고 태어났어.
+[name="에비게그나데"]우리는 태어날 때부터 라이타니엔을 바꿀 운명이었어.
+[name="에비게그나데"]레오폴트는 우리가 두려워서 군대를 준비했고, 우리를 이용해 헤르쿤프트쇼른을 처치하고 나면, 뒤에서 우리를 산산조각 내려고 했지.
+[name="에비게그나데"]하지만 결국 우리는 살아남았어.
+[charslot(slot = "left", name = "avg_npc_1115_1#2$1",focus="l")]
+[name="그리마흐트"]……우리가 이 세상에 태어나길 선택한 건 아니지만, 생명을 가진 이상 우리도 살아갈 권리가 있다.
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="에비게그나데"]23년 전, 우린 여기에 서서…… 똑같은 노을, 그리고 다른 혼란스러운 상황을 마주했지.
+[name="에비게그나데"]모두가 기대하는 연주를 시작하기 전, 너는…… 내게 손을 내밀고……
+[charslot(slot = "right", name = "avg_npc_487_1#12$1",focus="r")]
+[name="에비게그나데"]이런 말을 했어……
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="그리마흐트"]이 노을은 누구의 것도 아니다.
+[name="그리마흐트"]헤르쿤프트쇼른 것도, 레오폴트 것도, 그 어느 선제후 것도 아니고, 야망에 불타는 대귀족 것도 아니다.
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="에비게그나데"]맞아.
+[name="에비게그나데"]너는 내 손을 잡고 여기까지 걸어왔어.
+[name="에비게그나데"]선제후들에게 복명할 필요도 없고…… 어떤 이의 지시도 들을 필요가 없었어.
+[name="에비게그나데"]우리는 우리의 운명을 결정했으니까.
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="에비게그나데"]아무래도…… 똑같은 소망을 품은 자가 있는 게 분명해.
+[name="에비게그나데"]사람의 마음이란 건 참 재미있네.
+[name="에비게그나데"]인공적으로 태어난 아이지만, 마음을 갖게 되면서 사람의 욕망이 싹트고.
+[name="에비게그나데"]연약해 보이는 사람일지라도, 단순하기 그지없는 소원에 얽매여, 헤르쿤프트쇼른조차도 할 수 없었던…… 라이타니엔을 다시 정의하는 일을 해낼 수 있을지도 모르니.
+[charslot(slot = "left", name = "avg_npc_1115_1#2$1",focus="l")]
+[name="그리마흐트"]너……
+[charslot(slot = "left", name = "avg_npc_1115_1#8$1",focus="l")]
+[name="그리마흐트"]……
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="에비게그나데"]왜 코라를 방임했냐고 묻고 싶은 거지?
+[name="에비게그나데"]그 일에 있어서는 너도 마찬가지 아니야? 우리의 마음은 서로 통해. 비록 오랫동안 이렇게 둘이서…… 함께 노을을 보지 않았어도.
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="에비게그나데"]그럼 함께 조금만 더 보자. 오래 걸리지는 않아.
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="그리마흐트"]……알았어.
+[charslot(slot = "right", name = "avg_npc_487_1#8$1",focus="r")]
+[name="에비게그나데"]미래는 어떤 모습으로 변할까?
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="에비게그나데"]힐데가르트, 너…… 계속 나와 함께 봐줄래?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="44_g9_towersquare_arrived",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1",duration=0.5)]
+[delay(time=1)]
+[name="게사츠슈베이터"]코라는?
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="비비아나"]……
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1")]
+[name="게사츠슈베이터"]비비아나……?
+[Dialog]
+[charslot(duration=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playsound(key="$d_avg_mgcbttlfld", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=0.4, fadetime=2,channel="a")]
+[playsound(key="$d_avg_swrdbzz",volume=0.6)]
+[Subtitle(text="브란트의 목소리가 들린다. 그는 나머지 잔당과 싸우고 있다. 그의 능력이라면 내 주변 사람들은 얼마 버티지 못하겠지.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="하지만 브란트보다 더 빠른 사람이 있다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="비비아나는 입을 다물고 있었지만, 그녀의 아츠는 점점 가까워지고 있다. 나는 커다란 그림자가 발등을 뒤덮는 걸 느꼈고, 그 그림자는 야밤의 폭풍처럼 차가웠다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[StopSound(channel="a", fadetime=3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1127_1#1$1")]
+[name="'위치킹의 여음'"]수석님, 비키세요!
+[name="'위치킹의 여음'"]수석님……
+[Dialog]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=5, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_knife")]
+[Blocker(a=0.2, r=0.2, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[name="'위치킹의 여음'"]내 아츠가 왜 거꾸로…… 나를 관통……
+[name="'위치킹의 여음'"]이건…… 조율? 수석님, 당신……
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="코라"]미안해, 아멜리에. 말했다시피, 내 선택은 변한 적이 없어.
+[charslot(slot = "m", name = "avg_npc_1127_1#1$1")]
+[name="'위치킹의 여음'"]아…… 하하…… 솔직히, 놀랍지도 않아요. 우리는 평생 사람들을 배신했으니까. 아마도 너무 많이 배신했나 보군요.
+[name="'위치킹의 여음'"]헤르쿤프트쇼른의 영원한 탑이…… 곧…… 저는 계단 위에서 기다리겠습니다……
+[name="'위치킹의 여음'"]……수석님.
+[Dialog]
+[playsound(key="$d_avg_bodyxplde")]
+[charslot(duration=0.5)]
+[delay(time=1)]
+아멜리에는 내 앞에서 아마 시커먼 연기가 됐을 것이다. 이건 위치킹 잔당의 관례이고, 그들은 자신의 육체가 헤르쿤프트쇼른의 시선이 닿지 않는 땅에 남는 걸 원치 않는다.
+[charslot]
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]그녀는 죽었어요.
+[name="비비아나"]대부분 사람이 죽었어요. 아직 저항하는 사람들도 얼마 버티지 못할 거예요.
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="코라"]……나도 그렇겠지.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]당신, 헤르쿤프트쇼른의 신도를 속였군요.
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="코라"]맞아. 위치킹의 잔당 '수석'이 되어 그들에게 미끼와 희망을 던져주고, 스스로 심연에 발을 들여놓도록 유인한 게 여황이 내게 준 임무야.
+[name="코라"]23년 전에, 위치킹에 관한 모든 것, 그 오랜 악몽, 뿌리 박힌 공포, 의미 없는 야망은 원래 이 국가에서 완전히 사라져야 했어.
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="비비아나"]그런데 왜 '조율'은 계속되고 있나요?
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="코라"]그건……
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="코라"]베르너가 말려들었으니까.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]여황이 제 아버지를 죽게 했나요?
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="코라"]……난 베르너를 설득했었어. 계속.
+[name="코라"]내가 다른 곳으로 옮기게 귈데네스게사츠 사본을 달라고 했어. 하지만 베르너는 위치킹의 잔당이 놀라 미끼를 물지 않을까 봐 걱정했지.
+[name="코라"]그리고 브란트에게 빨리 와달라 하고, 습격 현장에서 구해달라고 하면 안 되냐고 물었는데…… 그것도 거절했어.
+[name="코라"]베르너는 병이 이미 심각해져서, 죽음이 자기를 루신다 곁으로 데려다주길 기다렸던 거야. 고작 며칠 더 살기 위해 슈투름란트와…… 너를 끌어들일 가치는 없다고 말이야.
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="코라"]하지만 몇 시간만 더 버텼으면…… 아니면 아주 조금이라도 더 버텼으면 널 볼 수 있었을 텐데.
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="비비아나"]……
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="코라"]베르너는 너무 단호했고 너무 쉽게 포기해서 나도 어쩔 수가 없었어.
+[name="코라"]베르너가 죽은 그날, 나는 귈데네스게사츠 사본을 손에 넣었어. 그리고 네가 슈투름란트에 돌아와 이미 정해진, 베르너와 비슷한 길을 걷기 시작한 걸 보았지……
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="코라"]그래서 난 마음속에서 오랫동안 고민했던 결정을 내렸어.
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="비비아나"]……귈데네스게사츠.
+[name="비비아나"]당신은 헤르쿤프트쇼른의 술식으로 악장을 조율했죠. 당신은 지금 악장을 파괴하고 있어요. 다르게 말하면, 악장이 모든 라이타니엔 사람의 마음속에 가한 아츠의 힘을 파괴하고 있어요.
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="코라"]다들 운명은 끝이 보이지 않는 나선계단이라고 하지 않았어?
+[name="코라"]귈데네스게사츠는 라이타니엔을 가둬버린 나선계단 그 자체야.
+[charslot(slot = "m", name = "avg_npc_1113_1#4$1")]
+[name="코라"]천 년 전의 의지가 만들어낸 계단이 아무리 화려하고 아름답다고 해도, 그 내부는 이미 다 썩어 문드러졌어.
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="코라"]오랫동안 나는 거기에 갇힌 사람들을 너무나 많이 봐왔어. 엠마누엘, 게르하르트, 프리다, 로리스…… 그리고 브란트까지, 모두가 운명에 시달렸지만, 정작 그걸 바꿀 힘은 없었지.
+[name="코라"]위치킹의 탑이 무너지고 더 많은 고탑이 세워졌어. 탑 아래의 사람은 죽을힘을 다해 위로 올라가려 하고, 탑 위의 사람은 여전히 더 높은 탑으로 올라가고 싶어 해.
+[name="코라"]사람들이 왔다가 떠나기를 반복했고, 올라갔다가 다시 또 내려와. 원한은 되풀이되고, 싸움은 영원히 멈추질 않아. 고통, 후회, 유감이…… 세대를 거치면서 계속 라이타니엔 사람의 마음을 차지하게 돼.
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="코라"]너도 마찬가지야, 비비아나. 여황 탑에 들어가면 넌 여황이 원하는 목소리밖에 낼 수 없어.
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="코라"]나에게는 '보여'…… 난 이미 봤어. 너는 네 아버지처럼 될 거야. 원치 않는 삶에서 평생을 헛되이 보내게 될 거라고.
+[name="코라"]귈데네스게사츠의 곡조가 변하지 않으면 라이타니엔은 영원히 바뀌지 않아. 그리고 미래에는 더 많은 참극이 일어나겠지.
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="코라"]이 시대에 뒤떨어진 악장에서부터 모두가 해방되지 않는 한.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]당신은 우리의 운명을 바꾸고 싶다고 말했지만, 누가 행운아가 되고 누가 희생자가 될지 당신이 어떻게 결정하죠?
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="코라"]난 결정할 수 없어. 자격도 없고. 그럴 자격을 가진 사람은 없어.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]당신은 낡은 질서를 무너뜨리려고 하지만, 그렇다면 새로운 질서는 어디 있죠? 그게 반드시 어제나 오늘보다 더 좋다는 보장은 있나요?
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="코라"]나도 모르겠어. 미래는 나 같은 사람의 손에 달린 게 아니니까.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]그럼 그 계획 속에 죽어간 사람들…… 우리 앞에 있는 이 사람들, 그들이 받는 고통은 당신에겐 보이지 않나요?
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="코라"]……다 들려. 주위의 외침, 죽은 자의 탄식…… 다 내 마음속에 있어. 내가 죽기 전까지 한순간도 멈추진 않겠지.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]그런데 왜 당신이 그 모든 걸 바꾸는 사람이 되려고 하나요?
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="코라"]나라면…… 할 수 있으니까.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]그저, 할 수 있기 때문인가요?
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="코라"]누군가는 해야 하잖아. 내 목숨은 애초에 보잘 것도 없어. 아주 작은 빛이 남아있지만…… 그것마저도 완전히 내 것이 아니야. 그 작은 빛이 꺼지지 않기 위해서라면 난 뭐든지 할 수 있어.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="비비아나"]당신의 잔혹함, 오만함과 무책임에는…… 동의할 수 없어요.
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="비비아나"]그렇기에 저는, 반드시 당신을 막을 거예요.
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="코라"]그래.
+[name="코라"]재난은 이미 일어났어. 내 손에서. 내가 수많은 사람을 죽게 했고, 아직도 많은 사람들이 나 때문에 죽음으로 향하고 있지.
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="비비아나"]제발 멈춰주세요.
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="코라"]그럴 수 없어. 이날을 위해 난 이미……
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="비비아나"]제가 가장 동의할 수 없는 점이…… 뭔지 아세요?
+[charslot(slot = "m", name = "avg_4098_vvana_1#3$1")]
+[name="비비아나"]당신은 정말……
+[charslot(slot = "m", name = "avg_4098_vvana_1#5$1")]
+[name="비비아나"]……너무 잔혹해요.
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[playsound(key="$d_avg_mgcbttlfld", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=0.4, fadetime=2,channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1",duration=0.5)]
+[delay(time=1)]
+[CameraShake(duration=1, fadeout=true, xstrength=25, ystrength=25, vibrato=30, randomness=90, block=false)]
+[name="게사츠슈베이터"]안 돼……!
+[multiline(name="게사츠슈베이터")] 비비아나……
+[CameraShake(duration=0.4, fadeout=true, xstrength=30, ystrength=30, vibrato=30, randomness=90, block=false)]
+[multiline(name="게사츠슈베이터")] 코라, 코라!
+[Dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="44_i10",screenadapt="coverall",xScale=1.1, yScale=1.1,x=-30)]
+[ImageTween( xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1,  xTo=0, duration=45)]
+[playMusic(intro="$storyendjp_intro",key="$storyendjp_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="코라"]알아, 나도 알아.
+[name="코라"]너는 여리지만, 의지만은 강한 아이야. 너는 다른 사람의 고통을 앞에 두고 등을 돌리지 못해.
+[name="코라"]너도 브란트를 힘들게 하고 싶지 않겠지. 지금, 이 순간까지도 너는 다른 사람을 배려하고 있잖아.
+[name="코라"]그리고…… 난 무척 기쁘단다. 마지막에 나를 죽인 사람이 내가 가장 사랑하는 사람이라서.
+[name="비비아나"]……죄송해요.
+[name="코라"]오늘 구름은 어때, 아름답니?
+[name="비비아나"]……
+[name="코라"]비비아나, 두려워하지 마.
+[name="코라"]지나갈 거야, 뭐든지 다……
+[Dialog]
+[delay(time=1)]
+그 아이는 날 안고 있다.
+내 등에 닿은 아이의 손이 계속 떨리는 게 느껴진다.
+나는 예전처럼 아이를 껴안고 위로의 말을 해주고 싶었다. 실제로 그렇게 했을지도 모른다. 출혈이 너무 심해 몸의 감각이 점점 사라지고 있지만, 나는 많은 말을 했다.
+나는 그 호수 같은 눈망울에 비가 내리기 시작했다는 걸 알고 있고, 그 상냥한 얼굴이 고통을 견디며 주름이 잔뜩 잡혀 있을 거란 것도 알고 있다.
+아마 그녀도 방금 알았을 거다. 사실 나는 그녀의 부모를 두 눈으로 본 적이 없다.
+그 둘의 모습, 그리고 금잔화 골목에서 어떻게 만나 사랑을 나눴는지는 모두 베르너의 설명을 듣고 상상한 것이다.
+왜냐하면 베두니엔에 온 첫날부터 나는 그 어두컴컴한 탑에 들어갔고, 탑을 나올 때는 이미 앞을 볼 수 없게 되었으니까.
+내가 느낄 수 있었던 삶의 아름다움은 모두 브란트나, 베르너, 루신다가 준 것이다.
+유일하게…… 단 한 가지만은 달랐다.
+그날 한 아이가 베르너의 손에 이끌려 고탑에서 나와 내 앞에 다가왔다. 그 겁에 질린 부드러운 손을 만졌을 때, 아이의 눈물을 닦아주었을 때……
+나는 확신했다.
+나는 그 아이를 사랑한다. 단지 그 두 사람의 아이라는 이유 때문이 아니다.
+나는 아이로부터 우리 중 아무도 가지지 않은 것을 봤기 때문이다……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="코라"]너는 더 좋은 삶을 살 자격이 있어, 비비아나…… 정말 그런 삶이 있다면……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[playsound(key="$bodyfalldown1", volume=0.6)]
+[delay(time=1)]
+[background]
+[gridbg(imagegroup="44_g13_afterglow_L1/44_g13_afterglow_R1/44_g13_afterglow_L2/44_g13_afterglow_R2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720",x=-640,fadetime=0)]
+[largebgtween(duration = 60,yFrom = 600, yTo = 360,block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="23년 전의 그날, 아래서부터 전해오는 죽고 죽이는 소리를 들으며 나는 탑 꼭대기의 공명 파이프를 건드렸다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그냥 가볍게 밀었을 뿐이다…… 누구든 할 수 있는 것처럼.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그리고 헤르쿤프트쇼른의 방어 술식에는 작은 빈틈이 생겼다. 그처럼 오만한 사람조차도 일개 하녀에게 감히 자신을 배신할 배짱이 있으리라 상상하지도 못했을 것이다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그리고 오늘, 나는 쌍둥이 여황 탑 아래에 있는 공명 파이프를 건드렸다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="다만, 위치킹이 남긴 조율기구로 그가 귈데네스게사츠 사본에 남긴 술식에 따라 살짝 돌려만 놓고, 나의 하찮은 오리지늄 아츠로 작동시켰을 뿐이다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="사람의 인생은 너무 짧다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="아무것도 하지 않는다면 그저 고탑을 지나가는 구름처럼 아무런 흔적도 남길 수 없다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="하지만 평생 바람에 휩쓸려 자신의 행선지조차 정하지 못하는 그런 사람은 없어야 한다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="많은 사람들이 변화를 갈망하지만, 나는 단지 먼저 손을 뻗었을 뿐이다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="앞으로 모든 착한 이들이, 내가 사랑하는 모든 사람이……", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="……진정한 내일을 가질 수 있기를.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=2, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[gridbg]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

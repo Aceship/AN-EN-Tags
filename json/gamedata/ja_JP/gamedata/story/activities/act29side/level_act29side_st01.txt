@@ -1,0 +1,793 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Background(image="28_g9_auditorium",screenadapt="coverall")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=2)]
+シュトルム領管区で過ごす夜は、たいてい風雨が伴となる。一族に伝わる高塔は、あまりにも古いせいで、術師たちがどれほど努力をしても、階段の隙間の苔を全て取り除くことはできない。
+彼はツヴィリングトゥルムを思い出した。螺旋を描く角状の黒い高塔が、いまだ双塔に取って代わられていなかった時代、あの雄大な都市は今とは違う名だった。
+秋の小路はいつも黄金色に輝き、若木のような時代の彼は、その中を歩いた。胸に抱くはアーツユニットや短刀ではなく、数冊の詩集と、自由への希望だけであった。
+今は違う。嵐が束の間の休息をとるときであっても、塔の頂は恐ろしいほどに寒い。雨のように降り注ぐ月光は帳を抜け、あらゆる期待をその場に釘付けにする。
+なんと惜しいことだろうか、彼は思う。
+あのカレンデュラがもう一度咲き誇る姿を、彼は永遠に見られないのだ。
+[Dialog]
+[Delay(time=2)]
+1100年 リターニア北部辺境 シュトルム領管区首府フェルス
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$warm_intro",key="$warm_loop", volume=0.6)]
+[PlaySound(key="$d_avg_applause", volume=0.6)]
+[Delay(time=2)]
+[charslot(slot = "r",posfrom = "0,0", posto = "-30,0",duration = 0)]
+[charslot(slot = "left", name = "avg_npc_493_1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_492_1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left",focus="l")]
+[name="年長の貴族"]ブラボー、大変素晴らしい！
+[name="年長の貴族"]なんとよどみない演奏だろうか、まるで月明かりが私の頬をなでているようだ――エーリヒ殿、どう思われますかな？
+[charslot(slot = "right",focus="right")]
+[name="若い貴族"]ミス・マルタ、あなたはなぜ私にそのような態度を取るのです？
+[charslot(slot = "left",focus="l")]
+[name="年長の貴族"]エーリヒ殿、人違いをしていますよ。あなたの元婚約者はここにはいません。
+[charslot(slot = "right",focus="right")]
+[name="若い貴族"]あなたの冷酷な表情は私の心を深く傷付けます。けれどあなたの美貌は私の呼吸をまた奪っていくのです。決して忘れることなどできない……
+[charslot(slot = "left",focus="l")]
+[name="年長の貴族"]私の腰から手をどかしていただけますかな。すでに何人かが我々の方を見ていますよ。
+[Dialog]
+[charslot(slot = "right",focus="all")]
+[delay(time=0.3)]
+[CameraShake(duration=0.3, xstrength=10, ystrength=5, vibrato=5, randomness=90, fadeout=false, block=false)]
+[charslot(slot = "r",posfrom = "-30,0", posto = "0,0",duration = 0.5)]
+[PlaySound(key="$d_avg_clothmovement")]
+[delay(time=1)]
+[charslot(slot = "right",focus="right")]
+[name="若い貴族"]も、申し訳ございません！　曲は終わりましたか？　気付きませんでした。
+[name="若い貴族"]どうしてか、また昨年の秋に戻ったような感覚に陥ったのです。マルタが私から去っていったあの日に。悲しみで息ができなくなりそうです。
+[charslot(slot = "left",focus="l")]
+[name="年長の貴族"]気晴らしにもっと外へ出た方がいいでしょう。このようなコンサートは、シュトルム領では滅多に開かれませんが、ツヴィリングトゥルムへ行けばそうではありません。
+[charslot(slot = "right",focus="right")]
+[name="若い貴族"]はぁ、恐らく私は今年の女帝の祭典には行けないでしょう。
+[charslot(slot = "left",focus="l")]
+[name="年長の貴族"]たしかエーリヒ殿の遠縁の叔父様は選帝侯の宮廷仕えでいらっしゃいましたね。もしかして何か知らせを得たので？　ウェルナー選帝侯は……
+[charslot(slot = "right",focus="right")]
+[name="若い貴族"]いえ、確かな情報は何もありません。
+[name="若い貴族"]ただここ数ヶ月、選帝侯はご自身の高塔からほとんど離れていないようです。医師の訪問は減り、他の一族を代表する術師の訪問はむしろますます増えているとか。
+[charslot(slot = "left",focus="l")]
+[name="年長の貴族"]どうやらここしばらくは我々もシュトルム領を離れることができないようですね。女帝の祭典は毎年行われますが、新たな領主の初のお目見えはそうではないですから。
+[charslot(slot = "right",focus="right")]
+[name="若い貴族"]そんな恐れ多いことを考えるなんて、私にはとても。どうかご容赦ください。それならば私はマルタのことを、もっと思っていたいです。
+[name="若い貴族"]ミス・アルトリアがいて幸いでした。
+[name="若い貴族"]彼女のチェロの音の中でだけ、私はこうして日々の耐え難い現実から抜け出し、一息つけるのですから。
+[charslot(slot = "left",focus="l")]
+[name="年長の貴族"]おっしゃる通りです。まったく、今日が最後のコンサートであるのが残念ですね。
+[charslot(slot = "right",focus="right")]
+[name="若い貴族"]ではもうしばらくの間じっくりと浸らせてください、少しで構いません。何せ、嵐がまたすぐにやってくるのですから。
+[Dialog]
+[charslot(duration=1)]
+[PlaySound(key="$d_avg_applause", volume=0.8)]
+[Dialog]
+[delay(time=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[stopmusic(fadetime=3)]
+[delay(time=1)]
+[Background(image="34_g5_noblehall",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[PlaySound(key="$d_gen_thunders_amb",volume=0.4)]
+[Blocker(a=0.4, r=1, g=1, b=1, fadetime=0.2, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_069",duration=0.5,bstart=0.2,bend=0.6)]
+[delay(time=1)]
+[name="貴族の侍従"]――
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_1135_1#1$1",duration=1)]
+[delay(time=2)]
+[name="高塔術師"]ここで何をしている？
+[name="高塔術師"]侍従長から何をすべきか聞いていないのか？　夕食の配膳が終わったなら、すぐに地下室に戻れ。選帝侯のお休みの邪魔をするな。
+[charslot(slot="m",name="avg_npc_069",bstart=0.2,bend=0.6)]
+[name="貴族の侍従"]……
+[charslot(slot = "m", focus = "n")]
+叱責を受けたにも関わらず、侍従は反応を示すことはなかった。
+[charslot(duration=1)]
+[playsound(key="$d_gen_walk_n")]
+彼女はただぼんやりと前へ進む。階段を伝い、扉の外へ向かって、まるで魂を失った抜け殻のように、外の雷鳴に従って漫然と行動する。
+[Dialog]
+[delay(time=1)]
+[playMusic(intro="$plot_intro",key="$plot_loop", volume=0.6)]
+[CameraShake(duration=0.5, xstrength=5, ystrength=10, vibrato=40, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.6, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[charslot(slot="m",name="avg_npc_069",bstart=0.2,bend=0.5)]
+[PlaySound(key="$d_gen_thunders_amb")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[charslot(slot="m",name="avg_npc_069",bstart=0.5,bend=0.9)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[charslot(slot="m",name="avg_npc_069",bstart=0.2,bend=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]待て。
+[multiline(name="高塔術師")]お前の手……
+[multiline(name="高塔術師")]血？
+[name="高塔術師"]選帝侯は……
+[name="高塔術師"]……
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="高塔術師"]護衛隊、早く！
+[PlaySound(key="$d_gen_soldiersrun")]
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="bg_snowconutryinside",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[playMusic(key="$saferoom_loop", volume=0.6)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_068",duration=1)]
+[delay(time=2)]
+[name="雑貨屋店主"]はぁ、なんでこうも天気がコロコロ変わるんだろうな。これじゃ、仕入れたばっかりの薪がまたしけっちまう。
+[name="雑貨屋店主"]ハンク、まだ火はつかないのか！？　裏庭に行くだけで、いつまでかかってるんだよ。またアーツユニットを持ってくの忘れたか――
+[Dialog]
+[charslot]
+[name="？？？"]……あの、蝋燭をもう一本頂けますか？
+[charslot(slot="m",name="avg_npc_068")]
+[name="雑貨屋店主"]どうぞ！　ドロステさん。また昨日みたいに、ここで人を待ってるんですか？
+[Dialog]
+[charslot]
+[delay(time=1)]
+[charslot(slot="m",name="avg_4098_vvana_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="ヴィヴィアナ"]ええ。
+[charslot(slot="m",name="avg_npc_068")]
+[name="雑貨屋店主"]今晩は風が特に強い。上の階に戻ってください、部屋の中の方が暖かいですよ。
+[charslot(slot="m",name="avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]どうぞお構いなく。長くこちらに戻っていませんでしたが……私の体は、まだこの場所の風や雨を忘れていませんから。
+[charslot(slot="m",name="avg_npc_068")]
+[name="雑貨屋店主"]ハハ、そうでした、あなたもシュトルム領出身でしたね。
+[name="雑貨屋店主"]数年前に新聞であなたの報道を読んだ時は、驚きましたよ。この辺りで育った子供なら、全員何かしら印象はあるはずなんですがね。
+[charslot(slot="m",name="avg_4098_vvana_1#7$1")]
+[name="ヴィヴィアナ"]覚えていなくても当然です。私は普通で、特別な人間ではありませんから。ずっとそうです。
+[charslot(slot="m",name="avg_npc_068")]
+[name="雑貨屋店主"]またまた、謙遜しちゃって。
+[name="雑貨屋店主"]あなたがうちの店に入って来た時、新聞もたまには本当のことを書くんだって、初めて思ったんです。あなたは確かにノーブルでエレガントだ。まるで高塔から下りてきた大貴族みたいにね。
+[charslot(slot="m",name="avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]ここ数日のご厚意に感謝します、ミュラーさん。特に……
+[charslot(slot="m",name="avg_npc_068")]
+[name="雑貨屋店主"]よしてくださいって。大丈夫です、あなたがここにいることは言いふらしやしませんよ。たとえ引退しても、メディアがしつこく追っかけてきてるのは知ってます。
+[name="雑貨屋店主"]前向きに考えましょう。ここはリターニアなんです。見出しを飾ることができるのはお貴族様の重大な出来事だけですよ。
+[charslot(slot="m",name="avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]……そうかもしれませんね。
+[charslot(slot="m",name="avg_npc_068")]
+[name="雑貨屋店主"]おっといけない。また自分の話に夢中になって、お時間を取らせてしまいました。先に蝋燭を渡しておきますね。他に何か必要なものはありますか？
+[charslot(slot="m",name="avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]あの……他に何かお借りできる本はありますか？
+[charslot(slot="m",name="avg_npc_068")]
+[name="雑貨屋店主"]前のあの小説はもう読み終えたんですか？　そうですね、次は何がいいでしょうか？　画集が二冊と、歴史小説が一冊、それと詩集が五、六冊がありますよ。
+[name="雑貨屋店主"]やはり詩集の方がお好きですよね？　ウェルナー選帝侯はよく民衆の間で詩会を開いていましてね、この詩人たちはどなたも彼のお客だそうですよ。
+[charslot(slot="m",name="avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]いいえ、歴史小説の方にしていただけますか。
+[name="ヴィヴィアナ"]こちらに戻ってきてから、今のところ、どんな詩歌も読む気にはなれないのです。
+[charslot(slot="m",name="avg_npc_068")]
+[PlaySound(key="$book_close")]
+[name="雑貨屋店主"]そうですか。ではこの小説をどうぞ、返すのはいつでも大丈夫ですから。ゆっくり読んでください。では私はこの辺で。
+[name="雑貨屋店主"]ハンク、ハンク――あの小僧、一体どこでサボってるんだ！
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.5)]
+[charslot(duration=1)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_4098_vvana_1#7$1",duration=1)]
+[delay(time=1.5)]
+[name="ヴィヴィアナ"]……『余燼』。
+[charslot(slot = "m", focus = "n")]
+[name="？？？"]それなりに面白い物語よ。まあ……本当の歴史とはかけ離れているけれど。
+[charslot(slot="m",name="avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]ほかにもお客さんがいたのですね。ご機嫌よう。
+[charslot(slot="m",name="avg_npc_1113_1#1$1",bstart=0.2,bend=0.6)]
+[name="？？？"]こんばんは。
+[charslot(slot="m",name="avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]あなたは……
+[charslot(slot="m",name="avg_npc_1113_1#1$1",bstart=0.2,bend=0.6)]
+[name="？？？"]コーラ。コーラ・レーヴェンシュタイン。
+[charslot(slot="m",name="avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]レーヴェンシュタインさんもこの本を読まれたことが？
+[Dialog]
+[charslot(slot="m",name="avg_npc_1113_1#1$1",bstart=0.2,bend=0.6)]
+[charslot(slot="m",name="avg_npc_1113_1#1$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_1113_1#2$1")]
+[name="コーラ"]残念ながら、その小説を改編したオペラしか聞いたことがないの。それが出版された年には、私はすでに文字を鑑賞する能力を失っていたから。
+[charslot(slot="m",name="avg_4098_vvana_1#4$1")]
+[name="ヴィヴィアナ"]あなたの目……申し訳ありません、気付きませんでした。
+[charslot(slot="m",name="avg_npc_1113_1#10$1")]
+[name="コーラ"]二十年以上も経っているから、とっくに慣れたわ。それにこんな日になると蝋燭や薪を節約できるのよ。ねえ、もっと近くに座ってもいいかしら？
+[charslot(slot="m",name="avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]どうぞ。
+[Dialog]
+[charslot]
+[charslot(slot="r",name="avg_4098_vvana_1#1$1")]
+[charslot(slot="left",name="avg_npc_1113_1#10$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="left",name="avg_npc_1113_1#10$1",focus="l")]
+[name="コーラ"]なんて暖かい蝋燭の火かしら。
+[charslot(slot="r",name="avg_4098_vvana_1#10$1",focus="r")]
+[name="ヴィヴィアナ"]外は雨が降っているのですか？　お召し物が濡れています。
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]ええ。道を急いでいて、傘を差すのを忘れていたわね。
+[charslot(slot="r",name="avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]失礼ですが、予想が誤っていないのであれば、もしや私を訪ねてこちらに？
+[charslot(slot="left",name="avg_npc_1113_1#9$1",focus="l")]
+[name="コーラ"]ここ何年も、このお店は景気が悪いの……いえ、正確にはシュトルム領全体がほとんど変わっていないというべきね。
+[name="コーラ"]首都から遠く、天災が頻発し、雨が降り続いている。特別な時期でもなければ、この場所が外からこれほど多くの人を引きつけるのは難しいでしょう。
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]たしか、この位置のそばにある窓からは、選帝侯の居住塔がある移動区画が見えたわね？　彼はあなたにもっと隠れやすい場所を選んであげるべきだったわ。
+[charslot(slot="r",name="avg_4098_vvana_1#4$1",focus="r")]
+[name="ヴィヴィアナ"]……
+[name="ヴィヴィアナ"]つまり、彼があなたを遣わしたのですね……
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]私の手を握って。
+[charslot(slot="r",name="avg_4098_vvana_1#10$1",focus="r")]
+[name="ヴィヴィアナ"]ええと？
+[stopmusic(fadetime=2)]
+[charslot(slot="left",name="avg_npc_1113_1#3$1",focus="l")]
+[name="コーラ"]耳を傾けてみて。
+[Dialog]
+[charslot(slot = "m", focus = "n")]
+[MusicVolume(volume=0.2, fadetime=2)]
+[PlaySound(key="$d_avg_wind")]
+[charslot(slot="r",name="avg_4098_vvana_1#5$1",focus="r")]
+[delay(time=1.5)]
+[name="ヴィヴィアナ"]人が……たくさん、外の風の中に隠れています。
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]ヴィヴィアナ、手元の蝋燭の火を制御できるのよね？
+[charslot(slot="r",name="avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]ええ。
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]準備してちょうだい――
+[charslot(slot="left",name="avg_npc_1113_1#4$1",focus="l")]
+[name="コーラ"]まずは「火を消して」。
+[Dialog]
+[PlaySound(key="$d_avg_cndlextngsh", volume=0.6)]
+[stopmusic(fadetime=1)]
+[charslot(slot = "m", focus = "n")]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[CameraShake(duration=0.5,xstrength=22,ystrength=13,vibrato=30,randomness=90,fadeout=true,block=false)]
+[PlaySound(key="$d_avg_windowbreak",volume=0.7)]
+蝋燭の光が暗くなったその刹那、雑貨屋の窓がすべて割れた。
+[PlayMusic(intro="$snowmonster_intro", key="$snowmonster_loop", volume=0.6)]
+[PlaySound(key="$d_avg_firemagic")]
+[PlaySound(key="$d_avg_magic_2",channel="2",delay=0.5)]
+それと同時に屋外の雨風と共になだれ込んできたのは、様々な効果を持つアーツだ。
+ヴィヴィアナはコーラの手を握りながら、自分がまるで荒れ狂う波の中心に浮かぶ小舟にいるように感じた。
+[PlaySound(key="$d_avg_watermagic_1")]
+[PlaySound(key="$b_char_defboost",channel="2",delay=1)]
+[CameraShake(duration=2,xstrength=12,ystrength=8,vibrato=20,randomness=90,fadeout=true,block=false)]
+アーツが繰り返し彼女たちに勢いよく注がれ、この小さな店先をほとんど粉々にしたが、二人とも傷一つなかった。
+[PlaySound(key="$d_avg_doorbreak",volume=0.7)]
+[PlaySound(key="$d_gen_soldiersrun",volume=0.5)]
+足音が屋内で響く。
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]向こうは私たちがどこにいるか見えていないから、近づいて探るしかないわ。彼らの位置が分かるかしら？
+[charslot(slot="r",name="avg_4098_vvana_1#6$1",focus="r")]
+[name="ヴィヴィアナ"]……はっきりと。私が対処します。
+[Dialog]
+[PlaySound(key="$d_avg_cndlbrn", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+燭火がヴィヴィアナの手の平で再び灯る。
+[PlaySound(key="$d_avg_shdwspllshrt",volume=0.7)]
+影は命を吹き込まれたかのように、廃墟の中から手足を伸ばし、崩れた周囲の壁をすり抜け、こちらに近付こうとしていた術師たちを地面に押さえつけた。
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$bodyfalldown1", volume=0.5)]
+[PlaySound(key="$bodyfalldown2", volume=0.5,channel="a",delay=0.2)]
+[delay(time=1.5)]
+[charslot(slot="left",name="avg_npc_1113_1#9$1",focus="l")]
+[name="コーラ"]……七人、八人。
+[name="コーラ"]九人。
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]これでひとまずは安全ね。
+[charslot(slot="r",name="avg_4098_vvana_1#1$1",focus="r")]
+[name="ヴィヴィアナ"]あなたのおかげです。
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]倒したのはあなたよ。私はただ彼らが放ったアーツを少し「調律」しただけ。
+[name="コーラ"]さあ、さらに多くの刺客が来る前に、私をここから連れて行ってくれるかしら。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="34_g4_swamp_n",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playMusic(intro="$darkness01_intro",key="$darkness01_loop", volume=0.6)]
+[charslot(slot="r",name="avg_4098_vvana_1#10$1",duration=1)]
+[charslot(slot="left",name="avg_npc_1113_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot="r",name="avg_4098_vvana_1#10$1",focus="r")]
+[name="ヴィヴィアナ"]先ほどのあの人たちは……
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]彼らも私と同じで、あなたを訪ねてきたのよ。
+[charslot(slot="r",name="avg_4098_vvana_1#4$1",focus="r")]
+[name="ヴィヴィアナ"]このまま私が離れて、ミュラーさんとハンクさんたちに危険は及びませんか？
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]あの優しい店主さんは裏庭に行って難を逃れたわ。後で私の仲間が保護して他の場所に連れて行くから安心して。
+[charslot(slot="left",name="avg_npc_1113_1#9$1",focus="l")]
+[name="コーラ"]お手伝いさんは……あの人たちを呼び寄せたのは彼なのよ。悪い人と関わったら、報酬が数個の源石錐だけで済まないことを知っておくべきだったわね。
+[charslot(slot="r",name="avg_4098_vvana_1#10$1",focus="r")]
+[name="ヴィヴィアナ"]私は自分がそこまで価値のあるターゲットだとは思いません。
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]それはまた後で説明するわ。その前に、ヴィヴィアナ……
+[charslot(slot="left",name="avg_npc_1113_1#10$1",focus="l")]
+[name="コーラ"]あなたのことを、よく「見せて」ちょうだい？
+[charslot(slot="r",name="avg_4098_vvana_1#4$1",focus="r")]
+[name="ヴィヴィアナ"]レーヴェンシュタインさん……
+[Dialog]
+[charslot(duration=1)]
+[PlaySound(key="$d_avg_clothmovement",volume=0.6)]
+女性の美しい顔立ちは見知らぬものだったが、彼女の表情と声はいずれも親しみを感じさせる。ヴィヴィアナは、自分が相手の要求を断る気になれないことに気付いた。
+コーラは両手を上げ、ヴィヴィアナの顔を探るように触れ、何度か優しくなでた。彼女の手つきはこれ以上なく繊細で、他に類がないほど貴重な楽器を扱うかのようだった。
+その直後、女性の輝きを失った両目から涙があふれ出た。
+[charslot(slot="m",name="avg_npc_1113_1#7$1")]
+[name="コーラ"]あなたはお母さんによく似ているわ。
+[name="コーラ"]もしウェルナーが直接あなたの姿を見ることができていたら、とても喜んだはずよ。あとほんの少しだったのに……彼が病床であんなに長い間耐え忍んだのは、あなたに一目会うためだったのよ。
+[charslot(slot="m",name="avg_4098_vvana_1#4$1")]
+[name="ヴィヴィアナ"]ウェルナー……お父様？
+[charslot(slot="m",name="avg_4098_vvana_1#5$1")]
+[name="ヴィヴィアナ"]彼は……
+[charslot(slot="m",name="avg_npc_1113_1#8$1")]
+[name="コーラ"]ごめんなさい、ヴィヴィアナ。
+[name="コーラ"]少し前に、あなたの父……シュトルム領選帝侯ウェルナーは、自らの高塔の中で亡くなったわ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="34_g5_noblehall",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1135_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]事のいきさつは以上です。我々は各々の持ち場を定められた通りに守護しておりましたが、まさか刺客が選帝侯の部屋に忍び込むなどとは想像もせず。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1117_1#2$1",bstart=0.2,bend=0.6)]
+[name="？？？"]……刺客。それは、あの選帝侯お付きの侍従のことか？
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]左様でございます。
+[charslot(slot="m",name="avg_npc_1117_1#2$1",bstart=0.2,bend=0.6)]
+[name="？？？"]彼女は選帝侯に仕え、人生の大半をこの塔で過ごしてきたのだぞ。
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]選帝侯は彼女を信頼しておりました、我々もです。しかし彼女は確かに最後に選帝侯にお会いした人物です。
+[charslot(slot="m",name="avg_npc_1117_1#2$1",bstart=0.2,bend=0.6)]
+[name="？？？"]事件後、他に部屋に入った者は？
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]衛兵と医者のみです。
+[charslot(slot="m",name="avg_npc_1117_1#2$1",bstart=0.2,bend=0.6)]
+[name="？？？"]出て行った者はいないのか？
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]おりません。今夜居住塔から出た者は誰もおりません。
+[name="高塔術師"]どこに誤りが生じたのか判明していませんので、使用人たちを全員塔の地下牢に閉じ込めております。ご案内いたしましょうか？
+[charslot(slot="m",name="avg_npc_1117_1#2$1",bstart=0.2,bend=0.6)]
+[name="？？？"]必要ない、すでに全員に会ってきた。
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]ではあの刺客に尋問はされましたか？
+[charslot(slot="m",name="avg_npc_1117_1#2$1",bstart=0.2,bend=0.6)]
+[name="？？？"]あの侍従は精神系アーツの影響を受け、自らが見聞きしたものを覚えていなかった。
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]彼女を拷問すべきです。でなければ、彼女が嘘をついていないかの断定が難しいと思われます。
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="avg_npc_1117_1#2$1",bstart=0.2,bend=0.6)]
+[name="？？？"]では、貴様は嘘をついているのか？
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]私ですか？　いえ、それはありえません。私は十年前からホッホベルク家に忠誠を尽くしています。今の私があるのは、全て選帝侯のお引き立てあってのことです。
+[charslot(slot="m",name="avg_npc_1117_1#2$1",bstart=0.2,bend=0.6)]
+[name="？？？"]では……金律楽章に誓いを立てられるか？
+[Dialog]
+[charslot]
+[PlayMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[CameraShake(duration=1.5, xstrength=7, ystrength=3, vibrato=70, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_swrdbzz")]
+[delay(time=1.5)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]金……律……
+[name="高塔術師"]私がどうして……金律法衛を騙せましょう？
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1117_1#2$1",duration=1.5)]
+[delay(time=2)]
+[name="金律法衛"]事件後、貴様は高塔を離れたな。
+[name="金律法衛"]体から雨の匂いがする。それと服の裾に塔外の階段の隙間にある苔が付いているぞ。
+[name="金律法衛"]たった十年では不十分だ。貴様はまだホッホベルク家の高塔への理解が足りていない、ウェルナー選帝侯への理解がまだ足りていないようにな。
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]選帝侯が……あなた方を呼んだのですか……
+[charslot(slot="m",name="avg_npc_1117_1#2$1")]
+[name="金律法衛"]選帝侯は貴様らの反心を察知していた。彼が病床についてから、貴様らは蠢き始めていたな。
+[name="金律法衛"]惜しむべきは、私とレーヴェンシュタインが一足遅かったことだ。
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="高塔術師"]……
+[charslot(duration=0.4)]
+[Dialog]
+[Blocker(a=0.7, r=0.7, g=0.7, b=0.7, fadetime=0.5, block=true)]
+[PlaySound(key="$d_avg_smoke_grenade")]
+[charslot(duration=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[Background(image="28_g12_sewer",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="「高塔術師」"]「首席」に伝えなければ、金律法衛がすでに――
+[Dialog]
+[charslot]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[CameraShake(duration=0.3,xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.03, block=true)]
+[PlaySound(key="$d_avg_gldswrdclave", volume=1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[CameraShake(duration=0.3,xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="「高塔術師」"]ぐあっ――！
+[charslot(slot="m",name="avg_npc_1117_1#2$1")]
+[name="金律法衛"]旋律の束縛から逃れようなどという、愚かな考えは捨てろ。貴様のそのアーツは、使い手の頭と同じくらい脆く醜い。
+[name="金律法衛"]それで、あれをどこへやった？
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[CameraShake(duration=0.3,xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="「高塔術師」"]ガハッ――うっ！
+[charslot(slot="m",name="avg_npc_1117_1#2$1")]
+[name="金律法衛"]答えろ、残党が。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[charslot(slot ="left", action="shake", power=10, times=20, duration=0.5)]
+[CameraShake(duration=1, xstrength=7, ystrength=3, vibrato=60, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_swrdbzz")]
+[delay(time=1.5)]
+[name="「高塔術師」"]ツ……ヴィリングトゥル……
+[charslot(slot="m",name="avg_npc_1117_1#2$1")]
+[name="金律法衛"]貴様の言った「首席」とは、精神系アーツを用いて侍従に影響を与えた人物か？　その者もツヴィリングトゥルムにいるのか？
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="「高塔術師」"]首席……は……
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="「高塔術師」"]頭が……痛い！
+[charslot(slot="m",name="avg_npc_1117_1#2$1")]
+[name="金律法衛"]黄金の旋律は、貴様の魂の奥深くで奏でられる。
+[name="金律法衛"]反抗の意思を持ち続ける限り、この旋律は貴様の心と脳を苛み続けるぞ。
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="「高塔術師」"]金律法衛……
+[name="「高塔術師」"]これほど圧倒的な力を有しておきながら、なぜ女帝という名の傀儡たちの下僕に甘んじる！？
+[charslot(slot="m",name="avg_npc_1117_1#2$1")]
+[name="金律法衛"]貴様を縛りつけているのは私の旋律でも、ましてや女帝の思し召しでもない。
+[name="金律法衛"]貴様はリターニアの意志には逆らえないのだ。
+[charslot(slot="m",name="avg_npc_1135_1#1$1")]
+[name="「高塔術師」"]リターニアの……意志？
+[name="「高塔術師」"]ハ……ハハ！　今のリターニアに……本来あるべき意志がまだ残っているとでも？
+[name="「高塔術師」"]「始源の角」……ヘーアクンフツホルンの力が、いずれ再びこの土地を覆うであろう！
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="「高塔術師」"]ガアアアァァ――！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[CameraShake(duration=1, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.15, r=0.7, g=0, b=0, fadetime=0.1, block=true)]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.5", scale=1.2,duration = 0.3)]
+[PlaySound(key="$d_avg_bodyxplde")]
+[PlaySound(key="$d_avg_smoke_grenade")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.2, block=false)]
+[charslot(duration=0.2)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1117_1#2$1",duration=0.5)]
+[delay(time=1)]
+[name="金律法衛"]死が引き起こす微弱な雑音を、遠くから捕捉できる術師であれば、決してただの残党ではないな。
+[name="金律法衛"]……「首席」か。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="27_g26_dusk_wild",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_245_cello_1#1$1",duration=1,bstart=0.15,bend=0.6)]
+[delay(time=2)]
+[name="？？？"]……
+[charslot(slot="m",name="avg_npc_498_1#1$1")]
+[name="貴族の侍従"]ツヴィリングトゥルム行きの車が到着いたしました。すぐに出発しますか？
+[charslot(slot="m",name="avg_245_cello_1#1$1",bstart=0.15,bend=0.6)]
+[name="？？？"]ええ、行きましょう。
+[name="？？？"]私を招いた友人は、つい先ほどカーテンコールを終えたし、私が演奏すべき曲は全て奏でたもの。
+[name="？？？"]もうここにとどまる必要はないわ。
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="28_g11_lounge",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_492_1$1",duration = 1)]
+[delay(time=1.5)]
+[name="若い貴族"]いつの間にか……こんな時間になってしまった……
+[name="若い貴族"]マルタ、私のマルタ……はぁ、まるで夢のようだった。次またこんな素晴らしい演奏を聞けるのは一体いつになることやら。
+[Dialog]
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$phonevibration")]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[name="若い貴族"]言っただろう、コンサートの時は邪魔をするなと……
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="若い貴族"]なに？　待て、もう一度言え！
+[name="若い貴族"]……
+[name="若い貴族"]すぐに戻る。車の用意をしてくれ、幾人かに会ってこなければ。
+[name="若い貴族"]ああ、数日前にループカーン管区で購入した木彫りの装飾、それと書斎にあるヴィクトリアの骨灰磁器も持ってくるんだ。
+[Dialog]
+[PlaySound(key="$d_avg_ringoff")]
+[delay(time=1)]
+[name="若い貴族"]なぜ、こんなに突然？　選帝侯はお元気だと、今朝聞いたばかりなのに。
+[name="若い貴族"]これからはまた大変な日々になるな。ミス・アルトリア……あぁ、ミス・アルトリアの音楽と美貌だけが私を悪夢から救い出してくれる。
+[name="若い貴族"]あれだけ苦労して彼女の仮住まいの住所を手に入れたというのに、まさかもう出……
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]続けてください。
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[name="若い貴族"]つ、続ける？　あなたはどちら様で？　手に持っているそれはアーツユニットですか、それとも……
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]先ほど、アルトリアを訪問する意思があると示唆しましたね。ですから、あなたは彼女と何らかの関わりがあると仮定します。
+[name="フェデリコ"]私は現在彼女を探しています。従って、彼女に関するあらゆる手がかりが必要なのです。
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[name="若い貴族"]あなたもミス・アルトリアを探しているのですか？　彼女の熱狂的なファンか何かですか？
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]ファン？　その表現は、正確性に欠けています。
+[name="フェデリコ"]法の規定と教皇庁の特殊任務に伴う務めとして、私は速やかに当該指名手配犯をラテラーノに連行しなければなりません。
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[name="若い貴族"]指名手配犯？　ミス・アルトリアは選帝侯の客人ですよ。たとえ外でそのような根拠のない噂があったとしても……いえ、あなた、あなたの方こそ疑わしいです！
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_airdefensealert", loop=true, channel="a",volume=0.5)]
+[stopsound(fadetime=5,channel="a")]
+[delay(time=1.5)]
+[charslot(slot = "r", name = "avg_npc_492_1$1")]
+[PlaySound(key="$rungeneral")]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_npc_493_1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_npc_493_1$1",focus="l")]
+[name="年長の貴族"]エーリヒ殿！　ご無事ですか？
+[name="年長の貴族"]外の通りはすべて戒厳令が敷かれ、どこも憲兵だらけです。金律法衛が選帝侯の居住塔に向かったとも聞き及びました。
+[charslot(slot = "r", name = "avg_npc_492_1$1",focus="r")]
+[name="若い貴族"]私は大丈夫です、ご心配をおかけしました。数名の伯爵方に情報を伺いに向かうところで。はぁ、今夜はおかしな出来事が多い。全部あの怠け者の運転手のせいです、今になっても来ないとは！
+[name="若い貴族"]幸いミス・アルトリアはすでにツヴィリングトゥルムへと発っていました。少なくとも彼女は安全でしょう……
+[name="若い貴族"]あれ、あのおかしなサンクタは？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="27_g26_dusk_wild",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1032_excu2_1#6$1",duration=0.5)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_penrustle")]
+[charslot(slot = "m", name = "avg_1032_excu2_1#6$1")]
+[name="フェデリコ"]……指名手配犯アルトリアはすでにフェルスを離脱。
+[charslot(slot = "m", name = "avg_1032_excu2_1#1$1")]
+[name="フェデリコ"]執行人フェデリコ、引き続きターゲットを追跡します。
+[name="フェデリコ"]目的地は――リターニア首都、ツヴィリングトゥルム。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="bg_ltstrongpoint",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_4098_vvana_1#2$1",duration=1)]
+[charslot(slot="left",name="avg_npc_1113_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]ヴィヴィアナ、私たちも出発するわよ。
+[charslot(slot="r",name="avg_4098_vvana_1#2$1",focus="r")]
+[name="ヴィヴィアナ"]……
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]選帝侯は病死だと対外的に発表されたわ。領地の安定のためには、理解できるやり方ね。
+[charslot(slot="r",name="avg_4098_vvana_1#5$1",focus="r")]
+[name="ヴィヴィアナ"]私は……葬儀に参加できないのですよね？
+[charslot(slot="left",name="avg_npc_1113_1#7$1",focus="l")]
+[name="コーラ"]ごめんなさい。わざわざカジミエーシュから駆け付けてきたのに、彼の最期に立ち会うこともできないし、公には……
+[charslot(slot="r",name="avg_4098_vvana_1#5$1",focus="r")]
+[name="ヴィヴィアナ"]ええ、哀悼の意を示すこともできません。
+[name="ヴィヴィアナ"]言ってしまえば、そもそも私自身に、その資格があるかすら分からないのです。
+[name="ヴィヴィアナ"]私は父の姿さえもはっきりと思い出せません。これまでずっと、私にとっての父とは、カジミエーシュへと送られてくる一通一通の手紙でした。
+[name="ヴィヴィアナ"]その手紙の文字ですら、父の代わりに従者が書いたものではないかと考えてしまう時もありました。
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]あなたの父親はあなたを片時も忘れたことはないわ。
+[charslot(slot="r",name="avg_4098_vvana_1#5$1",focus="r")]
+[name="ヴィヴィアナ"]はい……誰もが、彼自身も含め、皆さんがそう言います。
+[name="ヴィヴィアナ"]私もそれを信じたいと思っています。
+[name="ヴィヴィアナ"]けれど、最後の手紙を受け取った時に、私はやはり躊躇ってしまったのです。自分がここに帰るべきか……いえ、帰りたいと思っているか分からなかった。
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]あなたは優しい心の持ち主よ、ヴィヴィアナ。あなたは死にゆく人の最期の願いを断れないわ。
+[charslot(slot="r",name="avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]……あるいは、もう一度あの高塔を見たかったのかもしれません。
+[charslot(slot="r",name="avg_4098_vvana_1#3$1",focus="r")]
+[name="ヴィヴィアナ"]あの高塔は……未だに私の記憶にあるように高くそびえているのかどうかを確かめたかったのです。
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]あの高塔に戻ってはいけないわ、少なくとも今はまだ。
+[name="コーラ"]安全を考慮して、シュトルム領にはとどまらない方がいいわね。
+[charslot(slot="r",name="avg_4098_vvana_1#6$1",focus="r")]
+[name="ヴィヴィアナ"]父を殺害した人も、昨夜私たちの所に来た術師も……同一人物に指示を受けているのでしょうか？
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]そうとも限らないわ。ウェルナーがいなくなった今、あなたの素性を知っている人物であれば、誰もが動機を持ち得るもの。
+[charslot(slot="left",name="avg_npc_1113_1#4$1",focus="l")]
+[name="コーラ"]あなたは彼の唯一の子よ。今は情勢が非常に不安定な時期だから、彼の敵や、かつての従者、それに継承権を有し得る者たち、あなたを狙う人間には事欠かないわ。
+[charslot(slot="r",name="avg_4098_vvana_1#10$1",focus="r")]
+[name="ヴィヴィアナ"]ではあなたは？　あなたはなぜ私を守るのですか？
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]覚えているかしら。十三年前、あなたの母が亡くなった後、あなたを大騎士領へと送り届けたのは私よ。
+[charslot(slot="r",name="avg_4098_vvana_1#4$1",focus="r")]
+[name="ヴィヴィアナ"]あなたは……リターニアロイヤル楽団の……
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]……調律師よ。これがなかなか便利な肩書でね。
+[name="コーラ"]ロイヤル楽団の訪問は、リターニアとカジミエーシュの友好関係を表すものだから、その中で楽器を持った子供の身分を疑う人なんて誰もいないわ。
+[charslot(slot="r",name="avg_4098_vvana_1#4$1",focus="r")]
+[name="ヴィヴィアナ"]あなたが私を救ったのは……これが初めてではなかったのですね。
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]本当にあなたを救いたいと願っていたのは、あなたの父親よ。
+[name="コーラ"]数ヶ月前、ウェルナーは残された時間が少ないことを知り、自分がこの世を去った後で、あなたが権力闘争の犠牲になることを恐れたの。
+[name="コーラ"]あなたの身分は、あまりに特殊だもの。リターニアに帰るにせよ、カジミエーシュに残ることを選ぶにせよ、どう転んでも影響を受けるでしょう。
+[name="コーラ"]それで彼はもう一度私とブラントを訪ねるしかなかった。あなたを無事ツヴィリングトゥルムへと送り届けてほしいと古馴染みの私たちに頼んだのよ。
+[name="コーラ"]あそこでなら、あなたは女帝の庇護を受けられるから。
+[charslot(slot="r",name="avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]女帝の……庇護？
+[charslot(slot="left",name="avg_npc_1113_1#1$1",focus="l")]
+[name="コーラ"]そうよ、これがウェルナーの願い。
+[charslot(slot="left",name="avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]ヴィヴィアナ・フォン・ホッホベルク――
+[name="コーラ"]あなたは自らの一族を代表し、女帝の声になるのよ。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="34_g4_swamp_n",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+リターニア中部 アインヴァルト管区 ツヴィリングトゥルム周辺の町入城ゲート近く
+[Dialog]
+[charslot(slot="m",name="avg_npc_1133_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="疲弊した当直員"]ふぁ～……はぁ……眠ぃ。くそが、なんでまた俺が当直なんだよ。
+[name="疲弊した当直員"]若い連中は、毎日何かしら理由をつけてさっさと帰っちまうし。今日は何だっけ、新しい映画だったか、それとも地下のバーのライブだったか？
+[name="疲弊した当直員"]来月になったら、できるだけ早くツヴィリングトゥルムに異動させてもらえるよう男爵に……
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#1$1",duration = 0.5)]
+[playsound(key="$d_avg_grass")]
+[charslot(slot = "m", posfrom = "-200,0", posto = "0,0",duration = 1)]
+[delay(time=0.5)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1133_1#1$1")]
+[name="疲弊した当直員"]おい、そこ！
+[name="疲弊した当直員"]こんな遅くに何をふらついてるんだ？
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#13$1")]
+[name="エーベンホルツ"]極めて普通に道を歩いていただけだが。
+[name="エーベンホルツ"]私の知る限り、ここには十二時以降私のような平民が荒野を歩いてはならないなどという新たな法令はなかったはずだ。
+[charslot(slot="m",name="avg_npc_1133_1#1$1")]
+[name="疲弊した当直員"]……そりゃないけどよ。
+[name="疲弊した当直員"]退屈でぶらついてる若者なだけか、俺はなんでこんなに気を張ってるんだ……
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#1$1")]
+[name="エーベンホルツ"]……もう行っても構わないか？　お勤めご苦労。
+[charslot(slot="m",name="avg_npc_1133_1#1$1")]
+[name="疲弊した当直員"]ああ、いいよ……いや待て。
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#1$1")]
+[name="エーベンホルツ"]……
+[charslot(slot="m",name="avg_npc_1133_1#1$1")]
+[name="疲弊した当直員"]どこかで……あんたの顔を見たことある気がするが？
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#1$1")]
+[name="エーベンホルツ"]恐らく勘違いだろう。貴殿の言った通り、暇を持て余してぶらつく若者などどこにでもいるからな。
+[charslot(slot="m",name="avg_npc_1133_1#1$1")]
+[name="疲弊した当直員"]あんたはどこから来たんだ？　その訛りを聞くに、ウルティカか？
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#9$1")]
+[name="エーベンホルツ"]ウルティカの……田舎出身だ。
+[charslot(slot="m",name="avg_npc_1133_1#1$1")]
+[name="疲弊した当直員"]田舎？　田舎者がそのアクセント？　冗談はよせ。
+[name="疲弊した当直員"]いや、そうだ。そうだよ。そんな口調でしゃべる平民の若者なんて聞いたことないな。もしかして、あんたどこかのお貴族様の家から抜け出してきた坊ちゃまなんてことはないよな？
+[name="疲弊した当直員"]身分証を見せてくれ。
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#9$1")]
+[name="エーベンホルツ"]私をどこかへ送り届けることで、どこぞの貴族の歓心を得られるかもしれないなどという幻想を抱いているのなら、きっと失望することになる。
+[charslot(slot="m",name="avg_npc_1133_1#1$1")]
+[name="疲弊した当直員"]……なあ、あんたの話を聞いてるとイライラするって言われたことないか？
+[name="疲弊した当直員"]身分証だ。早く出せ。
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#2$1")]
+[name="エーベンホルツ"]……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_grass")]
+[charslot(slot = "left", name = "avg_npc_485_1#8$1",duration = 1,posfrom = "-200,0", posto = "0,0")]
+[charslot(slot = "right", name = "avg_npc_1133_1#1$1")]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_npc_485_1#8$1",focus="l")]
+[name="ビーグラー"]どうぞどうぞ、こちらがこの子のパスポートです、ご覧ください。
+[charslot(slot = "right", name = "avg_npc_1133_1#1$1",focus="r")]
+[name="疲弊した当直員"]あんたは誰だ？
+[charslot(slot = "left", name = "avg_npc_485_1#8$1",focus="l")]
+[name="ビーグラー"]おや、覚えてらっしゃらないのですか？　こちらに住んでいる者ですよ。ほら本を商っている。
+[name="ビーグラー"]そうだ、近頃は商売があまりうまくいかないので、コーヒー屋に鞍替えをしようかと思っているんです。遅くまで巡回して、お疲れでしょう？　さあどうぞ、このコーヒーを飲んでみてください。
+[charslot(slot = "right", name = "avg_npc_1133_1#1$1",focus="r")]
+[name="疲弊した当直員"]……フンッ。
+[name="疲弊した当直員"]うぷ……なんて味だ……コーヒー屋はやめておいた方がいい。
+[charslot(slot = "left", name = "avg_npc_485_1#8$1",focus="l")]
+[name="ビーグラー"]ハハ、でも目は覚めたでしょう。身分証はもうよろしいですか？
+[charslot(slot = "right", name = "avg_npc_1133_1#1$1",focus="r")]
+[name="疲弊した当直員"]……エーベンホルツ。これがあんたの名前か？
+[charslot]
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#1$1")]
+[name="エーベンホルツ"]そうだ。
+[charslot]
+[charslot(slot = "right", name = "avg_npc_1133_1#1$1",focus="l")]
+[charslot(slot = "left", name = "avg_npc_485_1#8$1",focus="l")]
+[name="ビーグラー"]彼の両親は楽器をこよなく愛していましてね、特にピアノを。
+[charslot(slot = "right", name = "avg_npc_1133_1#1$1",focus="r")]
+[name="疲弊した当直員"]そうか。もう行け、パスポート自体は本物っぽいし、名前が本当かどうかはどうでもいい。そうだ、本売りの。お前のポケットにある薄っすいコーヒー、全部置いていけ。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="28_g3_slumstreets_night",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$distressed_intro", key="$distressed_loop", volume=0.6)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_485_1#1$1",duration=1)]
+[charslot(slot = "right", name = "avg_4046_ebnhlz_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_npc_485_1#1$1",focus="l")]
+[name="ビーグラー"]戻ってくると分かっていたなら、例のパスポートを燃やさなかったのではないですか？
+[charslot(slot = "right", name = "avg_4046_ebnhlz_1#1$1",focus="r")]
+[name="エーベンホルツ"]どうでもいいことだ。
+[name="エーベンホルツ"]私に戻ってきてほしいと思うのであれば、当然今のように、二冊目を……それこそいくらでも新しいのを用意するだろう。
+[charslot(slot = "left", name = "avg_npc_485_1#1$1",focus="l")]
+[name="ビーグラー"]……なぜ戻ってきたのです？
+[charslot(slot = "right", name = "avg_4046_ebnhlz_1#9$1",focus="r")]
+[name="エーベンホルツ"]ウルティカ領にいる数十万の人々、それと高塔内の百人余りの侍従……私はいわゆる自由のためにこれほどまで多くの人を犠牲にできるほど利己的ではない。
+[charslot(slot = "right", name = "avg_4046_ebnhlz_1#1$1",focus="r")]
+[name="エーベンホルツ"]であるから、わざわざ私と冗談を言い合う必要もないぞ、親愛なる密偵殿。それとも、女帝陛下の命令で、私が本心から従っているか探りに来ているのか？
+[charslot(slot = "left", name = "avg_npc_485_1#2$1",focus="l")]
+[name="ビーグラー"]女帝の祭典が近づいています、近頃のツヴィリングトゥルムは少々不穏ですよ。
+[charslot(slot = "right", name = "avg_4046_ebnhlz_1#7$1",focus="r")]
+[name="エーベンホルツ"]フッ……あれはまだ私の頭の中にあるぞ。
+[name="エーベンホルツ"]耳障り極まりないこの曲がまだまだ終わらないことを、私は君たちの誰よりもよく理解している。
+[charslot(slot = "left", name = "avg_npc_485_1#10$1",focus="l")]
+[name="ビーグラー"]いいから聞きなさい。私の任務はここまでです。
+[name="ビーグラー"]ツヴィリングトゥルムに着いたら、他の迎えが来ます。
+[name="ビーグラー"]恐らくすでにご存知でしょうが、あの……あなたに戻ってくるよう命じた密書と、以前あなたに「死」を与えた密書は、同一の陛下によるものではありません。
+[name="ビーグラー"]以前のあのお方の慈悲に比べ、こちらは……
+[Dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "200,0",duration = 1,afrom=1,ato=0)]
+[PlaySound(key="$d_gen_walk_n", volume=0.7)]
+[Delay(time=1)]
+[charslot(slot = "m", focus = "n")]
+ビーグラーが話し終える前に、エーベンホルツはすでに足を踏み出していた。
+その後ろ姿が曲がり角で完全に消える前に、青年は彼に向かって手を振った。
+[charslot(slot = "l", name = "avg_npc_485_1#1$1")]
+[name="ビーグラー"]全て分かっていたか。
+[name="ビーグラー"]かつてのウルティカ伯爵、あなたは……本当の「死」を望んでいるのか？
+[name="ビーグラー"]ふぅ……これほどどんよりした天気だと、私ですら感傷的になってしまうな。
+[charslot(slot = "l", name = "avg_npc_485_1#2$1")]
+[name="ビーグラー"]どうかあなたが……
+[charslot(slot = "l", name = "avg_npc_485_1#1$1")]
+[name="ビーグラー"]いや、やめておくとしよう。
+[name="ビーグラー"]私たちのような人間に、まかり間違ってまだ運が残っているとしたら――
+[name="ビーグラー"]――もう二度と会うことがないと祈ろう。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

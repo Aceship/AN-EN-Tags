@@ -1,0 +1,892 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="bg_black",screenadapt="showall")]
+[Delay(time=1)]
+[playMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[interlude(maskid = "ui_cutin_mask_vertical", style = 1, size = "400, 720",offset = "-120,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_barracks", afrom = 0, ato = 1, aduration = 3, sfrom = "1.4,1.4", sto = "1.4,1.4",pfrom = "0,-200", pto = "0,-200", duration = 0,sduration = 0)]
+[delay(time=3)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "-100,-20", name = "cutin_char_14",sfrom = "1,1", sto = "1,1",  aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "-100,-20", pto = "-140,-20", duration = 40)]
+[delay(time=3)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Sometimes I think that if there really is a Creator responsible for these lands, he's one cruel bastard.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="He came up with a really awful disease, where you feel your body being consumed, gradually being replaced by these crystals, helpless to do anything to stop it.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nYou can feel your very self being removed from your body, day by day.",block = true)]
+[Sticker(id="st1", multi = true, text="\nYou can only accept it.",block = true)]
+[Sticker(id="st1", multi = true, text="\nWe can only accept it.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="And this creation of Oripathy is actually one of the gentler ones across the lands.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThe Infected and the uninfected, Nine tells me our persecution is as old as civilization itself.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="So... what about poor and rich? Slave and noble?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nForeigner and local? Disabled and able-bodied? Even abnormal and normal...?",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="A parasitic disease is scary, sure, but Oripathy is only the most obvious, the most prominent of the terrible diseases out there.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThe Creator's really awful inventions are poverty, war, bottomless, insatiable greed, the malice and hypocrisy that bring so much suffering, gaps we can never close.",block = true)]
+[Sticker(id="st1", multi = true, text="\nBut the truth is, we all know, no Creator came up with that stuff.",block = true)]
+[Sticker(id="st1", multi = true, text="\nHumans, we invented it all on our own.",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Delay(time=1)]
+[Sticker(id="st1", multi = true, text="You and me, we created them.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[interlude(channel = 2,clear = true)]
+[Background(image="bg_coldforest", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_1065_1#10$1")]
+[delay(time=1)]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]Good news? Or bad news?
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]The good news is that the workshop is still intact, the forest hid it good. The dukes and the Sarkaz never got to use it as an outpost.
+[name="Red"]The bad news is, someone's living there. We saw lights. I walked up, identified myself, and the lights went out.
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]Might be refugees or deserters.
+[name="Guard"]But they put out the lights... that means they're wary of us.
+[charslot(slot="m",name="avg_npc_080",focus="m")]
+[name="Reunion Warrior"]Our fighters are ready for anything.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]No, let's not be hasty. They might just be cautious, or fearful.
+[name="Nine"]Don't jump to conclusions.
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]And anyway, Red's carrying a pretty long blade. Anyone would want to play it safe.
+[name="Guard"]Why don't I go? I'll have a word with them.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]By yourself?
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]That's enough. The more men we send, the more nervous they'll be. Besides, if they mean us harm, a few more hands won't make a difference.
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]The sky to the south has been red for the past few days. Percival and the others even found an Arts Circle...
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]We need to move fast.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]There's some risk in that.
+[charslot(slot="m",name="avg_npc_1065_1#8$1",focus="m")]
+[name="Guard"]I know.
+[name="Guard"]But we made it out of Chernobog.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Fair enough.
+[name="Nine"]We'll be ready to provide support on the sidelines, to make a breakthrough.
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]This place was some kind of distillery before the Victorian Reunion settled in?
+[charslot(slot="m",name="avg_npc_1065_1#8$1",focus="m")]
+[name="Guard"]I can already smell the booze. Romanich would've loved it.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="43_g10_breweryinforest", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="It certainly was a distillery.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nSecret distilleries like this are common enough in Victoria, dodging around punishing taxes imposed by the lords. They could be used to make crude medication for the Infected.",block = true)]
+[Sticker(id="st1", multi = true, text="\nSoaking, mixing, distilling herbs would work, but purification... no way.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="I'm starting to admire the Victorian Reunion. They found this place and turned it into a distribution center for medicine.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nWhen did they start calling themselves Reunion and build all this? I'm not sure.",block = true)]
+[Sticker(id="st1", multi = true, text="\nAll I know is that the building is just an old house covered in vines now.",block = true)]
+[Sticker(id="st1", multi = true, text="\nNo movement around, no lights in the house.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="A figure flashes by the window. Red was right, there are people here, and they've spotted me.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI dust of my clothes and fix my hair, trying to look more presentable.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlaySound(key="$doorknockquite", volume=0.6)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]Hello. Anybody home?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="No answer.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]Hi, I'm Guard. I've got a team nearby, I'm pretty sure you saw them earlier?
+[name="Guard"]Don't worry, we mean no harm.
+[name="Guard"]The Victorian Reunion used to use this workshop to make medicine.
+[name="Guard"]It brought hope to a lot of Infected around Londinium. Its medicine even circulated among the workers in the sewers below the city's industrial districts.
+[name="Guard"]Whoever you are, you know the war is turning a lot more people Infected.
+[name="Guard"]We want to get things going again here, to help them.
+[multiline(name="Guard")]Since you're occupying the place...
+[charslot(slot="m",name="avg_npc_1065_1#8$1",focus="m")]
+[multiline(name="Guard")]We need your cooperation.
+[name="Guard"]We can provide medicine or other supplies. We'll trade fair.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Still, no response.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[PlaySound(key="$d_avg_doorknob")]
+[playsound(key="$d_avg_scabbard",volume=0.6,delay=0.9)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="The doorknob turns, and I grip the hilt of my sword.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nAfter everything we've been through, I know it's pretty likely I'll be staring down a pitchfork or hatchet next. I'm numb to that sort of thing now.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlaySound(key="$dooropenquite", volume=1)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="The door opens.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="char_1011_wizard_1",duration=1)]
+[Delay(time=1.5)]
+[playMusic(intro="$darkness02_intro", key="$darkness02_loop", volume=0.6)]
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Reunion?"]Reunion, you said?
+[charslot(slot="m",name="avg_npc_1065_1#4$1",focus="m")]
+[name="Guard"]Your clothes... who are you?
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Reunion?"]Mays.
+[name="Mays"]Come in.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g12_breweryinforest_inside", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_crwddiscuss_inside",loop=true, channel="crwd1", volume=0.4)]
+[stopSound(channel="crwd1", fadetime=4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_416_1#1$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_418_1#1$1",duration=0.7)]
+[Delay(time=1.5)]
+[charslot]
+[charslot(slot="l",name="avg_npc_002",duration=1)]
+[charslot(slot="r",name="avg_npc_659_1#1$1",duration=1)]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="There are more people hiding inside than I guessed. And it's quite a group.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nSome of them are obviously Infected, while others leaning against the wall are probably ordinary refugees from the city.",block = true)]
+[Sticker(id="st1", multi = true, text="\nThey're all looking over, silently, watching me and the woman in the Victorian Reunion uniform.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]Look away, and clear out.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="The crowd falls back, and Mays leads me past their collective gaze.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThese people... are terrified.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]Are you in charge here?
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]This place is under my control.
+[name="Mays"]Let's find a place to talk.
+[Dialog]
+[PlaySound(key="$d_avg_walk_stage")]
+[charslot(duration=1)]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="...Victorian Reunion... Percival is in Victorian Reunion too.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nOur organization doesn't exactly have franchising procedures and once word of the name spread around, the Reunion flag started popping up in all sorts of places.",block = true)]
+[Sticker(id="st1", multi = true, text="\nThat also means there have been various acts of violence, acts of revenge, taking place under the Reunion name.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="The kind of thing that happened in Chernobog. I start looking at this... Mays.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nShe seems nervous, her gait is unnatural.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g12_breweryinforest_inside", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="We're in the deepest depths of the workshop.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="l",name="avg_npc_1065_1#1$1",focus="r")]
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]Here we are. Nobody comes in here.
+[name="Mays"]So you're Reunion, the real Reunion. You came from the north?
+[name="Mays"]From... Ursus?
+[charslot(slot="l",name="avg_npc_1065_1#1$1",focus="l")]
+[name="Guard"]Yes, Ursus, Columbia, and now we're in Victoria.
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]That's a ways.
+[charslot(slot="l",name="avg_npc_1065_1#10$1",focus="l")]
+[name="Guard"]Your uniform, it's...
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]I... used a bedsheet.
+[name="Mays"]I ran into a group from Ursus before. They said you dress like this. I think I got the emblem right.
+[charslot(slot="l",name="avg_npc_1065_1#8$1",focus="l")]
+[name="Guard"]Looks a bit big.
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]Did you come here just to mock my handiwork?
+[charslot(slot="l",name="avg_npc_1065_1#1$1",focus="l")]
+[name="Guard"]So you control this place just because you dressed up in the garb of the infamous 'Reunion'.
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]Let's get to the point. I don't have much time.
+[name="Mays"]You want to get this place up and running again? To start making medicine?
+[charslot(slot="l",name="avg_npc_1065_1#1$1",focus="l")]
+[name="Guard"]Yes, if news got out that Reunion is running the place again...
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]No.
+[name="Mays"]Things are more complicated than you know. We have all kinds of people here.
+[name="Mays"]I'm worn out breaking up the daily fights between Infected and uninfected. And you want to make Infected medicine? You might as well blow the place up.
+[name="Mays"]It's hard to keep a balance between them.
+[charslot(slot="l",name="avg_npc_1065_1#5$1",focus="l")]
+[name="Guard"]......
+[charslot(slot="l",name="avg_npc_1065_1#1$1",focus="l")]
+[name="Guard"]You're Reunion, aren't you? At least, you claim to be.
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]More or less.
+[charslot(slot="l",name="avg_npc_1065_1#10$1",focus="l")]
+[name="Guard"]Who are your people?
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]What else would they be? Homeless Infected, war refugees, people who have lost everything. We all need a roof over our heads.
+[name="Mays"]I first came here with a few other Infected. We found this ruin.
+[name="Mays"]Later, more people came, including some... less than honest folk. We don't take anyone else in anymore.
+[name="Mays"]I'm glad to see you, Reunion comrades, but I don't want to worry anyone here.
+[charslot(slot="l",name="avg_npc_1065_1#10$1",focus="l")]
+[name="Guard"]Worry?
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]That you're conspiring with us to wipe out the uninfected in our midst.
+[name="Mays"]Whether or not it's just a pretext to get us to open our doors to you, we can trade supplies. But let's leave it at that...
+[charslot(slot="l",name="avg_npc_1065_1#1$1",focus="l")]
+[name="Guard"]There are plenty of uninfected here, so I get what you're saying.
+[name="Guard"]But I still think it would be a good idea to talk it over with your people before you come to a decision. As long as we can get back to making medicine here, we can come to a long-term agreement—
+[charslot(slot="r",name="char_1011_wizard_1",focus="r")]
+[name="Mays"]No, no thank you.
+[name="Mays"]Now, off with you. It was nice meeting you.
+[name="Mays"]If you want to take this place, you're welcome to it. So long as you <i>can</i> take it.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="I can't see her expression behind the mask.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nMaybe she's just bluffing.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="l",name="avg_npc_1065_1#5$1",focus="l")]
+[name="Guard"]Alright then.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="But I turned around, nevertheless, getting ready to leave.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]Hey, Reunion!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="m",name="avg_npc_1065_1#1$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]Yes?
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]Is Talulah with your group?
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]...She is.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Another Talulah worshiper?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nSure enough, she's our banner, and that's her cage now too.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]I hear she has a nomadic city.
+[name="Mays"]Does that city of hers only take Infected?
+[name="Mays"]......
+[name="Mays"]If you haven't been infected, are you allowed to go there?
+[name="Mays"]I've heard... from the passing caravans, I've heard it's a nice place.
+[name="Mays"]We—There's some people here in less-than-ideal positions, refugees from the wilderness, orphans without a single relative. Talk of that Reunion city has everyone full of hope.
+[name="Mays"]But... you only stand with the Infected, right?
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]A... city?
+[name="Guard"]There might be a misunderstanding here—
+[Dialog]
+[stopmusic(fadetime=2)]
+[charslot]
+[Delay(time=0.2)]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(slot="m",name="avg_npc_416_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="Frightened Refugee"]Mays! Do you know what they did?
+[name="Frightened Refugee"]Did you tell them to do it?! Have you gone mad?!
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]What are you talking about?
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="Frightened Refugee"]They—Those idiots!
+[name="Frightened Refugee"]He might've been a fighter in the war here! Or some big important figure, here to doom us all!
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Frightened Refugee"]We might be just a couple hours out from a battalion of Sarkaz coming in here to wipe us out!
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[playMusic(key="$formal_loop", volume=0.6)]
+[name="Guard"]What's going on?
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="Frightened Refugee"]You... Are you with Reunion, like Mays?
+[name="Frightened Refugee"]It was you, your people—
+[name="Frightened Refugee"]Those Infected, they killed a Sarkaz in the warehouse!
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]—
+[name="Mays"]Bollocks!
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="Frightened Refugee"]He... He was Infected too... He's going to explode, right?
+[name="Frightened Refugee"]We need to deal with him!
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]......
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]I'll take a look.
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]Go, quickly! You should be able to help!
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_towerinside", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="On the ground lies the corpse of a Sarkaz.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI... know this guy.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="The Sarkaz who rode a motorbike, he was a junkman, going around selling stuff he took off the dead.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nHe was clearly beaten to death, limbs twisted up in unnatural ways.",block = true)]
+[Sticker(id="st1", multi = true, text="\nHis hands are tied. He must've tried to break free, judging by his bloody wrists.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="The gathered crowd is mostly silent.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI feel a chill, leaving me briefly speechless.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_421_1#1$1",focus="m")]
+[name="Indifferent Infected"]He... he's dead. The Sarkaz aren't so strong.
+[name="Indifferent Infected"]Here... the medicine he had on him, and some stale bread.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="The one who did the killing doesn't look well. He indifferently breaks off a piece of bread and hands it to someone beside him.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Angry Infected"]He deserved it.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Someone spits on the ground.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nOne of them notices me, approaching me while chewing a piece of bread taken off the dead man.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Angry Infected"]You! You're with Reunion, aren't you?
+[name="Angry Infected"]Mays never told us how we could join you!
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="I remain silent for a while, calming myself down. I lower his hands for him, spotting the Originium crystals growing on his arm.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]Why did you do it?
+[name="Guard"]Did he threaten you? Try to hurt you?
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Angry Infected"]Huh? Why?
+[Dialog]
+[playsound(key="$d_avg_chairrub",volume=0.8)]
+[charslot(duration=0.5)]
+[Delay(time=1)]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="It's as if he suddenly loses interest, stumbling over to a nearby crate and taking a seat.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Angry Infected"]When the Sarkaz burned our farm and humiliated my daughter, did anyone ask why?
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]He wasn't a soldier. He wasn't a murderous devil from Kazdel. He was just a wandering hawker, selling his wares on the battlefields.
+[name="Guard"]He... even helped you.
+[charslot(slot="m",name="avg_npc_421_1#1$1",focus="m")]
+[name="Indifferent Infected"]Huh, what does he mean? Was he Reunion too?
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]I <i>am</i> Reunion.
+[name="Guard"]You lot must know what it is Reunion fights for.
+[charslot(slot="m",name="avg_npc_421_1#1$1",focus="m")]
+[name="Indifferent Infected"]Sure, you're fighting for all the Infected!
+[charslot(slot="m",name="avg_npc_1065_1#5$1",focus="m")]
+[name="Guard"]This man that you tortured to death, the one who never even got a chance to share his name...
+[name="Guard"]Wasn't he an Infected?
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Angry Infected"]But he was Sarkaz.
+[charslot(slot="m",name="avg_npc_1065_1#5$1",focus="m")]
+[name="Guard"]......
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]	
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="'Medicine and compassion cannot help the Infected in a way that matters, but solidary and strength can.'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]	
+[delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Solidarity... solidarity.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nInfected have no homeland. We share the same fate, the same sorrow.",block = true)]
+[Sticker(id="st1", multi = true, text="\nThese people don't understand... they've never thought about it.",block = true)]
+[Sticker(id="st1", multi = true, text="\nBut, what about us?",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="Will the veterans from Ursus on the team treat the Infected from Kazimierz well? Can Sankta Infected coexist with Sarkaz?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nEven at Rhodes Island, I...",block = true)]
+[Sticker(id="st1", multi = true, text="\n......",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="What about the future? If we succeed one day, and the Emperor of Ursus vows to stop massacring the Infected, if he agrees to grant us land and cities...", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nIn this beautiful, seemingly impossible future...",block = true)]
+[Sticker(id="st1")]
+[stopmusic(fadetime=1)]
+[Sticker(id="st1", multi = true, text="Will Reunion, will the Infected, start killing each other?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nWill we fracture, collapse, and give them another chance to butcher us?",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlayMusic(intro="$tense_intro", key="$tense_loop", volume=0.6)]
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]Hey, Guard, his corpse... it's glowing, he's about to disintegrate!
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]—
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="I had no idea his condition was so serious.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nOr did he really not leave any medicine for himself, trying to save money for some future that would not be his own?",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_1065_1#3$1",focus="m")]
+[name="Guard"]Get out of here! Now!
+[charslot(slot="m",name="avg_npc_421_1#1$1",focus="m")]
+[name="Indifferent Infected"]Run! Run!
+[Dialog]
+[PlaySound(key="$d_avg_crowdrun",volume=0.8)] 
+[charslot(duration=1)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_1065_1#6$1",focus="m")]
+[name="Guard"]Mays! How do you process the Infected here?
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]That room, the innermost one!
+[name="Mays"]Hurry, we have to throw him in there!
+[name="Mays"]Damn it, damn it all... I need a second, protection... for the nose, mouth, and wounds...
+[Dialog]
+[PlaySound(key="$d_gen_dooropen",volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[Sticker(id="st1", multi = true, text="Mays and I lift the Sarkaz's corpse and kick open the door.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[PlaySound(key="$d_avg_medicalbeep", channel="a", loop=true)]
+[Sticker(id="st1", multi = true, text="Upon opening it, my personal Originium monitor started beeping incessantly. I've never heard the alarm going so intensely before.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nJust...",block = true)]
+[Sticker(id="st1", multi = true, text="\nJust how many Infected were processed here?",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="Every inch of the room is covered with a thick layer of Originium dust, crystal clusters forming in the corners.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n'Danger' is no longer sufficient to describe the urgency of the situation.",block = true)]
+[Sticker(id="st1", multi = true, text="\nI don't know when things are going to get out of hand for this place, but... putting a disintegrating Infected in there is definitely not a good idea.",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[stopsound(channel="a", fadetime=0.5)]
+[charslot]
+[Background(image="bg_towerinside", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1065_1#3$1",focus="m")]
+[name="Guard"]No good, move, move!
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]What are you doing?! Why is the body—
+[charslot(slot="m",name="avg_npc_1065_1#3$1",focus="m")]
+[name="Guard"]There's too much Originium in here. How many Infected have been processed in this room?
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]I... Well... it was years they were being processed in there!
+[charslot(slot="m",name="avg_npc_1065_1#3$1",focus="m")]
+[name="Guard"]There's Originium dust in the air, the place won't survive a violent disintegration!
+[name="Guard"]Get everyone out, now!
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g12_breweryinforest_inside", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_416_1#1$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="Frightened Refugee"]Wh-What?
+[charslot(slot="m",name="avg_npc_1065_1#3$1",focus="m")]
+[name="Guard"]Don't you get it? The Originium environment here is extremely unstable. The place could blow at any minute!
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="Frightened Refugee"]So we leave? And go where?
+[name="Frightened Refugee"]Everything out there is—
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]There's no time!
+[name="Mays"]We're talking about Reunion here! They have an entire bloody nomadic city!
+[charslot(slot="m",name="avg_npc_1065_1#3$1",focus="m")]
+[name="Guard"]Run, get them all moving!
+[name="Guard"]I've contacted some of our teams on the outskirts, they'll take some of you in!
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]Ugh, there's still some booze left in the distillery. If there's an explosion, the whole place is going with it!
+[name="Mays"]And that—
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.7)]
+[charslot(duration=1)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_1065_1#10$1",focus="m")]
+[name="Guard"]Hey, Mays, where are you going?
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(duration=1)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g12_breweryinforest_inside", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="The woman dressed in a Reunion uniform is struggling with the machinery in the deepest depths of the workshop.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]What are you doing here?
+[name="Mays"]I'm... Hngh... Help me pull that lever...
+[charslot(slot="m",name="avg_npc_1065_1#6$1",focus="m")]
+[name="Guard"]Did you work here before? But you're not Infected!
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]Thanks for not exposing me! Hngh... pull harder!
+[charslot(slot="m",name="avg_npc_1065_1#6$1",focus="m")]
+[name="Guard"]Where did you get that Reunion outfit?
+[name="Guard"]This used to be a Reunion base, and so many died here... Don't test my patience!
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]I... I didn't do anything!
+[charslot(slot="m",name="avg_npc_1065_1#6$1",focus="m")]
+[name="Guard"]That's what they all say.
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]I was... a worker here. That Reunion lot took over the distillery, and they needed hands to run the machines for them.
+[name="Mays"]I... it's just, the mercenaries hired by the lord attacked, and I ran... I'm not Infected, why should I die here with those Reunion?!
+[charslot(slot="m",name="avg_npc_1065_1#6$1",focus="m")]
+[name="Guard"]So why did you come back?
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]......
+[name="Mays"]Why?
+[playMusic(intro="$drift_intro", key="$drift_loop", volume=0.6)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Mays"]Because I had nowhere else to go, dammit! What other reason would I end up trading my life for a secret distillery?!
+[name="Mays"]I'm not Infected, but sometimes I feel like I'd rather be with Reunion! At least they have something to fight against, they have a purpose!
+[name="Mays"]Pull harder! It's stuck!
+[name="Mays"]First, open the switch for this unloading port. Reunion left behind a whole lot of material!
+[name="Mays"]The doctor said this was the cheapest painkiller formula, they were working on it for a long time. It only relieves pain, but that's enough, right?
+[name="Mays"]With this... can I be a genuine part of Reunion?
+[name="Mays"]That is... I might be allowed a home in your nomadic city?
+[charslot(slot="m",name="avg_npc_1065_1#5$1",focus="m")]
+[name="Guard"]......
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="A nomadic city...", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlaySound(key="$d_avg_flapradio", volume=1)]
+[PlaySound(key="$d_avg_drone", volume=1,delay=1)]
+[CameraShake(duration=1, xstrength=25, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="I take a deep breath and throw out a kick. It makes me sore.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="The lever finally loosens.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThe machine comes to life. The giant hopper tilts to one side and what falls out of it is countless... petals.",block = true)]
+[Sticker(id="st1", multi = true, text="\nShe hurriedly picks up the herbs scattered across the ground and carefully piles them in her arms.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="If I don't consider where exactly I am, I feel like this could be... a beautiful sight.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nJust like that city.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]We don't have a city.
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]But, those Reunion guys all said—
+[name="Mays"]But, you... but...
+[name="Mays"]...Ahah... well...
+[name="Mays"]I mean... a nomadic city... a city, you know, we...
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="People without a home, people with nowhere to go, the Infected across the world are growing more and more numerous.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nIt's not that the disease is becoming more virulent, it's just that the world is becoming more cruel.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="The great worthies have so much to say about the 'modern' era we live in, an unprecedented era of high-speed battleships, nomadic cities, of industry—", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nHow enlightened our era is—",block = true)]
+[Sticker(id="st1", multi = true, text="\nHow tragic our era is.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="'Stand together.'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nCan the Infected really stand together, naturally?",block = true)]
+[Sticker(id="st1", multi = true, text="\nWho do we stand with? Is it just the Infected?",block = true)]
+[Sticker(id="st1", multi = true, text="\nThat... nomadic city we're dreaming of, does it have a place for them?",block = true)]
+[Sticker(id="st1", multi = true, text="\nIs a city enough to accommodate everything?",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[delay(time=1)]
+[PlaySound(key="$d_avg_clothmovementsp",volume=0.8)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]Take the herbs, we need to leave.
+[name="Guard"]There is no application to join Reunion. If you're willing to fight side-by-side with us, you're already Reunion.
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]But... I'm not Infected.
+[charslot(slot="m",name="avg_npc_1065_1#1$1",focus="m")]
+[name="Guard"]It's not only the Infected who want to resist.
+[name="Guard"]And besides, I need you to help me figure out who killed that Sarkaz man.
+[charslot(slot="m",name="avg_npc_1065_1#6$1",focus="m")]
+[name="Guard"]They need to be punished.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_sp_ballista")]
+[playsound(key="$d_gen_explo_n",volume=0.8,delay=0.6)]
+[CameraShake(duration=1.5, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1065_1#3$1",focus="m")]
+[name="Guard"]Now come on, let's go!
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(duration=1)]
+[delay(time=2)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="43_g12_breweryinforest_inside", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[bgeffect(name="$eb_dust_01",layer=1)]
+[PlayMusic(intro="$calamity_intro", key="$calamity_loop", volume=0.6)]
+[PlaySound(key="$d_avg_erthshkng",loop=true,channel="bgs",volume=1)]
+[CameraShake(duration=-1, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="We make our way quickly through the gigantic tanks, some places have already started collapsing. The air is full of the pungent scent of alcohol, with smoke floating in from somewhere.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThis workshop, where the Victorian Reunion began, is about to go up in flames.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_1065_1#3$1",focus="m")]
+[name="Guard"]We're almost there, quickly now.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="The waves of intense heat hit, Mays struggles to stay standing, the herbs in her arms are lifted by the hot air.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="char_1011_wizard_1",focus="m")]
+[name="Mays"]Agh! My—
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_mechadown",volume=0.7)]
+[PlaySound(key="$d_avg_dropspanner",volume=0.9,delay=0.5)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=0.5)]
+[Dialog]
+[bgeffect]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[StopSound(channel="bgs", fadetime=2)]
+[CameraShake(duration=0.1, xstrength=25, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Above our heads roars the sound of buckling metal.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[delay(time=1)]
+[Sticker(id="st1", multi = true, text="Well, alright, I push her away.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThen, I jump up with all my strength, and gather up the petals.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image(image="43_i02",screenadapt="coverall",fadetime=0,block=true)]
+[Background(image="bg_light",screenadapt="coverall")]
+[delay(time=1)]
+[PlaySound(key="$p_skill_explocar", volume=0.5)]
+[playMusic(intro="$distressed_intro", key="$distressed_loop", volume=0.6)]
+[CameraShake(duration=4, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=2)]
+[charslot]
+[dialog]
+[Sticker(id="st1", multi = true, text="A collapse.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nIt's hot.",block = true)]
+[Sticker(id="st1", multi = true, text="\nThe sun is burning. I'm burning.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="Is that the exit?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nA few steps further.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="But they're watching behind me. Those eyes... are they judging me? Or just judging my insignificant death?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nWhat did they expect of me?",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="I can't think about it... I can't.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nMaybe I let them down with their deaths. They should hope for a more meaningful end for me.",block = true)]
+[Sticker(id="st1", multi = true, text="\nLike, I don't know, dying on the steps of the palace in Deity Grypherburg? Anyway, not here, not dying for an uninfected woman I just met, holding some broken petals in my arms.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="How could I face them here?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nBut I still need to face them.",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=1, r=0.8, g=0.8, b=0.8, fadetime=3, block=true)]
+[image]
+[delay(time=1)]
+[Blocker(a=0, r=0.8, g=0.8, b=0.8, fadetime=1, block=true)]
+[delay(time=1)]
+[name="Guard"]Take them... and go.
+[name="Guard"]The exit is right ahead, don't lose them this time, I might've... crushed some of the petals, give them to a woman named Nine, she knows what to do.
+[name="Guard"]Don't dawdle, move.
+[Dialog]
+[Blocker(a=1, r=0.8, g=0.8, b=0.8, fadetime=1.5, block=true)]
+[charslot]
+[image]
+[Image(image="43_i02",screenadapt="coverall",fadetime=0,block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0.8, g=0.8, b=0.8, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="It's hot. It burns.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI remember the afternoon when I first learned I had Oripathy.",block = true)]
+[Sticker(id="st1", multi = true, text="\nWhat was it exactly that caused my infection? I still don't actually know.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="Maybe it was the time I fell in the river and something scratched my leg. Might've been an active Originium crystal instead of a rock.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nMaybe it was the dust I inhaled in the mines.",block = true)]
+[Sticker(id="st1", multi = true, text="\nMaybe it was industrial waste from the factories. Maybe.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[delay(time=0.5)]
+[Background(image="bg_black",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[Sticker(id="st1", multi = true, text="But when I got home, the smell of smoke in the room hadn't dissipated. My luggage was packed and placed on the table where we usually ate together.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI found a salt lake, but I wasn't lucky. Maybe I chose the wrong place, there was no boat at the time.",block = true)]
+[Sticker(id="st1", multi = true, text="\nI owe a lot to the Rhodes Island operator who came over and talked to me when I was sitting by the lake.",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[delay(time=2)]
+[PlaySound(key="$d_avg_devicebeep", volume=1)]
+[delay(time=1)]
+[name="Guard"]Nine, Red, Percival, Talulah, guh...
+[name="Guard"]I'm not sure if I'll be burned to cinders by the time you find me, but I hope this recorder survives.
+[name="Guard"]You ask—
+[name="Guard"]Are we fighting for all the 'Infected'?
+[name="Guard"]Whether they're despicable, upper class, or even... royalty?
+[name="Guard"]Or... are the people we unite with, the people we want to fight alongside—
+[name="Guard"]Only the Infected?
+[name="Guard"]Only... them?
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

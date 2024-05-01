@@ -1,0 +1,832 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=2)] 
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="이그제큐터"]……그 과정에서 동행 오퍼레이터가 경미한 발목 골절을 입었습니다. 임무 목표는 이미 체포했으며, 잃어버린 약품은 전량 회수했습니다.
+[name="이그제큐터"]이것이 이번 협력 임무 중에 있었던 일입니다. 또한 윗선에선 라테라노의 재외 공민을 살펴주신 일에 대신 감사를 전하라고 하셨습니다.
+[name="이그제큐터"]뿐만 아니라 박사님은 로도스 아일랜드가 라테라노 교외에 정박해 있는 동안 언제든 찾아오셔도 좋습니다. 공증소에서 아주 친절하게 안내해드릴 겁니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="아니야, 해야 할 일을 한 것뿐인걸.;여유가 된다면 꼭 들를게, 페데리코.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]네, 당신의 대답은 잘 전달하겠습니다. 다른 볼일이 없으시다면 먼저 가보겠습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="……잠깐, 페데리코.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]지시하실 다른 임무가 있으십니까, 박사님?
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="요즘 경미한 증상의 환자들의 병세가 안정되고 있어.;의료부에서 축하 파티를 열 생각이야.;조금 전에 나한테 재밌게 입으라는 메시지를 보내왔어.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]'재밌게'라…… 애매한 표현이군요. 다른 설명은 없었습니까?
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="아무래도 내 옷 색깔이 단조롭게 느껴진 모양이야.;더 알록달록하게 입으란 뜻이겠지.", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="바이비크가 파티 모자를 보내왔는데, 어떤 게 어울릴 것 같아?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="m")]
+[name="이그제큐터"]색깔만 다를 뿐, 전부 원뿔 형태의 모자군요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="none")]
+[Decision(options="맞아, 페데리코.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]박사님, 정확한 답변을 드리지 못해 죄송합니다. 어떤 색깔이든 제겐 별 차이가 느껴지지 않습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="하지만 다들 네가 옷 색깔을 잘 맞춰 입는다고 칭찬하던데.;네 옷도 나름 알록달록하잖아?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]이 옷은 제가 맞춰 입은 게 아니라 공증소에서 지급받은 작업복입니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="그럼 평소에는……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]평소에도 이 옷을 입습니다만.
+[name="이그제큐터"]똑같은 작업복 일곱 벌이 있어서 일할 때든 아니든 언제나 입을 수 있습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]실망스러운 표정이시군요, 박사님.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="아니야, 페데리코.;조금은, 페데리코.", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_corridor",screenadapt="showall")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=3.5)]
+[charslot]
+[charslot(slot="r",name="avg_npc_970_1#1$1",duration=1)]
+[charslot(slot="l",name="avg_npc_973_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_973_1#1$1",focus="l")]
+[name="후방 지원 오퍼레이터"]이그제큐터 씨가 한참 동안 저기 앉아 있네. 한 번도 안 움직인 것 같은데, 내 착각인가?
+[charslot(slot="r",name="avg_npc_970_1#1$1",focus="r")]
+[name="엔지니어 오퍼레이터"]제가 측정기로 확인해봤는데 1cm도 안 움직였어요. 이렇게 조용한 산크타는 거의 없는데……
+[charslot(slot="l",name="avg_npc_973_1#1$1",focus="l")]
+[name="후방 지원 오퍼레이터"]네가 갓 입사해서…… 모르는 거야……
+[charslot(slot="r",name="avg_npc_970_1#1$1",focus="r")]
+[name="엔지니어 오퍼레이터"]뭘요?
+[charslot(slot="l",name="avg_npc_973_1#1$1",focus="l")]
+[name="후방 지원 오퍼레이터"]한 명의 도주자, 두 개의 은밀한 지뢰, 세 개의 거대한 구멍…… 그리고 물이 새던 그날 밤.
+[Dialog]
+[charslot]
+[name="???"]흠흠, 둘 다 정신이 있는 거야? 업무 시간에 뒷담화하다가 나한테 걸리면 월급이 깎인다고.
+[Dialog]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_411_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_973_1#1$1",focus="m")]
+[name="후방 지원 오퍼레이터"]앗…… 클로저 씨. 여긴 어쩐 일이세요?
+[charslot(slot="m",name="avg_npc_411_1#1$1",focus="m")]
+[name="클로저"]박사를 찾아온 거니까 긴장하지 마. 어제부터 파티에 무슨 색 모자를 쓰고 갈지 고민하던데, 이제 결정했으려나 모르겠네.
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]……
+[charslot(slot="m",name="avg_npc_411_1#6$1",focus="m")]
+[name="클로저"]저 산크타는 계속 저기 죽치고 앉아 있을 생각인가? 로도스 아일랜드가 얼마나 넓은데, 왜 꼭 저기서 멍을 때리는 거야?
+[Dialog]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_1032_excu2_1#6$1")]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_411_1#1$1",posfrom="100,0",posto="0,0",duration=1.5)]
+[charslot(slot="r",afrom=0,ato=1,duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_411_1#7$1",focus="r")]
+[name="클로저"]이봐, 산크타! 이만 일어나는 게 어때? 곧 비가 온다니까 라테라노로 돌아가려면 서두르는 게 좋을 거야. 너도 폭우를 뚫고 돌아가긴 싫을 거 아니야.
+[Dialog]
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_1032_excu2_1#3$1",focus="l")]
+[name="이그제큐터"]뱀파이어 클로저. 로도스 아일랜드 총괄 엔지니어, 위험 등급, 1년 전 매우 위험에서 약간 위험으로 조정됨.
+[name="이그제큐터"]특별 작전은 필요치 않음.
+[charslot(slot="r",name="avg_npc_411_1#6$1",focus="r")]
+[name="클로저"](나지막이) 왠지…… 무시당하는 듯한 기분인데.
+[charslot(slot="r",name="avg_npc_411_1#8$1",focus="r")]
+[name="클로저"]산크타, 굳이 여기서 멍때려야 해?
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="이그제큐터"]무슨 색 파티 모자를 쓰는 게 좋을까 고민하고 있었습니다.
+[charslot(slot="r",name="avg_npc_411_1#5$1",focus="r")]
+[name="클로저"]뭐야, 박사가 너한테도 물어봤어? 음…… 얼른 대답해 봐! 지금 내 옷엔 어떤 색깔이 많은 것 같아?
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="이그제큐터"]검은색과 붉은색이 많습니다.
+[name="이그제큐터"]하지만 당신의 질문은 무슨 색 모자가 제일 잘 어울릴지에 대한 제 고민을 해결하는 데 전혀 도움이 되지 않는군요.
+[charslot(slot="r",name="avg_npc_411_1#1$1",focus="r")]
+[name="클로저"]그래? 색상 감지 부품을 설치하고 알고리즘을 추가하면 색 차이를 조금 더 잘 알 수 있을 텐데.
+[charslot(slot="r",name="avg_npc_411_1#7$1",focus="r")]
+[name="클로저"]내가 할인해줄게.
+[charslot(slot="l",name="avg_1032_excu2_1#2$1",focus="l")]
+[name="이그제큐터"]실현 가능성이 매우 낮습니다. 현재 기술로는 인간의 뇌에 기계 부품을 장착하기조차 어렵지요. 더군다나……
+[charslot(slot="r",name="avg_npc_411_1#1$1",focus="r")]
+[name="클로저"]뭐?
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="이그제큐터"]당신의 개두술 경험은 믿을 만한 수준이 아닙니다.
+[name="이그제큐터"]뱀파이어 클로저, 신뢰도 매우 낮음으로 조정. 언어 불신도 매우 높음으로 조정.
+[charslot(slot="r",name="avg_npc_411_1#6$1",focus="r")]
+[name="클로저"]……미안 미안. 내가 잘못했어. 더는 안 놀릴게.
+[Dialog]
+[charslot(slot="r",name="avg_npc_411_1#1$1",focus="all")]
+[Delay(time=0.3)]
+[charslot(slot="r",posfrom="0,0",posto="-50,0",duration=1.5,isblock=true)]
+[playsound(key="$d_avg_clothmovement")]
+[charslot(slot="r",posfrom="-50,0",posto="0,0",duration=1.5,isblock=true)]
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[name="이그제큐터"]이게 뭡니까?
+[charslot(slot="r",name="avg_npc_411_1#1$1",focus="r")]
+[name="클로저"]이번 주말, 라테라노 대성당에서 익명의 화가가 작품전을 개최한대. 주최 측에서 로도스 아일랜드로 표 몇 장을 보내왔어.
+[name="클로저"]원래 꼬마 오퍼레이터들에게 줄 생각이었는데 문득 네가 가도 될 것 같단 생각이 들어서.
+[Dialog]
+[charslot(slot="l",name="avg_1032_excu2_1#1$1",focus="l")]
+[Delay(time=1.5)]
+[name="이그제큐터"]……감사합니다.
+[charslot(slot="r",name="avg_npc_411_1#7$1",focus="r")]
+[name="클로저"]그럼 이제 나에 관한 수식어들을…… 좀 수정해줄래?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="26_g9_laterano_street",screenadapt="showall")]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="클로저한테 신비한 오퍼레이터가 동행한다고는 들었는데, 그게 너일 줄이야.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]로도스 아일랜드 오퍼레이터이자 라테라노 시민인 제가 이곳에 오는 건 그다지 놀랄 일이 아닐 텐데요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="네가 쉬는 시간에 작품전을 보러왔다는 게 놀라운 거야.;예술 작품전엔 관심이 없는 줄 알았는데.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]합리적인 의심입니다. 시간이 있다면 무기를 테스트하고 정비하거나, 잠을 보충했겠지요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="하지만 결국 이렇게 왔잖아, 페데리코.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]어제 박사님께서 제게 맡기신 임무를 완성하려면 색깔과 관련된 지식을 보충해야 합니다. 박사님께선 어쩐 일이십니까? 공증소로부터 박사님께서 라테라노를 방문했다는 소식은 듣지 못했습니다만.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="페데리코, 이건 임무가 아니래도.;공식적으로 온 게 아니야.;어린 친구들이 함께 가자고 해서 오게 됐지.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[name="활발한 꼬마 오퍼레이터"]와, 산크타 아저씨도 기말고사를 통과하려면 미술 성적을 더 높여야 해요?
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]제 연말 평가에는 그런 항목이 없습니다.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[name="실망한 꼬마 오퍼레이터"]박사님, 이건 불공평해요. 왜 저희만 시험을 봐야 하는데요?
+[Dialog]
+[Decision(options="뭘 사주면 네 주의력을 돌릴 수 있을까, 꼬마야?;아이스크림을 사줄 테니 그런 건 잊어버려.", values="1;2")]
+[Predicate(references="1;2")]
+[name="실망한 꼬마 오퍼레이터"]딸기 맛으로 사주세요. 감사합니다, 박사님.
+[name="활발한 꼬마 오퍼레이터"]전 파인애플 맛이요. 감사합니다.
+[Dialog]
+[Decision(options="페데리코, 너는?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]전 괜찮습니다. 제게 아이스크림 가게 VIP 카드가 있으니 가져가서 쓰셔도 좋습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="고마워.", values="1")]
+[Predicate(references="1")]
+[Decision(options="이따 작품전에서 보자.;곧 따라갈 테니 먼저 들어가 봐.", values="1;2")]
+[Predicate(references="1;2")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="26_g2_laterano_cathedralhall",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="이그제큐터"]이 앞에 오래 서 계시는군요. 이 그림이 마음에 드셨다고 생각해도 되겠습니까?
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="맞아, 페데리코.", values="1")]
+[Predicate(references="1")]
+[Decision(options="화가가 어떤 색을 사용한 건지 궁금하네.;캔버스에 담긴 도형과 그림이 흥미로워.", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]이 작품은 파란색의 비율이 71%로 가장 높으며, 다음으로 많이 사용된 색은 초록색과 하얀색입니다.
+[name="이그제큐터"]다른 색은 사용률이 1%도 채 되지 않았으니 무시하셔도 좋습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="그게 다야, 페데리코?", values="3")]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]이 작품에 사용된 모든 색은 도형 안을 완벽하게 채우고 있습니다. 대량의 자료를 확인한 결과, 이 화가는 질서와 원칙을 강조하는 사람인 듯합니다.
+[Dialog]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]캔버스에는 각진 기하학 도형이 없습니다. 가장 많이 보이는 요소는 원, 타원, 물결이며 모든 선이 부드러운 곡선으로 이뤄져 있지요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="이런 요소들로 구성된 작품을 보면 특별한 느낌이 들어?", values="4")]
+[Predicate(references="4")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]한때 타인의 감정을 이해하기 위해 도형의 시각적 성질을 연구했습니다. 여러 사례를 통해 무의식적으로 선택한 도형이 그 사람의 내적 성향과 관계가 있다는 걸 알 수 있었지요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="흠, 제법 흥미롭네…… 계속 얘기해줄래?", values="5")]
+[Predicate(references="5")]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="m")]
+[name="이그제큐터"]질서정연하고 균형 잡힌 도형 배치를 통해 이 작품을 그릴 때 화가가 평온한 감정이었단 사실을 유추할 수 있습니다.
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="none")]
+[Dialog]
+[Predicate(references="3;4;5")]
+[charslot]
+[name="실망한 꼬마 오퍼레이터"]저어…… 박사님……
+[name="실망한 꼬마 오퍼레이터"]그림 속 푸른 물감 때문에 눈이 시려요……
+[name="활발한 꼬마 오퍼레이터"]아무래도 작품을 그릴 때 격양된 상태였나 봐요.
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]이 작품에 사용된 색과 도형을 바탕으로 전 당신과 완전히 다른 결론을 내렸습니다. 어떻게 평온한 상태에서 격양된 감정을 가질 수 있는 걸까요?
+[name="이그제큐터"]그럴듯한 답을 찾지 못하겠군요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="인간은 복잡한 존재야, 페데리코.;불가능한 일은 없어, 페데리코.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot]
+[Delay(time=0.3)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="교황 기사"]성도님, 오랜만에 뵙습니다. 이곳에 오실 줄은 몰랐습니다. 직원들이 인파 속에서 성도님을 뵈었다고 했을 땐 제 귀를 의심했지요.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]안녕하십니까, 시메오네 씨. 교황님께서도 오셨는지요?
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]아뇨, 오늘은 저 혼자 왔습니다. 이분은……?
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]제가 소개해 드리겠습니다. 이분은 로도스 아일랜드의 {@nickname} 박사님입니다.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]처음 뵙겠습니다, {@nickname} 박사.
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="반갑습니다, 시메오네 씨.", values="1")]
+[Predicate(references="1")]
+[charslot]
+[Delay(time=0.1)]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="이그제큐터"]오늘은 어쩐 일로 오신 겁니까?
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]성도님, 오늘은 일요일이니 업무 이야기는 하지 않겠습니다.
+[name="교황 기사"]한 가지 비밀을 알려 드리자면, 이 작품전을 개최한 익명의 화가가 바로 접니다. 아직 은퇴 전이라 총기사라는 신분으로 이목을 끌고 싶지 않아서 이렇게 숨긴 것이지요.
+[name="교황 기사"]성도님은 어떻습니까? 정말 작품을 감상하러 오신 겁니까?
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]맞습니다, 시메오네 씨.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]하하, 성도님께서도 농담을 하시는군요. 분명 공증소 일 때문에 오셨겠지요?
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="장담컨대 페데리코는 그렇게 복잡한 이유로 온 게 아닙니다.", values="1")]
+[Predicate(references="1")]
+[charslot]
+[Delay(time=0.1)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]전 색에 관한 지식을 쌓기 위해 이곳에 온 겁니다.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]흐음, 색에 관한 지식이라면…… 제대로 찾아오셨군요. 제 설명이 분명 도움이 되실 겁니다.
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="그렇게 말씀하시니 저도 궁금하군요.;그럼 부탁 좀 드리겠습니다.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]색에 대한 인지는 사람마다 조금씩 다르겠지만, 역사적으로 사람들은 색에 대해 어느 정도 공감대를 형성해왔습니다.
+[name="교황 기사"]빨간색이라고 하면 일반적으로 흥분과 격양, 정열처럼 자극적인 느낌을 떠올리는 것처럼 말이지요.
+[name="교황 기사"]하지만 저는 빨간색을 그림에 사용하는 경우가 드뭅니다. 성도님도 아시다시피 전 차분한 사람이지 않습니까?
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="이그제큐터"]5년 전만 해도……
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"](큰 목소리로) 이제 제가 가장 좋아하는 색깔을 말씀드리겠습니다, 성도님.
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="크흠. 아무래도 가만히 듣는 편이 좋겠어, 페데리코.;(나지막이) 나도 어딘가 모순적이라고 생각하지만 말이지.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]작품 전반에 파란색 물감을 사용하신 걸 보니 시메오네 씨는 파란색을 정말 좋아하시나 봅니다.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]정말 예리하시군요. 파란색은 평온, 지혜, 심오를 뜻합니다. 전 평생 이것들을 추구해왔지요.
+[name="교황 기사"]뿐만 아니라 파란색은 사람들의 마음을 안정시키고 편안하게 만들죠. 잠깐, 저기 웬 불빛이……?
+[name="교황 기사"]야, 이 망할 새끼야! 뭔 짓거리를 하는 거냐!
+[name="교황 기사"]그래, 너 말이야! 고개 돌리지 마! 누가 플래시를 켜래? 당장 내 작품에서 안 떨어져? 더 멀리 떨어지라고!!
+[name="교황 기사"]아, 조금 전에 제가 어디까지 얘기했죠……?
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]파란색이 사람들의 마음을 안정시키고 편안하게 만든다고 하셨지요.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]맞습니다. 파란색은…… 제 영혼의 거처이자 영원함의 상징입니다. 정말…… 아름다운 색이지요.
+[Dialog]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[name="작품전 관계자"]시메오네 씨, 실례합니다만 잠시 시간 좀 내주실 수 있나요? 급하게 말씀드려야 할 일이 있어서요.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]금방 다녀올 테니, 두 분께서는 잠시만 기다려주시지요.
+[Dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[charslot]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]온통 모순되는 말뿐이었습니다. 파란색에 관해 시메오네 씨가 얘기한 내용은 도통 믿을 수가 없군요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="잠깐만, 페데리코.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]박사님께선 그의 의견이 타당하다고 생각하십니까?
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="색이 인간의 감정에 미치는 영향은 아주 복잡해. 조금 더 알아보는 게 어떨까?;인간의 감정은 짧은 순간에도 쉽게 변해. 색은 수많은 영향 요인 중 하나일 뿐이지.", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="색이 감정에 미치는 영향을 이해하려면 다양한 요인을 종합해봐야 해.", values="3")]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="이그제큐터"]태생적으로 생리적 결함을 안고 태어난 탓에 그 목표를 이루기까지 오랜 시간이 걸릴 것 같군요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="none")]
+[Decision(options="그래도 덕분에 아무 두려움 없이 도전할 수 있잖아?;하지만 넌 두려움을 느끼지 않잖아, 페데리코.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#7$1",focus="m")]
+[name="이그제큐터"]그렇습니다, 박사님.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="교황 기사"]성도님, 이쪽으로 와주셔야 할 것 같습니다.
+[Dialog]
+[stopmusic(fadetime=1)]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="none")]
+[Decision(options="시메오네 씨?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]아, 성도님. 귀를 이쪽으로……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="무슨 일이지?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]박사, 어린 오퍼레이터의 안전을 위해서라도 어서 이곳을 떠나시지요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="너는?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]급한 임무가 생겼습니다.
+[Dialog]
+[charslot]
+[name="방송"]관람객 여러분, 긴급 상황이 벌어졌으니 침착하게 비상구 표지판에 따라 질서 있게 퇴장해주시기 바랍니다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_towerinside",screenadapt="showall")]
+[PlayMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]왜 이곳에 폭탄이 있는 겁니까?
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[name="작품전 관계자"]어제 대성당에서 총격 사건이 벌어졌습니다. 용의자가 남긴 폭발물을 전부 치웠다고 생각했는데……
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]……
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[name="작품전 관계자"]성도님, 좋은 방법이 없을까요?
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]폭탄이 터지더라도 인명피해는 없을 것으로 판단됩니다.
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[name="작품전 관계자"]하지만…… 위에 있는 작품들은……
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]임무 목표 추가. 작품전 작품까지 구해보겠습니다.
+[Dialog]
+[playsound(key="$d_avg_warning",volume=0.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[delay(time=1.5)]
+[name="이그제큐터"]그럼 시간이 없으니 빠르게 움직여야겠군요.
+[Dialog]
+[playsound(key="$rungeneral")]
+[charslot(duration=1)]
+[Delay(time=2)]
+[name="작품전 관계자"]어딜 가시려고요? 앗, 성도님!
+[name="이그제큐터"]누구도 따라오지 못하게 막아주십시오.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="26_g10_laterano_roof",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$rungeneral")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1")]
+[name="이그제큐터"]이미 관람객과 작품전 예술품에서 멀리 떨어진 상태입니다. 옥상에 차폐물이 많아 폭발 영향 범위를 반경 3m 이내로 제어할 수 있을 겁니다.
+[name="이그제큐터"]해당 지점으로 폭탄을 옮기겠습니다.
+[Dialog]
+[playsound(key="$d_avg_clothmovement")]
+[Delay(time=1.5)]
+[name="이그제큐터"]설치 완료. 카운트다운…… 10, 9, 8, 7……
+[Dialog]
+[Charslot(slot="m",posfrom="0,0",posto="50,0",duration=1.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[name="이그제큐터"]5, 4, 3, 2, 1.
+[Dialog]
+[playsound(key="$d_avg_button",channel="1",volume=1)]
+[Delay(time=0.1)]
+[stopmusic]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n",channel="2",volume=1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=2.5)]
+[Charslot(slot="m",name="avg_1032_excu2_1#1$1",posfrom="50,0",posto="0,0",duration=1.5)]
+[charslot(slot="m",afrom=0,ato=1,duration=1)]
+[Delay(time=2)]
+[Charslot(slot="m",name="avg_1032_excu2_1#1$1")]
+[name="이그제큐터"]기폭 성공. 폭발 범위와 예상 범위가 거의 일치합니다. 현장에 건물 잔해가 일부 떨어지고, 약 1.75㎡의 구멍이 뚫렸으나 인명 및 전시품 피해는 없습니다.
+[name="이그제큐터"]폭발물 처리 임무를 완료했으니 내려가서 보고드리겠습니다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="26_g2_laterano_cathedralhall",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=2)]
+[name="이그제큐터"]이미 폭발물을 옥상으로 옮겨 기폭 시켰습니다. 사람들은 무사히 대피했고, 전시품도 무사합니다.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1")]
+[name="이그제큐터"]위험은 이미 제거되었으니 계속 작품전을 진행하시면 됩니다.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[name="작품전 관계자"]……성도님, 어서 떠나세요. 더 지체되면…… 돌이킬 수 없을 거예요.
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="m")]
+[name="이그제큐터"]걱정과 두려움…… 그리고 아쉬움이 느껴지는군요.
+[name="이그제큐터"]임무를 완수했을 때 예상했던 감정과 차이가 커서 그런데, 이유를 설명해주시겠습니까?
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="none")]
+[name="작품전 관계자"]폭탄을 들고 너무 빨리 가신 탓에 말씀드리지 못한 게 있어요. 사실 이번 작품전의 가장 중요한 작품은……
+[Dialog]
+[charslot]
+[playsound(key="$rungeneral")]
+[charslot(slot="m",name="avg_npc_358_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="교황 기사"]말리지 마! 그 자식이 성도든 뭐든 간에 주먹을 날려야 성이 풀리겠으니까!
+[playMusic(intro="$farce_intro", key="$farce_loop", volume=0.6)]
+[name="교황 기사"]일 년 동안 고생해서 그린 천장 작품에 구멍이 뻥 뚫렸는데, 이 정도 말도 못 하냐?
+[name="교황 기사"]야, 이 새끼야! 도망칠 생각은 꿈도 꾸지 마!
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="m")]
+[name="이그제큐터"]시메오네 씨, 전 한 발자국도 움직이지 않았습니다.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]좋아, 담은 크다 이거지?
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]작품을 망쳐서 죄송합니다. 임무 완수 상황을 다시 평가하고 피해 정도에 따라 보상을 해드리지요.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]……보상? 내가 저 그림을 그리기 위해 쏟아부은 노력을 돈으로 보상할 수 있다고 생각하나?
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]원하신다면 제가 한 치의 오차도 없이 복원해 드리겠습니다.
+[name="이그제큐터"]천장을 포함해 작품전 곳곳을 세세히 둘러본 덕분에 여전히 천장 작품이 머릿속에 남아 있습니다. 복원에는 문제가 없을 테지요.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]이봐, 방금 그 말은 모욕이나 마찬가지라고.
+[name="교황 기사"]내 붓 터치는 복원할 수 있겠지만, 그때 내 마음에 일었던 감정과 뇌리에 떠올랐던 영감은 어쩔 텐가? 그건 어떻게 복원할 거지?
+[name="교황 기사"]“한 치의 오차도 없이”라니…… 정말 무지한 발언이로군.
+[name="교황 기사"]쯧, 왜 인상을 쓰고 그러나? 내 평가를 인정하지 못하겠다는 건가?
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]그게 아니라 다른 방법을 생각 중이었습니다.
+[name="이그제큐터"]기억 속 작품에서 그 당시 시메오네 씨의 감정을 유추하고 있지요.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]그걸 유추해서 어쩌겠다는 거지? 그때의 감정은 이미 기억과 함께 흐릿해졌고, 천장이 무너짐과 동시에 산산이 조각났는데.
+[name="교황 기사"]이제 남은 건…… 구멍 너머로 보이는 하늘뿐이라고.
+[charslot(slot="m",name="avg_1032_excu2_1#5$1",focus="m")]
+[stopmusic(fadetime=1)]
+[name="이그제큐터"]하늘……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#5$1",focus="m")]
+집행자가 천장을 향해 고개를 들자 구멍 사이로 은은한 햇살이 비쳤다.
+[charslot(slot="m",name="avg_1032_excu2_1#3$1",focus="m")]
+그의 얼굴에 점차 온기가 퍼졌다.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[Delay(time=2)]
+[playMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Decision(options="지난 며칠간, 폭우 탓에 이곳의 하늘을 제대로 본 적이 없었다.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="이그제큐터"]……박사, 어린 오퍼레이터들과 함께 함선으로 돌아가시지요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="none")]
+[Decision(options="아이들은 근처 사무소에 맡겨뒀으니 걱정 마.;아이들은 안전해. 네가 걱정돼서 돌아온 거야.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]이번 방문에 불편을 드려 죄송합니다…… 아무래도 계획을 새롭게 세워야겠군요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="쉿…… 하늘을 봐. 페데리코……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[Delay(time=1.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[Background(image="bg_infirmary",screenadapt="showall")]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$dooropenquite")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="이그제큐터"]박사, 오셨습니까?
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="다친 아이들을 살피러 왔어.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="이그제큐터"]임무를 마치고 인원을 파악하던 중, 지하감옥에 있는 아이들의 영양 상태가 좋지 않다는 것을 알게 됐습니다. 아이들 중 넷은 중병을 앓고 있고, 한 아이는 목숨이 위태로운 상황이지요.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]하루만 일찍 도착했다면, 아이들의 생존율이 대폭 상승했을 겁니다.
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="다쳤어?;어깨는 왜 그래?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="m")]
+[name="이그제큐터"]어깨 부근에 상처를 입었습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#2$1",focus="none")]
+[Decision(options="......", values="1")]
+[Predicate(references="1")]
+[Decision(options="손에 들고 있는 건 뭐야, 페데리코?", values="2")]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]한 아이에게 받은 그림입니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="우리 함선에 타고난 화가가 있는 모양이네.", values="1")]
+[Predicate(references="1")]
+[Decision(options="뭐가 그려져 있어, 페데리코?", values="2")]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",focus="m")]
+[name="이그제큐터"]푸른 하늘입니다.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]그 아이는 자신이 어둠 속에 갇혀 있다고 말했습니다. 완전히 희망을 잃어가던 그때, 파란색을 보았고……
+[name="이그제큐터"]그러자 마음이 놓였다고 합니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="하지만 네 보고서에 따르면 현장에는 파란색 물건이 없었지.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]전 그 아이의 환각이라고 생각하지 않습니다. 지하감옥에 진입하기 위해 지면을 폭파했는데, 아마 그때 하늘을 봤을 겁니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="그래, 페데리코. 파란 하늘을 보면 마음이 편해지잖아.;그래, 하늘 같은 파란색은 언제나 사람을 안심하게 만들지.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+페데리코는 자신의 어깨를 토닥이는 손길을 느끼며, 다시 그림 속 하늘을 내려다보았다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="26_g2_laterano_cathedralhall",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2.5, block=true)]
+[Delay(time=2)]
+[name="작품전 관계자A"]비가 그치니까 정말 좋다. 날이 흐린 탓에 며칠 동안 몸이 찌뿌둥했다고.
+[name="작품전 관계자B"]아, 이 따사로운 햇살…… 어디 드러누워서 가만히 햇볕을 쬐고 싶어.
+[name="작품전 관계자A"]흐린 날씨 때문에 불쾌했던 기분이 싹 사라지는 것 같아……
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]……
+[Dialog]
+[Charslot]
+[name="작품전 관계자B"]봐, 시메오네 씨도 이 햇살에 취해 계시잖아.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]정말 아름다운 파란색이군. 왠지 꿈에서 본 듯한 느낌이야.
+[name="교황 기사"]내 작품과 완벽히 어울리는 색이야. 내가 천장 작품에 사용한 파란색은 그 아름다움을 돋보이게 할 뿐이지.
+[Dialog]
+[charslot]
+연이은 폭우 탓에 지금 이 순간의 하늘은 푸른색 물감이 번진 듯했다.
+바람이 물감을 더 멀리, 더 연하게 퍼뜨리자 색이 겹치고 어우러지기를 반복하면서 아름다운 푸른빛을 자아냈다.
+그곳에 있던 사람들은 고개를 들고 하늘을 바라보며 황홀한 표정을 지었다. 달콤함과 고요함이 그들의 마음을 가득 채웠다.
+머지않아 이런 감정이 거리 전체를 뒤덮었다. 거리의 사람들은 걸음을 멈췄고, 식당 손님들은 식사를 멈췄다……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="위기가 해결된 것 같네, 페데리코.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#3$1",focus="m")]
+[name="이그제큐터"]네, 보시다시피 사건은 해결됐습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#3$1",focus="none")]
+[Decision(options="임무 완수가 아니라 사건 해결이라는 표현을 썼네.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="이그제큐터"]제 임무를 다하지 못했기 때문입니다. 폭발물 제거 도중 작품이 훼손되었지 않았습니까.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="none")]
+[Decision(options="하지만 다들 기뻐 보여.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]그건 이 순간의 하늘빛 덕분이겠지요.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]목요일. 날씨 맑음. 하늘은 진청색과 연청색 사이의 오묘한 빛을 띠고 있습니다.
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]관찰 결과 이런 파란색을 본 사람은 눈이 커지고 입꼬리와 눈가가 휘어집니다. 이를 통해 즐거운 감정이 생긴다는 것을 알 수 있지요.
+[name="이그제큐터"]이런 특별한 파란색이 사람들의 긍정적인 감정에 더욱 강한 영향을 미치는지 파악하려면…… 더 많은 정보가 필요합니다.
+[charslot(slot="m",name="avg_npc_358_1#1$1",focus="m")]
+[name="교황 기사"]후…… 그만해. 더는 여기서 중얼거리지 말라고.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]……알겠습니다.
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="(어깨를 토닥인다);(눈을 마주친다);(아무것도 하지 않는다)", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]박사님, 전 지금 이런 신체 접촉이 뭘 의미하는지 모릅니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="특별한 의미는 없어, 페데리코.", values="4")]
+[Predicate(references="4")]
+[Decision(options="네가 나와 함께 하늘을 봐주기를 바랄 뿐이지.", values="5")]
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="m")]
+[name="이그제큐터"]……박사님, 뭘 이야기하고 싶은 겁니까?
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="none")]
+[Decision(options="너무 많은 걸 기억할 필요는 없어, 페데리코.", values="6")]
+[Predicate(references="6")]
+[Decision(options="지금 이 순간의 하늘빛만 기억하면 돼.", values="7")]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+짧은 침묵 후, 집행자가 다시 고개를 들어 구멍 너머의 맑은 하늘을 바라봤다.
+편안해 보이는 주변 사람들과 달리 그의 표정은 유달리 차가워 보였다.
+당신은 아무 말 없이 그를 따라 하늘로 시선을 던졌다.
+[Dialog]
+[Predicate(references="5;7;3")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+[Background(image="26_g2_laterano_cathedralhall",screenadapt="showall")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="페데리코? 페데리코? 이만 가야 할 것 같아.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]……
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]박사님…… 우리가 이곳에 얼마나 있었습니까?
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="한 시간 반.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]한 시간 반…… 그럴 리가 없습니다. 그렇게 긴 시간이 흐른 것 같진 않습니다만.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="none")]
+[Decision(options="작품전 관계자도 다 퇴근했어. 여기엔 우리 둘뿐이야.;손목시계를 보면 되겠네. 기계는 거짓말하지 않을 테니.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]확인 결과 실제 경과 시간은 1시간 37분 16초로 인지한 시간과 큰 오차가 있었습니다.
+[charslot(slot="m",name="avg_1032_excu2_1#3$1",focus="m")]
+[name="이그제큐터"]……시간의 인지 왜곡이라.
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="m")]
+[name="이그제큐터"]……이런 적은 처음입니다.
+[name="이그제큐터"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#9$1",focus="none")]
+[Decision(options="괜찮아?;안색이 안 좋은데.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="이그제큐터"]박사님, 함께 가도 되겠습니까? 의료부에 가서 종합 검진을 받아야 할 것 같습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="none")]
+[Decision(options="왜 그래?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="이그제큐터"]이 보기 드문 파란색이…… 높은 확률로 제게 병을 유발하는 요인일지도 모릅니다. 향후 임무에 지장은 없는지 확인해야겠군요.
+[Dialog]
+[stopmusic(fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=3)]
+[Background(image="bg_rhodescom",screenadapt="showall")]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+3일 후
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m",duration=1.5)]
+[Delay(time=2)]
+[name="이그제큐터"]죄송합니다, 박사님. 갑작스러운 진찰로 의료부 오퍼레이터들에게 민폐를 끼쳤군요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="괜찮아, 민폐는 무슨.;별일 아니니 개의치 마.", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="참, 클로저가 메시지를 보내왔어.", values="3")]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="이그제큐터"]……
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="none")]
+[Decision(options="엔지니어링팀으로 가서 자기를 찾아달라네.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#4$1",focus="m")]
+[name="이그제큐터"]……알겠습니다.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]브로치를 고르시는 겁니까?
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="그래, 긴히 참석해야 할 자리가 있거든.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]연청색이 좋겠습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="하지만 얼마 전 세상을 떠난 학자를 추모하기 위한 자리인데.;연청색? 하지만 참석해야 하는 곳은 장례식인데.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#6$1",focus="m")]
+[name="이그제큐터"]……
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]아, 그와 유사한 경우에는 연청색이 적절치 않나 봅니다.
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="m")]
+[name="이그제큐터"]감사합니다, 박사님. 다른 임무가 없다면 먼저 가보도록 하지요.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#1$1",focus="none")]
+[Decision(options="또 보자, 페데리코.;……또 뵙겠습니다.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",posfrom="0,0",posto="50,0",duration=1.5,isblock=true)]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",posfrom="50,0",posto="50,0",focus="m")]
+[name="이그제큐터"]박사님, 한 가지 발견한 사실이 있습니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#10$1",posfrom="50,0",posto="50,0",focus="none")]
+[Decision(options="음, 뭘 발견했는데?;얘기해 봐.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1032_excu2_1#7$1",posfrom="50,0",posto="50,0",focus="m")]
+[name="이그제큐터"]박사님의 외투는 진남색입니다.
+[Dialog]
+[charslot(slot="m",name="avg_1032_excu2_1#7$1",posfrom="50,0",posto="50,0",focus="none")]
+[Decision(options="뭐?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1032_excu2_1#7$1",posfrom="50,0",posto="50,0",focus="m")]
+[name="이그제큐터"]그럼 다음에 뵙지요, 박사님.
+[Dialog]
+[playsound(key="$doorclosequite")]
+[charslot(slot="m",posfrom="50,0",posto="100,0",duration=1.5,isblock=false)]
+[Charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[Decision(options="외투는…… 늘 진남색 아니었나?;……풉……", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

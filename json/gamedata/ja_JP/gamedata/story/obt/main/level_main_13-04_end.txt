@@ -1,0 +1,832 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[playMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[delay(time=1)]
+[interlude(maskid = "ui_cutin_mask_vertical", style = 1, size = "600, 720",offset = "-120,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "34_g11_hispdwarshipdeck", afrom = 0, ato = 1, aduration = 3, sfrom = "1.9,1.9", sto = "1.9,1.9", sduration = 0,block=true)]
+[delay(time=2)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "-120,50", name = "cutin_char_8", aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "-120,50", pto = "-170,50", duration = 40)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Sticker(id="st1", multi = true, text="最も残酷なこととは何か知っているか？", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="それは完全な暗闇でも、終わりのない責め苦でも、あるいは突き当りの見えぬ暗い路地裏や、そこに潜む無数の刺客でもない。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n全てが終わり、あらゆる苦痛がようやく終わりを迎え、温かな手が悪夢から救い上げてくれたと思ったその時。",block = true)]
+[Sticker(id="st1", multi = true, text="\n突如として気付いてしまうことだ。与えられたと思った救済が単なる冗談であり、より深い暗闇に潜る前のごく短い息継ぎの間に過ぎなかったことに。",block = true)]
+[Sticker(id="st1", multi = true, text="\nさらなる苦難がそう遠くないところで、腕を組んで冷たい目でこちらを見ていることに。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="そして、その嘲笑に応える気力もなくなっていることに。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[stopsound(channel="wind",fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[interlude(channel = 2,clear = true)]
+[Background(image="34_g11_hispdwarshipdeck",screenadapt="showall")]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_snowstormflp", volume=0.6, loop=true, channel="wind",fadetime=3)]
+[charslot(slot="m",name="avgnew_112_siege_1#9$1",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[Dialog]
+[name="シージ"]デルフィーン、貴様……我々に加わるか？
+[name="シージ"]ウィンダミア公爵の棺は、増援に来た高速軍艦へ向かっているところだ。難民たちの一部は彼女に感謝し、去り行く棺を見送り悼む儀式を自発的に執り行っているが……
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="デルフィーンは母親が最後に倒れた場所をずっと見つめていた。血痕はとうに片付けられていたが。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="今、彼女を勧誘するのはまずいかもしれない……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n私はすでに後悔し始めていた。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_866_1#6$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="デルフィーン"]ヴィーナさん、私の代わりに皆さんにお礼を言っておいていただけますか？　私は……もうしばらくここにいたいんです。
+[charslot(slot="m",name="avgnew_112_siege_1#9$1",focus="m")]
+[name="シージ"]さっきの奴らからは何と言われたんだ？
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="デルフィーン"]……大したことじゃないですよ。ここで「頭を冷やせ」と。
+[name="デルフィーン"]ソードガードたちは後から来た護送艦隊に乗り込みました。彼らのほとんどは……他の貴族たちが慌てふためく中、ずっと黙り込んでいました。
+[charslot(slot="m",name="avg_npc_866_1#8$1",focus="m")]
+[name="デルフィーン"]……
+[name="デルフィーン"]ただ一瞬、隙を見せただけなのに。私があの兵士を助けようとしたから……
+[name="デルフィーン"]ブラッドブルードが私に伸ばしてきた手が、見え透いた罠であろうとなかろうと……母はそのために傷を負いました。
+[name="デルフィーン"]陣形が崩壊し、死傷者が出ようと、ソードガードたちが自らの公爵を守ったことはありません。彼らはただ託された使命を果たすためだけに――
+[name="デルフィーン"]――だけど、彼らが立ち向かった敵は強大でした……想像を絶するほどに。
+[name="デルフィーン"]……
+[charslot(slot="m",name="avgnew_112_siege_1#9$1",focus="m")]
+[name="シージ"]デルフィーン……
+[charslot(slot="m",name="avg_npc_866_1#6$1",focus="m")]
+[name="デルフィーン"]参謀たちは、今回の行動には「私的な感情」が多すぎたと考えているそうです。参謀団はそもそも……こんな軽率な行動を支持したりしません。
+[name="デルフィーン"]彼らは……母の死を招いた直接的な原因は……私にあると考えているんです。
+[name="デルフィーン"]「英雄は弱者のために殉死すべきではない」と……
+[name="デルフィーン"]……彼らの言う通りです。
+[charslot(slot="m",name="avgnew_112_siege_1#9$1",focus="m")]
+[name="シージ"]……
+[Dialog]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私は遅れてきた戦艦たちを見やった。掲げられた旗が風に揺られている。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nなぜだか、アラデルのことを思い出した。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_866_1#1$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_1070_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_1070_1#1$1",focus="r")]
+[name="シアラー少尉"]これでいいでしょう。デルフィーンお嬢様、傷口を可能な限り洗浄しておきました。薬品は限られているので、今はこれくらいしかできません。
+[charslot(slot="l",name="avg_npc_866_1#1$1",focus="l")]
+[name="デルフィーン"]ありがとう、先生。
+[charslot(slot="r",name="avg_npc_1070_1#1$1",focus="r")]
+[name="シアラー少尉"]私もそろそろ失礼します。参謀団から全部隊に対し、報告へ戻るようにとの通達が出ているので……
+[name="シアラー少尉"]それと、あなたの物もまとめておきました。
+[name="シアラー少尉"]元々は、公爵様があなたに用意していたプレゼントです。もちろん……公爵様の剣もあります。あれはすでに受け取られたことでしょう。
+[name="シアラー少尉"]今からお伝えすることは少々失礼に当たるかもしれませんが、私はいまだに、あなたが我々と共に「ガラヴァエ鉄盾」へ戻ってくれるよう願っています。
+[name="シアラー少尉"]上官方が何と言おうと、あなたは「ウィンダミア公爵」の爵位を受け継ぐ継承者なのです。その事実は何者だろうと曲げられません。
+[charslot(slot="l",name="avg_npc_866_1#8$1",focus="l")]
+[name="デルフィーン"]……
+[charslot(slot="l",name="avg_npc_866_1#6$1",focus="l")]
+[name="デルフィーン"]考えておきます。ですが今は、どうかしばらくの間、一人で静かにさせてください。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_warehouse", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avgnew_112_siege_1#1$1",duration=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avgnew_112_siege_1#1$1",focus="m")]
+[name="シージ"]皆、無事か？
+[charslot(slot="m",name="avg_155_tiger_1#8$1",focus="m")]
+[name="インドラ"]あいつらが一部の人を連れて行ったが、ここにゃまだまだたくさんの人が残ってるぜ。
+[charslot(slot="m",name="avg_155_tiger_1#2$1",focus="m")]
+[name="インドラ"]それで、その、あの厳つい母ちゃんはマジで……？
+[charslot(slot="m",name="avgnew_112_siege_1#1$1",focus="m")]
+[name="シージ"]ああ。
+[name="シージ"]……皮肉なことに、公爵は配下の者たちをとてもよく育て上げていたようだ。
+[name="シージ"]今この時になっても、ウィンダミアの参謀団は相変わらず元々の計画に沿って次の一手を講じている。
+[charslot(slot="m",name="avgnew_112_siege_1#2$1",focus="m")]
+[name="シージ"]しかし……
+[charslot(slot="m",name="avg_npc_405_1#6$1",focus="m")]
+[name="モーガン"]デルフィーンちゃんは？
+[charslot(slot="m",name="avgnew_112_siege_1#9$1",focus="m")]
+[name="シージ"]……実利主義の軍の上層は、彼女を見放すつもりらしい。
+[name="シージ"]奴らがデルフィーンをどうするつもりなのかは……私には分からないし、心配ですらある。あいつは「継承者」だからな。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Sticker(id="st1", multi = true, text="継承者。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avgnew_112_siege_1#9$1",focus="m")]
+[name="シージ"]あいつには……まだ覚悟ができていない。
+[charslot(slot="m",name="avg_npc_396_1#1$1",focus="m")]
+[name="ダグザ"]……ウィンダミア公爵は辣腕の指導者だ。旗下のソードガードも、参謀団も、常にヴィクトリア全体の利益だけを考えてきた。
+[multiline(name="ダグザ")]でも彼女自身は、娘のために……
+[charslot(slot="m",name="avg_npc_396_1#3$1",focus="m")]
+[multiline(name="ダグザ")]彼女の下した決断は、立派ではあるが、あまりに無謀だった。
+[charslot(slot="m",name="avg_155_tiger_1#6$1",focus="m")]
+[name="インドラ"]だけどよ、こんだけ多くの人間が生き延びることができたのも、その決断のおかげじゃねぇのかよ？
+[charslot(slot="m",name="avg_npc_396_1#9$1",focus="m")]
+[name="ダグザ"]私だって、彼女の意思を尊重してないわけじゃない！
+[name="ダグザ"]しかし……これじゃデルフィーンは、ウィンダミア公爵……自分の母親が一手に築き上げた力に、見放されてしまったことになるじゃないか。
+[charslot(slot="m",name="avg_155_tiger_1#2$1",focus="m")]
+[name="インドラ"]あっ……
+[charslot(slot="m",name="avg_npc_405_1#5$1",focus="m")]
+[name="モーガン"]それで、吾輩たちは今後どうするの？
+[name="モーガン"]あいつらは確かに難民を一部連れて行ってくれたけど、まさか本気で信じるつもり？　これからの戦いは、貴族どもと共闘ってわけ？
+[charslot(slot="m",name="avgnew_112_siege_1#5$1",focus="m")]
+[name="シージ"]……全員を連れて行ったわけではないんだな？
+[name="シージ"]いや、たとえ人数が多かろうと、この船一隻に乗る人数なのに、それより多くの戦艦が乗せられない道理など――
+[stopmusic(fadetime=3)]
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_rampartclose",volume=0.6)]
+[playsound(key="$d_avg_rosoutofcontrol", loop=true, channel="wd",volume=0)]
+[SoundVolume(volume=0.2, fadetime=2,channel="wd")]
+[CameraShake(duration=5, xstrength=25, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=3)]
+[stopsound(channel="wd", fadetime=1)]
+[charslot(slot="m",name="avg_npc_405_1#4$1",focus="m")]
+[name="モーガン"]何この音？　エンジンならもう壊れちゃったんじゃない？
+[charslot(slot="m",name="avg_155_tiger_1#5$1",focus="m")]
+[name="インドラ"]窓の外だ！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[dialog]
+[charslot]
+[Sticker(id="st1", multi = true, text="先ほど我々と合流したばかりの護送艦隊が、砂塵を巻き上げているところだった。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n奴らはここを離れつつあるのだ。",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="34_g11_hispdwarshipdeck", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_snowstormflp", volume=0.6, loop=true, channel="wind1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_runstop")]
+[charslot(slot="m",name="avgnew_112_siege_1#5$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avgnew_112_siege_1#5$1",focus="m")]
+[name="シージ"]デルフィーン！
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="彼女は甲板の上の、母が亡くなった場所に佇んでいた。私が下層へ向かった時の姿勢のまま、母の剣を抱えて。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n風が彼女の短い髪をなびかせる。孤独のせいか、少しやつれたように見えた。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avgnew_112_siege_1#5$1",focus="m")]
+[name="シージ"]何があった――
+[Dialog]
+[charslot]
+[stopsound(channel="wind1",fadetime=1.5)]
+[PlaySound(key="$d_avg_clothmovementsp",volume=1)]
+[Delay(time=1.5)]
+[playMusic(intro="$distressed_intro", key="$distressed_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_866_1#8$1",duration=1.5)]
+[Delay(time=3)]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私が彼女の肩を掴むと、ようやくこちらを振り向いた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n想像していたような怒りや、恐れ、悲しみはなかった。それどころか一瞬……その顔には何の感情も見られなかったほどだ。",block = true)]
+[Sticker(id="st1", multi = true, text="\nあるのはただ、淡々とした失望……いたたまれないほど深い平静さだけだった。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_866_1#8$1",focus="m")]
+[name="デルフィーン"]……行ってしまいました。
+[Dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="声が少し震えている。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nだがそれでも――あまりに平静すぎる。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avgnew_112_siege_1#7$1",focus="m")]
+[name="シージ"]下にはまだ、ウィンダミア公爵の棺の送別に向かう民間人たちがいるんだぞ！
+[name="シージ"]あの畜生ども、無辜の平民を傷つけても平気なのか！？
+[Dialog]
+[charslot]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_walkfast", volume=0.7)]
+[charslot(slot="m",name="avg_npc_1070_1#4$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[name="シアラー少尉"]なっ、何事だ！？
+[name="シアラー少尉"]クソッ、こんなの軍令にはないぞ！　いや、彼らの受けた指令に誤りがあっただけかもしれん……
+[name="シアラー少尉"]この船にはまだ何台か動かせる歩兵戦闘車がある。一刻も早く「ガラヴァエ鉄盾」に戻らねば！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[Sticker(id="st1", multi = true, text="チッ。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="高速軍艦の船尾をこれほど真剣に眺めるのは初めてだ。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nまったく、馬鹿げている。",block = true)]
+[Sticker(id="st1")]
+[delay(time=1)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="37_g10_wildbattlefield", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=2)]
+[dialog]
+[charslot]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="衣服に残った血の雨の痕が、今でもあの残酷な襲撃を皆に思い出させてくる。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="我々がウィンダミア公爵の旗艦を離れてから、もう数時間が経つ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n悪い知らせは後を絶たない。戦艦を引き揚げ、人数確認をしている際に気づいた……ドクター、アーミヤ、アスカロンの三人がいなくなっていることに。",block = true)]
+[Sticker(id="st1", multi = true, text="\n時間的に簡単な捜索くらいしかできなかったが、収穫はなしだ……",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="私には彼らの実力を信じることしかできない。だがアーミヤは……私はなぜかいつも、彼女の痩せこけた肩を思い出す。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n今やこの部隊では、「悲しみ」や「無力感」は、最も気にする余裕のないものにすら成り果てていた。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_408_1#1$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]グズグズするな！
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="ノーポート難民"]ほ……本当にもう動けないんです！
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]この鞭で叩かれないと歩くこともできんのか？
+[CameraShake(duration=0.3, xstrength=8, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="ヴィクトリア士官"]さっさと走れ！　生き延びたければ前の戦車に追いつくんだ！
+[charslot(slot="m",name="avg_npc_416_1#1$1",focus="m")]
+[name="ノーポート難民"]もう……息が……上官、俺は、病気の身で……
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]……
+[name="ヴィクトリア士官"]モタモタしてると許さんぞ。これはお前の命だけの問題じゃ――
+[Dialog]
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_clothmovementsp")]
+[charslot(slot="r",name="avgnew_112_siege_1#10$2",duration=0.5)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_slap")]
+[PlaySound(key="$d_avg_clothmovement", volume=0.7,delay=0.2)]
+[charslot(slot = "m", posfrom="0,0", posto="-200,0", duration=0.3)]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]手を放せ、ノーポート区のチンピラめ。私はただ軍の指令に従っているだけだ。
+[charslot(slot="r",name="avgnew_112_siege_1#10$2",focus="r")]
+[name="シージ"]彼らは貴様らのような軍事訓練を受けてはいない。五時間以上に渡る急行軍ですでにヘトヘトなんだ。
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]ならば地面に横たわって、ここで死を待っていればよい。
+[name="ヴィクトリア士官"]我々はこいつらの命を救ってやってるんだ！　「ガラヴァエ鉄盾」に戻りさえすれば、まだ何もかも取り返せるかもしれない。
+[charslot(slot="r",name="avgnew_112_siege_1#10$2",focus="r")]
+[name="シージ"]彼らには野営地での休息が必要だ。
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]言っただろう――
+[charslot(slot="r",name="avgnew_112_siege_1#10$2",focus="r")]
+[name="シージ"]これは貴様らのためでもあるぞ、准尉。誤魔化さなくても貴様らの状況は分かっている。
+[name="シージ"]残された兵士はそう多くないが、貴様らのほとんどが感染――
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]黙れ！
+[Dialog]
+[PlaySound(key="$d_avg_swordexsheath", volume=0.6)]
+[charslot(slot = "m", posfrom="-200,0", posto="-170,0", duration=0.7,isblock=true)]
+[Delay(time=0.3)]
+[charslot(slot="r",name="avgnew_112_siege_1#10$2",focus="all")]
+[PlaySound(key="$d_avg_twohandedblunt")]
+[PlaySound(key="$d_avg_axeimp",volume=1,delay=0.3)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", posfrom="-170,0", posto="-200,0", duration=0.5)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avgnew_112_siege_1#10$2",focus="r")]
+[name="シージ"]……次はないぞ。
+[name="シージ"]貴様はウィンダミア公爵の部下だろう。彼女の名を汚すような行動は慎め。
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]私は――
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="「感染」とは、彼らがどうしても避けたがる呪いだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n自分を置き去りにした船を追いかけ、包帯の下で日に日に浮き上がりつつある黒い結晶を覆い隠す。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="こんなのはただの自己欺瞞に過ぎない。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]すまなかった……だが……クソッ！　頼むからその言葉だけは言わないでくれ！
+[name="ヴィクトリア士官"]私は至って健康だ……何も問題などないんだ！
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[PlaySound(key="$d_gen_walk_n", volume=0.6)]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]荒野を行軍する際はサルカズ部隊の目を引かぬよう、行動を慎めと頼んだはずだが。
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]上官、私は……
+[charslot(slot="m",name="avgnew_112_siege_1#1$1",focus="m")]
+[name="シージ"]もう日も暮れてきた。少尉、貴様らについて走りっぱなしの平民たちには、野営地で休息する必要がある。
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]……賛同できかねる。既定の作戦に基づいて行軍を続けたまえ。
+[name="シアラー少尉"]このペースなら、夜中の内には31号高地に辿り着けるはずだ。
+[name="シアラー少尉"]そこでなら「ガラヴァエ鉄盾」との通信を回復できる。移動要塞との連絡が戻らねば、本部隊に本当の安全は訪れん。
+[name="シアラー少尉"]夜明けまで待っていたら、本部隊でサルカズ部隊の相手が務まるとは――
+[charslot(slot="m",name="avgnew_112_siege_1#1$1",focus="m")]
+[name="シージ"]貴様は部隊における一時的な指揮官であり、船医であり、この場において最高の階級を持つ者だ。
+[name="シージ"]ならば分かるだろう。我々は徒歩と、たった数台の戦車に頼って、高速戦艦に追いつこうとしているんだぞ。
+[charslot(slot="m",name="avg_npc_1070_1#2$1",focus="m")]
+[name="シアラー少尉"]……
+[charslot(slot="m",name="avgnew_112_siege_1#1$1",focus="m")]
+[name="シージ"]少尉、貴様の判断は尊重するが、我々はあの艦隊がなぜあの場を離れたのかすら理解していない。
+[name="シージ"]あの時、艦隊が貴様らの通信に応答しなかったというのなら、貴様は何をもってあの移動要塞が我々のために門を開くと決めつけている？
+[name="シージ"]この部隊の状況はすでに把握した。戦闘能力を有する兵士はたったの三個中隊にも満たず、部隊について行進する難民たちはおよそ千人近くにも上る。
+[name="シージ"]貴様が夢見る偉大な行軍が達成される頃には、部隊について来れる人数は二割にも満たない数に減っているだろう。
+[charslot(slot="m",name="avg_npc_1070_1#2$1",focus="m")]
+[name="シアラー少尉"]君、確かヴィーナとか言ったな。いいか――
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="彼の目が泳いでいる。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]私が言った二割というのは、貴様の兵士のことだ。
+[name="シージ"]難民は全滅するだろう。
+[Dialog]
+[charslot(slot="m",name="avg_npc_1070_1#2$1",focus="all")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_runstop")]
+[charslot(slot="l",name="avg_npc_408_1#1$1",posfrom="-300,0", posto="-50,0",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="l",name="avg_npc_408_1#1$1",focus="l")]
+[name="ヴィクトリア士官"]（小声）上官……
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="彼らの話を聞く必要はなかった。起きたことは見えていたからだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="沈黙する人々の中、最後の一滴の血が流れ落ちた者がいた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n彼の身体から滴り落ちた血痕は長い線を引いていたが、すでにぬかるみと混じり合っている。",block = true)]
+[Sticker(id="st1", multi = true, text="\n少尉は二呼吸もしない内に口を開いた。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]速度を緩め……
+[name="シアラー少尉"]行軍を続けるのだ――
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="救いようのない奴め。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_punch",volume=1)] 
+[Effect(name="$e_fist_hit_02",layer = 1,x = -50,y=180)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=0.6)]
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_bonbrke")]
+[Delay(time=1)]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="彼の顔面に、私の拳の痕が赤く残った。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n場違いなほど小気味よい音が耳元に響いた。おそらく、あごが外れたのだろう。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[playMusic(intro="$escape_intro",key="$escape_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_1070_1#6$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_bonrcver")]
+[charslot(slot = "m", action="shake",random=true, power=5, times=60,duration=0.3)]
+[Delay(time=0.8)]
+[name="シアラー少尉"]……ぐっ……
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="彼のあごを戻す動作はとても機敏だった。どうやらこの手のことには慣れているようだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[name="シアラー少尉"]……軍人を挑発するか、たかがギャングが。
+[name="シアラー少尉"]ヴィクトリア軍法に則り、君を処刑することだってできるんだぞ。
+[name="シアラー少尉"]君は――
+[Dialog]
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_punch",volume=0.8)]
+[PlaySound(key="$fightgeneral",volume=0.6,delay=0.2)]
+[CameraShake(duration=1, xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=0.2)]
+[charslot(duration=0.4)]
+[PlaySound(key="$bodyfalldown2")]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avgnew_112_siege_1#7$1",focus="m")]
+[name="シージ"]立て。
+[name="シージ"]やってみろ。それとも続きをやるか？
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="拳というのは、本当にたまにしか役には立たない。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlaySound(key="$d_avg_crowdrun",volume=0.6)]
+[Delay(time=1.5)]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="ダグザ、モーガン、インドラが、じっとりと機を伺う兵士たちの前に立っている。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n市民たちは黙ったまま我々を取り囲んでいた。",block = true)]
+[Sticker(id="st1", multi = true, text="\n以前までの、ストリートでシマを争っていた日々を思い出す。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[name="シアラー少尉"]全員、勝手な真似はよすんだ！　民間人を誤って傷つけることは許さんぞ！
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]……
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]彼らは君を「シージ」と呼んでいたな？　君が何やら大層な身分の者だという噂もあるが……
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]私はただのギャングのボスだ。グラスゴーの……リーダーだ。
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]分かった、それはいいとしよう。だがいいか、私はウィンダミア公爵に忠誠を尽くす軍人であり……
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[name="シアラー少尉"]私の使命は、上官から仰せつかった任務を遂行することにある！
+[Dialog]
+[charslot]
+[Effect(name="$e_fist_01",layer = 1)]
+[Effect(name="$e_fist_hit_01",layer = 2,delay=0.1)]
+[PlaySound(key="$fightgeneral")]
+[CameraShake(duration=0.8, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[playsound(key="$d_avg_punch02")]
+[Effect(name="$e_fist_02",layer = 3)]
+[Effect(name="$e_fist_hit_02",layer = 4,delay=0.1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Delay(time=0.5)]
+[Dialog]
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",duration=0.3)]
+[delay(time=0.3)]
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]口元の血を拭くまで待ってやる。
+[name="シージ"]……もう諦めろ。肩が外れるぞ。
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[name="シアラー少尉"]多くの者を救うためなら、私は……犠牲を受け入れる。
+[Dialog]
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_punch02",volume=0.7)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Effect(name="$e_fist_hit_02",x=100,layer = 1)]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",posfrom="0,0",posto="-80,0",afrom=1,ato=1,duration=0.2,isblock=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",posfrom="-80,0",posto="0,0",afrom=1,ato=1,duration=0.5)]
+[delay(time=1)]
+[charslot(slot="m",name="avgnew_112_siege_1#7$1",focus="m")]
+[name="シージ"]多くの者とは誰のことだ？
+[CameraShake(duration=0.3, xstrength=12, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="シージ"]貴様は本当に、目を開いて自分の部隊を見たことがあるのか！？
+[charslot(slot="m",name="avg_npc_1070_1#2$1",focus="m")]
+[name="シアラー少尉"]私は……
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="狼狽する兵士。黙り込む市民。感染者。負傷者。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n我々を取り囲んでいるのは、そんな者たちばかりだった。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]……
+[name="シージ"]もう十分だ。
+[name="シージ"]ノーポート区の地獄から這い出た者たちに、私も言いたいことがある……
+[name="シージ"]……その者たちにはまだ、私がついている。気にかける者が、まだいる。
+[name="シージ"]腕っぷしで優る者にこそ、理がある。これがストリートの鉄則だ、少尉。
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]……
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]では今から貴様に通告する。ここを野営地とし、彼らを休息させて立て直しを図るぞ。今後の作戦を再考せねばならん。
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[name="シアラー少尉"]「ガラヴァエ鉄盾」の主力軍と完全に別れてしまった以上、サルカズ部隊と遭遇すれば我々は全滅してしまうんだぞ。ここにいるあらゆる者が――
+[Dialog]
+[stopmusic(fadetime=1)]
+[charslot]
+[name="デルフィーン"]もうやめてください。
+[name="デルフィーン"]シアラー少尉、あなたがいまだ自らをウィンダミア公爵軍の一員だと自認しておられるなら、これ以上母の顔に泥を塗るような真似はおやめください。
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[name="シアラー少尉"]何を馬鹿な――
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="デルフィーンは剣の柄を握りしめた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="私は目を見張ったが、シアラー少尉はもっと驚いていた。それと同時に、怒りも露わにしていた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n私は、ふと思い出した。「ガラヴァエ鉄盾」が私たちを見捨てて去って行く前、彼は船上のすべての者に医療救護を提供する軍医だったことを。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avgnew_112_siege_1#8$1",focus="m")]
+[name="シージ"]デルフィーン、その服と、その剣は……
+[Dialog]
+[charslot]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_walk_stage")]
+[charslot(slot="m",name="avg_4110_delphn_1#1$1",duration=1.5)]
+[delay(time=2.5)]
+[playMusic(intro="$newhope01_intro", key="$newhope01_loop", volume=0.6)]
+[charslot(slot="m",name="avg_4110_delphn_1#1$1",focus="m")]
+[name="デルフィーン"]この服は……私にはやっぱり、少し大きすぎます。
+[name="デルフィーン"]ですが、今はどうか私の考えを聞いてください。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Background(image="37_g10_wildbattlefield", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_4110_delphn_1#1$1")]
+[charslot(slot="r",name="avgnew_112_siege_1#12$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[charslot(slot="r",name="avgnew_112_siege_1#12$1",focus="r")]
+[name="シージ"]少尉は出発の用意を整えたのか？
+[charslot(slot="l",name="avg_4110_delphn_1#1$1",focus="l")]
+[name="デルフィーン"]はい。一番状態の良い戦車を選んで、特別小隊を編成しました。いつでも出発できるそうです。
+[name="デルフィーン"]この小隊は軽装のまま単独で速やかに行軍する予定なので、夜明け前には地図上の目的地に辿り着けると思います。
+[charslot(slot="r",name="avgnew_112_siege_1#12$1",focus="r")]
+[name="シージ"]その服、身に着けたのだな。
+[charslot(slot="l",name="avg_4110_delphn_1#9$1",focus="l")]
+[name="デルフィーン"]……この服が象徴するものが、ひょっとしたら誰かの力になることがあるかもしれませんから。
+[Dialog]
+[charslot]
+[delay(time=0.2)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",duration=1)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]デルフィーンお嬢様、兵士たちへの言いつけは済ませました。私が戻るまで、彼らの指揮権は一時的にあなたに引き継いでいただきます。
+[name="シアラー少尉"]……最後にもう一度だけお願いします。あなたはウィンダミア公爵の肩書を継承する筆頭となるお方です。いかなる理由があろうと、あなたは私たちと共に――
+[charslot(slot="m",name="avg_4110_delphn_1#1$1",focus="m")]
+[name="デルフィーン"]ごめんなさい、私はここに残らなきゃいけないんです。
+[name="デルフィーン"]これは市民たちへの約束でもあるんです。ヴィクトリアは誰も見捨てたりしないってことを、彼らに知らせてあげる必要があります。
+[name="デルフィーン"]そうした希望がなければ、彼らは立ち続けることができませんから……今はお互いに信じ合うことしかできませんし、信じ合わなきゃいけないんです。
+[name="デルフィーン"]それに、護送艦隊が離れたのが単なる誤解か、あるいは少数の反乱によるものだとしたら、私がいようがいまいが「ガラヴァエ鉄盾」は門を開けてくれるでしょう。
+[charslot(slot="m",name="avg_4110_delphn_1#8$1",focus="m")]
+[name="デルフィーン"]けど、もしもそうじゃなかったら？
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="少尉のまぶたが、ぴくりと動いた。デルフィーンの発言は確かに不敬極まりないものだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4110_delphn_1#1$1",focus="m")]
+[name="デルフィーン"]私が姿を見せれば……事態はより悪化してしまいます。でも少なくともあなたは生き延びることができる、そうでしょう？
+[charslot(slot="m",name="avg_npc_1070_1#4$1",focus="m")]
+[name="シアラー少尉"]そんな！　知っているでしょう！　私はそんな無様に生き永らえるような真似は――
+[charslot(slot="m",name="avg_4110_delphn_1#7$1",focus="m")]
+[name="デルフィーン"]彼らが私を見逃したのは、母への敬意からかもしれないし……少しばかりの同情心からかもしれません。けど、私に二度目のチャンスを与えたりはしないでしょう。
+[charslot(slot="m",name="avg_npc_1070_1#2$1",focus="m")]
+[name="シアラー少尉"]……
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]私は戦友たちと、上官方の公爵様への忠誠心を信じております。
+[name="シアラー少尉"]デルフィーンお嬢様、我々の座標ビーコンをお渡ししておきます。必ずいい知らせを持って帰って来ると約束しましょう。
+[name="シアラー少尉"]それで、君は……
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="男は静かに私を見つめてきた。私は拳を握りしめ、不意の一撃に備えた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]……はぁ。君のその硬い拳で、どうかお嬢様をお守りしてくれ。
+[charslot(slot="m",name="avgnew_112_siege_1#3$1",focus="m")]
+[name="シージ"]ああ、任せろ、少尉。
+[Dialog]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=2)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Background(image="43_g9_campedchariot", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[playsound(key="$d_avg_woodcracle", channel="warm", volume=0.7, loop=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_396_1#1$1",focus="m")]
+[name="ダグザ"]シージ、ノーポート区の難民たちの状況は一通り調べ終えたぞ。
+[name="ダグザ"]ウィンダミア公爵が無断で下した命令なのかは分からなかった。乗船時は状況が混乱しすぎていたし、指示を実行した者も見つからなかったからな。
+[name="ダグザ"]だが結果的に、彼らの乗船者の選別は「的確だった」としか言いようがない。今部隊内にいる難民のほとんどには、感染の兆候が見られないんだ。
+[charslot(slot="m",name="avg_npc_396_1#2$1",focus="m")]
+[name="ダグザ"]しかし今は……
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私は少尉が去って行った方向に目を向けた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nそれも当然だ。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_396_1#2$1",focus="m")]
+[name="ダグザ"]サルカズの巫術の中で戦った兵士たちは……大部分が急性の感染症状を引き起こしている。
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]彼ら軍人たちは、サルカズと戦うために鉱石病に感染したんだぞ。なのにその戦友たちは何の躊躇もなく彼らを見捨てたというのか？
+[charslot(slot="m",name="avg_4110_delphn_1#1$1",focus="m")]
+[name="デルフィーン"]……それが軍隊というもの習いです。ヴィクトリアだけではなく、カジミエーシュや、ウルサス、果てはかつてのガリアでも同じでした。
+[name="デルフィーン"]兵営内には感染者を受け入れませんし、もう少し良心のある指揮官なら彼らを独立した部隊に編制くらいはするかもしれませんが、だとしてもその後、一番危険な任務に赴かせるだけです。
+[name="デルフィーン"]軍隊にとっては、感染者と、彼らの暴走したアーツは不安定すぎるんです。
+[charslot(slot="m",name="avgnew_112_siege_1#5$1",focus="m")]
+[name="シージ"]……誰かそれに抗った者がいたはずだ。
+[charslot(slot="m",name="avg_4110_delphn_1#1$1",focus="m")]
+[name="デルフィーン"]でも、誰一人成功しませんでした。歴史上、戦争中の軍隊における感染者の比率はそれほど高くありません。前線の安定のためなら、そういった消耗は許容範囲内ですから。
+[name="デルフィーン"]王立前衛学校では、この事実をそのまま教科書に記載しているくらいです。
+[name="デルフィーン"]彼らは単に――
+[stopmusic(fadetime=1)]
+[Dialog]
+[charslot]
+[name="？？？"]「栄光の礎の下に埋まる、尊敬すべき犠牲者たち」に過ぎない。
+[Dialog]
+[charslot(slot="l",name="avg_4110_delphn_1#7$1",focus="all")]
+[charslot(slot="r",name="avgnew_112_siege_1#10$2",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_unsheathe",volume=1)]
+[PlaySound(key="$d_avg_exsheath",delay=0.2)]
+[Delay(time=1)]
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]手荒な真似はよしてくれ、お嬢さん方。
+[name="「グレーシルクハット」"]ただ少し話がしたいだけだ。
+[Dialog]
+[StopSound(channel="warm", fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g9_campedchariot", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_867_1#1$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]まず断っておこう。ウィンダミア公爵閣下の死と、我らが忠誠を尽くす一部のヴィクトリアとの間には何の関わりもない。
+[name="「グレーシルクハット」"]デルフィーン嬢、私は心からの哀悼の意を胸にここへ来た。嘘偽りなくね。私自身の立場はさておき、私はウィンダミア公爵こそ、四皇会戦の英雄たちよりも輝かしい存在だったと思っているんだよ。
+[name="「グレーシルクハット」"]しかし今、彼女が残した防衛線の穴は誰が埋めるのかな？　彼女が本来持っていた戦略的意義は誰が受け継ぐ？
+[name="「グレーシルクハット」"]ウェリントン公爵は争いに長けた古強者ではあるが、彼に本気を出すつもりがないことは周知の事実だ。
+[name="「グレーシルクハット」"]カスター公爵様は斡旋しようと必死に努力なさっておられる。端的に言えば、ウィンダミア公爵の死が我々にもたらした厄介事は非常に大きいものでね。
+[charslot(slot="m",name="avg_4110_delphn_1#7$1",focus="m")]
+[name="デルフィーン"]情報が伝わるのが少し早すぎやしませんか？
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]……これは我々の職責だ。あなたも……同業者と言えるだろう。
+[charslot(slot="m",name="avg_4110_delphn_1#7$1",focus="m")]
+[name="デルフィーン"]ここへ来た目的は一体何ですか？
+[name="デルフィーン"]ここから先は慎重に言葉を選んだ方が身のためですよ。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]……
+[name="「グレーシルクハット」"]英雄に花を手向けに来たのさ、ウィンダミア嬢。それと、手土産に食糧や弾薬をいくつか持ってきた。
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]何が望みだ？
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]あなたならお分かりのはずだ、殿下。
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]「諸王の息」。あの鉄の棒か。
+[name="シージ"]率直に言えば、確かにこの剣は私にとって役立たずの代物だ。
+[name="シージ"]そんなに取引したいなら、応じてやっても構わん。
+[charslot(slot="m",name="avgnew_112_siege_1#6$1",focus="m")]
+[name="シージ"]条件は簡単だ――
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]この剣も、貴様らの持つあの忌々しい台座とやらも最前線まで持っていけ。戦火の最も激しい、嵐が最も通り得る場所までな。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]……
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]もしも貴様らがこの剣を安全な場所まで持っていき、王侯貴族どもが茶を啜る際の日よけテントの支柱代わりに使うつもりなら、私の前から立ち去れ！
+[name="シージ"]だが貴様らがこれを本気で前線まで運び、ヴィクトリアの戦士や、市民、あるいは故郷を失くした哀れな者たちに雨風をしのがせるために使う気があるのなら……
+[name="シージ"]彼らが鍛冶職人の息子だろうと、教師の娘だろうと、ヴィクトリアの職業軍人だろうと、手製の武器を持つ民間人だろうと、全員が等しくこれがもたらす庇護を受けられるのなら……
+[name="シージ"]この鉄の棒は喜んで貴様らにくれてやろう。
+[name="シージ"]剣の台座を持ってから私に会いに来い、グレーシルクハット。前線にて、私は貴様らに一歩たりとも遅れは取らんことを約束しよう。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]……やれやれ。
+[name="「グレーシルクハット」"]それは私の持つ権限の範疇を超えてしまっている。私は単なる代役に過ぎず、最終的な決定権はカスター公爵様のお手にあるのだからね。
+[charslot(slot="m",name="avgnew_112_siege_1#7$1",focus="m")]
+[name="シージ"]では貴様の主人の元へ知らせに行け。我が敬愛する叔母君の口から結論を出させた後で、私に会いに来るんだな！
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]なるべく努力してみよう、アレクサンドリナ殿下。
+[name="「グレーシルクハット」"]だが……それはあくまで個人的な約束に過ぎない。
+[name="「グレーシルクハット」"]これからの会話は記録には残らない。ただの個人的な……「グレーシルクハット」としてではなく、サフォーク伯、ベリンガムとしての個人的な考えだ。
+[name="「グレーシルクハット」"]殿下、時には新たな意見を持つ者が現れるというのも、悪いことではないかもしれないぞ。
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]……
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]あなた方はすでに一定数の感染者戦士を受け入れている。おっと、民間人が大半だったかな。それは結構なことだが……それだけではまだ不足だ。あなたに必要なのは、「軍隊」だよ。
+[name="「グレーシルクハット」"]それもただの軍隊じゃない。彼らが身を落ち着けることのできる、あなただけの「軍隊」さ。
+[charslot(slot="m",name="avgnew_112_siege_1#5$1",focus="m")]
+[name="シージ"]……何を……
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="それは確かに意外な提案だった。あるいはこれ自体が、カスターが講じた何らかの策でもあるのかもしれんが……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n彼はあろうことか、私にレユニオンもどきの設立を勧めているのだ。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]どうやら録音機のスイッチは本当に切っているらしいな。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]ははっ。あまり長いことオフにしていると同僚たちに疑惑を抱かれてしまうがね。
+[name="「グレーシルクハット」"]……私の祖母は、四国戦争での感染が原因で処刑された……
+[name="「グレーシルクハット」"]彼女は出発前に大笑いして私の父に告げた。戦争で鉱石病に感染する確率は三パーセントにも満たないとね。私は爵位を継いだ後で、資料館で調べものをしていた際にようやく気づいたんだ……
+[name="「グレーシルクハット」"]その「三パーセント」という数字が使われ始めてから、すでに何百年も経っているということに。
+[name="「グレーシルクハット」"]……はっ。現代の戦争ではより多くの源石機器や、より複雑なアーツが使われているというのに、その三パーセントという数字は永久に変わらないんだ。
+[name="「グレーシルクハット」"]あなた方は、自分が戦場における特定の一角だけしか見えていないことに気が付けないのかもしれない。それは公爵様とて例外ではない。彼らは遥か遠くを見据えているのだから。
+[name="「グレーシルクハット」"]だが私にはよく分かる。ヴィクトリア軍における感染問題の、今までにないほどの深刻さが。
+[name="「グレーシルクハット」"]かつての「文明国家」との衝突では、皆、自分を抑えることができていた。
+[name="「グレーシルクハット」"]誰も自分の兵営を生きた爆弾で埋め尽くしたり、あるいは源石の粉塵で汚れきった都市を手にしたいなどとは思わないだろう。
+[name="「グレーシルクハット」"]だが今や……我々はサルカズを相手にしている。
+[name="「グレーシルクハット」"]シージさん、もしもあなたが本当に志をお持ちなら、それはあなたの名声にとっても、私の未来にとっても……ひいては我々の国家にとっても、皆にとって良いことなのかもしれない。
+[charslot(slot="m",name="avgnew_112_siege_1#10$1",focus="m")]
+[name="シージ"]感染者については、貴様らよりも、私や私の仲間たちの方が心得ている。気遣いは無用だ。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]喜ばしいことだ。
+[name="「グレーシルクハット」"]そうだ、不用になった備品がいくつかあるんだ。仕事中に出た副産物でね、誰も必要としないし気にも留めないものだ。
+[name="「グレーシルクハット」"]廃棄品ということで、無償であなた方に差し上げよう。
+[name="「グレーシルクハット」"]では、また。
+[Dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1)]
+[Delay(time=3)]
+[charslot(slot="l",name="avg_4110_delphn_1#11$1",focus="l")]
+[charslot(slot="r",name="avgnew_112_siege_1#5$1",focus="l")]
+[name="デルフィーン"]どこまでが本当の話だと思いますか？
+[charslot(slot="r",name="avgnew_112_siege_1#5$1",focus="r")]
+[name="シージ"]今となっては、彼のような人物でさえこの戦場に無関心ではいられないはずだと信じたいものだ。
+[name="シージ"]ところで、何を残してくれたんだ？　録音や座標か？
+[Dialog]
+[PlaySound(key="$transmission",volume=0.6)]
+[delay(time=1.5)]
+[charslot(slot="r",name="avgnew_112_siege_1#8$1",focus="r")]
+[name="シージ"]この音……これは――
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Sticker(id="st1", multi = true, text="「ジジッ――」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="「応援……求む……チェットリータウン……」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n「囲まれて……テンペスト特攻隊……」",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="「応援を求む！」", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

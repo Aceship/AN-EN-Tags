@@ -1,0 +1,607 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[stopmusic]
+[Dialog]
+[delay(time=2)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[interlude(maskid = "ui_cutin_mask_vertical", style = 1, size = "450, 720",offset = "-100,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_ltroom", afrom = 0, ato = 1, aduration = 3, sfrom = "1.3,1.3", sto = "1.3,1.3", sduration = 0)]
+[delay(time=2)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "-100,-20", name = "cutin_char_16",sfrom = "0.9,0.9", sto = "0.9,0.9",  aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "-100,-20", pto = "-140,-20", duration = 40)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私のクローゼットの中には、勲章を収めるための引き出しがある。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="私がシール軍事学院を卒業した際にもらった記念章や都市防衛軍の十五年勤続章。四年前に市内の混乱が収まった後、市議会から贈呈されたロンディニウム自由褒章もそこに入っている。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="引き出しのさらに奥には、我が一族に伝わる旧時代の遺物が眠っている。古参近衛隊の帽章、リンゴネスの瓦の残骸、そしてコルシカⅠ世陛下から直々に賜った金の杯もある。",x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n今やその金の杯は二つに折れてしまい、彫られた紋様もおぼろげになってしまったが、私は今でも紋様の筋と、レリーフにされている人物たちの表情を覚えている。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="あれは私の父と母、そして叔父叔母たちがいつまでも心に思い続けてきたガリアの繁栄の象徴だ。剥奪されず、決して色褪せない繁栄だ。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[interlude(channel = 2,clear = true,duration=2)]
+[delay(time=1)]
+[charslot]
+[Background(image="bg_offce", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_649_1#8$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="レト中佐"]……あの金の杯はかなりの重さだ。売れば相当の値がつくだろう。ガリアの芸術品の相場はいつだって悪くないからな。
+[name="レト中佐"]たとえその杯を融かし、ただの金として売ったとしても、どの都市の一等地でも家を買えるだけのお金は手に入るだろう。
+[Dialog]
+[playsound(key="$d_avg_key")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_649_1#6$1",focus="m")]
+[name="レト中佐"]これは私の家の鍵だ、持っていけ。物はクローゼットの中に仕舞っている。
+[name="レト中佐"]新しい場所へ行き、新しい暮らしを過ごしたまえ。今年起こった出来事は、たまたま見てしまった悪夢とでも思っておけばいい。
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="元都市防衛軍の兵士"]サルカズに追われた時に私を助けてくれたのも、都市防衛軍の執務室に私を匿ってくれたのも、中佐、あなたです。
+[name="元都市防衛軍の兵士"]私が感謝しなければなりません。私はとっくに都市防衛軍の者ではなくなった上、ガリア人でもないのに……
+[name="元都市防衛軍の兵士"]中佐がそこまでする必要は――
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]いいから持っていきたまえ。
+[name="レト中佐"]もし家の中でほかに目ぼしい物があれば、好きなだけ持っていくといい。記念品は、もはや私にとってなんの意味もないのだ。
+[name="レト中佐"]外が落ち着くまで、君はここに隠れておいたほうがいい。
+[name="レト中佐"]軍事委員会はすでに都市防衛軍の武装を解除してしまった。サルカズたちから見れば、今の君はヴィクトリアの一般人となんら区別はないだろう。
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="元都市防衛軍の兵士"]しかし私たちの戦友がまだ外にいます。彼らはその、ちょっと無鉄砲なので……私、みんなを助けてやりたいのです……
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="レト中佐"]彼らならみんな捕らえられてしまったよ。
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="元都市防衛軍の兵士"]……
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="レト中佐"]私の手で彼らを捕らえ、軍事委員会に引き渡したのだ。
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="元都市防衛軍の兵士"]なっ……
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="彼の目の中に見えた怒りは頂点に達する前、早々に収まりを見せてしまった。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nこれまでの私の彼に対する評価のように、彼は臆病者だ。作戦時はほんの僅かばかりの肝っ玉を見せてくれたかもしれないが、それでもやはり臆病者に変わりはない。",block = true)]
+[Sticker(id="st1", multi = true, text="\n彼は死にたくないという思いで今私とここにいる。あのサルカズに反抗した戦士たちとは、永遠に比べ物にならないだろう。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそう、永遠に。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n私は比べ物になれるのだろうか？",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="はは。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nそんなことは……どうでもいい。",block = true)]
+[Sticker(id="st1", multi = true, text="\nとっくにどうでもよくなってしまったよ。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_399_1#1$1",focus="m")]
+[name="元都市防衛軍の兵士"]中佐、これから……どこに向かわれるのですか？
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]私か？
+[name="レト中佐"]ブラッドブルードの大君が私を待っている。
+[name="レト中佐"]君はここで待機していなさい。全て終わった後に立ち去るといい。
+[name="レト中佐"]生き残りたければ、ドアを開ける際に、外で歓喜の叫びを上げているのが魔族どもではなくヴィクトリア人であることだな。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n歓喜するヴィクトリア人か……",block = true)]
+[Sticker(id="st1", multi = true, text="\n最初に頭に浮かんだのが、よもやヴィクトリアが勝利する場面とはな。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="いや、きっとそれが癖なのだろう。私は無論、テレシスに勝ってほしいと思っている。彼がガリアを復興させてくれるための前提条件だからな。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nこれまで私が払ってきた犠牲、してきた裏切り、そして許されないと知りつつも犯してきた罪、それらは全てガリアのためだ。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそうだ、全て……ガリアのためだ。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそうであれ。",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="32_g1_lentiavenue", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_soldiersstep",volume=0.5)]
+[PlaySound(key="$d_avg_autocannon", volume=0.9)]
+[PlaySound(key="$d_avg_wellwheel",volume=0.4)]
+[delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="サルカズの軍隊に護送されていく人々の集団は、遠くに見える城壁へと向かっていく。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nサルカズは、ロンディニウムを自分たちの要塞に仕上げるつもりだ。おそらく最終決戦は間近に迫っているのだろう。",block = true)]
+[Sticker(id="st1", multi = true, text="\nこのヴィクトリアの首都に立てこもるつもりなのだろうか。おそらくそうだろう。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="連れていかれる人々の中には、私に怒りと憎悪の目を向けてくる者がいた。私は彼らの顔を知っている。かつて互いに……酒を飲み交わしたことがあった者たちだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n私を止める者なら誰もいない。私がどこへ向かおうと、サルカズはまったく気にも留めていない。",block = true)]
+[Sticker(id="st1", multi = true, text="\n飼い慣らされた羽獣は、たとえ目の前で檻籠が開けられたとしても、どこへ飛んでいけるというのか？",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="25_mini02_victoria_street_n", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$darkness02_intro", key="$darkness02_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_401_1#1$1",bstart=0.2,bend=0.7,duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_401_1#1$1",bstart=0.2,bend=0.7,focus="m")]
+[name="？？？"]ルネ·レト？
+[name="？？？"]まさかこうしてキミと接触することができたとはな。
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_401_1#1$1",bstart=0.2,bend=0.7,focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",posfrom = "0,0", posto = "200,0",focus="n")]
+[charslot(slot = "m", name = "avg_npc_401_1#1$1",bstart=0,bend=0,duration=2,focus="m")]
+[delay(time=2)]
+[name="クロヴィシア"]多分これはいい知らせなのだろう。少なくとも、キミはまだサルカズに処刑されていないのだから。
+[name="クロヴィシア"]少し話をする時間はないか？
+[Dialog]
+[charslot(duration=0.2)]
+[delay(time=0.3)]
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="レト中佐"]……
+[name="レト中佐"]ふむ、君のことは知っている……自救軍の小さき指導者、クロヴィシアだね？
+[charslot(slot="r",name="avg_npc_649_1#5$1",focus="r")]
+[name="レト中佐"]自救軍の拠点ならすべて我々によって掃討され、残された者たちも全員ロンディニウムから撤退したはずだ。なぜ君がここにいる？
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="クロヴィシア"]都市防衛軍が手加減してくれた上に、カスターも約束を違えなかったからだ。
+[name="クロヴィシア"]自救軍がこの滅びゆく都市から脱出できるように、彼女の「グレーシルクハット」がそれを保障してくれたのだ。
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="レト中佐"]カスター公爵……
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="レト中佐"]……君の正体ならとっくに目星はついている。だが今、君がどのお偉いさんに従属していようがその操り人形でいようが、私にはもうどうでもいいことだ。
+[name="レト中佐"]君の実力がどれほどのものかは分からんが、今のロンディニウムは政府に反旗を翻した子供がうろちょろしていい場所ではないぞ。
+[name="レト中佐"]隠れていた場所に帰るといい。サルカズに捕らえられていないうちであれば、私も君のことは見なかったことにしてあげよう。
+[charslot(slot = "l", name = "avg_npc_401_1#9$1",focus="l")]
+[name="クロヴィシア"]……レトよ。
+[name="クロヴィシア"]君もロンディニウムに隠れて長くなるだろう。
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="レト中佐"]……
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="クロヴィシア"]私は自救軍とはぐれてしまった後、可能な限り迅速にロンディニウム内で行動する目標を新たに見つけたのだ。
+[name="クロヴィシア"]私たちも……裏切りに遭ってな。具体的にどういった面々が裏切ったかは今も分からないままだが。
+[name="クロヴィシア"]しかし、そんなことを考えている暇など私にはない。市内の状況は私たちの「移動都市を占領する」という概念に対する理解を遥かに超えている。
+[name="クロヴィシア"]今ここで起こっていることは、歴史書をどれだけ漁っても見つかりはしないはずだ。
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="レト中佐"]そんなこと、私も理解しているさ、誰よりもな。
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="クロヴィシア"]では、市外の状況は見たのか？
+[name="クロヴィシア"]サルカズの法陣が天にも突くほどの赤い光を発しているところを見かけた。各種異様な形状をした戦争装置もこの目で見かけた。あれは決して国の制式装備が敵うものではない。
+[name="クロヴィシア"]空を浮いている巫術師が領空を制して、あらゆるドローンとアーツを無効化していくところも目にした。
+[name="クロヴィシア"]以前であればサルカズの軍勢とあのいわゆる「ナハツェーラー」を描いた伝説は、多少なりとも徒に恐怖を脚色していた文学的な手段に過ぎないと考えていた。
+[name="クロヴィシア"]だが、もうそういった考えは捨てたよ。
+[name="クロヴィシア"]死そのものが門を開けば、私たちは一体どういった生き地獄を見ることになるのだろうな？
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="レト中佐"]公爵たちはどうしている？
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="クロヴィシア"]……公爵の軍は確かに逞しくて強い。だが……
+[charslot(slot = "l", name = "avg_npc_401_1#8$1",focus="l")]
+[name="クロヴィシア"]彼らは地平線の遥か彼方にいる。手が及べないだろうな。
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="レト中佐"]……
+[charslot(slot = "l", name = "avg_npc_401_1#9$1",focus="l")]
+[name="クロヴィシア"]当ててみようか？　今のキミは心の中に後ろめたさと悲哀を抱きながらも、ほんの少しだけ誇らしさを持っているのではないか？
+[name="クロヴィシア"]これまで多くの残忍な選択を下してきたが、今ようやく自分の使命を全うすることができたと、そう考えているのだろう。
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="レト中佐"]……
+[charslot(slot = "l", name = "avg_npc_401_1#9$1",focus="l")]
+[name="クロヴィシア"]キミは多分テレシスに一つ取引を持ち出し、それにテレシスは応じてくれたのではないか？　かつてガリアに属していた移動都市に関する取引だ。
+[name="クロヴィシア"]ロンディニウムは、サルカズの野心を収めるにはあまりにも小さすぎる。彼はこの場所を利用して、テラ各国の蠢く野心を突き動かそうとしているだけだ。
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="クロヴィシア"]そんな者が本当にキミやキミのガリアのことを気にすると思うか？
+[name="クロヴィシア"]今やロンディニウムは完全に陥落してしまったが、キミは愚か者ではない、きっと分かるはずだ。
+[name="クロヴィシア"]カズデル軍事委員会は最初からヴィクトリアを占領するなど計画していないのだ。
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="レト中佐"]私とて愚かではないさ。最初から希望をテレシスの許諾に託してなどいない。
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="クロヴィシア"]しかしそれでもなお、キミは同胞らが殺し合う多くの惨劇に関与してきた。
+[name="クロヴィシア"]チャンスを作るつもりでいたのか？　サルカズたちがカズデルのためにしていることのように。
+[name="クロヴィシア"]公爵らのすべての力を搾り取ってしまうこの戦争なら、確かにガリアの亡霊を再びこの世へ呼び戻すきっかけにはなり得るだろう。
+[name="クロヴィシア"]しかし問題は――
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="クロヴィシア"]キミは本当にそれを信じているのか。ルネ・レトよ？
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="レト中佐"]……
+[charslot(slot="r",name="avg_npc_649_1#5$1",focus="r")]
+[name="レト中佐"]他に何を信じればいいというのだ？
+[name="レト中佐"]私はすでに自分の臆病さを認めた。この上、自分の愚かしさや絶望そして存在すらが無意味であることをを認めろと言うのか？
+[name="レト中佐"]一体、何の用があって訪ねてきたのだ。
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="クロヴィシア"]協力関係を結ぼう。
+[name="クロヴィシア"]自救軍、それからサルカズに反抗し、ヴィクトリアの愚かな貴族たちの間で藻掻いている人たちにはまだ生きる道が残されている。
+[name="クロヴィシア"]そして、キミが追い求めているその「ガリア」も、その道の中にあるかもしれない。
+[charslot(slot="r",name="avg_npc_649_1#6$1",focus="r")]
+[name="レト中佐"]……ガリア、ガリアか。
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="レト中佐"]どうやら君は、今も抗い続けようとする者のようだな。
+[name="レト中佐"]君たちのような者からすれば、たとえ塵の中の廃墟でも、次の砦の礎になり得るのだろう。
+[name="レト中佐"]みんなそうだ。君にしかり、軍事委員会にしかり……
+[charslot(slot="r",name="avg_npc_649_1#6$1",focus="r")]
+[name="レト中佐"]君たちは本当に強かったよ、国家を転覆し得るほどに。歴史を思うままに操ることも……私のような者の運命を弄ぶことも、容易だろう。
+[charslot(slot = "l", name = "avg_npc_401_1#1$1",focus="l")]
+[name="クロヴィシア"]自暴自棄になるのはやめておきなさい。地獄が訪れる前に、私たちにはまだやれることがたくさん残っているだろう。
+[name="クロヴィシア"]キミがこれを贖罪か、あるいは別の抗争の始まりと見なしていようが私はどうだっていい。
+[name="クロヴィシア"]レトよ、どうかキミと手を――
+[charslot(slot="r",name="avg_npc_649_1#9$1",focus="r")]
+[name="レト中佐"]ならば大層立派であられる者よ、教えてくれ――
+[name="レト中佐"]私はどうやって私自身を救えばいいのだ？
+[charslot(slot = "l", name = "avg_npc_401_1#5$1",focus="l")]
+[name="クロヴィシア"]……
+[charslot(slot="r",name="avg_npc_649_1#9$1",focus="r")]
+[name="レト中佐"]ほら、君でも思いつかないではないか。
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="レト中佐"]さあ、道を開けたまえ。
+[charslot(slot = "l", name = "avg_npc_401_1#7$1",focus="l")]
+[name="クロヴィシア"]本当に考え直す気はないのか？
+[charslot(slot="r",name="avg_npc_649_1#1$1",focus="r")]
+[name="レト中佐"]ああ。
+[charslot(slot = "l", name = "avg_npc_401_1#6$1",focus="l")]
+[name="クロヴィシア"]……なら、こちらも祝福は贈らない。
+[name="クロヴィシア"]キミはあれだけ多くの死を、私の仲間たちの死を引き起こしておきながら、ここまで見下げた決断を下したのだからな！
+[charslot(slot = "l", name = "avg_npc_401_1#3$1",focus="l")]
+[name="クロヴィシア"]ルネ·レトよ！
+[charslot(slot="r",name="avg_npc_649_1#5$1",focus="r")]
+[name="レト中佐"]……そこまでにしたまえ。早く逃げるがいい、もうじきサルカズたちがやって来るぞ。
+[charslot(slot="r",name="avg_npc_649_1#8$1",focus="r")]
+[name="レト中佐"]私はまだ……別れを済まさねばならないのだ。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="32_g11_victoriaroom_n", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[Sticker(id="st1", multi = true, text="我々の涙が染み込むリンゴネス♪", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n戦場は苦痛と疲労だらけだけど♪",block = true)]
+[Sticker(id="st1", multi = true, text="\nいつかその日はやって来る♪",block = true)]
+[Sticker(id="st1", multi = true, text="\n侵略者に死を下さん♪",block = true)]
+[Sticker(id="st1", multi = true, text="\n侵略者に死を下さん♪",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlaySound(key="$doorknockquite", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[PlaySound(key="$dooropenquite")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]……
+[Dialog]
+[Charslot]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="市内に住んでいる、とある「古参近衛隊」の者。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nこんな時、なぜ彼のことを真っ先に思い起こしたのだろう？",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[musicvolume(volume=0, fadetime=1)]
+[charslot(slot="m",name="avg_npc_649_1#5$1",focus="m")]
+[delay(time=0.3)]
+[PlaySound(key="$d_avg_punchsp1",volume=0.8)]
+[CameraShake(duration=0.7, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="r",name="avg_npc_081", posfrom = "-60,0", posto = "-60,0",bstart=0.2,bend=0.7,afrom=0,ato=0,duration=0,focus="m")]
+[charslot(slot="r",name="avg_npc_081",action="zoom",poszoom="0.5,0.5",scale=0.95,duration=0,focus="m",bstart=0.2,bend=0.7,isblock=true)]
+[charslot(slot="r",afrom=0,ato=1,duration=1,focus="m",bstart=0.2,bend=0.7,isblock=true)]
+[charslot(slot="m",name="avg_npc_649_1#5$1",focus="n")]
+[name="？？？"]……所属と、階級を言え！
+[charslot(slot="m",name="avg_npc_649_1#5$1",focus="m")]
+[name="レト中佐"]相変わらず長官の棍棒は力強いですね。
+[charslot(slot="m",name="avg_npc_649_1#5$1",focus="n")]
+[name="？？？"]黙、れ！　貴様の……所属と階級を言え、と言っているのだ！　兵士よ！
+[charslot(slot="m",name="avg_npc_649_1#2$1",focus="m")]
+[name="レト中佐"]……
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]リンゴネス青年近衛隊は第二近衛選抜歩兵兵団所属、レト伍長であります！
+[Dialog]
+[PlaySound(key="$d_avg_runstop", volume=0.4)]
+[charslot(slot="r", posfrom = "-60,0", posto = "60,0",afrom=1,ato=1,duration=0.5,focus="m")]
+[charslot(slot="r",afrom=1,ato=1,action="zoom",poszoom="0.5,0.5",scale=1,focus="m",duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_081",bstart=0.2,bend=0.7,focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[delay(time=0.2)]
+[charslot(slot = "l", name = "avg_npc_081",posfrom = "0,0", posto = "460,0",focus="n")]
+[charslot(slot = "r", name = "avg_npc_081",bstart=0,bend=0,duration=1,focus="r")]
+[delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_081",focus="r")]
+[name="酷く呆けた老人"]私の、部隊？
+[Dialog]
+[charslot(slot="r",name="avg_npc_081",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_cloakmovement", volume=0.7)]
+[charslot(slot="m", posfrom = "0,0", posto = "-200,0",afrom=1,ato=1,duration=1.5)]
+[delay(time=2)]
+[musicvolume(volume=0.6, fadetime=2)]
+[charslot(slot="m",name="avg_npc_649_1#9$1",focus="m")]
+[name="レト中佐"]はっ、長官の部隊であります。
+[charslot(slot="r",name="avg_npc_081",focus="r")]
+[name="酷く呆けた老人"]見ない、顔だが。
+[charslot(slot="m",name="avg_npc_649_1#9$1",focus="m")]
+[name="レト中佐"]会ったことはあります。ただ忘れてしまわれただけですよ、長官。
+[charslot(slot="r",name="avg_npc_081",focus="r")]
+[name="酷く呆けた老人"]そうか……
+[name="酷く呆けた老人"]皇帝陛下から、ここで養生しろとの、ご命令が下っている。が、前線の戦況が、知りたい。
+[name="酷く呆けた老人"]邪悪なる、巫王は我らの艦隊によって、撃滅されたか？
+[name="酷く呆けた老人"]テレビで、あの、ヴィクトリアの、ひ、髭を蓄えた公爵の軍を見たのだ！
+[name="酷く呆けた老人"]奴ら、は隙につけ込んで、皇帝陛下に逆らうつもりか！
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="レト中佐"]ロンディニウムならすでに陥落していますよ、長官。
+[charslot(slot="r",name="avg_npc_081",focus="r")]
+[name="酷く呆けた老人"]おお、素晴らしい！
+[name="酷く呆けた老人"]これで私も……古参、近衛隊に抜擢されるのだ！　貴様などは、まだまだ！　貴様にはまだ、実績が必要だ！
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="彼はもうじき九十歳にもなる。とっくの昔にほとんどの記憶が曖昧になってしまうほど呆けてしまっているのだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n数十年もの間、この人の記憶はガリア人がコルシカⅠ世に追随し、リターニアへ出征したあの黄金期に留まっている。",block = true)]
+[Sticker(id="st1", multi = true, text="\n看護師は常々、彼の命は来年までだと言ってくるが、それでも彼はここまで持ち堪えてきた。",block = true)]
+[Sticker(id="st1", multi = true, text="\nガリアが歴史になってしまった時まで。",block = true)]
+[Sticker(id="st1", multi = true, text="\nロンディニウムまでもが墓に埋もれてしまいそうな時まで。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n私が都市防衛軍を離れた際に下した最後の命令は、この療養所の安全を確保するものだった。",block = true)]
+[Sticker(id="st1", multi = true, text="\nこれは私の長い都市防衛軍の服役期間において、私自身のためにした唯一のことだった。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_649_1#9$1",focus="m")]
+[name="レト中佐"]リンゴネス産のランスシャンパンをお持ちしました、あなたが愛してやまない逸品です。さあ、どうぞお座りください。
+[Dialog]
+[charslot(slot="m",name="avg_npc_081",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_chairrub")]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[name="酷く呆けた老人"]ふむ……
+[name="酷く呆けた老人"]いい酒だな、伍長。ふむ……
+[name="酷く呆けた老人"]我々の涙が染み込むリンゴネスよ♪
+[name="酷く呆けた老人"]戦場には苦痛と疲労が満ち溢れるけれど♪
+[name="酷く呆けた老人"]……侵略者に死を下さん……♪
+[charslot(slot="m",name="avg_npc_649_1#9$1",focus="m")]
+[name="レト中佐"]あなたがその歌を歌う時はまるで、これまでの病苦も老いも最初から存在していなかったかのようですね。
+[Dialog]
+[charslot]
+[name="酷く呆けた老人"]……我らの旗は永久に輝かん♪
+[Dialog]
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]私は一度もリンゴネスを見たことがありません。
+[name="レト中佐"]あなたが何度も私に語ってくださった、あの豪華絢爛な宮殿も、発達した交通網も……
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="レト中佐"]……ゴールディングのことを覚えておりますか？　何年も前、私と共にあなたを訪ねてきた女性です。
+[name="レト中佐"]その彼女が亡くなりました。
+[name="レト中佐"]ゴールディングは、この残酷で、動かしがたく、血に塗れた時代に殺されました。
+[charslot(slot="m",name="avg_npc_649_1#6$1",focus="m")]
+[name="レト中佐"]そして私が、その元凶の一人でした。
+[name="レト中佐"]私は彼女に……いや、分かりません。
+[name="レト中佐"]しかし、彼女はもうこの世にはいません。もう私の見えるところにはおらず、振り向いてくれることもありません。
+[name="レト中佐"]私は……とても怖いです、長官。
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]アーミヤという子供が私にこう言ったのです。私のしてきた行いはすべて臆病さから来ているのだと。
+[name="レト中佐"]私も昔、ゴールディングに心中を打ち明けました。立て続けにやって来る破滅の中で、私はただ生き延びたいだけなのだと。
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="レト中佐"]なのに私は、今でも……
+[name="レト中佐"]たとえただの口実だとしても、私は今でも――
+[name="レト中佐"]あの廃墟から新たにガリア人たちが立ち上がることを願っています……
+[charslot(slot="m",name="avg_npc_649_1#6$1",focus="m")]
+[name="レト中佐"]いや、違う。
+[name="レト中佐"]ゴールディングにはいつまでも日差しと花の香りに包まれながら、あの子供らを教え諭していてほしかった……
+[name="レト中佐"]自分の信念を貫く彼女の姿は本当に美しいものでした。
+[name="レト中佐"]それに比べて私は、私は……
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]私は、自分のできることすべてをやり尽くしました。とても苦労を要しましたよ、長官。
+[name="レト中佐"]我々には、はたしてまだ未来は残されているのでしょうか？
+[Dialog]
+[charslot]
+[delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n……",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="もう眠りに入ってしまっていたのか。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nちょうどいい。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[PlaySound(key="$d_avg_drawsword")]
+[PlaySound(key="$d_avg_exsheath",delay=0.3)]
+[delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私は自分の帯剣を引き抜いた。かつてガリア人の物であった剣を。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n多分……サルカズがここへ押し寄せてくる前に、彼を夢の中に残してあげたほうがいいだろう。",block = true)]
+[Sticker(id="st1", multi = true, text="\n少なくともその夢は輝かしいものだ。",block = true)]
+[Sticker(id="st1", multi = true, text="\n……私のような卑劣な者に、なんの資格があってその夢を穢すことができようか――",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1.5)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_avg_broadswordblood",volume=0.7)]
+[delay(time=1.5)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n年老いてしまった青年近衛隊の者の血が、私の両手を紅く染め上げた。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_victoria", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$plot_intro", key="$plot_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="鮮血を統べる君主、ブラッドブルードの大君。その彼は静かにヴィクトリア宮殿の中をあしらう豪華な装飾を眺めている。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n彼の表情は……安らかとすら言える。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_410_1#1$1",focus="m")]
+[name="ブラッドブルードの大君"]来てくれましたね、レトよ。
+[name="ブラッドブルードの大君"]てっきりどこかに隠れるのかと思っていましたよ。
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",duration=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]いえ、無論そんなことはしませんとも。
+[name="レト中佐"]必ずやあなたのもとを訪ねに参りますよ、大君殿。
+[charslot(slot="m",name="avg_npc_410_1#1$1",focus="m")]
+[name="ブラッドブルードの大君"]今日はかなり気を引き締めた格好ですね、良いことです。あのガリアの教師が亡くなられてから、ずっと気分が沈み込んだままでいましたからね。
+[name="ブラッドブルードの大君"]私は私の子らと一つ賭けをしましたよ。あなたはもうじき死ぬと、彼らはそちらに賭けをしましてね。
+[name="ブラッドブルードの大君"]だが私はあなたを信じていましたよ、レト。
+[name="ブラッドブルードの大君"]さあ、一杯お付き合いなさい。あなたの仇敵、このヴィクトリアと名の付く国の死を祝おうではありませんか。
+[name="ブラッドブルードの大君"]この手で儀式を執り行い、奴に最古の呪いを授け、哀しい結末を迎えさせてあげましょう。
+[name="ブラッドブルードの大君"]私はもうじき発たなければなりません。私の血を引く者たちにさえ与えられない特別の栄誉なのです、ここは喜ぶべきですよ？
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="レト中佐"]……
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]大君殿は、すでにご存じであられるでしょう。
+[name="レト中佐"]私が生まれた時、ガリアの首都はすでにウェリントン公爵とその卑劣な共謀者らによって徹底的に滅ぼされてしまいました。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="一つの都市が滅んでしまったのだ。まるでため息一つ吐き出されたかのように。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]そして、今あなたはどうやらロンディニウムにまったく同じことをされるおつもりだ。
+[charslot(slot="m",name="avg_npc_410_1#7$1",focus="m")]
+[name="ブラッドブルードの大君"]それが悲しく思えてしまうのですか？
+[charslot(slot="m",name="avg_npc_649_1#8$1",focus="m")]
+[name="レト中佐"]私はただ……思いもよらなかっただけです。
+[charslot(slot="m",name="avg_npc_410_1#1$1",focus="m")]
+[name="ブラッドブルードの大君"]かのウェリントン公爵はリンゴネスを滅ぼし、その移動区画を分け取りしていきました。フッ、ヴィクトリア人は実に愚かしく凡庸です。
+[name="ブラッドブルードの大君"]もしやあなた、自らの手で仇を討ちたいと思っているのですか？　その執着は称賛に値しますね。
+[name="ブラッドブルードの大君"]私であれば、その機会をあなたに賜ることができましょう。
+[charslot(slot="m",name="avg_npc_649_1#1$1",focus="m")]
+[name="レト中佐"]感謝の至り、大君殿。
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私は深く頭を下げた。だが依然と彼が私に視線を向けているのを感じる。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_410_1#5$1",focus="m")]
+[name="ブラッドブルードの大君"]あぁ……なんと嘆かわしい。
+[name="ブラッドブルードの大君"]卑劣で、心変わりが激しく、臆病でありながら自惚れてもいる。
+[name="ブラッドブルードの大君"]恐怖のために憐れみを希求し、絶望のために我が身をも滅ぼしてしまうでしょう。
+[name="ブラッドブルードの大君"]とは言え、やはり気になるものですね、レトよ。
+[name="ブラッドブルードの大君"]そのちっぽけな命からしてみれば、我々はそれなりに長い付き合いを続けてきましたね。
+[charslot(slot="m",name="avg_npc_410_1#9$1",focus="m")]
+[name="ブラッドブルードの大君"]――本気で私を殺せるとお思いですか、レトよ？
+[name="ブラッドブルードの大君"]いいえ、そんなことはありません。
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="私の血液が、私の心臓を握り潰そうとしてきた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_649_1#7$1",focus="m")]
+[name="レト中佐"]――
+[charslot(slot="m",name="avg_npc_410_1#7$1",focus="m")]
+[name="ブラッドブルードの大君"]おそらくこう思ったことでしょう。このサルカズはなんと傲慢で、不遜なのか、と。自分のことを塵埃程度にしか見ていないのだろうと。
+[name="ブラッドブルードの大君"]むしろ逆ですよ……レト。
+[name="ブラッドブルードの大君"]これから私が目にする物事が起こるおかげで、私はあなたに対し、愛しさを抱いています。
+[name="ブラッドブルードの大君"]確かに、あなたは愚かで卑劣な方でした。自分の血は惜しむべきですよ。
+[name="ブラッドブルードの大君"]その血も本来であれば、もっと面白いところで役に立てると思っていたのですがね。
+[charslot(slot="m",name="avg_npc_410_1#5$1",focus="m")]
+[name="ブラッドブルードの大君"]はぁ。これで我々もお別れですか。あっけないものですね。
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="ガリア人の剣を……それを私は必死に探っていた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n卑劣なる者の剣を。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_410_1#5$1",focus="m")]
+[name="ブラッドブルードの大君"]哀れな人ですね。もう少しだけ頑張っていれば、ほんの少しだけ藻掻いていれば、剣柄に触れることができるというのに。
+[charslot(slot="m",name="avg_npc_649_1#7$1",focus="m")]
+[name="レト中佐"]……私から……
+[name="レト中佐"]私の……賜ってやろう……
+[charslot(slot="m",name="avg_npc_410_1#1$1",focus="m")]
+[name="ブラッドブルードの大君"]何か言いたげですね？
+[charslot(slot="m",name="avg_npc_649_1#7$1",focus="m")]
+[name="レト中佐"]貴様に――
+[stopmusic(fadetime=1)]
+[Dialog]
+[delay(time=1)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0, block=true)]
+[Blocker(a=0.3, r=1,g=0.2, b=0.2, fadetime=0.03, block=true)]
+[PlaySound(key="$d_avg_bldwhoosh", volume=1)]
+[PlaySound(key="$d_avg_tear", volume=1,delay=0.2)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="剣の刃が私の首元を滑っていく。氷のように冷たく、ひんやりと。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nやがて自分の目に、私の薄汚い血が首元から噴き出してくる光景が映った。",block = true)]
+[Sticker(id="st1", multi = true, text="\n緋色の液体は奴の衣装を濡らし、顔に噴き付けられていく。",block = true)]
+[Sticker(id="st1", multi = true, text="\nハッ。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(slot="m",name="avg_npc_649_1#3$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=12, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="レト中佐"]私の血を「賜ってやろう」と言ってるのだ、この蛆虫めッ！
+[name="レト中佐"]これで貴様がその血の純潔をひけらかすことはもうできまい！
+[charslot(slot="m",name="avg_npc_649_1#3$1",focus="m")]
+[name="レト中佐"]なぜなら卑劣者のルネ・レトの血が、貴様の血を穢してやったのだから！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

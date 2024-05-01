@@ -1,0 +1,700 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_sunnytown_1",screenadapt="coverall")]
+[Delay(time=0.5)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=0.5)]
+[name="Busy Shopkeeper"]Huh, you want to buy obsidian?
+[Dialog]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]Mhm! I see you have all kinds of ores here... but no obsidian.
+[name="Chestnut"]I saw something about the Obsidian Festival on a flyer before... Isn't obsidian supposed to be a Siestan specialty?
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_paper1")]
+[PlaySound(key="$d_avg_paper2",delay=0.5)]
+[PlaySound(key="$d_avg_paper1",delay=1)]
+[Delay(time=1.5)]
+The short man flips through a geology manual and shows the Obsidian Festival flyer enclosed within to the shopkeeper.
+Next to the crumpled flyer is a sketch of the mineral that he drew himself.
+The shopkeeper's nose is buried in the goods awaiting arrangement on the shelves, and he doesn't even lift his head to look.
+[name="Busy Shopkeeper"]We can't go around selling the stuff openly, not after the Obsidian Festival.
+[name="Busy Shopkeeper"]Try your luck elsewhere. I got nothing for you!
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="Chestnut"]Wait, <i>music</i> festival? ...I've only heard of the regular Obsidian Festival.
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]Is... it not a festival for selling obsidian?
+[Dialog]
+[charslot]
+[name="Busy Shopkeeper"]It's not. It's for music addicts to cut loose.
+[name="Busy Shopkeeper"]Noisy as hell, day in, day out. At least it's finally over now.
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]Um... Would you happen to know where I can find some obsidian then?
+[Dialog]
+[charslot]
+The shopkeeper looks up from his hectic work and peers at the short fellow in front of him.
+He is surprised at first, but then shows signs of displeasure.
+[name="Busy Shopkeeper"]A kid? ...Didn't I say not to cause trouble at my place?
+[name="Busy Shopkeeper"]I don't have any obsidian here, so run along back to your mommy now!
+[Dialog]
+[PlaySound(key="$d_gen_doorclose", volume=0.6)]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_pick_lock", volume=1, loop=false, channel="a")]
+[StopSound(channel="a", fadetime=2)]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_pullcurtain", volume=1)]
+[Delay(time=1)]
+The shopkeeper slams the door shut, locks it from the inside, and draws the curtains.
+The small man scratches his head.
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="Chestnut"]Huh... Did I offend him somehow?
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="m",name="avg_npc_022",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_022",focus="m")]
+[name="Tourist"]It's probably because you mentioned obsidian.
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]...
+[charslot(slot="m",name="avg_npc_022",focus="m")]
+[name="Tourist"]Some Siestans get real antsy the moment they hear that word, as if they're afraid it'll get them involved in something.
+[name="Tourist"]Apparently there was a Catastrophe Messenger who hid the volcano's situation and completely tricked everyone.
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="Chestnut"]A Catastrophe Messenger... hiding the truth? But why?
+[charslot(slot="m",name="avg_npc_022",focus="m")]
+[name="Tourist"]Why else? For the money. Long story short, so much obsidian was dug up that it destroyed the environment around the volcano, and now Siesta has to relocate...
+[name="Tourist"]What a damn shame! When I think about that beautiful beach soon being swallowed up by lava... A tragedy is what it is! Maybe this is the unavoidable fate of the Siestans.
+[name="Tourist"]So stop looking for obsidian and get a move on! What could possibly be more important than getting outta here before the whole volcano blows?
+[Dialog]
+[playsound(key="$rungeneral", volume=0.9)]
+[charslot(duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="Chestnut"]...
+[name="Chestnut"]Destroying the environment, lying to the people, and inviting disaster...
+[name="Chestnut"]It's nothing like what the flyer said. Is obsidian really such a terrible mineral?
+[charslot(slot="m",name="avg_4041_chnut_1#2$1",focus="m")]
+[name="Chestnut"]Also... if the Siestans knew in advance that the volcano was going to erupt and had already begun preparing accordingly, then why...
+[name="Chestnut"]Why does everyone still seem so restless?
+[Dialog]
+[charslot]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="Mysterious Person"]Heeheeheheheh... Lemme tell you something, kiddo. In the face of disaster, everyone's going to go through a mix of sensitivity, anxiety, and pain, no matter how well prepared they are.
+[name="Mysterious Person"]That so-called 'preparation' is nothing more than a false sense of security, a coping mechanism... Heeheeheheh.
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Chestnut"]...What? Wh-Who are you?
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="Mysterious Person"]Oh, that hardly matters. What matters is that I know your past. I've also grasped your present and glimpsed into your future.
+[Dialog]
+[charslot(duration=0.3)]
+[PlaySound(key="$d_avg_clothmovement", volume=0.7)]
+[delay(time=1.5)]
+A withered hand stretches out from under the sleeve, presenting a small bone plate.
+[Dialog]
+[PlaySound(key="$d_avg_marblecollide", volume=1)]
+[PlaySound(key="$d_avg_metalroll",volume=0.4,delay=0.3)]
+[delay(time=1)]
+The mysterious person wobbles the plate around, causing the metal balls upon it roll around, making an indescribable sound when they collide.
+He then contorts himself into a strange posture, craning his neck to press his ear against the bone plate as if carefully interpreting some sort of message.
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="Mysterious Person"]Ohohohoh... I hear it.
+[name="Mysterious Person"]What a poor, pitiful child you are. From the day the disaster from the skies destroyed your 'burrows,' you were driven towards the frigid cold and scorching sun of the surface.
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]Burrows? They're not burrows, they're our cities. Underground cities. Have you never heard of Durins?
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="Mysterious Person"]Durins? They're no different from us. We all have our fair share of worries and hardships throughout life.
+[name="Mysterious Person"]I know what it is you're looking for, and what you're trying to protect. Do not heed the words of others; simply follow your heart, and do as you desire.
+[Dialog]
+[charslot(duration=0.3)]
+[PlaySound(key="$d_avg_clothmovementsp",volume=0.8)]
+[delay(time=1)]
+With the other hand, the person reaches inside his pocket to produce a small stone.
+The jet-black crystal seems to absorb all sunlight, diffusing it across its lustrous surface.
+[charslot(slot="m",name="avg_4041_chnut_1#5$1",focus="m")]
+[name="Chestnut"]Whoa... It's beautiful.
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="Mysterious Person"]Instead of preparing for disaster, it is better to seek out refuge so that disaster may never again occur.
+[name="Mysterious Person"]Heheheh... This chunk of obsidian will protect you, but... only if you're willing to pay a small 'price.'
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]...
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="Chestnut"](This black stone is certainly quite beautiful... but it doesn't feel like a natural mineral at all.)
+[name="Chestnut"](Is it really obsidian?)
+[name="Chestnut"](For all I know, it could just be a piece of glass.)
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]Excuse me, sir—
+[Dialog]
+[charslot]
+[delay(time=0.5)]
+[musicvolume(volume=0.3, fadetime=1)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="l",name="avg_npc_204",duration=0.5)]
+[charslot(slot="r",name="avg_npc_205",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="l",name="avg_npc_204",focus="l")]
+[name="Tourist A"]Oh, I found it! Over here!
+[charslot(slot="r",name="avg_npc_205",focus="r")]
+[name="Tourist B"]Finally, there you are! The swindler with the bone plate!
+[name="Tourist B"]Trying to scam people with fake goods?! You call this obsidian?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="Mysterious Person"]Absolutely. What I sell is 'obsidian'! These are all spiritual stones that ensure peoples' safety. Once sold, they cannot be returned!
+[name="Mysterious Person"]If what you're after is that accursed rock that brings only calamity, then go dig it up yourself from that volcanic cave!
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_204",focus="l")]
+[charslot(slot="r",name="avg_npc_205",focus="l")]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Tourist A"]You bastard! Give us back our money, now!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$runsand")]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,posfrom="0,0",posto="200,0",duration=1,isblock=false)]
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,afrom=1,ato=0,duration=0.7)]
+[delay(time=1)]
+[charslot]
+[charslot(slot="l",name="avg_npc_204",focus="all")]
+[charslot(slot="r",name="avg_npc_205",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$rungeneral", volume=0.9, loop=false, channel="run1")]
+[PlaySound(key="$rungeneral", volume=0.8, loop=false, channel="run2",delay=0.4)]
+[charslot(slot="l",name="avg_npc_204",posfrom="0,0",posto="400,0",duration=0.8,isblock=false)]
+[charslot(slot="l",name="avg_npc_204",afrom=1,ato=0,duration=0.4)]
+[charslot(slot="r",name="avg_npc_205",posfrom="0,0",posto="300,0",duration=1,isblock=false)]
+[charslot(slot="r",name="avg_npc_205",afrom=1,ato=0,duration=0.6)]
+[delay(time=1)]
+[charslot]
+[PlaySound(key="$fightgeneral", volume=0.7)] 
+[PlaySound(key="$d_avg_punchsp5",delay=0.5)]
+[PlaySound(key="$d_avg_punch",volume=0.9,delay=0.9)]
+[CameraShake(duration=0.5, xstrength=25, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=true)]
+[CameraShake(duration=0.5, xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=true)]
+[CameraShake(duration=1, xstrength=45, ystrength=45, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_vallyrck", volume=0.7)]
+The situation before the short man devolves into a brawl.
+The tourists' wallets, the mysterious person's bone plate, and a button ripped from someone's shirt all fly through the air and land nearby.
+Along with the 'obsidian,' rolling to a stop at the short man's feet.
+[Dialog]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",posfrom="0,0",posto="0,-50",duration=1.5,isblock=false)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",afrom=1,ato=0,duration=1)]
+[delay(time=1.5)]
+He leans over and picks it up.
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(key="$formal_loop", volume=0.6)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]Hmm...
+[name="Chestnut"]It turned darker...
+[Dialog]
+[charslot(duration=0.5)]
+[PlaySound(key="$d_avg_open_box", volume=1)]
+[delay(time=2)]
+He takes out the 'obsidian' he had just obtained earlier from his specimen box.
+The piece of black glass sinks into the darkness of the cave, and it becomes hard to distinguish its outline.
+[Dialog]
+[PlaySound(key="$d_avg_throwstone",volume=0.4)]
+[PlaySound(key="$d_avg_throwstone", volume=0.4, loop=false, channel="cast",delay=0.4)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+The short man waves his staff around, brightening the area.
+[name="Chestnut"]The bone plate guy gave me directions to the real obsidian mine as a thank-you for pulling the two angry tourists off of him.
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]It should be right here.
+[name="Chestnut"]Though this mine's really old, some company has been active here for quite some time, and the ore in the shallow layer is likely on the verge of exhaustion.
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="Chestnut"]But this place should be safe enough, based on how far it is from the volcano... In any case, I won't know if I can find any obsidian here until I try.
+[Dialog]
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_sandstone",volume=0.5)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="Chestnut"]Hmm... Actually, I really need to take a closer look at the geological structure of this cave. These fine, regularly-spaced lines... Were they left behind by lava flows? The thin line bends here, then extends downward...
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]...Which likely means I still need to go a bit deeper. The veins containing ore should be farther down.
+[Dialog]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="none")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_vallyrck", volume=0.8)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4041_chnut_1#6$1",focus="m")]
+[name="Chestnut"]...
+[name="Chestnut"]That sound... is that water? ...No.
+[charslot(slot="m",name="avg_4041_chnut_1#3$1",focus="m")]
+[name="Chestnut"]Behind the pillar... Who's there? Why are you hiding?
+[Dialog]
+[charslot]
+[name="Cautious Man"]...
+[name="Cautious Man"]What, it's just a little kid.
+[charslot(slot="m",name="avg_4041_chnut_1#3$1",focus="m")]
+[name="Chestnut"]I'm not a kid! I'm a grown adult!
+[Dialog]
+[charslot]
+The man frowns.
+[name="Cautious Man"]What'd you come here for? You don't just waltz into an obsidian mine. It's dangerous down here.
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]I'm looking for obsidian veins... I'm a geological surveyor of sorts?
+[Dialog]
+[charslot]
+[name="Cautious Man"]Tch, a surveyor, huh?
+[name="Cautious Man"]Where are you from, Victoria or Columbia? What geological institute do you belong to? Or are you with one of those high-and-mighty conservation organizations?
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="Chestnut"]You've got the wrong idea, sir... I'm not here on behalf of any organization. Collecting beautiful rocks like obsidian is just a personal hobby.
+[Dialog]
+[charslot]
+[name="Cautious Man"]...
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",duration=1)]
+[PlaySound(key="$d_avg_kneelsnow_s", volume=0.8)]
+[delay(time=1.5)]
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="r")]
+[name="Cautious Man"]Hold on... Gah, too bright! Point that thing away from me! What are you doing?!
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="Chestnut"]...Abnormal ridges around the fingernails, and sclera show signs of yellowing, which either means you have some problem with your digestive system, or you haven't eaten in a while.
+[name="Chestnut"]Also...
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_originiumcastshort", volume=0.7)]
+[Blocker(a=0.7, r=0.95, g=0.95, b=0.95, fadetime=0.7, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="none")]
+The short man raises his staff, and a faint glow pours out in front of it.
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="r")]
+[name="Cautious Man"]Wh-What's going on? I feel... warmth.
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]You've sprained your leg. Don't worry though, I'll help relieve the muscle fatigue and repair the damaged tissue.
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="r")]
+[name="Cautious Man"]...
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="Chestnut"]How do you feel now?
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="r")]
+[name="Cautious Man"]Much better. It doesn't seem to hurt anymore. Are you a doctor, little fella?
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="Chestnut"]I don't qualify as a doctor yet, but I do know some basic healing Arts.
+[name="Chestnut"]This light can only temporarily relieve your symptoms. If the problems come back and the pain gets worse, you should go see a specialist.
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="r")]
+[name="Cautious Man"]Mm... Appreciate it.
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="Chestnut"]Here, I'll help you up.
+[Dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=10, ystrength=10, vibrato=30, randomness=50, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[delay(time=1)]
+The short man reaches over to help pull up the person lying in the corner, but his body is heavier than expected.
+[Dialog]
+He manages to help the man stand up, but the force from being pulled forward nearly makes him topple over.
+[PlaySound(key="$d_avg_vallyrck", volume=0.6)]
+The little piece of black glass tucked in his pocket falls to the ground with a clinking sound.
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#5$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="l")]
+[name="Chestnut"]Ah! My 'obsidian'!
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]...
+[name="Cautious Man"]Obsidian?
+[name="Cautious Man"]Isn't that one of those cheap knock-offs made by Siestan hawkers to trick tourists?
+[name="Cautious Man"]They told you this was obsidian?
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="Chestnut"]Uhh... Actually, I knew all along that it was a fake.
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="none")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_marblecollide", volume=0.7)]
+[PlaySound(key="$d_avg_marblecollide", volume=0.6, loop=false, channel="ro",delay=0.4)]
+The man leans over and picks up the black rock that had fallen onto the ground, pinches it between his thumb and index finger, then taps it against the wall to produce another clinking sound.
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="Chestnut"]Please don't mess with it any more...
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]What's the big deal? Isn't this just a piece of black glass? Completely worthless.
+[name="Cautious Man"]Here, take it.
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]Yes, but even if it isn't obsidian, it still counts as a beautiful stone.
+[name="Chestnut"]Every stone has its own value.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]...
+[name="Cautious Man"]What a strange little fella.
+[name="Cautious Man"]How about I show you something actually worth something?
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="none")]
+The man takes off the cloth bag fastened to his waist and unties the rope. It's filled to the brim with black rocks.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]Here, all of this obsidian is yours.
+[charslot(slot="l",name="avg_4041_chnut_1#5$1",focus="l")]
+[name="Chestnut"]Whoa! This is... it's all real obsidian! But...
+[name="Chestnut"]You're giving all these to me? Why...?
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]As thanks for the treatment you just gave me.
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="Chestnut"]Oh... But I don't need all that. I just wanted a little chunk to study in my collection. Just this one's fine.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]...
+[name="Cautious Man"]You came all the way into this mine just for a tiny little chunk of obsidian... for your collection? To study? You sure?
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="Chestnut"]One piece is enough. Combined with the lava markings left in the cave, I have a pretty good idea of where the obsidian veins are.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]What do you need the veins for? Is a whole bag of the stuff not enough for you?
+[name="Cautious Man"]Just take it before I change my mind. Won't get a deal this good anywhere.
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]But... isn't all this more valuable to <i>you</i>? I mean, you took a whole lot of risks just to come dig it up.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]...
+[charslot(slot="l",name="avg_4041_chnut_1#11$1",focus="l")]
+[name="Chestnut"]Oh! I, um... Yeah, I won't tell anyone! Especially not anyone on the lookout for obsidian smugglers.
+[name="Chestnut"]Also... I won't be in Siesta much longer, now that I've got my hands on the real deal.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man"]What, you think I'm a smuggler just 'cause of this bag here?
+[name="Cautious Man"]Lots of people come here looking for obsidian. Volcanologists, environmental workers, government employers... and folks like you, surveyors who are 'just interested.'
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]If you really were some kind of researcher here to monitor volcanic activity, why wouldn't you shout for help when you saw someone coming?
+[name="Chestnut"]You hurt your leg and couldn't move, plus it looks like you've been down here without food for quite some time now...
+[name="Chestnut"]But even after I found you, you were more worried about who I might be, rather than how I could help you.
+[name="Chestnut"]So what else could explain all that, other than being an obsidian smuggler?
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Cautious Man?"]...
+[name="Obsidian Miner"]Smuggling? What the hell are you talking about? ...My old man was an obsidian miner, so's my brother, and so am I.
+[name="Obsidian Miner"]This is how we make a living. How does that add up to 'smuggling'?
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]Sir... I meant no offense. I'm not qualified to judge Siesta's policies or your actions, nor am I in any position to do so, but...
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]Doesn't matter anyway.
+[name="Obsidian Miner"]Even if you go running off to tell the police or the people at City Hall or whatever, this is what I gotta do to support my family.
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="Chestnut"]But what if the volcano suddenly erupts early?
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]Who cares? That's way off in the future. How could that happen all of a sudden?
+[name="Obsidian Miner"]Besides, the Siestans have already started moving, so there's still plenty of time.
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="Chestnut"]...But wouldn't it be way too late by the time disaster actually struck?
+[name="Chestnut"]My old hometown was destroyed in a sudden disaster. Everything we had worked so hard to build was just gone overnight.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]...
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="Chestnut"]In order to find out what caused it, my people and I started studying geology. Afterwards, I came to the surface to see how various other people handle their crises.
+[name="Chestnut"]Seeing Catastrophe Messengers warning people of danger, nomadic cities moving people away from high-risk areas... I really admire that kind of resilience.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]Resilience? What do you mean by that?
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]Hmm... I mean being able to bounce back after facing a sudden crisis?
+[name="Chestnut"]Just like a huge lake. Not only can it store the runoff from a flooding river after a rainy season, but it can also nourish that same river during droughts.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]In that case, why don't you people move to a nomadic city like Siesta, too?
+[name="Obsidian Miner"]If they're all as observant as you, I'm sure you could easily pick out a few capable people to be Catastrophe Messengers.
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]Well... Um, there are actually a lot of things we don't quite understand.
+[name="Chestnut"]Compared to my hometown, Siesta's a pretty lucky city. After all, the volcano hasn't erupted yet, and there's still plenty of time to avoid the brunt of the disaster.
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="Chestnut"]But...
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_sunnytown_1", screenadapt="coverall", block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[delay(time=0.5)]
+[musicvolume(volume=0.3, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="Busy Shopkeeper"]I don't have any obsidian here, so run along back to your mommy now!
+[charslot(slot="m",name="avg_npc_022",focus="m")]
+[name="Tourist"]Maybe this is the unavoidable fate of the Siestans... What could possibly be more important than getting outta here before the whole volcano blows?
+[charslot(slot="m",name="avg_npc_201",bstart=0.3,bend=0.9,focus="m")]
+[name="Mysterious Person"]That so-called 'preparation' is nothing more than a false sense of security, a coping mechanism... Heeheeheheh.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1")]
+[charslot(slot="r",name="avg_npc_998_1#1$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="l")]
+[name="Chestnut"]Even knowing about the disaster doesn't seem to be making life any easier for the Siestans...
+[name="Chestnut"]So what do we do...? What <i>can</i> we do when faced with these sudden natural disasters?
+[Dialog]
+[stopmusic(fadetime=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#2$1",focus="none")]
+[delay(time=0.2)]
+[PlaySound(key="$smallearthquake")]
+[CameraShake(duration=2.5, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=3)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]Wh-What's going on? It's shaking so much... Don't tell me the volcano's actually about to blow...?
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="l")]
+[name="Chestnut"]...
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]I just had to jinx it... There's no way our timing's actually this bad, is there?
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="l")]
+[name="Chestnut"]No, I don't think it should erupt just yet...
+[name="Chestnut"]But the structure of this cave is already extremely unstable, and even the slightest volcanic activity could cause it to collapse.
+[name="Chestnut"]We need to get out of here, now.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]...Hah, I reckon that's easier said than done.
+[Dialog]
+[playMusic(intro="$escape_intro",key="$escape_loop", volume=0.6)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="none")]
+[playsound(key="$e_atk_airshipvibe")]
+[playsound(key="$e_atk_vibe_n",delay=0.4)]
+[delay(time=1.5)]
+A swarm of Originium slugs starts approaching from the cave's entrance.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]If we head over there, they'll pick our bones clean!
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="l")]
+[name="Chestnut"]Head down! Follow me!
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1")]
+[charslot(slot="r",name="avg_npc_998_1#1$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]Well, what now? There are slugs down there too. Stop going down and take that higher passage up there!
+[name="Obsidian Miner"]I'm familiar with that area. Mined obsidian up there a few times! Besides, didn't you say you wanted to check out the obsidian veins? Well, now's your chance!
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="l")]
+[name="Chestnut"]Let's keep going this way.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]Is that some kinda sick joke? I ain't dying down here with you!
+[name="Obsidian Miner"]I'm going that way.
+[Dialog]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="none")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_icebrk", volume=0.8)]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=false, block=false)]
+[delay(time=1)]
+[playsound(key="$e_atk_airshipvibe")]
+[playsound(key="$e_atk_vibe_n",delay=0.4)]
+[delay(time=1.5)]
+Before the miner finishes his words, the wall above that cave passage cracks open, and an Originium slug squeezes out from it.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]...
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",focus="all")]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="all")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",posfrom="0,0",posto="-50,0",afrom=1,ato=1,duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="l",name="avg_4041_chnut_1#6$1",focus="l")]
+[name="Chestnut"]This way! Over here! What are you even doing?
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]Oh... Coming...
+[Dialog]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1")]
+[charslot(slot="r",name="avg_npc_998_1#1$1")]
+[delay(time=0.2)]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",posfrom="-50,0",posto="-300,0",duration=1)]
+[charslot(slot="l",name="avg_4041_chnut_1#3$1",afrom=1,ato=0,duration=0.5,isblock=false)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",posfrom="0,0",posto="-200,0",duration=1.2)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",afrom=1,ato=0,duration=0.7,isblock=false)]
+[delay(time=1.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_cave_2", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_4041_chnut_1#9$1")]
+[charslot(slot="r",name="avg_npc_998_1#1$1")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_walkfast", volume=0.7)]
+[PlaySound(key="$d_avg_runstop", volume=1,delay=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]Could you tell it was dangerous that way?
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]I know it looks like we're going deeper right now, but I can tell from the lines on the wall that it'll climb back up as we go forward. Plus... the Originium slugs aren't coming this way.
+[name="Chestnut"]As for the path up there... Didn't you just say that you mined obsidian from there?
+[name="Chestnut"]Long-term excavation will absolutely destroy the stability of the rock formation, and it could easily collapse if things start shaking again. Also, after the ore gets dug out, the cavity left behind is the perfect place for a slug nest.
+[charslot(slot="r",name="avg_npc_998_1#1$1",focus="r")]
+[name="Obsidian Miner"]...
+[name="Obsidian Miner"]Heh. You've got a little bit of that magic in you, little man.
+[name="Obsidian Miner"]Treating the wounded, observing the environment, guiding an escape, slug-related disasters... Do you do this all the time?
+[charslot(slot="l",name="avg_4041_chnut_1#9$1",focus="l")]
+[name="Chestnut"]...
+[charslot(slot="l",name="avg_4041_chnut_1#1$1",focus="l")]
+[name="Chestnut"]I see light ahead! That should be our way out!
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_beach_1", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[PlaySound(key="$beach", channel="beach", loop=true, volume=0.7)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+After escaping from the mines, Chestnut says goodbye to the obsidian miner.
+'Do you do this all the time?'
+But disaster still struck... when nobody was ready for it.
+The short man cannot help but think: what else can he do? For now, he still can't come up with an answer.
+However, he now welcomes two new guests to his specimen box — two pieces of beautiful 'obsidian.' That was enough to make him feel at peace.
+[Dialog]
+[delay(time=1)]
+On his last day in Siesta, Chestnut went to the beach, drank ice-cold soda from a street vendor, felt the sea breeze, and listened to the sound of the waves.
+Sitting on the stone steps, he opens up his booklet and starts detailing the hard-earned ore in his hand, recording this unique holiday in the way he's accustomed to.
+[stopSound(channel="beach", fadetime=1)]
+This time, though, the sound of crying suddenly pierces through the momentary calm of the receding waves.
+[charslot(slot="m",name="avg_4041_chnut_1#10$1",focus="m")]
+[name="Chestnut"]Is that a little kid?
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]Is it coming from the beach?
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_beach_1", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="Little Girl"]Uwaaaaah—
+[name="Little Boy"]Hey! Stop crying! What's the big deal anyway?!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]...Excuse me, what's wrong?
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="none")]
+[name="Little Girl"]Waaaaah—
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="none")]
+[name="Little Boy"]A big wave just came and messed up our drawing of our big brother!
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]A drawing of your big brother? Where is it?
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="none")]
+[name="Little Boy"]Right under your foot.
+[Dialog]
+[charslot]
+Chestnut looks down and sees that he's stepping on a drawing in the sand.
+Even though it had been washed away by the waves, he can vaguely see the outline of a large head.
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="Chestnut"]Um... How about we draw another one? I can help you out.
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+[name="Little Girl"]Uwaaaaaaaaaah!
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="Chestnut"]Huh? Why's she crying even harder now?
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="none")]
+[name="Little Boy"]We can't! Big brother's eyes have been washed away!
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="Chestnut"]His eyes? Why not just draw two more?
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="none")]
+[name="Little Boy"]No, the eyes have to be rocks. My little sis went all over the beach looking for the right ones, and finally found two round black pebbles, but the waves took them away!
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="none")]
+[name="Little Girl"]*sniffle*...
+[charslot(slot="m",name="avg_4041_chnut_1#9$1",focus="m")]
+[name="Chestnut"]Black pebbles?
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="Chestnut"]How about these? Will they work?
+[Dialog]
+[charslot]
+Chestnut holds out two chunks of obsidian—one real, one fake. The two children come closer and carefully look them over.
+[name="Little Boy"]Um... This might work?
+[name="Little Girl"]No, no...
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="m")]
+[name="Chestnut"]Huh? That's too bad then...
+[charslot(slot="m",name="avg_4041_chnut_1#7$1",focus="none")]
+[name="Little Girl"]They... They're not round enough!
+[charslot(slot="m",name="avg_4041_chnut_1#1$1",focus="m")]
+[name="Chestnut"]Oh, I've got you.
+[Dialog]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=0.95, g=0.95, b=0.95, fadetime=0.6, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_4041_chnut_1#1$1",focus="none")]
+His staff is once again surrounded with light, which then wraps around the two 'black pebbles.'
+[charslot(slot="m",name="avg_4041_chnut_1#1$1",focus="none")]
+[name="Little Girl"]Huh?
+[name="Little Girl"]The rocks... are round now?
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="Chestnut"]So now we've got the eyes. What else do we need?
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+[name="Little Boy"]Draw a big ol' head!
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+[name="Little Girl"]I'll draw the ears, and he'll draw the mouth... Since you're new here, you can just put the eyes in!
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="Chestnut"]You want me to do it?
+[name="Chestnut"]Hmm, these two rocks...
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="none")]
+The short man places the two 'black pebbles' inside the sand portrait, and the sound of the children's laughter drifts into his ears.
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="Chestnut"]Under the sunlight, the way they shine... isn't any different.
+[Dialog]
+[charslot]
+But, that's not important anymore—
+Right now, they are bright, shining eyes.
+[Dialog]
+[name="Little Girl & Little Boy"]Now it's perfect!
+The portrait in the sand slowly becomes more and more complete. Apparently, in the minds of these two kids, the brother is... a bit funny-looking.
+[Dialog]
+[delay(time=1)]
+Phew...
+Is it time to head home? To return underground, to return to my people, to build a stronger home together?
+The waves may still surge over onto the beach, mercilessly washing away our masterpiece without warning.
+But, the big ol' head can be drawn again. And you can always find two more 'black pebbles.'
+[charslot(slot="m",name="avg_4041_chnut_1#11$1",focus="m")]
+[name="Chestnut"]...
+[name="Chestnut"]This time... should be perfect, right?
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,388 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[Delay(time=2)]
+[interlude(maskid = "ui_cutin_mask_vertical", style = 1, size = "600, 720",offset = "-120,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "43_g8_wildernesswarcircle", afrom = 0, ato = 1, aduration = 3, sfrom = "1.9,1.9", sto = "1.9,1.9", sduration = 0)]
+[delay(time=2)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "-120,50", name = "cutin_char_5",sfrom = "1.2,1.2", sto = "1.2,1.2",  aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "-120,50", pto = "-170,50", duration = 40)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="난 내 피가 혈관을 타고 흐른다는 걸 이토록 실감나게 느껴본 적이 없다.", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n혈액은 이리저리 부딪히며 계속 나아가고, 내 사지를 지나, 마지막에는 내 심장에 모여든다.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="로도스 아일랜드에서 메딕 오퍼레이터들이 내 몸을 검사할 때면 항상 그…… 뭐더라, 이름은 잊어버렸는데, 아무튼 그것을 내 몸에 놓으려고 했었다.",x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="그때 난 오퍼레이터들을 깜짝 놀라게 했었다. 이미 몸속에 오리지늄이 있는 것만으로도 충분히 벅찬데, 또 무언가를 집어넣으려고 하니 상당한 거부감이 들었다.",x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n지금은 나도 알고 있다. 우리는 이 피 덕분에 살아가고 있다는 사실을.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="피에 산소가 있다는 것도 외드레르가 이야기해 준 적이 있다.",x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n하지만 지금은, 이 느낌이 너무나도 싫다.",block = true)]
+[Sticker(id="st1")]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="내 피라면 내 말을 들어야 하는 것 아닌가.", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n그게 싫다면 내 몸에서 나가든지.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="난 허리춤에 있는 검에 손을 올렸다.", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Delay(time=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[interlude(channel = 2,clear = true)]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[PlaySound(key="$d_avg_daggerexsheath", volume=0.6)]
+[delay(time=0.3)]
+[PlaySound(key="$d_avg_inject", volume=0, loop=false, channel="bld")]
+[SoundVolume(volume=0.6,channel="bld", fadetime=2)]
+[delay(time=1)]
+[Dialog]
+[charslot]
+[Background(image="43_g8_wildernesswarcircle", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_412_1#2$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_412_1#2$1",focus="m")]
+[name="W"]하……
+[charslot(slot="m",name="avg_4087_ines_1#6$1",focus="m")]
+[name="이네스"]W, 무슨 일이야!
+[charslot(slot="m",name="avg_npc_412_1#2$1",focus="m")]
+[name="W"]괜찮아, 사혈요법일 뿐이야.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4088_hodrer_1#6$1",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="m",name="avg_4088_hodrer_1#6$1",focus="m")]
+[name="외드레르"]후우……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_869_1#6$1",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "m", name = "avg_npc_869_1#6$1",focus="m")]
+[name="에르망가르드"]……
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="외드레르는 눈썹을 찡그렸다. 그 리치도 자신의 모자를 꼭 붙잡고 있다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n흥분이 드디어 가라앉았다. 아니, 우리가 적응했다고 하는 게 더 맞을 것이다.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]이네스, 괜찮아?
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="이네스"]난 멀쩡해. 그보단 너희가 나한테 설명해 줘야겠는데?
+[charslot(slot="m",name="avg_npc_412_1#1$1",focus="m")]
+[name="W"]알았다, 이 돌들은 냉혹한 할망구에게는 통하지 않는 거야. 켈시라면 여기서 춤도 출 수 있을걸?
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="이네스"]나도 그렇게 믿긴 하지만, 일단 네 상처부터 치료해.
+[charslot(slot="m",name="avg_npc_412_1#7$1",focus="m")]
+[name="W"]걱정 마, 정확하게 동맥은 피해서 찔렀으니까.
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="이네스"]그래서, 이건 살카즈를 상대하기 위한 장치인가? 피와 관련이 있는?
+[charslot(slot="m",name="avg_4087_ines_1#3$1",focus="m")]
+[name="이네스"]살카즈와 피라. 하, 어렵네 이거.
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]이 주술 장치들은…… 아직 완전히 가동된 게 아니에요.
+[charslot(slot = "m", name = "avg_npc_869_1#8$1",focus="m")]
+[name="에르망가르드"]으음…… 왠지 불안한 느낌이 들어 이곳에 왔더니만, 이게 원인이었군요.
+[name="에르망가르드"]어쩐지 선생님들이 런디니움의 사정에 대해 항상 지나치게 신중한 태도를 보이시더라니.
+[charslot(slot="m",name="avg_npc_412_1#13$1",focus="m")]
+[name="W"]그럼 완전히 가동되면 어떤데? 모든 살카즈가 폭발해서 죽기라도 하는 거야? 그러면 뱀파이어 생귀나르가 우리 피를 다 모아서 빅토리아한테 뿌리는 거고?
+[charslot(slot="m",name="avg_4088_hodrer_1#8$1",focus="m")]
+[name="외드레르"]이 주변에…… 바퀴 자국은 없다. 무언가를 운송한 흔적은 없어.
+[charslot(slot="m",name="avg_4088_hodrer_1#4$1",focus="m")]
+[name="외드레르"]녀석들은 이 거대한 결정을 먼 거리에서 바로 이곳에 던져버리기라도 한 건가?
+[name="외드레르"]……이런 방법, 어디선가 들어 본 것 같기도 하다.
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]에르망가르드 부인…… 이것도 당신과는 무관한가 보군요.
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]당연하죠. 리치도 이런 건 못 해요. 우리가 연구하는 것도 여기 있는 '공간'이 아니고요.
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]또 한 가지, 방금 절 알고 있는 것 같던데요?
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]외드레르 씨…… 예전에 당신의 책을 본 적이 있어요. 당신의 책 복사본이 라이타니엔의 살카즈들 사이에서 돌아다녔거든요.
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]짐작가는 부분이라도 있으십니까?
+[charslot(slot = "m", name = "avg_npc_869_1#7$1",focus="m")]
+[name="에르망가르드"]제가 왜 당신들을 도와야 하죠? 당신들은 조금 전 제 큐브를 깨뜨렸잖아요.
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="쳇. 저 여자, 방금 날 째려봤다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_412_1#1$1",focus="m")]
+[name="W"]적어도 네 가슴팍에 있는 구멍에 폭탄을 집어넣진 않았잖아?
+[charslot(slot = "m", name = "avg_npc_869_1#7$1",focus="m")]
+[name="에르망가르드"]흠. 요즘 살카즈 용병은 모두 그렇게 죽고 싶어 안달이 난 건가요?
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="저 여자가 여기서 한 마디만 더 하면, 난 정말로 저질러 버릴 것만 같다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot = "m", name = "avg_npc_869_1#2$1",focus="m")]
+[name="에르망가르드"]……뭐, 됐어요.
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]일단 조금 전 그 환상에 대해 얘기해 보죠.
+[name="에르망가르드"]그건 일종의 흔적이에요…… 공간과 시간의 흔적.
+[name="에르망가르드"]방금 바퀴 자국을 찾고 있었죠? 그 환상이야말로 바퀴 자국이에요. 어떤 특수한 아츠가 이곳에 영향을 끼쳤거든요.
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]그건 오리지늄 아츠 같은 게 아니었습니다. 살카즈 주술도 아니었고요.
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]이 마법진은 확실히 뱀파이어와 연관이 있어요. 환상도 마법진과 연관이 있긴 하지만 직접적인 건 아니에요.
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]어쩌면…… 당신이라면 이 단서를 어딘가에 쓸 수도 있지 않을까요?
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]……리치들의 태도는 어떻습니까?
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]평소대로예요. 아무런 약속도 하지 않았어요.
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]하지만 저도 정보원을 통해 들었습니다. 최근 카즈델에도…… 몇몇 리치가 나타났다더군요. 평소대로라면 리치가 카즈델에 모습을 드러내는 건 흔한 일이 아닙니다.
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]……흠?
+[name="에르망가르드"]당신은 바벨을 떠나 감염자 조직에 가입했고, 마지막에는 런디니움까지 오게 되었어요. 그런데 어떻게 아직도 카즈델에 정보망을 가지고 있는 거죠?
+[name="에르망가르드"]당신 정말로 용병이 맞나요? 제가 보기엔 당신 정도의 능력이라면 충분히 라이타니엔에서 게사츠슈베이터가 될 수 있을 것 같거든요. 아, 아츠는 그리 대단하지 않지만요.
+[charslot(slot="m",name="avg_4088_hodrer_1#8$1",focus="m")]
+[name="외드레르"]개인적인 습관 같은 겁니다.
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]……흐음, '습관'이라.
+[name="에르망가르드"]전장이 이리도 넓은데, 만약 제가 정말로 마음 먹고 사라지기라도 한다면 절 막을 수 있을 것 같아요?
+[charslot(slot="m",name="avg_4088_hodrer_1#4$1",focus="m")]
+[name="외드레르"]혹시…… 당신도 저흴 찾고 계셨던 겁니까?
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]그런 셈이죠. 당신한테 조금 흥미가 생겼거든요.
+[charslot(slot="m",name="avg_4087_ines_1#13$1",focus="m")]
+[name="이네스"]살카즈들은 은어를 사용하지 않으면 대화가 안 되는 거야?
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="이네스가 처음으로 대화에 끼어들었다. 짜증이 난 것 같다. 너무 좋다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=0.8)]
+[Sticker(id="st1", multi = true, text="그녀가 주의를 끄는 사이에 내가 이 리치인가 뭔가를 처리하면 될 것 같다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]당신조차 카즈델의 정보를 얻을 수 있다는 건, 그 남매가 보고도 못 본 척한다는 거겠군요.
+[name="에르망가르드"]우리는, 음, 테레시스를 위해서 뒷일 같은 걸 준비해야 해요. 우리는 지금 카즈델을 인계받고 있어요. 다들 빅토리아에 와 있으니 누군가는 남아서 고향을 지켜야겠죠.
+[charslot(slot="m",name="avg_npc_412_1#13$1",focus="m")]
+[name="W"]뒷일이라니? 뭐, 쫑파티라도 준비하는 거야?
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]그래요, 그건 계획의 첫 단계죠. 건국기념일 같은 것도 만들어야 하고요.
+[charslot(slot="m",name="avg_npc_412_1#5$1",focus="m")]
+[name="W"]……
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]하하, 농담 아닌데……
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]……그건 정말로 계획의 첫 단계예요.
+[name="에르망가르드"]테레시스와 테레시아는 물러설 생각이 전혀 없어요. 그 두 사람은 정말로 런디니움을 전장으로 삼아 온 대륙이랑 전쟁을 하려나 봐요.
+[name="에르망가르드"]우리도 그 자신감이 어디서 나온 건지는 잘 모르지만, 그 남매의 계획이라면 분명 미리 준비를 하고 있을 거예요.
+[name="에르망가르드"]그러니까 만약 그 둘이 정말로 성공한다면…… 우린 정말로 카즈델의 낙원을 재건하게 될 수도 있어요.
+[charslot(slot="m",name="avg_4088_hodrer_1#7$1",focus="m")]
+[name="외드레르"]……만약 실패하면요?
+[name="외드레르"]만약 살카즈가 이곳에서 실패를 겪게 된다면, 살카즈가 잃는 것은 한 세대의 젊은이들일 겁니다. 어쩌면 나라의 미래를 짊어질 모든 젊은이들을 말이죠.
+[name="외드레르"]200년 전의 그 원정 이후, 대부분의 국가들은 카즈델의 현상황에 대해 잘 알지도 못하고, 그리 관심을 가지지도 않습니다.
+[name="외드레르"]현재까지도 빅토리아의 높은 자리에 앉아 있는 이들은 대부분 카즈델이 단순한 폐허에 불과하다고 여기고 있습니다.
+[name="외드레르"]하지만 내전이 발발하기 전, 테레시아 전하의 계획 아래, 카즈델에는 이미 이동도시의 초기 모델이 존재했었습니다.
+[charslot(slot="m",name="avg_npc_412_1#5$1",focus="m")]
+[name="W"]하지만 테레시스가 모든 것을 엉망으로 만들었어. 지금의 카즈델은 하나의 거대한 주술 견인기에 불과해. 그것도 움직일 때마다 부품이 하나씩 떨어지는 그런 물건 말이야.
+[charslot(slot="m",name="avg_4088_hodrer_1#7$1",focus="m")]
+[name="외드레르"]카즈델은 애초에 이른바 전쟁이라는 것을 감당할 능력이 없습니다. 하지만 섭정왕은 결국 전쟁을 일으켰어요.
+[name="외드레르"]전쟁이 발발한 이후에는 분명 각 진영의 스파이들도 카즈델에 접촉하기 시작했을 겁니다. 방관만 하고 있는 그 나라들의 사람들은…… 자기 영토 내의 살카즈들을 어떤 눈으로 바라볼까요?
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]음, 당신은 비관적인 사람이군요. 나쁘지 않네요, 저도 그렇거든요.
+[name="에르망가르드"]그래서 계획의 두 번째 단계에 대해서 말인데…… 지금 카즈델에 남아 있는 리치들은 이미 카즈델을 조각낼 계획을 세워뒀어요.
+[charslot(slot = "m", name = "avg_npc_869_1#6$1",focus="m")]
+[name="에르망가르드"]만약 테레시스가 실패한다면 카즈델은 그 즉시 뿔뿔이 흩어지게 될 거예요. 아마 십수 개 정도로 나뉘게 되겠죠……
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]그리고 각각 가지고 있는 거주 구역과 함께, 으음, '씨족' 단위로 황야의 가장 깊은 곳에 숨어 살게 될 거예요.
+[name="에르망가르드"]노선을 계획한다거나, 생산의 균형을 맞춘다거나, 카즈델을 위한 이동도시를 확보하는 건 결코 무의미한 일이 아니에요. 살카즈에겐 다른 인간들의 적의야말로 진정한 재앙이니까요.
+[name="에르망가르드"]카즈델은 또 다른 방랑의 시대를 맞이하게 될 거예요.
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="또 방랑인가.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n이 무슨 헛소리란 말인가, 그렇다면 지금 우리가 하고 있는 건 방랑이 아니라는 얘기인가? 언제는 우리가 이동도시에서 재앙 구름을 구경하며 편안하게 차 한 잔이라도 마신 적이 있었던가?",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]……
+[charslot(slot="m",name="avg_4088_hodrer_1#2$1",focus="m")]
+[name="외드레르"]카즈델은 이미 끈끈하게 단결되어 있습니다. 비록 이건 제가 원하는 형태의 단결은 아닙니다만…… 그래도 결과만 따지고 보자면, 테레시스가 확실히 해낸 건 사실입니다.
+[charslot(slot="m",name="avg_4088_hodrer_1#2$1",focus="m")]
+[name="외드레르"]하지만 단결이란 단순히 복수와 살육을 반복하는 것 이상의 의미를 가질 수도 있습니다.
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]그 단결이 원한과 전쟁을 기반으로 만들어진 것이라 해도 말인가요? 분명 쉽지 않은 길일 거예요, 외드레르 씨.
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]……
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="에르망가르드"]카즈델은 단순한 하나의 도시가 아니라, 카즈델을 고향으로 여기는 사람 모두를 뜻하는 거예요.
+[name="에르망가르드"]원래 계획대로라면 카즈델에는 많은 거주민들이 필요하지 않았어요…… 군사위원회도 우리가 사람들을 잔뜩 데려가는 걸 허락할 리가 없고요.
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]우린 빅토리아에서의 전쟁을 끝내야만 합니다. 빠르면 빠를수록 좋습니다.
+[name="외드레르"]원한을 거둬들일 수 없다면, 적어도 그 원한의 힘을 활용해서 카즈델의 기반을 튼튼하게 만들 수는 있습니다.
+[name="외드레르"]그리고 카즈델의 미래를 위해선 생명 하나하나 모두 중요합니다.
+[charslot(slot = "m", name = "avg_npc_869_1#11$1",focus="m")]
+[name="에르망가르드"]뭐든 말은 쉽죠……
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="외드레르"]저희가 방금 얘기했던 먼 거리에서 물자와 인원을 운송하는 수단 말입니다만, 이건 아마 저희가 계속 조사하던 군사 위원회의 '생명선'일 겁니다.
+[name="외드레르"]전 이 '생명선'을 찾을 겁니다. 이것이 우릴 런디니움으로 오게 만든 이상…… 우릴 고향으로 돌려보낼 수도 있겠죠.
+[name="외드레르"]모두가 매장 당하기 전에 말입니다.
+[charslot(slot = "m", name = "avg_npc_869_1#8$1",focus="m")]
+[name="에르망가르드"]……그래요.
+[multiline(name="에르망가르드")]다만……
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[multiline(name="에르망가르드")]성공하지 못할 수도 있어요. 당신은 그저 용병일 뿐이니까요.
+[charslot(slot="m",name="avg_4088_hodrer_1#9$1",focus="m")]
+[name="외드레르"]“모두에게 돌아갈 집이 있도록.”
+[charslot(slot="m",name="avg_npc_412_1#6$1",focus="m")]
+[name="W"]……
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="테레시아.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n난 계속 이 전쟁에서 그 이름을 멀리 떨어뜨리려 노력했다.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="전하는……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n이전과 달라진 게 하나 없는 이 전쟁에서, 과연 누가 안식을 찾을 수 있을까?",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="하하, 아마 그 망할 테레시스가 부린 속임수일 것이다. 그녀석은 전하를 죽이고 모독하기까지 했다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n난 반드시 테레시스가 무릎 꿇고 사과하게 만들 것이다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n사과가 끝나면 그 망할 머리통을 날려버려야지.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]……역시 당신에게 접촉하는 건 정답이었어요. 전 당신의 대답을…… 바벨 잔당의 뜻으로서 다른 리치들한테 전달할 생각이에요.
+[charslot(slot="m",name="avg_4088_hodrer_1#9$1",focus="m")]
+[name="외드레르"]감사합니다.
+[charslot(slot = "m", name = "avg_npc_869_1#7$1",focus="m")]
+[name="에르망가르드"]그건 그렇고 당신들, 제 큐브를 터뜨렸잖아요! 설마 저더러 걸어서 돌아가라는 건가요?
+[charslot(slot="m",name="avg_4087_ines_1#3$1",focus="m")]
+[name="이네스"]북서쪽으로 8km 떨어진 곳에 살카즈 운송 기지가 있어. 그 녀석들의 차를 뺏으면 돼.
+[name="이네스"]혹시 도움 필요해?
+[charslot(slot = "m", name = "avg_npc_869_1#6$1",focus="m")]
+[name="에르망가르드"]……됐어요.
+[name="에르망가르드"]또 그 여자한테 잡혀서 제가 당신들이랑 무슨 거래를 했는지 들키고 싶진 않네요.
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="에르망가르드"]그럼, 행운을 빌게요. 그녀를 만나고 난 이후에도…… 살아남아서 꼭 당신들의 말을 지켰으면 좋겠어요.
+[Dialog]
+[stopmusic(fadetime=2.5)]
+[PlaySound(key="$d_avg_highheelfts", volume=0.6)]
+[charslot(duration=1.5)]
+[delay(time=2.5)]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="'그녀'?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n잠깐만.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_412_1#3$1",focus="m")]
+[name="W"]뭔가…… 익숙한 느낌 안 들어?
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="이네스"]무슨 말이야?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[playMusic(intro="$plot_intro", key="$plot_loop", volume=0.6)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Sticker(id="st1", multi = true, text="내가 지금 무슨 말을 하고 있는 거지? 나도 잘 모르겠다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n역겹네, 이런 감성적인 말은 외드레르나 할 법한 소린데.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="……그렇지만 정말로 뭐였던 걸까?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g8_wildernesswarcircle",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="그리 멀지 않은 산 정상에 누군가 앉아 있다. 원래라면 흩어져 사라졌어야 했을 그 환상의 끝자락에.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n그녀는 아무 생각이 없는 듯 그저 앉아만 있었다.",block = true)]
+[Sticker(id="st1", multi = true, text="\n그녀의 분홍색 긴 머리는 늘 그랬듯 어깨를 걸치며 늘어뜨러져 있었다.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_056",focus="m",duration=1)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="게다가 저…… 슬픈 눈빛……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(duration=1)]
+[Delay(time=1)]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="나는 눈길을 돌렸다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="……그럴 리가?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n말도 안 돼, 말도 안 돼, 말도 안 돼……",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="아니, 저건 환각이 아니야……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n그녀를 본 순간부터, 난 그것이 환각이 아니라는 걸 깨달았다.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="바로 그녀였다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="43_g8_wildernesswarcircle",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_412_1#3$1",focus="m")]
+[name="W"]……전하?
+[dialog]
+[charslot]
+[Delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="그녀가 떠났다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n나는 손을 내밀어……",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="아니, 그만뒀다.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n어쩌면 다음 기회로 미뤄두는 것이 좋을 지도.",block = true)]
+[Sticker(id="st1", multi = true, text="\n어차피…… 저게 진짜일 리도 없으니까.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="저건 단지…… 정말로 비슷한 무언가일 뿐이야. 대부분의 멍청이들은 속아넘어가겠지만.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

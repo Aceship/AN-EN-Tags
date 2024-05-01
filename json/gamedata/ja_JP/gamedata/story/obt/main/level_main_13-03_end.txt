@@ -1,0 +1,388 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[Delay(time=2)]
+[interlude(maskid = "ui_cutin_mask_vertical", style = 1, size = "600, 720",offset = "-120,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "43_g8_wildernesswarcircle", afrom = 0, ato = 1, aduration = 3, sfrom = "1.9,1.9", sto = "1.9,1.9", sduration = 0)]
+[delay(time=2)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "-120,50", name = "cutin_char_5",sfrom = "1.2,1.2", sto = "1.2,1.2",  aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "-120,50", pto = "-170,50", duration = 40)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="自分の血が血管を流れる感覚を、こんなにはっきりと感じたことなんて今までなかったわ。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nでたらめに衝突を繰り返しながら、四肢を通って、最後にはあたしの心臓に集まってくる。 ",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="ロドスで医療部の検査を受けた時に、連中があたしの身体に注射しようとしたあれは……なんて言ったかしら、忘れちゃった。 ",x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="あたしはあいつらを脅してやったわ。自分の身体に、源石の他にまた何かわけの分からない物体を混入させるなんてごめんだもの。 ",x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nまあ、今になってようやく分かったわ。あたしたちは確かに、血によって生かされてるってことがね。 ",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="酸素ボンベやら何やらを持っておけって、ヘドリーに言われたこともあったわね。 ",x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nだけど今は、この感覚が鬱陶しい。 ",block = true)]
+[Sticker(id="st1")]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="あんたらね。あたしの血なんだから、あたしの言うことを聞くべきなのよ。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nそれができないなら、身体の中から出てってもらうわ。 ",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="あたしは腰のナイフに手を伸ばした。", x=300,y=270, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Delay(time=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[interlude(channel = 2,clear = true)]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[PlaySound(key="$d_avg_daggerexsheath", volume=0.6)]
+[delay(time=0.3)]
+[PlaySound(key="$d_avg_inject", volume=0, loop=false, channel="bld")]
+[SoundVolume(volume=0.6,channel="bld", fadetime=2)]
+[delay(time=1)]
+[Dialog]
+[charslot]
+[Background(image="43_g8_wildernesswarcircle", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_412_1#2$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_412_1#2$1",focus="m")]
+[name="W"]ハッ――
+[charslot(slot="m",name="avg_4087_ines_1#6$1",focus="m")]
+[name="イネス"]W、一体どうしたの！？
+[charslot(slot="m",name="avg_npc_412_1#2$1",focus="m")]
+[name="W"]平気よ。ただの瀉血療法だわ。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4088_hodrer_1#6$1",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot="m",name="avg_4088_hodrer_1#6$1",focus="m")]
+[name="ヘドリー"]ふぅ……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_869_1#6$1",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "m", name = "avg_npc_869_1#6$1",focus="m")]
+[name="エルマンガルド"]――
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="ヘドリーが眉間にしわを寄せている。あのリッチも自分の帽子を強く握りしめている。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nようやく血が落ち着いてきたみたいね。いや、あたしたちが頑丈だから適応できたって言うべきかしら。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]イネス、大丈夫か？
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]私は何ともない。あなたたちの方こそ説明すべきよ。
+[charslot(slot="m",name="avg_npc_412_1#1$1",focus="m")]
+[name="W"]なるほど、この石は冷酷なババアには効果なしってことね。ならケルシーは間違いなくここでダンスできるわ。
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="イネス"]彼女なら可能でしょうけど、そんなことより、まずは傷口を塞ぐのをおすすめするわ。
+[charslot(slot="m",name="avg_npc_412_1#7$1",focus="m")]
+[name="W"]舐めないでくれる。動脈は避けて刺してるわ。
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]それで、この装置はサルカズに向けたものってこと？　血液と何か関係があるの？
+[charslot(slot="m",name="avg_4087_ines_1#3$1",focus="m")]
+[name="イネス"]サルカズに、血ね。ハッ、まったく理解不能だわ。
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]これらの巫術装置は……まだ完全に起動しているわけではありませんわ。
+[charslot(slot = "m", name = "avg_npc_869_1#8$1",focus="m")]
+[name="エルマンガルド"]うむ……嫌な予感がしてここへ来てみましたけど、これが元凶だったのね。
+[name="エルマンガルド"]先生方が、ロンディニウムでの事情にあれほど慎重になるのも納得です。
+[charslot(slot="m",name="avg_npc_412_1#13$1",focus="m")]
+[name="W"]じゃあ完全に起動したらどうなるわけ？　全サルカズが爆発でもするのかしら？　それからブラッドブルードの大君が、あたしたちの血をヴィクトリア人たちに向けてぶちまけたりして。
+[charslot(slot="m",name="avg_4088_hodrer_1#8$1",focus="m")]
+[name="ヘドリー"]この付近に……轍や輸送の痕跡は見当たらないな。
+[charslot(slot="m",name="avg_4088_hodrer_1#4$1",focus="m")]
+[name="ヘドリー"]奴らは長い距離を超えて、これほど巨大な結晶を、何もないところからここへ移したとでも？
+[name="ヘドリー"]……このやり方、どこかで聞いたことがある気がする。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]エルマンガルド女史……これはあなたとは無関係のようだ。
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]当然、リッチにこんな真似は不可能です。私たちが研究しているのは彼方の「空間」ですから。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]それと、俺のことを知っているようだったが？
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]ヘドリーさんは、まあ……あなたの著作は知っておりますの。一部の写本はリターニアのサルカズの間でも出回っていますのよ。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]なるほど。それで、あなたの方に何か心当たりは？
+[charslot(slot = "m", name = "avg_npc_869_1#7$1",focus="m")]
+[name="エルマンガルド"]なぜ私が手を貸さねばなりませんの？　先ほど私のキューブちゃんを爆破したのはあなた方でしたわよね。
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="チッ、この女、今あたしの方を見たわね。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_412_1#1$1",focus="m")]
+[name="W"]少なくとも、あんたの胸に空いたその穴に爆弾を詰めてはいないはずだけど。
+[charslot(slot = "m", name = "avg_npc_869_1#7$1",focus="m")]
+[name="エルマンガルド"]へぇ。今時のサルカズ傭兵は、皆が死に急ぐものなのですか？
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="これ以上何か言ったら、本気でそうしてやるわ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot = "m", name = "avg_npc_869_1#2$1",focus="m")]
+[name="エルマンガルド"]……まあいいですわ。
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]先ほどの幻の話をしましょう。
+[name="エルマンガルド"]あれは痕跡でしょう……空間と、時間のね。
+[name="エルマンガルド"]先ほど轍を探していましたね？　あの幻こそがその轍なのです。何らかの特殊なアーツがこの場所に影響を及ぼしたのですわ。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]だがあれはアーツでも、サルカズの巫術でもない。
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]これらの法陣がブラッドブルードにまつわるものであるのは確か。さらに幻と法陣の間に何か関わりがあるのも確かですが、直接的な関係があるわけではないようです。
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]この手がかり……あなたにとっては有用なのではなくて？
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]……リッチはどの立場に立つつもりだ？
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]いつも通りです、我々は何の約束もいたしません。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]だが、情報提供者によれば最近はカズデルにも……何人かのリッチが現れているという話だ。あなたたちは普段、あまりカズデルに姿を見せたりはしないはずだが。
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]……ふむ。
+[name="エルマンガルド"]バベルを離れ、感染者組織に加わり、果てはロンディニウムにまで来たあなたが、いまだカズデルに情報網を持っているのですか？
+[name="エルマンガルド"]本当にただの傭兵？　その才能があれば、リターニアで金律法衛くらいは務まると思いますけれど。ああ、アーツがそれほど得意でないのかしら。
+[charslot(slot="m",name="avg_4088_hodrer_1#8$1",focus="m")]
+[name="ヘドリー"]情報収集はただの個人的な習慣だ。
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]……ふぅん。「個人的な習慣」ね。
+[name="エルマンガルド"]戦場はこんなに広いのよ。もし私がこっそりこの場を離れようとしたら、あなた方に止められるとお思いですの？
+[charslot(slot="m",name="avg_4088_hodrer_1#4$1",focus="m")]
+[name="ヘドリー"]あなたの方も……俺たちを探してたんだろ？
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]そうとも言えますわね。あなたに興味があるのです。
+[charslot(slot="m",name="avg_4087_ines_1#13$1",focus="m")]
+[name="イネス"]あなたたちサルカズって謎かけみたいにしか話できないの？
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="イネスが初めて口を挟んできた。とうとう、我慢できなくなったようね、いいじゃない。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=0.8)]
+[Sticker(id="st1", multi = true, text="あいつが気を引いてる内に、このリッチとかいう奴、ぶっ殺してやるわ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]あなたでさえカズデルの情報が手に入るということは、あの兄妹は間違いなく、見て見ぬふりをしているだけでしょうね。
+[name="エルマンガルド"]私たちはテレシスのために、そうね……とっておきの策を用意する必要があるのです。我々はカズデルを引き継ぎつつあります。皆がヴィクトリアに集うからには、故郷の見張り番が必要ですから。
+[charslot(slot="m",name="avg_npc_412_1#13$1",focus="m")]
+[name="W"]何よとっておきって、祝勝パーティーでも開くわけ？
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]その通り、それが計画の最初の一段階目ですわ。それに、建国記念日も制定したりして。
+[charslot(slot="m",name="avg_npc_412_1#5$1",focus="m")]
+[name="W"]……
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]ふふっ、冗談はこの辺にして――
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]――計画の一段階目という点は確かですわ。
+[name="エルマンガルド"]テレシスとテレジアに撤退の意志は微塵もありません。どうやら彼らは、本気でロンディニウムをこの大地全土との決戦の舞台に変えようとしているようです。
+[name="エルマンガルド"]彼らの自信がどこから来るのかは私たちも存じ上げません。けれどあの二人のことですから、きっと早くから用意した手段があるに違いありませんわ。
+[name="エルマンガルド"]つまり、もしも彼らが本当に成功したら――私たちは確実にカズデルを、サルカズの楽園を再建することができますの。
+[charslot(slot="m",name="avg_4088_hodrer_1#7$1",focus="m")]
+[name="ヘドリー"]……もし失敗したら？
+[name="ヘドリー"]仮にこの地でサルカズが失敗したら、俺たちは丸々一世代に渡る若者たちを失うことになる。ひょっとしたら、未来の子供たちも。
+[name="ヘドリー"]二百年前の遠征の後、大多数の国家がカズデルの現状への理解や興味を失った。
+[name="ヘドリー"]今日に至っても、ヴィクトリアのほとんどのお偉いさんは、カズデルを単なる廃墟だとしか認識していない。
+[name="ヘドリー"]だが内戦の前、テレジア殿下主導のもとで、カズデルには移動都市のプロトタイプが生まれていたんだ。
+[charslot(slot="m",name="avg_npc_412_1#5$1",focus="m")]
+[name="W"]そんなのテレシスの奴が全部滅茶苦茶にしたわ。今のカズデルは、ただのバカデカい巫術で動くトラクターよ。それも走ってるうちにパーツがポロポロ落っこちていくやつね。
+[charslot(slot="m",name="avg_4088_hodrer_1#7$1",focus="m")]
+[name="ヘドリー"]カズデルはそもそも、いわゆる戦争ってやつには耐えられない。なのによりにもよって摂政王は戦争を始めた。
+[name="ヘドリー"]開戦以降、すでに各勢力の密偵がカズデルとの接触を始めているはずだ。高みの見物を決め込む国々は、領土内の……サルカズたちをどう思うだろうな？
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]あなたは悲観的な方ですわね。気が合いますわ、私もです。
+[name="エルマンガルド"]そこで、計画の二段階目ですが――今カズデルに残っているリッチたちは、すでにカズデルを分割する計画を立てました。
+[charslot(slot = "m", name = "avg_npc_869_1#6$1",focus="m")]
+[name="エルマンガルド"]もしもテレシスが失敗した場合、カズデルは直ちに数個、果ては十数個の区画にまで分割されることになるのです……
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]従属下にある居住区と共に、特定の……えっと、「部族」単位で荒野の奥深くへ隠れ潜むのですわ。
+[name="エルマンガルド"]航路を計画し、生産を安定させ、カズデルを確実に移動都市へと変えた意義を確保する。サルカズにとっては、他の人々の敵意こそが天災なのですから。
+[name="エルマンガルド"]カズデルは再び流浪の時代を迎えるのです。
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="ほんと流浪って言葉が好きね。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nなにバカなこと言ってんのかしら。じゃあ今のあたしたちは流浪してないってわけ？　どっかの移動都市に根を下ろして、天災雲を眺めながらアフタヌーンティーでもしてるっての？",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]……
+[charslot(slot="m",name="avg_4088_hodrer_1#2$1",focus="m")]
+[name="ヘドリー"]サルカズはすでに固く団結している。俺の望んでいたやり方とは違うが……結果だけで言えば、テレシスはそれを成し遂げた。
+[charslot(slot="m",name="avg_4088_hodrer_1#2$1",focus="m")]
+[name="ヘドリー"]だが団結とは、単に復讐と殺戮を繰り返すこと以上の意味を持つこともできる。
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]その団結が、憎悪と戦争の上に築き上げられているとしても？　そう簡単なことではありませんのよ、ヘドリーさん。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]……
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[name="エルマンガルド"]カズデルとは単なる一つの都市ではなく、その地を故郷と見なす一人一人の人間なのです。
+[name="エルマンガルド"]当初の計画では、カズデルは多くの住民を必要としてはいませんでした……軍事委員会もそれほど多くの者を連れて行くことを、許しはしないでしょうから。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]俺たちは、このヴィクトリアにおける戦争を終わらせねばならないんだ。一刻も早く。
+[name="ヘドリー"]憎しみを消し去ることは不可能かもしれないが、せめてその熱量を利用して、カズデルを支える柱を形作ることはできる。
+[name="ヘドリー"]そして、きっと一つ一つの生命がカズデルの未来にとって重要な意味を持つ。
+[charslot(slot = "m", name = "avg_npc_869_1#11$1",focus="m")]
+[name="エルマンガルド"]そう簡単にはおっしゃいますけど――
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]さっき話していた物資と人員を遠距離輸送する手段のことだが、それこそ俺たちが調査し続けていた、ロンディニウムにおける軍事委員会の「生命線」になり得るものだ。
+[name="ヘドリー"]俺はそれを見つけ出し、自分のものにしてみせる。そいつが俺たちをロンディニウムへ連れて来れるのなら……故郷へも連れて行けるはずだ。
+[name="ヘドリー"]あらゆる人々がこの地に骨を埋める前にな。
+[charslot(slot = "m", name = "avg_npc_869_1#8$1",focus="m")]
+[name="エルマンガルド"]……ええ。
+[multiline(name="エルマンガルド")]ですが……
+[charslot(slot = "m", name = "avg_npc_869_1#9$1",focus="m")]
+[multiline(name="エルマンガルド")]それが成功するとは限らないわ。あなたはただの傭兵ですもの。
+[charslot(slot="m",name="avg_4088_hodrer_1#9$1",focus="m")]
+[name="ヘドリー"]「皆に帰るべき家を与える」んだ。
+[charslot(slot="m",name="avg_npc_412_1#6$1",focus="m")]
+[name="W"]……
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="テレジア。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nあたしはこれまでずっと、その名前をこの戦争から切り離そうとしてきた。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="殿下は……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nこれまでのと何も変わっちゃいない戦争だっていうのに、誰が安心して眠れるのかしら？",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="ハッ、大方テレシスのバカ野郎が仕掛けたインチキか何かよ。あいつは殿下を殺しただけじゃなく、冒涜したんだわ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n絶対にひざまずかせて謝らせてやる。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそれで謝り終わったら、脳ミソを吹き飛ばしてやるのよ。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]……あなたと接触したのは正しかったみたいですわね。あなたの考えは……バベル残党の態度として、リッチたちに伝えておきます。
+[charslot(slot="m",name="avg_4088_hodrer_1#9$1",focus="m")]
+[name="ヘドリー"]感謝する。
+[charslot(slot = "m", name = "avg_npc_869_1#7$1",focus="m")]
+[name="エルマンガルド"]ですが、あなた方は私のキューブちゃんを爆破しましたわよね！　どうやって帰れとおっしゃるつもりですの？　歩いて帰れとでも？
+[charslot(slot="m",name="avg_4087_ines_1#3$1",focus="m")]
+[name="イネス"]北西に八キロの位置にサルカズの輸送拠点があるから、奴らの車を奪えばいいわ。
+[name="イネス"]助けがいるかしら？
+[charslot(slot = "m", name = "avg_npc_869_1#6$1",focus="m")]
+[name="エルマンガルド"]……結構ですわ。
+[name="エルマンガルド"]彼女に捕まって、あなた方とこそこそ取引をしてたなんて知られるのは、もうごめんですもの。
+[charslot(slot = "m", name = "avg_npc_869_1#1$1",focus="m")]
+[name="エルマンガルド"]では、幸運を祈っておりますわ。彼女に会った後……無事に生き延びて、約束を果たせるようにね。
+[Dialog]
+[stopmusic(fadetime=2.5)]
+[PlaySound(key="$d_avg_highheelfts", volume=0.6)]
+[charslot(duration=1.5)]
+[delay(time=2.5)]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="「彼女」？", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n待って。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_412_1#3$1",focus="m")]
+[name="W"]あんたたちさ……なんか、懐かしい感じがしない？
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]何の話？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[playMusic(intro="$plot_intro", key="$plot_loop", volume=0.6)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Sticker(id="st1", multi = true, text="あたしったらなに言ってるのかしら？　自分でもよく分からない。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n気色悪いわね。こんな感傷的なセリフはヘドリーにでも任せておくべきよ。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="……だけど、一体何なの？", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g8_wildernesswarcircle",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="そう遠くない山の上に、誰かが一人座っている。ちょうどさっき消え去ったあの幻の境目の辺りだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n彼女はただそこに座っていた。まるで何も考えていないかのように。",block = true)]
+[Sticker(id="st1", multi = true, text="\nいつもと同じく、薄いピンク色の長髪を肩から垂れ下げて。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_056",focus="m",duration=1)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="それにあの目。あの……悲しげな目は……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[charslot(duration=1)]
+[Delay(time=1)]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="あたしは視線をそらした。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[dialog]
+[charslot]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="……ありえない。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nありえない、ありえない、ありえない。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="いや、あれは幻じゃない……", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nあの人を一目見た瞬間、すぐに分かった。あれが幻なんかじゃないってことが。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="あれはあの人だ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="43_g8_wildernesswarcircle",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_412_1#3$1",focus="m")]
+[name="W"]……殿下？
+[dialog]
+[charslot]
+[Delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="彼女が去って行く。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nあたしは手を伸ばそうとして――",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="やっぱりやめた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n次に取っておくべきかもしれないから。",block = true)]
+[Sticker(id="st1", multi = true, text="\nどうせ……本物のわけないんだし。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="あれはただ……すごく、ものすごくそっくりな偽物よ。大半のバカなら騙せるでしょうけどね。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,870 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[gridbg(imagegroup="44_g13_afterglow_L1/44_g13_afterglow_R1/44_g13_afterglow_L2/44_g13_afterglow_R2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720",x=-1280,fadetime=0)]
+[largebgtween(duration = 60,yFrom = 560, yTo = 460,block = false)]
+[playMusic(intro="$distressed_intro",key="$distressed_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="I was fifteen when I entered the Witch King's Spire.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I came from an ordinary family in Kreis Einwald. I should not have been able to become a noble's attendant, but I heard that Herkunftshorn made no distinction between nobles and commoners.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="This was not because he treated commoners particularly well, but because he looked down equally on all who cowered at the foot of his throne.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="At first, my job was to clean his instruments. But Herkunftshorn no longer played ordinary music, and those instruments had no meaning.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Later, I was sent to clean the resonance pipelines at the top of the Spire. It was not a difficult job, but Herkunftshorn would not tolerate even a single speck of dust in them.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="My colleagues came and went. Few got to leave on their own two feet. In the end, I was the only one left, quietly cleaning at the top of the tower.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="And a thousand sunrises and sunsets later, the Witch King's Spire fell.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[gridbg]
+[Background(image="44_g5_spiralstairs",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$m_avg_goldenrulesymphony_intro", key="$m_avg_goldenrulesymphony_loop", volume=0.6)]
+[playsound(key="$d_gen_soldiersrun", volume=0.4)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="Imperial Caster"]Cut off the way down.
+[name="Imperial Caster"]Attention all squads. Find the Sankta. Do not allow her to enter the amphitheater and interrupt the performance of the Güldenesgesatz.
+[name="Imperial Caster"]The target is known to use unusual Arts. You have permission to kill if necessary.
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Arturia"]Hello. Were you looking for me?
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]—Barrier up!
+[name="Imperial Caster"]Get in formation! Catch her!
+[Dialog]
+[charslot]
+[charslot(slot = "r",name = "avg_npc_1135_1#1$1",posfrom = "100,0", posto = "0,0",duration = 0.5)]
+[charslot(slot = "l",name = "avg_npc_1135_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 0.5)]
+[delay(time=0.6)]
+[charslot(duration=0.3)]
+[PlaySound(key="$d_avg_magic_4",volume=0.8)]
+[PlaySound(key="$d_avg_magic_5",volume=0.8,channel="1")]
+[CameraShake(duration=1, xstrength=30, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_245_cello_1#5$1")]
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[delay(time=0.3)]
+[name="Arturia"]Hm...
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]Arturia Giallo.
+[name="Imperial Caster"]Leithanien took you in when you became a pariah in Laterano. Countless nobles honored you for your remarkable musical talent.
+[name="Imperial Caster"]The Kaiserinnen granted you rights equivalent to spire nobility.
+[name="Imperial Caster"]So return to your cell and submit to them, and they may yet allow you to live.
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="Arturia"]That was never an option.
+[name="Arturia"]What point is there to living if I can't play freely?
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]Then accept your death.
+[Dialog]
+[PlaySound(key="$d_avg_spellattack_1",volume=0.8)]
+[charslot(duration=0.3)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_245_cello_1#7$1")]
+[name="Arturia"]Your Arts have gotten stronger.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]You missed your chance to break out, Sankta.
+[name="Imperial Caster"]The Güldenesgesatz is in progress. Do you see the scene outside? Your parlor tricks are meaningless before the golden glory of Leithanien.
+[charslot(slot = "m", name = "avg_245_cello_1#11$1")]
+[name="Arturia"]Yes, I can feel that your will is firmer than ever.
+[name="Arturia"]But is it <i>your</i> will expressing that music, or has the melody convinced you that what you see is what you think?
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]That's irrelevant. The golden melody guides me. My will echoes along with it!
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Imperial Caster"]You, our enemy, will melt before Leithanien's radiance—
+[Dialog]
+[charslot(slot = "m", name = "avg_245_cello_1#11$1")]
+[charslot(duration=0.5)]
+[delay(time=0.8)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]...She's gone?
+[name="Imperial Caster"]An illusion? But there was no music!
+[charslot(slot = "m", focus = "n")]
+[name="Arturia"]Why does everyone keep assuming that I create illusions?
+[name="Arturia"]I warned you. When your emotions are being controlled by a melody that doesn't belong to yourself, you can easily overlook the reality before you... Like where I moved to in that 'radiance.'
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]Behind—
+[name="Imperial Caster"]Barrier— too late—
+[Dialog]
+[MusicVolume(volume=0.2, fadetime=1)]
+[charslot]
+[playsound(key="$d_avg_cellodoubth")]
+[delay(time=2)]
+[MusicVolume(volume=0.6, fadetime=2)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="Arturia"]Now, I would like to ask you to kindly remove the Arts cast on my instrument.
+[name="Arturia"]There, it's clean now. Danke.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]How did we... lose to you?
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="Arturia"]Normally I wouldn't stand a chance, but your souls have become stiff and inflexible due to the bindings of the Güldenesgesatz, creating innumerable weaknesses in your Arts.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]But... why? With Arts like these, you could have changed your destiny, enjoyed wealth, fame, and favor beyond reckoning... What meaning is there in defying the Kaiserinnen?
+[Dialog]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="Arturia"]Hm, I think we have very different views on the meaning of meaning.
+[charslot(slot = "m", name = "avg_245_cello_1#3$1")]
+[name="Arturia"]Fame, fortune, status... All merely accessories to a soul that will eventually wither and rot with the passage of time.
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="Arturia"]Kurfürst, beggar, or myself, the only difference is in the whispers of our hearts.
+[name="Arturia"]I want to climb the tallest spire. Because of a melody, a soul, and a future.
+[charslot(slot = "m", name = "avg_245_cello_1#2$1")]
+[name="Arturia"]And for a promise I made to a friend.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="44_g8_towersquare",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="Ten years had passed since the death of the Witch King. I was attending the funeral of an old friend.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="After the funeral, I saw a Sankta with her cello in the amphitheater below the Twin Spires. Others came and went, but she stood there from noon until sundown.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Arturia"]According to legend, even the clouds stopped for the Witch King when he played up on his spire.
+[name="Arturia"]I wonder... do the clouds remember what the Spire looked like back then?
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="I suppose not. Clouds change so quickly, after all.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="Arturia"]My teacher often told me of how he stood beneath the Witch King's Spire while it was still standing, playing for the sole sovereign of Leithanien.
+[name="Arturia"]The golden-red clouds embraced the dark spire like an extravagant robe.
+[charslot(slot = "m", name = "avg_245_cello_1#8$1")]
+[name="Arturia"]He wanted to come back and see the spectacle again, but wasn't allowed to participate in Das Kaiserinnensfest. In fact, he could barely get permission to leave his home.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="Herr Emmanuel was one of the Witch King's musicians, after all, even if just for a short while. Times were hard for him after the Witch King's demise.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#8$1")]
+[name="Arturia"]Few came to say their goodbyes, and you were the only one to truly shed tears for him.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="I heard your playing at the funeral. It was very touching.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="Arturia"]Danke.
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="Arturia"]But that doesn't bring even the slightly bit of comfort to my teacher.
+[name="Arturia"]I asked to play for him while he was still alive, but he refused. During his days of pain and hardship, he refused to dwell on the happiness of the past, nor did he seek any change.
+[name="Arturia"]He simply shut himself in his room, playing the Güldenesgesatz over and over again.
+[name="Arturia"]Through that unchanging melody, he drowned himself in Leithanien's greatness. Forgetting love, forgetting hate, and forgetting himself.
+[name="Arturia"]Yet, when faced with death, his heart was still filled with... regret.
+[Dialog]
+[charslot(duration=1.5)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="I've heard far too much regret over these long years.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="My image of Herr Emmanuel remained that of the energetic old man who thanked you with a hearty laugh when you passed him his instrument.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I heard that, in the end, he was too weak to even lift a bow.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I thought that without the shadow of the Witch King's Spire, the skies of Leithanien would change greatly.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I thought that, going from Vedunien to Zwillingstürme, from the Witch King's Spire to the Twin Empresses' Spires, the melody echoing in the dusk would be somehow different.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="But both then and now, we are like the clouds, unable to control where we drift.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[MusicVolume(volume=0.3, fadetime=3)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[CameraShake(duration=3, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_magic_5")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.2, block=true)]
+[playsound(key="$d_avg_spelldfns_1",channel="a",delay=0.1)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[playsound(key="$d_avg_spellattack_2",channel="b",delay=0.2)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]You...
+[name="Imperial Caster"]Why are you not going downstairs?
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="Arturia"]I have no interest in this sort of 'concert.'
+[name="Arturia"]A melody that binds the listener's will is just another form of law.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="Imperial Caster"]How did you know—
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="Arturia"]As complex as your Arts are, their structure is clearly visible to those familiar with Originium Arts and music. In that sense, it's different from Laterano's law.
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="Arturia"]Music should come from the unrestrained breathing of the soul, but you turned it into a cornerstone of order, all to control people's wills and wear down their emotions.
+[charslot(slot = "m", name = "avg_245_cello_1#9$1")]
+[name="Arturia"]True bonds between souls are growing weaker. People are increasingly unable to understand one another, unable to respect the emotions of one another, and as such do harm to one another.
+[name="Arturia"]Such a rigid melody is no music at all.
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[name="Imperial Caster"]Ugh—!
+[Dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 0.5,afrom=1,ato=0)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[CameraShake(duration=0.3, xstrength=5, ystrength=20, vibrato=15, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=2)]
+[name="Arturia"]We're almost at the top. I should start preparing for the next piece, before this one ends.
+[name="Arturia"]It's almost time to make good on our promise, isn't it?
+[charslot(slot = "m", name = "avg_245_cello_1#2$1")]
+[name="Arturia"]As you said, this is a good place to play... or listen.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[MusicVolume(volume=0.6, fadetime=3)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="Is this my deepest memory?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=false)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[name="Arturia"]Yes.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="Sorry.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#5$1")]
+[name="Arturia"]Why apologize?
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="Arturia"]Very few have invited me to play their heart's music of their own accord. Most did whatever they could to escape. Yet you have bared your soul to me... For that, I am grateful, and overjoyed.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="I just thought I could show you the death of the Witch King through my memories.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="Arturia"]My music simply follows the melody of your heart. It cannot decide what you recall. All I can do is feel your emotions, and recreate them.
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="Sounds like sculpting, then.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="Arturia"]You could say that. I discover and record, rather than changing one's true visage.
+[name="Arturia"]There is only one reason we cannot enter the Witch King's Spire in your memories.
+[charslot(slot = "m", name = "avg_245_cello_1#3$1")]
+[name="Arturia"]Whenever you recall his death, there is a... hand that truly moves your emotions.
+[name="Arturia"]A hand that grabbed you amidst that great flood of Arts.
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="Arturia"]Whose hand was it?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Sticker(id="st1", text="Whose hand was it?", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=1)]
+[Sticker(id="st1")]
+[delay(time=1)]
+[Sticker(id="st2", text="It was...", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,block = true,duration=1)]
+[Sticker(id="st2",duration=1,block = false)]
+[charslot]
+[delay(time=2)]
+[MusicVolume(volume=0, fadetime=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="44_g8_towersquare",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="Viviana"]Look out!
+[name="Viviana"]They're coming one after another. Federico and I will try to hold them off.
+[name="Viviana"]You're blind, and it's too risky. Grab my hand and stay close.
+[Dialog]
+[charslot]
+[MusicVolume(volume=0.6, fadetime=2)]
+[charslot(slot = "m", name = "avg_npc_1113_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="Cora"]...You're so much like him.
+[charslot(slot = "m", name = "avg_4098_vvana_1#10$1")]
+[name="Viviana"]You mean... my father?
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="Cora"]This is just like when he grabbed me under the Witch King's Spire... He grabbed the hand of a servant he'd never met, and protected me through one wave of Arts after another.
+[charslot(slot = "m", name = "avg_4098_vvana_1#10$1")]
+[name="Viviana"]...You were in the Spire the night the Witch King died.
+[name="Viviana"]You never told me that was how you met.
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="Cora"]Ja.
+[name="Cora"]I had just lost my sight, and was cowering before the half-collapsed stairs. Neither the Witch King's guards nor the Twins' soldiers would have paid any heed to a humble servant.
+[name="Cora"]Instead, a squad from Sturmland found me.
+[name="Cora"]It was led by Werner, looking for his missing father and brother in the Spire.
+[name="Cora"]His heart must have been fraught with worry, but he couldn't ignore me shivering in a corner, and pulled me out of the ruins himself.
+[charslot(slot = "m", name = "avg_4098_vvana_1#1$1")]
+[name="Viviana"]...That sounds like him alright.
+[name="Viviana"]I would have done the same.
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="Cora"]You're both good people. Very good people.
+[name="Cora"]It's such a shame that...
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4098_vvana_1#1$1")]
+[MusicVolume(volume=0.4, fadetime=3)]
+[charslot(slot = "l",name = "avg_npc_1113_1#8$1",posfrom = "0,0", posto = "100,0",duration = 0.5,focus="m")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_clothmovement")]
+[charslot(slot = "l",afrom=1,ato=0,duration = 0.5,focus="m")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_4098_vvana_1#4$1")]
+[name="Viviana"]Why are you covering my ears?
+[charslot(slot = "m", focus = "n")]
+[name="Cora"]No need to be afraid, Viviana.
+[name="Cora"]It'll pass. This will all pass.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[PlaySound(key="$d_avg_tinnitus")]
+[PlaySound(key="$d_avg_tinnitus",delay=0.1,channel="a")]
+[PlaySound(key="$d_avg_tinnitus",delay=0.2,channel="b")]
+[Background(image="44_g8_towersquare",screenadapt="coverall",duration=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#3$1")]
+[name="Ebenholz"]What's happening?
+[name="Ebenholz"]The music has changed.
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#6$1")]
+[name="Ebenholz"]It's... It's hideous!
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Young Noble"]My head... who's attacking me?! It's like someone stuffed a thousand screaming fowlbeasts into my brain!
+[name="Young Noble"]These fireworks, too! The colors! It's so crass!
+[name="Young Noble"]This is wrong. This isn't right. Am I playing it wrong? Is <i>everyone</i> wrong?
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#3$1")]
+[name="Ebenholz"]Herr from Sturmland? Are you alright?
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[name="Young Noble"]D-Don't touch me! I don't know who you are, and I don't want to know! Are you the one who played it wrong? Are you trying to break something? Everything?
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[name="Young Noble"]Ugh—euuggh!
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#6$1")]
+[name="Ebenholz"]Something went wrong with the melody?
+[name="Ebenholz"]But how could everyone be wrong at the same time?
+[name="Ebenholz"]And how could a simple mistake lead to something so... painful?
+[charslot]
+[charslot(slot = "m", name = "avg_4011_lessng_1#1$1")]
+[name="Lessing"]Look at the Twin Empresses' Spires.
+[Dialog]
+[charslot]
+[playMusic(intro="$rebel_intro",key="$rebel_loop", volume=0.6)]
+[PlaySound(key="$d_avg_drkcludsthdr")]
+[Background(image="44_g9_towersquare_arrived",screenadapt="coverall",fadetime=3)]
+[delay(time=5)]
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#9$1",focus="l")]
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="Ebenholz"]...
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#8$1",focus="l")]
+[name="Ebenholz"]It's him. Herkunftshorn. I'd recognize that anywhere. His power is eating away at the Güldenesgesatz!
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Ebenholz"]The Witch King's remnants... where are they?! I knew there were some left. It's time to fight, Lessing!
+[charslot(slot = "r", name = "avg_4011_lessng_1#2$1",focus="r")]
+[name="Lessing"]...You're not affected?
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#8$1",focus="l")]
+[name="Ebenholz"]By a few dark clouds? After what I've had to live with in my head every day of my life?
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#9$1",focus="l")]
+[name="Ebenholz"]...The Güldenesgesatz itself, though.
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#5$1",focus="l")]
+[name="Ebenholz"]It made me miss Urtica. Now <i>that</i> is deeply disturbing.
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="Lessing"]That's the power of the Movement.
+[name="Lessing"]It defines Leithanien and its beliefs.
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#13$1",focus="l")]
+[name="Ebenholz"]I don't want someone else deciding what I should miss, what I should love, and what I should praise.
+[name="Ebenholz"]But I'm guessing that whoever it is that's sabotaging the performance is after more than just pranking the Kaiserinnen and the nobles outside Zwillingstürme.
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="Lessing"]Enemy on your left.
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#1$1",focus="l")]
+[name="Ebenholz"]I know. Your side, too.
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="Lessing"]Let's do this together.
+[Dialog]
+[playsound(key="$d_avg_clothmovementsp")]
+[charslot(slot = "r",posfrom = "0,0", posto = "-200,0",duration = 0.5)]
+[charslot(slot = "l",posfrom = "0,0", posto = "200,0",duration = 0.5)]
+[delay(time=0.3)]
+[charslot(slot = "r",duration = 0.3,afrom=1,ato=0)]
+[charslot(slot = "l",duration = 0.3,afrom=1,ato=0)]
+[delay(time=0.5)]
+[CameraShake(duration=1, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=0.6, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=true)]
+[playsound(key="$d_avg_swrdclave",channel="2")]
+[Blocker(a=0, r=0, g=0, b=0, afrom=0.6, rfrom=0, gfrom=0, bfrom=0, fadetime=0.3, block=true)]
+[playsound(key="$p_skill_darkholespell",channel="1")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="'Witch King's Echo'"]I didn't think anyone would retain their senses.
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#13$1")]
+[name="Ebenholz"]For once, I'm grateful for everything you've done to me. Pain and chaos in my brain are like old friends by now.
+[Dialog]
+[charslot(duration=0.5)]
+[playsound(key="$p_skill_darkholeborn")]
+[CameraShake(duration=1.5, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.3, r=0.2, g=0, b=0, fadetime=1.5, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 0.5)]
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#1$1",posfrom = "100,0", posto = "0,0",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="Lessing"]...Good work.
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#13$1",focus="r")]
+[name="Ebenholz"]You too.
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#5$1",focus="r")]
+[name="Ebenholz"]So why are <i>you</i> acting just fine while everyone else is in agony? I'm beginning to suspect that you're a Lich-sculpted wooden puppet.
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="Lessing"]I was trained from a very young age to deal with this kind of situation.
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#3$1",focus="r")]
+[name="Ebenholz"]And what kind of situation would that be?
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="Lessing"]The collapse of the Güldenesgesatz.
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#3$1",focus="r")]
+[name="Ebenholz"]...Please tell me you're joking.
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="Lessing"]Do you see the golden glow rising over the edge of the amphitheater?
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#9$1",focus="r")]
+[name="Ebenholz"]...
+[name="Ebenholz"]I've never seen so many Gesatzswächter in one place at the same time.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_armour", volume=1)]
+[charslot(slot = "left", name = "avg_npc_1117_1#2$1",duration = 1)]
+[delay(time=0.5)]
+[charslot(slot = "right", name = "avg_npc_1117_1#2$1",duration = 1)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1")]
+[name="Gesatzswächter"]Her Majesty's order—
+[name="Gesatzswächter"]Surround Gnade Avenue and Macht Avenue.
+[name="Gesatzswächter"]Do not allow the corrupted Güldenesgesatz to spread.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_soldiersrun", volume=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="Viviana"]So many Gesatzswächter... and Gendarmerie.
+[name="Viviana"]The entire Zwillingstürmeshof will be on lockdown before long.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1125_1#1$1")]
+[name="'Witch King's Echo'"]Haha, it's no use! It's too late.
+[name="'Witch King's Echo'"]Herkunftshorn is back! The one true king has returned to a Leithanien that rightfully belongs to him!
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#6$1",focus="r")]
+[name="Viviana"]Quiet, please.
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1125_1#1$1")]
+[PlaySound(key="$d_avg_shdwspllshrt", volume=0.5)]
+[delay(time=1)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[PlaySound(key="$bodyfalldown1", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=8, ystrength=16, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="Viviana"]We're leaving.
+[charslot(slot = "l", name = "avg_npc_1113_1#2$1",focus="l")]
+[name="Cora"]Viviana...
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="Viviana"]Cora, please, promise me... Don't say or do anything for now.
+[name="Viviana"]I might have tried something if it were just Herr Reiner, but there are too many of them, and each one the equal of a Knight-Champion.
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="Cora"]...
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1")]
+[name="'Witch King's Echo'"]Why do you not speak? Why should we hide now that the curtain is about to rise?
+[name="'Witch King's Echo'"]Our dream, our obsession, the moment for which we have given both blood and soul is finally upon us!
+[name="'Witch King's Echo'"]So why is there no joy on your face?
+[name="'Witch King's Echo'"]Concertm—
+[Dialog]
+[PlaySound(key="$d_avg_shdwspllshrt", volume=0.5)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1")]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[PlaySound(key="$bodyfalldown1", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=8, ystrength=16, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="Viviana"]I told you to be quiet.
+[Dialog]
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="Cora"]......
+[charslot(slot = "l", name = "avg_npc_1113_1#8$1",focus="l")]
+[name="Cora"]You knew.
+[name="Cora"]Since when?
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="Viviana"]I visited Marigold Alley before I went to see Arturia.
+[charslot(slot = "right", name = "avg_4098_vvana_1#2$1",focus="r")]
+[name="Viviana"]I wanted to see those drawings again, the images that gave me such warmth.
+[charslot(slot = "right", name = "avg_4098_vvana_1#2$1",focus="r")]
+[name="Viviana"]But I didn't find anything.
+[name="Viviana"]All the drawings, the ones with marigolds in them, the ones with clues leading to the Witch King... All gone.
+[name="Viviana"]You took them, didn't you?
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="Cora"]I only needed to take the ones containing the clues.
+[name="Cora"]But I couldn't bear to part with the marigolds either.
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="Viviana"]...My suspicions were confirmed the moment you told me that you were there the night the Witch King died.
+[name="Viviana"]When you cleaned the canvas back then, you left a spot untouched. The part showing you.
+[name="Viviana"]The Witch King's remnants were after witnesses to the Witch King's death.
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="Viviana"]And you were one of them.
+[name="Viviana"]But you're different from the others. You're not an innocent victim.
+[name="Viviana"]I... didn't want to say it. I didn't even want to ask.
+[name="Viviana"]Why... couldn't I be selfish, just this once?
+[charslot(slot = "l", name = "avg_npc_1113_1#8$1",focus="l")]
+[name="Cora"]...I'm sorry.
+[name="Cora"]I really am sorry, Viviana.
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="Viviana"]Why?
+[name="Viviana"]Why do I have to lose something I only just found?
+[Dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1125_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1127_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[name="'Witch King's Echo'"]We should fight together, Concertmaster.
+[name="'Witch King's Echo'"]The Gesatzswächter are here. We've come so far. It would be a shame to die at their hands now.
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="Cora"]......
+[Dialog]
+[charslot(duration=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="The amphitheater is a scene of chaos.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="The tuning continues. The Ludwigs-Universität incident already proved that only the Kaiserinnen could fight Herkunftshorn's Arts.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="What would the Twins think of my little show of selfishness, of betrayal?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I am not especially concerned.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_487_1#9$1")]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="Ewigegnade"]...Do you believe that the Güldenesgesatz can completely change its tone?
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="Grimmacht"]I only care about the result.
+[charslot(slot = "right", name = "avg_npc_487_1#8$1",focus="r")]
+[name="Ewigegnade"]The last person to rewrite the Güldenesgesatz was Herkunftshorn.
+[name="Ewigegnade"]But even he did not consider its destruction.
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="Grimmacht"]The Movement is the foundation on which Leithanien is built.
+[name="Grimmacht"]Its destruction will undermine everything. Our aesthetics, our habits and usage of Arts, the Kurfürsten system, the imperial authority...
+[charslot(slot = "left", name = "avg_npc_1115_1#3$1",focus="l")]
+[name="Grimmacht"]It will bring unprecedented change to Leithanien.
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="Ewigegnade"]But change isn't necessarily bad. If it were, we would never have been born.
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="Grimmacht"]A pair of children born of Arts, in defiance of the laws of nature.
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="Ewigegnade"]'This is just the beginning.'
+[name="Ewigegnade"]That's what Fremont said to Leopold. We were but infants at the time, but I know you understood what they said as well as I did.
+[name="Ewigegnade"]We were born with a duty.
+[name="Ewigegnade"]A duty to change Leithanien.
+[name="Ewigegnade"]Leopold was afraid of us. Which is why he had an army ready to tear us apart from behind the moment we killed Herkunftshorn.
+[name="Ewigegnade"]But we survived.
+[charslot(slot = "left", name = "avg_npc_1115_1#2$1",focus="l")]
+[name="Grimmacht"]...We may not have chosen to be born, but once we were, we had the right to live.
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="Ewigegnade"]Twenty-three years ago, we stood here gazing at the same sunset, over an altogether different scene of chaos.
+[name="Ewigegnade"]You extended your hand to me before we began our long-awaited duet.
+[charslot(slot = "right", name = "avg_npc_487_1#12$1",focus="r")]
+[name="Ewigegnade"]You said...
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="Grimmacht"]This sunset doesn't belong to anyone.
+[name="Grimmacht"]Not to Herkunftshorn, not to Leopold, not to the Kurfürsten, nor to any other ambitious noble.
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="Ewigegnade"]Ja.
+[name="Ewigegnade"]You took my hand, and we walked here together.
+[name="Ewigegnade"]There's no need to answer to the Kurfürsten... No need to be manipulated by anyone.
+[name="Ewigegnade"]Our fate is ours alone to decide.
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="Ewigegnade"]And apparently... someone else shares the same desire.
+[name="Ewigegnade"]Such a curious thing, the human soul.
+[name="Ewigegnade"]To think that even artificial children would learn human desire after gaining souls.
+[name="Ewigegnade"]That through a wish as simple as can be, the meek may be able to accomplish what even Herkunftshorn failed to, and redefine Leithanien.
+[charslot(slot = "left", name = "avg_npc_1115_1#2$1",focus="l")]
+[name="Grimmacht"]You...
+[charslot(slot = "left", name = "avg_npc_1115_1#8$1",focus="l")]
+[name="Grimmacht"]......
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="Ewigegnade"]You want to ask whether I let Cora roam free on purpose, don't you?
+[name="Ewigegnade"]Are you not of the same mind on this matter? Our thoughts are linked, even if it's been a long time since the two of us have watched the sunset together.
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="Ewigegnade"]Let's stay a while. It won't take long.
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="Grimmacht"]...Very well.
+[charslot(slot = "right", name = "avg_npc_487_1#8$1",focus="r")]
+[name="Ewigegnade"]What will the future look like?
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="Ewigegnade"]Would you still watch it with me, Hildegard?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="44_g9_towersquare_arrived",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1",duration=0.5)]
+[delay(time=1)]
+[name="Gesatzswächter"]Where's Cora?
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="Viviana"]...
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1")]
+[name="Gesatzswächter"]Viviana?
+[Dialog]
+[charslot(duration=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playsound(key="$d_avg_mgcbttlfld", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=0.4, fadetime=2,channel="a")]
+[playsound(key="$d_avg_swrdbzz",volume=0.6)]
+[Subtitle(text="I could hear Brandt's voice. He's fighting the remaining cultists. They won't last long.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="But the other is even faster.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Viviana is silent, but her Arts draw closer. I feel a shadow creep over the top of my foot, as cold as a storm at night.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[StopSound(channel="a", fadetime=3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1127_1#1$1")]
+[name="'Witch King's Echo'"]Look out, Concertmaster!
+[name="'Witch King's Echo'"]Concertmaster—
+[Dialog]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=5, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_knife")]
+[Blocker(a=0.2, r=0.2, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[name="'Witch King's Echo'"]How... my Arts... went through...
+[name="'Witch King's Echo'"]This is... tuning? Why...
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="Cora"]I'm sorry, Amelie. Like I said, my decision has never changed.
+[charslot(slot = "m", name = "avg_npc_1127_1#1$1")]
+[name="'Witch King's Echo'"]Ha... haha... it's nothing. We've betrayed so many in our lifetimes... perhaps too many.
+[name="'Witch King's Echo'"]Herkunftshorn's eternal spire... It's so close... I'll be waiting for you... on the stairs...
+[name="'Witch King's Echo'"]...Concertmaster.
+[Dialog]
+[playsound(key="$d_avg_bodyxplde")]
+[charslot(duration=0.5)]
+[delay(time=1)]
+Amelie must have turned to dark dust before me. This is how it is for the Witch King's followers. They don't want their bodies to linger on a land that lacks Herkunftshorn's favor.
+[charslot]
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]She's dead.
+[name="Viviana"]Most of them are. The remaining resistance will not last long.
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="Cora"]...And the same for me, I suppose.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]You deceived the followers of Herkunftshorn.
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="Cora"]Ja. The Kaiserin's instruction was to become the Concertmaster of the Witch King's followers. To become a hope and a lure, and to lead them into the abyss by their own volition.
+[name="Cora"]It's been twenty-three years. Everything about the Witch King—the long nightmares, the deep-rooted fears, the meaningless ambition—should have been gone from this country a long time ago.
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="Viviana"]So why is the 'tuning' still going?
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="Cora"]Because...
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="Cora"]Werner.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]Did the Kaiserin order father's death?
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="Cora"]...I tried to persuade him. I tried so hard.
+[name="Cora"]I wanted him to hand over the copy of Güldenesgesatz, so I could move it elsewhere, but he was concerned that the Witch King remnants would catch on, thus nullifying the bait.
+[name="Cora"]I asked him if maybe Brandt could arrive at the scene earlier, and save him at the scene of the attack... but he refused.
+[name="Cora"]He said he was already dying, and would soon get to see Lucinda. A few more days wasn't worth dragging both you and Sturmland into it.
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="Cora"]But you'd have gotten there if only he'd held out for a few more hours... or less.
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="Viviana"]......
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="Cora"]He was too determined to leave, and gave up too easily.
+[name="Cora"]The day Werner died, I recovered the copy of the Movement and watched you return to Sturmland, walking the path paved for you, so similar to his...
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="Cora"]And I made the choice that had long been brewing in my heart.
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="Viviana"]...The Güldenesgesatz.
+[name="Viviana"]You're using Herkunftshorn's Arts to tune the music. You're trying to destroy it, or rather the influence it holds over all Leithanians.
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="Cora"]They say that fate is an endless spiral staircase.
+[name="Cora"]If so, the Güldenesgesatz is the staircase trapping Leithanien.
+[charslot(slot = "m", name = "avg_npc_1113_1#4$1")]
+[name="Cora"]Stairs built a thousand years ago, glorious and beautiful on the outside, yet rotted to the core on the inside.
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="Cora"]I've seen so many people trapped within. Herr Emmanuel, Gerhard, Frieda, Loris... and Brandt. All suffering the tidings of fate, helpless to change it.
+[name="Cora"]The Witch King's Spire fell. Yet more rose to take its place. Those beneath the spires wish to climb them, while those atop them aspire to an even higher perch.
+[name="Cora"]They come and go, up and down, an endless waltz of hatred and conflict. Pain, sorrow and regret, filling the souls of one generation of Leithanians after another.
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="Cora"]You too, Viviana. Once you enter the Kaiserinnen's Spires, you will only speak what they want you to.
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="Cora"]I can 'see'... I have already seen how you will be forced to live a life you don't want, just like your father before you.
+[name="Cora"]The Güldenesgesatz never changes. Leithanien never changes. Tragedy never changes.
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="Cora"]Unless we free ourselves from the Movement of the past.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]You say you want to change our fate. But who are you to decide who gets saved, and who gets sacrificed?
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="Cora"]I can't. It's not my place, nor is it anyone's.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]You want to destroy the old order. But where is the new order? Can you guarantee it will be better than yesterday or today?
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="Cora"]I can't. Our future isn't for someone like me to decide.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]Those who died for the plan, and the people right before us... don't you realize the pain they're in?
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="Cora"]I hear them. Their screams, their laments... I will never stop hearing them, not until the day I die.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]Then why do you have to be the one to change everything?
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="Cora"]Because... I can.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]That's the only reason?
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="Cora"]Someone has to. My life never had much meaning to begin with, except for one speck of light that never fully belonged to me. And I would do anything to keep it from going out.
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="Viviana"]I can't condone your cruelty, arrogance, or irresponsibility.
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="Viviana"]And as such, I must stop you.
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="Cora"]Of course.
+[name="Cora"]Disaster has already struck, and by my hand. I've caused so much death, with even more to come.
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="Viviana"]Just stop this.
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="Cora"]I can't. Not after what it took to get this far.
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="Viviana"]Do you know what it is about your actions I agree with the least?
+[charslot(slot = "m", name = "avg_4098_vvana_1#3$1")]
+[name="Viviana"]You really are...
+[charslot(slot = "m", name = "avg_4098_vvana_1#5$1")]
+[name="Viviana"]Heartless.
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[playsound(key="$d_avg_mgcbttlfld", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=0.4, fadetime=2,channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1",duration=0.5)]
+[delay(time=1)]
+[CameraShake(duration=1, fadeout=true, xstrength=25, ystrength=25, vibrato=30, randomness=90, block=false)]
+[name="Gesatzswächter"]No—!
+[multiline(name="Gesatzswächter")] Viviana...
+[CameraShake(duration=0.4, fadeout=true, xstrength=30, ystrength=30, vibrato=30, randomness=90, block=false)]
+[multiline(name="Gesatzswächter")] Cora, Cora!
+[Dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="44_i10",screenadapt="coverall",xScale=1.1, yScale=1.1,x=-30)]
+[ImageTween( xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1,  xTo=0, duration=45)]
+[playMusic(intro="$storyendjp_intro",key="$storyendjp_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="Cora"]I know, I know.
+[name="Cora"]You're soft on the outside, but firm on the inside. You just can't turn your back on other people's pain.
+[name="Cora"]You don't want to make things difficult for Brandt either. You're always thinking of others, even now.
+[name="Cora"]And... I'm glad I got to die at the hands of the one I love the most.
+[name="Viviana"]...I'm sorry.
+[name="Cora"]Are the clouds beautiful today?
+[name="Viviana"]......
+[name="Cora"]No need to be afraid, Viviana.
+[name="Cora"]It'll pass. This will all...
+[Dialog]
+[delay(time=1)]
+She embraces me.
+I can feel her hand on my back, trembling.
+I want to hug her and comfort her like I used to. Perhaps I did. I talked so much, even though I had already begun to go numb from blood loss.
+I can imagine her lake-like eyes beginning to rain, her gentle complexion warped by torment.
+She only just learned that I've never clearly seen the faces of her father and mother.
+Through Werner's words, I could only imagine how they looked, how they met, and how they fell in love.
+After all, I went into that dark spire the day I came to Vedunien. And the day I left it, I could no longer see.
+Everything I know that's nice and beautiful, including Brandt, was brought to me by Werner and Lucinda.
+Except for one thing... except this.
+The day that Werner brought the girl down from the spire to me, the day that I touched her soft, timid hand, the day that I wiped away her tears...
+That was the day that I became certain of it.
+I loved this child, and not because she was their daughter.
+But because I saw in her something that none of us had.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="Cora"]You deserve a better life than this, Viviana... If there really is one...
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[playsound(key="$bodyfalldown1", volume=0.6)]
+[delay(time=1)]
+[background]
+[gridbg(imagegroup="44_g13_afterglow_L1/44_g13_afterglow_R1/44_g13_afterglow_L2/44_g13_afterglow_R2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720",x=-640,fadetime=0)]
+[largebgtween(duration = 60,yFrom = 600, yTo = 360,block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="Twenty-three years ago, I heard the sound of fighting from below, and gave the resonance pipeline at the top of the Spire a little push.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Just a little push, something anyone could do.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="It created the tiniest gap in Herkunftshorn's defensive Arts. He had never imagined that a humble maidservant would have the courage to betray him.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Today, I tampered with the resonance pipelines of the Twin Empresses' Spires.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="All I did was restore the Witch King's tuning components, according to the Arts he left behind in the copy of the Güldenesgesatz, then activate them with my own humble Arts.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Life is too short.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Do nothing, and you leave no trace behind, like the clouds floating past the spires.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="But no one should drift with the wind like that, unable to determine their own future.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Many desires change. I'm just the first to extend my hand.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I hope that after this, all good people, all the people I love...", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Will have a true future.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=2, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[gridbg]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

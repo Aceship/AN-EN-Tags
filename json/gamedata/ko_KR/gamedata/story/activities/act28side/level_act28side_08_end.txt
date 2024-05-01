@@ -1,0 +1,796 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[playMusic(intro="$mist_intro",key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1",duration=0.5)]
+[Delay(time=1)]
+[name="'클립' 클리프"]……현재 상황은?
+[charslot(slot = "m", focus = "n")]
+[name="비서"]제시카 씨의 행방을 파악했습니다만…… 명령 때문에 용병들의 행동에 제약이 있습니다. 그래도 시간을 계산해 보면 아마 제시카 씨의 탄환은 거의 다 떨어졌을 겁니다.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]틸라 쪽은?
+[charslot(slot = "m", focus = "n")]
+[name="비서"]헬레나 씨와 광부가 돈을 갖고 에너지 타워로 들어갔는데…… 두 사람 모두 나오지 않았습니다.
+[charslot(slot = "m", name = "avg_npc_1036_1#7$1")]
+[name="'클립' 클리프"]그 많은 사람이 지켜보는데 사라졌다고? 다른 출구가 있는 게 분명하니, 틸라한테 계속 찾아보라고 해.
+[charslot(slot = "m", focus = "n")]
+[name="비서"]네.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]우디는? 떠났나?
+[charslot(slot = "m", focus = "n")]
+[name="비서"]우드로 씨는…… 섹터를 떠나지 않았습니다. 아무래도 기존의 도주 계획을 포기한 것 같아요.
+[name="비서"]처음에 틸라가 보고한 바에 따르면, 우드로 씨는 원래 모든 일이 끝난 뒤에 그 광부와 함께 산속으로 숨으려고 했거든요.
+[charslot(slot = "m", name = "avg_npc_1036_1#10$1")]
+[name="'클립' 클리프"]우디가 어디로 간 거지……
+[charslot(slot = "m", focus = "n")]
+[name="비서"]우드로 씨는…… 이곳으로 오고 있습니다.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]……
+[charslot(slot = "m", focus = "n")]
+[name="비서"]사람을 보내 막을까요?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]됐어, 오라고 해. 우디가 오겠다고 고집부리면 아무도 못 막으니까.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[playsound(key="$d_avg_woodcracle", loop=true, channel="a")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "left", name = "avg_106_franka_1#1$1",duration=0.5)]
+[charslot(slot = "right", name = "avg_107_liskam_1#1$1",duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_106_franka_1#1$1",focus="l")]
+[name="프란카"]리스캄, 앞쪽에 장애물이 불타고 있어서 차로는 들어갈 수가 없어. 내려서 걸어가야 해.
+[charslot(slot = "right", name = "avg_107_liskam_1#7$1",focus="r")]
+[name="리스캄"]저것들은…… 블랙스틸의 차량인가?
+[charslot(slot = "left", name = "avg_106_franka_1#5$1",focus="l")]
+[name="프란카"]우드로 씨일까…… 아니면, 제시카일까……
+[charslot(slot = "right", name = "avg_107_liskam_1#4$1",focus="r")]
+[name="리스캄"]적어도 아까 에너지 타워가 폭발할 때, 모든 사람이 안에 있었던 건 아니라는 거네.
+[charslot(slot = "left", name = "avg_106_franka_1#8$1",focus="l")]
+[name="프란카"]잠깐, 리스캄…… 위에서 소식이 왔어.
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[playsound(key="$d_gen_transmissionget")]
+[delay(time=1.5)]
+[name="통신음"]각 팀은 잘 들어라. 현재 상황을 말해주겠다. 아까 있었던 폭발 사고로 목표 엔지니어는 생사를 알 수 없고, 목표 헬레나는 실종되었다……
+[charslot(slot = "left", name = "avg_106_franka_1#5$1",focus="l")]
+[name="프란카"]세상에……
+[charslot(slot = "m", focus = "n")]
+[name="통신음"]위에서 지령이 내려왔다. 목표 우드로는 포기하고 목표 제시카를 체포하는 데 전력을 다한다. 목표는 채굴 공장 동쪽의 버려진 골목에 있고, 대량의 무기를 소지하고 있다.
+[charslot(slot = "left", name = "avg_106_franka_1#11$1",focus="l")]
+[name="프란카"]……리스캄, 우리는…… 어쩌지……?
+[charslot(slot = "right", name = "avg_107_liskam_1#4$1",focus="r")]
+[name="리스캄"]……우리가 할 수 있는 일이 있을 거야. 다른 팀보다 우리가 채굴 공장을 더 잘 알잖아. 가장…… 빠른 속도로 제시카한테 갈 수 있는 방법을 찾아야 해.
+[Dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=0.7)]
+[charslot(slot = "m", name = "avg_npc_1034_1#1$1",duration=1)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="r")]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'클립' 클리프"]내가 예상한 것보다 빨리 왔군…… 우디.
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="우드로"]오는 동안 모든 건물이 텅 비어 있다 보니, 널 찾아올 수밖에 없더군.
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="'클립' 클리프"]지금 날 탓하는 건가?
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="우드로"]그러면 안 되나? 사람은 무슨 행동을 해서가 아니라, 아무 행동도 하지 않아서 죄를 짊어질 때도 있지.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'클립' 클리프"]그렇다면 몇십 년 전에 넌 총을 쐈어야 했어, 우디.
+[name="'클립' 클리프"]하지만 넌 도망쳤지, 왜 그랬지?
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="우드로"]오랫동안 침묵하던 내 공감 능력이 드디어 내 곁에 또다시 산크타가 나타난 걸 감지했거든. 바로 너 말이야.
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="'클립' 클리프"]그때 난 형편없었어. 나랑 공감하는 건 별로 좋지 않았을 텐데, 우디.
+[charslot(slot = "l", name = "avg_npc_1034_1#2$1",focus="l")]
+[name="우드로"]어쩔 수 없어, 산크타의 천성이니까…… 우리는 늘 모든 걸 공유하거든.
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="우드로"]네 머릿속에서 공감된 것과 비교하면, 포로수용소에서 있었던 일은 정말 아무것도 아니었어.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'클립' 클리프"]정말 잔인하군, 우디. 그렇게 날 증오하면서도, 내 고통이 널 즐겁게 할 수 없다니.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g8_abandonedblock",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_avg_drone")]
+[delay(time=1)]
+[playsound(key="$transmission")]
+[name="통신음"]보고, 제시카 발견, 좌표 공유 완료.
+[name="통신음"]목표는 채굴 공장 바깥으로 이동하고 있어. 중형 에너지포와 반자동 소총…… 그리고 모델을 알 수 없는 권총을 소지하고 있다.
+[name="통신음"]혼자 그 많은 걸 짊어지고 있다고?
+[name="통신음"]아, 참, 필요할 때 포탑으로 변할 수 있는 무거운 방패도 메고 있어.
+[name="통신음"]진짜 대단하네. 우리 아가씨가 세월이 지나면서 꽤…… 만만치 않은 상대가 된 것 같아.
+[name="통신음"]제시카는 어때? 공격적이야? 막다른 길에 몰린 강도는 쉽게 놀라고, 사소한 거 하나에도 길길이 날뛰잖아.
+[name="통신음"]음…… 꽤 평온해 보여. 아무것도 안 하고 그냥 앞으로 나아가고만 있어.
+[dialog]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot="m",name="avg_1034_jesca2_1#1$2",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "m", focus = "n")]
+골목에서 여자아이가 눈보라를 헤치고 무기를 짊어진 채 힘겹게 앞으로 나아가고 있었다. 길 양쪽의 무너진 벽이 옆으로 느릿느릿 멀어지고 있었다.
+갈림길에 도착한 여자아이는 잠시 멍하니 서 있다, 옷깃을 여미고는 바람을 거슬러야 갈 수 있는 길로 방향을 바꿨다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1")]
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1")]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="우드로"]포로수용소 안의 시간은 멈춰있었지만, 바깥에서는 전쟁이 계속됐어.
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="'클립' 클리프"]맞아, 우디. 너랑 그 녀석이 포로로 잡힌 뒤에, 나는 더 많은 사람을 데리고 더 넓은 전장으로 향했어.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'클립' 클리프"]1월에는 포화 속에 강을 건넜고, 8월에는 또 뜨거운 사막을 지키며 한 발짝도 물러날 수 없었지.
+[name="'클립' 클리프"]승리할 때는 적군의 시체를 밟으며 전진했고, 패배할 때는 아군의 시체를 밟으며 후퇴했어.
+[charslot(slot = "r", name = "avg_npc_1036_1#7$1",focus="r")]
+[name="'클립' 클리프"]그리고 더 상황이 나빴을 땐, 하나를 지키기 위해 다른 하나를 희생시켜야 했지.
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="우드로"]네가 나와 그 녀석에게 했던 것처럼 말이군.
+[charslot(slot = "r", name = "avg_npc_1036_1#5$1",focus="r")]
+[name="'클립' 클리프"]맞아, 난 수도 없이 그렇게 했어. 너희뿐만 아니라 다른 사람에게도 그랬지.
+[name="'클립' 클리프"]이게 바로 전쟁이 내 앞에 놓아둔 것이야. 선택처럼 보이지만 사실 거스를 수 없는 규칙이었어.
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="우드로"]그럼에도 넌 선택했어.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'클립' 클리프"]어쩔 수 없지. 선택하지 않으면 지금까지 한 일 모두 물거품이 되고 참패하고 말 테니까. 그래서 나는 규칙을 받아들이기로 선택한 거야.
+[charslot(slot = "l", name = "avg_npc_1034_1#2$1",focus="l")]
+[name="우드로"]……
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="우드로"]한때는 너무나도 존경했던 사람이, 전쟁의 규칙과 논리 때문에 딴사람이 된 모습을 보는 건 정말 슬픈 일이군.
+[name="우드로"]네가 원래 어땠는지 기억하나? 독립전쟁을 겪지 않았을 때의 모습 말이야.
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="우드로"]늘 경전을 들고 사방을 유람하며, 손에 든 총으로 모든 불공평과 분쟁을 끝내겠다고 맹세했었지. 기억나나?
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="'클립' 클리프"]당연하지, 우디. 내 모습뿐만 아니라, 네 모습은 더 잘 기억하고 있어.
+[name="'클립' 클리프"]예전에 넌 늘 펜을 들고 다니며, 언젠가 성당의 돔 천장에 본인 작품을 남기는 날이 오기를 바랐지.
+[name="'클립' 클리프"]그동안 펜을 잡은 적은 있나, 우디?
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="우드로"]……아니, 손가락 네 개를 다시 이어 붙였거든.
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$transmission")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_snowrun", volume=0.8)]
+[name="통신음"]목표가 왼쪽으로 갔다. 속도가 빠르지 않으니 근처 팀원은 체포할 준비해.
+[charslot(slot = "m", name = "avg_106_franka_1#8$1")]
+[name="프란카"]이 좌표는…… 바로 앞쪽이야, 서둘러…… 리스캄.
+[charslot(slot = "m", name = "avg_107_liskam_1#7$1")]
+[name="리스캄"]후우…… 자, 잠깐만.
+[charslot]
+골목을 돌아 두 사람은 발걸음을 멈췄다. 여자아이의 쓸쓸한 뒷모습이 갑자기 두 사람 앞에 나타났기 때문이었다.
+[playMusic(intro="$distressed_intro",key="$distressed_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="리스캄"]제시카……
+[charslot]
+부르는 소리를 들은 여자아이가 고개를 돌렸다.
+찾아온 사람을 보고 반가워하는 기색을 보였으나, 그것도 잠시, 당황하며 어쩔 줄을 몰라 했다.
+[Dialog]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#1$2",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#3$2")]
+[name="제시카"]티, 팀장님…… 두 분도 오셨네요?
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="리스캄"]응, 네 좌표를 받고 전력을 다해 달려왔어……
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]정말 죄송해요, 팀장님…… 이번에 제가 친 사고는 진짜 수습할 수 없을 것 같아요.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="리스캄"]난 결국 너의 탈퇴 신청을 승인했어. 그러니 엄밀히 따지면 난 네 팀장이 아니야, 제시카.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]그렇네요…… 하긴, 두 사람은 지금 절 체포하러 온 거겠군요.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="리스캄"]아니…… 우리는 친구로서 온 거야.
+[name="리스캄"]오는 길에 통신을 받았는데, 에너지 타워 폭발 사고로 리온 씨가…… 네가 아는지 모르겠지만, 어찌 됐든 네가 누군가와 같이 있고 싶어 할 것 같아서.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]네…… 알고 있어요. 폭발하기 전까지 전 리온 씨와 통화하고 있었거든요…… 와 줘서 정말 고마워요. 하지만……
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="프란카"]괜찮아, 제시카?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]저는……
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="제시카"]안 괜찮아요, 최악이에요.
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="프란카"]그쪽으로 가서 안아줄까?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="제시카"]아니요…… 다가오지 마세요. 할 말이 있으면 그냥 이렇게 하세요…… 이 거리에서도 잘 들리거든요.
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_106_franka_1#11$1",duration=1)]
+[PlaySound(key="$d_avg_snowbootwalk")]
+[delay(time=1.5)]
+[name="프란카"]제시카……
+[charslot(slot = "m", name = "avg_1034_jesca2_1#6$2")]
+[name="제시카"]거기 가만히 있어요, 프란카 씨.
+[charslot(slot = "m", focus = "n")]
+허둥대는 사이, 제시카는 허리춤에서 권총을 꺼내 다가오려던 프란카를 막았다.
+[charslot(slot = "m", name = "avg_106_franka_1#5$1")]
+[name="프란카"]지금…… 나한테 총을 겨눈 거야, 제시카?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="제시카"]죄, 죄송해요…… 저, 저는 그냥…… 프란카 씨, 이러지 마세요…… 그냥 저 혼자 두세요.
+[charslot(slot = "m", name = "avg_106_franka_1#11$1")]
+[name="프란카"]제시카……
+[charslot(slot = "m", name = "avg_107_liskam_1#1$1")]
+[name="리스캄"]프란카, 내가 얘기할게……
+[dialog]
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[delay(time=1)]
+[name="리스캄"]어디 가고 싶은 데는 없어, 제시카? 이 모든 일이 끝나면 말이야.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]어디로 갈 수 있겠어요……? 드론이 계속 절 쫓아오는데. 두 분은 절 찾지 말아야 했어요…… 돌아가면 제대로 설명하지 못할지도 모른다고요.
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="리스캄"]난 상관없어…… 설명할 말이 없으면 없으라지, 뭐. 우리가 함께한다면 아무것도 무섭지 않아.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]하지만 전 무서워요…… 너무 무섭단 말이에요……
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="리스캄"]뭐가 무서운데?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="제시카"]그 깨끗한 온수가 너무 포근하고 아름다울까 봐요.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="리스캄"]그게…… 무슨 말이야……?
+[dialog]
+[charslot]
+[playsound(key="$d_avg_truckengine", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=1, fadetime=1.5,channel="a")]
+[Blocker(a=0.6, r=1, g=1, b=1, fadetime=1.5, block=true)]
+[delay(time=0.5)]
+차량 헤드라이트가 제시카를 비추었고, 여러 개의 거대한 빛의 고리가 여자아이를 그 안에 가두었다.
+여자아이의 눈은 이렇게 강렬한 빛을 감당할 수 없었다. 그래서 한 손으로 총을 쥐고, 다른 한 팔로 눈을 가렸다.
+잠시 후에 여자아이는 적응된 듯 팔을 내렸고, 반쯤 감은 눈으로 멀리서 그녀를 향해 다가오는 차량 행렬을 바라보았다.
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[Dialog]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1")]
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1")]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'클립' 클리프"]우디, 그동안 어떻게 지냈지?
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="우드로"]수십 년 동안 사람들과 거리를 둔 채 개척지에서 지내면서 홀로 버든비스트 무리를 데리고 사방을 돌아다녔지.
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="'클립' 클리프"]왜 신성한 도시에 돌아가지 않은 건가?
+[charslot(slot = "l", name = "avg_npc_1034_1#1$1",focus="l")]
+[name="우드로"]그러고 싶지 않았으니까. 넌 왜 안 돌아갔는데?
+[charslot(slot = "r", name = "avg_npc_1036_1#7$1",focus="r")]
+[name="'클립' 클리프"]난 용병이라서 라테라노에는 내 자리가 없어. 넌 왜 돌아가기 싫었는데?
+[charslot(slot = "l", name = "avg_npc_1034_1#5$1",focus="l")]
+[name="우드로"]하……
+[name="우드로"]레타라노로 돌아가면, 어떤 힘들었던 일이든 다 잊히지 않겠어?
+[name="우드로"]포로수용소의 사람은 대부분 죽었고, 그 일을 기억하는 사람은 몇 명 안 돼. 누군가는 기억해야 하니까.
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="'클립' 클리프"]하지만 넌 여기로 와서 네가 거부하던 평온한 삶을 살았어. 늘 똑같이 반복되는 삶 말이야.
+[charslot(slot = "l", name = "avg_npc_1034_1#6$1",focus="l")]
+[name="우드로"]하지만 난 잊지 않았어. 지금까지도 계속 기억하고 있다고.
+[charslot(slot = "r", name = "avg_npc_1036_1#8$1",focus="r")]
+[name="'클립' 클리프"]언젠가 네가 옛일로 날 찾아올 줄은 알고 있었어.
+[name="'클립' 클리프"]그날이 이렇게 늦게 올 줄은 몰랐지만.
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1",duration=0.5)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_gunload")]
+[delay(time=1.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[PlaySound(key="$d_avg_driveincar", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=1, fadetime=2,channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[StopSound(channel="a", fadetime=3)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_drone")]
+[delay(time=1)]
+[dialog]
+[PlaySound(key="$d_gen_soldiersrun")]
+[charslot(slot = "left", name = "avg_npc_1045_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1045_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot]
+[playsound(key="$transmission")]
+[name="통신음"]목표는 포위됐다. 반복한다, 목표는 포위됐다.
+[dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1",focus="m",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_mictest")]
+[delay(time=1)]
+[name="냉정한 블랙스틸 용병"]제시카 씨, 손에 든 무기를 버려. 이제 다 끝났어.
+[name="냉정한 블랙스틸 용병"]주위를 살펴봐, 당신은 아무 데도 갈 수 없어. 오늘 일은 다 끝났거든. 조금 있으면 눈발이 더 거세질 거야…… 제기랄, 오늘은 원래 일찍 퇴근해서 이불에 들어갔어야 했는데.
+[charslot]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]……미안하다고 하고 싶지만, 오늘은 너무 많이 해서, 더 해봤자…… 그저 의미 없는 말로 들릴 거예요.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]당신은 무사할 거야. 일이 커지기는 했지만, 당신에게 아무 일도 없을 거라는 건 여기 있는 모두가 알아.
+[name="냉정한 블랙스틸 용병"]난 입사하자마자 당신의 이름을 들었어, 제시카 씨. 다들 당신은 절대 건드리지 말라고 하더군, 당신 집안의 변호사가 오늘 여기 있는 용병보다 더 많다면서.
+[charslot]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="제시카"]……훨씬 더 많을 거예요.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]봐, 당신도 알잖아. 당신한테 최악의 결말이라 해 봤자 2년 정도 감옥에 들어가는 것뿐이야. 석방되면 다시 원하는 삶을 살 수 있을 테고.
+[charslot]
+[charslot(slot = "m", name = "avg_107_liskam_1#1$1")]
+[name="리스캄"]확성기 좀 내려놓지그래? 이 정도 거리에서는 안 써도 되잖아.
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[PlaySound(key="$d_avg_doorknob")]
+[delay(time=0.5)]
+[name="냉정한 블랙스틸 용병"]어허, 기껏 가져왔더니.
+[charslot(slot = "m", name = "avg_107_liskam_1#3$1")]
+[name="리스캄"]부탁이니까 입 좀 다물어.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]너한테 제시카 씨를 설득할 더 좋은 말이 있다면 기꺼이 입을 다물어 줄게.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]괜찮아요, 리스캄 씨. 그렇게 절 감싸주지 않아도 돼요. 다들 절 어떻게 생각하는지 저도 잘 알거든요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="제시카"]맞아요, 전 어려서부터 뭘 하든 결과를 생각해 본 적이 없어요. 어차피 무슨 짓을 하든 집에서 뒤를 봐줄 테니, 때론 멋대로 굴기도 했죠.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]하지만 세상일은 그렇지 않았어요…… 무슨 일이든 다 대가가 있었어요. 경솔하게 결정을 내렸으면 그에 대한 뒷감당도 책임져야 해요.
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="리스캄"]제시카…… 난 네가 팀을 떠날 때 이 모든 걸 이미 다 생각했을 줄 알았어.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]아니요, 리스캄 씨. 오늘 밤 일을 말하는 게 아니에요. 7년 전, 배런 기지에 와서 대문으로 들어갔을 때를 말하는 거예요.
+[name="제시카"]그때 전 장비 및 응용기술부에서 장비 테스터가 되고 싶었을 뿐이에요. 언젠가 진짜 전장에서 무기를 들고 다른 사람을 겨냥하게 될 줄은 상상도 못 했다고요.
+[name="제시카"]그래요, 문제는 바로 그거였어요. 사람들은 늘 쉽게 무기를 들어 올리지만, 그 뒤에 치러야 하는 대가는 생각하지 않아요.
+[name="제시카"]이 작은 총은요, 제가 두 손으로 들어 올릴 수 있고, 손가락 하나만으로도 방아쇠를 당길 수 있어요. 총 쏘는 법을 배우는 데 한 달이 채 안 걸렸어요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="제시카"]더 무서운 건…… 이걸로 한 사람의 목숨을 앗아가는 데 1초밖에 필요하지 않다는 거예요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]그렇지만 그 1초를 잊으려면 평생이 걸려요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="제시카"]보세요, 이게 바로 그때의 저예요. 참 어리석었어요. 총을 손에 들기 전에, 훗날 이것으로 무엇을 겨냥하게 될지조차 제대로 알지 못했으니까요.
+[name="제시카"]……하지만 첫 번째 총알은 이미 발사되었어요. 제대로 알지 못하면 용서할 수 없는 일이 되어버릴 거예요.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]그럼 제시카 씨, 지금은 알게 된 거야?
+[name="냉정한 블랙스틸 용병"]한순간도 내리지 않고 계속 총을 들고 있잖아.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_npc_1034_1#10$1")]
+[name="우드로"]너무 거만하군. 내가 언제 옛일 때문에 널 찾아왔다고 했지?
+[name="우드로"]설마 우리의 지난 원한을 끝내기 위해 내가 총알을 들고 찾아왔다고 생각한 건가?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]과거에 갇혀있는 사람은 너잖아, 우디?
+[charslot(slot = "m", name = "avg_npc_1034_1#5$1")]
+[name="우드로"]아니, 거기에서 빠져나오지 못하는 사람은 너야.
+[name="우드로"]아흔이 넘도록 용병을 하고 있잖아. 전장 밖의 생활에 적응할 수는 있겠나?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]우디, 내가 전장을 떠나지 않는 건 전쟁이 끝나지 않기 때문이야.
+[charslot(slot = "m", name = "avg_npc_1034_1#1$1")]
+[name="우드로"]컬럼비아의 전쟁은 진작 끝났어.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]컬럼비아의 전쟁은 끝났지만 볼리바르의 전쟁이 시작되었어. 지금 빅토리아 전쟁의 불꽃은 잠시 수습되었지만, 그 여파는 쉽게 가라앉지 않아……
+[name="'클립' 클리프"]우디, 전쟁은 계속 존재하고 있어. 그저 잠시 멈추는 것일 뿐, 다시 일어난다고.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="우드로"]그럼 넌 왜 전장에 남아 있지? 계속 전쟁의 세례를 받고 싶은 건가?
+[charslot(slot = "m", name = "avg_npc_1036_1#2$1")]
+[name="'클립' 클리프"]전쟁을 끝낼 수 없다면, 나도 차선책으로 그 스위치를 내 손에 쥐려고 시도할 수밖에.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]이것 또한 내가 블랙스틸 용병 회사를 세운 이유야.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="우드로"]정말 통제할 수 있겠나?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]수도 없이 시도했고 참혹한 대가를 치렀지만 결국 해냈어.
+[charslot(slot = "m", name = "avg_npc_1034_1#5$1")]
+[name="우드로"]그럴 가치는 있었고?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]단 몇 초만 멈추게 해도 너 같은 많은 사람들이 다시 펜을 잡게 하기엔 충분해.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="우드로"]그렇다면 여기서 하는 작전은 왜 몇 초도 멈출 수 없었던 거지?
+[name="우드로"]몇 초만 멈췄어도 나 같은 수많은 사람이 숨 돌릴 기회가 있었을 거야. 그렇게 허겁지겁 개척지로 쫓겨나지 않아도 됐다고.
+[charslot(slot = "m", name = "avg_npc_1036_1#5$1")]
+[name="'클립' 클리프"]데이비스 타운은 전장이 아니니까.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#11$2")]
+[name="제시카"]내려놓을 수 없어요. 왜냐하면…… 이건 제가 가진 것 중에서 힘을 가진 유일한 물건이니까요.
+[name="제시카"]그동안 전 제가 색이 없는 기호 같다고 느꼈어요……
+[name="제시카"]그 기호가 대표하는 부와 가문, 세력은 제가 해결하려고 애쓰는 문제 앞에서…… 어떠한 의미도 없고, 아무런 역할도 하지 못했어요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]하지만 적어도 들고 있는 이것에 의지해…… 저는 임무를 끝냈고 목표를 달성했죠.
+[name="제시카"]적어도 이걸 들고 있는 전 아무 쓸모 없는 기호가 아니에요.
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="리스캄"]무슨 말도 안 되는 소리를.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="제시카"]팀장님……?
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="리스캄"]제시카, 5년이야. 5년 동안 한 번이라도 내가 그때 왜 널 조수로 선택했는지 깨달은 적 있었어?
+[name="리스캄"]거긴 블랙스틸 월드와이드야…… 온갖 대단한 녀석들이 있는 곳이라고, 제시카. 하지만 내가 널 선택한 건 네 손에 든 총이 아니라, 네 눈물 때문이었어.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#14$2")]
+[name="제시카"]눈물이라니…… 팀장님, 하지만 나약한 눈물로는 제 뒤에 서 있는 사람을 지킬 수 없잖아요……
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="리스캄"]눈물은 절대 나약한 게 아니야, 제시카. B.P.R.S의 일은 더럽고 힘들고 위험해. 단지 돈을 위해 이 일을 하는 사람은 없어.
+[name="리스캄"]타인의 고통에 공감할 줄 아는 녀석만이 일면식도 없는 사람과 낯선 곳을 위해 물불을 가리지 않을 수 있는 거야.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]팀장님…… 제가 아무런 쓸모도 없다는 생각이 들었을 때, 팀장님이 절 팀으로 데려왔어요.
+[name="제시카"]태어나서 처음으로 누군가가 알아준 거라서 계속 기억하고 있어요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#13$2")]
+[name="제시카"]팀장님의 믿음에 보답하기 위해서라면, 전 물불 가리지 않고, 그 무엇이라도 기꺼이 할 수 있어요.
+[charslot(slot = "m", name = "avg_107_liskam_1#4$1")]
+[name="리스캄"]하지만 그건 네가 가야 할 길이 아니야…… 왜냐면 앞으로 나아간다는 건 누군가의 인정을 받기 위해서가 아니기 때문이야.
+[charslot(slot = "m", name = "avg_107_liskam_1#5$1")]
+[name="리스캄"]제시카, 네가 정말 하고 싶고 널 행복하게 하는 일을 해. 다른 사람의 인정 따윈 필요 없어. 그저 네 마음에서 인정할 수 있으면 돼.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#8$2")]
+[name="제시카"]팀장님, 저 지금…… 마음껏 울고 싶어요……
+[charslot(slot = "m", name = "avg_107_liskam_1#8$1")]
+[name="리스캄"]그럼 울어. 눈물 흘려도 돼. 아무것도 걱정할 필요 없어.
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[playMusic(intro="$epic_intro",key="$epic_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="'클립' 클리프"]우디, 네 광륜이 계속 깜빡이고 있군.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$1")]
+[name="우드로"]맞아, 제대로 봤어. 난 널 정말로 죽이고 싶거든.
+[name="우드로"]넌 계속 전쟁은 끝낼 수 없고, 오직 통제할 수밖에 없다고 말하고 있어.
+[name="우드로"]하지만 틀렸어. 전쟁은 끝낼 수 있어. 다만 네가 그럴 능력이 없을 뿐이지.
+[name="우드로"]전쟁은 그로 인해 수많은 피해를 보았지만, 여전히 잡초처럼 열심히 살아가는 평범한 사람들이 끝내는 거야.
+[name="우드로"]그리고 전쟁의 불길에 타올랐던 곳은, 절망 속에서도 자신의 원래 생활을 유지하려고 노력하는 무수한 평범한 사람들에 의해 복원되지.
+[charslot(slot = "m", name = "avg_npc_1034_1#3$1")]
+[name="우드로"]넌 전장에서 죽었어야 했어. 그게 지금처럼 입만 열면 전쟁 타령이나 하는 미치광이가 되는 것보다 나았을 테니까.
+[name="우드로"]원래는 그저 네게 총알을 돌려주려고 했는데, 지금은 정말로 널 죽이고 싶군.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[image(image="42_i11",screenadapt="coverall",xScale=1.2, yScale=1.2)]
+[ImageTween(image="42_i11",xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, xFrom=80, xTo=0, duration=9)]
+[bgeffect(name="$eb_glow_42i11_01",layer=2)]
+[bgeffect(name="$eb_glow_42i11_02",layer=3)]
+[cgitem(image="cgitem_42_i11", style="cg",pfrom = "-200,0",pto = "0,0",pduration = 10,layer = 4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[playsound(key="$d_avg_snowstormflp", loop=true, channel="bgs")]
+[StopSound(channel="bgs", fadetime=3)]
+[delay(time=7)]
+한차례의 광풍이 노인의 모자를 말아 올리더니 높은 공중으로 날려버렸다.
+하지만 노인은 그것을 쳐다볼 겨를도 없었고, 주우러 가기도 귀찮았다.
+그의 눈빛은 온통 맞은 편에 있는 남자에게 쏠렸다. 눈도 깜빡하지 않고, 뺨부터 목까지 근육이 긴장되어 있었다.
+그리고 노인의 머리 위에서는, 광륜이 미친 듯이 깜빡이고 있었다.
+맞은 편에 있는 남자는 한참 동안 침묵하더니 천천히 숨을 내뱉었다, 이제야 막 휘몰아치는 바람 속에서 노인의 말을 구분해 낸 것처럼.
+[name="'클립' 클리프"]그렇다면 우디, 네가 죽이려는 사람이 누군지는 정확히 알고 있나?
+[name="'클립' 클리프"]적, 자신을 배신한 친구, 아니면 그냥 미치광이?
+[name="우드로"]다 아니야. 그저 오만하기 짝이 없는 놈이지.
+[name="우드로"]그놈의 눈에는 뭐든지 저울에 올려 비교할 수 있고, 목표를 위해서라면 뭐든지 대가로 희생할 수 있어.
+[name="'클립' 클리프"]……그렇다면 넌? 넌 어떤 입장으로 그 사람에게 총알을 쏘려는 거지?
+[name="우드로"]평범한 사람.
+[name="우드로"]너의 그 깔보는 듯한 시선 속에서 모든 것을 잃고 분노만이 남은 평범한 사람이지.
+[name="'클립' 클리프"]아주 좋군.
+[name="우드로"]왜 웃는 거지?
+[name="'클립' 클리프"]펜을 잡고 싶어 하던 손가락은 결국 방아쇠를 당기게 됐고, 경전을 들고 싶어 하던 두 손은 결국 피로 물들었으니까.
+[name="'클립' 클리프"]운명은 참 사람을 농락하기 좋아하는 것 같아.
+바람이 클리프의 외투로 불어 들어와 허리춤의 총과 총을 향한 손이 드러났다.
+흩날리는 눈송이 속에서 그는 똑같은 동작을 하는 우드로를 보았다.
+클리프는 어렴풋한 기억이 떠올랐다. 오래전에 라테라노에서, 기숙사로 돌아가는 길에 밤바람이 우드로의 모자를 날려버렸고, 공중에 떠서 오래도록 떨어지지 않았었다.
+순식간에 오랜 세월이 흘러 바람 속의 모자가 마침내 땅으로 떨어졌다.
+[Stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[hidecgitem]
+[Background(image="bg_black",screenadapt="coverall")]
+[bgeffect]
+[image]
+[delay(time=1)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[PlaySound(key="$d_avg_gunshot")]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[PlaySound(key="$d_avg_gunsingle",channel="a",delay=0.3)]
+[delay(time=0.16)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.5, block=false)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[delay(time=2.5)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[name="제시카"]제 눈물을…… 여러분은 볼 수 있어요.
+[name="제시카"]하지만 그 사람들은요?
+[charslot(slot = "m", name = "avg_107_liskam_1#3$1")]
+[name="리스캄"]……
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]그 사람들? 누구를 말하는 거지?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2",focus="n")]
+제시카는 대답하지 않았다. 그저 고개를 돌려 황량하고 쇠퇴한 공업단지를 바라보았다. 한 차례 폭발을 겪은 그곳은 온통 상처투성이였다.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]예전에 저기가 어땠는지 아나요?
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]몰라.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]전 알아요……
+[charslot(slot = "m", name = "avg_1034_jesca2_1#7$2")]
+[name="제시카"]에너지 타워는 이곳의 주민들에게 계속해서 온기를 주기 위해 끊임없이 타올랐어요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#2$2")]
+[name="제시카"]저 레스토랑은 밤새 영업했는데, 사람들이 테이블 옆에 둘러앉아서 맥주를 마시며 신나게 노래를 불렀어요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="제시카"]이곳의 겨울은 길고 추워요. 하지만 여기 살던 모든 사람은 자신의 노력과 성실함으로 빛을 냈죠.
+[name="제시카"]그 찬란하고 뜨거운 빛이 이곳의 구석구석을 채워서, 겨울밤의 추위와 어둠을 몰아냈어요.
+[name="제시카"]사람들은 자신의 왁자지껄한 일상생활을 뜨거운 피로 만들어서, 겨울날 얼어붙은 이 섹터에 생명과 활력을 불어넣었어요.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#11$2")]
+[name="제시카"]그 사람들은 앞길에 희망이 없어도 끝까지 걸어갔어요.
+[name="제시카"]그 사람들은 삶의 모진 고통으로 목이 휘청거려도 눈보라를 무릅쓰고 계속 살아갔어요.
+[name="제시카"]그 사람들은…… 눈물을 흘려도 아무도 신경 쓰지 않는 사람들이었어요.
+[name="제시카"]제 눈물은…… 그 사람들의 슬픔을 대신할 수 없어요.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[image(image="42_i09",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+여자아이는 총을 들어 스코프를 통해 다양한 얼굴을 보았다.
+누군가는 이해하지 못하거나 무시했고, 누군가는 멍하니 있거나 어리둥절해했다. 또 누군가는 속으로 몰래 웃거나 한숨을 내쉬었다.
+하지만 그 얼굴들은 중요하지 않았다. 그저 여자아이의 눈에 빠르게 들어왔다가 또 빠르게 스쳐 지나갔다. 잠시도 여자아이의 마음속에 머물지 않았다.
+여자아이의 머릿속에 다른 얼굴이 떠올랐다.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect]
+[image]
+[Background(image="34_g9_tent",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+텐트 안에서 기도하던 여자아이.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[Background(image="bg_iceforest_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+눈밭에서 미친 듯이 뛰던 여자.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+어둠 속에서 총을 뽑았던 노인.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[image]
+[image(image="42_i09",screenadapt="coverall")]
+[delay(time=0.5)]
+화염 속에서 떠나간 남자.
+[dialog]
+[bgeffect(name="$eb_blizzard",layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[name="제시카"]하지만 제 총은 그 사람들의 슬픔을 위해 울어줄 거예요.
+[dialog]
+[MusicVolume(volume=0.3, fadetime=2)]
+[delay(time=3)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="2")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="3")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="4")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="5")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="6")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="7")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=1, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=false)]
+[CameraShake(duration=0.4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="8")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_ejectempaty",channel="x")]
+[delay(time=2.5)]
+[MusicVolume(volume=0.6, fadetime=2)]
+여자아이는 손목을 높이 들어 먼 하늘을 가리켰다. 그리고 연속으로 총을 쏴서 모든 총알을 다 써버렸다.
+[PlaySound(key="$d_avg_bulltdrpsnw")]
+[PlaySound(key="$d_avg_bulltdrpsnw",channel="a",delay=0.3,volume=0.5)]
+[PlaySound(key="$d_avg_bulltdrpsnw",channel="b",delay=0.45,volume=0.3)]
+온 하늘에 흩날리는 눈송이와 함께 탄피가 바닥으로 떨어졌다. 그 잔열이, 쌓인 눈을 녹여 눈구덩이를 만들었다.
+총소리는 공중에서 한참 메아리쳤다. 주위가 다시 조용해지기 전에, 여자아이의 두 귀에 가느다란 미세한 울림이 느껴졌다.
+그건 본인의 눈물이 땅을 내려치는 소리였다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[bgeffect]
+[charslot]
+[image]
+[delay(time=1)]
+[Background(image="42_g11_blacksteelplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1036_1#5$2",duration=1.5)]
+[delay(time=2)]
+[name="'클립' 클리프"]후우……
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'클립' 클리프"]윽……
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1034_1#1$2",duration=1)]
+[delay(time=1.5)]
+[name="우드로"]네가 졌어……
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'클립' 클리프"]미안해, 우디. 난 전쟁을 선택했어. 영원히 끝나지 않는 전쟁을 말이야.
+[name="'클립' 클리프"]그래서…… 내 인생은 뒤돌아볼 수 없는 총알, 멈출 수 없는 폭발, 영원히 끊임없는 공격과 수비와 같아.
+[name="'클립' 클리프"]난 전쟁을 끝낼 수 없어. 하지만 우디, 넌 날 끝낼 수 있어.
+[name="'클립' 클리프"]마지막까지 싸운 병사가 쓰러져야, 비로소 전쟁을 끝낼 수 있지.
+[charslot(slot = "m", name = "avg_npc_1034_1#5$2")]
+[name="우드로"]루퍼트……
+[charslot(slot = "m", name = "avg_npc_1036_1#8$2")]
+[name="'클립' 클리프"]정말…… 오랜만에 들어보는군.
+[name="'클립' 클리프"]정말 고마워, 우디. 그 이름을 다시 불러줘서. 너 말고는 아무도 모르거든.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="우드로"]잘 가라……
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+클리프는 두 눈을 감고 총알이 자기 이마를 찢길 기다렸다.
+[playsound(key="$phonevibration")]
+하지만 그 전에 벨 소리가 먼저 울렸다.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+주머니에서 통신기를 꺼내 본 클리프는 코웃음을 치며 다시 주머니에 넣었다.
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="우드로"]누구야?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'클립' 클리프"]군부 쪽 사람.
+[name="'클립' 클리프"]신경 쓸 거 없어, 우디. 계속해.
+[dialog]
+[charslot]
+[playsound(key="$phonevibration")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="우드로"]……볼리바르, 아니면 빅토리아?
+[charslot(slot = "m", name = "avg_npc_1036_1#6$2")]
+[name="'클립' 클리프"]상관하지 마, 우디.
+[charslot(slot = "m", name = "avg_npc_1034_1#10$2")]
+[name="우드로"]그것도 아니면 컬럼비아?
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1036_1#3$2")]
+[name="'클립' 클리프"]어서 해!
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="우드로"]또 전쟁이 시작되려는 거군, 그렇지?
+[name="우드로"]……어디까지 영향이 미치지?
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'클립' 클리프"]전조일 뿐이야. 일어나지 않을 수도 있어.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="우드로"]이리 내.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'클립' 클리프"]우디, 여기 있는 많은 것들은 나에게 사소한 일상일 뿐이지만, 너한테는……
+[charslot(slot = "m", name = "avg_npc_1036_1#7$2")]
+[name="'클립' 클리프"]또 다른 악몽일 거야.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="우드로"]……꺼내.
+[charslot(slot = "m", name = "avg_npc_1036_1#1$2")]
+[name="'클립' 클리프"]굳이 보겠다면 마음대로 해.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="우드로"]……
+[name="우드로"]……네가 죽으면 여기 있는 일은 누가 맡지?
+[charslot(slot = "m", name = "avg_npc_1036_1#2$2")]
+[name="'클립' 클리프"]누군가는 맡겠지.
+[charslot(slot = "m", name = "avg_npc_1034_1#7$2")]
+[name="우드로"]……그건 안 돼.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="우드로"]너 같은 사람이 또 생겨서는 안 된다고.
+[dialog]
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_revolver",volume=0.7)]
+우드로는 통신기를 바닥에 내던지고 총구를 기울여 그것을 쏘아 벌집으로 만들었다.
+[charslot(slot = "m", name = "avg_npc_1034_1#6$2")]
+[name="우드로"]……
+[charslot(slot = "m", name = "avg_npc_1034_1#1$2")]
+[name="우드로"]난 널 죽일 수 없어.
+[name="우드로"]이 죄는 네가 책임져야 해.
+[charslot(duration=0.5)]
+[PlaySound(key="$d_gen_soldiersrun",volume=0.7)]
+우드로는 총을 바닥에 내려놓고 두 손을 들었다.
+그의 뒤로 총소리를 들은 용병이 끊임없이 몰려왔고, 분주한 발걸음 소리가 우드로를 포위했다.
+하늘에서 이 밤의 마지막 눈송이가 떨어지고 있었다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[Background(image="42_g2_mine_ruined",screenadapt="coverall")]
+[playsound(key="$d_avg_snowstormflp", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.8, fadetime=3,channel="bgs")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="제시카"]절 잡아가세요, 여러분. 전 준비됐어요.
+[charslot(slot = "m", focus = "n")]
+총을 다시 허리춤에 찬 여자아이는 손을 머리 위로 올렸다.
+[charslot]
+[charslot(slot = "m", name = "avg_106_franka_1#1$1")]
+[name="프란카"]손 뒤로 해.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]……생각했던 것보다 수갑이 차갑지 않네요.
+[charslot(slot = "m", name = "avg_106_franka_1#3$1")]
+[name="프란카"]내가 한참 동안 쥐고 있었으니까.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#9$2")]
+[name="제시카"]고마워요……
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]떠나기 전에 잠깐 얘기해도 될까?
+[charslot(slot = "m", name = "avg_1034_jesca2_1#15$2")]
+[name="제시카"]안 그래도 감사 인사를 드리고 싶었어요. 제 말을 들어줘서 고마워요.
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]아니야…… 너보다 먼저 계속 그런 말을 하던 녀석이 있었거든.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#10$2")]
+[name="제시카"]……
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]그 녀석은 분명 좋아할 거야…… 본인이 한 말을 당신이 기억해 줘서.
+[charslot(slot = "m", name = "avg_1034_jesca2_1#3$2")]
+[name="제시카"]아…… 당신도 그 사람을 아는군요……
+[charslot(slot = "m", name = "avg_npc_1045_1#1$1")]
+[name="냉정한 블랙스틸 용병"]아주 좋은 녀석이었어. 한번 만나면 잊을 수 없는…… 잘 가, 제시카 씨.
+[PlaySound(key="$d_avg_cloakmovement")]
+[charslot(duration=1)]
+용병은 가볍게 여자아이의 어깨를 토닥이고는 아침 햇살 속에 먼지를 일으키며 떠났다.
+태양 아래에서 날리는 먼지를 바라보며 제시카는 갑자기 밤이 다 지나갔음을 깨달았다.
+그리고 어젯밤에 펑펑 내리던 눈도 어느샌가 조용히 멈췄다.
+[dialog]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#15$2",duration=1)]
+[delay(time=2)]
+[name="제시카"]♪그녀는 두 팔 벌려 나를 안아주었네♪
+[name="제시카"]♪그때부터 그녀의 두 팔 사이엔 내 집과 꿈으로 가득하다네♪
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[StopSound(channel="bgs", fadetime=3)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

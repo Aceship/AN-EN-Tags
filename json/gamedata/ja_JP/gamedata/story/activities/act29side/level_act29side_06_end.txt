@@ -1,0 +1,870 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[gridbg(imagegroup="44_g13_afterglow_L1/44_g13_afterglow_R1/44_g13_afterglow_L2/44_g13_afterglow_R2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720",x=-1280,fadetime=0)]
+[largebgtween(duration = 60,yFrom = 560, yTo = 460,block = false)]
+[playMusic(intro="$distressed_intro",key="$distressed_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="巫王の塔に入った時、私はまだ十五歳だった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私はアインヴァルト管区の一般家庭で生まれ、大貴族に仕える資格なんてなかった。けれどヘーアクンフツホルンの目には平民と貴族の差などないと聞いた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="これは決して彼が平民を優遇しているからではなく、彼があまりに傲慢であるがゆえに、玉座の下でひれ伏す誰もを平等に見下ろしているからだ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私の最初の仕事は彼のために楽器を拭くことだった。しかしヘーアクンフツホルンはとうの昔に普通の楽曲など演奏しなくなり、それらの楽器も役割を失っていた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="その後、私は塔の頂にある共鳴パイプの清掃に行かされた。決して難しい仕事ではなかったが、ヘーアクンフツホルンはパイプ内にちり一つ残すことを許さなかった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私の同僚は来ては去り、大抵が悲惨な最期を遂げた。最終的に、塔の頂に残り黙々と清掃しているのは私だけとなった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="千余りの朝と夜を見て、巫王の塔は倒れた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[gridbg]
+[Background(image="44_g5_spiralstairs",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$m_avg_goldenrulesymphony_intro", key="$m_avg_goldenrulesymphony_loop", volume=0.6)]
+[playsound(key="$d_gen_soldiersrun", volume=0.4)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="女帝の術師"]階下に通じる道を封鎖するんだ。
+[name="女帝の術師"]各小隊、全力であのサンクタを捜索しろ。塔前劇場に入られ、金律楽章の演奏の邪魔をされるなどあってはならない。
+[name="女帝の術師"]忘れるな、ターゲットのアーツは非常に特殊だ。女帝の命により、彼女を見つけ次第、即座に重傷を負わせても、ひいては殺しても構わない――
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="アルトリア"]こんにちは。私を探しているのかしら？
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]――バリア！
+[name="女帝の術師"]戦闘態勢をとれ、彼女を捕らえろ！
+[Dialog]
+[charslot]
+[charslot(slot = "r",name = "avg_npc_1135_1#1$1",posfrom = "100,0", posto = "0,0",duration = 0.5)]
+[charslot(slot = "l",name = "avg_npc_1135_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 0.5)]
+[delay(time=0.6)]
+[charslot(duration=0.3)]
+[PlaySound(key="$d_avg_magic_4",volume=0.8)]
+[PlaySound(key="$d_avg_magic_5",volume=0.8,channel="1")]
+[CameraShake(duration=1, xstrength=30, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_245_cello_1#5$1")]
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[delay(time=0.3)]
+[name="アルトリア"]うっ……
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]アルトリア・ジアロ。
+[name="女帝の術師"]お前はラテラーノ人でありながら、そのラテラーノに指名手配されている。にもかかわらずリターニアは、お前を受け入れた。非凡な楽才を持っており、無数の貴族がお前を賓客と見なしている。
+[name="女帝の術師"]リターニアにおいて、お前は高塔貴族とほとんど同等の権利を有している。これは全て女帝がお前に与えた恩恵だ。
+[name="女帝の術師"]すぐに戻り、両陛下に逆らうのをやめろ。さすれば生き続けることをお許しになるかもしれない。
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="アルトリア"]それは……選択肢にならないわ。
+[name="アルトリア"]もし生き続けても、自由に演奏することができないなら、死んだのと何が違うの？
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]ならば死を受け入れろ。
+[Dialog]
+[PlaySound(key="$d_avg_spellattack_1",volume=0.8)]
+[charslot(duration=0.3)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_245_cello_1#7$1")]
+[name="アルトリア"]あなたたちのアーツ……強くなってるわね。
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]脱獄するタイミングを間違えたな、サンクタ。
+[name="女帝の術師"]金律楽章は奏でられている。外の盛大な光景が見えるか？　リターニアの金色の輝きの中では、混乱を引き起こすお前のそのくだらない小細工など何の役にも立たない。
+[charslot(slot = "m", name = "avg_245_cello_1#11$1")]
+[name="アルトリア"]ええ、感じるわ、あなたたちの意志がかつてないほど確固たるものであることを。
+[name="アルトリア"]だけど……それはあなたの意志がこの曲を演奏しているの？　それとも旋律があなたを説き伏せ、目に映るものと考えが一致していると信じ込ませているのかしら？
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]そんなのはどうだっていい。黄金の旋律が私を導いて、私の意志は旋律と共鳴している！
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="女帝の術師"]そしてお前、我々の敵よ。お前はリターニアの輝きの中で溶ける定めだ――
+[Dialog]
+[charslot(slot = "m", name = "avg_245_cello_1#11$1")]
+[charslot(duration=0.5)]
+[delay(time=0.8)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]……消えた？
+[name="女帝の術師"]幻覚か？　しかしチェロの音は響いていないぞ！
+[charslot(slot = "m", focus = "n")]
+[name="アルトリア"]はぁ、どうしてあなたたちはみんな、私が幻覚を作り出すことができると思っているの？
+[name="アルトリア"]忠告したはずよね。自分の感情が自分のものでない旋律に掌握された時、人は目の前の真実を容易に無視してしまうものだと……例えば、私が「輝き」の中でどこへ歩いたのか、とか。
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]後ろ……！
+[name="女帝の術師"]バリア！　間に合わない――！
+[Dialog]
+[MusicVolume(volume=0.2, fadetime=1)]
+[charslot]
+[playsound(key="$d_avg_cellodoubth")]
+[delay(time=2)]
+[MusicVolume(volume=0.6, fadetime=2)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="アルトリア"]ちょうどいいわ。私のチェロにかけられていたささやかなアーツを解いてほしかったの。
+[name="アルトリア"]これでようやく綺麗になったわ、ありがとう。
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]我々が……お前なんかに負けるはずが……
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="アルトリア"]本当なら、敵わなかったわ。だけどあなたたちの心は金律楽章の束縛によって硬直して、アーツも穴だらけになってしまったの。
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]な……ぜだ？　このようなアーツを有しているなら、本来自らの運命を書き換え、尽きぬほどの名誉や利益、無上の寵愛を得ることができたというのに……女帝を敵に回すなど、一体何の意味が……
+[Dialog]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="アルトリア"]意味……かしら？　あなたの理解する意味は、恐らく私が望むものとは全くの別物よ。
+[charslot(slot = "m", name = "avg_245_cello_1#3$1")]
+[name="アルトリア"]名声、富、人より優れた地位。そんなものは心の表面を覆うものでしかなくて、時間の流れと共に朽ち果てていく定めなの。
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="アルトリア"]私にしてみれば、身分が高い者であれ低い者であれ、私自身であれ……違いは、心の声にしかない。
+[name="アルトリア"]私が最も高い塔の頂に行きたいのは、一つの旋律、一つの心、一つの未来のため。
+[charslot(slot = "m", name = "avg_245_cello_1#2$1")]
+[name="アルトリア"]それと……ある友人との約束のため。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="44_g8_towersquare",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="巫王の死後さらに十数年が経ち、私はある旧友の葬儀に参加した。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="葬儀が終わったあと、双子の塔の下で私はある人と出会った。その人は、チェロを持ったサンクタ。塔前劇場は人々が行き交い、彼女は人混みの中、昼から日没までずっとそこにいた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="アルトリア"]伝説によると、巫王が塔の頂で演奏した時、空の雲さえも彼のアーツによって足を止めたらしいわ。
+[name="アルトリア"]ずっと考えていたの……雲はあの塔の様子を覚えているかしら？
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="きっと難しいでしょうね。雲は時々刻々と変化するものだから。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="アルトリア"]先生はかつて何度も話してくれたわ。巫王の塔がまだあった頃、彼はロイヤル楽団のチェロ奏者として、塔の下に立ち、リターニアの唯一の君主のために演奏したと。
+[name="アルトリア"]その時、金と赤の織り交ざる雲が漆黒の塔を取り囲み、まるで華やかなローブをまとっているようだったって。
+[charslot(slot = "m", name = "avg_245_cello_1#8$1")]
+[name="アルトリア"]彼はここに戻り、もう一度その壮大な景色を見たかった。でも残念ながら……彼には女帝の祭典に参加する資格はおろか、住まいを出ることすらままならなかった。
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="エマニュエル氏はかつて巫王の楽師を短い間務めたんだもの。巫王の死後、彼は苦しい時期を過ごした。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#8$1")]
+[name="アルトリア"]先生に別れを告げに来た人はとても少ない。そして心から彼のために涙を流しているのは……あなただけよ。
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="葬儀であなたの演奏を聞いたわ。心を動かす音色だった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="アルトリア"]ありがとう。
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="アルトリア"]けど、こういった音色では少しも先生に安らぎをもたらすことはできなかったわ。
+[name="アルトリア"]彼が生きている時、私は彼のために演奏したいと申し出たけど断られてしまったの。苦しみの底にいる歳月の中で、彼は過去の喜びを追想することを拒み、いかなる変化も求めなかった。
+[name="アルトリア"]ただ部屋に閉じこもって、何度も何度も金律楽章を演奏することだけを望んでいたのよ。
+[name="アルトリア"]その不変の旋律の中で、彼はリターニアの壮麗さと崇高さを感じ、ついに愛と恨みを、そして自分自身を忘れ去ってしまったの。
+[name="アルトリア"]けれど死に直面した時、彼の心にあふれていたのは……やはり、後悔だったわ。
+[Dialog]
+[charslot(duration=1.5)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="今まで、私はあまりに多くの後悔を聞いてきたわ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私の記憶に残るエマニュエル氏は、年老いてなお元気で、楽器を受け取る時大笑いしながらお礼を言う方。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="彼が亡くなった時は、すでに弓も持ち上げられないほどやつれていたと聞いた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="巫王の塔の影がなくなれば、リターニアの空は大きく変わるだろうと思っていた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="……ヴィドゥニアからツヴィリングトゥルムになり、巫王の塔から双子の女帝の塔になれば、夕景色の中に響く旋律は違うものになるだろうと思っていた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="けれど私たちも雲とは同じ、あの時も、今も、漂う方向を決めることはできない。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[MusicVolume(volume=0.3, fadetime=3)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[CameraShake(duration=3, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_magic_5")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.2, block=true)]
+[playsound(key="$d_avg_spelldfns_1",channel="a",delay=0.1)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[playsound(key="$d_avg_spellattack_2",channel="b",delay=0.2)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]お前……
+[name="女帝の術師"]なぜ……下に向かって行かない？
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="アルトリア"]こんな「演奏会」には興味ないの。
+[name="アルトリア"]こんな聴衆の意志をあえて縛りつける旋律なんて、ただの違う形の法にすぎないわ。
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[name="女帝の術師"]なぜそれを……
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="アルトリア"]あなたたちの術式は複雑だけど、アーツと音楽に精通している人からしてみれば、分かりやすい。この点に関してはラテラーノの法とは異なるわね。
+[charslot(slot = "m", name = "avg_245_cello_1#10$1")]
+[name="アルトリア"]音楽とは本来、人々の心が自由に呼吸する時に発する響きであるべきよ。けれど、あなたたちはそれを秩序の一部として人々の意志を支配し、感情をすり減らすために用いている。
+[charslot(slot = "m", name = "avg_245_cello_1#9$1")]
+[name="アルトリア"]人の心と心の本当の結びつきは……ますます弱まっているわ。ますます互いを理解できなくなり、相手の感情を尊重しなくなり、さらには互いを傷つけ合っている。
+[name="アルトリア"]こんな堅苦しい旋律は、楽章と呼ぶに相応しくないわ。
+[charslot(slot = "m", name = "avg_npc_491_1#1$1")]
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[name="女帝の術師"]うっ――！
+[Dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 0.5,afrom=1,ato=0)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[CameraShake(duration=0.3, xstrength=5, ystrength=20, vibrato=15, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=1)]
+[delay(time=2)]
+[name="アルトリア"]もうすぐ頂に着くわね。この曲が終わる前に、次の曲を迎える準備をしましょう。
+[name="アルトリア"]私たちの約束ももうすぐで実現するわよね？
+[charslot(slot = "m", name = "avg_245_cello_1#2$1")]
+[name="アルトリア"]あなたが教えてくれたように、この位置は確かに素晴らしいわ。演奏するにしても……耳を傾けるにしても。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[MusicVolume(volume=0.6, fadetime=3)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="これが……私の心の中で最も深く刻まれた記憶？", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=false)]
+[charslot(slot = "m", name = "avg_245_cello_1#1$1",duration=0.5)]
+[delay(time=0.5)]
+[name="アルトリア"]そうよ。
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="ごめんなさい。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_245_cello_1#5$1")]
+[name="アルトリア"]どうして謝るの？
+[charslot(slot = "m", name = "avg_245_cello_1#1$1")]
+[name="アルトリア"]私に心の声を演奏してほしいと自分から話をしてくる人は滅多にいないわ。彼らは近寄ることすら恐れているの。でもあなたはこうして本音を見せてくれた……とても嬉しいし、感謝もしている。
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="けど……私の記憶の中から巫王が死んだ時の光景を見せてあげられると思ったの。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="アルトリア"]ほら、私の音色はあなたの心の声によって動いている。チェロの音はあなたが何を思い出すかは決められないわ。私にできるのはあなたの感情を感じて、それを私たちの前に表現するだけ。
+[Dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="なんだか人の像を彫刻するのに似ているのね。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="アルトリア"]ええ……彫刻と大差ないわ。私は人の真実の姿形を発見して、記録するのであって、変えるのではない。
+[name="アルトリア"]私たちがあなたの記憶の中の巫王の塔に入れない理由は一つだけ。
+[charslot(slot = "m", name = "avg_245_cello_1#3$1")]
+[name="アルトリア"]巫王の死を思い出す度に、あなたの感情を最も揺らしているのは……手ね。
+[name="アルトリア"]あなたをつかみ、アーツの奔流の中を突き抜ける手。
+[charslot(slot = "m", name = "avg_245_cello_1#4$1")]
+[name="アルトリア"]それは誰の手？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Sticker(id="st1", text="それは誰の手？", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=1)]
+[Sticker(id="st1")]
+[delay(time=1)]
+[Sticker(id="st2", text="それは……", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,block = true,duration=1)]
+[Sticker(id="st2",duration=1,block = false)]
+[charslot]
+[delay(time=2)]
+[MusicVolume(volume=0, fadetime=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="44_g8_towersquare",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="ヴィヴィアナ"]……危ない！
+[name="ヴィヴィアナ"]敵が次々と湧き出ています。私とフェデリコさんでできる限り食い止めます。
+[name="ヴィヴィアナ"]あなたは周囲の状況を逐一把握できないでしょうから、戦闘に巻き込まれる可能性が高いです。私のそばを離れないでください。私の手を握っていて、いいですか？
+[Dialog]
+[charslot]
+[MusicVolume(volume=0.6, fadetime=2)]
+[charslot(slot = "m", name = "avg_npc_1113_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="コーラ"]……あなたは彼と、本当によく似ているわね。
+[charslot(slot = "m", name = "avg_4098_vvana_1#10$1")]
+[name="ヴィヴィアナ"]それは……父のことですか？
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="コーラ"]あの時巫王の塔の下で、彼もこうやって私をつかんでくれた……面識もないただの侍従の手をつかんで、何度も何度も押し寄せるアーツの攻撃から私を守ってくれた。
+[charslot(slot = "m", name = "avg_4098_vvana_1#10$1")]
+[name="ヴィヴィアナ"]……巫王が亡くなったあの晩、あなたもあの塔にいたのですね。
+[name="ヴィヴィアナ"]父との出会いが、そのようなものだったなんて聞いていません。
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="コーラ"]ええ。
+[name="コーラ"]当時の私は……視力を失ったばかりだった。崩れかけた階段の下で這いつくばり、巫王のインペリアルガードも、双子に続く軍隊も……皆私みたいな侍従の生死なんて気にもかけなかった。
+[name="コーラ"]シュトルム領から来た軍が私を見つけてくれた。
+[name="コーラ"]その軍隊を率いていたのはウェルナーでね。彼は巫王の塔内で行方不明になった父と兄を探していたの。
+[name="コーラ"]あんなに焦っていたのに、ぶるぶる震える私を見て見ぬふりできなくて、廃墟の中から自らの手で私を引っ張り出してくれた。
+[charslot(slot = "m", name = "avg_4098_vvana_1#1$1")]
+[name="ヴィヴィアナ"]……父ならそうするでしょう。
+[name="ヴィヴィアナ"]私もそうします。
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="コーラ"]二人とも良い人よ、とってもとっても良い人。
+[name="コーラ"]ただ残念だわ……
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4098_vvana_1#1$1")]
+[MusicVolume(volume=0.4, fadetime=3)]
+[charslot(slot = "l",name = "avg_npc_1113_1#8$1",posfrom = "0,0", posto = "100,0",duration = 0.5,focus="m")]
+[delay(time=1)]
+[PlaySound(key="$d_avg_clothmovement")]
+[charslot(slot = "l",afrom=1,ato=0,duration = 0.5,focus="m")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_4098_vvana_1#4$1")]
+[name="ヴィヴィアナ"]手……なぜ私の耳を塞ぐのですか？
+[charslot(slot = "m", focus = "n")]
+[name="コーラ"]ヴィヴィアナ、怖がらないで。
+[name="コーラ"]大丈夫……すぐに終わるから。何もかも。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[PlaySound(key="$d_avg_tinnitus")]
+[PlaySound(key="$d_avg_tinnitus",delay=0.1,channel="a")]
+[PlaySound(key="$d_avg_tinnitus",delay=0.2,channel="b")]
+[Background(image="44_g8_towersquare",screenadapt="coverall",duration=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#3$1")]
+[name="エーベンホルツ"]何が……起きた？
+[name="エーベンホルツ"]楽章が変わった。変わったのか？
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#6$1")]
+[name="エーベンホルツ"]なぜこんなにも……耳障りなんだ！？
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="若い貴族"]あ……頭が、誰が攻撃している？　一万ものやかましい羽獣を私の頭に詰め込んだのは誰だ！
+[name="若い貴族"]それとこの花火、くそ、けばけばしくて、なんて低俗なんだ！
+[name="若い貴族"]こんなはずはない。全然違う。私が吹き間違えたのか？　それとも全員が間違えたのか？
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#3$1")]
+[name="エーベンホルツ"]大丈夫か？
+[charslot(slot = "m", name = "avg_npc_492_1$1")]
+[name="若い貴族"]さ、触らないでくれ――！　お前のことは知らないし、知りたくもない！　お前が吹き間違えたのか？　演奏を……壊そうとしているのか……？
+[charslot(slot ="m", action="shake", power=10, times=50, duration=0.3)]
+[name="若い貴族"]うぅ――おえっ！
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#6$1")]
+[name="エーベンホルツ"]旋律を間違えたのか？
+[name="エーベンホルツ"]そんなバカな！　これだけの人たちが一斉に間違えるなどありえるのか？
+[name="エーベンホルツ"]ただ間違えただけならば……なぜ皆こんなに苦しんでいる？
+[charslot]
+[charslot(slot = "m", name = "avg_4011_lessng_1#1$1")]
+[name="レッシング"]双子の女帝の塔を見てみろ。
+[Dialog]
+[charslot]
+[playMusic(intro="$rebel_intro",key="$rebel_loop", volume=0.6)]
+[PlaySound(key="$d_avg_drkcludsthdr")]
+[Background(image="44_g9_towersquare_arrived",screenadapt="coverall",fadetime=3)]
+[delay(time=5)]
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#9$1",focus="l")]
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="エーベンホルツ"]……
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#8$1",focus="l")]
+[name="エーベンホルツ"]あいつだ。ヘーアクンフツホルンだ。見間違えるはずない。奴の力が金律楽章を侵食している！
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="エーベンホルツ"]巫王派の残党……残党はどこだ！？　奴らが死に絶えていないのはわかっていた。ハハハ、レッシング、戦うぞ！
+[charslot(slot = "r", name = "avg_4011_lessng_1#2$1",focus="r")]
+[name="レッシング"]……あなたは影響を受けていないのか？
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#8$1",focus="l")]
+[name="エーベンホルツ"]この小さな暗雲の影響を受ける？　私がこれまで、何に耐えてきたか知っているか？
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#9$1",focus="l")]
+[name="エーベンホルツ"]……それより金律楽章の方が気になる。
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#5$1",focus="l")]
+[name="エーベンホルツ"]私にウルティカを恋しく思わせた。これは決して尋常じゃない……
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="レッシング"]それこそ楽章の力だ。
+[name="レッシング"]楽章はリターニアを定義し……リターニア人の審美を決めた。
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#13$1",focus="l")]
+[name="エーベンホルツ"]私が何を恋しがり、何を愛し、何を称えるべきかを、誰かに決められたくないな。
+[name="エーベンホルツ"]だがここで楽章の演奏をぶち壊そうとしている者はただどたばた劇を起こし、塔の上の女帝やツヴィリングトゥルムの外の大貴族たちの笑いを誘おうとしているわけではないだろうな。
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="レッシング"]気を付けろ、左に敵がいる。
+[charslot(slot = "l", name = "avg_4046_ebnhlz_1#1$1",focus="l")]
+[name="エーベンホルツ"]余計な気遣いだ。そっちにもいるぞ。
+[charslot(slot = "r", name = "avg_4011_lessng_1#1$1",focus="r")]
+[name="レッシング"]一気にかかるぞ。
+[Dialog]
+[playsound(key="$d_avg_clothmovementsp")]
+[charslot(slot = "r",posfrom = "0,0", posto = "-200,0",duration = 0.5)]
+[charslot(slot = "l",posfrom = "0,0", posto = "200,0",duration = 0.5)]
+[delay(time=0.3)]
+[charslot(slot = "r",duration = 0.3,afrom=1,ato=0)]
+[charslot(slot = "l",duration = 0.3,afrom=1,ato=0)]
+[delay(time=0.5)]
+[CameraShake(duration=1, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, afrom=0.6, rfrom=1, gfrom=1, bfrom=1, fadetime=0.15, block=true)]
+[playsound(key="$d_avg_swrdclave",channel="2")]
+[Blocker(a=0, r=0, g=0, b=0, afrom=0.6, rfrom=0, gfrom=0, bfrom=0, fadetime=0.3, block=true)]
+[playsound(key="$p_skill_darkholespell",channel="1")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="「巫王の余韻」"]……まさかまだ意識を保っている奴がいるとは。
+[charslot(slot = "m", name = "avg_4046_ebnhlz_1#13$1")]
+[name="エーベンホルツ"]礼を言おう。君たちが押しつけたゴミのおかげで、混乱と苦痛は早くから私の頭と切り離せないものとなっていた。
+[Dialog]
+[charslot(duration=0.5)]
+[playsound(key="$p_skill_darkholeborn")]
+[CameraShake(duration=1.5, xstrength=8, ystrength=6, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.3, r=0.2, g=0, b=0, fadetime=1.5, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 0.5)]
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#1$1",posfrom = "100,0", posto = "0,0",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="レッシング"]……やるな。
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#13$1",focus="r")]
+[name="エーベンホルツ"]君も悪くはない。
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#5$1",focus="r")]
+[name="エーベンホルツ"]だが他人がこんなにも苦しんでいるのに、君はなぜいつも通り無表情なのだ？　レッシング・マイヤー殿、君がリッチに生み出された朴念仁なのではないかと疑い始めているぞ。
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="レッシング"]俺が幼い頃から受けてきた訓練は、すべてこういった状況に対処するためのものだ。
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#3$1",focus="r")]
+[name="エーベンホルツ"]どういった状況だ？
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="レッシング"]金律楽章の崩壊だ。
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#3$1",focus="r")]
+[name="エーベンホルツ"]わざと真面目な顔をして、冗談を言っているんじゃないだろうな。
+[charslot(slot = "l", name = "avg_4011_lessng_1#1$1",focus="l")]
+[name="レッシング"]劇場の周囲で……浮かび上がっている金色の光が見えるか？
+[charslot(slot = "r", name = "avg_4046_ebnhlz_1#9$1",focus="r")]
+[name="エーベンホルツ"]……
+[name="エーベンホルツ"]こんなに多くの金律法衛が同時に現れるなんて、これまでに見たことがない。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_armour", volume=1)]
+[charslot(slot = "left", name = "avg_npc_1117_1#2$1",duration = 1)]
+[delay(time=0.5)]
+[charslot(slot = "right", name = "avg_npc_1117_1#2$1",duration = 1)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1")]
+[name="金律法衛"]女帝の命令だ――
+[name="金律法衛"]恩寵大通と大権大通を囲め。
+[name="金律法衛"]汚された金律楽章を決して蔓延させてはならない。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_soldiersrun", volume=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]あれだけたくさんの金律法衛が……それに憲兵まで。
+[name="ヴィヴィアナ"]すぐに双塔区全域が封鎖されます。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1125_1#1$1")]
+[name="「巫王の余韻」"]ハハハハ、意味ねーよ。もう遅い、とっくに遅いんだよ！
+[name="「巫王の余韻」"]ヘーアクンフツホルンが帰ってきた。我らの唯一の陛下が、再び彼のリターニアに降臨した！
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#6$1",focus="r")]
+[name="ヴィヴィアナ"]少し静かにしてくださいますか？
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1125_1#1$1")]
+[PlaySound(key="$d_avg_shdwspllshrt", volume=0.5)]
+[delay(time=1)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[PlaySound(key="$bodyfalldown1", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=8, ystrength=16, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#1$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]ここを離れましょう。
+[charslot(slot = "l", name = "avg_npc_1113_1#2$1",focus="l")]
+[name="コーラ"]ヴィヴィアナ……
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]コーラさん、約束していただけますか……今は何も言わず、何もしないでください。
+[name="ヴィヴィアナ"]あまりにも数が多いです。法衛はどなたも、チャンピオン騎士にも劣りません。でもブラントさん一人だけであれば、まだなんとか相手はできるかもしれません。
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="コーラ"]……
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1")]
+[name="「巫王の余韻」"]なぜ何もおっしゃってくれないのですか？　幕が開かれようとしているのです。もう隠れる必要はありません。
+[name="「巫王の余韻」"]我々の願い、我々の渇望、我々の血と心を捧げて求めた瞬間が――まもなく訪れるのです！
+[name="「巫王の余韻」"]なのにどうして、あなたのお顔からは……少しも喜びが感じ取れないのでしょうか？
+[name="「巫王の余韻」"]しゅ……
+[Dialog]
+[PlaySound(key="$d_avg_shdwspllshrt", volume=0.5)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1126_1#1$1")]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[PlaySound(key="$bodyfalldown1", volume=0.7)]
+[CameraShake(duration=0.5, xstrength=8, ystrength=16, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="r")]
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="ヴィヴィアナ"]それ以上言わないでください。
+[Dialog]
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="コーラ"]……
+[charslot(slot = "l", name = "avg_npc_1113_1#8$1",focus="l")]
+[name="コーラ"]あなた……知ってたのね。
+[name="コーラ"]いつから？
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]アルトリアさんを訪ねる前に、カレンデュラ小路へ向かいました。
+[charslot(slot = "right", name = "avg_4098_vvana_1#2$1",focus="r")]
+[name="ヴィヴィアナ"]もう一度あの絵を見たいと思っていたのです。絵に描かれていた……過去の光景が、温かみを感じさせてくれましたから。
+[charslot(slot = "right", name = "avg_4098_vvana_1#2$1",focus="r")]
+[name="ヴィヴィアナ"]ですが何も見つかりませんでした。
+[name="ヴィヴィアナ"]すべての絵、カレンデュラを描いたものや、巫王に関する情報が残されているもの、全部なくなっていました。
+[name="ヴィヴィアナ"]あなたが持ち去ったのですね？
+[charslot(slot = "l", name = "avg_npc_1113_1#7$1",focus="l")]
+[name="コーラ"]本来は情報があるものだけ持ち去ればよかった。
+[name="コーラ"]けど……カレンデュラにまつわる過去も放ってはおけなかったの。
+[charslot(slot = "right", name = "avg_4098_vvana_1#7$1",focus="r")]
+[name="ヴィヴィアナ"]……巫王の亡くなったあの夜、あなたも現場にいたとあなたの口から聞いた時、確信しました。私の予想は間違っていなかったと。
+[name="ヴィヴィアナ"]あの時、あなたは絵全体を覆っていた源石顔料を完全に取り除きはしなかった。完全にさらされなかった絵には、あなたの姿も残っていたのですね。
+[name="ヴィヴィアナ"]巫王派の残党は巫王の死の目撃者を追っています。
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="ヴィヴィアナ"]そしてあなたも……そのうちの一人です。
+[name="ヴィヴィアナ"]しかしあなたはあの亡くなっていった罪なき人たちとは違います。
+[name="ヴィヴィアナ"]私は……こんなことを言いたくありません。問いたいとすらも思いません。
+[name="ヴィヴィアナ"]今回だけ、少しでいいから、どうして……わがままでいさせてくれないのですか？
+[charslot(slot = "l", name = "avg_npc_1113_1#8$1",focus="l")]
+[name="コーラ"]……ごめんなさい。
+[name="コーラ"]本当にごめんなさい、ヴィヴィアナ。
+[charslot(slot = "right", name = "avg_4098_vvana_1#5$1",focus="r")]
+[name="ヴィヴィアナ"]どうしてですか？
+[name="ヴィヴィアナ"]どうして……なぜ得たばかりなのに、また失わなければならないのですか？
+[Dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1125_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1127_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[name="「巫王の余韻」"]戦う時です、首席。
+[name="「巫王の余韻」"]金律法衛が全員到着しました。我々は多大なる犠牲を払い、ここまでたどり着いたのです。こんなところで奴らに殺されてはあまりに惜しいです。
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="コーラ"]……
+[Dialog]
+[charslot(duration=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="劇場は一面の惨状。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="調律はいまだ続いている。ルートヴィヒ大学の件が、双子の女帝以外にヘーアクンフツホルンの術式に抵抗できる者はいないと証明した。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="彼女たち……あの双子は私の些細な私心と裏切りをどう思うかについては。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="実のところ、そこまで関心はない。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_487_1#9$1")]
+[Background(image="44_g6_towerterrace",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="イーヴェグナーデ"]……金律楽章が完全に変調すると思うか？
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="グリムマハト"]私に関心があるのは結果のみだ。
+[charslot(slot = "right", name = "avg_npc_487_1#8$1",focus="r")]
+[name="イーヴェグナーデ"]前回金律楽章を書き換えたのは……ヘーアクンフツホルンだ。
+[name="イーヴェグナーデ"]しかし彼でさえ、楽章を滅ぼそうとは考えなかった。
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="グリムマハト"]金律楽章はリターニアの秩序の根底だ。
+[name="グリムマハト"]一人一人の審美感やアーツ使用の習慣や方法、選帝侯制度、皇帝の権力に至るまで……一度楽章が滅びれば、これらすべての前提が覆される恐れがある。
+[charslot(slot = "left", name = "avg_npc_1115_1#3$1",focus="l")]
+[name="グリムマハト"]その時、リターニアは未曾有の変化を迎えるであろう。
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="イーヴェグナーデ"]しかし変化……変化が悪いものであるとは限らない。そうでなければ我々は生まれてさえいなかった。
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="グリムマハト"]術式により生まれた一対の子供、これは単に自然法則に反しているだけだ。
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="イーヴェグナーデ"]「これは始まりにすぎない。」
+[name="イーヴェグナーデ"]フレモントはそうレオポルドに言った。当時の我々はまだおくるみの中にいたが、そなたも私と同様彼らの会話を聞き取れただろう。
+[name="イーヴェグナーデ"]我々は生まれ落ちた時から使命を持っている。
+[name="イーヴェグナーデ"]我々は生まれ落ちた時からリターニアを変える定めにある。
+[name="イーヴェグナーデ"]レオポルドは我々を恐れていた。ゆえに軍隊を一つ用意して、我々にヘーアクンフツホルンを殺させた後で、背後から我々を引き裂くつもりであった。
+[name="イーヴェグナーデ"]しかし最後に我々はやはり生き残ったのだ。
+[charslot(slot = "left", name = "avg_npc_1115_1#2$1",focus="l")]
+[name="グリムマハト"]……我々はこの世に生まれ出ることをこの手で選び取ったわけではない。だが生命を持った以上、我々には生きていく権利がある。
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="イーヴェグナーデ"]二十三年前のあの日、我々はこの位置に立っていた……向き合っていたのは同じような夕焼け、そして全く異なる混乱した状況だ。
+[name="イーヴェグナーデ"]皆が一心に期待を寄せる共奏を始める前に、そなたは私に……手を差し伸べたな。
+[charslot(slot = "right", name = "avg_npc_487_1#12$1",focus="r")]
+[name="イーヴェグナーデ"]そして言った……
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="グリムマハト"]この夕焼けは誰のものでもない。
+[name="グリムマハト"]ヘーアクンフツホルンのものでも、レオポルドのものでも、選帝侯のものでも、あるいは野心に燃える大貴族たちのものでもない。
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="イーヴェグナーデ"]そう。
+[name="イーヴェグナーデ"]そなたは私の手を引き、共にここまで歩んできた。
+[name="イーヴェグナーデ"]選帝侯たちに復命する必要も……他の誰かが敷いた道を歩く必要もない。
+[name="イーヴェグナーデ"]我々は自らの運命を決めたのだ。
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="イーヴェグナーデ"]そして……同様の願望を抱いている者がいるのは明らかである。
+[name="イーヴェグナーデ"]人の心とは実に面白い。
+[name="イーヴェグナーデ"]人の手で作られた童も、そのうちに心が生まれれば、人の欲望がわいてくる。
+[name="イーヴェグナーデ"]一見弱々しい者も、これ以上ないほどの単純な願いにすがり、ヘーアクンフツホルンですらできなかったこと……リターニアの再定義を成せるかもしれない。
+[charslot(slot = "left", name = "avg_npc_1115_1#2$1",focus="l")]
+[name="グリムマハト"]お前は……
+[charslot(slot = "left", name = "avg_npc_1115_1#8$1",focus="l")]
+[name="グリムマハト"]……
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="イーヴェグナーデ"]私がコーラを放任していたのかと聞きたいのか？
+[name="イーヴェグナーデ"]そなたも同じではないか？　我々の心は通じ合っている。たとえ長らくこうして、二人で一緒に……夕焼けを見ていなかったとしてもな。
+[charslot(slot = "right", name = "avg_npc_487_1#1$1",focus="r")]
+[name="イーヴェグナーデ"]もうしばらく共に見ようではないか。長くはかからないであろう。
+[charslot(slot = "left", name = "avg_npc_1115_1#1$1",focus="l")]
+[name="グリムマハト"]……いいだろう。
+[charslot(slot = "right", name = "avg_npc_487_1#8$1",focus="r")]
+[name="イーヴェグナーデ"]未来はどうなるのであろうか？
+[charslot(slot = "right", name = "avg_npc_487_1#9$1",focus="r")]
+[name="イーヴェグナーデ"]ヒルデガルト、そなたは……まだ私と共に、この景色を見ていてくれるか？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="44_g9_towersquare_arrived",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1",duration=0.5)]
+[delay(time=1)]
+[name="金律法衛"]コーラは？
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="ヴィヴィアナ"]……
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1")]
+[name="金律法衛"]ヴィヴィアナ……？
+[Dialog]
+[charslot(duration=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playsound(key="$d_avg_mgcbttlfld", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=0.4, fadetime=2,channel="a")]
+[playsound(key="$d_avg_swrdbzz",volume=0.6)]
+[Subtitle(text="ブラントの声が聞こえる。彼は残りの残党と戦っている。彼の能力であれば、私の周りの者たちはいくらも持たないだろう。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="しかしもう一人は彼よりも速かった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="ヴィヴィアナは黙ったままだ。しかし彼女のアーツがますます近づいてくる。大きな影が私の足の甲を覆うのを感じる。夜の嵐のように冷たい。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[StopSound(channel="a", fadetime=3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1127_1#1$1")]
+[name="「巫王の余韻」"]首席、避けてください！
+[name="「巫王の余韻」"]首席――
+[Dialog]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=5, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_knife")]
+[Blocker(a=0.2, r=0.2, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[name="「巫王の余韻」"]どうして私のアーツが逆に……自分を貫いた……
+[name="「巫王の余韻」"]これは……調律？　首席、あなた……
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="コーラ"]ごめんなさい、アメリ。言ったはずよ、私の選択が変わったことはない。
+[charslot(slot = "m", name = "avg_npc_1127_1#1$1")]
+[name="「巫王の余韻」"]あぁ……ハハ……正直言って、驚きはしません。私たちは裏切りの人生を生きてきましたから。あまりにも多くの人を裏切って。
+[name="「巫王の余韻」"]ヘーアクンフツホルンの永遠なる塔は……すぐに……階段の上でお待ちしていますよ……
+[name="「巫王の余韻」"]……首席。
+[Dialog]
+[playsound(key="$d_avg_bodyxplde")]
+[charslot(duration=0.5)]
+[delay(time=1)]
+アメリは私の前で漆黒のちりとなったのだろう。これが巫王派の残党のしきたり。彼らは自らの肉体がこのヘーアクンフツホルンの視線を受けていない土地に残ることを望まない。
+[charslot]
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]彼女は死にました。
+[name="ヴィヴィアナ"]彼らのほとんどが死にました。いまだ頑なに抵抗している者たちも時間の問題でしょう。
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="コーラ"]……私もきっとそうね。
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]あなたはヘーアクンフツホルンの信徒を騙しました。
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="コーラ"]そうよ。巫王派の残党の「首席」となり、彼らに餌と希望を与え、自ら深淵へと足を踏み入れるよう招く。これが女帝が私に与えた任務。
+[name="コーラ"]二十三年前、巫王に関するすべて、あの長い悪夢、深く植え付けられた恐怖、無用な野心は、本来この国から完全に取り除かれるべきだった。
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="ヴィヴィアナ"]でもなぜ、「調律」はまだ続いているのですか？
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="コーラ"]それは……
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="コーラ"]ウェルナーが巻き込まれたから。
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]女帝が父に死を迫ったのですか？
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="コーラ"]……何度も彼を説得した。ずっと、ずっと。
+[name="コーラ"]彼に金律楽章の副本を渡してもらって、別の場所に移そうとした。けど彼は、巫王派の残党がそれで警戒して、餌としての機能を失うことを恐れた。
+[name="コーラ"]ブラントに早めに来てもらって、襲撃現場で助けてもらおうとも提言したわ……それも断られた。
+[name="コーラ"]自分の病は手遅れで、死がルシンダの所へ導いてくれるのを待っていると言っていた。数日長生きするために、シュトルム領を……そしてあなたを巻き添えにするに値しないと、彼は言ったわ。
+[charslot(slot = "m", name = "avg_npc_1113_1#8$1")]
+[name="コーラ"]だけどあと数時間耐えれば……あるいはあとほんの少しで、彼はあなたに会えたのに。
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="ヴィヴィアナ"]……
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="コーラ"]あまりにも簡単に諦めて、あまりにも決然と逝った。本当になすすべがなかった。
+[name="コーラ"]ウェルナーが死んだあの日、私は金律楽章の副本を手に入れた。それと同時にあなたがシュトルム領に戻り、ウェルナーと似たような道を歩み始めるのを見たのよ……
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="コーラ"]その時、私は心の中でずっと思い巡らせていたこの決定を下した。
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="ヴィヴィアナ"]……金律楽章。
+[name="ヴィヴィアナ"]あなたはヘーアクンフツホルンの術式を用いて楽章を調律した。今楽章を、あるいは楽章がすべてのリターニア人の心に付したアーツの力を破壊しています。
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="コーラ"]あなたたちは皆、運命とは終わりの見えない螺旋階段だと言っているでしょ？
+[name="コーラ"]金律楽章こそリターニアを閉じ込める螺旋階段そのものなのよ。
+[charslot(slot = "m", name = "avg_npc_1113_1#4$1")]
+[name="コーラ"]千年前の意志が作り上げた階段は、どんなに華やかで美しくても、中身はもう朽ち果てている。
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="コーラ"]私はあまりに多くの囚われた人を見てきた。エマニュエル氏、ゲルハルト、フリーダ、ロリス……それとブラント。誰もが運命に苛まれているけれど、それを変える力がないの。
+[name="コーラ"]巫王の塔は倒れ、より多くの高塔が建てられた。塔の下の人は死に物狂いで上へと登ろうとし、塔の上の人は今よりも高い塔へ行こうとする。
+[name="コーラ"]繰り返し繰り返し、来ては去って、上っては下る。恨みは循環し、争いは永遠にやまない。苦痛、悔恨、遺憾が……何代ものリターニア人の心を占めることになる。
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="コーラ"]あなたもよ、ヴィヴィアナ。女帝の塔に入ったら、あなたの口は女帝が発してほしいと思う声しか出せなくなる。
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="コーラ"]私には「見えた」……もう見たの。あなたもあなたの父のように、望まない生活の中で一生むなしく過ごすでしょう。
+[name="コーラ"]金律楽章の曲調が変わらなければ、リターニアは変わることなんてない。未来ではより多くの悲劇が演じられる。
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[name="コーラ"]時代遅れの楽章から全員が解放されない限り。変わらない運命よ。
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]私たちの運命を変えたいと言いますが、誰が幸せ者になり、誰が犠牲者になるかをなぜあなたが決められるのですか？
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="コーラ"]決められないわ。私にはその資格がないし、そんな資格を持つべき人もいない。
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]あなたは古い秩序を滅ぼそうとしています。ですが新たな秩序はどこにあるのですか？　それは必ず昨日や今日のものより良くなるのですか？
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="コーラ"]わからないわ。未来は私のような人の手には握られないもの。
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]それとこの計画の中で亡くなった人たち……そして、私たちの目の前のこの人たち。あなたは彼らの受けた苦しみに気付いていないのですか？
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="コーラ"]……すべて聞こえたわ。周囲の叫び、死者の嘆息……彼らは皆私の心の中にいる。私が死ぬまで、一瞬たりともやむことはないでしょう。
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]では、なぜあなたがその「変える人」にならなければならないのですか？
+[charslot(slot = "m", name = "avg_npc_1113_1#9$1")]
+[name="コーラ"]……私ならできるからよ。
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]ただ、できるからですか？
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="コーラ"]誰かがやらなければならないもの。私の命にそもそも褒められるところがない。かつて……私のものですらなかった光が残っているだけ。それを簡単に消させないためなら、私は何だってするわ。
+[charslot(slot = "m", name = "avg_4098_vvana_1#2$1")]
+[name="ヴィヴィアナ"]あなたは……残酷で、傲慢で無責任です。賛同できません。
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="ヴィヴィアナ"]だから、私が止めます。
+[charslot(slot = "m", name = "avg_npc_1113_1#2$1")]
+[name="コーラ"]そうね。
+[name="コーラ"]災いはすでに起きた、私の手によって。私はこれだけたくさんの人を殺し、さらに多くの人が私のせいで死に向かっている。
+[charslot(slot = "m", name = "avg_4098_vvana_1#6$1")]
+[name="ヴィヴィアナ"]止まってください。
+[charslot(slot = "m", name = "avg_npc_1113_1#7$1")]
+[name="コーラ"]できないわ。この日のために、私はもう……
+[charslot(slot = "m", name = "avg_4098_vvana_1#7$1")]
+[name="ヴィヴィアナ"]私が一番あなたに賛同できないのは……何かご存知ですか？
+[charslot(slot = "m", name = "avg_4098_vvana_1#3$1")]
+[name="ヴィヴィアナ"]あなたは本当に……
+[charslot(slot = "m", name = "avg_4098_vvana_1#5$1")]
+[name="ヴィヴィアナ"]……残酷です。
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[playsound(key="$d_avg_mgcbttlfld", loop=true, channel="a",volume=0)]
+[SoundVolume(volume=0.4, fadetime=2,channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1117_1#2$1",duration=0.5)]
+[delay(time=1)]
+[CameraShake(duration=1, fadeout=true, xstrength=25, ystrength=25, vibrato=30, randomness=90, block=false)]
+[name="金律法衛"]やめろ――！
+[multiline(name="金律法衛")] ヴィヴィアナ……
+[CameraShake(duration=0.4, fadeout=true, xstrength=30, ystrength=30, vibrato=30, randomness=90, block=false)]
+[multiline(name="金律法衛")] コーラ、コーラ！
+[Dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="44_i10",screenadapt="coverall",xScale=1.1, yScale=1.1,x=-30)]
+[ImageTween( xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1,  xTo=0, duration=45)]
+[playMusic(intro="$storyendjp_intro",key="$storyendjp_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="コーラ"]わかっている、わかってるわ。
+[name="コーラ"]あなたは優しそうに見えて、とても意志の固い子。他人の苦しみを前にして背を向けるなんてあなたにはできない。
+[name="コーラ"]ブラントにつらい思いをさせたくもない。この期に及んで、あなたはまだ他人を思いやるのね。
+[name="コーラ"]それに……うれしいわ、最後に私を殺してくれるのが、私の最も愛する人。
+[name="ヴィヴィアナ"]……ごめんなさい。
+[name="コーラ"]今日の雲は、綺麗かしら？
+[name="ヴィヴィアナ"]……
+[name="コーラ"]ヴィヴィアナ、怖がらないで。
+[name="コーラ"]何もかも、すぐに終わるから……
+[Dialog]
+[delay(time=1)]
+あの子が抱きしめてくれている。
+感じる、私の背中に置いてある彼女の手がずっと震えている。
+過去のように彼女を抱きしめて、慰めてあげたい。実際にそうしてあげたのかもしれない。体が失血で感覚を失っていても、私はたくさんの言葉をかけてあげた。
+あの湖のような目の中ではきっともう雨が降り、あの優しい顔も苦しみに耐えるために、しわができているのでしょうね。
+多分彼女はついさっき理解したでしょう。私は実のところ彼女の両親をはっきりと見たことがないのを。
+あの二人の姿、そしてカレンデュラ小路でどのように出会って、愛し合ったかは、全てウェルナーの説明から想像したもの。
+だって、ヴィドゥニアに来たその日から、私はあの漆黒の塔に入っていたから。そして巫王の塔を出たあの日、私はもうよく見えなくなっていた。
+私の感じることのできた人生の美しさはすべて、ブラントを含め、どれもウェルナーとルシンダがもたらしてくれた。
+唯一……一つだけが違う。
+あの日ウェルナーに手を引かれ高塔から出てきた女の子が私の前へとやってきた。その柔らかな震える手に触れた時、その子の涙を拭いてあげた時……
+私は確信した。
+私はこの子を愛している。それはあの二人の子供だからというだけではない。
+この子から、私たちの誰も持っていなかったものを見た……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[charslot(slot = "m", name = "avg_npc_1113_1#3$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="コーラ"]ヴィヴィアナ、あなたはもっと良い生活を送っていいのよ……もし本当にそのような生活があれば……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[playsound(key="$bodyfalldown1", volume=0.6)]
+[delay(time=1)]
+[background]
+[gridbg(imagegroup="44_g13_afterglow_L1/44_g13_afterglow_R1/44_g13_afterglow_L2/44_g13_afterglow_R2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720",x=-640,fadetime=0)]
+[largebgtween(duration = 60,yFrom = 600, yTo = 360,block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="二十三年前のあの日、下から聞こえてくる殺し合いの音を聞いて、私は塔の頂の共鳴パイプを動かした。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="ただ軽く押すだけ……それは誰にでもできる動き。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="ヘーアクンフツホルンが築いた防御術式に小さな裂け目ができた。彼のような傲慢な人であれば、想像もできなかったでしょう。掃除担当の一介の侍従に彼を裏切る度胸があったなんて。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="今日、私は双子の女帝の塔の下の共鳴パイプを動かした。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="ただ巫王の残した調律器具を、彼が金律楽章の副本に残した術式にしたがってそっと戻し、それから私の地味なアーツで動くよう促しただけ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="人の一生はあまりに短い。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="もし何もしなければ、高塔を漂う雲のように、何の跡も残せない。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="けど誰もがそんなふうに風に吹かれて一生の間漂い、自分の行き先さえ決められないなんてこと、あるべきではない。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="多くの人が変化を望んでいる。私はただ先んじて手を伸ばした人にすぎない。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="今後、全ての善良な人が、私の愛する全ての人が……", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="……皆が、何にも縛られない明日を生きることができますように。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=2, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[gridbg]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

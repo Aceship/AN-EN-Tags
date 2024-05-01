@@ -1,0 +1,387 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="bg_ltroom",screenadapt="coverall")]
+[playMusic(intro="$darkness02_intro",key="$darkness02_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[name="インタビューゲスト"]広大な開拓地には、まだまだ可能性が眠っています。新たな挑戦を求め、才能を活かす場を探している公民の皆さんには、ぜひ参加をお勧めします。
+[name="インタビューゲスト"]一方、自分の故郷を愛し、守り続ける人々に対しても、我々は区画の再開発計画を用意しました。
+[name="司会者"]区画の再開発計画？
+[name="インタビューゲスト"]産業が後進的な一部の区画について、我々は該当の区画を一新する再開発計画を定めました。州政府が招致した企業がこうした貴重な区画を活用し、ハイテク産業を発展させるのです。
+[name="司会者"]それは大変喜ばしいニュースですね！　これらの区画の住民の皆さんは、きっと明るい未来を心待ちにしていることでしょう。
+[name="インタビューゲスト"]州政府はすでに複数の区画に対して再開発計画を策定しました。例えばベースウッドタウン、デッドホースタウン、デイヴィスタウンなど……
+[name="司会者"]今ご覧の皆さんの中に、これらの区画にお住まいの方はいらっしゃるでしょうか？　これは皆さんにとって新年最初の朗報と言っても差し支えないでしょう！
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g9_modernoffice",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_176",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1036_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_npc_176",focus="l")]
+[name="銀行頭取"]ミスタークリフ、壮大なバロン基地をこの目で見られたと思うと、私は気持ちが大変高ぶります。
+[charslot(slot = "r", name = "avg_npc_1036_1#8$1",focus="r")]
+[name="「クリップ」クリフ"]とんでもないことです……御行のような企業と協力できるのは我々からしても幸運ですよ。
+[charslot(slot = "left", name = "avg_npc_176",focus="l")]
+[name="銀行頭取"]ハハハ。ミスタークリフ、可能であれば、開拓地におけるいくつかの業務に関しても、引き続きご協力願いたいものですな。
+[charslot(slot = "r", name = "avg_npc_1036_1#8$1",focus="r")]
+[name="「クリップ」クリフ"]こちらとしても同じ考えです。
+[charslot(slot = "left", name = "avg_npc_176",focus="l")]
+[name="銀行頭取"]あなたとの会話はいつも愉快だ。このような関係がずっと続くことを願っていますよ。何せ牽引作業は長い道のりです。春になって雪が完全に溶けてようやく、我々に別れの時が訪れるわけですから。
+[charslot(slot = "r", name = "avg_npc_1036_1#8$1",focus="r")]
+[name="「クリップ」クリフ"]それでは短いと感じるくらいですよ。私は大変残念に――
+[Stopmusic(fadetime=2)]
+[charslot(slot = "m", focus = "n")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="ジェシカ"]ミスタークリフ！　ミスタークリフ！
+[PlaySound(key="$doorknockquite")]
+[name="ジェシカ"]ミスタークリフ、ドアを開けてください。緊急の報告があります。
+[charslot(slot = "r", name = "avg_npc_1036_1#8$1",focus="r")]
+[name="「クリップ」クリフ"]もし協力するにあたり何か必要なことがございましたら、いつでもご連絡を――
+[charslot(slot = "m", focus = "n")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="ジェシカ"]開けてください、お願いします、本当に緊急なんです！　ミスタークリフ！！
+[charslot(slot = "left", name = "avg_npc_176",focus="l")]
+[name="銀行頭取"]……どうやら急ぎの用のようですな？
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]少々お待ちを。
+[dialog]
+[charslot]
+[playsound(key="$d_avg_glassdooropen")]
+[charslot(slot = "m", name = "avg_1034_jesca2_1#11$1",duration=1)]
+[delay(time=2)]
+[playMusic(key="$formal_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1036_1#6$1")]
+[name="「クリップ」クリフ"]ジェシカ、何しに来た？　誰の許しを得て私の執務室の前でそんな大声をあげてるんだ。
+[charslot(slot = "m", focus = "n")]
+[name="秘書"]申し訳ございません、ミスタークリフ。ジェシカさんの報告内容は確かに緊急でしたので。
+[charslot(slot = "m", name = "avg_npc_1036_1#6$1")]
+[name="「クリップ」クリフ"]なら手短に済ませろ。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#1$1")]
+[name="ジェシカ"]ですが、あちらに部外者の方が……
+[charslot(slot = "m", name = "avg_npc_176")]
+[name="銀行頭取"]ミスタークリフ、お手洗いをお借りしてもよろしいですかな？
+[charslot(slot = "m", name = "avg_npc_1036_1#8$1")]
+[name="「クリップ」クリフ"]もちろんです。
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n",volume=0.7)]
+[delay(time=2)]
+[charslot(slot = "l", name = "avg_1034_jesca2_1#1$1",duration=0.5)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]さあ言え。この扉をノックしなければならないほどの報告内容とは一体何だ？
+[charslot(slot = "l", name = "avg_1034_jesca2_1#11$1",focus="l")]
+[name="ジェシカ"]銀行が州政府の委任状を盾に、民衆に発砲するよう我々に要求してきました。
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]それで、お前たちは従ったのか。
+[charslot(slot = "l", name = "avg_1034_jesca2_1#10$1",focus="l")]
+[name="ジェシカ"]少なくともわたしがこちらに向かった時点ではまだです。し、しかし今の状況は……
+[charslot(slot = "l", name = "avg_1034_jesca2_1#11$1",focus="l")]
+[name="ジェシカ"]いえ……
+[name="ジェシカ"]いえ、わたしたちは民衆に手をかけることはありません。
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]そうか。わかった、もう下がれ。
+[charslot(slot = "l", name = "avg_1034_jesca2_1#10$1",focus="l")]
+[name="ジェシカ"]住民たちはどう対処しますか？
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]それはお前には関係ない。
+[charslot(slot = "l", name = "avg_1034_jesca2_1#10$1",focus="l")]
+[name="ジェシカ"]ですがせめて……
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]わからないなら、もう少しわかりやすく言ってやろう。
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="「クリップ」クリフ"]それはお前にも、私にも、関係のないことだ。
+[charslot(slot = "l", name = "avg_1034_jesca2_1#11$1",focus="l")]
+[name="ジェシカ"]そうなんですか……？
+[name="ジェシカ"]では、あなたにとって関係のあることとは何ですか……？　銀行から受け取る高額な報酬ですか？　軍部から得られる特権ですか？　それとも、他人を思う存分踏みつけることで得られる……
+[name="ジェシカ"]人より優れているという優越感ですか？
+[charslot(slot = "m", focus = "n")]
+突然、目の前の傭兵が見知らぬ人間に変わったような錯覚に墜ち、クリフは目を細めて彼女を上から下までしげしげと眺めた。
+[charslot(slot = "r", name = "avg_npc_1036_1#2$1",focus="r")]
+[name="「クリップ」クリフ"]私は九十を超えているんだ、ジェシカ。そんなことで喜びなど覚えない。
+[charslot(slot = "l", name = "avg_1034_jesca2_1#11$1",focus="l")]
+[name="ジェシカ"]では、なぜですか……あのような者たちと徒党を組んで、いったい何が得られるというのですか？
+[name="ジェシカ"]どうしても理解できません。わたしの目には……あなたはそのようなものを追求する過程で、人としての心をほとんど失ってしまったように見えます。
+[charslot(slot = "r", name = "avg_npc_1036_1#10$1",focus="r")]
+[name="「クリップ」クリフ"]人としての心、か……私にとってはもはや遠い存在だ。BSWという傭兵企業の社長として、そうした美しい言葉が何の役に立つ？
+[name="「クリップ」クリフ"]私からすれば、理解し難いのはむしろお前の方だ、ジェシカ。もしそういう類のものをそこまで重視しているなら……なぜBSWに来た？
+[charslot(slot = "l", name = "avg_1034_jesca2_1#10$1",focus="l")]
+[name="ジェシカ"]わたしは……
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]確か以前、お前の父は私にこう言っていた。お前がここに残ったのは問題を解決し、人々を守るためだと……
+[charslot(slot = "l", name = "avg_1034_jesca2_1#1$1",focus="l")]
+[name="ジェシカ"]はい……
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]であれば、なぜ初めから警察官や裁判官、保安官を志望しなかったのだ？　兵士に志願して国防に就いたっていいじゃないか。最悪、軍属という選択もあるだろう？
+[name="「クリップ」クリフ"]それなのにお前は傭兵を――武力と引き換えに金を得る仕事を、殺戮と暴力が伴う仕事を、栄光とも呼べず、栄誉も得られぬこの仕事を選んだ。
+[name="「クリップ」クリフ"]お前は金に困っているわけでもない。それならジェシカ、一体何のためだ？
+[charslot(slot = "l", name = "avg_1034_jesca2_1#14$1",focus="l")]
+[name="ジェシカ"]……
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]もしわからないのであれば、経験者として答えを提示してやっても構わんが。
+[charslot(slot = "l", name = "avg_1034_jesca2_1#11$1",focus="l")]
+[name="ジェシカ"]野心……のためです。野心の実現のため、兄や姉に劣らないことを証明するため、そして自分が一族の中で……取るに足らない人間ではないと証明するためです。
+[name="ジェシカ"]そのためにここへ来ました。
+[charslot(slot = "r", name = "avg_npc_1036_1#1$1",focus="r")]
+[name="「クリップ」クリフ"]素晴らしい、非常に明確な自己認識だ。
+[name="「クリップ」クリフ"]だったらここで私のビジネスのやり方を非難するな。お前の父も優秀なビジネスマンだ。彼の子として、もっと彼を見習いなさい。
+[name="「クリップ」クリフ"]もっと大人になれ。理性的であれ。感情的になるな。
+[charslot(slot = "r", name = "avg_npc_1036_1#6$1",focus="r")]
+[name="「クリップ」クリフ"]秘書、彼女を連れて行け。今後彼女が来ても、私は取り合わない。
+[charslot(slot = "l", name = "avg_1034_jesca2_1#11$1",focus="l")]
+[name="ジェシカ"]……数十年前、あなたは友人が捕虜になるのを黙って見ていましたよね。その数十年後、今度は人々が自分の家から追い出されるのを黙って見ているんですか？
+[name="ジェシカ"]もしそれがあなたの言う理性的で、感情的でない大人の姿なら――
+[name="ジェシカ"]わたしは一生幼稚なままで……一生平凡な馬鹿で構いません。
+[charslot]
+[name="秘書"]ジェシカさん、どうかお引き取りください。
+[charslot(slot = "m", name = "avg_1034_jesca2_1#11$1")]
+[name="ジェシカ"]触らないで……自分で出て行きますから。
+[dialog]
+[playsound(key="$d_gen_walk_n",volume=0.7)]
+[charslot(slot = "m",posfrom = "0,0", posto = "-200,0",duration = 1.5)]
+[delay(time=1)]
+[charslot(duration=1)]
+[playsound(key="$d_avg_glassdoorclose")]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1036_1#7$1")]
+[name="「クリップ」クリフ"]……
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_176",duration=1)]
+[delay(time=1.5)]
+[name="銀行頭取"]どうやらそちらの用件は終わったようですな、ミスタークリフ。
+[charslot(slot = "m", name = "avg_npc_1036_1#1$1")]
+[name="「クリップ」クリフ"]はい、頭取。
+[name="「クリップ」クリフ"]ですが、たった今ある知らせを聞きました。まことに残念な知らせです。
+[name="「クリップ」クリフ"]銀行の入口にて、あなたの部下が私の部下に対し、住民に向かって発砲せよとの命令を下したそうです。
+[name="「クリップ」クリフ"]許可なく、指示を仰ぐこともなく。
+[charslot(slot = "m", name = "avg_npc_176")]
+[name="銀行頭取"]それの何が問題なのですか、ミスタークリフ？
+[name="銀行頭取"]我々は政府から権限を授かっています。あの小隊もあなたが我々に派遣したものであり、緊急時に強硬手段をとる必要がある場合は、具体的な措置を逐一あなたに報告する義務はないと思われますが。
+[name="銀行頭取"]ああご安心を、我々も節度はわきまえております。ただ緊急の場合には、我々の需要を最優先に考えることをどうかご理解いただきたい。
+[charslot(slot = "m", name = "avg_npc_1036_1#10$1")]
+[Stopmusic(fadetime=3)]
+[name="「クリップ」クリフ"]頭取、私の言っていることをご理解されていないようですな。
+[name="「クリップ」クリフ"]残念な知らせというのは、私にとってではなく、あなたにとってのものなのですよ。
+[charslot(slot = "m", name = "avg_npc_176")]
+[name="銀行頭取"]ご……ご冗談を。
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1036_1#6$1")]
+[playsound(key="$d_avg_gunload")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1036_1#6$1")]
+[name="「クリップ」クリフ"]私の頭越しにうちの部隊を指揮できる人間は誰一人いません。もし今後も友好関係を続けたいのであれば、この言葉をしっかりと頭に留めておいていただきたい。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g4_bank",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$ponder_intro",key="$ponder_loop", volume=0.6)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1039_1#1$1",duration=0.5)]
+[charslot(slot = "r", name = "avg_npc_1041_1#1$1",duration=0.5)]
+[delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1041_1#1$1",focus="r")]
+[name="銀行支店長"]書類の仕分けは終わりましたか？
+[charslot(slot = "l", name = "avg_npc_1039_1#1$1",focus="l")]
+[name="シルヴィア"]今取り掛かっています……すぐに、もうすぐで終わります。
+[name="シルヴィア"]あの……先ほどある株式質権書類を確認したのですが、レオーネ・テルミンの株は先日売却されたばかりでしたよね……
+[name="シルヴィア"]しかし彼のために用意された記入待ちの同意書が、十数年前の書類の中にありました。
+[name="シルヴィア"]それに、このような書類は一つだけではありません。多くの書類が保管場所を間違えており……サインもありません。
+[charslot(slot = "r", name = "avg_npc_1041_1#1$1",focus="r")]
+[name="銀行支店長"]それは間違いではありませんよ。ただ前もって用意されていたというだけです。
+[charslot(slot = "l", name = "avg_npc_1039_1#8$1",focus="l")]
+[name="シルヴィア"]ですが十数年前なんて……町のほとんどの方はまだ銀行に足を運んだことすらもないはずなのに……
+[charslot(slot = "r", name = "avg_npc_1041_1#1$1",focus="r")]
+[name="銀行支店長"]シルヴィアさん、我々は専門的な精算システムを所有しています。わずかな貸付利息などは我々の眼中にありません。
+[name="銀行支店長"]我々の目的はこの地にあるものすべてです。それはこれまでずっと変わっていません。
+[charslot(slot = "l", name = "avg_npc_1039_1#8$1",focus="l")]
+[name="シルヴィア"]そんな……当時言っていたことと、ち、違うじゃないですか……
+[charslot(slot = "r", name = "avg_npc_1041_1#1$1",focus="r")]
+[name="銀行支店長"]確かにそうですね。あなたは我々の中核事業から少し離れたところにいますから、知らないのも無理はありません。あなたはもっと向上心を持つべきです。
+[name="銀行支店長"]しかしまあ……せっかくチャンスが目の前に転がってますから、それを逃す道理はないはずです。どう思いますか、シルヴィアさん？
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g3_diner",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$warm_intro",key="$warm_loop", volume=0.6)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_doorbell", volume=1)]
+[charslot(slot = "r", name = "avg_npc_1034_1#1$1",duration=1)]
+[delay(time=2)]
+[charslot(slot = "l", name = "avg_4104_coldst_1#2$1",duration=0.5)]
+[delay(time=0.6)]
+[charslot(slot = "l", name = "avg_4104_coldst_1#2$1",focus="l")]
+[name="ヘレナ"]ウッディ……やっと戻ったのね。
+[charslot(slot = "r", name = "avg_npc_1034_1#10$1",focus="r")]
+[name="ウッドロウ"]お前その腕どうした？
+[charslot(slot = "l", name = "avg_4104_coldst_1#4$1",focus="l")]
+[name="ヘレナ"]ちょっと派手にやらかして……痛い目見ちゃったわ。
+[charslot(slot = "r", name = "avg_npc_1034_1#5$1",focus="r")]
+[name="ウッドロウ"]ヘレナ、もし……俺がここを去ると言ったら、俺と一緒に行くか？
+[charslot(slot = "l", name = "avg_4104_coldst_1#2$1",focus="l")]
+[name="ヘレナ"]……あの人に何を言われたの？
+[charslot(slot = "r", name = "avg_npc_1034_1#7$1",focus="r")]
+[name="ウッドロウ"]別に何も……あの会話で確信が得られたのは、あいつが相変わらず憎たらしい野郎だってことだけだ。
+[charslot(slot = "l", name = "avg_4104_coldst_1#9$1",focus="l")]
+[name="ヘレナ"]でも当時のあなたは、そんな奴のためにためらうことなくラテラーノを離れ、クルビアの地を踏み、ほとんどすべてを失ってしまうような戦争に加わったんでしょう？
+[charslot(slot = "r", name = "avg_npc_1034_1#2$1",focus="r")]
+[name="ウッドロウ"]あいつが俺に語り聞かせた理想はあまりに魅力的だったんだ……英雄となり、人々を率いて戦争を終わらせ、ラテラーノの外に完全なる楽園を築こうってな。
+[charslot(slot = "r", name = "avg_npc_1034_1#1$1",focus="r")]
+[name="ウッドロウ"]それに、ぼんやりとした考えしか持たない青臭いガキどもの中で、あいつだけは常に固い意志と明確な思考を持っていた。あいつの後を追いかけたくなるのも無理はないとわかるだろう。
+[charslot(slot = "l", name = "avg_4104_coldst_1#3$1",focus="l")]
+[name="ヘレナ"]ウッディ……わかるわ、わかってる。あなたが騙されたとか言ってるんじゃないの。
+[charslot(slot = "l", name = "avg_4104_coldst_1#2$1",focus="l")]
+[name="ヘレナ"]あたしは、自分の過去を恥じる必要なんてないって言いたいのよ。あなたの旅が何によって始まったとしても、最終的にあなたを今の場所へと導いたんだもの。
+[name="ヘレナ"]そうした過去が今のあなたを作り上げたのよ。
+[name="ヘレナ"]時には振り返ったって構わない。でも後悔しちゃダメよ、絶対に。
+[charslot(slot = "r", name = "avg_npc_1034_1#5$1",focus="r")]
+[name="ウッドロウ"]ヘレナ……
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="ヘレナ"]ほら、踊りましょう。ステップを教えてあげるから。
+[name="ヘレナ"]十八の時、あるお馬鹿さんがあたしにステップを教えてくれたの。そいつはほんとにどうしようもない馬鹿だったけど、あたしはこのダンスが大好きになっちゃったのよ。
+[charslot(slot = "r", name = "avg_npc_1034_1#1$1",focus="r")]
+[name="ウッドロウ"]実のところ、俺も踊れるんだ……
+[charslot(slot = "l", name = "avg_4104_coldst_1#8$1",focus="l")]
+[name="ヘレナ"]ほんと？　……まるで知らなかったわ。いつ習ったのよ。
+[charslot(slot = "r", name = "avg_npc_1034_1#1$1",focus="r")]
+[name="ウッドロウ"]……若い頃にな。お前には言ったことがないし知らなくて当然だ。
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="ヘレナ"]へぇ、どこで？
+[charslot(slot = "r", name = "avg_npc_1034_1#1$1",focus="r")]
+[name="ウッドロウ"]……学生寮に帰る道すがら。
+[charslot(slot = "l", name = "avg_4104_coldst_1#1$1",focus="l")]
+[name="ヘレナ"]じゃあ一曲踊ってくださる？
+[charslot(slot = "r", name = "avg_npc_1034_1#8$1",focus="r")]
+[name="ウッドロウ"]……お手をどうぞ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g7_sonwydowntown_n",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_106_franka_1#1$1",duration=1)]
+[charslot(slot = "r", name = "avg_107_liskam_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_106_franka_1#1$1",focus="l")]
+[name="フランカ"]さっき撤退の命令を受けた時、どうして退かなかったの？
+[charslot(slot = "r", name = "avg_107_liskam_1#3$1",focus="r")]
+[name="リスカム"]命令違反は一回も二回もそう変わらないでしょう。
+[charslot(slot = "l", name = "avg_106_franka_1#9$1",focus="l")]
+[name="フランカ"]ちぇー、カッコつけちゃって。後から来た小隊だってわかってたんだからね。彼らに民衆に対して度を越した行為をさせないためだったんでしょ？
+[charslot(slot = "l", name = "avg_106_franka_1#11$1",focus="l")]
+[name="フランカ"]額はまだ痛む？　あいつらったら、民衆に対しては手加減ってものを知ってるのに、身内にはちっとも容赦しないなんて。
+[charslot(slot = "r", name = "avg_107_liskam_1#1$1",focus="r")]
+[name="リスカム"]平気、ただのかすり傷だから。
+[name="リスカム"]何せ先に違反したのはこっちの方だし……自分に何ができるかわからなかったから、全員の安全を守るという最も基本的なことをしたまでだよ。
+[charslot(slot = "l", name = "avg_106_franka_1#11$1",focus="l")]
+[name="フランカ"]それで十分よ。よくやったわ、優等生サマ。
+[charslot(slot = "r", name = "avg_107_liskam_1#1$1",focus="r")]
+[name="リスカム"]……
+[charslot(slot = "l", name = "avg_106_franka_1#3$1",focus="l")]
+[name="フランカ"]……そうだ、今日一日ずっと言おうと思ってたんだけど、言う暇がなかったのよね……
+[charslot(slot = "r", name = "avg_107_liskam_1#1$1",focus="r")]
+[name="リスカム"]何？
+[charslot(slot = "l", name = "avg_106_franka_1#7$1",focus="l")]
+[name="フランカ"]ハッピーニューイヤー。
+[charslot(slot = "r", name = "avg_107_liskam_1#9$1",focus="r")]
+[name="リスカム"]今は……残念だけど、もう十二時過ぎてるよ、フランカ。
+[charslot(slot = "l", name = "avg_106_franka_1#3$1",focus="l")]
+[name="フランカ"]別にいいでしょう？
+[charslot(slot = "r", name = "avg_107_liskam_1#10$1",focus="r")]
+[name="リスカム"]確かに。先に言われたのがちょっと悔しかっただけかもね……
+[charslot(slot = "r", name = "avg_107_liskam_1#9$1",focus="r")]
+[name="リスカム"]ハッピーニューイヤー。
+[Stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="42_g5_banktreasury",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$storyendjp_intro",key="$storyendjp_loop", volume=0.6)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1039_1#1$1",duration=1)]
+[delay(time=1)]
+[name="シルヴィア"]……
+[name="シルヴィア"]…………
+[charslot(slot = "m", focus = "n")]
+分厚い鉄の扉が固く閉ざされた。ギミックが作動し、鈍い衝突音を響かせて、扉の向こうから漂ってくるインクの匂いを遮断する。
+それは人を蕩かすような匂い。
+嗅ぐだけであらゆる望みが簡単に手に入り、すべての後悔を帳消しにできるような奇妙な錯覚を人々は抱く。
+[charslot(slot = "m", name = "avg_npc_1039_1#8$1")]
+[name="シルヴィア"]あなたが欲しいのは……いったい何？
+[name="シルヴィア"]あなたの悔しさは……どこから来るの？
+[charslot(slot = "m", name = "avg_npc_1039_1#2$1")]
+[name="シルヴィア"]……シルヴィア。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="42_g6_sonwydowntown_d",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="優しい声"]期末テスト、また一位を取ったのね……もう、なんて賢い子なの。シルヴィー、あなたはお母さんの誇りよ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="42_g7_sonwydowntown_n",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="優しい声"]本当に……？　あそこの金融学科はクルビア随一よ……なんてことでしょう、うちの子があそこに受かるなんて！　シルヴィー、あなたは私の誇りよ、何回言っても言い足りないわ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="29_g8_alley_n",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="優しい声"]シルヴィー、本当に地元の銀行で働くの？　わかってるんでしょう……お母さんは自分の仕事のせいであなたの選択肢を狭めたくないの。特にこういった大事なことに関しては。
+[name="優しい声"]……あなたは私の誇りなのよ、シルヴィー。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_windows",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="優しい声"]ゴホゴホッ……ゴホッ、シルヴィー……もうあそこを辞めなさい。あなたならほかの仕事が見つかるから……お母さんの……お母さんのことは気にしないで。
+[name="優しい声"]あなたが、あなたが何をしようと……お母さんは、あなたを誇りに思うわ。
+[name="優しい声"]たとえ……この命が尽き、ても……
+[name="優しい声"]ずっと……ずっとよ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1039_1#2$1")]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="42_g5_banktreasury",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[name="シルヴィア"]お母さん……
+[charslot(slot = "m", name = "avg_npc_1039_1#4$1")]
+[name="シルヴィア"]私は……私は、ずっとお母さんの誇りでありたい。
+[charslot(duration=1)]
+それは時間を操ることが可能な魔力を秘めた匂い。
+その匂いに包まれる中で、幼い赤ん坊は数十年後にようやく自力で揚げることかなうだろう凧を持ち上げ、余命わずかな老人は三歳の頃に夢見ていた飴を目の前に浮かばせる。
+その誘惑に抗える者は、誰もいない。
+[dialog]
+[PlaySound(key="$d_avg_gateopen", volume=1)]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[Image]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

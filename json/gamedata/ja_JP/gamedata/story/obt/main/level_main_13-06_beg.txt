@@ -1,0 +1,540 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="bg_black",screenadapt="showall")]
+[Delay(time=1)]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[dialog]
+[interlude(maskid = "ui_cutin_mask_horizon", style = 1, size = "1500, 520",offset = "20,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_battlefield", afrom = 0, ato = 1, aduration = 3, sfrom = "1.2,1.2", sto = "1.2,1.2", sduration = 0,block=true)]
+[interlude(channel = 2, type = 2, name = "bg_battlefield", pfrom="0,0",pto="-80,0", duration =30,block=false)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="馬鹿げた話だ。俺たちは、この死骸と、鮮血と、砂埃と泥水にまみれた戦場に身を置きながら、あろうことか虚ろな幻を追いかけている。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nあの幻が俺たちにとって唯一の手がかりだ。リッチの言うように浮き沈みする歴史の破片こそあれの残した轍なのだろう。",block = true)]
+[Sticker(id="st1", multi = true, text="\n俺たちは今は無き廃墟を一つ一つ渡り歩いてきた。忘れられた崩壊の一つ一つに足を踏み入れてきた。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそれらの景色はどれもすぐに消えてしまった。ほとんどの場合ただ最後の残滓を捉えるだけで終わった。",block = true)]
+[Sticker(id="st1")]
+[interlude(channel = 2, type = 1, slot = "m", offset = "170,0", name = "cutin_char_3",sfrom = "0.7,0.7", sto = "0.7,0.7",  aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "170,0", pto = "120,0", duration = 40)]
+[Sticker(id="st1", multi = true, text="俺たちが見つけたブラッドブルードの戦争法陣は全部で十七個だ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nこの戦場全体に設置された法陣の数はおそらくその数倍……果ては数十倍にも上るかもしれない。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそのどれもが例外なく、ここ一週間以内にこの戦場に現れたものだった。ぞっとするような効率の良さだ。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="その中の二つには部隊が通りがかったような痕跡が残っていたが、泥に残った跡から察するに、おそらくは単に巡回点検やメンテナンスの任務に就いていた者たちのものだろう。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nこの法陣を破壊することに意味はあるのか、かなり疑わしいところだ。いくつか破壊されたとしても、また新しいのを「置けば」それで済むのではないか。",block = true)]
+[Sticker(id="st1", multi = true, text="\n俺は、ますます確信を持ち始めている。あれの正体が何であろうと、俺たちは一刻も早く掌握せねばならないということを。",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[interlude(channel = 2,clear = true)]
+[Background(image="bg_cherunder_2", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[playsound(key="$d_avg_sewer",volume=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_4088_hodrer_1#4$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4088_hodrer_1#4$1",focus="m")]
+[name="ヘドリー"]……この場所は完全に破壊されているな。
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="イネス"]以前ロドスが予想していた通り、都市外から都市内へと通じる秘密のルートがもう一つあったのね。
+[name="イネス"]テレシスは、この輸送ポイントを通じて大量の鉄や結晶制御装置、巫術装置をロンディニウムへ運び込んでいた。ザ・シャードを修理し、飛空船を完成させるまで。
+[name="イネス"]けど、一体どうやってロンディニウム周辺まで運んだのかしら？　公爵たちがいかに愚かとは言え、彼らも自分たちが掌握してないような大口の物資をヴィクトリア内に流通させたりはしないはずよ。
+[name="イネス"]つまりそれもナハツェーラーの王の軍団と同じく、「パッ」って具合に一瞬でポイントの付近に現れたってことなんでしょうね。
+[name="イネス"]私たちがずっと探し続けていた「サルカズの補給ルート」っていうのは、もしかしたら輸送の過程における一番最後の、一番取るに足らない部分だったのかもしれないわ。
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]……一体どんな技術なの？
+[charslot(slot="m",name="avg_4088_hodrer_1#8$1",focus="m")]
+[name="ヘドリー"]疑問はもう一つある。テレシスがこれほどの能力を持っていたのならどうしてそれをそのまま戦争に活用しないのか？
+[name="ヘドリー"]軍隊を敵の防衛線の後方に直接出現させるか、あるいはいっそのこと起爆直前の源石爆弾を、公爵たちの船の頭上にでも送り込めば済む話だ。
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]制約の多い技術なのかもしれないし……実際のところは隙だらけの技術なのかもしれないわ。
+[name="イネス"]あのリッチはアーツの範疇を越えた術だと言っていたわね。だけど想像もできないわ……
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]W、そっちは――
+[Dialog]
+[charslot]
+[name="W"]……
+[name="W"]え？
+[name="W"]あー、戦闘の痕跡はないわ。ここは完全に崩れちゃってるわね。
+[Dialog]
+[Delay(time=1)]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="数日前の遭遇以降、Wはずっと上の空だ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n夜番中に火を見ながらボーっとしていた時もある。",block = true)]
+[Sticker(id="st1", multi = true, text="\n俺でもどうにもできん。だがあいつならきっと自力で答えを見つけるだろう。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]……行こう。ここには他に見るものもなさそうだ。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_labentrance", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="俺は手元の地図を見た。すでにマークしておいたブラッドブルードの法陣の位置が、まばらな丸い点で示されている。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nそこに先ほどの輸送ポイントと、ナハツェーラーの王の軍団の駐屯地を書き加えた。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそれはどれも、かつて同じ手段で何らかのものが「置かれた」ことのある場所だ。",block = true)]
+[Sticker(id="st1", multi = true, text="\nきっと何か関係があるに違いない。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="地図上に記されたそれらの名をさっと見回してみた。丘陵、谷地、小さな森、それから決して大きいとは言えないいくつかの池。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n何らかの類似点があるのか？　ひょっとしたら、特殊な地理的共通点でもあるのかもしれない。",block = true)]
+[Sticker(id="st1", multi = true, text="\n俺の視線は、とある町の名の部分で止まった。そこには「ブレントウード」と書いてある。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]イネス、ロドスは都市防衛軍司令塔からの情報を分析した結果、目標地点を「ブレントウード」という町の付近に定めたと言っていたな。
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="俺はブレントウードの位置を丸で囲んだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="イネス"]分析したのはクロージャよ。1094年にテレシスがロンディニウムに入ってからの全貨物輸送データを盗み出して、そのルートを重ね合わせた図を生成したの。
+[name="イネス"]その図では、ロンディニウム周辺のあらゆる町がそれらの輸送通行記録で埋め尽くされていたわ。
+[name="イネス"]ここは何と言っても、ヴィクトリアの首都よ。開戦前に市民たちが毎日大量に消費していたステーキやお酒は、棚から勝手に湧いて出てくるわけじゃないもの。
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]けど、その町……「ブレントウード」だけは一際目立つ空白になっていたの。ごくわずかに記載された通行記録も、そのほとんどが1094年から1095年の間に集中していたわ。
+[name="イネス"]まるでその町が人々から忘れ去られてしまったかのように。おかしな話よ、そこはヴィクトリアの真ん中にあるっていうのに。
+[name="イネス"]その時ロドスは、ブレントウードこそがサルカズの持つ地下輸送路の出発点か、あるいは秘密のルートの要所だと推測したの。だから陰で何らかの通行規制が行われているのかも、とね。
+[name="イネス"]その輸送ポイントが確かに存在することは、さっき私たちが突き止めたわ。
+[charslot(slot="m",name="avg_4087_ines_1#3$1",focus="m")]
+[name="イネス"]だけどテレシスが……ふん、「見えない大きな手」を持っていて、物を何もないところから好きな場所へ置けるってことも、すでに判明してしまったわ。
+[name="イネス"]もしかしたら、ブレントウードの件については考え直す必要があるかもしれないわね。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]……いや。
+[name="ヘドリー"]この場所に近付くほど、ブラッドブルードの法陣もより密集して現れている。
+[name="ヘドリー"]そして最も遠いいくつかの地点とブレントウードとを線で繋ぐと、その距離も大体一致する。このことから、この距離がすなわち置くことのできる限界距離であると推測可能だ。
+[charslot(slot="m",name="avg_npc_412_1#8$1",focus="m")]
+[name="W"]そんな推測、無意味よ。そのブレントウードなら知ってるけど、貧しくて隠す場所なんて何もないとこだったもの。何ヶ月か前に行った時は暇そうなサルカズすら少しも見かけなかったわ。
+[name="W"]キャラバンだってあんなところ通らないわよ。多分その町が退屈すぎるからでしょうね。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_throwstone",volume=1)]
+[PlaySound(key="$d_avg_vallyrck", volume=0.6,delay=0.5)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Wはつまらなさそうに石を投げてきた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nあいつは確かに不機嫌のようだ。いつもだったら、手榴弾のピンでも投げてきただろうに。",block = true)]
+[Sticker(id="st1", multi = true, text="\n石は地図の上をころころと転がり、ちょうど俺が注目していた場所を塞いできた。石をどけようとしたその時――",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="ブレントウードの後方、そう遠くない場所に小さな丘があることに気づいた。その石がちょうど、丘を示す記号の真ん中に落ちたからだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_4088_hodrer_1#6$1",focus="m")]
+[name="ヘドリー"]……はぁ。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]出発するぞ。手がかりが少ない以上、偶然に身を委ねるのも悪い選択ではあるまい。
+[name="ヘドリー"]最初の地点はここに決まりだ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="40_g6_mountaincave", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="山はひっそりとしていて、真っ暗だった。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nかつてヴィクトリア人の歴史書である比喩表現を見かけたことがある。歴史の探求とはまさに、こうした山の洞窟に踏み込み、暗闇の中で岩壁の模様を探るようだと。",block = true)]
+[Sticker(id="st1", multi = true, text="\n実際には何も見えず、ただ微かな手触りを頼りに、「我々はどこから来たのか」といったことを、もっともらしく導き出すだけだ。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="この大地は歴史に優しい場所ではない。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n源石鉱脈は、地層中のあらゆる有機物とほとんど同化してしまう。遺骨さえ見逃さぬほどに。",block = true)]
+[Sticker(id="st1", multi = true, text="\n考古学者たちが発掘できるのは、往々にして源石に侵食され尽くした遺跡だけであり、彼らは残された金属の破片を前に頭を悩ませる羽目になる。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="だが俺たちは違う。俺たちはサルカズだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n俺たちが歴史を振り返る手段はたくさんある。カズデルの炉に宿るレヴァナントたちが、時折古代の魔王の偉大なる功績や、あるいは悲惨な末路について囁くという噂もあった。",block = true)]
+[Sticker(id="st1", multi = true, text="\n俺が子供の頃は、毎日のようにその不滅の炉のそばに入り浸っていた。過去から響く木霊の一つでも捉えられることを願って。",block = true)]
+[Sticker(id="st1", multi = true, text="\nだが俺の耳に届くのは、ただ沈黙ばかりだった。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="40_g6_mountaincave", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_4087_ines_1#14$1",focus="m")]
+[name="イネス"]もしかしたら本当に当たりかもしれないわね。ここの影はかなり異状だわ。
+[name="イネス"]混乱している、と言うべきかしら？　けれど痕跡は残っているみたいね。
+[name="イネス"]これはまるで……一隻の船がここを通っていったみたいだわ。湧き起こる波紋が互いに重なり合い、干渉し合って、最後にはすべてを滅茶苦茶にしてる。
+[name="イネス"]通っていったというより、むしろ……漂ったと言うべきかしら。
+[charslot(slot="m",name="avg_4088_hodrer_1#4$1",focus="m")]
+[name="ヘドリー"]「漂った」か。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]かつて老い先短い炎魔の老人から、ある物語を聞いたことがある。彼の話す支離滅裂な戯言の中にも、その言葉が出てきた。
+[charslot(slot="m",name="avg_npc_412_1#3$1",focus="m")]
+[name="W"]どんな物語よ？
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]災厄の物語さ。
+[charslot(slot="m",name="avg_4088_hodrer_1#9$1",focus="m")]
+[name="ヘドリー"]これから俺たちの目の前に、その話に聞いたようなものが現れないことを願いたいものだ。
+[name="ヘドリー"]俺たちにも、まだツキが残っているといいのだが。
+[charslot(slot="m",name="avg_npc_412_1#1$1",focus="m")]
+[name="W"]自分がツイてると思ってた傭兵は皆死んだわ。
+[charslot(slot="m",name="avg_4088_hodrer_1#1$1",focus="m")]
+[name="ヘドリー"]ならばW、万全を期すためにも、お前はここに残って俺たちのバックアップを務めてくれないか。
+[name="ヘドリー"]今回の任務は戦闘じゃない。まずは自分たちが今何と直面しているのかを、はっきりさせるとしよう。
+[name="ヘドリー"]もし状況が悪化したら撤退しなきゃならん。その時、お前は……
+[charslot(slot="m",name="avg_npc_412_1#7$1",focus="m")]
+[name="W"]安心して。あたしが、ちゃんとあんたらのために退路を断っておいてあげるわ。
+[name="W"]爆破の角度は丹精込めて計算しておくわね。あんたらが、ブラッドブルードかナハツェーラーか、なんならいっそテレシス本人に出口まで追いかけられて、目の前に光が見えたその瞬間――
+[charslot(slot="m",name="avg_npc_412_1#10$1",focus="m")]
+[name="W"]ドカーン！
+[name="W"]あんたの大好きな物語の登場人物になれるってわけよ、ヘドリー！
+[charslot(slot="m",name="avg_4087_ines_1#2$1",focus="m")]
+[name="イネス"]あなた一人だけじゃテレジアの相手は務まらないわ、W。
+[charslot(slot="m",name="avg_npc_412_1#4$1",focus="m")]
+[name="W"]……
+[charslot(slot="m",name="avg_npc_412_1#13$1",focus="m")]
+[name="W"]イネス。
+[name="W"]ほんとに埋めてやるからね。
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[name="イネス"]……ふん。自分でも分かってるくせに。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_walk_n",loop=true, channel="hd",volume=0.8)]
+[PlaySound(key="$d_gen_walk_n",loop=true,channel="in",volume=0.4,delay=0.7)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="ヘドリー"]Wなら本気でこの山を丸ごと爆破しかねんぞ。
+[name="ヘドリー"]奴がどれだけイカれてるかはお前もよく知ってるだろう。テレジアの件を持ち出してあいつを刺激するのはよせ。
+[name="イネス"]ああいう演技は見てて悲しくなるのよ。それならいっそ、自分の望むものが何なのかを、気づいてほしいわ。
+[name="イネス"]都市内にあれだけ長く留まっていたあなたがいるんだから、真相が知りたいだけなら、あなたに直接訊けばいいと思わない？
+[name="イネス"]だけど、「あのテレジアは本物か」なんて訊いてきたことあったかしら？
+[name="ヘドリー"]……
+[name="イネス"]私も訊かれたことなんてないわ。ほらね、あいつの精神はちっとも成長しちゃいないのよ。
+[name="イネス"]あの「テレジア」にしっぽを振って許しを乞うか、彼女を殺す覚悟を決めればいい。
+[name="イネス"]あんな演技をするのは一体なんのためかしら？　自分が強い子だってことを私たちにアピールしたいの？
+[name="イネス"]それとも自分に言い聞かせるためかしら。何も特別なことなんて起きてはいない、ただ前みたいに誰かを殺して地雷を埋めるだけで、全部なかったことにできる、ってね。
+[name="イネス"]何も考えないようにする才能なんてものを、本当にWが持ってるならそれでいいわ。けど……まるで、氷の上に立っている子供みたいよ。
+[name="イネス"]足を踏み出すべきか悩んだり、前へ進んでは後ろへ戻ったりして、ぐずぐずし続けた挙句、結局その場で考え込んだまま無駄に悲しみ続けるんだわ。
+[name="ヘドリー"]俺にはそうは見えんがな。
+[name="イネス"]……嘘つき。あなたはただ、面倒事が嫌なだけでしょ。
+[name="ヘドリー"]お前があいつをそこまで気にかけていたとは。
+[name="イネス"]私が気にかけているのは私自身よ。あいつのせいで死ぬのはごめんだもの。
+[name="ヘドリー"]イネス、これは真剣な話なんだが……お前、カズデルに戻る気はないか？
+[name="イネス"]ハッ！　私があなたたちの偉業の足手まといになってるってわけ？
+[name="ヘドリー"]そうじゃない。ただ時折思うんだ。俺にもWにも、この戦場に留まり続ける理由がある。
+[name="ヘドリー"]だがお前はどうだ？
+[name="イネス"]……私にもあるわよ。
+[Dialog]
+[stopSound(channel="hd", fadetime=0.5)]
+[stopSound(channel="in", fadetime=0.5)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[Delay(time=1)]
+[name="イネス"]着いたわ。
+[Dialog]
+[stopmusic(fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g5_spinestops", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3.5, block=true)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_4088_hodrer_1#1$1",duration=0.7)]
+[charslot(slot="r",name="avg_4087_ines_1#7$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_4087_ines_1#7$1",focus="r")]
+[name="イネス"]ここが……山の内部ね。
+[name="イネス"]奴ら、山全体を掘り尽くしたっていうの？
+[charslot(slot="l",name="avg_4088_hodrer_1#1$1",focus="l")]
+[name="ヘドリー"]これでWの爆破計画ももっと順調に進むな。
+[charslot(slot="r",name="avg_4087_ines_1#7$1",focus="r")]
+[name="イネス"]このレール、それにこんな規模の積み卸しシステムなんて……
+[charslot(slot="r",name="avg_4087_ines_1#9$1",focus="r")]
+[name="イネス"]デカい奴だね。
+[Dialog]
+[charslot(slot="r",name="avg_4087_ines_1#9$1",focus="n")]
+[PlaySound(key="$d_avg_walkfast", volume=0.3)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_4088_hodrer_1#7$1",focus="l")]
+[name="ヘドリー"]隠れるぞ。
+[Dialog]
+[charslot(slot="l",name="avg_4088_hodrer_1#7$1",focus="all")]
+[Delay(time=0.2)]
+[charslot(duration=0.3)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_053",duration=0.7)]
+[charslot(slot="r",name="avg_npc_054",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_053",focus="l")]
+[name="疲れたサルカズ労働者"]次はいつだ？
+[charslot(slot="r",name="avg_npc_054",focus="r")]
+[name="寡黙なサルカズ労働者"]もうすぐだ。
+[name="寡黙なサルカズ労働者"]いつも通り、時間ぴったりだよ。
+[charslot(slot="l",name="avg_npc_053",focus="l")]
+[name="疲れたサルカズ労働者"]はぁ、こりゃ上官と相談すべきかなぁ。外でヴィクトリア人をぶっ殺してた方がマシだぜ。
+[charslot(slot="r",name="avg_npc_054",focus="r")]
+[name="寡黙なサルカズ労働者"]お前、戦いは苦手だろ。
+[charslot(slot="l",name="avg_npc_053",focus="l")]
+[name="疲れたサルカズ労働者"]言われなくても分かってらぁ！　だけどよ、この場所は……息苦しすぎるんだよ。
+[name="疲れたサルカズ労働者"]毎日毎日、本当かどうかも分からねぇような幻がいっぱい見えることだしよ。
+[name="疲れたサルカズ労働者"]ここは、まるで……渦だ。時空を超えるゴミがどんどん湧いて出てくる、渦みたいな場所だよ。
+[name="疲れたサルカズ労働者"]ウルスラが良い人で助かったぜ。あの人はちょっかい出してくることもねぇし、やたら威張り散らしたりもしねぇ。
+[name="疲れたサルカズ労働者"]軍事委員会の階級的には、最年少の少佐らしいぜ。
+[charslot(slot="r",name="avg_npc_054",focus="r")]
+[name="寡黙なサルカズ労働者"]あの人は王庭の人じゃないから、あまり出世はできないだろう。
+[charslot(slot="l",name="avg_npc_053",focus="l")]
+[name="疲れたサルカズ労働者"]テレジア殿下と摂政王だって純粋な血筋じゃねぇだろ。
+[name="疲れたサルカズ労働者"]チッ、王庭。王庭がどうしたってんだ！　カズデルってのはそんな仲良しこよしのお偉いさんどもが勝ち取った場所だってのか？
+[charslot(slot="r",name="avg_npc_054",focus="r")]
+[name="寡黙なサルカズ労働者"]けど、あの人らは皆すごい人たちばかりだ。
+[charslot(slot="l",name="avg_npc_053",focus="l")]
+[name="疲れたサルカズ労働者"]そりゃああいつらが……
+[charslot(slot="r",name="avg_npc_054",focus="r")]
+[name="寡黙なサルカズ労働者"]さあ、もうすぐ時間だぞ。
+[name="寡黙なサルカズ労働者"]機器のそばで待機して、積み卸しに備えよう。
+[Dialog]
+[PlaySound(key="$d_gen_soldiersrun",volume=0.8)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="43_g5_spinestops", screenadapt="coverall", block=true)]
+[Delay(time=2)]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_4088_hodrer_1#7$1",focus="r")]
+[charslot(slot="r",name="avg_4087_ines_1#7$1",focus="r")]
+[name="イネス"]……奴らが口にした名前、聞いた？
+[charslot(slot="l",name="avg_4088_hodrer_1#7$1",focus="l")]
+[name="ヘドリー"]ウルスラ。
+[charslot(slot="r",name="avg_4087_ines_1#7$1",focus="r")]
+[name="イネス"]まさか……
+[charslot(slot="l",name="avg_4088_hodrer_1#7$1",focus="l")]
+[name="ヘドリー"]俺たちが考えている人物だとは限らないがな。サルカズの名前は大抵ただのコードネームか、英雄の逸話から取ってきたものか、どちらかだ。
+[name="ヘドリー"]時盗みのウルスラ、鎖と鍵のウルスラ。こいつは巨獣に関するサルカズの伝説だ。誰が名を借りてたとしても不思議じゃない。
+[charslot(slot="l",name="avg_4088_hodrer_1#4$1",focus="l")]
+[name="ヘドリー"]……待てよ。時盗みの……ウルスラ？
+[charslot(slot="r",name="avg_4087_ines_1#14$1",focus="r")]
+[name="イネス"]「ヘドリー」って名前には何の由来があるの？
+[charslot(slot="l",name="avg_4088_hodrer_1#1$1",focus="l")]
+[name="ヘドリー"]何も。
+[charslot(slot="r",name="avg_4087_ines_1#3$1",focus="r")]
+[name="イネス"]ふっ、でしょうね。
+[Dialog]
+[charslot(slot="r",name="avg_4087_ines_1#3$1",focus="n")]
+[PlaySound(key="$bigbell", volume=1)]
+[delay(time=2)]
+[PlaySound(key="$bigbell", volume=1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_4088_hodrer_1#4$1",focus="l")]
+[name="ヘドリー"]鐘の音だ。
+[charslot(slot="r",name="avg_4087_ines_1#6$1",focus="r")]
+[name="イネス"]待って、あそこ……
+[name="イネス"]あれは……何？
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_erthshkng",loop=true,channel="sk",volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="あれは何だ？", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n山が震えている……",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[StopSound(channel="sk", fadetime=3)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="いや、空間が震えている。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[skipnode(mode="nofirstskip")]
+[Sticker(id="st1")]
+[interlude(channel = 2,clear = true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[Dialog]
+[Character]
+[theater(mode=true)]
+[Video(res="video/main_13/main_13_01.mp4")]
+[Dialog]
+[theater(mode=false)]
+[skipnode(mode="skip")]
+[Delay(time=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[Image(image="43_i10", screenadapt="coverall",fadetime=0, xScale=1.8, yScale=1.8, x=-500, y=130)]
+[Delay(time=1)]
+[ImageTween(image="43_i10", fadetime=0.5, xScaleFrom=1.8, yScaleFrom=1.8, xScaleTo=1.8, yScaleTo=1.8, xTo=-400, yTo=50, duration=30)]
+[playMusic(intro="$stranger_intro", key="$stranger_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[bgeffect]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="ほんの一瞬、俺の目の前に無数の光景が浮かんだ。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="宮殿の中で崩れ落ちる太った君主。腕を切り、鮮血でもって新たに生まれた幼子を育む古の血族たち。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n琥珀を焼き尽くす炎魔の炎。青銅の巨大な城の下、ひれ伏したまま切断跡だらけの柳の木を捧げる鹿角の悪魔。",block = true)]
+[Sticker(id="st1", multi = true, text="\n唯一の結び目が虚空から垂れ下がり、無数の紐が広がる。赤肌の怪物が角を切り落とし、自らの胸に突き刺している。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Image(image="43_i10", screenadapt="coverall",fadetime=0, xScale=1.8, yScale=1.8, x=-100, y=50)]
+[Delay(time=1)]
+[ImageTween(image="43_i10", fadetime=0.5, xScaleFrom=1.8, yScaleFrom=1.8, xScaleTo=1.8, yScaleTo=1.8, xTo=0, yTo=-30, duration=30)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="ぐちゃぐちゃの破片が一つになり、俺の目の前に遥かなる都市が現れた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n静かで、安らかで、車輪も付いていなければ、憎悪に染まってもいない。その美しさは――たとえ幻の中だとしても――荒唐無稽で違和感を覚えるほどだった。",block = true)]
+[Sticker(id="st1", multi = true, text="\nあれこそがカズデルだ。俺は理由もなくそう確信した。歴史のどこかに存在した、今やもう存在しない、俺の故郷だ。",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="俺はあそこへ行って、その中に入ってみたいと思った。かつての俺たちが……一体どんな生活を営んでいたのかを見てみたい。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Image(image="43_i10", screenadapt="coverall",fadetime=0, xScale=1.8, yScale=1.8, x=400, y=-50)]
+[Delay(time=1)]
+[ImageTween(image="43_i10", fadetime=0.5, xScaleFrom=1.8, yScaleFrom=1.8, xScaleTo=1.8, yScaleTo=1.8, xTo=500, yTo=-130, duration=30)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="そうして足を上げたものの、結局踏みとどまった。俺はただ、静かにそれを見ていた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nすべてが静寂へと還るまで。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそして――",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Image]
+[Delay(time=1)]
+[charslot]
+[Image(image="43_i10",screenadapt="coverall",fadetime=0,block=true)]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="あの骨だけの哀れな生き物が、そっと身体を揺らしていた。", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n神経束を伸ばし、巨大なコンテナを引っ張っていく。",block = true)]
+[Sticker(id="st1", multi = true, text="\nそれは確かに、まだ生きたままこの場所を漂っていた。",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[image]
+[charslot]
+[Delay(time=0.5)]
+[Background(image="43_g4_spinestops_ex", screenadapt="coverall", block=true)]
+[charslot(slot="l",name="avg_4088_hodrer_1#4$1")]
+[charslot(slot="r",name="avg_4087_ines_1#7$1")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_4087_ines_1#7$1",focus="r")]
+[name="イネス"]これが……「輸送船」なの？
+[name="イネス"]この大きさ……テレシスはこんなものまで……
+[charslot(slot="l",name="avg_4088_hodrer_1#4$1",focus="l")]
+[name="ヘドリー"]まさか、本当に……？
+[name="ヘドリー"]時盗みの……ウルスラ。
+[stopmusic(fadetime=3)]
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_walk_stage",channel="n",loop=false)]
+[stopsound(channel="n",fadetime=2)]
+[charslot(slot="m",name="avg_npc_1067_1#1$1",bstart=0.2,bend=0.7,duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1067_1#1$1",bstart=0.2,bend=0.7,focus="m")]
+[name="？？？"]ほんと、不思議な縁よね。
+[name="？？？"]ウルスラの伝説には、目の前のあらゆる物事の速度を緩めさせることができて、霧の中から過去を窺う巨獣がカズデルを襲ったとあるわ。
+[name="？？？"]そして最後には、英雄ウルスラはいくつもの過去を乗り越え、時空の幻の中で彷徨う同胞たちを救った。
+[name="？？？"]ただ何気なくこの名を選んだだけの私が、まさか本当にそんな伝説を目の当たりにする時が来るなんて。
+[Dialog]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1067_1#1$1",bstart=0.2,bend=0.7,focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1067_1#1$1",posfrom = "0,0", posto = "200,0",focus="n")]
+[charslot(slot = "m", name = "avg_npc_1067_1#1$1",bstart=0,bend=0,duration=2,focus="m")]
+[delay(time=2)]
+[charslot(slot = "m", name = "avg_npc_1067_1#8$1",focus="m")]
+[name="？？？"]角の磨き方がますます板についてきたじゃない、イネス。本物のサルカズと見間違えそうなくらいよ。
+[charslot]
+[charslot(slot="m",name="avg_4088_hodrer_1#7$1",focus="m")]
+[name="ヘドリー"]ウルスラ。
+[charslot(slot = "m", name = "avg_npc_1067_1#8$1",focus="m")]
+[name="ウルスラ"]ヘドリー、あんた、マンフレッド将軍を裏切ったりして心が痛まないの？
+[name="ウルスラ"]色々と噂は流れてきたけど、あんたが本当にイネスに危害を加えるわけがないのはとっくに分かってた。私のは機密性の高い仕事だから、ロンディニウムまであんたらに会いにも行けなくてね。
+[charslot(slot="m",name="avg_4087_ines_1#3$1",focus="m")]
+[name="イネス"]ふん、あなたってスカーモールの跡継ぎだったはずよね？　聞いてる感じだと、いつの間にかこんなところで骸骨の機関士になってたみたいだけど。
+[name="イネス"]そこまで仕事熱心なのは、伝説の英雄を演じられるからかしら？
+[charslot(slot = "m", name = "avg_npc_1067_1#8$1",focus="m")]
+[name="ウルスラ"]もう古いものは、そこまで魅力的ではなくなったの。
+[name="ウルスラ"]こんな名前をいまだに使い続けてるのは、過去に囚われたおバカさんだけよ。
+[charslot(slot="m",name="avg_4088_hodrer_1#7$1",focus="m")]
+[name="ヘドリー"]別の名に変えてみたらどうだ。
+[charslot(slot = "m", name = "avg_npc_1067_1#8$1",focus="m")]
+[name="ウルスラ"]で、はるばる駆けつけてくれた旧友さんたちは、一体どうやってここを見つけたのかしら？
+[name="ウルスラ"]どう？　一緒に飲みにでも行かない？
+[Dialog]
+[charslot(slot="m",name="avg_4087_ines_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_drawsword")]
+[PlaySound(key="$d_avg_exsheath",delay=0.5)]
+[delay(time=1)]
+[name="イネス"]あなた、昔は飲まなかったんじゃないかしら。
+[charslot(slot = "m", name = "avg_npc_1067_1#2$1",focus="m")]
+[name="ウルスラ"]昔……昔、ね。
+[charslot(slot = "m", name = "avg_npc_1067_1#1$1",focus="m")]
+[name="ウルスラ"]昔のあんたなら、私にナイフを向けてこなかったわ、イネス。
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

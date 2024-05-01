@@ -129,25 +129,27 @@ function WardrobeSortByTimeState:_RefreshReponseContent(obj)
 	local skinArray = {}
 	for i, shopSkin in pairs(self.stateBean.skinList) do
 		if (#shopSkin > 5) then
+			local partList = {}
 			local frontPart = {}
 			local endPart = {}
 			for j, skin in pairs(shopSkin) do
-				if (j > 5) then
-					table.insert(endPart,skin)
-				else
-					table.insert(frontPart,skin)
+				local index = (j -1)//5
+				if partList[index] == nil then
+					partList[index] = {}
 				end
+				table.insert(partList[index],skin)
 			end
-			local frontObj = {}
-			frontObj.time = i
-			frontObj.showTime = true
-			frontObj.skinList = frontPart
-			table.insert(skinArray, frontObj)
-			local endObj = {}
-			endObj.time = i
-			endObj.showTime = false
-			endObj.skinList = endPart
-			table.insert(skinArray, endObj)
+			for idx, group in pairs(partList) do
+				local result = {}
+				if (idx == 0) then
+					result.showTime = true
+				else
+					result.showTime = false
+				end
+				result.time = i
+				result.skinList = group
+				table.insert(skinArray, result)
+			end
 		else
 			local temp = {}
 			temp.time = i

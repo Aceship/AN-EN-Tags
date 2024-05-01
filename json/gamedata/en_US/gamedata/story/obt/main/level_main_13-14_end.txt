@@ -1,0 +1,509 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_black",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[playMusic(intro="$drift_intro", key="$drift_loop", volume=0.6)]
+[Delay(time=2)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[interlude(maskid = "ui_cutin_mask_horizon", style = 1, size = "1500, 420",offset = "20,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_lungmen_n", afrom = 0, ato = 1, aduration = 3, sfrom = "1.6,1.6", sto = "1.6,1.6", sduration = 0,block=true)]
+[interlude(channel = 2, type = 2, name = "bg_lungmen_n", pfrom="0,0",pto="-80,0", duration =30,block=false)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="When I was still in the L.G.D., I used to spend my afternoons going around the city.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI knew very well my duty, what I was expected to fight against.",block = true)]
+[Sticker(id="st1", multi = true, text="We wielded law and order as our weapons to curb chaos, resolve disputes, fight crime, and right wrongs.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="Back then, I thought people were just so... easily corruptible.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nAll of us are born pure and without flaw, but evil creeps in with age, like how mold corrodes every branch and leaf on a plant.",block = true)]
+[Sticker(id="st1")]
+[interlude(channel = 2, type = 1, slot = "m", offset = "-170,50", name = "cutin_char_15",sfrom = "1,1", sto = "1,1",  aduration = 2,block=false)]
+[interlude(channel = 2, type = 1, slot = "m", pfrom = "-170,50", pto = "-120,50", duration = 40)]
+[delay(time=1)]
+[Sticker(id="st1", multi = true, text="I used to think this land could be rid of evil, if we were strong enough, selfless enough.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI held that belief, until I became Infected, until I went to Lungmen's slums.",block = true)]
+[Sticker(id="st1", multi = true, text="\nAnd I realized that 'justice' is even weaker than men are.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="When mutated plants grow from dirty soil, are the flowers in the greenhouse qualified to critique their twisted forms? Do they have the authority to cut off their branches?", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThere is no way we can talk about the same kind of justice until we share the same soil.",block = true)]
+[Sticker(id="st1")]
+[Dialog]
+[stopmusic(fadetime=4)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=4, block=true)]
+[interlude(channel = 2,clear = true)]
+[Delay(time=2)]
+[Background(image="43_g11_breweryinforest_b",screenadapt="coverall")]
+[playMusic(intro="$tense_intro", key="$tense_loop", volume=0.8)]
+[playsound(key="$d_avg_churchfire", loop=true, channel="bgs",volume=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_labber")]
+[delay(time=2)]
+[PlaySound(key="$d_avg_statuecollapse",volume=0.9,delay=0.5)]
+[CameraShake(duration=2, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=3)]
+[PlaySound(key="$d_avg_riot",volume=0.9,delay=0.5)]
+[Delay(time=5)]
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m",duration=1)]
+[delay(time=2)]
+[CameraShake(duration=0.5, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false)]
+[name="Nine"]Hurry, get everyone out of the building and as far away as possible!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Desperate Refugee"]My stuff's still inside! It's all my family has!
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]What stuff?
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Desperate Refugee"]Pillows... and a mattress! The last of the belongings I took from my home!
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false)]
+[name="Percival"]Are you mad?! Follow me to the back where it's safe!
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[name="Percival"]You haven't gotten Infected yet, right? Better count yourself lucky for that!
+[charslot(slot="m",name="avg_npc_1066_1#7$1",focus="m")]
+[name="Nowell"]The crowd's so chaotic, there's so many people running out from there we don't know who's Infected and who isn't, and there might even be some wanted fugitives among them. We don't know where they even came from.
+[charslot(slot="m",name="avg_npc_1066_1#7$1",focus="m")]
+[name="Nowell"]And this fire... we're not far from the battlefield. Who knows what kind of attention we'll attract.
+[charslot(slot="m",name="avg_npc_1066_1#3$1",focus="m")]
+[name="Nowell"]We could leave right now! We're not responsible for this fire!
+[charslot(slot="m",name="avg_npc_1066_1#3$1",focus="m")]
+[name="Nowell"]Nine! Make your decision!
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="People are screaming, crying, falling into the mud, and crawling back up to their feet.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThe fire burns a rosy red behind them.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]It... It was an Infected who started the fire! Some infected exploded, so that distillery—
+[charslot(slot="m",name="avg_npc_329_1$1",focus="m")]
+[name="Nervous Infected"]What's that got to do with us?!
+[charslot(slot="m",name="avg_npc_329_1$1",focus="m")]
+[name="Nervous Infected"]Wasn't it you lot who brought that Sarkaz here?
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]Not us!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]It's all because of you Infected! We could have hidden here for so much longer if it weren't for you!
+[charslot(slot="m",name="avg_npc_329_1$1",focus="m")]
+[name="Nervous Infected"]What the bloody hell did you just say?
+[charslot(slot="m",name="avg_npc_329_1$1",focus="m")]
+[PlaySound(key="$fightgeneral")]
+[CameraShake(duration=0.3, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false)]
+[name="Nervous Infected"]Did you already forget who took you all in?!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=false)]
+[name="Panicked Refugee"]You dare strike me?!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]You—
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Enough!
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Incessant bickering.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nEndless verbal abuse.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]If you don't want to move, I can send you back into the fire.
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]R-Reunion... you and Mays are the same gang!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]If it weren't for the infected... if it weren't for you Infected...
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]And what if we <i>weren't</i> Infected?
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Open your eyes. We're not the ones who caused you to lose everything you owned and made you huddle together in an abandoned distillery with nothing but the clothes on your back.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]We're no different, except for the stones in our bodies.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]We had everything taken from us by this disease, but you? You haven't experienced how hard it gets, and yet here you are in the same wretched plight as us.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Hmph.
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]What—What'd you know?!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]Ever had a finger chewed off by a machine on the assembly line? Been thrown out of a factory? Had your house burned down by some lord?!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]You yell about the injustices you suffer, but you're not the only ones who live unfair lives!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]The viscount who burned down my home? Everyone says his son actually has Oripathy, but so what? A bigwig like him can just send his son to a fancy hospital in Columbia!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]But us? Me? He burned down my house with my two children inside it, just because I couldn't pay my taxes, just because I talked back to him!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]And no one dares to care, because he's high and mighty while I'm disabled and poor!
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]You're not the only ones enslaved by your fates, so why does it seem like you're the only ones who can actually stand up to those bullies so brazenly, and even kill them?!
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]......
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]'Why?' Because we don't want to remain enslaved in those chains.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]No one ever said you couldn't fight against it.
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]I...... I—
+[charslot(slot="m",name="avg_npc_660_1#1$1",focus="m")]
+[name="Panicked Refugee"]There's... no way I could do that, I don't have your Originium Arts.
+[charslot(slot="m",name="avg_npc_864_1#7$1",focus="m")]
+[name="Percival"]Don't make excuses for yourself. It's not like every Infected comes with powerful Arts.
+[charslot(slot="m",name="avg_npc_864_1#7$1",focus="m")]
+[name="Percival"]Nine, we're already grouping up, are we evacuating?
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Tell Red to bring a few of his men to monitor our surroundings. The battlefronts near us are currently at a deadlock, so the warring parties might be unable to spare any manpower to inspect a distant fire.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Percival, help me calm down the people who just escaped, and get their names as you examine and provide medical treatment. We'll stay here for one more day at most, to be safe.
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[name="Percival"]I got it!
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]......
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="Nowell"]I'll help. I'm familiar with burns and respiratory blockage.
+[charslot(slot="m",name="avg_npc_864_1#7$1",focus="m")]
+[name="Percival"]Oh, we haven't been able to contact Guard yet either!
+[charslot(slot="m",name="avg_npc_864_1#4$1",focus="m")]
+[name="Percival"]We're not sure if he made it out!
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Don't worry, I'll find him.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]We both made it out of Chernobog after all.
+[charslot(slot="m",name="avg_npc_1066_1#8$1",focus="m")]
+[name="Nowell"]Nine, the concentration of Originium dust particles—
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="I was already rushing towards the burning distillery.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI've entered a scene like this before, back in Lungmen. Multiple times.",block = true)]
+[Sticker(id="st1", multi = true, text="\nAs an L.G.D. officer, and as a slum resident.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[stopmusic(fadetime=3)]
+[stopsound(channel="bgs",fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="bg_lungmen_b",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="Fire means loss, and also destruction.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nI always see tears falling upon charred remains.",block = true)]
+[Sticker(id="st1", multi = true, text="\nSometimes they're from Infected, and other times they're regular citizens.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="And at moments like these, rumors will spread through the spectating crowd.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThe casualties were a few Infected. Or perhaps they were regular citizens. Maybe it was an Infected exacting revenge on his neighbors who had harassed him, or maybe his uninfected neighbors were fed up with all the sick people hiding just next door.",block = true)]
+[Sticker(id="st1", multi = true, text="\nBut no one has ever questioned why fires uptown are always extinguished as soon as possible.",block = true)]
+[Sticker(id="st1", multi = true, text="\nWhile the big blazes that destroy several buildings and cause an unclear number of casualties always happen in the slums.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="43_g11_breweryinforest_b",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="I burst through the distillery's doors, and I witness a portion of the building fiercely collapsing not far from the exit.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nA single hand extends from the metal and debris.",block = true)]
+[Sticker(id="st1", multi = true, text="\nHolding onto Guard's recorder.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=4, block=true)]
+[Character(fadetime=0)]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=2)]
+[playMusic(intro="$distressed_intro", key="$distressed_loop", volume=0.6)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="'Or... are the people we unite with, the people we want to fight alongside—'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n'Only the Infected?'",block = true)]
+[Sticker(id="st1", multi = true, text="\n'Only... them?'",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="'We Infected are just the culmination of all the decay there is... we gather as one because of our shared experience.'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n'But what unites us... is not just disease.'",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="'Let's say we meet a... noble, abusing his power to exploit the people. How would we treat him?'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n'If he was actually... an Infected?'",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="'We can't use our infection as... our sole criterion and slogan.'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n'Our companions must share the same belief... we will not only retaliate against the humiliation we've suffered, but also liberate the same people who have caused us pain.'",block = true)]
+[Sticker(id="st1", multi = true, text="\n'We're not the only ones enslaved across the lands... so we should stand with them, together.'",block = true)]
+[Sticker(id="st1", multi = true, text="\n'We need to get them... to stand with us.'",block = true)]
+[Sticker(id="st1", multi = true, text="\n'We... can't just fight against disease.'",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="'What should we actually be fighting against?'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n'What are we building here?'",block = true)]
+[Sticker(id="st1", multi = true, text="\n'I——'",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="*rustle*", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="'Many years ago, when I had just become an Infected, I really... loved drinking. Back then, Ace warned me that if I carried on with that... hobby of mine, I'd die with my drink someday.'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\n'...Haha.'",block = true)]
+[Sticker(id="st1", multi = true, text="\n'And here I am... in a distillery.'",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="'——'", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m",duration=1)]
+[delay(time=1)]
+[name="Nine"]......
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="Talulah"]Nine, you've replayed it so many times now.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]I know.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Talulah. I've been wondering... if we really did manage to build a city for the Infected, what would it look like?
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Are you sure it wouldn't be... a hospice at its core?
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]All we'd do in that city is to wait for everything to be covered in a blanket of disintegrated Originium dust, for our deaths to come one by one.
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="Talulah"]......
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="Talulah"]Yes.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]We... can't just wait for our ends to come like this.
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m",duration=1)]
+[delay(time=2)]
+[name="Nowell"]Nine, Talulah.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]What is it?
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]I'm... thinking of leaving your group for a bit. Yesterday, I met some people among the refugees who escaped from Londinium.
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]They mentioned some... matters I'm very concerned about, that maybe someone I've been seeking this whole time is still hiding in there.
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="Nowell"]So I'll be heading over.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Londinium isn't safe at all right now.
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="Nowell"]I think Talulah already told you about me.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]You're a <i>long-lived.</i>
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]Yes. There's no way for me to die.
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]I've become more and more sick of this reality of mine.
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="Talulah"]...You want to kill yourself?
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="Talulah"]How did you get your 'longevity' in the first place?
+[charslot(slot="m",name="avg_npc_1066_1#9$1",focus="m")]
+[name="Nowell"]<i>Longevity,</i> heh.
+[charslot(slot="m",name="avg_npc_1066_1#9$1",focus="m")]
+[name="Nowell"]How did I first come to realize the joke that fate played on me?
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]I had my share of happy days too.
+[name="Nowell"]I came to know the one and only wife I've had, had children, a family, devoted my heart and soul to Originium Arts research... of course, I was the primary focus of my studies.
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]My children grew up while we grew old. Everything was going as natural order of things.
+[charslot(slot="m",name="avg_npc_1066_1#6$1",focus="m")]
+[name="Nowell"]Until my wife died in an accident, war broke out, and I was forced to leave my children. I suddenly realized in the years I spent as a refugee that I hadn't changed at all.
+[charslot(slot="m",name="avg_npc_1066_1#6$1",focus="m")]
+[name="Nowell"]The emperors started a war, a king was hanged years later, and then the dukes' conspiracies came to light. Afterwards the Sarkaz...
+[charslot(slot="m",name="avg_npc_1066_1#6$1",focus="m")]
+[name="Nowell"]I didn't change a single bit in all those years, until today.
+[charslot(slot="m",name="avg_npc_1066_1#6$1",focus="m")]
+[name="Nowell"]I have nightmares everyday, and in them I hear a voice I don't recognize... or maybe it's every voice I recognize calling out to me together.
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]'Pain makes you live forever, and only happiness can kill you.'
+[charslot(slot="m",name="avg_npc_1066_1#5$1",focus="m")]
+[name="Nowell"]Actually, I was already aware of this early on, but what can I even do to feel happiness and relief?
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="Nowell"]Especially after witnessing death after death, and experiencing tragedy after tragedy?
+[charslot(slot="m",name="avg_npc_1066_1#1$1",focus="m")]
+[name="Nowell"]We're in an era of suffering and despair...so I shall go look for those hiding behind the curtain.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]......
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]I have no right to make you stay.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]But there's no need to say your goodbyes so quickly. If you wish to return to the nexus of the war... we might not have to go our separate ways.
+[charslot(slot="m",name="avg_npc_1066_1#4$1",focus="m")]
+[name="Nowell"]Is that so? I thought you would return to Columbia after gathering up enough hands...
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Running to another place will never put a stop to anything.
+[charslot(slot="m",name="avg_npc_1066_1#10$1",focus="m")]
+[name="Nowell"]Fair enough. Perhaps the foes we're facing are fundamentally similar.
+[charslot(slot="m",name="avg_npc_1066_1#10$1",focus="m")]
+[name="Nowell"]Also... leave a bouquet of flowers for Guard on my behalf.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]I will.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_864_1#6$1",focus="m")]
+[name="Percival"]Nine...
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Percival, you...
+[charslot(slot="m",name="avg_npc_864_1#3$1",focus="m")]
+[name="Percival"]I'm fine! I just... got some smoke in my eyes.
+[charslot(slot="m",name="avg_npc_864_1#8$1",focus="m")]
+[name="Percival"]We're done registering the third batch of Infected, and all seven of them have gotten medicine from this workshop before.
+[charslot(slot="m",name="avg_npc_864_1#3$1",focus="m")]
+[name="Percival"]They told me many Infected used to gather and live in a tiny village near this forest to access the workshop.
+[charslot(slot="m",name="avg_npc_864_1#3$1",focus="m")]
+[name="Percival"]When the workshop was destroyed, most of them left, or died... but some still remained close by.
+[charslot(slot="m",name="avg_npc_864_1#3$1",focus="m")]
+[name="Percival"]They were all drawn here by the huge blaze.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Indeed.
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="I look at the petals given to me by the person they called Mays.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThe Reunion doctor here spent their life here for these herbs, and according to her, Guard also died for them.",block = true)]
+[Sticker(id="st1", multi = true, text="\nI recognize most of these plants. The Infected used to chew them for pain relief before modern pharmaceutical companies were a thing.",block = true)]
+[Sticker(id="st1", multi = true, text="\nPerhaps the effectiveness of our crude drugs can improve by referencing these, even if just by a little...",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="We can't simply wait for our end, watch ourselves wither away.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nThere's more work to be done.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Guard... we didn't manage a clean conclusion on our last discussion, but I have to make a decision on my own now.
+[charslot(slot="m",name="avg_npc_864_1#1$1",focus="m")]
+[name="Percival"]Um, Nine.
+[charslot(slot="m",name="avg_npc_864_1#6$1",focus="m")]
+[name="Percival"]We want to hold a little farewell rite for Guard, and it won't take much time to do so.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Right.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]I'll make some flowers bloom here.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Sticker(id="st1", multi = true, text="The enormous blaze burns throughout the night.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nWe finally abandon our efforts to recover Guard's body.",block = true)]
+[Sticker(id="st1")]
+[Sticker(id="st1", multi = true, text="Red finds a beautiful sturdy tree, its trunk perfectly pointing up toward the sky.", x=300,y=270,  alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nHe digs a hole and buries that cute towel of Guard's in it.",block = true)]
+[Sticker(id="st1", multi = true, text="\nFlowers grow around the freshly dug soil.",block = true)]
+[Sticker(id="st1", multi = true, text="\nThe floral patterns on that towel were too crude. A garden like this suits him better.",block = true)]
+[Sticker(id="st1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]......
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]I'm done questioning everyone that came out from the workshop.
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]The Sarkaz who died in the underground warehouse... the one who rode the motorbike.
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]He was murdered, by a few Infected Victorians.
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]They were driven out of their homes by the Sarkaz. Some of them lost their loved ones too, so they felt rightfully furious, and I, uh, calmed them down a little.
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]What's the plan?
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]......
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Back in Ursus, everyone used to think it was through the power of unity that Reunion managed to fight together with the patrol units, taxmen and mine guards.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]That wasn't the case. We simply had no other choice left to break the knife pointed at our throats.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Reunion used to act on our enmity, but our targets of hate have both become increasingly vague and broad.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]The Infected have no homeland... no identity, no bloodline. We can't just carry on with just a provocative slogan.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]We need to set clearer guidelines and principles.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Guard and I... discussed about this before.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]He said to ignore the Infected in positions of power, because they still enjoy exploiting others with their authority and see disease as only a tool.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]And that we should also grant the same kind of liberation to any oppressed people, and not just our sick brethren. Because they can fight alongside us, and we'll need their strength to put up a fight.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Chernobog has taught us enough.
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]He was always thinking so much about this, I thought...
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]I thought he could really take us to achieve some great feats.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]He will, even if he's dead. He merely died when he was still seen as insignificant and deplorable.
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]What about those murderers?
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]People who violently vent their grievances unprovoked cannot join us. It was war that turned them to brutality, even if they were just Victorians before.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]If we let this slide... what will happen to our group next?
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Ursine, Columbian, Victorian, Leithanian. Feline, Perro, Liberi, Caprinae, Sarkaz.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Power should be distinctly directed towards a common goal than become cracks of resentment that give others a chance to dismantle us from within.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Buldrokkas'tee and Ursus should have taught us this lesson.
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="Talulah"]......
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]They will be banished.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]They will have to find their own paths by themselves.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Reunion will make sure of it.
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]I understand.
+[charslot(slot="m",name="avg_npc_334",focus="m")]
+[name="Red"]I'll relay that to everyone, and... I'll handle those murderers too.
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=1)]
+[charslot(duration=1)]
+[delay(time=2)]
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="Talulah"]......
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]...Talulah. There's an Infected I used to know, who comes from a eminent lineage and held a distinguished position.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]But she threw it all away, in her quest for 'fairness'.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]You know her.
+[charslot(slot="m",name="char_011_talula_1#3",focus="m")]
+[name="Talulah"]......
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Everyone here has heard of your ideas. Reunion's earliest vision, exaggerated, distorted.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]But what we want is not a nomadic city for the infected.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]What we want is to send a message to all the aristocrats, and oppressors, those trying to divide, suppress, and eliminate us—
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]The blade they so despise hangs high above their necks.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Our goodbyes... have already been said. This isn't the first, nor will it be the last.
+[charslot(slot="m",name="avg_npc_043_1#2",focus="m")]
+[name="Nine"]Let's go. Our work in Victoria isn't done yet.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Character]
+[Image]
