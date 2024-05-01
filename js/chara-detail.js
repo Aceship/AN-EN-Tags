@@ -1568,15 +1568,15 @@
                 if(opKey=="char_1037_amiya3"){
                     zoombtn.push($(`<button class="btn ak-c-black btn-dark" style="margin:2px;padding:2px; height: 50px; width: 50px;" onclick="ChangeZoomChara('char_1037_amiya3_2')"><img src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'></button>`))
                     if(i == 0){
-                        $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3.png");
+                        $("#charazoom").attr("src","https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3_2.png");
                         $('#charazoom').modal('handleUpdate')
                         
                         tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
-                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3.png'>"
+                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3_2.png'>"
                             +"</div>"));
                     } else {
                         tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
-                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3.png'>"
+                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/char_1037_amiya3_2.png'>"
                             +"</div>"));
                     }
                 }
