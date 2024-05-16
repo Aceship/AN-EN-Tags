@@ -103,6 +103,9 @@ function getSex(name){
     console.log(name)
     if(currCharaBook){
         var currinfo = currCharaBook.storyTextAudio[0].stories[0].storyText.split("\n")[1].split("【性别】")[1]
+        if(!currinfo){
+            currinfo = currCharaBook.storyTextAudio[0].stories[0].storyText.split("\n")[1].split("【设定性别】")[1]
+        }
         return currinfo
     }
     return null
