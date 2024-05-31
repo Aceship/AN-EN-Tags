@@ -37,7 +37,7 @@
     </div>
     <script>
         $(function(){
-          $('#nav-placeholder').load('nav.html');
+            $('#nav-placeholder').load('nav.html');
         });
         $(window).on("load", function () {
             setTimeout(function () {
@@ -82,12 +82,17 @@
                 <span class="en">Load saved data</span>
             </button>
             <br>
-            <div style='display: inline-flex;'> 
+            <div style='display: inline-flex;flex-wrap: wrap'> 
                 <input class="my-1" type="text" style="background-color:#444444;width:410px;border-width:0;border-radius:5px;padding:5px;color:white;" id="updater" placeholder="Put the adress of another akevolve to update the current" />
-            <button type="button" class="btn btn-sm my-1" style="background-color:#444444;position:relative;border-radius:5px;color:white;margin: 2px;" id="btn-update">Update</button>
+                <button type="button" class="btn btn-sm my-1" style="background-color:#444444;position:relative;border-radius:5px;color:white;margin: 2px;" id="btn-update">Update</button>
             </div>
             <hr class="my-1" />
             <!-- <p class="cn my-0"><small><a class="save" href="?n&h&o">右键或长按复制我，保存输入信息</a></small></p> -->
+            <div style='display: inline-flex;flex-wrap: wrap'> 
+                <input class="my-1" type="text" style="background-color:#444444;width:410px;border-width:0;border-radius:5px;padding:5px;color:white;" id="genurl" placeholder="Press [Generate Url] botton when you ready to export and save" readonly/>
+                <button type="button" class="btn btn-sm my-1" style="background-color:#444444;position:relative;border-radius:5px;color:white;margin: 2px;height: 35px;white-space: nowrap;" id="btn-genurl" onclick="genUrl(true)">Generate Url</button>
+                <button type="button" class="btn btn-sm my-1" style="background-color:#444444;position:relative;border-radius:5px;color:white;margin: 2px;height: 35px;white-space: nowrap;" id="btn-copy" onclick="copy2clip('#genurl')">Copy to Clipboard</button>
+            </div>
             <p class="en my-0"><small><a class="save" href="?n&h&o">Copy me with right click or long press, to save your input</a></small></p>
         </div>
         <div class="col-12 mt-3 p-1 p-sm-2">
@@ -203,11 +208,17 @@
                         let v = parseInt($(e).find(".in-lack").val());
                         if (isNaN(v) || v === 0) $(e).hide();
                     });
+                    for(i=1;i<=5;i++){
+                        if ($('.ak-card-group.lvl-'+i).length==$('.lvl-'+i+'.ak-card-group:hidden').length) $(".w-100.lvl-" + i).hide()
+                    }
                 }else{
-                    $(".ak-card-group").each((_, e) => {
+                    /*$(".ak-card-group").each((_, e) => {
                         let v = parseInt($(e).find(".in-lack").val());
                         if (isNaN(v) || v === 0) $(e).show();
-                    });
+                    });*/
+                    for(i=1;i<=5;i++){
+                        if ($(".btn-opt[opt-id='"+i+"']").hasClass("btn-primary")) $(".lvl-" + i).show()
+                    }
                 }
             });
             $(document).on("click", "#btn-reset", () => {
@@ -261,33 +272,38 @@
             $(document).on("click", "#btn-update", () => {
                 let url = $("#updater").val();
                 console.log(url);
-                $("#updater").val("");
+                if (url.match(/^https\:\/\/aceship\.github\.io\/AN-EN-Tags\/akevolve\.html\?n\=(.+)\&h\=(.+)\&o\=(.+)$/g)){
+                    $("#updater").val("");
 
-                let names = Object.values(ms)
-                                  .filter(a => !a.hidden)
-                                  .sort((a, b) => (b.level - a.level))
-                                  .map(a => a.name_cn);
+                    let names = Object.values(ms)
+                                    .filter(a => !a.hidden)
+                                    .sort((a, b) => (b.level - a.level))
+                                    .map(a => a.name_cn);
 
-                let need_begin = url.search("[&?]n=") + 3;
-                let need_end = checkOrDefault(url.indexOf("&", need_begin), a => a !== -1, url.length);
-                let need = url.slice(need_begin, need_end)
-                              .split("+")
-                              .filter(a => !isNaN(Number(a)))
-                              .reduce((vout, vin, i) => (vout[names[i]] = parseInt(vin), vout), {});
+                    let need_begin = url.search("[&?]n=") + 3;
+                    let need_end = checkOrDefault(url.indexOf("&", need_begin), a => a !== -1, url.length);
+                    let need = url.slice(need_begin, need_end)
+                                .split("+")
+                                .filter(a => !isNaN(Number(a)))
+                                .reduce((vout, vin, i) => (vout[names[i]] = parseInt(vin), vout), {});
 
-                let have_begin = url.search("[&?]h=") + 3;
-                let have_end = checkOrDefault(url.indexOf("&", have_begin), a => a !== -1, url.length);
-                let have = url.slice(have_begin, have_end)
-                              .split("+")
-                              .filter(a => !isNaN(Number(a)))
-                              .reduce((vout, vin, i) => (vout[names[i]] = parseInt(vin), vout), {})
+                    let have_begin = url.search("[&?]h=") + 3;
+                    let have_end = checkOrDefault(url.indexOf("&", have_begin), a => a !== -1, url.length);
+                    let have = url.slice(have_begin, have_end)
+                                .split("+")
+                                .filter(a => !isNaN(Number(a)))
+                                .reduce((vout, vin, i) => (vout[names[i]] = parseInt(vin), vout), {})
 
-                calc(need, have,true);
+                    calc(need, have,true);
+                }
             });
 
             loadMaterials();
         });
             
+        window.onload = function() {
+            $("#btn-load").click()
+            };
 
             function regDropdown(el){
                 localStorage.setItem('gameRegion', el.attr("value"));
@@ -360,7 +376,7 @@
                                     +     '<div class="ak-title ak-shadow-small" style="z-index:5;display:inline-block;white-space: nowrap;">'+item2["name_"+lang]+'</div>'  
                                     +         '<img class="card-img-bg" style=";z-index:3;position:absolute" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/bg/item-'+ i + '.png">'
                                     +         '<div class="ak-img-container" style="vertical-align:middle;padding-left:0px;margin:0px">'  
-                                    +             '<img class="card-img-top col-12" style="z-index:4;display: block;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/material/'+ ms[n]['id'] + '.png">'
+                                    +             '<img class="card-img-top col-12" style="z-index:4;display: block;" src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/'+((ms[n]["id"]<68)?'material/'+ms[n]["id"]:'items/'+ms[n]["IconID"])+'.png">'
                                     +         '</div>'       
                                     + isOnStage
                                     +   '</div>'
@@ -380,7 +396,7 @@
                                     +                   `<input type="text" min=0 class="form-control form-control-sm mt-1 in-mc   ak-mid" style="display: inline-block;border-radius:2px;padding:0;text-align:center;background:#333;border:transparent;color:#DDD;height:35px;width:40px" placeholder="${{ 'cn': '已有', 'en': 'Have', 'kr': '보유량' }[lang]}" id="have-${cardid}"/>`
                                     +                   `<button type="button" class="btn btn-sm ak-btn" style='display: inline-block;width:10px;margin:auto;padding:0;background: #BBB;height:35px;margin-top:-4px;border-radius:0px 2px 2px 0px' onclick='Addition(1,"have-${cardid}")'>+</button>`
                                     +`</div>`
-                                    +                   `<input type="text"         class="form-control form-control-sm mt-1 in-lack ak-mid" style="border-radius:2px;padding:0;text-align:center;background:#222;border:transparent;color:#DDD" placeholder="${{ 'cn': '仍需', 'en': 'Lack', 'kr': '부족량' }[lang]}" id="lack-${cardid}"/>`
+                                    +                   `<input type="text" class="form-control form-control-sm mt-1 in-lack ak-mid" style="border-radius:2px;padding:0;text-align:center;background:#222;border:transparent;color:#DDD" placeholder="${{ 'cn': '仍需', 'en': 'Lack', 'kr': '부족량' }[lang]}" id="lack-${cardid}" readonly/>`
                                     +               '</div>'    
                                     +           '</form>'
                                     
@@ -403,7 +419,7 @@
                             //         + '</div></form>'
                             //         + '</div></div>');
                         });
-                        $("#row-m").append('<div class="w-100 my-1" style="padding:2px;background:#111;border-radius:2px"/>');
+                        $("#row-m").append('<div class="w-100 my-1 lvl-' + i +'" style="padding:2px;background:#111;border-radius:2px"/>');
                     }
                 })});
             }
@@ -418,12 +434,20 @@
                 
             }
 
-            function genUrl() {
+            function genUrl(onclick=false) {
                 allos = [];
                 for (let i = 1; i <= 5; i++) {
                     if ($(".btn-opt[opt-id='" + i + "']").hasClass("btn-primary")) allos.push(i);
                 }
-                $(".save").attr("href", "?n=" + allns.join("+") + "&h=" + allhs.join("+") + "&o=" + allos.join("+"));
+                $(".save").attr("href", "?n=" + allns.join("+") + "&h=" + allhs.join("+") + "&o=" + allos.join("+"))
+                if(onclick) $("#genurl").val(window.location.origin+window.location.pathname+"?n=" + allns.join("+") + "&h=" + allhs.join("+") + "&o=" + allos.join("+"));
+            }
+
+            function copy2clip(){
+                if ($("#genurl").val()) {
+                    navigator.clipboard.writeText($("#genurl").val())
+                    alert("Copied URL to Clipboard");
+                }
             }
 
             function changeUILanguage(){
