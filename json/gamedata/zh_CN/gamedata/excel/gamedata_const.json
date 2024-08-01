@@ -948,6 +948,8 @@
     "ro3.greent": "<color=#4ffaa5>{0}</color>",
     "ro3.bluet": "<color=#0085ff>{0}</color>",
     "ro3.bosst": "<color=#ffffff>{0}</color>",
+    "ro4.lose": "<color=#FF6E6E>{0}</color>",
+    "ro4.get": "<color=#28bfe5>{0}</color>",
     "rc.title": "<color=#FFFFFF>{0}</color>",
     "rc.subtitle": "<color=#FFC90E>{0}</color>",
     "rc.em": "<color=#FF7F27>{0}</color>",
@@ -1024,7 +1026,7 @@
   "commonPotentialLvlUpCount": 4,
   "weeklyOverrideDesc": "",
   "voucherDiv": 5,
-  "recruitPoolVersion": 15,
+  "recruitPoolVersion": 16,
   "v006RecruitTimeStep1Refresh": 1577172600,
   "v006RecruitTimeStep2Check": 1577154600,
   "v006RecruitTimeStep2Flush": 1577649600,
@@ -1296,10 +1298,20 @@
       "termName": "战栗",
       "description": "被阻挡后无法进行普通攻击"
     },
+    "ba.fear": {
+      "termId": "ba.fear",
+      "termName": "恐惧",
+      "description": "无法被阻挡并四散逃跑"
+    },
     "ba.dt.burning2": {
       "termId": "ba.dt.burning2",
       "termName": "灼燃损伤·我方",
       "description": "累计满时爆发（普通、精英敌人1000点、领袖2000点累计值），敌人立即受到7000点元素伤害且期间法术抗性-20。10秒冷却"
+    },
+    "ba.addash": {
+      "termId": "ba.addash",
+      "termName": "移动",
+      "description": "不退场，以当前血量在目标位置部署"
     },
     "cc.bd_A_1": {
       "termId": "cc.bd_A_1",
@@ -1464,7 +1476,7 @@
     "cc.g.abyssal": {
       "termId": "cc.g.abyssal",
       "termName": "深海猎人",
-      "description": "包含以下干员\n歌蕾蒂娅、斯卡蒂、幽灵鲨、安哲拉"
+      "description": "包含以下干员\n歌蕾蒂娅、斯卡蒂、幽灵鲨、安哲拉、乌尔比安"
     },
     "cc.g.psk": {
       "termId": "cc.g.psk",
@@ -1474,7 +1486,7 @@
     "cc.g.karlan": {
       "termId": "cc.g.karlan",
       "termName": "喀兰贸易",
-      "description": "包含以下干员\r\n银灰、灵知、初雪、崖心、角峰、讯使、耶拉、极光、锏"
+      "description": "包含以下干员\n银灰、灵知、初雪、崖心、角峰、讯使、耶拉、极光、锏"
     },
     "cc.g.sui": {
       "termId": "cc.g.sui",
@@ -1534,7 +1546,7 @@
     "cc.c.skill": {
       "termId": "cc.c.skill",
       "termName": "部分技能",
-      "description": "包含以下技能\r\n左膀右臂、S.W.E.E.P.、零食网络、清理协议、替身、必要责任、护卫、小小的领袖、独善其身、笑靥如春、金盏花诗会、捍卫之道"
+      "description": "包含以下技能\n左膀右臂、S.W.E.E.P.、零食网络、清理协议、替身、必要责任、护卫、小小的领袖、独善其身、笑靥如春、金盏花诗会、捍卫之道"
     },
     "cc.t.strong2": {
       "termId": "cc.t.strong2",
@@ -1625,11 +1637,16 @@
       "termId": "cc.gvial",
       "termName": "嘉维尔",
       "description": "包含以下干员\n百炼嘉维尔、嘉维尔"
+    },
+    "cc.tra.pepe": {
+      "termId": "cc.tra.pepe",
+      "termName": "特别独占订单",
+      "description": "由佩佩提供的特殊贵金属订单，该订单的获取时长固定，收益恒定，所需赤金交付数为0"
     }
   },
   "storyReviewUnlockItemLackTip": "事相碎片数量不足，请前往采购凭证区或活动期间商店获取",
-  "dataVersion": "50.0.0",
-  "resPrefVersion": "50d0d0",
+  "dataVersion": "53.0.0",
+  "resPrefVersion": "53d0d0",
   "announceWebBusType": "ak_announcement",
   "defaultMinContinuousBattleTimes": 1,
   "defaultMaxContinuousBattleTimes": 6,
@@ -1700,7 +1717,8 @@
     "hunter": "PHYSICAL",
     "primcaster": "MAGICAL",
     "loopshooter": "PHYSICAL",
-    "hammer": "PHYSICAL"
+    "hammer": "PHYSICAL",
+    "alchemist": "PHYSICAL"
   },
   "classicProtectChar": [
     "char_252_bibeak",

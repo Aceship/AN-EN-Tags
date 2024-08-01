@@ -1,51 +1,30 @@
--- local BaseHotfixer = require ("Module/Core/BaseHotfixer")
--- local eutil = CS.Torappu.Lua.Util
-local xutil = require('xlua.util')
----@class BattleControllerHotfixer:HotfixBase
 local BattleControllerHotfixer = Class("BattleControllerHotfixer", HotfixBase)
 
-local isHotFixed = false
-
-local function SetTargetOptions(self)
-  local targetOptions = self._targetOptions
-  targetOptions:SetSourceTypeAndConvertTargetType(CS.Torappu.Battle.SideType.ALLY);
-  self._targetOptions = targetOptions
-end
-
-local function Execute(self, blackboard, sourceType, snapshot)
-  local ok = xpcall(SetTargetOptions, debug.traceback, self)
-  return self:Execute(blackboard, sourceType, snapshot)
-end
-
-local function TouchAOEHeal()
-  if isHotFixed == false then
-    -- We do this just for touch AOEHeal's instance, to fix this bug for xlua
-    --https://github.com/Tencent/xLua/issues/622
-    local ret, buff = CS.Torappu.Battle.BuffDB.instance:TryGetTemplate("breeze_range")
-    local action = buff.eventToActions[CS.Torappu.Battle.Buff.Event.ON_BUFF_START]
-    local temp = action.Value[0]
-
-    xutil.hotfix_ex(CS.Torappu.Battle.Action.Nodes.AOEHeal, "Execute", function(self, blackboard, sourceType, snapshot)
-      return Execute(self, blackboard, sourceType, snapshot)
-    end)
-    isHotFixed = true
+local function SetTempLifePoint_Fix(self, value, side)
+  if not self.isPlaying then
+    return
   end
-end
 
-local function StartGame(self)
-  local ok = xpcall(TouchAOEHeal, debug.traceback)
-  self:StartGame()
+  local pSide = (side == CS.Torappu.PlayerSide.DEFAULT) and self.playerSide or side
+
+  local temp = self.m_tempLifePointDict[pSide]
+  local encrypted = CS.CodeStage.AntiCheat.ObscuredTypes.ObscuredInt.Encrypt(value)
+  temp:SetEncrypted(encrypted)
+  self.m_tempLifePointDict[pSide] = temp
 end
 
 function BattleControllerHotfixer:OnInit()
-  self:Fix_ex(CS.Torappu.Battle.BattleController, "StartGame", function(self)
-    return StartGame(self)
-  end)
+    xlua.private_accessible(CS.Torappu.Battle.BattleController)
+
+    self:Fix_ex(CS.Torappu.Battle.BattleController, "SetTempLifePoint", function(self, value, side)
+        local ok, errorInfo = xpcall(SetTempLifePoint_Fix, debug.traceback, self, value, side)
+        if not ok then
+            LogError("[BattleControllerHotfixer] fix" .. errorInfo)
+        end
+    end)
 end
 
 function BattleControllerHotfixer:OnDispose()
-  xlua.hotfix(CS.Torappu.Battle.Action.Nodes.AOEHeal, "Execute", nil)
-  isHotFixed = false
 end
 
 return BattleControllerHotfixer
