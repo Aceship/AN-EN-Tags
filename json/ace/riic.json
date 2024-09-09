@@ -304,6 +304,11 @@
 		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in all Dorms +0.05 (Only highest effect becomes active)",
 		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in all Dorms <@cc.vup>+0.05</> (Only highest effect becomes active)"
 	},
+	"control_dorm_rec[002]": {
+		"name": "Heart Patrol",
+		"desc": "When stationed at the Command Center, mood recovery per hour of all operators in all Dorms +0.05 (Only highest effect becomes active)",
+		"descformat": "When stationed at the Command Center, mood recovery per hour of all operators in all Dorms <@cc.vup>+0.05</> (Only highest effect becomes active)"
+	},
 	"control_train_spd[010]": {
 		"name": "S.W.E.E.P. Director",
 		"desc": "When stationed at the Command Center and there is an operator being trained in the Training Station, increase the skill training speed by +5% (Only highest effect becomes active)",
@@ -403,6 +408,16 @@
 		"name": "Elegy Recharging·α",
 		"desc": "When stationed at a Power Station, drone recovery +10%",
 		"descformat": "When stationed at a Power Station, drone recovery <@cc.vup>+10%</>"
+	},
+	"power_rec_spd[025]": {
+		"name": "Dome Logistics Management·α",
+		"desc": "When stationed at a Power Station, drone recovery +15%",
+		"descformat": "When stationed at a Power Station, drone recovery <@cc.vup>+15%</>"
+	},
+	"power_rec_spd[026]": {
+		"name": "Dome Logistics Management·β",
+		"desc": "When stationed at a Power Station, drone recovery +20%",
+		"descformat": "When stationed at a Power Station, drone recovery <@cc.vup>+20%</>"
 	},
 	"power_rec_drone[000]": {
 		"name": "Patrol Framework",
@@ -514,6 +529,16 @@
 		"desc": "When stationed at a Craft Station, production +30%",
 		"descformat": "When stationed at a Craft Station, production <@cc.vup>+30%</>"
 	},
+	"manu_prod_spd[004]": {
+		"name": "Command Familiar·α",
+		"desc": "When stationed at a Craft Station, production +20%",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+20%</>"
+	},
+	"manu_prod_spd[014]": {
+		"name": "Command Familiar·β",
+		"desc": "When stationed at a Craft Station, production +30%",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+30%</>"
+	},
 	"manu_skill_spd1[000]": {
 		"name": "Consciousness Agreement",
 		"desc": "When stationed at a Craft Station, production +5% for every Standardization-type skill in the same Craft Station",
@@ -621,6 +646,11 @@
 	},
 	"manu_prod_limit&cost[010]": {
 		"name": "Hoarder",
+		"desc": "When stationed at a Craft Station, storage capacity +10 and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Craft Station, storage capacity <@cc.vup>+10</> and mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"manu_prod_limit&cost[011]": {
+		"name": "Dauntless",
 		"desc": "When stationed at a Craft Station, storage capacity +10 and mood reduction per hour -0.25",
 		"descformat": "When stationed at a Craft Station, storage capacity <@cc.vup>+10</> and mood reduction per hour <@cc.vup>-0.25</>"
 	},
@@ -739,6 +769,11 @@
 		"desc": "When stationed at a Craft Station, production +1% for every 3 Worldly Plight",
 		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>3</> <$cc.bd_b1><@cc.rem>Worldly Plight</></>"
 	},
+	"manu_prod_spd_bd[400]": {
+		"name": "Unimaginable Tastiness",
+		"desc": "When stationed at a Craft Station, production +1% for every 1 Monster Cuisine",
+		"descformat": "When stationed at a Craft Station, production <@cc.vup>+1%</> for every <@cc.vup>1</> <$cc.bd_dungeon><@cc.rem>Monster Cuisine</></>"
+	},
 	"manu_formula_spd[000]": {
 		"name": "Plan to Victory",
 		"desc": "When stationed at a Craft Station, increase production of EXP cards by +25%",
@@ -783,6 +818,11 @@
 		"name": "Metal Crafts·α",
 		"desc": "When stationed at a Craft Station, increase production of precious metals by +30%",
 		"descformat": "When stationed at a Craft Station, increase production of <@cc.kw>precious metals</> by <@cc.vup>+30%</>"
+	},
+	"manu_formula_spd&dorm&lv[000]": {
+		"name": "United Sand Bandits",
+		"desc": "When stationed at a Craft Station, increase production of precious metals by +1% for every level of every Dorm",
+		"descformat": "When stationed at a Craft Station, increase production of <@cc.kw>precious metals</> by <@cc.vup>+1%</> for every level of every Dorm"
 	},
 	"manu_formula_spd&cost[000]": {
 		"name": "Little Stray Thoughts",
@@ -894,6 +934,11 @@
 		"desc": "When stationed at a Trade Station, order acquisition efficiency from other operators reduced to 0, however each operator grants +45% order acquisition efficiency to self. Additionally, mood reduction per hour of all operators +0.25",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency from other operators <@cc.vdown>reduced to 0</>, however each operator grants <@cc.vup>+45%</> order acquisition efficiency to self. Additionally, mood reduction per hour of all operators <@cc.vdown>+0.25</>"
 	},
+	"trade_ord_pepe[000]": {
+		"name": "Discerning Eye",
+		"desc": "When stationed at a Trade Station, obtain Special Exclusive Orders at fixed intervals (does not count as a default order). This order type is unaffected by order acquisition efficiency",
+		"descformat": "When stationed at a Trade Station, obtain <$cc.tra.pepe><@cc.kw>Special Exclusive Orders</></> at fixed intervals (does not count as a default order). This order type is <@cc.vdown>unaffected by order acquisition efficiency</>"
+	},
 	"trade_ord_spd_variable[000]": {
 		"name": "Investment Talks",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +4% for every 1 order limit provided by operators",
@@ -924,10 +969,20 @@
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +2% for each level of every Dorm",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+2%</> for each level of every Dorm"
 	},
+	"trade_ord_limit&trade&lv[000]": {
+		"name": "Multifaceted Success",
+		"desc": "When stationed at a Trade Station, order limit +1 for every level of the current Trade Station",
+		"descformat": "When stationed at a Trade Station, order limit <@cc.vup>+1</> for every level of the current Trade Station"
+	},
 	"trade_ord_spd&meet[000]": {
 		"name": "Volsinii Trade",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +25%. Additionally, further increase order acquisition efficiency by +5% for every level of Reception, capping at +40%",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+25%</>. Additionally, further increase order acquisition efficiency by <@cc.vup>+5%</> for every level of Reception, capping at <@cc.vup>+40%</>"
+	},
+	"trade_ord_spd&meet[010]": {
+		"name": "Natural-born Consultant",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +15%. Additionally, further increase order acquisition efficiency by +5% for every level of Reception, capping at +30%",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+15%</>. Additionally, further increase order acquisition efficiency by <@cc.vup>+5%</> for every level of Reception, capping at <@cc.vup>+30%</>"
 	},
 	"trade_ord_spd&formula[000]": {
 		"name": "Precise Scheduling",
@@ -1014,6 +1069,21 @@
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +30% and order limit +1",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+30%</> and order limit <@cc.vup>+1</>"
 	},
+	"trade_ord_spd&limit[034]": {
+		"name": "Order Distribution·α",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +20%",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+20%</>"
+	},
+	"trade_ord_spd&limit[035]": {
+		"name": "Grand Bazaar Management",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +30% and order limit +1",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+30%</> and order limit <@cc.vup>+1</>"
+	},
+	"trade_ord_spd&limit[036]": {
+		"name": "Half-foot Guild Representative",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +30% and order limit +1",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+30%</> and order limit <@cc.vup>+1</>"
+	},
 	"trade_ord_spd&limit[100]": {
 		"name": "Pressure",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +20% and order limit -2 (to a minimum of 1)",
@@ -1048,6 +1118,11 @@
 		"name": "Sorrowful Harmonies",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +1% for every 2 Silent Resonance",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+1%</> for every <@cc.vup>2</> <$cc.bd_B><@cc.rem>Silent Resonance</></>"
+	},
+	"trade_ord_spd_bd[100]": {
+		"name": "Familiar Scent",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +1% for every 1 Monster Cuisine",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+1%</> for every <@cc.vup>1</> <$cc.bd_dungeon><@cc.rem>Monster Cuisine</></>"
 	},
 	"trade_ord_limit&cost[000]": {
 		"name": "Negotiation",
@@ -1093,6 +1168,11 @@
 		"name": "Appraiser's Methods",
 		"desc": "When stationed at a Trade Station, increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
 		"descformat": "When stationed at a Trade Station, <@cc.kw>increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
+	},
+	"trade_ord_wt&cost[003]": {
+		"name": "Know the Ropes",
+		"desc": "When stationed at a Trade Station, slightly increase the appearance rate of high volume orders of Pure Gold (affected by work duration) and mood reduction per hour -0.25",
+		"descformat": "When stationed at a Trade Station, <@cc.kw>slightly increase</> the appearance rate of <@cc.kw>high volume orders of Pure Gold</> (affected by work duration) and mood reduction per hour <@cc.vup>-0.25</>"
 	},
 	"trade_ord_spd&share[000]": {
 		"name": "Advocate",
@@ -1168,6 +1248,16 @@
 		"name": "Self-made Trader·β",
 		"desc": "When stationed at a Trade Station, order acquisition efficiency +30%. Additionally, order acquisition efficiency +5% respectively if Ines or W are stationed in any Workplace (excluding Assistants)",
 		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+30%</>. Additionally, order acquisition efficiency <@cc.vup>+5%</> respectively if <@cc.kw>Ines</> or <@cc.kw>W</> are stationed in any <$cc.c.room3><@cc.kw>Workplace</></> (excluding Assistants)"
+	},
+	"trade_ord_spd_ext[000]": {
+		"name": "Land Contact Representative·α",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +25%. Additionally, order acquisition efficiency +5% if Ulpianus is in the base (excluding Assistant)",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+25%</>. Additionally, order acquisition efficiency <@cc.vup>+5%</> if <@cc.kw>Ulpianus</> is in the base (excluding Assistant)"
+	},
+	"trade_ord_spd_ext[001]": {
+		"name": "Land Contact Representative·β",
+		"desc": "When stationed at a Trade Station, order acquisition efficiency +30%. Additionally, order acquisition efficiency +10% if Ulpianus is in the base (excluding Assistant)",
+		"descformat": "When stationed at a Trade Station, order acquisition efficiency <@cc.vup>+30%</>. Additionally, order acquisition efficiency <@cc.vup>+10%</> if <@cc.kw>Ulpianus</> is in the base (excluding Assistant)"
 	},
 	"workshop_proc_probability[000]": {
 		"name": "Focus·α",
@@ -1619,6 +1709,11 @@
 		"desc": "When stationed at the Training Station, every operator from R6S Attackers in the base (excluding Assistants) increases the skill training speed by +10% (caps at 4 operators)",
 		"descformat": "When stationed at the Training Station, every operator from <$cc.g.Attack><@cc.kw>R6S Attackers</></> in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+10%</> (caps at <@cc.kw>4</> operators)"
 	},
+	"train_spd_power_down[000]": {
+		"name": "“Methods Should Be Effective”",
+		"desc": "When stationed at the Training Station, mood reduction per hour +1 and every operator from Abyssal Hunters in the base (excluding Assistants) increases the skill training speed by +10% (caps at 5 operators)",
+		"descformat": "When stationed at the Training Station, mood reduction per hour <@cc.vdown>+1</> and every operator from <$cc.g.abyssal><@cc.kw>Abyssal Hunters</></> in the base (excluding Assistants) increases the skill training speed by <@cc.vup>+10%</> (caps at <@cc.kw>5</> operators)"
+	},
 	"train_spd_doubleProf[000]": {
 		"name": "Blade and Gun",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Guard and Sniper operators by +30%",
@@ -1633,6 +1728,11 @@
 		"name": "Banshee's Power",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Caster and Supporter operators by +30%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Caster</> and <@cc.kw>Supporter</> operators by <@cc.vup>+30%</>"
+	},
+	"train_spd_doubleProf[201]": {
+		"name": "“Questions Should Be Precise”",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Guard and Supporter operators by +30%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Guard</> and <@cc.kw>Supporter</> operators by <@cc.vup>+30%</>"
 	},
 	"train_spd_doubleProf[110]": {
 		"name": "Red Dragon's Blood",
@@ -1869,6 +1969,16 @@
 		"desc": "When stationed at the Training Station, increase the skill training speed of Medic operators by +30%. If the trainee's subclass is Wandering Medic, increase the skill training speed by an additional +45%",
 		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Medic</> operators by <@cc.vup>+30%</>. If the trainee's subclass is <@cc.kw>Wandering Medic</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
 	},
+	"train_spd&profession3[182]": {
+		"name": "Medic Specialization·α",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Medic operators by +30%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Medic</> operators by <@cc.vup>+30%</>"
+	},
+	"train_spd&profession3[183]": {
+		"name": "Combat Techniques: Chain Medic",
+		"desc": "When stationed at the Training Station, increase the skill training speed of Medic operators by +30%. If the trainee's subclass is Chain Medic, increase the skill training speed by an additional +45%",
+		"descformat": "When stationed at the Training Station, increase the skill training speed of <@cc.kw>Medic</> operators by <@cc.vup>+30%</>. If the trainee's subclass is <@cc.kw>Chain Medic</>, increase the skill training speed by an additional <@cc.vup>+45%</>"
+	},
 	"train_spd&profession2[110]": {
 		"name": "Tactics Studies",
 		"desc": "When stationed at the Training Station, increase the skill training speed of Vanguard operators by +30%. If the current training is for Mastery 1, increase the skill training speed by an additional +45%",
@@ -2094,6 +2204,11 @@
 		"desc": "When stationed at a Dorm, every 1 Dream is converted into 1 Sensory Information",
 		"descformat": "When stationed at a Dorm, every <@cc.vup>1</> <$cc.bd_a1_a2><@cc.rem>Dream</></> is converted into <@cc.vup>1</> <$cc.bd_a1><@cc.rem>Sensory Information</></>"
 	},
+	"dorm_rec_bd_dungeon[000]": {
+		"name": "Great Senshi Canteen",
+		"desc": "When stationed at a Dorm, gain 1 Monster Cuisine for every level of the current Dorm",
+		"descformat": "When stationed at a Dorm, gain <@cc.vup>1</> <$cc.bd_dungeon><@cc.rem>Monster Cuisine</></> for every level of the current Dorm"
+	},
 	"dorm_rec_all[010]": {
 		"name": "Violin Solo",
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.15 per hour (When stacked, only the highest effect becomes active)",
@@ -2119,6 +2234,11 @@
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.15 per hour (When stacked, only the highest effect becomes active)",
 		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.15</> per hour (When stacked, only the highest effect becomes active)"
 	},
+	"dorm_rec_all[017]": {
+		"name": "Meditation Ceremony·α",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.15 per hour (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.15</> per hour (When stacked, only the highest effect becomes active)"
+	},
 	"dorm_rec_all[020]": {
 		"name": "Winter General",
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.2 per hour (When stacked, only the highest effect becomes active)",
@@ -2133,6 +2253,16 @@
 		"name": "Lionheart Sovereign",
 		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.2 per hour (When stacked, only the highest effect becomes active)",
 		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.2</> per hour (When stacked, only the highest effect becomes active)"
+	},
+	"dorm_rec_all[027]": {
+		"name": "Meditation Ceremony·β",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.2 per hour (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.2</> per hour (When stacked, only the highest effect becomes active)"
+	},
+	"dorm_rec_all&tag[000]": {
+		"name": "Experienced Chef",
+		"desc": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by +0.15 per hour. If the target is an operator from Team Laios, increase the mood recovery by an additional +0.15 (When stacked, only the highest effect becomes active)",
+		"descformat": "When stationed at a Dorm, increase mood recovery of all operators within that dorm by <@cc.vup>+0.15</> per hour. If the target is an operator from <$cc.tag.dungeon><@cc.kw>Team Laios</></>, increase the mood recovery by an additional <@cc.vup>+0.15</> (When stacked, only the highest effect becomes active)"
 	},
 	"dorm_rec_all&single[000]": {
 		"name": "Have a Drink",
@@ -2454,6 +2584,16 @@
 		"desc": "When stationed at Human Resource, accumulation of networking resources +20%. Whenever a refresh count is gained, increase the chance of obtaining clues from Glasgow Group (affected by work duration and Open Recruitment slots)",
 		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+20%</>. Whenever <@cc.vup>a refresh count</> is gained, increase the chance of obtaining clues from <@cc.kw>Glasgow Group</> (affected by work duration and Open Recruitment slots)"
 	},
+	"hire_spd_dorm&lv[000]": {
+		"name": "Maylander Detective·α",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +5%. Additionally, further increase accumulation of networking resources by +1% for every level of every Dorm",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+5%</>. Additionally, further increase accumulation of networking resources by <@cc.vup>+1%</> for every level of every Dorm"
+	},
+	"hire_spd_dorm&lv[010]": {
+		"name": "Maylander Detective·β",
+		"desc": "When stationed at Human Resource, accumulation of networking resources +5%. Additionally, further increase accumulation of networking resources by +2% for every level of every Dorm",
+		"descformat": "When stationed at Human Resource, accumulation of networking resources <@cc.vup>+5%</>. Additionally, further increase accumulation of networking resources by <@cc.vup>+2%</> for every level of every Dorm"
+	},
 	"meet_spd[000]": {
 		"name": "Clue Collection·α",
 		"desc": "When stationed at Reception, clue collection speed +10%",
@@ -2476,6 +2616,11 @@
 	},
 	"meet_spd[0020]": {
 		"name": "Clue Collection·β",
+		"desc": "When stationed at Reception, clue collection speed +20%",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+20%</>"
+	},
+	"meet_spd[021]": {
+		"name": "Curiosity",
 		"desc": "When stationed at Reception, clue collection speed +20%",
 		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+20%</>"
 	},
@@ -2678,6 +2823,11 @@
 		"name": "Intelligence Expert",
 		"desc": "When stationed at Reception, clue collection speed +5%. Additionally, further increase clue collection speed by +5% for every 1 Intelligence Reserve",
 		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+5%</>. Additionally, further increase clue collection speed by <@cc.vup>+5%</> for every <@cc.vup>1</> <$cc.bd_ash><@cc.rem>Intelligence Reserve</></>"
+	},
+	"meet_spd_bd[001]": {
+		"name": "Motivation on a Full Stomach",
+		"desc": "When stationed at Reception, clue collection speed +2% for every 1 Monster Cuisine",
+		"descformat": "When stationed at Reception, clue collection speed <@cc.vup>+2%</> for every <@cc.vup>1</> <$cc.bd_dungeon><@cc.rem>Monster Cuisine</></>"
 	},
 	"meet_spd_hast[000]": {
 		"name": "Shadow Gathering",
