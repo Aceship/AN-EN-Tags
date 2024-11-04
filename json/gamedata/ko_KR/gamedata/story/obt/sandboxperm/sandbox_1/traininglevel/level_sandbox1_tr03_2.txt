@@ -1,0 +1,37 @@
+[HEADER(is_tutorial=true, is_skippable=false)] xb1教学关3_2
+[InputBlocker(blockInput=true)]
+[Battle.SwitchToDefaultUIState]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_aguard")]도구를 사용하니 확실히 채집 능률이 증가했네. 우리도 함께 도와줄게.
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=9.2, offsetX=4, time=1)]
+[Delay(time=5)]
+[InputBlocker(blockInput=true)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]채집에는 체력 소모가 크니까 다들 지금쯤 목이 마를 거야. 그래서 <@tu.kw>맑은 물</>을 확보해야 해.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]야외 생존에 있어 맑은 물은 필수 자원이지만, 인력으로 얻을 수는 없어.
+[Tutorial(focusX=-139, focusY=61, focusWidth=118, focusHeight=122, anchor="BottomRight", \
+          animStyle="Highlight", focusStyle="HighlightRect", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama")] \
+이럴 때 <@tu.kw>메탈 크랩 펌프</>가 필요하지.
+[InputBlocker(blockInput=true, rightStart=true, cardIndex=0, validWidth=112, validHeight=116)]
+[Battle.EnsureMinCost(cost=5)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-140, startY=61, startAnchor="BottomRight", endAnchor="Center", endX=-240, endY=-172)] \
+이곳에 배치해!
+[InputBlocker(blockInput=true)]
+[Delay(time=1)]
+[InputBlocker(blockInput=true, validX=175, validY=-17, validWidth=703, validHeight=425)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-12, startY=-22, endX=-5, endY=163)] \
+안심해, 어느 쪽으로 배치해도 펌프는 알아서 잘 작동하니까.
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=3)]
+[Battle.Pause]
+[Tutorial(tileY=7, tileX=2, focusWidth=125, focusHeight=125, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama")] \
+배치하면 일정 시간마다 맑은 물을 채집해. 그런데 메탈 크랩 펌프 사용에는 시간제한이 있어서 일정 시간이 지나면 무효가 돼.
+[Tutorial(dialogHead="$avatar_zumama")]일단 작전을 계속 진행하자.
+[Battle.Pause(pause=false)]

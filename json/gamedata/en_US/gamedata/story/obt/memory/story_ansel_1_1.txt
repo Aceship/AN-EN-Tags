@@ -1,0 +1,581 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_corridor",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro",key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Rhodes Island Messenger"]Is this everything, Ansel?
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]Yes. Reserve Op Team A4 is heading to Iron Fist City on a mission next month, so I don't need to trouble you to bring anything home for me.
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Rhodes Island Messenger"]I know, but... don't you need to send some letters to your family?
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]No... I'm alright.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Just take that letter to my friend. Ngala will figure it out for me.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]Oh, right, only the big parcel is for him. This small box of antibiotics is for you. It'll be useful if you get bitten by a gloompincer out in the wilderness. Be sure to keep it on you.
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Rhodes Island Messenger"]Hah, if I run into your family, then I'll really be in trouble.
+[charslot(slot="m",name="avg_npc_002",focus="m")]
+[name="Rhodes Island Messenger"]Alright, I'm off then, Ansel. Thanks a lot.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Right, I ought to get back to prepping myself.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Phew...
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[playMusic(intro="$frontline_intro",key="$frontline_loop", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot="m",name="char_211_adnach_1#5",focus="m")]
+[name="Adnachiel"]Melantha, I can't see you from here. There's no way I can lay down covering fire!
+[charslot(slot="m",name="char_211_adnach_1#5",focus="m")]
+[name="Adnachiel"]Two small gloompincers approaching from the northeast! Hold back, Cardigan!
+[charslot(slot="m",name="char_211_adnach_1#5",focus="m")]
+[name="Adnachiel"]Keep to Ansel's medic support plan!
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Don't worry, I won't let Ansel down!
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Sniiiiff... Sniff... I smell it! It's a lure!
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Melantha, the beast tamer controlling these gloompincers is definitely to the northeast. Might be hiding in the darkness of that mine entrance!
+[charslot(slot="m",name="char_208_melan_1#5",focus="m")]
+[name="Melantha"]Roger that. Steward... fall back, leave this to me.
+[charslot(slot="m",name="char_208_melan_1#5",focus="m")]
+[name="Melantha"]Can you take charge of escorting the target with Ansel?
+[dialog]
+[charslot]
+[charslot(slot="l",name="avg_212_ansel_1#5$1",focus="all",duration=1)]
+[charslot(slot="r",name="avg_npc_243",focus="all",duration=1)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]Please lie down, ma'am.
+[charslot(slot="m",name="avg_npc_243",focus="m")]
+[name="Panicked Merchant"]Lie down? Are you kidding me? Doctor, take us back to the vehicle!
+[charslot(slot="m",name="avg_npc_243",focus="m")]
+[name="Panicked Merchant"]Did you not see the bugs and gloompincers? Did you not hear the bombs exploding?
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]Please, trust my teammates.
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]I'll be able to support them from this position, and they'll protect us better than the vehicle's sheet metal.
+[charslot(slot="m",name="avg_npc_243",focus="m")]
+[name="Panicked Merchant"]A-Are you sure?
+[dialog]
+[charslot]
+[PlaySound(key="$grenade_explosion", volume=1)]
+[PlaySound(key="$d_sp_ballista", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[CameraShake(duration=1.7, xstrength=20, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_243",focus="m")]
+[name="Panicked Merchant"]Eeek!
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]The gloompincer that got you was venomous. I need you to remain calm and lie down to slow the bloodflow and get you treated. That's how we'll prevent permanent damage to your nervous system.
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]But don't worry, I have an antidote with me.
+[charslot(slot="m",name="avg_npc_243",focus="m")]
+[name="Panicked Merchant"]W-Well...
+[charslot(slot="m",name="avg_npc_243",focus="m")]
+[name="Panicked Merchant"]Okay. I'll trust you, Doctor.
+[dialog]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(duration=1)]
+[delay(time=2)]
+[name="Panicked Merchant"]Are you sure you've got the right antidote? What if you mistook the type of gloompincer? W-Will you compensate me?
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]I'm sure I didn't mistake anything. I'm very familiar with the beasts of Rim Billiton.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Alright, now please relax...
+[charslot]
+[name="Panicked Merchant"]Wait, D-Doctor, they're coming, over there—
+[name="Steward"]Ansel, duck!
+[dialog]
+[PlaySound(key="$grenade_explosion", volume=1)]
+[PlaySound(key="$d_sp_ballista", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[CameraShake(duration=1.7, xstrength=20, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=3)]
+[charslot]
+[name="Steward"]I dealt with the threats, and I've brought another casualty to safety!
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]Very good, just give me a moment!
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Ma'am, your injection is done. You can rest for a while.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Now I need to treat the other injured on your team. Once all the treatment is finished, we'll proceed with the escort according to the mission briefing.
+[charslot]
+[name="Panicked Merchant"]*Pant* *pant*...
+[name="Panicked Merchant"]Thank you...
+[name="Panicked Merchant"]Doctor, has anyone ever told you that, at your age, as calm as you are, you're a little... intimidating?
+[charslot(slot="m",name="avg_212_ansel_1#3$1",focus="m")]
+[name="Ansel"]What?
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]No, I'm just very focused on doing what I need to do.
+[charslot]
+[name="Panicked Merchant"]But you really are impressive. You must've saved a lot of lives.
+[charslot(slot="m",name="avg_212_ansel_1#6$1",focus="m")]
+[name="Ansel"]Well...
+[charslot]
+[Dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot="m",name="char_210_stward_1#3",focus="m",duration=1)]
+[delay(time=1.5)]
+[name="Steward"]Ansel, what's your status?
+[charslot(slot="m",name="char_210_stward_1#2",focus="m")]
+[name="Steward"]Why'd you turn all gloomy?
+[charslot(slot="m",name="avg_212_ansel_1#3$1",focus="m")]
+[name="Ansel"]...Oh.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]The nutritional supplements are in the bag. I'll get to your wound straight away.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Sorry, I was just distracted for a moment.
+[charslot(slot="m",name="char_210_stward_1#6",focus="m")]
+[name="Steward"]Hah, it just goes to show that your teammates are trustworthy.
+[charslot(slot="m",name="char_210_stward_1#6",focus="m")]
+[name="Steward"]I'm fine, just a scratch.
+[charslot(slot="m",name="char_210_stward_1#4",focus="m")]
+[name="Steward"]But you... have you found some time to recharge a bit?
+[charslot(slot="m",name="char_210_stward_1#4",focus="m")]
+[name="Steward"]*Sigh*... Ever since you came back to Rim Billiton, you've been working like this, day and night. You're forgetting to take care of yourself.
+[charslot(slot="m",name="char_210_stward_1#4",focus="m")]
+[name="Steward"]Surely you've had several operators coming to pick up those night shifts?
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]I'm just used to the rhythm of night work.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]I'm just...
+[charslot(slot="m",name="avg_212_ansel_1#6$1",focus="m")]
+[name="Ansel"]I'm just thinking, do I deserve the appreciation I get? As a doctor?
+[charslot(slot="m",name="avg_212_ansel_1#6$1",focus="m")]
+[name="Ansel"]Do you think I've saved enough lives?
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="28_g4_embassy",screenadapt="showall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=2)]
+[playMusic(intro="$tech_intro",key="$tech_loop", volume=0.6)]
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]The physical results are in, Melantha, nothing to worry about. Everyone's in good shape, no injuries sustained during the mission, and no worsened infections.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]I'll tell the others in the morning... huh?
+[charslot(slot="m",name="avg_212_ansel_1#3$1",focus="m")]
+[name="Ansel"]Why are you all still awake? Get to bed!
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]Especially you, Cardigan. Don't forget we're going to the Originium processing plant tomorrow! We can't have you falling asleep in the meeting again!
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]But we're not done tasting all these weird Rim Billitonian snacks!
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Sugar papaya leaf rolls, fried dandelion fowlbeast egg...
+[charslot(slot="m",name="char_210_stward_1#6",focus="m")]
+[name="Steward"]Who wants to try this next one? Hibiscus warned us away from it, saying it's bad for your blood sugar. And Ansel says not to eat it, but he's always stocking up on the stuff. Any takers?
+[charslot(slot="m",name="char_211_adnach_1#2",focus="m")]
+[name="Adnachiel"]After that description, who would say no?
+[charslot(slot="m",name="char_210_stward_1#6",focus="m")]
+[name="Steward"]Hah!
+[charslot(slot="m",name="char_210_stward_1#6",focus="m")]
+[name="Steward"]—Here, Iron Fist City artisanal peppermint candy. Take a piece.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]Thanks...
+[charslot(slot="m",name="char_210_stward_1#3",focus="m")]
+[name="Steward"]It's tough, what you said today, that thought weighing on your mind.
+[charslot(slot="m",name="char_210_stward_1#3",focus="m")]
+[name="Steward"]If I were you, I would definitely hesitate before walking into that house.
+[charslot(slot="m",name="char_210_stward_1#3",focus="m")]
+[name="Steward"]'If you don't take my place, can I really call you my successor?' That uncle of yours is real tough. Not easy to answer at all.
+[charslot(slot="m",name="char_210_stward_1#4",focus="m")]
+[name="Steward"]—But you can't let it get to you, you still have to take care of yourself.
+[charslot(slot="m",name="char_211_adnach_1#2",focus="m")]
+[name="Adnachiel"]Yeah. Even if you prove yourself a great doctor to your uncle, how are the rest of us supposed to buy it when you tell us to take care of ourselves?
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]Alright... I'll finish my midnight snack and then get some rest! Really! No more passing out on the stairs!
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Melantha, do you think we can believe Ansel this time?
+[charslot(slot="m",name="char_208_melan_1#3",focus="m")]
+[name="Melantha"]Hm... maybe just this once.
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Alright then, Ansel, we'll go on ahead! Call me if you fall down the stairs, I'll catch you before you hit the bottom!
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_crowdrun",volume=0.5)]
+[delay(time=3)]
+[name="Cardigan"]Does Ansel still think we don't know Cautuses aren't a naturally nocturnal race?
+[name="Steward"]Alright, nothing wrong with him sneaking in some late night snacks. It'll help him hold up through PT...
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]*sigh*...
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_telephonering", channel="slide",volume=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]—Hello, you've reached the Rhodes Island branch office in Iron Fist City, Rim Billiton.
+[charslot]
+[name="Passionate Male Voice"]G'day, I'm looking for...
+[name="Passionate Male Voice"]Wait a minute, Ansel? You're the one answering the phone, right? I knew it was you as soon as I heard your voice! You're here!
+[charslot(slot="m",name="avg_212_ansel_1#3$1",focus="m")]
+[name="Ansel"]—Ngala?!
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]How long has it been since I last heard your voice?
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]I thought you would've sent word by Messenger telling me when you had time.
+[charslot]
+[name="Ngala"]Hah, I saw your company's number in the Yellow Pages, so I went for a phone booth.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]The one by your house with all the cartoon stickers? Or the one near the refinery that got burned?
+[charslot]
+[name="Ngala"]Yeah, nah, the roads here have all been redone. Don't worry, I'll show you around in a few days.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]How did you know I'm just about to rush out the door?
+[charslot]
+[name="Ngala"]You think I don't know you?
+[name="Ngala"]Aw, hearing you in such good spirits puts my heart at ease. Sounds like that company is treating you right.
+[name="Ngala"]You remember when you were interning two years ago? We couldn't find anything about your company.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]Yeah, I was worried too. The Yellow Pages even had the address and number for the grocer downstairs, so I thought maybe the company was a scam.
+[charslot]
+[name="Ngala"]Ever since you learned that canned spinach doesn't actually make you stronger, you've been slow to trust.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]Ugh, let's not talk about that... I was so let down, after all those hopeful years scarfing down spinach.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]You know, when I was a kid, I really wanted to get into some kind of athletics. Football or factory parkour or something.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]How many times did I say it? I wanted to be like you, tall and strong from a young age, putting in all that work for the family without getting tired.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]But all I could manage was running with the boys for a few minutes before I got winded and dizzy and ended up watching from the sidelines.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]If you hadn't suggested giving me a megaphone to do commentary, I would've probably been standing there alone all that time.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]That time we all decided to sneak out at night to hit the slag field and watch our neighborhood team do the tug-of-war with the boys across the way...
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]The floodlights on the slag field were glaringly bright. Everybody was cheering, and I had my little notebook, diligently jotting down all the slogans and comments I thought could be cool.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]It all seems ridiculous now, of course.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]Hah, sorry, I ended up going into all that on our call here...
+[charslot(slot="m",name="avg_212_ansel_1#3$1",focus="m")]
+[name="Ansel"]Ngala...? Are you still there?
+[charslot]
+[name="Ngala"]Oh... Uh, yeah. No worries.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Do you... feel sick at all? Any discomfort?
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Have you been taking the medicine I sent you? Remember the self-assessment criteria for Oripathy I mentioned a few times before?
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]When do you think you might be free? If you can't go to a hospital for a proper exam, I could at least do a basic checkup...
+[charslot]
+[name="Ngala"]Pfft! Hahaha! Settle down, Ansel.
+[name="Ngala"]How's your own health, by the way? You had, what was it...? Anemia?
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Oh, me? I'm fine, nothing to worry about at all. I may have been diagnosed with an incurable congenital disease, but I'm only exhibiting mild symptoms...
+[charslot]
+[name="Ngala"]But, Doctor, that's not how you put it when you found out I had Oripathy.
+[charslot(slot="m",name="avg_212_ansel_1#6$1",focus="m")]
+[name="Ansel"]......
+[charslot]
+[name="Ngala"]You said something like 'current methods can't cure it,' I think?
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]Yes, you're right.
+[charslot]
+[name="Ngala"]I know you want to save more lives with your skills and prove to your uncle that what you're doing is meaningful.
+[name="Ngala"]But didn't you start studying medicine to save yourself?
+[name="Ngala"]Don't let it get to you.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]I...
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]...Maybe I am a bit too eager now that I'm back home. I've got this idea that everything I'm doing has to do with my family and friends here.
+[charslot]
+[name="Ngala"]Sure, just don't worry so much. Do as you always did, focus on what you can actually accomplish, and leave the rest to your chums.
+[name="Ngala"]Let's meet up tomorrow night. The usual place. We'll have a late snack.
+[Dialog]
+[PlaySound(key="$d_avg_phonestop", volume=0.9)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]I don't know... are you sure?
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_undergroundF",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_1186_1#1$1",focus="m")]
+[name="Company Representative"]Sorry, Rhodes Islanders, I'm still finding it hard to see the value in the Oripathy suppressants you're proposing.
+[charslot(slot="m",name="avg_npc_1186_1#1$1",focus="m")]
+[name="Company Representative"]And, as you can see, we have new protective equipment for the workers and two new assembly lines. We have no plans to upgrade equipment or increase Oripathy protection measures.
+[charslot(slot="m",name="avg_npc_1186_1#1$1",focus="m")]
+[name="Company Representative"]Your proposal is just too expensive. And it comes with too much we don't need.
+[charslot(slot="m",name="avg_212_ansel_1#3$1",focus="m")]
+[name="Ansel"]Please wait, ma'am...!
+[charslot(slot="m",name="avg_npc_1186_1#1$1",focus="m")]
+[name="Company Representative"]We've been over this a dozen times now, Doctor.
+[charslot(slot="m",name="avg_npc_1186_1#1$1",focus="m")]
+[name="Company Representative"]Let's leave it here for today.
+[dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(duration=2)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_212_ansel_1#6$1",focus="m")]
+[name="Ansel"]......
+[charslot(slot="m",name="char_208_melan_1#3",focus="m")]
+[name="Melantha"]She's wrong, Ansel. They don't have reliable channels for the workers to buy their medicine.
+[charslot(slot="m",name="char_208_melan_1#3",focus="m")]
+[name="Melantha"]But... you gave such a detailed and professional explanation. Why couldn't you convince them?
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]It was always going to end like that.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]In Rim Billiton, people tend to trust the experience of their forebears and the word of mouth from their neighbors.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Especially when it comes to medicine, things are rough for Rim Billitonians, but the medical sector is pretty underdeveloped here.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]So you get people saying things are less serious than they are, mistakenly telling each other they don't need a doctor...
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Everyone wants to solve their minor issues at home. So you get quack miracle cures suddenly becoming popular in this neighborhood or that.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]I was prepared for this from the beginning.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]But I still feel... a little disappointed.
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Oh, but you were so excited when you heard this company was interested in collaborating.
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]You prepared so much. You even tried to work with a third-party logistics provider to reduce costs.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]Yes, though I had some selfish motives here...
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]A big Rim Billitonian company like this will have tens of thousands of workers. I can't help but think some of the workers who get this Oripathy protection could be my friends and relatives.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]I really wanted to prove that becoming a doctor meant something, was worth something, that I could do something for them.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]It's really disappointing.
+[charslot(slot="m",name="char_208_melan_1",focus="m")]
+[name="Melantha"]Don't worry, Ansel... This day is done, but tomorrow is a new day.
+[charslot(slot="m",name="char_208_melan_1",focus="m")]
+[name="Melantha"]You can try again, like you always do.
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Yeah! If you believe you're right, just stick with it until you convince them, right? I kind of thought you'd chase her down and keep going, actually.
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Besides, you said it yourself, Ansel, you want to save more lives. You can't call that selfish.
+[charslot(slot="m",name="avg_212_ansel_1#6$1",focus="m")]
+[name="Ansel"]......
+[charslot(slot="m",name="avg_212_ansel_1#6$1",focus="m")]
+[name="Ansel"]I just...
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Background(image="46_g3_rmbttown",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[name="Solemn Man"]Ansel. Can you make sense of Uncle Donnie's report?
+[name="Ansel"]Hm... There are abnormal shadows in his organs, taken together with his lung issues, these imaging tests show...
+[name="Solemn Man"]In a word, it's Oripathy, right?
+[name="Ansel"]Yes, Uncle.
+[name="Solemn Man"]Is there anything you can do?
+[name="Ansel"]No...
+[name="Ansel"]I told him to quit working in the mines, but...
+[name="Solemn Man"]Not everyone has the same options you do.
+[name="Solemn Man"]I hope you make the right choice. Choose to do what you need to do.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[Background(image="bg_undergroundF",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Maybe I just know the place too well, so no matter how hard I try, I can't do anything.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]Sorry, it's time for me to meet an old high school chum. You all head back to the office.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="46_g3_rmbttown",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_212_ansel_1#3$1",focus="m")]
+[name="Ansel"]Huh, it's just like Ngala said, even the old phone booth here got renovated... Hah, is it supposed to be carrot colored now?
+[charslot(slot="m",name="avg_212_ansel_1#3$1",focus="m")]
+[name="Ansel"]The grocer's little window still has that black oil smudge.
+[charslot(slot="m",name="avg_212_ansel_1#2$1",focus="m")]
+[name="Ansel"]Hm, I wonder if Ngala likes soda? I'll buy him a bottle...
+[dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1185_1#1$1",focus="all",duration=1)]
+[charslot(slot="r",name="avg_npc_007",focus="all",duration=1)]
+[delay(time=3)]
+[charslot]
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]......
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]...If you need medicine, you'll turn to the black market when you get desperate, right?
+[dialog]
+[charslot]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(slot="r",name="avg_npc_1185_1#1$1",focus="all")]
+[charslot(slot="l",name="avg_212_ansel_1#1$1",afrom=0,ato=1,posfrom="-140,0",posto="0,0",duration=1,focus="all")]
+[delay(time=3.5)]
+[charslot(slot="l",name="avg_212_ansel_1#1$1",focus="l")]
+[name="Ansel"]I'm sorry, please hear me out.
+[charslot(slot="l",name="avg_212_ansel_1#1$1",focus="l")]
+[name="Ansel"]Sir, do you need Oripathy medicine?
+[charslot(slot="r",name="avg_npc_1185_1#1$1",focus="r")]
+[name="Infected Worker"]Um, well, yes... my partner really needs it.
+[charslot(slot="r",name="avg_npc_1185_1#1$1",focus="r")]
+[name="Infected Worker"]He's right over there, but he can't stand...
+[charslot(slot="l",name="avg_212_ansel_1#1$1",focus="l")]
+[name="Ansel"]......
+[dialog]
+[charslot]
+Ansel looks and spies a familiar figure.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[delay(time=1)]
+[Sticker(id="st1", multi = true, text="Hey! Melantha! Cardigan! Are you in?! I'm taking my friend in to the office for a checkup!", x=300,y=300, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1")]
+Shhh... It's okay, Ansel, it just hurt for a little bit. That worker made a big fuss over nothing.
+Don't worry about me, it's not worth your time. We haven't met in ages, and you still have to tell me about all the places you've been.
+[Dialog]
+[Sticker(id="st1", multi = true, text="What happened to the medicine I sent you? Do you know how bad you look right now?", x=300,y=300, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nYou haven't been Infected for long. Why are you deteriorating so quickly? You're a mine engineer, don't you have protective gear?",block = true)]
+[Sticker(id="st1")]
+Relax, you only go to the doctor for serious stuff, right? I'm fine. It doesn't hurt that bad.
+There's a lot of workers out there sicker than me. With wives and kids too... I pass the medicine off to them.
+[Dialog]
+[Sticker(id="st1", multi = true, text="No, Ngala, how many times have I told you, you can't...", x=300,y=300, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nPain is the body's warning system, not a normal thing you're supposed to bear with. And doctors aren't just for serious illness...",block = true)]
+[Sticker(id="st1")]
+Oh come on, your company's medicine really works, I've heard all sorts of great things about it. Ansel, you really can be proud of what you're doing. I know I am!
+[Dialog]
+[Sticker(id="st1", multi = true, text="......", x=300,y=300, alignment="left", size=24, delay=0.04, width=700,block = true)]
+[Sticker(id="st1", multi = true, text="\nHow is it that I really can't do anything?",block = true)]
+[Sticker(id="st1")]
+[dialog]
+[delay(time=2)]
+[Background(image="21_G9_rhodes_xqoffice",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=2)]
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]Was that man just now... Ansel's friend?
+[charslot(slot="m",name="char_209_ardign",focus="m")]
+[name="Cardigan"]He's in bad shape... Under his jacket, he's got lots of exposed Originium crystals on his arms and chest.
+[charslot(slot="m",name="char_211_adnach_1",focus="m")]
+[name="Adnachiel"]But he's pretty lucid. Meaning it's not an acute infection, he's developed that over time.
+[charslot(slot="m",name="char_211_adnach_1",focus="m")]
+[name="Adnachiel"]*sigh*... I think I get why Ansel wanted to be a doctor so badly, and why is family was so reluctant.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m",duration=2)]
+[delay(time=3)]
+[charslot(slot="m",name="char_208_melan_1#3",focus="m")]
+[name="Melantha"]Ansel...
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]...I've got the test results.
+[charslot(slot="m",name="char_211_adnach_1",focus="m")]
+[name="Adnachiel"]It's hard to say right to the guy's face. We could help you talk your way out of it, if you want.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]No need... I already told him.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]He's been mentally prepared for it for a long time. In a mining district like this, Infected keep on working together. I'm sure he's seen... lots of similar cases.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]He's just too used to it all.
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]If only I'd come back a bit earlier... if only I'd been harsher when telling him to assess his condition and take his medication...
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]If only I had realized that pain perception varies from person to person, if only I could've changed the mindset that doctors are only for serious illness...
+[charslot(slot="m",name="avg_212_ansel_1#5$1",focus="m")]
+[name="Ansel"]If only medical standards in Rim Billiton were higher, and if only awareness of Oripathy protection measures was more widespread...
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]His condition has progressed from mid- to late-stage now. At this point, any suppression methods I know are no longer effective.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]He might have two years, or one... I couldn't put it off any longer.
+[charslot(slot="m",name="char_211_adnach_1",focus="m")]
+[name="Adnachiel"]......
+[charslot(slot="m",name="char_208_melan_1#3",focus="m")]
+[name="Melantha"]I'm sorry, Ansel... I wish I could help you, or comfort you, but...
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]No, it's alright. I'm the one who's sorry.
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]I shouldn't have told you all this...
+[charslot(slot="m",name="avg_212_ansel_1#4$1",focus="m")]
+[name="Ansel"]...I'm the sickly one who always needed help, why is it someone else who gets struck down by illness first?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Background(image="46_g3_rmbttown",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="Ngala"]Don't pull me, Ansel, I'm worried you could pass out on the street at any moment.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_bridge",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="char_211_adnach_1#2",focus="m")]
+[name="Adnachiel"]Yeah, I'm a better shot with my crossbow now, seeing as I'm stronger and all. Meaning I can support you from a greater distance.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_trainingcom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="char_210_stward_1",focus="m")]
+[name="Steward"]I can grasp the tail of those Arts... Don't worry, Ansel, my infection hasn't worsened. I just feel like I'm understanding it better.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_laccolith",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="char_208_melan_1#5",focus="m")]
+[name="Melantha"]No problem, I'll... move to strike alone. Thanks to Franka's instruction, my swordplay is tougher, and I won't get knocked down so easily.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_infirmary",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="Medic Operator"]Yes, Ansel. Rhodes Island's Oripathy research is rather advanced.
+[name="Medic Operator"]But for now, our conclusion is that we can't reverse the progression of the disease. We can only buy some time for our patients, stolen from the hands of death.
+[name="Medic Operator"]Of course, if you aspire to be a surgeon, you may have less direct contact with Oripathy.
+[name="Medic Operator"]But, since you're a doctor, what we do is more or less the same.
+[name="Medic Operator"]We look death in the eye and say: 'Not today.' Over and over again.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[Background(image="21_G9_rhodes_xqoffice",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]...I... didn't have a choice in the first place.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]I'll never accept that there are things I can't do or lives I can't save.
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]'Just not today.'
+[charslot(slot="m",name="avg_212_ansel_1#1$1",focus="m")]
+[name="Ansel"]That's all I can say... as a doctor.
+[dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=4, block=true)]
+[Dialog]
+[Character]
+[Image]

@@ -1,0 +1,590 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_indoor_2",screenadapt="coverall")]
+[playMusic(key="$victorianormal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$1", duration=0.5, isblock=true)]
+[name="シージ"]周囲の廃棄区画の整理が終われば、模範軍もロンディニウムの城壁下まで来られるだろう。
+[charslot(slot = "m", name = "avg_npc_405_1#13$1")]
+[name="モーガン"]ナハツェーラーの軍隊は、吾輩たちがシルバーロックブラフスの要塞を突破した途端に、前線から撤退してしまったね。てっきり、廃棄区画のどこかにサルカズが待ち伏せしてるかと思いきや……
+[charslot(slot = "m", name = "avg_npc_405_1#3$1")]
+[name="モーガン"]実際には……人っ子一人いない。
+[charslot(slot = "m", name = "avg_155_tiger_1#1$1")]
+[name="インドラ"]空にかかってた変な赤い色も消え始めてんな。
+[charslot(slot = "m", name = "avg_npc_405_1#7$1")]
+[name="モーガン"]正直、今でもまだちょっと怖くて体が震えそうだよ。ここ数日の戦いは、まるで夢の中の出来事みたい。
+[charslot(slot = "m", name = "avgnew_112_siege_1#6$1")]
+[name="シージ"]この勝利は、戦場にいた皆が命を懸けて掴んだものだ。それがどんなに辛く、苦しいものであったとしても……
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$1")]
+[name="シージ"]これは間違いなく我々全員の勝利だ。
+[name="シージ"]我々の帰る場所は、もう目と鼻の先にある。
+[name="シージ"]少し急ごう。なるべく早く――
+[dialog]
+[charslot]
+[stopmusic(fadetime=2)]
+[PlaySound(key="$d_avg_erthshkng", volume=0.4, loop=true, channel="e")]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[PlaySound(key="$glass", volume=1)]
+[CameraShake(duration=4, xstrength=10, ystrength=10, vibrato=90, randomness=50, fadeout=true, block=false)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[StopSound(channel="e", fadetime=5)]
+[PlaySound(key="$d_avg_rockfall", volume=0.6)]
+[delay(time=1)]
+突然、大きな音が響き、シージたちのいる建物全体が激しく揺れ動いた。
+辛うじて無事だった数枚の窓ガラスもすべて砕け散り、建物の奥からシューシューという奇妙な音が聴こえてくる。
+[charslot(slot = "m", name = "avg_155_tiger_1#9$1")]
+[name="インドラ"]やっぱりな！　そう簡単にことが運ぶはずがねぇって思ってたぜ！
+[charslot(slot = "m", name = "avg_npc_405_1#11$1")]
+[name="モーガン"]各小隊、直ちに吾輩たちと合流を――
+[dialog]
+[charslot(duration=0.5, isblock=true)]
+[PlaySound(key="$d_avg_erthshkng", volume=0.4, loop=true, channel="e")]
+[CameraShake(duration=4, xstrength=10, ystrength=10, vibrato=90, randomness=50, fadeout=true, block=false)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_collapse")]
+[StopSound(channel="e", fadetime=4)]
+[PlaySound(key="$d_avg_steamrelease")]
+[bgeffect(layer=2)]
+[Delay(time=2.5)]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot = "m", name = "avg_4110_delphn_1#3$1", duration=1.5, isblock=true)]
+[name="デルフィーン"]……この音、何かを噴射している音では？
+[charslot(slot = "m", name = "avg_155_tiger_1#5$1")]
+[name="インドラ"]ヴィーナ、まさか――
+[dialog]
+[playMusic(intro="$loneliness_intro",key="$loneliness_loop", volume=0.6)]
+[PlaySound(key="$d_avg_humanchange", volume=0.6)]
+[delay(time=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Image(image="32_i12", screenadapt="coverall", fadetime=0)]
+[ImageTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.1, yScaleTo=1.1, duration=15, block=false)]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="「ヴィクトリア」", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[PlaySound(key="$d_avg_humanchange", volume=0.6)]
+[delay(time=0.4)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Image]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#10$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="シージ"]……
+[name="シージ"]他の小隊に伝えてくれ。直ちに建物から撤退し、身を守る場所を見つけ、空からの攻撃に備えろと。警戒レベルを最大に引き上げる。
+[name="シージ"]本小隊は防衛陣形を取り、このまま前進する。あらゆる攻撃の可能性に備え、気を引き締めていくように。
+[charslot(slot = "m", name = "avg_155_tiger_1#6$1")]
+[name="インドラ"]ヴィーナ、あの蒸気騎士は狂っちまったって、諸王の眠る地から出てきたお前たちはそう言ってたよな？
+[name="インドラ"]だけどあいつは、シルバーロックブラフスで俺たちを助けてくれただろ？　ヴィクトリアの栄光が帰ってきたってみんな騒いでたじゃねぇか！
+[charslot(slot = "m", name = "avg_155_tiger_1#6$1")]
+[name="インドラ"]だったら、なんで今になってこんな……？
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$1")]
+[Delay(time=1.5)]
+[charslot(slot = "m", focus="n")]
+インドラの疑問はもっともだ。シージは自身が持ち上げられた瞬間に、鎧の中から聞こえたくぐもった怒号をまだ鮮明に覚えている。
+「ヴィクトリアに――栄光あれ！！！」
+鋼鉄の甲冑から発せられた声と、諸王の眠る地で聞いた声の持ち主が、同一人物かは分からない。甲冑の反響のせいで、声が全部似た響きに聞こえてしまうからだ。
+だけど、もしかすると、今あの甲冑の中にいるのは……
+[dialog]
+[PlaySound(key="$d_avg_humanchange", volume=0.6)]
+[delay(time=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[background]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_397_1#1$1", bstart=0.1,bend=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="bg_indoor_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+シージは首を横に振り、その馬鹿馬鹿しい考えを振り払った。
+あの人は己の運命と向き合うことを選んだ。ならば、その勇気を一方的な幻想で汚すわけにはいかない。
+[dialog]
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$1")]
+[name="シージ"]行こう。
+[name="シージ"]奴にもう一度会えば、自ずと答えが出るはずだ。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_storehouse",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$1", duration=1, isblock=true)]
+[Delay(time=0.5)]
+[name="シージ"]……奴は確かにここにいた。少なくとも通りかかったはずだ。
+[charslot]
+壁や床の至る所に、焼け焦げた跡と剣で斬りつけられた傷が残っており、広範囲に及ぶ損傷は部屋の奥へと続いている。
+シージが、このような痕跡を目にしたのは初めてではない。先王の像が立つ、諸王の眠る地の扉へ続く通路にも、同じものがあった……
+ヴィクトリア人の賛歌の中では、蒸気騎士の剣から噴き出すのは不屈の闘志だと、謳われている。
+だが、今はどうなのだろう？
+[charslot(slot = "m", name = "avg_4110_delphn_1#8$1")]
+[name="デルフィーン"]サルカズの死体が何体も転がっていますね。
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1")]
+[name="デルフィーン"]恐らく、サルカズはここで最後の蒸気騎士を包囲し、葬り去ろうとしたのでしょう。
+[dialog]
+[charslot]
+ゾワッと、シージの背筋に冷たいものが走る。同じような話を過去に聞いたことがあったからだ。
+誰かが彼女の袖を軽く引っ張った。
+[charslot(slot = "m", name = "avg_npc_396_1#1$1")]
+[name="ダグザ"]……シージ。
+[dialog]
+[charslot]
+ダグザがじっと自分を見つめていた。ダグザも、諸王の眠る地の下で、同じ光景を目の当たりにした。
+栄光の墓場。
+[charslot(slot = "m", name = "avg_npc_396_1#1$1")]
+[name="ダグザ"]奴は最後の蒸気騎士だ。
+[charslot(slot = "m", name = "avg_npc_396_1#9$1")]
+[name="ダグザ"]ロンディニウムの時のように、我々の敵として行く手を阻むと言うのなら……
+[name="ダグザ"]……
+[charslot(slot = "m", name = "avg_npc_396_1#3$1")]
+[name="ダグザ"]いや、何でもない。ただ、遅かれ早かれ、奴とは向き合わねばならない。
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$1")]
+[name="シージ"]……ダグザ。
+[charslot(slot = "m", name = "avg_npc_396_1#1$1")]
+[name="ダグザ"]奴には奴の使命があるように、私たちには私たちの使命がある。
+[dialog]
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$1")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#2$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="「使命」。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="彼女のロンディニウムでの日々は、一つの「使命」を全うするためのものにすぎないと、ある人はそうシージに告げたことがある。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[name="シージ"]……そうだな。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="しかし、彼女の中ではとっくに結論が出ていた――こんなものは認めない、と。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$1")]
+[name="シージ"]ならば、我々で全ての「使命」を投げ捨ててから、奴を助ければいい。それだけのことだ。
+[charslot(slot = "m", name = "avg_npc_396_1#5$1")]
+[name="ダグザ"]私たちに……そんな権利があるのだろうか？
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$1")]
+[name="シージ"]ぐずぐず悩んでいるよりも、終わらせてから考えればいい。
+[name="シージ"]行こう。
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5, isblock=true)]
+シージは小柄な少女の黒髪を乱暴に撫で、真っ先に奥の部屋へと足を踏み入れた。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[name="シージ"]焼け焦げた死体ばかりだな。こっちに落ちてるのは……蒸気騎士の鎧の破片か。
+[name="シージ"]あらかじめ待ち伏せていたというよりも、偶発的に起きた戦いの可能性が高いだろう。この場所で厄介な敵に遭遇するのは、サルカズにとっても予想外のことだったようだ。
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1", duration=1.5, isblock=true)]
+[name="デルフィーン"]ひと通り確認しましたが、生存者はいませんでした。
+[name="デルフィーン"]残っているのは、奥のスペースのみですね。
+[dialog]
+[charslot]
+壁が崩れたせいで、部屋の半分が重苦しい暗闇によって覆われてしまっている。
+何の音も聞こえなければ、気配も感じられない。少し前に聞いた噴射音が幻聴のように思えてくる。
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$1")]
+[name="シージ"]皆はここで待っててくれ。いつでも撤退できる準備をしておくように。
+[dialog]
+[charslot(duration=0.5, isblock=true)]
+そう言うと、シージは奥の闇へゆっくりと近付いていった。
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[backgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.15, yScaleTo=1.15, duration=4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Background]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+もしかしたら、あの蒸気と白い煙が再び襲い掛かってくるのかもしれない。
+炎を纏った長剣の明かりが、突如目の前で灯るのかもしれない。
+もしかしたら――シージは考えるのを止めることができなかった――もしかしたら、一番の理想的な展開は……
+もう二度と会うことは叶わないと思っていた友人が、巨大な蒸気甲冑にもたれかけて、ぐっすりと眠っている光景かもしれない。
+......
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Background(image="bg_storehouse",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#2$1", duration=1.5, isblock=true)]
+[name="シージ"]……
+[charslot(slot = "m", name = "avg_155_tiger_1#10$1")]
+[name="インドラ"]どうだった？
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$1")]
+[name="シージ"]……もぬけの殻だ。
+[name="シージ"]蒸気騎士の姿はどこにもなかった。先ほど聞いた噴射音と轟音は、奴が壁を突き破り立ち去った音だろう。
+[name="シージ"]既にロンディニウムに戻った可能性も十分に考え得る。
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$1")]
+[name="シージ"]警戒態勢を解除するよう、周囲で待機している小隊に伝えてくれ。十分後に行進を再開する。
+[charslot(slot = "m", name = "avg_npc_396_1#1$1")]
+[name="ダグザ"]わかった、すぐに伝えてくる。
+[dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(duration=1, isblock=true)]
+全員、ほっと安堵の息をついた。
+その中で、シージだけがため息をつく。
+[charslot(slot = "m", name = "avg_4110_delphn_1#5$1")]
+[name="デルフィーン"]ヴィーナさん……？
+[charslot(slot = "m", name = "avgnew_112_siege_1#9$1")]
+[name="シージ"]気にするな。
+[name="シージ"]行こう。
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5, isblock=true)]
+シージは、先ほど見つけたものについて、誰にも話さなかった。
+あんなのは、何の証明にもならない。
+いや、むしろ何もかもとっくに証明されているのかもしれない。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[background]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[playsound(key="$d_gen_transmissionget", volume=1)]
+[CharacterCutin(widgetID="1", name="avg_npc_229_1#1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=0, width=200, block=true)]
+[delay(time=0.5)]
+[name="ホルン"]模範軍は予定時刻通りに目的地点へと到着しました。ロンディニウムの城壁は目視できる範囲内にあります。
+[name="ホルン"]このまま、外部区画に到達するまで、北東へ向かって前進を続けます。各車、座標の確認をお願いします――
+[Dialog]
+[playsound(key="$transmission", volume=1)]
+[CharacterCutin(widgetID="1", fadetime=0.5, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Background(image="37_g10_wildbattlefield", xScale=1.2, yScale=1.2, y=-120, screenadapt="coverall")]
+[BackgroundTween(xFrom=100, xTo=-100, duration=40, ease="OutQuad",block=false)]
+[curtain(direction = 0,fillfrom = 0.1,fillto = 0.25, grad=true, fadetime=1)]
+[curtain(direction = 4,fillfrom = 0.1,fillto = 0.25, grad=true, fadetime=1)]
+[Delay(time=2)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="シージ"]……
+[dialog]
+禍々しい赤が消えた空には、美しい夕焼けが広がっている。だが、シージは心ここにあらずといった様子だった。
+入り日の黄金色は、先生の美しいたてがみと、自身が持つ無数の伝説が刻まれた剣を連想させた……
+それと――
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[background]
+[curtain]
+[Background(image="37_g10_wildbattlefield", screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_4110_delphn_1#11$1")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="デルフィーン"]ヴィーナさん、何を眺めているのです？
+[charslot(slot = "m", name = "avgnew_112_siege_1#6$1")]
+[name="シージ"]いや、何でもない。
+[charslot]
+シージは慌てて拳を握りしめ、そしてふと自嘲気味に笑った。
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$1")]
+[name="シージ"]……らしくないと、そう思っているのだろう。
+[dialog]
+[charslot]
+彼女はほんの一瞬迷ったのち、拳を緩め、握りしめていたものをデルフィーンに見せた。
+その手にあったのは、端に焦げ跡のある赤い布切れだった。
+ここ数日は、風がやけに強い。突如吹き抜けた風に、デルフィーンが慌てて布切れを押さえようとするも、シージは手を放し、吹かれるまま布が空を舞うのを、見えなくなるまで眺めていた。
+[dialog]
+[charslot(slot = "l", name = "avgnew_112_siege_1#12$1", duration=0.5)]
+[charslot(slot = "r", name = "avg_4110_delphn_1#5$1", duration=0.5, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "r", name = "avg_4110_delphn_1#5$1", focus="r")]
+[name="デルフィーン"]あれは？
+[charslot(slot = "l", name = "avgnew_112_siege_1#2$1", focus="l")]
+[name="シージ"]さっきの廃棄区画で見つけたものだ。
+[name="シージ"]どこにでもあるような、ただの服の切れ端かもしれないし、蒸気騎士とはまったく無関係で、始めからそこに落ちていたのかもしれない。
+[charslot(slot = "r", name = "avg_4110_delphn_1#5$1", focus="r")]
+[name="デルフィーン"]（赤い服……)
+[name="デルフィーン"]アラデル・カンバーランドがまだ生きていると？
+[charslot(slot = "l", name = "avgnew_112_siege_1#6$1", focus="l")]
+[name="シージ"]……
+[name="シージ"]私は、全員に生きて帰ってきてほしいと望んでいる。だけど、それはこのすべてがただの夢で、今でも自分がノーポートのストリートギャングであることを望むのと同じくらい、無意味なことだ。
+[charslot(slot = "r", name = "avg_4110_delphn_1#8$1", focus="r")]
+[name="デルフィーン"]自救軍の話によれば、アラデル・カンバーランドは彼らのリーダーであり、諸王の息を手に入れる任務に旅立ったきり、戻ってくることはなかったそうです。
+[charslot(slot = "l", name = "avgnew_112_siege_1#2$1", focus="l")]
+[name="シージ"]……彼女は我々のために犠牲となった。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]でも、真実は違うのではありませんか？
+[charslot(slot = "l", name = "avgnew_112_siege_1#2$1", focus="l")]
+[name="シージ"]……
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]あなたは以前の私の仕事を知っているはずです。
+[name="デルフィーン"]ロンディニウムにいた頃、自分と同じ「工作員」や「諜報員」の情報を集めることは、サルカズの動向について知ることと同じくらい重要でした。
+[name="デルフィーン"]カンバーランド公爵の爵位が消失したにも関わらず、その後継者は依然としてロンディニウムで公けに活動できている。それが何を意味するかは、誰が見ても明らかです。
+[charslot(slot = "r", name = "avg_4110_delphn_1#2$1", focus="r")]
+[name="デルフィーン"]あなたが彼女に抱く思いを否定するつもりはありません。ですが、ヴィクトリアの権力者が誰かに、純粋な善意のみで手を差し伸べることはないのです。これだけは言わせてください――
+[charslot(slot = "l", name = "avgnew_112_siege_1#9$1", focus="l")]
+[name="シージ"]彼女は目的があって、私に接近した。
+[name="シージ"]それはわかっている。私たちは最後に……本音で言葉を交わした。彼女にはカスターの息がかかっていて、奴のために諸王の息を手に入れようとしていた。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]その事実を知ってもなお、あなたは彼女に生きていてほしいと願っているのですね。
+[charslot(slot = "l", name = "avgnew_112_siege_1#9$1", focus="l")]
+[name="シージ"]彼女のことは……今でも友だと思っている。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]……感情に流されるのは命取りですよ、ヴィーナさん。規律を厳守して初めて、軍は形を保つことができるのです。
+[charslot(slot = "l", name = "avgnew_112_siege_1#9$1", focus="l")]
+[name="シージ"]わかっている。これが取り返しのつかない、決して許されることのない罪であることを、私も彼女も理解しているんだ。
+[name="シージ"]だが、それでもなお、自らの力不足を悔やまずにはいられん。私は彼女を……多くの者を救えなかった。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]……私は、直接カンバーランド女史と話したことはありません。ロンディニウムにいた頃も、何度か姿を見かけただけですが、それでも、彼女が努力して家を守っているのはよく分かりました。
+[charslot(slot = "r", name = "avg_4110_delphn_1#2$1", focus="r")]
+[name="デルフィーン"]そして、そのためにどれだけのものを捧げてきたのか……考えるまでもありません。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]ですが、カンバーランド女史のような人は、いくらでもいます。冷たく聞こえるかもしれませんが、それがこの国全体を使った、ゲームのルールだからです。
+[name="デルフィーン"]彼女はゲームボード上のコマのひとつです。当然、コマに選択肢などありません。
+[name="デルフィーン"]今の私は、そこから抜け出すことができるでしょう。あなたたちと……出会えたから。
+[name="デルフィーン"]腐敗した習わしに流されることを拒み、権力者たちの晩餐会で、悲運の最期を遂げる憐れな脇役にならずに済んだのは、あなたたちがいたからです。
+[charslot(slot = "r", name = "avg_4110_delphn_1#8$1", focus="r")]
+[name="デルフィーン"]けれど、当時のカンバーランド女史はたった独りでした。
+[charslot(slot = "l", name = "avgnew_112_siege_1#12$1", focus="l")]
+[name="シージ"]アラデルは……運命に毅然と立ち向かっていた。決して屈服を選んだ敗北者ではないはずだ。
+[name="シージ"]だが、悲劇を常に残酷な運命のせいにするのも、惰性に流されてしまっているからではないのか？
+[name="シージ"]そして、その惰性を私はいつの間にか、当たり前のものだと受け入れてしまっている。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]……努力だけではどうにもならないことが、この世にはたくさんあります。形を持たないその巨大な何かを「運命」と呼ぶのは、それに抗うことができないからなんですよ。
+[charslot(slot = "l", name = "avgnew_112_siege_1#1$1", focus="l")]
+[name="シージ"]フッ、貴様が先ほど言っていた「腐敗した習わし」のようなものだな？
+[name="シージ"]暗黙の了解に反したものは、いとも簡単に抹殺される。蒸気騎士たちのように……
+[charslot(slot = "l", name = "avgnew_112_siege_1#2$1", focus="l")]
+[name="シージ"]我が父……アリステアのように。
+[charslot(slot = "r", name = "avg_4110_delphn_1#5$1", focus="r")]
+[name="デルフィーン"]ヴィーナさん――
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="シージ"]安心しろ、父の思いを晴らすつもりはない。私にとっては、ほとんど赤の他人のようなものだからな。
+[name="シージ"]今思えばずいぶんと滑稽なことだ。幼い頃、養父母からしょっちゅう、「アリステア陛下」の話を聞かされていたのに……
+[name="シージ"]二人とも早くに亡くなってしまったせいか、その内容のほとんどを忘れてしまっていた。
+[name="シージ"]アラデルからもう一度あの皇帝の話を聞かされ、ようやくおぼろげだった記憶が少し蘇ったんだ。向こう見ずな癖に、志だけは高く、何か大きなことを成し遂げたい一心で動いていた――
+[charslot(slot = "l", name = "avgnew_112_siege_1#4$1", focus="l")]
+[name="シージ"]ハハッ、私とは血が繋がっていること以外、まったく共通点が見当たらないな。父はほとんどの大貴族の恨みを買った挙句、革命に失敗し絞首刑に処された君主。
+[name="シージ"]一方、私はノーポートのギャングだ。バーやジム以外で一番世話になったところといえば、警察署だろう。
+[name="シージ"]私と父は同じ「ヴィクトリア」の姓を持っていただけ。ただそれだけのこと。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]……ヴィンダミア公爵の責務は、ヴィクトリアとリターニアの国境を護ることです。だからうちは、ロンディニウムで起きた政治闘争には、それほど注目してはいませんでした。
+[charslot(slot = "r", name = "avg_4110_delphn_1#8$1", focus="r")]
+[name="デルフィーン"]ただ……確かに母は、あのクーデターやアリステア陛下について、滅多に口にすることはなかったです。
+[name="デルフィーン"]まるで、あえて避けていたかのように……私も、当時の状況について調べたことがあるのですが――
+[charslot(slot = "l", name = "avgnew_112_siege_1#12$1", focus="l")]
+[name="シージ"]貴様の母にできることなどなかった。だから、私に対して貴様が後ろめたさを感じる必要はない。これがヴィクトリアのゲームルールだ。穏やかに見える波の中で、すべてが予め定められている。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]……
+[name="デルフィーン"]当時の母がどう思っていたとしても、何かを変えようとする人が間違っていたとは、私は思いません。
+[name="デルフィーン"]だって私たちも今、何かを変えようとしているじゃないですか？　ただ……何から始めればいいのか、誰もわからないだけで。
+[charslot(slot = "l", name = "avgnew_112_siege_1#9$1", focus="l")]
+[name="シージ"]ああ、当時だろうと今だろうと、何かがおかしいことに皆気づいていていた。
+[name="シージ"]今回の戦争によって、確かにヴィクトリアは作り変えられようとしているが、それは果たしてどこへ向かっているのだろうか？
+[name="シージ"]我々は全員……自分たちが願う未来に近づけているのだろうか？
+[name="シージ"]ついさきほど、我々はいとも簡単に反旗を翻すウェリントンに、躊躇するばかりで前に進もうとしない大公爵たちと、かつてと同じような光景が繰り返されているのを目撃した。
+[name="シージ"]デルフィーン、今の我々が直面していること、そして、我々の国に起きたすべては……何が原因だと思う？
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]……本当に私の意見が聞きたいのですか？
+[name="デルフィーン"]一言で言えば、狡猾で残虐なサルカズどもに騙されたからですね。ヴィクトリアはただ時間が必要なだけです。
+[name="デルフィーン"]――なんて、荘園に座って新聞を読んでいる貴族と全く同じ結論を出すだけなら、簡単なことです。
+[charslot(slot = "r", name = "avg_4110_delphn_1#7$1", focus="r")]
+[name="デルフィーン"]しかし、私たちはこの目で見てきました。
+[name="デルフィーン"]栄光に満ちた祖国にはびこる浅はかさ、傲慢さ、軽率さ。そして、愚かな貴族に腐敗しきった官僚、言われるがままの議会、さらには搾取することしか頭にない地主に工場長……
+[name="デルフィーン"]だけど、人々の目に映る最も輝かしかったヴィクトリアだって、今と同じだったのかもしれませんよ。
+[name="デルフィーン"]――私たちが見たすべては、かつてのヴィクトリアの栄光を作り出した源であると同時に、私たちが真底嫌っている習わしそのものなのです。
+[charslot(slot = "l", name = "avgnew_112_siege_1#1$1", focus="l")]
+[name="シージ"]……
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="シージ"]だが、今の我々には十分な数の仲間がいる。そろそろ、行動の幅を広げる時かもしれないな。
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]それはどういう……？
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="シージ"]フッ、たった今気づいたのだ。私と父にはもう一つ共通点があったことにな。
+[name="シージ"]私たちの敵は、どちらも――「ヴィクトリア」だ。
+[name="シージ"]先ほど、父を向こう見ずだと言ったが、私とて同じようなものかもしれん。もしかすると、私の辿る結末は……父と同じかもしれないな。
+[name="シージ"]だが、試す価値はあるだろう？
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]……
+[name="デルフィーン"]ヴィーナ……いえ、アレクサンドリナ・ヴィーナ・ヴィクトリア、あなたは自分が何を言っているのか、わかっているのですか？
+[name="デルフィーン"]確かに今の私たちの元には仲間が集ってくれていますし、模範軍は今回の戦場で奇跡を起こしました……
+[charslot(slot = "r", name = "avg_4110_delphn_1#7$1", focus="r")]
+[name="デルフィーン"]ですが、すべてはロンディニウム周辺での出来事に過ぎないのですよ！　ヴィクトリアに同じような都市がまだ、いくつあると思っているのです！？
+[name="デルフィーン"]この戦争に参加した兵士や士官が、あなたを英雄として扱っているのは、大公爵たちが――
+[charslot(slot = "l", name = "avgnew_112_siege_1#4$1", focus="l")]
+[name="シージ"]大公爵たちが己たちの失敗を覆い隠すために、英雄という存在が必要だからだ。私たちは、そのために選ばれた、ただのシンボルに過ぎない。
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="シージ"]だが、それがどうした。
+[name="シージ"]我らはこの場所に立っている。
+[name="シージ"]ヴィクトリアを突き動かす「習わし」、栄光への執念、光輝への崇拝、さらには帝王や公爵、大小さまざまな貴族たち、そして傀儡と化した議会も……
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="シージ"]ここで終わりにせねば。
+[charslot(slot = "r", name = "avg_4110_delphn_1#4$1", focus="r")]
+[name="デルフィーン"]すべてを変えると言うのですか？
+[charslot(slot = "l", name = "avgnew_112_siege_1#1$1", focus="l")]
+[name="シージ"]変えるだけではない。
+[name="シージ"]戦うんだ、すべてと。
+[charslot(slot = "l", name = "avgnew_112_siege_1#6$1", focus="l")]
+[name="シージ"]無論、それは容易なことではない。もしかすると、それはこの国そのもの、そして我々自身と立ち向かうことになるのだろう。さらには、何十年と長い歳月を費やすことになるかもしれん……
+[charslot(slot = "l", name = "avgnew_112_siege_1#1$1", focus="l")]
+[name="シージ"]だが、今回ロンディニウムで起きたことを繰り返さないためには、これが唯一の選択だ。
+[name="シージ"]過去のヴィクトリアを倒してみせる。カウントダウンが尽きる時まで、リング上に立つ最後の一人になるまで。
+[charslot(slot = "r", name = "avg_4110_delphn_1#4$1", focus="r")]
+[name="デルフィーン"]……そんなこと――
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="デルフィーン"]……
+[name="デルフィーン"]あまりにも無謀です。論理的に考えて、ほぼ不可能と言ってもいいでしょう。
+[name="デルフィーン"]この国を変えようとした者、さらに革命を起こそうとした者は、今までも多くいました。失敗した者もいれば、成功した者もいます。
+[name="デルフィーン"]ですが、彼らの努力はいずれもロンディニウムの霧に呑み込まれ消えてしまったのです。そして、ヴィクトリアが変わったことはありません。
+[name="デルフィーン"]それでも……ヴィーナさんは、この場所を自分のリングに選ぶと？
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="シージ"]ようは、相手が誰であろうと、何であろうと、私にできることはただ一つ――「アッパーカット」を喰らわせるだけのことだろう。
+[charslot(slot = "r", name = "avg_4110_delphn_1#6$1", focus="r")]
+[name="デルフィーン"]はあ……
+[name="デルフィーン"]先に言っておきますが、私はそのリングに立つつもりはありませんからね。
+[charslot(slot = "r", name = "avg_4110_delphn_1#11$1", focus="r")]
+[name="デルフィーン"]でも……ヴィーナさんが華麗に技を決めた暁には、拍手喝采を送りましょう。
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="シージ"]いいだろう。
+[name="シージ"]ならば、まずはロンディニウムの市民たちに知らせねば。模範軍は民と共にあるとな！
+[name="シージ"]我々は……帰ってきたのだ。
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", afrom=1, ato=0, duration=1.5)]
+[delay(time=1)]
+[charslot(slot = "r", afrom=1, ato=0, duration=1.5, isblock=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[curtain(direction = 6,fillfrom = 0.6,fillto = 0.6, grad=true, fadetime=1)]
+[curtain(direction = 2,fillfrom = 0.1,fillto = 0.1, grad=true, fadetime=1)]
+[Background(image="37_g10_wildbattlefield", xScale=1.6, yScale=1.6, x=-450, screenadapt="coverall")]
+[BackgroundTween(yFrom=50, yTo=-100, duration=40, ease="OutQuad",block=false)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+視界の端を、金色の影が掠めた気がした。
+シージの先生はまさにヴィクトリアのシンボルであると、養父が期待を込めた眼差しで自分に語ったことがある。
+彼のサポートがあれば、シージは必ずやこの国を、苦しみのない栄光の元へと導いてくれるのだと。
+なら……先生は今何を思っているのだろう？
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[background]
+[curtain]
+[Background(image="21_G7_decisivebattlealley_d",screenadapt="coverall")]
+先生の足取りは風のように素早く、いつも神出鬼没だ。
+寒さに凍えれば、いつもその金色のたてがみが、風から守り温めてくれた。
+そして、先生の体からはいつも太陽のにおいがしていた。
+もう何年も……先生の姿を見ていない。
+[dialog]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$rungeneral", volume=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="「待って、先生！」", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_656_1#1$1", duration = 0.5, isblock=true)]
+[delay(time=0.5)]
+[name="ガヴェイン"]……
+[name="ガヴェイン"]ヴィーナ。
+[dialog]
+[charslot]
+腕が痛い。大きな棺は、大人たちの手を借りても、墓地まで運ぶのはかなり大変なことだ。
+養父と養母の墓は隣り合っており、一つの墓石を共有している。
+幼い頃よく遊びに来ていたおじさんとおばさんの姿は、どこにもない。恐らく二人ともあきらめてしまったのだろう。もうこんなにも長い間、経ったのだから。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="「先生」", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「私はこれから……どうしたらいい？」", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[charslot(slot = "m", name = "avg_npc_656_1#1$1", duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="ガヴェイン"]貴方はすでに十分な知恵と力、そして生きるための術を身に着けた
+[name="ガヴェイン"]これ以上教えられることはもうない。
+[dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="「でも……」", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+先生は小さくため息をつくと、こちらに振り向いた。金色のたてがみが頬をくすぐる。
+いつもの同じ、太陽のにおい。
+[charslot(slot = "m", name = "avg_npc_656_1#2$1")]
+[name="ガヴェイン"]だけど、貴方は自分の向かうべき先をまだわかっていない。
+[name="ガヴェイン"]これまで教わったことをどう活かせば良いのかも、まだ分からないだろう。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="「……」", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「私に先生の姿が見えるのは、『使命』を背負っているからだと、みんな言うんだ。」", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_npc_656_1#1$1")]
+[name="ガヴェイン"]いや、「使命」など存在しない。
+[name="ガヴェイン"]貴方にも、そして私にも。
+[name="ガヴェイン"]自らを束縛する鎖を「使命」と呼ぶ者がいる。ただ、それだけのことに過ぎない。
+[name="ガヴェイン"]いつか貴方が一歩足を踏み出せば……
+[name="ガヴェイン"]その時は、私も――
+[dialog]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$flashback", volume=0.8)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="s")]
+[Background(image="37_g10_wildbattlefield",screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[playsound(key="$transmission", volume=1)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "avg_4110_delphn_1#8$1")]
+[name="デルフィーン"]すみません、通信が入りました――
+[dialog]
+[playsound(key="$d_gen_transmissionget", volume=1)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "avg_4110_delphn_1#8$1")]
+[name="デルフィーン"]……はい、では引き続き調査をお願いします。必要があれば、ロドスに支援を申請してください。
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$1")]
+[name="シージ"]どうした？
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1")]
+[name="デルフィーン"]つい先ほど、こちらの会話を盗聴していた電波を補足したと、エンジニアから報告がありました。
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$1")]
+[name="シージ"]公爵？　それともサルカズか？
+[charslot(slot = "m", name = "avg_4110_delphn_1#7$1")]
+[name="デルフィーン"]それが妙なことに、どちらでもありません。
+[name="デルフィーン"]電波を解析した結果……聞いたことない名前が……
+[name="デルフィーン"]「ミルスカー」という名の女性です。おそらく、ロンディニウムに住んでいる者かと。
+[dialog]
+[StopSound(channel="s", fadetime=2)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Background]
+[Image]

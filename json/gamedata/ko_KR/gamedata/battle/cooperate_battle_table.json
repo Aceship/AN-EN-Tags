@@ -1,0 +1,530 @@
+{
+  "costTransferred": 15,
+  "costTransferredExtra": 10,
+  "getMaxMsgCntInOneUpdate": 10,
+  "buffList": {
+    "PIONEER": {
+      "key": "cooperate_buff_pioneer_warrior",
+      "buffId": "buff_1",
+      "atRoot": true,
+      "title": "돌파",
+      "description": "가드/뱅가드 오퍼레이터가 적 처치 시 배치 코스트 <@ba.vup>{lv1.cost}</> 회복, 협력자가 배치 코스트 요청 시 획득하는 배치 코스트 최대 25까지 증가",
+      "Blackboard": [
+        {
+          "key": "lv1.cost",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.cost",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.cost",
+          "value": 6.0,
+          "valueStr": null
+        },
+        {
+          "key": "extraCost",
+          "value": 10.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "CASTER": {
+      "key": "cooperate_buff_caster_sniper",
+      "buffId": "buff_2",
+      "atRoot": true,
+      "title": "공략",
+      "description": "캐스터/스나이퍼 오퍼레이터가 협력자의 유닛이 저지한 적 공격 시, 마법 저항 <@ba.vup>{lv1.magic_resist_penetrate_fixed}</> 및 방어력 <@ba.vup>{lv1.def_penetrate:0%}</> 무시",
+      "Blackboard": [
+        {
+          "key": "lv1.magic_resist_penetrate_fixed",
+          "value": 60.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.magic_resist_penetrate_fixed",
+          "value": 80.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.magic_resist_penetrate_fixed",
+          "value": 100.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def_penetrate",
+          "value": 0.6,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def_penetrate",
+          "value": 0.8,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def_penetrate",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "MEDIC": {
+      "key": "cooperate_buff_medical_tank",
+      "buffId": "buff_3",
+      "atRoot": true,
+      "title": "수비",
+      "description": "메딕/디펜더 오퍼레이터의 방어력 <@ba.vup>{lv1.def:0%}</>증가, 협력자 유닛에 대한 치료 효과 <@ba.vup>{lv1.heal_scale:0%}</> 증가",
+      "Blackboard": [
+        {
+          "key": "lv1.heal_scale",
+          "value": 1.4,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.heal_scale",
+          "value": 1.8,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.heal_scale",
+          "value": 2.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def",
+          "value": 0.3,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def",
+          "value": 0.5,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "SUPPORT": {
+      "key": "cooperate_buff_support_special",
+      "buffId": "buff_4",
+      "atRoot": false,
+      "title": "지원",
+      "description": "서포터/스페셜리스트 오퍼레이터의 공격 범위 내에 배치된 유닛의 SP 초당 <@ba.vup>+{lv1.sp_recovery_per_sec}</>",
+      "Blackboard": [
+        {
+          "key": "lv1.sp_recovery_per_sec",
+          "value": 1.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.sp_recovery_per_sec",
+          "value": 1.5,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.sp_recovery_per_sec",
+          "value": 2.5,
+          "valueStr": null
+        }
+      ]
+    },
+    "SNIPER": {
+      "key": "cooperate_buff_caster_sniper",
+      "buffId": "buff_2",
+      "atRoot": true,
+      "title": "공략",
+      "description": "캐스터/스나이퍼 오퍼레이터가 협력자의 유닛이 저지한 적 공격 시, 마법 저항 <@ba.vup>{lv1.magic_resist_penetrate_fixed}</> 및 방어력 <@ba.vup>{lv1.def_penetrate:0%}</> 무시",
+      "Blackboard": [
+        {
+          "key": "lv1.magic_resist_penetrate_fixed",
+          "value": 60.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.magic_resist_penetrate_fixed",
+          "value": 80.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.magic_resist_penetrate_fixed",
+          "value": 100.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def_penetrate",
+          "value": 0.6,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def_penetrate",
+          "value": 0.8,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def_penetrate",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "WARRIOR": {
+      "key": "cooperate_buff_pioneer_warrior",
+      "buffId": "buff_1",
+      "atRoot": true,
+      "title": "돌파",
+      "description": "가드/뱅가드 오퍼레이터가 적 처치 시 배치 코스트 <@ba.vup>{lv1.cost}</> 회복, 협력자가 배치 코스트 요청 시 획득하는 배치 코스트 최대 25까지 증가",
+      "Blackboard": [
+        {
+          "key": "lv1.cost",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.cost",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.cost",
+          "value": 6.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "TANK": {
+      "key": "cooperate_buff_medical_tank",
+      "buffId": "buff_3",
+      "atRoot": true,
+      "title": "수비",
+      "description": "메딕/디펜더 오퍼레이터의 방어력 <@ba.vup>{lv1.def:0%}</>증가, 협력자 유닛에 대한 치료 효과 <@ba.vup>{lv1.heal_scale:0%}</> 증가",
+      "Blackboard": [
+        {
+          "key": "lv1.heal_scale",
+          "value": 1.4,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.heal_scale",
+          "value": 1.8,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.heal_scale",
+          "value": 2.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def",
+          "value": 0.3,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def",
+          "value": 0.5,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "SPECIAL": {
+      "key": "cooperate_buff_support_special",
+      "buffId": "buff_4",
+      "atRoot": false,
+      "title": "지원",
+      "description": "서포터/스페셜리스트 오퍼레이터의 공격 범위 내에 배치된 유닛의 SP 초당 <@ba.vup>+{lv1.sp_recovery_per_sec}</>",
+      "Blackboard": [
+        {
+          "key": "lv1.sp_recovery_per_sec",
+          "value": 1.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.sp_recovery_per_sec",
+          "value": 1.5,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.sp_recovery_per_sec",
+          "value": 2.5,
+          "valueStr": null
+        }
+      ]
+    },
+    "NONE": {
+      "key": "cooperate_buff_normal",
+      "buffId": "buff_5",
+      "atRoot": true,
+      "title": "조절",
+      "description": "모든 오퍼레이터의 공격력, 방어력, 최대 HP <@ba.vup>{lv1.atk:0%}</> 증가",
+      "Blackboard": [
+        {
+          "key": "lv1.atk",
+          "value": 0.1,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def",
+          "value": 0.1,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.max_hp",
+          "value": 0.1,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.atk",
+          "value": 0.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def",
+          "value": 0.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.max_hp",
+          "value": 0.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.atk",
+          "value": 0.3,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def",
+          "value": 0.3,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.max_hp",
+          "value": 0.3,
+          "valueStr": null
+        }
+      ]
+    }
+  },
+  "cooperateBonusMap": {
+    "cooperate_character_limit_add": {
+      "key": "cooperate_character_limit_add",
+      "fail": true,
+      "weight": 0,
+      "description": "배치 가능 인원수 +1",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_modify_life_point": {
+      "key": "cooperate_modify_life_point",
+      "fail": true,
+      "weight": 0,
+      "description": "스테이지 HP +5",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 5.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_cost_recovery_multi": {
+      "key": "cooperate_cost_recovery_multi",
+      "fail": true,
+      "weight": 0,
+      "description": "배치 코스트 자연 회복 속도 +20%",
+      "blackboard": [
+        {
+          "key": "delta_cost_increase_time",
+          "value": 0.8,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_respawn_time_multi": {
+      "key": "cooperate_respawn_time_multi",
+      "fail": true,
+      "weight": 0,
+      "description": "오퍼레이터 재배치 시간 -10%",
+      "blackboard": [
+        {
+          "key": "respawn_time",
+          "value": -0.1,
+          "valueStr": null
+        },
+        {
+          "key": "remaining_respawn_time",
+          "value": 0.9,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_kazimierz_buff": {
+      "key": "cooperate_kazimierz_buff",
+      "fail": false,
+      "weight": 50,
+      "description": "카시미어 오퍼레이터가 배치 후 30초간 공격력 +20%",
+      "blackboard": [
+        {
+          "key": "atk",
+          "value": 0.2,
+          "valueStr": null
+        },
+        {
+          "key": "duration",
+          "value": 30.0,
+          "valueStr": null
+        },
+        {
+          "key": "value",
+          "value": 5.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_sp_recover_ratio_multi": {
+      "key": "cooperate_sp_recover_ratio_multi",
+      "fail": true,
+      "weight": 0,
+      "description": "오퍼레이터의 SP 회복 속도 +20%",
+      "blackboard": [
+        {
+          "key": "sp",
+          "value": 0.2,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_atk_speed_multi": {
+      "key": "cooperate_atk_speed_multi",
+      "fail": true,
+      "weight": 0,
+      "description": "오퍼레이터의 공격 속도 +20%",
+      "blackboard": [
+        {
+          "key": "atk_speed",
+          "value": 0.2,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_profession_buff_add": {
+      "key": "cooperate_profession_buff_add",
+      "fail": false,
+      "weight": 100,
+      "description": "특수 버프의 효과 증가",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_profession_buff_add_2": {
+      "key": "cooperate_profession_buff_add_2",
+      "fail": true,
+      "weight": 100,
+      "description": "특수 버프의 효과 대폭 증가",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 2.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_buff_spareshot": {
+      "key": "cooperate_buff_spareShot",
+      "fail": false,
+      "weight": 50,
+      "description": "오퍼레이터가 공격 시 50% 확률로 탄약을 소모하지 않음",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "prob",
+          "value": 0.5,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_buff_abyssal": {
+      "key": "cooperate_buff_abyssal",
+      "fail": false,
+      "weight": 50,
+      "description": "어비설 헌터스 오퍼레이터의 공격력/방어력/HP +50%",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "atk",
+          "value": 0.5,
+          "valueStr": null
+        },
+        {
+          "key": "def",
+          "value": 0.5,
+          "valueStr": null
+        },
+        {
+          "key": "max_hp",
+          "value": 0.5,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_buff_student": {
+      "key": "cooperate_buff_student",
+      "fail": false,
+      "weight": 50,
+      "description": "우르수스 오퍼레이터가 스킬 발동 시, 기타 우르수스 오퍼레이터 SP +10",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "sp",
+          "value": 10.0,
+          "valueStr": null
+        }
+      ]
+    }
+  },
+  "endTileInfo": {
+    "MY_SIDE": {
+      "name": "나의 방어 포인트",
+      "description": "적이 침입 시 나의 목표 HP만 차감, 목표 HP가 0이 될 경우 이후 침입한 적은 협력자의 방어 포인트에 출현"
+    },
+    "MATE_SIDE": {
+      "name": "협력자의 방어 포인트",
+      "description": "적이 침입 시 협력자의 목표 HP만 차감, 목표 HP가 0이 될 경우 이후 침입한 적은 나의 방어 포인트에 출현"
+    },
+    "SHARED": {
+      "name": "공동 방어 포인트",
+      "description": "적 침입 시 양측의 목표 HP 동시에 차감"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+[HEADER(is_tutorial=true, is_skippable=true)] 活动33side教学关1_c
+[Battle.LockFunction(mask="SYSTEM_MENU")]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_kroos", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Alright, the next exercise should be improvised combat. Guess I'll retreat for now, as planned!
+[Tutorial(protectTime=0.5, dialogHead="$avatar_jesica", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Kroos! Wait, we're still linked!
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Kroos, Jessica, stay close! Remember what the exercise is about! Always be mindful of your teammates' status!
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+...Why does it have to be so high?
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Deep breaths, five more seconds... Now, based on what you've learned, what should you do when your teammates are in danger?
+[Tutorial(protectTime=0.5, dialogHead="$avatar_fang")] \
+I know, Instructor Dobermann!
+[InputBlocker(blockInput=false)]
+[Tutorial(protectTime=0.5,waitForSignal="put_down", dialogHead="$avatar_fang", animStyle="Drag", \
+          startX=-86, startY=84, startAnchor="BottomRight", endX=360, endY=201)] \
+You didn't immediately fall into the Transverse Plate when you lost your Stabilizer Chain. Instead, you gained the status <@tu.kw>Unsteady</>.
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_fang", animStyle="Drag", \
+          startX=360, startY=201, endX=360, endY=140)] \
+If another Operator, such as myself, is deployed on a normal plate near you in time, they'll be able to throw the Stabilizer Chain to you.
+[InputBlocker(blockInput=true)]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Well done, Fang!

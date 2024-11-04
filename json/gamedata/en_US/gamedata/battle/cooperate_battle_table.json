@@ -1,0 +1,530 @@
+{
+  "costTransferred": 15,
+  "costTransferredExtra": 10,
+  "getMaxMsgCntInOneUpdate": 10,
+  "buffList": {
+    "PIONEER": {
+      "key": "cooperate_buff_pioneer_warrior",
+      "buffId": "buff_1",
+      "atRoot": true,
+      "title": "Invasion",
+      "description": "Your Vanguard and Guard Operators gain <@ba.vup>{lv1.cost}</> DP on kill; partner gains up to 25 DP on request",
+      "Blackboard": [
+        {
+          "key": "lv1.cost",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.cost",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.cost",
+          "value": 6.0,
+          "valueStr": null
+        },
+        {
+          "key": "extraCost",
+          "value": 10.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "CASTER": {
+      "key": "cooperate_buff_caster_sniper",
+      "buffId": "buff_2",
+      "atRoot": true,
+      "title": "Offence",
+      "description": "Your Caster and Sniper Operators ignore <@ba.vup>{lv1.magic_resist_penetrate_fixed}</> RES and <@ba.vup>{lv1.def_penetrate:0%}</> DEF when attacking enemies blocked by your partner",
+      "Blackboard": [
+        {
+          "key": "lv1.magic_resist_penetrate_fixed",
+          "value": 60.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.magic_resist_penetrate_fixed",
+          "value": 80.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.magic_resist_penetrate_fixed",
+          "value": 100.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def_penetrate",
+          "value": 0.6,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def_penetrate",
+          "value": 0.8,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def_penetrate",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "MEDIC": {
+      "key": "cooperate_buff_medical_tank",
+      "buffId": "buff_3",
+      "atRoot": true,
+      "title": "Defence",
+      "description": "Your Medic and Defender Operators gain <@ba.vup>{lv1.def:0%}</> more DEF, and the healing effects on partner's units increase to <@ba.vup>{lv1.heal_scale:0%}</>",
+      "Blackboard": [
+        {
+          "key": "lv1.heal_scale",
+          "value": 1.4,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.heal_scale",
+          "value": 1.8,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.heal_scale",
+          "value": 2.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def",
+          "value": 0.3,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def",
+          "value": 0.5,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "SUPPORT": {
+      "key": "cooperate_buff_support_special",
+      "buffId": "buff_4",
+      "atRoot": false,
+      "title": "Support",
+      "description": "Units in your Supporter and Specialist Operators' attack range recover <@ba.vup>+{lv1.sp_recovery_per_sec}</> SP every second",
+      "Blackboard": [
+        {
+          "key": "lv1.sp_recovery_per_sec",
+          "value": 1.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.sp_recovery_per_sec",
+          "value": 1.5,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.sp_recovery_per_sec",
+          "value": 2.5,
+          "valueStr": null
+        }
+      ]
+    },
+    "SNIPER": {
+      "key": "cooperate_buff_caster_sniper",
+      "buffId": "buff_2",
+      "atRoot": true,
+      "title": "Offence",
+      "description": "Your Caster and Sniper Operators ignore <@ba.vup>{lv1.magic_resist_penetrate_fixed}</> RES and <@ba.vup>{lv1.def_penetrate:0%}</> DEF when attacking enemies blocked by your partner",
+      "Blackboard": [
+        {
+          "key": "lv1.magic_resist_penetrate_fixed",
+          "value": 60.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.magic_resist_penetrate_fixed",
+          "value": 80.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.magic_resist_penetrate_fixed",
+          "value": 100.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def_penetrate",
+          "value": 0.6,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def_penetrate",
+          "value": 0.8,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def_penetrate",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "WARRIOR": {
+      "key": "cooperate_buff_pioneer_warrior",
+      "buffId": "buff_1",
+      "atRoot": true,
+      "title": "Invasion",
+      "description": "Your Vanguard and Guard Operators gain <@ba.vup>{lv1.cost}</> DP on kill; partner gains up to 25 DP on request",
+      "Blackboard": [
+        {
+          "key": "lv1.cost",
+          "value": 3.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.cost",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.cost",
+          "value": 6.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "TANK": {
+      "key": "cooperate_buff_medical_tank",
+      "buffId": "buff_3",
+      "atRoot": true,
+      "title": "Defence",
+      "description": "Your Medic and Defender Operators gain <@ba.vup>{lv1.def:0%}</> more DEF, and the healing effects on partner's units increase to <@ba.vup>{lv1.heal_scale:0%}</>",
+      "Blackboard": [
+        {
+          "key": "lv1.heal_scale",
+          "value": 1.4,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.heal_scale",
+          "value": 1.8,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.heal_scale",
+          "value": 2.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def",
+          "value": 0.3,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def",
+          "value": 0.5,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "SPECIAL": {
+      "key": "cooperate_buff_support_special",
+      "buffId": "buff_4",
+      "atRoot": false,
+      "title": "Support",
+      "description": "Units in your Supporter and Specialist Operators' attack range recover <@ba.vup>+{lv1.sp_recovery_per_sec}</> SP every second",
+      "Blackboard": [
+        {
+          "key": "lv1.sp_recovery_per_sec",
+          "value": 1.0,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.sp_recovery_per_sec",
+          "value": 1.5,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.sp_recovery_per_sec",
+          "value": 2.5,
+          "valueStr": null
+        }
+      ]
+    },
+    "NONE": {
+      "key": "cooperate_buff_normal",
+      "buffId": "buff_5",
+      "atRoot": true,
+      "title": "Coordination",
+      "description": "All Operators gain <@ba.vup>{lv1.atk:0%}</> more ATK, DEF and Max HP",
+      "Blackboard": [
+        {
+          "key": "lv1.atk",
+          "value": 0.1,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.def",
+          "value": 0.1,
+          "valueStr": null
+        },
+        {
+          "key": "lv1.max_hp",
+          "value": 0.1,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.atk",
+          "value": 0.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.def",
+          "value": 0.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv2.max_hp",
+          "value": 0.2,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.atk",
+          "value": 0.3,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.def",
+          "value": 0.3,
+          "valueStr": null
+        },
+        {
+          "key": "lv3.max_hp",
+          "value": 0.3,
+          "valueStr": null
+        }
+      ]
+    }
+  },
+  "cooperateBonusMap": {
+    "cooperate_character_limit_add": {
+      "key": "cooperate_character_limit_add",
+      "fail": true,
+      "weight": 0,
+      "description": "Deployment limit +1",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_modify_life_point": {
+      "key": "cooperate_modify_life_point",
+      "fail": true,
+      "weight": 0,
+      "description": "Life Points +5",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 5.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_cost_recovery_multi": {
+      "key": "cooperate_cost_recovery_multi",
+      "fail": true,
+      "weight": 0,
+      "description": "Natural DP regeneration rate +20%",
+      "blackboard": [
+        {
+          "key": "delta_cost_increase_time",
+          "value": 0.8,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_respawn_time_multi": {
+      "key": "cooperate_respawn_time_multi",
+      "fail": true,
+      "weight": 0,
+      "description": "Redeployment time -10%",
+      "blackboard": [
+        {
+          "key": "respawn_time",
+          "value": -0.1,
+          "valueStr": null
+        },
+        {
+          "key": "remaining_respawn_time",
+          "value": 0.9,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_kazimierz_buff": {
+      "key": "cooperate_kazimierz_buff",
+      "fail": false,
+      "weight": 50,
+      "description": "Kazimierz Operators gain +20% ATK for 30 seconds after deployment",
+      "blackboard": [
+        {
+          "key": "atk",
+          "value": 0.2,
+          "valueStr": null
+        },
+        {
+          "key": "duration",
+          "value": 30.0,
+          "valueStr": null
+        },
+        {
+          "key": "value",
+          "value": 5.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_sp_recover_ratio_multi": {
+      "key": "cooperate_sp_recover_ratio_multi",
+      "fail": true,
+      "weight": 0,
+      "description": "Operators' SP recovery +20%",
+      "blackboard": [
+        {
+          "key": "sp",
+          "value": 0.2,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_atk_speed_multi": {
+      "key": "cooperate_atk_speed_multi",
+      "fail": true,
+      "weight": 0,
+      "description": "Operators' ASPD +20%",
+      "blackboard": [
+        {
+          "key": "atk_speed",
+          "value": 0.2,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_profession_buff_add": {
+      "key": "cooperate_profession_buff_add",
+      "fail": false,
+      "weight": 100,
+      "description": "Class Bonus Effect boosted",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 1.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_profession_buff_add_2": {
+      "key": "cooperate_profession_buff_add_2",
+      "fail": true,
+      "weight": 100,
+      "description": "Class Bonus Effect greatly boosted",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 2.0,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_buff_spareshot": {
+      "key": "cooperate_buff_spareShot",
+      "fail": false,
+      "weight": 50,
+      "description": "50% probability to consume 0 ammo when an operator attacks",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "prob",
+          "value": 0.5,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_buff_abyssal": {
+      "key": "cooperate_buff_abyssal",
+      "fail": false,
+      "weight": 50,
+      "description": "Abyssal Hunter Operators gain +50% ATK/DEF/HP",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "atk",
+          "value": 0.5,
+          "valueStr": null
+        },
+        {
+          "key": "def",
+          "value": 0.5,
+          "valueStr": null
+        },
+        {
+          "key": "max_hp",
+          "value": 0.5,
+          "valueStr": null
+        }
+      ]
+    },
+    "cooperate_buff_student": {
+      "key": "cooperate_buff_student",
+      "fail": false,
+      "weight": 50,
+      "description": "When an Ursus Operator uses a skill, other Ursus Operators gain 10 SP",
+      "blackboard": [
+        {
+          "key": "value",
+          "value": 4.0,
+          "valueStr": null
+        },
+        {
+          "key": "sp",
+          "value": 10.0,
+          "valueStr": null
+        }
+      ]
+    }
+  },
+  "endTileInfo": {
+    "MY_SIDE": {
+      "name": "My Objective Point",
+      "description": "You lose Life Points if an enemy enters; when its Life Points reach zero, the entered enemy will appear at the Partner's Objective Point"
+    },
+    "MATE_SIDE": {
+      "name": "Partner's Objective Point",
+      "description": "The partner loses Life Points if an enemy enters; when its Life Points reach zero, the entered enemy will appear at My Objective Point"
+    },
+    "SHARED": {
+      "name": "Shared Objective Point",
+      "description": "Both players lose Life Points if an enemy enters"
+    }
+  }
+}

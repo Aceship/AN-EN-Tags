@@ -1,0 +1,61 @@
+[header(actId="sandbox_1", npcId="trap_435_trsrhuntr")]
+[summontrap(charId="trap_467_ttuye", dir="LEFT", x="11", y="9", isChar="False")]
+[summontrap(charId="trap_435_trsrhuntr", dir="RIGHT", x="10", y="11", isChar="False")]
+[summonenemy(enemyId="enemy_7024_clking", x="9", y="11", endX="14", endY="6")]
+[summonenemy(enemyId="enemy_7025_clbb", x="8", y="11", endX="14", endY="6")]
+[camerafocusto(offsetX="10", offsetY="10", time="2", scale="FAR")]
+[foginview(leftBottomX="6", leftBottomY="7", rightUpX="14", rightUpY="12", id="fog_1")]
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]좋아, 보석을 가져왔나 보군. 이리 줘봐, 얼른!
+[decision(option1="돈을 추가해야 돼.", value1="1.1")]
+[predicate(references="1.1")]
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]쳇, 그럼 이거 어때? 거래소 VIP 배지야. 이거면 충분하지?
+[additem(itemId="sandbox_1_craft_9", itemCount="1")]
+[name="트레져헌터", avatarId="bavg_npc_003", isAvatarRight="FALSE"]절대 주면 안 돼요. 보석을 손에 넣으면 이놈들이 결정 동굴을 완전히 박살 낼 거라고요!
+[decision(option1="보석을 줄 테니까, 그녀를 풀어줘.", value1="2.1")]
+[predicate(references="2.1")]
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]아, 이 영롱한 모습을 좀 봐. 아미르께 바친다면 분명 큰 상을 내리시겠지. 어쩌면 관직까지 내려 주실지도 몰라.
+[name="곡예사 조수", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]다행이에요, 보스. 그럼 이제 도망치는 생활도 끝이겠네요?
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"](작은 목소리로) 너희들이 사람을 해치지 않았다면 도망칠 필요도 없는데……
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]기분 좋을 때 얼른 저 여자를 데리고 꺼져. 괜히 눈앞에서 알짱거리지 말고.
+[decision(option1="가자.", value1="3.1")]
+[predicate(references="3.1")]
+[name="트레져헌터", avatarId="bavg_npc_003", isAvatarRight="FALSE"]……감사합니다.
+[decision(option1="뭐, 사람은 구했으니까.", value1="4.1")]
+[predicate(references="4.1")]
+[playanim(id="trap_467_ttuye", anim="Idle", dir="RIGHT")]
+[delay(time="0.5")]
+[withdraw(id="trap_467_ttuye")]
+[withdraw(id="trap_435_trsrhuntr")]
+[delay(time="3")]
+[camerafocusto(offsetX="9", offsetY="11", time="1", scale="MID")]
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]이 눈부신 빛깔을 봐, 우리가 곧 맞이할 미래처럼 찬란하지 않아?
+[name="곡예사 조수", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]보스, 저희도 보여 주세요.
+[playanim(id="enemy_7024_clking", anim="Attack", dir="LEFT", looporidle="Idle")]
+[delay(time="1")]
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]자, 조심해. 떨어뜨리지 말고.
+[name="곡예사 조수", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]우와아…… 아름답다.
+[summontrap(charId="trap_470_tmantic", dir="LEFT", x="10", y="11", isChar="False")]
+[executeactionarray(target="trap_470_tmantic", key="effect_mantic[hidden]")]
+[delay(time="0.5")]
+[name="???", avatarId="char_215_mantic", isAvatarRight="FALSE"](……기회가 왔다……)
+[name="???", avatarId="char_215_mantic", isAvatarRight="FALSE"](바로 지금이야!)
+[playanim(id="trap_470_tmantic", anim="Attack", dir="LEFT")]
+[delay(time="1")]
+(보석이 깨지는 소리)
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]내 보석! 망할! 네놈이 감히!!
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]조심하라고 했잖아!
+[name="곡예사 조수", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]보스, 어, 억울해요!
+[name="곡예사 조수", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]어, 어떻게 된 거지? 분명 아무것도 안 했는데, 보석이 제 손바닥 위에서 깨져 버렸어요……
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]아, 안 돼!!!
+[uioperation(target="main", enable="False")]
+[withdraw(id="enemy_7024_clking")]
+[withdraw(id="enemy_7025_clbb")]
+[delay(time="3")]
+[name="???", avatarId="char_215_mantic", isAvatarRight="FALSE"](임무 완료.)
+[name="???", avatarId="char_215_mantic", isAvatarRight="FALSE"](슬슬 떠나야겠다……)
+[withdraw(id="char_215_mantic")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

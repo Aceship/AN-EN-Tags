@@ -1,0 +1,13 @@
+[HEADER(is_skippable=true, is_tutorial=true)] 
+[Battle.Pause]
+[InputBlocker(blockInput=false)]
+[Battle.LockFunction(mask="SYSTEM_MENU")]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_kroos", animStyle="Drag", \
+          startX=-62, startY=60, startAnchor="BottomRight", endX=194, endY=130)] \
+비상 난방기 <@tu.kw>주변</>에 있으면 다른 비상 난방기도 <@tu.kw>작동</>시킬 수 있거든. 내가 보여줄게~
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_kroos", animStyle="Drag", \
+          startX=250, startY=140, endX=284, endY=-100)] \
+비상 난방기를 <@tu.kw>명중</>하면 <@tu.kw>공격받은</> 비상 난방기가 바로 작동해~
+[InputBlocker(blockInput=true)]
+[Battle.UnlockFunction(mask="SYSTEM_MENU")]
+[Battle.Pause(pause=false)]

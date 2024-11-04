@@ -14,6 +14,14 @@
 UIBase = Class("UIBase");
 
 
+function UIBase.GetLuaLayout(go)
+    if go == nil then
+        return nil
+    end
+    return go:GetComponent("Torappu.Lua.LuaLayout")
+end 
+
+
 
 function UIBase:Initialize(gobj, parent)
   self.m_destroyed = false;
@@ -421,4 +429,9 @@ end
 
 function UIBase:LoadSpriteFromAutoPackHub(hubPath, spriteName)
     return self.m_parent:LoadSpriteFromAutoPackHub(hubPath, spriteName);
+end
+
+
+function UIBase:LoadPrefab(path)
+    return self.m_parent:LoadPrefab(path);
 end

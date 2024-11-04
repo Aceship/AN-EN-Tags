@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]やっと仕事が片付いた。何日も働きづめで身体がガタガタだ……
+[decision(option1="ユーネクテス、助けてくれ！", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="大祭司の好物は一体何なんだ？", value1="2.1")]
+[predicate(references="2.1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]なんだ、じいやはまだ怒っているのか？
+[decision(option1="ああ。怒りのあまり羽が抜け続けている。", value1="3.1")]
+[predicate(references="3.1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]わかった、任せてくれ。じいや好みの味なら心得ている。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]だが、それを作るには特殊な調味料が必要なんだ。まずは<color=#d8d769>固形ポタージュ</color>を作ってもらえないか？
+[decision(option1="それなら作ったことがある。", value1="4.1", option2="待っていてくれ。", value2="4.2")]
+[predicate(references="4.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_16", itemCount="-1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]ありがとう。調理するからしばらく待っていてくれ。
+[withdraw(id="trap_466_tzumama", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="4.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_16", value="1")]

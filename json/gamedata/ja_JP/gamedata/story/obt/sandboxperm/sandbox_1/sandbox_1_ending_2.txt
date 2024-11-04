@@ -1,0 +1,88 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="47_g30_oasis2",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot]
+[name="年老いた族長"]二度目の勝利が訪れ、さらに仲間が増えてきた。この地は、今やここ数年見なかったほどの希望に満ち溢れている。
+[charslot(slot="m",name="avg_402_tuye_1#1$1",focus="m")]
+[name="トゥイエ"]私たちは見事に勝利したわけだ。連中がこの失敗を教訓に、嫌がらせをやめてくれるといいんだが。
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="ユーネクテス"]フンッ、首長は貪欲だからな。求めるものを手に入れない限りは諦めんだろう。
+[playMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[charslot]
+[name="年老いた族長"]奴らは金に困っているわけでもないのに、何年もの間襲撃を繰り返している。恐らく、特別なものを探しているのだろうな。
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="ユーネクテス"]アルサランには本当に「遺跡」や「宝」が存在する、ということか？
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="パッセンジャー"]この地がシュバト＝アルサランと呼ばれるのには、理由がございます。ここは、かつてアスランが兵を挙げた地の一つなのです。
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="パッセンジャー"]数千年もの歳月を経てきた遺跡も数々眠っているやもしれません。
+[Dialog]
+[charslot]
+[Decision(options="その辺りのことは、あの手記にも書かれていたな。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#7$1",focus="m")]
+[name="トゥイエ"]まあ……何を探しているにせよ、奴らはまた戻ってくるだろうな。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_215_mantic_1#1$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="マンティコア"]うん……わ、わたしもそう思う……絶対、また来るよ……それも、前より隠れて、ばれないように。そうすると、防衛がまた……難しくなるね……
+[charslot(slot="m",name="avg_402_tuye_1#5$1",focus="m")]
+[name="トゥイエ"]わっ！　マンティコア、いつからここに？
+[charslot(slot="m",name="avg_215_mantic_1#2$1",focus="m")]
+[name="マンティコア"]ずっと……ここにいたよ……
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="パッセンジャー"]確かに、宮殿が飼い慣らしているという、暗殺者の噂を耳にしたことがございます……
+[charslot(slot="m",name="avg_215_mantic_1#1$1",focus="m")]
+[name="マンティコア"]うん……首長軍に攻め落とせない場所には、その人たちが出向くの。
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="パッセンジャー"]彼らの歩んだ地には余すところなく殺戮と死がもたらされ、すべてが血に染められるとか。
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]では、どう動くべきだろうか？
+[Dialog]
+[charslot]
+[Decision(options="まずは宝の真相を調べよう。", values="1")]
+[Predicate(references="1")]
+[Decision(options="それを知ることでのみ……", values="1")]
+[Predicate(references="1")]
+[Decision(options="首長への対処法が見えてくるはずだ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#7$1",focus="m")]
+[name="トゥイエ"]賛成だ。いつまでも首長軍をのさばらせてはおけないしな。
+[charslot(slot="m",name="avg_402_tuye_1#7$1",focus="m")]
+[name="トゥイエ"]先に宝を見つけられたら、和平交渉の材料にできる可能性もある。
+[Dialog]
+[charslot]
+[Decision(options="ああ。今後の任務のためにも、環境を安定化させないと。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="トゥイエ"]まずは例のペペとかいう学者に連絡しよう。今一番真相に近いのは彼女だからな。
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="ユーネクテス"]だが、それと同時に最悪の事態にも備えなければ。万一首長軍と徹底的に争うことになった場合……我々の拠点には、より多くの資源が必要だ。
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="ユーネクテス"]時にご老人、ジャングルの北には何があるんだ？
+[charslot]
+[name="年老いた族長"]禁断の地、サリマだ……あの場所にも、首長軍がおる。それゆえ、我々には北方へと赴く勇気はなかった。
+[Dialog]
+[charslot]
+[Decision(options="どんな場所なのだろう？", values="1")]
+[Predicate(references="1")]
+[charslot]
+[name="年老いた族長"]先祖曰く、シャアの「しもべ」が長くその地に留まっていた神聖な場所だそうだ。
+[Dialog]
+[charslot]
+[Decision(options="宝はそこにあるかもしれない。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="トゥイエ"]だが、奴らがすでにそこで「遺跡」を見つけているのなら、ほかの場所を探す必要なんてあるのか？
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

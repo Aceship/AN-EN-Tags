@@ -1,0 +1,1015 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot]
+[Subtitle(text="일반적으로 사건이 발생한 즉시 만족스러운 답을 얻기란 어려운 법이다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="마치 엄마와 젬마 아줌마가 오밤중에 이웃들이 전부 깰 정도로 대판 싸웠을 때처럼……", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="더구나 둘이 언쟁을 벌인 이유는 '인부들의 휴식을 방해하지 않기 위해 곡물 분쇄기와 정미기의 가동 시간을 어떻게 조정해야 할지'였다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="마치 '울타리 사건'에서, 농민과 인부들을 도와 공동전선을 구축한 림 빌리턴의 젊은 상인들처럼……", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그들은 백작과 빅토리아 상인회의 지배에서 벗어나기 위해 힘을 썼지만, 결국 그중 몇 명은 자신의 이익을 위해 행동했다. 그렇다면 진심으로 림 빌리턴의 미래를 위해 싸운 사람은 과연 얼마나 될까?", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그리고, 그때 여행하고 있었던 박사와 아미야처럼……", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="어떤 일은 어떻게든 해답을 찾을 수 있을지도 모른다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.11, fadetime=0.1)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.11, fadetime=0.1)]
+[Background(image="46_g4_rmbtwild_d", xScale=1.1,yScale=1.1, screenadapt="coverall")]
+[PlaySound(key="$d_avg_snowstormflp", volume=0.5, loop=true, channel="a")]
+[PlaySound(key="$d_avg_drivestop", volume=1)]
+[delay(time=1)]
+[CameraShake(duration=-1,xstrength=0.5,ystrength=0.5,vibrato=10,randomness=10, fadeout=false,block=false)]
+[PlaySound(key="$d_avg_truckengine", volume=0.15, loop=true, channel="b")]
+[PlayMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot(slot = "l", name = "char_002_amiya_1#1", duration=1)]
+[charslot(slot = "r", name = "avg_230_savage_1#1$1", duration=1, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "r", name = "avg_230_savage_1#4$1", focus="r")]
+[name="새비지"]뭐? 어디로 갈지 안 정했어?
+[charslot(slot = "r", name = "avg_230_savage_1#10$1", focus="r")]
+[name="새비지"]이동 플랫폼에 가서 어린 시절의 흔적을 찾자는 게 이번 여정의 첫 번째 목표 아니야? 그거 말고도 두 번째, 세 번째 목표가 있어야 할 텐데……
+[name="새비지"]연료도 가득 채웠고, 심지어 캠핑용 조리 기구랑 텐트도 다 준비했는데……
+[name="새비지"]게다가 지금은 림 빌리턴 광업 챔피언스리그가 조별 예선 중이라고…… 남쪽으로 가면 투어 더 빅해머 버든비스트 랠리도 볼 수 있는데……
+[charslot(slot = "r", name = "avg_230_savage_1#8$1", focus="r")]
+[name="새비지"]아니면, 림 빌리턴의 현지 요리를 맛보는 건 어때? 요 몇 년에 내가 맛집을 여러 곳 봐 뒀거든. 특히 굴착이 끝난 갱도 안에 차린 가게들이 분위기가 좋아.
+[name="새비지"]아무튼, 둘 다 당분간 임무는 없을 거라고 켈시가 말했는데. 빅토리아에 가는 건 나중에 생각해도 되잖아!
+[charslot(slot = "l", name = "char_002_amiya_1#6", focus="l")]
+[name="아미야"]지, 진정하세요. 새비지 언니…… 저는 나중 일이 걱정돼서 여행할 기분이 안 드는 게 아니에요!
+[name="아미야"]그러니까 제 말은, 예전처럼 아무런 목적 없이 돌아다니며 여행하는 게 어떨까 싶어서요.
+[charslot(slot = "l", name = "char_002_amiya_1#3", focus="l")]
+[name="아미야"]……으음, 이렇게 말하면 조금 이상하려나요. 그 당시의 박사님은 자신이 어딜 가고 싶은 건지 다 알고 계셨어요.
+[dialog]
+[charslot(slot = "r", focus="n")]
+[Decision(options="……내가?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "l", name = "char_002_amiya_1#3", focus="l")]
+[name="아미야"]제 기억으로는 그때는 매일 다른 일이 일어났고, 매일 다른 광경을 보고 있었으니까요.
+[name="아미야"]만약 정말 림 빌리턴 황야에서 정처 없이 돌아다닌다면, 대부분 시간은 그저 비슷한 모래와 오리지늄 결정 더미, 그리고 광산 갱도나 보게 될 거예요.
+[charslot(slot = "r", name = "avg_230_savage_1#9$1", focus="r")]
+[name="새비지"]그건 두 사람이 너무 운이 나빠서 그랬을 거야. 길에서 성가신 일에만 휘말리게 됐으니……
+[charslot(slot = "r", name = "avg_230_savage_1#8$1", focus="r")]
+[name="새비지"]그래도 다행히 지금의 아미야는 실력도 충분하고, 나도 그때의 열정만 넘치는 덜렁이가 아니니까. 성가신 일에 휘말리더라도 이젠 쉽게 해결할 수 있지 않을까……?
+[dialog]
+[charslot(slot = "r", name = "avg_230_savage_1#3$1")]
+[charslot(slot = "l", name = "char_002_amiya_1#5")]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$drift", volume=1)]
+[StopSound(channel="b", fadetime=1)]
+[BackgroundTween(xScaleFrom=1.1,xScaleTo=1.2, yScaleFrom=1.1, yScaleTo=1.2, duration=0.5, block=false)]
+[charslot(slot = "r", action="zoom", poszoom = "0.5,0.5", scale=1.05, duration = 0.5)]
+[charslot(slot = "l", action="zoom", poszoom = "0.5,0.5", scale=1.05, duration = 0.5, isblock=true)]
+[delay(time=0.5)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punchsp1", volume=1)]
+[BackgroundTween(xScaleFrom=1.2,xScaleTo=1.05, yScaleFrom=1.2, yScaleTo=1.05, duration=0.2, block=false)]
+[charslot(slot = "r", action="zoom", poszoom = "0.5,0.5", scale=0.98, duration = 0.2)]
+[charslot(slot = "l", action="zoom", poszoom = "0.5,0.5", scale=0.98, duration = 0.2, isblock=true)]
+[BackgroundTween(xScaleFrom=1.05,xScaleTo=1.1, yScaleFrom=1.05, yScaleTo=1.1, duration=0.2, block=false)]
+[charslot(slot = "r", action="zoom", poszoom = "0.5,0.5", scale=1, duration = 0.2)]
+[charslot(slot = "l", action="zoom", poszoom = "0.5,0.5", scale=1, duration = 0.2, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "r", focus="n")]
+[Decision(options="으악……;……", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot = "l", name = "char_002_amiya_1#5", focus="n")]
+[charslot(slot = "r", name = "avg_230_savage_1#5$1", focus="r")]
+[name="새비지"]미, 미안해 박사!
+[charslot(slot = "l", name = "char_002_amiya_1#5", focus="l")]
+[name="아미야"]박사님! 괜찮으세요? 머리를 부딪히셨나요?
+[dialog]
+[Predicate(references="2")]
+[charslot(slot = "l", name = "char_002_amiya_1#5", focus="n")]
+[charslot(slot = "r", name = "avg_230_savage_1#1$1", focus="r")]
+[name="새비지"]방금 무슨 소리지?
+[charslot(slot = "l", name = "char_002_amiya_1#4", focus="l")]
+[name="아미야"]박사님…… 부딪힌 데가 아프면 무리하지 않는 편이……
+[dialog]
+[Predicate(references="1;2")]
+[charslot(slot = "r", focus="n")]
+[Decision(options="괜찮아…… 머리는 아직 무사해.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "l", name = "char_002_amiya_1#4", focus="l")]
+[name="아미야"]새비지 언니…… 무슨 일이에요? 왜 갑자기 급정거를……
+[charslot(slot = "r", name = "avg_230_savage_1#6$1", focus="r")]
+[name="새비지"]저기 봐……
+[name="새비지"]저기 수송차에 연기가 나고 있지?
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)] 
+[curtain]
+[charslot]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1")]
+[name="알라나"]차량 강탈범, 병나무 수액 받아와. 최대한 많이!
+[charslot(slot = "m", focus="n")]
+[name="레이"]알았어.
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1")]
+[name="알라나"]담요도 하나 가져와. 그리고 냄비 뚜껑을 부축하고 있어.
+[charslot(slot = "m", focus="n")]
+[name="레이"]응.
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1")]
+[name="알라나"]그리고 테이프로 냄비 뚜껑을 냉각수 파이프에 묶어. 그다음 발을 찬물에 담가 둬. 온몸에 물을 뿌리고……
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", duration=1, isblock=true)]
+[name="레이"]응. 그런데, 왜?
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1")]
+[name="알라나"]우리 공장의 치료 비법이야! 열이 나든 화상을 입든, 몸이 뜨거우면 이게 열을 식히는 최고의 방법이거든.
+[name="알라나"]약도 먹이고 물리적인 처치도 함께 해야 돼. 안과 밖을 함께 치료해야 가장 효과적이야!
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1")]
+[name="냄비 뚜껑"]라나…… 언니……
+[charslot]
+[charslot(slot = "r", name = "avg_4117_ray_1#6$1", focus="n")]
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]걱정 마, 괜찮으니까. 언젠가 이런 일이 생길 줄 알고 약도 미리 준비해 뒀거든…… 자, 워미, 약 먹어.
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="레이"]회색 귀가, 너무 뜨거워.
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]약을 삼킬 수 있다는 건 상태가 심각하진 않다는 얘기야. 조금 있으면 열은 금방 내릴 거야.
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]맞아, 분명 문제없을 거야. 날 믿어.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]응, 널 믿을게.
+[name="레이"]그런데 얘는 열이 나는 게 아닌 것 같은데.
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="알라나"]……나도 알아.
+[name="알라나"]오리지늄 아츠야. 얘가 또 몰래 오리지늄 아츠를 써서 동력로의 온도를 조절했어.
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]움직이는 동안 수송차의 동력도 충분했고, 변속도 너무 매끄러웠다는 걸 진작에 눈치챘어야 했는데.
+[name="알라나"]내가 아츠 유닛 없이 아츠를 시전하지 말라고 그렇게 당부했는데. 얘는 자신도 도움이 된다는 걸 증명하고 싶었던 거야.
+[name="알라나"]얘는 바보고 고집도 세. 내 차에 올랐을 때부터 이미 알고 있었는데……
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="알라나"]……*림 빌리턴 욕설*.
+[charslot(slot = "r", name = "avg_4117_ray_1#4$1", focus="r")]
+[name="레이"]의사를 찾으러 가자. 이동 플랫폼으로 되돌아가는 데 그리 오래 걸리진 않을 거야.
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]그 이동 플랫폼에서 찾을 수 있는 의사라면 아마 나랑 수준이 비슷할걸.
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]……분명 괜찮아질 거야. 내가 어떻게든 해낼 거야.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]음……
+[dialog]
+[Blocker(a=0.1, r=255, g=0, b=0, fadetime=2)]
+[PlaySound(key="$d_avg_energywell", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=0.2, channel="a",fadetime=1)]
+[delay(time=2)]
+[charslot(slot = "r", name = "avg_4117_ray_1#6$1", focus="r")]
+[name="레이"]라나, 동력실이 점점 뜨거워지고 있어.
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]그래? 내 등에서는 식은땀만 나는데……
+[dialog]
+[charslot(slot = "l", posfrom="0,0", posto="-80,-10", duration=1, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]……앗, 뜨거워. 얘가…… 왜 이렇게 열이 나지?
+[dialog]
+[charslot(slot = "l", posfrom="-80,-10", posto="0,0", duration=1, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]아, 편법이 생각났어. 가서 원석충 좀 잡아 와……
+[dialog]
+[PlaySound(key="$d_avg_transpthrn", volume=1)]
+[Delay(time=2)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]라나, 벨 소리야. 누가 차에 타려 해.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]차량 강탈범, 네가 가서 쫓아버려.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]아니, 라나. 네가 가.
+[name="레이"]오리지늄 아츠가 폭주하면 매우 위험해. 자신뿐만 아니라, 타인도 다치게 하지.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]그게 무슨……
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l")]
+[name="알라나"]……
+[name="알라나"]아니야, 그렇게까지 끔찍한 정도는 아니야. 절대 그럴 리가 없어. 얘는 내가 거둔 아이란 말이야.
+[name="알라나"]기다려, 레이. 내가 금방 처리하고 올 테니까.
+[name="알라나"]금방 돌아올게.
+[dialog]
+[PlaySound(key="$rungeneral",volume=1)] 
+[charslot(slot = "l", afrom=1, ato=0, duration=1, isblock=true)]
+[Delay(time=1)]
+[charslot(slot = "r", name = "avg_4117_ray_1#10$1", focus="r")]
+[name="레이"]……감염자가 발작을 일으키거나, 오리지늄 아츠가 폭주할 위험이 있으면, 다른 감염자가 처리해야 해.
+[name="레이"]그러면 붕괴가 일어나더라도 새로운 감염자가 생길 일은 없으니까.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]일할 때 사람들은 항상 그랬어.
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "r", name = "avg_230_savage_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", posfrom="-300,0", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "l", focus="l")]
+[name="알라나"]저리 가.
+[charslot(slot = "r", name = "avg_230_savage_1#1$1", focus="r")]
+[name="새비지"]잠깐, 난 저기 있는 차 운전자인데, 나한테 공구가 있거든. 뭔가 도움이 필요한 거 아니야?
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]도움? 하하, 도움은 무슨. 여긴 전혀 문제없어.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]우린 지금 휴식 중이니까 방해하지 않는 게 도와주는 거야.
+[charslot(slot = "r", name = "avg_230_savage_1#10$1", focus="r")]
+[name="새비지"]어? 차에서 연기가 나는데? 아무리 봐도 문제가 없을 리가 없는데……
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]이 차는 원래 이래. 내 차를 내가 모를 리가 있겠어?
+[charslot(slot = "r", name = "avg_230_savage_1#10$1", focus="r")]
+[name="새비지"]……
+[name="새비지"]미안한데 차 안을 확인해 봐야겠어.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]지금 손님 맞이할 시간이 없어.
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]다시 한번 말하는데, 얼른 꺼져. 험한 꼴 보기 싫으면.
+[charslot(slot = "r", name = "avg_230_savage_1#6$1", focus="r")]
+[name="새비지"]……너, 떨고 있네.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]내가? 웃기지 마. 그럴 리가.
+[name="알라나"]그런데, 네 그 장비……
+[charslot(slot = "r", name = "avg_230_savage_1#3$1", focus="r")]
+[name="새비지"]……너, 뭔가 나쁜 짓을 했나 본데.
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]……너, 감염자를 찾으러 온 용병인가 본데.
+[dialog]
+[charslot]
+[stopmusic(fadetime=1)]
+[CameraShake(duration=2.5, xstrength=10, ystrength=10, vibrato=90, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n", volume=0.4)]
+[Delay(time=2)]
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="n")]
+[charslot(slot = "r", name = "avg_230_savage_1#6$1", focus="r")]
+[name="새비지"]차에서…… 폭발음이?!
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]*림 빌리턴 욕설*, 꺼져! 너를 상대할 시간은 없어!
+[dialog]
+[PlaySound(key="$rungeneral",volume=1)] 
+[charslot(slot = "l", posfrom="0,0", posto="-300,0", afrom=1, ato=0, duration=0.5, isblock=true)]
+[charslot(slot = "r", name = "avg_230_savage_1#3$1", posfrom="0,0", posto="-200,0", afrom=1, ato=1, duration=0.5, isblock=true)]
+[name="새비지"]야! 잠깐!
+[charslot(slot = "r", name = "avg_230_savage_1#6$1")]
+[name="새비지"]……이 차, 무슨 일이 있었던 거야…… 차체는 너덜너덜해졌고, 앞쪽도 조금 변형된 거 같은데……
+[name="새비지"]연기 나는 건 아무래도 냉각 파이프가 너무 뜨거워져서 그런 것 같고……
+[name="새비지"]그리고 저 운전기사는……
+[name="새비지"]……저 사람, 이 차보다 상태가 더 심각해.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)] 
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)] 
+[charslot]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_4117_ray_1#9$1")]
+[PlayMusic(key="$monastery_sad_loop", volume=0.6)]
+[PlaySound(key="$d_avg_energywell", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=0.6, channel="a",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Blocker(a=0.1, r=255, g=0, b=0, fadetime=0.5)]
+[name="레이"]……
+[name="레이"]회색 귀, 불쌍해.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[PlaySound(key="$d_avg_sewer", volume=1)]
+[Delay(time=1.5)]
+엔진은 꺼졌지만, 동력실에선 여전히 냉각 파이프에서 흐르는 물소리가 들려왔다.
+실내 온도는 비정상적으로 높아졌고, 온몸이 흠뻑 젖은 워미는 끊임없이 몸을 떨고 있었다.
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="레이"]라나가 이러는 게 효과가 있다고 했어.
+[charslot(slot = "m", focus="n")]
+[name="냄비 뚜껑"]으음…… 조금만 참으면, 조금만……
+[dialog]
+[charslot]
+나머지 말은 입 밖으로 나오지 못했고, 냄비 뚜껑은 마치 잠꼬대하듯 입술만 움직였다.
+잠시 생각에 잠긴 레이는 냄비 뚜껑의 손을 잡았다. 상대의 손은 무의식적으로 움츠려졌지만, 뿌리칠 만한 기력은 없었다.
+[charslot(slot = "m", name = "avg_4117_ray_1#5$1")]
+[name="레이"]……너무 뜨거운데.
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="레이"]걱정 마. 이제 네 오리지늄 폭주가 어느 정도인지 알았어.
+[name="레이"]도움이 되는 방법은 모르겠지만, 위험을 최소화하는 방법은 알고 있어.
+[charslot(slot = "m", name = "avg_4117_ray_1#10$1")]
+[name="레이"]자신을 땅에 묻는 사람도 있고, 폐기된 갱도에 자신을 가둬두는 사람도 있고, 아주 먼 곳으로 떠나는 사람도 있어.
+[name="레이"]그래, 사람은 언젠가는 병에 걸려. 마치 부품이 녹스는 걸 피할 수 없는 것처럼.
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="레이"]적절하게 처리하고 타인에게 피해를 주지 않는다면, 사고로 이어지지도 않아.
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_clothmovement", volume=0.4)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#2$1", posfrom="0,-20", posto="0,0", duration=2, isblock=true)]
+[name="냄비 뚜껑"]저…… 저는……
+[name="냄비 뚜껑"]……그러고 싶지 않아요……
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1")]
+[name="냄비 뚜껑"]레이 언니……!
+[dialog]
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="레이"]움직이지 마, 회색 귀. 체온이 아직도 올라가고 있어.
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1")]
+[name="냄비 뚜껑"]……예전에 함께 살던 대가족 아저씨, 아줌마들도 모두 감염자였어요.
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="레이"]응.
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1")]
+[name="냄비 뚜껑"]다들…… 일도 잘하고, 자기 집도 잘 만들고…… 성실하게, 행복하게 살았어요.
+[name="냄비 뚜껑"]저도 매우 즐거웠어요. 저는…… 엄청 큰 수프를 끓여서 사람들한테 나눠 줬죠……
+[charslot(slot = "m", name = "avg_4081_warmy_1#2$1")]
+[name="냄비 뚜껑"]맛있는 걸 먹으면…… 병도 나으니까요. 아저씨 아줌마들도 병이 다 나으면 돌아오지 않아도 되고요……
+[charslot(slot = "m", name = "avg_4117_ray_1#4$1")]
+[name="레이"]잠깐, 거기까지만 해, 회색 귀. 체온이 너무 높아……
+[dialog]
+[charslot]
+[Blocker(a=0.2, r=255, g=0, b=0, fadetime=2)]
+[PlaySound(key="$d_avg_sprkbrst", volume=1)]
+[SoundVolume(volume=1, channel="a",fadetime=2)]
+[delay(time=2)]
+공기 중에서 미세하게 스파크가 터지는 소리가 들려왔다.
+[charslot(slot = "m", name = "avg_4117_ray_1#4$1")]
+[name="레이"]이젠 네 손을 잡아 주기도 힘들 정도야.
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="레이"]……나도 경험이 있어, 회색 귀. 어떤 사람은 실수해서 사람을 다치게 하거나 죽이기도 하지만, 난 그러지 않아. 잠깐 널 기절만 시킬 뿐…… 며칠만 아프고 말 거야.
+[name="레이"]손 놓을게.
+[charslot(slot = "m", name = "avg_4081_warmy_1#2$1")]
+[name="냄비 뚜껑"]워미…… 밥도 잘 먹고, 잘…… 자라서, 병이 다 나으면…… 아빠도, 돌아올 거야……
+[name="냄비 뚜껑"]……왜, 저 사람들은 감염자들을 찾으려고 하는 거지? 왜 나는 감염자여서, 라나 언니에게 폐를 끼치는 걸까?
+[charslot(slot = "m", name = "avg_4117_ray_1#9$1")]
+[name="레이"]……
+[charslot(slot = "m", focus="n")]
+손바닥에 생긴 물집의 통증에 레이의 움직임은 잠시 멈췄다.
+[dialog]
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1")]
+[name="냄비 뚜껑"]레이 언니.
+[name="냄비 뚜껑"]감염자가 된 게…… 잘못인가요?
+[dialog]
+[musicvolume(volume=0.2, fadetime=2)]
+[SoundVolume(volume=0, channel="a",fadetime=1)]
+[CameraShake(duration=2, xstrength=20, ystrength=20, vibrato=20, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_explosion_stone", volume=1)]
+[PlaySound(key="$d_avg_steamburst", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[PlaySound(key="$d_avg_sandstone", volume=1)]
+[delay(time=2)]
+[name="레이"]……
+[name="레이"]난……
+[name="레이"]……회색 귀, 많이 아프지?
+[name="레이"]그 아픔이 느껴져.
+[name="레이"]나도 알아. 가끔은 광석병 발작 때문에 잠도 못 잘 때가 있으니까.
+[name="레이"]하지만 그때, 그 빛이 날 비췄던 때가 기억나…… 왠지 몸이 편안해졌고, 푹 잠들 수 있었어.
+[name="레이"]'베헤모스'……
+[name="레이"]……지금은 편히 쉬고 있어. 회색 귀, 내가 그걸 반드시 찾아올 테니까.
+[dialog]
+[delay(time=1.5)]
+[name="알라나"]……냄비 뚜껑! 냄비 뚜껑!
+[Dialog]
+[charslot]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[musicvolume(volume=0.6, fadetime=2)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[SoundVolume(volume=0.2, channel="a",fadetime=2)]
+[Blocker(a=0.1, r=255, g=0, b=0, fadetime=2)]
+[PlaySound(key="$rungeneral",volume=1)] 
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", posfrom="300,0", posto="0,0", duration=0.8, isblock=true)]
+[name="알라나"]어떻게 된 거야?!
+[charslot(slot = "m", name = "avg_npc_1183_1#4$1")]
+[name="알라나"]너희들…… 그…… 피는……
+[charslot(slot = "m", name = "avg_4117_ray_1#9$1")]
+[name="레이"]라나, 난……
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="레이"]……회색 귀는 다치지 않았어. 하지만 가까이 오지 마. 열이 아주 조금 내렸을 뿐이야.
+[name="레이"]아까 소규모 폭발이 일어났어. 라나, 여기 몇 군데랑 저기 파이프가 파열됐는데, 혹시 위험한 상황이야?
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1")]
+[name="알라나"]……
+[name="알라나"]파이프는 상관없어. 그런데……
+[name="알라나"]약은…… 확실히 효과가 없었던 모양이네.
+[dialog]
+[charslot]
+[PlaySound(key="$rungeneral", volume=1, loop=true, channel="r")]
+[StopSound(channel="r", fadetime=1)]
+[charslot(slot = "m", name = "avg_230_savage_1#6$1", posfrom="300,0", posto="0,0", duration=1, isblock=true)]
+[name="새비지"]내 도움이 필요할 거라 했잖아……
+[charslot(slot = "m", name = "avg_230_savage_1#4$1")]
+[name="새비지"]……어라? 이 톱이랑 렌치랑 테이프…… 그리고 이 아이, 전에 본 적이 있는데……
+[charslot(slot = "m", name = "avg_230_savage_1#6$1")]
+[name="새비지"]……왜 이 아이를 묶어뒀어? 너희 얘한테 뭘 하려는 거야?
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1")]
+[name="알라나"]……
+[name="알라나"]뭘 하려는 거냐고?
+[name="알라나"]내가…… 또 뭘 할 수 있는데?
+[charslot(slot = "m", name = "avg_4117_ray_1#9$1")]
+[name="레이"]라나……
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1")]
+[name="알라나"]내가 무슨 바보도 아니고. 이런 방법이 효과가 없다는 거 내가 모를 줄 알아? 열사병에 걸린 친구가 민간요법으로 치료하다가 고통 속에서 다시는 직장에 돌아오지 못한 걸 내가 못 봤겠어?
+[name="알라나"]'녹슨 렌치'는 그나마 이겨냈어. 벙어리가 됐지만, 그래도 일은 할 수 있었지. 바비 아저씨는 이 방법으로 겨우 살아났다고 했어…… 내가 설마 그 사람들이 극소수라는 걸 몰랐겠어?
+[name="알라나"]나라고…… 광석병이 불치병이라는 걸 모르겠어?
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1")]
+[name="알라나"]하지만 이 바보는 몰라. 이 녀석은 광석병을 치료할 수 있을 거라고 믿어. 하지만 내가 이 녀석과 함께 믿어 주는 것 외에, 할 수 있는 게 또 뭐가 있는데?
+[name="알라나"]내가 할 수 있는 거라곤 이런 약을 구하고, 사람들로부터 민간요법을 배워오는 게 전부야.
+[name="알라나"]나도…… 사람이 내 앞에서 죽는 걸 지켜보면서 아무것도 안 할 수는 없잖아.
+[dialog]
+[charslot]
+[stopmusic(fadetime=2)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[delay(time=2)]
+[Decision(options="저기, 안녕.", values="1")]
+[Predicate(references="1")]
+[Decision(options="그쪽에 있는 꼬마 감염자의 상태를 좀 봐도 될까?", values="1")]
+[Predicate(references="1")]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_magic_4", volume=0.4)]
+[charslot]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[PlayMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="아미야"]푹 쉬세요. 더 이상 자신에게 화상을 입히지 마시고요.
+[name="아미야"]이런 아츠를 사용해서 죄송해요……
+[name="아미야"]꿈속에선 부디 광석병에 시달리지 않았으면 좋겠네요.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="무의식적인 아츠 시전이 멈췄네.;잘했어, 아미야.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="아미야"]……저는 느껴져요. 이 아이, 무척 힘들어하고 있어요.
+[dialog]
+[Delay(time=1)]
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="아미야"]박사님, 제가 또 도와드릴 게 있을까요?
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="됐어.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", focus="n")]
+[Decision(options="기본적인 주사만으로도 충분해.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="아미야"]제 아츠도 끝났으니…… 다른 분들도 들어오시게 해야겠네요.
+[dialog]
+[charslot]
+[Delay(time=0.5)]
+[PlaySound(key="$rungeneral",volume=1)] 
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", duration=1.5, isblock=true)]
+[name="알라나"]……정말 이제 괜찮은 거야?!
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="아미야"]네, 무의식적으로 사용하던 아츠도 이제 멈췄고, 체내 오리지늄 결정의 활성화도 억제됐어요. 하지만 발열 증상은 아직 완전하게 회복되지 않았으니, 조금 더 지켜봐야 해요.
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]수송차를 이렇게나 오래 몰았지만, 이런 곳에서 의사를 다 마주치게 될 줄이야…… 정말이지.
+[name="알라나"]……정말로 너무 고마워.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]별말씀요. 감염자를 구하는 게 저희 로도스 아일랜드가 해야 할 일인걸요.
+[name="아미야"]게다가, 저와 박사님은 전문 의료진이 아니에요. 혹시 모르니까, 최대한 빨리 로도스 아일랜드의 사무소에 가서 전용 의료 설비로 전면적인 검사를 받는 게 좋을 거예요.
+[charslot(slot = "m", name = "avg_npc_1183_1#4$1")]
+[name="알라나"]로도스 아일랜드……?
+[name="알라나"]맞다, 그러고 보니 전에 냄비 뚜껑이 나한테 명함을 하나 줬는데. 어떤 언니가…… 가족한테 전해주라고 했다면서.
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="새비지"]어, 그게 나야.
+[name="새비지"]그때 마침 이 아이가 감염자인 걸 눈치채고, 가족들이라면 이해하지 않을까 싶어서……
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]아, 여기 있다. 이거야. 굴착기 버킷이 하늘을 가리키던 로고가 생각나더라.
+[charslot(slot = "m", name = "char_002_amiya_1#5")]
+[name="아미야"]……굴착기 버킷이요?
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]지금 림 빌리턴에서 이런 일은 경쟁이 너무 심하거든. 차라리 수송차를 모는 게 낫지.
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]그나저나 너희 회사, 복지가 상당한데? 무슨 건설 회사에 전문적인 의료진이 다 있어…… 림 빌리턴의 회사들이 다 너희 같았으면 얼마나 좋을까!
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="아미야"]뭔가 오해가 있는 것 같네요. 알라나 씨……
+[name="아미야"]……하지만 알라나 씨 말이 맞아요. 만약 림 빌리턴의 기업들이 모두 광석병에 대한 안전 의식을 갖고 있었다면, 이 환자도 지금 같은 위험에 처하진 않았겠죠.
+[name="아미야"]그리고 저희도 업무 범위를 제대로 명시한 로도스 아일랜드 명함을 다시 만들어야겠어요…… 감염자들은 의료 서비스를 받을 기회가 거의 없으니까요.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]아무튼 로도스 아일랜드의 사무소라면 더 전문적인 의료진이 워미 씨를 치료해줄 수 있을 거예요. 괜찮다면 이 차로 가장 가까운 이동 도시까지 갈 수 있을까요?
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]좋아.
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1")]
+[name="알라나"]……아냐, 잠깐.
+[name="알라나"]이 차는 상황이 조금 특별해서 말이지. 한번 돌아가면 다신 못 올 수도 있어…… 게다가 이미 다른 사람이랑 약속한 것도 있어서.
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="새비지"]상황이 특별해? 아, 그러고 보니 이건 수송차잖아.
+[name="새비지"]하지만, 이대로 계속 가봤자 앞에는 재앙 다발 지역밖에 없는데.
+[charslot(slot = "m", name = "avg_230_savage_1#10$1")]
+[name="새비지"]설마…… 너희들 거기 가서 병나무를 심을 생각이야?
+[charslot(slot = "m", focus="n")]
+[name="???"]아니…… 아니, 우리는…… '베헤모스'를 찾으러……
+[charslot(slot = "m", name = "avg_230_savage_1#10$1")]
+[name="새비지"]……베헤모스?
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_chairrub", volume=1)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_clothmovement", volume=0.4)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1", posfrom="0,-20", posto="0,0", duration=2, isblock=true)]
+[name="냄비 뚜껑"]부탁이에요…… 저를 두고 가지 말아 주세요……
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1")]
+[multiline(name="알라나")]알았어 알았어, 아무도 너를 버리지 않아. 그래서 다들 지금 토론하고 있잖아……
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=90, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_npc_1183_1#4$1")]
+[multiline(name="알라나",end=true)]어, 냄비 뚜껑?!
+[name="알라나"]깼어?
+[name="알라나"]머리는 좀 어때? 몸은 아직도 뜨거워?
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1")]
+[name="냄비 뚜껑"]라나 언니, 엄청 흥분하고 계신 것 같은데…… 무슨 일이 있었던 거예요? 왠지 엄청 피곤한 꿈을 꾼 거 같아요……
+[charslot(slot = "m", name = "avg_4081_warmy_1#2$1")]
+[name="냄비 뚜껑"]……아, 그리고 마지막에 베헤모스를 본 것 같아요.
+[name="냄비 뚜껑"]레이 언니가 저한테 엄청나게 큰 그림자를 보여 줬거든요. 저도 자세히 보려고 엄청 노력했는데, 잘 안 보이더라고요.
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1")]
+[name="냄비 뚜껑"]라나 언니, 저도 베헤모스를 찾으러 따라가도 될까요?
+[charslot(slot = "m", name = "avg_4117_ray_1#9$1")]
+[name="레이"]……
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="46_g5_rmbtwild_n",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[PlaySound(key="$d_avg_woodcracle", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=1, channel="a",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]자, 이거 먹어 봐.
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]식자재는 별로 없는데, 그래도 감사의 표시는 제대로 해야지.
+[name="알라나"]냄비 뚜껑을 구해준 데다, 얘를 돌봐 주려고 우리와 동행까지 해 주다니. 정말 다행이야.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]아니에요. 알라나 씨. 저희도 어차피 목적지가 없었거든요.
+[name="아미야"]그리고 여기 이 박사님은, 여러분이 말씀하신 베헤모스에 대해 관심이 많으세요.
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_230_savage_1#8$1", duration=1.5, isblock=true)]
+[name="새비지"]다 끝났어, 알라나. 내 차는 수송차의 화물칸에 넣어 뒀어.
+[name="새비지"]앞으로의 여정도 잘 부탁해.
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]훗, 내게 맡겨.
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="새비지"]그나저나 너희가 찾고 있다는 그 '베헤모스'는 대체 뭐야?
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1")]
+[name="알라나"]그건…… 음…… 엄청나게 거대한……
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]아무튼 전설 속에 등장하는 그런 생물이야! 듣기론 엄청나게 대단한 탐험가가 이 전설을 주제로 칼럼을 쓴다는 소문이 자자해!
+[name="알라나"]베헤모스는 림 빌리턴의 모래바람 속에서도 몇 달째 쉬지 않고 비행할 수 있으면서, 가장 높은 산꼭대기를 뛰어넘어 태양을 향해 불을 뿜고, 어두운 밤안개 속에서도 달보다 밝게 빛난대!
+[name="알라나"]이번에 우리가 그곳으로 가는 것도 더 많은 단서를 찾기 위해서야! 그렇지? 차량 강…… 아니, 레이?
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="새비지"]저기 석궁만 안고 있는 사람 말하는 거지? 말이 거의 없는 것 같은데……
+[charslot(slot = "m", name = "avg_npc_1183_1#2$1")]
+[name="알라나"]……뭐, 혼자 저기서 찬 바람이나 쐬게 내버려 둬.
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]아무튼 베헤모스는 그런 대단한 녀석이야.
+[charslot(slot = "m", name = "avg_230_savage_1#7$1")]
+[name="새비지"]음, 이런 참신한 전설은…… 들어본 적 없는 것 같은데.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]저는 들어본 적 있어요.
+[name="아미야"]거대한 파울비스트가 하늘의 구름을 다 먹어 치우고 하늘에서 떨어지기 전에, 그 파울비스트의 등을 타고 끝없는 별바다를 향해 뛰어 들어갈 수 있다고……
+[name="아미야"]옛날에 자기 전에 박사님께서 가끔 이런 동화들을 들려줬거든요.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="응?;미안…… 기억이 잘 안 나네.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#2")]
+[name="아미야"]아, 물론 박사님께서 말씀하신 거랑 제가 말한 게 약간 다를 순 있죠……
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]다만…… 박사님의 이야기를 듣고 있으면 마치 모든 게 다 진짜인 것 같다는 생각이 들거든요.
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]오, 그 후드 안에 그렇게 상상력이 풍부한 머리가 숨어 있었다니. 놀라운데.
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]하지만 우리가 찾는 건 동화가 아니라, 진짜야!
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#4$1", duration=1.5,isblock=true)]
+[name="냄비 뚜껑"]후우…… 후우…… 자, 막 끓인 고구마수프 나왔어요!
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]우와, 이거 진짜 맛있는 건데. 너희도 어서 먹어!
+[charslot(slot = "m", name = "avg_230_savage_1#9$1")]
+[name="새비지"]고마워, 워미.
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1")]
+[name="냄비 뚜껑"]별말씀요. 다른 요리도 있어요!
+[dialog]
+[PlaySound(key="$rungeneral",volume=1)] 
+[charslot(duration=1, isblock=true)]
+[charslot(slot = "m", name = "avg_230_savage_1#10$1")]
+[name="새비지"]잠깐…… 그런데…… 왜 원석충이 들어간 것 같은 맛이 나지?
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]응, 원석충 젤라틴이 들어갔으니까.
+[name="알라나"]방금 먹어봤는데, 말랑말랑한 게 맛도 좋아. 아마 독은 없을 거야.
+[charslot(slot = "m", name = "avg_230_savage_1#2$1")]
+[name="새비지"]……음, 진짜 괜찮긴 하네.
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="새비지"]그러고 보니 아까 알라나가 가져온 요리도 나쁘지 않았어. 네가 요리도 잘할 줄은 몰랐네.
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1")]
+[name="알라나"]그게 그렇게 놀라울 일이야? 왜, 요리는 전혀 못하게 생겼어? 내가 한 요리는 공장 사람들이 서로 빼앗아 먹을 정도야!
+[name="알라나"]하지만…… 나는 맛이 진한 요리를 잘해. 이런 담백하고 시간도 오래 걸리는 건 무리야.
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]이런 보르쉬랑 방금 너희가 먹은 원석충 고구마수프는 다 냄비 뚜껑이 혼자 만든 거야. 나는 그저 나르는 걸 도왔을 뿐이고.
+[charslot(slot = "m", name = "avg_230_savage_1#6$1")]
+[name="새비지"]워미? 이제 막 회복했는데…… 이렇게 많은 일을 시켜?
+[name="새비지"]쉬고 있으라고 해. 나머지는 내가 할게.
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]잠깐…… 걔한테 맡겨. 괜히 일을 더 만들지 말고.
+[name="알라나"]자신이 아무것도 할 수 없다고 느끼면 아마 또 우울해할 거야.
+[name="알라나"]그 녀석은 늘 그래. 자신이 할 수 있다고, 자기도 어른이라고 증명하고 싶거든…… 그것 때문에 낮에도 그 꼴이 된 거고.
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="아미야"]아, 그러고 보니, 알라나 씨……
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]응?
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="아미야"]도대체 워미 씨에게 무슨 일이 있었던 건가요?
+[name="아미야"]늘 웃는 얼굴에 기운이 넘쳐 보이지만, 저는…… 워미 씨가 슬퍼하는 게 느껴지거든요.
+[name="아미야"]워미 씨의 감정과 미소는 마치 전혀 다른 두 가지를 호소하고 있는 것 같아요.
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]……하하하.
+[name="알라나"]괜히 강한 척하는 거야. 별거 아니야.
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="아미야"]그렇지만 보통 아이들이 이렇게까지 완고하지는 않은데……
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]아마 걔 아빠가 사라지기 전에 남긴 말 때문일 거야. “지금처럼 즐겁게 자라다오”……
+[name="알라나"]게다가 그 전날이 그 녀석 생일이었대. 성가시지? 아이들은 생일 소원이나 기도 같은 걸 진지하게 받아들이니까.
+[charslot(slot = "m", name = "avg_230_savage_1#5$1")]
+[name="새비지"]그럼 워미의 아빠는 지금……
+[charslot(slot = "m", name = "avg_npc_1183_1#2$1")]
+[name="알라나"]글쎄. 아무튼 걔는 나를 계속 따르고 있어. 걔네 아빠가 출근할 때 매번 내 수송차를 탔으니까.
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1")]
+[name="알라나"]이 차의 승객들 중 가장 많은 게 광부고, 두 번째로 많은 게 카우투스인데, 걔 아빠는 둘 다야! 그러니 내가 기억할 리가 있겠어?
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1")]
+[name="알라나"]그런데, 이 차가 곧 운행이 종료된다고 내가 말했었나?
+[name="알라나"]왜냐하면 정거장이었던 광산들이 전부 폐쇄했거든. 최근에 폐쇄된 곳은 자원이 거의 고갈돼서 이미 가치가 바닥났어. 그리고 2년 전에는…… 사고 때문에 한 곳이 폐쇄됐고.
+[name="알라나"]그러고 보니 걔가 내 차에 탄 것도 딱 2년 전이네. 항상 즐겁게 웃지 않으면 인파 속에서 아빠를 찾았을 때, 아빠가 자기를 못 알아볼 거라고 했었지.
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="아미야"]……
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]자, 나는 가서 좀 도와주고 올게. 아마 너무 의욕이 넘쳐서, 너희들이 가져온 그 작은 오리지늄 난로로 광부 만찬 풀코스를 만들어 버릴지도 몰라.
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="알라나"]너희들도 좋은 녀석들 같네. 쟤가 만든 요리를 먹어 주는 사람도 아주 오랜만이거든.
+[name="알라나"]그리고 아까 너희가 했던 얘기가 진짜이길 바랄게. 감염자와 함께 밥 먹어도 감염되지 않는다는 게……
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1")]
+[name="알라나"]아니면 적어도 나처럼 착한 사람에겐 상응하는 보답이 따른다고 기도해둘까? 나는 아무 일도 없잖아, 하하하.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=2, isblock=true)]
+[charslot(slot = "m", name = "avg_230_savage_1#7$1")]
+[name="새비지"]저 사람, 얼마나 위험한지도 모르면서 워미를 곁에 뒀구나……
+[dialog]
+[charslot]
+[Decision(options="아미야.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="아미야"]네, 박사님……
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="후회하고 있어?;기뻐하고 있어?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="아미야"]아, 티가 났나요? 저는 단지……
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="아미야"]……만약, 그때 박사님께서 저를 잔해 속에서 구해주지 않았다면 어떻게 됐을까…… 라고 생각하고 있을 뿐이에요.
+[name="아미야"]림 빌리턴의 거리를 걷다 보면 자주 이런 생각이 들어요. 뛰어다니거나 소리를 지르는 카우투스 아이들 모두가, 저 같다고요.
+[name="아미야"]림 빌리턴에는 재난이 자주 일어나거든요. 위험한 전통적인 광업에, 비정상적으로 빈번한 재앙까지……
+[charslot(slot = "m", name = "avg_230_savage_1#6$1")]
+[name="새비지"]쳇, 심지어 예전에 몇몇 빅토리아 상인들은 '여기는 인간이 사는 곳이 아니다'라고 했다니까.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]아, 물론, 림 빌리턴의 삶 자체가 나쁘다는 건 아니에요…… 비록 환경은 척박하지만, 그래도 집집마다 분위기는 따뜻하니까요.
+[name="아미야"]림 빌리턴의 대가족은 갈 곳이 없는 아이들을 거두는 경우가 자주 있어요.
+[name="아미야"]저는 단지…… 지금처럼 무언가를 할 수 있다는 게 너무 기뻐요.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="예를 들면, 냄비 뚜껑을 돕는 거?;예를 들면, 감염자를 위해 싸우는 거?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]그리고 박사님을 성공적으로 구해낸 거요. 그리고 그 전에……
+[dialog]
+[charslot]
+작은 카우투스는 이내 입을 다물었지만, 당신은 그게 그녀들이 암묵적으로 당신의 비밀을 지켜주고 있는 것이란 걸 잘 알고 있었다.
+아미야는 약간 실의에 빠진 듯했지만, 유감이나 후회는 보이지 않았다.
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="아미야"]……생각해보면 고향을 떠난 후엔, 한 해 한 해가 너무 길었던 것 같아요.
+[name="아미야"]일들은 순식간에 지나가죠. 제 키가 자라는 것보다, 어릴 때 옷이 작아져서 못 입게 되는 것보다 더 빠르게요.
+[name="아미야"]그래서 저는 가끔 자신에게 이렇게 질문할 때가 있어요…… 부모님이 생각났을 때, 내가 경험한 모든 것을 어떻게 정리해서 얘기해야…… 부모님이 저를 알아볼 수 있을지요.
+[charslot(slot = "m", name = "avg_230_savage_1#5$1")]
+[name="새비지"]……
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]하지만 림 빌리턴에 돌아온 순간 저는 깨달았어요.
+[name="아미야"]제가 부모님에게 하고 싶은 말은…… 제가 살아남았다는 말뿐이에요.
+[name="아미야"]왜냐하면, 박사님께서 제 손을 잡아 주셨으니까요.
+[dialog]
+[musicvolume(volume=0.2, fadetime=2)]
+[charslot(duration=2)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+당신의 뇌리에 문득 어떠한 광경이 스쳐 지나갔다.
+로도스 아일랜드에 탑재된 레이저 채굴 모듈에 박힌 거대한 림 빌리턴 로고. 당신은 예전에도 그걸 바라보았던 기억이 떠올랐다.
+그리고 최근 로도스 아일랜드 내부에서 점차 당신에게 열람을 허용한 자료들이 떠올랐다.
+로도스 아일랜드의 전신인 '바벨'은 림 빌리턴에 채굴 모듈의 제작을 의뢰했고, 첫 수송 도중에 습격을 받았다.
+바벨이 고용한 용병대는 방어에 실패했고, 수송대의 많은 사람들이 죽었다.
+그리고 당신은 텅 빈 황야에서 타오르는 시커먼 연기가 떠올랐다.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+아득히 멀고 애매한 감정이 어슴푸레한 기억과 함께 마음속에서 되살아났다.
+당신은 그게 자신의 과거라는 사실을 아직 깨닫지 못했지만, 그럼에도 당신의 마음은……
+[dialog]
+[Decision(options="……끝없는 고독을 느끼고 있었다.", values="1")]
+[Predicate(references="1")]
+[musicvolume(volume=0.6, fadetime=2)]
+[charslot(slot = "m", name = "char_002_amiya_1#1",duration=1, isblock=true)]
+[name="아미야"]제가 여기서 찾고 싶은 건…… 여기에서부터 시작한 그 여행의 흔적이에요.
+[name="아미야"]그리고 여기에서 발굴된 로도스 아일랜드가, 림 빌리턴을 가로질러 대지의 어딘가에서 출항하기에 이르기까지의 흔적도요.
+[name="아미야"]저는 그저……
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="아미야"]로도스 아일랜드를 만나지 못했더라면, 켈시 선생님과 테레시아 씨를 만나지 못했더라면…… 만약 박사님을 만나지 못했더라면……
+[name="아미야"]분명 엄청 아쉬웠을 것 같아요.
+[dialog]
+[stopmusic(fadetime=2)]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_amb_forestnight_loop", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=1, channel="a",fadetime=2)]
+[Background(image="46_g5_rmbtwild_n",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$calm_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="새비지"]후우…… 드디어 정리가 끝났네.
+[charslot(slot = "m", name = "avg_230_savage_1#7$1")]
+[name="새비지"]정말이지, 알라나랑 워미가 계속 저런 수송차 안에서 살았다니. 아까 바로 해머를 휘두르지 않길 잘했어. 안 그랬으면 저 차는……
+[charslot(slot = "m", name = "avg_230_savage_1#7$1")]
+[name="새비지"]그러고 보니 마지막으로 이렇게 많은 사람들이랑 캠핑한 게 언제였더라?
+[name="새비지"]……이렇게 박사랑 아미야랑 같이 즐겁게 밖에서 저녁을 먹었던 건 또 언제였지?
+[dialog]
+[musicvolume(volume=0.2, fadetime=2)]
+[SoundVolume(volume=0, channel="a",fadetime=2)]
+[charslot(duration=1, isblock=true)]
+[Background(image="46_g5_rmbtwild_n", screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", amount=1, keep=true, fadetime=4)]
+[Delay(time=2)]
+[name="새비지"]……'응'이라니, 그걸로 끝이야?
+[name="새비지"]그 말을 듣고도 화가 안 나? 그 빌어먹을 상인들이 우리 광산을 빼앗으려 한다고! 게다가 내 친구들도, 어쩌다 그놈들처럼 속물이 됐지?!
+[name="박사"]……미안.
+[name="박사"]그냥…… 옛날에 읽었던 책 내용이 생각나서.
+[name="새비지"]……
+[name="새비지"]그런 눈으로 쳐다보지 마.
+[name="새비지"]마치 하늘의 별을 바라보고 있는 것 같잖아.
+[dialog]
+[SoundVolume(volume=1, channel="a",fadetime=2)]
+[CameraEffect(effect="Grayscale", amount=0, keep=true, fadetime=2)]
+[musicvolume(volume=0.6, fadetime=2)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "avg_230_savage_1#7$1", duration=0.5, isblock=true)]
+[name="새비지"]……그 당시에도 즐거운 일만 있었던 건 아니야.
+[charslot(slot = "m", name = "avg_230_savage_1#4$1")]
+[name="새비지"]음……?
+[name="새비지"]아미야랑 박사…… 벌써 잠들었나?
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="새비지"]신나게 놀다가 지쳤나 보네. 여긴 안전한 곳도 아닌데, 참. 이러다 감기라도 걸리면……
+[dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image(image="46_i01", screenadapt="coverall", xScale=1.1, yScale=1.1, fadetime=0)]
+[ImageTween(xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=20, block=false)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Decision(options="새비지?", values="1")]
+[Predicate(references="1")]
+[name="새비지"]어?!
+[name="새비지"]……박사, 아직 안 잤어?
+[name="새비지"]어두워서 얼굴이 잘 안 보이긴 했는데……
+[name="새비지"]혹시 나 때문에 깼어?
+[dialog]
+[Decision(options="잠들지 않는 야수도 있어.;계속 잠을 안 잔 사람도 있어.", values="1;2")]
+[Predicate(references="1;2")]
+[name="새비지"]……그 말은, 아미야를 위해 불침번을 서는 거구나.
+[name="새비지"]하긴, 림 빌리턴의 황야는 늘 위험하니까. 만나는 사람들이 다 착하다는 보장도 없지.
+[name="새비지"]……그러니까, 처음 너희를 봤을 때 내가 얼마나 초조했는지!
+[name="새비지"]몸이 허약한 이방인이, 어린애 하나 데리고 황야를 걷고 있었어. 나 좀 죽여달라는 거나 마찬가지잖아!
+[name="새비지"]너는 림 빌리턴을 몰라서 그랬다 치지만, 아미야까지 무턱대고 너를 믿고 있었으니……
+[name="새비지"]……하지만 그 후에는 나도 이해했어. 아미야가 항상 네 곁에서만 푹 잘 수 있는 데는 다 이유가 있다는 걸 말이야.
+[dialog]
+[Decision(options="내가 똑똑하다는 거야?;내가 경각성이 높다는 거야?", values="1;2")]
+[Predicate(references="1")]
+[name="새비지"]그래, 너는 아는 것도 많고 수단도 많지.
+[name="새비지"]……하지만, 좀 얼빠진 것처럼 보이는 부분도 있어. 특히 막 같이 여행을 떠났을 때.
+[name="새비지"]너는 '이런 열매는 신맛이 강해'라고 했으면서, 결국 한 번 맛보고서야 아미야에게 먹지 말라고 충고했지.
+[dialog]
+[Predicate(references="2")]
+[name="새비지"]……그래, 너는 쉬는 법이 거의 없었어.
+[name="새비지"]아무것도 없는 황야든, 별이 가득한 밤하늘이든, 도시의 흔한 철골이나 크레인이든, 너는 언제나 질리지도 않고 계속 바라보니까.
+[name="새비지"]불침번을 하려고 일부러 깨어 있는 건 아니었겠지만, 확실히 네 덕분에 아미야가 사나운 파울비스트나 악당에게 당하지 않은 적은 몇 번 있었지.
+[dialog]
+[Predicate(references="1;2")]
+[delay(time=1)]
+[name="새비지"]박사, 여기 앉아도 될까?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[image]
+[charslot]
+[Background(image="46_g5_rmbtwild_n",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="새비지"]……그때처럼 말이야.
+[charslot(slot = "m", name = "avg_230_savage_1#2$1")]
+[name="새비지"]하아, 너희를 데리고 놀러 가려고 했는데, 결국엔 또 이상한 일을 겪고야 말았네.
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="새비지"]그나마 다치지 않아서 다행이야.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="그때의 여행도 이랬어?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_230_savage_1#7$1")]
+[name="새비지"]맞아…… 하지만 나한테 그때랑 가장 다른 건 기분이려나.
+[name="새비지"]솔직히 그때는 좀 우울해서 기분이라도 낼 겸 멀리 떠나고 싶었어.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="다른 림 빌리턴 오퍼레이터들한테서 들었어.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", focus="n")]
+[Decision(options="너는 원래 동네에서 인망이 두터웠다며?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_230_savage_1#7$1")]
+[name="새비지"]응, 맞아. '울타리 사건' 때문에.
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="새비지"]하지만, 사건이 해결되고 너랑 아미야를 따라서 여행을 떠났으니, 사람들이 보기엔 내가 마치 사라진 것 같겠지. 여행 끝나고 돌아가도 다들 아마 잊어버렸을 거야.
+[name="새비지"]……그게 내가 원한 것이기도 했고.
+[charslot(slot = "m", name = "avg_230_savage_1#6$1")]
+[name="새비지"]그때, 상인들은 림 빌리턴 사람들을 위해 광산을 개발하겠다는 계약서에 서명했어. 하지만 돌아서자마자 바로 황무지의 야수를 대하듯이 울타리를 쳐서 우리를 밖으로 쫓아버렸지.
+[name="새비지"]물론 그보다 더 슬펐던 건 함께 우리 땅을 지키자고 했던 공작들이 우리를 짐승 취급하면 안 된다고 말했던 녀석들이야.
+[name="새비지"]어떤 사람들은 명성을 얻고 존경을 받으니까 서서히 그 상인이나 광석 도둑들처럼 변하더라.
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=90, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", name = "avg_230_savage_1#3$1")]
+[name="새비지"]하아, 생각만 해도 그놈들의 예쁜 집을 이 해머로 박살 내고 싶다니까!
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="진정해, 새비지.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_230_savage_1#4$1")]
+[name="새비지"]아, 미안. 놀라게 했네, 박사……
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="새비지"]……헤헤, 매번 이 얘기 할 때마다 기분이 이상해.
+[charslot(slot = "m", name = "avg_230_savage_1#7$1")]
+[name="새비지"]아무튼, 그때 난 엄청 화가 났어.
+[name="새비지"]난 그런 거 못 참아. 마치 자신과 벽이라도 쌓고, 자신으로부터 점점 멀어지는 것 같은 느낌. 나를 바라보는 눈빛은 전혀 친구로 대하는 눈빛이 아니었어……
+[name="새비지"]한마디로 그런 놈은 신뢰할 가치도 없다는 거야.
+[charslot(slot = "m", name = "avg_230_savage_1#2$1")]
+[name="새비지"]나도 그래서…… 사람들을 오해한 적도 있지만.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="……혹시, 내가 아는 사람이야?;그 '사람들'이 너의 믿음을 저버리지 않았으면 좋겠네.", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_230_savage_1#2$1")]
+[name="새비지"]……응.
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="새비지"]하지만 걱정 마. 내 해머는 오로지 너희를 보호하는 일에만 쓸 거니까.
+[dialog]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="새비지"]너와 아미야가 내게 답을 줬어.
+[name="새비지"]그리고 아미야는 이 길을 선택한 것에 조금의 후회도 없다고 했고.
+[name="새비지"]그게 얼마나 무거운 짐인지 알아. 그래서 내가 할 수 있는 건 최대한 아미야를 도와주는 것뿐이야.
+[name="새비지"]그리고 박사, 너는……
+[dialog]
+[SoundVolume(volume=0, channel="a",fadetime=1)]
+[musicvolume(volume=0.2, fadetime=1)]
+[PlaySound(key="$flashback", volume=0.8)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="bg_bridge",screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[name="새비지"]이건 아니야, 켈시. 도대체 여기서 무슨 일이 일어났던 거야? 아미야 몸에 무슨 일이 일어난 거냐고? 이렇게 어린아이가 이런 걸 감당할 수 있을 리가 없잖아?!
+[name="새비지"]……말해, 이게 박사의 선택이야? 그 인간은…… 설마 아미야마저도 장기말로 생각하는 거야?
+[name="새비지"]난…… 박사에게 약속을 요구한 적이 있어. 도저히 의심하지 않을 수 없지만, 또 한편으론 박사를 믿고 싶어서 박사에게 약속을 요구했지.
+[name="새비지"]아미야를 데리고 림 빌리턴을 떠나면 아미야를 소중히, 건강하고…… 그리고 자유롭게 자랄 수 있게 해주겠다고 약속했어.
+[name="새비지"]……응, 나도 알고 있어.
+[name="새비지"]기억을 잃은 사람에게 답을 구해 봤자 소용없겠지.
+[name="새비지"]켈시, 너는…… 너도 기다리고 있는 거야?
+[name="새비지"]알았어, 그럼 나도 함께 기다릴게. 시간이 모든 걸 말해주겠지.
+[dialog]
+[PlaySound(key="$flashback", volume=0.8)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="46_g5_rmbtwild_n",screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[charslot(slot = "m", name = "avg_230_savage_1#9$1")]
+[SoundVolume(volume=1, channel="a",fadetime=1)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[name="새비지"]……박사, 너도 마찬가지야.
+[name="새비지"]내가 필요하면 언제든지 얘기 해.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="(먼 곳을 가리킨다)", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "avg_230_savage_1#4$1")]
+[name="새비지"]엥? 지금?
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="새비지"]……앗, 그러고 보니.
+[name="새비지"]쟤, 저쪽에서 밤새 앉아 있었구나.
+[name="새비지"]박사, 네 말은 쟤가 위협이 될 수도 있다는 거야?
+[name="새비지"]……아니면, 뭔가 다른 생각이 있어?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="46_g5_rmbtwild_n",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_4117_ray_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot = "r", name = "avg_230_savage_1#1$1", posfrom="200,0", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "l", name = "avg_4117_ray_1#1$1", focus="l")]
+[name="레이"]……
+[charslot(slot = "r", name = "avg_230_savage_1#1$1", focus="r")]
+[name="새비지"]밤도 깊었는데, 불은 쬐러 가지 않는 거야?
+[name="새비지"]그러고 보니 오늘 너 다쳤잖아. 그러면 더욱 체력을 보충해야 할 텐데.
+[charslot(slot = "r", name = "avg_230_savage_1#8$1", focus="r")]
+[name="새비지"]워미가 요리를 잔뜩 했는데, 알라나가 차 안에 보관해 뒀어. 필요하면 내가 데워줄까?
+[charslot(slot = "l", name = "avg_4117_ray_1#4$1", focus="l")]
+[name="레이"]나는……
+[charslot(slot = "r", name = "avg_230_savage_1#8$1", focus="r")]
+[name="새비지"]워미의 요리는 정말 대단해. 맛도 못 보게 되면 내가 더 아쉬울까 봐 그래.
+[charslot(slot = "l", name = "avg_4117_ray_1#1$1", focus="l")]
+[name="레이"]……워미는 괜찮아?
+[charslot(slot = "r", name = "avg_230_savage_1#1$1", focus="r")]
+[name="새비지"]응, 별일 없어.
+[name="새비지"]직접 가서 얼굴이라도 보지 그래?
+[charslot(slot = "l", name = "avg_4117_ray_1#1$1", focus="l")]
+[name="레이"]……고마워.
+[charslot(slot = "l", name = "avg_4117_ray_1#9$1", focus="l")]
+[name="레이"]하지만…… 난 워미의 아픔을 느꼈어.
+[name="레이"]예전에 나는 아픈 게 두렵지 않다고 생각했는데…… 지금은 너무 무서워서 떨릴 정도야.
+[charslot(slot = "r", name = "avg_230_savage_1#5$1", focus="r")]
+[name="새비지"]……
+[dialog]
+[charslot]
+무기를 품에 안은 그녀는 실제로 떨고 있지는 않았다.
+그저 꼼짝도 하지 않고 밤하늘만 바라볼 뿐. 마치 시선을 다른 곳으로 옮기기를 거부하는 것처럼.
+[charslot(slot = "r", name = "avg_230_savage_1#5$1", focus="n")]
+[charslot(slot = "l", name = "avg_4117_ray_1#9$1", focus="l")]
+[name="레이"]……한 감염자가 자기 몸에 불을 지르는 걸 본 적이 있어.
+[name="레이"]구할 수 없는 감염자를 그대로 보낼 수 밖에 없던 때도 있었지.
+[name="레이"]하지만 워미는…… 그래선 안 돼.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_4117_ray_1#10$1", focus="l")]
+[name="레이"]난…… 이제야 무서워졌어.
+[charslot(slot = "l", name = "avg_4117_ray_1#9$1", focus="l")]
+[name="레이"]애초에…… 이 차가 노선을 이탈하게 한 건 나야.
+[charslot(slot = "r", name = "avg_230_savage_1#1$1", focus="r")]
+[name="새비지"]……응. 알라나한테 들었어.
+[name="새비지"]되돌리고 싶어?
+[charslot(slot = "l", name = "avg_4117_ray_1#9$1", focus="l")]
+[name="레이"]……
+[name="레이"]아니.
+[name="레이"]다만, 나 혼자 갔어야 했어……
+[charslot(slot = "r", name = "avg_230_savage_1#8$1", focus="r")]
+[name="새비지"]그럼 됐네. 왜냐하면 지금은 박사마저도 네가 말한 그 베헤모스에 관심이 생겼으니까.
+[dialog]
+[SoundVolume(volume=0.2, channel="a",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[gridbg(imagegroup="38_g21_skystarry_L1/38_g21_skystarry_R1/38_g21_skystarry_L2/38_g21_skystarry_R2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720", x=-105, fadetime=1)]
+[largebgtween(duration = 60,yFrom = 720, yTo = 360,block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[name="새비지"]밤하늘이 이쁘지? 한참을 쳐다보던데.
+[name="레이"]……모르겠어.
+[name="레이"]먼 곳에서, 어둠 속에서 빛을 내는 것뿐이잖아.
+[name="레이"]그래도 어두운 것보다는 나아.
+[name="새비지"]어두운 게 무서워?
+[name="레이"]아니. 갱도 안은 항상 어두우니까 이미 익숙해.
+[name="새비지"]갱도? 아, 그냥 거기가 싫은 거구나. 맞지?
+[name="새비지"]이해해. 나도 예전에 경비원으로 갱도에 내려간 적이 많은데, 내려갈 때마다 답답해서 숨도 못 쉬겠더라.
+[name="새비지"]그리고 가끔은 고개를 숙여 주변의 사물을 보면 슬퍼지니까, 고개를 들어서 하늘의 별을 보게 될 때가 있다는 것도 알고 있어.
+[name="레이"]……
+[name="새비지"]너는 어때?
+[name="새비지"]너는 뭘 봤어? 또 뭘 찾고 있어?
+[name="새비지"]……그리고, 애초에 차는 왜 강탈한 거야?
+[dialog]
+[StopSound(channel="a", fadetime=2)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Background]
+[Image]

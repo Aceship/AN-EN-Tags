@@ -1,0 +1,36 @@
+[HEADER(is_tutorial=true, is_skippable=false)] 新手局基地敌袭
+[Battle.lockFunction(mask="PAUSE_BUTTON_INTERACT")]
+[Battle.lockFunction(mask="BATTLE_STATUS")]
+[InputBlocker(blockInput=true)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]こうして敵襲を迎撃するのは初めてだが、あまり緊張しなくてもいい。
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=3, offsetX=24, time=3)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]敵は拠点の端にある入口からやってくる。
+[Delay(time=0.5)]
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=20, offsetX=24, time=2.5)]
+[Delay(time=3)]
+[SandboxBattle.CameraFocusTo(offsetY=20, offsetX=4, time=2)]
+[Delay(time=2.5)]
+[SandboxBattle.CameraFocusTo(offsetY=3, offsetX=4, time=2.5)]
+[Delay(time=3)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]奴らは<@tu.kw>砦</>を目指して侵攻してくるぞ。
+[SandboxBattle.CameraFocusTo(offsetY=11, offsetX=14, time=2)]
+[Delay(time=2)]
+[Tutorial(tileY=12, tileX=14, focusWidth=200, focusHeight=200, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+この砦が攻め落とされてしまうと、拠点は陥落し、演算自体も失敗となる。
+[SandboxBattle.CameraFocusTo(offsetY=6, offsetX=14, time=1)]
+[Delay(time=1)]
+[Tutorial(tileY=6, tileX=14, focusWidth=125, focusHeight=125, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+こうした設備は、一時的に敵をブロックするのに役立ってくれる。うまく活用しつつオペレーターを配置して、敵を食い止めるんだ。
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+私は待機しているから必要とあれば指示をくれ。さあ、始めるぞ！

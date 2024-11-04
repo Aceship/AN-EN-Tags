@@ -1,0 +1,13 @@
+[HEADER(is_skippable=true, is_tutorial=true)] 
+[Battle.Pause]
+[InputBlocker(blockInput=false)]
+[Battle.LockFunction(mask="SYSTEM_MENU")]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_kroos", animStyle="Drag", \
+          startX=-62, startY=60, startAnchor="BottomRight", endX=194, endY=130)] \
+Standing <@tu.kw>around</> an Emergency Heater lets us <@tu.kw>activate</> the other heaters quicker. I'll do a demo.
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_kroos", animStyle="Drag", \
+          startX=250, startY=140, endX=284, endY=-100)] \
+I just need to <@tu.kw>attack</> the other heater, and it'll activate after <@tu.kw>taking some attacks</>.
+[InputBlocker(blockInput=true)]
+[Battle.UnlockFunction(mask="SYSTEM_MENU")]
+[Battle.Pause(pause=false)]

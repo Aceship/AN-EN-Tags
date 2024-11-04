@@ -1,0 +1,22 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]なんじゃ、またユーネクテスの奴に言われて来たのか？
+[decision(option1="<color=#d8d769>固形ポタージュ</color>を持ってきたんだ。", value1="1.1", option2="いや、偶然通りかかっただけだ。", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_16", itemCount="-1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]ほほう？　では味見させてもらおうかのう……ふむむ……
+[decision(option1="お味は？", value1="2.1")]
+[predicate(references="2.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]この料理、お主が作ったのか？
+[decision(option1="ああ。", value1="3.1")]
+[predicate(references="3.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]まあまあじゃな。だが、まだ満足はできんのう。
+[decision(option1="皿まで舐めてたのに……", value1="4.1")]
+[predicate(references="4.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]ええいうるさい、満足しとらんと言ったらしとらんのじゃ！　まったく、最近の若者ときたら何を考えとるんだか！　わしの考えが少しもわからんようじゃな！
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]いいから別の料理を持ってきなさい！
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_16", value="1")]

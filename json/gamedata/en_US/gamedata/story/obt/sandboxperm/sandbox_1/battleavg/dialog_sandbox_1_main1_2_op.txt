@@ -1,0 +1,40 @@
+[header(actId="sandbox_1", npcId="trap_415_trademan")]
+[foginview(leftBottomX="4", leftBottomY="5", rightUpX="10", rightUpY="8", id="fog_1")]
+[summontrap(x="8", y="6", charId="trap_415_trademan", isChar="FALSE", dir="LEFT")]
+[summontrap(x="5", y="6", charId="trap_467_ttuye", isChar="FALSE", dir="RIGHT")]
+[camerafocusto(offsetX="7", offsetY="6", time="0.2", scale="FAR")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(id="trap_415_trademan", offsetX="-1", scale="CLOSE", time="1")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="TRUE"]Hello! I didn't expect to see other travelers in these jungles.
+[camerafocusto(id="trap_467_ttuye", offsetX="1", scale="MID", time="1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Who are you? What are you doing here?
+[camerafocusto(id="trap_415_trademan", offsetX="-1", scale="CLOSE", time="1")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="TRUE"]Allow me to introduce myself. I'm a humble employee of Sunvalley Industries, here to advertise our products.
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="TRUE"]Take a look! The quality is good, the price reasonable, and after-sales service impeccable!
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]We go wherever our customers need us, no matter how remote.
+[decision(option1="Maybe you should get out of the quagmire first?", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="It looks like you're sinking.", value1="2.1")]
+[predicate(references="2.1")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]Oh, I think I can get myself out. Do you know if there's a place around here where I can get some rest?
+[decision(option1="Our camp is to the north.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="What's in it for us, though?", value1="4.1")]
+[predicate(references="4.1")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]You scratch my back, I scratch yours. Trust me, you won't regret it.
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]Just a friendly tip that there's a quarry nearby where you can find stone. You could try your luck there.
+[decision(option1="Thank you.", value1="5.1")]
+[predicate(references="5.1")]
+[decision(option1="We look forward to seeing you in camp.", value1="6.1")]
+[predicate(references="6.1")]
+[withdraw(id="trap_467_ttuye")]
+[uioperation(target="main", item="", enable="False")]
+[delay(time="3")]
+[emoji(target="trap_415_trademan", emoji="common_bubble_happy")]
+[delay(time="2")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]Rhodes Island, at last. It was worth the wait... all the weeks of waiting...
+[withdraw(id="trap_415_trademan")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

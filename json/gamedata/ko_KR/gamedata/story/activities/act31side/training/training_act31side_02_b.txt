@@ -1,0 +1,27 @@
+[HEADER(is_tutorial=true, is_skippable=true, is_autoable=false)] 活动25side教学关02_b
+[Battle.Pause]
+[InputBlocker(blockInput=true, black=0.2)]
+[Tutorial(focusX=-90, focusY=-45, focusWidth=100, focusHeight=100, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black="$f_tut_black", \
+          protectTime=0.5, dialogHead="$avatar_jesica")]크, 큰일 났어요! 왜 갑자기 더러운 물을 내뿜는 거죠?!
+[PopupDialog(dialogHead="$avatar_nian", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]하아, 역시 책벌레들이 개발한 양수기는 물만 끌어오고, 정화는 못 하네! 양수기 뒤편의 논밭이 이미 <@tu.kw>오염된 상태</>면, 물을 끌어와도 <@tu.kw>병해만 확산돼</>!
+[PopupDialog(dialogHead="$avatar_nian", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]물론, 아무리 확산해도 발원지의 오염도를 <@tu.kw>초과하지 않지만</>.
+[PopupDialog(dialogHead="$avatar_nian", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]그리고 명심해, 오직 <@tu.kw>깨끗한 물</>로만 병해의 오염을 정화할 수 있어!
+[Battle.Pause(pause=false)]
+[Delay(time=1)]
+[Battle.Pause(pause=true)]
+[PopupDialog(dialogHead="$avatar_jesica")]니엔 씨! 천사들이 양수기를 보내왔어요!
+[PopupDialog(dialogHead="$avatar_nian", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]이럴 때는 또 빠릿빠릿하네. 자, 이제부터 내 말대로 해.
+[InputBlocker(blockInput=false)]
+[Battle.LockFunction(mask="SYSTEM_MENU")]
+[Battle.EnsureMinCost(cost=10)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_nian", animStyle="Drag", \
+          startX=-60, startY=60, startAnchor="BottomRight", endX=230, endY=45)] \
+새로운 양수기를 <@tu.kw>여기에 배치</>하고.
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_nian", animStyle="Drag", \
+          startX=230, startY=45, endX=230, endY=-100)] \
+<@tu.kw>방향은 아래로</> 해줘.
+[Battle.UnlockFunction(mask="SYSTEM_MENU")]
+[InputBlocker(blockInput=true, black=0.2)]
+[PopupDialog(dialogHead="$avatar_nian")]내가 여기에 있으니 논밭은 이제 걱정이 없을 거야.
+[PopupDialog(dialogHead="$avatar_nian")]얼른 남은 적들을 처치하자!

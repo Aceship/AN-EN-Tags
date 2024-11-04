@@ -1,0 +1,37 @@
+[HEADER(is_tutorial=true, is_skippable=false)] xb1教学关3_2
+[InputBlocker(blockInput=true)]
+[Battle.SwitchToDefaultUIState]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_aguard")]道具を活用したおかげで、採取効率が大幅に向上したな。
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=9.2, offsetX=4, time=1)]
+[Delay(time=5)]
+[InputBlocker(blockInput=true)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]採取は体力を大きく消耗するものだ。恐らく皆喉が渇いているだろうし、どうにかして<@tu.kw>水</>を手に入れよう。
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]生き延びるためにも、水は非常に重要だ。しかし、手に入れるには道具が必要になる。
+[Tutorial(focusX=-139, focusY=61, focusWidth=118, focusHeight=122, anchor="BottomRight", \
+          animStyle="Highlight", focusStyle="HighlightRect", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama")] \
+<@tu.kw>カニカニポンプ</>を使えば、水を回収することができるぞ。
+[InputBlocker(blockInput=true, rightStart=true, cardIndex=0, validWidth=112, validHeight=116)]
+[Battle.EnsureMinCost(cost=5)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-140, startY=61, startAnchor="BottomRight", endAnchor="Center", endX=-240, endY=-172)] \
+さあ、ここに配置するんだ！
+[InputBlocker(blockInput=true)]
+[Delay(time=1)]
+[InputBlocker(blockInput=true, validX=175, validY=-17, validWidth=703, validHeight=425)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-12, startY=-22, endX=-5, endY=163)] \
+この時、どの方向に向けてもポンプは正常に機能するので安心してくれ。
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=3)]
+[Battle.Pause]
+[Tutorial(tileY=7, tileX=2, focusWidth=125, focusHeight=125, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama")] \
+配置後は、カニカニポンプが一定時間ごとに水を集めてくれるぞ。だがポンプを使える時間には制限があり、一定時間使用すると故障してしまうんだ。
+[Tutorial(dialogHead="$avatar_zumama")]このまま行動を続けよう。
+[Battle.Pause(pause=false)]

@@ -1,0 +1,30 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]簡易的な偵察システムを確立しておいたので、近辺の基本情報や首長軍の動向は把握済みだ。何か知りたいことがあれば、遠慮なく聞いてくれ。
+[decision(option1="この近辺の環境について知りたい。", value1="1.1", option2="君の尽力への感謝を伝えに来た。", value2="1.2", option3="この場所、以前と変わったな。", value3="1.3", option4="ありがとう。今はほかにやるべきことがあるんだ。", value4="1.4")]
+[predicate(references="1.1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]シュバト＝アルサランの自然環境は、大別して5つの地域で構成されている。西にあるのは、「緑豊かな林地」とも呼ばれるラブ＝アラケシュのジャングルだ。豊富な資源と程よい生態環境を有していることから、探索の起点にはもってこいだな。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]そして、南へ向かえば「塩河流域の浜辺」がある。そこは石材が豊富で、ジャングルのある地域と繋がっているとか。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]他方で、東部にはオアシスがあるという話だ。鉄鉱石が大量に分布しているらしいが、問題はどうやって入るか、だな。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]北西部については、現状、危険に満ちているという程度の噂しか聞いていない。さらなる調査が必要だな。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]また、現時点では、北にある「試練の環廊」はまだ探索が行われていない。新たな情報が入り次第、すぐに共有しよう。
+[end]
+[predicate(references="1.2", visibleCondition="c0&&!c5")]
+[decision(option1="<color=#d8d769>オガクズタケ</color>を採ってきたんだ。", value1="2.1")]
+[predicate(references="2.1")]
+[additem(itemId="sandbox_1_mushroom", itemCount="-1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]くれるのか？　ありがとう。だが、まだ仕事が残っているのでな。
+[addfavor(trapId="trap_466_tzumama", val="10")]
+[end]
+[predicate(references="1.3", visibleCondition="c1&&!c4")]
+[decision(option1="なんだか物が増えたんじゃないか？", value1="3.1")]
+[predicate(references="3.1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]気付いたか。今度は私がプレゼントをする番だ。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]これは私の<color=#d8d769>密林用バトルアックス</color>だ。役に立てばいいんだが。
+[additem(itemId="sandbox_1_craft_14", itemCount="1")]
+[end]
+[predicate(references="1.4")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_mushroom", value="1")]
+[condition(references="c5", key="checkfavor", trapId="trap_466_tzumama", val="50", containsEq=1)]
+[condition(references="c1", key="checkfavor", trapId="trap_466_tzumama", val="50", containsEq=1)]
+[condition(references="c4", key="itemGE", itemId="sandbox_1_craft_14", value="1")]

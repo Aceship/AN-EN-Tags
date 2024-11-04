@@ -1,0 +1,12 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]안녕하세요! 여러분이 길을 가르쳐 준 덕분에 제가 이곳까지 올 수 있었습니다. 그런데 새 제품을 보러 오신 거라면, 아직 준비되어 있지는……
+[decision(option1="그래서, 여기는 어때?", value1="1.1", option2="그럼 다음에 올게.", value2="1.2")]
+[predicate(references="1.1", visibleCondition="!c0")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]아주 좋습니다. 이 근처에 이렇게 기분 좋은 곳이 있을 거라곤 상상도 못 했습니다. 감사의 표시로 여러분께 소정의 선물을 드리겠습니다.
+[additem(itemId="sandbox_1_craft_7", itemCount="1")]
+[decision(option1="고마워.", value1="2.1")]
+[predicate(references="2.1")]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_craft_7", value="1")]

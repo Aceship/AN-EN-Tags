@@ -1,0 +1,28 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]이번엔 또 뭔가?
+[decision(option1="이번엔 분명 만족할 거야.", value1="1.1", option2="아니, 그냥 지나가던 길인데.", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_craft_17", itemCount="-1")]
+('유넥티스' 표 고압 수프를 건네준다)
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]흥, 그럴 리가……
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]음……?
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]으음……?
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]스읍……
+[decision(option1="표정이 왜 그래?", value1="2.1")]
+[predicate(references="2.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]자네가 만든 게 맞나? 분명 저번이랑은 많이 다른데!
+[decision(option1="맞아, 유넥티스한테 고맙지.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="유넥티스가 포인트를 잘 짚어줬어.", value1="4.1")]
+[predicate(references="4.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]음…… 나쁘지 않군. 난 그 녀석이 나를 아예 잊은 줄 알았는데.
+[decision(option1="그래서, 이번엔 만족해?", value1="5.1")]
+[predicate(references="5.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]자네한테 할 말은 없다네, 유넥티스 녀석을 불러오게.
+[additem(itemId="sandbox_1_condiment", itemCount="3")]
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_craft_17", value="1")]

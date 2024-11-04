@@ -1,0 +1,28 @@
+[header(actId="sandbox_1", npcId="trap_469_tpasngr")]
+[summontrap(charId="trap_469_tpasngr", dir="LEFT", x="16", y="10", isChar="False")]
+[foginview(leftBottomX="5", leftBottomY="7", rightUpX="19", rightUpY="14", id="fog_1")]
+[camerafocusto(id="trap_469_tpasngr", scale="MID", time="1")]
+[delay(time="1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]I did not expect us to see each other again. How did you find this place?
+[summonenemy(enemyId="enemy_7026_xbele", x="10", y="10", endX="6", endY="2")]
+[decision(option1="We are looking for a strange colossus.", value1="1.1")]
+[predicate(references="1.1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]You mean the runaway colossus?
+[playanim(id="trap_469_tpasngr", anim="Attack", dir="LEFT")]
+[camerafocusto(offsetX="11", offsetY="10", time="2", scale="FAR")]
+[delay(time="2")]
+[decision(option1="Yeah. You?", value1="2.1")]
+[predicate(references="2.1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Everything is proceeding unexpectedly smoothly. I am very close, just as you are.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Take a look. I don't have it in me to disrupt such a peaceful, picturesque scene.
+[playanim(id="enemy_7026_xbele", anim="Skill", dir="RIGHT")]
+[delay(time="1")]
+[decision(option1="It... seems really happy?", value1="3.1")]
+[predicate(references="3.1")]
+[delay(time="1")]
+[fognotinview(id="fog_1")]
+[withdraw(id="enemy_7026_xbele")]
+[withdraw(id="trap_469_tpasngr")]
+[resetcamera(time="1")]
+[save]
+[end]

@@ -1,0 +1,124 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="47_g31_temple",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="ペペ"]安心したまえ。奴らは本当に逃げていった。我々を追ってくることはないさ。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="確かに、ここへ追ってくるのは難しそうだ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#11$1",focus="m")]
+[name="ペペ"]好きなように伸びた水晶が入口を塞いでいるおかげで、内部の装飾品は壊されることもなく、完璧に保存されているね。
+[Dialog]
+[charslot(slot="m",name="avg_npc_1200_1#11$1",focus="r")]
+[Decision(options="今なら答えてもらえるだろうか？", values="1")]
+[Predicate(references="1")]
+[Decision(options="この円盤は、何に使う物なんだ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="ペペ"]これから起きることに驚いて顎を外してしまわぬように、しっかり支えておくといい。
+[Dialog]
+[charslot]
+[PlaySound(key="$b_char_rock")]
+[delay(time=2)]
+[PlaySound(key="$b_char_rock")]
+[delay(time=3)]
+分厚い円盤の片割れを一つずつ、史録の地の中央にある祭壇へ少女がそっとはめ込むと、その凹凸の一つ一つがくぼみにぴたりと収まった。
+それを終えると、彼女はほとんど力を入れずに、円盤を反時計回りにゆっくりと押した。
+そのわずかな力だけで、円盤は素早く回転し始め、それがもたらす地面の揺れが足元から感じられる。
+[Dialog]
+[PlaySound(key="$d_avg_rockfall", volume=1)]
+[CameraShake(duration=2, xstrength=15, ystrength=15, vibrato=30, randomness=40, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[character]
+長き沈黙を経て、この史録の地は再び活力を取り戻したのだ。池は次第に水で満たされ、鉱物の中を光が駆け抜け、揺れはますます激しくなっていく。
+ついにその揺れが収まった時、あらゆる光が池の中央に集約され、巨大な人影を形作った。
+[dialog]
+[Image(image="pic_sandbox_1_5", fadetime=1, xScale=1.2, yScale=1.2,x=-50,screenadapt="coverall")]
+[ImageTween(image="pic_sandbox_1_5",xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, xTo=0, yTo=0,screenadapt="coverall",duration=20,block=false)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[delay(time=1.5)]
+[charslot]
+[name="光影の中の声"]……来た……か。
+[Dialog]
+[name="ペペ"]我が主……
+[name="ペペ"]この清浄なる地の静けさを破ってしまい、申し訳ありません。
+[charslot]
+[name="光影の中の声"]お前はあの約束に従い、我を探してここへ来たのだろう。
+[charslot]
+[name="光影の中の声"]ならば我もまた約束を果たし、時の中へと鍵を隠そう。
+[charslot]
+[name="光影の中の声"]それはお前を「彼の地」へと導くであろう。そこで得られたすべての物は、お前の子孫に与えよう。
+[charslot]
+[name="光影の中の声"]時の果てにて垣間見るその者たちの顔に、お前の面影を見られることを願っているぞ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[character]
+[Image]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+男の姿は薄れていき、光と影が変化して、池の中には再び小さな峡谷が形成された。
+ほんの数十秒の間に、山河は姿を変えていく。川の流れは移り変わり、峡谷の木々は凄まじい速さで成長しては枯れていく。あらゆるものが歳月の浸食によって変化していた。
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="ペペ"]すまないな、旅人たちよ。君たちとの旅はこれでおしまいだ。君たちに会えてよかった。機会があれば、また一緒に旅をしたいな。
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="あの手記は……", values="1")]
+[Predicate(references="1")]
+[Decision(options="わざと霊殿に置いていったのか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#8$1",focus="m")]
+[name="ペペ"]気付かれてしまったかな？
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="ペペ"]実は、あの連絡員から聞いていたんだ。ロドスの人々が、首長軍を倒す方法を探していて、中にはとても頭のいい人がいるから、私の力になってくれるかもしれない、と。
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="我々は君が史録の地を見つける手助けをした。", values="1")]
+[Predicate(references="1")]
+[Decision(options="確か、報酬をくれるという話だったかな。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="ペペ"]そうだな、これを。地元のトランスポーターに渡せば、役に立つものをくれるだろう。
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="君はまだここに残るのか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#2$1",focus="m")]
+[name="ペペ"]ああ。求める答えはすぐそこにあるのだから、ここに留まって探さなければ。
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#2$1",focus="r")]
+[Decision(options="あれほど早く移ろう映像から、か。", values="1")]
+[Predicate(references="1")]
+[Decision(options="あの中から情報を見つけ出すのは困難だろう。", values="1")]
+[Predicate(references="1")]
+[Decision(options="目眩がするような作業になるぞ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="ペペ"]それでも私は諦めない。
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="ペペ"]これこそが私の、そして我が一族の悲願だからな。
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="ペペ"]時間の無駄に終わるとしても、それでいい。
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="では、幸運を祈る。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#5$1",focus="m")]
+[name="ペペ"]ありがとう。また会おう。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

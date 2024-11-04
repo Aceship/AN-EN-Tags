@@ -1,0 +1,901 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_labcorridor",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)] 
+[playsound(key="$d_avg_sldrsldng",channel="1")]
+[charslot(slot="l",name="avg_4124_iana_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_4123_ela_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[stopsound(fadetime=1,channel="1")]
+[playsound(key="$d_gen_transmissionget",channel="1")]
+[charslot(slot="r",name="avg_4123_ela_1#1$1",focus="r")]
+[name="Ela"]마그넷힐 2호에 도착했다. 반복한다, 마그넷힐 2호에 도착했다.
+[name="Ela"]Doc, 그쪽 상황은 어때?
+[charslot(slot="r",name="avg_4123_ela_1#1$1",focus="none")]
+[name="Doc"]외부는 이상 없음.
+[name="Doc"]합류하는 게 좋은 것 같은데. 마그넷힐 2호는 특이하니까.
+[charslot(slot="r",name="avg_4123_ela_1#1$1",focus="r")]
+[name="Ela"]좋아.
+[name="Ela"]Iana, 드론 정찰 결과는.
+[charslot(slot="l",name="avg_4124_iana_1#1$1",focus="l")]
+[name="Iana"]처음 날렸을 때와 별 다를 건 없어. 수치도 거의 비슷하고 누가 돌아다닌 흔적도 없어.
+[charslot(slot="l",name="avg_4124_iana_1#7$1",focus="l")]
+[name="Iana"]마그넷힐 2호는 확실하게 격리된 것 같네.
+[charslot(slot="r",name="avg_4123_ela_1#7$1",focus="r")]
+[name="Ela"]그럼, 여기엔 아무도 없다는 말이군.
+[name="Ela"]좋은 소식은 아니지. 여기서 사라진 Ash 팀을 찾으러 온 거잖아.
+[charslot(slot="r",name="avg_4123_ela_1#1$1",focus="r")]
+[name="Ela"]경계를 늦추지 마. 합류해서 리바이의 실험실로 간다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_caveentrance",screenadapt="coverall")]
+[charslot]
+[Delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_4124_iana_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_4123_ela_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot(slot="r",name="avg_4123_ela_1#7$1",focus="r")]
+[name="Ela"]다 왔군.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_4126_fuze_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="r")]
+[name="Doc"]여기가 확실해?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]지도를 보면 여기가 리바이의 실험실이 있던 곳이 맞아.
+[charslot(slot="m",name="avg_4124_iana_1#7$1",focus="m")]
+[name="Iana"]우린 코언의 뒤를 바짝 따라가고 있었어. 그러다 땅이 울리기 시작했고……
+[name="Iana"]정신 나간 리바이가 한 짓인지 아니면 장치에 무슨 문제가 생겼는지 모르겠지만, 실험실이 통째로 사라졌어.
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#13$1",focus="m")]
+[name="Doc"]사라졌다고? 그게 무슨 말이야?
+[Dialog]
+[charslot(slot="m",name="avg_4124_iana_1#1$1",focus="m")]
+[name="Iana"]당시 상황에 대한 전문가들의 의견에 따르면, 그게 가장 적절한 설명이야.
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#13$1",focus="m")]
+[name="Doc"]그런 게 가능한 건가.
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]폭발이었다면 실험실을 아무 흔적도 없이 소멸시킬 순 없어. 폭발은 이런 거대한 구덩이를 남기지 않아. 밖에서도 미미한 진동 밖에 감지되지 않겠지.
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[playsound(key="$smallearthquake")]
+[bgeffect(name="$eb_dust_01",layer=1)]
+[CameraShake(duration=-1, xstrength=5, ystrength=10, vibrato=15, randomness=70, fadeout=false, block=false)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="m")]
+[name="Doc"]지진인가? 아니면 네 말처럼……
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]지진이 아니야!
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]이 진동도 사건과 관련이 있을 가능성이 높아.
+[name="Ela"]안전한 곳으로 대피해 진동이 멈출 때까지 대기한다!
+[Dialog]
+[playsound(key="$a_bat_buildingshaking_2")]
+[CameraShake(duration=4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[bgeffect]
+[charslot]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=2, block=true)]
+[Background(image="48_g7_galleriesstaircase",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_soldiersrun")]
+[charslot(slot="l",name="avg_npc_1271_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",duration=1.5)]
+[Delay(time=3.5)]
+[charslot(slot="r",focus="r")]
+[name="힘들어하는 군인"]대체 몇 층까지 있는 겁니까? 다리가 삐걱거리기 시작했습니다만.
+[charslot(slot="l",focus="l")]
+[name="지휘관"]계속 올라가. 레이넬의 펜트하우스까지 가야 해.
+[charslot(slot="r",focus="r")]
+[name="불평하는 군인"]엘리베이터를 타면 안 됩니까? 왜 굳이 계단으로 올라가는 거죠?
+[charslot(slot="l",focus="l")]
+[name="지휘관"]나라고 이러고 싶어서 이러는 줄 아나?
+[name="지휘관"]정찰 보고에 펜트하우스로 올라갈 수 있는 방법은 이 계단과 전용 엘리베이터뿐이라고 했어.
+[name="지휘관"]그리고 층마다 경비가 엘리베이터 옆을 지키고 있지.
+[name="지휘관"]그래서 경비가 가장 허술한 계단으로 진입하는 거다.
+[charslot(slot="r",focus="r")]
+[name="힘들어하는 군인"]돈이나 좀 벌어보겠다고 여기까지 온 카시미어인 아닙니까? 누가 뒤를 봐주는 것도 아닌데, 이전 합의서 하나 받자고 이렇게까지 조심할 필요가 있습니까?
+[charslot(slot="l",focus="l")]
+[name="지휘관"]돈이 있지. 돈이 힘이잖아?
+[name="지휘관"]그만 두리번거리고 올라가!
+[charslot(slot="l",focus="none")]
+[name="나태한 군인"]대장님, 너무 지쳤습니다…… 경비와 싸우더라도 엘리베이터를 타는 게 낫겠는데요.
+[charslot(slot="l",focus="l")]
+[name="지휘관"]쉿……
+[charslot(slot="l",focus="none")]
+[name="나태한 군인"]대장님?
+[charslot(slot="l",focus="l")]
+[name="지휘관"](작은 목소리로) 사무실에 거의 다 왔어! 조용히 해……
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_ltroom",screenadapt="coverall")]
+[charslot]
+[Delay(time=2.5)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_1211_1#8$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$doorknockquite")]
+[Delay(time=1.5)]
+[charslot]
+[playsound(key="$dooropenquite")]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1213_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_1211_1#10$1",focus="m")]
+[name="레이넬"]편지? 전에 알아서 열어보라고 했잖나. 굳이 물어보지 말고.
+[charslot(slot="m",name="avg_npc_1213_1#1$1",focus="m")]
+[name="미워시"]레이넬 님 외에는 읽지 말라고 적혀 있습니다만.
+[charslot(slot="m",name="avg_npc_1211_1#10$1",focus="m")]
+[name="레이넬"]누가 보냈지?
+[charslot(slot="m",name="avg_npc_1213_1#1$1",focus="m")]
+[name="미워시"]카시미어…… 레이넬 님의 삼촌분이 보낸 모양입니다.
+[charslot(slot="m",name="avg_npc_1211_1#2$1",focus="m")]
+[name="레이넬"]아. 또 유산 이야기겠군.
+[charslot(slot="m",name="avg_npc_1213_1#1$1",focus="m")]
+[name="미워시"]그리고…… 도솔레스 시청에서 온 것도 있습니다.
+[charslot(slot="m",name="avg_npc_1211_1#10$1",focus="m")]
+[name="레이넬"]도솔레스 시청? 신경 쓰지 말게. 또 쓸데없는 연회 초대장이나 보냈겠지.
+[charslot(slot="m",name="avg_npc_1213_1#1$1",focus="m")]
+[name="미워시"]칸델라님이 참석할 수도 있습니다. 개관식에 관한 이야기도 나눌 수 있을 텐데요. 얼마 남지도 않았고 레이넬 님이 그렇게 공을 많이 들이셨으니……
+[name="미워시"]분명히 훌륭한 행사가 되겠죠.
+[charslot(slot="m",name="avg_npc_1211_1#1$1",focus="m")]
+[name="레이넬"]미워시, 잠깐 이쪽으로 와보게.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[Delay(time=2.5)]
+미워시는 빨간 머리 불포에게 다가가 옆에 섰다.
+두 사람은 방 가장자리에 걸린, 성인 키의 두 배는 될 것 같은 작품을 함께 감상했다.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1213_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",duration=1.5)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",focus="r")]
+[name="레이넬"]미워시, 제목은 '질서의 붕괴'라고 붙일까 하는데. 자네 생각은 어떤가?
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="미워시"]음…… 괜찮군요. 개관식에서 공개하는 건가요?
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="레이넬"]평소처럼 솔직하게 말해보게. 돌려 말하지 말고.
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="미워시"]저 뒤틀린 곡선이 '붕괴'를 나타내는 겁니까?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]아니, 사회가 사람을 바라보는 시선을 나타내지.
+[name="레이넬"]집단에 순응하지 않는 행동을 광기로 여기는 사회의 틀에 박힌 시선 말이네. 고요함이 휩쓸고 간 이베리아에서나 볼 수 있는 그런 선이지.
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="미워시"]이베리아 재판소 말씀이시군요. 질서의 상징이긴 하죠.
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]……
+[charslot(slot="l",name="avg_npc_1213_1#7$1",focus="l")]
+[name="미워시"]오른쪽에…… 차마 뭐라고 말하기 어렵게 생긴 원뿔은 라이타니엔의 고탑인가요?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]아니. 상상해 보게. 수 천년 간 사르곤을 다듬은 바람과 모래, 아미르와 파디샤, 황금 도시까지…… 이국적인 광경에 환상을 품는 것도 우리 내부에 자리잡은 질서의 산물이지.
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="레이넬"]태초에는 광활했던 사람의 상상력조차 이제 진부한 파편 밖에 남지 않은 거야.
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="미워시"]아…… 그렇군요. 말이 되는 것 같습니다.
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="레이넬"]사실 방금 다 지어낸 이야기네.
+[charslot(slot="l",name="avg_npc_1213_1#10$1",focus="l")]
+[name="미워시"]어……
+[name="미워시"]레이넬 님의 예술은 의미를 전하는 매체와 표현이 늘 독특했죠.
+[name="미워시"]골프공을 몇 개나 사용하신 겁니까? 천 개? 이 천 개?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]숫자는 중요하지 않아. 이 마지막 공이 정말 중요한 거야. 자네에게 작품의 마무리를 부탁할까 하는데. 이 마지막 공을 꼭대기에 올려주겠나?
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="미워시"]그러면 어떻게 되는 거죠?
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="레이넬"]작품이 완성되는 거지. 그리고……
+[Dialog]
+[playsound(key="$d_gen_soldiersrun",volume=0.2)]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",focus="r")]
+[Delay(time=2.5)]
+[charslot]
+그때, 사무실 문 틈으로 움직이는 그림자가 보였다.
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[playsound(key="$d_avg_doorbreak",volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=true)]
+반응할 새도 없이 문이 거칠게 열렸다. 방 전체가 요동치자 불안하게 서 있던 작품이 쓰러져 골프공이 사방으로 튀었다.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",focus="l")]
+[name="미워시"]……붕괴?
+[Dialog]
+[charslot]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[playsound(key="$d_gen_soldiersrun")]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",duration=1.5)]
+[Delay(time=3.5)]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="지휘관"]레이넬, 그리고 비서. 손 머리 위로 올리고 엎드려. 함부로 움직이지 말고.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1213_1#6$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",focus="l")]
+[name="미워시"]누구지?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",focus="m")]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",focus="m")]
+[name="지휘관"]알 필요 없다. 둘 다 다치기 싫으면 얌전히 따라와 줘야겠어.
+[Dialog]
+[charslot]
+[playsound(key="$a_bat_buildingshaking_1",volume=0.3)]
+[CameraShake(duration=1.5, xstrength=10, ystrength=15, vibrato=30, randomness=90, fadeout=false, block=true)]
+바로 그때, 무언가 위에서 빠르게 다가오는 듯했다.
+지휘관은 유난히 큰 파울비스트가 나타났다고 생각하며 무시했다. 그리고 그는 반쯤 무너진 골프공 조형물 너머로 레이넬을 향해 석궁을 조준했다.
+[Dialog]
+[playsound(key="$a_bat_buildingshaking_1")]
+[CameraShake(duration=0.5, xstrength=10, ystrength=15, vibrato=30, randomness=90, fadeout=false, block=true)]
+그때, 무너진 조형물 위 천장에서 커다란 소리가 들렸다.
+[Dialog]
+[playsound(key="$a_bat_buildingshaking_2")]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=false, block=true)]
+한 번 더.
+[Dialog]
+[playsound(key="$d_avg_towercllps")]
+[PlaySound(key="$bodyfalldown1", volume=1,channel="3")]
+[PlaySound(key="$bodyfalldown2", volume=1,channel="4")]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=2, block=true)]
+이번에는 천장에 커다란 구멍이 뚫리며 널빤지가 부서지는 소리도 들렸다.
+자욱한 파편의 먼지를 뚫고 검은 형체들이 사무실로 떨어졌다. 그들이 떨어지며 그나마 남아 있던 골프공 조형물은 사방으로 흩어지고 말았다.
+병사는 욕설이 목구멍 끝까지 차올랐지만 가까스로 참았다.
+그림자들이 움직이기 시작했다.
+[Dialog]
+[playsound(key="$d_avg_clothmovement")]
+[charslot(slot="m",name="avg_4123_ela_1#10$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4123_ela_1#10$1",focus="m")]
+[name="Ela"]모두 무사한가?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_4126_fuze_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_4124_iana_1#10$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_4124_iana_1#10$1",focus="r")]
+[name="Iana"]조금 긁혔을 뿐이야.
+[charslot(slot="l",name="avg_4126_fuze_1#1$1",focus="l")]
+[name="Fuze"]이상 없음.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]Doc?
+[Dialog]
+[charslot]
+[name="Doc"]나…… 나도 괜찮아.
+[Dialog]
+[charslot(slot="r",name="avg_4124_iana_1#1$1",posfrom="100,0",posto="0,0",duration=1.5)]
+[charslot(slot="r",afrom=0,ato=1,duration=1)]
+[Dialog]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_4124_iana_1#4$1",focus="r")]
+Iana는 Doc을 일으켜 세우며, Doc의 손에 들려 있는 골프공과 그 골프공이 남긴 것 같은 이마의 자국을 보았다.
+[Dialog]
+[playsound(key="$d_avg_clothmovement")]
+[charslot(slot="l",name="avg_4125_rdoc_1#7$1",posfrom="0,-30",posto="0,30",duration=1.5)]
+[charslot(slot="l",afrom=0,ato=1,duration=1)]
+[Dialog]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_4125_rdoc_1#7$1",focus="l")]
+[name="Doc"]별 이상 없어…… 골프공에 좀 부딪혔을 뿐이지.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]좋아, 다음.
+[name="Ela"]골프공 더미에 떨어졌다는 것 외에 무슨 일이 벌어졌는지 아는 사람 있나?
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",duration=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="지휘관"]……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1213_1#4$1",focus="all")]
+[charslot(slot="r",name="avg_npc_1211_1#5$1",focus="all")]
+[name="미워시 & 레이넬"]……
+[Dialog]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="l")]
+[name="의심하는 군인"]저희도 처음부터 지붕으로 들어왔어도 됐겠는데요? 그랬으면 계단을 오를 필요는 없었잖아요.
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="지휘관"]닥치고 싸울 준비나 해!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4123_ela_1#6$1",focus="m")]
+[Delay(time=0.5)]
+[playsound(key="$d_avg_arrow_rain")]
+[playMusic(intro="$mutate_intro", key="$mutate_loop", volume=0.6)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",posfrom="0,0",posto="30,-20",duration=0.3)]
+[Delay(time=0.8)]
+[name="Ela"]석궁?
+[Dialog]
+[playsound(key="$d_avg_gunequip")]
+[charslot(slot="m",posfrom="30,-20",posto="0,0",duration=0.5)]
+[Delay(time=0.8)]
+[name="Ela"]……전투 준비.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1213_1#4$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]둘이 같은 편은 아닌 것 같군.
+[name="레이넬"]미워시, 무기 가져왔나?
+[charslot(slot="l",name="avg_npc_1213_1#2$1",focus="l")]
+[name="미워시"](어깨를 으쓱하며) 아뇨.
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]뭐, 그렇다면……
+[name="레이넬"]어느 쪽이 날 납치할지 싸워서 이기는 쪽이 결정하면 되겠군. 안타깝지만 이 몸은 한 명뿐이니까.
+[Dialog]
+[charslot(slot="r",posfrom="0,0",posto="50,0",duration=1)]
+[Delay(time=1.5)]
+[playsound(key="$d_avg_winglssice")]
+[Delay(time=2.5)]
+[charslot(slot="r",posfrom="50,0",posto="0,0",duration=1)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]미워시, 자네도 마시겠나?
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="미워시"]아뇨. 저는 레이넬 님을 보호해야 합니다만.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="m")]
+[name="Doc"]납치?
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]퍼리 납치 파티라도 하나? 요즘 세상엔 별 게 다 있군.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="지휘관"]그만, 입 다물어! 몸에 구멍 나기 싫으면 무기를 버리고 레이넬에게서 떨어져!
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]납치범인지 뭔지 모르겠지만, 우리한테 덤비는데?
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]엄폐해!
+[name="Ela"]Iana, Doc, 민간인을 데리고 여기서 나가! 내가 Fuze와 엄호하겠다!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_sldrpllgn", volume=1,channel="1")]
+[PlaySound(key="$d_avg_sldrpllgn", volume=1,channel="2",delay=0.3)]
+[PlaySound(key="$d_avg_ghtsvnzrld", volume=1,channel="3",delay=0.5)]
+[Delay(time=1)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="3",delay=0.1)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="4",delay=0.2)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="5",delay=0.3)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_1272_1#1$1")]
+[charslot(slot="r",name="avg_npc_1272_1#1$1")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="3",delay=0.1)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="4",delay=0.2)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="5",delay=0.3)]
+[charslot(slot="l",posfrom="0,0",posto="0,-50",duration=0.8)]
+[charslot(slot="l",afrom=1,ato=0,duration=0.5)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="3",delay=0.1)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="4",delay=0.2)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="5",delay=0.3)]
+[charslot(slot="r",posfrom="0,0",posto="0,-50",duration=0.8)]
+[charslot(slot="r",afrom=1,ato=0,duration=0.5)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="지휘관"]산크타의 고리도 없고, 블랙스틸도 아닌 것 같은데……
+[name="지휘관"]죽고 싶어 환장한 놈들인가? 아니면 총이 멋지다고 생각하는 거냐?
+[name="지휘관"]막아! 레이넬을 데려가지 못하게 해!
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]Iana, 10시 방향!
+[Dialog]
+[charslot]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.17, fadetime=0.5)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.17, fadetime=0.5)]
+[PlaySound(key="$d_avg_sldrrldn", volume=1,channel="2")]
+[BackgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.5, yScaleTo=1.5, duration=0, block=false,screenadapt="coverall")]
+[charslot(slot="m",name="avg_4124_iana_1#6$1",scale=1.05,posfrom="80,-350",posto="-80,-350",duration=1.5)]
+[charslot(slot="m",action="zoom", poszoom = "0.5,0.5",scale=1.8,duration=0)]
+[Delay(time=1.55)]
+[curtain(fadetime=0.8)]
+[PlaySound(key="$d_avg_sldrpllgn", volume=1,channel="1")]
+[charslot(slot="m",scale=3,posfrom="-80,-350",posto="-240,-350",duration=1)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1.55)]
+[charslot]
+[BackgroundTween(xScaleFrom=1.5, yScaleFrom=1.5, xScaleTo=1, yScaleTo=1, duration=0, block=false,screenadapt="coverall")]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",focus="m")]
+[Delay(time=0.1)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_ghtsvnzrtk", volume=1,channel="2")]
+[charslot(slot="m",posfrom="0,0",posto="0,-50",duration=0.8)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.5)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]적이 쓰러졌다!
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="l")]
+[name="눈치 빠른 군인"]저거 진짜 총이잖아?!
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="지휘관"]버텨라! 곧 지원군이 온다!
+[name="지휘관"]대기조! 빈둥대지 말고 빨리 진입해!
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_soldiersrun")]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",duration=1.5)]
+[Delay(time=3)]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_ghtsvnzrtk", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_ghtsvnzrtk", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_ghtsvnzrtk", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#3$1",focus="m")]
+[name="Doc"]민간인 쪽으로 접근 불가! 적이 너무 많아. 녀석들이 Iana와 나를 몰아세우고……
+[name="Doc"]재장전!
+[charslot(slot="m",name="avg_4124_iana_1#6$1",focus="m")]
+[name="Iana"]내 차례네!
+[Dialog]
+[PlaySound(key="$d_avg_gnrtrpn", volume=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",posfrom="0,0",posto="-20,0",duration=0.3,isblock=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m",posfrom="-20,0",posto="0,0",duration=0.3,isblock=true)]
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]수류탄 투척!
+[Dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_explosion")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[playsound(key="$d_gen_soldiersrun")]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",duration=1.5)]
+[Delay(time=3.5)]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#6$1",focus="m")]
+[name="Iana"]효과 없음! 폭발물이 적에게 듣질 않는다!
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]확인. Fuze, 연막탄.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_gnrtrpn", volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-5,0",duration=0.3,isblock=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m",posfrom="-5,0",posto="0,0",duration=0.3,isblock=true)]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]연막탄 투척.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0")]
+[charslot(slot="m",name="avg_npc_1272_1#1$1")]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0")]
+[Delay(time=0.05)]
+[PlaySound(key="$d_avg_gnrtrllng", volume=1,channel="1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_gnrtrsmkk", volume=1,channel="2")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.7, r=1, g=1, b=1, fadetime=1, block=true)]
+[Delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]연기만으로는 해결이 안 될 텐데. 접착식 집속탄은 어때? 아직 꽤 많이 남았거든.
+[charslot(slot="m",name="avg_4123_ela_1#6$1",focus="m")]
+[name="Ela"]그것도 좋지만, 여기선 GRZMOT 지뢰가 더 잘 먹힐 거야.
+[name="Ela"]Iana, Doc! 민간인들을 안전한 곳으로 대피시켜! Fuze와 엄호하겠다!
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]사격 개시!
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1213_1#3$1",focus="m")]
+[name="미워시"]물러서시죠!
+[charslot(slot="m",name="avg_4124_iana_1#6$1",focus="m")]
+[name="Iana"]괜찮아! 안전한 곳으로 데려가려는 거야!
+[charslot(slot="m",name="avg_npc_1213_1#3$1",focus="m")]
+[name="미워시"]우리가 왜 당신 말을……
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]조심해!
+[Dialog]
+[charslot(slot="m",name="avg_npc_1213_1#6$1",focus="m")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.03, block=true)]
+[PlaySound(key="$e_skill_skulsrsword", volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-50,0",duration=0.3)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[name="미워시"]기습인가?!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",focus="m")]
+[name="눈치 빠른 군인"]평범한 비서는 아닌가 본데!
+[charslot(slot="m",name="avg_npc_1213_1#6$1",focus="m")]
+[name="미워시"]말이 많군.
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="m")]
+[name="Doc"]뒤로 물러서세요! 사선에서 벗어나야……
+[Dialog]
+[charslot]
+[delay(time=0.1)]
+[charslot(slot="m",name="avg_npc_1213_1#6$1",focus="m")]
+[delay(time=0.1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[charslot(slot="m",posfrom="0,0",posto="-100,-50",duration=0.8)]
+[PlaySound(key="$fightgeneral",volume=1)] 
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Delay(time=1.2)]
+[charslot(duration=1.5)]
+[PlaySound(key="$bodyfalldown1", volume=1,channel="2")]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",focus="m")]
+[name="눈치 빠른 군인"]고작 와인병으로 진짜 무기를 막겠다고? 멍청한……
+[Dialog]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_gunshot", volume=1,channel="2")]
+[charslot(slot="m",posfrom="0,0",posto="0,-50",duration=0.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.3)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="m")]
+[name="Doc"]멍청한 놈.
+[name="Doc"]의식을 잃었군. 내가 업고 갈 테니, 넌 저 하얀 옷의 남자를 맡아.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="지휘관"]레이넬을 데려가려고 한다! 저 놈들을 막아!
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[name="교활한 군인"]접근할 수가 없습니다! 사격 속도가 너무 빠릅니다!
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="지휘관"]쳇, 그럼 놈들이 사격을 중지했을 때 움직였어야지!
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[name="교활한 군인"]사각지대를 너무 잘 찾습니다! 게다가 연계도 너무……
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="지휘관"]고작 네 명이잖아! 우린 지금 사람이 몇 명인데?!
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=0.8)]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=0.8)]
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="m")]
+[name="Doc"]엄폐할 곳을 찾았다! 한동안 버틸 수 있어!
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]재장전!
+[Dialog]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="지휘관"]저놈 탄약이 떨어졌다! 공격해!
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]Iana, 연막탄!
+[Dialog]
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[Delay(time=0.2)]
+[charslot(slot="m",posfrom="0,0",posto="-5,0",duration=0.3,isblock=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m",posfrom="-5,0",posto="0,0",duration=0.3,isblock=true)]
+[name="Iana"]연막탄 투척!
+[Dialog]
+[charslot]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_gnrtrllng", volume=1,channel="1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_gnrtrsmkk", volume=1,channel="2")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.7, r=1, g=1, b=1, fadetime=1, block=true)]
+[Delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="지휘관"]쿨럭! 쿨럭! 또 연막탄이냐? 숨는 것 밖에 할 줄 아는 게……
+[Dialog]
+[charslot(slot="m",name="avg_4123_ela_1#6$1",focus="m")]
+[name="Ela"]지뢰 투척.
+[name="Ela"]……부착 완료.
+[name="Ela"]여기 기념품이야.
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]Fuze, 피해!
+[Dialog]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[Delay(time=0.5)]
+[PlaySound(key="$rungeneral", volume=1,channel="1")]
+[charslot(slot="m",posfrom="0,0",posto="100,0",duration=1)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.5)]
+[Delay(time=2.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="l")]
+[name="교활한 군인"]두 놈이 숨으려 한다!
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="지휘관"]포위해서……
+[Dialog]
+[CameraShake(duration=2, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_strmbmbo")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[PlaySound(key="$d_avg_stkmyer")]
+[Delay(time=2.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[PlaySound(key="$bodyfalldown1", volume=1,channel="1")]
+[Delay(time=2.5)]
+[PlayMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",duration=1.5)]
+[Delay(time=1.5)]
+[name="Doc"]지뢰를 살피지도 않고 그냥 몰려들었어. 전술이라는 걸 모르는 건가.
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]일단 저들의 무장을 해제한다. Doc, 부상자를 부탁해.
+[name="Ela"]클리어.
+[charslot(slot="m",name="avg_4124_iana_1#1$1",focus="m")]
+[name="Iana"]클리어.
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]클리어.
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="m")]
+[name="Doc"]올 클리어. 사상자 없음. 좋은 소식이라고 봐도 되겠지.
+[name="Doc"]아무리 우리가 살상보다 무력화를 노렸다고 해도, 저 친구들은 비정상적으로 강했어. 한 명은 산탄총을 가까이에서 맞았는데도 살았다고.
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]좋은 소식이지.
+[charslot(slot="m",name="avg_4125_rdoc_1#9$1",focus="m")]
+[name="Doc"]이상한 게 하나 더 있는데. 이걸 어떻게 생각해야 할지 모르겠지만, 머리에 달린 동물 귀…… 자세히 보면 혈관도 보여.
+[charslot(slot="m",name="avg_4123_ela_1#5$1",focus="m")]
+[name="Ela"]뭐??
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]이것도 리바이 박사의 연구 결과인가?
+[charslot(slot="m",name="avg_4124_iana_1#1$1",focus="m")]
+[name="Iana"]내 나침반이 먹통이야. Doc, 나침반 좀 볼래?
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]우리가 정말 우랄 산맥 남부의 마그넷힐 2호 근처에 있다면……
+[Dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1,channel="1")]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+Doc은 창을 돌아보았다. 바람에 커튼이 펄럭이고 있었다.
+대원들은 바깥의 풍경을 보려 발코니로 걸어 나갔다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image(image="48_i01", xScale=1.4, yScale=1.4,screenadapt="showall")]
+[ImageTween(image="48_i01",xFrom=-70, yFrom=-30, xTo=0, yTo=0,xScaleFrom=1.4, yScaleFrom=1.4, xScaleTo=1, yScaleTo=1,duration=45)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1.5)]
+고층 건물 사이로 노을이 바다를 붉은빛으로 물들이고 있었다.
+수영복을 입은 관광객들이 해변에 누워 아이스크림 트럭의 음악을 감상하며 느긋한 오후를 즐기고 있었다.
+방에서 유일하게 정신을 차리고 있던 남성이 대원들을 향해 천천히 다가왔다.
+[name="Fuze"]퍽이나 우랄 산맥이겠다.
+[name="Ela"]임무 지역을 벗어난 건 확실하군.
+[name="Iana"]순간이동한 건가?
+[name="Ela"]어디로? 몰디브로?
+[name="Iana"]휴양지처럼 보이긴 하는데…… 몰디브는 아닌 것 같아.
+[name="Ela"]아까 운 나쁘게 휘말린 피해자들에게 물어볼…… 아, 마침 왔군.
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[Image]
+[Background(image="48_g11_deluxeroom_n",screenadapt="coverall")]
+[delay(time=1)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="l",name="avg_4123_ela_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1211_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="l")]
+[name="Ela"]잠시 질문이 있는데. 당신은 누구지? 여긴 어디야? 그리고 아까 그 무장한 자들은 누구고?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]여러분이 내 작품에 부여해준 뜻밖의 결말에 대한 '감사'의 의미로, 질문에 대답하지.
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="레이넬"]정식으로 인사를 하기 전에 한 가지만 정정할까…… 나는 운 나쁘게 휘말린 피해자가 아니야.
+[name="레이넬"]그랬던 적도 없고, 앞으로도 없을 테지.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#1$1",focus="m")]
+[name="Iana"]다시 본론으로 돌아가도 될까?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="레이넬"]그러지. 볼리바르의 검은 심장……
+[name="레이넬"]도솔레스에 온 것을 환영하지.
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]레이넬 코발스키라고 하네.
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="l")]
+[name="Ela"]Ela라고 부르면 돼, 레이넬 씨.
+[charslot(slot="l",name="avg_4123_ela_1#6$1",focus="l")]
+[name="Ela"]하지만 우리도 상황파악이 급해서, 자기소개는 이쯤에서 끝내지. 질문은 내가 할 테니 답만 해주면 돼. 알겠어?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]달리 선택권이 없는 것 같군.
+[charslot(slot="l",name="avg_4123_ela_1#6$1",focus="l")]
+[name="Ela"]도솔레스는 어느 국가의 도시지?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]볼리바르의 도시지. 명목 상으로는.
+[charslot(slot="l",name="avg_4123_ela_1#7$1",focus="l")]
+[name="Ela"]볼리바르…… 볼리비아를 말하는 건가? 볼리비아의 도솔레스라는 도시는 못 들어봤는데. Iana, 너는?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#10$1",focus="m")]
+[name="Iana"]……나도 없어.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_4123_ela_1#6$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="l")]
+[name="Ela"]다른 질문을 하지. 여기는 어느 대륙이지? 남미인가?
+[charslot(slot="r",name="avg_npc_1211_1#5$1",focus="r")]
+[name="레이넬"]대륙? 무슨 소리를 하는 건지 모르겠다만. 이 '땅덩어리'의 이름을 묻는다면 당연히 테라이지.
+[charslot(slot="l",name="avg_4123_ela_1#7$1",focus="l")]
+[name="Ela"]Gówno……
+[charslot(slot="r",name="avg_npc_1211_1#5$1",focus="r")]
+[name="레이넬"](카시미어어) 호오? 모국어를 듣는 건 오랜만이군.
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="l")]
+[name="Ela"]모국어라고?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="레이넬"]아무것도 아닐세. 계속 물어보게나.
+[charslot(slot="l",name="avg_4123_ela_1#10$1",focus="l")]
+[name="Ela"]이런 질문을 하게 될 줄은 몰랐지만……
+[name="Ela"]레이넬 씨, 지금 우리가 있는 이 행성은 지구인가?
+[charslot(slot="r",name="avg_npc_1211_1#11$1",focus="r")]
+[name="레이넬"]행성……? 지구……? 질문에 답만 하면 될 거라 생각했지만, 이젠 나도 묻고 싶은 것들이 생기는군.
+[charslot(slot="l",name="avg_4123_ela_1#10$1",focus="l")]
+[name="Ela"]……
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="l")]
+[name="Ela"]Iana, 네가 질문해 보는 건 어때……?
+[charslot(slot="l",name="avg_4123_ela_1#5$1",focus="l")]
+[name="Ela"]Iana?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#4$1",duration=1.5)]
+[Delay(time=2)]
+Iana는 대답을 하지 않았다.
+그녀는 눈을 부릅뜨고, 해가 지는 곳 반대편의 지평선을 바라보고 있었다.
+[Dialog]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+대원들은 그녀를 따라 시선을 돌렸다.
+멀리서 두 개의 달이 천천히 떠오르고 있었다. 밝은 달과 조금은 어두운 달.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="48_g3_galleriessquare_n",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_1212_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="과하게 치장한 두린족"]이런, 들키기 전에 하나 밖에 못 그렸잖아.
+[charslot(slot="m",name="avg_npc_1212_1#6$1")]
+[name="과하게 치장한 두린족"]위험했어…… 갑자기 사람들이 들이닥쳐서 조마조마했네.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1212_1#6$1",focus="none")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="갤러리 경비원"]뭐야, 거기 너! 갤러리에 낙서를 하다니 무슨 짓이야!
+[charslot(slot="m",name="avg_npc_1212_1#4$1")]
+[name="과하게 치장한 두린족"]쳇, 가야겠다.
+[charslot(slot="m",name="avg_npc_1212_1#7$1")]
+[name="과하게 치장한 두린족"]오늘 운 좋은 줄 알아…… 레이넬.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

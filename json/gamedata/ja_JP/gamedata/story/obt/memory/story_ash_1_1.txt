@@ -1,0 +1,551 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+「LORD、ウルサスで楽しい時間を過ごせているかしら？」
+「あたしはもうクルビアに到着したわ。ここは、そうね、興味深い場所よ。ええ、興味深い、そうとしか言いようがないわね。」
+「最近、ある問いがなぜかしきりに脳裏をよぎるの。それは誰もが聞いたことのある、または考えたことのある問いよ……深く掘り下げれば、多くの物の存在価値や意味の根源がそこに至るだろう。」
+「あたしたちが知る歴史は、果たして天が投げたサイコロの出目にすぎないのか、それともある種の必然性を持っていたのか……」
+「もし時間を億万年巻き戻し、生物の進化を最初からやり直すとしたら、あたしたちが生きる世界は、果たしてどうなるのだろう？」
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_cave_2",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[name="リターニア労働者"]奴らはいなくなったぞ。
+[name="ウルサス村人"]なんでわかるんだ？
+[Dialog]
+[playsound(key="$d_avg_clothmovement",volume=1)]
+[charslot(slot="l",name="avg_npc_068",posfrom="-150,0",posto="-150,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_004",duration=1.5)]
+[charslot(slot="r",name="avg_npc_081",posfrom="150,0",posto="150,0",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="l",focus="l")]
+[name="リターニア労働者"]足音だ。
+[name="リターニア労働者"]これまで洞窟の入口からは少なくとも一人の足音は聞こえていた。だが今はシーンとしている。何かあったに違いない。
+[name="リターニア労働者"]ここに監禁されてから何日経った？
+[charslot(slot="m",focus="m")]
+[name="カジミエーシュ少女"]たぶん、今日で三日目だと思う……
+[name="カジミエーシュ少女"]あそこの水だまりは光を反射するわ。日が沈むたびにちょっとだけ光が射すの。
+[charslot(slot="l",focus="l")]
+[name="リターニア労働者"]もう三日か。一体いつまで待てばいいんだ？　きっともう大部隊に置いて行かれたぞ。
+[name="リターニア労働者"]これ以上は我慢できん。今すぐここから出るぞ。
+[name="リターニア労働者"]後ろにある石で擦ればロープは切れる。一緒に出よう。
+[charslot(slot="r",focus="r")]
+[name="ウルサス村人"]落ち着け！　あの強盗団は十人以上いた。しかも武器を持ってる。それに比べて俺たちは拉致された理由すらわからない──
+[charslot(slot="l",focus="l")]
+[name="リターニア労働者"]少なくともまだ殺されていない……今がチャンスじゃないのか？
+[charslot(slot="m",focus="m")]
+[name="カジミエーシュ少女"]もうちょっと待った方がいいかも。あの人たちを下手に刺激したら……
+[charslot(slot="l",focus="l")]
+[name="リターニア労働者"]ここで死ぬのを待つつもりなら止めはしない。
+[name="リターニア労働者"]俺は一人ででもここから出るぞ。クルビアはもう目の前だ。たとえ殺されるとしても、こんな場所で死を待つのはごめんだ！
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n",channel="1")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[PlaySound(key="$a_bat_buildingshaking_2",channel="2")]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=3.5)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_456_ash_1#1",duration=1.5)]
+[delay(time=2)]
+[name="Ash"]そこのみんな、助けは必要かしら？
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+「この奇妙な世界に迷い込んでから、もう随分と経ったわ。しかし今になっても、ここでの生活に慣れたとは言えない。みんなもきっとそうでしょ？」
+「でも、あの常識離れしたクリーチャーたちを除けば、この世界に妙な親近感が湧いているのは確かよ。」
+「こんなことを言うのは少し変かもしれないけど、あたしは確かにそう思っている。」
+「この世界を理解することに努めるべきだ、と。」
+[Dialog]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_456_ash_1#1",duration=1.5)]
+[delay(time=2)]
+[name="Ash"]焚き火跡から判断して、あんたたちが言う「大部隊」は、おそらく三日前にはもうここを出てる。あいにくあたしの車もあんたたちと出会う前日に故障したわ。
+[name="Ash"]ツイてないわね。追いつくのは多分無理よ。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]クソッ、クソッ！　ああわかってたさ、あいつらが待ってくれるわけないって！
+[name="リターニア労働者"]クルビアはもう目と鼻の先だもんな、莫大な富を前にして、誰が俺たちなんかを待つもんか！
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]けど俺たちだってキャラバンに金を払ったのに……失踪してから、探すふりすらしないなんて。
+[charslot(slot="m",name="avg_npc_004")]
+[name="カジミエーシュ少女"]荒野に一日でも長くいれば、その分危険が増すのはみんな同じだから……
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]もういいだろ、これが現実だ。この大地の人間はみんな自分のことばかり……みんなそうやって生きてきたんだ。他人に期待するだけ無駄さ！
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]それにはあたしも賛成よ。でも文句を言うのも同じく無駄だわ……ここからは自分たちで乗り越えなきゃいけない。
+[name="Ash"]マップによると、ここから一番近い村は南に100キロの地点よ。補給物資をもらうには、まずその村まで移動することね。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]南？　俺たちの目的地は西だぞ！
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]東の国の哲学者が残した言葉でこんなのがある、「千里の遠いところに行く者は、三ヶ月前から食糧の準備にかからねばならない。」
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]食糧？　なんで食糧なんかを？　金じゃなくて？
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]まあいいわ、忘れて……とにかく、野垂れ死にしたくなければ補給は必要よ。
+[name="Ash"]グズグズしている暇はない。気を取り直して、出発するわよ。
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_desert_3",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]よし、もう一回ね。
+[name="Ash"]あんたの名はアルウィン、種族はキャプリニーで、リターニア人。
+[name="Ash"]あんたの国で今政権を握っているのは双子の女帝。そして多くの人たちは……えっと、アーツが得意なのね。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]そうさ！　我々の自慢の音楽も忘れないでくれよ。
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]次に、あんたはニコライ、国籍はウルサス。種族は……同じくウルサスね？
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]そうだ、ウルサスの名は他のどの国からも恐れられている。時には自分たちウルサス人でさえも恐れるほどだ。
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]そしてあんたはアリチァ、カジミエーシュ出身。そこの騎士競技は世にも有名なのね。
+[charslot(slot="m",name="avg_npc_004")]
+[name="カジミエーシュ少女"]うん！
+[charslot(slot="m",name="char_456_ash_1#4")]
+[name="Ash"]騎士競技について、少し疑問に思うところがあるわ。
+[name="Ash"]あんたの話だと、それは企業がお金を出して戦士を雇って命がけの戦いをさせるスポーツ。そしてそのスポーツはカジミエーシュに莫大な経済的利益をもたらしている。
+[name="Ash"]その一方で、競技に参加している「騎士」たちの一部はスターもしくはヒーロー扱いをされるが、一部は命すら取引される商品として扱われる……この理解で合ってる？
+[charslot(slot="m",name="avg_npc_004")]
+[name="カジミエーシュ少女"]大都市に行ったことがある人から聞いた話だけど、そうらしいよ。
+[charslot(slot="m",name="char_456_ash_1#4")]
+[name="Ash"]そう、変な話ね、けど理解できなくもない。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]お姉さん、これだけは聞かせてくれ。あの強盗グループから我々を助けたんだから、あなたの戦士としての強さに関しては疑う余地がないが……
+[name="リターニア労働者"]この大地に関する常識は……お世辞にも持っているとは言えない。
+[name="リターニア労働者"]あなたは一体どこから来たんだ……？　実に気になるんだが。
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]それはお恥ずかしい限りだわ。そうね、あたしは……とても遠いところから来たのよ。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]細かいことは気にすんなよ。我々を助けた命の恩人様だぞ？　疑ってどうするんだ！
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]今のところは一応目的地が一致しているわけだし、仲間ってことで一つよろしく。
+[name="Ash"]さっきの話からすると大勢でクルビア？　に向かっているのね？　なるほど……クルビアね。
+[name="Ash"]いいだろう、ここにはヴィクトリアもあればガリアもある……だったらクルビアがあってもおかしくないわね。
+[charslot(slot="m",name="avg_npc_004")]
+[name="カジミエーシュ少女"]私も、ニコライおじさんも、あとアルウィンおじさんも……みんなカジミエーシュの西の村から出発した開拓隊で出会ったの。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]お姉さん、大開拓はさすがに聞いたことあるよな？
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]ええ、「大開拓」という単語自体は確かに聞いたことがあるわ。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]そうだよな！　騎士競技は知らなくても、大開拓ぐらいはさすがに聞いたことあるよな！　夢や理想を持つ人間ならあの盛り上がりようを耳にして心を動かされないわけがない！
+[name="リターニア労働者"]想像してみなよ。巨大な移動都市が荒野の上を駆け巡り、莫大な量の物資を農場や採掘場へ届ける……そして都市に物資を納めれば、使い切れないほどの金がもらえる。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]そうだ、俺も聞いたぞ！　クルビアにはたくさんの荒野が未開拓のままだそうだ。土地を奪われる心配もなければ、育てた作物も全部自分のものだ。
+[name="ウルサス村人"]努力すれば農場をまるまる所有できる！　まるっと全部だぞ！
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]あのさ、夢はもっと大きく持った方がいいぜ？
+[name="リターニア労働者"]やっぱ金稼ぎと言や鉱脈の採掘じゃん？　農家より断然儲かるぞ。
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]ちょっといい？　すまないが、今言った「鉱脈」っていうのは、源石鉱のことかしら？
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]源石鉱に決まってるだろ？　他に何があるってんだ？
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]あたしの理解が間違っていなければ、あれはまさに鉱石病の感染源なのでは？
+[name="Ash"]あと「天災」のこともそう。移動都市は天災から逃れられるけど、採掘場や農場はそうはいかないわ……一見おいしそうな話だけど、よくよく考えたら大きなリスクも潜んでいるんじゃない？
+[name="Ash"]クルビア政府はただ、ここに金稼ぎのチャンスがあると言っているだけのようにしか聞こえない。
+[name="Ash"]すると各地から来た人々は命の危険も顧みず荒野の開拓に没頭し、政府はそれについて何の責任も負わなくて済む。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]おかしなことを言うお姉さんだな。
+[name="リターニア労働者"]鉱脈の採掘はもちろん危険だ。それぐらいは駄獣だってわかるぜ。だから何だって言うんだ？　俺の首のコレを見なよ、もう危険かどうかどうでもいいのさ。
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]……悪かったわ、非難するつもりはないのよ。それに、非難できる立場でもないし。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]俺に言わせりゃ、農場を失う理由を並べたら、天災なんかは後ろから数える方が早い。
+[name="ウルサス村人"]（ウルサス語）「荒野では、農場がいつ天災で滅ぶかわからない。だがウルサスでは、農場は必ず地主に奪われるものだ。」
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]なるほど、生きるすべを見つけるのが先ってことね。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]それに、感染者も一般人も、キャプリニーもサルカズも、クルビアでは金さえあればいい暮らしができるってよ。これぞ「平等」ってやつだろ。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]おやまぁ、お前たちリターニアの労働者はそういうのあんまり気にしないって聞いてたけど、違うのか？
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]どこへ行っても感染者は害虫扱いされるもんさ。リターニアはただ害虫駆除にそんなに熱心じゃないってだけだ。
+[name="リターニア労働者"]ハッ、まあどうでもいいがな、どうせクルビアに着けばもうそんなことで悩まなくて済むんだ。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]そうだ。クルビアに行けさえすれば、すべて解決だ。
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]この中で、誰かクルビアに行ったことがある人は？
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]いや。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]俺も実際に行ったことは……
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]心配するなよ。噂はたくさん聞いてる。
+[name="リターニア労働者"]サルゴン出身の貧乏な若者が、クルビアでのし上がって億万長者になるっていう映画だって見たことがあるぞ！
+[name="リターニア労働者"]正直、クルビアの音楽センスはひどいもんだが、あの映画とかいうのは確かに面白いぜ。
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]実に興味深い。あたしもそんな映画を見たことがあるような気がするわ。
+[charslot(slot="m",name="avg_npc_004")]
+[name="カジミエーシュ少女"]実はね、私のパパがクルビアにいるの……
+[name="カジミエーシュ少女"]一ヶ月前にパパから手紙が来たの。クルビアに落ち着いてそこそこいい暮らしをしてるから、私にも来て欲しいんだって。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]お父さんがクルビアに行ってたのか？　初めて聞いたぞ！
+[charslot(slot="m",name="avg_npc_004")]
+[name="カジミエーシュ少女"]で、でも本当はあんまり信じられなくて……パパは何年も前に家を出たっきりなの。この手紙がクルビアからどれだけの時間をかけて私のところに来たのかもわからないし……
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]あっ、そうか、わかったぞ！
+[name="ウルサス村人"]お前の父さんがクルビアで金持ちになったことが誰かに知られて、そいつがお前を拉致して身代金を要求しようとしたんだ！　これですべてのつじつまが合う。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]フンッ、俺たち二人はお嬢様誘拐事件に巻き込まれたってわけか。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]逆に考えてみろよ！　クルビアに行けば本当に金持ちになれるってことじゃないか！
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]た、確かに。
+[charslot(slot="m",name="avg_npc_004")]
+[name="カジミエーシュ少女"]本当にそうなの？
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]そうに決まってる！　でなけりゃこれは一体なんなんだ？
+[name="ウルサス村人"]そう考えたら拉致されるのも悪くないな！
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]お嬢ちゃんよ、一応生死を共にした仲間だ。お父さんに会ったら、どうやって金持ちになったのか訊いてもいいよな？
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]当然だよな！　もうみんな仲間だ、一緒にリッチになろうぜ！
+[charslot(slot="m",name="avg_npc_004")]
+[name="カジミエーシュ少女"]うん……いいよ、わかった！
+[name="カジミエーシュ少女"]お姉ちゃんは？　クルビアに行って何をするの？
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]あんたたちと一緒よ。
+[name="Ash"]生きるすべを見つけたいの。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]待って、お姉さん、マップをちょっと見せてくれないか？
+[name="リターニア労働者"]ここ……ここじゃないか！　そうだ、この坂だ、間違いない！
+[Dialog]
+[PlaySound(key="$rungeneral")]
+[charslot(slot="m",posfrom="0,0",posto="-150,0",duration=1.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_laccolith",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1.5)]
+[name="リターニア労働者"]おい、見たか？　あれが「第九都市」だ！　あんなデカい移動都市ほかで見たことあるか？
+[name="リターニア労働者"]これからここを中心に、クルビアからカジミエーシュに至る道を拓くだそうだ。それが両国の市場、さらには都市間交通網まで繋ぐって話さ！
+[name="リターニア労働者"]そこからクルビアの映画がカジミエーシュ市場に入り、大騎士領の騎士競技もクルビアで生配信される！
+[name="リターニア労働者"]奴らは嘘なんかついていなかった、噂は全部本当だったんだ！
+[name="カジミエーシュ少女"]なんて大きいんだろう……
+[name="ウルサス村人"]こんなデカい街、生まれて初めて見たぜ。
+[name="Ash"]こんなビル群ができるとは、確かに偉業と言ってもいいわね。
+[name="リターニア労働者"]いつかは俺もあの都市で働き、自分の手で大金をつかむんだ。俺を止められるものはもう何もないぜ──
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+「夕日に照らされた巨大な都市がまるで戦艦のように荒野を走る。実に幻想的で壮大な光景だった。」
+「だけどあたしたちは知っている。壮大な景色というのは、大抵醜くて見るに耐えないレンガたちの上に成り立っていることを。」
+「綺麗な包み紙を剥いたら、中身はいつも似たような嘘ばかり。」
+「ここで出会った全員が夢を抱いていて、その真っ直ぐな瞳は忠誠を誓う戦士か、無垢な子供にしか見たことはなかった。」
+「この先で、彼らを待っているものが何なのかはわからない。」
+「だが、もしかするとあたしたちはすでにそれを目にしているかもしれない。「歴史」という名の書に綴られたものを……」
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="l",name="avg_npc_004",focus="r")]
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]筋肉がこわばっていると、反動力で照準が合わなくなるわ。
+[name="Ash"]リラックスして、呼吸のリズムを調整しながら……
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="カジミエーシュ少女"]……
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]オーケー、次はこの照準をターゲットにしっかり合わせ、そして、引き金を引く。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_frdrgntk",channel="1")]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_wing",channel="2")]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[charslot(slot="r",name="char_456_ash_1#1",focus="l")]
+[name="カジミエーシュ少女"]ううっ……
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]いいだろう、初めてにしては上出来よ。
+[name="Ash"]ただ、晩ご飯のメニューは一品減ることになるわね。
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="カジミエーシュ少女"]お姉ちゃんが暮らしていた場所は、みんなその……銃みたいなものを持たなきゃいけないの？
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]いや……そうね、多くの人たちが持たなくていいように、あたしたちが武器を手に取るの。
+[name="Ash"]あんたが武器を手にする日が来ないことを祈るけど、いざその日が来たときはきっと、習っておいてよかったと思うはずよ。
+[name="Ash"]でもあんたたちにとっては、クロスボウの方がもっと実用的かもしれないわね。あたしに腕利きの同僚がいるけど、彼女もここにいれば教えてもらえたのに。
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="カジミエーシュ少女"]矢を射るのならできるよ！　小さい頃自分で覚えたの、狩りをしたこともあるよ！
+[name="カジミエーシュ少女"]私もね、頑張って練習すれば、騎士のお姉さんたちみたいに強くなれるかなって思ってたの……でもそれを言ったらパパに怒られたから、諦めちゃったんだ。
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]偶然ね、あたしも似たようなことを言われたわ……でも、あたしはおとなしく言うことを聞かなかった。
+[name="Ash"]新生活を始めたら、好きなことを存分にやればいい。
+[Dialog]
+[charslot]
+[name="ウルサス村人"]薪を拾ってきた。焚き火を起こしていいぞ。夕食の支度をしよう。
+[Dialog]
+[charslot(slot="l",name="avg_npc_004",focus="r")]
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]行こう、補給の時間だ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="char_456_ash_1#5",focus="m")]
+[name="Ash"]……
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]……
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]……
+[charslot(slot="m",name="avg_npc_004",focus="m")]
+[name="カジミエーシュ少女"]お姉ちゃん、食べないの？
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]あと食べられるのは砂虫の缶詰ぐらいだ。塩気がキツいけど、今はエネルギーの補給が最優先だ。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]俺は悪くないと思うぜ。フリエーブもあれば最高だがな。
+[charslot(slot="m",name="char_456_ash_1#5",focus="m")]
+[name="Ash"]確かに、エネルギーの補給は大事ね……あたしの経験上、ここでよく食べられているような食べ物は少なくとも人体には無害なはず──一つ頂こう。
+[Dialog]
+[PlaySound(key="$d_avg_drinkswllw",channel="1")]
+[Delay(time=1)]
+[charslot(slot="m",name="char_456_ash_1#8",focus="m")]
+[Delay(time=1)]
+[charslot(slot="m",name="char_456_ash_1#8",focus="m")]
+[name="Ash"]……
+[charslot(slot="m",name="char_456_ash_1#5",focus="m")]
+[name="Ash"]悪くは……ないわね。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]ふぅ……あったまるぜ。
+[name="ウルサス村人"]あったかい飯にありつけた時は、こういう生活も悪くはない、なんとか生きていけるさって思うよな？
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]そうだな……けどもうすぐクルビアだ、新しい生活が待ってるぞ。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]おうよ！　きっとうまくいく……
+[name="ウルサス村人"]おっと、こういう時にゃコイツがないとな。
+[Dialog]
+[PlaySound(key="$d_avg_glassclink",channel="1")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]酒！？　どっから手に入れたんだ？
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]あの洞窟から脱出する時に、ついでに奴らの酒を拝借してやった。あいつらのせいで俺たちは大部隊とはぐれたんだから、このぐらい詫び代わりにもらったっていいだろ。
+[name="ウルサス村人"]ラベルに書いてあるのは、クルビア語か、読めないな……
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]よくやった！　今すぐ乾杯したい気分だ！
+[name="リターニア労働者"]はぁ、リターニアを出る前にチェロを売っぱらってなきゃ、ここで一曲弾いてやってもよかったんだがな。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]チェロなんか弾けるんだ、意外だな。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]リターニア人にとっちゃ楽器を弾けない以上に情けないことはないのさ。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]クルビアで金を稼いだら新しいのを買えばいいさ！　リターニアの音楽家に乾杯！
+[name="ウルサス村人"]お嬢ちゃんも一杯どうだい？
+[charslot(slot="m",name="avg_npc_004",focus="m")]
+[name="カジミエーシュ少女"]わ、私はお酒飲めないから……
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]それは残念だ。地元じゃ気が済むまで飲める機会なんて、めったになかったからよ。
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]確かに残念だな。まぁいい、俺たちで乾杯しようぜ。
+[charslot(slot="m",name="avg_npc_081")]
+[name="ウルサス村人"]新しい生活に乾杯！
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]クルビアに乾杯！
+[Dialog]
+[charslot]
+[PlaySound(key="$clink",channel="1")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_068")]
+[name="リターニア労働者"]おっと、忘れるところだった。お姉さんも一杯どうだい？
+[charslot(slot="m",name="char_456_ash_1#5",focus="m")]
+[name="Ash"]いいえ、あたしは結構よ。
+[name="Ash"]別の状況下なら喜んでグラスを合わせたいところだが、残念ながら今夜は気を緩められそうにもないわ。
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[playMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+キャンプ地から少し離れた場所
+[Dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_npc_007",duration=1.5)]
+[charslot(slot="r",name="avg_npc_007",duration=1.5)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_007",focus="l")]
+[name="傭兵A"]一通り確認してきたが、視界が悪い……早めに動くべきだったかもしれない。
+[charslot(slot="r",name="avg_npc_007",focus="r")]
+[name="傭兵B"]安心しろ、この森からは抜け出せない。
+[charslot(slot="l",name="avg_npc_007",focus="l")]
+[name="傭兵A"]気を抜くな、俺たちのキャンプ地を襲った奴はまだあいつらと一緒にいるかもしれない。
+[charslot(slot="r",name="avg_npc_007",focus="r")]
+[name="傭兵B"]今回は準備万端だ。痛い目を見させてやるさ。
+[name="傭兵B"]ここは任せたぞ。俺はちょっと向こうの状況を見てくる。チャンスがあったらそのまま仕留める。
+[Dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="r",posfrom="0,0",posto="200,0",duration=1.5)]
+[charslot(slot="r",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[name="傭兵A"]……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n")]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="傭兵A"]どうした、もう戻ってきたのか？
+[Dialog]
+[charslot]
+[name="？？？"]いや、もう戻ってこないわ。
+[Dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_456_ash_1#1",duration=1.5)]
+[delay(time=2)]
+[PlaySound(key="$d_avg_frdrgnld")]
+[delay(time=1.5)]
+[name="Ash"]キャリアはあるようだけど、まだまだアマチュアね。
+[name="Ash"]では、武器を下ろしてもらおうか。
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="傭兵A"]お前なんだな──
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]正解よ。
+[name="Ash"]これからの質問にも同じように正しく答えてほしいものね。
+[name="Ash"]誰の差し金？
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="傭兵A"]けっ──
+[Dialog]
+[charslot(slot="m",name="char_456_ash_1#2")]
+[PlaySound(key="$d_avg_clnchfst")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clnchfst")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clnchfst")]
+[delay(time=0.5)]
+[charslot(slot="m",name="char_456_ash_1#2")]
+[name="Ash"]今日はあまりいい気分じゃない。こういう話の進め方が好みなら、喜んで付き合うけど。
+[name="Ash"]なぜあの人たちを拉致したの？
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="傭兵A"]金だ。
+[name="傭兵A"]労働力が必要な農場や採掘場は、定期的に人手を探しに来る。この荒野を行き交う開拓隊をターゲットにすれば、いくらでも商売が成り立つ。
+[charslot(slot="m",name="char_456_ash_1#2")]
+[name="Ash"]なぜ、よりによってあの三人を？
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="傭兵A"]三人？　何の話だ？
+[name="傭兵A"]うちの人間がお前にやられたから追って来たんだよ！
+[charslot(slot="m",name="char_456_ash_1#2")]
+[name="Ash"]……
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="傭兵A"]まだ何か質問が？
+[name="傭兵A"]お前の勝ちだ。残りの物資も弾薬も全部持ってけ。
+[name="傭兵A"]さっさとやれ！
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+「これらを書き記したのは何かを非難するためじゃない。そもそも誰かを非難する資格などない。」
+「何かの本で読んだように、他人と同じ境遇に身を置いているのでなければ、その人を非難する資格はない。」
+「ここは面白い世界ね。あたしたちの知ってる世界とは違うけど、ある意味、鏡のようでもある。そこに映るものを見ると、実に考えさせられることが多い。」
+「この世界であたしは多くのことを学んだ。」
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_456_ash_1#1",duration=1.5)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[charslot(slot="r",name="char_456_ash_1#1",focus="l")]
+[name="カジミエーシュ少女"]お姉ちゃん、どこ行ってたの？
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]ちょっとしたトラブルを処理してきた。
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="カジミエーシュ少女"]さっき、なんだか怖い音が聴こえたような……
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]もう大丈夫よ、安心して。
+[name="Ash"]今のうちに寝ておいた方がいいわ。体力を温存しないとこれからの移動に耐えられない。
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="カジミエーシュ少女"]でも、眠れなくて……
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]わかった。いいわ、ここに座って、おしゃべりしようか。
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="カジミエーシュ少女"]なんだかわからないけど、怖いの。
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]それが普通よ。人は未知のものに恐怖を感じるものだから。むしろ慎重さは人を賢くするわ。
+[name="Ash"]アリチァ、あんたは何を心配しているの？
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="カジミエーシュ少女"]自分でもわからないの……開拓隊のみんながクルビアを目指して、一刻も早く着けるように頑張ってる姿を見てきたけど……
+[name="カジミエーシュ少女"]みんなが期待すればするほど、私、心配なの。この大地にあんな夢みたいな街がほんとに存在するのかなって……クルビアはほんとはどんな場所なのかなって……
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]いい質問だけど、訊く相手を間違えたわね。
+[name="Ash"]知っての通り、あたしは遠い場所から来たの。この大地に関してはあんたの方がまだ詳しいはずよ。これからはあたしもあんたたちと一緒にクルビアを知ることになる。
+[name="Ash"]あたしたちはみんな、この目でクルビアを見極めるの。他人の判断を盲信せず、過去の経験に囚われずに、自分の目で見て、自分の頭で考える。
+[name="Ash"]まずはたどり着かなくちゃ。今は先へ進むしかないわ。
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="カジミエーシュ少女"]先へ進む……
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]そう、先へ進む。
+[name="Ash"]これでも不安が消えないなら、お話をしてあげよう。
+[name="Ash"]物語の舞台は、クルビアとよく似た場所……
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

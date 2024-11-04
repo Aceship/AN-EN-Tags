@@ -1,0 +1,901 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_labcorridor",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)] 
+[playsound(key="$d_avg_sldrsldng",channel="1")]
+[charslot(slot="l",name="avg_4124_iana_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_4123_ela_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[stopsound(fadetime=1,channel="1")]
+[playsound(key="$d_gen_transmissionget",channel="1")]
+[charslot(slot="r",name="avg_4123_ela_1#1$1",focus="r")]
+[name="Ela"]We've arrived at Magnethill No. 2. Repeat, we've arrived at Magnethill No. 2.
+[name="Ela"]Doc, how are things over on your side?
+[charslot(slot="r",name="avg_4123_ela_1#1$1",focus="none")]
+[name="Doc"]Exterior clear.
+[name="Doc"]Considering the unique properties of Magnethill No. 2, I suggest we meet up.
+[charslot(slot="r",name="avg_4123_ela_1#1$1",focus="r")]
+[name="Ela"]Agreed.
+[name="Ela"]Drone recon report, Iana.
+[charslot(slot="l",name="avg_4124_iana_1#1$1",focus="l")]
+[name="Iana"]Almost no different from the way we left it. Readings are virtually the same, and there is no sign of activity from any other party.
+[charslot(slot="l",name="avg_4124_iana_1#7$1",focus="l")]
+[name="Iana"]Looks like the quarantine on Magnethill No. 2 has been pretty well enforced.
+[charslot(slot="r",name="avg_4123_ela_1#7$1",focus="r")]
+[name="Ela"]Which is to say, there's nobody here.
+[name="Ela"]And that's not good news, because we're here to look for the missing Ash squad.
+[charslot(slot="r",name="avg_4123_ela_1#1$1",focus="r")]
+[name="Ela"]Keep your eyes open. We'll proceed to Levi's main lab once we rendezvous.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_caveentrance",screenadapt="coverall")]
+[charslot]
+[Delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_4124_iana_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_4123_ela_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot(slot="r",name="avg_4123_ela_1#7$1",focus="r")]
+[name="Ela"]Here we are.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_4126_fuze_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="r")]
+[name="Doc"]Are you sure?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]This is where Levi's main lab was, according to the map.
+[charslot(slot="m",name="avg_4124_iana_1#7$1",focus="m")]
+[name="Iana"]We were only one step behind Cohen. There were tremors, then...
+[name="Iana"]I don't know if it was that madman Levi, or something wrong with the equipment, but the whole lab disappeared into thin air.
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#13$1",focus="m")]
+[name="Doc"]Into thin air? Are you sure?
+[Dialog]
+[charslot(slot="m",name="avg_4124_iana_1#1$1",focus="m")]
+[name="Iana"]I'd say that in my expert opinion, it's the most fitting description of the events.
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#13$1",focus="m")]
+[name="Doc"]That just doesn't seem possible.
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]No explosion can wipe out all evidence that a lab ever existed. It wouldn't have left a big hole like this, sending only a few tremors through those outside.
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[playsound(key="$smallearthquake")]
+[bgeffect(name="$eb_dust_01",layer=1)]
+[CameraShake(duration=-1, xstrength=5, ystrength=10, vibrato=15, randomness=70, fadeout=false, block=false)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="m")]
+[name="Doc"]Earthquake? Or is it like you said...
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]It's not an earthquake!
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]The tremors might well be linked to the disappearance.
+[name="Ela"]Find cover and wait for the tremors to pass!
+[Dialog]
+[playsound(key="$a_bat_buildingshaking_2")]
+[CameraShake(duration=4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[bgeffect]
+[charslot]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=2, block=true)]
+[Background(image="48_g7_galleriesstaircase",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_soldiersrun")]
+[charslot(slot="l",name="avg_npc_1271_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",duration=1.5)]
+[Delay(time=3.5)]
+[charslot(slot="r",focus="r")]
+[name="Grumbling Soldier"]How many floors are there? My legs are starting to scream.
+[charslot(slot="l",focus="l")]
+[name="Commanding Officer"]Keep going up, we need to reach the Reynell's penthouse.
+[charslot(slot="r",focus="r")]
+[name="Grumbling Soldier"]Can't we take the elevator? Why do we have to climb these stairs floor by floor?
+[charslot(slot="l",focus="l")]
+[name="Commanding Officer"]You think I don't want to?
+[name="Commanding Officer"]Recon report on the security here indicates that the penthouse is only accessible by these stairs and his own private elevator.
+[name="Commanding Officer"]There are guards posted by the elevator on every floor.
+[name="Commanding Officer"]Security is weakest on the stairs, that's where we break through.
+[charslot(slot="r",focus="r")]
+[name="Grumbling Soldier"]Guy's just a Kazimierzian who came to make some money, isn't he? It's not like he has anybody backing him up. Why do we have to be so careful just to get him to sign a transfer agreement?
+[charslot(slot="l",focus="l")]
+[name="Commanding Officer"]He has money. That's all the backing he needs.
+[name="Commanding Officer"]Keep moving. Quit looking around!
+[charslot(slot="l",focus="none")]
+[name="Tired Soldier"]I'm completely spent, boss... I'd rather take the lift and fight my way through.
+[charslot(slot="l",focus="l")]
+[name="Commanding Officer"]Shh...
+[charslot(slot="l",focus="none")]
+[name="Tired Soldier"]Captain?
+[charslot(slot="l",focus="l")]
+[name="Commanding Officer"](Whisper) We've almost reached the office! Quiet down..
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_ltroom",screenadapt="coverall")]
+[charslot]
+[Delay(time=2.5)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_1211_1#8$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$doorknockquite")]
+[Delay(time=1.5)]
+[charslot]
+[playsound(key="$dooropenquite")]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1213_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_1211_1#10$1",focus="m")]
+[name="Reynell"]A letter? I told you, you can open those on your own. No need to ask me.
+[charslot(slot="m",name="avg_npc_1213_1#1$1",focus="m")]
+[name="Miłosz"]It says for your eyes only, Reynell.
+[charslot(slot="m",name="avg_npc_1211_1#10$1",focus="m")]
+[name="Reynell"]Where is it from?
+[charslot(slot="m",name="avg_npc_1213_1#1$1",focus="m")]
+[name="Miłosz"]Kazimierz... looks like it's from your uncle.
+[charslot(slot="m",name="avg_npc_1211_1#2$1",focus="m")]
+[name="Reynell"]Ah, the usual inheritance demand.
+[charslot(slot="m",name="avg_npc_1213_1#1$1",focus="m")]
+[name="Miłosz"]Also... one from the Dossoles municipal government.
+[charslot(slot="m",name="avg_npc_1211_1#10$1",focus="m")]
+[name="Reynell"]A letter from the city? Probably nothing important. Should be another stupid banquet invitation.
+[charslot(slot="m",name="avg_npc_1213_1#1$1",focus="m")]
+[name="Miłosz"]Maybe Candela will be there. We could discuss the opening ceremony with her. It's not far off, after all, and you've spent so much time and effort on it...
+[name="Miłosz"]It's probably going to be spectacular.
+[charslot(slot="m",name="avg_npc_1211_1#1$1",focus="m")]
+[name="Reynell"]Come, stand with me, Miłosz.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[Delay(time=2.5)]
+The man walks up and stands by the red-haired Vulpo's side.
+They admire the artwork at the end of the room, about the height of two persons.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1213_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",duration=1.5)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",focus="r")]
+[name="Reynell"]I'm naming it 'The Fall of Order'. What do you think?
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="Miłosz"]Er... sure. You want to show it at the opening?
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="Reynell"]We've always been straight with each other, haven't we?
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="Miłosz"]Is that twisted curve intended to represent the 'fall'?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]No, it represents the fleeting gaze of society on man.
+[name="Reynell"]A dogmatic gaze that considers all that does not conform to be madness. Lines that can only emerge from a post-Profound Silence Iberia.
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="Miłosz"]The Iberian Inquisition. Certainly a symbol of order.
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]...
+[charslot(slot="l",name="avg_npc_1213_1#7$1",focus="l")]
+[name="Miłosz"]On the right... does that indescribable cone represent the spires of Leithanien?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]No. Imagine Sargon and its millennia of wind and sand, the lords ameer, the Padishah, the golden city... fantasizing the exotic is also a construct of internal order.
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="Reynell"]The last gasp of imagination, once broad, now left with nothing but cliche.
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="Miłosz"]Yes... Right, that makes sense.
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="Reynell"]I pulled all of that directly out of my behind.
+[charslot(slot="l",name="avg_npc_1213_1#10$1",focus="l")]
+[name="Miłosz"]Er...
+[name="Miłosz"]Your artistic style has always been unique, from medium to expression.
+[name="Miłosz"]How many golf balls did it take? A thousand? Two thousand?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]That's not important. What's important is the last one. Would you do me a favor and put the finishing touch on it, by placing this one on top?
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="Miłosz"]What would happen?
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="Reynell"]It will be completed, and at that moment—
+[Dialog]
+[playsound(key="$d_gen_soldiersrun",volume=0.2)]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",focus="r")]
+[Delay(time=2.5)]
+[charslot]
+He sees shadows flash past the bottom gap of the office door.
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[playsound(key="$d_avg_doorbreak",volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=true)]
+The door is kicked open before he could react. The whole room trembles, causing the teetering sculpture before him to collapse, sending golf balls flying everywhere.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",focus="l")]
+[name="Miłosz"]...'The Fall'?
+[Dialog]
+[charslot]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[playsound(key="$d_gen_soldiersrun")]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",duration=1.5)]
+[Delay(time=3.5)]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="Commanding Officer"]Reynell and you, secretary over there. Hands on your heads and get down. No sudden moves.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1213_1#6$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1211_1#10$1",focus="l")]
+[name="Miłosz"]Who are you?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",focus="m")]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",focus="m")]
+[name="Commanding Officer"]Doesn't matter. You and your boss are going to come quietly, if you know what's good for you.
+[Dialog]
+[charslot]
+[playsound(key="$a_bat_buildingshaking_1",volume=0.3)]
+[CameraShake(duration=1.5, xstrength=10, ystrength=15, vibrato=30, randomness=90, fadeout=false, block=true)]
+Something is approaching rapidly from above.
+Must be a particularly big fowlbeast, the officer thought. He pays no heed to it and points his crossbow at Reynell, the half-collapsed golf ball sculpture standing between them.
+[Dialog]
+[playsound(key="$a_bat_buildingshaking_1")]
+[CameraShake(duration=0.5, xstrength=10, ystrength=15, vibrato=30, randomness=90, fadeout=false, block=true)]
+Then, he hears a loud noise from the ceiling, right above what remains of the sculpture.
+[Dialog]
+[playsound(key="$a_bat_buildingshaking_2")]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=false, block=true)]
+Then another.
+[Dialog]
+[playsound(key="$d_avg_towercllps")]
+[PlaySound(key="$bodyfalldown1", volume=1,channel="3")]
+[PlaySound(key="$bodyfalldown2", volume=1,channel="4")]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=1, g=1, b=1, fadetime=2, block=true)]
+This time, a large hole appears in the ceiling, along with the sound of broken planks.
+Several dark shadows fall through the shrapnel-mixed dust onto the floor of Reynell's office, smashing what remained of the sculpture, sending golf balls flying in all directions.
+The soldier was about to let out an expletive, but it died in his throat.
+The shadows began to move.
+[Dialog]
+[playsound(key="$d_avg_clothmovement")]
+[charslot(slot="m",name="avg_4123_ela_1#10$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4123_ela_1#10$1",focus="m")]
+[name="Ela"]Everybody alright?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_4126_fuze_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_4124_iana_1#10$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_4124_iana_1#10$1",focus="r")]
+[name="Iana"]Just a little scrape.
+[charslot(slot="l",name="avg_4126_fuze_1#1$1",focus="l")]
+[name="Fuze"]I'm fine.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]Doc?
+[Dialog]
+[charslot]
+[name="Doc"]I... I'm okay.
+[Dialog]
+[charslot(slot="r",name="avg_4124_iana_1#1$1",posfrom="100,0",posto="0,0",duration=1.5)]
+[charslot(slot="r",afrom=0,ato=1,duration=1)]
+[Dialog]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_4124_iana_1#4$1",focus="r")]
+Iana gives Doc a hand and sees he is holding a golf ball, which left a round mark on his forehead.
+[Dialog]
+[playsound(key="$d_avg_clothmovement")]
+[charslot(slot="l",name="avg_4125_rdoc_1#7$1",posfrom="0,-30",posto="0,30",duration=1.5)]
+[charslot(slot="l",afrom=0,ato=1,duration=1)]
+[Dialog]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_4125_rdoc_1#7$1",focus="l")]
+[name="Doc"]I'm fine... other than a little knock from a golf ball.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]Next question.
+[name="Ela"]Anyone know what happened, other than that we somehow fell into a pile of golf balls?
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",duration=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="Commanding Officer"]...
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1213_1#4$1",focus="all")]
+[charslot(slot="r",name="avg_npc_1211_1#5$1",focus="all")]
+[name="Miłosz & Reynell"]...
+[Dialog]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="l")]
+[name="Bewildered Soldier"]Why didn't we go just in through the roof? We wouldn't have had to climb the stairs if we did that.
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="Commanding Officer"]Shut up. Prepare to engage!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4123_ela_1#6$1",focus="m")]
+[Delay(time=0.5)]
+[playsound(key="$d_avg_arrow_rain")]
+[playMusic(intro="$mutate_intro", key="$mutate_loop", volume=0.6)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",posfrom="0,0",posto="30,-20",duration=0.3)]
+[Delay(time=0.8)]
+[name="Ela"]A crossbow?
+[Dialog]
+[playsound(key="$d_avg_gunequip")]
+[charslot(slot="m",posfrom="30,-20",posto="0,0",duration=0.5)]
+[Delay(time=0.8)]
+[name="Ela"]...Prepare to engage.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1213_1#4$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]I guess you aren't exactly friends.
+[name="Reynell"]Did you bring a weapon, Miłosz?
+[charslot(slot="l",name="avg_npc_1213_1#2$1",focus="l")]
+[name="Miłosz"](Shrugs) Nope.
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]Well, in that case...
+[name="Reynell"]You'd better duke it out amongst yourselves to decide who gets to kidnap me. There's only one of me, after all.
+[Dialog]
+[charslot(slot="r",posfrom="0,0",posto="50,0",duration=1)]
+[Delay(time=1.5)]
+[playsound(key="$d_avg_winglssice")]
+[Delay(time=2.5)]
+[charslot(slot="r",posfrom="50,0",posto="0,0",duration=1)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]A drink, Miłosz?
+[charslot(slot="l",name="avg_npc_1213_1#1$1",focus="l")]
+[name="Miłosz"]Pass. I still have to protect you.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="m")]
+[name="Doc"]Kidnap?
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]A furry kidnapping party? That's new.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="Commanding Officer"]Enough chit-chat! Drop your weapons and get away from Reynell, or we'll shoot!
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]Well, they're coming for us, kidnappers or not.
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]Find cover!
+[name="Ela"]Iana, Doc, take the non-combatants and get out of here! Fuze and I will cover you!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_sldrpllgn", volume=1,channel="1")]
+[PlaySound(key="$d_avg_sldrpllgn", volume=1,channel="2",delay=0.3)]
+[PlaySound(key="$d_avg_ghtsvnzrld", volume=1,channel="3",delay=0.5)]
+[Delay(time=1)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="3",delay=0.1)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="4",delay=0.2)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="5",delay=0.3)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_1272_1#1$1")]
+[charslot(slot="r",name="avg_npc_1272_1#1$1")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="3",delay=0.1)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="4",delay=0.2)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="5",delay=0.3)]
+[charslot(slot="l",posfrom="0,0",posto="0,-50",duration=0.8)]
+[charslot(slot="l",afrom=1,ato=0,duration=0.5)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="3",delay=0.1)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="4",delay=0.2)]
+[PlaySound(key="$d_avg_frdrgntk", volume=1,channel="5",delay=0.3)]
+[charslot(slot="r",posfrom="0,0",posto="0,-50",duration=0.8)]
+[charslot(slot="r",afrom=1,ato=0,duration=0.5)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="Commanding Officer"]No Sankta halos, and they don't look like Blacksteel either...
+[name="Commanding Officer"]Do these idiots have a death wish? They just think guns look cool?
+[name="Commanding Officer"]Move! Don't let them get away with Reynell!
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]On your ten, Iana!
+[Dialog]
+[charslot]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.17, fadetime=0.5)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.17, fadetime=0.5)]
+[PlaySound(key="$d_avg_sldrrldn", volume=1,channel="2")]
+[BackgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.5, yScaleTo=1.5, duration=0, block=false,screenadapt="coverall")]
+[charslot(slot="m",name="avg_4124_iana_1#6$1",scale=1.05,posfrom="80,-350",posto="-80,-350",duration=1.5)]
+[charslot(slot="m",action="zoom", poszoom = "0.5,0.5",scale=1.8,duration=0)]
+[Delay(time=1.55)]
+[curtain(fadetime=0.8)]
+[PlaySound(key="$d_avg_sldrpllgn", volume=1,channel="1")]
+[charslot(slot="m",scale=3,posfrom="-80,-350",posto="-240,-350",duration=1)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1.55)]
+[charslot]
+[BackgroundTween(xScaleFrom=1.5, yScaleFrom=1.5, xScaleTo=1, yScaleTo=1, duration=0, block=false,screenadapt="coverall")]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",focus="m")]
+[Delay(time=0.1)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_ghtsvnzrtk", volume=1,channel="2")]
+[charslot(slot="m",posfrom="0,0",posto="0,-50",duration=0.8)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.5)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]Hostile down!
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="l")]
+[name="Alert Soldier"]Those guns aren't just for looks!
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="Commanding Officer"]Stand your ground! We have backup!
+[name="Commanding Officer"]Reserve squad! Quit fooling around and get out here!
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_soldiersrun")]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",duration=1.5)]
+[Delay(time=3)]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_ghtsvnzrtk", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_ghtsvnzrtk", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_ghtsvnzrtk", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#3$1",focus="m")]
+[name="Doc"]I can't get to the non-combatants! There are too many of them. Iana and I are suppressed—
+[name="Doc"]Reloading!
+[charslot(slot="m",name="avg_4124_iana_1#6$1",focus="m")]
+[name="Iana"]I'm up!
+[Dialog]
+[PlaySound(key="$d_avg_gnrtrpn", volume=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",posfrom="0,0",posto="-20,0",duration=0.3,isblock=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m",posfrom="-20,0",posto="0,0",duration=0.3,isblock=true)]
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]Frag out!
+[Dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_explosion")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[playsound(key="$d_gen_soldiersrun")]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0",duration=1.5)]
+[Delay(time=3.5)]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#6$1",focus="m")]
+[name="Iana"]Ineffective! Hostiles are blast resistant!
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]Roger. Fuze, smoke.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_gnrtrpn", volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-5,0",duration=0.3,isblock=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m",posfrom="-5,0",posto="0,0",duration=0.3,isblock=true)]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]Smoke grenade out.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",posfrom="-100,0",posto="-100,0")]
+[charslot(slot="m",name="avg_npc_1272_1#1$1")]
+[charslot(slot="r",name="avg_npc_1272_1#1$1",posfrom="100,0",posto="100,0")]
+[Delay(time=0.05)]
+[PlaySound(key="$d_avg_gnrtrllng", volume=1,channel="1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_gnrtrsmkk", volume=1,channel="2")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.7, r=1, g=1, b=1, fadetime=1, block=true)]
+[Delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]Smoke won't solve the real problem. Need a Cluster Charge? I still have plenty.
+[charslot(slot="m",name="avg_4123_ela_1#6$1",focus="m")]
+[name="Ela"]That's one way, but Grzmot works better here.
+[name="Ela"]Iana, Doc, get those non-combatants to cover! Fuze and I will cover!
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]Firing!
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1213_1#3$1",focus="m")]
+[name="Miłosz"]Stay back!
+[charslot(slot="m",name="avg_4124_iana_1#6$1",focus="m")]
+[name="Iana"]Don't resist! I'm taking you to cover!
+[charslot(slot="m",name="avg_npc_1213_1#3$1",focus="m")]
+[name="Miłosz"]Why do we have to—
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[name="Iana"]Look out!
+[Dialog]
+[charslot(slot="m",name="avg_npc_1213_1#6$1",focus="m")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.03, block=true)]
+[PlaySound(key="$e_skill_skulsrsword", volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-50,0",duration=0.3)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[name="Miłosz"]A sneak attack?!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",focus="m")]
+[name="Alert Soldier"]Looks like you're more than just a secretary!
+[charslot(slot="m",name="avg_npc_1213_1#6$1",focus="m")]
+[name="Miłosz"]You talk too much.
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="m")]
+[name="Doc"]Get back, sir! You're in the line of fi—
+[Dialog]
+[charslot]
+[delay(time=0.1)]
+[charslot(slot="m",name="avg_npc_1213_1#6$1",focus="m")]
+[delay(time=0.1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[charslot(slot="m",posfrom="0,0",posto="-100,-50",duration=0.8)]
+[PlaySound(key="$fightgeneral",volume=1)] 
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Delay(time=1.2)]
+[charslot(duration=1.5)]
+[PlaySound(key="$bodyfalldown1", volume=1,channel="2")]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1272_1#1$1",focus="m")]
+[name="Alert Soldier"]Trying to fight real weapons with a wine bottle? Dumbass—
+[Dialog]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$d_avg_gunshot", volume=1,channel="2")]
+[charslot(slot="m",posfrom="0,0",posto="0,-50",duration=0.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.3)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="m")]
+[name="Doc"]Very immature.
+[name="Doc"]He's out cold. I'll carry him. You get that guy in white.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="Commanding Officer"]They're trying to take Reynell away! Stop them!
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[name="Slick Soldier"]We can't get close! Their guns fire too quickly!
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="Commanding Officer"]Dammit, what the hell are you doing when they're not firing!
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[name="Slick Soldier"]They keep finding dead zones! And their coordination—
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="Commanding Officer"]There are only four of them! How many guys do <i>we</i> have?!
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=0.8)]
+[CameraShake(duration=1.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=1,channel="1")]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="2",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="3",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.01, block=true)]
+[PlaySound(key="$d_avg_frdrgntkln", volume=1,channel="4",delay=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=0.8)]
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="m")]
+[name="Doc"]We're in cover! We can hold out for a while!
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]Reloading!
+[Dialog]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="Commanding Officer"]That guy's out! Get him!
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]Iana, smoke!
+[Dialog]
+[charslot(slot="m",name="avg_4124_iana_1#3$1",focus="m")]
+[Delay(time=0.2)]
+[charslot(slot="m",posfrom="0,0",posto="-5,0",duration=0.3,isblock=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m",posfrom="-5,0",posto="0,0",duration=0.3,isblock=true)]
+[name="Iana"]Smoke grenade out!
+[Dialog]
+[charslot]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_gnrtrllng", volume=1,channel="1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_gnrtrsmkk", volume=1,channel="2")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.7, r=1, g=1, b=1, fadetime=1, block=true)]
+[Delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1271_1#1$1",focus="m")]
+[name="Commanding Officer"]*cough* *cough* Another smoke grenade? Is that the best you can—
+[Dialog]
+[charslot(slot="m",name="avg_4123_ela_1#6$1",focus="m")]
+[name="Ela"]Flying out.
+[name="Ela"]...Sticking it.
+[name="Ela"]Here's a memento.
+[charslot(slot="m",name="avg_4123_ela_1#4$1",focus="m")]
+[name="Ela"]Get out of the way, Fuze!
+[Dialog]
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[Delay(time=0.5)]
+[PlaySound(key="$rungeneral", volume=1,channel="1")]
+[charslot(slot="m",posfrom="0,0",posto="100,0",duration=1)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.5)]
+[Delay(time=2.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot="l",name="avg_npc_1272_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="l")]
+[name="Slick Soldier"]The other two are trying to hide!
+[charslot(slot="r",name="avg_npc_1271_1#1$1",focus="r")]
+[name="Commanding Officer"]Surround them and—
+[Dialog]
+[CameraShake(duration=2, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_strmbmbo")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[PlaySound(key="$d_avg_stkmyer")]
+[Delay(time=2.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[PlaySound(key="$bodyfalldown1", volume=1,channel="1")]
+[Delay(time=2.5)]
+[PlayMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",duration=1.5)]
+[Delay(time=1.5)]
+[name="Doc"]They swarmed without any caution for possible explosives. No tactical awareness whatsoever.
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]Let's disarm them first. Tend to the wounded, Doc.
+[name="Ela"]Clear.
+[charslot(slot="m",name="avg_4124_iana_1#1$1",focus="m")]
+[name="Iana"]Clear.
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]Clear.
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="m")]
+[name="Doc"]All clear. No casualties. That's good news.
+[name="Doc"]Even though we were shooting to incapacitate rather than kill, these guys were still unusually tough. That one there survived a full shotgun blast at point-blank range.
+[charslot(slot="m",name="avg_4123_ela_1#1$1",focus="m")]
+[name="Ela"]Good news indeed.
+[charslot(slot="m",name="avg_4125_rdoc_1#9$1",focus="m")]
+[name="Doc"]One more thing. Not sure what it means, but look at the animal ears... you can see blood vessels, if you look closely.
+[charslot(slot="m",name="avg_4123_ela_1#5$1",focus="m")]
+[name="Ela"]What?!
+[charslot(slot="m",name="avg_4126_fuze_1#1$1",focus="m")]
+[name="Fuze"]Is that part of Levi's research too?
+[charslot(slot="m",name="avg_4124_iana_1#1$1",focus="m")]
+[name="Iana"]My compass isn't working. What about yours, Doc?
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]If we're really near Magnethill No. 2 in the Southern Urals...
+[Dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1,channel="1")]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+Doc looks behind him, where the wind is blowing the curtains open.
+The squad walks out to the balcony and takes in the sight outside.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image(image="48_i01", xScale=1.4, yScale=1.4,screenadapt="showall")]
+[ImageTween(image="48_i01",xFrom=-70, yFrom=-30, xTo=0, yTo=0,xScaleFrom=1.4, yScaleFrom=1.4, xScaleTo=1, yScaleTo=1,duration=45)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1.5)]
+The setting sun shines down between towering skyscrapers, painting the waters red.
+Tourists in swimsuits lie on the beach, enjoying a lazy holiday afternoon set to ice cream truck music.
+The only man in the room who can still stand slowly walks towards them.
+[name="Fuze"]If this is the Urals, then I'm George Clooney.
+[name="Ela"]It's clear we're no longer in the mission area.
+[name="Iana"]Did we teleport?
+[name="Ela"]Where to? The Maldives?
+[name="Iana"]It looks like a vacation spot alright... but I don't think it's the Maldives.
+[name="Ela"]Maybe we can ask the unfortunate victims—Oh, speak of the devil.
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[Image]
+[Background(image="48_g11_deluxeroom_n",screenadapt="coverall")]
+[delay(time=1)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="l",name="avg_4123_ela_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_1211_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="l")]
+[name="Ela"]Could you answer a few questions, sir? Who are you? What is this place? And who were those armed men?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]I'm happy to explain a few things, out of 'gratitude' for the surprising ending that you created for my work.
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="Reynell"]Before formal introductions, however, I must correct one premise... I was never an unfortunate victim.
+[name="Reynell"]Not before, not now, not ever.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#1$1",focus="m")]
+[name="Iana"]Can we get back on topic?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1211_1#9$1",focus="r")]
+[name="Reynell"]Very well. Welcome to the dark heart of Bolívar...
+[name="Reynell"]Welcome to Dossoles.
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]My name is Reynell Kowalski.
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="l")]
+[name="Ela"]Call me Ela, Mr. Reynell.
+[charslot(slot="l",name="avg_4123_ela_1#6$1",focus="l")]
+[name="Ela"]But, given that we need to quickly grasp our situation, I think we can cut the introductions. I'll ask, and you'll answer. Alright?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]Doesn't look like I have a choice.
+[charslot(slot="l",name="avg_4123_ela_1#6$1",focus="l")]
+[name="Ela"]Which country does Dossoles belong to?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]Bolívar. In name, at least.
+[charslot(slot="l",name="avg_4123_ela_1#7$1",focus="l")]
+[name="Ela"]Bolívar... You mean Bolivia? I don't know a city called Dossoles in Bolivia. What about you, Iana?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#10$1",focus="m")]
+[name="Iana"]...No.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_4123_ela_1#6$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="l")]
+[name="Ela"]Let's try another way. Which continent are we on? South America?
+[charslot(slot="r",name="avg_npc_1211_1#5$1",focus="r")]
+[name="Reynell"]Continent? I'm not sure what you mean. If you mean the name of our 'landmass,' that's Terra, obviously?
+[charslot(slot="l",name="avg_4123_ela_1#7$1",focus="l")]
+[name="Ela"]Gówno......
+[charslot(slot="r",name="avg_npc_1211_1#5$1",focus="r")]
+[name="Reynell"](Kazimierzian) Oh? It's not every day I hear my mother tongue spoken.
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="l")]
+[name="Ela"]Your mother tongue?
+[charslot(slot="r",name="avg_npc_1211_1#1$1",focus="r")]
+[name="Reynell"]Nothing. Keep going.
+[charslot(slot="l",name="avg_4123_ela_1#10$1",focus="l")]
+[name="Ela"]I never thought I would be asking this, but...
+[name="Ela"]Mr. Reynell, are we on Planet Earth?
+[charslot(slot="r",name="avg_npc_1211_1#11$1",focus="r")]
+[name="Reynell"]Planet...? Earth...? I thought all I had to do was answer questions, but now I'm beginning to have a few of my own.
+[charslot(slot="l",name="avg_4123_ela_1#10$1",focus="l")]
+[name="Ela"]...
+[charslot(slot="l",name="avg_4123_ela_1#1$1",focus="l")]
+[name="Ela"]Iana, maybe you can do better with the questions...
+[charslot(slot="l",name="avg_4123_ela_1#5$1",focus="l")]
+[name="Ela"]Iana?
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4124_iana_1#4$1",duration=1.5)]
+[Delay(time=2)]
+Iana does not answer.
+Her eyes are wide, staring at the horizon in the opposite direction of the setting sun.
+[Dialog]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+The others follow her gaze.
+Two moons are rising slowly in the distance, one brighter than the other.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="48_g3_galleriessquare_n",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_1212_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="Strangely-Dressed Durin"]Damn, only had time for one doodle before they found out.
+[charslot(slot="m",name="avg_npc_1212_1#6$1")]
+[name="Strangely-Dressed Durin"]That was close... gave me a fright when all those people showed up.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1212_1#6$1",focus="none")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Galería Security"]Hold it right there, girl! You won't get away with vandalizing the Galería!
+[charslot(slot="m",name="avg_npc_1212_1#4$1")]
+[name="Strangely-Dressed Durin"]Shoot. I'd better go.
+[charslot(slot="m",name="avg_npc_1212_1#7$1")]
+[name="Strangely-Dressed Durin"]You got lucky today... Reynell.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

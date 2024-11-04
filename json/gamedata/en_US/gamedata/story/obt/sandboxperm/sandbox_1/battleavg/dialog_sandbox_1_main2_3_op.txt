@@ -1,0 +1,66 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="8", y="7", charId="trap_471_tegmaus", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="10", y="7", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[foginview(leftBottomX="5", leftBottomY="5", rightUpX="11", rightUpY="12", id="fog_1")]
+[camerafocusto(id="trap_471_tegmaus", offsetX="1", scale="CLOSE", time="1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Stop! Not one step closer. Now talk. Why were you tailing me?
+[decision(option1="Is this journal yours?", value1="1.1")]
+[predicate(references="1.1")]
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]You were following me to return it?
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]You stayed in a temple a few days ago and left this notebook behind. The priestess said you always carried it with you. It seemed important.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]We happened to be going in the same direction, so we caught up with you to return it.
+[camerafocusto(id="trap_471_tegmaus", scale="CLOSE", time="1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Thank you. How can I pay you back?
+[decision(option1="We would like to know more about the ancient ruins.", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="What does this have to do with the treasure?", value1="3.1")]
+[predicate(references="3.1")]
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Don't you know the old saying...? Curiosity killed the Feline.
+[decision(option1="Is this why you have an arrest warrant on you?", value1="4.1")]
+[predicate(references="4.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]The ameeri troops are looking for it too. You'll get on their bad side.
+[decision(option1="We already have.", value1="5.1")]
+[predicate(references="5.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Alright, if you want to know, find the other half of the 'disc'.
+[decision(option1="'Disc'?", value1="6.1")]
+[predicate(references="6.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Did you read my notes?
+[decision(option1="Of course!", value1="7.1", option2="We flipped through it, but didn't read carefully.", value2="7.2")]
+[predicate(references="7.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Doesn't matter whether you read them or understood them. Basically, it's a big disc made of stone.
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]The legends say it was spotted on a sandy island.
+[decision(option1="Legends... an island...", value1="8.1")]
+[predicate(references="8.1")]
+[decision(option1="Alright, we'll do it.", value1="9.1")]
+[predicate(references="9.1")]
+[decision(option1="What's your name?", value1="10.1")]
+[predicate(references="10.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Hm...
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Just call me Pepe.
+[withdraw(id="trap_471_tegmaus")]
+[withdraw(id="trap_467_ttuye")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]
+[predicate(references="7.2")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Doesn't matter whether you read them or understood them. Basically, it's a big disc made of stone.
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]The legends say it was spotted on a sandy island.
+[decision(option1="Legends... an island...", value1="11.1")]
+[predicate(references="11.1")]
+[decision(option1="Alright, we'll do it.", value1="12.1")]
+[predicate(references="12.1")]
+[decision(option1="What's your name?", value1="13.1")]
+[predicate(references="13.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Hm...
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Just call me Pepe.
+[withdraw(id="trap_471_tegmaus")]
+[withdraw(id="trap_467_ttuye")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

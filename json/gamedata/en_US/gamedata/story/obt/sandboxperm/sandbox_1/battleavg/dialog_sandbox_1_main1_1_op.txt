@@ -1,0 +1,42 @@
+[header(actId="sandbox_1", npcId="trap_466_tzumama")]
+[summontrap(x="7", y="4", charId="trap_466_tzumama", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="9", y="4", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[camerafocusto(offsetX="8", offsetY="4", time="0.2", scale="MID")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Finally, we've reached the 'promised land' of legend.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Considering the unusual nature of our core operations, we have to set aside a blank plot outside the camp. In addition to housing guests...
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Everything from procuring supplies, upgrading equipment and inventory management is carried out here. Feel free to find me any time you have a need.
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1.5")]
+[playanim(id="trap_467_ttuye", anim="Special_Begin", looporidle="Special_Loop", dir="LEFT")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]Since Zumama has chosen to run the camp's everyday operations here, I'll take charge of exploration and resource gathering.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]The trailer has been repaired and can now navigate rougher terrain. I can set out first thing tomorrow morning, if we have the fuel.
+[decision(option1="So soon?", value1="1.1")]
+[predicate(references="1.1")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1.5")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]We've lost too much time and we're running out of supplies.
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1.5")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]I scouted the Rabum-Arakeeshtu jungles to the west of the camp. It appears there are a lot of resources there.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]We'll go further in this trip and try to find the supplies that we need.
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1.5")]
+[playanim(id="trap_466_tzumama", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[delay(time="1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Take this map. You'll need it to find wood that fits our requirements.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]It wasn't easy to get. Don't lose it.
+[decision(option1="Thank you.", value1="2.1")]
+[predicate(references="2.1")]
+[additem(itemId="sandbox_1_craft_1", itemCount="1")]
+(You obtained the map of the Arsalan woods. You can now gather wood.)
+[camerafocusto(id="trap_467_ttuye", offsetX="-1", scale="MID", time="1")]
+[decision(option1="Get some rest tonight.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="We'll be busy tomorrow.", value1="4.1")]
+[predicate(references="4.1")]
+[playanim(id="trap_467_ttuye", anim="Special_End", looporidle="Idle", dir="LEFT")]
+[delay(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[withdraw(id="trap_466_tzumama")]
+[delay(time="1")]
+[resetcamera(time="1")]
+[save]
+[end]

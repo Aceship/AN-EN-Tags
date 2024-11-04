@@ -1,0 +1,30 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]우리가 이미 기초적인 정찰 메커니즘을 구축해서 이곳의 기본적인 정보와 아미르군의 동향을 모두 파악했어. 궁금한 게 있으면 뭐든 물어봐.
+[decision(option1="이곳의 지역 구분에 대해 궁금해.", value1="1.1", option2="고마워, 정말 고생이 많았어.", value2="1.2", option3="오늘은 뭔가 좀 색다르네.", value3="1.3", option4="고마워, 다른 일이 있어서 이만.", value4="1.4")]
+[predicate(references="1.1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]스바트 아르살란은 크게 5개 지역으로 나뉘어 있어. 서쪽은 라브 아라키슈투 정글, 보통은 아라키슈투 정글이라고 하는데, 기초 자원이 풍부하고 생태환경이 좋아 탐색의 시작점으로는 매우 적합해.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]남쪽은 나루타바팀 알칼리스, 거기는 석재가 풍부하고 정글 지역이랑 연결되어 있어.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]동쪽은 대부분 오아시스야, 대량의 철광이 있다고 들었어. 어떻게 들어가느냐가 문제이긴 하지만.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]북서부는 굉장히 위험하다고만 들었어. 자세한 정보는 더 탐사해 봐야 알아.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]북쪽에 수행의 회랑이라는 지역이 있는데, 그곳은 아직 탐색을 시작하지 못했어. 새로운 정보가 들어오는 대로 알려줄게.
+[end]
+[predicate(references="1.2", visibleCondition="c0&&!c5")]
+[decision(option1="이건 우리가 채집한 <color=#d8d769>톱밥 버섯</color>이야.", value1="2.1")]
+[predicate(references="2.1")]
+[additem(itemId="sandbox_1_mushroom", itemCount="-1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]오, 선물 고마워. 근데 일을 계속해야 할 것 같아.
+[addfavor(trapId="trap_466_tzumama", val="10")]
+[end]
+[predicate(references="1.3", visibleCondition="c1&&!c4")]
+[decision(option1="뭐가 좀 많아진 것 같은데?", value1="3.1")]
+[predicate(references="3.1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]앗, 티 났어? 이번엔 내가 선물할 차례야.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]이건 내 <color=#d8d769>밀림작전용 도끼</color>인데, 도움이 됐으면 좋겠네.
+[additem(itemId="sandbox_1_craft_14", itemCount="1")]
+[end]
+[predicate(references="1.4")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_mushroom", value="1")]
+[condition(references="c5", key="checkfavor", trapId="trap_466_tzumama", val="50", containsEq=1)]
+[condition(references="c1", key="checkfavor", trapId="trap_466_tzumama", val="50", containsEq=1)]
+[condition(references="c4", key="itemGE", itemId="sandbox_1_craft_14", value="1")]

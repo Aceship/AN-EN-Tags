@@ -1,0 +1,819 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_uptown_1",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro",key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[playsound(key="$rungeneral",volume=1)]
+[charslot(slot="m",name="avg_npc_032",duration=1.5)]
+[Delay(time=3)]
+[name="？？？"]ウィンドチャイム！　待って！
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4083_chimes_1#5$1",duration=1.5)]
+[Delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_4083_chimes_1#5$1",focus="r")]
+[charslot(slot="r",name="avg_npc_032",focus="r")]
+[name="？？？"]よかった、街を出る前に追いついた。
+[charslot(slot="l",name="avg_4083_chimes_1#5$1",focus="l")]
+[name="ウィンドチャイム"]雲（ユン）？　どうしました？　もしかして、私、郵便局に忘れ物でもしましたか？
+[charslot(slot="r",name="avg_npc_032",focus="r")]
+[name="ユン"]ううん、さっき役所が石橋村宛ての手紙を持ってきてね。
+[name="ユン"]だけど、郵便局にいる信使は誰もそんな村の名前を聞いたことがなくて、しばらくみんなで聞き回ってたの。
+[name="ユン"]それで最終的に誰かが「ウィンドチャイムが知らなけりゃ、もう誰も知らないだろう」って言ってさ。
+[name="ユン"]その時、あなたはまだ出かけたばっかりだから、こうして追いかけてきたってわけ。
+[charslot(slot="l",name="avg_4083_chimes_1#1$1",focus="l")]
+[name="ウィンドチャイム"]状況は把握できました。任せてください。
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_clothmovement",volume=1)]
+[Delay(time=2)]
+ウィンドチャイムが背囊を開くと、中には溢れんばかりの郵便物が詰め込まれていた。
+[charslot(slot="l",name="avg_4083_chimes_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_032",focus="l")]
+[name="ウィンドチャイム"]手紙を入れてください。石橋村の名前とおおよその方角は知っています。具体的な位置は確認が必要ですが、それは配達の道中で尋ねれば大丈夫でしょう。
+[charslot(slot="r",name="avg_npc_032",focus="r")]
+[name="ユン"]今回の配達が終わったら玉門に戻るの？　それとも龍門？
+[charslot(slot="l",name="avg_4083_chimes_1#1$1",focus="l")]
+[name="ウィンドチャイム"]龍門です。山岳地帯宛ての郵便物は、龍門のほうが玉門よりも多く溜まってますから。
+[charslot(slot="r",name="avg_npc_032",focus="r")]
+[name="ユン"]じゃあ配達が終わって戻ってきたら、最近広告でよく見る辣椒老媽（ラァジャオラオマア）のアイスをおごってあげる！　なんかスパイシーなアイスらしくて、全然甘くないんだって！
+[charslot(slot="l",name="avg_4083_chimes_1#5$1",focus="l")]
+[name="ウィンドチャイム"]アイスって甘いものなのでは？
+[charslot(slot="r",name="avg_npc_032",focus="r")]
+[name="ユン"]まあまあ、甘いのに飽きたら辛いものが食べたくなるんだよ。それが流行りってもんでしょ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_lungmen_station",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="char_015_lmg",focus="l")]
+[charslot(slot="r",name="avg_4083_chimes_1#1$1",focus="l")]
+[name="近衛局隊員"]今回も配達か？
+[charslot(slot="r",name="avg_4083_chimes_1#1$1",focus="r")]
+[name="ウィンドチャイム"]はい。
+[charslot(slot="l",name="char_015_lmg",focus="l")]
+[name="近衛局隊員"]通っていいぞ。荷物検査はなしでいい。前回あんたが手紙を恐る恐る取り出して、またきっちりしまい込んだのを見て、こっちのほうがなんか申し訳なくなってな。
+[charslot(slot="r",name="avg_4083_chimes_1#1$1",focus="r")]
+[name="ウィンドチャイム"]ありがとうございます。
+[charslot(slot="l",name="char_015_lmg",focus="l")]
+[name="近衛局隊員"]それと、張（ジャン）からあんたに礼を言っておくよう頼まれた。
+[charslot(slot="r",name="avg_4083_chimes_1#5$1",focus="r")]
+[name="ウィンドチャイム"]ジャンさん？
+[charslot(slot="l",name="char_015_lmg",focus="l")]
+[name="近衛局隊員"]ほら、故郷の町が移動しちまったせいで、出した手紙が毎回郵便局に戻されてた、あの髭を生やした人だよ。
+[name="近衛局隊員"]あんたが一気に何十通もの手紙を届けてやったんだろ？　この間その返信が来て、あいつ喜びのあまりに大泣きだったんだぜ。
+[charslot(slot="r",name="avg_4083_chimes_1#8$1",focus="r")]
+[name="ウィンドチャイム"]ああ、思い出しました……大したことはしていませんよ、それくらいお安い御用です。
+[charslot(slot="l",name="char_015_lmg",focus="l")]
+[name="近衛局隊員"]だとしても感謝はしとかんとな。それじゃあ道中気をつけろよ！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1.5)]
+[charslot]
+[Background(image="35_g11_yumendesert",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+人は移動都市に長くいすぎると、「外」の存在を忘れがちになる。
+しかし実際には「外」はすぐ近くにあり、航路の外側にむかって数里歩いただけで、もう砂混じりの風と顔を突き合わせることになるのだ。
+[Dialog]
+[playMusic(key="$normal_loop", volume=0.6)]
+[charslot(slot="l",name="avg_4083_chimes_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_140#2",focus="l")]
+[name="ウィンドチャイム"]おじさん、馳道（ちどう）の整備お疲れ様です！
+[charslot(slot="r",name="avg_npc_140#2",focus="r")]
+[name="素朴な労働者"]誰かと思えば、角折れの信使じゃないか！　もしかして、村から手紙でも届いたのか？　俺宛か？　それとも現場にいる若い奴ら宛てかな？
+[charslot(slot="l",name="avg_4083_chimes_1#1$1",focus="l")]
+[name="ウィンドチャイム"]確かに郵便物を届けに来たのですが、手紙ではなく龍門からの手当です。
+[charslot(slot="r",name="avg_npc_140#2",focus="r")]
+[name="素朴な労働者"]手当か……
+[charslot(slot="l",name="avg_4083_chimes_1#5$1",focus="l")]
+[name="ウィンドチャイム"]嬉しくないのですか？
+[charslot(slot="r",name="avg_npc_140#2",focus="r")]
+[name="素朴な労働者"]そんなこたぁないさ。生活を良くするために、こうして出稼ぎに来てんだからな！　ただ、前に村から手紙が届いてもう二ヶ月は経つだろ？　ちょいと心配でな……
+[charslot(slot="l",name="avg_4083_chimes_1#1$1",focus="l")]
+[name="ウィンドチャイム"]先月おじさんたちの村を通りかかりましたが、皆さんとても元気そうでしたよ。
+[charslot(slot="r",name="avg_npc_140#2",focus="r")]
+[name="素朴な労働者"]そうか、それならよかった。
+[name="素朴な労働者"]お前さん、そう先を急がんでもいいだろう。　今日は夕飯でも食って泊まっていくといい。
+[charslot(slot="l",name="avg_4083_chimes_1#5$1",focus="l")]
+[name="ウィンドチャイム"]いえ、今回は郵便物が多いので、お誘いはありがたいのですが――
+[charslot(slot="r",name="avg_npc_140#2",focus="r")]
+[name="素朴な労働者"]なあに遠慮してんだ！　手紙がなくたってみんなお前さんが来るのを楽しみにしてるんだぞ。お前さんが話す移動都市のことは、どれも面白いからな。
+[name="素朴な労働者"]ちょうど手当も出たことだし、早めに食事の用意をさせて、それと話し相手に若いのを何人か呼んできてやる！
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_lungmen_station",screenadapt="coverall")]
+[Delay(time=2)]
+[playMusic(intro="$m_dia_street_intro",key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="char_015_lmg",focus="m")]
+[name="近衛局隊員"]次。
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_799_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="char_015_lmg",focus="m")]
+[name="近衛局隊員"]街の外へは仕事でか？
+[charslot(slot="m",name="avg_npc_799_1#1$1")]
+[name="疲弊した男性"]ああ、そうだ。
+[charslot(slot="m",name="char_015_lmg",focus="m")]
+[name="近衛局隊員"]カバンを開けてくれ。セキュリティチェックだ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_799_1#1$1")]
+[playsound(key="$d_avg_clothmovement",volume=1)]
+[Delay(time=2)]
+[name="疲弊した男性"]そうだ、一つ伺いたいのだが
+[charslot(slot="m",name="char_015_lmg",focus="m")]
+[name="近衛局隊員"]なんだ？
+[charslot(slot="m",name="avg_npc_799_1#1$1")]
+[name="疲弊した男性"]今日の昼に角の折れたフォルテの信使が街を出なかったか？　彼女はどちらへ向かった？
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="35_mini01_villagevacancy",screenadapt="coverall")]
+[Delay(time=2)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[name="気がはやる村人"]「拝……啓、私は龍門で……」
+[name="気がはやる村人"]芳（ファン）、お前は字が読めたよな。ここになんて書いてあるのかちょっと見てくれよ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="疲弊した村人"]これは……懐中電灯？　うちにもあるのに、どうしてわざわざ龍門からこんなものを送ってきたのかしら？
+[name="若い村人"]おばさん、それ懐中電灯じゃなくて望遠鏡だよ！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[name="興味津々な村人"]信使さんが持ってるそれは何？
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="m")]
+[name="ウィンドチャイム"]撮影機です。皆さんの生活を記録しようと思いまして。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="興味津々な村人"]テレビを撮影する機械ってこと？
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="m")]
+[name="ウィンドチャイム"]うーん……似たような感じですかね。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="興味津々な村人"]だったらちゃんとした服に着替えてこないと……
+[Dialog]
+[charslot(slot="m",name="avg_4083_chimes_1#8$1",focus="m")]
+[Delay(time=2.5)]
+[charslot]
+「長く働いていると心が鈍くなるものだ」と人はよく言う。それから「何事も同じだ。繰り返し経験するうちに、それが普通になっていく」とも。
+だけど、私が山々と移動都市を行き来する中で、最も多く届けたのは家族宛ての手紙だ。
+今月の手紙と先月の手紙の内容に大した違いはない。今月は雨が数日多く降ったとか、麦の収穫量が増えたとか、いつもそんなものである。
+でも故郷がなくならない限り、人々は手紙を書き続けるだろう。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="m")]
+[name="ウィンドチャイム"]ところで、石橋村への行き方はご存じですか？
+[name="ウィンドチャイム"]北の方にあるのは知っているのですが、具体的な位置はわからなくて……
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="興味津々な村人"]石橋村？　あまり印象にないな。村のみんなにも聞いてみるね。
+[charslot(slot="m",name="avg_4083_chimes_1#8$1",focus="m")]
+[name="ウィンドチャイム"]お願いします。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="35_mini01_villagevacancy",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[name="興味津々な村人"]ごめんなさい、聞いて回ってみたけど詳しい人はいないみたい。
+[name="興味津々な村人"]でも辺蹄村に親戚を頼って石橋村から移ってきた若者がいるらしいから、その人なら知ってるかもね。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="m")]
+[name="ウィンドチャイム"]辺蹄村……ちょうどよかったです。そこにも手紙を届ける予定がありますので。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="興味津々な村人"]もっとゆっくりしていかないの？
+[charslot(slot="m",name="avg_4083_chimes_1#8$1",focus="m")]
+[name="ウィンドチャイム"]いえ、今日のところは。ではまた！
+[Dialog]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(duration=1.5)]
+[Delay(time=3.5)]
+[stopmusic(fadetime=1.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[Delay(time=2.5)]
+[name="怪しい男性"]おーい、そこのあんた！
+[name="興味津々な村人"]ん、どうしたの？
+[name="興味津々な村人"]待って、あなた誰？　初めて見る顔だけど。
+[name="怪しい男性"]さっきの信使、もしかして石橋村に行くって言ってなかったか？
+[name="興味津々な村人"]そうだけど――って、もう行っちゃうの？
+[name="怪しい男性"]うちは石橋村のすぐそばにあるんだ。案内してくる！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_desert_3",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="親切な村人"]石橋村から来た……ああ、良（リャン）のことかね？
+[name="親切な村人"]リャン、ちょっとこっちへ来い！　こちらのお嬢さんがお前に道を尋ねたいんだとさ！
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0,fadetime=2, block=true)]
+[charslot(slot="m",name="avg_4083_chimes_1#1$1")]
+[Delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[name="ウィンドチャイム"]北にある北墳村からさらに十里ほど進み、数人がかりでようやく抱きかかえられるほど太い枯れ木が見えたら、それを目印に山の中へ入ると。
+[name="ウィンドチャイム"]その山を越えると、人が踏み分けてできた分かれ道が現れるから、右のほうに向かって一日ほど歩く……
+[name="ウィンドチャイム"]よし、覚えました。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="親切な村人"]こんなに複雑な道順、よく一瞬で覚えられるのう。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="m")]
+[name="ウィンドチャイム"]実は……分かれ道の左へ行くと、私の故郷の村があるんです。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="親切な村人"]やっぱりな。お前さんみたいな素直な子は、絶対にわしらと同じ山育ちじゃろうと思っておったわい。
+[name="親切な村人"]お前さんの村はどんな様子じゃ？　みんな無事かね？
+[charslot(slot="m",name="avg_4083_chimes_1#3$1",focus="m")]
+[name="ウィンドチャイム"]……とっくに荒れ果ててしまっていますよ。みんな生計を立てるために都市に移り住んでしまいました。
+[charslot(slot="m",name="avg_4083_chimes_1#3$1",focus="none")]
+[name="親切な村人"]はあ……ここ数年は作柄が悪かったからのう。わしらも同じようなことを考えたんじゃが、幸いなことになんとか乗り越えられたんだ……道中気を付けるんじゃぞ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1.5)]
+[charslot]
+[Background(image="bg_desert_3",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[Delay(time=2)]
+[name="狡猾な男性"]そこのお二人、今の信使は――
+[name="親切な村人"]あの子に何か用かね？
+[name="狡猾な男性"]俺も石橋村に向かう途中なんだ。さっき遠くから、あんたたちが村への行き方について話してるのが聞こえたんだが、はっきり聞き取れなくて……
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="ウィンドチャイム"]北墳村が見えてきた。
+[name="ウィンドチャイム"]北墳村宛ての手紙は全部で二通。そして残りの一通は……例の石橋宛の手紙だ。
+[charslot(slot="m",name="avg_4083_chimes_1#5$1")]
+[name="ウィンドチャイム"]あれ？　人だかりができてる……
+[Dialog]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Delay(time=1.5)]
+[playMusic(intro="$m_dia_street_intro",key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4083_chimes_1#5$1")]
+[name="ウィンドチャイム"]皆さん、何を見ているのですか……これは通達？
+[charslot(slot="m",name="avg_4083_chimes_1#5$1",focus="none")]
+[name="ワクワクした村人"]ああ、ついにうちの村も移る時が来たんだよ。新しい移動区画が作業員を募集してて、建設に携わったやつは区画が完成した後は、メンテナンス要員としてそこに住み続けていいんだとさ。
+[name="ワクワクした村人"]ほら、通達にも書いてあるだろ？　数日後には車隊が迎えに来てくれる。
+[charslot(slot="m",name="avg_4083_chimes_1#10$1",focus="m")]
+[name="ウィンドチャイム"]では、あなた方への手紙は……
+[charslot(slot="m",name="avg_4083_chimes_1#10$1",focus="none")]
+[name="ワクワクした村人"]俺が全部預かっとくよ。みんなが帰ってきたら渡しとくから。ここ何年もの間、手紙届けてくれてありがとな。
+[charslot(slot="m",name="avg_4083_chimes_1#2$1",focus="m")]
+[name="ウィンドチャイム"]……いえ。
+[charslot(slot="m",name="avg_4083_chimes_1#2$1",focus="none")]
+[name="ワクワクした村人"]あれ、まだ北のほうに行くのか？
+[charslot(slot="m",name="avg_4083_chimes_1#7$1",focus="m")]
+[name="ウィンドチャイム"]はい、石橋村宛ての手紙が一通あるので、それを届けにいかないといけないんです。
+[charslot(slot="m",name="avg_4083_chimes_1#7$1",focus="none")]
+[name="ワクワクした村人"]石橋村？
+[name="ワクワクした村人"]石橋村なら先月にもう移動の通達が来てたぞ。今はもう誰もいないんじゃないのか？
+[charslot(slot="m",name="avg_4083_chimes_1#10$1",focus="m")]
+[name="ウィンドチャイム"]そ、その情報は確かですか？
+[charslot(slot="m",name="avg_4083_chimes_1#10$1",focus="none")]
+[name="ワクワクした村人"]あの村の移動は決定事項だからな。数日前に車隊が山に入ってくのも見たぜ。だけど、言われてみれば確かに山から出てきたのを見てないか……
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="m")]
+[name="ウィンドチャイム"]それならまだ間に合います。
+[Dialog]
+[playsound(key="$rungeneral",volume=1)]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[name="ワクワクした村人"]いやあ、行くのはよしたほうがいい。村までまだ距離があるし、人がまだいるかもわからない。万が一道中で盗賊にでも――
+[name="ワクワクした村人"]って、あれ？
+[name="ウィンドチャイム"]色々教えてくれてありがとうございます！　今から走って行けば、まだ間に合うはずです！
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="35_g11_yumendesert",screenadapt="coverall")]
+[Delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[Delay(time=2)]
+日が徐々に西へ沈み行く。狭い道の両側は、ただ山が延々と連なっているだけだ。
+北へ十里ほど進むと、話に聞いた枯れ木が見えてきた。何回か道を曲がって山へと入り、それを超えると、例の分かれ道が現れた。
+あの時はこの道から歩いてきた。だけど今回は……
+[Dialog]
+[playMusic(intro="$nervous_intro",key="$nervous_loop", volume=0.6)]
+[playsound(key="$d_gen_soldiersrun",volume=1)]
+[charslot(slot="l",name="avg_npc_007",duration=1)]
+[charslot(slot="r",name="avg_npc_007",duration=1)]
+[Delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_npc_007",duration=1.5)]
+[charslot(slot="r",name="avg_npc_008",duration=1.5)]
+[Delay(time=2.5)]
+[charslot]
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]……すみません、通してもらえますか？
+[charslot(slot="m",name="avg_npc_007")]
+[name="怪しい男性"]すまんな、俺たちは手紙を受け取りに来たんだ。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]このカバンの中にあなた方宛ての手紙は入っていません。
+[charslot(slot="m",name="avg_npc_007")]
+[name="怪しい男性"]そんなはずはないぜ。その中には石橋村宛ての手紙があるって聞いたんだ。石橋村はすぐ先だ。手紙を渡しな、俺が届けてきてやる。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]結構です。
+[charslot(slot="m",name="avg_npc_007")]
+[name="怪しい男性"]チッ、下手に出ていりゃ付けあがりやがって。
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]手紙を寄こせ！　たかが紙屑一枚にぐずぐずしてんじゃねぇ！
+[charslot(slot="m",name="avg_4083_chimes_1#4$1",focus="m")]
+[name="ウィンドチャイム"]どうしてもほしいのなら、どうぞ力尽くで奪ってみてください。
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]俺たちに盾突くとは、生意気になったもんだな。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]……以前にどこかで会ったことあります？
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]無駄話はいい。今回はお頭がいねぇんだ。もう手加減はしねぇぞ！
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[Delay(time=0.2)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing2", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[playMusic(intro="$normal02_intro",key="$normal02_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]構えだけは一丁前だが、果たしてテメェその刃は血を見たことがあんのかねぇ……
+[Dialog]
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[Delay(time=0.2)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing4", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[name="ウィンドチャイム"]フンッ！
+[charslot(slot="m",name="avg_npc_007")]
+[name="狡猾な盗賊"]避けるのがうまいじゃねぇか――
+[charslot(slot="m",name="avg_4083_chimes_1#4$1",focus="m")]
+[name="ウィンドチャイム"]はあッ！
+[Dialog]
+[charslot(slot="m",name="avg_npc_007")]
+[Delay(time=0.2)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[name="狡猾な盗賊"]くそっ、この小娘、マジで斬りかかってきやがった！
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]なにビビってんだ！　まとめてかかるぞ！
+[Dialog]
+[charslot]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_007",posfrom="200,0",posto="0,0",duration=1)]
+[charslot(slot="m",afrom=0,ato=1,duration=0.5)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_007")]
+[name="狡猾な盗賊"]テメェはバカか？　ただの荷物運びのくせに、何命懸けてんだよ！
+[charslot(slot="m",name="avg_4083_chimes_1#4$1",focus="m")]
+[name="ウィンドチャイム"]はあ……はあ……無駄なお喋りをするつもりはありません。
+[charslot(slot="m",name="avg_npc_007")]
+[name="狡猾な盗賊"]（小声）兄貴、あの小娘なかなかやりますぜ。こうなりゃ……
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]（小声）フン、そうするしかなさそうだな。
+[name="偉そうな盗賊"]おい、お互い一歩引いて少し話でもしねぇか？　俺たちがなんでその手紙を欲しがってんのかを聞いてから、もう一度命を懸ける必要があるかどうか考えてみりゃいい。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]……
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]お前、自分が今運んでる手紙の差出人を知ってるか？　捕まったうちのお頭だよ。
+[name="偉そうな盗賊"]石橋村はお頭の故郷だが、とっくの前に荒れ果てて、もうほとんど人が残っちゃいねぇ。お前が村への行き方をあれこれ尋ねて回ってなきゃ、俺たちもお前に目なんて付けなかった。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]あなたたちの言うことを私が信じるとでも？
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]だったら、どこの誰のものかもわからねぇ紙切れのために、俺たちがお前と本気でやり合う理由はなんだ？
+[name="偉そうな盗賊"]実を言うとな、お頭は捕まる前にお宝をどっかに隠したんだ。わざわざ苦労して龍門から手紙を出したからには、中にその在処についての情報があるに決まってらぁ。
+[name="偉そうな盗賊"]手紙を渡しな。お宝を見つけたら、お前にも分けてやるからよ。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]お断りします。
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]だったら、もう一つ教えてやるよ。俺たちは既に一回お前を見逃してやったことがある。そん時のお前は角も折れてなけりゃ、その大剣も背負っちゃいなかった。
+[charslot(slot="m",name="avg_4083_chimes_1#5$1",focus="m")]
+[name="ウィンドチャイム"]まさか――！？
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]やっと思い出したか？
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]あなたたちは……私が初めて遭遇した盗賊？　私に目隠しをして、手紙を燃やしたあの？
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]ほかに誰がいるってんだよ。
+[name="偉そうな盗賊"]役所の使いっ走りを殺すことなんざ、俺たちにとっちゃどうってことねぇ。あん時は、お頭が面倒事を嫌がったのと、お前のような家を失くした小娘を哀れに思って生かしてやったんだ。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]哀れ……どうしてあなたたちがそんなことを？
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]フンッ、お前と俺たちが似てるからだよ。
+[name="偉そうな盗賊"]デキる盗賊ってのは移動都市で大仕事をやるもんだ。俺たちだって家を失ってなきゃ、誰がこんな寂れた場所まで来て追いはぎの真似なんかすんだよ。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]……
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]お頭の手紙を届けようとしてるのがお前なのも、何かの縁ってやつだろ。久しぶりの再会なんだから、穏便に済ませようじゃねぇか。
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]もし本当にこれが縁だと思っているのなら、今すぐそこをどいてください。
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]聞き分けの悪ぃ小娘だなあ！？
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]……この剣はあなたたちに襲われた後に購入しました。ですが、本当に誰かに使うようなことはしたくありません。
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]もういい！　お前ら、殺っちまえ！　この小娘は相当死に急いでるみてぇだからなあ！
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_soldiersrun",volume=1)]
+[charslot(slot="l",name="avg_npc_007",posfrom="-150,0",posto="0,0",duration=2)]
+[charslot(slot="l",afrom=0,ato=1,duration=1.5)]
+[charslot(slot="r",name="avg_npc_007",posfrom="150,0",posto="0,0",duration=2)]
+[charslot(slot="r",afrom=0,ato=1,duration=1.5)]
+[Delay(time=3.5)]
+[charslot]
+[charslot(slot="m",name="avg_4083_chimes_1#4$1",focus="m")]
+[Delay(time=0.5)]
+[playsound(key="$d_avg_punchsp4",volume=1)]
+[charslot(slot="m",posfrom="0,0",posto="-150,0",duration=1)]
+[charslot(slot="m",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1)]
+[charslot]
+[charslot(slot="l",name="avg_npc_007")]
+[charslot(slot="r",name="avg_npc_007")]
+[Delay(time=0.2)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=1)]
+[charslot(slot="l",posfrom="0,0",posto="-50,-50",duration=1)]
+[charslot(slot="l",afrom=1,ato=0,duration=0.5)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.3)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$fightgeneral", volume=1)]
+[charslot(slot="r",posfrom="0,0",posto="50,-50",duration=1)]
+[charslot(slot="r",afrom=1,ato=0,duration=0.5)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_007")]
+[name="狡猾な盗賊"]てめぇ！？
+[Dialog]
+[charslot]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing4", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing5", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing4", volume=1)]
+[charslot(slot="m",name="avg_4083_chimes_1#4$1",posfrom="-150,0",posto="0,0",duration=1)]
+[charslot(slot="m",afrom=0,ato=1,duration=0.5)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_4083_chimes_1#4$1",focus="m")]
+[name="ウィンドチャイム"]──ハァッ！
+[Dialog]
+[charslot(slot="m",name="avg_npc_007")]
+[name="狡猾な盗賊"]あいつカバンを庇ってるぞ！　背中を狙え！
+[Dialog]
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[Delay(time=0.2)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing1", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_008")]
+[name="偉そうな盗賊"]すばしっこいやつだな……
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]さっさと……消えてください。あっちの二人は致命傷ではありませんので、まだ助かる余地はあります。
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="l",name="avg_npc_008",duration=1.5)]
+[charslot(slot="r",name="avg_npc_007",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_008",focus="l")]
+[name="偉そうな盗賊"]テメェにゃもう全部話しちまったんだ。俺たちに加担しないってんなら、生かしちゃおけねぇな。
+[charslot(slot="r",name="avg_npc_007",focus="r")]
+[name="狡猾な盗賊"]おいおい、もう足がブルブル震えちまってるじゃねぇか。おとなしく手紙を渡して俺らについてきな。運が良けりゃ一儲けできるぜ。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]ぜ……絶対にさせません……
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="狡猾な盗賊"]おいおい、もう呂律も回ってねぇじゃ――
+[Dialog]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_broadswordblood", volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[name="狡猾な盗賊"]ぐあっ……
+[Dialog]
+[playsound(key="$bodyfalldown1",volume=1)]
+[charslot(duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4083_chimes_1#6$1",focus="m")]
+[name="ウィンドチャイム"]今回は、腕を狙いましたが……次はそうとは限りませんよ。
+[charslot(slot="m",name="avg_npc_008",focus="m")]
+[name="偉そうな盗賊"]やるじゃねぇか。たかが信使一人に俺たち三人がやられちまうなんてよ。だけど、お前もそこまでだ。剣を置け。
+[name="偉そうな盗賊"]置けっつってんだろうが！
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[CameraShake(duration=0.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_arrow",volume=1)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[name="偉そうな盗賊"]なんだ！？　応援が来やがったのか！？
+[name="偉そうな盗賊"]おい、撤退だ！
+[Dialog]
+[playsound(key="$rungeneral",volume=1)]
+[charslot(duration=1.5)]
+[Delay(time=3.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_799_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot]
+[playMusic(intro="$darkness01_intro",key="$darkness01_loop", volume=0.6)]
+[charslot(slot="l",name="avg_4083_chimes_1#6$1",focus="r")]
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="疲弊した男性"]ケガはないか？
+[charslot(slot="l",name="avg_4083_chimes_1#2$1",focus="l")]
+[name="ウィンドチャイム"]はい……だけど、あなたは一体……
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="疲弊した男性"]その手紙……
+[Dialog]
+[charslot(slot="l",name="avg_4083_chimes_1#5$1",focus="l")]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_4083_chimes_1#6$1",focus="l")]
+[Delay(time=0.5)]
+[charslot(slot="l",posfrom="0,0",posto="-20,0",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_4083_chimes_1#6$1",focus="none")]
+男の発言にウィンドチャイムは無意識に一歩後ずさった。
+[charslot(slot="l",name="avg_4083_chimes_1#6$1",focus="r")]
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="疲弊した男性"]すまない、気が急いてしまった。これが私の身分証だ。
+[Dialog]
+[charslot(slot="l",posfrom="-20,0",posto="0,0",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_4083_chimes_1#5$1",focus="l")]
+[name="ウィンドチャイム"]龍門近衛局？
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]端的に言うと、君には近衛局に協力していただきたい。今すぐ私と一緒に龍門に戻り、その手紙の調査が終わるのを待ってから、また届けてくれないか。
+[charslot(slot="l",name="avg_4083_chimes_1#10$1",focus="l")]
+[name="ウィンドチャイム"]その手紙は……一体なんなのです？
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]逮捕されたとある盗賊の頭目が、石橋村にいる母親宛てに書いた手紙だ。本人の発言が真実ならな。
+[name="近衛局隊員"]調べたところ、彼は確かに石橋村出身だった。それと、彼が最初に自供したことは、君を襲撃した件のことだったよ。
+[charslot(slot="l",name="avg_4083_chimes_1#10$1",focus="l")]
+[name="ウィンドチャイム"]……
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]彼は家を出てから、もう十年以上、一度も帰っていないそうだ。残された時間も多くないことを鑑みて、我々も必要以上に干渉はしてこなかった。
+[charslot(slot="l",name="avg_4083_chimes_1#10$1",focus="l")]
+[name="ウィンドチャイム"]十年以上も家に帰ってない？
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]本人は家族を巻き込まないようにするためだと言っていたが、実際のところは……誰にも分からないさ。
+[name="近衛局隊員"]だが、タイミングの悪いことに、君が都市を出発したのとほぼ同時期に、彼が別の事件にも関与していたことが分かったんだ。
+[name="近衛局隊員"]そうなると、その手紙が家族に宛てたものではなく、仲間に情報を伝えるものである可能性が高くなってくる。
+[charslot(slot="l",name="avg_4083_chimes_1#2$1",focus="l")]
+[name="ウィンドチャイム"]だけど……石橋村まであともう少しなんですよ。ただの近衛局の思い過ごしで、これは本当に家族へ宛てた普通の手紙の可能性はないのですか？
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]まさにそれを確かめるために、こうしてここまで君を追いかけてきたのだよ。
+[charslot(slot="l",name="avg_4083_chimes_1#2$1",focus="l")]
+[name="ウィンドチャイム"]警官さん、この道を右に進めば石橋村にたどり着けます。そして、左に進めば私の故郷がありますが……そこにはもう何も残っていません。
+[name="ウィンドチャイム"]石橋村ももうすぐ移転してしまいます。私は自分の家族宛ての手紙をどこへ送ればいいのか知っていますが、その人は……
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]……
+[charslot(slot="l",name="avg_4083_chimes_1#2$1",focus="l")]
+[name="ウィンドチャイム"]どうしても龍門に戻らないのいけないのでしょうか？
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]はあ……そこまでして戻りたくないと言うのなら、この場で手紙を開けて確認しても構わない。
+[name="近衛局隊員"]だが、手紙に本当に何か仕込まれていたり、私の身に何か起きたとなれば、君の責任になってしまうぞ。
+[charslot(slot="l",name="avg_4083_chimes_1#7$1",focus="l")]
+[name="ウィンドチャイム"]構いません。
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]たとえ彼が、かつて君を襲った張本人だとしてもか？
+[charslot(slot="l",name="avg_4083_chimes_1#2$1",focus="l")]
+[name="ウィンドチャイム"]そんなのは関係ありません。ただ……
+[name="ウィンドチャイム"]十年以上も家に帰っていない、そしてもう二度と帰ることもできない人が……最後に送る手紙はきっと、家族宛てのなんの変哲もない手紙だと、信じたいんです。
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]君の考えはよくわかった。
+[name="近衛局隊員"]その撮影機はまだ使えるかね？　手紙を調べる過程をすべて映像で記録してほしい。そのほうがお互い変に疑われずに済むだろう。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="35_g11_yumendesert",screenadapt="coverall")]
+[charslot(slot="l",name="avg_4083_chimes_1#2$1")]
+[charslot(slot="r",name="avg_npc_799_1#1$1")]
+[Delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]……待たせたな。
+[charslot(slot="l",name="avg_4083_chimes_1#2$1",focus="l")]
+[name="ウィンドチャイム"]その手紙は、結局……
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_paper1",volume=1)]
+男は手紙を丁寧に折り畳み、封筒に戻すと、私へ返してくれた。そしてポンポンと肩を叩かれる。
+[charslot(slot="l",name="avg_4083_chimes_1#2$1",focus="r")]
+[charslot(slot="r",name="avg_npc_799_1#1$1",focus="r")]
+[name="近衛局隊員"]本来これを読むべき人の元へ届けてあげなさい。
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_desert_3",screenadapt="coverall")]
+[Delay(time=1.5)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$rungeneral",volume=1)]
+[CameraShake(duration=3.5, xstrength=5, ystrength=5, vibrato=30, randomness=90, fadeout=true, block=true)]
+この山を越えた先にも山が続いており、仮に車隊が石橋村を出発したとしても、正面から鉢合わせることになるのは分かっていた。それでも、どうしても歩を緩めることができなかった。
+今の自分は、手紙を届けに行くというより、今日引っ越す予定の最後の隣人に会いに行っているような気分だ。
+早く到着すれば、一緒にお茶を飲みながらおしゃべりができる。だけど遅くなってしまえば、その後ろ姿を見送ることしかできない。
+[Dialog]
+[playsound(key="$rungeneral",volume=1)]
+[charslot(slot="m",name="avg_4083_chimes_1#2$1",duration=1.5)]
+[Delay(time=3.5)]
+[name="ウィンドチャイム"]はあ……はあ……間に合った……
+[charslot(slot="m",name="avg_4083_chimes_1#2$1",focus="none")]
+[name="車隊リーダー"]お嬢ちゃん、どうしたんだい？　親戚の見送りにでも来たのか？
+[charslot(slot="m",name="avg_4083_chimes_1#2$1")]
+[name="ウィンドチャイム"]いえ、私は……信使で、龍門からの手紙を、届けに来たんです……
+[charslot(slot="m",name="avg_4083_chimes_1#2$1",focus="none")]
+[name="車隊のリーダー"]龍門から？　そいつはご苦労だったな。宛名を見せてくれ。もう車に乗った村人に訊いてくるよ。
+[Dialog]
+[playsound(key="$d_avg_paper1",volume=1)]
+[Delay(time=1.5)]
+[name="車隊リーダー"]参ったな、こいつは趙（ジャオ）婆さん宛ての手紙のようだ。
+[charslot(slot="m",name="avg_4083_chimes_1#10$1")]
+[name="ウィンドチャイム"]参ったって、まさか……！？
+[charslot(slot="m",name="avg_4083_chimes_1#10$1",focus="none")]
+[name="車隊リーダー"]ああ、落ち着いて。あんたが思っているようなことじゃない。ジャオ婆さんはまだ元気にしてるよ。ただもうかなりの年だからな、目も耳も悪いし、頭も少し回らなくなってきてんだ。
+[name="車隊リーダー"]車隊が来たら一緒に出発しようって、村人たちと約束してたのに、今日になってどうしても行きたくない、俺たちが自分を騙そうとしてるって、子供みたいに駄々をこね始めてな。
+[name="車隊リーダー"]だからその手紙も、読めるかどうかは……
+[charslot(slot="m",name="avg_4083_chimes_1#2$1")]
+[name="ウィンドチャイム"]……
+[charslot(slot="m",name="avg_4083_chimes_1#7$1")]
+[name="ウィンドチャイム"]とにかく、手紙を届けに行ってきます。
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_indoor4",screenadapt="coverall")]
+[Delay(time=1.5)]
+[playMusic(intro="$distressed_intro",key="$distressed_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$dooropenquite",volume=1)]
+[charslot(slot="m",name="avg_4083_chimes_1#10$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="ウィンドチャイム"]……お婆さん？
+[charslot(slot="m",name="avg_4083_chimes_1#10$1",focus="none")]
+[name="ぼんやりした老人"]今度は誰なんだい！？　誰が来たって私は行かないよ！　あんたらはみんな嘘つきだ！　移動都市も、電話も、都市間ネットワークも……どうせ全部嘘に決まってる！
+[name="ぼんやりした老人"]私の大切な二牙（アルヤー）を騙してさらったみたいに、私のこともさらう気だろう？　私は行かないよ！
+[charslot(slot="m",name="avg_4083_chimes_1#5$1")]
+[name="ウィンドチャイム"]私をここを去るよう説得しに来たんじゃありません。ただ手紙を届けに――
+[charslot(slot="m",name="avg_4083_chimes_1#5$1",focus="none")]
+[name="ぼんやりした老人"]うるさい！　私は死んでもここで離れないからね。ここであの子を待たないと……甘いもので釣ろうとしたって無駄さ！
+[charslot(slot="m",name="avg_4083_chimes_1#10$1")]
+[name="ウィンドチャイム"]……え？
+[charslot(slot="m",name="avg_4083_chimes_1#10$1",focus="none")]
+[name="ぼんやりした老人"]あんたは誰だい？　なんで勝手にうちに入って来てるんだい？
+[charslot(slot="m",name="avg_4083_chimes_1#1$1")]
+[name="ウィンドチャイム"]……お婆さん、私は信使で、手紙を届けに来たんです。あなたの息子さんが――
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="ぼんやりした老人"]私は字が読めないせいで、一生騙されてきたんだ……だけど字が読めたところで何の役に立つんだい。アルヤーだって結局は騙されてしまった……
+[charslot(slot="m",name="avg_4083_chimes_1#1$1")]
+[name="ウィンドチャイム"]このお手紙はきっとアルヤーさんがあなたへ送ったものですよ。
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="ぼんやりした老人"]手紙……アルヤーからの？　あの子は一度だってそんなもの……一体何が書いてあるんだい？
+[charslot(slot="m",name="avg_4083_chimes_1#1$1")]
+[name="ウィンドチャイム"]よろしければ、私が読みましょうか？
+[charslot(slot="m",name="avg_4083_chimes_1#1$1",focus="none")]
+[name="ぼんやりした老人"]手紙を……聞くってことかい？
+[name="ぼんやりした老人"]手紙を聞く……
+[Dialog]
+[charslot(slot="m",name="avg_4083_chimes_1#2$1")]
+[playsound(key="$d_avg_paper1",volume=1)]
+[Delay(time=2.5)]
+[name="ウィンドチャイム"]「母さんへ。すまない、十数年もの間、一度も家に帰らなかったどころか、手紙すら送ったこともなかった……」
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[charslot(duration=1.5)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="母さんへ。すまない、十数年もの間、一度も家に帰らなかったどころか、手紙すら送ったこともなかった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="母さんを面倒事に巻き込みたくなかったし、何を書けばいいかもわからなかったんだ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="道を踏み外した俺は、たくさんの人の人生を壊してしまった。なの振り返ってみれば、この数十年ただわけも分からず過ごしていただけで、まるでずっと熱にうなされていたみたいだよ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="どんな道を選ぶのかは、すべて自分の責任だと人は皆そういうが、俺はどうしてもあの時、村に来たあの商人の……あいつが持っていた箱いっぱいのアイスのせいだと思いたい。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="本当に甘かったなぁ、母さん。もう何年も経ったのに、今でも鮮明にあの味を覚えてる。「アイスクリーム」って書いてある袋に入ってる食い物は、こんなにも甘くて、うまいんだなあって。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="それまではナツメが大の好物だったのに、あの味を知ってしまってからは、どんなに大きくて紅いナツメにも、見向きもしなくなってしまった。ただただアイスが食いたくて仕方なかった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="あの時、母さんは「気でも触れちまったのか」って叱ってたよな。俺は結局、本当に気が触れちまったんだろう。たかがアイスのために黙って家を飛び出したんだから。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="最初の金が手に入ると、俺はすぐに色んな味のアイスを丸々一箱買い占めた。だけど腹を壊すまで食べても、あの我を忘れるほどの甘さを感じることはできなかった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="俺の今後がようやく全部決まったが、これでいよいよ、母さんに会いに家に帰ることはもうできなくなってしまったよ。だけど、悲しまないでくれ。俺はちゃんとやってるから。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="どうしても俺が恋しくなったら、裏庭にナツメの木でも植えて、それを俺だと思ってくれ。春に芽が出れば、それは俺が起きたってことだ。秋に実が落ちたら、そいつは俺が食べたんだ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="木の棘が手に刺さったら、それは俺がわがままを言ってるのさ。そん時は叩いたって、𠮟ったっていい。いくら怒られても、俺はそこに根付いている。どこにも行かずに、母さんのそばにいる。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="うん、それがいい。それで俺が家に帰ったことにしてくれ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+手紙を読み終えた私は、泣き出してしまわぬよう、歯を思いっきり食いしばった。老人は何も言わずに立ち上がると、ゆっくりとした歩幅で家を出て、裏庭へ向かう。
+庭の中央には丁寧に手入れされた木が立っており、その枝には青や赤のナツメがいっぱいに実っていた。
+老人は葉の生い茂ったナツメの枝を、思いっきり引っぱたいた。棘が彼女の手に引っかき傷を残し、涙が皺だらけの頬を伝う。
+しばらく沈黙した後、老人は木に背中を向けると、車隊の方へ歩いて行った。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

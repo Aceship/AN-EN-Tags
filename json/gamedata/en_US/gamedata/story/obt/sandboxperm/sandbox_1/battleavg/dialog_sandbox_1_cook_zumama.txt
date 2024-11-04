@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Finally free! I've been working so hard these past few days that my bones feel like they're about to rattle apart.
+[decision(option1="Eunectes, come help me with something, quick!", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="What does the High Priest like to eat?", value1="2.1")]
+[predicate(references="2.1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]What, is he still upset?
+[decision(option1="Yup, so upset he's molting feathers everywhere.", value1="3.1")]
+[predicate(references="3.1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Let me handle this. I know how to cook something he won't be able to resist.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Before I begin, I've got to prepare some special seasonings, though. Can you make some <color=#d8d769>Pressure-Cooked Soup</color> first?
+[decision(option1="I've made that before, actually.", value1="4.1", option2="Leave.", value2="4.2")]
+[predicate(references="4.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_16", itemCount="-1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Thanks for helping me out. I'll have it ready when you need it.
+[withdraw(id="trap_466_tzumama", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="4.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_16", value="1")]

@@ -1,0 +1,21 @@
+[HEADER(is_skippable=false, is_tutorial=true)] 出击规则&天气&狩猎关
+[SandboxV2.EnsureDungeonQuest(questId="training_1", isForceTutorial=true)]
+[SandboxV2.EnsureDungeonStable]
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama")] Welcome to Reclamation Algorithm. To ensure the best chance of success, allow me to introduce you to certain important concepts before we commence.
+[SandboxV2.DungeonFocusNode(focusType="PURE_CAMERA_ZOOM", zoomType="FAR")]
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama")] Reclamation Algorithm consists of various <@tu.kw>zones</>. Before we start, please familiarize yourself with some of the more common types.
+[Tutorial(target="sandbox_dungeon_left_slider", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] You can zoom in or out here to get a better view of your surroundings.
+[SandboxV2.DungeonFocusNode(focusType="PURE_CAMERA_ZOOM", zoomType="NEAR", focusNodeId="nF6AB")]
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, target="btn_sandbox_dungeon_center_node", waitForSignal="sandbox_v2_dungeon_node_preview_routed", animStyle="Click",            focusStyle="HighlightRect", black="$f_tut_black", dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] Our first stop is a <@tu.kw>Hunting Zone</>. I will now guide you through your first hunt.
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, target="btn_sandbox_dungeon_node_preview_weather", waitForSignal="sandbox_v2_dungeon_weather_preview_panel_routed", animStyle="Click",            focusStyle="HighlightRect", black="$f_tut_black", dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] You can view a weather report of the target zone here before you depart.
+[Tutorial(target="btn_sandbox_dungeon_weather_preview_panel", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] Looks like we're lucky - its a sunny day.
+[Tutorial(target="btn_sandbox_dungeon_weather_preview_panel", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] At other times, we might encounter adverse weather that have various effects on operators, local wildlife, the environment, or resources.
+[Tutorial(protectTime=0.8, target="btn_sandbox_dungeon_node_preview_start_battle", waitForSignal="sandbox_v2_squad_state_routed", animStyle="Click",            focusStyle="HighlightRect", black="$f_tut_black", dialogHead="$avatar_zumama")] Let's make our preparations.
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] Here, we can view and change assignments for Operators, Aiding Items, and Buildout Constructs.
+[Tutorial(target="btn_sandbox_v2_squad_drink_display", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] Note that operators will need <@tu.kw>Energy Drinks</> to operate in Reclamation Algorithm.
+[Tutorial(target="btn_sandbox_v2_squad_btn_battle", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] Ready? I'll be waiting for you at the goal-line!

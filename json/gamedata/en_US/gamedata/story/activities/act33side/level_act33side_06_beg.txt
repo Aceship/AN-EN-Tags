@@ -1,0 +1,770 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[PlayMusic(intro="$loading_intro", key="$loading_loop", volume=0.6)]
+[Background(image="bg_iceforest_1",screenadapt="coverall")]
+[bgeffect(name="$eb_lightsnow", layer=1)]
+[PlaySound(key="$d_avg_snowstormflp", volume=0.5, loop=true, channel="snow")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_snowrun", volume=1, loop=true, channel="run")]
+[StopSound(channel="run", fadetime=2)]
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", duration = 1, isblock = true)]
+[name="Sarkaz Civilian"]Look! Up ahead!
+[name="Sarkaz Civilian"]The bridge... it's been blown? How are we supposed to get across?
+[name="Sarkaz Civilian"]I-Is there another path? The Catastrophe cloud is still over our heads...
+[name="Sarkaz Civilian"]We can't go any further, not with all the wounded and children...
+[dialog]
+[curtain(direction = 6,fillfrom = 0,fillto = 1,fadetime=0.5)]
+[delay(time=1)]
+[curtain]
+[charslot]
+[Background(image="bg_snow_2",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[curtain(direction = 6,fillfrom = 1,fillto = 0,fadetime=0.5)]
+[Delay(time=1)]
+[name="Babel Member"]Damn, the Originium crystals on the ground are starting to glow...
+[multiline(name="Babel Member")]They'll kill us before the Catastrophe even has a chance.
+[multiline(name="Babel Member", end=true)]*cough*
+[multiline(name="Babel Member")]We need to—
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[multiline(name="Babel Member")]*cough*—
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[multiline(name="Babel Member", end=true)]*cough* *cough*—
+[name="Babel Member"]We need to go... It's all *Sarkaz expletive* Originium particles in the air.
+[name="Babel Member"]No medicine for more than a week now... all the injured... Infected... damn it!
+[dialog]
+[PlaySound(key="$d_gen_thunders_amb", volume=0.4)]
+[PlaySound(key="$d_avg_drkcludsthdr", volume=1, loop=true, channel="d")]
+[delay(time=1.5)]
+[name="Babel Member"]Wh-What's that sound?
+[dialog]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[charslot]
+[Background(image="30_ex1_snowmount_s",screenadapt="coverall")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_053")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="Sarkaz Mercenary"]No reinforcements from Babel yet? Then keep looking for a path! Don't come back until you do!
+[name="Sarkaz Mercenary"]The Catastrophe cloud's fully formed. Which *Sarkaz expletive* unit attacked the hospital? Not even Scareye's that crazy!
+[name="Sarkaz Mercenary"]Stick together! It's too late to try to get out of the Catastrophe. We need to find some clean caves! Nothing with Originium traces on it, not even a little bit!
+[name="Sarkaz Mercenary"]Doing this to the wounded... Theresis, you piece of...
+[dialog]
+[StopSound(channel="d", fadetime=1)]
+[StopSound(channel="snow", fadetime=1)]
+[curtain(direction = 2,fillfrom = 0,fillto = 1,fadetime=0.5)]
+[delay(time=1)]
+[bgeffect]
+[curtain]
+[charslot]
+[Background(image="bg_cave_2",screenadapt="coverall")]
+[curtain(direction = 2,fillfrom = 1,fillto = 0,fadetime=0.5)]
+[Delay(time=1)]
+[name="Sarkaz Child"]Mom... my leg hurts...
+[charslot(slot = "m", name = "avg_npc_935_1#1$1")]
+[name="Sarkaz Civilian"]Don't cry, don't cry... we're almost home...
+[charslot(slot = "m", focus="n")]
+[multiline(name="Sarkaz Child")]No— no—
+[multiline(name="Sarkaz Child",end=true)]It hurts— It hurts...
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_thundercloud",screenadapt="coverall")]
+[PlaySound(key="$d_avg_drkcludsthdr", volume=1, loop=true, channel="d")]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="s")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+The sound of children crying.
+The sound of conspiracy, of death, of struggling to survive.
+The Catastrophe is deaf to all that, turning wind and snow into storm.
+[dialog]
+[SoundVolume(volume=0.4, channel="s",fadetime=2)]
+[SoundVolume(volume=0.4, channel="d",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="30_ex1_snowmount_s",screenadapt="coverall")]
+[bgeffect(name="$eb_lightsnow", layer=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+A few figures stand on a distant cliff.
+The woman stands on the edge, peering silently into the distance.
+A merciless Catastrophe, enemy soldiers blocking key passages, fleeing beasts, and the wounded and civilians with nowhere to run.
+Life echoes in the valley, reaching Mantra's ears.
+It is the sound of children crying.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1300_1#7$1")]
+[name="Mantra"]...I hear it.
+[name="Mantra"]Children are crying.
+[dialog]
+[charslot]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1", duration=1.5, isblock=true)]
+[name="Ace"]It's starting to snow. This isn't good.
+[charslot(slot = "m", name = "avg_npc_1300_1#3$1")]
+[name="Mantra"]Two thousand, three hundred and thirteen.
+[name="Mantra"]All confirmed.
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]Location and physical data logged.
+[dialog]
+[playsound(key="$transmission")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]Fewer losses than expected, but time's of the essence.
+[name="Ace"]Watching your Arts up close is always a remarkable experience, Mantra.
+[charslot(slot = "m", name = "avg_npc_1300_1#3$1")]
+[name="Mantra"](Nods humbly)
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]Was the Djall in HR able to get you a few assistants?
+[charslot(slot = "m", name = "avg_npc_1300_1#2$1")]
+[name="Mantra"](Closes eyes)
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]A shame.
+[name="Ace"]Message sent to all squads.
+[charslot(slot = "m", name = "avg_npc_1300_1#3$1")]
+[name="Mantra"]Cave, seven kilometers to the northeast.
+[name="Mantra"]The children are there.
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]But the Military Commission's drones have found us.
+[name="Ace"]I'll stay. You go.
+[charslot(slot = "m", name = "avg_npc_1300_1#4$1")]
+[name="Mantra"](Frowns)
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]They don't want to face my squad head-on in this terrain.
+[name="Ace"]Just going to say hi. Will try to take Manfred alive if he's leading them.
+[charslot(slot = "m", name = "avg_npc_1300_1#1$1")]
+[name="Mantra"]Don't take unnecessary risks—
+[dialog]
+[charslot]
+[playsound(key="$d_gen_transmissionget", volume=1)]
+[CharacterCutin(widgetID="1", name="avg_npc_048", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=-300, width=200, block=true)]
+[delay(time=1)]
+[name="Doctor"]Doctor here.
+[name="Doctor"]Sorry I'm late. Operations in the CA area have concluded.
+[name="Doctor"]Continue to carry out Mantra's plan. I'll provide support elsewhere. The priority is to help the civilians and wounded.
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1309_1#1$1", duration=0.5, isblock=true)]
+[name="Ace"]Good timing, Doctor.
+[charslot(slot = "r", focus="n")]
+[name="Doctor"]Thanks. Misery is distracting the Military Commission, but he needs help.
+[charslot(slot = "r", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]Is this the part where I volunteer?
+[charslot(slot = "r", focus="n")]
+[name="Doctor"]Yes, Ace.
+[charslot(slot = "r", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]Awaiting your orders.
+[charslot(slot = "r", focus="n")]
+[name="Doctor"]And...
+[name="Doctor"]Theresa will go directly to the affected field hospital at the center to prevent further casualties.
+[name="Doctor"]If all goes well... I'll meet you there.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[CharacterCutin(widgetID="1", fadetime=0)]
+[bgeffect]
+[charslot]
+[SoundVolume(volume=1, channel="s",fadetime=2)]
+[SoundVolume(volume=1, channel="d",fadetime=2)]
+[bgeffect(name="$eb_blizzard", layer=1)]
+[Background(image="bg_snow_2",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[CameraShake(duration=1, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_explosion_stone")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="Babel Member"]Explosion! Explosion!
+[name="Babel Member"]Move away from the glowing area! Back off! The Originium underground is being activated—
+[name="Babel Member"]*Sarkaz expletive* Too late—
+[dialog]
+[charslot]
+Fires stir beneath the frozen earth, and blizzard brings with it the sparks of Catastrophe.
+Every breath seems to carry the weight of all of Terra, bringing it upon every individual soul.
+[dialog]
+[PlaySound(key="$d_avg_explosion", volume=0.4)]
+[delay(time=1.5)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n", volume=0.8)]
+[delay(time=1.6)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$d_avg_explosion_stone", volume=1, loop=true, channel="e")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1)]
+[StopSound(channel="e", fadetime=1)]
+[StopSound(channel="s", fadetime=1)]
+[StopSound(channel="d", fadetime=1)]
+[delay(time=1)]
+[musicvolume(volume=0, fadetime=1)]
+[bgeffect(fade = true, fadetime = 1.5)]
+The weight vanishes in an instant.
+They look up to see an astonishing sight.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[multiline(name="Babel Member")]Gah—
+[multiline(name="Babel Member", end=true)]...The explosions stopped?
+[name="Babel Member"]Snow... floating in the air?
+[dialog]
+[charslot]
+[musicvolume(volume=0.6, fadetime=2)]
+[playsound(key="$d_avg_snowbootwalk")]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1", duration=1.5, isblock=true)]
+[name="Pith"]The snow crystals here are almost indistinguishable from Originium crystals. Control over them can be achieved with sufficient focus.
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="Babel Member"]You... You're
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1")]
+[name="Pith"]Precise control over individual snowflakes is difficult, but it's not so difficult to hold a snowstorm off in an Originium-rich environment.
+[name="Pith"]Have you been paying attention in class, Aidan?
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="Babel Member"]Pith! You're here! You...
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1")]
+[name="Pith"]I can give you ten minutes.
+[name="Pith"]Go back to the meadows at the bottom of the valley and head south. Scout will guide your path.
+[name="Pith"]Don't you remember what I taught you? There are a lot of emergency precautions you can take in an Originium-dense environment, but you did nothing.
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="Babel Member"]I—
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1")]
+[name="Pith"]Wait... you have acute Oripathy patients in your group! What were you thinking?!
+[name="Pith"]Take this syringe! I'll do what I can. You have ten minutes to get everybody in order.
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="Babel Member"]But you—
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1")]
+[name="Pith"]Move it, before the Catastrophe fully forms! This area will be safe while I can dampen it for a bit.
+[name="Pith"]—One more thing.
+[name="Pith"]I'm using several kinds of Arts at the same time right now. I want to see an essay from all of you on my table by this weekend, explaining which schools these Arts belong to.
+[name="Pith"]So you better damn well make it out alive.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_iceforest_1",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_054")]
+[name="Sarkaz Mercenary A"]...It's me. Any instructions from Manfred?
+[name="Sarkaz Mercenary A"]What is he doing? Huh?
+[name="Sarkaz Mercenary A"]A Royal Court high rank in amongst the Babel forces and refugees? Impossible! Look it up!
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary B"]Doubt there's anything to look up. Manfred probably made up the excuse on the spot.
+[name="Sarkaz Mercenary B"]Even if they were there, they're Babel prisoners now. Rescuing prisoners in the middle of a Catastrophe is not part of the contract.
+[charslot(slot = "m", name = "avg_npc_054")]
+[name="Sarkaz Mercenary A"]But we have to do it anyway. Dammit, get Thorn Squad to check the blockade...
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary B"]Alright... 86 here. Hello? Hello?
+[dialog]
+[playsound(key="$transmission")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary B"]No response. Where did they go? It's not time for the shift change yet, is it?
+[name="Sarkaz Mercenary B"]...Wait.
+[name="Sarkaz Mercenary B"]Isn't it a little too quiet?
+[name="Sarkaz Mercenary B"]There were fowlbeast cries only a moment ago...
+[charslot(slot = "m", name = "avg_npc_054")]
+[name="Sarkaz Mercenary A"]All the animals must have fled the Catastrophe.
+[name="Sarkaz Mercenary A"]It'll sweep through this place in five hours. This is no time to be taking a nap.
+[name="Sarkaz Mercenary A"]Hand me the schedule.
+[name="Sarkaz Mercenary A"]I said, hand me the—
+[dialog]
+[delay(time=1.5)]
+[name="Sarkaz Mercenary A"]Huh? Hey, where did you go?
+[playsound(key="$transmission")]
+[name="Sarkaz Mercenary A"]Hello? This is Squad 86! Anyone hear me? Anybody? What's going on? Somebody's—
+[charslot(slot = "m", focus="n")]
+[name="Scout"]You called?
+[PlaySound(key="$d_avg_cnstrctnck", volume=1)]
+[charslot(slot = "m", action="shake", power=4, times=40, duration=0.5)]
+[name="Sarkaz Mercenary A"]—
+[dialog]
+[playsound(key="$bodyfalldown2")]
+[charslot(slot = "m", posfrom="0,0", posto="0,-30", afrom=1, ato=0, duration=0.5, isblock=true)]
+[charslot]
+[delay(time=1.5)]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "m", name = "avg_npc_1311_1#1$1", duration=1, isblock=true)]
+[name="Scout"]Phew.
+[dialog]
+[playsound(key="$d_gen_transmissionget", volume=1)]
+[delay(time=1)]
+[name="Scout"]Three squads silenced. No alerts. The path is clear.
+[name="Scout"]Combat personnel, follow these coordinates. Medics, take the injured and follow the markings I've left.
+[name="Scout"]...There's something I need to confirm.
+[dialog]
+[PlaySound(key="$d_avg_snowbootwalk", volume=1, loop=true, channel="s")]
+[StopSound(channel="s", fadetime=1)]
+[charslot(slot = "m", posfrom="0,0", posto="20,-50", afrom=1, ato=1, duration=0.6, isblock=true)]
+[name="Scout"]......
+[name="Scout"]It's the Military Commission's frequency alright, but these were scouts, not the rogue mercenaries that attacked our positions.
+[name="Scout"]Mission briefing 'Strawberry'. Just monitoring the retreat of the civilians... hah, Manfred even lied to them that there was a 'Royal Court high rank' here.
+[name="Scout"]Well, I guess I'll leave the rest to Ascalon.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[bgeffect]
+[charslot]
+[PlaySound(key="$d_avg_drkcludsthdr", volume=1, loop=true, channel="d")]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="s")]
+[PlayMusic(intro="$stranger_intro", key="$stranger_loop", volume=0.6)]
+[Background(image="30_ex1_snowmount_s",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_npc_1306_1#1$1", bstart=0.2,bend=0.7,)]
+[Delay(time=1)]
+[bgeffect(name="$eb_snow", layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="Mysterious Mercenary"]......
+[name="Mysterious Mercenary"]Babel.
+[name="Mysterious Mercenary"]Are you my death?
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1", duration=1.5, isblock=true)]
+[name="Ascalon"]You led the attack on Babel positions. Who's orders are you following?
+[name="Ascalon"]It's just doctors and Infected civilians—
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1306_1#1$1", posfrom="300,0", posto="30,0", duration=0.2)]
+[delay(time=0.1)]
+[PlaySound(key="$e_skill_skulsrsword", volume=0.7)]
+[PlaySound(key="$d_avg_ftrub", volume=1)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#4$1", action="jump", posto="-300,-20", afrom=1, ato=0, power=5, times=1, duration=0.5)]
+[CameraShake(duration=1, xstrength=15, ystrength=10, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$swordtsing5", volume=0.7,delay=0.2)]
+[Effect(name="$e_bladeline_01_large",x = 100,y=60,roy=0,rox=-30,layer = 1)]
+[Effect(name="$e_spark_02_mid",x = 50,y=50,layer = 2,delay=0.01)]
+[Effect(name="$e_spark_02_mid",x = 52,y=55,layer = 3,roy=180,delay=0.03)]
+[Effect(name="$e_spark_02_mid",x = 54,y=60,layer = 4,delay=0.05)]
+[Effect(name="$e_spark_02_mid",x = 56,y=65,layer = 5,roy=180,delay=0.07)]
+[Effect(name="$e_spark_02_mid",x = 58,y=70,layer = 6,delay=0.09)]
+[Effect(name="$e_spark_02_mid",x = 60,y=75,layer = 7,delay=0.11)]
+[Effect(name="$e_spark_02_mid",x = 62,y=80,layer = 8,delay=0.13)]
+[Effect(name="$e_spark_02_mid",x = 64,y=85,layer = 9,delay=0.15)]
+[Effect(name="$e_spark_02_mid",x = 66,y=90,layer = 10,delay=0.19)]
+[Effect(name="$e_spark_02_mid",x = 68,y=95,layer = 11,delay=0.22)]
+[Effect(name="$e_spark_02_mid",x = 70,y=100,layer = 12,delay=0.25)]
+[Effect(name="$e_spark_02_mid",x = 72,y=105,layer = 13)]
+[delay(time=0.5)]
+[charslot]
+The sword comes before she can finish her sentence.
+Something feels out of place.
+But Ascalon adjusts quickly. She has always been more familiar with the language of violence anyway.
+[PlaySound(key="$d_avg_daggerexsheath", volume=1)]
+The sleeve-blade is out of its sheath.
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1306_1#1$1", posfrom="30,0", posto="30,0", duration=0)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#5$1", posfrom="-800, 0", posto="300,0", duration=0.6, afrom = 1, ato = 0)]
+[charslot(slot = "l", name = "avg_4132_ascln_1#5$1", posfrom="0,-20", posto="500,0", duration=0.3, afrom = 0, ato = 0.5)]
+[delay(time=0.2)]
+[charslot(slot = "l", name = "avg_4132_ascln_1#1$1", posfrom="500,0", posto="750,0", duration=0.3, afrom = 0.5, ato = 0)]
+[Blocker(a=0, r=255, g=0, b=0, fadetime=0, block=true)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=0, b=0, fadetime=0.03, block=true)]
+[PlaySound(key="$d_avg_attack_heavy", volume=1)]
+[Blocker(a=0, r=255, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[PlaySound(key="$bodyfalldown2", volume=1)]
+[charslot(slot = "r", posfrom="30,0", posto="30,-50", afrom=1, ato=0, duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[bgeffect]
+[delay(time=0.5)]
+[name="Mysterious Mercenary"]Ngh.
+[dialog]
+[charslot]
+[charslot(slot = "r", name = "avg_4132_ascln_1#5$1")]
+[bgeffect(name="$eb_snow", layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="Ascalon"]What are you—
+[dialog]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot = "l", name = "avg_npc_1306_1#1$1", posfrom="0,-80", posto="0,0", duration=2, isblock=true)]
+[charslot(slot = "l", focus="l")]
+[name="Mysterious Mercenary"]......
+[dialog]
+[PlaySound(key="$d_avg_button", volume=1)]
+[charslot(slot = "r", name = "avg_4132_ascln_1#6$1", focus="r")]
+[name="Ascalon"]—!
+[dialog]
+[charslot(slot = "r", name = "avg_4132_ascln_1#6$1", posfrom="0,0", posto="200,0", afrom=1, ato=0, duration=0.2)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_explosion_stone")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_ftrub", volume=1)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1", posfrom="-600,0", posto="40,-20", duration=1, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", posfrom="40,-20", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#5$1")]
+[name="Ascalon"]Bomb... you're crazy.
+[name="Ascalon"]Surrender. You have no chan—
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]......
+[dialog]
+[playsound(key="$transmission")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#3$1")]
+[name="Ascalon"]...It's me. I'm done.
+[charslot(slot = "m", name = "avg_4132_ascln_1#2$1")]
+[name="Ascalon"]Sorry, couldn't take him alive. He blew himself up.
+[name="Ascalon"]Something's not right.
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]He recognized me as Babel immediately, realized he was no match for me and quickly chose to blow himself up.
+[multiline(name="Ascalon")]Abnormally decisive. Could be some experienced spy, or...
+[charslot(slot = "m", name = "avg_4132_ascln_1#6$1")]
+[multiline(name="Ascalon", end=true)]Wait.
+[dialog]
+[playsound(key="$d_avg_pcket")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]I found a pouch. It's undamaged. I must have cut it off.
+[name="Ascalon"]There's a Babel sleeve badge and a Military Commission medal inside.
+[name="Ascalon"]It's not unusual for a mercenary working both sides of a war.
+[charslot(slot = "m", name = "avg_4132_ascln_1#3$1")]
+[name="Ascalon"]And a piece of paper. Possibly personal notes.
+[name="Ascalon"]Most of it is illegible. The only thing I can make out is...
+[name="Ascalon"]'...del. Home.'
+[charslot(slot = "m", name = "avg_4132_ascln_1#2$1")]
+[name="Ascalon"]......
+[name="Ascalon"]Forget it. Not important.
+[dialog]
+[stopmusic(fadetime=2)]
+[StopSound(channel="s", fadetime=2)]
+[StopSound(channel="d", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[bgeffect]
+[PlaySound(key="$blizzard", volume=1, loop=true, channel="b")]
+[charslot]
+[Background(image="bg_snowconutry_4",screenadapt="coverall")]
+[Delay(time=1)]
+[bgeffect(name="$eb_snow", layer=1)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "l", name = "avg_npc_053", duration=1)]
+[delay(time=0.5)]
+[charslot(slot = "r", name = "avg_npc_1299_1#1$1", duration=1, isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l", focus="l")]
+[name="Sarkaz Mercenary"]Communications are out? Well, I guess the old stuff won't do it when a Catastrophe is so close.
+[name="Sarkaz Mercenary"]Let's hope the other teams found a way out.
+[dialog]
+[PlaySound(key="$d_gen_thunders_amb", volume=0.2)]
+[PlaySound(key="$d_avg_drkcludsthdr", volume=0.6, loop=true, channel="d")]
+[delay(time=1.5)]
+[charslot(slot = "r", name = "avg_npc_1299_1#1$1", focus="r")]
+[name="Julie"]Don't just stand there.
+[name="Julie"]Bring all the Infected who can't move over here.
+[charslot(slot = "l", name = "avg_npc_053", focus="l")]
+[name="Sarkaz Mercenary"]What's the point? It's not like they'll be able to get away from the Catastrophe.
+[charslot(slot = "r", name = "avg_npc_1299_1#4$1", focus="r")]
+[name="Julie"]Just do it. It's not like you have anything to lose, is there?
+[charslot(slot = "l", name = "avg_npc_053", focus="l")]
+[name="Sarkaz Mercenary"]And...? Some of them are comatose.
+[charslot(slot = "r", name = "avg_npc_1299_1#6$1", focus="r")]
+[name="Julie"]My condition isn't that far off from theirs. I'll end their suffering.
+[name="Julie"]Originium particles will spread when they die. I'll take the brunt of it. Take your bow, keep your distance, and finish the job.
+[dialog]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "r", afrom=1, ato=0, duration=1.5, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_053", focus="l")]
+[name="Sarkaz Mercenary"](Mumbles) Hell no.
+[dialog]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "m", name = "avg_npc_048", posfrom="200,0", posto="0,0", duration=1.5)]
+[charslot(slot = "m", action="zoom", poszoom = "0.5,0.5", scale=0.9, duration = 0)]
+[delay(time=1.2)]
+[charslot(slot = "m", posfrom="0,0", posto="-200,0", afrom=1, ato=0, duration=1.5, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_npc_053", focus="l")]
+[name="Sarkaz Mercenary"]Hey, stay away from the Infected. Julie will deal with them.
+[Dialog]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", name = "avg_npc_048", posfrom="200,0", posto="0,0", duration=1, isblock=true)]
+[name="Doctor"]...Infected.
+[name="Doctor"]You're just leaving them here like firewood.
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary"]I'm not doing it because I want to.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Is there any hope for them?
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary"]No. Just death. They'll turn to dust in ten minutes or so.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]They could have been saved.
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary"]Does living a little longer count as being saved?
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]......
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary"]Their conditions are too severe. If they don't die here, they'll die in some forgotten alleyway in Kazdel. I should have stayed in Sargon...
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Here, give them these suppressants. It'll at least relieve their pain.
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary"]Where did you get these suppressants? No, who are you anyway? When did you get here?
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[name="Sarkaz Mercenary"]Don't move!
+[name="Sarkaz Mercenary"]Your ID code, now, or I'll—
+[charslot(slot = "m", focus="n")]
+[name="???"]Let the Doctor pass.
+[dialog]
+[charslot]
+[SoundVolume(volume=0.2, channel="b",fadetime=2)]
+[SoundVolume(volume=0.2, channel="d",fadetime=2)]
+[PlayMusic(key="$wasteland_loop", volume=0.6)]
+[PlaySound(key="$d_avg_snowfootstep", volume=1, loop=true, channel="snow")]
+[StopSound(channel="snow", fadetime=2)]
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1", duration = 2, isblock=true)]
+[name="Theresa"]It's fine.
+[name="Theresa"]Everything will be fine.
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary"]You look familiar—
+[dialog]
+[charslot(slot = "l", name = "avg_npc_1299_1#7$1", posfrom="-100,0", posto="100,0", duration=0.5)]
+[playsound(key="$bodyfalldown3")]
+[delay(time=0.3)]
+[charslot(slot = "m", posfrom="0,0", posto="40,0", duration=0.2, isblock=true)]
+[charslot(slot = "l", focus="l")]
+[name="Julie"]Y-Your Highness! How could you—
+[name="Julie"]We're right in the middle of the Catastrophe! W-We're very grateful, but...
+[charslot(slot = "l", name = "avg_npc_1299_1#10$1", focus="l")]
+[name="Julie"]You shouldn't have come! It's too dangerous—
+[dialog]
+[charslot]
+The white Sarkaz appears on the battlefield without a sound, as though she has come out of nowhere.
+[PlaySound(key="$d_avg_crwddiscuss_outside", volume=0, loop=true, channel="c")]
+[SoundVolume(volume=1, channel="c",fadetime=1)]
+The crowd whispers amongst themselves. Is she truly the King of Babel, one of the living Six Heroes, the mother of Kazdel?
+[StopSound(channel="c", fadetime=3)]
+Theresa simply nods at confused and bewildered crowd.
+She kneels by the side of the Infected.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", bstart=0.2,bend=0.7, duration=2, isblock=true)]
+[name="Dying Infected"]Your... Highness...
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]I'm sorry I came late.
+[charslot(slot = "m", name = "avg_npc_1296_1#6$1")]
+[name="Theresa"]Too late to save your lives... I'm sorry I couldn't do enough...
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", bstart=0.2,bend=0.7)]
+[name="Dying Infected"]Please... don't...
+[charslot(slot = "m", focus="n")]
+Theresa gently holds his hand in hers.
+The other Infected, all the ones still conscious, those who have not fully given up on living, feel a little bit of gentle warmth.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]I'm listening, my children.
+[name="Theresa"]I will remember how all of you lived and died... forgive me that I could not promise you more, but for your family, children, friends and comrades...
+[charslot(slot = "m", name = "avg_npc_1296_1#6$1")]
+[name="Theresa"]There will come a day when they will no longer live in fear.
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", bstart=0.2,bend=0.7)]
+[name="Dying Infected"]......
+[charslot(slot = "m", name = "avg_npc_1296_1#6$1")]
+[name="Theresa"]Your lives should have been so much more.
+[name="Theresa"]Now, though, dream a warm dream... a dream that will come true.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]Sleep, children of Kazdel. Sleep in the warm embrace of home.
+[name="Theresa"]Sleep.
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", bstart=0.2,bend=0.7)]
+[name="Dying Infected"]Thank... you...
+[dialog]
+[charslot(duration=2, isblock=true)]
+The Infected begin to glow with the colors of Originium.
+Tiny stones eat away at flesh and blood, transforming their lives and desires into fleeting sparks.
+Theresa holds their hands to the end.
+[dialog]
+[PlaySound(key="$d_avg_smkedspte", volume=1)]
+[delay(time=1)]
+Until shining dust rises towards the sky and is scattered by the wind, never to become stars upon the heavens.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_048", duration=2, isblock=true)]
+[name="Doctor"]......
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="Julie"]So, you... er...
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]You can call me anything you like. Even 'evil spirit', if that's what you prefer.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="Julie"]I-I don't mean that! It's just, this is the first time we've spoken to each other alone.
+[name="Julie"]You brought us many victories. I've had a hand in some. They also say you're an expert on Originium...
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]...'Expert'.
+[name="Doctor"]Yet it's the first time I've seen Infected die like this with my own two eyes.
+[charslot(slot = "m", name = "avg_npc_1299_1#6$1")]
+[name="Julie"]You're lucky.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]I never thought it would be so...
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[PlaySound(key="$flashback", volume=0.2)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_053")]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="Sarkaz Mercenary"]Does living a little longer count as being saved?
+[dialog]
+[Blocker(a=0.4, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_048")]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="Doctor"]...Never mind.
+[name="Doctor"]It's time to go, Theresa.
+[charslot(slot = "m", name = "avg_npc_1296_1#6$1")]
+[name="Theresa"]Right.
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="Sarkaz Mercenary"]But it's too late, even if we leave now. And the Military Commission has set a trap for us...
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]It'll be fine.
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_snowbootwalk", volume=1)]
+[charslot(slot = "r", name = "avg_npc_1310_1#1$1", duration=1.5)]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_npc_1309_1#1$1", duration=1.5)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1", duration=1.5, isblock=true)]
+[delay(time=2)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]Let's go home.
+[dialog]
+[StopSound(channel="b", fadetime=3)]
+[StopSound(channel="d", fadetime=3)]
+[musicvolume(volume=0.2, fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[bgeffect]
+The Military Commission's after-action report writes:
+'The King of Babel and her most trusted men led her people out of the valley.
+'With a single touch she parted wind, snow, and flames, gentle as a mother parts the bed curtains to put her child to sleep.
+'Our casters and crossbowmen observed the procession, but none dared take the first shot, nor give the order to.'
+The flowery report and Manfred's 'false intelligence' earned an admonition from the Commission, but no further discipline.
+[dialog]
+[charslot]
+[Background(image="bg_room_2",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_048")]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_003_kalts_1#1$1", duration=1, isblock=true)]
+[charslot(slot = "l", focus="l")]
+[name="Kal'tsit"]Doctor.
+[name="Kal'tsit"]I heard about the operation. You...
+[dialog]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_003_kalts_1#4$1", focus="l")]
+[name="Kal'tsit"]Doctor?
+[charslot(slot = "r", name = "avg_npc_048", focus="r")]
+[name="Doctor"]There's something I want to ask, Kal'tsit.
+[charslot(slot = "l", name = "avg_003_kalts_1#1$1", focus="l")]
+[name="Kal'tsit"]Go ahead.
+[charslot(slot = "r", name = "avg_npc_048", focus="r")]
+[name="Doctor"]As a physician, is it saving a life when all you can do is stave off death for a little while?
+[charslot(slot = "l", name = "avg_003_kalts_1#1$1", focus="l")]
+[name="Kal'tsit"]Unless it goes contrary to the patient's wishes, the duty of a physician is to save lives.
+[name="Kal'tsit"]That's what we've always worked to do.
+[name="Kal'tsit"]Why do you ask?
+[charslot(slot = "r", name = "avg_npc_048", focus="r")]
+[name="Doctor"]Looking at Amiya and the people around us makes me feel that you shouldn't have to deal with this kind of suffering.
+[charslot(slot = "l", name = "avg_003_kalts_1#4$1", focus="l")]
+[name="Kal'tsit"]......
+[charslot(slot = "r", name = "avg_npc_048", focus="r")]
+[name="Doctor"]And I...
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1", duration=1.5, isblock=true)]
+[name="Theresa"]Doctor, Kal'tsit, there you are.
+[name="Theresa"]The intelligence meeting just ended. The unexpected Catastrophe has led to a stalemate, and some breathing room for us.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]The two of you need to get some rest. Especially you, Doctor. You've hardly slept since you've been back, right?
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]I'm fine...
+[charslot]
+Theresa glances at Kal'tsit, who seems to sigh wordlessly with her eyes.
+The King of Sarkaz senses guilt and restlessness. It is not an easy thing to accept, watching so many Infected turn to dust before one's eyes.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]Doctor... do you think all this is your fault?
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]It is.
+[name="Doctor"]I won't run from my responsibility, and I won't wallow in self-pity... I just need time to accept the present.
+[name="Doctor"]I—
+[dialog]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[delay(time=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background]
+[Subtitle(text="I don't know if Originium is supposed to hurt a newborn civilization like this.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Subtitle(text="<color=#000000>But Originium is the only way to protect all life and existence.</color>", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Background(image="bg_room_2",screenadapt="coverall")]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[delay(time=0.4)]
+[charslot(slot = "m", name = "avg_npc_048")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[name="Doctor"]......
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]You're tired, Doctor. I'm grateful that you have chosen to bear the burden of these emotions for the sake of this great land.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]Your pain and struggle shows your kindness and ideals. I won't try to wipe them away, but we could share this burden, if you are willing...
+[charslot]
+Theresa wants to hold the Doctor's hand, perceive the Doctor's guilt- and anxiety-filled soul.
+She wants to help the Doctor.
+[dialog]
+[PlaySound(key="$d_avg_tinnitus", volume=0.5)]
+[delay(time=1)]
+But a tiny speck of noise echoes ominously in the King's mind.
+[name="Theresa"]...?
+[name="Theresa"](The Doctor is rejecting me? Or is it...?)
+[dialog]
+[charslot(slot = "m", name = "avg_npc_048", duration=0.5, isblock=true)]
+[name="Doctor"]Sorry, Theresa, but this is not something you need to take on.
+[name="Doctor"]No need to use Civilight Eterna on me. It takes a toll on you too. There are more important uses for it.
+[charslot(slot = "m", name = "avg_npc_1296_1#10$1")]
+[name="Theresa"]More important than helping someone who's given everything for us?
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Hehe... thank you. I mean it.
+[name="Doctor"]You and Scout said we have some breathing room, right?
+[name="Doctor"]I'll make dinner for us, then. I learned it off Misery.
+[name="Doctor"]For our future challenges.
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Background]
+[Image]

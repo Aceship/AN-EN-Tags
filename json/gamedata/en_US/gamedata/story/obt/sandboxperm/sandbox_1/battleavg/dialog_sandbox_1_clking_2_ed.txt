@@ -1,0 +1,61 @@
+[header(actId="sandbox_1", npcId="trap_435_trsrhuntr")]
+[summontrap(charId="trap_467_ttuye", dir="LEFT", x="11", y="9", isChar="False")]
+[summontrap(charId="trap_435_trsrhuntr", dir="RIGHT", x="10", y="11", isChar="False")]
+[summonenemy(enemyId="enemy_7024_clking", x="9", y="11", endX="14", endY="6")]
+[summonenemy(enemyId="enemy_7025_clbb", x="8", y="11", endX="14", endY="6")]
+[camerafocusto(offsetX="10", offsetY="10", time="2", scale="FAR")]
+[foginview(leftBottomX="6", leftBottomY="7", rightUpX="14", rightUpY="12", id="fog_1")]
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]You got the gems? Give them to me, now!
+[decision(option1="You'll need to pay extra.", value1="1.1")]
+[predicate(references="1.1")]
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Alright, what about this? VIP pass for the trading post. Good enough?
+[additem(itemId="sandbox_1_craft_9", itemCount="1")]
+[name="Treasure Hunter", avatarId="bavg_npc_003", isAvatarRight="FALSE"]Don't give it to them! They'll destroy the whole crystal cave once they get the gems!
+[decision(option1="Here are your gems. Now let her go.", value1="2.1")]
+[predicate(references="2.1")]
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Look how clear and shiny they are! The Lord Ameer will reward us. Maybe he'll even make me a muhtasib.
+[name="Acrobat Assistant", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Now we can finally stop running!
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"](Whisper) You wouldn't have had to run anywhere if you weren't committing all those crimes.
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Alright, take the woman and go, while I'm still feeling generous.
+[decision(option1="Come on.", value1="3.1")]
+[predicate(references="3.1")]
+[name="Treasure Hunter", avatarId="bavg_npc_003", isAvatarRight="FALSE"]Thank you.
+[decision(option1="At least we saved your life.", value1="4.1")]
+[predicate(references="4.1")]
+[playanim(id="trap_467_ttuye", anim="Idle", dir="RIGHT")]
+[delay(time="0.5")]
+[withdraw(id="trap_467_ttuye")]
+[withdraw(id="trap_435_trsrhuntr")]
+[delay(time="3")]
+[camerafocusto(offsetX="9", offsetY="11", time="1", scale="MID")]
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Look how bright and beautiful they are! Just like my future!
+[name="Acrobat Assistant", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Can we look too, boss?
+[playanim(id="enemy_7024_clking", anim="Attack", dir="LEFT", looporidle="Idle")]
+[delay(time="1")]
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Alright. But be careful and don't drop them.
+[name="Acrobat Assistant", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]So pretty...
+[summontrap(charId="trap_470_tmantic", dir="LEFT", x="10", y="11", isChar="False")]
+[executeactionarray(target="trap_470_tmantic", key="effect_mantic[hidden]")]
+[delay(time="0.5")]
+[name="???", avatarId="char_215_mantic", isAvatarRight="FALSE"](...It's time...)
+[name="???", avatarId="char_215_mantic", isAvatarRight="FALSE"](Now!)
+[playanim(id="trap_470_tmantic", anim="Attack", dir="LEFT")]
+[delay(time="1")]
+(Gems shatter)
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]My gems! No! How dare you!
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]I told you to be careful!
+[name="Acrobat Assistant", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]I-It wasn't me, boss!
+[name="Acrobat Assistant", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]I-It just shattered in my palm like that! I didn't do anything!
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]No! Noooo!!!
+[uioperation(target="main", enable="False")]
+[withdraw(id="enemy_7024_clking")]
+[withdraw(id="enemy_7025_clbb")]
+[delay(time="3")]
+[name="???", avatarId="char_215_mantic", isAvatarRight="FALSE"](Mission accomplished)
+[name="???", avatarId="char_215_mantic", isAvatarRight="FALSE"](Time to go...)
+[withdraw(id="char_215_mantic")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

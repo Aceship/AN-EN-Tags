@@ -1,0 +1,913 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.2,fadetime=1)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.2,fadetime=1)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="bgs")]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="吹き荒ぶ風は細長い砂埃の帯を巻き上げて、キャタピラが作る轍を覆い、埋めていく。こういう情景は今まで何度も見てきた。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「荒野のアランナ」なんて大層な呼び方をされちゃいるが、自分でも分かってんだ。あたしはひたすら突き進む砂嵐なんかじゃない。コロコロ転がっては止まる、ただのタンブルウィードなんだよ。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="もちろん、労働者たちとの賭け事はあたしの腕の見せどころだし、乗客たちから聞いた珍妙な旅見聞も自慢話の種だ。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="けどそれは……本当に、あたしの物語だと言えるのだろうか？", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="孤独に大地を往く船の下には、くすんだ黄土色の砂地が取り留めもなく広がり、頭上には太陽が爛々と輝いている。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="それは過去の道をそのまま辿っているわけではなく、進む先もズレが生じているようだ。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="果たしてそれは何を求め、何から逃げているのだろうか。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="それから……あたしは一体何を求め、何から逃げてるんだろうか。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[StopSound(channel="bgs", fadetime=3)]
+[curtain(direction = 0,fillfrom = 0.2,fillto = 0,fadetime=3)]
+[curtain(direction = 4,fillfrom = 0.2,fillto = 0,fadetime=3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=3)]
+[PlaySound(key="$d_avg_truckengine", volume=0, loop=true, channel="bgs")]
+[SoundVolume(channel="bgs", volume=0.7, fadetime=0.5)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[name="アランナ"]いい天気だよな。あんな遠くにある源石クラスターまではっきりと見えるぜ。目的地まできっと無事に着けるよ。
+[name="？？？"]……
+[name="アランナ"]まただんまりか……何か話してぇことはねぇのかよ？
+[name="アランナ"]あたしゃ長いこと運転手やってるけど、あんたみたいに退屈な乗客は初めてだぜ。
+[name="？？？"]話すって、何を？
+[StopSound(channel="bgs", fadetime=4)]
+[PlaySound(key="$d_avg_faucetoff", volume=0.6)]
+[name="アランナ"]ハァ、もういい……ってちょっ、たんま――そ、そいつは降ろしてくれるって話だったろ？
+[name="？？？"]何してるの？
+[name="アランナ"]窓を開けて空気を入れ替えようとしただけだ！ 本当だって、誓ってもいい！
+[name="？？？"]そう。
+[name="アランナ"]とりあえずそのデカい得物を一旦どけてくんねぇか？ 話し合いで解決しようぜ。
+[dialog]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l",duration=0.5)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]このままニヤニヤ谷へ向かってくれれば、傷つけたりしない。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]あたしの車をジャックしたうえに、そんなクロスボウだか大砲だかも分かんねぇようなおっかないモン突きつけておいて、「傷つけたりしない」って言われてもな。何を装填してるのか言ってみろ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]特製の矢だよ。感染生物はこれをすごく怖がるの。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]あっそ。正直「ニンジン」か「キャンディー」って答えてくれるのを期待してたんだけど。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]でもまあ、幸いあたしは感染生物じゃないから、今んところはそいつを怖がる必要はなさそうだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]けど、あんたがずーっとそいつをあたしに向けてるつもりだって言うんなら――
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]ハァ……
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="アランナ"]もしも――もしもの話な。あんたが引き金を引くはめになって、あたしがやられたら、その後この車をどうするつもり？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]そうなったら、うちも運転できるから。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]へえ、そう？ けどあんたがハンドルを握った時には、もうとっくにコントロールを失ってるはずだぜ。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]崖下へと向かって真っすぐ突き進むか、あの巨大な源石クラスターに突っ込むかのどっちかさ。
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]いずれにせよ、結果はドッカーンだ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]わかったわかった、じゃ仮に運転手はあんたでもいいし、この車が暴走することもないとしよう。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]あたし一人なら相手するのは簡単かもしれないが、乗客はどうするつもりだ？ 皆は……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]つまりその、後ろにいるザラックの男は？ どうする気だ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]車を降りるチャンスは全員に与えた。君たちが降りなかっただけ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]うちはただ、この車が手に入ればよかったの。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]だったらさ、気にならないわけ？ ……何であの男が降りなかったのかを。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]あたしがあんただったら、あいつを警戒してるだろうよ。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]人を轢いて逃走中の慌てん坊か、仕事をクビになった不運野郎か……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]あんたを尾行してついてきた私服警官って線もあるぞ。確かに今はガタガタ震えてるが、ああ見えてかなりの腕利きだったりして！
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]誰しも秘密の一つや二つはあるさ。そうだろ？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……うん。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]ちなみにあたしが降りなかったのは――雇われの身として、会社の財産を守る責任ってやつがあるからだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]それに、こいつとももう長い付き合いだしな。だから感情的にも倫理的にも、見知らぬ他人に易々と渡すわけにはいかねぇんだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[multiline(name="アランナ",delay=0.2)] この旅は元々……
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[multiline(name="アランナ")] そう、元々はこいつが生まれ変わるための旅路になる予定だったんだぞ！
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[multiline(name="アランナ",delay=0.01,end=true)]本来なら、こいつはあの毎日何億個もの鉱石を飲み込んでは吐き出すアイアンキャロットシティに向かい、乗客たちが注目する中堂々と工場に入っていくはずだった。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[multiline(name="アランナ",delay=0.01,end=true)]そこで改装を受ければ、イカした最新モデルにだってなれた。たとえばシールドモジュールなんか搭載してさ、天災警報が鳴ったらすぐ地面に穴を掘って退避することだってできるようになるんだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[multiline(name="アランナ",delay=0.01,end=true)]ハッ、愛車に代わって感謝しなきゃだな！ おかげでこいつの未来もあたしたちの新生活も、何もかもパーになっちまった！
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="カージャック犯"]君、たくさん話すね。しかもすごく早口。感心しちゃうな。
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#6$1", focus="r")]
+[name="カージャック犯"]でも新生活って何？ うちにはよくわからない……
+[charslot(slot = "r", name = "avg_4117_ray_1#10$1", focus="r")]
+[name="カージャック犯"]生活なんて、どこでも一緒……新しいとか古いとか、そんな違いはないと思う。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]まあ、それもそうだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="アランナ"]けど知ってるか？ あたしにとっちゃさ、突然現れた変人に武器を突きつけられることすら、珍しいことじゃないんだぜ？
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]……悲しいことではあるかもしんないけどな。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……
+すると、カージャック犯は構えていた巨大なクロスボウをゆっくりと下ろした。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]なんだ？ 今のが心に響いちまったか？ ……ま、何でもいい。どうやら、あんたにも多少は人の心があるようだな。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]ならひと言いいか？　公共のトレーラーをタダで貸し切りにしたいんなら、その態度は良くねぇな。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]巻き込んだ相手、つまりあたしらに進んで協力してほしいんなら、せめて愛想くらいよくしろ。
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="カージャック犯"]誰も巻き込むつもりはなかった。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……この時間帯のダイヤなら、お客さんはいないって聞いたから。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]なるほど、綿密に計画を練ってたわけだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]けど、どんなに周到に準備したところで、アクシデントは起こるもんだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]まあ、今日のことはあたしとこのオンボロ車が「大当たり」を引いちまったってことにしてやるよ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……目的地に着いたら、解放するから。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]お金もちゃんと払う。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]そりゃいい。楽しみにしてるぜ。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]じゃあその「口約束」を信じて、ひとまずはニヤニヤ谷へ向かうとしよう――ただし、乗客全員の安全の保証が条件だ。もういちいちそのクロスボウを構えたりするなよ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]わかった。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]そんじゃあカージャック犯さん――駅に着くまでの間だけど、そこのシートにちゃんと座って、風景でも眺めてのんびりしててくれ。
+[stopmusic(fadetime=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[playMusic(key="$formal_loop", volume=0.6)]
+[Background(image="27_g15_customs",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+それからどれだけ時が経っただろう、気付けばトレーラーは徐々に速度を緩め、そのまま停止してしまった。
+到着したのは検問所で、通行待ちの車両が何台も連なっていた。最前の車両がゲートを抜ける度に、トレーラーはようやく少しだけ前へ進むことができる。
+いつものアランナなら、こうして足止めされることを何より嫌がるのだが、今、彼女は少しでも長く渋滞が続くことを願っていた。
+何故なら、渋滞が長引くほどに、本来のコースから外れたこの車を奪還できる見込みが増すのだから。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l",duration=0.5)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "r", name = "avg_4117_ray_1#4$1", focus="r")]
+[name="カージャック犯"]すごい車の数。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]どうせまたどっかの国際的な大実業家かなんかが、ここら一帯の採掘場の鉱石資源を根こそぎ買い占めようとして、使い走りを派遣してんだろう。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]奴らは何も考えず自分勝手に金を転がしてるわけだけど、そのしわ寄せがあたしら道路稼業もんに来るんだから、困ったもんだよ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]ほかの道じゃダメなの？ こんなに混んでるし。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]ニヤニヤ谷へ向かうには、絶対にグリーンメドウ自治州の検問所をパスしなきゃなんねぇ。避けては通れないんだ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]まあ検問っつってもただ通行料を払って登録を済ませるだけだ。検査されたりはしないよ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]そう。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]（後ろのやつ、何もたもたしてんだ。さっさと車間距離詰めろ……そうだ、よしっ、これでUターンはもうできない。）
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",channel="slide",volume=1)]
+カージャック犯は席を立ち、車内の狭い通路を後部へと向かって歩いていき、しばらくするとまた戻ってきた。周りの道路状況でも確認したかったのだろうか。
+[stopsound(channel="slide", fadetime=1)]
+[dialog]
+[delay(time=1.5)]
+[PlaySound(key="$d_gen_walk_n")]
+彼女の足音が再び近づいてくるのにつれ、アランナの鼓動も早まっていく。
+ミラー越しではその全身を見ることはできないが、相変わらずクロスボウをしっかり握り込んでいることは目視できた。
+鏡は次第と彼女が身に着けたカーキ色に埋め尽くされ、やがてその姿はアランナの視界にも入り、そして助手席へと戻ってきた。
+落ち着いている様子のカージャック犯は、やはり落ち着いた動作で着席する。革のシートとこすれ合うかすかな衣擦れの音は、アランナのどよめく鼓動をいい具合にかき消した。
+[PlaySound(key="$d_avg_clothmovement", volume=0.7)]
+[Dialog]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r",duration=0.5)]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]……どうかしたのか？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]別に。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]（疑われたわけじゃないみたいだな。よかったぜ。）
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]（ふん……ニヤニヤ谷までの道がこれ一本なわけないだろ。確かに一番の近道ではある。が、それより重要なのはここを抜けるのに必ず検問を通らなくちゃならないことだ。）
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]（検査官と話すチャンスさえあれば、必ずSOSを出せる。いくらクロスボウを持ってるからって、さすがに訓練を積んだ係官には敵わないだろう。）
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]天災かも。
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="アランナ"]は？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]渋滞してる車はみんな、天災……もしくは別の何か、そういうよくないものから逃げて来たのかもしれない。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]……どうしてそんなことが分かるのさ？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]車体に、感染生物の痕跡があった。それに粉塵も……ほんの少しだけど、うちには見える。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……あとは、乗ってる人たちの顔。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]事故が起こると、採掘場の労働者はみんな、ああいう顔をする……
+[charslot(slot = "r", name = "avg_4117_ray_1#10$1", focus="r")]
+[name="カージャック犯"]これからどこへ行けばいいのかわからなくなった時、みんなこうして焦るし、不安になる。
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="アランナ"]……そいつは聞き捨てならねぇな。
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="アランナ"]ちょっくら聞いて来る。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)] 
+[charslot]
+[Background(image="27_g15_customs",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[name="アランナ"]おい、そこのスラグダンプの兄ちゃん！
+[name="アランナ"]今日はどうしてこんなに混んでんだ？ 何か知らないか？
+[name="疲弊した運転手"]あんた、ダブルヘルメット鉱区から来たんじゃなさそうだな。
+[name="アランナ"]ああ、ラストスラグのほうから来た。
+[name="アランナ"]ダブルヘルメット鉱区って……たしか少し前に、資源が豊富な鉱脈が見つかったとかで、大勢の労働者がわれ先に働きに出てて――
+[name="疲弊した運転手"]ああ。んで、そこで事故が起きた。
+[name="疲弊した運転手"]不安定な源石が爆発して、坑道ごと吹っ飛んじまった。おかげで鉱区ごと駄目になっちまった……
+[name="アランナ"]そいつは……なんというか、災難だったな。
+[name="アランナ"]それで逃げてきたわけだな？ 他のやつらは？
+運転手は突然激しく咳き込み始めた。その時にようやく、アランナは彼の顔色が異様なほど青白いことに気がついた。
+[name="疲弊した運転手"]ゴホッ……残った連中は、運次第としか言えない……はぐれた家内と子供も、運よく難を逃れてるといいのだが。
+[name="疲弊した運転手"]今ここで車に乗ってるのは、恐らくほとんどが俺と同じく帰るに帰れない連中だろう。現場の後始末が終わるまで、どこかに身を寄せるしかない……
+そこまで聞いて、アランナは背後に目をやった。
+カージャック犯は依然落ち着いた表情で、反対側の窓の外に視線を向けている。
+[dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)] 
+[charslot]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r",duration=0.5)]
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]なに？
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]……いいや、別に。
+[charslot(slot = "r", name = "avg_4117_ray_1#5$1", focus="r")]
+[name="カージャック犯"]乗り込む気だね。
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="アランナ"]えっ？
+[charslot(slot = "r", name = "avg_4117_ray_1#5$1", focus="r")]
+[name="カージャック犯"]あの武器を持った人たち、車に乗り込む気だよ。
+[dialog]
+[charslot]
+乗り込むだって？ 誰もこのトレーラーに近づいてきてないが。
+そう思っていたアランナはカージャック犯の視線を辿り、ようやく彼女の言葉を理解した。
+検問所の係官が前方の車の運転手に何かを話したかと思えば、大げさな装備に身を包んだの男数人が、乱暴な仕草でその車の中へと押し入った。
+ほどなくして、運転手が車から引きずり降ろされた。服の袖を切り裂かれた彼の腕には、源石結晶が露出しており、血も流れている。
+アランナの胸に、漠然とした不安がよぎった――
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="r")]
+[charslot(slot = "r", name = "avg_4117_ray_1#5$1", focus="r")]
+[name="カージャック犯"]捜してるんだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#5$1", focus="r")]
+[name="カージャック犯"]あの人たち、感染者を捜してる。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Background(image="bg_towerinside",screenadapt="coverall")]
+[Delay(time=1)]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+トレーラーの狭い工具室の中で、ウォーミーは言いつけをしっかりと守っていた。
+[charslot(slot = "m", name = "avg_4081_warmy_1#10$1", focus="m")]
+[name="鍋蓋ちゃん"]……うーん。
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$1", focus="m")]
+[name="鍋蓋ちゃん"]このカージャックしてきたコータスのお姉さん、やっぱり変です。なんだかランナお姉ちゃんと仲良くやってるようにも見えますし、本当に悪い人なのでしょうか……
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$1", focus="m")]
+[name="鍋蓋ちゃん"]あっ、ウォーミーわかっちゃいました！ きっとお姉ちゃんがすごいからです。だから誰とでもすぐ仲良くなれるんですね！
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$1", focus="m")]
+[name="鍋蓋ちゃん"]この監視モニターを見ればわかります、ほら――
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]そ、そうだね……
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]見た感じ……誰かを傷つける気はなさそうだ。
+[charslot(slot = "m", name = "avg_4081_warmy_1#10$1", focus="m")]
+[name="鍋蓋ちゃん"]でしたら要求を聞いてあげてもいいのでは？ それともやっぱり予定していた通りの路線に戻した方がいいのでしょうか？ だとしたらこのトレーラーの運行終了も予定通りになるんでしょうか？
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]さ、さあ……
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$1", focus="m")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[name="鍋蓋ちゃん"]って、えっ――！？
+[charslot(slot = "m", name = "avg_npc_1184_1#4$1", focus="m")]
+[name="おどおどした乗客"]どどどどうしたんだい？
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$1", focus="m")]
+[name="鍋蓋ちゃん"]そういえば、お兄さん……どうしてこの工具室にいるんですか？
+[charslot(slot = "m", name = "avg_4081_warmy_1#5$1", focus="m")]
+[name="鍋蓋ちゃん"]ここはこのトレーラーの秘密スペースですよ。部外者は立ち入り禁止です！
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="おどおどした乗客"]そ、それは……えっと……僕、カージャックなんて人生で初めてだから、ちょっと怖くて……いや、ちょっとどころか、すごく恐ろしくて……
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="おどおどした乗客"]それでドアがあるのを見つけたから、何も考えずに入ってきちゃった……
+[charslot(slot = "m", name = "avg_npc_1184_1#3$1", focus="m")]
+[name="おどおどした乗客"]お願いだ、どうかここにいさせてくれ。ほら、スペースを取らないように、こうやって隅っこに縮こまって、君の仕事の邪魔もしないようにするからさ……
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1", focus="m")]
+[name="鍋蓋ちゃん"]そういうことなら、わかりました。ただ、これだけは聞かせてください。
+[charslot(slot = "m", name = "avg_4081_warmy_1#10$1", focus="m")]
+[name="鍋蓋ちゃん"]そんなに怖がっているのに、どうしてさっき降りていいと言われた時に降りなかったのですか？
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]ぼ……僕にもよくわからないんだ……怖いことは怖いんだけど……なんだか、ふと肩の荷が下りたような気がして。
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]そう……ここから降りたら、もっと怖い目に遭うかもしれないから……僕も願ってるんだ。この車ができるだけ遠くまで、できるだけ長い間走ってくれればって――
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]……そういう君は？ どうして降りなかったんだい？
+[charslot(slot = "m", name = "avg_4081_warmy_1#11$1", focus="m")]
+[name="鍋蓋ちゃん"]わたしですか？ ランナお姉ちゃんがまだ残ってるのに、わたしだけ降りられるわけないじゃないですか！
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]「ランナお姉ちゃん」って……運転手さんのことかい？ 君たちは家族？ それとも……
+[charslot(slot = "m", name = "avg_4081_warmy_1#11$1", focus="m")]
+[name="鍋蓋ちゃん"]家族ですか……うーん、どうでしょう。家を出てずいぶん経っているので、家族がどんな感じだったのか、思い出せないから違うかもしれませんが……
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1", focus="m")]
+[name="鍋蓋ちゃん"]お姉ちゃんのことをパパみたいだって思う時はあります。でもママにも、坑夫のおじさんやおばさんたちにも似てて……だけど皆に似てるってことは、誰にも似てないってことですよね？
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1", focus="m")]
+[name="鍋蓋ちゃん"]だからランナお姉ちゃんはランナお姉ちゃんです。それにお姉ちゃんは友達と賭けをしてて、その対象がわたしなので……
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1", focus="m")]
+[name="鍋蓋ちゃん"]そう考えるとたぶん……家族ってわけではないと思います！ わたしたちはただ、このトレーラーの中で一緒に暮らしてるだけです。
+[musicvolume(volume=0.3, fadetime=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="27_g15_customs",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[musicvolume(volume=0.6, fadetime=1)]
+検問所を抜ける通路はもう目と鼻の先にあるものの、固く閉ざされたゲートがトレーラーを押し留めている。
+今度は検査官数名がこっちへやってきて、運転室の車窓をコンコンと叩いた。
+少し躊躇はしたが、アランナは結局自ら降りることにした。
+[dialog]
+[PlaySound(key="$d_avg_steamburst", volume=1)]
+[PlaySound(key="$d_avg_gateopen", volume=1, loop=true, channel="g")]
+[StopSound(channel="g", fadetime=2.5)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1", focus="m",duration=0.5)]
+[delay(time=0.7)]
+[name="アランナ"]なんだい、お兄さん。
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]保安検査だ。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1", focus="m")]
+[name="アランナ"]うちは公営の輸送トレーラーだぜ？ 調べる必要はないはずだろ。
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1", focus="m")]
+[name="アランナ"]ほら、運行許可証だってこの通りちゃんとあるし。
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]今は特殊な状況下にある。ご協力願おう。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1", focus="m")]
+[name="アランナ"]いやいや、素通りさせてた車両も結構あったろうが。そいつらは良くて、あたしのトレーラーじゃダメとは納得がいかないんだが？
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="アランナ"]ったく、勘弁してほしいぜ。なんでこう次から次に「当たり」を引いちまうんだ。とんだ厄日だよ！
+[charslot]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="r")]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="r")]
+[name="検査官B"]（小声）隊長、これ以上無駄話に付き合う必要はありません。さっき識別コードを確認してきましたが、ビッグピラー自治州から来た車両です！
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="r")]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="r")]
+[name="検査官B"]（小声）あそこは管理がルーズな採掘場ばかりで、防護プロセスも徹底されてませんから、感染者がわんさかいるんですよ。
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]……このトレーラーの識別コードは、我々グリーンメドウ自治州のものではない。よそから来た車両はすべてチェックすることになっている。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="アランナ"]断るって言ったら？
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]その場合、君たちにはその車から降りてもらい、完全武装した警備隊によって事務所まで「エスコート」され、取り調べを受けることになる。
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]数日、もしくは数ヶ月間の拘留、及び当該違反車両の没収、運行許可証の剥奪、多額の罰金を科される可能性もあるだろう。
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]具体的な処置の如何は、君がいつまで管を巻き続けるのかによって変わるがな。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="アランナ"]おいおい、流石にちょっと横暴すぎやしないかい？ 長いこと運転手をやってきて、検問所なんて山ほど通ってきたけど、こんなのは初めてだ……
+[charslot]
+警備員たちは一斉にクロスボウを構え、アランナに向けた。
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1", focus="m")]
+[name="アランナ"]……わーったって。
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="アランナ"]保安検査なら、運転手のあたしが協力すればいいんだよな？ あたし以外に乗ってるのは乗客だけだから……
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]乗客？
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="アランナ"]ああそうさ、みんな……
+[charslot]
+そこまで言いかけて、アランナは振り返り、開いたドア越しに車内の状況を素早く確認した。
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]……
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="アランナ"]（鍋蓋ちゃんはうまく隠れてるみたいね。）
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1", focus="m")]
+[name="アランナ"]（けど……残ってたあのザラックはどこ行ったんだ？）
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="アランナ"]（それにカージャック犯は……なんでクロスボウに矢をつがえてんのさ！？）
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="アランナ"]……あの子……あの子が乗客だ。チケットはちゃんと買ってるよ。
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="アランナ"]なあ、あんたが持ってるその装置、明らかに保安検査って感じじゃないよな？ これまで何度も検問所は通ってきたけど、鉱石病の感染状況の検査なんて一度もされたことないぞ。
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="アランナ"]乗客が嫌がるならあたしは強制できないからな。それに運営会社に訴えられでもしたら――
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]黙れ。
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="検査官A"]乗り込むぞ。
+[charslot]
+[musicvolume(volume=0.3, fadetime=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[musicvolume(volume=0.6, fadetime=1)]
+程なくして、トレーラーにいた者全員が揃って座席に座らされた。腕にはそれぞれ鉱石病検査装置が取り付けられている。
+アランナは今、自分自身よりもほかの三人が心配でならなかった――
+鍋蓋ちゃんはうつむきながら、虚ろな目でじっと検査装置のプログレスメーターを見つめている。
+カージャック犯は向かい側に座る警備員と、開いたドア越しに見える検問所をまじまじと観察している。
+そして降車を拒んだザラックの男は、少し距離を置いてカージャック犯の横に座っていた……足がガタガタ震えているようだ。
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]この小部屋にこっそり隠れていた二人は何者だ？ 彼らが乗車していることを君は知っていたのか？
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="アランナ"]……もちろん、知ってたさ。
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]では先ほどは、故意に隠蔽したと？
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="アランナ"]それは……あんたらがあんな剣幕で詰め寄るもんだから、頭が真っ白になって言い忘れただけだ。
+[stopmusic(fadetime=1)]
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1", focus="m")]
+[name="アランナ"]ははっ、とりあえず落ち着いて話し合おうぜ……
+[playsound(key="$d_avg_medicalbeep")]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]――鳴ったのはどいつだ！？
+[PlayMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#3$1", focus="m")]
+[name="鍋蓋ちゃん"]……！
+[charslot(slot = "m", name = "avg_4081_warmy_1#3$1", focus="m")]
+[name="鍋蓋ちゃん"]（ど、どうしよう……こういう時、ランナお姉ちゃんなら……）
+[dialog]
+[charslot]
+一筋の汗がアランナの頬を伝って落ちた。
+検査官たちが物わかりのいい相手だとはとても思えない。ましてその周囲を取り囲む警備員たちは、もっと話が通じなさそうだ。
+この状況を打開する策を、速やかに考え出さねばならない。さもなくば……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]な、なあ……頼むよ、検査官さん……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]こんな小さい子相手にムキになんなよ。グリーンメドウに……あんた方の自治州に、父親に会いに来ただけなんだ。
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]父親さんがここの精錬所勤めで、一年に一回故郷へ帰るのも難しいらしくて……あんたらの検問所の壁やゲート、この検査装置に使う材料だって、この子の父親の仕事の賜物かもしれねぇだろ。
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]そんな働き者の親父さんを安心させるため、この小さなコータスはふた月か三月に一度だけあたしの車に乗って、顔を見せに行ってるのさ。
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]……もううちの常連客と言えるわけで、今まで一度も問題はなかったんだ。ちょっと融通利かせてくれりゃあ済む話なんだよ。
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]何もこんな親孝行の可哀想な子を困らせることもないだろ？
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]……
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]先日、ダブルヘルメット鉱区で発生した鉱山事故のせいで、多くの被災者が我々の管轄区域に疎開してきた。
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]感染者の流入は厳重に取り締まるようにと、上から言われている。融通がどうのという問題ではない。責務である以上、我々とてやむを得んのだ。
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]（手で合図する）やれ。
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[name="アランナ"]――！
+[Dialog]
+[PlaySound(key="$flashback",volume=0.4)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[musicvolume(volume=0.3, fadetime=1)]
+[Delay(time=0.6)]
+[Background(image="bg_20_G08",screenadapt="coverall")]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.7, fadetime=0)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.6)]
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="チャーリー"]アランナ。昨夜の夜のアレ、はっきり見たぞ。
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="チャーリー"]あのチビ、感染者で間違いないな？　どうりで俺たちのところに連れてきたがらなかったわけだ！　後生大事に車ん中で二年も匿ってたなんて……
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="チャーリー"]……お前は馬鹿だ。ノリで受けた賭けのために、ここまでするなんて本当に大馬鹿だ。
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="チャーリー"]ずっと俺が言い続けてただろう。お前のその負けず嫌いな性格、死んでも頭を下げたがらないプライドの高さは……
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="チャーリー"]いつか絶対に自分の首を絞めることになる、そして周りの人々まで巻き込んじまうってよ！
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1", focus="m")]
+[name="アランナ"]……
+[Dialog]
+[charslot(duration=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[focusout(duration=0, type="bg", from=1, to=0, block=true)]
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[name="アランナ"]待ってくれ！
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]……
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="アランナ"]検査官の旦那……あたしたち、もうここは通らないからさ、元来た道を引き返すよ、今すぐに！
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="アランナ"]だから頼む。それで勘弁してくれないか？
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]駄目だ。州境にあるが検問所は我々の管轄内にある。境内に入った以上、たとえ通らないにしても、こちらの指示には従ってもらう。
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="アランナ"]……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]……ここの通行料はきちんと支払うし、罰金だって文句ナシで受け入れる。それでも駄目なら……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]このトレーラーを押収してくれてもいいし、あたしを連行しても構わない。調査にはあたしが協力するから……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]だから頼む。その子だけは……見逃してやってくれないか？
+[dialog]
+[charslot]
+アランナのこんな表情を見るのは、ウォーミーにとって初めてのことだ。
+今まで一緒に過ごしてきた中で、アランナはいつだって勇敢で、恐れ知らずで、大胆不敵だった。
+おどけた顔で人をからかったり、武勇伝をおおげさに語ったり、人目をはばからず大声で笑う――
+そんな彼女が今は、あんなに腰を低くして検査官に許しを懇願している……それもすべて自分のために。
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]連れていけ。
+[dialog]
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1", focus="m")]
+[charslot(slot = "r",name = "avg_npc_007",posfrom = "100,0", posto = "0,0",duration = 0.5, focus="m")]
+[charslot(slot = "l",name = "avg_npc_008",posfrom = "-100,0", posto = "0,0",duration = 0.5, focus="m")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m", action="shake",random=true, power=5, times=30,isblock=true,duration=0.5,afrom=1,ato=1, focus="m")]
+[name="鍋蓋ちゃん"]ランナお姉ちゃん……
+[charslot(slot = "m", name = "avg_4081_warmy_1#11$1", focus="m")]
+[name="鍋蓋ちゃん"]……わたしなら、大丈夫ですから。
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="アランナ"]嫌だ……
+[charslot(slot = "r",name = "avg_npc_007",focus="m")]
+[charslot(slot = "l",name = "avg_npc_008",focus="m")]
+[charslot(slot = "m", name = "avg_4081_warmy_1#4$1", focus="m")]
+[name="鍋蓋ちゃん"]お見送りはいりません。少しの間離れるだけです。またお姉ちゃんを探しに来ますから。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)] 
+[charslot]
+[Background(image="27_g15_customs",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[playsound(key="$d_avg_medicalbeep")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]まだ感染者がいたのか？
+[charslot]
+[name="検査官B"]こいつもです！
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]そいつも連行しろ。
+[stopmusic(fadetime=2)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]……どこへ行った？
+[PlaySound(key="$d_avg_arrowshot", volume=1)]
+[charslot(duration=0.5)]
+いきなり飛んできた一本の矢が、確認のためトレーラーへ乗ろうとした検査官の動きを遮った。
+[dialog]
+[PlaySound(key="$d_avg_arrow_rain")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.3, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=0, fadetime=0.5, block=true)]
+それから続けざまに矢が放たれ、彼らは後退を余儀なくされた。
+[dialog]
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", focus="m",duration=0.5,isblock=true)]
+[delay(time=1)]
+[PlayMusic(intro="$escape_intro", key="$escape_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[multiline(name="検査官A")]なっ……
+[multiline(name="検査官A",end=true)]紫色の髪の女だ！ 捕らえろ！
+[dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="警備隊"]はっ！
+[dialog]
+[PlaySound(key="$d_gen_soldiersrun",volume=1)]
+[charslot(slot = "r",name = "avg_npc_007",posfrom = "100,0", posto = "0,0",duration = 0.5)]
+[charslot(slot = "l",name = "avg_npc_008",posfrom = "-100,0", posto = "0,0",duration = 0.5)]
+[delay(time=0.6)]
+[charslot(duration=0.3)]
+[CameraShake(duration=1, xstrength=30, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_battlefield_environment", volume=0.4, loop=true, channel="bgs")]
+[PlaySound(key="$fightgeneral",volume=0.6)] 
+[CameraShake(duration=0.4, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[PlaySound(key="$d_avg_punch02",volume=0.6)] 
+[CameraShake(duration=0.4, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[PlaySound(key="$d_avg_punch",volume=0.6)] 
+[CameraShake(duration=0.4, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+拳、蹴り、クロスボウによる殴打により、何名かの警備員が地面に倒れ込み、顔を歪める。
+そしてまたもや放たれた矢の雨が彼らの衣服を貫き、地面に縫い付けた。
+動けなくなった警備員たちの上を、例のカージャック犯は跨いで進んだ。そしてウォーミーの元へとたどり着く。
+[StopSound(channel="bgs", fadetime=2)]
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", focus="m")]
+[name="カージャック犯"]行こう。
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$1", focus="m")]
+[charslot(slot = "m", action="jump", power=5, times=2,duration=0.3)]
+[multiline(name="鍋蓋ちゃん")]え？
+[charslot(slot = "m", name = "avg_4081_warmy_1#3$1", focus="m")]
+[multiline(name="鍋蓋ちゃん",end=true)]……は、はい！
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="検査官A"]ま、待て！ 貴様ら――
+[dialog]
+[charslot]
+[musicvolume(volume=0.3, fadetime=0.1)]
+[interlude(maskid = "ui_cutin_mask_horizon", style = 1, size = "1280, 100",offset = "0,25", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_black", afrom = 1, ato = 1, aduration = 0,sfrom = "1.3,1.3", sto = "1.3,1.3", sduration = 0, block = false)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "400,0", name = "cutin_char_18", aduration = 0.1)]
+[delay(time=0.4)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "400,0", name = "cutin_char_19", aduration = 1,afrom=1,ato=1)]
+[delay(time=0.5)]
+[interlude(channel = 2, clear = true)]
+[delay(time=0.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[charslot(slot = "m", action="shake",random=true, power=5, times=60,duration=0.3)]
+[multiline(name="検査官A")]いっ、
+[multiline(name="検査官A",end=true)]いや、何でもない……
+[charslot(slot = "m", name = "avg_npc_1183_1#4$1", focus="m")]
+[name="アランナ"]……
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", focus="m")]
+[name="カージャック犯"]車を出して。
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", focus="m")]
+[name="カージャック犯"]……何してるの？
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="アランナ"]……コホンッ。行くよ、乗りな！
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="アランナ"]（……こいつのこと、検査官に突き出さなくて正解だった。）
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="アランナ"]そうだ、そっちのあんたはどうする？
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="アランナ"]……てかあんた、検査装置鳴ってなかったよな？ なんで一緒に降りてきた？
+[charslot(slot = "m", name = "avg_npc_1184_1#2$1", focus="m")]
+[name="おどおどした乗客"]……僕？
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="おどおどした乗客"]僕は……ただ、その、怖くて……
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="おどおどした乗客"]ど、どこでもいいですから、ついて行かせてくれると……
+[charslot]
+[name="地面に倒れた警備員"]逃げられると思うなよ！
+[charslot(slot = "m", name = "avg_npc_1184_1#4$1", focus="m")]
+[name="おどおどした乗客"]あっ……
+[dialog]
+[charslot]
+足を掴まれたザラックの乗客は、体勢を崩したせいで、警備員の手を思い切り踏みつけた。
+[PlaySound(key="$fightgeneral",volume=0.5)]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[name="地面に倒れた警備員"]ぎゃあっ！！！ 指が――
+[charslot(slot = "m", name = "avg_npc_1184_1#2$1", focus="m")]
+[name="おどおどした乗客"]ご、ごめんなさい！ わざとでは！ ……も、もう行きますね！
+[charslot(duration=0.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[playMusic(intro="$normal02_intro", key="$normal02_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="カージャック犯"]ぞろぞろ集まってくるね。
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="アランナ"]増援だなこりゃ……マズった、大ごとになったぜ。
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="アランナ"]どうするよ？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]四十人以上はいる。対装甲砲まで装備してる。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]進路も分厚い鋼鉄のゲートで塞がれてるし。
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="カージャック犯"]打開策も思いつかない。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]打開策……なら……へへっ、一つ思いついたぜ。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]ただ、無茶ぶりなやつだ。でももし成功したら、向こう数年は自慢できるだろうな。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]それってどんな？
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]いいかい、カージャック犯さん。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]あたしのトレーラーを、そんじょそこらの普通のトレーラーと一緒にされちゃ困る。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]こいつの正式名称は何だと思う？
+[charslot(slot = "r", name = "avg_4117_ray_1#4$1", focus="r")]
+[name="カージャック犯"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]こいつはなぁ――土石掘削兼サカビンノキ移植兼都市間人員輸送用トレーラーってのさ！
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]巨石やサカビンノキの運搬はもちろん、ラストスラグのゲートを支えてる二本の鉄骨だって、こいつのおかげで組立てられたようなもんなんだぜ。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]そして何を隠そう、それを成し遂げたのはこのあたしなんだ。
+[charslot]
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$1", focus="m")]
+[name="鍋蓋ちゃん"]ランナお姉ちゃん……
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="r")]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]手が震えてるよ。
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="アランナ"]うっさいわ！ そんじゃまあ、しっかり掴まってな――
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="アランナ"]ゲートに突っ込むぞ！
+[dialog]
+[PlaySound(key="$sportscarstart", volume=0.6)]
+[delay(time=0.8)]
+[CameraShake(duration=10, xstrength=40, ystrength=40, vibrato=40, randomness=90, fadeout=true, block=false)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_avg_collapse", volume=0.6)]
+[PlaySound(key="$d_gen_signalbomb",Delay=0.05,volume=1)]
+[CameraShake(duration=0.1, xstrength=1, ystrength=1, vibrato=40, randomness=90, fadeout=true, block=false)]
+[stopmusic(fadetime=2)]
+[charslot]
+[delay(time=4)]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.15,fadetime=1)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.15,fadetime=1)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$saferoom_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_truckengine", volume=0.6, loop=true, channel="bgs")]
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]……
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="おどおどした乗客"]あのー……
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="おどおどした乗客"]すみません……何か、この穴たちを塞げるようなものはないでしょうか？
+[charslot(slot = "m", name = "avg_npc_1184_1#3$1", focus="m")]
+[name="おどおどした乗客"]少し……冷えるもので……
+[charslot]
+[StopSound(channel="bgs", fadetime=4)]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="bse")]
+車体に空いた複数の穴から、荒野の風が吹き込んできて、ザラックの髪を乱している。
+[StopSound(channel="bse", fadetime=10)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]ねぇな。まあ少しの間の辛抱だ。
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[multiline(name="アランナ")]後でどっかの移動区画にでも寄って、修理用の材料を買えば……
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[multiline(name="アランナ",end=true)]って、なんであんたまだ乗ってんだよ！
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]一体何者なんだ！？
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="おどおどした乗客"]あっ、僕は……その……ただの乗客で……
+[name="おどおどした乗客"]あ、怪しい者では！ 善良な一般市民です！ 本当です！ これ、僕の身分証……
+[charslot]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]ふぅん、ジェリーっていうのか……でもなぁジェリーさん、善良な一般市民がここにいても、今は困るんだよなあ。
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="ジェリー"]……ご安心を！ さっきのことは決して言い触らしたりはしませんから！
+[charslot]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]まあいいさ。こうなった以上……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]今ここに乗ってるやつは、漏れなく共犯だ。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]聞こえたかい、カージャック女。これであたしたち、めでたくあんたの仲間入りだ。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]……けど、さっきは助かったよ。ありがとな、鍋蓋ちゃんを助けてくれて。
+[charslot(slot = "r", name = "avg_4117_ray_1#6$1", focus="r")]
+[name="カージャック犯"]うちのも鳴ってたから。
+[charslot(slot = "r", name = "avg_4117_ray_1#6$1", focus="r")]
+[name="カージャック犯"]捕まったら、収容区に連れてかれる。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]けどうちは、ニヤニヤ谷に行かなきゃいけない。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]はいはい。行ってやりますよ、ニヤニヤ谷に。このトレーラーは今からニヤニヤ谷へ向かって一直線だ！
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]――と言いたいところだが、今の燃料じゃあそこまで持たないだろうから、やっぱりどっかの移動区画には寄らせてもらうぞ？ ついでに傷だらけの車体も少しは修理しないとな……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]じゃないと、車を返す時に会社に説明つかなくなる。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]うん。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]そうだ、あんた名前は？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="カージャック犯"]採掘場の人たちには、レイって呼ばれてた。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]レイか。うーん、やっぱ「カージャック女」のほうがしっくりくるかも。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]で、流石に気になるんだが……あんた車は乗っ取るわ、警備隊員はぶん殴るわで、ここまでしてニヤニヤ谷へ行きたいのは一体なぜなんだ？
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]あそこは天災で破壊された荒地や廃墟ばかりで、道なんてほとんど通じてないって聞いたけど……まさか、新しく発見された未知のお宝でも眠ってたりして？
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]もったいぶらずに言えよな！ ほんとにそうなら、こんだけの騒ぎを起こした甲斐もあるってもんだ！
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="レイ"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#10$1", focus="r")]
+[name="レイ"]大きな影を探しに行くんだ。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]……あん？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="レイ"]霧の中で光を放つ、山みたいに大きな影。
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="レイ"]それに、言葉も喋る。
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]……しゃ……喋る影だと？
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="レイ"]うん。
+[charslot]
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$1", focus="m")]
+[name="鍋蓋ちゃん"]……
+[charslot(slot = "m", name = "avg_npc_1184_1#2$1", focus="m")]
+[name="ジェリー"]……
+[charslot]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="アランナ"]……はぁ！？ なんだそりゃ！？
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=3)]
+[background]
+[charslot]
+[curtain(direction = 0,fillfrom = 0.15,fillto = 0,fadetime=0.1)]
+[curtain(direction = 4,fillfrom = 0.15,fillto = 0,fadetime=0.1)]
+[curtain]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Image]

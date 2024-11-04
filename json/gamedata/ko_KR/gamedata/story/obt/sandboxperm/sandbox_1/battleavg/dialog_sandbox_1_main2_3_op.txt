@@ -1,0 +1,66 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="8", y="7", charId="trap_471_tegmaus", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="10", y="7", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[foginview(leftBottomX="5", leftBottomY="5", rightUpX="11", rightUpY="12", id="fog_1")]
+[camerafocusto(id="trap_471_tegmaus", offsetX="1", scale="CLOSE", time="1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]거기서 멈춰. 더 다가오면 공격한다! 말해봐, 왜 나를 따라왔지?!
+[decision(option1="이 노트, 네 거 맞지?", value1="1.1")]
+[predicate(references="1.1")]
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]지금까지 날 쫓아온 게 고작 이 노트를 돌려주기 위해서였다고?
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]며칠 전, 네가 신전에서 머물렀을 때 이 노트를 놓고 왔더라고. 여사제 말로는 네가 항상 들고 다니던 노트니까 아마 중요한 물건일 거라고 하던데.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]마침 우리도 가는 길이 같았거든, 따라와서 노트를 돌려주는 것뿐이었어.
+[camerafocusto(id="trap_471_tegmaus", scale="CLOSE", time="1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]고마워. 혹시 보수라도 줄까? 말해봐, 뭐가 필요해?
+[decision(option1="고대 유적에 관해 알고 싶어.", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="그게 보물이랑 무슨 관련이 있어?", value1="3.1")]
+[predicate(references="3.1")]
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]호기심 때문에 사람이 죽을 수도 있거든?
+[decision(option1="네가 지명수배인 게 그것 때문이야?", value1="4.1")]
+[predicate(references="4.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]아미르군이랑 맞서는 게 두렵지도 않아? 녀석들도 그걸 찾고 있을 텐데.
+[decision(option1="이미 원수가 된 사이야.", value1="5.1")]
+[predicate(references="5.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]그럼 뭐, 정 알고 싶다면 나머지 반쪽 '원판'을 찾아줘.
+[decision(option1="그게 뭐야? '원판'?", value1="6.1")]
+[predicate(references="6.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]내 노트를 읽어봤을 거 아냐?
+[decision(option1="당연하지!", value1="7.1", option2="대충 훑어봤어.", value2="7.2")]
+[predicate(references="7.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]아무튼 그건 돌로 만들어진 커다란 원판이야.
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]소문에 따르면 누가 모래섬에서 그걸 봤대.
+[decision(option1="소문…… 섬……", value1="8.1")]
+[predicate(references="8.1")]
+[decision(option1="알았어, 찾아줄게.", value1="9.1")]
+[predicate(references="9.1")]
+[decision(option1="너를 어떻게 부르면 될까?", value1="10.1")]
+[predicate(references="10.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]음……
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]페페라고 불러.
+[withdraw(id="trap_471_tegmaus")]
+[withdraw(id="trap_467_ttuye")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]
+[predicate(references="7.2")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]아무튼 그건 돌로 만들어진 커다란 원판이야.
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]소문에 따르면 누가 모래섬에서 그걸 봤대.
+[decision(option1="소문…… 섬……", value1="11.1")]
+[predicate(references="11.1")]
+[decision(option1="알았어, 찾아줄게.", value1="12.1")]
+[predicate(references="12.1")]
+[decision(option1="너를 어떻게 부르면 될까?", value1="13.1")]
+[predicate(references="13.1")]
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]음……
+[name="???", avatarId="bavg_npc_001", isAvatarRight="FALSE"]페페라고 불러.
+[withdraw(id="trap_471_tegmaus")]
+[withdraw(id="trap_467_ttuye")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

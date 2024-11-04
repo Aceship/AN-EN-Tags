@@ -1,0 +1,42 @@
+[header(actId="sandbox_1", npcId="trap_466_tzumama")]
+[summontrap(x="7", y="4", charId="trap_466_tzumama", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="9", y="4", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[camerafocusto(offsetX="8", offsetY="4", time="0.2", scale="MID")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]드디어, 말로만 듣던 그 '좋은 곳'에 도착했네.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]우리의 핵심 작업의 특수성을 고려해서, 주둔지 바깥에 따로 공터를 하나 더 마련했어. 나중에 손님 접대 외에도……
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]물자 조달, 설비 업그레이드, 창고 관리 같은 건 다 여기서 하게 될 거야…… 필요하면 언제든지 여기 와서 나를 찾으면 돼.
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1.5")]
+[playanim(id="trap_467_ttuye", anim="Special_Begin", looporidle="Special_Loop", dir="LEFT")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]주마마가 여기서 캠프를 관리하기로 했으니까, 나는 주변 탐색이나 자원 수집 같은 임무를 맡을게.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]캠핑카도 이미 튜닝이 끝났어. 이제 더 복잡한 지형에서도 운용할 수 있을 거야. 연료만 준비되면 내일 아침에도 당장 출발할 수 있거든.
+[decision(option1="그렇게 빨리?", value1="1.1")]
+[predicate(references="1.1")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1.5")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]어쩔 수 없어. 길에서 시간을 너무 허비한 탓에 창고의 물자가 슬슬 바닥이 보여.
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1.5")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]전에 캠프 서쪽의 라브 아라키슈투 정글을 간단하게 탐색해 봤는데, 거기 자원이 꽤 많더라.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]그래서 이번엔 좀 더 깊이 탐색하려고, 급한 물자부터 최대한 많이 확보해야지.
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1.5")]
+[playanim(id="trap_466_tzumama", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[delay(time="1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]아, 맞다. 이 지도를 줄게. 우리 건설 기준에 맞는 목재를 벌채하려면 이게 필요할 거야.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]나도 간신히 구해 온 거니까, 절대 잊어버리면 안 돼.
+[decision(option1="고마워.", value1="2.1")]
+[predicate(references="2.1")]
+[additem(itemId="sandbox_1_craft_1", itemCount="1")]
+(아르살란 수림 분포도 획득. 이제 목재를 채집할 수 있습니다.)
+[camerafocusto(id="trap_467_ttuye", offsetX="-1", scale="MID", time="1")]
+[decision(option1="오늘은 일찍 쉬자.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="내일도 할 일이 많아.", value1="4.1")]
+[predicate(references="4.1")]
+[playanim(id="trap_467_ttuye", anim="Special_End", looporidle="Idle", dir="LEFT")]
+[delay(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[withdraw(id="trap_466_tzumama")]
+[delay(time="1")]
+[resetcamera(time="1")]
+[save]
+[end]

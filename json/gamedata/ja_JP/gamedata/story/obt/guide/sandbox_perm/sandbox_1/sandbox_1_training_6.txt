@@ -1,0 +1,19 @@
+[HEADER(is_skippable=false, is_tutorial=true)] 敌袭&制造支援道具
+[SandboxV2.EnsureDungeonQuest(questId="training_6", isForceTutorial=true)]
+[SandboxV2.EnsureDungeonStable]
+[Delay(time=0.5)]
+[SandboxV2.DungeonFocusNode(focusType="FOCUS_BY_NODE_ID", focusNodeId="nF6AB")]
+[Tutorial(target="btn_sandbox_dungeon_center_node", animStyle="Highlight",            focusStyle="HighlightRect", black="$f_tut_black", protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] この辺りでは時折敵襲が発生し、ほとんどの場合は、我々の拠点に向かって侵攻してくる。
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] その際は、エリアの環境を参照しつつ、拠点から遠く離れたエリアでこちらから打って出るか、あるいは拠点で迎え撃って防衛するのかを自分で選ぶことができる。
+[Tutorial(dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 我々はまだここに来たばかりだから、今回は拠点で防衛するしかないな。
+[Tutorial(target="btn_sandbox_dungeon_bottom_bar_workbench_panel_btn", waitForSignal="sandbox_v2_administration_main_state_workbanch_panel_routed",           animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black", focusWidth=141, focusHeight=65,           protectTime=0.8, dialogHead="$avatar_zumama")] 準備をするためにも、まずは組立台へ向かおう。
+[Delay(time=0.5)]
+[Tutorial(target="btn_sandbox_administration_panel_type_combat_building", waitForSignal="sandbox_v2_administration_combat_building_sub_panel_routed",           animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] この拡張設備を選んでくれ。
+[Delay(time=0.5)]
+[Tutorial(target="btn_sandbox_administration_combat_building_item", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] <@tu.kw>臨時高台Ⅰ</>があれば、配置の際に選択肢が広がる。防衛線には非常に有用な設備だ。
+[Delay(time=0.5)]
+[Tutorial(target="btn_sandbox_workbench_make_dialog_make", waitForSignal="sandbox_v2_gain_item_page_routed", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama", focusWidth=215, focusHeight=68,)] ここをタップして、組み立てを始めよう。
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] これで組み立ては完了だ。
+[SandboxV2.CloseGainItemPage]
+[Tutorial(target="btn_sandbox_administration_back",           animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black", protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y", focusWidth=300, focusHeight=55)] マップに戻るぞ。
+[SandboxV2.EnsureDungeonStable]

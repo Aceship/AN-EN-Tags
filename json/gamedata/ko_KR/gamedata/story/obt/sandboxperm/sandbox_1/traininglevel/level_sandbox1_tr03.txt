@@ -1,0 +1,38 @@
+[HEADER(is_tutorial=true, is_skippable=false)] xb1教学关3
+[Battle.lockFunction(mask="PAUSE_BUTTON_INTERACT")]
+[Battle.lockFunction(mask="BATTLE_STATUS")]
+[InputBlocker(blockInput=true)]
+[Delay(time=1.75)]
+[Battle.Pause]
+[Tutorial(dialogHead="$avatar_zumama")]전과 마찬가지로, 내가 적을 처치하는 걸 도와줄 거야.
+[Battle.EnsureMinCost(cost=5)]
+[InputBlocker(blockInput=true, cardIndex=3, validWidth=112, validHeight=116)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-140, startY=61, startAnchor="BottomRight", endAnchor="Center", endX=0, endY=0)] \
+그 전에, 먼저 <@tu.kw>목재 채집 허브</>를 배치해 봐. 이게 있으면 목재를 빠르게 채집할 수 있거든.
+[InputBlocker(blockInput=true)]
+[Delay(time=0.5)]
+[InputBlocker(blockInput=true, tileY=8, tileX=4, validWidth=178, validHeight=153)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=84, startY=10, endX=74, endY=206, dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+<@tu.kw>위</>로 배치해서 목재 채집 허브의 채집 범위가 최대한 많은 나무를 커버하게 해봐!
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=6.35)]
+[Battle.Pause]
+[Tutorial(tileY=8, tileX=4, focusWidth=150, focusHeight=150, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+목재 채집 허브에서 일정 시간마다 채집차가 나와 목재를 자동으로 채집해.
+[Tutorial(tileY=8, tileX=4, focusWidth=150, focusHeight=150, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=1, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+충분히 채집하면 채집차는 스스로 목재를 운반해. 따라서 목재 채집 허브만 살아 있으면 작업 범위 내 모든 목재를 금방 채집할 수 있어.
+[Battle.Pause(pause=false)]
+[Delay(time=2.5)]
+[Battle.Pause]
+[Tutorial(focusX=25, focusY=-170, anchor="Center", focusWidth=150, focusHeight=150, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama")] \
+이번 적은 까다로우니, 도구로 목재를 채집하면서 내가 저지한 적을 함께 처치해 줘.
+[Battle.Pause(pause=false)]

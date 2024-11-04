@@ -1,0 +1,77 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="47_g30_oasis2",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot]
+[name="Village Elder"]This is the first time I ever saw anyone defeat the minions of the lords ameer. I can't thank you enough.
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="Eunectes"]We may have fended off this assault, but I doubt they'll give up so easily. There's not enough manpower in the camp. We'll need more help.
+[charslot]
+[name="Village Elder"]Come to think of it, we've had some dealings with an Archosauria tribe in the Eclumui Oasis. Perhaps they can help.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]With their help, we will have a greater advantage in the upcoming fight.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]Besides, if they've lived here for years, they must have more clues to the treasure.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="Eunectes"]But what kind of treasure attracts so many ameeri troops?
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="Tuye"]We interrogated a few captives. None of them know what exactly it is either.
+[charslot(slot="m",name="char_416_zumama_1#6",focus="m")]
+[name="Eunectes"]They don't even know what it is?!
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="Tuye"]Nope. A few even said that they were kidnapping and looting just to find the treasure. If they can't find it, they'll force the locals to look for it.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="Eunectes"]What savage methods... The ameeri soldiers are harassing everyone everywhere. Who knows if that tribe is safe.
+[charslot]
+[name="Village Elder"]They built a temple of their own in the oasis. If you find the temple, you'll find them.
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="Tuye"]But I think our top priority right now is to report to the landship and wait for their assistance.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]Don't worry. I've already sent out a letter asking for help. Let's be patient and wait.
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_215_mantic_1#3$1",focus="m")]
+[name="Manticore"]Um... These are all the supplies. Please go over the checklist.
+[Dialog]
+[charslot]
+[Decision(options="Good work, everybody.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#5$1",focus="m")]
+[name="Tuye"]I didn't expect the landship to send so many people here to help.
+[charslot(slot="m",name="avg_215_mantic_1#10$1",focus="m")]
+[name="Manticore"]R-Right... There's one more carrying our luggage. He'll be here soon...
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m",duration=2)]
+[delay(time=4)]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="r")]
+[Decision(options="Oh, Passenger, it's you.", values="1")]
+[Predicate(references="1")]
+[Decision(options="Long time no see.", values="1")]
+[Predicate(references="1")]
+[Decision(options="Good work out there.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="Passenger"]No need to thank me, Doctor. It's my pleasure to lend you my assistance in this field operation.
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="Passenger"]That said, there is something I need to make clear up front. I am here on some personal business. You'll have to grant me a short leave when the time comes.
+[Dialog]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="r")]
+[Decision(options="Of course. Not a problem.", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

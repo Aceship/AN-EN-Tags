@@ -1,0 +1,590 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_indoor_2",screenadapt="coverall")]
+[playMusic(key="$victorianormal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$1", duration=0.5, isblock=true)]
+[name="시즈"]외곽의 이 버려진 땅만 정리하면 파라곤 부대가 런디니움의 성벽 아래에 도착할 수 있다.
+[charslot(slot = "m", name = "avg_npc_405_1#13$1")]
+[name="모건"]우리가 실버록 블러프스의 요충지를 돌파하자 정면의 나흐체러르 군대는 전장에서 바로 퇴각했어. 본래 우리는 버려진 땅에 살카즈가 매복해 있을 거라고 예상했는데……
+[charslot(slot = "m", name = "avg_npc_405_1#3$1")]
+[name="모건"]하지만 지금 보니…… 아무도 없군.
+[charslot(slot = "m", name = "avg_155_tiger_1#1$1")]
+[name="인드라"]하늘의 그 기이한 붉은색도 사라지기 시작했어.
+[charslot(slot = "m", name = "avg_npc_405_1#7$1")]
+[name="모건"]아직도 좀 공포스러워. 요 며칠 동안의 전투는 정말이지 꿈을 꾸는 것 같았어.
+[charslot(slot = "m", name = "avgnew_112_siege_1#6$1")]
+[name="시즈"]이번 승리는 전장의 사람들이 목숨을 바쳐 이번 쟁취해 낸 거야. 비록 힘들고, 어려웠지만……
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$1")]
+[name="시즈"]이건 우리 한 사람 한 사람이, 모두가 함께 일궈낸 승리야.
+[name="시즈"]우리 집이 이미 근처에 있어.
+[name="시즈"]속도를 높이자, 어서……
+[dialog]
+[charslot]
+[stopmusic(fadetime=2)]
+[PlaySound(key="$d_avg_erthshkng", volume=0.4, loop=true, channel="e")]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.03, block=true)]
+[PlaySound(key="$glass", volume=1)]
+[CameraShake(duration=4, xstrength=10, ystrength=10, vibrato=90, randomness=50, fadeout=true, block=false)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[StopSound(channel="e", fadetime=5)]
+[PlaySound(key="$d_avg_rockfall", volume=0.6)]
+[delay(time=1)]
+갑자기 커다란 굉음이 울리며, 건물 전체가 심하게 흔들리기 시작했다.
+건물에서 그나마 온전하다고 할 수 있는, 얼마 남지 않은 창문마저 전부 산산이 부서지고, 건물 깊은 곳에서 괴상한 굉음이 들려왔다.
+[charslot(slot = "m", name = "avg_155_tiger_1#9$1")]
+[name="인드라"]내가 그렇게 쉽지 않을 거라고 했잖아!
+[charslot(slot = "m", name = "avg_npc_405_1#11$1")]
+[name="모건"]다른 소대가 우리 쪽으로 접근하고 있어……
+[dialog]
+[charslot(duration=0.5, isblock=true)]
+[PlaySound(key="$d_avg_erthshkng", volume=0.4, loop=true, channel="e")]
+[CameraShake(duration=4, xstrength=10, ystrength=10, vibrato=90, randomness=50, fadeout=true, block=false)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_collapse")]
+[StopSound(channel="e", fadetime=4)]
+[PlaySound(key="$d_avg_steamrelease")]
+[bgeffect(layer=2)]
+[Delay(time=2.5)]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(slot = "m", name = "avg_4110_delphn_1#3$1", duration=1.5, isblock=true)]
+[name="델핀"]……이 굉음은, 증기 소리?
+[charslot(slot = "m", name = "avg_155_tiger_1#5$1")]
+[name="인드라"]비나, 설마……
+[dialog]
+[playMusic(intro="$loneliness_intro",key="$loneliness_loop", volume=0.6)]
+[PlaySound(key="$d_avg_humanchange", volume=0.6)]
+[delay(time=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Image(image="32_i12", screenadapt="coverall", fadetime=0)]
+[ImageTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.1, yScaleTo=1.1, duration=15, block=false)]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="“빅토리아.”", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[PlaySound(key="$d_avg_humanchange", volume=0.6)]
+[delay(time=0.4)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Image]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#10$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="시즈"]……
+[name="시즈"]다른 소대에게 이 건물에서 즉시 철수하라고 전달해. 전투 경계 등급은 최고로 하고. 엄폐물을 찾아서 방공에 주의한다.
+[name="시즈"]본 소대는 방어 진형으로 계속 전진한다. 가능한 모든 기습을 염두에 두고 주의하도록.
+[charslot(slot = "m", name = "avg_155_tiger_1#6$1")]
+[name="인드라"]비나, 너희 모두 증기 기사가 왕의 안식처에서 나온 후부터 미쳤다고 했지!
+[name="인드라"]하지만 실버록 블러프스 전장에서는 우리를 도와줬잖아? 모두들 빅토리아의 영광이 돌아왔다고 했었는데!
+[charslot(slot = "m", name = "avg_155_tiger_1#6$1")]
+[name="인드라"]그런데 지금은 왜……?
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$1")]
+[Delay(time=1.5)]
+[charslot(slot = "m", focus="n")]
+그렇다. 시즈는 자신이 위로 받쳐 올려졌던 순간과 갑옷에서 들려오던 음습한 울부짖음을 기억한다.
+“영광…… 빅토리아!!!”
+시즈는 갑옷에서 나는 소리가 왕의 안식처에서 들었던 소리와 다른지는 구분할 수 없다. 강철 투구와 갑옷은 속에서 나는 소리를 모두 비슷하게 들리게 한다.
+또 다른 가능성은 없나? 지금 갑옷 속에 있는 게……
+[dialog]
+[PlaySound(key="$d_avg_humanchange", volume=0.6)]
+[delay(time=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[background]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_397_1#1$1", bstart=0.1,bend=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="bg_indoor_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+시즈는 고개를 저으며 말도 안 되는 생각을 떨쳐냈다.
+자신의 운명을 정면으로 마주하기로 한 그 용기가, 어떤 일방적인 환상으로 더럽혀져서는 안 된다.
+[dialog]
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$1")]
+[name="시즈"]가자.
+[name="시즈"]녀석과 다시 만나게 되면, 답을 얻을 수 있을 거야.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_storehouse",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$1", duration=1, isblock=true)]
+[Delay(time=0.5)]
+[name="시즈"]……녀석은 분명 여기에 있어. 적어도 온 적은 있겠지.
+[charslot]
+벽과 바닥은 화염과 칼날의 흔적으로 가득했고, 거대한 상처 자국은 건물 깊은 곳에까지 이어졌다.
+이 흔적들을 보는 건 처음이 아니다. 왕의 안식처의 커다란 문 앞, 선왕의 조각상이 세워진 길……
+빅토리아인의 찬가에서 증기 기사의 칼날이 내뿜는 것은 불굴의 의지.
+지금은 어떠한가?
+[charslot(slot = "m", name = "avg_4110_delphn_1#8$1")]
+[name="델핀"]여기 살카즈 시체가 있어, 하나뿐만이 아니야.
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1")]
+[name="델핀"]살카즈들이 마지막 증기 기사를 이곳에서 포위해 죽이려고 했던 것 같아.
+[dialog]
+[charslot]
+시즈는 소름이 돋았다. 들어본 적 있는 말이다.
+한 손이 그녀의 소매를 잡아당겼다.
+[charslot(slot = "m", name = "avg_npc_396_1#1$1")]
+[name="다그다"]……시즈.
+[dialog]
+[charslot]
+다그다는 시즈를 바라본다. 그녀들은 함께 왕의 안식처 지하에서 같은 상황을 겪은 적이 있다.
+영광의 무덤.
+[charslot(slot = "m", name = "avg_npc_396_1#1$1")]
+[name="다그다"]녀석은 마지막 증기 기사야.
+[charslot(slot = "m", name = "avg_npc_396_1#9$1")]
+[name="다그다"]만약 그가 런디니움 때처럼, 우리의 적이 되어 앞을 막는다면……
+[name="다그다"]……
+[charslot(slot = "m", name = "avg_npc_396_1#3$1")]
+[name="다그다"]아니, 아무것도 아니야. 나도 알고 있어, 언젠가 우린 녀석과 맞서야 한다는 걸.
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$1")]
+[name="시즈"]……다그다.
+[charslot(slot = "m", name = "avg_npc_396_1#1$1")]
+[name="다그다"]녀석에게는 자신의 사명이 있어. 우리에게도 우리의 사명이 있고.
+[dialog]
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$1")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#2$1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="“사명.”", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="누군가가 이야기한 적이 있다. 런디니움에서 그녀의 모든 삶은 그저 '사명'을 완수하기 위함일 뿐이었다고.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[name="시즈"]…… 그래.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="하지만 그녀는 더 이상 그걸 인정하지 않기로 결심한 지 오래였다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$1")]
+[name="시즈"]그러면 우리는 모든 '사명'을 내려놓고, 녀석을 구하면 돼. 간단하지.
+[charslot(slot = "m", name = "avg_npc_396_1#5$1")]
+[name="다그다"]그런데 우리한테…… 그럴 권리가 있나?
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$1")]
+[name="시즈"]머뭇대는 것보단 저지르고 다시 생각하는 게 나아.
+[name="시즈"]가자.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5, isblock=true)]
+시즈는 키 작은 소녀의 검은 머리카락을 아무렇게나 헝클이고는 곧바로 앞장서서 방 안으로 들어갔다.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[name="시즈"]곳곳이 검게 그을린 시체야. 그리고 이건…… 증기 기사의 갑옷 파편이고.
+[name="시즈"]이건 제대로 된 매복이라기보다는, 조우전에 더 가까워. 살카즈들도 이렇게 성가신 적을 여기에서 만날 줄 몰랐던 거야.
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1", duration=1.5, isblock=true)]
+[name="델핀"]확인 끝. 여기에 숨이 붙어 있는 살카즈는 없어.
+[name="델핀"]이제 안에 있는 공간 하나만 남았어.
+[dialog]
+[charslot]
+무너진 벽의 뒤, 방의 남은 절반이 짙은 어둠 속에 가려져 있다.
+아무런 소리도, 어떠한 숨결도 없다. 마치 조금 전의 증기 분사음이 환각이었던 것처럼.
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$1")]
+[name="시즈"]너희는 여기에 남아서 언제든 철수할 수 있도록 준비해.
+[dialog]
+[charslot(duration=0.5, isblock=true)]
+시즈는 방 안 깊숙한 어둠 속으로 천천히 들어간다.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[backgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.15, yScaleTo=1.15, duration=4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Background]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+어쩌면 그 증기와 하얀 연기가 다시 뿜어져 나올지도 모른다.
+어쩌면, 화염으로 된 장검이 갑자기 번쩍하며 얼굴을 비출지도 모른다.
+어쩌면, 시즈는 자기도 모르게 생각한다. 어쩌면, 가장 긍정적인 가정이라면……
+잃어버린 줄 알았던 친구가 거대한 증기 갑옷에 기댄 채 곤히 잠들어 있다거나.
+……
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Background(image="bg_storehouse",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#2$1", duration=1.5, isblock=true)]
+[name="시즈"]……
+[charslot(slot = "m", name = "avg_155_tiger_1#10$1")]
+[name="인드라"]어때, 비나?
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$1")]
+[name="시즈"]……아무것도 없네.
+[name="시즈"]증기 기사는 이미 떠났어. 우리가 방금 들었던 증기 분사음과 붕괴 소리는, 아마도 녀석이 벽을 뚫고 나가면서 난 소리겠지.
+[name="시즈"]녀석은 이미 런디니움 성으로 돌아갔을지도 몰라.
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$1")]
+[name="시즈"]외곽 부대에 알려. 경보를 해제하고 10분 후 출발한다.
+[charslot(slot = "m", name = "avg_npc_396_1#1$1")]
+[name="다그다"]알겠어. 내가 연락할게.
+[dialog]
+[PlaySound(key="$rungeneral", volume=1)]
+[charslot(duration=1, isblock=true)]
+모두 한시름 놓는다.
+그러나 시즈는 한숨을 내쉬었다.
+[charslot(slot = "m", name = "avg_4110_delphn_1#5$1")]
+[name="델핀"]비나 씨……?
+[charslot(slot = "m", name = "avgnew_112_siege_1#9$1")]
+[name="시즈"]아무것도 아니야.
+[name="시즈"]가자.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5, isblock=true)]
+시즈는 방금 본 것을 사람들에게 이야기하지 않았다.
+그걸로는 아무것도 증명할 수 없어.
+아니면 모든 것이 이미 증명되었을지도.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[background]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[playsound(key="$d_gen_transmissionget", volume=1)]
+[CharacterCutin(widgetID="1", name="avg_npc_229_1#1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=0, width=200, block=true)]
+[delay(time=0.5)]
+[name="혼"]파라곤 부대, 예정된 시간에 위치에 이미 도착했습니다. 런디니움의 성벽이 가시거리 내에 있습니다.
+[name="혼"]이제 외곽 지역에 도착할 때까지 북동쪽으로 계속 전진하겠습니다. 각 차량은 좌표를 확인……
+[Dialog]
+[playsound(key="$transmission", volume=1)]
+[CharacterCutin(widgetID="1", fadetime=0.5, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Background(image="37_g10_wildbattlefield", xScale=1.2, yScale=1.2, y=-120, screenadapt="coverall")]
+[BackgroundTween(xFrom=100, xTo=-100, duration=40, ease="OutQuad",block=false)]
+[curtain(direction = 0,fillfrom = 0.1,fillto = 0.25, grad=true, fadetime=1)]
+[curtain(direction = 4,fillfrom = 0.1,fillto = 0.25, grad=true, fadetime=1)]
+[Delay(time=2)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="시즈"]……
+[dialog]
+사악한 기운의 붉은빛이 걷히자, 아름다운 석양이 보였다. 하지만 시즈는 다른 데 정신이 팔려 있다.
+시즈는 이 금색의 석양빛을 보면서, 선생님의 아름다운 갈기와 자신의 손에 들린 전설이 깃든 장검을 떠올렸다……
+그리고……
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[background]
+[curtain]
+[Background(image="37_g10_wildbattlefield", screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_4110_delphn_1#11$1")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="델핀"]비나 씨, 뭘 보고 있어?
+[charslot(slot = "m", name = "avgnew_112_siege_1#6$1")]
+[name="시즈"]아니, 아무것도 아니야.
+[charslot]
+시즈는 약간 당황해 하며 주먹을 꽉 쥐었다가, 이내 자조적으로 웃었다.
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$1")]
+[name="시즈"]…… 정말 나답지 않지, 안 그래?
+[dialog]
+[charslot]
+시즈는 몇 초간 망설이다가 손가락을 폈다.
+가장자리에 탄 흔적이 있는, 붉은색 천 조각이 시즈의 손에 놓여 있다.
+요 며칠 계속해서 불던 매서운 바람에 천 조각이 나부꼈고, 델핀이 날아가는 천 조각을 다급히 잡으려 했지만, 시즈는 그저 내버려 두었다. 천조각은 순식간에 멀리 날아가 보이지 않게 되었다.
+[dialog]
+[charslot(slot = "l", name = "avgnew_112_siege_1#12$1", duration=0.5)]
+[charslot(slot = "r", name = "avg_4110_delphn_1#5$1", duration=0.5, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "r", name = "avg_4110_delphn_1#5$1", focus="r")]
+[name="델핀"]그건?
+[charslot(slot = "l", name = "avgnew_112_siege_1#2$1", focus="l")]
+[name="시즈"]버려진 땅에서 발견한 거야.
+[name="시즈"]어디서나 볼 수 있는 옷 조각일지도 몰라. 아니면 애초에 증기기사가 가져온 게 아닌, 원래 그곳에 있었던 걸지도 모르고.
+[charslot(slot = "r", name = "avg_4110_delphn_1#5$1", focus="r")]
+[name="델핀"](붉은색 옷……)
+[name="델핀"]알레데일 컴버랜드가 아직 살아있다고 생각해?
+[charslot(slot = "l", name = "avgnew_112_siege_1#6$1", focus="l")]
+[name="시즈"]……
+[name="시즈"]난 많은 사람이 살아 돌아오기를 원해. 하지만 이런 바람은 그저, 내가 여전히 노포트 구의 길거리 건달이길 바라거나, 이 모든 일이 없었던 일이 되었으면 좋겠다고 바라는 것처럼, 아무런 의미도 없어.
+[charslot(slot = "r", name = "avg_4110_delphn_1#8$1", focus="r")]
+[name="델핀"]어느 자경단 단원 말로는 예전에 알레데일 컴버랜드가 자기들 리더였는데, 왕의 숨결을 얻는 임무를 수행하던 중 돌아오지 못했다고 하더라고.
+[charslot(slot = "l", name = "avgnew_112_siege_1#2$1", focus="l")]
+[name="시즈"]……우리를 위해 희생한 거야.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]글쎄, 정말 그렇진 않을 거 같은데. 맞지?
+[charslot(slot = "l", name = "avgnew_112_siege_1#2$1", focus="l")]
+[name="시즈"]……
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]당신은 내가 예전에 어떤 일을 했는지 알고 있을 거야.
+[name="델핀"]런디니움에 있을 때 내게 가장 필요했던 건 살카즈의 동향을 제외하면, 바로 나 같은 '정보원'과 '염탐꾼'의 정보였어.
+[name="델핀"]컴버랜드 공작의 작위는 더 이상 존재하지 않지만, 그 후계자는 여전히 런디니움에서 공개적으로 활동할 수 있지. 이게 뭘 의미하는지 우리는 모두 알고 있어.
+[charslot(slot = "r", name = "avg_4110_delphn_1#2$1", focus="r")]
+[name="델핀"]비나 씨, 그 사람에 대해 어떻게 생각할지는 당신 마음이야. 하지만 빅토리아의 거물 사이에, 이유 없는 선의와 도움은 없어. 결국……
+[charslot(slot = "l", name = "avgnew_112_siege_1#9$1", focus="l")]
+[name="시즈"]알레데일은 목적을 갖고 내게 접근했던 거야.
+[name="시즈"]나도 알고 있어. 마지막에…… 아주 솔직한 대화를 나눴거든. 알레데일은 캐스터를 위해 일했어. 캐스터가 왕의 숨결을 얻도록 도우려는 목적이었지.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]그런데도 당신은 알레데일이 살아있기를 바라는구나.
+[charslot(slot = "l", name = "avgnew_112_siege_1#9$1", focus="l")]
+[name="시즈"]나는…… 여전히 알레데일을 친구라고 부르고 싶어.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]……그건 아주 위험한 감정이야, 비나 씨. 군대에는 규율이 있어야 기강이 잡혀.
+[charslot(slot = "l", name = "avgnew_112_siege_1#9$1", focus="l")]
+[name="시즈"]알아, 델핀. 이건 돌이킬 수도, 용서받을 수도 없는 죄라는 걸. 나도, 알레데일도 잘 알고 있어.
+[name="시즈"]하지만 나는 여전히 내 힘이 부족했단 이유로 알레데일과…… 다른 사람들을 구하지 못한 것이 후회돼.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]……난 컴버랜드와 직접 만나본 적은 없고, 런디니움에서도 그저 멀리서 봤을 뿐이야. 하지만 적어도 컴버랜드가 자기 체면을 지키려고 노력했다는 건 알아.
+[charslot(slot = "r", name = "avg_4110_delphn_1#2$1", focus="r")]
+[name="델핀"]그걸 위해 컴버랜드가 치른 대가는…… 어렵지 않게 상상할 수 있지.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]이렇게 말하면 매정해 보이겠지만, 난 컴버랜드 같은 사람을 여럿 봤어. 이 나라에서는 이게 바로 게임의 룰이야.
+[name="델핀"]컴버랜드는 무대 위에 있는 사람이고, 그런 사람에게는 다른 선택의 여지가 없어.
+[name="델핀"]내가 벗어날 수 있었던 건 아마도…… 당신들을 만난 덕분일 거야.
+[name="델핀"]난 당신들 덕분에 그 더러운 타성에 휘둘리지 않고, 거물들의 연회에서 불행한 조연 역할을 맡는 선택에서 벗어날 수 있었어.
+[charslot(slot = "r", name = "avg_4110_delphn_1#8$1", focus="r")]
+[name="델핀"]하지만 당시 컴버랜드는 고립무원의 상태였지.
+[charslot(slot = "l", name = "avgnew_112_siege_1#12$1", focus="l")]
+[name="시즈"]알레데일…… 나는 알레데일이 당당하게 운명을 직시했고, 굴복을 택한 실패자가 아니라고 생각해.
+[name="시즈"]하지만, 델핀. 이 비극을 항상 잔혹한 운명의 탓으로 돌리는 건, 일종의 나태함이 아닐까?
+[name="시즈"]습관이 되어버린 나태함 말이야.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]……비나 씨, 노력만으로 할 수 없는 일은 아주 많아. 우리가 거대하고 눈에 보이지 않는 것을 '운명'이라고 표현하는 이유는 그것이 거스를 수 없는 대상이기 때문이야.
+[charslot(slot = "l", name = "avgnew_112_siege_1#1$1", focus="l")]
+[name="시즈"]훗, 전에 얘기했던 '더러운 타성'처럼?
+[name="시즈"]암묵적 규칙을 깬 사람들은 손쉽고도 과감하게 말살당하지, 증기 기사들처럼 말이야.
+[charslot(slot = "l", name = "avgnew_112_siege_1#2$1", focus="l")]
+[name="시즈"]그리고…… 내 아버지, 알리스테어처럼.
+[charslot(slot = "r", name = "avg_4110_delphn_1#5$1", focus="r")]
+[name="델핀"]비나 씨……
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="시즈"]걱정하지 마. 아버지 때문에 불평할 생각은 없어. 솔직히 별로 잘 알지도 못하고.
+[name="시즈"]말하자니 우습네. 양부모님은 항상 내게 내 친아버지 '알리스테어 폐하'의 일을 지지치도 않고 계속 이야기해 줬지만……
+[name="시즈"]그랬던 두 분도 너무 일찍 돌아가시는 바람에, 난 그 이야기들을 거의 잊어버리고 있었거든.
+[name="시즈"]나중에 알레데일이 다시 내게 그 황제 얘기를 꺼내고 나서야 겨우 드문드문하던 기억 일부를 떠올릴 수 있었어. 무모하고, 야심도 많으면서, 전심전력으로 대업을 이루려고 했던……
+[charslot(slot = "l", name = "avgnew_112_siege_1#4$1", focus="l")]
+[name="시즈"]하하, 나와 아버지 사이에 혈연관계 외에 도대체 무슨 닮은 점이 있는지 모르겠어. 아버지는 개혁에 실패해 처형당한 군주인 데다, 거의 모든 귀족의 미움을 샀잖아.
+[name="시즈"]하지만 난, 노포트 구의 건달이지. 내게 가장 익숙한 장소는 술집, 복싱장이 아니면 경찰서뿐이고.
+[name="시즈"]나와 아버지는, 서로가 '빅토리아'라는 성을 공유하긴 하지만, 그뿐이야.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]……우리 윈더미어 공작가는 빅토리아와 라이타니엔의 경계를 지키는 역할을 줄곧 도맡아 왔지. 그래서 런디니움에서 발생한 정치 투쟁에는 그다지 관심이 없었어.
+[charslot(slot = "r", name = "avg_4110_delphn_1#8$1", focus="r")]
+[name="델핀"]하지만…… 아무리 그렇다 해도 확실히 어머니께선, 그 쿠데타와 알리스테어 폐하에 대해서도 별로 언급하지 않으셨지.
+[name="델핀"]마치 일부러 회피하는 듯했어. 그래서 내가 당시 상황을 보고 혼자서 분석한 적이 있지만……
+[charslot(slot = "l", name = "avgnew_112_siege_1#12$1", focus="l")]
+[name="시즈"]윈더미어 공작이 아무것도 할 수 없었다는 건 나도 알아, 델핀. 네가 내게 죄책감을 가질 필요는 없어. 이게 바로 빅토리아의 게임 규칙이잖아. 이 모든 건 바람 하나 없는 정적 속에서 진작에 결정 난 일이야.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]……
+[name="델핀"]당시 어머니의 생각이 어떠했든 간에, 난 무언가를 바꾸려는 게 잘못이라고 생각하진 않아.
+[name="델핀"]우리도 바꾸고 싶어 하잖아, 안 그래? 다만…… 어디서부터 시작해야 하는지 아는 사람이 없을 뿐이야.
+[charslot(slot = "l", name = "avgnew_112_siege_1#9$1", focus="l")]
+[name="시즈"]맞아. 그때나 지금이나, 모두들 뭐가 문제인지는 잘 알고 있으니까.
+[name="시즈"]이 전쟁이 빅토리아를 새롭게 만들고 있는 건 확실해. 하지만 어떤 방향으로 바뀌고 있는 걸까?
+[name="시즈"]너, 나 그리고 우리 팀원들이 바라는 미래…… 우리는 정말 그 미래에 가까워지고 있는 걸까?
+[name="시즈"]우리는 막 웰링턴이 입장을 바꾸는 것을 직접 목격했고, 대공작들이 주저하는 것도 봤어. 과거에 일어났던 모든 일들과 똑같이.
+[name="시즈"]델핀, 오늘날 우리가 직면하고 있는 이 모든 일들, 우리의 국가가 겪은 이 모든 일들이…… 대체 왜 발생했다고 생각해?
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]……진짜 내 의견을 듣고 싶어?
+[name="델핀"]간단해. 교활하고 흉악한 살카즈들 때문이야. 놈들이 우리를 기만했으니까.
+[name="델핀"]빅토리아는 단지 시간이 필요할 뿐이야. 저택에 앉아 신문이나 보는 귀족들과 똑같은 결론 정도는 나도 쉽게 낼 수 있어.
+[charslot(slot = "r", name = "avg_4110_delphn_1#7$1", focus="r")]
+[name="델핀"]하지만 우리는 이미 직접 봤잖아.
+[name="델핀"]이 '영광스러운 조국'은 근시안적이고, 오만하고, 경솔하지. 탐욕스러운 귀족, 무능한 관료, 나약한 의회, 착취에만 온통 정신이 팔린 지주와 공장주로 넘쳐나고……
+[name="델핀"]문제는 말이야, 비나 씨. 어쩌면 사람들 눈에 가장 찬란하게 빛났던 그 시대에도, 빅토리아는 마찬가지로 이런 모습이었을 거라는 거야.
+[name="델핀"]……이 모든 것은 바로 빅토리아 과거 영광의 근원이지만, 동시에 우리가 경멸하는 그 타성 자체이기도 해.
+[charslot(slot = "l", name = "avgnew_112_siege_1#1$1", focus="l")]
+[name="시즈"]……
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="시즈"]하지만 지금 우리에겐 부대가 생겼어, 어쩌면 더 많은 일을 해야 할 때가 된 걸지도 몰라.
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]무슨 말을 하는 거야……?
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="시즈"]아, 갑자기 생각났는데, 나와 내 아버지 사이에 비슷한 점이 하나 더 있어.
+[name="시즈"]우리의 적이…… '빅토리아'라는 것.
+[name="시즈"]아버지는 너무 경솔했어. 물론 내가 아버지보다 더 낫다고는 할 수 없으니, 어쩌면 우리의 결말은…… 결국 같을 수도 있지.
+[name="시즈"]하지만 적어도 시도할 가치는 있다고 봐, 그렇지 않아?
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]……
+[name="델핀"]비나 씨…… 아니, 알렉산드리나 비나 빅토리아. 지금 본인이 무슨 말을 하고 있는지 알고 있어?
+[name="델핀"]지금 우리에게 동료가 생겼고, 파라곤 부대가 전쟁에서 기적을 만들어낸 건 사실이야.
+[charslot(slot = "r", name = "avg_4110_delphn_1#7$1", focus="r")]
+[name="델핀"]하지만…… 지금 이 모든 건 런디니움이라는 결국 이 도시와 그 주변에 국한된 것뿐이야! 빅토리아 전체에 도시가 얼마나 많은 줄 알아?
+[name="델핀"]이 전쟁에 참여한 병사와 군관들은 당신을 영웅이라고 생각해, 그 이유는 대공작들이……
+[charslot(slot = "l", name = "avgnew_112_siege_1#4$1", focus="l")]
+[name="시즈"]대공작들은 자신의 실패를 덮어줄 영웅이 필요하지. 나나 우리 모두, 결국엔 놈들이 앞세운 상징에 불과하다는 걸 아주 잘 알고 있어.
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="시즈"]하지만 그러면 또 어때.
+[name="시즈"]우리는 이미 여기에 있어.
+[name="시즈"]이 빅토리아를 움직이는 '타성', 영광에 대한 미련, 찬란함에 대한 숭배, 제왕, 공작, 높고 낮은 직위의 귀족들, 꼭두각시로 전락한 의회……
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="시즈"]이제 전부 끝낼 때가 온 거야.
+[charslot(slot = "r", name = "avg_4110_delphn_1#4$1", focus="r")]
+[name="델핀"]이 모든 것들을 바꾸고 싶어?
+[charslot(slot = "l", name = "avgnew_112_siege_1#1$1", focus="l")]
+[name="시즈"]고작 바꾸는 걸로 그치진 않아.
+[name="시즈"]나는 놈들과 싸울 거야.
+[charslot(slot = "l", name = "avgnew_112_siege_1#6$1", focus="l")]
+[name="시즈"]당연히 쉽지 않겠지. 맞서야 하는 것들이 어쩌면 이 국가를 구성하는 모든 것, 심지어 우리 자신이 될지도 몰라. 그 과정도 10년, 20년 이상의 아주 오랜 시간이 걸릴지도 몰라.
+[charslot(slot = "l", name = "avgnew_112_siege_1#1$1", focus="l")]
+[name="시즈"]하지만 오늘 런디니움에서 일어난 모든 일이 더는 재연되지 않도록 하려면, 이게 남은 유일한 선택이야.
+[name="시즈"]과거의 빅토리아를 깨부숴야 해. 카운트 다운이 끝나고, 결국 링 위에 마지막 한 사람만 남을 때까지.
+[charslot(slot = "r", name = "avg_4110_delphn_1#4$1", focus="r")]
+[name="델핀"]……나는……
+[charslot(slot = "r", name = "avg_4110_delphn_1#1$1", focus="r")]
+[name="델핀"]……
+[name="델핀"]그건 너무 멀고 험난한 길이야. 아니, 이성적으로 말할게. 거의 실현 불가능해.
+[name="델핀"]이 나라엔 개혁가나 혁명가가 부족했던 게 아니야. 누군가는 실패했고, 누군가는 승리했지.
+[name="델핀"]하지만 예외 없이 그 모든 노력은 런디니움의 안갯속으로 사라졌고, 빅토리아는 여전히 변하지 않았어.
+[name="델핀"]그런데도…… 비나, 이곳을 링으로 삼겠다고?
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="시즈"]그렇기 때문에, 무엇을 맞닥뜨리든 내가 할 수 있는 건 오직…… '어퍼컷'을 날리는 것뿐이야.
+[charslot(slot = "r", name = "avg_4110_delphn_1#6$1", focus="r")]
+[name="델핀"]……하아.
+[name="델핀"]미리 말해둘게. 난 당신과 같이 링 위에 설 생각은 없어.
+[charslot(slot = "r", name = "avg_4110_delphn_1#11$1", focus="r")]
+[name="델핀"]하지만…… 만약 당신이 멋지게 한 방 날린다면, 기꺼이 박수갈채를 보낼게.
+[charslot(slot = "l", name = "avgnew_112_siege_1#3$1", focus="l")]
+[name="시즈"]그래.
+[name="시즈"]그러면 우선 런디니움 시민들에게 파라곤 부대가 자기들 편에 섰다는 걸 알려야겠군!
+[name="시즈"]우리가…… 돌아온 거야.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", afrom=1, ato=0, duration=1.5)]
+[delay(time=1)]
+[charslot(slot = "r", afrom=1, ato=0, duration=1.5, isblock=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[curtain(direction = 6,fillfrom = 0.6,fillto = 0.6, grad=true, fadetime=1)]
+[curtain(direction = 2,fillfrom = 0.1,fillto = 0.1, grad=true, fadetime=1)]
+[Background(image="37_g10_wildbattlefield", xScale=1.6, yScale=1.6, x=-450, screenadapt="coverall")]
+[BackgroundTween(yFrom=50, yTo=-100, duration=40, ease="OutQuad",block=false)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+시즈는 곁눈질로 스쳐 지나가는 금빛 그림자를 언뜻 보았다.
+양아버지가 기대에 차서 그녀의 선생님이 바로 빅토리아의 상징이라고 말한 적이 있었다.
+그가 보좌하고 함께한다면, 그녀는 영광 속에서 더 이상 어떠한 고통도 없을 때까지 국가를 이끌 수 있을 것이다.
+그렇다면…… 선생님은 지금 무슨 생각을 하고 있을까?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[background]
+[curtain]
+[Background(image="21_G7_decisivebattlealley_d",screenadapt="coverall")]
+그의 발걸음은 늘 빨랐고, 그의 등장은 항상 예상할 수 없었다.
+그의 황금빛 갈기는 가장 추울 때 언제나 바람을 막아주고 따뜻하게 해 주었다.
+그의 몸에는 태양의 숨결이 있다.
+하지만 그는 이미…… 몇 년 동안이나 나타나지 않았다.
+[dialog]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$rungeneral", volume=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="“잠깐만, 선생님!”", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_656_1#1$1", duration = 0.5, isblock=true)]
+[delay(time=0.5)]
+[name="가웨인"]……
+[name="가웨인"]비나.
+[dialog]
+[charslot]
+손이 시큰거려, 관이 너무 커. 어른들이 도와줬어도, 이걸 묘지까지 들고 가는 건 힘들었을 거야.
+양아버지의 묘지는 양어머니의 옆이었다. 그들은 같은 묘비를 썼다.
+내가 아직 어릴 적, 놀러 오던 아저씨와 아주머니들은 오늘 아무도 오지 않았다. 아마도 이미 포기한 거겠지. 어쨌든 이미 오랜 시간이 지났으니.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="“선생님.”", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="“이제…… 어떻게 해야 돼?”", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[charslot(slot = "m", name = "avg_npc_656_1#1$1", duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="가웨인"]너는 이미 지식을 습득하는 법과 전투하는 법, 그리고 생존하는 법도 배웠다.
+[name="가웨인"]더 이상 네게 가르쳐줄 건 없다.
+[dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="“하지만……”", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+선생님은 가볍게 한숨을 내쉬고 돌아섰다. 황금빛 갈기가 내 얼굴 쪽으로 가까이 다가왔다.
+늘 그렇듯, 햇빛의 냄새다.
+[charslot(slot = "m", name = "avg_npc_656_1#2$1")]
+[name="가웨인"]하지만, 정작 너는 네가 어디로 가야 하는지 모르는구나.
+[name="가웨인"]나에게 배운 것들을 어디에 써야 할지 모르고 있어.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="“……”", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="“다들 내가 선생님을 볼 수 있는 건, 내가 '사명'을 짊어지고 있기 때문이라고 했어.”", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot(slot = "m", name = "avg_npc_656_1#1$1")]
+[name="가웨인"]아니, '사명' 같은 건 없다.
+[name="가웨인"]네게도, 내게도.
+[name="가웨인"]사명은 속박당한 사람이 자신을 옭아맨 사슬을 부르는 말일뿐이다.
+[name="가웨인"]언젠가 네가 발걸음을 내딛는다면……
+[name="가웨인"]그때는 나도……
+[dialog]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$flashback", volume=0.8)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="s")]
+[Background(image="37_g10_wildbattlefield",screenadapt="coverall")]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[playsound(key="$transmission", volume=1)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "avg_4110_delphn_1#8$1")]
+[name="델핀"]잠깐, 새로운 통신이 왔어......
+[dialog]
+[playsound(key="$d_gen_transmissionget", volume=1)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "avg_4110_delphn_1#8$1")]
+[name="델핀"]알겠어. 계속 조사해 줘. 필요하면 로도스 아일랜드에 협조를 요청해.
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$1")]
+[name="시즈"]무슨 일이지?
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1")]
+[name="델핀"]방금 기술자들이 우리를 도청해 온 신호를 추적했다고 보고해 왔어.
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$1")]
+[name="시즈"]공작인가? 아니면 살카즈?
+[charslot(slot = "m", name = "avg_4110_delphn_1#7$1")]
+[name="델핀"]이상하게도 둘 다 아니야.
+[name="델핀"]신호 분석 결과는…… 처음 들어본 이름인데……
+[name="델핀"]런디니움 도시 사람인가 봐. '밀마크'라고 불리는 듯해.
+[dialog]
+[StopSound(channel="s", fadetime=2)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Background]
+[Image]

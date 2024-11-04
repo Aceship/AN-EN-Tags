@@ -1,0 +1,26 @@
+[header(actId="sandbox_1")]
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]Thanks for the help. Looks like they won't be after me for a while.
+[decision(option1="If you don't have anywhere to go...", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="Feel free to come to our camp.", value1="2.1")]
+[predicate(references="2.1")]
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]No, I need to go back to the quarries in the south. There are still a lot of workers enslaved there. I need to help them.
+[decision(option1="That's not a wise choice.", value1="3.1", option2="You might die.", value2="3.2")]
+[predicate(references="3.1")]
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]I'm a slave and a warrior. My life doesn't belong to me. I'll repay this favor, if I make it.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Should we help her? We've already crossed swords with the ameeri army, after all.
+[withdraw(id="trap_472_tfalco")]
+[decision(option1="She's already on the move. Let's follow.", value1="4.1")]
+[predicate(references="4.1")]
+[additem(itemId="sandbox_1_craft_15", itemCount="1")]
+[save]
+[end]
+[predicate(references="3.2")]
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]I'm a slave and a warrior. My life doesn't belong to me. I'll repay this favor, if I make it.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Should we help her? We've already crossed swords with the ameeri army, after all.
+[withdraw(id="trap_472_tfalco")]
+[decision(option1="She's already on the move. Let's follow.", value1="5.1")]
+[predicate(references="5.1")]
+[additem(itemId="sandbox_1_craft_15", itemCount="1")]
+[save]
+[end]

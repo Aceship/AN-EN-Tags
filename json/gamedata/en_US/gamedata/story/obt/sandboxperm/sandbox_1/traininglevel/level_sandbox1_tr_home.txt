@@ -1,0 +1,36 @@
+[HEADER(is_tutorial=true, is_skippable=false)] 新手局基地敌袭
+[Battle.lockFunction(mask="PAUSE_BUTTON_INTERACT")]
+[Battle.lockFunction(mask="BATTLE_STATUS")]
+[InputBlocker(blockInput=true)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]It's our first time facing a Raid, but there's no need to panic.
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=3, offsetX=24, time=3)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]Enemies will pour in from the entrances at the perimeter of our Headquarters.
+[Delay(time=0.5)]
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=20, offsetX=24, time=2.5)]
+[Delay(time=3)]
+[SandboxBattle.CameraFocusTo(offsetY=20, offsetX=4, time=2)]
+[Delay(time=2.5)]
+[SandboxBattle.CameraFocusTo(offsetY=3, offsetX=4, time=2.5)]
+[Delay(time=3)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]They'll head towards the <@tu.kw>Headquarter of Sandbank</> and attack anything that stands in their way.
+[SandboxBattle.CameraFocusTo(offsetY=11, offsetX=14, time=2)]
+[Delay(time=2)]
+[Tutorial(tileY=12, tileX=14, focusWidth=200, focusHeight=200, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+If the Headquarter of Sandbank is destroyed, our headquarters will fall, and the algorithm calculation will be deemed a failure.
+[SandboxBattle.CameraFocusTo(offsetY=6, offsetX=14, time=1)]
+[Delay(time=1)]
+[Tutorial(tileY=6, tileX=14, focusWidth=125, focusHeight=125, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+These facilities can help you to hold off the enemies' attacks temporarily. Use them wisely to deploy your Operators and block the enemies.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+I'm ready to go anytime. Give me orders as necessary, and let's begin!

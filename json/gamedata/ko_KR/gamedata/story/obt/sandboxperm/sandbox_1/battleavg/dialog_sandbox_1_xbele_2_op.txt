@@ -1,0 +1,28 @@
+[header(actId="sandbox_1", npcId="trap_469_tpasngr")]
+[summontrap(charId="trap_469_tpasngr", dir="LEFT", x="16", y="10", isChar="False")]
+[foginview(leftBottomX="5", leftBottomY="7", rightUpX="19", rightUpY="14", id="fog_1")]
+[camerafocusto(id="trap_469_tpasngr", scale="MID", time="1")]
+[delay(time="1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]이렇게 다시 만나게 될 줄은 몰랐군요. 여기는 어떻게 찾아오셨습니까?
+[summonenemy(enemyId="enemy_7026_xbele", x="10", y="10", endX="6", endY="2")]
+[decision(option1="이상한 석상을 따라왔어.", value1="1.1")]
+[predicate(references="1.1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]그 가출한 석상 말씀이십니까?
+[playanim(id="trap_469_tpasngr", anim="Attack", dir="LEFT")]
+[camerafocusto(offsetX="11", offsetY="10", time="2", scale="FAR")]
+[delay(time="2")]
+[decision(option1="맞아. 그런데 너는?", value1="2.1")]
+[predicate(references="2.1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]일이 놀랍도록 순조롭군요. 저는 아주 가까이 왔습니다. 박사님만큼이나요.
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]보십시오, 저렇게 평화롭고 아름다운 광경을 차마 방해할 수가 없습니다.
+[playanim(id="enemy_7026_xbele", anim="Skill", dir="RIGHT")]
+[delay(time="1")]
+[decision(option1="정말로…… 즐거워 보이네?", value1="3.1")]
+[predicate(references="3.1")]
+[delay(time="1")]
+[fognotinview(id="fog_1")]
+[withdraw(id="enemy_7026_xbele")]
+[withdraw(id="trap_469_tpasngr")]
+[resetcamera(time="1")]
+[save]
+[end]

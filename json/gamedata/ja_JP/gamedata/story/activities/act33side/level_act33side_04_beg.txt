@@ -1,0 +1,649 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[gridbg(imagegroup="38_g21_skystarry_L1/38_g21_skystarry_r1/38_g21_skystarry_L2/38_g21_skystarry_r2", solidwidth="1280/1280/1280/1280", solidheight="720/720/720/720",x=-360)]
+[largebgtween(duration = 60,yFrom = 0, yTo = 100,block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlayMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Delay(time=2)]
+[playsound(key="$d_avg_penrustle")]
+ケルシーへ
+手紙をありがとう。そちらもバベルで変わらず元気に過ごしていることを願っている。
+一つ伝えておくことがある。二ヶ月前、事故を起こした車から一人の女の子を救出した。名はアーミヤという。
+残念なことに、この子の両親は事故で亡くなり、彼女自身も鉱石病に感染してしまった。
+元々はどこかに預けて旅を続けようと思っていたのだが、この地で身寄りのない鉱石病患者が車に詰められ、無人の荒野送りになる様子を目の当たりにしたので、結局連れて行くことにした。
+奇妙な巡り合わせで、この子は今や同行者だ。
+この子の面倒を見ている時に、どれほど狼狽しているか、君には想像できないだろう……
+幸いにも、サベージと名乗る女性も我々の旅に加わってくれた。彼女の手助けのおかげで、少しは肩の荷が下りたよ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[gridbg]
+[Delay(time=1)]
+[Background(image="46_g5_rmbtwild_n",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+月明かりの下、一つの黒い影が「砂丘」から這い出てくる。
+[dialog]
+[PlaySound(key="$d_avg_pawfootstep_1")] 
+[charslot(slot = "m", name = "avg_npc_1190_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 1.5,bstart=0.6,bend=0.9)]
+[Delay(time=2)]
+[name="？？？"]（警戒しながら近づく）
+[name="？？？"]（威嚇しながら鳴く）
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1295_1#1$1",duration=1.5,bstart=0.4,bend=0.7)]
+[delay(time=2)]
+[charslot(slot = "m", action="jump",posto = "0,0",power=30,times=1,duration = 0.4)]
+[delay(time=0.6)]
+[name="？？？"]こら！　あっち行って！
+[name="？？？"]近づかないで！
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_pawfootstep_3")] 
+[charslot(slot = "m", name = "avg_npc_1190_1#1$1",posfrom = "0,0", posto = "100,0",duration = 1.5)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1188_1#1$1",posfrom = "-100,0", posto = "0,0",duration = 1.5)]
+[delay(time=2)]
+[charslot(slot = "m", focus = "m")]
+[name="巨大なサンドビースト"]（興奮しながら地面を掻く）
+[charslot(slot = "l",name = "avg_npc_1188_1#7$1", focus = "l")]
+[name="幼いサンドビースト"]（疑わしげに顔を出す）
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[name="ドクター"]君が驚かせたから、さらに興奮しているようだ、アーミヤ。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1295_1#5$1",duration=1.5)]
+[delay(time=2)]
+[name="アーミヤ"]怖がらなくて大丈夫ですよドクター、私がなんとかしますから！
+[name="アーミヤ"]サンドビーストの撃退法なら両親から教わってます。天敵の鳴き声の真似をするんです。
+[charslot(slot="m",name="avg_npc_1295_1#6$1")]
+[name="アーミヤ"]チューチュー……
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1190_1#1$1",posfrom = "100,0", posto = "100,0",focus = "m")]
+[charslot(slot = "l", name = "avg_npc_1188_1#1$1",posfrom = "0,0", posto = "0,0",focus = "m")]
+[name="巨大なサンドビースト"]（困惑して立ち止まる）
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1295_1#10$1")]
+[name="アーミヤ"]ち、違う、こうじゃなかった気がする。じゃあ……シューシュー？
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1190_1#1$1",posfrom = "100,0", posto = "100,0",focus = "l")]
+[charslot(slot = "l", name = "avg_npc_1188_1#7$1",posfrom = "0,0", posto = "0,0",focus = "l")]
+[name="幼いサンドビースト"]（不思議そうに首をかしげる）
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1295_1#10$1")]
+[name="アーミヤ"]やっぱり違う。うーん、何だっけ？
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]アオーン？　ポッポー？　コッコ……？
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1190_1#1$1",posfrom = "100,0", posto = "100,0",focus = "m")]
+[charslot(slot = "l", name = "avg_npc_1188_1#1$1",posfrom = "0,0", posto = "0,0",focus = "m")]
+[name="巨大なサンドビースト"]（いぶかしげに尻尾を振る）
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]うぅ……どれも違うみたい……
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[name="ドクター"]大丈夫だ、アーミヤ。任せてくれ。
+[charslot(slot = "m", focus = "n")]
+すると、ドクターは人差し指と親指で輪っかを作り、奇妙な音の指笛を長く吹いた。
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1190_1#1$1",posfrom = "100,0", posto = "100,0",focus = "m")]
+[charslot(slot = "l", name = "avg_npc_1188_1#1$1",posfrom = "0,0", posto = "0,0",focus = "m")]
+[charslot(slot = "m", action="jump",posto = "0,0",power=30,times=1,duration = 0.3)]
+[name="巨大なサンドビースト"]（驚いて立ち上がる）
+[charslot(slot = "l", name = "avg_npc_1188_1#5$1",focus = "l")]
+[name="幼いサンドビースト"]（不安げに見渡す）
+[playsound(key="$d_avg_sandanimaldig")]
+[charslot(slot = "m", name = "avg_npc_1190_1#1$1",posfrom = "100,0", posto = "100,0",focus = "m")]
+[charslot(slot ="m", action="shake", power=10, times=100, duration=0.5)]
+[charslot(slot = "m", focus = "m")]
+[name="巨大なサンドビースト"]（素早く穴を掘る）
+[playsound(key="$d_avg_sandanimaldig")]
+[charslot(slot = "l", name = "avg_npc_1188_1#5$1",focus = "l")]
+[charslot(slot ="l", action="shake", power=5, times=10, duration=0.5)]
+[charslot(slot = "m", focus = "l")]
+[name="幼いサンドビースト"]（ゆっくりと続く）
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1295_1#1$1")]
+[name="アーミヤ"]ドクター、すごいです！　まるで本物みたい！
+[name="アーミヤ"]私もやってみます！
+[dialog]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[playsound(key="$d_avg_unskilledwhistle")]
+アーミヤは小さな手を丸めて口元に押し当てる。けれど、力を入れすぎたせいか、中々音が鳴らない。アーミヤは顔を真っ赤にしながら、ようやくぎこちない音を鳴らした。
+[playsound(key="$d_avg_pawfootstep_1")]
+広大な荒野に指笛が際立つ。たちまちサンドビーストは伏せ、尻尾を巻いて地面に潜っていった。
+指笛は次第に弱まり、子供の幼い笑い声へと変わった。
+そして笑い声が静まり、一瞬の沈黙の後、小さなため息が響いた。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1")]
+[name="ドクター"]アーミヤ、おいで。
+[name="ドクター"]サンドビーストはうまく追い払えたのに、どうしてまだ顔をくしゃくしゃにしているんだ？
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1295_1#7$1",posfrom = "70,0", posto = "0,0",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "r", name = "avg_npc_1295_1#7$1",focus="r")]
+[name="アーミヤ"]……お父さんとお母さんに何度も教えてもらったのに、私ちゃんと覚えてなかった。それにドクターを守るって言ったけど、結局助けられちゃって……
+[name="アーミヤ"]ドクターの手のケガ……まだ治ってないのに。
+[charslot(slot = "l", focus="l")]
+[name="ドクター"]もう全然痛くないから大丈夫さ、アーミヤ。それに……
+[name="ドクター"]さっきの鳴き真似は君から教わったんじゃないか。忘れたのか？
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",focus="r")]
+[name="アーミヤ"]あれ、やったことありましたっけ？
+[charslot(slot = "l", focus="l")]
+[name="ドクター"]ほら、言っただろう。ちゃんと眠らないと頭の回転が遅くなって、結局色んなことを忘れてしまうんだよ。
+[charslot(slot = "r", name = "avg_npc_1295_1#7$1",focus="r")]
+[name="アーミヤ"]わ、私……眠りたくないです。
+[name="アーミヤ"]……だって怖いから。寝たらあの時のことが夢に出てきてしまいそうで。
+[charslot(slot = "l", focus="l")]
+[name="ドクター"]でも、夢で両親と会えることがあるとも言っていただろう？
+[charslot(slot = "r", name = "avg_npc_1295_1#7$1",focus="r")]
+[name="アーミヤ"]うぅ……
+[charslot(slot = "l", focus="l")]
+[name="ドクター"]アーミヤ、迎えが来るまでまだ時間がある。しばらく寝るといい。
+[charslot(slot = "r", name = "avg_npc_1295_1#2$1",focus="r")]
+[name="アーミヤ"]はい……
+[name="アーミヤ"]ドクター、もうちょっと近くで寝てもいいですか……
+[charslot(slot = "r", name = "avg_npc_1295_1#8$1",focus="r")]
+[name="アーミヤ"]起きた時……最初に見るのは……ドクターがいいんです。
+[charslot(slot = "l", focus="l")]
+[name="ドクター"]もちろんだとも。サベージお姉さんを一緒に待ってくれるお礼に、物語を話してあげよう。
+[dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0",duration = 1,afrom=1,ato=0)]
+[delay(time=1)]
+[playsound(key="$d_avg_clothmovement",volume=0.7)]
+[delay(time=1)]
+[charslot(slot = "l", focus="l")]
+[name="ドクター"]昔々あるところに、とてもすごい科学者がいました……
+[name="ドクター"]彼女が住む場所は大変な危機に直面しており、故郷や周りの人を守るため、彼女は苦しい決断をしたのです……
+[charslot(slot = "m", focus = "n")]
+[name="アーミヤ"]すぅ……
+[dialog]
+[charslot]
+[playsound(key="$d_avg_truckengine", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.8, channel="bgs",fadetime=2)]
+[delay(time=2)]
+[StopSound(channel="bgs", fadetime=1)]
+[delay(time=1)]
+[playsound(key="$d_avg_cardoorc",volume=0.7)]
+[delay(time=1)]
+[playsound(key="$d_gen_walk_n",volume=0.7)]
+[charslot(slot="m",name="avg_230_savage_1#8$1",duration=1)]
+[delay(time=1.5)]
+[name="サベージ"]ドクター、新しい乗り物が見つかったよ！　これで次の医療所に早く着け――
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]（小声）シッー、アーミヤが寝ている。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g6_rmbtmine",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$tech_intro", key="$tech_loop", volume=0.6)]
+[playsound(key="$d_avg_penrustle")]
+[Delay(time=1)]
+ケルシー、この大地の至る所で生命の痕跡が見て取れることを、心から嬉しく思う。
+ここは見知らぬ世界でありながらも、時折懐かしさを覚える。幼い頃に夢中になった伝説のように、古くさいながらも、その中を駆け巡る想像をかき立てられるようだ。
+そして今、物語に登場した坑道と砂ぼこりの中で轟音を鳴らす旧時代の巨大な乗り物が、再びこの大地に屹立している。
+物語は本当に現実となるのだな。そして、目の前の現実も、いずれは物語として語られるのだろう。
+[dialog]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="ドクター"]……アーミヤ、そんなところでキョロキョロしていると危ないぞ。こっちへ来るんだ。
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",posfrom = "150,0", posto = "100,0",duration = 1)]
+[Delay(time=1.5)]
+[charslot(slot = "r",posfrom = "100,0", posto = "0,0",duration = 0.7)]
+[Delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_1295_1#2$1",focus="r")]
+[name="アーミヤ"]ドクター、絵を描いてたんですか？　邪魔しちゃいましたか？
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]いいや、そんなことはないよ。
+[dialog]
+[PlaySound(key="$d_avg_paper2", volume=1)]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]ほら、どうかな。よく描けているかい？
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",focus="r")]
+[name="アーミヤ"]さっき一緒に運転したトロッコだ！
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]そうだよ。これまで体験した多くのことをノートに描き留めているんだ。
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",focus="r")]
+[name="アーミヤ"]そういえば、ドクターはここのトロッコを運転したことあるんですか？　あんなにスピードを出すなんて、ベテランの鉱夫さんでもかないませんよ。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]昔……不思議な乗り物を色々と見てきたからね。例えば、オリジムシの卵鞘（らんしょう）をずっと大きくしたようものとか。それを一人で運転して……
+[name="ドクター"]……星々を跨ぐ一本の橋を渡ったこともある。
+[charslot(slot = "r", name = "avg_npc_1295_1#4$1",focus="r")]
+[name="アーミヤ"]星を跨ぐ一本の橋……夜は暗いですし、きっとその上も真っ暗なんですよね？　危なそうです。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]そんなことはないよ。橋の両側に案内人がいてね、彼らは年老いた星から光る雲を借りてきて、丸い鏡を作ってくれるんだ。
+[name="ドクター"]それで鏡が映し出す道に沿って進むと……
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",focus="r")]
+[name="アーミヤ"]進むと……？
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]橋の向こう側に、大気の潮汐の中で見え隠れする尖塔や、星の額に載せられたお花の冠なんかが見えるんだ。
+[name="ドクター"]そうしてお花の冠に降りたら、そこは君のようないい子のためにある大きな大きな遊園地だって気付くのさ。
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",focus="r")]
+[name="アーミヤ"]遊園地？　童話の中で見たことがあります……小さなお友達がたくさんいる所ですよね。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]アーミヤもお友達と遊びたい？
+[charslot(slot = "r", name = "avg_npc_1295_1#2$1",focus="r")]
+[name="アーミヤ"]ううん……全然。私はドクターとだけ遊んでいたいです。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]だが、これから君はたくさんのお友達と知り合うだろう。
+[charslot(slot = "r", name = "avg_npc_1295_1#2$1",focus="r")]
+[name="アーミヤ"]それはこれからのお話ですし……
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",focus="r")]
+[name="アーミヤ"]そうだ、ドクター。ドクターが運転してきた乗り物の中で、一番不思議なものはどんなのでしたか？
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]一番不思議か……そうだな、ある乗り物に乗って、自分は長い歳月を走ったんだ……長い長い歳月を。
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",focus="r")]
+[name="アーミヤ"]一緒に乗ってくれる人はいなかったんですか？
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]昔はいたよ。だけど最後には、自分一人だけになった。
+[name="ドクター"]……でも眠っていたから寂しくなかった。長い間眠ったんだ。
+[charslot(slot = "r", name = "avg_npc_1295_1#8$1",focus="r")]
+[name="アーミヤ"]じゃ次は私も乗せてください。私がずっと一緒にいますから、退屈で眠るしかないなんてことにはなりませんよ。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]……フフッ。
+[charslot(slot = "r", name = "avg_npc_1295_1#1$1",focus="r")]
+[name="アーミヤ"]ドクター、どうして笑うんですか？
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]それはとても重みのある約束になるからね。よく考えないといけないよ。
+[name="ドクター"]アーミヤ、君には君自身の旅、君自身の景色、そして君自身の未来があるんだ……それでも、本当にずっと一緒にいたいのか？
+[charslot(slot = "r", name = "avg_npc_1295_1#7$1",focus="r")]
+[name="アーミヤ"]でも、みんな……体に石が生えた人には未来がないって言ってました。
+[name="アーミヤ"]だから……ずっとドクターと一緒にいられますよ……
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]……
+[name="ドクター"]アーミヤ、我々には必ず未来がある。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_1360_1#1$1")]
+[charslot(slot = "right", name = "avg_230_savage_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "right", name = "avg_230_savage_1#1$1",focus="r")]
+[name="サベージ"]アーミヤちゃんはまだ元気がないの？
+[charslot(slot = "right", name = "avg_230_savage_1#5$1",focus="r")]
+[name="サベージ"]うーん……まだ少し熱があるね。興奮しすぎて鉱石病の合併症を引き起こしたのかな。この辺じゃ鉱石病の薬もなかなか手に入らないだろうし……参ったな。
+[name="サベージ"]昼間は平気そうにしてても、夜になるといっつも悪い夢にうなされちゃうんだよね。ほんとに可哀想……
+[name="サベージ"]はぁ、事故の生存者は一人残らず感染しちゃったし。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]……このくらいの子供の場合、鉱石病はどの程度の速さで悪化するんだ？
+[charslot(slot = "right", name = "avg_230_savage_1#7$1",focus="r")]
+[name="サベージ"]人それぞれかな。急性発作の翌日に源石粉塵になり始める人もいれば、十数年、苦しみにもがいた挙句ようやく命を終える人もいる。
+[charslot(slot = "right", name = "avg_230_savage_1#2$1",focus="r")]
+[name="サベージ"]だけどみんな結末は同じ……
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]鉱石病……この世界に鉱石病を完治させられる人はいるのか？
+[charslot(slot = "right", name = "avg_230_savage_1#10$1",focus="r")]
+[name="サベージ"]「世界」？　あぁ、この大地にってことだよね……学者様っぽい話し方なのに、あなたって冗談も言ったりするんだ。
+[charslot(slot = "right", name = "avg_230_savage_1#4$1",focus="r")]
+[name="サベージ"]……ってちょっと待って、まさか本気で聞いてるの？
+[charslot(slot = "right", name = "avg_230_savage_1#5$1",focus="r")]
+[name="サベージ"]残念だけど……そんなの不可能だよ。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]いや、それを可能にする必要がある。
+[name="ドクター"]数百年前、君たちは移動都市なんてものを想像すらできなかっただろう？
+[name="ドクター"]アーミヤの病状が悪化する前に何とかしてみせよう。難しいだろうが、解決できないと決まったわけではないのでね。
+[charslot(slot = "right", name = "avg_230_savage_1#1$1",focus="r")]
+[name="サベージ"]そんなの、どこのレム・ビリトン人に話したって、からかってるって思われるだけだよ。
+[charslot(slot = "right", name = "avg_230_savage_1#7$1",focus="r")]
+[name="サベージ"]はぁ……旅路を共にしてから、あなたよく突拍子もないことを言うけど、なんだか無意識のうちに信じちゃうんだよね。
+[charslot(slot = "right", name = "avg_230_savage_1#8$1",focus="r")]
+[name="サベージ"]もしかして、これが賢い人の魅力ってやつ？
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]からかわないでくれ、シャーロット。
+[charslot(slot = "right", name = "avg_230_savage_1#8$1",focus="r")]
+[name="サベージ"]……あは、わたしが言いたいのはそうじゃなくて……まあいいや。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]何だ？
+[charslot(slot = "right", name = "avg_230_savage_1#7$1",focus="r")]
+[name="サベージ"]その、つまり……うーん……
+[name="サベージ"]自分では気付かないかもしれないけど、あなたからはなんとも言えない不思議な感じがするんだよ。まるで……自分はあなたたちとは違う存在だって、みんなに訴えかけてるみたい。
+[charslot(slot = "right", name = "avg_230_savage_1#1$1",focus="r")]
+[name="サベージ"]アーミヤちゃんもきっとそれを感じてるよ。子供ってわたしたちが思ってるよりずっと敏感だから。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]そんなに露骨だったか……
+[charslot(slot = "right", name = "avg_230_savage_1#8$1",focus="r")]
+[name="サベージ"]でもこの子は強いから、あなたの前で悲しい感情を見せないようにしてる。あなたには喜びだけ見せて、迷惑はかけないようにって。あなたのお世話をしてあげたいとさえ考えているよ。
+[name="サベージ"]あなたに助け出されたあの日から、この子はもうあなたを唯一の拠り所だと思ってるみたいだからさ。
+[charslot(slot = "right", name = "avg_230_savage_1#7$1",focus="r")]
+[name="サベージ"]でもそれと同時に、あなたたち二人は本来交わるはずじゃなかったというのもよくわかってる。この子はいつかドクターにまで捨てられてちゃうんじゃないかって恐れてるんだ。
+[charslot(slot = "l", name = "avg_npc_1360_1#1$1",focus="l")]
+[name="ドクター"]……
+[name="ドクター"]心配しなくても、ずっとアーミヤと歩き続けるつもりだ。
+[charslot(slot = "right", name = "avg_230_savage_1#9$1",focus="r")]
+[name="サベージ"]……うん！
+[charslot(slot = "right", name = "avg_230_savage_1#8$1",focus="r")]
+[name="サベージ"]そう言うと思ったよ。
+[dialog]
+[charslot(duration=1)]
+[Delay(time=2)]
+[playsound(key="$d_avg_penrustle")]
+本来であれば、この世界にとって自分はただの通りすがりであり、歴史にその存在は記録されず、この地と繋がりを持つことすらないものだと思っていた。
+そうして意図的に距離を置くことで、いつの間にか現実を――すでにこの大地に身を置いているという、この現実を忘れてしまっていたようだ。
+ケルシー、一体何がこんな気持ちを芽生えさせているのかはまだわからない。
+しかし、一人の子供の熱い手の平から伝わるその命の温度が、この心臓を焼き焦がし、耐えがたい痛みをもたらしているのもまた事実だ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$tech_intro", key="$tech_loop", volume=0.6)]
+[Delay(time=1)]
+[playsound(key="$d_avg_sandftsingle")]
+[charslot(slot="m",name="avg_4132_ascln_1#1$1",duration=1)]
+[delay(time=2)]
+[name="アスカロン"]これは……
+[name="アスカロン"]干し肉と果物だな。わざと置いていったように見える。
+[name="アスカロン"]……気づかれているのか。
+[charslot(slot="m",name="avg_4132_ascln_1#3$1")]
+[name="アスカロン"]つかめない奴だ。
+[dialog]
+[charslot(duration=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$tech_intro", key="$tech_loop", volume=0.6)]
+[Delay(time=1)]
+[playsound(key="$d_avg_penrustle")]
+ケルシー、アーミヤを連れてバベルへと戻ることにした。
+ここまでサベージがアーミヤのためにいくつも薬を調達してきてくれたが、この環境ではこれ以上の治療をしてやることはできない。
+アーミヤがそれほど特別な子供でないことも、バベルが複雑な危機にあることもわかっている。しかしそれでもこの子を連れて帰ろうと思う。
+この旅で、たくさんの人と知り合い、助けられ、旅費で悩むような経験もした。新たな物事を見て、随分長い間味わっていなかった驚きすら感じた。
+そして今何をしているかと言うと、同行させてもらっていた車列が故障に見舞われてしまったから、牧者の手引きで、ボーリングマシンとエンジンの音を聞きながら駄獣で荒野を越えているところだ。
+[dialog]
+[charslot(slot="m",name="avg_npc_1163_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="駄獣"]（優しくなめる）
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1295_1#8$1",duration=1)]
+[delay(time=1.5)]
+[name="アーミヤ"]よしよし、いい子だねぇ。
+[dialog]
+[PlaySound(key="$d_avg_pcknmgrwl")]
+[charslot(slot = "m", focus = "n")]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1295_1#2$1")]
+[name="アーミヤ"]ドクター、本当に炎国に行かないんですか？
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1360_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="ドクター"]ああ。まずは君の病気を治療できる場所に向かう。
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]でも……鉱石病はどうしようもないって……
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]アーミヤ、解決不可能な難題なんて世の中にはないんだ。
+[name="ドクター"]目的地の名はバベル。信頼できる人々がこうした病を根絶するために奮闘している場所だよ。
+[name="ドクター"]我々も、彼らと共に頑張ってみよう。
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]じゃあ……その場所に長い間いないとダメなんですか？
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]しばらくは時間を要するだろう。だけど君と一緒に遊んだり、お手伝いしたりしてくれる人ならたくさんいるから心配しなくていい。無論自分もいる。
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]……
+[name="アーミヤ"]ドクター……どうしても行かなきゃダメなんですか？
+[name="アーミヤ"]レム・ビリトンの外に治療しに行った子はたくさんいるけど、誰も戻って来ないし……
+[name="アーミヤ"]鉱石病だって、少しも痛くないです。
+[name="アーミヤ"]ドクター、お願い……いい子でいるから。サベージお姉さん、私、これまでもずっといい子だったよね？
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_230_savage_1#8$1",duration=1)]
+[delay(time=1.5)]
+[name="サベージ"]……うん、アーミヤちゃんはずっといい子だよ。
+[charslot(slot="m",name="avg_230_savage_1#1$1")]
+[name="サベージ"]ドクター、アーミヤちゃんの意見をもう一度検討してみたら？
+[name="サベージ"]レム・ビリトン人は毎日源石を相手にしてるから、鉱石病が何をもたらすかはよくわかってる。
+[charslot(slot="m",name="avg_230_savage_1#7$1")]
+[name="サベージ"]だけどこの場所に……レム・ビリトンに留まっている限り、少なくともアーミヤちゃんには……家を与えてあげられるよ。
+[name="サベージ"]アーミヤちゃんにとっては、冷たい研究施設なんかより、こっちの方が大切かもしれないでしょ。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]……「家」。
+[name="ドクター"]否定は……しない。だが源石がアーミヤを傷つけるのを黙って見ていることはできない。自分は、それに抗う義務がある。
+[name="ドクター"]アーミヤ、何が起きてもすべてを尽くして君を治してみせる。前に約束した通りだ。
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]ドクター……
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]しかしサベージの言うことも一理ある。加えて、バベルがある地域も絶対に安全な場所とは言えない。
+[name="ドクター"]もし君がレム・ビリトンを離れたくないなら、これからはサベージお姉さんについていってもいい。
+[name="ドクター"]こんなに幼い君に選択を迫ることになって、本当にすまない……しかし君は強い子だ。我々は君の考えを尊重するよ。
+[charslot(slot="m",name="avg_230_savage_1#8$1")]
+[name="サベージ"]……そうそう、わたしもアーミヤちゃんの選択を尊重する。今すぐ答えを出さなくてもいいから、よく考えてみて。
+[charslot(slot="m",name="avg_npc_1295_1#1$1")]
+[name="アーミヤ"]私……！
+[name="アーミヤ"]……ドクターを、信じます！
+[charslot(slot="m",name="avg_npc_1295_1#4$1")]
+[name="アーミヤ"]私も……未来がほしい。大きくなったら、サベージお姉さんと旅行したり、ドクターと本を読んだり……私……
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]ドクターの提案が嫌だったわけじゃないんです……ただ……少し不安で……
+[charslot(slot="m",name="avg_230_savage_1#8$1")]
+[name="サベージ"]……フフ。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]ありがとう、アーミヤ。
+[charslot(duration=0.5)]
+アーミヤの頭をなでると、ドクターは彼女を抱き上げ、駄獣の背にまたがった。
+[stopmusic(fadetime=2)]
+[PlaySound(key="$smallearthquake")] 
+[CameraShake(duration=3, xstrength=6, ystrength=3, vibrato=50, randomness=90, fadeout=true, block=false)]
+姿勢を安定させる間もなく、突然地面の石ころがゆっくりと震動し始め、砂埃が舞い上がっていることにドクターは気づいた。
+[dialog]
+[charslot]
+[name="駄獣"]（警戒する低いうなり声）
+[name="アーミヤ"]えっ、駄獣さんどうしたの？
+[charslot(slot="m",name="avg_230_savage_1#4$1")]
+[name="サベージ"]――足元！
+[charslot(slot="m",name="avg_230_savage_1#3$1")]
+[name="サベージ"]深層のボーリングマシンが動いてて、駄獣が怖がっちゃってる！　うわわっ！　気をつけて！
+[charslot]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=40, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_pcknmgrwl")]
+[name="駄獣"]（驚いたいななき）
+[name="アーミヤ"]うわ、駄獣さん暴れちゃダメ！
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="ドクター"]うわっ！
+[charslot(slot="m",name="avg_230_savage_1#4$1")]
+[name="サベージ"]ドクター、しっかりつかまって！
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="アーミヤ"]ドクター！
+[charslot]
+[dialog]
+[PlaySound(key="$d_avg_pcknmgrwl")]
+[Delay(time=1)]
+[CameraShake(duration=3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_animalrun")]
+駄獣は体を大きく上げて高ぶったいななきを発すると、重々しく地面を蹴り出し前方へと疾走した。
+周囲の駄獣もつられて次々と後に続き、土煙を上げて走り去っていく。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_black",screenadapt="coverall")]
+[image(image="49_i07",screenadapt="coverall")]
+[PlayMusic(intro="$holiday_intro", key="$holiday_loop", volume=0.6)]
+[CameraShake(duration=-1, xstrength=2, ystrength=2, vibrato=20, randomness=90, fadeout=false, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_animalrun")]
+[PlaySound(key="$d_avg_animalswaterfs",delay=2,channel="2")] 
+大地を駆ける駄獣の群れが湿地に差し掛かると、飛び散るしぶきが辺りを舞った。
+猛スピードで駆ける駄獣の背で、ドクターはその背中の毛をしっかりと掴み、振り落とされないよう力を振り絞るしかなかった。
+大混乱の中、アーミヤは必死に目を開き続けていた。
+彼女は片手で駄獣をしっかりと掴み、もう一方の手をドクターの方へ懸命に伸ばす。
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[ImageTween( xFrom=0, xTo=200, xScaleFrom=1, yScaleFrom=1, xScaleTo=1.5, yScaleTo=1.5, duration=0, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="アーミヤ"]ドクター、私の手に掴まってください！
+[dialog]
+[ImageTween( xFrom=200, xTo=100,yFrom=0, yTo=50, duration=0.5, block=true)]
+[PlaySound(key="$d_avg_pcknmgrwl")]
+[name="駄獣"]（不満げないななき）
+[PlaySound(key="$d_avg_animalrun")]
+[PlaySound(key="$d_avg_animalswaterfsfast",channel="3")]
+[name="駄獣"]（思い切り加速する）
+[dialog]
+[ImageTween( xFrom=100, xTo=0,yFrom=50, yTo=-50,duration=0.5, block=true)]
+[name="ドクター"]うわっ……うっ、駄獣たちをどうにかおとなしく……ひぃー！
+[dialog]
+[ImageTween( xFrom=0, xTo=200,yFrom=-50, yTo=0, duration=0.3, block=true)]
+[name="アーミヤ"]ドクター、しっかり掴まってください！　駄獣が加速しました！
+[dialog]
+[ImageTween( xFrom=200, xTo=0,yFrom=0, yTo=-50,duration=0.3, block=true)]
+[name="ドクター"]どうにか……耐えてる……！
+[dialog]
+[ImageTween(  xTo=0, yTo=0,xScaleFrom=1.5, yScaleFrom=1.5, xScaleTo=1, yScaleTo=1, duration=0.5, block=true)]
+[name="サベージ"]ドクター持ちこたえて、今行く！
+[name="ドクター"]はっ、早くしてくれー！
+[name="ドクター"]くっ――
+[dialog]
+[PlaySound(key="$d_avg_animalrun")]
+[CameraShake(duration=2, xstrength=10, ystrength=20, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Delay(time=1)]
+[imagerotate(angle=-20,fadetime=0.3,block = false)]
+[ImageTween( xFrom=0, yFrom=0, xTo=500, duration=0.3, block=false)]
+[PlaySound(key="$d_avg_slip")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.3, block=true)]
+[Delay(time=0.3)]
+[name="ドクター"]うわああああー！
+[dialog]
+[PlaySound(key="$d_avg_jump_water",channel="2")]
+[Delay(time=2)]
+[playsound(key="$d_avg_penrustle")]
+結局持ちこたえきれず、駄獣の背中から水に落ちてしまった。
+臀部と背部がひりひりと痛む。鼻に水が入ったせいで窒息しかけるほど咳き込んだ。
+このハプニングはテラを半年近く旅した自分に、この大地に生きているということを切に感じさせてくれた。
+まるで自らの命がほとばしる音を聞いたようだったよ、ケルシー。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[Delay(time=1)]
+[Background(image="bg_laccolith",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+[Delay(time=1)]
+1091年夏
+カズデル地区
+[Dialog]
+[charslot(slot="m",name="avg_npc_1360_1#1$1",duration=1)]
+[delay(time=2)]
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_230_savage_1#1$1",duration=1)]
+[delay(time=1)]
+[name="サベージ"]……ここから先に、トランスポーターの拠点はもうないよ。
+[name="サベージ"]集落もまばらだし、盗賊がそこらにいる……
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]サベージ、君との旅はここまでになるかもしれない。
+[charslot(slot="m",name="avg_230_savage_1#4$1")]
+[name="サベージ"]どうして？
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]この先はずいぶんときな臭い地域だ。傭兵に姿を見られれば、君はレム・ビリトンへ無事に帰れなくなる恐れがある。
+[charslot(slot="m",name="avg_230_savage_1#1$1")]
+[name="サベージ"]だとしたら、あなたとアーミヤちゃんだって危険なんじゃないの？
+[name="サベージ"]大丈夫だよ！　最後まで見送らせて！
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]……
+[name="ドクター"]シャーロット……ここまでありがとう。
+[charslot]
+突然本名を呼ばれたコータスは耳をピクリと動かし、ドクターを見た。
+数ヶ月の旅というのは、長くも短くもない。
+長いというには、これまでの人生のほんの一部でしかなく、短いというには、数百日の間を共に過ごし、数え切れないほどの思い出ができた。
+夕日の下で、サンドビーストの前で、小屋の軒下で。そして、この大地の上で。
+とても楽しい旅だった。この寡黙で奇妙な考えをたくさん持つ人物を完全に理解するには、いささか時間が足りなかったが。
+サベージと名乗るコータスは、仕方なしとため息をつく。わたしはドクターほど聡明ではないのだから、と。
+[charslot(slot="m",name="avg_npc_1295_1#2$1")]
+[name="アーミヤ"]サベージお姉さん……またいつか会いに来てくれる？
+[charslot(slot="m",name="avg_230_savage_1#8$1")]
+[name="サベージ"]うん！　もちろん！
+[name="サベージ"]それにドクターが言ってたでしょ。「バベル」の今の拠点はレム・ビリトンの施工チームが請け負ったプロジェクトだって！　もしかしたらまたすぐに会えるかもね！
+[charslot(slot="m",name="avg_npc_1295_1#8$1")]
+[name="アーミヤ"]じゃあ……待ってるね、サベージお姉さん。
+[charslot(slot="m",name="avg_230_savage_1#9$1")]
+[name="サベージ"]うん。アーミヤちゃんはほんといい子だね。でも本当のお別れは目的地に着いた後にしよう。まずはわたしが二人を連れて荒野を抜ける方法を考えるからね！
+[charslot(slot="m",name="avg_230_savage_1#8$1")]
+[name="サベージ"]ドクターはアーミヤちゃんとここで休んでて。わたしはこの先の中継所でレンタルできるオフロード車がないか見てくるから。
+[dialog]
+[playsound(key="$d_avg_sandftsingle")]
+[charslot(slot = "m",posfrom = "0,0", posto = "200,0",duration = 1,afrom=1,ato=0)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_4132_ascln_1#1$1",duration=0.5)]
+[delay(time=1)]
+[name="アスカロン"]ドクター。
+[charslot(slot="m",name="avg_npc_1295_1#1$1")]
+[charslot(slot = "m", action="jump",posto = "0,0",power=30,times=1,duration = 0.3)]
+[name="アーミヤ"]きゃっ！
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]別れの挨拶をする時間くらいはあるか？
+[charslot(slot="m",name="avg_4132_ascln_1#1$1")]
+[name="アスカロン"]ここの環境は危険だ。長居すればトラブルが増えるだけだぞ。
+[name="アスカロン"]あのコータスの娘は到着まで見送る意志が固いように見える。このまま別れた方が両者のためだろう。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]……それもそうだな。
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]ドクター……サベージお姉さんを待たなくていいんですか？
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]アーミヤ、時にはより良い結果のために、いじわるをしなくてはならないこともあるんだ。
+[name="ドクター"]絶対に、サベージお姉さんには危険な目になんて遭ってほしくないだろう？　でもお姉さんはきっとアーミヤとの別れを惜しんで我々がなんと言おうと最後まで見送ろうとするはずだ。
+[name="ドクター"]別れも言わずに去るのは無礼だが、こうすれば危険な目に遭わずに済む。
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]うぅ……
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]だが、またいつかサベージお姉さんに会えると保証しよう。
+[charslot(slot="m",name="avg_npc_1295_1#7$1")]
+[name="アーミヤ"]じゃあドクター、お手紙を残していってもいいですか？　戻ってきたときに私たちがいなかったら、きっと心配しちゃうから……
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]わかった。本当に気配りのできる子だ。ではお手紙はアーミヤに任せよう。
+[charslot(slot="m",name="avg_npc_1295_1#8$1")]
+[name="アーミヤ"]はい！
+[dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "-100,0",duration = 1)]
+[charslot(duration=0.5)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_4132_ascln_1#1$1")]
+[name="アスカロン"]……殿下がお前と会いたがっている。二人だけで。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]状況は芳しくないのか？　ケルシーは無事か？
+[charslot(slot="m",name="avg_4132_ascln_1#1$1")]
+[name="アスカロン"]ここでは話せない。
+[name="アスカロン"]あの子が手紙を書き終えたら出発しよう。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]わかった。手紙も……任せていいか。
+[charslot(slot="m",name="avg_4132_ascln_1#1$1")]
+[name="アスカロン"]安心しろ。彼女が絶対に見落とさない場所に置いておく。
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

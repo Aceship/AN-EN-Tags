@@ -1,0 +1,28 @@
+[header(actId="sandbox_1", npcId="trap_469_tpasngr")]
+[summontrap(charId="trap_469_tpasngr", dir="LEFT", x="16", y="10", isChar="False")]
+[foginview(leftBottomX="5", leftBottomY="7", rightUpX="19", rightUpY="14", id="fog_1")]
+[camerafocusto(id="trap_469_tpasngr", scale="MID", time="1")]
+[delay(time="1")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]よもや、ここでお会いしようとは。どのようにしてこの場所を見つけ出したのですか？
+[summonenemy(enemyId="enemy_7026_xbele", x="10", y="10", endX="6", endY="2")]
+[decision(option1="あの妙な石像を追ってきたんだ。", value1="1.1")]
+[predicate(references="1.1")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]例の、家出をした巨大な像のことでしょうか？
+[playanim(id="trap_469_tpasngr", anim="Attack", dir="LEFT")]
+[camerafocusto(offsetX="11", offsetY="10", time="2", scale="FAR")]
+[delay(time="2")]
+[decision(option1="ああ。君のほうは？", value1="2.1")]
+[predicate(references="2.1")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]私事は思いのほか順調に進んでおります。あなた様と同様、目的のすぐそばまで近付いているところでございますよ。
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]ご覧ください、この平和で美しい光景を。邪魔立てするのは本当に忍びなく思います。
+[playanim(id="enemy_7026_xbele", anim="Skill", dir="RIGHT")]
+[delay(time="1")]
+[decision(option1="あの石像……すごく楽しそうに見えるな。", value1="3.1")]
+[predicate(references="3.1")]
+[delay(time="1")]
+[fognotinview(id="fog_1")]
+[withdraw(id="enemy_7026_xbele")]
+[withdraw(id="trap_469_tpasngr")]
+[resetcamera(time="1")]
+[save]
+[end]

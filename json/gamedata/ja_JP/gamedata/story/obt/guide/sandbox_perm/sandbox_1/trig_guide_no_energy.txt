@@ -1,0 +1,12 @@
+[HEADER(is_skippable=false, is_tutorial=true)] 能量饮料弹尽粮绝
+[SandboxV2.EnsureDungeonQuest(questId="trig_guide_no_energy")]
+[SandboxV2.EnsureDungeonStable]
+[Delay(time=0.5)]
+[SandboxV2.DungeonFocusNode(focusType="FOCUS_BY_NODE_ID", focusNodeId="nB32E")]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama")]悪い知らせがある。拠点が敵に包囲された。加えて、現状持ち合わせているエナジードリンクだけでは、オペレーターたちが防衛作戦を行うには不十分だ。
+[SandboxV2.OpenGainItemPage(itemId="sandbox_1_stamina",itemCount=4)]
+[Tutorial(waitForSignal="sandbox_v2_gain_item_page_routed", dialogHead="$avatar_zumama")]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] だが幸い、こうした事態に備えて事前に備蓄しておいたドリンクがある。ひとまずはそれを使ってくれ。
+[SandboxV2.CloseGainItemPage]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] さて、今ので「在庫」は使い果たしてしまった。今後同じことが起こらないように、エナジードリンクを作って万が一に備えておこう。
+[SandboxV2.EnsureDungeonStable]

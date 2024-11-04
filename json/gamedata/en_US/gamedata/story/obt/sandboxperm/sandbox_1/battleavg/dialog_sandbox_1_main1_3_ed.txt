@@ -1,0 +1,68 @@
+[header(actId="sandbox_1", npcId="trap_467_ttuye")]
+[summontrap(x="3", y="8", charId="trap_467_ttuye", isChar="FALSE", dir="RIGHT")]
+[summonenemy(enemyId="enemy_7001_blwzad_2", x="7", y="8", endX="1", endY="4")]
+[move(enemyId="enemy_7001_blwzad_2", x="6", y="8")]
+[summonenemy(enemyId="enemy_7001_blwzad", x="7", y="9", endX="1", endY="4")]
+[move(enemyId="enemy_7001_blwzad", x="6", y="9")]
+[camerafocusto(offsetX="5", offsetY="8", scale="FAR", time="1")]
+[foginview(id="rect1", leftBottomX=1, leftBottomY=6, rightUpX=7, rightUpY=11)]
+[name="Ameeri Soldier", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]I warned you! You don't know who you're messing with!
+[decision(option1="Stars in the sky, lords ameer on the ground.", value1="1.1", option2="Which little star are you twinkling?", value2="1.2")]
+[predicate(references="1.1")]
+[name="Ameeri Soldier", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]You'll pay for your insult to the Lord Ameer. Our armies will trample your settlement into the dirt.
+[name="Ameeri Soldier", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]You will become our slaves and work our quarries.
+[withdraw(id="enemy_7001_blwzad_2")]
+[withdraw(id="enemy_7001_blwzad")]
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]The quarries...
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]We have to stop them before they force any more people over there.
+[decision(option1="We've certainly made enemies now.", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="Send word back to the camp.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="We must prepare.", value1="4.1")]
+[predicate(references="4.1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Look what I found in the stuff they left behind. A bounty notice for an archaeologist.
+[decision(option1="An archaeologist? Here?", value1="5.1")]
+[predicate(references="5.1")]
+[decision(option1="Could the rumors about the treasure be real?", value1="6.1")]
+[predicate(references="6.1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]The soldiers dug up every scrap of earth looking for the treasure.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Treasure... that might be the key to driving away the ameeri armies. We should find this archaeologist, if we can.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Good news, they also left a quarrying map. We can start mining stone now.
+[additem(itemId="sandbox_1_craft_2", itemCount="1")]
+(You obtained the map of Arsalan stone deposits. You can now gather stone.)
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[save]
+[end]
+[predicate(references="1.2")]
+[name="Ameeri Soldier", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]You'll pay for your insult to the Lord Ameer. Our armies will trample your settlement into the dirt.
+[name="Ameeri Soldier", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]You will become our slaves and work our quarries.
+[withdraw(id="enemy_7001_blwzad_2")]
+[withdraw(id="enemy_7001_blwzad")]
+[camerafocusto(id="trap_467_ttuye", scale="MID", time="1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]The quarries...
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]We have to stop them before they force any more people over there.
+[decision(option1="We've certainly made enemies now.", value1="8.1")]
+[predicate(references="8.1")]
+[decision(option1="Send word back to the camp.", value1="9.1")]
+[predicate(references="9.1")]
+[decision(option1="We must prepare.", value1="10.1")]
+[predicate(references="10.1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Look what I found in the stuff they left behind. A bounty notice for an archaeologist.
+[decision(option1="An archaeologist? Here?", value1="11.1")]
+[predicate(references="11.1")]
+[decision(option1="Could the rumors about the treasure be real?", value1="12.1")]
+[predicate(references="12.1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]The soldiers dug up every scrap of earth looking for the treasure.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Treasure... that might be the key to driving away the ameeri armies. We should find this archaeologist, if we can.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Good news, they also left a quarrying map. We can start mining stone now.
+[additem(itemId="sandbox_1_craft_2", itemCount="1")]
+(You obtained the map of Arsalan stone deposits. You can now gather stone.)
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[save]
+[end]

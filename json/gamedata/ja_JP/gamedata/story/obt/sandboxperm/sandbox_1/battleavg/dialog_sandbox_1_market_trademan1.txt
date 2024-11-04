@@ -1,0 +1,12 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]やあみんな！　おかげさまで、教えてもらった道をたどって、ようやくここを見つけることができたよ。だけど、まだ新製品は持ってきてなくてさ……
+[decision(option1="それで、この場所の居心地は？", value1="1.1", option2="それならまた来よう。", value2="1.2")]
+[predicate(references="1.1", visibleCondition="!c0")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]すごく快適だよ。この辺にこんなに楽しい場所があるなんて思いもしなかった！　感謝の気持ちを込めて、ささやかなプレゼントを贈らせてね。
+[additem(itemId="sandbox_1_craft_7", itemCount="1")]
+[decision(option1="ありがとう。", value1="2.1")]
+[predicate(references="2.1")]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_craft_7", value="1")]

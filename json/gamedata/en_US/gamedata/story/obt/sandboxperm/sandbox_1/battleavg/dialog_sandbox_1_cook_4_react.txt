@@ -1,0 +1,27 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Why... hasn't that girl...come by yet...?
+[decision(option1="What are you droning on about?", value1="1.1")]
+[predicate(references="1.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]AH! You scared me! What are you doing here? Did Eunectes tell you to come find me?
+[decision(option1="This time, I brought <color=#d8d769>Crab Sashimi</color>.", value1="2.1", option2="No, I was just passing by.", value2="2.2")]
+[predicate(references="2.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_4", itemCount="-1")]
+[decision(option1="I hope you like it.", value1="3.1")]
+[predicate(references="3.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]This meat... is it cooked enough?
+[decision(option1="It's a little raw, on purpose.", value1="4.1")]
+[predicate(references="4.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Ah... let me have a taste... hmm...
+[decision(option1="How is it?", value1="5.1")]
+[predicate(references="5.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]A little better than last time, but I'm still not satisfied.
+[decision(option1="You were smiling as you finished!", value1="6.1")]
+[predicate(references="6.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Does a smile automatically mean satisfaction?
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Hmph! I'm not content yet, and that's that! Don't come to me again without something good on you!
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="2.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_4", value="1")]

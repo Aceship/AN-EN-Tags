@@ -1,0 +1,521 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="45_g2_trainwalkway",screenadapt="coverall")]
+[Delay(time=1)]
+[playsound(key="$d_avg_crwddiscuss_outside", loop=true, channel="bgs",volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_trnrvlbrdcst", volume=0.7)]
+ご乗車の皆様、この列車は終点――
+銀心湖駅に到着いたします。
+盆地の中央に位置するこの銀心湖、透き通る湖面に立ち込めたる霧は美しく、まさにイェラグの地で育まれた数ある宝の一つと言えるでしょう。
+伝説によると、銀心湖はイェラガンドが落とした最初の涙であると言われています。冬には凍った湖面を歩くこともでき、足元の氷越しに湖底の景色をお楽しみいただけますよ。
+そしてこの度新たに建設されたイェラガンド像は、銀心湖の中心に浮かぶ島にそびえ立っております。イェラガンドはそこから、イェラグとその民をお見守りくださっているのです。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+ご乗車の皆様、この列車は……
+[Dialog]
+[StopSound(channel="bgs", fadetime=4)]
+[PlaySound(key="$d_avg_walk_stage")]
+[PlaySound(key="$d_avg_higheldshosfts", volume=0.6)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[Delay(time=2.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Image(image="45_i05",screenadapt="coverall",fadetime=0,block=true)]
+[Delay(time=1)]
+[ImageTween(xFrom=0, yFrom=-100, xTo=0, yTo=0, xScaleFrom=1.5, yScaleFrom=1.5, xScaleTo=1, yScaleTo=1, duration=25, block=false)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=2)]
+[name="ハロルド"]……
+[name="「グレーシルクハット」"]……
+[name="デーゲンブレヒャー"]……
+[name="ハロルド"]……つまり、すべて誤解だったということですかな？
+[name="ハロルド"]暗殺計画はもちろん、隠された事情も、列車に誰かしら重要人物がいる可能性などというのも、すべてなかったと？
+[name="デーゲンブレヒャー"]その「重要人物」というのが、私がこの列車に乗る理由となった人物を表しているのなら、それはあなたのことね。
+[name="デーゲンブレヒャー"]わずか一ヶ月だけで牧畜民に名が売れた、駄獣の治療がお得意のハロルド・クレイガボン子爵。
+[name="ハロルド"]こほん。
+[name="ハロルド"]光栄の至りでございます、デーゲンブレヒャー殿。
+[name="「グレーシルクハット」"]どうぞお赦しください、デーゲンブレヒャー女史。
+[name="「グレーシルクハット」"]あなたの手袋に血がついていたので、ついあれこれと邪推をしてしまいました。
+[name="デーゲンブレヒャー"]ああ、これ？
+[name="デーゲンブレヒャー"]そんなに気になるの？
+[name="デーゲンブレヒャー"]だったら、こうなった理由くらい聞かせてあげてもいいわよ。
+[name="「グレーシルクハット」"]よろしければ、ぜひとも。
+[name="デーゲンブレヒャー"]リリーのお産があまり上手くいかなくてね。
+[name="デーゲンブレヒャー"]早産で、それも急だったから出血が多くて大変だったの。
+[name="ハロルド"]何ですと！？
+[name="ハロルド"]早産……しかも出血多量と仰いましたか？
+[name="ハロルド"]それは大ごとですな。今のリリーの容体はいかがですか？
+[name="デーゲンブレヒャー"]応急処置はしておいたけど、その後のケアには専門家が必要ね。
+[name="デーゲンブレヒャー"]レオン爺さんが言うには、一番信頼できるのはあなただそうよ。
+[name="デーゲンブレヒャー"]つまり、あとはあなたの腕次第ってことになるわね。
+[name="ハロルド"]わかりました！　すぐに向かいましょう！
+[name="「グレーシルクハット」"]……
+[name="デーゲンブレヒャー"]あら、何だか残念そうね。もしかして、想像してたのと違った？
+[name="デーゲンブレヒャー"]それなら、あなたの想像通りにしてあげてもいいわよ。
+[name="「グレーシルクハット」"]そこまでしていただく必要はございませんよ。
+[name="デーゲンブレヒャー"]それで？　あなたたちは何をどう誤解していたの？
+[name="ハロルド"]それは……はっはっは、銀心湖は本当に素晴らしい場所ですな！
+[name="ハロルド"]今日は天気も良いですし、風が穏やかで空気も綺麗で……
+[name="デーゲンブレヒャー"]……ヴィクトリア人って、話題をそらす時まで天気の話をしたがるのね。
+[name="デーゲンブレヒャー"]そういう常套句は腐るほど聞いてきたし、もう飽きてるんだけど。
+[name="ハロルド"]これは申し訳ない。ヴィクトリアでは、ひどい天気を取っ掛かりにして会話を始める方法を幼い頃より学びますもので。
+[name="「グレーシルクハット」"]そういったお話でヴィクトリアのイメージを軽率に貶めるのはお控えいただけますか、子爵様。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[Delay(time=0.5)]
+[Background(image="45_g1_kjeragtrainstation", screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_194_leto_1#13$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_194_leto_1#13$1",focus="m")]
+[name="リェータ"]おーい――
+[name="リェータ"]あんたら、いつまでそこで立ち話してるつもりなんだ？
+[name="リェータ"]ちょっとした誤解だったんだろ？　もう解決したんじゃねぇのか？
+[charslot(slot="m",name="avg_4114_harold_1#1$1",focus="m")]
+[name="ハロルド"]ええ、もちろんですとも。
+[name="ハロルド"]実のところ、そそっかしい誰かさんがいなければ、そんな誤解も生まれずに済んだのですがね。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]……
+[charslot(slot="m",name="avg_194_leto_1#9$1",focus="m")]
+[name="リェータ"]へえ。ま、解決したならそれでいいだろ。
+[name="リェータ"]列車ん中を走るのは結構楽しかったけど、もうテーブルの下でほこり食うのは御免だわ。
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]ところで、今向こうを見に行ってきたんだ。ガイドの姉ちゃんがいたから、地図を二枚もらっといたぜ。
+[name="リェータ"]こっから銀心湖までだと、1ブロック歩けば着くのか。すげー近いなあ。
+[name="リェータ"]どうする？　すぐに出発すっか？
+[charslot(slot="m",name="avg_4114_harold_1#12$1",focus="m")]
+[name="ハロルド"]それが……大変申し訳ありません。先ほどのお約束ですが、守れなくなってしまいました。
+[name="ハロルド"]実は今、私をより強く必要としているレディがいらっしゃいますもので、すぐに彼女の元へ向かわねばならないのです。
+[charslot(slot="m",name="avg_194_leto_1#6$1",focus="m")]
+[name="リェータ"]……リリーってマジで駄獣なんだよな？　なんつーかその、ヴィクトリア貴族の隠語とかじゃなくて。
+[charslot(slot="m",name="avg_4114_harold_1#10$1",focus="m")]
+[name="ハロルド"]お戯れを！　信じてください！
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]わかったわかった。じゃあ、早く「レディ・リリー」のとこに行ってやれよ。私のことなら、一人でもヘーキだから気にすんなって。
+[charslot(slot="m",name="avg_4114_harold_1#2$1",focus="m")]
+[name="ハロルド"]ロザリン……
+[charslot(slot="m",name="avg_194_leto_1#14$1",focus="m")]
+[name="リェータ"]な、なんだよその顔、どうしたんだ？
+[charslot(slot="m",name="avg_4114_harold_1#2$1",focus="m")]
+[name="ハロルド"]貴方はなんとも思いやり深い素敵なお嬢さんですね！
+[Dialog]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4114_harold_1#4$1",focus="m")]
+[name="ハロルド"]では、ひとまず連絡先を交換しておきましょう。
+[Dialog]
+[PlaySound(key="$d_avg_devicebeep",volume=0.8)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4114_harold_1#1$1",focus="m")]
+[name="ハロルド"]お困りの際にはいつでもご連絡ください。このハロルドが喜んでお力になりますよ。
+[name="ハロルド"]それと、貴方の父君……イェラグの美男子と仰いましたよね？　そちらの件も気に留めておきましょう。
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]おう。ありがとな、おっさん。
+[name="リェータ"]そんじゃ、そっちの話の続きをどーぞ！　私はもう行くよ！
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_4114_harold_1#14$1",focus="m")]
+[name="ハロルド"]いやはや、なんと良い子なのでしょう。母君を亡くされたばかりだというのに、あれほど前向きでたくましくいられるとは……
+[charslot(slot="m",name="avg_4116_blkkgt_1#10$1",focus="m")]
+[name="デーゲンブレヒャー"]……イェラグの美男子？
+[charslot(slot="m",name="avg_4114_harold_1#1$1",focus="m")]
+[name="ハロルド"]おや、聞こえていましたか。
+[name="ハロルド"]ロザリンが今回イェラグへやってきたのは、長年会っていなかった父君を見つけるためだそうですよ。
+[name="ハロルド"]本当に感動的ですよね。万事順調に進むことを願ってやみません。
+[charslot(slot="m",name="avg_4116_blkkgt_1#7$1",focus="m")]
+[name="デーゲンブレヒャー"]父親……
+[charslot(slot="m",name="avg_4116_blkkgt_1#10$1",focus="m")]
+[name="デーゲンブレヒャー"]あの子がそう言っていたのね？
+[charslot(slot="m",name="avg_4114_harold_1#14$1",focus="m")]
+[name="ハロルド"]ええ。さて、誤解が解けたからには……
+[name="ハロルド"]実は私、デーゲンブレヒャー殿の筋金入りのファンなのですが、よろしければサインを――
+[charslot(slot="m",name="avg_4116_blkkgt_1#1$1",focus="m")]
+[name="デーゲンブレヒャー"]今は時間がないの。
+[name="デーゲンブレヒャー"]先に失礼するわ。リリーのことは頼んだわよ。
+[stopmusic(fadetime=2)]
+[Dialog]
+[PlaySound(key="$d_avg_higheldshosfts", volume=0.6)]
+[charslot(duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4114_harold_1#8$1",focus="m")]
+[name="ハロルド"]ちょ、ちょっと、お待ちを、デーゲンブレヒャー殿！
+[name="ハロルド"]はぁ――
+[charslot(slot="m",name="avg_4114_harold_1#12$1",focus="m")]
+[name="ハロルド"]……行ってしまわれましたな。
+[Dialog]
+[charslot]
+[name="「グレーシルクハット」"]どうやら、我らが黒騎士はあの輝かしき過去があまりお好きではないようですね。
+[name="「グレーシルクハット」"]しかし、それも当然でしょう。あのような形でカジミエーシュを追放されては……
+[Dialog]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[charslot(slot="l",name="avg_4114_harold_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_867_1#1$1",focus="l")]
+[name="ハロルド"]おっと、失礼。まだいらしたとは気付きませんでした。
+[charslot(slot="r",name="avg_npc_867_1#1$1",focus="r")]
+[name="「グレーシルクハット」"]私も、不用意な発言でかの黒騎士の怒りを買いたくありませんでしたから。
+[charslot(slot="l",name="avg_4114_harold_1#1$1",focus="l")]
+[name="ハロルド"]ご自分の身の丈をよくわかっていらっしゃるようですね。
+[charslot(slot="r",name="avg_npc_867_1#1$1",focus="r")]
+[name="「グレーシルクハット」"]確かに、発言にはもっと慎重を期すべきでした。私のミスです。
+[name="「グレーシルクハット」"]しかし、本当にデーゲンブレヒャー女史の言い分を信じるおつもりですか？
+[charslot(slot="l",name="avg_4114_harold_1#15$1",focus="l")]
+[name="ハロルド"]……
+[charslot(slot="r",name="avg_npc_867_1#1$1",focus="r")]
+[name="「グレーシルクハット」"]カジミエーシュを離れ、シルバーアッシュと共にイェラグへ来てからというもの、黒騎士は長らく彼の腹心です。
+[name="「グレーシルクハット」"]私の知る限り、ここ最近の彼女はずっと、カランド貿易のため、山中で新たな部隊の訓練を指揮しています。
+[name="「グレーシルクハット」"]さらに、最近になってこちらの手の者が感知したことには、イェラグは頻繁に輸出入を行っている様子です。特に一部のデリケートな材料に関しては、取引額がやや異常と言えるほどで……
+[charslot(slot="l",name="avg_4114_harold_1#15$1",focus="l")]
+[name="ハロルド"]……それで？
+[charslot(slot="r",name="avg_npc_867_1#1$1",focus="r")]
+[name="「グレーシルクハット」"]すべてはまだ、私の推測に過ぎません。
+[name="「グレーシルクハット」"]ですが、思うにあなた自身もいくらかお疑いだからこそ、先ほどのロザリン嬢と連絡先を交換なさったのでは？
+[charslot(slot="l",name="avg_4114_harold_1#15$1",focus="l")]
+[name="ハロルド"]貴殿はヴィクトリアで長く働きすぎたせいで、人間不信になってしまわれたようですな。実に残念なことです。
+[charslot(slot="r",name="avg_npc_867_1#1$1",focus="r")]
+[name="「グレーシルクハット」"]それが私の務めですので、なにとぞご容赦ください。
+[name="「グレーシルクハット」"]今日起きたことは、すべて公爵様にご報告させていただきます。
+[charslot(slot="l",name="avg_4114_harold_1#16$1",focus="l")]
+[name="ハロルド"]お待ちを……！
+[charslot(slot="r",name="avg_npc_867_1#1$1",focus="r")]
+[name="「グレーシルクハット」"]もう一度ご忠告いたしましょうか。
+[name="「グレーシルクハット」"]ご自分の責務をどうかお忘れにならぬよう、そして公爵様のご期待に背かれぬようお願いします。
+[name="「グレーシルクハット」"]これは決して観光旅行などではないのですから。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="24_g10_manorhouse", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlayMusic(intro="$m_dia_street_intro", key="$m_dia_street_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_transmissionget",volume=1)]
+[charslot(slot="r",name="avg_172_svrash_1#1$1",duration=0.5)]
+[CharacterCutin(widgetID="1", name="avg_npc_177", style="cutin", povX =-50,fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=-300, width=200, block=true)]
+[charslot(slot="r",name="avg_172_svrash_1#1$1",focus="r")]
+[name="エンシオディス"]カランド貿易との提携について、テイラー殿のお考えをお聞かせいただけますでしょうか？
+[name="エンシオディス"]弊社のヤーカがすでにカランド貿易傘下の採掘場や工場をご案内差し上げたかと思うのですが、イェラグと弊社にはご満足いただけましたか？
+[charslot(slot="r",name="avg_172_svrash_1#1$1",focus="n")]
+[name="クルビアの豪商"]もちろん、御社には満足しておりますとも。
+[name="クルビアの豪商"]とはいえ、あなたもビジネスマンでいらっしゃる以上、ご理解いただけるでしょうが――
+[name="クルビアの豪商"]この手の大規模プロジェクトですと、カランド貿易単体との提携であれば、ここまでためらいはしませんが……
+[name="クルビアの豪商"]イェラグとの提携込みとなりますと、皆まだあまりイェラグへの理解が深くありませんので、より慎重に検討せざるを得ないのです。
+[charslot(slot="r",name="avg_172_svrash_1#1$1",focus="r")]
+[name="エンシオディス"]ごもっともです。
+[charslot(slot="r",name="avg_172_svrash_1#1$1",focus="n")]
+[name="クルビアの豪商"]それに、数日前には、街でヴィクトリアの兵士を見かけました。
+[name="クルビアの豪商"]まさかと思いますが……イェラグとヴィクトリアの間に対立などはございませんよね？
+[charslot(slot="r",name="avg_172_svrash_1#10$1",focus="r")]
+[name="エンシオディス"]このイェラグにおいて、あなたの安全が脅かされることは決してないとお約束いたしましょう。
+[name="エンシオディス"]ともあれ、ゆっくりお考えいただいても問題ありませんよ。この地は決してあなたを失望させませんので。
+[charslot(slot="r",name="avg_172_svrash_1#10$1",focus="n")]
+[name="クルビアの豪商"]それは素晴らしい！　今後とも、なにとぞよろしくお願いいたしますね、シルバーアッシュ様。
+[Dialog]
+[PlaySound(key="$transmission",volume=0.6)]
+[CharacterCutin(widgetID="1",fadetime=0.2,block=true)]
+[delay(time=1.5)]
+[Dialog]
+[charslot]
+[delay(time=0.3)]
+[charslot(slot="m",name="avg_172_svrash_1#1$1",focus="m")]
+[name="エンシオディス"]マッターホルン、明日もテイラー氏の案内を頼む。
+[name="エンシオディス"]常識的な範囲で、先方の要求はすべて満たしてやって構わない。
+[charslot(slot="m",name="avg_199_yak_1#1$1",focus="m")]
+[name="マッターホルン"]はい。
+[name="マッターホルン"]……ですが旦那様、本当にテイラー氏と提携なさるおつもりで？
+[charslot(slot="m",name="avg_172_svrash_1#10$1",focus="m")]
+[name="エンシオディス"]お前の目には、良きパートナーとして映らなかった、と？
+[charslot(slot="m",name="avg_199_yak_1#1$1",focus="m")]
+[name="マッターホルン"]私の立場で意見を述べるなど恐れ多いことですが。
+[charslot(slot="m",name="avg_199_yak_1#6$1",focus="m")]
+[name="マッターホルン"]ただ、この方はイェラグ滞在中に幾度も契約のサインを避けていますし、利益配分についても前言撤回を繰り返しています。となると恐らくは……
+[charslot(slot="m",name="avg_172_svrash_1#10$1",focus="m")]
+[name="エンシオディス"]そうだな。お前の言う通り、彼は抜け目のないビジネスマンだ。
+[name="エンシオディス"]現状のイェラグでは、あの手の鼻が利く狡猾なビジネスマンと提携するほかに道はない。だが、彼らからすれば選択肢は一つではないのだ。
+[name="エンシオディス"]イェラグを彼らにとって唯一の選択肢にすることが、私の今後の課題だな。
+[charslot(slot="m",name="avg_199_yak_1#6$1",focus="m")]
+[name="マッターホルン"]旦那様……
+[Dialog]
+[charslot]
+[playsound(key="$phone")]
+[Delay(time=1)]	
+[charslot(slot="m",name="avg_172_svrash_1#1$1",focus="m")]
+[name="エンシオディス"]さて、その前にデーゲンブレヒャーの新兵部隊の様子を確かめてきてくれ。
+[name="エンシオディス"]テイラー氏の護衛は彼らに任せたいのでな。
+[charslot(slot="m",name="avg_199_yak_1#1$1",focus="m")]
+[name="マッターホルン"]はい。
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_gen_transmissionget",volume=1)]
+[CharacterCutin(widgetID="2", name="avg_4116_blkkgt_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=0, width=200, block=true)]
+[name="デーゲンブレヒャー"]もしもし、エンシオディス？
+[Dialog]
+[CharacterCutin(widgetID="2",fadetime=0.2,block=false)]
+[delay(time=0.3)]
+[charslot(slot="m",name="avg_172_svrash_1#1$1",focus="m")]
+[name="エンシオディス"]ああ。どうした？
+[name="エンシオディス"]お前が通信機を使うとは珍しい。こういった遠隔通信は嫌いなのではなかったか？
+[Dialog]
+[charslot]
+[CharacterCutin(widgetID="3", name="avg_4116_blkkgt_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0, offsetx=0, width=200, block=true)]
+[name="デーゲンブレヒャー"]人から連絡が来るのが嫌なだけよ。
+[name="デーゲンブレヒャー"]それより、あなたも知ってるでしょうけど、一応お知らせしておくべきことがあるの。
+[name="デーゲンブレヒャー"]さっき、銀心湖行きの列車内でロドスのお嬢さんと会ったわ。
+[name="デーゲンブレヒャー"]あなた、また彼らと何か新しく提携でもしたの？
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[CharacterCutin(widgetID="3",fadetime=0,block=false)]
+[charslot]
+[Background(image="45_g8_kjeragstreet", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[playMusic(key="$comedy_loop", volume=0.6)]
+[PlaySound(key="$d_avg_crwddiscuss_outside",loop=true, channel="crwd1", volume=0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]寄ってらっしゃい見てらっしゃい！　イェラグの特製スノーチーズにビッグサイズの駄獣フィギュア、それに麗しの巫女様の肖像画もあるよ！
+[name="特産品商"]地元の特産品が勢ぞろいだ！
+[charslot(slot="m",name="avg_npc_277_1#1$1",focus="m")]
+[name="ライバル商人"]最新版の駄獣ブラインドボックスだよ！　数量限定、ぜひお見逃しなく！
+[charslot(slot="m",name="avg_194_leto_1#1$1",focus="m")]
+[name="リェータ"]ほーん、すげー賑やかだなあ。
+[charslot(slot="m",name="avg_194_leto_1#13$1",focus="m")]
+[name="リェータ"]どれどれ、売り物はーっと……
+[charslot(slot="m",name="avg_194_leto_1#14$1",focus="m")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="リェータ"]何だこれ？　巫女の肖像画？　これってプラマニクスだよな？　どうしてこんなふうに描かれてんだ？
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]おいおい、お嬢ちゃん何てこと言うんだ！　この肖像画は巫女様ご本人にもお目通しいただいた、正真正銘の本物なんだぞ！
+[charslot(slot="m",name="avg_194_leto_1#5$1",focus="m")]
+[name="リェータ"]はいはい、本物ねえ。
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]あ、そのスノーチーズってやつ、もらってくよ。それって今の一番人気だったりするのか？
+[name="リェータ"]私もガキの頃に食ったことあるかもな……
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]おや、あんたイェラグ人かい？
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]そんなとこだよ。
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]だったら早く言いなさい。それならそっちは買わんでいい。
+[charslot(slot="m",name="avg_194_leto_1#6$1",focus="m")]
+[name="リェータ"]はあ？
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]それは外国の観光客向けの商品だからな。イェラグ人なら、わざわざそんなのを買うこたない！
+[name="特産品商"]こっちの粉チーズにしなさい。味はたいして変わらんし、これで十分さ！
+[charslot(slot="m",name="avg_194_leto_1#14$1",focus="m")]
+[name="リェータ"]この店……外国人をカモってんのか？
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]そんなわけなかろう！
+[name="特産品商"]ほれ、このスノーチーズを見てみなさい。パッケージが綺麗でセンスがあるだろう。観光客が特産品に求めているのは、こういう高級感なんだよ。
+[name="特産品商"]だからわしはラッピングの分儲けようとしているだけで、粗悪品を良品と偽って売ってるわけじゃあない。チーズの味は折り紙付きだしな！
+[charslot(slot="m",name="avg_194_leto_1#9$1",focus="m")]
+[name="リェータ"]……一理あるな。
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]そんじゃ、この粉チーズをもらうよ。あ、ついでに聞きてぇことがあるんだけど。
+[name="リェータ"]イェラグには、誰もが認める美男子っているのか？
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]美男子？
+[name="特産品商"]そうだな……わしはペイルロッシュ家の者なんだが、こればかりは本当のことを言わねばな。
+[name="特産品商"]このイェラグで誰もが認める美男子と言えば、一番に挙がるのはやはりエンシオディス様だろう。
+[charslot(slot="m",name="avg_194_leto_1#6$1",focus="m")]
+[name="リェータ"]エンシオディス……って、シルバーアッシュか！？
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]そうそう、あのご当主だよ。
+[charslot(slot="m",name="avg_194_leto_1#10$1",focus="m")]
+[name="リェータ"]いや、ないな……絶対ありえねーわ！
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]なあおっちゃん、ほかには？
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]うーむ、そうだなぁ……んんん……
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]あー、いいよいいよ。ちょっと聞いてみただけだから。
+[name="リェータ"]代わりにもう一つ教えてくれよ。銀心湖のそばにある山のことなんだけどさ。
+[name="リェータ"]なんかあの山にまつわる話とかねぇの？
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]おお、あれか！　あの山はフューゲン山といってな！
+[name="特産品商"]この辺りでも有名な縁結びスポットなんだよ。若いカップルなんかは皆こぞって向かっとるぞ。
+[charslot(slot="m",name="avg_194_leto_1#13$1",focus="m")]
+[name="リェータ"]カップルねえ……
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]最近は謳い文句まであってな。「日の出を一緒に見た二人は永遠に一緒にいられる」だの、「イェラグで結ばれればその愛は氷のように固くなる」だの、まったく、むず痒くなってくるよ。
+[name="特産品商"]観光客が大勢そこへ詰めかけて、愛を証明する錠前とかいうのをかけてるらしいが……おお、そういえば！
+[name="特産品商"]アークトス様はあの山で狩りをするのがお好きでな。この頃は観光客に何度も邪魔されて、不機嫌になさっとるらしいぞ！
+[charslot(slot="m",name="avg_194_leto_1#7$1",focus="m")]
+[name="リェータ"]ふーん……
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]色々ありがとな、おっちゃん。チーズの代金、これでいいか？
+[charslot(slot="m",name="avg_npc_278_1#1$1",focus="m")]
+[name="特産品商"]おう、まいどあり！
+[Dialog]
+[stopSound(channel="crwd1", fadetime=2.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="45_g6_lakescenery_d", screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_194_leto_1#13$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_194_leto_1#13$1",focus="m")]
+[name="リェータ"]これが母ちゃんがいつも言ってた銀心湖か……
+[name="リェータ"]そんであの山がフューゲン山だな。
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]確かにいい景色だけど……こんくらいの湖なら、ウルサスにもないわけじゃねぇなあ。
+[charslot(slot="m",name="avg_194_leto_1#6$1",focus="m")]
+[name="リェータ"]おっ、氷はかなり厚そうだ。
+[name="リェータ"]向こうに立ってるあの顔がよく見えねぇやつが……イェラガンド像かな？
+[charslot(slot="m",name="avg_194_leto_1#14$1",focus="m")]
+[name="リェータ"]うわ、でっけー。相当大規模な工事だったんだろうな。あんなバカでかい像作るとなると、どんだけ石使うことになるんだ？
+[charslot(slot="m",name="avg_194_leto_1#14$1",focus="n")]
+[name="？？？"]石ですって？
+[name="？？？"]我らがイェラガンド像はそんな単純な造りしてないわよ！
+[charslot(slot="m",name="avg_194_leto_1#9$1",focus="m")]
+[name="リェータ"]ん？
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_walk_stage")]
+[charslot(slot="m",name="avg_npc_262_1#10$1",duration=1)]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_262_1#10$1",focus="m")]
+[name="スキウース"]でもあなた、楽しみ方は上出来ね。イェラガンド像を鑑賞するならここはベストスポットだもの。
+[charslot(slot="m",name="avg_194_leto_1#9$1",focus="m")]
+[name="リェータ"]えーと、あんた誰？
+[charslot(slot="m",name="avg_npc_262_1#1$1",focus="m")]
+[multiline(name="スキウース")]あたしは――
+[charslot(slot="m",name="avg_npc_262_1#10$1",focus="m")]
+[multiline(name="スキウース")]こほん、おっほん！　重要なのはそこじゃなくて、あなたが今言ってたことでしょ！
+[name="スキウース"]このイェラガンド像は普通の石で作られたものじゃないの。イェラガンドへの敬愛の念を込めて、最高級の材料を使ってるのよ！
+[charslot(slot="m",name="avg_194_leto_1#13$1",focus="m")]
+[name="リェータ"]最高級の材料？
+[name="リェータ"]って、具体的には何なんだ？
+[charslot(slot="m",name="avg_npc_262_1#1$1",focus="m")]
+[name="スキウース"]あら、わからない？　最高級って言ったらそれはもちろん――
+[charslot(slot="m",name="avg_npc_262_1#5$1",focus="m")]
+[name="スキウース"]――あっ！
+[charslot(slot="m",name="avg_194_leto_1#13$1",focus="m")]
+[name="リェータ"]どうした、舌でも噛んだのか？
+[charslot(slot="m",name="avg_npc_262_1#2$1",focus="m")]
+[name="スキウース"]違うわよ！　そんなの当然機密事項だし、観光客にそうやすやすと教えられないってだけ！
+[charslot(slot="m",name="avg_npc_262_1#10$1",focus="m")]
+[name="スキウース"]とにかく、詳しくは話せないけど……すっごくすっごい材料を使ってるの！
+[charslot(slot="m",name="avg_194_leto_1#6$1",focus="m")]
+[name="リェータ"]さっき言いそうになってたくせに。
+[charslot(slot="m",name="avg_npc_262_1#7$1",focus="m")]
+[name="スキウース"]うるさいわね、結局言わなかったじゃない！
+[charslot(slot="m",name="avg_194_leto_1#3$1",focus="m")]
+[name="リェータ"]はいはい、そーだな。
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]じゃ、あとはごゆっくり。私はもう行くぜ。
+[charslot(slot="m",name="avg_npc_262_1#4$1",focus="m")]
+[name="スキウース"]あっ、ちょっと！　待ちなさい！
+[charslot(slot="m",name="avg_194_leto_1#13$1",focus="m")]
+[name="リェータ"]どうした、まだ何かあんのか？
+[charslot(slot="m",name="avg_npc_262_1#5$1",focus="m")]
+[multiline(name="スキウース")]あなた……
+[charslot(slot="m",name="avg_npc_262_1#10$1",focus="m")]
+[multiline(name="スキウース")]えっと、その！　あなた、観光客よね？
+[name="スキウース"]二日後の朝に、ここでイェラガンド像の落成式が執り行われるの。
+[name="スキウース"]その時までイェラグにいるなら、絶対見に来なさいよね！
+[charslot(slot="m",name="avg_194_leto_1#13$1",focus="m")]
+[name="リェータ"]はあ？　そんなこと言われてもなあ。
+[name="リェータ"]二日後のことなんてまだわかんねぇって。それに、今見るのと別に変わんねぇだろ。
+[charslot(slot="m",name="avg_npc_262_1#1$1",focus="m")]
+[name="スキウース"]変わんなくないわよ！
+[charslot(slot="m",name="avg_npc_262_1#11$1",focus="m")]
+[name="スキウース"]これは主催の巫女様が自ら出席なさる式典だし、本当にイェラガンドの御業を見られるかもしれないんだから！
+[charslot(slot="m",name="avg_npc_262_1#10$1",focus="m")]
+[name="スキウース"]あなた……ええと、名前は？
+[charslot(slot="m",name="avg_194_leto_1#9$1",focus="m")]
+[name="リェータ"]ロザリンだ。
+[charslot(slot="m",name="avg_npc_262_1#10$1",focus="m")]
+[name="スキウース"]フルネームは何ていうの？
+[charslot(slot="m",name="avg_194_leto_1#9$1",focus="m")]
+[multiline(name="リェータ")]ったく、めんどくせぇなあ……
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[multiline(name="リェータ")]（ウルサス語）ロザリン・タチアノヴナ・ラリーナだよ。
+[charslot(slot="m",name="avg_npc_262_1#10$1",focus="m")]
+[name="スキウース"]よろしい！　それじゃ、あなたを招待してあげるっていうのはどうかしら？
+[name="スキウース"]ロザリン・タチアノヴナ・ラリーナを、このスキウース・ブラウンテイルが正式に式典へ招待するの！　だから二日後の落成式に顔を出しなさいな！
+[charslot(slot="m",name="avg_npc_262_1#1$1",focus="m")]
+[name="スキウース"]そうすれば、このイェラガンド像がほかとは違う、最高に特別なものだってことがわかるはずよ！
+[charslot(slot="m",name="avg_194_leto_1#8$1",focus="m")]
+[name="リェータ"]へえ、そんなに自信があんのか？
+[charslot(slot="m",name="avg_194_leto_1#1$1",focus="m")]
+[name="リェータ"]いいぜ、だったら期待して待っててやんよ。
+[Dialog]
+[PlaySound(key="$d_avg_walkfast", volume=0.7)]
+[charslot(duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_262_1#4$1",focus="m")]
+[name="スキウース"]あっ、ちょっと！　まだ招待状を渡してないでしょ！
+[charslot(slot="m",name="avg_npc_262_1#5$1",focus="m")]
+[name="スキウース"]ああもう……なんであんなに足が速いのよ！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="45_g6_lakescenery_d", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_867_1#1$1")]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]ブラウンテイル家当主の妹、スキウースか。この頃はイェラグを代表する使者として頻繁に他国を訪れていると聞くが……
+[name="「グレーシルクハット」"]まさか、ロザリンは彼女の計画でここに？
+[name="「グレーシルクハット」"]どうにかして盗聴すべきだったな……
+[charslot(slot="m",name="avg_npc_282_1#1$1",focus="m")]
+[name="店主"]あのー、さっきからうちの店の前で五分は立ち止まってますよね。古新聞持って何をお考えかわかりませんが……
+[name="店主"]何も買わないならどいていただけますか。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]おっと、申し訳ない。駄獣ミルクティーを一杯頂けるだろうか。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="45_g6_lakescenery_d", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_npc_262_1#9$1")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_262_1#9$1",focus="m")]
+[name="スキウース"]……
+[name="スキウース"]これで、ラタトスのクソ女の言いつけは守れた、ってことでいいわよね。
+[name="スキウース"]あの子を見張れ、何とかして接触しろ、とか急に言ってきたりして……ほんと、わけわかんないわ。
+[name="スキウース"]でもあの子、よく見ると何となく見覚えが……
+[charslot(slot="m",name="avg_npc_263_1#1$1",focus="m")]
+[name="ユカタン"]ウース？
+[name="ユカタン"]本当に僕が手伝わなくていいのか？
+[charslot(slot="m",name="avg_npc_262_1#4$1",focus="m")]
+[name="スキウース"]ユカタン！
+[charslot(slot="m",name="avg_npc_262_1#1$1",focus="m")]
+[name="スキウース"]平気よ、なんにも心配いらないわ。あたしに任せときなさい。
+[name="スキウース"]さあ、それじゃ帰るわよ。あのロザリンって子が一体何者なのか、ラタトスにちゃんと説明させないとね！
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,474 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[focusout(duration=0.5, type="bg", from=0, to=1, block=true)]
+[Delay(time=1)]
+[PlayMusic(key="$babel_loop", volume=0.8)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+You might not remember exactly what today means to you.
+It would lead you into great danger if you do so.
+...
+No.
+You must remember.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="Distant Voice"]...Condition... Stable...
+[name="Distant Voice"]...Sorry...
+[name="Distant Voice"]For making you suffer again.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image(image="avg_8_9",screenadapt="coverall")]
+[focusout(duration=0.5, type="cg" , from=0, to=1, block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="???"]...
+[name="???"]Hold my hand tight, Doctor.
+[name="???"]Next time, please don't leave me without saying a word.
+[Dialog]
+[focusout(duration=1.5, type="cg" , from=1, to=0, block=true)]
+[delay(time=0.5)]
+[name="???"]You wouldn't accept something like this happening again either, right?
+[name="???"]Mmm... What's wrong, Dr. {@nickname}?
+[name="???"]Why are you looking at me so strangely?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect(name="$eb_dim_openeye",layer=1)]
+[image]
+[charslot]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[focusout(duration=0.1, type="bg", from=1, to=0, block=true)]
+[charslot(slot="m",name="avg_npc_083")]
+[delay(time=1)]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=2)]
+[bgeffect]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="(Unknown language) Pries... tess...?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]*sigh* Where did you manage to learn such a strange language this time around?
+[name="Priestess"]Did you sneakily upload your cognition to some civilization out on the tip of the spiral arm in this round of hibernation?
+[name="Priestess"]Alright, I'd just like to reconfirm whether or not your capability for language has been properly restored.
+[name="Priestess"]Don't tell me that you've even forgotten my name just because you've had a big nap.
+[name="Priestess"]Come on, say my name again. The database will analyze all of your voice data.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Pries...tess...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]You recovered rather quickly, {@nickname}.
+[name="Priestess"]But since your body has only just revived, it still hasn't fully acclimated yet.
+[name="Priestess"]So don't make any sudden movements. NX-07 will press you back into bed if you do. Its new orders are rather difficult to rescind, so I'm afraid that my hands are tied.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="You... Where am I?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]You're still on 'Rhodes Island', of course. Our home.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="You mean... just me?;What about the others... on Rhodes Island...", values="1;2")]
+[Predicate(references="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]Just you? Hey, I'm here too.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]...You really do keep asking this every time.
+[Predicate(references="1;2")]
+[name="Priestess"]It all happened so fast. The damage to the defense array exceeded ninety percent, and with all the extreme environmental damage we received, the repair units were finding it difficult to restore everything in the short time that we had.
+[name="Priestess"]Not long after you began your hibernation, many of our colleagues left, one after the other. Everyone wanted to treasure the time they had before the stars fell. I understand how they felt.
+[name="Priestess"]Now it's just the two of us left. Of course, AMa-10 is still here as well. She's in good spirits, and still rather lively.
+[name="Priestess"]But don't worry, what's left of Rhodes Island can still maintain its basic functions. We still have some time.
+[name="Priestess"]When you are here with me, {@nickname}, I'm not afraid of the end.
+[name="Priestess"]No matter if our bodies collapse, or if our consciousnesses freeze, or if the laws of the universe invert, I can accept it all with open arms.
+[name="Priestess"]I need only have you by my side.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]You seem rather absent-minded today. Still not fully awake from your dream, {@nickname}?
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+She takes your hand, pressing it against her cheek.
+The touch of her skin is warm. Its corporeality snaps you out of your dream.
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]If that's the case, then I would like to know what you dreamed of.
+[name="Priestess"]Although I will say that I would prefer if I were in it.
+[stopmusic(fadetime=2)]
+[Dialog]
+[charslot]
+[Decision(options="...;Dream...?;A very long dream...?", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[focusout(duration=2, type="bg", from=0, to=1, block=true)]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_9_2",x=50, y=30,xScale=1.15, yScale=1.15, fadetime=0)]
+[focusout(duration=0.1, type="cg", from=0, to=1, block=true)]
+[delay(time=1)]
+[PlayMusic(key="$memory_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[focusout(duration=1.5, type="cg", from=1, to=0, block=false)]
+[delay(time=2)]
+'Terra'.
+That land... Catastrophe... Oripathy...
+You wandered that land for several years. Felt how real everything was. All too real.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_8_15",screenadapt="coverall")]
+[focusout(duration=0.1, type="bg", from=1, to=0, block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+The jubilant cries of the masses still echo in your ears.
+The Catastrophes have not yet stifled all hope. Beneath the trauma and the suffering, you can still feel a warmth, enduring, eternal.
+It is warm. It is touching. You are surrounded by a gentle crowd of people.
+'Rhodes Island'.
+You will never forget Rhodes Island.
+Rhodes Island healed your scars. Rhodes Island allowed you to have your regrets.
+You are still standing with it, aren't you?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+You have been to lands covered in ice and snow with them.
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="24_g1_snowyforest", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+Felt the soft sand at the shore with them.
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[largebg(imagegroup="bg_beach_1/bg_beach_2", solidwidth="920/920", solidheight=720,x=-180)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+Witnessed how they live.
+[Dialog]
+[largebg]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="46_i01",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+Witnessed how they die.
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_6_13",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+They convince you that—
+In a unjust land that should have been burnt away, ideals are still worth believing in.
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="bg_23_G08", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+You accompanied those idealists against the surging heat, no matter if it would sear your flesh.
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="bg_topburning", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+You saw vile empires, and the sorrow of those unable to fight their fate.
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="32_g1_lentiavenue", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+You could never forget...
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_ac8mi_melancholic_kalts",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+Her.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+She has never left you.
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_0_1",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+They have never left you.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+'Doctor...'
+'Doctor!'
+[Dialog]
+[Decision(options="(Unknown language) Amiya...", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[charslot]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="m",name="avg_npc_083")]
+[delay(time=0.5)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]Doctor!
+[name="Priestess"]Your mind's wandered off again. It seems you have a penchant for speaking in that alien language.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Those experiences... were real.;That was no dream.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]And what's wrong with that?
+[name="Priestess"]We have always had the power to define dreams and reality in our own hands, {@nickname}.
+[name="Priestess"]When our consciousnesses traverse the universe across countless light years, and we participate in sacrificial rituals to a white dwarf in the frozen wastelands, how would we define these experiences?
+[name="Priestess"]Once you return to this body of yours, how would you be able to determine if information that must wait millions of years to be captured is dream or reality?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]Wait, you're not seriously thinking that over, are you?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Priestess...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]What is it, {@nickname}?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Why do I know your name, when we've never met?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]'Never met'... So, you've finally noticed.
+[name="Priestess"]I'm happy to hear you say that. It means that you are very close to finding the real me.
+[name="Priestess"]But I can't help but feel a little disappointed.
+[name="Priestess"]Because of that minor mishap, your memories... have been damaged beyond repair, and there is nothing that I can do about it.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Is this place here... also Rhodes Island?;Have I been here before?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]Here... It's 'The unknowable'.
+[name="Priestess"]We made a wish together when we created this place.
+[name="Priestess"]When the last warmth of the stars dissipates, and the weave of time falls apart into chaos, we will let the darkness wrap around the two of us like a blanket.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="It sounds like you're describing a tomb.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]We will wait until this world and the starry sky above welcome their final moments... Our universe will become an immense tomb of its own.
+[name="Priestess"]There is no hope in any corner of any star in the heavens. Each and every speck of cosmic debris that seems to hold possibility of salvation has long since been found and examined by us.
+[name="Priestess"]Every attempt at resistance only ended in its premature destruction. Every exploration only deepened our despair.
+[name="Priestess"]The conclusion was rather simple. Any life formed from ordinary matter is unable to escape. Any knowable technology is unable to prevail over our inevitable end.
+[name="Priestess"]My apologies, {@nickname}.
+[name="Priestess"]It's just that it has been a rather long time since I last had the opportunity to tell you everything I wanted to say.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Were we... intimate?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]Intimate? I wouldn't use that term to describe our relationship.
+[name="Priestess"]It belittles all that we have experienced together in the past.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="I don't remember any of it.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]It's fine, I'm not upset.
+[name="Priestess"]Though your mind may not remember, I am sure that in the deepest recesses of your consciousness, deeper than any probe or instrument can reach, there are still traces of me.
+[name="Priestess"]If it were not the case, then why would you allow me to keep holding your hand like this?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Hmm...;Did we do this a lot in the past?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]'Holding hands'... Yes, we had many different ways to 'hold hands'. Much of the time, we had no need to use any specific part of the body to do it.
+[name="Priestess"]The first time we met, I was flying about an oceanic planet. I used its star as my unchanging anchor, following the line where night met day, flying loop after loop after loop.
+[name="Priestess"]The star died soon after. The ocean below me dissociated in an instant, revealing the bare, dark red skeleton of the planet.
+[name="Priestess"]Someone tugged at me from behind, pulling me within a nebula, even more serene than the planet I had just left.
+[name="Priestess"]That one explained to me that although they knew I was most likely not at any risk, there was not enough time to confirm which starfield my original form was in, forcing them to use their ship to salvage my consciousness beacon.
+[name="Priestess"]That was the first time I stepped aboard that ovoid ship. It was not big, but quite agile, and it had already been to countless numbers of stellar systems.
+[name="Priestess"]I took the ship to a planet far from the hustle and bustle. I showed the master of the ship my seaside laboratory, and I stepped closer.
+[name="Priestess"]And just like what we're doing now... We shook hands.
+[name="Priestess"]'My name is Priestess, a linguist. I am researching the final sound waves emitted by planets as they die. I like quietly spending my time alone, but I also wanted to find someone to explore the universe with.'
+[name="Priestess"]And now...
+[name="Priestess"]It's your turn.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Me? Introduce myself?", values="1")]
+[Predicate(references="1")]
+[Decision(options="I am... {@nickname}.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]How wonderful. We got to know each other once again.
+[name="Priestess"]Oh, right, you seemed somewhat hesitant back then as well. In that age, people were already showing less and less closeness in their associations with others.
+[name="Priestess"]Thankfully, we are rather alike. You unselfishly shared your experiences of your travels with me, and even extended me an invitation.
+[name="Priestess"]We leapt across time and space, exploring every nook and cranny of the cosmos. At times we travelled via your ship, but most of the time, we projected our consciousnesses to and from distant worlds.
+[name="Priestess"]You would describe to me the rise and fall of many different civilizations, the rhythm hidden within the birth and death of the stars.
+[name="Priestess"]As our thoughts collided with one another, we would work our way through countless iterations. When we stopped to look back, we realized that we had already far surpassed everyone else.
+[Dialog]
+[charslot]
+She flips her hand and shows me a piece of purest crystal.
+[Dialog]
+[Decision(options="...Originium.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]A crystal formed from our contentions and collisions, condensing the innumerable truths left behind by the pioneers who watched the cosmos.
+[name="Priestess"]It is truly a beauty.
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+She places the Originium into your hand lightly, then holds your hand in hers. Together, you are holding this wondrous creation.
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]Everyone said that I was the one who created Originium and the future both, as though I were akin to a god.
+[name="Priestess"]But I always knew that the true genius was you, {@nickname}.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]You have forgotten... but you shouldn't have.
+[name="Priestess"]As I walked along the path to creating it, I never ceased to follow in your footsteps.
+[name="Priestess"]I feared that there would come a time that I would fall behind you in the field of debate. Feared that you would realize that I was not your equal.
+[name="Priestess"]Or no, perhaps you <i>had</i> noticed... Perhaps you had slowed your steps once, waiting for me to catch up to you.
+[name="Priestess"]But now, I will never know the answer.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Does it... bother you?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]It does, but I have accepted this fact. I would say that actually, it makes me rather happy.
+[name="Priestess"]You still hide many secrets that captivate me.
+[name="Priestess"]Besides, from your perspective, I, as I am now, am the same as you in this regard.
+[name="Priestess"]Am I wrong, {@nickname}?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="I... am still rather puzzled.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]Well, you can continue to find your answers here then.
+[name="Priestess"]This is our shared creation, our shared past, and it conceals our shared secrets.
+[name="Priestess"]You and I need only walk together—
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="Sorry, but I have more pressing concerns now.;I must first confirm some important matters.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]...
+[name="Priestess"]I had wanted to share a few things I had been keeping in your stead with you.
+[name="Priestess"]The things that you once described to me, your ideas and vision that you have completely forgotten.
+[name="Priestess"]I wanted to let you know all that we had accomplished.
+[name="Priestess"]Perhaps this would have helped you to remember the past, remember me.
+[name="Priestess"]But I can see what you are thinking, sense what you are feeling.
+[name="Priestess"]You are still plagued by endless doubts, even now.
+[name="Priestess"]'Amiya', 'Kal'tsit'—
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="—!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="Priestess"]I... don't want to put you in a dilemma. I respect your decision.
+[Dialog]
+[charslot(duration=1)]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+Her hand touches the darkness—
+[Dialog]
+[Image(image="50_i16",screenadapt="coverall",block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[name="Priestess"]But there is one thing that I am sure of, {@nickname}.
+[name="Priestess"]That when you are truly confused by everything, you will remember: the answers you seek were here all along.
+[name="Priestess"]I will be here.
+[Dialog]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=3, block=true)]
+[image]
+[Background(image="bg_white", screenadapt="coverall")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Subtitle(text="<color=#000000>Go, 'Doctor'. Go solve your conundrums.</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>All that you wish for, I am able to grant.</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>And once all the grand rhythms and minute pulsations have fallen into silence...</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>You will return to my side.</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

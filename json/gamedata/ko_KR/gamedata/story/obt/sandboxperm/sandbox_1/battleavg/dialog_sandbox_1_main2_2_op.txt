@@ -1,0 +1,39 @@
+[header(actId="sandbox_1", npcId="trap_467_ttuye")]
+[summontrap(x="18", y="7", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summonenemy(enemyId="enemy_7035_epasng", x="18", y="5", endX="15", endY="6")]
+[move(enemyId="enemy_7035_epasng", x="17", y="5")]
+[camerafocusto(offsetX="17", offsetY="6", scale="FAR", time="5")]
+[delay(time="2")]
+[foginview(id="rect1", leftBottomX=12, leftBottomY=3, rightUpX=22, rightUpY=9)]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]여기가 아마 찾고 계셨던 곳일 겁니다. 무성하게 자란 식물, 그리고 고대 신전.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]좋은 소식이 있어, 방금 아다크리스 마을을 발견했어. 나쁜 소식은 무슨 이유인지 마을에 아무도 없다는 거야.
+[decision(option1="더 가까이 가서 확인해 보자.", value1="1.1")]
+[predicate(references="1.1")]
+[camerafocusto(offsetX="14", offsetY="6", scale="FAR", time="5")]
+[move(enemyId="enemy_7035_epasng", x="15", y="6")]
+[delay(time="2")]
+[summonenemy(enemyId="enemy_1096_ccwitch_2", x="12", y="5", endX="14", endY="5")]
+[move(enemyId="enemy_1096_ccwitch_2", x="13", y="5")]
+[summonenemy(enemyId="enemy_7023_gatbb", x="12", y="6", endX="14", endY="6")]
+[move(enemyId="enemy_7023_gatbb", x="13", y="6")]
+[summonenemy(enemyId="enemy_1096_ccwitch", x="12", y="7", endX="14", endY="7")]
+[move(enemyId="enemy_1096_ccwitch", x="13", y="7")]
+[name="신전 경비", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]이 파렴치한 도적놈들, 감히 다시 돌아와 우리 여신님을 모독하려고 하다니!
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]아무래도 <color=#d8d769>매복</color>인 것 같군요.
+[decision(option1="아니, 그보다는 오해 같은데.", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="우리는 도움을 청하러 왔어!", value1="3.1")]
+[predicate(references="3.1")]
+[name="신전 경비", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]그런 거짓말은 이제 지긋지긋하다. 처음에는 아미르군이, 그 뒤로는 수상한 필라인까지. 이 조용한 곳이 이렇게나 시끄러웠던 적은 없어.
+[name="신전 경비", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]무기를 꺼내.
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="TRUE"]박사님, 이번 전투는 저랑 투예 씨한테 맡겨 주세요.
+[playanim(id="trap_467_ttuye", anim="Idle", dir="RIGHT")]
+[withdraw(id="enemy_1096_ccwitch")]
+[withdraw(id="enemy_1096_ccwitch_2")]
+[withdraw(id="enemy_7023_gatbb")]
+[withdraw(id="enemy_7035_epasng")]
+[withdraw(id="trap_467_ttuye")]
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[save]
+[end]

@@ -1,0 +1,671 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="47_g7_fieldhouse",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[PlaySound(key="$d_avg_brdchrp")]
+日が昇るにつれ、羽獣の鳴き声が農民の家の窓に入り込む。母親は眠い目を開き、腕の中の子は母の服の裾をぎゅっとつかんでいる。
+母親はため息をつきながら体を起こし、昨日起きた出来事と、そして子供がおびえて一晩中泣いていたことを思い出した。
+幼い子供は、母が離れたことに気づく。眠りから覚めると鼻をすすり、涙が顔を流れ落ちた。父親は慣れた手つきで子を受け取ると、窓辺に立って子の背中を優しく叩き、寝かしつけ始めた。
+[PlaySound(key="$d_avg_reedmarshes", volume=0, loop=true, channel="reed")]
+[SoundVolume(volume=1, fadetime=1,channel="reed")]
+「ほれほれ、泣くな泣くな。窓の外には何もいないぞ。」
+「いつもの田んぼに、いつものお花だ。何ともないよ。よしよし……」
+しかし、子の泣き声は次第に大きくなり、さらには手を伸ばして窓の外を指さした。夫婦はその手に沿って目を向けると、一頭の奇妙な、青白い獣が、あぜ道に立っていた。
+[dialog]
+[backgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.05, yScaleTo=1.05, duration=3)]
+[playMusic(intro="$plot_intro",key="$plot_loop", volume=0.6)]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.1,fadetime=3)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.1,fadetime=3)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=0.01,afrom=0,ato=0,block=true)]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.5", scale=0.9,duration = 0.01,block=true)]
+[charslot(slot="m",duration=3,afrom=0,ato=1)]
+[Delay(time=4)]
+それは振り返り、一家三人の家の窓を見る。
+[Dialog]
+[stopsound(channel="reed",fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[curtain]
+[Background(image="47_g8_crestofweir",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1243_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="沈黙する木こり"]……
+[charslot]
+沈黙する木こりは斧を持ち上げた。ぼろぼろの布が漂い、まるで何かを思い出したように彼はその裂け目をなぞる。
+剣だこだらけの力強い手はそれほど白くはないが骨ばっている。血と泥の混ざったものが、一本の絹を彼の腕に結ぶも、すぐに生気なく地面に落ちた。
+その両手はかつて重い武器を持ち上げ、彼の顔をなで、泣きじゃくる子供を抱いたのだ。
+その両手の持ち主は黒ずんだ肌を持ち、笑うと真っ白な歯と、浅いえくぼをのぞかせる。
+彼は、川岸の樹林の前に立つ。樹林は赤い絹が一本一本結ばれ、その下には木札が一つ一つ掛けられていた。刻まれた名前はすでにぼやけている。
+[PlaySound(key="$d_avg_woodensign", volume=1)]
+一陣の風が吹き、枝が揺れ、木札がカラカラと音を出す。
+[charslot(slot="m",name="avg_npc_1243_1#1$1")]
+[name="沈黙する木こり"]うん……
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+奇妙ないななきが聞こえてくると、木こりは濁った目を半分だけ開いた。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_hgmlgscrm")]
+[name="異様な織物"]（奇怪な叫び）
+[dialog]
+[charslot(slot = "l",name="avg_npc_1243_1#3$1",posfrom = "-150,0", posto = "0,0",duration = 0.4)]
+[PlaySound(key="$d_avg_singleblunt")]
+[PlaySound(key="$d_avg_hammer", volume=0.8)]
+[delay(time=0.2)]
+[charslot(slot="m",duration=0.3,posfrom = "0,0", posto = "200,0")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.7)]
+[PlaySound(key="$d_avg_hgmdspr")]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_1243_1#3$1")]
+[name="沈黙する木こり"]――
+[charslot(slot = "m", focus = "n")]
+あいつらが戻ってきた。
+あいつらは戻ってくるべきではない。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="47_g1_desertedcityfield_d",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$smallearthquake")]
+[CameraShake(duration=2.5, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",focus="l")]
+[name="慌てる農家"]なんだ？　地震か？
+[name="慌てる農家"]移動区画はまだ出来上がってないんじゃなかったか？
+[name="慌てる農家"]な、なら今のは何んだ！？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "left", name = "avg_npc_1251_1#3$1",duration = 1,posfrom = "0,-200", posto = "0,-200")]
+[charslot(slot = "right", name = "avg_npc_1251_1#3$1",duration = 1,posfrom = "0,-200", posto = "0,-200")]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_drone")]
+[charslot(slot ="l", action="shake", power=10, times=100, duration=1)]
+[charslot(slot ="r", action="shake", power=10, times=100, duration=1)]
+[delay(time=1.1)]
+[charslot(slot = "left", name = "avg_npc_1251_1#4$1",duration = 1,posfrom = "0,-200", posto = "0,-100")]
+[delay(time=0.5)]
+[charslot(slot = "right", name = "avg_npc_1251_1#4$1",duration = 1,posfrom = "0,-200", posto = "0,-100")]
+[delay(time=2)]
+[charslot(slot = "right", name = "avg_npc_1251_1#5$1",duration = 0.3)]
+[PlaySound(key="$d_avg_drone")]
+[delay(time=0.3)]
+[charslot(slot = "right",duration = 0.5,posfrom = "0,-100", posto = "300,200")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[charslot(slot = "m",posfrom = "0,0", posto = "-200,0")]
+[charslot(slot="m",name="avg_npc_1249_1#1$1")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "l", name = "avg_npc_1251_1#5$1",duration = 0.1)]
+[charslot(slot = "l",duration = 0.5,posfrom = "-500,-200", posto = "-100,200")]
+[delay(time=0.1)]
+[charslot(slot = "l",duration = 0.3,afrom=1,ato=0)]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0",duration = 0.3)]
+[delay(time=0.3)]
+[CameraShake(duration=0.5, xstrength=28, ystrength=26, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "r",posfrom = "-100,0", posto = "100,0",duration = 0.5)]
+[charslot(slot = "m",posfrom = "-200,0", posto = "0,0",duration = 0.5)]
+[delay(time=0.51)]
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="不安な農家"]危ない！
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="m")]
+[name="慌てる農家"]危なかった……頭が……
+[name="慌てる農家"]どういうことだ……天杭が全て暴走した！？
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_drone")]
+[PlaySound(key="$d_avg_drone",channel="1",delay=0.1)]
+[PlaySound(key="$d_avg_drone",channel="2",delay=0.2)]
+[PlaySound(key="$d_avg_drone",channel="3",delay=0.3)]
+天杭はまるで何かに驚いたように群れとなって、人々の頭上に広がり天地を覆い尽くす。それは久しく見ていなかった虫害を彷彿とさせた。
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="不安な農家"]見て！
+[name="不安な農家"]太陽が、どうしてあんな色に……
+[charslot]
+[dialog]
+[Effect(name="$e_demoninfect",layer = 1)]
+[delay(time=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="47_i08",screenadapt="coverall",xScale=1.2,yScale=1.2)]
+[imagetween(xScaleTo=1,yScaleTo=1,duration=30)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=3)]
+人々が見上げると、太陽がまるで突然西に傾いたように、空の半分を血のように赤く照らした。
+誰もがそれに恐怖を感じた。
+それは、古より人々の心に存在してきた恐怖。
+天災、獣害、病、飢饉……
+この場所はもはや彼らの慣れ親しんだ故郷ではない。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[delay(time=1)]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+[name="異様な織物"]（不安になるいななき）
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="l")]
+[name="慌てる農家"]こいつらは何だ、害獣か？
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="焦る農家"]ありえないわ！　こいつら何もない所から現れたのよ。土の中から出てきたのもいる……四方八方、そこら中にいる！
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_4122_grabds_1#5$1",duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$p_skill_ctefltpn")]
+[delay(time=2)]
+[charslot(slot="m",name="avg_4122_grabds_1#6$1")]
+[name="シャオマン"]どういうこと……？　この子たちは、どうして言うことを聞かないの？
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+[charslot(slot="m",name="avg_npc_1244_1#3$1")]
+[name="異様な織物"]（奇怪ないななき）
+[dialog]
+[charslot(slot = "r",name="avg_4119_wanqin_1#6$1",posfrom = "250,0", posto = "0,0",duration = 0.5)]
+[PlaySound(key="$d_avg_singleblunt")]
+[delay(time=0.3)]
+[charslot(slot="m",duration=0.4,posfrom = "0,0", posto = "-200,0")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_hgmdspr")]
+[charslot(slot="m",duration=0.7,afrom=1,ato=0)]
+[delay(time=1)]
+[charslot]
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#2$1",focus="l")]
+[name="ホーシェン"]大丈夫か！
+[charslot(slot="r",name="avg_4122_grabds_1#4$1",focus="r")]
+[name="シャオマン"]あたし……
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="シャオマン"]あたしこんな動物見たことないよ。なんだか、「動物」にすら見えない。
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="ホーシェン"]動物というより、むしろ村芝居の伝説に出てくる化け物みたいだ……こいつら、地面から出てきたのか？
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="ホーシェン"]やってみるか……
+[charslot]
+[playsound(key="$d_avg_windmagic")]
+突如激しい風が起こり、化け物の姿は引き裂かれて細かい糸になったが、見る見るうちにまた元の形に戻り、前へと這って進む。
+さらに多くの化け物が土の中から出てくる。それらが通った場所では、作物がすべて枯れ、土地はことごとく干上がる。
+[charslot(slot="l",name="avg_4119_wanqin_1#7$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="l")]
+[name="ホーシェン"]効かない！？
+[charslot]
+[PlaySound(key="$d_avg_hgmlgscrm")]
+[CameraShake(duration=1, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1")]
+[name="異様な織物"]（長く甲高い鳴き声）
+[charslot(slot = "m", focus = "n")]
+[name="ズオ・ラウ"]危ない――！
+[dialog]
+[charslot(slot = "l",name="avg_4121_zuole_1#4$1",posfrom = "200,0", posto = "200,0",duration = 0.3)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=50, randomness=90, fadeout=false, block=false)]
+[playsound(key="$d_avg_spear")]
+[delay(time=0.5)]
+[charslot(slot="m",duration=0.7,afrom=1,ato=0)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="ホーシェン"]ズオさん！　こいつらはなんです？
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="ズオ・ラウ"]皆さん下がって……一言では説明しきれません。
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_hgmdspr")]
+ズオ・ラウは長剣で一本の糸をすくい上げる。それは眼前に持ち上げられる前に、風と共に消えてしまった。
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="ホーシェン"]これは……？
+[charslot(slot="m",name="avg_4121_zuole_1#2$1")]
+[name="ズオ・ラウ"]はい。
+[charslot]
+持燭人は顔を上げ、都市の中心を見やる。そこには、白玉のようにつややかな高い塔がそびえ立ち、不吉な光を放っていた。
+「天上の白玉京、十二楼五城。」
+古代人がかつて想像した天に達する都市が、今は災厄の根源となった。
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="ズオ・ラウ"]彼の思い通りとなってしまいました……
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="ホーシェン"]君は一体何を知っているんですか？
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="ズオ・ラウ"]説明している暇はありません……ホーシェンさん、どうか力を貸してください。ここにいる全員を救うことでもあります。
+[name="ズオ・ラウ"]農民全員を集めて、できるだけ皆さんで一緒に……いえ、絶対に誰一人としてはぐれさせないでください。
+[name="ズオ・ラウ"]覚えておいてください、絶対にあいつらを恐れてはダメです。恐れないよう、無理にでも自分に言い聞かせるんです。
+[charslot(slot="m",name="avg_4119_wanqin_1#7$1")]
+[name="ホーシェン"]なら君は？　君は何をしに行くんですか？
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="ズオ・ラウ"]あの装置を止めます……
+[charslot(slot="m",name="avg_4119_wanqin_1#5$1")]
+[name="ホーシェン"]また一人で行動するんですか？
+[charslot(slot="m",name="avg_4121_zuole_1#7$1")]
+[name="ズオ・ラウ"]これが私の責務です……たとえこの命を賭しても……
+[charslot(slot="m",name="avg_4119_wanqin_1#5$1")]
+[name="ホーシェン"]なにバカなこと言ってるんです……
+[charslot(slot="m",name="avg_4119_wanqin_1#6$1")]
+[name="ホーシェン"]命を懸けて誰が喜ぶんです？　どうしていつも上から、みんなが君に助けてもらうことを望んでいると思い込んでいるんですか！？
+[charslot(slot="m",name="avg_4121_zuole_1#6$1")]
+[name="ズオ・ラウ"]私は――
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=0.7)] 
+[charslot(slot="m",name="avg_npc_1240_1#4$1",duration=1)]
+[delay(time=1.5)]
+[name="郷長"]シャオホーの言う通りだ。これは誰かに頼って解決できる問題ではない。
+[charslot(slot="m",name="avg_4121_zuole_1#6$1")]
+[name="ズオ・ラウ"]それは……
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="ホーシェン"]僕たちは今、どうすれば？
+[charslot(slot="m",name="avg_npc_1240_1#4$1")]
+[name="郷長"]これは川の北岸の汚染だ。この前の洪水で、汚染が大荒城の防衛線を突破してきたのだ。
+[name="郷長"]うろたえる必要はない。天機閣の天師が駆けつけてきている。それまで、まずは皆で団結する。人が多ければ力も大きくなり、互いに助け合える。
+[name="郷長"]君たちは一緒に行くといい。助けを必要としている人を守りに行くんだ。
+[charslot]
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="l")]
+[name="ホーシェン"]シャオマン、行くぞ。
+[dialog]
+[charslot(slot = "m", focus = "all")]
+[playsound(key="$rungeneral")]
+[charslot(slot = "r",posfrom = "0,0", posto = "300,0",duration = 1,afrom=1,ato=0)]
+[delay(time=0.3)]
+[charslot(slot = "l",posfrom = "0,0", posto = "400,0",duration = 1,afrom=1,ato=0)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "left", name = "avg_4121_zuole_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_4121_zuole_1#1$1",focus="l")]
+[name="ズオ・ラウ"]栄晩晴（ロン・ワンチィン）……殿。
+[name="ズオ・ラウ"]司歳台の名簿で、あなたの名前を拝見したことがあります。
+[charslot(slot = "right", name = "avg_npc_1240_1#3$1",focus="r")]
+[name="ロン・ワンチィン"]その服はとうの昔に脱いだ。
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="ズオ・ラウ"]山海衆を掃討し、かの罪人の計画を追い、あなたは元々過去百年で最も伝説的な持燭人でした……
+[name="ズオ・ラウ"]四十年前に司歳台を去って大荒城同知に転任し、それ以後この地に留まっておられますが……一体なぜですか？
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="ロン・ワンチィン"]私の責務は、炎国の脅威となる存在を見張ることだ。しかしシュウは、決してそのうちの一人ではない。
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="ズオ・ラウ"]シュウ……彼女は、自身の命をもって大荒城地下の悪魔の穢れを取り除いたのですか？
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="ロン・ワンチィン"]そうだ。
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="ロン・ワンチィン"]だがどのような方法でかジーが悪魔の破片を用いて中枢区画のエネルギーを強制起動させた。それで、この異様な化け物が生まれたのだ。
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="ズオ・ラウ"]事前にあの罪人の計画を察知できなかったのは私の失態です……
+[name="ズオ・ラウ"]ですが、北岸の天機閣の防衛線はすでにかなり危うい状態だと聞きました。だとしたら大荒城の防衛に人手を回している余裕はないのではないですか。
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="ロン・ワンチィン"]確かにその通りだ。今は本当に私たち自身に頼るしかない。
+[name="ロン・ワンチィン"]この創造物はあの代理人の能力によるものであり、悪魔の影でもある。こいつらの力もまた、恐怖により増す……これは人の心と勇気の戦いでもあるんだ。
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="ズオ・ラウ"]ですが、この化け物たちをどうやって止めれば……
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="ロン・ワンチィン"]心臓も体から離れれば活動できない。土木天師たちはすでに各区画と中枢区画との接続を解除しに行っている。我々にできるのは、この地の民を守ることだ。
+[charslot(slot = "left", name = "avg_4121_zuole_1#4$1",focus="l")]
+[name="ズオ・ラウ"]……身命を賭して。
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="ロン・ワンチィン"]持燭人の職責とは、燭を灯して巨獣の影を払うことだ。しかし頭上に掛かる影は、巨獣のものだけではない。
+[name="ロン・ワンチィン"]――灯火をつけ、光を残す。それを忘れるな。
+[charslot(slot = "left", name = "avg_4121_zuole_1#4$1",focus="l")]
+[name="ズオ・ラウ"]必ず彼を止めます。
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "left",posfrom = "0,0", posto = "500,0",duration = 1.5,afrom=1,ato=0)]
+[delay(time=2.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playsound(key="$d_avg_hgmgrssvcm")]
+[playsound(key="$d_avg_hgmgrssvcm",channel="a",delay=0.1)]
+[charslot(slot = "r", name = "avg_npc_1244_1#3$1",duration = 1,posfrom = "0,0", posto = "0,0")]
+[charslot(slot = "left", name = "avg_npc_1244_1#3$1",duration = 1,posfrom = "0,0", posto = "0,0")]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1240_1#2$1")]
+[name="ロン・ワンチィン"]これが、君が受け取る代価か……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g11_shuresearchoffice",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="ジー"]お久しぶりです、と言うべきでしょうか？
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="ロン・ワンチィン"]君は戻ってくるべきではなかった。
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="ジー"]少なくとも貴女は、私を捕縛せよとの命は下してはいません。
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="ロン・ワンチィン"]シュウに免じてな。
+[name="ロン・ワンチィン"]君たちの面会は黙認してやる。その後、すぐに立ち去れ。
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="ロン・ワンチィン"]これ以上君が定めに違反するなら、私がかつての情を忘れてしまっても悪く思わないでくれ。
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="ジー"]かつての情ね。よく言えたものです。
+[name="ジー"]もし貴女の言うかつての情が彼女をここに閉じ込め、貴女たちのために千年もの間こき使うことだとしたら……
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="ロン・ワンチィン"]君の口調を聞くに、炎国が君たちを巻狩りしていた頃へ戻りたいのか？
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="ジー"]いえいえ……あらゆる生命は利己的で利を重んじる、そこに人と獣の違いはありません。私はただ貴女と取引がしたいだけです。
+[name="ジー"]十二楼五城が滞りなく完成し、今後悪魔と天災の脅威を心配する必要はなくなると約束しましょう。また今後三年は天候に恵まれ、貴方がたは食糧を蓄え休養するのに十分な時間を取れるでしょう。
+[name="ジー"]その条件として、姉さんをここから解放してください。
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="ロン・ワンチィン"]まるで、君なしでは大荒城がこの困難を乗り越えられないような物言いだな？
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="ジー"]悪魔の祟りも、天災も厄介な相手です。大荒城の現状は、言わずとも貴女の方がよく理解しているでしょう。
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="ロン・ワンチィン"]……どう君を信じればいい？
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="ジー"]我々の能力について、司歳台はこれ以上ないほどよくご存知のはずでは？
+[name="ジー"]私は有言実行します。取引が成立した以上、もし貴女が反故にするのであれば、担保として他の品を頂くしかありません。
+[charslot(slot = "right", name = "avg_npc_1240_1#3$1",focus="r")]
+[name="ロン・ワンチィン"]……
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="ジー"]この土地に対して、私も情を持っていることを信じるべきではないですか。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[name="ロン・ワンチィン"]シュウ……私は確かに君を解放すると約束した。
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1240_1#2$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_npc_1240_1#1$1")]
+[name="ロン・ワンチィン"]有言実行か。よく言ったものだ。
+[charslot(slot = "m", name = "avg_npc_1240_1#4$1")]
+[name="ロン・ワンチィン"]しかし私の命を求めるなら、このインチキな手段がどこまで有効かにかかっているぞ。
+[dialog]
+[charslot]
+[charslot(slot = "m",name = "avg_npc_1244_1#3$1",posfrom = "150,0", posto = "0,0",duration = 1)]
+[delay(time=1.5)]
+[playsound(key="$d_avg_hgmlgscrm")]
+[name="異様な織物"]（長く甲高い鳴き声）
+[dialog]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.5", scale=1.05,duration = 0.6)]
+[CameraShake(duration=0.8, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[playsound(key="$b_char_defboost")]
+[delay(time=0.5)]
+[playsound(key="$fightgeneral",volume=0.6)]
+[delay(time=1)]
+[playsound(key="$d_avg_blddpgrn")]
+[charslot]
+[delay(time=2)]
+[Background(image="47_g5_factory_inside",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1245_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1246_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$loading_intro",key="$loading_loop", volume=0.6)]
+[delay(time=1)]
+[PlaySound(key="$alarmenter",channel="bgs", volume=1,block=false,loop=true)]
+[Blocker(a=0.4, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[Blocker(a=0, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[Blocker(a=0.4, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[StopSound(channel="bgs", fadetime=0)]
+[Blocker(a=0, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[charslot(slot = "left", name = "avg_npc_1245_1#1$1",focus="l")]
+[name="土木天師"]コアエネルギーモジュールが勝手に起動した？　完成はまだじゃなかったのか！？
+[charslot(slot = "right", name = "avg_npc_1246_1#1$1",focus="r")]
+[name="土木天師"]このエネルギー……冗談でしょ。これだけあれば大型移動都市が三百年独立して運行できるわよ。
+[charslot(slot = "m", focus = "n")]
+[name="ワン侍郎"]どきなさい、私がやります。
+[dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "200,0",duration = 1)]
+[charslot(slot = "l",posfrom = "0,0", posto = "-200,0",duration = 1)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_npc_1241_1#4$1",duration=1.5)]
+[delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_298_1#1$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="ニン・ツーチウ"]このコアエネルギーはすでに制御不能です……彼がすでに掌握し、魔物を生み出しています。
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="ワン侍郎"]説明は不要です。私以上にこの装置の状態を理解している人はいません。
+[name="ワン侍郎"]それよりもニン侍郎、この件における礼部と司歳台の失態は、もはや私から指摘する必要はないでしょうね。
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="ニン・ツーチウ"]……
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="ワン侍郎"]「制御不能」……工学を学ぶために天師府に入ったその日から、私が最も憎んでいる言葉。それが「制御不能」です。
+[name="ワン侍郎"]だから太傅の言う「人の任用は賢のみによる」よりも、太尉の「我が族類に非ず」の方を私は信じているのです。
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="ニン・ツーチウ"]目下の危機を乗り越えられたあかつきには、ワン侍郎には礼部を弾劾する時間などいくらでもございましょう。
+[name="ニン・ツーチウ"]当面の急務は中枢区画と全ての区画との連結を切断することです。それでも制御できない場合は、力づくで中枢区画を破壊します。
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="ワン侍郎"]ニン侍郎が私のことを権力におもねるばかりだと軽蔑していることは存じています。だが私とて、このような時に大局がわからぬ卑怯者ではございません。
+[name="ワン侍郎"]あなたは行ってください。私がこのエネルギー装置を止めます。
+[charslot(slot="r",name="avg_npc_298_1#4$1",focus="r")]
+[name="ニン・ツーチウ"]あなた一人で……？
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="ワン侍郎"]これは私の仕事です。私の仕事が制御不能になったことは一度もありませんし、これからも決して許しはしません。
+[charslot(slot="l",name="avg_npc_1241_1#2$1",focus="l")]
+[name="ワン侍郎"]もし失敗したのなら、この手で破壊すべきでしょう。私が払わねばならぬ代価もろとも。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g6_civilengineermasteroffice",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1")]
+[charslot(slot = "right", name = "avg_npc_1236_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1",focus="l")]
+[name="ワン侍郎"]この工事の完成を手伝う？　なぜですか？
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="ジー"]ワン侍郎は極めて聡明な取引相手ですので、貴方との商売はきっとうまくいくと思ったからです。
+[name="ジー"]貴方はこの工事をとても重視しておられるはずです……以前届けた支援物資は、私からの少しばかりの誠意ですよ。
+[charslot(slot = "left", name = "avg_npc_1241_1#10$1",focus="l")]
+[name="ワン侍郎"]これらの物資に代金を支払ってほしいのですか？　構いません、値段を言ってください。
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="ジー"]いえいえ、誤解をされているようですね。こんな些細な品々で、どうして貴方と取引するに値しましょう？
+[name="ジー"]私としたことが失念してしまったのですが……工部尚書の一年の俸給はいくらでしたか。ワン侍郎は、その地位に何年就きたいとお考えですか？
+[charslot(slot = "left", name = "avg_npc_1241_1#6$1",focus="l")]
+[name="ワン侍郎"]……
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="ジー"]驚くことはありません。ワン侍郎が一介の貧乏学生から二品に登り詰め、ここ数年で一挙に出世するのにどれだけのご苦労があったのかは知っています。
+[name="ジー"]人が朝廷で何かと忙しくしているのも所詮は「利」を求めるためにすぎません。そうでなければワン侍郎が大きなリスクを負って玉門へ向かい、あの方のために後始末をすることもなかったはずです。
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1",focus="l")]
+[name="ワン侍郎"]……私を脅しているのですか？
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="ジー"]商売をしたいだけですよ。この城を完成させるのです。我々の双方に利のある取引でね。
+[charslot(slot = "left", name = "avg_npc_1241_1#3$1",focus="l")]
+[name="ワン侍郎"]……いいでしょう、応じます。
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="ジー"]思い切りがよい回答をありがとうございます。ですが、よくよく考えてくださいね。一度契約を交わせば、対価の支払いからは逃れられませんから。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="47_g5_factory_inside",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_npc_1241_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1241_1#4$1")]
+[name="ワン侍郎"]皆利の為に来り皆利の為に往く……ふん。私の気にかける利が、この官服だとでも？
+[name="ワン侍郎"]全員、この万勤城（ワン・チンチェン）を見くびり過ぎだ！
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1241_1#5$1")]
+[PlaySound(key="$d_avg_magic_5", volume=1)]
+[PlaySound(key="$d_avg_magic_5", channel="2",delay=0.1)]
+[PlaySound(key="$d_avg_magic_5", channel="3",delay=0.2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_blddpgrn")]
+[name="ワン侍郎"]ゴホッ。
+[dialog]
+[stopmusic(fadetime=2)]
+[charslot]
+[delay(time=1)]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$rungeneral", loop=true, channel="a")]
+[charslot(slot="l",name="avg_4119_wanqin_1#2$1",duration=1)]
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",duration=1)]
+[StopSound(channel="a", fadetime=2)]
+[delay(time=2)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="ホーシェン"]どうした……？　なぜ立ち止まった？
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="シャオマン"]シャオホー……
+[name="シャオマン"]正直……ちょっと怖いよ……
+[charslot(slot="r",name="avg_4122_grabds_1#3$1",focus="r")]
+[name="シャオマン"]どうして田んぼがこんなことになって、劇の中にしかいないはずの化け物が出てきちゃったの……
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="ホーシェン"]正直言うと、僕も怖い。
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="ホーシェン"]でも、僕よりも怖い思いをして、どうしていいか分からない人はたくさんいるはずだ。
+[name="ホーシェン"]僕にはまだできることがある。まだ他の人を守れる……
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="シャオマン"]でか角くん、いつもおバカとかのろまくんって悪口言ってるけど、本当はあなたはあたしが見てきた中で一番賢い人だよ。たくさんのことを知ってて、作物に関する知識は誰よりもあるし。
+[name="シャオマン"]だから、どんなことが起きても、ちゃんと自分を守ってね。あなたの理想は必ず叶うから！
+[name="シャオマン"]絶対に、自分には家族がいないとか、気にかけてくれる人がいないとか考えて、それで……それで……
+[charslot(slot="l",name="avg_4119_wanqin_1#7$1",focus="l")]
+[name="ホーシェン"]急に何言ってるんだよ……
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="シャオマン"]自分でも分かんないよ。多分怖いから、普段心に隠してることが全部口から出ちゃってるのかな。
+[name="シャオマン"]はぁ、もしシュウ姉ちゃんがいるなら、きっとこれがどういうことか教えてくれるのに。
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="ホーシェン"]誰……？
+[charslot(slot="r",name="avg_4122_grabds_1#7$1",focus="r")]
+[name="シャオマン"]あれ……あたし今……何て言った？
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="ホーシェン"]シュウ姉ちゃんって……誰だ？
+[charslot(slot="r",name="avg_4122_grabds_1#11$1",focus="r")]
+[name="シャオマン"]分かんない。でもたしかに、あたしたちのそばに誰かがいて、その人は何でも知ってるっていうのを覚えてるよ。
+[Dialog]
+[PlaySound(key="$flashback")] 
+[MusicVolume(volume=0.3, fadetime=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_2025_shu_1#9$1")]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g7_fieldhouse",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", bstart=0.2,bend=1,fadetime=2)]
+[delay(time=1.5)]
+[charslot(duration=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1")]
+[charslot(slot="r",name="avg_4122_grabds_1#11$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[MusicVolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="ホーシェン"]何言ってるんだ……
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="シャオマン"]分からない……
+[name="シャオマン"]数日前、誰かに川辺で引き止められて、お話を聞かされた……
+[charslot(slot="r",name="avg_4122_grabds_1#7$1",focus="r")]
+[name="シャオマン"]そうだ、川辺……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[MusicVolume(volume=0.3, fadetime=2)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g8_crestofweir",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_1243_1#1$1",duration=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#9$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_4122_grabds_1#1$1",focus="l")]
+[name="シャオマン"]おじちゃん！　この曲どう？
+[charslot(slot="r",name="avg_npc_1243_1#2$1",focus="r")]
+[name="沈黙する木こり"]……
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="シャオマン"]好きじゃない？
+[name="シャオマン"]おじちゃんは、『小さなお花、おうちへ帰ろう』しか好きじゃないの？
+[charslot(slot="r",name="avg_npc_1243_1#1$1",focus="r")]
+[name="沈黙する木こり"]……
+[charslot(slot="l",name="avg_4122_grabds_1#11$1",focus="l")]
+[name="シャオマン"]おじちゃん、あたしがシャオホーと喧嘩しちゃった話はしたっけ？
+[name="シャオマン"]優秀な学生はみんな百灶に行くけど、あたしは行けないって言うんだよ。ちゃんと授業を受けないからって。ほんとムカつく。わざと嫌なこと言ってきてると思わない？
+[charslot(slot="r",name="avg_npc_1243_1#7$1",focus="r")]
+[name="沈黙する木こり"]……
+[charslot(slot="l",name="avg_4122_grabds_1#8$1",focus="l")]
+[name="シャオマン"]それの何がいけないの。あたしはここにいて、お父さんとお母さんが帰ってくるのを待ちたいの。
+[dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0",duration = 0.8)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=0, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l",posfrom = "0,0", posto = "-70,0",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="シャオマン"]わぁ！　どうしてまた急に追い払うの！！
+[dialog]
+[charslot(slot = "r",posfrom = "-100,0", posto = "-200,0",duration = 0.8)]
+[delay(time=0.3)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=0, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l",posfrom = "-70,0", posto = "-170,0",duration = 0.6)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="シャオマン"]分かったよ、もう行くから！　わっ！　斧が当たるってば！
+[stopmusic(fadetime=3)]
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1")]
+[charslot(slot="r",name="avg_4122_grabds_1#4$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_4122_grabds_1#4$1",focus="r")]
+[name="シャオマン"]シャオホー……あたし……
+[playMusic(key="$formal_loop", volume=0.6)]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="シャオマン"]……川岸にまだ避難してない人がいるはず！
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="ホーシェン"]シャオマン！　勝手に行くな！
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="シャオマン"]大丈夫！　あの無口なおじちゃんはあたしの話なら聞いてくれるから、あたしが連れて帰ってくる。そしたら大荒城の全員が無事でいられるよ！
+[dialog]
+[PlaySound(key="$rungeneral", volume=0.7)]
+[charslot(slot = "r",posfrom = "0,0", posto = "300,0",duration = 1,afrom=1,ato=0)]
+[delay(time=1.5)]
+[charslot(slot = "m", focus = "n")]
+[name="シャオマン"]後で、中心エリアで落ち合おう！
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

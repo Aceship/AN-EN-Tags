@@ -1,0 +1,33 @@
+[header(actId="sandbox_1", npcId="trap_472_tfalco")]
+[summontrap(x="2", y="6", charId="trap_472_tfalco", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="4", y="8", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summontrap(x="5", y="6", charId="trap_470_tmantic", isChar="FALSE", dir="LEFT")]
+[camerafocusto(offsetX="3", offsetY="7", time="1", scale="MID")]
+[foginview(id="rect1", leftBottomX="1", leftBottomY="4", rightUpX="7", rightUpY="10")]
+[name="ケストレル", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]お前たちは本当に強いんだな。助けてくれてありがとう。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]やるべきことをやったまでだ。
+[name="ケストレル", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]アルサランじゃ、有言実行するだけでそいつは大した奴なんだよ。俺たちはあの首長どものせいで、もう長いこと、簡単に約束するような奴を信じられなくなってるからな。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]そうか……お前たちのリーダーはどうしたんだ？
+[name="ケストレル", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]戦いの中で犠牲になったよ。……もともと、俺たちはナルタバティムの流域に住んでいたんだが、あの川は干上がってしまってな。その時、何人かは北のジャングルの集落に避難していったもんだ。
+[name="マンティコア", avatarId="char_215_mantic", isAvatarRight="TRUE"]サルゴンでは……よく聞く話、だね……
+[name="ケストレル", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]俺がガキの頃には、首長が来てはあれこれ約束事をしたもんだが、結局何一つ果たされやしなかった。
+[name="ケストレル", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]その後、俺は仲間たちと共にここへ連れてこられて、働かされる羽目になった。力を合わせて抵抗を試みたんだが……それも失敗に終わったよ。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]だが、それはもう過去のことだ。お前の仲間たちが、北の集落に合流できるよう手配しておいた。
+[name="ケストレル", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]重ね重ね、有難いよ。礼として渡せるものは何もないが、代わりに先人たちがまとめてくれた採掘技術の資料を渡そう。
+[playanim(id="trap_472_tfalco", anim="Attack", dir="RIGHT")]
+[delay(time="1")]
+[name="ケストレル", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]よかったらもらってくれ。
+[additem(itemId="sandbox_1_craft_13", itemCount="1")]
+[decision(option1="この先、行くあてはあるのか？", value1="1.1")]
+[predicate(references="1.1")]
+[name="ケストレル", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]どうだろうな。お前らが望んでくれるのなら、そっちの拠点へ行って手伝いをしてもいいんだが。
+[decision(option1="いつでも歓迎しよう。", value1="2.1")]
+[predicate(references="2.1")]
+[fognotinview(id="rect1")]
+[withdraw(id="trap_472_tfalco")]
+[withdraw(id="trap_467_ttuye")]
+[withdraw(id="trap_470_tmantic")]
+[delay(time="2")]
+[resetcamera(time="1")]
+[save]
+[end]

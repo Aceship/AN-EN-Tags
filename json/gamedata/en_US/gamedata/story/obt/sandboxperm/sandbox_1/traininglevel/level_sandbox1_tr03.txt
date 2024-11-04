@@ -1,0 +1,38 @@
+[HEADER(is_tutorial=true, is_skippable=false)] xb1教学关3
+[Battle.lockFunction(mask="PAUSE_BUTTON_INTERACT")]
+[Battle.lockFunction(mask="BATTLE_STATUS")]
+[InputBlocker(blockInput=true)]
+[Delay(time=1.75)]
+[Battle.Pause]
+[Tutorial(dialogHead="$avatar_zumama")]I'll help you handle those pesky enemies like I did last time.
+[Battle.EnsureMinCost(cost=5)]
+[InputBlocker(blockInput=true, cardIndex=3, validWidth=112, validHeight=116)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-140, startY=61, startAnchor="BottomRight", endAnchor="Center", endX=0, endY=0)] \
+First, try using the <@tu.kw>Wood Gathering Hub</>. This tool will help us gather wood faster.
+[InputBlocker(blockInput=true)]
+[Delay(time=0.5)]
+[InputBlocker(blockInput=true, tileY=8, tileX=4, validWidth=178, validHeight=153)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=84, startY=10, endX=74, endY=206, dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Deploy <@tu.kw>upwards</> and cover as many trees as possible within the Gathering Hub's operation range!
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=6.35)]
+[Battle.Pause]
+[Tutorial(tileY=8, tileX=4, focusWidth=150, focusHeight=150, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+The Wood Gathering Hub will periodically dispatch a Harvester to gather resources.
+[Tutorial(tileY=8, tileX=4, focusWidth=150, focusHeight=150, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=1, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+It'll automatically return to the Hub once it has collected the maximum amount it can carry. It'll gather your resources quickly as long as the Hub isn't destroyed.                                                                                                                                                                                                                                                                                                                                                                                                                    
+[Battle.Pause(pause=false)]
+[Delay(time=2.5)]
+[Battle.Pause]
+[Tutorial(focusX=25, focusY=-170, anchor="Center", focusWidth=150, focusHeight=150, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama")] \
+We have trickier enemies to deal with this time. Use the Hub to gather wood while I hold them off over here.
+[Battle.Pause(pause=false)]

@@ -1,0 +1,39 @@
+[header(actId="sandbox_1", npcId="trap_467_ttuye")]
+[summontrap(x="18", y="7", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summonenemy(enemyId="enemy_7035_epasng", x="18", y="5", endX="15", endY="6")]
+[move(enemyId="enemy_7035_epasng", x="17", y="5")]
+[camerafocusto(offsetX="17", offsetY="6", scale="FAR", time="5")]
+[delay(time="2")]
+[foginview(id="rect1", leftBottomX=12, leftBottomY=3, rightUpX=22, rightUpY=9)]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]繁茂する植物と、古代の霊殿。恐らくはここが、あなた様のお探しになられていた場所でしょう。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]良い知らせと悪い知らせがあるぞ。良い知らせのほうは、アダクリスのものらしき集落を見つけたこと。それで悪い知らせのほうは、なぜだかそこに誰もいないってことだ。
+[decision(option1="近付いて確かめるべきかもしれない。", value1="1.1")]
+[predicate(references="1.1")]
+[camerafocusto(offsetX="14", offsetY="6", scale="FAR", time="5")]
+[move(enemyId="enemy_7035_epasng", x="15", y="6")]
+[delay(time="2")]
+[summonenemy(enemyId="enemy_1096_ccwitch_2", x="12", y="5", endX="14", endY="5")]
+[move(enemyId="enemy_1096_ccwitch_2", x="13", y="5")]
+[summonenemy(enemyId="enemy_7023_gatbb", x="12", y="6", endX="14", endY="6")]
+[move(enemyId="enemy_7023_gatbb", x="13", y="6")]
+[summonenemy(enemyId="enemy_1096_ccwitch", x="12", y="7", endX="14", endY="7")]
+[move(enemyId="enemy_1096_ccwitch", x="13", y="7")]
+[name="霊殿の衛兵", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]恥知らずな賊どもめ、再び戻ってこようとは……！　我らが女神への冒涜だぞ！
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]どうやら<color=#d8d769>待ち伏せ</color>されていたようですね。
+[decision(option1="いや、恐らく何かの誤解だろう。", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="――我々は助けを求めて来た者だ！", value1="3.1")]
+[predicate(references="3.1")]
+[name="霊殿の衛兵", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]斯様な戯言は聞き飽きた！　まったく、最初は首長軍で、その次はあの妙なフェリーン、そして今度はお前たちか――静かなるこの場所がこれほど騒がされることなど、今までにないことだ！
+[name="霊殿の衛兵", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]武器を構えろ。
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="TRUE"]あなた様はお下がりください。戦いは我々にどうかお任せを。
+[playanim(id="trap_467_ttuye", anim="Idle", dir="RIGHT")]
+[withdraw(id="enemy_1096_ccwitch")]
+[withdraw(id="enemy_1096_ccwitch_2")]
+[withdraw(id="enemy_7023_gatbb")]
+[withdraw(id="enemy_7035_epasng")]
+[withdraw(id="trap_467_ttuye")]
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[save]
+[end]

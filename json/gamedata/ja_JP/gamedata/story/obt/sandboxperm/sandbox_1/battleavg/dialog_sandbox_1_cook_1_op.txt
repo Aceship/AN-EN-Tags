@@ -1,0 +1,41 @@
+[header(actId="sandbox_1", npcId="trap_468_tpriest")]
+[summontrap(x="8", y="7", charId="trap_466_tzumama", isChar="FALSE", dir="LEFT")]
+[summontrap(x="7", y="6", charId="trap_468_tpriest", isChar="FALSE", dir="RIGHT")]
+[delay(time="1")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(offsetX="7", offsetY="7", time="1", scale="FAR")]
+[playanim(id="trap_466_tzumama", anim="Special_Begin", looporidle="Special_Loop", dir="LEFT")]
+[delay(time="1")]
+[playanim(id="trap_468_tpriest", anim="Special", dir="RIGHT")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]うわあああ――！！　わ、わしの尻が――！！
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]あつあつあつ、熱すぎて死んでしまう！！
+[decision(option1="大祭司、大丈夫か？", value1="1.1")]
+[predicate(references="1.1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]安心しろ、じいやなら平気だ。
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]これ、その味もそっけもない言い草はなんじゃ？　一番見事な尻羽が丸焦げになってしまったんじゃぞ！
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]ああ、だがまた生えてくるのだろう？
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]なんという物言いじゃ！　わしは本気で怒ったぞ。次の実験はお主一人でやるがいいわ！　二度とわしに泣きついて来るでないぞ！
+[withdraw(id="trap_468_tpriest")]
+[playanim(id="trap_466_tzumama", anim="Special_End", looporidle="Idle", dir="LEFT")]
+[delay(time="1")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1")]
+[playanim(id="trap_466_tzumama", anim="Attack", dir="LEFT")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]やれやれ、どうしたものか。じいやはどうして突然機嫌を損ねてしまったんだ？
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]以前なら、こんなことはなかったはずなのだが。
+[decision(option1="早くなだめてやったほうが良いんじゃないか。", value1="2.1")]
+[predicate(references="2.1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]この仕事を終えたらそうしよう。今はやるべきことが山積みだからな。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]よかったら、代わりにじいやの様子を見てきてくれないか？　恐らくは……食べ物を持っていってやるといいだろう。
+[decision(option1="面倒なことになりそうだ……", value1="3.1")]
+[predicate(references="3.1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]ほら、『アルサラン料理100のコツ』なんて本を置いていったみたいだぞ。
+[decision(option1="こんなもの本当に役立つのか？", value1="4.1")]
+[predicate(references="4.1")]
+[additem(itemId="sandbox_1_craft_10", itemCount="1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]試しに、<color=#d8d769>カニ肉混ぜご飯</color>を作ってみよう。
+[decision(option1="いいアイデアだ。", value1="5.1")]
+[predicate(references="5.1")]
+[withdraw(id="trap_466_tzumama", withoutAnim="TRUE")]
+[resetcamera(time="1")]
+[save]
+[end]

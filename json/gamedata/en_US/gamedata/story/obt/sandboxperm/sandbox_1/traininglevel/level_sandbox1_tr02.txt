@@ -1,0 +1,58 @@
+[HEADER(is_tutorial=true, is_skippable=false)] xb1教学关2
+[Battle.lockFunction(mask="PAUSE_BUTTON_INTERACT")]
+[Battle.lockFunction(mask="BATTLE_STATUS")]
+[InputBlocker(blockInput=true)]
+[Delay(time=6)]
+[Battle.Pause]
+[Tutorial(dialogHead="$avatar_zumama")]Once you've chopped down a tree, a nearby Operator has to carry it back with them.
+[Tutorial(dialogHead="$avatar_zumama")]Every Operator can carry as much as their own <@tu.kw>Block Count</>.
+[InputBlocker(blockInput=true, cardIndex=5, validWidth=112, validHeight=116)]
+[Battle.EnsureMinCost(cost=17)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-611, startY=61, startAnchor="BottomRight", endAnchor="Center", endX=-110, endY=50)] \
+First, deploy an Operator next to a tree, and position them to carry the wood back once they're done chopping wood.
+[InputBlocker(blockInput=true)]
+[Delay(time=0.5)]
+[InputBlocker(blockInput=true, tileY=3, tileX=2, validWidth=169, validHeight=153)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-12, startY=47, endX=-14, endY=230)] \
+Deploy <@tu.kw>upwards</>!
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=9)]
+[Battle.Pause]
+[Tutorial(focusX=-46, focusY=136, focusWidth=94, focusHeight=82, anchor="Center",\
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Once a tree is cut down, operators around it will collect wood automatically.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+An Operator carrying wood will deliver it back to base successfully on retreat or defeat.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+You will also get any wood carried by Operators on the field when the battle concludes.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Now, try retreating an Operator carrying wood.
+[SandboxBattle.LockCamera(enable=false)] 
+[InputBlocker(blockInput=true, tileY=3, tileX=2, validWidth=40, validHeight=40)]
+[Tutorial(protectTime=0.5, tileY=3, tileX=2, waitForSignal="char_info", \
+          animStyle="Click", focusStyle="HighlightCircle", black="$f_tut_black", focusWidth=100, focusHeight=100,)]
+[SandboxBattle.LockCamera(enable=true)] 
+[Delay(time=0.5)]
+[InputBlocker(blockInput=true, validX=-77, validY=142, validWidth=96, validHeight=73)]
+[Tutorial(focusX=-77, focusY=142, focusWidth=96, focusHeight=73, waitForSignal="withdraw", \
+          animStyle="Click", focusStyle="HighlightCircle", black="$f_tut_black")] 
+[InputBlocker(blockInput=true)]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]You've successfully gathered some wood.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]Every resource point has a limited amount of resources you can gather from. It will disappear once the resource has been harvested.
+[Tutorial(focusX=-14, focusY=-34, focusWidth=255, focusHeight=49, anchor="Top", \
+          animStyle="Highlight", focusStyle="HighlightRect", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+It's not advisable to fight in the wilderness for too long. You should grab the opportunity to gather as much wood as you can.
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=4, offsetX=13, time=2)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+There'll always be unexpected visitors interrupting our work, huh.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+Alright, you guys can continue gathering wood and leave the enemies to us.
+[Battle.Pause(pause=false)]

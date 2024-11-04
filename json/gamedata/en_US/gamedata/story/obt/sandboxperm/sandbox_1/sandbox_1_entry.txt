@@ -1,0 +1,123 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[PlaySound(key="$d_avg_sandwnd", volume=0.6, loop=true, channel="wind")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Decision(options="*huff*... *huff*...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]Are you overheating? You're sweating all over.
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="Tuye"]At this rate, we're going to have a whole oasis under your feet in no time.
+[dialog]
+[charslot]
+[Decision(options="There's no end to the desert.;Grains of sand strike the wheel hubs.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]If we're lucky, we'll reach the clearing near the legendary Eclumui Oasis by nightfall. If we're not...
+[charslot(slot="m",name="avg_402_tuye_1#11$1",focus="m")]
+[name="Tuye"]If we're not lucky, we might be swallowed up by the wind and sand and never find it at all.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]Enough downer talk. That clearing is the very best place in Arsalan to serve as the Rhodes Island branch office and Foehn Hotlands observation point.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="Eunectes"]If we don't manage to find it, then we just need to try harder. Assuming our intel is correct, we don't have much time left.
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="Tuye"]*sigh*... Even though there clearly aren't any Originium industrial facilities in this area, why do the number of Oripathy cases increase each year?
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]The raging sandstorms might be able to answer that for you.
+[Dialog]
+[charslot]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="Eunectes"]Hey, what are you staring out the window for?
+[Dialog]
+[charslot]
+[Decision(options="Look. What is that...?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_416_zumama_1#6",focus="m")]
+[name="Eunectes"]Tuye, stop the car!
+[Dialog]
+[charslot]
+Through the sandy haze, you see the vague outlines of several enraged needleflies attacking some wobbly person.
+[Dialog]
+[charslot]
+[PlaySound(key="$drift", volume=0.6)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="Tuye"]Effendi, needleflies make their nests in this desolate desert. It's extremely dangerous, why are you out here alone?
+[charslot]
+[name="Injured Traveler"]Th-Thank you so much... I, I got caught in a sandstorm while out hunting, and ended up losing my way.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]Where do you live? We might be able to take you back home.
+[charslot]
+[name="Injured Traveler"]My tribe and I fled to these parts, and we're still not familiar with the desert. All I know is that my home was near a jungle.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]Rabum-Arakeeshtu Jungle?
+[charslot]
+[name="Injured Traveler"]What...? There are so many jungles around here. How am I supposed to know which one you're talking about?
+[charslot(slot="m",name="avg_402_tuye_1#1$1",focus="m")]
+[name="Tuye"]Whether or not it's the same one, we should get going before the next sandstorm kicks up.
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="47_g30_oasis2",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[name="Village Elder"]Thank you for back the lost man, young ones. Had it not been for you, he could've spent his entire life wandering out there.
+[name="Village Elder"]But this isn't exactly the promised land. What brings you here?
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]We're looking to establish a branch office in the Szubat-Arsalan region, as well as a site for observing the Foehn Hotlands.
+[charslot]
+[name="Village Elder"]Szubat-Arsalan? That's a long-defunct name. But yes, this would be the place you people call Arsalan.
+[name="Village Elder"]However, very few people ever mention the glorious name of the 'Lionpride's Ancient Throne'.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="Eunectes"]What about now?
+[charslot]
+[name="Village Elder"]Now? It's exactly as you see.
+[charslot]
+[name="Village Elder"]We once lived along the shores of the Narotabati River to the south, but the Foehn Hotlands gradually cut off the river's flow, turning the coast into salt flats.
+[charslot]
+[name="Village Elder"]Our homeland was buried in a sandstorm, my predecessor lost his ameeri title, and conquest continued to eat away at his territory.
+[charslot]
+[name="Village Elder"]Our autonomy was supposed to be the last thing we had left, but in recent years, rumors started going around that Arsalan still hid a treasure of some sort, prompting the nearby lords ameer to return with their troops.
+[charslot]
+[name="Village Elder"]They pillaged and looted everywhere they went, forcing our people into their mining camps to the south, where many of them contracted deadly diseases. *sigh*...
+[name="Village Elder"]We were forced to move north, and here we are.
+[charslot]
+[name="Village Elder"]There is no such thing as the 'Lionpride's Ancient Throne'. It is nothing more than a place where a bunch of refugees have gathered.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="Eunectes"]Figures... So that's why so many Oripathy patients have been showing up around here.
+[charslot(slot="m",name="avg_402_tuye_1#3$1",focus="m")]
+[name="Tuye"]On top of the fact that it's hard enough to stay alive in this place, it seems that the lords ameer spell serious trouble for our operational objective.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="Eunectes"]There has to be a solution.
+[charslot]
+[name="Village Elder"]Let's set that aside. The location you marked isn't too far from us. It's in the vicinity of this part of the jungle and the oasis.
+[name="Village Elder"]We won't get in the way of your work. If there's anything you need, come and find me.
+[Dialog]
+[Decision(options="We can help you as well.;We can also fight against the ameeri army.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot]
+[name="Village Elder"]We'd truly appreciate if you're willing to help us, but we have nothing to give you in return.
+[charslot(slot="m",name="avg_402_tuye_1#9$1",focus="m")]
+[name="Tuye"]As long as you share some local wisdom with us, that's payment enough.
+[charslot]
+[name="Village Elder"]In that case... you might be here a long time, young ones.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,681 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Background(image="bg_snowconutryinside",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+「先生、うちのクオモを救ってくださって、本当にありがとうございます！」
+「半月は絶対に安静にさせること。再発する可能性があるから、決してベッドから出さないように。父親としてしっかり守ってあげてくれ。」
+「ええ、もちろんです！　それで治療費は、いくらお支払いすればいいのでしょうか？」
+「そんなものは必要ない。」
+「そんな！　あなたはここ数年で、初めてうちの村まで診察にきてくれたお医者様なんですよ！」
+「申し訳なく思う必要はない。むしろ、ここの現状を知ってから、衣食に不自由ない生活をしている自分が恥ずかしいくらいだ。」
+「で、では……うちの村にはもてなせるようなものは何もありませんが……せめて、水でも飲んでいかれてください。」
+「Merci。」
+「えっ？　今なんて？」
+「ああ、すまない。『ありがとう』と言ったんだ」
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="bg_offce",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_223",duration=1.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_paper2",channel="1")]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]他に身分を証明できるものは？
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="r")]
+[name="Doc"]それで全部だ。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]なら書類不十分で、ストーンブレイク村へは行かせられん。
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]前回ストーンブレイク村へ行った時は、書類なんて要求されなかったぞ。そのうえ君の前任者は、親切にもキャラバンに連絡までしてくれた。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]彼は私より親切だったかもしれないが、仕事への責任感に関しては私のほうが上だ。
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]なら、なんの書類が足りないのか教えてくれるかね？　今すぐ揃えてこよう。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]……
+[Dialog]
+[PlaySound(key="$d_avg_paper2",channel="1")]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]医者ともあろう方なら、「書類不十分」がどういう意味なのか、理解していただけるはずだが。
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]私にわかるのは、自分が医者であり、ストーンブレイク村に緊急で薬を届けにいかねばならないことだけだ。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]しかし私から見れば、あんたは腰に銃を提げた、異国訛りの不審者なのだよ。ヴィクトリアの村には、あんたのような奴の助けは必要ない。帰ってくれ。
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]私にできるのはただ、一人一人の命を救うことだけだ。村全体を救おうだなんて考えたこともないし、たった一人でそんなことができるはずもない。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]そうかい。しかしあんたが「救おう」としている「命」は、そう考えていないのさ。ガリア復興主義者さんよ。
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]ガリア……復興だと？
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]とぼけるな。ガリア訛りがバレバレなんだよ、医者を装った扇動者めが。
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]それは誤解だ。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]誤解だと言うのなら、なぜサンドバー村やティテニー村ではなく、わざわざストーンブレイク村に行くのかね？　あの村はうちの管轄下で唯一ガリア人が暮らす村だからだろ？
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[name="Doc"]サンドバー村には、リタイアして里帰りした年老いた医者が既にいるからだ。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]……
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[name="Doc"]そしてティテニー村には、それなりに設備の整った病院がある。そして他の村は、定期的に医療を提供するキャラバンが巡回している……
+[name="Doc"]だが、ストーンブレイク村は、唯一いた医者が数年前に亡くなって以降、引き継ぐ者もいなければ、キャラバンも通りたがらない。そちらの管轄下で唯一、完全に医療サービスが欠落した村だ。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]……まさかあんた、本当にスパイか？　あらかじめこの近辺で情報を集めたってわけか。
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]その逆さ。君の前任者がキャラバンに連絡を取る前に、この区域全体の医療サービスの水準について、熱心に教えてくれたのさ。
+[name="Doc"]約束しよう。私はストーンブレイク村にいる間、医者としての職務の範疇を越えるようなことは決してしないと。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]口先だけのきれいごとも大概にしろ。
+[name="現地の役人"]知ってるか？　昔はあんたみたいな奴を見分ける簡単な方法があったんだ。コルシカⅠ世の肖像画にツバを吐きかけさせるんだよ。ためらった奴は不穏分子ってわけだ。
+[charslot(slot="r",name="avg_4125_rdoc_1#6$1",focus="r")]
+[name="Doc"]……コルシカⅠ世？　ガリアの皇帝か？
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]他に誰がいるってんだ！　なんだ、その信じられないとでもいうような間抜け面は？
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]（肩をすくめる）コルシカとは、彼の出生地のことかと思ったものでね。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_barracks",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[PlaySound(key="$d_gen_walk_n",channel="2")]
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="Doc"]ようやく着いたぞ、ストーンブレイク村……それにしても、道中は揺れがずいぶんと酷かった。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",channel="2")]
+[charslot(slot="m",name="avg_npc_001",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1")]
+[name="Doc"]やあ、アベル。最近の調子はどうだ？　まだ喘息の発作は頻繁に起きてるかな？　それと君のとこのクオモは――
+[Dialog]
+[charslot(slot="m",name="avg_npc_001")]
+[Delay(time=0.8)]
+[PlaySound(key="$rungeneral",channel="2")]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1")]
+[name="Doc"]……？
+[Dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="アベル"]先生！？　みんな！　先生が本当に戻って来てくれたぞ！
+[Dialog]
+[Delay(time=1.5)]
+[PlaySound(key="$d_avg_crwddiscuss_outside",channel="1",loop=true,fadetime=1)]
+[name="驚く村人"]本当に先生なのか……
+[name="興奮する村人"]先生だ！　本当にまた来てくれたんだ！
+[name="客好きな村人"]先生、うちで休んでってくれよ！
+[name="せっかちな村人"]お前んちに行ったって仕方ないだろ！　早く先生をもてなす支度をしてこい！
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1")]
+[name="Doc"]その前に薬を受け取りに来てくれ。この後は手術も控えている。薬が一刻でも早く皆の手元に渡ってくれたほうが、私も荷が一つ降りるというものだ。
+[Dialog]
+[stopsound(channel="1",fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_barracks",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="m")]
+[name="Doc"]この新開発の長期抑制剤は、毎月一回の注射だけで済む。今回は半年分の量を渡しておくから、くれぐれも厳重に保管してくれ。
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="none")]
+[name="顔色の悪い感染者"]Merci……
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[Delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="none")]
+[name="優しい婦人"]先生、リンゴをどうぞ。前回、先生から重労働を控えるよう言われたから、村の近くを歩き回って、みんなのために果実を集めたりしているの。
+[charslot(slot="m",name="avg_4125_rdoc_1#10$1",focus="m")]
+[name="Doc"]このリンゴは取っておきなさい。あなたも栄養が必要だ――
+[charslot(slot="m",name="avg_4125_rdoc_1#10$1",focus="none")]
+[name="優しい婦人"]まあ先生ったら、またそのようなことをおっしゃるの？　前回来た時も、私たちの負担にならないようにと、帰る時はすっかり痩せこけちゃって……いいから、受け取ってちょうだい。
+[charslot(slot="m",name="avg_4125_rdoc_1#10$1",focus="m")]
+[name="Doc"]それなら、ありがたくいただこう。それと、あなたの分の薬だ。
+[charslot(slot="m",name="avg_4125_rdoc_1#10$1",focus="none")]
+[name="優しい婦人"]Merci。
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#13$1",focus="m")]
+[Delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_001")]
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="r")]
+[name="Doc"]アベル、君は薬を受け取る列に並んでいた時、ずっと後から来た人に順番を譲っていたね。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]俺はただの喘息だけど、ほかはお年寄りや重病の人、あと感染者ばかりだから、譲るのは当然です。
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="r")]
+[name="Doc"]皆に代わって礼を言うよ。それから、前に喫煙は控えるよう伝えたはずだが……
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]ああ、それならもう完全にやめました。
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="r")]
+[name="Doc"]ならよかった。ほら、前に言った吸入薬だ。発作が起きた時に使いなさい。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]Merci。
+[charslot(slot="r",name="avg_4125_rdoc_1#12$1",focus="r")]
+[name="Doc"]De rien──
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="「とぼけるな。ガリア訛りがバレバレなんだよ。」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]ど、どういたしまして。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]先生、のど渇いたでしょう？　テーブルに置いてあるリンゴ、洗ってきますね。
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="r")]
+[name="Doc"]いや、自分でやるよ――
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]いいから座って！　俺に任せてください！
+[Dialog]
+[charslot(slot="l",posfrom="0,0",posto="-50,0",duration=1.5)]
+[charslot(slot="l",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="none")]
+[name="村人の声"]アベル、先生が来たと聞いたが、どこにいるんだ？
+[name="アベルの声"]ここを曲がったとこにいるよ。今、みんなに薬を配ってるから、お前みたいななんともない頑丈な奴は、会いに行くのは後にしな。
+[name="村人の声"]Merci。
+[name="アベルの声"]De rien。
+[name="村人の声"]それもガリア語か？　どういう意味だ？
+[name="アベルの声"]「どういたしまして」って意味らしい。今先生から教わったんだ。
+[name="村人の声"]De……rien……か、覚えたぜ。
+[Dialog]
+[charslot(slot="l",name="avg_npc_001",posfrom="-50,0",posto="0,0",duration=1.5)]
+[charslot(slot="l",afrom=0,ato=1,duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]どうぞ、リンゴです。
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]……アベル、私が教えたフランス語を皆にも教えたのか？
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]「フランス語？」　前に教えてくれたのって、ガリア語じゃないんですか？
+[name="アベル"]村から祖国の言葉を話せる人がいなくなってから、十年以上も経ちます。だから前先生から教わった言葉を、みんなにも教えたら、全員すごく感激していました。今回も色々教えてくださいよ。
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Background(image="bg_snowconutryinside",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+「Merci。」
+「えっ？　今なんて？」
+「ああ、すまない。『ありがとう』と言ったんだ。』
+「先生はガリア人なんですか？」
+「いや、どう言えばいいか……私にはカジミエーシュへ行ったことのない友人がいるのだが、彼女はおそらくここではカジミエーシュ人に当たるはずだ。私もそれと似たような状況だろう。」
+「では先生は……まだガリア語を話せるんですか？」
+「ははっ、もし私がガリア人だとすれば、当然私の母国語も、ガリア語の一種に分類されるだろうね。」
+「それじゃあ、いくつか簡単な言葉を教えてもらえますか？」
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="bg_barracks",screenadapt="coverall")]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_001")]
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1")]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]がっかりさせてしまって申し訳ない。でも私が君たちに教えたのはフランス語であって、ガリア語ではないんだ。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]え？　でも……
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]前回紛らわしい説明をしてしまったことを謝らせてほしい。もし君たちが本気で自分たちの言葉を学びたいのなら、本物のほうを学ぶべきだ。
+[name="Doc"]私はもう失礼するよ。これから手術室の準備があるからね。
+[Dialog]
+[charslot(slot="r",posfrom="0,0",posto="50,0",duration=1.5)]
+[charslot(slot="r",afrom=1,ato=0,duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]待ってください！　俺も手伝います！
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="34_g10_tent_inside",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="m")]
+[name="Doc"]あれから膝の調子は良くなりましたか？
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="none")]
+[name="優しい婦人"]ええ、先生のおかげさまで！　先生がいなかったら、こんな日がくるなんて想像もできなかったわ……私より重症の人もみんな先生が治してくださったんですってね！
+[name="優しい婦人"]やっぱり先生はなんでもできちゃうのね。ああ、あなたは私たちの救世主よ……
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="m")]
+[name="Doc"]……救世主？
+[name="Doc"]誤解しないでください。私はただ膝に溜まった水を抜いただけで、関節炎の症状は改善されていません。重い荷物を運んだり、長距離の歩行は必ず控えてください。
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="none")]
+[name="優しい婦人"]ええ、ええ、分かってるわ！　きちんと安静にしていれば、この膝もちゃんと治るのでしょう！　ありがとう……merci、merci！　私たちの救世主よ！
+[name="優しい婦人"]こんな老いぼれの両足だけど、いつまでも先生についていくわ！
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",channel="2")]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1")]
+[Delay(time=0.5)]
+[name="Doc"]そうではありません！　待ってくださ――
+[charslot(slot="m",name="avg_4125_rdoc_1#7$1")]
+[name="Doc"]……
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="l")]
+[name="アベル"]婆さんが何か忘れ物でも？
+[charslot(slot="r",name="avg_4125_rdoc_1#1$1",focus="r")]
+[name="Doc"]アベル、すまないがご婦人に伝えておいてくれ。彼女の膝は悪化を抑えるのが精一杯で、楽観視しすぎないようにと。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]そっとしといてやりましょうよ。あの婆さんも可哀そうな人なんですよ。人の手を借りないと、食事もまともにできないくらいのお年寄りなんだから……
+[charslot(slot="r",name="avg_4125_rdoc_1#13$1",focus="r")]
+[name="Doc"]村の周りでリンゴを拾っていると言っていたが？
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]他の人には内緒ですよ。果樹園の番をやってるヴィクターさんが可哀そうに思って、虫に食われたリンゴを婆さんの通り道に置いて、喜ばせてやってるんです。
+[charslot(slot="r",name="avg_4125_rdoc_1#9$1",focus="r")]
+[name="Doc"]……本人はそれを知っているのか？
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]リンゴを拾えることに気づいてからというもの、ますます熱心に歩き回るようになりました。
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]だめだ、それでは関節炎を悪化させてしまう――
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]じゃあどうすればいいんですか？　先生は前だって婆さんと似たような患者を何人も治したじゃないですか。まさか、あの人たちも歩いちゃダメなんです？
+[charslot(slot="r",name="avg_4125_rdoc_1#2$1",focus="r")]
+[name="Doc"]手立てがあろうがあるまいが、まずは現実と向き合わねばならないのだよ。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]だけど、こんな場所じゃ俺たちはまともな生活だってできません。それが現実です。
+[name="アベル"]前にガリア語を話すのをやめるようおっしゃったのは、町から不当な扱いを受けないよう、守ってくれようとしたからですよね。みんな分かってるんですよ……
+[stopmusic(fadetime=1.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]いや、守ったわけでは――
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]……けど、町の人は俺たちにわざわざ嫌がらせをする必要なんてないんです。
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]……
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[playMusic(intro="$distressed_intro", key="$distressed_loop", volume=0.6)]
+[name="アベル"]俺たちの親父の世代は、行き場を失くしてここに辿り着きました。豊かな土地はとっくに占有され、「ガリアのよそ者」は砂利の上で村を建てるしかなかったんです。
+[name="アベル"]村の土地は痩せこけており、自分たちを養う分の作物を育てるだけでやっとだ。こんな場所にキャラバンも医者も来たがらないのは、当然ですよ。
+[name="アベル"]数年前、各村の間の道路を補修することになった時も、当然俺たちの村は一番最後に後回しですよ。そして残り二つの村になったところで、天災のリスクがあるって話になり、工事は一時中止になりました。
+[name="アベル"]結局天災なんて来なかったんですけどね。もう一つの村は自分たちでお金を集めて道を修繕したみたいですけど、俺たちにそんな余裕なんて……
+[name="アベル"]移動都市で誰かが事件を起こした時も、毎回わざわざここまで調査に来るんです。口では「盗賊の追跡」とか「治安維持」だなんて言うけど、結局はガリア人を疑ってるだけでしょう……
+[name="アベル"]俺たちはそんな扱いにずっと耐えて来たんです。そしてついにあなたが来てくださった。
+[charslot(slot="r",name="avg_4125_rdoc_1#6$1",focus="r")]
+[name="Doc"]……私が？
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]あなたは……ただみんなの病気を治しに来たんだけじゃない。ここから俺たちを連れ出してくれるんでしょう？
+[charslot(slot="r",name="avg_4125_rdoc_1#6$1",focus="r")]
+[name="Doc"]待ってくれ、アベル。一体なんの話をしているんだ？　私がいつそんなことを言った？
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]リターニアから送られてきた、先生のご友人の手紙に書いてありました。
+[name="アベル"]勝手にカバンを漁ったことは謝ります……でも、もう俺たちこれ以上は待ってられないんです。
+[charslot(slot="r",name="avg_4125_rdoc_1#3$1",focus="r")]
+[name="Doc"]アベル、目を覚ますんだ！　この手紙は英――ヴィクトリア語で書かれている。君なら読めるはずだろう！　これは普通の友人同士のやり取りに過ぎない！
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]ですがそのBlitzさんという方は、この大地はあまりにも苦痛に溢れていると手紙に書いていたじゃないですか？　それと先生たちが帰るための道を探していることも。
+[name="アベル"]何年か前にも、リターニアの「選帝大公爵」が、ガリアの難民に特別な待遇を保証する噂が流れ――
+[charslot(slot="r",name="avg_4125_rdoc_1#8$1",focus="r")]
+[name="Doc"]アベル、私を見たまえ！　私は一体何者だと思う！？
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]……医者、ですか？
+[charslot(slot="r",name="avg_4125_rdoc_1#2$1",focus="r")]
+[name="Doc"]そうだ、医者だ。私は一介の医者に過ぎない。
+[name="Doc"]ここへ来たのは、君たちの苦痛をできる限り緩和させるためだ。誤解によって生じた幻覚に溺れさせることではない。頼むから目を覚ましてくれ。
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]すり減った関節が、幻想の力で回復することもなければ、私は全知全能の「救世主」でもない。私はただ、自分の力の限り君たちの力になろうとしているだけだ。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]力になってくれるというのなら、ここから俺たちを連れ出してくれるでしょう！　町の役人どもすら騙せるあなたなら、砂利と何も生えない土しかないこの牢獄から、俺たちを連れ出せるはずだ！
+[name="アベル"]あなたはただの医者じゃない！　俺たちは今までたくさんの医者を見てきましたが、こんなに大勢の病気を治してくれたうえに、一銭も取らない医者は先生が初めてです！
+[name="アベル"]ついて来てください。他にも見せたいものがあるんです……きっと驚きますよ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_snowconutryinside",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[PlaySound(key="$d_gen_walk_n",channel="2")]
+[charslot(slot="l",name="avg_npc_001",duration=1.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[name="Doc"]これは……
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]コルシカⅠ世陛下の肖像画ですよ。耳が遠くなったある爺さんの家の倉庫の奥で見つかったんです。
+[name="アベル"]絵の顔部分は皇帝陛下が崩御された直後に、何者かにぐちゃぐちゃに引っかかれてしまったんです。その爺さんも陛下の見た目をよく覚えていないと言うから、俺たちなりに修復してみました……
+[name="アベル"]あまり似てはいないかもしれませんが、みんなはなかなかいい出来だと褒めてくれました。どのみち、ガリアの救世主には違いないって……
+[Dialog]
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[Delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="ガリアの救世主！？", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="その言葉に反応する前に、私は肖像画に描かれた人物の顔にすっかり目を奪われ、言葉を失ってしまった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="絵の顔部分の損傷が激しく、補修した者たちが想像で細部を補うしかなかったというのは、明らかに見て取れる。そうやって完成された絵は、そこそこ似ていると言えるだろう――", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私の顔に。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="色褪せた金メッキの額縁に納められた絵に描かれているのは、王冠を戴き、胸にサッシュをかけ、礼服を身に包んだギュスターヴ・カテブの姿だった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="もしここが地球ならば……いや、ロドスやドッソレスであったとしても、変な絵だと笑い飛ばされるだけで終わっていただろう。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="だが、それはよりにもよってこの村にある。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_4125_rdoc_1#9$1",focus="r")]
+[name="Doc"]すまない、もうその絵は見たくない。しまってくれ。
+[name="Doc"]私はガリアの救世主などではない。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]ガリア人を救いに来たんじゃないのなら、なぜストーンブレイクなんて辺ぴで貧しい村に来たのです！？
+[charslot(slot="r",name="avg_4125_rdoc_1#9$1",focus="r")]
+[name="Doc"]病魔にあえぐ人々を助けるためだ。話す言語や、生まれ育った場所に関係なくな。
+[charslot(slot="r",name="avg_4125_rdoc_1#2$1",focus="r")]
+[name="Doc"]そして私の次の目的地もリターニアではなく、カズデルだ。あの地の人々も、君たちと同じ苦しみを味わっていると聞いたからね。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]魔族の地に！？　そんな……あ、ありえない！
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[name="Doc"]それに、私はヴィクトリアの町役人に約束した。ストーンブレイク村にいる間、医師としての職務の範疇を越えるようなことは決してしないと。
+[charslot(slot="l",name="avg_npc_001",focus="l")]
+[name="アベル"]それは、奴らをごまかすためにそう言っただけでしょう！　そうに決まってる！
+[charslot(slot="r",name="avg_4125_rdoc_1#2$1",focus="r")]
+[name="Doc"]そんなことはない。私は言ったことは必ず守る。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[Subtitle(text="会話が終わると、例の肖像画は再び倉庫の奥底にしまい込まれた。私は村人との会話を極力避けるよう努めたが、彼らは相変わらず崇拝めいた視線を向けてきた。しかも、日増しに視線の数は増えた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="彼らが尊敬しているのが果たして一人の医者なのか、それとも「ガリア人の救世主」なのか、私には知る由もなかった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私にできるのは、手術と診察で予定を埋め尽くすことのみ。どんなに祈りを捧げようと、何も応えることのない偶像から、彼らがいつか目覚めることを願いながら。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="だがその選択は、完全なる間違いだったのだ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_barracks",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[PlaySound(key="$d_gen_walk_n",channel="2")]
+[charslot(slot="m",name="avg_npc_001",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_4125_rdoc_1#13$1",focus="m")]
+[name="Doc"]アベル？
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]……
+[charslot(slot="m",name="avg_4125_rdoc_1#13$1",focus="m")]
+[name="Doc"]村の入口に何か用でもあるのか？
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]……いえ、別に。
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="m")]
+[name="Doc"]そうか。ほら、前回渡し忘れていた薬だ。
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]喘息の薬はもうもらいましたよね？
+[charslot(slot="m",name="avg_4125_rdoc_1#1$1",focus="m")]
+[name="Doc"]近頃少し忙しくて失念していたが、君の家にはクオモもいたな。これはあの子の薬だ。今回はあの子の姿を見ていないが、出かけてるのか？　帰ってきたら必ず飲ませてやってくれ。あの子はまだ――
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]……
+[charslot(slot="m",name="avg_4125_rdoc_1#13$1",focus="m")]
+[name="Doc"]アベル……？
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]前にあなたが去ってすぐ、町から役人が盗賊の捜索にやって来て、一晩中騒ぎになったんです。奴らはベッドに違法品を隠していると決めつけて、クオモを無理やり引きずり下ろしました。
+[name="アベル"]そしたら興奮したせいか……クオモの咳が止まらなくなって。役人たちにクオモを町に連れて行くように頼みましたが……全員無視でしたよ。
+[name="アベル"]夜のうちに他の村に医者を呼びに行きましたが、うちのような貧しい家には誰も来たがらなかったんです。最後はどうにかサンドバーの先生に来てもらえることになりましたが、戻った頃にはもう……
+[name="アベル"]俺がタバコをやめたのは、その夜からです。
+[name="アベル"]先生、こんなことはもう二度と起こらないですよね？　先生はもう俺たちを見捨てたりしない、そうだろう？
+[name="アベル"]みんな分かってるんです。俺たちを気にかけてくれるのは、俺たち以外のガリア人だけだって……
+[name="アベル"]みんなの病気を治してくださったあなたなら、最後はきっと俺たちを救済してくれるはずだ！　俺には分かるんです……
+[Dialog]
+[PlaySound(key="$d_avg_paper2",channel="1")]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="m")]
+[name="Doc"]待て、アベル。その手に持っているのはなんだ？
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]皆を連れてこの村を離れ、リターニアへ向かう知らせです。先生が必ず俺たちを率いてあらゆる障害を乗り越え、安寧の地へとみんなを連れて行ってくれることを、村の全員に知らせなきゃ……
+[name="アベル"]どうか、俺たちをお救いください……
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="アベル"]……ゲホッ、ゲホゲホ！　ゲホッ！
+[Dialog]
+[PlaySound(key="$bodyfalldown1",channel="1")]
+[charslot(duration=0.5)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="m")]
+[name="Doc"]喘息の発作か！？
+[charslot(slot="m",name="avg_4125_rdoc_1#3$1",focus="m")]
+[name="Doc"]マスクを着けたぞ、アベル。さあ、大きくゆっくり息を吸うんだ。
+[charslot(slot="m",name="avg_4125_rdoc_1#3$1",focus="none")]
+[name="アベル"]ゼェ……ゼェ……
+[charslot(slot="m",name="avg_4125_rdoc_1#3$1",focus="m")]
+[name="Doc"]アベル！
+[charslot(slot="m",name="avg_4125_rdoc_1#3$1",focus="none")]
+[name="アベル"]ゼェ……ゼェ……ヒュー……
+[charslot(slot="m",name="avg_4125_rdoc_1#3$1",focus="m")]
+[name="Doc"]合図をするから、一で息を吸って、ニで吐くんだ、いいね！　一……二！　一……二！
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="m")]
+[name="Doc"]一……二……一……二……
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="none")]
+[name="アベル"]……すぅ……はぁ……
+[name="アベル"]……せん……い……
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="m")]
+[name="Doc"]まだ喋っては――
+[charslot(slot="m",name="avg_4125_rdoc_1#4$1",focus="none")]
+[name="アベル"]みん、な……集まって、くれた……
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#7$1",focus="m")]
+[PlaySound(key="$d_gen_walk_n",channel="2")]
+[Delay(time=2.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]皆、聞いてくれ、このストーンブレイク村で私にできることはもうなくなった。そろそろここを去らねばならない。
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="none")]
+[name="優しい婦人"]私たちもついていくわ。私たちには、あなたの導きが必要なのよ。
+[charslot(slot="m",name="avg_4125_rdoc_1#2$1",focus="m")]
+[name="Doc"]私は医者であって、牧人ではない。
+[charslot(slot="m",name="avg_4125_rdoc_1#2$1",focus="none")]
+[name="感謝する村人"]ですが、私の子は……いえ、私たち全員の命は、すべてあなたがお救いになったのです！
+[charslot(slot="m",name="avg_4125_rdoc_1#7$1",focus="m")]
+[name="Doc"]私があなた方の命を救ったのは、自分のためではない。
+[charslot(slot="m",name="avg_4125_rdoc_1#7$1",focus="none")]
+[name="顔色の悪い感染者"]もしヴィクトリア人が俺たちの邪魔をしたり、あなたに指一本でも触れるつもりなら、最後まで徹底的にやってやりますよ。
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#6$1",focus="m")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4125_rdoc_1#2$1",focus="m")]
+[name="Doc"]もし本当にそのようなことが起きたとなれば、私は自分がここに来たことを後悔するだろう。
+[charslot(slot="m",name="avg_4125_rdoc_1#2$1",focus="none")]
+[name="アベル"]あなたは、ここにいる全員を救済してくださった。
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]私はただ病による苦痛を和らげただけだ。誰かを救済することはできない。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_clothmovement",channel="2")]
+[charslot(slot="m",name="avg_npc_001",duration=1.5)]
+[delay(time=2)]
+[name="アベル"]あなたならできるはずです。
+[name="アベル"]あなたは……ガリア人の救世主なのですから。
+[Dialog]
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="誰が手渡したのか、アベルは再びあの肖像画を持っていた。コルシカⅠ世の装いに身を包んだ、ギュスターヴ・カテブの肖像画を。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="皆、同じような眼差しを私に投げかけている。そのような目を別のどこかで見たことがあったが、その時視線が向けられていたのは私ではなかった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="それは苦痛と、尊敬と、希望に満ちた……狂信の眼差しだ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="まだ噴き出していない血の生臭い匂いが、鼻腔を突いた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]……ちょうどいい、アベル。出発する前に、君に頼みたいことがあるんだった。
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]どうぞなんでもおっしゃってください。ここにいる者は皆、あなたのお言葉に従います。
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]これを受け取ってくれ。
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]……本、ですか？
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]君たち全員のカルテだ。病状の重さに応じて異なる色の付せんで印をつけてある。それぞれのカルテの最後には、発症時の対処法と、対応する薬品の使用方法と量も記載した。
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]病気でしたらもうあなたに治していただきました。こんなものは必要ありません。
+[charslot(slot="m",name="avg_4125_rdoc_1#9$1",focus="m")]
+[name="Doc"]いや。
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]私の力には限りがある。私に治せる病などごく僅かしかない。幻想だけでは、数日、数週間、あるいは数ヶ月後に再び襲い掛かってくる病魔をごまかすことはできないのだよ。
+[name="Doc"]あのご婦人も、さっきからずっと膝を叩いているだろう？　もう膝に違和感を覚え始めているんだ。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_clothmovement",channel="2")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]そうだ、受け取りなさい。それから……その絵をこちらへ。
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]……
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]その絵を渡しなさい。
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]……分かりました。
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_clothmovement",channel="2")]
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="私はもう一度、その肖像画をしげしげと眺めた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="もしここに描かれているギュスターヴ・カテブがコルシカⅠ世の格好をしていなければ、これをロドスに持ち帰って、笑い話として誰かに語ってもよかったのかもしれない。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="しかし、そういうわけにはいかないのだ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私は医者だ。患者に現実にそぐわない幻想を抱かせることが何を意味するのかを、十分に理解している。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="自分が意図せず蒔いてしまった種から実った苦い果実を、私は何度も噛みしめた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="片手で肖像画を持ち、もう片方の手でホルスターからリボルバーを抜く。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="村人たちは私が何をするつもりか察したようだが、誰一人として動こうとしなかった。まるで間もなく下される最終審判を待つ信徒のごとく。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="彼らはじっと私を見つめている。その眼差しに宿る狂信が、蝋燭の火のように揺らめいていた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+[stopmusic(fadetime=1.5)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_gunshot",channel="2")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="だがその火種も、銃声が鳴り響いた瞬間に燃え尽きた。そこには非難も増悪もなく、あるのは壊された理想のみ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「これでいいのだ」などと言うつもりはない。だが、人々を狂信から目覚めさせる代償としては、血を流すことよりも理想を壊すほうが遥かにマシだろう。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="肖像画を再び確認すると、ロドスエンジニア部の工業用アケトン原料のおかげか、顔以外の部分に損傷はほとんど見られなかった。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+[playMusic(intro="$newhope01_intro", key="$newhope01_loop", volume=0.6)]
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]アベル、これを。
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]なん……ですか？
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]肖像画だ。
+[charslot(slot="m",name="avg_npc_001",focus="m")]
+[name="アベル"]……今さらこれを受け取ったところで、どうしろと？　壊れた肖像画で……何ができると言うんです？
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]この絵の皇帝に真の顔を与えてやりなさい、少なくとも、医者以外の顔をね。
+[name="Doc"]コルシカⅠ世の顔をもう誰も知らないのなら、君たちを本当の意味で救済してくれる者を捜すんだ。君たちを砂利と何も生えない土から連れ出してくれる者をね。
+[charslot(slot="m",name="avg_4125_rdoc_1#2$1",focus="m")]
+[name="Doc"]その者は本当のガリア語を話せるかもしれないし、話せないのかもしれない。君たちを血の流れる道へと導くかもしれないし、もっと平和でもっと険しい道へと導くかもしれない。
+[name="Doc"]その者は君たちの中の誰かかもしれないし、ここにはいないのかもしれない。あるいは、君たち全員がそうなのかもしれない。
+[charslot(slot="m",name="avg_4125_rdoc_1#11$1",focus="m")]
+[name="Doc"]だが、それは決して私ではない。
+[name="Doc"]医者は患者のために戦うものだ。だが患者は人であり、人によってつくられた……別の何かではない。
+[name="Doc"]すまない。
+[name="Doc"]Je suis navré。
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",channel="2")]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="アベルは呆然とした表情で肖像画を受け取った。村人たちがコソコソと言葉を交わす声が、低いざわめきとなって伝わってくる。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="私が伝えたかったことを、彼らが理解してくれたかどうかは分からない。だが、彼らがちゃんと耳を傾けてくれていたことは、しっかりと見て取れた。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="最も険しい一歩は乗り越えられた。彼らはこれから自分たちで考え始めるだろう。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="それが、手遅れでないことを祈るばかりだ。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_offce",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_223",duration=1.5)]
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]先生、前にあなたへ向かって発した侮辱の数々をすべて撤回させてください。あなたこそ真の愛国――ああ、いえ……真の平和主義者です。
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[name="Doc"]……もう全部知ってるのか？
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]もちろんですとも！　昨日の私がどれだけ焦っていたのかお分かりですか？　てっきりあなたが本気であのガリア人どもを、リターニアへ連れて行くかと思いましたよ！
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[name="Doc"]もし本当にそうしていたら、君はどうしていた？
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]盗賊がストーンブレイク村に潜んでいるという、我々の推測が証明されることになるだけです。
+[name="現地の役人"]キャラバンが来るまでもう少し時間があります。お茶でもいかがですか？
+[charslot(slot="r",name="avg_4125_rdoc_1#9$1",focus="r")]
+[name="Doc"]結構だ。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]ですが一つだけ言わせていただくと、あなたが彼らに最後に話した内容は……いささかリスクがありますよ。今後は発言をもう少し慎んだほうがよろしいかと。
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[name="Doc"]慎む？　君に問おう、この町にアルコール依存者はいるかね？
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]そ、それはもちろん……何人かはいますが、それと今の話になんの関係が？
+[charslot(slot="r",name="avg_4125_rdoc_1#7$1",focus="r")]
+[name="Doc"]彼らが酒によって命を失う前に引き返してほしいと願う者と、彼らにやけ酒をさせてしまう原因となっている者、慎むべきはどちらなのかな？
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]……先生、今の言葉はひとえにあなたへの尊敬から出たものです。どうか誤解なさらないでください。
+[charslot(slot="r",name="avg_4125_rdoc_1#11$1",focus="r")]
+[name="Doc"]私がストーンブレイク村の村人たちへ話したことも当然、一介の医者としての責任感から出た言葉だ。もちろん、先ほど君に話した言葉もね。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]それでは、私は「お医者様の指示に従います」とでも言えばいいのでしょうか？
+[charslot(slot="r",name="avg_4125_rdoc_1#9$1",focus="r")]
+[name="Doc"]ぜひそうしてくれ。
+[charslot(slot="l",name="avg_npc_223",focus="l")]
+[name="現地の役人"]あいにく私は、医者の言葉はすべて真に受けるのではなく、適度に聞き流せばいいと思っているタイプの人間でしてね。
+[charslot(slot="r",name="avg_4125_rdoc_1#5$1",focus="r")]
+[name="Doc"]ああ、もちろん、自分の判断を信じる者も世には大勢いる。彼らが最後の瞬間に、医者の戸を叩くことがないよう願っておこう。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

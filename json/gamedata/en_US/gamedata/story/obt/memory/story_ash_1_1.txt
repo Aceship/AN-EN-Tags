@@ -1,0 +1,551 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+'Lord, I hope you're enjoying Ursus.'
+'I've arrived in Columbia. It's an interesting place - the only word I have to describe it.'
+'I've been thinking about a question that we've all heard of or thought about. We might just trace the value and raison d'être of a good many things back to it.'
+'Is the history that we're familiar with just a roll of the dice, or is there a degree of inevitability?'
+'What would the world look like if we turned back the clock ten thousand years and allowed things to play out one more time?'
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_cave_2",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[name="Leithanian Worker"]I think they've left.
+[name="Ursus Villager"]How can you tell?
+[Dialog]
+[playsound(key="$d_avg_clothmovement",volume=1)]
+[charslot(slot="l",name="avg_npc_068",posfrom="-150,0",posto="-150,0",duration=1.5)]
+[charslot(slot="m",name="avg_npc_004",duration=1.5)]
+[charslot(slot="r",name="avg_npc_081",posfrom="150,0",posto="150,0",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="l",focus="l")]
+[name="Leithanian Worker"]Footsteps.
+[name="Leithanian Worker"]I always heard at least one set of footsteps at the mouth of the cave, but now it's all quiet. Something must have happened.
+[name="Leithanian Worker"]How many days have we been in here?
+[charslot(slot="m",focus="m")]
+[name="Kazimierzian Girl"]I think this is day three.
+[name="Kazimierzian Girl"]That puddle reflects a little bit of sunlight at dusk.
+[charslot(slot="l",focus="l")]
+[name="Leithanian Worker"]Maybe most of the group left. What are we waiting for?
+[name="Leithanian Worker"]I've had enough. I'm heading out now.
+[name="Leithanian Worker"]We can cut the rope behind me. Let's get out of here.
+[charslot(slot="r",focus="r")]
+[name="Ursus Villager"]There's at least a dozen of them, all of them armed. We don't even know why they kidnapped us.
+[charslot(slot="l",focus="l")]
+[name="Leithanian Worker"]At least they didn't kill us on the spot. This is our chance.
+[charslot(slot="m",focus="m")]
+[name="Kazimierzian Girl"]Maybe we should wait. If we get on the wrong side of them...
+[charslot(slot="l",focus="l")]
+[name="Leithanian Worker"]You can stay here and wait for death if you want.
+[name="Leithanian Worker"]Me, I'm going. Columbia is so close. If I'm gonna die, I would rather not die here.
+[Dialog]
+[charslot]
+[CameraShake(duration=1.5, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n",channel="1")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[PlaySound(key="$a_bat_buildingshaking_2",channel="2")]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=3.5)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_456_ash_1#1",duration=1.5)]
+[delay(time=2)]
+[name="Ash"]Need a hand?
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+'It's been some time since we arrived in this strange world. I can't say I'm used to life here yet, and I'm sure the same is true for you.'
+'But if you ignore the unfamiliar creatures for a minute, you will find this world more familiar than you might think.'
+'It may sound strange, but this is where my mind is.'
+'We should do what we can to understand it.'
+[Dialog]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_456_ash_1#1",duration=1.5)]
+[delay(time=2)]
+[name="Ash"]From the tracks here, it looks like the main group left three days ago. Unfortunately, my car broke down the day before I ran into you.
+[name="Ash"]It doesn't look like we'll be able to catch them.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Oh no! I knew they wouldn't wait for us.
+[name="Leithanian Worker"]Who would stop to wait when the wealth of Columbia awaits?
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]But we paid them. They didn't even try to find us...
+[charslot(slot="m",name="avg_npc_004")]
+[name="Kazimierzian Girl"]The barrens are a dangerous place. They didn't want to linger, even for a day...
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Life is about looking out for number one. We just have to live with it. Never, I say, never count on someone else!
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]I agree, and complaining won't do any good. We're on our own here.
+[name="Ash"]According to the map, the closest village is about a hundred clicks to the south. We'll need to resupply there.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]South? But we're going west!
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]An ancient eastern philosopher once said: need to save food for three months for a thousand-mile journey. 
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Food? Not money?
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Never mind... anyway, we'll need to prepare, if we want to make it where we're going.
+[name="Ash"]There's no time to complain. Put yourselves together; we're leaving.
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_desert_3",screenadapt="coverall")]
+[Delay(time=2.5)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Alright, one more time.
+[name="Ash"]Your name is Erwin. You're a Caprinae, and you hail from Leithanien.
+[name="Ash"]You're ruled by the Twin Empresses, and you have a lot of people who are skilled in the... Originium Arts.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Don't forget our proud musical tradition.
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Your name's Nikola. You're from Ursus, and your race is Ursus too.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Yes. The name Ursus is feared by many nations, and by many of its own people.
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Your name is Alicja. You're from Kazimierz, home to the famous knight sports.
+[charslot(slot="m",name="avg_npc_004")]
+[name="Kazimierzian Girl"]That's right!
+[charslot(slot="m",name="char_456_ash_1#4")]
+[name="Ash"]I have some questions about these knight sports.
+[name="Ash"]These are corporate-sponsored fights to the death by hired warriors, forming an important part of the Kazimierzian economy.
+[name="Ash"]The 'knights' competing in these competitions are considered stars, even heroes, and human life is a commodity.
+[charslot(slot="m",name="avg_npc_004")]
+[name="Kazimierzian Girl"]That's what people who have been to the big cities say.
+[charslot(slot="m",name="char_456_ash_1#4")]
+[name="Ash"]Strange, but not incomprehensible.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]May I ask a frank question? You're clearly a skilled warrior, seeing how you saved us from those bandits.
+[name="Leithanian Worker"]But your knowledge about our lands seems to be rather lacking.
+[name="Leithanian Worker"]Where exactly are you from?
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Pardon me. I come from a place that is, shall I say, pretty far away.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]That doesn't really matter. She saved our lives; we should trust her.
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]We're in this together, at least for now, since we're going to the same place.
+[name="Ash"]You said you were traveling as a group, heading for Columbia?
+[name="Ash"]Victoria, Gaul... now Columbia.
+[charslot(slot="m",name="avg_npc_004")]
+[name="Kazimierzian Girl"]Nikola, Erwin and I set out from a village in western Kazimierz, as part of a pioneer group.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]You've heard of the Great Expansion, haven't you?
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Great Expansion... yes, I've heard the word.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Of course you have! Even someone who hasn't heard of the Kazimierz Major must have heard of the Great Expansion! Who could hear the name and not feel their heart race?
+[name="Leithanian Worker"]Just imagine! Massive nomadic cities roaming the wilds, delivering supplies to farms and mines, showering you with money in exchange for goods!
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Yeah! I heard that Columbia has endless expanses of land waiting to be cultivated. No one will take your lands from you, and everything you grow belongs to you.
+[name="Ursus Villager"]You can have an entire farm, if you're willing to work hard!
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Wait a second, brother. Where's your ambition?
+[name="Leithanian Worker"]A farm? Mines are where the real money is!
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Excuse me. By 'mines', do you mean Originium mines?
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Of course! What else?
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]But aren't they a source of infection?
+[name="Ash"]And Catastrophes - nomadic cities can avoid Catastrophes, but not mines and farms. Won't that threaten your dreams?
+[name="Ash"]Sounds like Columbia is telling you there's a chance to get rich here.
+[name="Ash"]People from around the world risk their lives to help Columbia expand its borders, without the government putting any skin in the game.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]You say such strange things...
+[name="Leithanian Worker"]Of course mining is dangerous - even a burdenbeast knows that. So what? Look at this thing on my neck. What do I care about danger?
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]I meant no offense. I'm not making any accusations. I'm in no position to do that.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Catastrophes are pretty low on the list of things that can lose you your farm.
+[name="Ursus Villager"]You never know when a Catastrophe might take your farm in the barrenlands, but you know for sure that your lord will take your farm in Ursus.
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]You're right - we all have to try to survive.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]And I hear you can have a good life in Columbia as long as you have money, whether you're Infected or normal, Caprinae or Sarkaz. Now THAT's what I call fair.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]I never thought you Leithanians were concerned about these things.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]The Infected are pests anywhere, it's just that Leithanien isn't so diligent about pest control.
+[name="Leithanian Worker"]But none of this matters once we arrive in Columbia.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]You're right. Everything will be fine once we get to Columbia.
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Have any of you ever been to Columbia?
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]No.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Never.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Don't worry, we've all heard the stories.
+[name="Leithanian Worker"]I saw a movie about a poor Sargon kid who made his fortune in Columbia!
+[name="Leithanian Worker"]The Columbians have no taste in music, but that movie thing is pretty interesting.
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Yeah, interesting. I think I've seen that movie before.
+[charslot(slot="m",name="avg_npc_004")]
+[name="Kazimierzian Girl"]My father went to Columbia...
+[name="Kazimierzian Girl"]I got a letter from him a month ago, saying he's settled down there, and inviting me to join him.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Your father's in Columbia? You never told us!
+[charslot(slot="m",name="avg_npc_004")]
+[name="Kazimierzian Girl"]I-I still can't believe it... he left home so many years ago. Who knows how long it took for the letter to reach me from Columbia...
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Ah, now I get it!
+[name="Ursus Villager"]Someone knew your dad got rich in Columbia and hired people to kidnap you for ransom! Everything makes sense now!
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Ah, so we two poor sods got dragged into the mess of a rich man's daughter?
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Think on the bright side, brother! This proves that you really can strike it rich in Columbia!
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Y-You're right!
+[charslot(slot="m",name="avg_npc_004")]
+[name="Kazimierzian Girl"]Are you sure that's what happened?
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Of course it is! What else could it be!
+[name="Ursus Villager"]Looks like getting kidnapped wasn't such a bad thing!
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Sister, we've been through hell together. You should tell us what your dad does once you find him!
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]That's right! Let's share the wealth!
+[charslot(slot="m",name="avg_npc_004")]
+[name="Kazimierzian Girl"]A-Alright.
+[name="Kazimierzian Girl"]What about you? Why are you going to Columbia?
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Same as you.
+[name="Ash"]Looking for a job.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Excuse me, may I look at the map?
+[name="Leithanian Worker"]This is... yes! It must be! This hill! Right here!
+[Dialog]
+[PlaySound(key="$rungeneral")]
+[charslot(slot="m",posfrom="0,0",posto="-150,0",duration=1.5)]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_laccolith",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1.5)]
+[name="Leithanian Worker"]See that? That's City No.9! Have you ever seen a nomadic city that big?
+[name="Leithanian Worker"]It'll be the center of a new Columbia-Kazimierz highway that will open up trade between the two countries - even the intercity net!
+[name="Leithanian Worker"]Columbian films will enter the Kazimierzian market, and the Major finals in The Grand Knight Territory will be broadcast in real-time in Columbia!
+[name="Leithanian Worker"]The stories are true!
+[name="Kazimierzian Girl"]It's so big...
+[name="Ursus Villager"]I've never seen anything that big in my life.
+[name="Ash"]It's a monumental landmark alright.
+[name="Leithanian Worker"]I'll work there someday. I'll make my own fortune. No one can stop me—
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+'Massive cities sail the wasteland under a setting sun, a scene surreal and awe-inspiring in equal measure.'
+'But we all know that spectacular wonders are often built from mundane bricks, even downright ugly ones.'
+'The glamorous surface always hides the same lies.'
+'The eyes of everyone here are full of dreams, a kind of pure, naive passion that I've only seen in the eyes of the most loyal warriors and most innocent children.'
+'But I don't know what awaits them ahead.'
+'Or perhaps we all know how the story ends, because history has shown it too many times.'
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="l",name="avg_npc_004",focus="r")]
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]Recoil will throw your aim off, if you're tense.
+[name="Ash"]Relax. The key is in the rhythm of your breathing.
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="Kazimierzian Girl"]...
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]Very good. Line up your sights with the target, then squeeze the trigger.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_frdrgntk",channel="1")]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_wing",channel="2")]
+[Delay(time=2)]
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[charslot(slot="r",name="char_456_ash_1#1",focus="l")]
+[name="Kazimierzian Girl"]Oh...
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]Not bad, for a first try.
+[name="Ash"]Less meat for dinner, though.
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="Kazimierzian Girl"]Does everyone learn to use this, where you come from?
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]No... we take up arms so others can lay them down.
+[name="Ash"]I hope the day will never come when you have to take up arms. But if it comes, you'll be glad you learned this.
+[name="Ash"]Crossbows might be more useful for you guys. I have a friend who would've been a good teacher, if she was here.
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="Kazimierzian Girl"]I know how to use a bow! I've even hunted with it!
+[name="Kazimierzian Girl"]I fantasized about becoming as skilled as the knights... but I gave up practicing after dad gave me a scolding.
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]Interesting. I had a similar experience myself, though I wasn't so obedient.
+[name="Ash"]Choose your own way for yourself, when you start your new life.
+[Dialog]
+[charslot]
+[name="Ursus Villager (no portrait)"]We've got firewood. We can make dinner now.
+[Dialog]
+[charslot(slot="l",name="avg_npc_004",focus="r")]
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]Let's go. You must be hungry.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="char_456_ash_1#5",focus="m")]
+[name="Ash"]...
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]...
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]...
+[charslot(slot="m",name="avg_npc_004",focus="m")]
+[name="Kazimierzian Girl"]Aren't you hungry?
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]These sandworm cans are the only food we have left. It's a little salty, but food is food.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]I kind of like it. If only we had some rye bread.
+[charslot(slot="m",name="char_456_ash_1#5",focus="m")]
+[name="Ash"]No argument there... I'll have some. Food in this place is safe to eat, as far as I can tell.
+[Dialog]
+[PlaySound(key="$d_avg_drinkswllw",channel="1")]
+[Delay(time=1)]
+[charslot(slot="m",name="char_456_ash_1#8",focus="m")]
+[Delay(time=1)]
+[charslot(slot="m",name="char_456_ash_1#8",focus="m")]
+[name="Ash"]...
+[charslot(slot="m",name="char_456_ash_1#5",focus="m")]
+[name="Ash"]It's... not too bad.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Mm... I feel so warm.
+[name="Ursus Villager"]Hot food always makes you feel that things aren't so bad, right? Like there's always a way.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Of course. Columbia is a stone's throw away. Soon we'll be starting new lives.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Hear, hear.
+[name="Ursus Villager"]Let's not forget this!
+[Dialog]
+[PlaySound(key="$d_avg_glassclink",channel="1")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Booze? Where did you find it?
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]I grabbed a couple of things when we left that cave. Payback for getting us separated from the caravan.
+[name="Ursus Villager"]Can't read the label though. Looks like it's in Columbian...
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Nice! A drink is exactly what we need right now.
+[name="Leithanian Worker"]Too bad I sold my cello in Leithanien, or I would play something for us.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Didn't realize you had that up your sleeves.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]What could be more shameful than a Leithanian who doesn't play an instrument?
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Here's to music! And to the new cello that you'll buy once you've made your fortune in Columbia.
+[name="Ursus Villager"]A drink, sister?
+[charslot(slot="m",name="avg_npc_004",focus="m")]
+[name="Kazimierzian Girl"]S-Sorry, I'm not much of a drinker.
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]Too bad. Not many chances to drink your fill like this back home.
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Too bad, too bad. Well, brother, prost!
+[charslot(slot="m",name="avg_npc_081")]
+[name="Ursus Villager"]To a new life!
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]To Columbia!
+[Dialog]
+[charslot]
+[PlaySound(key="$clink",channel="1")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_068")]
+[name="Leithanian Worker"]Look at me, I almost forgot about the fraulein. Care to join us?
+[charslot(slot="m",name="char_456_ash_1#5",focus="m")]
+[name="Ash"]Sorry, I'll pass.
+[name="Ash"]I'd love to join, but I need to stay alert tonight.
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[playMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+A short distance from the camp.
+[Dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_npc_007",duration=1.5)]
+[charslot(slot="r",name="avg_npc_007",duration=1.5)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_007",focus="l")]
+[name="Mercenary A"]Line of sight isn't great. We should have made our move earlier.
+[charslot(slot="r",name="avg_npc_007",focus="r")]
+[name="Mercenary B"]Don't worry, they won't get out of the forest.
+[charslot(slot="l",name="avg_npc_007",focus="l")]
+[name="Mercenary A"]Careful. They might still be with the one who hit our camp.
+[charslot(slot="r",name="avg_npc_007",focus="r")]
+[name="Mercenary B"]We're ready this time. We'll make them pay.
+[name="Mercenary B"]Stay here while I scout ahead. If I get a shot...
+[Dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="r",posfrom="0,0",posto="200,0",duration=1.5)]
+[charslot(slot="r",afrom=1,ato=0,duration=1)]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[name="Mercenary A"]...
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n")]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="Mercenary A"]Back so soon?
+[Dialog]
+[charslot]
+[name="???"]He's not coming back.
+[Dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_456_ash_1#1",duration=1.5)]
+[delay(time=2)]
+[PlaySound(key="$d_avg_frdrgnld")]
+[delay(time=1.5)]
+[name="Ash"]Experienced, but not professional enough.
+[name="Ash"]Put down your weapon.
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="Mercenary A"]It was you—
+[charslot(slot="m",name="char_456_ash_1#1")]
+[name="Ash"]Sure was.
+[name="Ash"]Please answer the rest of my questions just as honestly.
+[name="Ash"]Who sent you?
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="Mercenary A"]Eat sh—
+[Dialog]
+[charslot(slot="m",name="char_456_ash_1#2")]
+[PlaySound(key="$d_avg_clnchfst")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clnchfst")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clnchfst")]
+[delay(time=0.5)]
+[charslot(slot="m",name="char_456_ash_1#2")]
+[name="Ash"]I'm not in a great mood today. If this is how you want to continue the conversation, I'm happy to oblige.
+[name="Ash"]Why did you kidnap them?
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="Mercenary A"]Money.
+[name="Mercenary A"]Farms and mines always need new labor. There's always business to be done with pioneer groups traveling across the wasteland.
+[charslot(slot="m",name="char_456_ash_1#2")]
+[name="Ash"]Why those three?
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="Mercenary A"]Those three? What are you talking about?
+[name="Mercenary A"]You killed our guys. We came after you!
+[charslot(slot="m",name="char_456_ash_1#2")]
+[name="Ash"]...
+[charslot(slot="m",name="avg_npc_007",focus="m")]
+[name="Mercenary A"]What are you waiting for?
+[name="Mercenary A"]You won. The remaining supplies and ammo are yours.
+[name="Mercenary A"]Do it!
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+'I didn't write this to accuse. I'm in no position to do that.'
+'As they say, you should not criticize someone until you have walked a mile in their shoes.'
+'This is an interesting world, one that is different from ours. It is like a mirror, and we must reflect upon what it is reflecting.'
+'I have learned a lot in this world.'
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[playMusic(key="$normal_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_456_ash_1#1",duration=1.5)]
+[delay(time=2)]
+[charslot]
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[charslot(slot="r",name="char_456_ash_1#1",focus="l")]
+[name="Kazimierzian Girl"]Where did you go?
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]I took care of a little problem.
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="Kazimierzian Girl"]I heard strange sounds...
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]It's all fine now.
+[name="Ash"]Get some sleep. You'll need it for the journey ahead.
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="Kazimierzian Girl"]But I can't sleep...
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]Well then, come sit with me and we can have a little chat.
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="Kazimierzian Girl"]I'm not sure why, but I feel afraid.
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]It's normal to fear the unknown. It's called caution, and it's a good thing to have.
+[name="Ash"]What are you worried about, Alicja?
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="Kazimierzian Girl"]I'm not sure... the others are so excited for Columbia, and they can't wait to get there.
+[name="Kazimierzian Girl"]But the more eager they are, the more concerned I get. Can it really be as good as the stories say? What kind of place is Columbia, actually?
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]That's a good question, but the wrong person to ask.
+[name="Ash"]I come from a place far away, you know that. I'm way less familiar with this land than you. We're going to learn about it together.
+[name="Ash"]Let's see it with our own eyes. We don't have to blindly believe the words of others, or the experiences of the past. We'll observe and think.
+[name="Ash"]But first, we'll need to get there. We need to keep walking.
+[charslot(slot="l",name="avg_npc_004",focus="l")]
+[name="Kazimierzian Girl"]Keep walking...
+[charslot(slot="r",name="char_456_ash_1#1",focus="r")]
+[name="Ash"]Keep walking.
+[name="Ash"]If that's not enough to set your mind at ease, let me tell you a story.
+[name="Ash"]A story of a place that's very much like Columbia...
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

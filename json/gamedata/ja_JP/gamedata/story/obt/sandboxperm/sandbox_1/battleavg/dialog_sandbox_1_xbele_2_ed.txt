@@ -1,0 +1,45 @@
+[header(actId="sandbox_1", npcId="trap_469_tpasngr")]
+[summontrap(charId="trap_467_ttuye", dir="LEFT", x="12", y="11", isChar="False")]
+[summonenemy(enemyId="enemy_7026_xbele", x="10", y="11", endX="19", endY="6")]
+[summonenemy(enemyId="enemy_7035_epasng", x="8", y="11", endX="19", endY="6")]
+[camerafocusto(offsetX="10", offsetY="11", time="1", scale="FAR")]
+[foginview(leftBottomX="5", leftBottomY="7", rightUpX="19", rightUpY="14", id="fog_1")]
+[delay(time="0.5")]
+[playanim(id="enemy_7026_xbele", anim="Special", looporidle="Special_Loop", dir="RIGHT")]
+[delay(time="1")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]こいつは長年霊殿の外を守り続けた末、「命」を得て自由な旅を始めたところだったというのに、私たちの手でその旅を終わらせることになるとはな。
+[decision(option1="本当に残念なことだ。", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="パッセンジャー、調査の結果は？", value1="2.1")]
+[predicate(references="2.1")]
+[camerafocusto(offsetX="9", offsetY="11", time="1", scale="MID")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]ほとんど予想通りです。案の定、石像の中にこの動力ユニットのプロトタイプが搭載されていました。
+[decision(option1="それがすべての原因か？", value1="3.1")]
+[predicate(references="3.1")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]はい。
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]この度のお力添えに感謝いたします。お礼と言ってはなんですけれども、こちらは私の工具箱です。普段ならお貸しすることはありませんが、あなた様には後々必要になることもあるかと思いまして。
+[decision(option1="ありがとう。", value1="4.1")]
+[predicate(references="4.1")]
+[additem(itemId="sandbox_1_craft_6", itemCount="1")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]先生の作品は、当時の紛争でどれも失われたものとばかり思っていたのです。まさか、偶然が重なってこのようなオアシスの古き石像から見つけることになろうとは。
+[decision(option1="この装置、持っていくのか？", value1="5.1")]
+[predicate(references="5.1")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]もちろんです。これが、此度の私の旅の目的でしたので。
+[move(enemyId="enemy_7035_epasng", x="9", y="11")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]……先生のサインがまだ残っている……
+[decision(option1="パッセンジャー？", value1="6.1")]
+[predicate(references="6.1")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]いえ、何でもありません。ただふと、私とこの石像との間には何の違いもないのかもしれない、と思っただけです。
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]なぜ前へ進んでいるのかもわからぬまま、同じ人の名が残した痕跡を追い、あてどなくこの大地を彷徨っているのですから。
+[playanim(id="enemy_7035_epasng", anim="Special_Begin", looporidle="Special_Loop", dir="RIGHT")]
+[delay(time="1")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]……
+[playanim(id="enemy_7035_epasng", anim="Special_End", looporidle="Idle", dir="RIGHT")]
+[name="パッセンジャー", avatarId="char_472_pasngr", isAvatarRight="FALSE"]他の方々を連れて、先に戻っていていただけませんか。私は、まだもう少しだけ……この石像と共に居ようと思います。
+[withdraw(id="trap_467_ttuye")]
+[fognotinview(id="fog_1")]
+[withdraw(id="enemy_7026_xbele")]
+[withdraw(id="enemy_7035_epasng")]
+[resetcamera(time="1")]
+[save]
+[end]

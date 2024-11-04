@@ -1,0 +1,41 @@
+[header(actId="sandbox_1", npcId="trap_468_tpriest")]
+[summontrap(x="8", y="7", charId="trap_466_tzumama", isChar="FALSE", dir="LEFT")]
+[summontrap(x="7", y="6", charId="trap_468_tpriest", isChar="FALSE", dir="RIGHT")]
+[delay(time="1")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(offsetX="7", offsetY="7", time="1", scale="FAR")]
+[playanim(id="trap_466_tzumama", anim="Special_Begin", looporidle="Special_Loop", dir="LEFT")]
+[delay(time="1")]
+[playanim(id="trap_468_tpriest", anim="Special", dir="RIGHT")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]으아아아악……! 내 엉덩이……!
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]뜨거워 뜨거워 뜨거워……!
+[decision(option1="할아범, 괜찮아?", value1="1.1")]
+[predicate(references="1.1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]걱정 마, 괜찮으니까.
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]이보게, 무슨 말을 그렇게 하는가? 내 엉덩이에 있는 가장 멋진 깃털이 다 타 버렸구먼!
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]뭐, 어차피 다시 자랄 거 아냐?
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]이 자식이! 남은 실험은 알아서 해라! 이 늙은이의 도움은 바라지 말고!
+[withdraw(id="trap_468_tpriest")]
+[playanim(id="trap_466_tzumama", anim="Special_End", looporidle="Idle", dir="LEFT")]
+[delay(time="1")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1")]
+[playanim(id="trap_466_tzumama", anim="Attack", dir="LEFT")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]하아, 어떡하지? 갑자기 성질을 부리네.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]전에는 이러지 않았는데.
+[decision(option1="가서 좀 달래봐.", value1="2.1")]
+[predicate(references="2.1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]이것만 하고. 지금 할 일이 너무 많아.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]그래서 말인데, 나 대신 먼저 할아범을 달래 줄 수 있어? 뭐…… 먹을 거라도 챙겨서 간다든지?
+[decision(option1="성가신 일 같은데……", value1="3.1")]
+[predicate(references="3.1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]봐, 할아범이 《아르살란 요리 100가지 팁》 책자도 남기고 갔잖아!
+[decision(option1="이게 정말 쓸모가 있어?", value1="4.1")]
+[predicate(references="4.1")]
+[additem(itemId="sandbox_1_craft_10", itemCount="1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]내가 일단 <color=#d8d769>크랩살 비빔밥</color> 만들어볼게.
+[decision(option1="좋은 생각이야.", value1="5.1")]
+[predicate(references="5.1")]
+[withdraw(id="trap_466_tzumama", withoutAnim="TRUE")]
+[resetcamera(time="1")]
+[save]
+[end]

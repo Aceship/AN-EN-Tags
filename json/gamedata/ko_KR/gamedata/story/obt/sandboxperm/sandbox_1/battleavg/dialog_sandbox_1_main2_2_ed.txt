@@ -1,0 +1,56 @@
+[header(actId="sandbox_1", npcId="trap_467_ttuye")]
+[summontrap(x="17", y="7", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summonenemy(enemyId="enemy_7035_epasng", x="17", y="6", endX="13", endY="6")]
+[move(enemyId="enemy_7035_epasng", x="16", y="6")]
+[summonenemy(enemyId="enemy_7023_gatbb", x="11", y="6", endX="14", endY="6")]
+[move(enemyId="enemy_7023_gatbb", x="12", y="6")]
+[camerafocusto(offsetX="14", offsetY="6", scale="FAR", time="0.8")]
+[delay(time="1")]
+[foginview(id="rect1", leftBottomX=12, leftBottomY=3, rightUpX=22, rightUpY=9)]
+[name="신전 경비", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]……너희들의 전투 방식을 보니, 확실히 아미르군은 아닌 것 같군……
+[decision(option1="오해라고 했잖아.", value1="1.1")]
+[predicate(references="1.1")]
+[summonenemy(enemyId="enemy_7022_gatgod", x="12", y="5", endX="14", endY="6")]
+[move(enemyId="enemy_7022_gatgod", x="13", y="5")]
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]여러분, 정말 죄송합니다. 다짜고짜 공격한 저희의 잘못입니다.
+[decision(option1="괜찮아, 이미 지난 일이니까.", value1="2.1")]
+[predicate(references="2.1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="TRUE"]여기 무슨 일이 있었던 겁니까? 어째서 외부인들에게 적의를 품게 되었는지요?
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]저희 부족은 지금까지 매우 평온하게 지내왔습니다. 하지만 어느 순간, 아미르군이 이 오아시스를 침범한 뒤부터 나무이 불에 타고 땅에서도 더 이상 식물이 자라지 않게 되었죠.
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]저희는 어쩔 수 없이 그들을 피해 계속 오아시스 바깥쪽으로 물러났고, 결국 대대로 지켜오던 이 신전까지 오게 되어서야 간신히 몸을 기댈 수 있는 곳을 찾게 되었습니다.
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]하지만 바로 지난달에, 신전 밖의 석상이 갑자기 사라져 버렸어요……
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]그 석상은 비바람을 맞아가며 수백 년 동안 늘 신전 앞을 지키고 있었던 겁니다. 저희에겐 유난히 의미가 깊은 석상이에요.
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="TRUE"]신전 문 앞의 흔적을 보면 상당히 거대한 석상이었던 것 같은데, 아무도 모르게 옮긴다는 건 상상이 안 됩니다.
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="TRUE"]게다가 단지 석상일 뿐인데, 그걸 가져다 쓸 곳이 있나요?
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]그건 저희도 모르죠. 보물을 찾으러 온 사람들은 조금이라도 오래된 물건이면 전부 가져가더라고요.
+[name="신전 경비", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]맞아. 저번에는 아미르군이 우리 집에 있는 오래된 절임용 항아리도 가져갔지, 도대체 뭘 찾고 있는지 도통 알 수가 없어.
+[name="신전 경비", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]나중에 그 수상한 필라인이 말해줬어, 어쩌면 그건 사하 시대의 유물일 수도 있다고 하더군.
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]사하……
+[decision(option1="어떻게 생긴 석상이야?", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="탐색하는 김에 우리도 찾아볼게.", value1="4.1")]
+[predicate(references="4.1")]
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]만약…… 만약에 정말 석상을 찾는 일에 도움을 주신다면, 저희도 여러분의 요청을 수락하도록 하겠습니다. 예를 들자면 방금 말씀드린 협력에 대한 것이라든가.
+[decision(option1="좋아, 잘 부탁해.", value1="5.1")]
+[predicate(references="5.1")]
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]그렇다면 우선 이걸 받아주세요. 변변치 못한 선물이지만, 아까의 무례함에 대한 사죄의 표시입니다.
+[decision(option1="고마워.", value1="6.1")]
+[predicate(references="6.1")]
+[additem(itemId="sandbox_1_craft_5", itemCount="1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="TRUE"]일단 문제가 잘 풀리는 것 같군요……
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="TRUE"]하지만 처리해야 할 개인적인 일이 있는지라, 이쯤에서 헤어져야 할 것 같습니다.
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="TRUE"]부디 양해를 부탁드립니다. 하지만 다음에 저를 필요로 하시기 전에 반드시 돌아오겠습니다.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]아직 확인해야 할 게 더 있어.
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]말씀하시죠.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]그 아미르군이 찾는 '보물'이 뭔지 알아?
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]저도 정확히는 모르겠습니다만, 선조께서 하셨던 말이 어렴풋이 기억납니다. 그 '보물'은 값을 매길 수 없을 정도로 진귀할 수도, 값어치가 아예 없을 수도 있습니다.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]엥? 그게 무슨 말이야?
+[name="신전 사제", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]어쩌면 며칠 전에 여기 왔던 고고학자가 잘 알지도 모릅니다. 하지만 보물에 관한 소문들은 전부 정글의 북쪽에서 전해온 걸로 알고 있습니다.
+[withdraw(id="enemy_7023_gatbb")]
+[withdraw(id="enemy_7022_gatgod")]
+[withdraw(id="enemy_7035_epasng")]
+[withdraw(id="trap_467_ttuye")]
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[save]
+[end]

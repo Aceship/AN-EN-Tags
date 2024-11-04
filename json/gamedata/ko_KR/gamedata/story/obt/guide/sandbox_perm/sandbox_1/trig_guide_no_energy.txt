@@ -1,0 +1,12 @@
+[HEADER(is_skippable=false, is_tutorial=true)] 能量饮料弹尽粮绝
+[SandboxV2.EnsureDungeonQuest(questId="trig_guide_no_energy")]
+[SandboxV2.EnsureDungeonStable]
+[Delay(time=0.5)]
+[SandboxV2.DungeonFocusNode(focusType="FOCUS_BY_NODE_ID", focusNodeId="nB32E")]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama")]나쁜 소식은 적들이 주둔지를 둘러쌌는데, 에너지음료가 부족해서 오퍼레이터들이 방어 작전을 진행할 수 없어.
+[SandboxV2.OpenGainItemPage(itemId="sandbox_1_stamina",itemCount=4)]
+[Tutorial(waitForSignal="sandbox_v2_gain_item_page_routed", dialogHead="$avatar_zumama")]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 좋은 소식은 내가 이런 경우를 대비해서 에너지음료를 만들어서 비축해 뒀지. 일단 가져가서 써.
+[SandboxV2.CloseGainItemPage]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 자, 이제 마지막 '재고'를 다 털었으니, 앞으로 이런 상황을 피하기 위해 에너지음료를 미리 만들어서 비축해야 돼.
+[SandboxV2.EnsureDungeonStable]

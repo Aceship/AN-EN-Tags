@@ -1,0 +1,770 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[PlayMusic(intro="$loading_intro", key="$loading_loop", volume=0.6)]
+[Background(image="bg_iceforest_1",screenadapt="coverall")]
+[bgeffect(name="$eb_lightsnow", layer=1)]
+[PlaySound(key="$d_avg_snowstormflp", volume=0.5, loop=true, channel="snow")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_snowrun", volume=1, loop=true, channel="run")]
+[StopSound(channel="run", fadetime=2)]
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", duration = 1, isblock = true)]
+[name="サルカズ平民"]おいあれ見ろよ！　前はどうなってんだ！？
+[name="サルカズ平民"]橋が……爆破されてるのか？　ならどうやって渡ればいいんだよ？
+[name="サルカズ平民"]ほ、ほかに道はないのか？　やっとここまで逃げてきたのに、天災雲がまだ頭上にあるなんて……
+[name="サルカズ平民"]隊には負傷者や子供もいるんだ。これ以上、どうやって道を探せってんだよ……
+[dialog]
+[curtain(direction = 6,fillfrom = 0,fillto = 1,fadetime=0.5)]
+[delay(time=1)]
+[curtain]
+[charslot]
+[Background(image="bg_snow_2",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[curtain(direction = 6,fillfrom = 1,fillto = 0,fadetime=0.5)]
+[Delay(time=1)]
+[name="バベルメンバー"]クソ！　森も草原も源石クラスターだらけだ。ヤバい……源石が活性化を始めてやがる。
+[multiline(name="バベルメンバー")]このままだと天災の直撃を食らう前に、源石の爆発で死んじまうよ……
+[multiline(name="バベルメンバー", end=true)]ゴホッ。
+[multiline(name="バベルメンバー")]今すぐ――
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[multiline(name="バベルメンバー")]ゴホゴホッ――
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[multiline(name="バベルメンバー", end=true)]ゴホゴホゴホッ――
+[name="バベルメンバー"]……いや、これ以上ぐずぐずしていられないな。源石の塵が漂ってやがる、*サルカズスラング*。
+[name="バベルメンバー"]もう一週間近く薬の補給がないってのに……隊の負傷者と……感染状況を考えたら……クソ！
+[dialog]
+[PlaySound(key="$d_gen_thunders_amb", volume=0.4)]
+[PlaySound(key="$d_avg_drkcludsthdr", volume=1, loop=true, channel="d")]
+[delay(time=1.5)]
+[name="バベルメンバー"]な、何の音だ？
+[dialog]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[charslot]
+[Background(image="30_ex1_snowmount_s",screenadapt="coverall")]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_053")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="サルカズ傭兵"]バベルの救援はまだ来ねぇのか？　まだだと？　なら斥候を偵察に出せ。なにか見つけるまで戻ってくるんじゃねぇ！
+[name="サルカズ傭兵"]チッ、天災雲の形がもうできてきてやがる。医療拠点を襲撃したのは一体どこの*サルカズスラング*な部隊だ！　「スカーアイ」ですらここまでイカれたマネはしねぇぞ！
+[name="サルカズ傭兵"]おい、後ろの連中もしっかりついてこいよ！　避難はもう間に合わねぇから、洞窟を探して隠れるぞ！　中に源石の痕跡があるとこはダメだ。少しだろうと安全とは言えねぇからな！
+[name="サルカズ傭兵"]……クソったれ！　負傷者でさえ見逃さねぇなんて、テレシスのクソ野郎が……
+[dialog]
+[StopSound(channel="d", fadetime=1)]
+[StopSound(channel="snow", fadetime=1)]
+[curtain(direction = 2,fillfrom = 0,fillto = 1,fadetime=0.5)]
+[delay(time=1)]
+[bgeffect]
+[curtain]
+[charslot]
+[Background(image="bg_cave_2",screenadapt="coverall")]
+[curtain(direction = 2,fillfrom = 1,fillto = 0,fadetime=0.5)]
+[Delay(time=1)]
+[name="サルカズ子供"]お母さん……痛い……足が痛いよ……
+[charslot(slot = "m", name = "avg_npc_935_1#1$1")]
+[name="サルカズ平民"]ほら、泣かないで。もう少しの辛抱よ、あとちょっとでおうちに帰れるから……
+[charslot(slot = "m", focus="n")]
+[multiline(name="サルカズ子供")]やだ――いやだ――
+[multiline(name="サルカズ子供",end=true)]うわあああん、痛い――痛いよぉ……
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_thundercloud",screenadapt="coverall")]
+[PlaySound(key="$d_avg_drkcludsthdr", volume=1, loop=true, channel="d")]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="s")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+子供の泣き声。
+陰謀の声、死の声、生を求める声。
+天災は無情にも、風雪を呑み込み、嵐を育んでいく。
+[dialog]
+[SoundVolume(volume=0.4, channel="s",fadetime=2)]
+[SoundVolume(volume=0.4, channel="d",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="30_ex1_snowmount_s",screenadapt="coverall")]
+[bgeffect(name="$eb_lightsnow", layer=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+遠くの崖の上に、数名の人影があった。
+厳しい吹雪の中、崖の縁に立つ女性はただ黙って遠くを見つめている。
+視線の先にあるのは、無情な天災、要路を守る敵兵士、逃げ惑う野獣、そして行き場を失った負傷者と民だ。
+生命が幽谷にこだまするかのように、Mantraの耳の中に返ってきた。それは――
+子供の泣き声だった。
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1300_1#7$1")]
+[name="Mantra"]……聞こえた。
+[name="Mantra"]子の泣き声だ。
+[dialog]
+[charslot]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1", duration=1.5, isblock=true)]
+[name="Ace"]雪がずいぶん激しくなってきたな。状況は芳しくない。
+[charslot(slot = "m", name = "avg_npc_1300_1#3$1")]
+[name="Mantra"]二千三百十三人。
+[name="Mantra"]これで全員だな。
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]……位置とバイタルサインはすべて入力済みだ。
+[dialog]
+[playsound(key="$transmission")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]被害は予想より少ないが、急がねば。
+[name="Ace"]Mantraさんのアーツを近くで見ると、やはり目を見張るものがあるな。
+[charslot(slot = "m", name = "avg_npc_1300_1#3$1")]
+[name="Mantra"]（謙虚にうなずく）
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]それにしても、人事部のあのジャールはまだ優秀な通信兵をスカウトできていないのか？
+[charslot(slot = "m", name = "avg_npc_1300_1#2$1")]
+[name="Mantra"]（軽く目を閉じる）
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]それは残念だ。
+[name="Ace"]……よし、情報をすべての行動隊に送ったぞ。
+[charslot(slot = "m", name = "avg_npc_1300_1#3$1")]
+[name="Mantra"]北東に七キロ、洞窟。
+[name="Mantra"]子供たちがそこにいる。
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]だが、軍事委員会の偵察ドローンが俺たちに気づいているな。
+[name="Ace"]連中の対処は俺に任せてくれ。子供たちを頼めるか？
+[charslot(slot = "m", name = "avg_npc_1300_1#4$1")]
+[name="Mantra"]（眉をひそめる）
+[charslot(slot = "m", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]なに、奴らはこの地形で俺の小隊とあえて正面衝突するようなことはしないさ。
+[name="Ace"]安心しろ、あくまでも挨拶に行くだけだ。もしもリーダーがマンフレッドなら、俺が生け捕りにしてきてやる。
+[charslot(slot = "m", name = "avg_npc_1300_1#1$1")]
+[name="Mantra"]軽率な行動は慎め――
+[dialog]
+[charslot]
+[playsound(key="$d_gen_transmissionget", volume=1)]
+[CharacterCutin(widgetID="1", name="avg_npc_048", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=-300, width=200, block=true)]
+[delay(time=1)]
+[name="ドクター"]各位、聞こえるか。
+[name="ドクター"]遅れてすまない。CA建築エリアでの行動はすでに完了した。
+[name="ドクター"]皆は引き続きMantraの計画に従い行動するように。こちらは場所を移し、負傷者と平民の救助を優先して引き続き支援を行う。
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1309_1#1$1", duration=0.5, isblock=true)]
+[name="Ace"]いいタイミングだ、ドクター。
+[charslot(slot = "r", focus="n")]
+[name="ドクター"]ああ。現状、Miseryが軍事委員会の注意を引いてくれているが、そろそろ手助けが必要になりそうなんだ。
+[charslot(slot = "r", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]つまりちょうど俺の出番か？
+[charslot(slot = "r", focus="n")]
+[name="ドクター"]ちょうど君の出番だ、Ace。
+[charslot(slot = "r", name = "avg_npc_1309_1#1$1")]
+[name="Ace"]よし、では命令を待とう。
+[charslot(slot = "r", focus="n")]
+[name="ドクター"]それと……
+[name="ドクター"]さらなる死傷者を抑えるため、テレジアは中心部の被災医療拠点へと直接突入する。
+[name="ドクター"]各員が無事ならば……後ほどその場所で会おう。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[CharacterCutin(widgetID="1", fadetime=0)]
+[bgeffect]
+[charslot]
+[SoundVolume(volume=1, channel="s",fadetime=2)]
+[SoundVolume(volume=1, channel="d",fadetime=2)]
+[bgeffect(name="$eb_blizzard", layer=1)]
+[Background(image="bg_snow_2",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[CameraShake(duration=1, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_explosion_stone")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="バベルメンバー"]ばっ、爆発だ！
+[name="バベルメンバー"]慌てるな！　光ってる地面から離れろ！　みんな下がるんだ！　地下の源石が活性化し始めてる――
+[name="バベルメンバー"]*サルカズスラング*、間に合わない――
+[dialog]
+[charslot]
+炎が凍土の下で蠢き、吹雪に天災の火花が混ざる。
+ひと息ひと息が重いことこの上なく、まるで「テラ」という抽象的な概念が、一つ一つの具体的な生命を圧迫しているかのようであった。
+[dialog]
+[PlaySound(key="$d_avg_explosion", volume=0.4)]
+[delay(time=1.5)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n", volume=0.8)]
+[delay(time=1.6)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$d_avg_explosion_stone", volume=1, loop=true, channel="e")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1)]
+[StopSound(channel="e", fadetime=1)]
+[StopSound(channel="s", fadetime=1)]
+[StopSound(channel="d", fadetime=1)]
+[delay(time=1)]
+[musicvolume(volume=0, fadetime=1)]
+[bgeffect(fade = true, fadetime = 1.5)]
+しかし次の瞬間に、その圧迫感は突如として消え失せた。
+目の前の光景に、人々は無意識のうちに深く息を呑んだ。
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[multiline(name="バベルメンバー")]っ――
+[multiline(name="バベルメンバー", end=true)]爆発が……止まった？
+[name="バベルメンバー"]それだけじゃない……雪が……雪が空中で止まってる？
+[dialog]
+[charslot]
+[musicvolume(volume=0.6, fadetime=2)]
+[playsound(key="$d_avg_snowbootwalk")]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1", duration=1.5, isblock=true)]
+[name="Pith"]今降り注ぐ雪の結晶は、源石結晶に近しいものだ。十分に気をつけていれば、お前でも制御できる。
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="バベルメンバー"]おま――あなたは……
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1")]
+[name="Pith"]一片一片の雪を精確に制御することは極めて困難だが、源石に富んだこの環境であれば、吹雪を止めることはそう難しくない。
+[name="Pith"]エイダン、授業をよく聞いてなかったな。
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="バベルメンバー"]せ……先生！　来てくださったんですね！　先生は……
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1")]
+[name="Pith"]十分間耐えてやる。
+[name="Pith"]その間にお前たちは谷の草地に戻り、南へ向かえ。Scoutが先導してくれるはずだ。
+[name="Pith"]それと、大量の源石にさらされながらの行軍において、講じられる応急防護手段はいくつもあるはずだ。何もしてないということは、教えたことをすっかり忘れてしまったのか？
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="バベルメンバー"]それは――
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1")]
+[name="Pith"]いや待て……急性鉱石病を発症している者までいるのか。なんてことだ！
+[name="Pith"]注射剤だ、受け取れ！　追加で十分……全部で二十分稼いでやる。一旦全員その場で休みつつ防護措置を取れ！　私が何とかする！
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1")]
+[name="バベルメンバー"]でも、先生が――
+[charslot(slot = "m", name = "avg_npc_1310_1#1$1")]
+[name="Pith"]天災が完全に形成される前に、万全の状態を整えろ！　私がこいつの首根っこを掴んでるうちは、少なくともこの付近は安全だ！
+[name="Pith"]――そうだ。
+[name="Pith"]私が今同時に何種類のアーツを使用しているか、それぞれどの学派によるものか、今週末までにレポートを書き上げるように。お前たち全員だ。
+[name="Pith"]……だから生きて帰れ、わかったか！
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_iceforest_1",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_054")]
+[name="サルカズ傭兵A"]……俺だ。マンフレッドはまだ明確な命令を下してねぇのか？
+[name="サルカズ傭兵A"]あいつは何してんだ？　あぁ？
+[name="サルカズ傭兵A"]ありえねぇ！　王庭の重要人物だって？　そいつが難民とバベルの軍隊に混じってるだと？　おい、調べろ！
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵B"]何を調べるってんだ、どうせデマだ。大方マンフレッドが手を引くために考えた言い訳だろうよ。
+[name="サルカズ傭兵B"]たとえいたとしても、とっくにバベルの捕虜になってるだろ？　天災から捕虜を救い出すなんて任務は受けてねぇんだけどな。
+[charslot(slot = "m", name = "avg_npc_054")]
+[name="サルカズ傭兵A"]そうは言っても言われた通りやるしかないだろ、ったく。おい、イバラ小隊に要所の確認を……
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵B"]はいはいっと……おい聞こえるか？　こちら86番、こちら86番……
+[dialog]
+[playsound(key="$transmission")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵B"]おーい聞こえねぇのか？　どこ行った？　まだ交替の時間になってねぇだろ。
+[name="サルカズ傭兵B"]……待て。
+[name="サルカズ傭兵B"]ちょっと辺りが静かすぎねぇか？
+[name="サルカズ傭兵B"]さっきまで羽獣の鳴き声もしてたってのに……
+[charslot(slot = "m", name = "avg_npc_054")]
+[name="サルカズ傭兵A"]野獣も天災にビビって逃げ出したんだろ。
+[name="サルカズ傭兵A"]天災は五時間以内にここに直撃する予定だってのに、こんな時にあいつらは何サボってやがんだ？
+[name="サルカズ傭兵A"]当番表は？　見せてみろ。
+[name="サルカズ傭兵A"]見せろって言ってんだろ――
+[dialog]
+[delay(time=1.5)]
+[name="サルカズ傭兵A"]お、おい、どこ……どこ行った？
+[playsound(key="$transmission")]
+[name="サルカズ傭兵A"]おい！　こちら86番小隊！　誰か、誰かいないのか！？　一体どういうことだ、誰か――
+[charslot(slot = "m", focus="n")]
+[name="Scout"]いるぜ。
+[PlaySound(key="$d_avg_cnstrctnck", volume=1)]
+[charslot(slot = "m", action="shake", power=4, times=40, duration=0.5)]
+[name="サルカズ傭兵A"]――
+[dialog]
+[playsound(key="$bodyfalldown2")]
+[charslot(slot = "m", posfrom="0,0", posto="0,-30", afrom=1, ato=0, duration=0.5, isblock=true)]
+[charslot]
+[delay(time=1.5)]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "m", name = "avg_npc_1311_1#1$1", duration=1, isblock=true)]
+[name="Scout"]ふぅ。
+[dialog]
+[playsound(key="$d_gen_transmissionget", volume=1)]
+[delay(time=1)]
+[name="Scout"]三つの小隊をすべて鎮静化した。気づかれていないし、ルートは安全だ。
+[name="Scout"]戦闘員は送った座標に従って移動してくれ。医療スタッフは先に負傷者を連れて俺が残した目印に従って退避するように。
+[name="Scout"]……俺にはまだ確認しなければならないことがある。
+[dialog]
+[PlaySound(key="$d_avg_snowbootwalk", volume=1, loop=true, channel="s")]
+[StopSound(channel="s", fadetime=1)]
+[charslot(slot = "m", posfrom="0,0", posto="20,-50", afrom=1, ato=1, duration=0.6, isblock=true)]
+[name="Scout"]……
+[name="Scout"]確かに軍事委員会の通信回線だな。だがこいつらは斥候だし、拠点を襲撃した雇い主のいない傭兵でもない。
+[name="Scout"]こいつらが受けてるのは「レッドベリー」――平民の撤退ルートを確認するだけの任務か……ふっ、マンフレッドが「王庭の要人」がいるなんて嘘までつくとはな。
+[name="Scout"]うむ。どうやら本命はアスカロンに任せるしかないようだ。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[bgeffect]
+[charslot]
+[PlaySound(key="$d_avg_drkcludsthdr", volume=1, loop=true, channel="d")]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="s")]
+[PlayMusic(intro="$stranger_intro", key="$stranger_loop", volume=0.6)]
+[Background(image="30_ex1_snowmount_s",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_npc_1306_1#1$1", bstart=0.2,bend=0.7,)]
+[Delay(time=1)]
+[bgeffect(name="$eb_snow", layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="謎の傭兵"]……
+[name="謎の傭兵"]バベル。
+[name="謎の傭兵"]お前は俺の死神か？
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1", duration=1.5, isblock=true)]
+[name="アスカロン"]……バベルの拠点の襲撃を主導したのはお前だな。誰の命令だ？
+[name="アスカロン"]あの者たちはただの医者と感染者の平民――
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1306_1#1$1", posfrom="300,0", posto="30,0", duration=0.2)]
+[delay(time=0.1)]
+[PlaySound(key="$e_skill_skulsrsword", volume=0.7)]
+[PlaySound(key="$d_avg_ftrub", volume=1)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#4$1", action="jump", posto="-300,-20", afrom=1, ato=0, power=5, times=1, duration=0.5)]
+[CameraShake(duration=1, xstrength=15, ystrength=10, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$swordtsing5", volume=0.7,delay=0.2)]
+[Effect(name="$e_bladeline_01_large",x = 100,y=60,roy=0,rox=-30,layer = 1)]
+[Effect(name="$e_spark_02_mid",x = 50,y=50,layer = 2,delay=0.01)]
+[Effect(name="$e_spark_02_mid",x = 52,y=55,layer = 3,roy=180,delay=0.03)]
+[Effect(name="$e_spark_02_mid",x = 54,y=60,layer = 4,delay=0.05)]
+[Effect(name="$e_spark_02_mid",x = 56,y=65,layer = 5,roy=180,delay=0.07)]
+[Effect(name="$e_spark_02_mid",x = 58,y=70,layer = 6,delay=0.09)]
+[Effect(name="$e_spark_02_mid",x = 60,y=75,layer = 7,delay=0.11)]
+[Effect(name="$e_spark_02_mid",x = 62,y=80,layer = 8,delay=0.13)]
+[Effect(name="$e_spark_02_mid",x = 64,y=85,layer = 9,delay=0.15)]
+[Effect(name="$e_spark_02_mid",x = 66,y=90,layer = 10,delay=0.19)]
+[Effect(name="$e_spark_02_mid",x = 68,y=95,layer = 11,delay=0.22)]
+[Effect(name="$e_spark_02_mid",x = 70,y=100,layer = 12,delay=0.25)]
+[Effect(name="$e_spark_02_mid",x = 72,y=105,layer = 13)]
+[delay(time=0.5)]
+[charslot]
+その言葉を言い終える前に、剣先はすでに届いていた。
+アスカロンはわずかに違和感を覚えた。
+しかし彼女はすぐに状態を整えた。そう、暴力を振るうために。対話でもって答えを引き出すのは、正直あまり得意ではないのだ。
+[PlaySound(key="$d_avg_daggerexsheath", volume=1)]
+袖口の仕込み刀はすでに冷たい光を放っている。
+[dialog]
+[charslot(slot = "r", name = "avg_npc_1306_1#1$1", posfrom="30,0", posto="30,0", duration=0)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#5$1", posfrom="-800, 0", posto="300,0", duration=0.6, afrom = 1, ato = 0)]
+[charslot(slot = "l", name = "avg_4132_ascln_1#5$1", posfrom="0,-20", posto="500,0", duration=0.3, afrom = 0, ato = 0.5)]
+[delay(time=0.2)]
+[charslot(slot = "l", name = "avg_4132_ascln_1#1$1", posfrom="500,0", posto="750,0", duration=0.3, afrom = 0.5, ato = 0)]
+[Blocker(a=0, r=255, g=0, b=0, fadetime=0, block=true)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=0, b=0, fadetime=0.03, block=true)]
+[PlaySound(key="$d_avg_attack_heavy", volume=1)]
+[Blocker(a=0, r=255, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[PlaySound(key="$bodyfalldown2", volume=1)]
+[charslot(slot = "r", posfrom="30,0", posto="30,-50", afrom=1, ato=0, duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[bgeffect]
+[delay(time=0.5)]
+[name="謎の傭兵"]うっ。
+[dialog]
+[charslot]
+[charslot(slot = "r", name = "avg_4132_ascln_1#5$1")]
+[bgeffect(name="$eb_snow", layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="アスカロン"]お前は一体――
+[dialog]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot = "l", name = "avg_npc_1306_1#1$1", posfrom="0,-80", posto="0,0", duration=2, isblock=true)]
+[charslot(slot = "l", focus="l")]
+[name="謎の傭兵"]……
+[dialog]
+[PlaySound(key="$d_avg_button", volume=1)]
+[charslot(slot = "r", name = "avg_4132_ascln_1#6$1", focus="r")]
+[name="アスカロン"]――！
+[dialog]
+[charslot(slot = "r", name = "avg_4132_ascln_1#6$1", posfrom="0,0", posto="200,0", afrom=1, ato=0, duration=0.2)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_explosion_stone")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_ftrub", volume=1)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1", posfrom="-600,0", posto="40,-20", duration=1, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", posfrom="40,-20", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#5$1")]
+[name="アスカロン"]チッ……爆薬か……狂人めが。
+[name="アスカロン"]もう万策尽きただろう。さっさと……
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="アスカロン"]……
+[dialog]
+[playsound(key="$transmission")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#3$1")]
+[name="アスカロン"]……私だ。たった今終わった。
+[charslot(slot = "m", name = "avg_4132_ascln_1#2$1")]
+[name="アスカロン"]主導者らしき者は丸焦げだ。すまない、生け捕りにすることはできなかった。
+[name="アスカロン"]ああ、何かがおかしい。
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="アスカロン"]相手は一目見て私がバベルの人間だと認識し、一瞬刃を交えた後、私に敵わないと判断した瞬間に自爆した。
+[multiline(name="アスカロン")]あまりに果断すぎる。百戦錬磨のスパイか、あるいは……
+[charslot(slot = "m", name = "avg_4132_ascln_1#6$1")]
+[multiline(name="アスカロン", end=true)]待て。
+[dialog]
+[playsound(key="$d_avg_pcket")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="アスカロン"]カバンを見つけた。ああ、壊れていない。先ほどの攻撃で斬り落とされて爆発を免れたようだ。
+[name="アスカロン"]中には……バベルの腕章と、軍事委員会の勲章もあるな。
+[name="アスカロン"]だが、傭兵が敵味方の両陣営と繋がっていることは決して珍しくはない。
+[charslot(slot = "m", name = "avg_4132_ascln_1#3$1")]
+[name="アスカロン"]あとは紙が一枚……個人的なメモかもしれない。見てみよう。
+[name="アスカロン"]特に重要な情報はなさそうだ。はっきりと読み取れるのはサルカズ語で書かれた一つの単語だけだな。
+[name="アスカロン"]「デル」――家。
+[charslot(slot = "m", name = "avg_4132_ascln_1#2$1")]
+[name="アスカロン"]……
+[name="アスカロン"]忘れろ。特に意味はない。
+[dialog]
+[stopmusic(fadetime=2)]
+[StopSound(channel="s", fadetime=2)]
+[StopSound(channel="d", fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[bgeffect]
+[PlaySound(key="$blizzard", volume=1, loop=true, channel="b")]
+[charslot]
+[Background(image="bg_snowconutry_4",screenadapt="coverall")]
+[Delay(time=1)]
+[bgeffect(name="$eb_snow", layer=1)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "l", name = "avg_npc_053", duration=1)]
+[delay(time=0.5)]
+[charslot(slot = "r", name = "avg_npc_1299_1#1$1", duration=1, isblock=true)]
+[delay(time=1)]
+[charslot(slot = "l", focus="l")]
+[name="サルカズ傭兵"]……通信不能だと？　それもそうか。天災を間近にして、こんな古臭いブツじゃ確かに役に立たねぇな……
+[name="サルカズ傭兵"]はぁ……ほかの隊が逃げ延びる方法を見つけてくれてりゃいいが。
+[dialog]
+[PlaySound(key="$d_gen_thunders_amb", volume=0.2)]
+[PlaySound(key="$d_avg_drkcludsthdr", volume=0.6, loop=true, channel="d")]
+[delay(time=1.5)]
+[charslot(slot = "r", name = "avg_npc_1299_1#1$1", focus="r")]
+[name="ジュリー"]ぼうっと突っ立ってるな。
+[name="ジュリー"]動けない感染者は……全員こっちに運んでやれ。
+[charslot(slot = "l", name = "avg_npc_053", focus="l")]
+[name="サルカズ傭兵"]もう何の希望もないんだぜ。天災も避けられるわけじゃねぇし。
+[charslot(slot = "r", name = "avg_npc_1299_1#4$1", focus="r")]
+[name="ジュリー"]どうせ何の希望もないんだから、やるだけやるんだよ。
+[charslot(slot = "l", name = "avg_npc_053", focus="l")]
+[name="サルカズ傭兵"]……やってどうすんだ？　意識がない奴だっているんだぞ。
+[charslot(slot = "r", name = "avg_npc_1299_1#6$1", focus="r")]
+[name="ジュリー"]あたしも同じ様な感染状況だし大差ない。この手でみんなの苦しみを終わらせてやるんだ。
+[name="ジュリー"]みんなが死んだら源石が拡散するだろうし、あたしもろくな結末にはならないだろうね。お前は遠くからクロスボウか何かであたしの後始末を頼むよ。
+[dialog]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "r", afrom=1, ato=0, duration=1.5, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_053", focus="l")]
+[name="サルカズ傭兵"]（つぶやく）やるわけねぇだろ。
+[dialog]
+[playsound(key="$d_avg_snowbootwalk")]
+[charslot(slot = "m", name = "avg_npc_048", posfrom="200,0", posto="0,0", duration=1.5)]
+[charslot(slot = "m", action="zoom", poszoom = "0.5,0.5", scale=0.9, duration = 0)]
+[delay(time=1.2)]
+[charslot(slot = "m", posfrom="0,0", posto="-200,0", afrom=1, ato=0, duration=1.5, isblock=true)]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_npc_053", focus="l")]
+[name="サルカズ傭兵"]おい、止まれ。そっちの感染者には近づくな。ジュリーが処理する連中だからよ。
+[Dialog]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", name = "avg_npc_048", posfrom="200,0", posto="0,0", duration=1, isblock=true)]
+[name="ドクター"]……感染者。
+[name="ドクター"]君は彼らを薪のようにここに捨てた。
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵"]俺だってやりたくてやってるわけじゃねぇ。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]彼らに助かる見込みはないのか？
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵"]助からねぇよ。みんな死を待ってるところだ。あと十分と経たずに全員塵になるだろうな。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]助けられた命だった。
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵"]ちょっとばかし寿命が延びることを、助かるって言うのか？
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]……
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵"]あいつらは感染状況が深刻すぎる。ここを離れたって、どうせカズデルの裏路地で野垂れ死ぬだけなんだよ。こんなことになるなら俺もサルゴンに残っときゃよかった……
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]この抑制剤を彼らに使ってあげよう。少なくとも痛みを和らげることができる。
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵"]……抑制剤なんてどこで手に入れた？　いや、そもそもお前はどこのどいつだ？　いつここに来た？
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[name="サルカズ傭兵"]動くな！
+[name="サルカズ傭兵"]識別コードを教えろ。さもないと――
+[charslot(slot = "m", focus="n")]
+[name="？？？"]ドクターにやらせてあげて。
+[dialog]
+[charslot]
+[SoundVolume(volume=0.2, channel="b",fadetime=2)]
+[SoundVolume(volume=0.2, channel="d",fadetime=2)]
+[PlayMusic(key="$wasteland_loop", volume=0.6)]
+[PlaySound(key="$d_avg_snowfootstep", volume=1, loop=true, channel="snow")]
+[StopSound(channel="snow", fadetime=2)]
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1", duration = 2, isblock=true)]
+[name="テレジア"]大丈夫よ。
+[name="テレジア"]全部、大丈夫だから。
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵"]お前、なんだか見覚えが――
+[dialog]
+[charslot(slot = "l", name = "avg_npc_1299_1#7$1", posfrom="-100,0", posto="100,0", duration=0.5)]
+[playsound(key="$bodyfalldown3")]
+[delay(time=0.3)]
+[charslot(slot = "m", posfrom="0,0", posto="40,0", duration=0.2, isblock=true)]
+[charslot(slot = "l", focus="l")]
+[name="ジュリー"]で、殿下！　な――なんで殿下が――
+[name="ジュリー"]ここは天災の真下です！　避難はもう間に合いませんよ！　来ていただいて……本当に嬉しく思いますが……でも……
+[charslot(slot = "l", name = "avg_npc_1299_1#10$1", focus="l")]
+[name="ジュリー"]殿下はここにいるべきではありません！　あなたがこんな危険を冒す価値なんて、あたしたちには――
+[dialog]
+[charslot]
+白きサルカズは、音もなく唐突に戦場に現れた。
+[PlaySound(key="$d_avg_crwddiscuss_outside", volume=0, loop=true, channel="c")]
+[SoundVolume(volume=1, channel="c",fadetime=1)]
+人々がざわつき出す。ひっそりと現れたこの人物は、本当にバベルの魔王であり生ける六英雄の一人、そしてカズデルを育んだかの者なのだろうか？
+[StopSound(channel="c", fadetime=3)]
+テレジアはただ驚きと疑念を隠せない群衆の方へとうなずいただけだった。
+彼女は感染者たちのそばで膝を折った。
+[dialog]
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", bstart=0.2,bend=0.7, duration=2, isblock=true)]
+[name="瀕死の感染者"]……殿……下……
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]ごめんなさい、来るのが遅くなってしまったわ。
+[charslot(slot = "m", name = "avg_npc_1296_1#6$1")]
+[name="テレジア"]私にはもうあなたたちの命を救ってあげられない……私の努力はまだまだ足りないわ。ごめんなさい……
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", bstart=0.2,bend=0.7)]
+[name="瀕死の感染者"]どうか……そんなことを……おっしゃらないで……
+[charslot(slot = "m", focus="n")]
+テレジアが彼の手をそっと握った。
+まだ意識がある他の感染者も、まだ死を拒み続けている者も、皆同時に彼女の手から伝わるほんのわずかな……温もりを感じた。
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]皆の言葉は届いているわ、我が子たちよ。
+[name="テレジア"]あなたたち一人一人の人生を覚えておくわ……それ以上の約束はできないことを許してちょうだい。だけどあなたたちの家族、子供、友人、戦友……
+[charslot(slot = "m", name = "avg_npc_1296_1#6$1")]
+[name="テレジア"]彼らにはいずれ、恐怖の中で生きる必要がなくなる日が訪れるわ。
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", bstart=0.2,bend=0.7)]
+[name="瀕死の感染者"]……
+[charslot(slot = "m", name = "avg_npc_1296_1#6$1")]
+[name="テレジア"]あなたたちの命は、本来こんなにもちっぽけなものであるべきじゃないの。
+[name="テレジア"]少なくとも今この瞬間、あなたたちは温かな夢を見る資格があるわ……将来必ず実現する夢を。
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]眠りなさい、カズデルの子らよ。温かな故郷で安らかな眠りを。
+[name="テレジア"]おやすみなさい。
+[charslot(slot = "m", name = "avg_npc_932_1#1$1", bstart=0.2,bend=0.7)]
+[name="瀕死の感染者"]……ありが……とう……ございます……
+[dialog]
+[charslot(duration=2, isblock=true)]
+感染者の体が源石の色を発し始める。
+たちまち細かな鉱石が血肉を浸食し始め、彼らの背負う生活と欲望がすべて輝く火の光へと変わった。
+テレジアは彼らの手を握り続けた。
+[dialog]
+[PlaySound(key="$d_avg_smkedspte", volume=1)]
+[delay(time=1)]
+光を放つ灰が空に舞い上がり、風雪に打たれ、ついに空の星々になることが叶わなくなるその時まで。
+[dialog]
+[charslot(slot = "m", name = "avg_npc_048", duration=2, isblock=true)]
+[name="ドクター"]……
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="ジュリー"]あのさ、あんた、えっと……
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]好きに呼んでもらって構わない。「悪霊」という呼び名がしっくりくるならそれでもいい。
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="ジュリー"]違う、そういうつもりじゃない！　ただ、二人で話すのは初めてだからさ。
+[name="ジュリー"]あんたは何度も勝利をもたらしてくれただろ、あたしもあんたの指揮下で戦ったことがあるんだ。それに、たしか源石の専門家でもあるって……
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]……「専門家」か。
+[name="ドクター"]だが実のところ……感染者がああいった形で亡くなっていくのを間近で見たのは今回が初めてだ。
+[charslot(slot = "m", name = "avg_npc_1299_1#6$1")]
+[name="ジュリー"]……これまで随分運が良かったんだな。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]まさかその光景があんなにも……
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[PlaySound(key="$flashback", volume=0.2)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_053")]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="サルカズ傭兵"]ちょっとばかし寿命が延びることを助かるって言うのか？
+[dialog]
+[Blocker(a=0.4, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_048")]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="ドクター"]……何でもない。
+[name="ドクター"]テレジア、出発しよう。
+[charslot(slot = "m", name = "avg_npc_1296_1#6$1")]
+[name="テレジア"]……ええ。
+[charslot(slot = "m", name = "avg_npc_053")]
+[name="サルカズ傭兵"]だが今出発したところでもう手遅れだ。軍事委員会の罠も待ち受けているし……
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]大丈夫よ。
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_snowbootwalk", volume=1)]
+[charslot(slot = "r", name = "avg_npc_1310_1#1$1", duration=1.5)]
+[delay(time=0.5)]
+[charslot(slot = "l", name = "avg_npc_1309_1#1$1", duration=1.5)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1", duration=1.5, isblock=true)]
+[delay(time=2)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]さあ、家に帰りましょう。
+[dialog]
+[StopSound(channel="b", fadetime=3)]
+[StopSound(channel="d", fadetime=3)]
+[musicvolume(volume=0.2, fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[bgeffect]
+後に、軍事委員会の作戦報告にはこのように記された。
+「バベルの魔王は最も信頼する部下を率いて、風雪と烈火を払いのけた。」
+「それはまるでベッドカーテンをめくり、子を夢へといざなう母のように優しいものだった。彼らは想定通りのルートで撤退し、やがて我々の包囲網に入った。」
+「だがその場に居合わせた術師と射撃兵は、誰一人として数百メートルにも連なるその隊列に奇襲を仕掛けようとはせず、そう命令を下す者もいなかった。」
+このあまりに余計な脚色が過ぎる報告書と、マンフレッドが王庭の要人から提供された「偽の情報」に騙された件については、いずれも委員会から批判されたが――それ以上の処罰は受けなかった。
+[dialog]
+[charslot]
+[Background(image="bg_room_2",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "r", name = "avg_npc_048")]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "l", name = "avg_003_kalts_1#1$1", duration=1, isblock=true)]
+[charslot(slot = "l", focus="l")]
+[name="ケルシー"]ドクター。
+[name="ケルシー"]今回の作戦について聞いたが、君は……
+[dialog]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_003_kalts_1#4$1", focus="l")]
+[name="ケルシー"]ドクター？
+[charslot(slot = "r", name = "avg_npc_048", focus="r")]
+[name="ドクター"]ケルシー、教えてほしいことがある。
+[charslot(slot = "l", name = "avg_003_kalts_1#1$1", focus="l")]
+[name="ケルシー"]何だ。
+[charslot(slot = "r", name = "avg_npc_048", focus="r")]
+[name="ドクター"]医者の立場から見て、患者の余命を延ばすことはできても、死の定めを挽回できないとしたら……それは救いと呼べるのだろうか？
+[charslot(slot = "l", name = "avg_003_kalts_1#1$1", focus="l")]
+[name="ケルシー"]患者本人に他の要望がない限り、命を救うべく手を尽くすのは医者の責務だ。
+[name="ケルシー"]我々は常にそのために尽力している。
+[name="ケルシー"]どうしてそんなことを？
+[charslot(slot = "r", name = "avg_npc_048", focus="r")]
+[name="ドクター"]ただ、アーミヤや他の仲間たちを見ていると、君たちはこんな苦しみを受けるべきではないと……そう思ったんだ。
+[charslot(slot = "l", name = "avg_003_kalts_1#4$1", focus="l")]
+[name="ケルシー"]……
+[charslot(slot = "r", name = "avg_npc_048", focus="r")]
+[name="ドクター"]それに、その苦しみは……
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1", duration=1.5, isblock=true)]
+[name="テレジア"]ドクター、ケルシー、二人ともここにいたのね。
+[name="テレジア"]情報会議が今終わったわ。あの天災で戦局が膠着状態に陥っているのは確かみたいだし、一息つくなら今しかないわよ。
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]あなたたち二人はちゃんと休まないと！　特にドクター、帰ってきてからあんまり寝てないでしょう？
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]平気だ……
+[charslot]
+テレジアはケルシーをちらりと見た。ケルシーの目からは、やるせなさが透けて見える。
+魔王には感じられた。罪悪感を、そして焦燥感を。あれだけ多くの感染者が散っていくのを目の当たりにしたのだ。そう簡単に受け入れられることではない。
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]ドクター、あなたまさか……これらすべてがあなたの手によって引き起こされたとでも思っているの？
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]残念だが、それは事実だ。
+[name="ドクター"]責任から逃れるつもりはないし､後悔するつもりもない。ただ、現状を受け入れるには……もう少し時間が必要なんだ。
+[name="ドクター"]今はまだ――
+[dialog]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[delay(time=0.4)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background]
+[Subtitle(text="源石がこのようにして新たに生まれた文明を傷つけることが、果たして正しいのかどうかわからない。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Subtitle(text="<color=#000000>しかし、源石こそがすべての生命と存在を守る最後の方法だ。</color>", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Background(image="bg_room_2",screenadapt="coverall")]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[delay(time=0.4)]
+[charslot(slot = "m", name = "avg_npc_048")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[name="ドクター"]……
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]この大地のために、そうした感情を抱えてくれているのはすごく嬉しいけれど……ちょっと疲れを溜めすぎているんじゃないかしら。
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]あなたの今の苦しみや葛藤も、きっと善意と理想から生み出されたものでしょう？　私はそれを拭い去ったりはしないけど、あなたさえよければ、私にも一緒に背負わせて……
+[charslot]
+テレジアはドクターの手を優しく握ろうとした。ドクターの罪悪感と不安に満ちた魂を感じ取るために。
+ドクターの力になりたかったのだ。
+[dialog]
+[PlaySound(key="$d_avg_tinnitus", volume=0.5)]
+[delay(time=1)]
+しかし、不穏な雑音がわずかに魔王の脳内に響き渡った。
+[name="テレジア"]……？
+[name="テレジア"]（ドクターが……私を拒絶したの？　それとも……）
+[dialog]
+[charslot(slot = "m", name = "avg_npc_048", duration=0.5, isblock=true)]
+[name="ドクター"]すまない、テレジア……君がそれを背負う必要はない。
+[name="ドクター"]ましてや、わざわざ「文明の存続」を使う必要なんてないんだ。君に負担がかかるし、もっと重要な使い道だってある。
+[charslot(slot = "m", name = "avg_npc_1296_1#10$1")]
+[name="テレジア"]力を尽くして頑張ってくれているドクターを助けることよりも重要な使い道が？
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]フフッ……ありがとう、本当に。
+[name="ドクター"]さて、君もScoutも、今が一息つける時だと言っていたな。
+[name="ドクター"]ならばMiseryから盗んだ料理の技術で、君たちにディナーをご馳走するとしよう。
+[name="ドクター"]――今後の試練に立ち向かうために。
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Background]
+[Image]

@@ -1,0 +1,671 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="47_g7_fieldhouse",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[PlaySound(key="$d_avg_brdchrp")]
+The cries of fowlbeasts waft through the window of the farmhouse along with the rays of the rising sun. A mother opens her sleepy eyes, the child in her arms tightly grasping at the hem of her clothes.
+She lets out a sigh and sits up, thinking of the events of the previous day, as well as the cries of her frightened child throughout the night.
+The young child rouses from his sleep when he notices his mother's departure. His nose twitches, and tears soon flow down his chubby cheeks. The father adroitly picks up the child and stands next to the window, patting his back and lulling him back to sleep.
+[PlaySound(key="$d_avg_reedmarshes", volume=0, loop=true, channel="reed")]
+[SoundVolume(volume=1, fadetime=1,channel="reed")]
+'Hush, hush, there's no need to cry. Look out the window – there's nothing there at all.'
+'Look at the flowers, and look at our fields. Everything's fine, so there's no need to cry...'
+However, the child bawls even louder, even stretching his arm to point out the window. The mother and father follow his gesture and look outside, where they see a strange, pale beast standing at the farmland's edge.
+[dialog]
+[backgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.05, yScaleTo=1.05, duration=3)]
+[playMusic(intro="$plot_intro",key="$plot_loop", volume=0.6)]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.1,fadetime=3)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.1,fadetime=3)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=0.01,afrom=0,ato=0,block=true)]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.5", scale=0.9,duration = 0.01,block=true)]
+[charslot(slot="m",duration=3,afrom=0,ato=1)]
+[Delay(time=4)]
+It stares back, through the window of the family of three.
+[Dialog]
+[stopsound(channel="reed",fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[curtain]
+[Background(image="47_g8_crestofweir",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1243_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Silent Lumberjack"]...
+[charslot]
+The silent lumberjack picks up his axe, and a wisp of tattered red cloth floats by. He rubs that coarse gash, as if remembering something.
+A pair of strong, calloused hands – not quite bleached, but with distinct joints, coalesces with blood and mud. The hands tied a strand of red silk to his arm, before they fell lifelessly to the ground.
+Those hands once lifted a heavy weapon. They once stroked his face. They once held a crying child.
+The hand's master has slightly darkened skin, and when she smiles, she reveals her white teeth and shallow dimples.
+He stands before the woods along the riverbank. Among the tree trunks are tied strips of red silk, wooden placards engraved with blurry names dangling from them.
+[PlaySound(key="$d_avg_woodensign", volume=1)]
+A gust of wind blows, the branches sway, and the wooden placards make crisp sounds.
+[charslot(slot="m",name="avg_npc_1243_1#1$1")]
+[name="Silent Lumberjack"]Nngh...
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+A strange braying sound floats by, and the lumberjack half-opens his cloudy eyes.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_hgmlgscrm")]
+[name="Eerie Fabric"](Howls)
+[dialog]
+[charslot(slot = "l",name="avg_npc_1243_1#3$1",posfrom = "-150,0", posto = "0,0",duration = 0.4)]
+[PlaySound(key="$d_avg_singleblunt")]
+[PlaySound(key="$d_avg_hammer", volume=0.8)]
+[delay(time=0.2)]
+[charslot(slot="m",duration=0.3,posfrom = "0,0", posto = "200,0")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.7)]
+[PlaySound(key="$d_avg_hgmdspr")]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_1243_1#3$1")]
+[name="Silent Lumberjack"]—
+[charslot(slot = "m", focus = "n")]
+They've returned.
+They shouldn't be here.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="47_g1_desertedcityfield_d",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$smallearthquake")]
+[CameraShake(duration=2.5, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",focus="l")]
+[name="Panicked Farmer"]What's wrong? An earthquake?
+[name="Panicked Farmer"]I thought the plate hadn't been completed yet?
+[name="Panicked Farmer"]Wh-What's going on then?!
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "left", name = "avg_npc_1251_1#3$1",duration = 1,posfrom = "0,-200", posto = "0,-200")]
+[charslot(slot = "right", name = "avg_npc_1251_1#3$1",duration = 1,posfrom = "0,-200", posto = "0,-200")]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_drone")]
+[charslot(slot ="l", action="shake", power=10, times=100, duration=1)]
+[charslot(slot ="r", action="shake", power=10, times=100, duration=1)]
+[delay(time=1.1)]
+[charslot(slot = "left", name = "avg_npc_1251_1#4$1",duration = 1,posfrom = "0,-200", posto = "0,-100")]
+[delay(time=0.5)]
+[charslot(slot = "right", name = "avg_npc_1251_1#4$1",duration = 1,posfrom = "0,-200", posto = "0,-100")]
+[delay(time=2)]
+[charslot(slot = "right", name = "avg_npc_1251_1#5$1",duration = 0.3)]
+[PlaySound(key="$d_avg_drone")]
+[delay(time=0.3)]
+[charslot(slot = "right",duration = 0.5,posfrom = "0,-100", posto = "300,200")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[charslot(slot = "m",posfrom = "0,0", posto = "-200,0")]
+[charslot(slot="m",name="avg_npc_1249_1#1$1")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "l", name = "avg_npc_1251_1#5$1",duration = 0.1)]
+[charslot(slot = "l",duration = 0.5,posfrom = "-500,-200", posto = "-100,200")]
+[delay(time=0.1)]
+[charslot(slot = "l",duration = 0.3,afrom=1,ato=0)]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0",duration = 0.3)]
+[delay(time=0.3)]
+[CameraShake(duration=0.5, xstrength=28, ystrength=26, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "r",posfrom = "-100,0", posto = "100,0",duration = 0.5)]
+[charslot(slot = "m",posfrom = "-200,0", posto = "0,0",duration = 0.5)]
+[delay(time=0.51)]
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="Worried Farmer"]Watch out!
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="m")]
+[name="Panicked Farmer"]That was a close one... My head...
+[name="Panicked Farmer"]What's happening... All the Sky Poles are out of control?!
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_drone")]
+[PlaySound(key="$d_avg_drone",channel="1",delay=0.1)]
+[PlaySound(key="$d_avg_drone",channel="2",delay=0.2)]
+[PlaySound(key="$d_avg_drone",channel="3",delay=0.3)]
+The Sky Poles seem affected by some disturbance, passing over the people's heads in swarms, blotting out the sky in a manner reminiscent of an insect plague not seen in ages.
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="Worried Farmer"]Look at that!
+[name="Worried Farmer"]What's with the color of the sun...?
+[charslot]
+[dialog]
+[Effect(name="$e_demoninfect",layer = 1)]
+[delay(time=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="47_i08",screenadapt="coverall",xScale=1.2,yScale=1.2)]
+[imagetween(xScaleTo=1,yScaleTo=1,duration=30)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=3)]
+The people lift their heads and see that the sun has suddenly dipped down into the west, illuminating half the sky blood-red.
+Everyone is stricken with a sense of fear.
+A primordial fear that has existed within human hearts since ancient times.
+Catastrophe, pestilence, disease, famine...
+This realm is no longer the home they have known.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[delay(time=1)]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+[name="Eerie Fabric"](Unsettling braying noises)
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="l")]
+[name="Panicked Farmer"]What are these things? Pests?
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="Anxious Farmer"]How can this be?! They're popping out of thin air, straight out of the ground... They're everywhere!
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_4122_grabds_1#5$1",duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$p_skill_ctefltpn")]
+[delay(time=2)]
+[charslot(slot="m",name="avg_4122_grabds_1#6$1")]
+[name="Grain Buds"]What's going on...? Why are these animals not listening?
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+[charslot(slot="m",name="avg_npc_1244_1#3$1")]
+[name="Eerie Fabric"](Eerie cry)
+[dialog]
+[charslot(slot = "r",name="avg_4119_wanqin_1#6$1",posfrom = "250,0", posto = "0,0",duration = 0.5)]
+[PlaySound(key="$d_avg_singleblunt")]
+[delay(time=0.3)]
+[charslot(slot="m",duration=0.4,posfrom = "0,0", posto = "-200,0")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_hgmdspr")]
+[charslot(slot="m",duration=0.7,afrom=1,ato=0)]
+[delay(time=1)]
+[charslot]
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#2$1",focus="l")]
+[name="He Sheng"]Are you okay?!
+[charslot(slot="r",name="avg_4122_grabds_1#4$1",focus="r")]
+[name="Grain Buds"]Um...
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="Grain Buds"]I've never seen animals like these before. They almost look like... they're not even <i>animals?</i>
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="He Sheng"]They're more like the monsters from popular operas than pestilence beasts... They're even popping out of the ground?
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="He Sheng"]Let's give this a try...
+[charslot]
+[playsound(key="$d_avg_windmagic")]
+A gust of wind suddenly rises, and the monster's body is torn into fine threads. However, it snaps right back to its original form in an instant and continues to crawl forward.
+More and more monsters begin to rise from the soil. Wherever they go, crops wither and the land dries up.
+[charslot(slot="l",name="avg_4119_wanqin_1#7$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="l")]
+[name="He Sheng"]It didn't do anything?!
+[charslot]
+[PlaySound(key="$d_avg_hgmlgscrm")]
+[CameraShake(duration=1, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1")]
+[name="Eerie Fabric"](Piercing wail)
+[charslot(slot = "m", focus = "n")]
+[name="Zuo Le"]Watch out—!
+[dialog]
+[charslot(slot = "l",name="avg_4121_zuole_1#4$1",posfrom = "200,0", posto = "200,0",duration = 0.3)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=50, randomness=90, fadeout=false, block=false)]
+[playsound(key="$d_avg_spear")]
+[delay(time=0.5)]
+[charslot(slot="m",duration=0.7,afrom=1,ato=0)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="He Sheng"]Zuo Le! What are these things?
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="Zuo Le"]Get back... This isn't something I can explain in a sentence or two.
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_hgmdspr")]
+Zuo Le plucks a strand of silk with his longsword, but before he can raise it to eye level, the silk thread disappears on the wind.
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="He Sheng"]Are they the same...?
+[charslot(slot="m",name="avg_4121_zuole_1#2$1")]
+[name="Zuo Le"]Yes.
+[charslot]
+The Candleholder looks up toward the center of the city. A tower of white jade stands there, emitting an ominous light.
+'The Skybound White Jade Capital, of Twelve Pagodas and Five Cities.'
+The ancients once envisioned a city that reached the heavens, but now, it has become a source of calamity.
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="Zuo Le"]He did it, in the end...
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="He Sheng"]How much do you really know?
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="Zuo Le"]There's no time to explain... He Sheng, do me a favor and rescue all the people here.
+[name="Zuo Le"]Go gather all the farmers and have them stick together as much as possible... No, whatever you do, don't leave anyone alone.
+[name="Zuo Le"]Remember, don't be afraid of them. Even if you have to force yourself, do not feel fear.
+[charslot(slot="m",name="avg_4119_wanqin_1#7$1")]
+[name="He Sheng"]What about you? What are you going to do?
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="Zuo Le"]I'm going to shut down that device...
+[charslot(slot="m",name="avg_4119_wanqin_1#5$1")]
+[name="He Sheng"]You're doing this on your own again?
+[charslot(slot="m",name="avg_4121_zuole_1#7$1")]
+[name="Zuo Le"]This is my duty... even if I have to put my life on the line...
+[charslot(slot="m",name="avg_4119_wanqin_1#5$1")]
+[name="He Sheng"]What kind of talk is that?
+[charslot(slot="m",name="avg_4119_wanqin_1#6$1")]
+[name="He Sheng"]Did anyone ask for your life? Why are you always up on your own pedestal, acting as if everyone's looking to you to save them?
+[charslot(slot="m",name="avg_4121_zuole_1#6$1")]
+[name="Zuo Le"]Well—
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=0.7)] 
+[charslot(slot="m",name="avg_npc_1240_1#4$1",duration=1)]
+[delay(time=1.5)]
+[name="Old Xiangzhang"]Xiaohe is right. This isn't a problem you can solve on your own.
+[charslot(slot="m",name="avg_4121_zuole_1#6$1")]
+[name="Zuo Le"]It's you...
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="He Sheng"]What should we be doing now?
+[charslot(slot="m",name="avg_npc_1240_1#4$1")]
+[name="Old Xiangzhang"]This is happening because of the contamination on the north bank of the river. The flood allowed them to penetrate Dahuang's defenses.
+[name="Old Xiangzhang"]Don't panic, the Tianshis from the Chamber of Heaven's Designs is on the way. But first, we need to organize everyone together. Strength in numbers: that's how we'll look after one another.
+[name="Old Xiangzhang"]Come together, and protect those in need.
+[charslot]
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="l")]
+[name="He Sheng"]Let's get going, Grain Buds.
+[dialog]
+[charslot(slot = "m", focus = "all")]
+[playsound(key="$rungeneral")]
+[charslot(slot = "r",posfrom = "0,0", posto = "300,0",duration = 1,afrom=1,ato=0)]
+[delay(time=0.3)]
+[charslot(slot = "l",posfrom = "0,0", posto = "400,0",duration = 1,afrom=1,ato=0)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "left", name = "avg_4121_zuole_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_4121_zuole_1#1$1",focus="l")]
+[name="Zuo Le"]Rong Wanqing... Qianbei.
+[name="Zuo Le"]I have seen your name on the Sui Regulator's roster.
+[charslot(slot = "right", name = "avg_npc_1240_1#3$1",focus="r")]
+[name="Rong Wanqing"]I hung up those robes a long time ago.
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="Zuo Le"]You suppressed the Shanhaizhong, and traced the criminal's master plan. You were the Sui Regulator's most storied Candleholder of the last century.
+[name="Zuo Le"]Forty years ago, you left the Sui Regulator to became a magistrate in Dahuang, and you've stayed here ever since... Why?
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="Rong Wanqing"]My duty is to keep an eye on anything that might threaten Yan. However, Shu is not one of those things.
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="Zuo Le"]Shu... Used her own life to cleanse the demonic contamination beneath Dahuang?
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="Rong Wanqing"]She did.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="Rong Wanqing"]But by some unknown means, Ji forcibly powered up the core city with demon fragments, resulting in the strange monsters we see now.
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="Zuo Le"]I failed to detect a criminal plan, a clear dereliction of duty...
+[name="Zuo Le"]But I've heard that the Chamber's defensive line along the northern bank is imperiled. How can we allocate the manpower to defend Dahuang?
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="Rong Wanqing"]You've got the situation right. At the moment, we can only rely on ourselves.
+[name="Rong Wanqing"]These creations come from the power of that proxy, and are also shadows of the demons fueled by fear... This struggle is also one of courage and the human heart itself.
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="Zuo Le"]How do we stop these monsters though...?
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="Rong Wanqing"]The heart can't move without its limbs. The Tumu Tianshis have already gone to sever the connections between the various plates and the core city. Our job is to protect the people here.
+[charslot(slot = "left", name = "avg_4121_zuole_1#4$1",focus="l")]
+[name="Zuo Le"]...I'll see it done.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="Rong Wanqing"]A Candleholder's duty is to carry the fire that drives out the shadows of the Feranmut. However, the shadows that loom over the people do not come solely from Feranmuts.
+[name="Rong Wanqing"]Light the lamp, and let it remain lit. Do not forget that.
+[charslot(slot = "left", name = "avg_4121_zuole_1#4$1",focus="l")]
+[name="Zuo Le"]I'll stop him, I will.
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "left",posfrom = "0,0", posto = "500,0",duration = 1.5,afrom=1,ato=0)]
+[delay(time=2.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playsound(key="$d_avg_hgmgrssvcm")]
+[playsound(key="$d_avg_hgmgrssvcm",channel="a",delay=0.1)]
+[charslot(slot = "r", name = "avg_npc_1244_1#3$1",duration = 1,posfrom = "0,0", posto = "0,0")]
+[charslot(slot = "left", name = "avg_npc_1244_1#3$1",duration = 1,posfrom = "0,0", posto = "0,0")]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1240_1#2$1")]
+[name="Rong Wanqing"]This is the debt that you must collect...
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g11_shuresearchoffice",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="Ji"]Would it be right to say... long time no see?
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="Rong Wanqing"]You shouldn't have come back.
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="Ji"]At least you weren't the one who directly ordered my arrest.
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="Rong Wanqing"]For Shu's sake.
+[name="Rong Wanqing"]I can allow you to see her. But after that, begone.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="Rong Wanqing"]Any further transgressions, however, and you'll have only yourself to blame for any lingering sentiments being set aside.
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="Ji"]Lingering sentiments? Sounds quite nice when you put it like that.
+[name="Ji"]If by lingering sentiments, you're referring to trapping her here for a millennium to be your work-beast, then...
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="Rong Wanqing"]Your tone suggests you would prefer we went back to the days when Great Yan was hunting all of you?
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="Ji"]No, no... Life is self-centered and zero-sum, and that much is as true for beasts as it is for humans. I simply want to make a deal with you.
+[name="Ji"]I promise to you the successful completion of the Twelve Pagodas and Five Cities, free from the threat of demons and Catastrophes. Additionally, the next three years shall be beneficent, such that you will have ample time to stockpile food and recuperate.
+[name="Ji"]In exchange, I ask that my sister be freed from this place.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="Rong Wanqing"]You make it sound like Dahuang won't be able to overcome this challenge without you.
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="Ji"]The demons run rampant, and Catastrophes are capricious. You should be fully aware of Dahuang's situation.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="Rong Wanqing"]How do I know I can trust you?
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="Ji"]Is it not amply clear to the Sui Regulator what our abilities are?
+[name="Ji"]I will do as I stated and uphold my side of the deal. If you pull out, however, I will be forced to collect other assets as collateral.
+[charslot(slot = "right", name = "avg_npc_1240_1#3$1",focus="r")]
+[name="Rong Wanqing"]...
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="Ji"]Just know that I, too, have lingering sentiments when it comes to this land.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[name="Rong Wanqing"]Shu... I did promise to let you leave.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1240_1#2$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_npc_1240_1#1$1")]
+[name="Rong Wanqing"]You will do as you stated...
+[charslot(slot = "m", name = "avg_npc_1240_1#4$1")]
+[name="Rong Wanqing"]But, if it's my life you would collect, we'll see just what these demons' blasphemous methods can do.
+[dialog]
+[charslot]
+[charslot(slot = "m",name = "avg_npc_1244_1#3$1",posfrom = "150,0", posto = "0,0",duration = 1)]
+[delay(time=1.5)]
+[playsound(key="$d_avg_hgmlgscrm")]
+[name="Eerie Fabric"](Piercing wail)
+[dialog]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.5", scale=1.05,duration = 0.6)]
+[CameraShake(duration=0.8, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[playsound(key="$b_char_defboost")]
+[delay(time=0.5)]
+[playsound(key="$fightgeneral",volume=0.6)]
+[delay(time=1)]
+[playsound(key="$d_avg_blddpgrn")]
+[charslot]
+[delay(time=2)]
+[Background(image="47_g5_factory_inside",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1245_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1246_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$loading_intro",key="$loading_loop", volume=0.6)]
+[delay(time=1)]
+[PlaySound(key="$alarmenter",channel="bgs", volume=1,block=false,loop=true)]
+[Blocker(a=0.4, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[Blocker(a=0, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[Blocker(a=0.4, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[StopSound(channel="bgs", fadetime=0)]
+[Blocker(a=0, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[charslot(slot = "left", name = "avg_npc_1245_1#1$1",focus="l")]
+[name="Tumu Tianshi"]The energy core activated on its own? But how? It's not ready yet!
+[charslot(slot = "right", name = "avg_npc_1246_1#1$1",focus="r")]
+[name="Tumu Tianshi"]These readings... Is this is a joke? This is enough to power a sizable nomadic city for three hundred years.
+[charslot(slot = "m", focus = "n")]
+[name="Assistant Minister Wan"]Out of the way. I'll deal with this.
+[dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "200,0",duration = 1)]
+[charslot(slot = "l",posfrom = "0,0", posto = "-200,0",duration = 1)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_npc_1241_1#4$1",duration=1.5)]
+[delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_298_1#1$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="Ning Ciqiu"]The energy core has gone out of control... He's taken control and is using it to create monsters.
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="Assistant Minister Wan"]Spare me the abstract. Nobody knows this device better than me.
+[name="Assistant Minister Wan"]On the other hand, Assistant Minister Ning, I don't need to remind you that the current situation is due to the failures of the Ministry of Rites and the Sui Regulator.
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="Ning Ciqiu"]...
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="Assistant Minister Wan"]'Out of control'... Since the day I joined the Tianshi Bureaus and began studying engineering, the three words I've come to hate most are 'out of control'.
+[name="Assistant Minister Wan"]So, I place a lot more stock in the Grand Commandant's 'discrimination' over the 'meritocracy' that the Grand Tutor speaks of.
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="Ning Ciqiu"]You'll have plenty of time to impeach the Ministry of Rites after this crisis is over.
+[name="Ning Ciqiu"]Our top priority is to cut the connection between the plates and the core city. If we can't regain control at that point, then we must destroy the core city.
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="Assistant Minister Wan"]I understand you don't appreciate the way I fawn upon the powerful figures, but I'm not so petty as to fail to grasp the overall situation.
+[name="Assistant Minister Wan"]You can go now. I will stop the device.
+[charslot(slot="r",name="avg_npc_298_1#4$1",focus="r")]
+[name="Ning Ciqiu"]All by yourself?
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="Assistant Minister Wan"]This is my project. My own projects have never gone out of control, nor will they ever.
+[charslot(slot="l",name="avg_npc_1241_1#2$1",focus="l")]
+[name="Assistant Minister Wan"]If it is to fail, then I should be the one to destroy it, and pay whatever price I must.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g6_civilengineermasteroffice",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1")]
+[charslot(slot = "right", name = "avg_npc_1236_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1",focus="l")]
+[name="Assistant Minister Wan"]You want to help me finish this project? Why?
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="Ji"]I find you a sagacious partner, Assistant Minister Wan. I trust that our business will go smoothly.
+[name="Ji"]I see how much you value this project... The material aid I sent is a token of my sincerity.
+[charslot(slot = "left", name = "avg_npc_1241_1#10$1",focus="l")]
+[name="Assistant Minister Wan"]And you want me to pay for those supplies, yes? That's fine, name your price.
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="Ji"]You misunderstand, Assistant Minister Wan. What are these baubles worth, compared to you?
+[name="Ji"]I've forgotten... What is the annual salary a Minister earn in the Ministry of Engineering? And how long would you like to occupy that position, Assistant Minister Wan?
+[charslot(slot = "left", name = "avg_npc_1241_1#6$1",focus="l")]
+[name="Assistant Minister Wan"]...
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="Ji"]Nothing to be surprised about. I know how difficult it was for you to rise from a humble scholar to a second-tier official.
+[name="Ji"]For all the hemming and hawing in the court, their plans amount to nothing more than 'profit'. Which is why you took such a great risk to help a certain mandarin deal with the aftermath of Yumen.
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1",focus="l")]
+[name="Assistant Minister Wan"]Are you threatening me?
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="Ji"]I'm only out to make a deal here. It is to our mutual benefit that this project be completed.
+[charslot(slot = "left", name = "avg_npc_1241_1#3$1",focus="l")]
+[name="Assistant Minister Wan"]Fine... I accept.
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="Ji"]You've readily agreed to the terms. But, allow me to remind you that once you've signed this contract, you will have to pay the price, come what may.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="47_g5_factory_inside",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_npc_1241_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1241_1#4$1")]
+[name="Assistant Minister Wan"]All under Heaven live for profit, and die for profit.... Hmph. Do you think the only thing that matters to me is this minister's robe?
+[name="Assistant Minister Wan"]It's the lot of you who underestimate me!
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1241_1#5$1")]
+[PlaySound(key="$d_avg_magic_5", volume=1)]
+[PlaySound(key="$d_avg_magic_5", channel="2",delay=0.1)]
+[PlaySound(key="$d_avg_magic_5", channel="3",delay=0.2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_blddpgrn")]
+[name="Assistant Minister Wan"](Coughs up blood)
+[dialog]
+[stopmusic(fadetime=2)]
+[charslot]
+[delay(time=1)]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$rungeneral", loop=true, channel="a")]
+[charslot(slot="l",name="avg_4119_wanqin_1#2$1",duration=1)]
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",duration=1)]
+[StopSound(channel="a", fadetime=2)]
+[delay(time=2)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="He Sheng"]What's wrong? Why did you stop?
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="Grain Buds"]He Sheng...
+[name="Grain Buds"]I'm actually... a bit scared...
+[charslot(slot="r",name="avg_4122_grabds_1#3$1",focus="r")]
+[name="Grain Buds"]What's happening with all the farmland? Monsters are popping out from all over the place, like in the operas...
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="He Sheng"]To be honest, I'm scared too.
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="He Sheng"]But, I also know there are a lot of people even more scared, and they don't know what to do.
+[name="He Sheng"]There's still something I can do. I can still protect them...
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="Grain Buds"]Big Buffalo, even though I always call you a stupid buffalo, you're actually the smartest person I've ever met. You know so much; much more than anyone else when it comes to farming.
+[name="Grain Buds"]Which is why no matter what happens, you have to swear to keep yourself safe. Your dreams will surely come true!
+[name="Grain Buds"]Whatever you do, don't think nobody cares about you just because you have no family... It's just...
+[charslot(slot="l",name="avg_4119_wanqin_1#7$1",focus="l")]
+[name="He Sheng"]What's gotten into you all of a sudden?
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="Grain Buds"]I don't know... Maybe it's because I'm scared that I'm blurting out all the things I normally keep buried deep down.
+[name="Grain Buds"]*sigh*... If only Shu were here. She'd know what these things are.
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="He Sheng"]Huh...? Who?
+[charslot(slot="r",name="avg_4122_grabds_1#7$1",focus="r")]
+[name="Grain Buds"]What did I... just say?
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="He Sheng"]Who... is Shu?
+[charslot(slot="r",name="avg_4122_grabds_1#11$1",focus="r")]
+[name="Grain Buds"]But, there was someone with us. She knew everything.
+[Dialog]
+[PlaySound(key="$flashback")] 
+[MusicVolume(volume=0.3, fadetime=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_2025_shu_1#9$1")]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g7_fieldhouse",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", bstart=0.2,bend=1,fadetime=2)]
+[delay(time=1.5)]
+[charslot(duration=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1")]
+[charslot(slot="r",name="avg_4122_grabds_1#11$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[MusicVolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="He Sheng"]What are you talking about...?
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="Grain Buds"]I don't know...
+[name="Grain Buds"]A couple days ago, someone stopped me along the riverbank and told me a story...
+[charslot(slot="r",name="avg_4122_grabds_1#7$1",focus="r")]
+[name="Grain Buds"]Oh right, the riverbank...
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[MusicVolume(volume=0.3, fadetime=2)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g8_crestofweir",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_1243_1#1$1",duration=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#9$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_4122_grabds_1#1$1",focus="l")]
+[name="Grain Buds"]How about this song?
+[charslot(slot="r",name="avg_npc_1243_1#2$1",focus="r")]
+[name="Silent Lumberjack"]...
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="Grain Buds"]Not a fan, huh?
+[name="Grain Buds"]Is 'Come Home Soon, Little Flower' the only song you like?
+[charslot(slot="r",name="avg_npc_1243_1#1$1",focus="r")]
+[name="Silent Lumberjack"]...
+[charslot(slot="l",name="avg_4122_grabds_1#11$1",focus="l")]
+[name="Grain Buds"]Did I tell you that I got into a fight with He Sheng?
+[name="Grain Buds"]He said that if I kept skipping school, all the good students would go off to Baizao but I'd have to stay here. So mean, right? Don't you think he's just trying to provoke me for no reason?
+[charslot(slot="r",name="avg_npc_1243_1#7$1",focus="r")]
+[name="Silent Lumberjack"]...
+[charslot(slot="l",name="avg_4122_grabds_1#8$1",focus="l")]
+[name="Grain Buds"]What's wrong with the way I am anyway? I just want to stay here and wait for my parents to come back.
+[dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0",duration = 0.8)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=0, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l",posfrom = "0,0", posto = "-70,0",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="Grain Buds"]Hey! Why are you chasing me off again?!
+[dialog]
+[charslot(slot = "r",posfrom = "-100,0", posto = "-200,0",duration = 0.8)]
+[delay(time=0.3)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=0, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l",posfrom = "-70,0", posto = "-170,0",duration = 0.6)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="Grain Buds"]Okay, okay, I'm leaving! Woah! Watch where you're swinging that axe!
+[stopmusic(fadetime=3)]
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1")]
+[charslot(slot="r",name="avg_4122_grabds_1#4$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_4122_grabds_1#4$1",focus="r")]
+[name="Grain Buds"]He Sheng, I...
+[playMusic(key="$formal_loop", volume=0.6)]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="Grain Buds"]...There's someone on the other side of the river who hasn't evacuated yet!
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="He Sheng"]Grain Buds! Don't run off!
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="Grain Buds"]I'll be fine! The mute uncle only listens to me, so I have to bring him back! Everyone in Dahuang's gonna be safe and sound!
+[dialog]
+[PlaySound(key="$rungeneral", volume=0.7)]
+[charslot(slot = "r",posfrom = "0,0", posto = "300,0",duration = 1,afrom=1,ato=0)]
+[delay(time=1.5)]
+[charslot(slot = "m", focus = "n")]
+[name="Grain Buds"]I'll see you soon, in the center city!
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

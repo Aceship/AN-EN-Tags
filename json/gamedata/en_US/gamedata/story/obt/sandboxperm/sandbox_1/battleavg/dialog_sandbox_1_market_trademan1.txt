@@ -1,0 +1,12 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]Hello! I finally found your haven by following your directions. I don't have any new goods right now, though...
+[decision(option1="Are you enjoying the place?", value1="1.1", option2="We'll come again next time.", value2="1.2")]
+[predicate(references="1.1", visibleCondition="!c0")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]I never imagined I would find such an enjoyable place around here. Please, accept this token of my gratitude.
+[additem(itemId="sandbox_1_craft_7", itemCount="1")]
+[decision(option1="Thank you for the gift.", value1="2.1")]
+[predicate(references="2.1")]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_craft_7", value="1")]

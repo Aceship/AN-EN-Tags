@@ -1,0 +1,77 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="47_g30_oasis2",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot]
+[name="연로한 족장"]아미르군을 물리친 사람은 그대들이 처음이오. 참으로 감사드리오.
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="유넥티스"]비록 이번 습격은 막아냈지만, 아미르군이 이대로 포기하진 않을 거야. 캠프에 인원도 많지 않아, 우리에겐 더 많은 지원이 필요해.
+[charslot]
+[name="연로한 족장"]그러고 보니, 에클루무 오아시스에 있는 아다크리스 부족이 우리랑 왕래가 있었는데, 어쩌면 그들이 도움을 줄 수 있을지도 모르겠소.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]그들의 지원이 있다면 다음 전투는 더 유리하겠네.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]게다가, 이곳에서 오래 살았으니 분명 보물에 관한 단서도 알고 있을 거야.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="유넥티스"]그런데 그 보물이 도대체 무엇이길래 아미르군이 자꾸 몰려드는 거야?
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="투예"]아미르군 포로를 몇 명 심문해 봤는데, 그들도 '보물'의 정체를 모르더라.
+[charslot(slot="m",name="char_416_zumama_1#6",focus="m")]
+[name="유넥티스"]그놈들도 '보물'의 정체를 모른다고?!
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="투예"]응, 심지어 납치든 약탈이든 전부 '보물'을 찾기 위해서라던데. 직접 찾아낼 수 없으면 현지인을 겁박해서라도 찾아낼 거래.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="유넥티스"]어쩜 이리도 야만적일까…… 지금 아미르군이 사방을 들쑤시고 다니는데, 그 부족은 괜찮을지…… 아무도 모르겠네.
+[charslot]
+[name="연로한 족장"]그들이 오아시스에 신전을 지었소. 신전을 찾아낸다면 분명 그들을 만날 수 있을 것이오.
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="투예"]그래도 나는 현재 상황을 본함에 보고하고, 지원을 기다려야 한다고 생각해.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]걱정 마, 지원 요청은 이미 보냈으니까. 우리는 얌전히 기다리고 있으면 돼.
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_215_mantic_1#3$1",focus="m")]
+[name="맨티코어"]저기…… 지원 물자는 이게 다야. 이 목록을 확인해 줘.
+[Dialog]
+[charslot]
+[Decision(options="다들 수고했어.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#5$1",focus="m")]
+[name="투예"]본함에서 이렇게 많은 사람을 보내 줄 거라곤 생각도 못 했는데.
+[charslot(slot="m",name="avg_215_mantic_1#10$1",focus="m")]
+[name="맨티코어"]그…… 그러게. 한 명이 더 있는데, 지금 짐을 나르고 있어. 곧 올 거야……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m",duration=2)]
+[delay(time=4)]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="r")]
+[Decision(options="아, 패신저였구나.", values="1")]
+[Predicate(references="1")]
+[Decision(options="오랜만이네.", values="1")]
+[Predicate(references="1")]
+[Decision(options="오느라 수고했어.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="패신저"]별말씀을요, 이번 외근 임무에서 박사님을 도울 수 있어서 영광입니다.
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="패신저"]하지만 미리 말씀드릴 얘기가 있습니다. 이번에 온 김에 사적인 일도 처리하려 합니다. 나중에 부디 허가를 부탁드립니다.
+[Dialog]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="r")]
+[Decision(options="물론, 문제없어.", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,77 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="47_g30_oasis2",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot]
+[name="年老いた族長"]首長の手先を撃退した者を見るのは初めてだ。そなたらに感謝を。
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="ユーネクテス"]今回は退けることができたが、首長軍がただで引き下がるとは思えない。拠点の人手も足りないし、さらなる援助が欲しいところだ。
+[charslot]
+[name="年老いた族長"]そういえば、エクルムイのオアシスに住むアダクリスの部族とはかつて交流があったのだが、彼らなら力を貸してくれるかもしれぬ。
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]なるほど。手を借りることができれば、今後の戦闘を有利に進めることができそうだな。
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]それに、この地に長く住んでいる彼らであれば、宝に関する手がかりも持っているはずだ。
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="ユーネクテス"]しかし、これほど多くの首長軍を魅了する宝というのは、一体何なのだろう。
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="トゥイエ"]首長軍の捕虜数人に尋問をしてみたんだが、奴らも「宝」が何なのかはわかっていないようだった。
+[charslot(slot="m",name="char_416_zumama_1#6",focus="m")]
+[name="ユーネクテス"]何？　「宝」の正体も知らずに動いているのか？
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="トゥイエ"]ああ。人を捕まえるのも、略奪するのも、すべては「宝」を見つけるための行動で、自力で見つけられないのなら地元の人間に無理やり探させるまで、だそうだ。
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="ユーネクテス"]なんと野蛮なやり口だ……首長軍が至る所へ侵略している今、例の部族がまだ無事でいてくれるかは、何とも言えないところだな。
+[charslot]
+[name="年老いた族長"]彼らはオアシスに霊殿を建てている。霊殿が見つかれば、自ずと彼らも見つかるだろう。
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="トゥイエ"]だが、ひとまずは現状を本艦に報告して、支援を待つことが優先だろう？
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]支援要請は出しておいたから安心してくれ。今は助けが来るまで辛抱強く待つとしよう。
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_215_mantic_1#3$1",focus="m")]
+[name="マンティコア"]ええと……支援物資は、これで全部。リストを……確認して。
+[Dialog]
+[charslot]
+[Decision(options="みんな、道中お疲れ様。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#5$1",focus="m")]
+[name="トゥイエ"]まさか、本艦がこれほどたくさんの人員を派遣してくれるとはな。
+[charslot(slot="m",name="avg_215_mantic_1#10$1",focus="m")]
+[name="マンティコア"]そ……そうだね。それと、もう一人……今荷物を下ろしてるところで……もうすぐ、来るから……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m",duration=2)]
+[delay(time=4)]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="r")]
+[Decision(options="おや、パッセンジャー。君だったのか。", values="1")]
+[Predicate(references="1")]
+[Decision(options="久しぶりだな。", values="1")]
+[Predicate(references="1")]
+[Decision(options="ここまでご苦労様。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="パッセンジャー"]滅相もないことでございます。此度は、外勤任務にてあなた様のお役に立てる機会をいただき、恐悦至極に存じます。
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="パッセンジャー"]ですが、事前に一つお伝えしておきたいことが。私がここへ参りましたのは私事もあってのことなのです。恐れ入りますが、その際は一時的に離脱させていただけたらと。
+[Dialog]
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="r")]
+[Decision(options="もちろん、構わない。", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

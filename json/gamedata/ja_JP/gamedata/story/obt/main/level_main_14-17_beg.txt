@@ -1,0 +1,474 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[focusout(duration=0.5, type="bg", from=0, to=1, block=true)]
+[Delay(time=1)]
+[PlayMusic(key="$babel_loop", volume=0.8)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+今日があなたにとってどんな意味を持っているのかを――覚えてはいないかもしれないわね。
+けど、思い出せないままでは、あなたは非常に危険な状況に陥りかねないわ。
+……
+いえ、それ以前に――
+あなたは思い出さなければならないの。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="謎の声"]……状態……安定……
+[name="謎の声"]……ごめんなさい……
+[name="謎の声"]また、大変な思いをさせてしまって。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image(image="avg_8_9",screenadapt="coverall")]
+[focusout(duration=0.5, type="cg" , from=0, to=1, block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="？？？"]……
+[name="？？？"]ドクター、私の手を握って。
+[name="？？？"]今度はもう何も言わず私のそばを離れたりしないでね。
+[Dialog]
+[focusout(duration=1.5, type="cg" , from=1, to=0, block=true)]
+[delay(time=0.5)]
+[name="？？？"]まあ、こんなことは二度とあってはならないとあなたも思っているでしょう？
+[name="？？？"]ん……どうしたの、Dr.{@nickname}……
+[name="？？？"]なぜそんな他人のような目で私を見るの？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect(name="$eb_dim_openeye",layer=1)]
+[image]
+[charslot]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[focusout(duration=0.1, type="bg", from=1, to=0, block=true)]
+[charslot(slot="m",name="avg_npc_083")]
+[delay(time=1)]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=2)]
+[bgeffect]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="（「未知の言語」）プリー……スティス……？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]あら、またどこでそんな奇妙な言語を覚えてきたの？
+[name="プリースティス"]今回の休眠中に、またこっそり思考をスパイラルアーム末端の文明にアップロードしたのかしら？
+[name="プリースティス"]さてと、あなたの言語機能の回復状況がいかがなものかもう一度確認しましょう。
+[name="プリースティス"]ぐっすり眠っていたせいで、私の名前まで忘れてしまったなんて言わせないよ。
+[name="プリースティス"]さあ、もう一度私の名前を呼んでちょうだい。データベースがあなたの音声データを全て分析するから。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="プリー……スティス……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]回復が早いわね、{@nickname}。
+[name="プリースティス"]でもあなたの身体は目覚めたばかりで、まだ完全には適応してないわ。
+[name="プリースティス"]焦って動き回ると、NX-07にベッドに叩き戻されるわよ。新しいコマンドは解くのが難しくて、私ですらどうにもできないの。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="君は……ここはどこだ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]もちろん「ロドス」、私たちの家よ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="ここにいるのは自分……一人だけか？;ロドスの……他のみんなは……", values="1;2")]
+[Predicate(references="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]そんなはずないでしょう？　私がいるのが見えないのかしら。
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]……やっぱりその質問ね。
+[Predicate(references="1;2")]
+[name="プリースティス"]異変が起きるのがはやくて。防御マトリックスの損傷は90%を超えているわ。その上、極限環境の影響を受けて、修理ユニットもすぐには機能を回復できなかった。
+[name="プリースティス"]あなたが眠りに落ちてからほどなくして、多くの同僚が相次いでここを去ったわ……みんなこの星が落ちるまでの時間を大切に思っているから、理解できなくもない。
+[name="プリースティス"]今、ここに残っている人は確かに私たち二人だけよ。もちろん、AMa-10もいるのよ、元気いっぱいで活発だわ。
+[name="プリースティス"]心配しないで、ロドスの残った部分でまだ基本機能は維持できるし私たちにはまだ少し時間が残されている。
+[name="プリースティス"]{@nickname}、あなたがそばにいてくれれば、終わりも怖くないわ。
+[name="プリースティス"]私たちの体を構成する物質が崩壊しようと、私たちの意識が変化を止めようと宇宙の法則が覆ろうと、私は平然と受け入れられる。
+[name="プリースティス"]あなたさえ、離れずそばにいてくれればそれでいいの。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]ぼうっとしてるけど、まだ夢から醒めてないのかしら、{@nickname}？
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+彼女はあなたの手を握りながら、自分の頬に当てた。
+その温かくてリアルな肌の感触は、あなたを夢から現実へと引き戻す。
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]もしそうだとしたら、私はあなたの夢を知りたいわ。
+[name="プリースティス"]でも、夢の中には私もいてほしいものね。
+[stopmusic(fadetime=2)]
+[Dialog]
+[charslot]
+[Decision(options="……;……夢なのか……？;……長い夢なのか……？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[focusout(duration=2, type="bg", from=0, to=1, block=true)]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_9_2",x=50, y=30,xScale=1.15, yScale=1.15, fadetime=0)]
+[focusout(duration=0.1, type="cg", from=0, to=1, block=true)]
+[delay(time=1)]
+[PlayMusic(key="$memory_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[focusout(duration=1.5, type="cg", from=1, to=0, block=false)]
+[delay(time=2)]
+「テラ」。
+あの大地……天災……そして鉱石病……
+しかしあの大地を何年も旅してきたあなたにとっては、すべてが現実味を帯びている。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_8_15",screenadapt="coverall")]
+[focusout(duration=0.1, type="bg", from=1, to=0, block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+人々の歓声がいまだあなたの耳元でこだまする。
+天災は未だかつて希望を打ち砕いたことはない。苦難の傷の下で、あなたは依然その恒久の余熱に触れることができる。
+優しい人々に囲まれていると、あなたはその温かさに胸を打たれるような感覚に包まれていった……
+「ロドス」。
+あなたが永遠に忘れることのないロドス。
+傷を癒してくれたロドス……かつて悔いを残したロドス……
+あなたは、いまだここに立っているのではないのか？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+彼らと共に、あなたは雪に覆われた地に行った。
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="24_g1_snowyforest", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+砂浜の柔らかさも感じた。
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[largebg(imagegroup="bg_beach_1/bg_beach_2", solidwidth="920/920", solidheight=720,x=-180)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+彼らが生きているのを目にした……
+[Dialog]
+[largebg]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="46_i01",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+彼らが離れるのを目にした……
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_6_13",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+彼らはあなたに確信させた――
+本来焼き尽くされるべき不公平な地において……理想はまた、信念でもあるべきだと。
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="bg_23_G08", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+熱気に焼かれることを気にもせずに、理想主義者とともにそれを越えたあなたは……
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="bg_topburning", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+帝国の卑劣を目にした。そして運命に抗う力がないゆえの悲しみも覚えた……
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="32_g1_lentiavenue", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+あなたは忘れない……
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_ac8mi_melancholic_kalts",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+――彼女を。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+彼女が、あなたのもとを離れたことはない。
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_0_1",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+彼女たちが離れたことはない。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+「ドクター……」
+「ドクター！」
+[Dialog]
+[Decision(options="（「未知の言語」）アーミヤ……", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[charslot]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="m",name="avg_npc_083")]
+[delay(time=0.5)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]ドクター！
+[name="プリースティス"]ぼうっとしちゃって、また私たちのものではない言語をぶつぶつ言い出していたわよ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="自分が経験してきたことは……とてもリアルだ。;あれは夢ではない。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]それは当たり前じゃない？
+[name="プリースティス"]{@nickname}、夢と現実を定義する権力は、いつも私たちの手に握られているわ。
+[name="プリースティス"]凍結した荒野で、人々が白色矮星に向けて生命を祭る儀式を行う場面があるとして、その儀式に宇宙の何億光年もの距離を越えて私たちの意識が参加するという体験は、どのように定義すればいいの？
+[name="プリースティス"]その意識がこの肉体に戻った後、何億万年もかけてようやく捕らえられた情報が夢か現実かをあなたはどうやって見分けるというの？
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]待って。まさか本当にこのことを考えてるわけじゃないわよね？
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="プリースティス……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]どうしたの、{@nickname}？
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="会ったこともないのに、どうして自分は君を知ってる？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]会ったこともないか……やっぱり気づかれちゃったわね。
+[name="プリースティス"]それを聞けてうれしいわ。あなたがもうすぐ私を見つけてくれる証だもの。
+[name="プリースティス"]けれどもやっぱり少しだけがっかりしちゃうわね。
+[name="プリースティス"]あの些細なハプニングのせいで、あなたの記憶は……確かに取り返しのつかない損傷を受けた。それはこの私ですらどうすることもできないほどのものね。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="ここも……ロドスなのか？;自分は以前ここに来たことがあるのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]ここはね……「アンノウン」よ。
+[name="プリースティス"]かつてこの場所を一緒に建てた時、私たちは同じことを願ったわ。
+[name="プリースティス"]星々の最後の温かさが消え去り、時のロードネットワークが完全に混乱に陥るその日、暗闇を私たち二人の布団にしましょうって。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……墓のように聞こえるが。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]元々この世界が、この星空が最後の瞬間を迎える時……私たちの宇宙は巨大な墓となる運命なの。
+[name="プリースティス"]希望はもう、どの星のどの片隅にも隠されていない。仮に救済の答えが秘められた宇宙の欠片の微粒子があるとすれば、私たちはそれをすでに掬いあげているはず。
+[name="プリースティス"]反抗はいずれも早々に破滅に終わり、繰り返される探索もより深い絶望をもたらすだけ……
+[name="プリースティス"]結論はとてもシンプルよ。いかなる普通の物質で構成された生命形態も逃れることはできない。いかなる知り得る技術も、その絶対的な終結に打ち勝つことはできない。
+[name="プリースティス"]ごめんなさい、{@nickname}……
+[name="プリースティス"]久々にあなたに思いを明かす機会だから、つい……
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="君と……親しいのか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]親しい？　私ならそんな単語でこの関係を表現しないわ。
+[name="プリースティス"]それは、私たちがこれまで積み重ねて来たものを愚弄する言葉よ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="覚えていないんだ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]平気よ、私は怒ってないから。
+[name="プリースティス"]たとえ脳が覚えてなくても、いかなる機器でも捉えられない意識の奥深くに……きっと私の痕跡がまだ残っているわ。
+[name="プリースティス"]でなきゃ……こうして私に手を握り続けさせてはくれないでしょ？
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="そうだな……;昔はよくこんなことしていたのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]「手を繋ぐ」ことね――うん、色んな形で「手を繋ぐ」体験ををしたわ。具体的な身体の部分に頼る必要がない場合も多かったわね。
+[name="プリースティス"]私たちが最初に出会った時……私は、海洋の星の周りを飛行していたわ。私はその恒星を不変の錨とし、昼夜の境界線に沿って、何周も回っていた。
+[name="プリースティス"]恒星の死はすぐに訪れた。下に見える海はほぼ一瞬で解離し、星の赤黒い背骨がむき出しになった。
+[name="プリースティス"]その時に私は誰かに後ろから引っ張られ、今までいた場所よりもさらに静かな星雲に引き込まれた。
+[name="プリースティス"]その人は私にこう説明したわ。多分安全だって分かっていたけど私の本体がどこのスターフィールドにいるか確認する暇がなかったから、自分の船で私の意識ビーコンを引き上げるしかなかったって。
+[name="プリースティス"]その時に、私は初めてあの卵形の船に乗ったわ。決して大きくはなかったけど、とても敏捷で、すでに無数の星系を行き来していた船だった。
+[name="プリースティス"]それから、私は船を賑やかとは言えない惑星へと連れて行った。船の主に、海に面した私の小さな実験室を見せてから、私はその人の前へと歩み寄った。
+[name="プリースティス"]こんなふうに……私はその人の手を握った。
+[name="プリースティス"]「私はプリースティス、言語学者よ。惑星が亡くなる際に発する最後の音波を研究しているの。静かな場所で一人で過ごすのも好きだけど、気が合う者と一緒に宇宙を探索したいとも思っているわ。」
+[name="プリースティス"]次は……
+[name="プリースティス"]あなたの番よ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="自分？　自己紹介をするのか？", values="1")]
+[Predicate(references="1")]
+[Decision(options="……{@nickname}だ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]素晴らしいわ、私たちまた知り合えたわね。
+[name="プリースティス"]そういえば、あの時もあなたは少しためらっていたわ。あの時代……人々がこうやって親しく接することは、もうだいぶ減っているのよ。
+[name="プリースティス"]幸いなことに、私たちが同類だった。あなたは私心なく私に自分の旅の見聞を共有し、そして私を誘ってくれた。
+[name="プリースティス"]私たちは時間と空間の中を飛び跳ね、宇宙のあちこちを訪れた。あなたの船に乗ることもあったけど、意識だけで行くことが多かったのよ。
+[name="プリースティス"]あなたは私に様々な文明の興亡と、星々の誕生と破滅の中に隠れてた法則を話してくれた。
+[name="プリースティス"]私たちの思考は互いにぶつかり合う中で無限に更新されていく。そして、それが他人を遥かに超えていたことに、立ち止まって振り返る時にようやく気付いた……
+[Dialog]
+[charslot]
+彼女の手の中で純粋な色をした結晶が転がる。
+[Dialog]
+[Decision(options="……源石。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]この私たちの論争と衝突の結晶には、無数の先駆者たちが宇宙を見守った際に残した真理が凝縮されている。
+[name="プリースティス"]なんて美しいのかしら……
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+彼女は源石をそっとあなたの手に置き、あなたの手を握って、共に美しき造物を持ち上げる。
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]誰もがみな、私のことを源石と未来を創り出した「神」のような人間だと言っている。
+[name="プリースティス"]でも本当の天才は{@nickname}、あなたなのよ。それを私が知っている。
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]あなたは忘れてしまったけど……忘れてはいけないことだったの。
+[name="プリースティス"]源石を創っていく中で、私はあなたの足跡を追い続けていた。
+[name="プリースティス"]いつかあなたとの弁論で後れを取って、私があなたに劣っていると気づかれてしまうのではないかと恐れていた。
+[name="プリースティス"]いいえ、あなたは気づいていたのかもしれない……そして、私が追いつけるようにわざと歩みを緩めたことがあるかもしれない。
+[name="プリースティス"]でも、その答えを知ることはもうできなくなったわ……
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="気にしているのか……答えを？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]ええ、でも私はこの事実を受け入れる。むしろ、喜ばしく思うわ。
+[name="プリースティス"]あなたの身にはいまだに私を魅了する秘密がたくさん秘められているから。
+[name="プリースティス"]それに、あなたにとっては、今の私も同じでしょ。
+[name="プリースティス"]そうじゃないの、{@nickname}？
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="確かに……分からないことはまだたくさんある。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]なら、引き続きこの場所で答えを探すといいわ。
+[name="プリースティス"]これは私たちの共同の造物であり、共有している過去でもある。そして、私たち二人が分け合う秘密を隠している。
+[name="プリースティス"]あなたが私と一緒にいてくれさえすれば――
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="申し訳ないが、今はそれよりも気になることがある。;それよりも重要なことを確認する必要がある。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]……
+[name="プリースティス"]本当は、あなたのために保存しておいたものを共有しようと思っているところなのよ。
+[name="プリースティス"]あなたがかつて私に語ってくれた、今ではあなた自身が完全に忘れてしまった理念とビジョン……
+[name="プリースティス"]そして、私たち二人が手に入れた成果をあなたに知ってもらいたいの。
+[name="プリースティス"]そうすればあなたは過去を、私を思い出してくれるかもしれない――
+[name="プリースティス"]だけど私はあなたが考えていることが見えるし、あなたが思っていることも感じられる。
+[name="プリースティス"]今この瞬間、あなたの脳内でいまだ渦巻いているその尽きることない疑問のように……
+[name="プリースティス"]「アーミヤ」「ケルシー」――
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="――！", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="プリースティス"]私は……あなたを困らせたくない。あなたの選択を尊重するわ。
+[Dialog]
+[charslot(duration=1)]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+彼女の手が暗闇に触れた――
+[Dialog]
+[Image(image="50_i16",screenadapt="coverall",block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[name="プリースティス"]だけど私は確信しているわ……{@nickname}……
+[name="プリースティス"]あなたが全てに対して本当の困惑を感じた時、きっと思い出してくれるでしょう。答えはずっとここにあると。
+[name="プリースティス"]私はここにいると。
+[Dialog]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=3, block=true)]
+[image]
+[Background(image="bg_white", screenadapt="coverall")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Subtitle(text="<color=#000000>行くといいわ、「ドクター」、その困惑を解くために。</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>あなたの願いは、私が全部叶えてあげられるわ。</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>そしてあらゆる巨大な脈動と微小な動悸が全て静寂に帰した後――</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>あなたの帰る場所は、私の傍となるでしょう。</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

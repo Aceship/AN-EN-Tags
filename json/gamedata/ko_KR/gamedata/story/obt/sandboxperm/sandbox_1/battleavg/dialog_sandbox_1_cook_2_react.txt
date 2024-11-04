@@ -1,0 +1,15 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]유넥티스 그 녀석이 시킨 겐가?
+[decision(option1="맞아, <color=#d8d769>크랩살 비빔밥</color>을 가져왔어.", value1="1.1", option2="저기, 잠시만……", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_1", itemCount="-1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]음식이 내 마음에 들지 않는다면 단단히 각오해야 할 거다.
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]어디 보자……
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]뭐야 이게?! 이딴 걸로 어물쩍 넘어가려 했다고?
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]좀 더 성의를 보여서 새로운 걸 가져오도록!
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_1", value="1")]

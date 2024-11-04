@@ -1,0 +1,22 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]What, did Eunectes tell you to come find me again?
+[decision(option1="Would you like to try this <color=#d8d769>Pressure-Cooked Soup</color>?", value1="1.1", option2="No, I was just passing by.", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_16", itemCount="-1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Really? Let me have a taste... hmm...
+[decision(option1="How is it?", value1="2.1")]
+[predicate(references="2.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Did you make this?
+[decision(option1="Yes.", value1="3.1")]
+[predicate(references="3.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]It's alright, but I'm still not satisfied.
+[decision(option1="But you licked the whole pot clean...", value1="4.1")]
+[predicate(references="4.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]I'm not satisfied yet, and that's that! What's with the kids these days?! You never understand me!
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Come back with another dish!
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_16", value="1")]

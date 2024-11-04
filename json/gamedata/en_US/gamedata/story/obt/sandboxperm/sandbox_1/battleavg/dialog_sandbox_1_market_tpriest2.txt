@@ -1,0 +1,13 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]What? You want more Jungle Bizarre Strange Flavor Candy? You'll need <color=#d8d769>two Strange Mixtures</color> for that!
+[decision(option1="Yes, we need more!", value1="1.1", option2="You're mistaken. We're just passing by!", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_0", itemCount="-2")]
+[additem(itemId="sandbox_1_food_44", itemCount="1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Let's call it here...
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_0", value="2")]

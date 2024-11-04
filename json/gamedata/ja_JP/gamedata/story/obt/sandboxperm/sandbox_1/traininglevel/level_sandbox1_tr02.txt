@@ -1,0 +1,58 @@
+[HEADER(is_tutorial=true, is_skippable=false)] xb1教学关2
+[Battle.lockFunction(mask="PAUSE_BUTTON_INTERACT")]
+[Battle.lockFunction(mask="BATTLE_STATUS")]
+[InputBlocker(blockInput=true)]
+[Delay(time=6)]
+[Battle.Pause]
+[Tutorial(dialogHead="$avatar_zumama")]木を伐採したら、落ちた木材を周囲のオペレーターが背負うことで採取は完了だ。
+[Tutorial(dialogHead="$avatar_zumama")]各オペレーターが背負える資源の数は、<@tu.kw>ブロック数</>と対応している。
+[InputBlocker(blockInput=true, cardIndex=5, validWidth=112, validHeight=116)]
+[Battle.EnsureMinCost(cost=17)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-611, startY=61, startAnchor="BottomRight", endAnchor="Center", endX=-110, endY=50)] \
+まずはオペレーターを木の周辺に配置し、伐採と同時に木材を運搬する準備を整えよう。
+[InputBlocker(blockInput=true)]
+[Delay(time=0.5)]
+[InputBlocker(blockInput=true, tileY=3, tileX=2, validWidth=169, validHeight=153)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-12, startY=47, endX=-14, endY=230)] \
+<@tu.kw>上方向</>に配置してくれ！
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=9)]
+[Battle.Pause]
+[Tutorial(focusX=-46, focusY=136, focusWidth=94, focusHeight=82, anchor="Center",\
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+伐採を終えた後は、付近のオペレーターが自分で木材を背負ってくれるぞ。
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+なお、一度資源を背負っておけば、撤退しても撃破されても、集めた資源は無事に持ち帰ることができる。
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+加えて、戦闘終了時には、その場のオペレーター全員が背負った資源もまとめて回収されるぞ。
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+では、木材を背負ったオペレーターを撤退させてみよう。
+[SandboxBattle.LockCamera(enable=false)] 
+[InputBlocker(blockInput=true, tileY=3, tileX=2, validWidth=40, validHeight=40)]
+[Tutorial(protectTime=0.5, tileY=3, tileX=2, waitForSignal="char_info", \
+          animStyle="Click", focusStyle="HighlightCircle", black="$f_tut_black", focusWidth=100, focusHeight=100,)]
+[SandboxBattle.LockCamera(enable=true)] 
+[Delay(time=0.5)]
+[InputBlocker(blockInput=true, validX=-77, validY=142, validWidth=96, validHeight=73)]
+[Tutorial(focusX=-77, focusY=142, focusWidth=96, focusHeight=73, waitForSignal="withdraw", \
+          animStyle="Click", focusStyle="HighlightCircle", black="$f_tut_black")] 
+[InputBlocker(blockInput=true)]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]よし。無事、木材を集めることができたな。
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]こういった資源は、一定数取り終わるまで、同じ場所から何度も採取することができるぞ。
+[Tutorial(focusX=-14, focusY=-34, focusWidth=255, focusHeight=49, anchor="Top", \
+          animStyle="Highlight", focusStyle="HighlightRect", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+だが、外で長時間作戦行動を行うのはやめたほうがいい。無駄なく時間を活用して、できるだけ多くの木材を採取するんだ。
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=4, offsetX=13, time=2)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+……とはいえ、作業の邪魔をしにくる予期せぬ訪問者というのは常にいるものだ。
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+奴らのことは私に任せて、お前たちは引き続き木材を集めてくれ。
+[Battle.Pause(pause=false)]

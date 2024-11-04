@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+[uioperation(target="", item="sandbox_1_dimensioncoin", enable="TRUE")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]자, '아르살란 대추첨'에 도전해 보시겠습니까? 새로 들어온 경품도 있습니다! 한 번 추첨하면 <color=#d8d769>결정 파편</color> 1개가, 10번이면 10개가 필요합니다!
+[decision(option1="10번 추첨한다", value1="1.1", option2="기분이 어떤지 물어보러 왔어.", value2="1.2", option3="아니, 다른 일이 있어서.", value3="1.3")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_dimensioncoin", itemCount="-10")]
+[gacha(gachaPool="pool_npc1", cnt="10", all="FALSE")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]아하, 운도 참 좋으시군요! 다음에도 많은 참여 부탁드립니다!
+[withdraw(id="trap_415_trademan", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2", visibleCondition="!c1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]아주 좋습니다. 이 근처에 이렇게 기분 좋은 곳이 있을 거라곤 상상도 못 했습니다. 감사의 표시로 여러분께 소정의 선물을 드리겠습니다.
+[additem(itemId="sandbox_1_craft_7", itemCount="1")]
+[decision(option1="고마워.", value1="2.1")]
+[predicate(references="2.1")]
+[end]
+[predicate(references="1.3")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_dimensioncoin", value="10")]
+[condition(references="c1", key="itemGE", itemId="sandbox_1_craft_7", value="1")]

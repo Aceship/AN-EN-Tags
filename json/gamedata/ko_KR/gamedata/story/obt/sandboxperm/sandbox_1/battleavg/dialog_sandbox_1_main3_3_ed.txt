@@ -1,0 +1,35 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="13", y="3", charId="trap_471_tegmaus", isChar="FALSE", dir="LEFT")]
+[summontrap(x="14", y="4", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summonenemy(enemyId="enemy_7024_clking", x="10", y="4", endX="15", endY="3")]
+[move(enemyId="enemy_7024_clking", x="11", y="4")]
+[summonenemy(enemyId="enemy_7025_clbb", x="9", y="3", endX="15", endY="3")]
+[move(enemyId="enemy_7025_clbb", x="10", y="3")]
+[camerafocusto(offsetX="12", offsetY="4", time="2", scale="FAR")]
+[delay(time="1")]
+[foginview(leftBottomX="8", leftBottomY="2", rightUpX="15", rightUpY="7", id="fog_1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]듣기로는 너희들이 여러 곳을 다니며 순회공연을 했고, 무대 위아래에서 찰떡 호흡으로 사람들의 돈을 많이 털었다면서?
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]이래서 나는 오지랖이 넓은 인간들이 질색이야. 빨리 꺼져줬으면 좋겠네, 남의 구역에서 함부로 입을 놀리면 안 된다고 못 배웠어?
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="LEFT")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="TRUE"]꼭 부하들 앞에서 모래가 휘날리도록 처맞아야 정신 차리지?
+[name="곡예사 조수", avatarId="bavg_enemy_common", isAvatarRight="FALSE"](작은 목소리로) 보스, 만만치 않은 놈들입니다. 일단 철수하시죠.
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]흥, 앞으로 더 다가오기만 해봐. 얼마 전에 멋대로 막 돌아다니던 여자가 어떻게 됐는지 알아?
+[decision(option1="또 보물을 찾으러 온 사람인가?", value1="1.1")]
+[predicate(references="1.1")]
+[name="곡예사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]헤헤, 예의 없는 손님들이 어떤 결말을 맞이했는지 굳이 말하지 않아도 알겠지?
+[withdraw(id="enemy_7024_clking")]
+[name="곡예사 조수", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]보스, 좀 기다려 주세요!
+[withdraw(id="enemy_7025_clbb")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]막 돌아다니던 여자? 누구지? 설마 연락책이 찾아달라던 그 친구인가?
+[playanim(id="trap_471_tegmaus", anim="Idle", dir="RIGHT")]
+[decision(option1="맞을 거야.", value1="2.1")]
+[predicate(references="2.1")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]괜찮아, 녀석들이 도망친 곳은 우리가 가는 방향과 같은 곳이야.
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]언젠가는 다시 마주칠 거야.
+[withdraw(id="trap_471_tegmaus")]
+[withdraw(id="trap_467_ttuye")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

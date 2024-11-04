@@ -1,0 +1,13 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]何じゃ、ジャングルフレーバーキャンディが欲しいのか？　<color=#d8d769>謎の混合物が2つ</color>必要じゃぞ！
+[decision(option1="ああ、キャンディをくれ！", value1="1.1", option2="いや、たまたま通りかかっただけだ！", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_0", itemCount="-2")]
+[additem(itemId="sandbox_1_food_44", itemCount="1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]では、今回はこの辺りにしておくか……
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_0", value="2")]

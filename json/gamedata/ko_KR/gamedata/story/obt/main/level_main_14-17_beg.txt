@@ -1,0 +1,474 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[focusout(duration=0.5, type="bg", from=0, to=1, block=true)]
+[Delay(time=1)]
+[PlayMusic(key="$babel_loop", volume=0.8)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+오늘이 당신에게 어떤 의미인지…… 당신은 아마 기억하지 못할 것이다.
+이건 당신을 매우 위험한 상황에 빠뜨리게 될 것이다.
+……
+아니.
+당신은 반드시 기억해내야만 한다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="희미한 목소리"]……몸 상태…… 정상……
+[name="희미한 목소리"]……미안……
+[name="희미한 목소리"]또 당신을 고생시키고 말았네.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Image(image="avg_8_9",screenadapt="coverall")]
+[focusout(duration=0.5, type="cg" , from=0, to=1, block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="???"]……
+[name="???"]박사, 내 손을 잡아.
+[name="???"]다음부터는 말도 없이 떠나지 마.
+[Dialog]
+[focusout(duration=1.5, type="cg" , from=1, to=0, block=true)]
+[delay(time=0.5)]
+[name="???"]당신도 이런 일은 두 번 다시 안 된다고 생각할 거야, 그렇지?
+[name="???"]음…… 왜 그래, {@nickname} 박사……
+[name="???"]왜 그렇게 낯선 눈빛으로 날 쳐다봐?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[bgeffect(name="$eb_dim_openeye",layer=1)]
+[image]
+[charslot]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[focusout(duration=0.1, type="bg", from=1, to=0, block=true)]
+[charslot(slot="m",name="avg_npc_083")]
+[delay(time=1)]
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=2)]
+[bgeffect]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="('미지의 언어') 프리…… 스티스?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]하아, 그런 이상한 언어는 또 어디서 배워온 거야?
+[name="프리스티스"]이번 휴면 중에 또 몰래 사고를 스파이럴 암의 말단 문명에 업로드한 거야?
+[name="프리스티스"]자, 언어 기능이 얼마나 회복되었는지 다시 확인해 볼까?
+[name="프리스티스"]한숨 잤다고 설마 내 이름마저 잊어버린 건 아니겠지?
+[name="프리스티스"]자, 다시 한번 불러 봐. 데이터베이스가 당신의 음성 데이터를 모두 분석할 거니까.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="프리…… 스티스……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]회복이 빠르네, {@nickname}.
+[name="프리스티스"]하지만 당신의 몸은 이제 막 회복된 참이라, 아직 완전히 적응하진 못했을 거야.
+[name="프리스티스"]함부로 움직이면 NX-07이 다시 침대에 눕힐지도 몰라. 새로 바뀐 명령을 풀기 어려워서, 나조차도 어떻게 할 수가 없어.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="너…… 여긴 어디지?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]당연히 '로도스 아일랜드'지, 우리 집.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="나…… 혼자?;로도스 아일랜드의…… 다른 사람들은……", values="1;2")]
+[Predicate(references="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]혼자라니? 나도 여기 있잖아.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]……역시, 또 그 질문이구나.
+[Predicate(references="1;2")]
+[name="프리스티스"]사고가 일어난 건 순식간이었지. 방어 매트릭스의 손상은 90%를 초과했고, 극한적인 환경의 영향으로 수리 유닛도 곧바로 작업을 재개하기 어려워.
+[name="프리스티스"]당신이 휴면한지 얼마 되지 않아 많은 동료들이 연달아 이곳을 떠났어…… 다들 이 별이 지기 전까지의 시간을 소중히 여기고 있어. 그건 나도 이해해.
+[name="프리스티스"]남은 건, 확실히 우리 둘뿐이야. 물론, AMa-10도 있어. 정신도 멀쩡하고, 아주 활발해.
+[name="프리스티스"]걱정 마, 로도스 아일랜드의 나머지 부분은 기본 기능을 유지할 수 있으니, 아직 시간은 좀 남아있어.
+[name="프리스티스"]{@nickname}, 당신이 내 곁에 있어준다면 난 결말이 두렵지 않아.
+[name="프리스티스"]우리 몸을 구성하는 물질이 붕괴하든, 우리의 의식이 변화를 멈추든, 설령 우주의 섭리가 뒤바뀐다 하더라도 난 모두 받아들일 수 있어.
+[name="프리스티스"]당신만 내 곁에 있다면 말이야.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]여전히 넋을 놓고 있네. 아직도 꿈에서 덜 깬 거야, {@nickname}?
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+그녀는 당신의 손을 잡아 자신의 볼에 갖다 댔다.
+따뜻하고 현실적인 피부의 감촉이 당신을 꿈에서 현실로 돌아오게 했다.
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]그렇다면, 무슨 꿈을 꿨는지 알려줄 수 있을까?
+[name="프리스티스"]그 꿈에 내가 있었으면 좋겠는데.
+[stopmusic(fadetime=2)]
+[Dialog]
+[charslot]
+[Decision(options="……;……꿈……?;……긴 꿈 말인가……?", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[focusout(duration=2, type="bg", from=0, to=1, block=true)]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_9_2",x=50, y=30,xScale=1.15, yScale=1.15, fadetime=0)]
+[focusout(duration=0.1, type="cg", from=0, to=1, block=true)]
+[delay(time=1)]
+[PlayMusic(key="$memory_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[focusout(duration=1.5, type="cg", from=1, to=0, block=false)]
+[delay(time=2)]
+'테라'.
+그 대지…… 재앙…… 광석병……
+그러나 몇 년이나 그 대지를 여행해 온 당신에게 있어, 그 모든 것은 너무나도 현실처럼 느껴졌다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_8_15",screenadapt="coverall")]
+[focusout(duration=0.1, type="bg", from=1, to=0, block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+사람들의 환호가 여전히 귓가에서 맴돌고 있었다.
+재앙은 희망을 꺾은 적이 없었고, 고난의 상처 속에서도 당신은 여전히 그 영원한 여운을 만질 수 있었다.
+온기. 감동. 당신은 상냥한 사람들 속에 둘러싸여 있었다……
+'로도스 아일랜드'.
+당신이 영원히 잊지 못할 로도스 아일랜드.
+당신의 상처를 치유했던 로도스 아일랜드…… 아쉬움을 남겼었던 로도스 아일랜드……
+당신은 여전히 여기에 서 있지 않은가?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+그들과 함께 당신은 빙설로 뒤덮인 땅에 갔었고……
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="24_g1_snowyforest", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+모래사장의 부드러움도 느꼈었다.
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[largebg(imagegroup="bg_beach_1/bg_beach_2", solidwidth="920/920", solidheight=720,x=-180)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+그들의 삶을 지켜보았고……
+[Dialog]
+[largebg]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="46_i01",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+그들의 이별도 지켜보았다……
+[Dialog]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_6_13",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+그들은 당신에게……
+원래라면 완전히 불탔어야 할 불공평한 땅에서…… 이상도 신념이라는 것을 확신케 해 주었다.
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="bg_23_G08", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+화상은 신경 쓰지도 않고, 당신은 이상주의자와 함께 그 뜨거운 열기를 넘어……
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="bg_topburning", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+제국의 추악함을 보았고, 운명에 대항할 수 없는 슬픔을 느꼈다.
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Background(image="32_g1_lentiavenue", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+당신은 잊지 않았다……
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_ac8mi_melancholic_kalts",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+……그녀를.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+그녀는 당신을 떠난 적이 없다.
+[Dialog]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="avg_0_1",screenadapt="coverall")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+그들도 당신을 떠난 적이 없다.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+“박사님……”
+“박사님!”
+[Dialog]
+[Decision(options="('미지의 언어') 아미야……", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image]
+[charslot]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08,block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="m",name="avg_npc_083")]
+[delay(time=0.5)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]박사!
+[name="프리스티스"]넋이 나갔네. 또 이상한 언어로 중얼거리고 있었어.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="그 경험들…… 너무 진실 같아.;그건 꿈이 아니야.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]당연한 거 아니야?
+[name="프리스티스"]꿈과 현실을 정의할 수 있는 권한은 언제나 우리 손에 있었으니까, {@nickname}.
+[name="프리스티스"]우리의 사고가 수억 광년의 우주를 넘어, 꽁꽁 얼어붙은 광야에서 백색왜성을 향한 생명 의식에 참여할 때, 우리는 이 경험을 어떻게 정의할 수 있을까?
+[name="프리스티스"]당신의 사고가 이 몸으로 돌아온 후, 당신은 또 어떻게 수억 광년 후에야 포착하게 될 정보가 꿈인지 현실인지 구별할 수 있을까?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]잠깐만, 당신이 정말 이걸 생각하고 있는 건 아니지?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="프리스티스……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]왜 그래, {@nickname}?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="우린 만난 적이 없는데, 내가 어떻게 너의 이름을 알고 있지?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]만난 적이 없었나…… 역시 눈치챘군.
+[name="프리스티스"]그 말을 들을 수 있어서 정말 기뻐. 그건 당신이 곧 진정한 자신을 찾게 될 거라는 증거야.
+[name="프리스티스"]그래도 조금은 실망스러운걸.
+[name="프리스티스"]그 작은 사고 때문에 당신의 기억이…… 돌이킬 수 없는 손상을 입은 건 사실이야. 나조차도 어쩔 수 없을 정도로.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="여기도…… 로도스 아일랜드야?;내가 여기에 온 적이 있었어?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]여기는…… '불가지'야.
+[name="프리스티스"]예전에 함께 이곳을 지을 때, 우리는 똑같은 소원을 빌었어.
+[name="프리스티스"]별들의 마지막 온기가 사라지고 시간의 네트워크가 혼란에 빠지게 되는 날, 어둠이 우리의 이불이 되라고.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……무덤처럼 들리는데.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]이 세상이, 이 별하늘이 마지막 순간을 맞이할 때가 되면…… 어차피 우리 우주는 거대한 무덤으로 변하게 될 거야.
+[name="프리스티스"]그 어떤 별의 구석에도 숨겨진 희망 같은 게 없어. 만약에, 이 우주의 단 한 조각의 입자에라도 구원에 대한 해답이 숨겨져 있다면, 그건 우리가 진작에 건져냈을 거야.
+[name="프리스티스"]모든 저항은 사전에 궤멸할 것이고, 모든 탐구는 더 깊은 절망만 초래할 뿐이지……
+[name="프리스티스"]결론은 아주 간단해. 평범한 물질로 구성된 그 어떤 형태의 생명도 벗어날 수 없어. 우리가 알고 있는 그 어떠한 기술로도 절대적인 종말을 이겨낼 수는 없지.
+[name="프리스티스"]미안, {@nickname}……
+[name="프리스티스"]오랫동안 당신에게 털어놓을 기회가 없어서.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="우리는…… 친한 사이였어?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]친하냐고? 난 그런 단어로 우리의 관계를 표현하지 않아.
+[name="프리스티스"]그건 우리가 과거에 겪었던 모든 것에 대한 모욕이니까.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="기억이 안 나.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]괜찮아, 나는 화나지 않아.
+[name="프리스티스"]설령 당신의 뇌가 기억하지 못하더라도, 당신의 의식 깊숙한 곳, 그 어떤 기계로도 포착할 수 없는 곳엔…… 분명 내 흔적이 남아있을 거야.
+[name="프리스티스"]그게 아니라면…… 어떻게 내가 이렇게 계속 당신의 손을 잡을 수 있겠어?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="음……;예전에도 자주 손을 잡았어?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]음…… '손을 잡는 것'에도 여러 형태가 있지. 신체의 특정 부분에 의존할 필요가 없을 때도 많았어.
+[name="프리스티스"]우리가 처음 만났을 때…… 나는 해양 행성 주위를 돌고 있었어. 나는 항성을 변하지 않는 닻으로 삼아, 낮과 밤의 경계선을 따라 날고 또 날았었지.
+[name="프리스티스"]그런데 항성의 죽음이 너무 빨리 찾아왔어. 아래로 보이는 바다는 순식간에 해리되었고, 벌거벗은 행성은 검붉은 등뼈를 드러냈어.
+[name="프리스티스"]그때 누군가 뒤에서 나를 잡아당겼고, 나를 더 조용한 성운 속으로 끌고 갔지.
+[name="프리스티스"]그 사람은 내가 딱히 위험하지 않을 것 같다고 했지만, 내 본체가 어느 스타필드에 있는지 확인할 겨를이 없어서, 어쩔 수 없이 자신의 배로 내 의식 비컨을 끌어올릴 수밖에 없었대.
+[name="프리스티스"]그때 내가 처음으로 그 알 모양의 배에 탔어. 큰 배는 아니었지만, 매우 빨라서 수많은 은하계를 다녀왔지.
+[name="프리스티스"]그리고 나는 그 배를 번화하다고 할 수 없는 조용한 행성에 데려갔어. 배 주인에게 바다에 면한 내 작은 실험실을 보여주며 그 사람 앞으로 다가갔어.
+[name="프리스티스"]그렇게 난…… 그 사람의 손을 잡았어.
+[name="프리스티스"]“난 프리스티스라고 해, 언어학자야. 나는 행성이 죽을 때 내는 마지막 음파를 연구하고 있어. 나는 혼자 조용히 있는 걸 좋아하지만, 마음이 맞는 사람이라면 함께 우주를 탐색하고 싶기도 해.”
+[name="프리스티스"]자, 다음은……
+[name="프리스티스"]당신 차례야.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="나? 자기소개를 하라는 거야?", values="1")]
+[Predicate(references="1")]
+[Decision(options="난…… {@nickname}야.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]만나서 반가워. 우리 다시 알게 되었네.
+[name="프리스티스"]그러고 보니, 그때도 당신은 약간 망설였어. 그 시대엔…… 사람들이 이렇게 친하게 지내는 게 거의 없었거든.
+[name="프리스티스"]다행히 우린 같은 부류였어. 당신은 내게 자신의 여행 견문을 모두 공유했고, 심지어 나를 초대까지 했어.
+[name="프리스티스"]우리는 시간과 공간을 넘나드며 우주 곳곳을 누볐지. 가끔은 당신의 배를 타고 다니기도 했지만, 의식을 통해 다닌 적이 더 많았지.
+[name="프리스티스"]당신은 내게 여러 문명의 흥망성쇠, 그리고 별들의 탄생과 소멸 속에 숨어 있는 법칙을 설명해주었어.
+[name="프리스티스"]우리의 사고는 서로 부딪히며 무한대로 업그레이드되었어. 그리고 우리가 멈춰 뒤돌아봤을 때, 우리의 사고가 이미 다른 사람들을 훨씬 초월했다는 사실을 알게 되었지……
+[Dialog]
+[charslot]
+그녀의 손에서 한없이 순수한 결정체가 나타났다.
+[Dialog]
+[Decision(options="……오리지늄.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]우리의 논쟁과 충돌의 결정체에는 수많은 선구자들이 우주를 지키며 남긴 진리가 응축되어 있어.
+[name="프리스티스"]이 얼마나 아름다워……
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+오리지늄을 부드럽게 당신의 손에 올려놓은 프리스티스는 당신의 손을 잡고 함께 이 아름다운 창조물을 들어 올렸다.
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]모두가 나를 오리지늄과 미래를 창조한 '신' 같은 존재라고 해.
+[name="프리스티스"]하지만 난 알아, 진정한 천재는 내가 아니라 {@nickname}, 당신이라는 걸.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]당신은 잊었겠지만…… 잊어서는 안 돼.
+[name="프리스티스"]그것을 창조하는 길에, 나는 끊임없이 당신의 발자취를 따라가고 있었어.
+[name="프리스티스"]언젠가 당신과의 논쟁에서 낙오될까 봐 두려웠고, 당신이 내가 당신보다 못하다는 것을 알게 될까 봐 두려웠어.
+[name="프리스티스"]아니, 당신은 이미 알고 있었을지도 몰라…… 어쩌면 당신이 발걸음을 늦춰 나를 기다리고 있었을 수도 있어.
+[name="프리스티스"]하지만 그 답은 이제 영원히 알 수 없게 됐어……
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="그게…… 신경 쓰여?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]신경 쓰이지만, 난 그 사실을 받아들였어. 오히려 그걸 더 기쁘게 생각해.
+[name="프리스티스"]당신은 여전히 나를 매혹시킬만한 수많은 비밀을 갖고 있으니까.
+[name="프리스티스"]게다가 당신에게 있어 지금의 나도 마찬가지거든.
+[name="프리스티스"]안 그래, {@nickname}?
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="사실…… 아직도 많이 곤혹스럽긴 해.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]그럼 여기서 계속 답을 찾아봐.
+[name="프리스티스"]이곳은 우리 둘의 창조물이자, 공동의 과거이기도 해. 그리고 우리 둘의 비밀도 숨어 있어.
+[name="프리스티스"]당신이 나와 함께……
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="미안하지만, 지금 더 궁금한 게 있어.;그것보다 더 중요한 걸 확인해야 해.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]……
+[name="프리스티스"]사실 당신을 위해 저장해 온 것들을 보여주고 싶었는데.
+[name="프리스티스"]당신이 예전에 내게 그렸던, 지금의 당신은 완전히 잊어버린 이념과 미래……
+[name="프리스티스"]그리고 우리가 이룬 성과들.
+[name="프리스티스"]어쩌면 당신이 과거를, 나를 떠올릴지도 모르니까……
+[name="프리스티스"]하지만 나는 당신이 생각하는 것을 볼 수 있고, 느낄 수 있어.
+[name="프리스티스"]지금 이 순간에도 당신의 머릿속에는 수많은 의문들이 끊임없이 소용돌이치고 있지……
+[name="프리스티스"]……'아미야', '켈시'.
+[Dialog]
+[charslot(slot="m",name="avg_npc_083",focus="n")]
+[Decision(options="……!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_083",focus="m")]
+[name="프리스티스"]난…… 당신을 곤란하게 하고 싶지 않아. 당신의 선택을 존중할게.
+[Dialog]
+[charslot(duration=1)]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+그녀의 손이 어둠에 닿았다……
+[Dialog]
+[Image(image="50_i16",screenadapt="coverall",block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[name="프리스티스"]하지만 난 확신해…… {@nickname}……
+[name="프리스티스"]모든 것이 혼란스러울 때, 당신은 기억날 거야…… 답은 항상 여기에 있었다는 사실을.
+[name="프리스티스"]내가 여기 있다는 것을.
+[Dialog]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=3, block=true)]
+[image]
+[Background(image="bg_white", screenadapt="coverall")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Subtitle(text="<color=#000000>가, '박사', 가서 당신의 곤혹을 해결해.</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>당신의 모든 소원을 내가 이뤄줄 수 있어.</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>하지만 거대한 박동이든 미세한 떨림이든, 모두 정적으로 돌아가고 나면……</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="<color=#000000>내 곁이 당신이 돌아가야 할 곳이 될 거야.</color>", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

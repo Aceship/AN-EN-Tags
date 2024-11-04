@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]후우, 드디어 끝났네. 며칠 연속으로 작업했더니 완전 녹초가 된 기분이야.
+[decision(option1="도와줘, 유넥티스!", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="대제사장이 좋아하는 요리가 도대체 뭐야?", value1="2.1")]
+[predicate(references="2.1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]뭐야, 할아범이 아직도 삐져 있어?
+[decision(option1="화 때문인지 깃털도 계속 빠지던데.", value1="3.1")]
+[predicate(references="3.1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]내게 맡겨. 할아범의 입맛은 내가 잘 알지.
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]하지만 그 전에 특별한 조미료가 필요해. 우선 <color=#d8d769>고압 수프</color> 하나 만들어 줄 수 있어?
+[decision(option1="그건 할 줄 알아.", value1="4.1", option2="떠난다.", value2="4.2")]
+[predicate(references="4.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_16", itemCount="-1")]
+[name="유넥티스", avatarId="char_416_zumama", isAvatarRight="FALSE"]고마워, 나중에 필요한 걸 얻을 수 있을 거야.
+[withdraw(id="trap_466_tzumama", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="4.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_16", value="1")]

@@ -1,0 +1,40 @@
+[header(actId="sandbox_1", npcId="trap_415_trademan")]
+[foginview(leftBottomX="4", leftBottomY="5", rightUpX="10", rightUpY="8", id="fog_1")]
+[summontrap(x="8", y="6", charId="trap_415_trademan", isChar="FALSE", dir="LEFT")]
+[summontrap(x="5", y="6", charId="trap_467_ttuye", isChar="FALSE", dir="RIGHT")]
+[camerafocusto(offsetX="7", offsetY="6", time="0.2", scale="FAR")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(id="trap_415_trademan", offsetX="-1", scale="CLOSE", time="1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="TRUE"]설마 이 정글에서 다른 여행자를 만날 수 있다니, 여러분 안녕하세요~
+[camerafocusto(id="trap_467_ttuye", offsetX="1", scale="MID", time="1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]그쪽은 누구지? 여긴 어쩐 일로 왔어?
+[camerafocusto(id="trap_415_trademan", offsetX="-1", scale="CLOSE", time="1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="TRUE"]우선 제 소개부터 할게요. 저는 선밸리 기계공업의 영업사원입니다. 여러분을 위해 저희 회사의 제품을 소개해 드리려고 여기까지 찾아왔지요.
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="TRUE"]자, 날이면 날마다 오는 기회가 아닙니다! 품질 보장, 합리적인 가격, 더 중요한 건 완벽한 AS까지!
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]고객께서 원하신다면, 저희는 그 어디라도 달려갈 수 있습니다.
+[decision(option1="우선 그 늪에서 빠져나오는 게 어때?", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="점점 가라앉고 있는 것 같은데.", value1="2.1")]
+[predicate(references="2.1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]아, 괜찮습니다. 저 스스로 해결해 보도록 하지요. 그, 그런데 혹시 어느 쪽으로 가야 쉴 만한 곳이 있는지 아십니까?
+[decision(option1="북쪽으로 가면 우리 캠프가 있어.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="우리한테 이득이 될 만한 부분이 뭔데?", value1="4.1")]
+[predicate(references="4.1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]제게 도움을 주신다면 저 또한 여러분께 도움을 드리지요. 장담합니다만, 절대 여러분께 손해를 끼치는 일은 없을 겁니다.
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]아, 참고로 이 근처에 채석장이 있는데 거기서 석재를 구할 수 있을 겁니다. 이건 서비스 차원에서 드리는 정보라 치죠.
+[decision(option1="고마워, 연락책 씨.", value1="5.1")]
+[predicate(references="5.1")]
+[decision(option1="캠프에서 만나기를 기대할게.", value1="6.1")]
+[predicate(references="6.1")]
+[withdraw(id="trap_467_ttuye")]
+[uioperation(target="main", item="", enable="False")]
+[delay(time="3")]
+[emoji(target="trap_415_trademan", emoji="common_bubble_happy")]
+[delay(time="2")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]훗, 드디어 당신들을 만났군요, 대형 거래처 로도스 아일랜드. 이곳에 며칠 동안 있던 보람이 있네요.
+[withdraw(id="trap_415_trademan")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

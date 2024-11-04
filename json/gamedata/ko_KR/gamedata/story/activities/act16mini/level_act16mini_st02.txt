@@ -1,0 +1,913 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.2,fadetime=1)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.2,fadetime=1)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="bgs")]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="황야에 날아오른 모래바람이 캐터필러가 지나간 흔적을 지워버리는 모습은 이미 셀 수 없이 봐왔다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="다들 나를 '황야의 알라나'라고 부르지만, 나는 막을 수 없는 모래 폭풍이 아니라 그저 바람에 밀려 끊임없이 황야를 떠도는 회전초일 뿐이다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="인부들과의 내기는 내 솜씨를 보여줄 수 있는 무대였고, 승객들과의 만남은 내 자랑스러운 수닷거리였다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="하지만…… 이게 정말로 내 이야기라고 할 수 있을까?", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="외로운 수송차는 대지를 누비고 있고, 차 밑은 광활한 사막이며 차 위는 찬란하게 빛나는 태양이다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그것은 과거의 길을 따라가지 않고, 그것의 앞길에는 어긋남이 있다.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그것이 원하는 건 무엇일까? 또 무엇으로부터 도망치고 있는 걸까?", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="그렇다면…… 내가 원하는 건 무엇일까? 나는 또 무엇으로부터 도망치고 있는 걸까?", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[StopSound(channel="bgs", fadetime=3)]
+[curtain(direction = 0,fillfrom = 0.2,fillto = 0,fadetime=3)]
+[curtain(direction = 4,fillfrom = 0.2,fillto = 0,fadetime=3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=3)]
+[PlaySound(key="$d_avg_truckengine", volume=0, loop=true, channel="bgs")]
+[SoundVolume(channel="bgs", volume=0.7, fadetime=0.5)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[name="알라나"]날씨 좋네. 저 멀리 오리지늄 결정까지 보이는걸. 이대로면 순조롭게 목적지에 도착할 수 있겠어.
+[name="???"]……
+[name="알라나"]아무 말이 없네. 뭐라도 하고 싶은 말 없어?
+[name="알라나"]지금까지 운전기사 생활을 하면서 너처럼 과묵한 승객은 처음이야.
+[name="???"]하고 싶은 말이라니, 뭘?
+[StopSound(channel="bgs", fadetime=4)]
+[PlaySound(key="$d_avg_faucetoff", volume=0.6)]
+[name="알라나"]아냐, 됐어…… 자, 잠깐만…… 그건 또 왜 들이밀고 그래?
+[name="???"]뭐 하는 거지?
+[name="알라나"]창문을 열어서 환기 좀 시키려고! 맹세코 다른 짓은 안 해!
+[name="???"]알았어.
+[name="알라나"]그나저나 이것부터 머리에서 좀 치워 주면 안 될까? 말로 하자고, 말로.
+[dialog]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l",duration=0.5)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]그리닝 밸리로 가기만 한다면 네가 다치는 일은 없을 거야.
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]차를 강탈한 것도 모자라, 석궁인지 화포인지 분간할 수도 없는 걸로 내 머리를 겨냥하고 있으면서, 다치는 일이 없을 거라고? 이 안에는 대체 뭐가 들어 있는 거야?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]특수 제작한 화살이야. 특히 감염 생물이 많이 두려워하지.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]사실 내가 기대한 대답은 화살이 아니라 '당근'이나 '사탕'이었는데.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]그래도 다행이야. 난 감염 생물이 아니니까, 무서워하지 않아도 되겠네.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]하지만 그걸 계속해서 나한테 겨눈다면……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]음……
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="알라나"]만약 네가 방아쇠를 당겨서, 그러니까 내 말은 혹시라도…… 내가 쓰러지면 이 차는 누가 운전해?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]네가 쓰러진다면, 내가 운전하면 돼.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]운전할 수 있다고? 네가 운전대를 넘겨받을 때면 차는 진작에 통제 불능이 될걸?
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]절벽을 향해 돌진하든가, 아니면 커다란 오리지늄 결정에 부딪히든가.
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="알라나"]쾅…… 하고 말이야.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]뭐, 네가 운전할 수 있고, 이 차도 통제 불능이 안 된다고 치자.
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]그런데 내가 죽으면 다른 사람들은? 저 사람들은……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]그러니까, 저 자라크의 안전은 어떡할 건데?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]난 분명 기회를 줬어. 차에서 내리지 않은 건 너희들이지.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]난 그저 이 차가 필요했을 뿐이야.
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]뭔가 이상한 점을 못 느꼈어? 다른 사람들이 왜 차에서 내리지 않는지?
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]내가 너였다면, 저 사람을 무서워했을 거야.
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]사고 치고 도망치는 놈일 수도 있고, 직장에서 잘려 실의에 빠진 재수 없는 녀석일 수도 있고……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]아니면, 널 쫓고 있는 사복 경찰일 수도 있잖아? 벌벌 떨고 있는 것처럼 보이지만, 사실 엄청난 실력을 숨기고 있을지도 모르지!
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]이 세상에 비밀이 없는 사람이 어디 있어, 안 그래?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……그렇지.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]내가 내리지 않는 이유는…… 회사에 고용된 직원으로서 회사 자산을 안전하게 지켜야 할 책임이 있기 때문이야.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]나와 함께한 세월이 얼만데, 감정으로나 도리로서나 모르는 녀석한테 그냥 넘길 순 없거든.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[multiline(name="알라나",delay=0.2)] 이 차는 원래……
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[multiline(name="알라나")] ……그래 그래, 원래는 이 녀석의 새로운 삶을 위해 떠날 예정이었어!
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[multiline(name="알라나",delay=0.01,end=true)]이 차는 원래 매일 엄청난 양의 광석을 실어 나르는 아이언 캐럿 시티에서 손님들의 주목을 받으며 자동차 공장으로 들어갔었어야 했다고.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[multiline(name="알라나",delay=0.01,end=true)]이놈은 거기서 더 멋지고 더 새로운 모델로 개조돼야 했어. 예를 들어 실드 머신 같은 모듈이 탑재되면, 재앙 경보가 울릴 때 바로 땅에 구멍을 파고 들어가 대피할 수 있게.
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[multiline(name="알라나",delay=0.01,end=true)]훗, 아무래도 내가 대신 너한테 고마워해야겠네! 아이언 캐럿 시티에서 보내게 될 새로운 삶이 물거품이 됐으니까! 네 덕분에 말이야!
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="차량 강탈범"]너는 말도 많고, 말하는 속도도 아주 빠르네. 대단해.
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="알라나"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#6$1", focus="r")]
+[name="차량 강탈범"]새로운 삶? 그게 뭔지 모르겠지만……
+[charslot(slot = "r", name = "avg_4117_ray_1#10$1", focus="r")]
+[name="차량 강탈범"]삶은 어딜 가나 똑같아…… 새롭든 오래됐든, 별 차이는 없지.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]뭐, 네 말이 맞을 수도 있어.
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="알라나"]그거 알아? 난 말이야, 갑자기 나타난 괴한이 무기를 내 머리에 겨누는 일조차 새삼스럽지 않아.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]……어쩌면 슬픈 일일지도 모르겠네.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……
+차량 강탈범은 커다란 석궁을 천천히 내려놓았다.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]왜 하필 이런 말에만 반응하는 거야? ……뭐, 됐어. 그래도 인간미는 남아 있나 보네.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]공공 교통수단을 돈도 안 내고 개인 전용 차량으로 쓰려면, 예의 정도는 지켜야지.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]그래야 이 사태에 말려든 사람들도 너한테 기꺼이 협력해 줄 테니까.
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="차량 강탈범"]아무도 끌어들일 생각은 없었어.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……내가 알기로는, 이 시간대에는 승객이 없다고 들었는데.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]음, 오랫동안 계획을 짜왔나 보구나.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]하지만 아무리 꼼꼼하게 계획을 세워도, 항상 예상외라는 게 있기 마련이잖아.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]그래, 나랑 이 고물딱지에겐 운이 좋다고 해두지, 뭐.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……목적지에 도착하면 너희들을 보내줄게.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]물론, 돈도 낼 거고.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]잘됐네, 그러길 바랄게.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]그럼 너의 그 '약속'을 믿고 그리닝 밸리로 가볼까…… 단, 이 차에 탄 모든 사람의 안전은 보장해야 돼. 그 석궁, 다시는 함부로 들지 말고.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]알았어.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]그럼, 강탈범 씨…… 자리에 앉아 바깥 경치라도 구경하면서 다음 역까지 기다려!
+[stopmusic(fadetime=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=2)]
+[playMusic(key="$formal_loop", volume=0.6)]
+[Background(image="27_g15_customs",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+얼마나 시간이 흘렀을까. 수송차는 천천히 속도를 늦추더니 그대로 멈췄다.
+도착한 곳은 검문소였다. 통행을 기다리는 차들이 줄지어 있었고, 앞쪽 차량이 빠져나가야 비로소 조금 앞으로 나아갈 수 있었다.
+예전 같으면 이건 알라나가 가장 싫어하는 일이었지만, 지금은 오히려 차가 더 밀리길 바라고 있었다.
+그래야 예정 노선을 이탈한 이 차량을 되찾을 가능성이 더 커지기 때문이었다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l",duration=0.5)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "r", name = "avg_4117_ray_1#4$1", focus="r")]
+[name="차량 강탈범"]차가 많네.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]또 어느 글로벌 대기업가가 근처 광산에서 나오는 광석을 싹쓸이하나 보네. 아마 다들 그 녀석을 위해 필사적으로 화물을 운반하는 거겠지.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]놈들이 물 흐르듯 돈 쓰는 바람에 도로를 달리는 우리 같은 사람들만 애먹는 거지.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]왜 다른 길로 안 가는 거야? 여긴 너무 밀리는데.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]그리닝 밸리로 가려면 반드시 그린미도우 자치주의 검문소를 통과해야만 해. 어쩔 수 없어.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]그래도 보통 불심검문은 안 해. 그냥 통행료를 내고 등록만 할 뿐이야.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]알았어.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"](뒤에 있는 차, 바싹 붙으란 말이야. 아주 좋아, 이제 퇴로는 막혔어.)
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",channel="slide",volume=1)]
+차량 강탈범은 자리에서 일어나 상황을 확인하려는 듯 좁은 통로를 따라 차의 뒤쪽으로 걸어갔다. 그리고 얼마 지나지 않아 바로 돌아왔다.
+[stopsound(channel="slide", fadetime=1)]
+[dialog]
+[delay(time=1.5)]
+[PlaySound(key="$d_gen_walk_n")]
+강탈범의 발소리가 가까워질수록 알라나의 심장 박동이 점점 더 빨라졌다.
+백미러에 강탈범의 전체 모습은 보이지 않았고, 손에 든 석궁만이 보였다.
+그리고 올리브 빛의 인영이 백미러에 비치는 모든 것을 뒤덮은 후에 알라나의 시야에 들어오더니, 다시 조수석에 걸터앉았다.
+상대는 마음도, 몸도 매우 침착한 것 같았다. 강탈범이 앉으면서 낸 옷과 좌석의 마찰 소리가 마침 알라나의 심장 소리를 가렸다.
+[PlaySound(key="$d_avg_clothmovement", volume=0.7)]
+[Dialog]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r",duration=0.5)]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]……무슨 일 있어?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]아무것도 아니야.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"](의심하는 건 같지 않네. 다행이다.)
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"](흥…… 그리닝 밸리로 가는 길이 이거 하나뿐이겠어? 이 길이 가장 빠른 건 사실이지만, 반드시 검문소를 통과해야 하는 것도 사실이거든.)
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"](검문소 직원이랑 대화할 수 있다면 구조 신호를 보낼 수 있을 거야. 이 녀석은 아마 전문 훈련을 받은 경비원을 당해낼 수 없겠지.)
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]재앙인가……
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="알라나"]어?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]이 차들, 재앙이나…… 아니면 다른 안 좋은 것을 피하고 있는 것 같아.
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]……왜? 그걸 어떻게 알아?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]차체에 감염 생물이 남긴 흔적이 있어. 게다가 분진…… 아주 조금이지만 볼 수 있으니까.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……그리고 차 안에 있는 사람들의 표정도.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]사고가 난 광산의 인부들이 저런 표정이었거든……
+[charslot(slot = "r", name = "avg_4117_ray_1#10$1", focus="r")]
+[name="차량 강탈범"]자신이 어디로 가야 할지 모를 때 보이는 초조함과 불안함이 딱 저랬어.
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]……기다려 봐.
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]물어보고 올게.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)] 
+[charslot]
+[Background(image="27_g15_customs",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[name="알라나"]어이, 거기 슬래그 덤프를 운전하는 형씨.
+[name="알라나"]대체 무슨 일이야? 오늘 왜 이렇게 밀려?
+[name="피곤한 운전기사"]너 더블헬멧 광산에서 온 거 아니지?
+[name="알라나"]러스트드레그 카운티에서 왔어.
+[name="알라나"]더블헬멧 광산이라면…… 내 기억으론 얼마 전까지만 해도 몹시 분주했을 건데. 자원이 풍부한 광맥이 새로 발견됐다면서……
+[name="피곤한 운전기사"]사고 났어.
+[name="피곤한 운전기사"]불안정한 오리지늄이 폭발하면서 갱도 전체가 완전히 무너져 버렸어. 지금 난리도 아니야……
+[name="알라나"]아…… 그거 큰일인데.
+[name="알라나"]그럼 너는 도망쳐 나왔어? 다른 사람들은?
+운전기사는 갑자기 심하게 기침했고, 알라나는 그제야 그의 안색이 이상하게 창백하다는 걸 알아챘다.
+[name="피곤한 운전기사"]쿨럭…… 그쪽에 있는 사람들은 운에 달렸다고 봐야지…… 내 아내와 아이도 운이 좋았으면……
+[name="피곤한 운전기사"]여기 있는 차들 대부분 나랑 같은 처지야. 집이 있어도 돌아가지 못하고. 현장이 정리되기 전까지는 다른 곳에 몸을 기댈 수밖에 없어.
+알라나는 뒤를 힐끗 돌아보았다.
+강탈범은 차분한 표정으로 반대편 창문을 바라보고 있었다.
+[dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)] 
+[charslot]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r",duration=0.5)]
+[charslot(slot = "l", name = "avg_npc_1183_1#5$1", focus="l",duration=0.5)]
+[delay(time=0.7)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]무슨 일 있어?
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]……아무것도 아니야.
+[charslot(slot = "r", name = "avg_4117_ray_1#5$1", focus="r")]
+[name="차량 강탈범"]차에 타려고 하네.
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="알라나"]뭐라고?
+[charslot(slot = "r", name = "avg_4117_ray_1#5$1", focus="r")]
+[name="차량 강탈범"]저 무기를 든 사람들이. 이 차에 타려 한다고.
+[dialog]
+[charslot]
+차에? 그러나 수송차에 다가오는 사람은 아무도 없었다.
+차량 강탈범의 시선을 따라간 알라나는 그제야 그녀가 무슨 말을 하는지 이해했다.
+검문소 경비원들이 앞차의 운전기사와 얘기를 나누고 있었고, 방호 장비를 갖춘 또 다른 경비원들이 난폭하게 차량 내부로 진입하고 있었다.
+얼마 지나지 않아, 경비원들은 운전기사를 끌어내렸다. 운전기사의 옷소매는 찢겨 있었고, 그의 팔에서는 오리지늄 결정이 노출되어 피까지 흐르고 있었다.
+순간 알라나는 알 수 없는 불안감이 엄습했다……
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="r")]
+[charslot(slot = "r", name = "avg_4117_ray_1#5$1", focus="r")]
+[name="차량 강탈범"]일일이 검사하고 있네.
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#5$1", focus="r")]
+[name="차량 강탈범"]감염자를 찾고 있어.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Background(image="bg_towerinside",screenadapt="coverall")]
+[Delay(time=1)]
+[PlayMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+수송차의 좁은 공구실에서 냄비 뚜껑은 자신의 약속을 지키고 있었다.
+[charslot(slot = "m", name = "avg_4081_warmy_1#10$1", focus="m")]
+[name="냄비 뚜껑"]……음.
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$1", focus="m")]
+[name="냄비 뚜껑"]차량을 강탈한 저 카우투스 언니도 참 이상한 사람이네요.
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$1", focus="m")]
+[name="냄비 뚜껑"]그래도 라나 언니랑은 생각보다 잘 지내고 있는 것 같은데요? 진짜로 차를 강탈하러 온 게 맞는 걸까요…… 아! 알겠어요! 라나 언니가 너무 대단해서 어떤 사람이라도 친구로 만들어 버린 거예요!
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$1", focus="m")]
+[name="냄비 뚜껑"]여기, 단말기의 감시 카메라 화면을 보세요……
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]어……
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]아무래도…… 누군가를 다치게 할 의도는 없는 것 같네.
+[charslot(slot = "m", name = "avg_4081_warmy_1#10$1", focus="m")]
+[name="냄비 뚜껑"]그, 그럼 원래 노선으로 돌아갈 수 있을까요? 이 수송차의 운행 종료 시간도 더 미룰 수 있는 걸까요?
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]글쎄, 그건 잘 모르겠네……
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$1", focus="m")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[name="냄비 뚜껑"]엥……?!
+[charslot(slot = "m", name = "avg_npc_1184_1#4$1", focus="m")]
+[name="잔뜩 위축된 승객"]왜 그래?
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$1", focus="m")]
+[name="냄비 뚜껑"]갑자기 생각난 건데, 왜…… 이 공구실에 있는 건가요?
+[charslot(slot = "m", name = "avg_4081_warmy_1#5$1", focus="m")]
+[name="냄비 뚜껑"]여기는 수송차의 비밀 공간이라 다른 사람에겐 출입 금지예요!
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="잔뜩 위축된 승객"]어…… 그게…… 조금 무서워서…… 아니, 조금이 아니라 많이 무서워져서…… 차량 납치는 처음 겪는 일이라……
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="잔뜩 위축된 승객"]문이 보이길래 급하게 들어왔어……
+[charslot(slot = "m", name = "avg_npc_1184_1#3$1", focus="m")]
+[name="잔뜩 위축된 승객"]꼬마야, 나 여기 계속 있으면 안 될까? 이렇게 구석에 쭈그리고 있으면 공간도 차지하지 않을 거야. 네 일을 방해하지도 않을 거고……
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1", focus="m")]
+[name="냄비 뚜껑"]네? 그렇다면 워미는 상관없어요! 하지만……
+[charslot(slot = "m", name = "avg_4081_warmy_1#10$1", focus="m")]
+[name="냄비 뚜껑"]그렇게 무서우면 왜 애초에 차에서 안 내린 거예요?
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]나…… 나도 잘 모르겠어…… 무섭긴 했는데…… 갑자기 안심되는 느낌도 들었거든.
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]그러니까…… 차에서 내리면 더 무서운 일이 생길지도 모르고…… 이 차가 더 멀리, 더 오래 달렸으면 좋으니까……
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]……그러는 넌 왜 안 내렸어?
+[charslot(slot = "m", name = "avg_4081_warmy_1#11$1", focus="m")]
+[name="냄비 뚜껑"]저요? 저는 당연히 내리면 안 되죠! 라나 언니가 아직 차에 타고 있는데, 저는 언니를 버릴 수 없어요!
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]'라나 언니'면…… 이 차의 운전기사를 말하는 거지? 너희들은 가족이야? 아니면……
+[charslot(slot = "m", name = "avg_4081_warmy_1#11$1", focus="m")]
+[name="냄비 뚜껑"]가족이요? 음…… 모르겠어요. 저는 집을 떠난 지 엄청 오래됐거든요.
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1", focus="m")]
+[name="냄비 뚜껑"]라나 언니는 아빠 같기도 하고, 엄마 같기도 한데, 가끔은 광부 이모 삼촌들 같기도 해요…… 그런데, 모두와 같다는 건 누구와도 같지 않다는 말이겠죠?
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1", focus="m")]
+[name="냄비 뚜껑"]라나 언니는 그냥 라나 언니예요. 언니는 친구들이랑 내기를 했고, 그 내기 대상이 저라서……
+[charslot(slot = "m", name = "avg_4081_warmy_1#1$1", focus="m")]
+[name="냄비 뚜껑"]그러니까…… 가족은 아닌 것 같아요! 그냥 이 차에서 같이 사는 것뿐인걸요.
+[musicvolume(volume=0.3, fadetime=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="27_g15_customs",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[musicvolume(volume=0.6, fadetime=1)]
+검문소를 나가는 통로가 바로 코앞에 있었지만, 굳게 닫힌 게이트가 수송차를 가로막았다.
+몇몇 경비원이 운전석으로 다가와 창문을 두드렸다.
+알라나는 잠시 망설이다가 결국 차에서 내렸다.
+[dialog]
+[PlaySound(key="$d_avg_steamburst", volume=1)]
+[PlaySound(key="$d_avg_gateopen", volume=1, loop=true, channel="g")]
+[StopSound(channel="g", fadetime=2.5)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1", focus="m",duration=0.5)]
+[delay(time=0.7)]
+[name="알라나"]형씨들, 무슨 일이야?
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]정기 검문이다.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1", focus="m")]
+[name="알라나"]공공 수송차도 검사해?
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1", focus="m")]
+[name="알라나"]봐, 운행 허가증도 있어.
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]시기가 시기니만큼 협조 바란다.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1", focus="m")]
+[name="알라나"]아니, 앞에 있던 차들은 그냥 통과시켰으면서 왜 갑자기 나는 안 된다는 거야?
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="알라나"]오늘은 재수도 참 좋네. 이렇게 많은 '좋은 일'이 한꺼번에 들이닥치다니!
+[charslot]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="r")]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="r")]
+[name="검사관 B"](작은 목소리로) 대장님, 대꾸하실 필요 없습니다…… 방금 이 수송차의 식별 코드를 확인해 봤는데, 빅필러 자치주에서 온 차량입니다!
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="r")]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="r")]
+[name="검사관 B"](작은 목소리로) 빅필러 자치주 관할 광산은 대부분 혼란스러운 데다가, 방호 절차도 규범화되지 않아 감염자들이 많을 겁니다!
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]차량 식별 코드가 그린미도우 자치주가 아니군. 외지 차량을 전부 검사하는 게 우리 임무다.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="알라나"]싫다고 하면?
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]그럼 중무장한 우리 검문소 경비원들이 너희를 검문소 사무실로 '모시겠지'.
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]며칠 또는 몇 달간 구속할 수도 있고, 이 차량을 압수하고 운행 허가증도 박탈한 뒤, 고액의 벌금을 부과할 거야.
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]구체적인 처리는 네가 언제까지 꾸물대는지에 달렸어.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="알라나"]형씨, 이거 너무한 거 아니야? 내가 수송차를 한두 해 운전한 것도 아니고, 검문소를 한두 번 통과한 것도 아닌데, 이런 대접은 또 처음……
+[charslot]
+말이 끝나기도 전에, 경비원들은 일제히 석궁을 들어 알라나에게 겨눴다.
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1", focus="m")]
+[name="알라나"]……알았어, 알았다고.
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="알라나"]관례대로 운전기사만 조사에 협조하면 되는 거지? 나머지 사람들은 전부 승객이야……
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]승객?
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="알라나"]그래, 전부……
+[charslot]
+여기까지 말한 알라나는 고개를 돌려 열린 문을 통해 수송차 안을 살펴보았다.
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]……
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="알라나"](냄비 뚜껑은 잘 숨어 있나 보네.)
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1", focus="m")]
+[name="알라나"](그런데 그 자라크…… 어디 갔지?)
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="알라나"](차량 강탈범은…… 왜 화살을 장전하고 있는 건데?!)
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="알라나"]……저 여자, 저 여자도 승객이야. 티켓도 샀어.
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="알라나"]그런데 형씨들 그 장치, 규칙 위반 아니야? 지금까지 검문소를 수도 없이 지나면서 광석병을 검사한다는 말은 들어본 적도 없는데.
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="알라나"]승객들이 검사받지 않겠다고 하면 나도 어쩔 수 없어. 승객들이 회사에 민원이라도 넣으면……
+[charslot]
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]닥쳐.
+[charslot(slot = "r", name = "avg_npc_399_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_399_1#1$1", focus="l")]
+[name="검사관 A"]차에 오른다.
+[charslot]
+[musicvolume(volume=0.3, fadetime=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[musicvolume(volume=0.6, fadetime=1)]
+수송차의 승객들은 모두 좌석에 앉아 있었고, 전원 팔에 광석병 검사 장치를 찼다.
+그러나 알라나는 자기보다 다른 세 사람이 더 걱정됐다……
+고개를 숙인 냄비 뚜껑은 공허한 눈으로 검사 장치의 프로그래스바를 응시하고 있었다.
+차량 강탈범은 맞은편에 앉은 경비원을 유심히 관찰하더니, 이내 열린 문을 통해 검문소 구석구석을 살펴보기 시작했다.
+그리고 그 자라크 승객은 차량 강탈범과 거리를 조금 두고 앉은 채…… 다리만 덜덜 떨고 있었다.
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]이 작은 공간에 숨어 있던 두 사람은 뭐야? 차에 탄 걸 알고 있었나?
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="알라나"]……물론 알고 있었지.
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]그럼 아까는 일부러 우리한테 알려 주지 않은 건가?
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="알라나"]그거야…… 형씨들이 너무 두려워서 깜짝 놀란 탓에 잊어버렸던 거지.
+[stopmusic(fadetime=1)]
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1", focus="m")]
+[name="알라나"]하하, 좋게 좋게 끝내자고……
+[playsound(key="$d_avg_medicalbeep")]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]……누구 장치가 울리고 있는 거지?!
+[PlayMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#3$1", focus="m")]
+[name="냄비 뚜껑"]……!
+[charslot(slot = "m", name = "avg_4081_warmy_1#3$1", focus="m")]
+[name="냄비 뚜껑"](어…… 어떡하지? 라나 언니…… 언니라면 어떻게 할까?)
+[dialog]
+[charslot]
+땀 한 방울이 알라나의 뺨에서 흘러내렸다.
+검문소 직원들은 융통성이라곤 찾아볼 수 없었고, 주위를 에워싼 경비원들도 만만치 않아 보였다.
+이 상황을 타개할 방안을 신속하게 생각해 내야 한다. 그렇지 않으면……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]저기…… 형씨, 아니, 선생님……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]이 승객은 아직 꼬마야. 그린미도우 자치주에…… 선생님네 자치주에 아빠를 만나러 가는 중이라고.
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]아빠가 제련소에서 일하는데 벌써 1년 넘게 집에 안 돌아왔대…… 이 검문소의 벽과 게이트, 그리고 이 검사 장치에 쓰인 재료도 모두 이 꼬마의 아빠가 만든 걸지도 몰라.
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]이 꼬마 카우투스는…… 두 달인가, 석 달에 한 번 차를 타고 아빠 만나러 가는데……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]……내 차의 단골이나 다름없어. 예전엔 이런 일이 한 번도 없었는데, 이번에도 그냥 넘어가 주면 안 될까?
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]당신, 아빠를 그리워하는 아이가 불쌍하지도 않아?
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]……
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]얼마 전, 더블헬멧 광산에서 사고가 발생해 난민들이 우리 관할구로 몰려들고 있어.
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]그리고 위에서 감염자들을 엄격하게 단속하라는 명령이 떨어졌어. 이건 융통성의 문제가 아니야. 우리도 일하는 거라 어쩔 수 없어.
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"](손으로 신호하며) 시작해.
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[name="알라나"]……!!
+[Dialog]
+[PlaySound(key="$flashback",volume=0.4)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[musicvolume(volume=0.3, fadetime=1)]
+[Delay(time=0.6)]
+[Background(image="bg_20_G08",screenadapt="coverall")]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.7, fadetime=0)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.6)]
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="찰리"]어젯밤에 난 똑똑히 봤어, 알라나.
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="찰리"]네가 2년간이나 차에 숨겨 키운 아이…… 사실 감염자지? 그래서 우리에게 한 번도 데려오지 않았고!
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="찰리"]……이 바보야. 그냥 말뿐인 내기였는데, 그렇게까지 할 필요 있어?
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="찰리"]넌 그 승부욕 때문에, 죽어도 굽히지 않는 자존심 때문에……
+[charslot(slot = "m", name = "avg_npc_002", focus="m")]
+[name="찰리"]언젠가는 자신을 해치고, 다른 사람도 말려들게 할 거야.
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1", focus="m")]
+[name="알라나"]……
+[Dialog]
+[charslot(duration=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[focusout(duration=0, type="bg", from=1, to=0, block=true)]
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[name="알라나"]잠깐!
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]……
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="알라나"]저기…… 존경하는 검사관님…… 우린 여기를 지나지 않고 왔던 길로 되돌아갈게. 지금! 당장!
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="알라나"]이러면 안 될까?
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]검문소도 우리 관할 구역이야. 너희가 지금 여기에 있는 이상, 검문소를 통과하지 않아도 우리 말을 따라야 해.
+[charslot(slot = "m", name = "avg_npc_1183_1#9$1", focus="m")]
+[name="알라나"]……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]저기…… 통행료는 제대로 낼게, 그리고 벌금도, 아니면……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]이 수송차를 압수하고 나를 데려가. 내가 조사에 협조할게……
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]그러니까 제발 부탁이야. 이 아이만큼은…… 봐주면 안 될까?
+[dialog]
+[charslot]
+냄비 뚜껑이 알라나의 이런 표정을 보는 건 처음이었다.
+지금까지 함께 지내는 동안, 알라나는 언제나 용감하고 두려움이 없었으며, 심지어 제멋대로였다고 할 수도 있었다.
+가끔 장난을 치기도 했고, 과거의 경험을 과대 포장해서 얘기하기도 했고, 남의 눈을 꺼리지 않고 큰소리로 웃기도 했다……
+하지만 지금은 자신을 위해…… 저렇게 머리를 숙이고 애원하고 있었다.
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]끌어내.
+[dialog]
+[charslot(slot = "m", name = "avg_4081_warmy_1#8$1", focus="m")]
+[charslot(slot = "r",name = "avg_npc_007",posfrom = "100,0", posto = "0,0",duration = 0.5, focus="m")]
+[charslot(slot = "l",name = "avg_npc_008",posfrom = "-100,0", posto = "0,0",duration = 0.5, focus="m")]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot="m", action="shake",random=true, power=5, times=30,isblock=true,duration=0.5,afrom=1,ato=1, focus="m")]
+[name="냄비 뚜껑"]라나 언니……
+[charslot(slot = "m", name = "avg_4081_warmy_1#11$1", focus="m")]
+[name="냄비 뚜껑"]……괜찮아요.
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1183_1#5$1", focus="m")]
+[name="알라나"]안 돼……
+[charslot(slot = "r",name = "avg_npc_007",focus="m")]
+[charslot(slot = "l",name = "avg_npc_008",focus="m")]
+[charslot(slot = "m", name = "avg_4081_warmy_1#4$1", focus="m")]
+[name="냄비 뚜껑"]배웅할 필요 없어요. 잠깐 차에서 내리는 것뿐인걸요. 조금 있다가 다시 만나러 올게요.
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)] 
+[charslot]
+[Background(image="27_g15_customs",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[playsound(key="$d_avg_medicalbeep")]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]감염자가 더 있나?
+[charslot]
+[name="검사관 B"]이 녀석도입니다!
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]그 녀석도 끌어내.
+[stopmusic(fadetime=2)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]……어디 갔지?
+[PlaySound(key="$d_avg_arrowshot", volume=1)]
+[charslot(duration=0.5)]
+갑자기 날아온 화살이 확인하기 위해 차에 타려던 경비원을 가로막았다.
+[dialog]
+[PlaySound(key="$d_avg_arrow_rain")]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.3, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Blocker(a=0, fadetime=0.5, block=true)]
+뒤이어 화살이 연이어 날아오자 경비원들은 황급히 후퇴했다.
+[dialog]
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", focus="m",duration=0.5,isblock=true)]
+[delay(time=1)]
+[PlayMusic(intro="$escape_intro", key="$escape_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[multiline(name="검사관 A")]이게……
+[multiline(name="검사관 A",end=true)]……저기 저 보라색 머리 여자다! 잡아라!
+[dialog]
+[charslot]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="경비원"]예!
+[dialog]
+[PlaySound(key="$d_gen_soldiersrun",volume=1)]
+[charslot(slot = "r",name = "avg_npc_007",posfrom = "100,0", posto = "0,0",duration = 0.5)]
+[charslot(slot = "l",name = "avg_npc_008",posfrom = "-100,0", posto = "0,0",duration = 0.5)]
+[delay(time=0.6)]
+[charslot(duration=0.3)]
+[CameraShake(duration=1, xstrength=30, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_battlefield_environment", volume=0.4, loop=true, channel="bgs")]
+[PlaySound(key="$fightgeneral",volume=0.6)] 
+[CameraShake(duration=0.4, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[PlaySound(key="$d_avg_punch02",volume=0.6)] 
+[CameraShake(duration=0.4, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+[PlaySound(key="$d_avg_punch",volume=0.6)] 
+[CameraShake(duration=0.4, xstrength=10, ystrength=10, vibrato=30, randomness=90, fadeout=true, block=true)]
+주먹질 한 번, 발차기 한 번, 그리고 석궁을 한 번 휘두르자 경비원들이 바닥에 쓰러졌다.
+그리고 또다시 쏟아 내린 화살이 그들의 옷을 꿰뚫어 그들을 전부 땅에 못 박았다.
+차량 강탈범은 어지럽게 쓰러진 자들을 넘어, 냄비 뚜껑 곁으로 다가왔다.
+[StopSound(channel="bgs", fadetime=2)]
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", focus="m")]
+[name="차량 강탈범"]가자.
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$1", focus="m")]
+[charslot(slot = "m", action="jump", power=5, times=2,duration=0.3)]
+[multiline(name="냄비 뚜껑")]어?
+[charslot(slot = "m", name = "avg_4081_warmy_1#3$1", focus="m")]
+[multiline(name="냄비 뚜껑",end=true)]……네!
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[name="검사관 A"]거, 거기 서! 너희들 아직……
+[dialog]
+[charslot]
+[musicvolume(volume=0.3, fadetime=0.1)]
+[interlude(maskid = "ui_cutin_mask_horizon", style = 1, size = "1280, 100",offset = "0,25", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_black", afrom = 1, ato = 1, aduration = 0,sfrom = "1.3,1.3", sto = "1.3,1.3", sduration = 0, block = false)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "400,0", name = "cutin_char_18", aduration = 0.1)]
+[delay(time=0.4)]
+[interlude(channel = 2, type = 1, slot = "m", offset = "400,0", name = "cutin_char_19", aduration = 1,afrom=1,ato=1)]
+[delay(time=0.5)]
+[interlude(channel = 2, clear = true)]
+[delay(time=0.5)]
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot(slot = "m", name = "avg_npc_399_1#1$1", focus="m")]
+[charslot(slot = "m", action="shake",random=true, power=5, times=60,duration=0.3)]
+[multiline(name="검사관 A")]아……
+[multiline(name="검사관 A",end=true)]아무것도 아니다……
+[charslot(slot = "m", name = "avg_npc_1183_1#4$1", focus="m")]
+[name="알라나"]……
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", focus="m")]
+[name="차량 강탈범"]운전해.
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1", focus="m")]
+[name="차량 강탈범"]……왜 그래?
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="알라나"]……크흠. 가자, 타!
+[charslot(slot = "m", name = "avg_npc_1183_1#6$1", focus="m")]
+[name="알라나"](……이 녀석을 신고하지 않길 잘했네.)
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="알라나"]맞다. 너는?
+[charslot(slot = "m", name = "avg_npc_1183_1#3$1", focus="m")]
+[name="알라나"]……너는 검사 장치가 울리지 않았는데, 왜 같이 내린 거야?
+[charslot(slot = "m", name = "avg_npc_1184_1#2$1", focus="m")]
+[name="잔뜩 위축된 승객"]……저요?
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="잔뜩 위축된 승객"]그…… 그냥 무서워서요……
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="잔뜩 위축된 승객"]어, 어딜 가든 괜찮으니까, 저를 데려가 주시면…….
+[charslot]
+[name="땅에 쓰러진 경비원"]도망칠 생각 마라!
+[charslot(slot = "m", name = "avg_npc_1184_1#4$1", focus="m")]
+[name="잔뜩 위축된 승객"]으아……
+[dialog]
+[charslot]
+다리를 잡힌 자라크 승객은 자세를 잃고 비틀거리며 경비원의 손을 힘껏 밟았다.
+[PlaySound(key="$fightgeneral",volume=0.5)]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[name="땅에 쓰러진 경비원"]으아악!!! 내 손가락……
+[charslot(slot = "m", name = "avg_npc_1184_1#2$1", focus="m")]
+[name="잔뜩 위축된 승객"]죄, 죄송해요! 진짜 죄송합니다…… 이, 이만 가볼게요!
+[charslot(duration=0.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Background(image="46_g2_rmbttransporter",screenadapt="coverall")]
+[Delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[playMusic(intro="$normal02_intro", key="$normal02_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="차량 강탈범"]사람들이 더 몰려오고 있어.
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]지원군이겠지…… 세상에, 일이 더 커졌네.
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]이제 어떡해?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]대장갑포를 장비한 경비원이 40명 이상.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]앞쪽은 두꺼운 강철 게이트로 막혀 있고.
+[charslot(slot = "r", name = "avg_4117_ray_1#9$1", focus="r")]
+[name="차량 강탈범"]딱히 좋은 방법은 떠오르지 않아.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]방법이라…… 흠…… 내게 좋은 방법이 하나 있긴 한데.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]도박이긴 하지만, 정말로 해낸다면 몇 년은 자랑할 수 있겠어.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]뭔데?
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]저기, 차량 강탈범 씨.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]그거 알아? 이 차는 평범한 수송차가 아니야.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]이 차의 정식 이름이 뭔지 알아?
+[charslot(slot = "r", name = "avg_4117_ray_1#4$1", focus="r")]
+[name="차량 강탈범"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]이 녀석의 이름은…… 토석 굴착 및 병나무 이식 겸 도시 간 인원 수송차야.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]큰 바위나 병나무를 옮기는 건 물론, 러스트드레그 카운티 대문을 지탱하는 그 두 철골도 이놈 덕분에 조립한 거거든.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]물론, 그걸 이뤄낸 운전기사가 바로 이 몸이고.
+[charslot]
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$1", focus="m")]
+[name="냄비 뚜껑"]라나 언니……
+[charslot]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="r")]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]너, 손이 떨리고 있어.
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]시끄러워! 꽉 잡아……
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[name="알라나"]이대로 돌파한다!
+[dialog]
+[PlaySound(key="$sportscarstart", volume=0.6)]
+[delay(time=0.8)]
+[CameraShake(duration=10, xstrength=40, ystrength=40, vibrato=40, randomness=90, fadeout=true, block=false)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_avg_collapse", volume=0.6)]
+[PlaySound(key="$d_gen_signalbomb",Delay=0.05,volume=1)]
+[CameraShake(duration=0.1, xstrength=1, ystrength=1, vibrato=40, randomness=90, fadeout=true, block=false)]
+[stopmusic(fadetime=2)]
+[charslot]
+[delay(time=4)]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.15,fadetime=1)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.15,fadetime=1)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$saferoom_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_truckengine", volume=0.6, loop=true, channel="bgs")]
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]……
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="잔뜩 위축된 승객"]저기……
+[charslot(slot = "m", name = "avg_npc_1184_1#6$1", focus="m")]
+[name="잔뜩 위축된 승객"]저기…… 죄송하지만, 혹시 여기 구멍을 막을 만한 게 없을까요?
+[charslot(slot = "m", name = "avg_npc_1184_1#3$1", focus="m")]
+[name="잔뜩 위축된 승객"]조금…… 추운데요.
+[charslot]
+[StopSound(channel="bgs", fadetime=4)]
+[PlaySound(key="$d_avg_snowstormflp", volume=1, loop=true, channel="bse")]
+차체에 뚫린 여러 구멍으로 황야의 바람이 들어와 자라크 승객의 머리카락을 흐트러뜨리고 있었다.
+[StopSound(channel="bse", fadetime=10)]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]없어, 그냥 참아.
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[multiline(name="알라나")]나중에 이동 플랫폼에 들러 재료를 사서 수리할 거야……
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[multiline(name="알라나",end=true)]……잠깐, 그런데 넌 왜 아직도 타고 있는 거야?
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]너 도대체 정체가 뭐야?
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="잔뜩 위축된 승객"]아, 저…… 그게…… 저는 그냥 평범한 승객인데요……
+[name="잔뜩 위축된 승객"]저, 저는 착한 사람입니다! 진짜예요! 이거 보세요. 제 신분증입니다……
+[charslot]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="알라나"]아, 제리…… 하지만 제리 씨, 지금은 우리한테 필요한 건 착한 사람이 아니야.
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1184_1#1$1", focus="m")]
+[name="제리"]……걱정 마세요! 여기 일은 절대 떠벌리지 않겠습니다!
+[charslot]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]뭐, 이렇게 된 이상……
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]지금부터 이 차에 탄 사람들 모두 공범이야. 아무도 여기서 도망칠 생각 하지 마.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]들었어, 차량 강탈범? 이제는 우리 모두가 차량 강탈범이 됐어.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]……그리고 아까는 냄비 뚜껑을 구해줘서 고마워.
+[charslot(slot = "r", name = "avg_4117_ray_1#6$1", focus="r")]
+[name="차량 강탈범"]내 검사 장치도 울렸어.
+[charslot(slot = "r", name = "avg_4117_ray_1#6$1", focus="r")]
+[name="차량 강탈범"]체포됐다면 아마 수용 구역으로 끌려갔겠지.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]그래도 난 그리닝 밸리에 가야만 해.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]알았어, 알았어. 지금 바로 그리닝 밸리로 간다. 이제부터 이 차의 종점은 그리닝 밸리야!
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]그런데 지금 남은 연료로는 거기까지 못 갈 수도 있어. 아무래도 이동 플랫폼에 들러서 보급받는 편이 나을 거야. 간 김에 이 상처투성이인 내 차도 좀 수리하고……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]아니면 차를 반납할 때 회사에 설명하기 힘들거든.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]그래.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]맞다, 너 이름이 뭐야?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="차량 강탈범"]광산 사람들은 날 레이라고 불러.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="알라나"]레이구나. 음, 역시 '차량 강탈범'이 입에 더 잘 감기는데.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]아무튼, 차량 강탈범, 궁금해서 그러는데…… 너는 이 차를 강탈했고, 경비원마저 때려눕혔는데, 이렇게 물불 안 가리고…… 그리닝 밸리에 가려는 이유가 도대체 뭐야?
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="알라나"]거긴 차도 거의 안 다니고, 재앙에 파괴된 황무지나 폐허밖에 없다고 들었는데…… 설마 거기서 뭔가 새로운 거, 보물 같은 걸 발견한 건 아니겠지?
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="알라나"]나도 좀 알려줘! 정말 귀한 보물이라도 있다면, 이 정도 난리를 피워도 충분히 가치가 있으니까!
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]……
+[charslot(slot = "r", name = "avg_4117_ray_1#10$1", focus="r")]
+[name="레이"]거대한 그림자를 찾으러 가는 거야.
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]……뭐라고?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]안개 속에서 빛을 내는 산처럼 거대한 그림자.
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]말도 할 줄 알아.
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="알라나"]……마 ……말도 할 줄 안다고?
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="r")]
+[name="레이"]응.
+[charslot]
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$1", focus="m")]
+[name="냄비 뚜껑"]……
+[charslot(slot = "m", name = "avg_npc_1184_1#2$1", focus="m")]
+[name="제리"]……
+[charslot]
+[charslot(slot = "r", name = "avg_4117_ray_1#1$1", focus="l")]
+[charslot(slot = "l", name = "avg_npc_1183_1#3$1", focus="l")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="알라나"]……뭐?! 뭐야 그게?!!
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=3)]
+[background]
+[charslot]
+[curtain(direction = 0,fillfrom = 0.15,fillto = 0,fadetime=0.1)]
+[curtain(direction = 4,fillfrom = 0.15,fillto = 0,fadetime=0.1)]
+[curtain]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Image]

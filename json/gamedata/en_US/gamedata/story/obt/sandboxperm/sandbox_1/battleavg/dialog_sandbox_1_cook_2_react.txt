@@ -1,0 +1,15 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Did Eunectes tell you to find me?
+[decision(option1="Yes, she asked me to bring you this <color=#d8d769>Crab Porridge</color>.", value1="1.1", option2="Calm down...", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_1", itemCount="-1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]I won't forgive her so easily, if your food is unsatisfactory.
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Let me have a taste—
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]WHAT?! Is that girl trying to fool me with this? She's out of her mind!
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Put in more effort and come back with something else!
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_1", value="1")]

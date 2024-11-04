@@ -1,0 +1,33 @@
+[header(actId="sandbox_1", npcId="trap_472_tfalco")]
+[summontrap(x="2", y="6", charId="trap_472_tfalco", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="4", y="8", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summontrap(x="5", y="6", charId="trap_470_tmantic", isChar="FALSE", dir="LEFT")]
+[camerafocusto(offsetX="3", offsetY="7", time="1", scale="MID")]
+[foginview(id="rect1", leftBottomX="1", leftBottomY="4", rightUpX="7", rightUpY="10")]
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]You're really strong. Thank you.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]Only doing the right thing.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]In Arsalan, you're a decent person if you keep your word. These days, the lords ameer have made us stop believing in promises.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]Where are your leaders?
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]All killed in battle. We once lived by the water, but when the Narotabati River dried up, some of us went to join the clans in the northern jungles.
+[name="Manticore", avatarId="char_215_mantic", isAvatarRight="TRUE"]Not an unusual story in Sargon.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]The lords ameer came when I was little. They promised much and delivered nothing.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]My siblings and I were taken and made to work here. We tried to resist... but we failed.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]That's all in the past now. We've arranged for your siblings to join up with the northern tribes.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]There isn't much I can offer in gratitude, except some notes on digging from those who came before.
+[playanim(id="trap_472_tfalco", anim="Attack", dir="RIGHT")]
+[delay(time="1")]
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]You can have these notes.
+[additem(itemId="sandbox_1_craft_13", itemCount="1")]
+[decision(option1="Where will you go now?", value1="1.1")]
+[predicate(references="1.1")]
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]I don't know. I would be happy to help out at your camp, if you'll have me.
+[decision(option1="You're always welcome.", value1="2.1")]
+[predicate(references="2.1")]
+[fognotinview(id="rect1")]
+[withdraw(id="trap_472_tfalco")]
+[withdraw(id="trap_467_ttuye")]
+[withdraw(id="trap_470_tmantic")]
+[delay(time="2")]
+[resetcamera(time="1")]
+[save]
+[end]

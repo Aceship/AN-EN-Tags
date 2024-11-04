@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+This is a risky invitation. Are you willing to accept this mysterious commission?
+[decision(option1="Accept commission", value1="1.1", option2="Switch commission", value2="1.2", option3="Accept commission", value3="1.3", option4="Leave", value4="1.4")]
+[predicate(references="1.1", visibleCondition="c0&&!c1")]
+<color=#d8d769>Commission accepted.</color>
+[orderrift(riftId="random_dungeon_1")]
+[end]
+[predicate(references="1.2", visibleCondition="c4&&c5")]
+<color=#d8d769>Commission switched.</color>
+[orderrift(riftId="random_dungeon_1")]
+[end]
+[predicate(references="1.3", visibleCondition="!c6")]
+<color=#d8d769>Temporarily unable to accept commissions. Please come back later.</color>
+[end]
+[predicate(references="1.4")]
+[end]
+[condition(references="c0", key="checkcanorderrandomrift")]
+[condition(references="c1", key="checkriftordered")]
+[condition(references="c4", key="checkcanorderrandomrift")]
+[condition(references="c5", key="checkriftordered")]
+[condition(references="c6", key="checkcanorderrandomrift")]

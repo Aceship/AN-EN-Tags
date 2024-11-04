@@ -1,0 +1,34 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="14", y="6", charId="trap_471_tegmaus", isChar="FALSE", dir="LEFT")]
+[foginview(leftBottomX="0", leftBottomY="0", rightUpX="16", rightUpY="12", id="fog_1")]
+[camerafocusto(id="trap_471_tegmaus", scale="CLOSE", time="3")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Looks like fate has guided us here. Welcome to the witnessing chamber of lost Szubat-Arsalan.
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="LEFT", looporidle="Idle")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]We have both halves of the disc. You are about to witness a piece of history that has been buried for a thousand years.
+[decision(option1="What is it about?", value1="1.1")]
+[predicate(references="1.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]The Shah...
+[decision(option1="Shahanshah, the King of Kings... Lugalszargus.", value1="2.1")]
+[predicate(references="2.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Yes, the Overlord of Ages. Even though he's long, long gone, some continue to obsess over his shadows.
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]His words and deeds that were never recorded in the history books, the items he left behind on his conquests...
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Over the past several years, I've visited the site of every legend of the Shah.
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]I wanted to pull back the curtain of history, to learn who the Shah truly was, behind the veil of the once and future king.
+[decision(option1="Why didn't you tell us until now?", value1="3.1")]
+[predicate(references="3.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Because there are others following in the Shah's footsteps, but their motives are far from pure.
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]The lords ameer only understand what they find in terms of treasures that symbolize authority, and turning them into glittering coins.
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]In most cases, though, their true value can't be measured in monetary terms.
+[decision(option1="So what is it measured in?", value1="4.1")]
+[predicate(references="4.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Curiosity... the easiest desire to satisfy. You seek nothing but a simple truth.
+[decision(option1="Truth is the hardest thing to find.", value1="5.1")]
+[predicate(references="5.1")]
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="LEFT", looporidle="Idle")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]You have a way with words. I like that.
+[withdraw(id="trap_471_tegmaus")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

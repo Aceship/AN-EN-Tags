@@ -1,0 +1,45 @@
+[header(actId="sandbox_1", npcId="trap_469_tpasngr")]
+[summontrap(charId="trap_467_ttuye", dir="LEFT", x="12", y="11", isChar="False")]
+[summonenemy(enemyId="enemy_7026_xbele", x="10", y="11", endX="19", endY="6")]
+[summonenemy(enemyId="enemy_7035_epasng", x="8", y="11", endX="19", endY="6")]
+[camerafocusto(offsetX="10", offsetY="11", time="1", scale="FAR")]
+[foginview(leftBottomX="5", leftBottomY="7", rightUpX="19", rightUpY="14", id="fog_1")]
+[delay(time="0.5")]
+[playanim(id="enemy_7026_xbele", anim="Special", looporidle="Special_Loop", dir="RIGHT")]
+[delay(time="1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]This statue has guarded the temple for ages. It finally got a life of its own and was able to begin a journey as a free being, only for us to put an end to it all.
+[decision(option1="Truly lamentable.", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="Passenger, how did the inspection go?", value1="2.1")]
+[predicate(references="2.1")]
+[camerafocusto(offsetX="9", offsetY="11", time="1", scale="MID")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]More or less how I anticipated. I was able to find within it the mobility operation unit prototype, just as I expected.
+[decision(option1="Is that what led to all this?", value1="3.1")]
+[predicate(references="3.1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Correct.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Thank you for your help. This is my personal tool box. Normally, I would never lend it to anyone, but I think you might find it helpful in your quest.
+[decision(option1="Thanks.", value1="4.1")]
+[predicate(references="4.1")]
+[additem(itemId="sandbox_1_craft_6", itemCount="1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Here I thought my teacher's works were all lost in the war. To think I would chance upon this inside an old colossus in an oasis.
+[decision(option1="Are you taking this machine with you?", value1="5.1")]
+[predicate(references="5.1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Of course. That was my objective all along.
+[move(enemyId="enemy_7035_epasng", x="9", y="11")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]His signature remains...
+[decision(option1="Passenger?", value1="6.1")]
+[predicate(references="6.1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Nothing. I merely thought that... perhaps this colossus and I are not very different.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]We walked onward, knowing not why, yet we continue to aimlessly wander these lands because of the traces of the same name.
+[playanim(id="enemy_7035_epasng", anim="Special_Begin", looporidle="Special_Loop", dir="RIGHT")]
+[delay(time="1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]...
+[playanim(id="enemy_7035_epasng", anim="Special_End", looporidle="Idle", dir="RIGHT")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Please take the others with you. I would like to... stay here with it a little longer.
+[withdraw(id="trap_467_ttuye")]
+[fognotinview(id="fog_1")]
+[withdraw(id="enemy_7026_xbele")]
+[withdraw(id="enemy_7035_epasng")]
+[resetcamera(time="1")]
+[save]
+[end]

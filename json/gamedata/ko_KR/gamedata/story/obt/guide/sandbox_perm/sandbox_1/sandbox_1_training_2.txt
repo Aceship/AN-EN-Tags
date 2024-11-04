@@ -1,0 +1,15 @@
+[HEADER(is_skippable=false, is_tutorial=true)] 制作饮料
+[SandboxV2.EnsureDungeonQuest(questId="training_2", isForceTutorial=true)]
+[SandboxV2.EnsureDungeonStable]
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, target="btn_sandbox_dungeon_bottom_bar_cook_panel_btn", waitForSignal="sandbox_v2_administration_main_state_cook_panel_routed",           animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black", focusWidth=141, focusHeight=65,           dialogHead="$avatar_zumama")] 다들 고생했어. 아까도 말했지만, 작전에는 에너지음료가 필요해. 따라서 이번에는 에너지음료 제조법을 알아볼 거야.
+[Delay(time=0.5)]
+[Tutorial(target="btn_sandbox_administration_panel_type_energy_drink", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 여기서 우리는 다양한 음식과 식자재로 에너지음료를 만들 수 있어.
+[Tutorial(target="btn_sandbox_administration_energy_drink_item", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 이렇게 하면 선택된 재료를 바로 에너지음료로 전환할 수 있지.
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 에너지음료가 가득 채워지면 이 병은 즉시 포장되어 오퍼레이터가 마실 수 있는 상태가 돼.
+[Tutorial(target="btn_sandbox_administration_energy_drink_auto", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] 또한, 이 자동 기능을 사용하면 에너지음료 한 병을 바로 채울 수 있어.
+[Tutorial(target="btn_sandbox_administration_energy_drink_make", waitForSignal="sandbox_v2_gain_item_page_routed",           animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black", dialogHead="$avatar_zumama")] 자, 이곳을 탭 해서 제작해 봐.
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 이렇게 해서 에너지음료 한 병을 또 획득했어.
+[SandboxV2.CloseGainItemPage]
+[Tutorial(target="btn_sandbox_administration_back",           animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black", protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y", focusWidth=300, focusHeight=55)] 이제 지도로 돌아가서 다음 목적지를 확인해 보자.
+[SandboxV2.EnsureDungeonStable]

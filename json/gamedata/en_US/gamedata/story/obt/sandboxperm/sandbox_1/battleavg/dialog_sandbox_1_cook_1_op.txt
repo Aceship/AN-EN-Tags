@@ -1,0 +1,41 @@
+[header(actId="sandbox_1", npcId="trap_468_tpriest")]
+[summontrap(x="8", y="7", charId="trap_466_tzumama", isChar="FALSE", dir="LEFT")]
+[summontrap(x="7", y="6", charId="trap_468_tpriest", isChar="FALSE", dir="RIGHT")]
+[delay(time="1")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(offsetX="7", offsetY="7", time="1", scale="FAR")]
+[playanim(id="trap_466_tzumama", anim="Special_Begin", looporidle="Special_Loop", dir="LEFT")]
+[delay(time="1")]
+[playanim(id="trap_468_tpriest", anim="Special", dir="RIGHT")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Aaaaaahh—! My butt—!
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]So Hot! It's being cooked—!
+[decision(option1="You okay, buddy?", value1="1.1")]
+[predicate(references="1.1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Don't worry. He's fine.
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Hey, why the indifferent response? My best butt feathers are all burnt!
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Don't feathers grow back?
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]I've had it with you, you rotten girl! You can worry about the rest of your experiments on your own! Don't come to me again!
+[withdraw(id="trap_468_tpriest")]
+[playanim(id="trap_466_tzumama", anim="Special_End", looporidle="Idle", dir="LEFT")]
+[delay(time="1")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1")]
+[playanim(id="trap_466_tzumama", anim="Attack", dir="LEFT")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]*sigh*, what do we do? How come he's throwing a tantrum all of a sudden?
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]This hasn't ever happened before.
+[decision(option1="Maybe you should try to talk to him, win back his favor or something.", value1="2.1")]
+[predicate(references="2.1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Maybe after I'm done with everything. I've got too much on my hands right now.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Think you could help me check on him? Maybe... bring him something to eat?
+[decision(option1="Sounds like a pain...", value1="3.1")]
+[predicate(references="3.1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Look, he even left a copy of <i>One Hundred Tips For Cooking in Arsalan!</i>
+[decision(option1="Is that even useful?", value1="4.1")]
+[predicate(references="4.1")]
+[additem(itemId="sandbox_1_craft_10", itemCount="1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Let's make a <color=#d8d769>Crab Porridge</color>.
+[decision(option1="Good idea.", value1="5.1")]
+[predicate(references="5.1")]
+[withdraw(id="trap_466_tzumama", withoutAnim="TRUE")]
+[resetcamera(time="1")]
+[save]
+[end]

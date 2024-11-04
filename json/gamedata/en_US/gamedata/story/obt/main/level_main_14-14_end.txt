@@ -1,0 +1,854 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_corridor_2",screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.7, fadetime=0)]
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1")]
+[Delay(time=1)]
+[playMusic(intro="$dignified_intro", key="$dignified_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]You said you won't resist—
+[name="W"]You said you want the release of death—
+[name="W"]I don't believe you.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1307_1#1$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_knife", volume=1)]
+[PlaySound(key="$d_avg_blddpgrn",volume=1,delay=0.5)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0, block=true)]
+[Blocker(a=0.6, r=1,g=0.2, b=0.2, fadetime=0.03, block=true)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$bodyfalldown2", volume=1)]
+[charslot(duration=0.7)]
+[delay(time=1)]
+[name="Dying Assassin"]...
+She pierces the assassin's chest with her dagger, but intentionally avoids dealing a fatal blow.
+She wants to hear the coward under the mask scream.
+She slowly spins the dagger, trying to catch one sound, one sign of weakness...
+She wants to hear it.
+But there is nothing.
+[name="Dying Assassin"]...
+[charslot(slot = "m", name = "avg_npc_1343_1#11$1",focus="m")]
+[name="W"]I won't let you die so easily...
+[name="W"]You took Her Highness—
+[name="W"]Death is too good for you...
+[name="W"]You said you were prepared to die when you accepted the mission—
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]I don't believe you.
+[name="W"]You want to live, don't you? You want to run away.
+[Dialog]
+[charslot]
+She wants them to run. She needs them to run.
+That way, she can chase them, hunt them, make them die in despair.
+She will drink their despair.
+But that is not enough. Not even close. What would be enough?
+[charslot(slot = "m", name = "avg_npc_1343_1#11$1",focus="m")]
+[name="W"]Hold this grenade. It'll explode soon.
+[name="W"]I'm right here. Prove it to me.
+[name="W"]You can throw it away.
+[name="W"]Do that, and you'll live.
+[name="W"]I won't kill you. I'll let you go.
+[Dialog]
+[charslot]
+[name="Dying Assassin"]...
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]...
+[charslot(slot = "m", name = "avg_npc_1343_1#3$1",focus="m")]
+[CameraShake(duration=0.5,xstrength=25,ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="W"]Throw it away!
+[Dialog]
+[charslot]
+[name="Dying Assassin"]...
+[name="Dying Assassin"]There won't be anything left of me once this thing goes off, right?
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]...
+[Dialog]
+[charslot]
+[name="Dying Assassin"]Good.
+[name="Dying Assassin"]You should stay away.
+She does not believe it. She wants to find a sign, any sign, that this man is bluffing.
+One moment of hesitation, the slightest hint of his desire to live—
+[Dialog]
+[PlaySound(key="$grenade_explosion",volume=0.7)]
+[CameraShake(duration=-1,xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=2, block=true)]
+[delay(time=1)]
+[CameraShake(duration=0.1,xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=true)]
+White light bursts before her eyes, from the hand that held the grenade tightly.
+Fire flies by her cheeks, but she feels no sense of satisfaction.
+[Dialog]
+[delay(time=1)]
+This is not enough...
+[Dialog]
+[PlaySound(key="$d_gen_explo_n", volume=1)]
+[delay(time=2)]
+[Decision(options="Enough, W!;There's nothing left of him but ashes!", values="1;2")]
+[Predicate(references="1;2")]
+No, it's not enough.
+Not nearly close.
+I have more—
+[Dialog]
+[PlaySound(key="$d_avg_explosion_stone", volume=0.8)]
+[PlaySound(key="$d_avg_explosion", volume=0.7,delay=1)]
+[delay(time=2)]
+[Decision(options="W!;...W.", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[delay(time=1)]
+[stopmusic(fadetime=2)]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="37_g9_airshipdockcorridor", screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="m",name="avg_1035_wisdel_1#15$1",focus="m")]
+[delay(time=0.5)]
+[playMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_1035_wisdel_1#15$1",focus="n")]
+The dark tides recede in the wake of the explosion.
+What about the man? Is there no trace left of him?
+[charslot(slot="m",name="avg_1035_wisdel_1#15$1",focus="m")]
+[name="W"]Did I use too much of my stock?
+[charslot(slot="m",name="avg_1035_wisdel_1#14$1",focus="m")]
+[name="W"]Who cares, the real waste is if I <i>don't</i> use it.
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]Are you okay?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="n")]
+[Decision(options="I... I'm okay.", values="1")]
+[Predicate(references="1")]
+[Decision(options="What... what happened to you just now?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]What? I was just saving your skin.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$Mon3tr_n")]
+[name="Mon3tr"](Low growling)
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]Little monster, you remember these people, don't you?
+[name="W"]Ghosts that should have died a long time ago...
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[name="Mon3tr"](Angry roar)
+[Dialog]
+[charslot]
+[Decision(options="...Should have died a long time ago?;Do you know these... ghosts?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]You don't know them?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="n")]
+[Decision(options="Should... should I?;You look so calm that you're starting to scare me.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]Ha. You better be telling the truth.
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]I don't know if this is one of the revenant's tricks...
+[name="W"]And I don't think it's a coincidence that he appears on this ship which carries Her Highness—
+[name="W"]But he's dead.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="n")]
+[Decision(options="I doubt it's that simple...;I feel like there's going to be more...", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$1",focus="m")]
+[name="W"]The more the merrier.
+[name="W"]This mission is getting more and more interesting.
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]Let's go. This way?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="n")]
+[Decision(options="Yes, this way.;No, that way.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]You go first.
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]No need to worry. This little monster goes with you.
+[name="W"]I have to keep you in my field of view in order to react in time.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="n")]
+[Decision(options="...;...Alright.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]It's not that hard, is it, working with me?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="37_g9_airshipdockcorridor",screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+The corridor smells of death. The silence is revolting.
+She does not need anyone to tell her that they are getting closer to the revenant's core.
+Why would Her Highness be in a place like this?
+Will Her Highness be there?
+Will Her Highness remember me?
+She has many questions, but thinking about it serves only to stifle her excitement.
+She cannot let Theresa see her down and depressed...
+Theresa always told her she looks best when she is smiling. She remembers—
+[stopmusic(fadetime=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]Hey, bastards. I was just thinking of you.
+[Dialog]
+[charslot]
+[playMusic(intro="$frontline_intro", key="$frontline_loop", volume=0.6)]
+[charslot(slot="l",name="avg_npc_1307_1#1$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_1307_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_npc_1307_1#1$1",focus="all")]
+[name="Airship 'Apparition'"]You shall not pass.
+[name="Airship 'Apparition'"]You shall not pass...
+[name="Airship 'Apparition'"]Go no further.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Don't stop, {@nickname}.
+[name="W"]What we're looking for must be waiting at the end of the corridor.
+[name="W"]Just grab on to little monster and don't think about anything else.
+[name="W"]I guarantee you they'll all turn to ash before they can touch you.
+[Dialog]
+[charslot]
+[PlaySound(key="$grenade_explosion")]
+[PlaySound(key="$d_sp_ballista",volume=0.6,delay=0.2)]
+[CameraShake(duration=1,xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_npc_1307_1#1$1",focus="all")]
+[charslot(slot="r",name="avg_npc_1307_1#1$1",focus="all")]
+[name="Airship 'Apparition'"]There's only so much you can do on your own.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1307_1#1$1",focus="all")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_shdwblwvr", volume=0.6)]
+[charslot(slot="r",name="avg_npc_1307_1#1$1",afrom=1,ato=0,duration=0.5)]
+[Delay(time=0.7)]
+[charslot]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]—?
+[Dialog]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[Delay(time=0.2)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[PlaySound(key="$e_skill_skulsrsword",volume=0.8)]
+[PlaySound(key="$swordtsing5", volume=0.9,delay=0.2)]
+[CameraShake(duration=1, xstrength=25, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Effect(name="$e_spark_02_large",layer = 2)]
+[Effect(name="$e_spark_01_mid",roy=-90,layer = 3)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[name="Mon3tr"](Angry roar)
+[Dialog]
+[charslot]
+[Decision(options="I'm fine, Mon3tr!", values="1")]
+[Predicate(references="1")]
+[Decision(options="Buy me some time, W! I have an idea!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#4$1",focus="m")]
+[name="W"]I'm not the bunny! I don't need you to tell me what to do!
+[name="W"]You need to do something, do it. Skip the talk.
+[Dialog]
+[charslot]
+[Decision(options="...I trust you.;Alright, I'll keep going.", values="1;2")]
+[Predicate(references="1;2")]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[charslot(slot="l",name="avg_npc_1307_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_npc_1307_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1307_1#1$1",focus="m")]
+[name="Airship 'Apparition'"]Deal with the Doctor.
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Did you really think I was just going to leave the dumbass alone?
+[charslot(slot="m",name="avg_npc_1307_1#1$1",focus="m")]
+[name="Airship 'Apparition'"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Have you spent so much time with the revenant that you've gone crazy too?
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]I left him a bunch of nice things.
+[name="W"]Close your eyes, {@nickname}—
+[name="W"]Bam!
+[Dialog]
+[charslot]
+[PlaySound(key="$e_skill_explodebris",volume=0.8)]
+[CameraShake(duration=-1,xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0, block=true)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.8, block=true)]
+[delay(time=0.5)]
+[CameraShake(duration=0.1,xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=true)]
+[Decision(options="Ouch... I knew it!;You left a 'Plan B' on me...", values="1;2")]
+[Predicate(references="1;2")]
+[name="W"]Don't praise me. I was going to give the old hag a surprise when we met up. Now it's all wasted.
+[name="Airship 'Apparition'"]Look out.
+[name="W"]Here's some more good stuff!
+[name="W"]I've lit up every corner for you. Time to go to hell—
+[Dialog]
+[PlaySound(key="$d_avg_explosion", volume=1)]
+[CameraShake(duration=2.5, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=1, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[charslot(slot="l",name="avg_npc_1307_1#1$1",duration=0.7)]
+[charslot(slot="r",name="avg_npc_1307_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Still no use? Guess we'll have to do this the hard way.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$Mon3tr_n")]
+[name="Mon3tr"](Answers excitedly)
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Just keep the Doctor alive.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[name="Mon3tr"](Complaining growl)
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]...
+[Dialog]
+[charslot]
+Ghosts continue to emerge from the darkness at the end of the corridor. There seems to be no end to it.
+One after another, no fear of death.
+Just like back then—
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_corridor_2",screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.7, fadetime=0)]
+[delay(time=1)]
+[PlaySound(key="$e_skill_skulsrsword", volume=0.2)]
+[PlaySound(key="$d_avg_metallicclick", volume=0.4,delay=0.3)]
+[delay(time=1)]
+[PlaySound(key="$swordtsing3", volume=1)]
+[PlaySound(key="$swordtsing5", volume=1,delay=0.2)]
+[CameraShake(duration=0.7,xstrength=35,ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]Who helped you?
+[charslot(slot="m",name="avg_npc_1307_1#1$1",focus="m")]
+[name="Silent Assassin"]...
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]...
+[Dialog]
+[charslot(slot="m",name="avg_npc_1307_1#1$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_daggerslow", volume=1)]
+[delay(time=2)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[charslot(duration=1)]
+[delay(time=2)]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[delay(time=1)]
+She gets no answer.
+This endless corridor is filled with the bodies of the perpetrators, but why could she not find out how this betrayal happened?
+She is sure that the answer is here.
+Here in Babel, amidst the seemingly unremarkable mission logs of PRTS.
+Perhaps... it's just at the end of the corridor.
+[name="???"]Here...
+[Dialog]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot = "m", name = "avg_npc_1343_1#4$1",duration=0.3)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_npc_1343_1#4$1",focus="m")]
+[name="W"]—?
+[charslot(slot = "m", name = "avg_npc_1343_1#4$1",focus="n")]
+[name="???"]Here... beneath these bodies...
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_1343_1#4$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_clothmovementsp", volume=1)]
+[charslot(duration=0.5)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1",focus="m")]
+[name="Babel Member"]Did you come back to help...? Go save Her Highness...
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]...
+[name="W"]What are you doing here...?
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1",focus="m")]
+[name="Babel Member"]I tried to protect Her Highness, but someone knocked me out.
+[name="Babel Member"]Did we save her?
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]You saw the assassins?
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1",focus="m")]
+[name="Babel Member"]The defense systems went offline all of a sudden. Then enemies rushed in...
+[name="Babel Member"]My team and I tried to protect Her Highness—
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]Are these your teammates? They're dead.
+[name="W"]But you're alive.
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1",focus="m")]
+[name="Babel Member"]...
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]Her Highness is dead.
+[charslot(slot = "m", name = "avg_npc_1308_1#1$1",focus="m")]
+[name="Babel Member"]...
+[charslot(slot = "m", name = "avg_npc_1343_1#1$1",focus="m")]
+[name="W"]Protect Her Highness. Hah.
+[name="W"]You can 'protect Her Highness' with this grenade.
+[Dialog]
+[charslot]
+She holds back the urge. If only she had stayed here.
+Would it have changed anything?
+She steps over a body and continues down the corridor.
+She hears no explosion from behind her.
+[charslot(slot = "m", name = "avg_npc_1343_1#7$1",focus="m")]
+[name="W"]Trash. Coward.
+[Dialog]
+[charslot]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+She arrives at the Speaker's Office to find the bodies of assassins piled outside the door. She does not want to go any further.
+Who is she to mourn Theresa when she has not killed the traitors?
+In her heart, she already has the answer to who was behind all this.
+The one who led the assassins, stood here, and led death to Theresa.
+She would confront that one, once she has killed everyone who participated in the deed.
+It would be her last target...
+[Dialog]
+[stopmusic(fadetime=2)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[playsound(key="$char_Mon3tr",volume=0.5)]
+[delay(time=1)]
+[Decision(options="It's time to go, W!;The door's open! We're going in!", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="37_g9_airshipdockcorridor",screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="m")]
+[delay(time=1)]
+[PlayMusic(intro="$warchaos_intro", key="$warchaos_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="m")]
+[name="W"]...You—
+[Dialog]
+[charslot]
+She looks at you.
+You stand in the darkness at the end of the corridor.
+Mon3tr's massive frame stands between you and the ghosts charging towards you.
+[Dialog]
+[Decision(options="I've drawn them out!;Mon3tr can't hold them off for too long!", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[name="Mon3tr"](Loud roar)
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]Hang in there, little monster!
+[Dialog]
+[charslot]
+She throws several bombs towards the gathered black apparitions.
+[Dialog]
+[PlaySound(key="$d_gen_explo_n",volume=0.7)]
+[PlaySound(key="$d_sp_ballista", volume=1,delay=0.2)]
+[PlaySound(key="$e_skill_explodebris",volume=0.7,delay=0.4)]
+[CameraShake(duration=1,xstrength=50,ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0, block=true)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=1, r=0.95, g=0.95, b=0.95, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0.95, g=0.95, b=0.95, fadetime=0.7, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[playsound(key="$char_Mon3tr",volume=0.5)]
+[name="Mon3tr"](Angry roar)
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Tsk.
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(duration=1)]
+[delay(time=2)]
+W charges into the wake of the explosion.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+She goes through enemies and Mon3tr, through the fire and the cracking air.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="50_g10_airshipwitchcraftcore",screenadapt="coverall", block=true)]
+[focusout(duration=1, type="bg", from=0, to=1, block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+W arrives at the other side of the door.
+She turns around—
+The figure is still standing in the corridor, one hand on the door control, as countless wraiths try to rush out from behind.
+She has no memory of ever having seen this scene.
+But there was a scene from her imagination of the assassination, a scene that she could never shake—
+Did that 'evil spirit' stand before Theresa like this?
+Did the culprits who took her life rush out from behind the 'evil spirit' like this?
+Was it the 'evil spirit' who opened the door to the Speaker's Office?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#15$1",focus="m")]
+[name="W"]...
+[Dialog]
+[charslot]
+[Decision(options="Come back, Mon3tr! I'm closing the door!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[name="Mon3tr"](Excited howling)
+[Dialog]
+[charslot]
+[Decision(options="Another bomb, W! Buy me some time!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#15$1",focus="m")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="m")]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]...
+[Dialog]
+[charslot]
+She tosses the bomb almost instinctively, without arguing.
+[Dialog]
+[PlaySound(key="$d_avg_explosion",volume=0.7)]
+[PlaySound(key="$d_avg_metaldoorclose", volume=1,delay=0.2)]
+[CameraShake(duration=-1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=false, block=false)]
+[delay(time=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[StopSound(channel="a", fadetime=1.5)]
+[stopmusic(fadetime=1.5)]
+[CameraShake(duration=0.1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot]
+[Background(image="50_g10_airshipwitchcraftcore",screenadapt="coverall", block=true)]
+[focusout(duration=0.5, type="bg", from=0, to=1, block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$Mon3tr_n")]
+[name="Mon3tr"](Raises you excitedly)
+[Dialog]
+[charslot]
+[Decision(options="Aw, aw, aw!;Take it easy! My back hurts!", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#15$1",focus="m")]
+[name="W"]...
+[Dialog]
+[charslot]
+She looks at you as if she is trying to find a shadow of someone bygone upon you.
+[Dialog]
+[Decision(options="Why are you looking at me like that?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="m")]
+[name="W"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#14$1",focus="m")]
+[name="W"]Was this your genius plan to prevent them from coming in? That simple?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#14$1",focus="n")]
+[Decision(options="Simple? Is that so...;Sometimes the simplest means are the most effective.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="m")]
+[name="W"]Wait. Is this... crystallization?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="n")]
+[Decision(options="Noticed it already, haven't you?;I saw that the airship was beginning to crystallize as I came in.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="m")]
+[name="W"]So that was our last chance before the door became fully crystalized...
+[name="W"]You had planned to block the door on your own from the beginning?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="n")]
+[Decision(options="I had you and Mon3tr.;I trust you and Mon3tr.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]Trust... me? Hah...
+[name="W"]Until I find out what happened back then, I—
+[Dialog]
+[charslot]
+[Decision(options="Look... I think this is the place.;My calculations were right.", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[PlayMusic(key="$m_bat_act37d0d0_01_loop", volume=0.6)]
+[PlaySound(key="$d_avg_energywell", volume=0, loop=true, channel="ghost")]
+[SoundVolume(volume=1, channel="ghost",fadetime=1.5)]
+[focusout(duration=1.5, type="bg", from=1, to=0, block=true)]
+[delay(time=2)]
+The engines roar deep inside the halls of the ship.
+Souls burn, releasing pain and anger.
+The core of the airship lies bare before you.
+[Dialog]
+[Decision(options="The airship is powered by burning the revenants?!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#6$1",focus="m")]
+[name="W"](Theresa isn't here.)
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Doesn't matter what it is. Blow it up, and this piece of junk stops.
+[name="W"]Let's finish our business here. I got more important stuff to do.
+[name="W"]You're coming with me to see Theresa.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="n")]
+[Decision(options="...;Alright. I'll go with you.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]I know you're there, old geezer.
+[name="W"]I put a special gift for you under your bed.
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]It's present time!
+[Dialog]
+[charslot]
+[PlaySound(key="$p_skill_explocar", volume=0.5)]
+[CameraShake(duration=1.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255,g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255,g=255, b=255, fadetime=1, block=true)]
+[StopSound(channel="ghost", fadetime=1.5)]
+[delay(time=1.5)]
+[Decision(options="Something's not right...;The bomb didn't work?", values="1;2")]
+[Predicate(references="1;2")]
+[musicvolume(volume=0, fadetime=2)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[Subtitle(text="How dare you come here!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="Outblood!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[Subtitle(text="And you! Sarkaz!", x=300, y=370, alignment="center", size=26, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.7, block=true)]
+[delay(time=0.5)]
+The burning core instantly freezes, and the scattered flames rush back inside.
+The fire that illuminates life dims.
+All sound fades. One could hear one's own heartbeat in the silence left behind.
+[Dialog]
+[PlaySound(key="$d_avg_erthshkng",loop=true,channel="sk",volume=1)]
+[PlaySound(key="$d_avg_underwateramb", channel="bw", loop=true,volume=0.4)]
+[SoundVolume(volume=0.5, fadetime=1.5,channel="bw")]
+[CameraShake(duration=-1,xstrength=20,ystrength=20, vibrato=30, randomness=90, fadeout=false, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+Darkness begins to fill the room.
+Shadows flow out of the core, converging into a great river, its current speeding up...
+Until a great black tide, enough to swallow the entire room, rushes towards you.
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]—!
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[stopSound(channel="bw", fadetime=1.5)]
+[charslot]
+[Background(image="37_g9_airshipdockcorridor",screenadapt="coverall", block=true)]
+[CameraShake(duration=3.5,xstrength=20,ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_394_1#13$1")]
+[delay(time=1)]
+[stopSound(channel="sk", fadetime=2.5)]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0.3, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]—!
+[name="Amiya"]Such great pain and anger...
+[Dialog]
+[charslot]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1340_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1340_1#1$1",focus="m")]
+[name="Shadow"]No more words for you, outblood King!
+[name="Shadow"]I have abided your many transgressions only because of Theresa. No more!
+[name="Shadow"]Do you know what you are trying to stop?
+[name="Shadow"]It is not just a war that the Sarkaz needs!
+[name="Shadow"]You are trying to extinguish the flame that will change our destiny!
+[name="Shadow"]You shall not succeed—
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+The black tide that swallowed Amiya recedes, and the shadows pulling at her weaken.
+[Dialog]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]He's focusing his strength?
+[Dialog]
+[charslot(slot="m",name="avg_npc_1340_1#1$1",focus="m")]
+[delay(time=0.2)]
+[Effect(name="$e_amiya_atk_01", layer = 1)]
+[PlaySound(key="$p_skill_chimera", volume=1)]
+[PlaySound(key="$d_avg_shdwblwvr", volume=0.7,delay=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.4, block=true)]
+[charslot(duration=0.7)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]All the shadows... they've disappeared.
+[name="Amiya"]Looks like someone else found the revenant's location first.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]Is the Doctor okay? I wonder where Dr. Kal'tsit and W are...
+[name="Amiya"]I can feel the place where the anger is strongest. That's what we're looking for.
+[name="Amiya"]Hang in there, Doctor, Dr. Kal'tsit...
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]I'm coming!
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(duration=0.7)]
+[delay(time=1.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="37_g9_airshipdockcorridor",screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",duration=0.3)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[multiline(name="Amiya")]Signs of explosions...
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[multiline(name="Amiya")]W must have been here!
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]Did Mon3tr leave these claw marks? Is the Doctor with W?
+[Dialog]
+[PlaySound(key="$e_skill_skulsrsword", volume=1)]
+[PlaySound(key="$d_avg_runstop", volume=1,delay=0.2)]
+[charslot(duration=0.3)]
+[CameraShake(duration=0.5, xstrength=30,ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.03, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]—!
+[Dialog]
+[charslot]
+A figure that Amiya never expected to see emerges from the shadow at the end of the corridor.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[musicvolume(volume=0.3, fadetime=1.5)]
+[charslot]
+[Image(image="49_i01",screenadapt="coverall",block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.7, fadetime=0)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+She has never forgotten the nightmare from so many years ago.
+She remembers Theresa, and the black sword that pierced her chest...
+The black-robed killers.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[image]
+[charslot]
+[Background(image="37_g9_airshipdockcorridor",screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.6, fadetime=1)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]Impossible...
+[name="Amiya"]You... you're all dead.
+[name="Amiya"]Ascalon checked and made sure you...
+[charslot(slot="m",name="avg_npc_1307_1#1$1",focus="m")]
+[name="Airship 'Apparition'"]...King of Sarkaz.
+[name="Airship 'Apparition'"]You're too late. She knew you would come.
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]Theresa...
+[charslot(slot="m",name="avg_npc_1307_1#1$1",focus="m")]
+[name="Airship 'Apparition'"]Amiya, the ones you're looking for will die.
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]—?!
+[charslot(slot="m",name="avg_npc_394_1#4$1",focus="m")]
+[name="Amiya"]Get out of my way.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_soldiersrun", volume=0.6)]
+[charslot(slot="l",name="avg_npc_1307_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_npc_1307_1#1$1",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$p_skill_spiritexplo", volume=1)]
+[CameraShake(duration=2, xstrength=10, ystrength=8, vibrato=20, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=1, g=1, b=1, fadetime=0.4, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=1, g=1, b=1, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#12$1",focus="m")]
+[name="Amiya"]You...
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1307_1#1$1",focus="all")]
+[charslot(slot="r",name="avg_npc_1307_1#1$1",focus="all")]
+[name="Airship 'Apparition'"]Spare the effort of reading our emotions.
+[name="Airship 'Apparition'"]The only way you will pass...
+[name="Airship 'Apparition'"]...is over our cold, dead bodies.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]I see the fragments of your memories—
+[name="Amiya"]How could this be...
+[charslot(slot="m",name="avg_npc_394_1#20$1",focus="m")]
+[name="Amiya"]You're from Babel?!
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

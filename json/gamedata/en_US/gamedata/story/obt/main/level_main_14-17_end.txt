@@ -1,0 +1,704 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[focusout(duration=0.5, type="bg", from=0, to=1)]
+[curtain(direction = 0,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[curtain(direction = 4,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[Delay(time=1)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=0.5)]
+[focusout(duration=1.5, type="bg", from=1, to=0, block=true)]
+[delay(time=1)]
+I have returned.
+It feels like it has been a very long time since I left, and I have not come back to the ship for a good night's rest in quite a while either.
+Doctor, Dr. Kal'tsit, Siege...
+Has the war outside ended? Finally, I can have a rest.
+I'd like nothing more than a bowl of hot vegetable soup at the cafeteria, then plop myself down in my bed in the dorms.
+What about Theresa? At this hour, she should be—
+...
+No... No, that's not right...
+Theresa is gone.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="bg_room_2", screenadapt="coverall", block=true)]
+[curtain(direction = 0,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[curtain(direction = 4,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[delay(time=1)]
+[PlaySound(key="$dooropenquite", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+The room is empty. Nobody is waiting for my return.
+I clearly remember that on many nights in the past, there would be someone who would tell me a whole library's worth of stories to put me to sleep.
+But now, they are no longer here.
+Wait... Why is there a piece of clothing on the bed?
+A white dress, with a neat corsage sewn to the collar. The needlework is deft, clearly done by a very experienced hand.
+'White suits you, Amiya.'
+Theresa...?
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[curtain]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[name="Distant Voice"]...Doctor!
+[name="Approaching Voice"]Can you hear my voice?
+[name="Kal'tsit"]Doctor!
+[Dialog]
+[PlaySound(key="$d_gen_dooropen", volume=1)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=2, block=true)]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_003_kalts_1#1$1")]
+[focusout(duration=0.1, type="bg", from=0, to=1)]
+[focusout(duration=0.1, type="char", from=0, to=1)]
+[delay(time=0.5)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]Doctor...
+[name="Kal'tsit"]You are here, as I surmised.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="(I feel rather unwell.);(What happened just now?);(Where am I?)", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]Based on how you look, you seem in poor health.
+[name="Kal'tsit"]I am afraid that there's no way for me to do a physical examination here, Doctor. Please keep your head clear and look at me.
+[name="Kal'tsit"]Did you... manage to remember something?
+[Dialog]
+[charslot]
+You hear the woman's stern but caring words, and you make an effort to open your eyes wide.
+[Dialog]
+[focusout(duration=1.5, type="char", from=1, to=0)]
+[focusout(duration=1.5, type="bg", from=1, to=0, block=true)]
+Your vision gradually clears as the various parts of your body regain their functionality.
+You slowly open your mouth—
+[Dialog]
+[Decision(options="(Unknown language) Kal'tsit...;(Unknown language) Where am I?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="Kal'tsit"]—!
+[Dialog]
+[charslot]
+Your shattered consciousness reassembles, your fragmented thoughts realign with one another. You are now able to determine that you are standing on solid ground.
+You look around, certain of the familiarity of your surroundings. You have spent quite a long time here before.
+The expression on the woman before you turns rather strange. Even hostile.
+[Dialog]
+[Decision(options="(Unknown language) Who am I...;...;Who am I?", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[musicvolume(volume=0.3, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i11", screenadapt="coverall", fadetime=0)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i15",screenadapt="coverall",fadetime=0,block=true)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i16", screenadapt="coverall", fadetime=0)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[Background(image="bg_black",screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+I am Dr. {@nickname} of Rhodes Island.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Delay(time=0.5)]
+[Dialog]
+[Decision(options="Amiya!;Kal'tsit! Why are we on Rhodes Island?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="Kal'tsit"]You...
+[name="Kal'tsit"]...It seems you still remember who you are.
+[name="Kal'tsit"]Amiya is not here with us. What I can say for certain that this is not the original Rhodes Island.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="We were separated from the others?;Where are Logos and W?", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]You are the only one I have seen since I arrived here.
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="Kal'tsit"]Are you sure you don't know what is going on?
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="I'm as confused as you are.", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]...
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="n")]
+[Decision(options="Do you...;...not believe me?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="Kal'tsit"]...A certain degree of precaution is necessary in these circumstances.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Be on guard, Doctor. We must leave here, no matter what.
+[name="Kal'tsit"]This is <i>not</i> a place that we are familiar with. I do not know what unexpected complications we may encounter.
+[name="Kal'tsit"]Still, I will do everything I can to protect you. Don't stray too far from me.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_trainingcom",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlayMusic(key="$wasteland_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=0.6)]
+[PlaySound(key="$d_avg_metallicclick", volume=0.9,delay=0.2)]
+[PlaySound(key="$swordtsing1", volume=0.6,delay=0.4)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "char_124_kroos_1#3",focus="m")]
+[name="Kroos"]No... No more...
+[name="Kroos"]I'm so tuckered out that I could sleep for an entire month.
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="Fang"]Don't be like that, Kroos!
+[name="Fang"]This is a live combat exercise! You need to treat the training room like the battlefield!
+[charslot(slot = "m", name = "char_122_beagle_1",focus="m")]
+[name="Beagle"]You can be real fierce sometimes, Captain...
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="Fang"]Focus up. There's still lots of training drills arranged by the instructors to go.
+[charslot(slot = "m", name = "char_124_kroos_1#3",focus="m")]
+[name="Kroos"]Why so serious... They're not even here—
+[charslot(slot = "m", name = "char_124_kroos_1#1",focus="m")]
+[name="Kroos"]Oh, Doctor!
+[Dialog]
+[charslot]
+[Decision(options="Good morning, Kroos.;Is everyone... here?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="Fang"]Kroos!
+[charslot(slot = "m", name = "char_124_kroos_1#1",focus="m")]
+[name="Kroos"]Oh, don't worry, the Doctor's definitely not going to tattle on us to the instructors.
+[name="Kroos"]Let me just take a nap here before—
+[Dialog]
+[charslot]
+[name="Stern Voice"]I thought I gave you combat <i>training</i> exercises, not combat sleeping ones.
+[Dialog]
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="Fang"]...We're doomed.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n", volume=0.6)]
+[charslot(slot = "m", name = "char_014_riope",duration=1)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="Ace"]Attention, all members of A1 Detachment!
+[Dialog]
+[charslot]
+[name="The Whole Team"]Sir!
+[Dialog]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="Ace"]All of you, a hundred laps around the training room, then fifty sets of stamina training exercises, on the double!
+[Dialog]
+[charslot]
+[name="The Whole Team"]Yessir...
+[Dialog]
+[PlaySound(key="$d_avg_soldiersstep",channel="step1",loop=false, volume=0.7)]
+[stopsound(channel="step1",fadetime=4)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="Ace"]Sorry you had to see that, Doctor.
+[name="Ace"]It's been too long since Rhodes Island experienced battle. These young fighters of ours can be a little slack.
+[name="Ace"]So I guess it's up to me to tighten them up.
+[Dialog]
+[charslot(slot = "m", name = "char_014_riope",focus="n")]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[Decision(options="Letting them grow up peacefully isn't so bad...", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="Ace"]Of course, but they still need to be prepared for any dangers we may come across.
+[name="Ace"]It'll be fine. No need to trouble yourself over their training. I'll handle it.
+[name="Ace"]You've been working real hard lately, Doctor. Go take a rest.
+[name="Ace"]Don't worry. We'll be keeping watch.
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=2)]
+[Decision(options="Did you see all that too, Kal'tsit?;Am I dreaming?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="Kal'tsit"]I saw the same scene unfurl as you did. They truly do exist here.
+[name="Kal'tsit"]Dreams would not be so clear, and this is not a scene out of your memory.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="It would be nice if everything here was real...;No, it definitely isn't real.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]Keep a clear head, Doctor.
+[name="Kal'tsit"]We must press onwards.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_bar_1",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_crwddiscuss_inside", volume=0.4, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_coin", volume=1)]
+[Delay(time=1)]
+[StopSound(channel="a", fadetime=1.5)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="Outcast"]Rare to see you here, Doctor.
+[name="Outcast"]Got time to sit down and have a drink? Everything's on my tab, for one night only.
+[Dialog]
+[charslot]
+[Decision(options="It's lively here.;Sure is a lot of people, isn't it?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_npc_249_1$1",focus="m")]
+[name="Touch"]Did you forget, Doctor? Today's Outcast's retirement party.
+[charslot(slot = "m", name = "avg_npc_252",focus="m")]
+[name="Sharp"]Here's to our venerate elder.
+[Dialog]
+[charslot]
+[PlaySound(key="$clink")]
+[PlaySound(key="$clink", loop=false, channel="1",delay=0.04)]
+[PlaySound(key="$clink", loop=false, channel="2",delay=0.06)]
+[PlaySound(key="$clink", loop=false, channel="3",delay=0.08)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="Outcast"]Oh, shut it, Sharp. I'm barely older than you are.
+[Dialog]
+[charslot]
+[Decision(options="Thank you for all that you've done for Rhodes Island, Outcast.;I wish you a happy retirement.", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_095",focus="m")]
+[name="Pith"]Here's to you, Outcast. We'll always remember your many deeds and exquisite marksmanship.
+[charslot(slot = "m", name = "char_017_homura_3#10",focus="m")]
+[name="Blaze"]I can't believe that Outcast is leaving us...
+[name="Blaze"]There'sh not gonna to be anyone left to... *hic* drink wish me on weekend nights...
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="Outcast"]Hey, I'm just retiring. Not even a Lateran funeral would be this sentimental.
+[name="Outcast"]Plus, even if I drink so much tonight that I don't wake up tomorrow, I'd call my life a life well lived.
+[name="Outcast"]My memories of working alongside you all are my greatest treasures, and I'll bring them to the grave with me along with my patron firearm.
+[name="Outcast"]Just make sure that it's Rangers teaching the youngsters how to shoot.
+[charslot(slot = "m", name = "char_017_homura_3#7",focus="m")]
+[name="Blaze"]You're drunk, Outcast. He uses a gun, how's he s'pposed to teach kids 'bout—*burp*—shootin' a Sankta crossbow?
+[charslot(slot = "m", name = "avg_npc_095",focus="m")]
+[name="Pith"]You need to cut back, Blaze. You're talking nonsense again.
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="Outcast"]Pah, both need you to keep one eye open and one eye shut. Not too big a difference.
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="n")]
+[PlaySound(key="$bottlebroken", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#1",focus="m")]
+[name="Outcast"]Oh, looks like we're not the only ones at the bar tonight.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_bar_1",screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_155_tiger_1#9$1")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_155_tiger_1#9$1",focus="m")]
+[name="Indra"]I'm serious, Dagda!
+[name="Indra"]Show me how powerful the fist of a Knight of the Tower can be!
+[charslot(slot = "m", name = "avg_npc_396_1#3$1",focus="m")]
+[name="Dagda"]...Just remember, you asked for this.
+[Dialog]
+[playsound(key="$d_avg_clnchfst")]
+[PlaySound(key="$d_avg_clothmovementsp",volume=0.8,delay=0.5)]
+[Delay(time=0.5)]
+[charslot(duration=0.5)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_863_1#3$1",focus="m")]
+[name="Baird"]Hey! This isn't the boxing gym! We're guests here on Rhodes Island, so don't go about making trouble!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_punch")]
+[PlaySound(key="$fightgeneral",volume=0.8,delay=0.4)]
+[PlaySound(key="$d_avg_glassbroken", volume=0.6,delay=0.5)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="Allerdale"]I've had my fair share of times like this before.
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="Vina"]Now that you're formally a member of the Steam Knights, are you going to break things off with street loafers like us?
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="Allerdale"]Oh, stop it... Have you made your decision, Vina?
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="Vina"]I see no real reason for me to hesitate. My days in Norport might have been some of the happiest in my life, and I don't really see any need to return to the palace.
+[name="Vina"]Alexandrina Vina Victoria is a descendant of the royal family, but she is also a normal, honorable Victorian.
+[name="Vina"]You are now an honorable Steam Knight, Allerdale, I the honorable Siege.
+[name="Vina"]I believe that these lives of ours are for the best.
+[charslot(slot="m",name="avg_npc_397_1#2$1",focus="m")]
+[name="Allerdale"]Peaceful lives. Such precious things.
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="Vina"]To life.
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="Allerdale"]To Victoria.
+[Dialog]
+[charslot]
+[PlaySound(key="$clink")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="Vina"]Whenever you're in the mood, we should go out and have a stroll together. Perhaps throw some stones at the dukes' windows?
+[Dialog]
+[charslot]
+[Decision(options="How wonderful.;...;This isn't real.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]You still remember each and every one of them. The regret you feel over their tragic fates is clear on your face.
+[name="Kal'tsit"]Otherwise you would not be seeing such things.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]What do you feel, Doctor?
+[name="Kal'tsit"]Gratification? Confusion? Perhaps anger?
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]These are the scenes that your subconscious mind wished to see.
+[name="Kal'tsit"]You hoped that they were all real, didn't you?
+[Predicate(references="1;2;3")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="Who else will I see here?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]Only you can answer that.
+[name="Kal'tsit"]Let us continue, Doctor.
+[name="Kal'tsit"]No matter what you see, you must face it. Surmount it.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_078#2",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="Talulah"]I'm back, Doctor. It's been a while.
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="...;...Talulah?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="Talulah"]Hehe, it hasn't been that long. Don't recognize me anymore?
+[name="Talulah"]I was out setting up an Infected treatment center in the north of Ursus. Took quite a lot of effort.
+[name="Talulah"]Thankfully the workers in town were all supporting us, nothing the local lord could do but compromise. We managed to get the land that we needed out of the deal.
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="Reunion doesn't exist...?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="Talulah"]Are you trying to crack a joke, Doctor, or have you just woken up?
+[name="Talulah"]If Reunion didn't exist, then who would be helping Rhodes Island with treating the Infected in Ursus?
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="And Kashchey? What about him?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="Talulah"]Why would you suddenly bring up the dead Black Snake?
+[name="Talulah"]Did you want me to thank you again? Very well. After all, it was only thanks to Rhodes Island that Ursus and I were able to cast off that mastermind and start a new future for countless people.
+[Dialog]
+[charslot(duration=0.5)]
+[musicvolume(volume=0, fadetime=1)]
+[Delay(time=1)]
+[name="Cold Voice"]Doctor.
+[Dialog]
+[Decision(options="No...;(Do not look back.)", values="1;2")]
+[Predicate(references="1;2")]
+[PlaySound(key="$d_avg_walk_stage", volume=1,loop="false", channel="fwalk")]
+[stopsound(fadetime=2, channel="fwalk")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",duration=1)]
+[Delay(time=2)]
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="FrostNova"]Doctor?
+[Dialog]
+[charslot]
+[Decision(options=".........", values="1")]
+[Predicate(references="1")]
+[Decision(options="FrostNova...", values="1")]
+[Predicate(references="1")]
+[Decision(options="You shouldn't be here.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="FrostNova"]Why?
+[name="FrostNova"]You told me to give you my report immediately after completing the missions, no?
+[Dialog]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="n")]
+[Decision(options="Missions... for Rhodes Island?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="FrostNova"]Who else would I do them for? I've always been a Rhodes Island Operator.
+[Dialog]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="n")]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="FrostNova"]You look strange, Doctor. Am I standing too close and making you feel cold?
+[stopmusic(fadetime=2)]
+[Dialog]
+[charslot]
+[Decision(options="This isn't right.;This isn't...;THIS ISN'T RIGHT!", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[PlaySound(key="$d_avg_dreambroken", volume=1)]
+[PlaySound(key="$d_avg_phntsmglsbrek", volume=1,delay=3)]
+[focusout(duration=3, type="bg", from=0, to=1, block=false)]
+[delay(time=3)]
+[CameraShake(duration=2, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Background(image="50_g14_rhodescorridor_ex",screenadapt="coverall", block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=3, block=true)]
+[focusout(duration=2, type="bg", from=1, to=0, block=true)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[delay(time=2)]
+One by one, the lively crew shed their visages, shifting into indistinct, jet-black shadows.
+They do not appear dangerous. They just slowly drift around you.
+[Dialog]
+[Decision(options="Kal'tsit... What are they?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]This is no illusion or dream. It is all real, in a sense.
+[name="Kal'tsit"]All the people, all the things you have encountered in the past exist within your imagination. They took their forms based on what you most hoped to see.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="n")]
+[Decision(options="They sully our memories.;How can you stay so calm?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]These scenes affect me as much as they do you, Doctor.
+[name="Kal'tsit"]But they are ultimately the product of your thoughts.
+[name="Kal'tsit"]Originium, guided by your wishes deep in your subconscious and your desires to make up for past regrets, has reproduced what you wish to see.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]You continue to hold a deep regard for everything you have experienced alongside Rhodes Island, yet despite that, you were able to break away from this beautiful lie.
+[name="Kal'tsit"]Only now can I believe that you, as you are now, are still the Doctor of Rhodes Island.
+[Dialog]
+[charslot]
+[Decision(options="Originium? Since when could it do this?;Why is it being guided by what I want?", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=0.5)]
+[Subtitle(text="<color=#000000>All that you wish for, I am able to grant.</color>", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=0.5)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=1)]
+[Dialog]
+[Decision(options="Pries...tess...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="Kal'tsit"]As I thought, you already...
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]I once told you, Doctor, that others cannot tell you how to solve the mysteries surrounding you. You can only rely on yourself.
+[name="Kal'tsit"]I suspect that we are now extremely close to that critical juncture.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="If this is all based on my hopes, then are you...;I can at least say for sure that you are no illusion.", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]I thought that our prior interactions would be sufficient for you to render an accurate judgement.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]I hope that this judgement of yours is based on rationality, and not something else.
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="If these scenes are all about making up for regrets...", values="1")]
+[Predicate(references="1")]
+[Decision(options="Will I be able to meet Theresa?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="Kal'tsit"]I do not know for certain where Theresa is, nor what she is doing.
+[name="Kal'tsit"]What I am sure of is that she has something to do with this environment.
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[name="Gentle Voice"]Doctor.
+[Dialog]
+[Decision(options="—!", values="1")]
+[Predicate(references="1")]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",duration=1)]
+[delay(time=1.5)]
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="Amiya!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="Amiya"]Doctor, Dr. Kal'tsit. Good, you're both here.
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="(Hesitate);(Step forward without hesitation)", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="Amiya"]Don't worry, Doctor. I am the real Amiya. Really.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1037_amiya3_1#9$1",focus="m")]
+[name="Amiya"]*sniff* I was looking all over for you, Doctor.
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="You look a little different.;Your clothes...?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[name="Amiya"]Theresa left me this dress.
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="n")]
+[Decision(options="So she really is here?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[name="Amiya"]I haven't seen her. I've sensed no presence of her aboard this 'Rhodes Island', in fact.
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="n")]
+[Decision(options="Did you run into any danger?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="Amiya"]I'm fine.
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[multiline(name="Amiya")]So many memories flowed before me...
+[charslot(slot="m",name="avg_1037_amiya3_1#7$1",focus="m")]
+[multiline(name="Amiya")]But not only memories. Emotions too, rich ones in every shape and form.
+[name="Amiya"]I think that the people that we saw were truly alive.
+[charslot(slot="m",name="avg_1037_amiya3_1#2$1",focus="m")]
+[name="Amiya"]But this form of 'life' just makes me... sad.
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="Amiya"]After walking down this corridor and seeing you, I think I understand now.
+[name="Amiya"]The emotions that I felt all stemmed from the same source, Doctor.
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="...Me.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="Amiya"]Yes.
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="Amiya"]I... 'touched' you, Doctor. I've never done that before...
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+The girl holds your hand, just as she has always done, but a little tighter, and more carefully this time.
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="Amiya"]I know that you've changed a lot compared to the past, Doctor.
+[name="Amiya"]But considering all that we've experienced together, I am even more convinced that... the you who stands before me now has always been the you that I've trusted the most.
+[charslot(slot="m",name="avg_1037_amiya3_1#9$1",focus="m")]
+[name="Amiya"]Memory may tell falsehoods, but emotion always speaks the truth.
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="Amiya"]There are many things that I still don't understand at this moment. I have questions that can't be answered until we see Theresa once more.
+[name="Amiya"]No matter what happens, no matter how many unhappy endings await us...
+[name="Amiya"]You'll stand by my side, won't you, Doctor?
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="I will.", values="1")]
+[Predicate(references="1")]
+[Decision(options="I am Dr. {@nickname} of Rhodes Island.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#11$1",focus="m")]
+[name="Amiya"]Good. That's all I ask for.
+[name="Amiya"]Let's go find Theresa, then.
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="Kal'tsit"]First, we must figure out how to leave.
+[name="Kal'tsit"]The answers we seek are not here.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="50_g11_rhodesdeck_ex",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4133_logos_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4133_logos_1#1$1",focus="m")]
+[name="Logos"]Though this is no illusion, heaven and earth, life and death...
+[charslot(slot="m",name="avg_4133_logos_1#12$1",focus="m")]
+[name="Logos"]It is all falsehood.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$2",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$2",focus="m")]
+[name="W"]Hah, so even if you leave that dreary gallery of fakes, you'd just find yourself wandering around an even bigger stage?
+[name="W"]Who the hell set up these curtains for us? Their taste sucks.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$2",focus="n")]
+[PlaySound(key="$d_avg_footstep_stonestep",volume=1,channel="step1",loop=false)]
+[PlaySound(key="$d_avg_walk_stage",volume=1,channel="step2",loop=false)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6,channel="step3",loop=false)]
+[stopsound(channel="step1",fadetime=2.5)]
+[stopsound(channel="step2",fadetime=2.5)]
+[stopsound(channel="step3",fadetime=2.5)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$2",focus="m")]
+[name="W"]Oh, looks like the main cast is finally here.
+[name="W"]Hey, crone, let's put that all-knowing brain of yours to good use. I've got a real big question I want answered—
+[charslot(slot="m",name="avg_1035_wisdel_1#14$2",focus="m")]
+[name="W"]Where. The hell. Are we?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[verticalbg(imagegroup="50_g22_1/50_g22_2", solidwidth=1280, solidheight="1512/1512",y=1905)]
+[largebgtween(duration =20,yFrom =560, yTo =860, block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=10)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[verticalbg(imagegroup="50_g22_1/50_g22_2", solidwidth=1280, solidheight="1512/1512",y=1905)]
+[largebgtween(duration =20,yFrom =1660, yTo =1890, block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=10)]
+A small boat, drifting atop an endless golden sea.
+[name="Kal'tsit"]We are within Originium.
+[name="Kal'tsit"]Within Originium, there exists a universe.
+[Dialog]
+[delay(time=2)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[largebg]
+[stopmusic(fadetime=2)]

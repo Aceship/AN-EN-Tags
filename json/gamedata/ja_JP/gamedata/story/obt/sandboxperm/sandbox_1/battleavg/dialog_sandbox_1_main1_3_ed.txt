@@ -1,0 +1,68 @@
+[header(actId="sandbox_1", npcId="trap_467_ttuye")]
+[summontrap(x="3", y="8", charId="trap_467_ttuye", isChar="FALSE", dir="RIGHT")]
+[summonenemy(enemyId="enemy_7001_blwzad_2", x="7", y="8", endX="1", endY="4")]
+[move(enemyId="enemy_7001_blwzad_2", x="6", y="8")]
+[summonenemy(enemyId="enemy_7001_blwzad", x="7", y="9", endX="1", endY="4")]
+[move(enemyId="enemy_7001_blwzad", x="6", y="9")]
+[camerafocusto(offsetX="5", offsetY="8", scale="FAR", time="1")]
+[foginview(id="rect1", leftBottomX=1, leftBottomY=6, rightUpX=7, rightUpY=11)]
+[name="首長軍兵士", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]警告はしたぞ。貴様らは誰の怒りを買ったのかまるでわかっていないようだがな！
+[decision(option1="空の星ほど大勢いる首長の一人かな。", value1="1.1", option2="ちっぽけな星の一体どれを指して言っている？", value2="1.2")]
+[predicate(references="1.1")]
+[name="首長軍兵士", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]……いずれ、首長に対する無礼への代償を払うことになるぞ。その時は我らの軍が貴様らの家を蹂躙してくれよう。
+[name="首長軍兵士", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]震えて待っているがいい。貴様らは我らの奴隷となり、採掘場で苦役に耐えることになる。
+[withdraw(id="enemy_7001_blwzad_2")]
+[withdraw(id="enemy_7001_blwzad")]
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]採掘場……
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]奴らを止める手立てを見つけないと、もっと大勢の人間がそこに連れていかれてしまうな。
+[decision(option1="今や彼らとは対立状態だ。", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="取り急ぎ、情報を拠点に持ち帰ろう。", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="すぐに計画を立てなければ。", value1="4.1")]
+[predicate(references="4.1")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]その前に、見てくれ。奴らが落としていった物の中に、指名手配書があったんだ。どうやら、ある考古学者を追っているらしい。
+[decision(option1="考古学者がこんなところに？", value1="5.1")]
+[predicate(references="5.1")]
+[decision(option1="もしや、宝の噂は本当なのか？", value1="6.1")]
+[predicate(references="6.1")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]あの兵士たちは、宝を探してこの土地を隅々まで掘り返していた。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]その宝……首長軍たちを追い払うにあたって、鍵になるかもしれないな。チャンスがあれば、この学者を探してみよう。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]待った、良い報せもあるぞ。奴ら、石材採掘用のガイドマップも置いていったようだ。これで採石ができるな。
+[additem(itemId="sandbox_1_craft_2", itemCount="1")]
+（アルサランの岩石分布図を手に入れたことで、石材の採取が可能になった。）
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[save]
+[end]
+[predicate(references="1.2")]
+[name="首長軍兵士", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]……いずれ、首長に対する無礼への代償を払うことになるぞ。その時は我らの軍が貴様らの家を蹂躙してくれよう。
+[name="首長軍兵士", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]震えて待っているがいい。貴様らは我らの奴隷となり、採掘場で苦役に耐えることになる。
+[withdraw(id="enemy_7001_blwzad_2")]
+[withdraw(id="enemy_7001_blwzad")]
+[camerafocusto(id="trap_467_ttuye", scale="MID", time="1")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]採掘場……
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]奴らを止める手立てを見つけないと、もっと大勢の人間がそこに連れていかれてしまうな。
+[decision(option1="今や彼らとは対立状態だ。", value1="8.1")]
+[predicate(references="8.1")]
+[decision(option1="取り急ぎ、情報を拠点に持ち帰ろう。", value1="9.1")]
+[predicate(references="9.1")]
+[decision(option1="すぐに計画を立てなければ。", value1="10.1")]
+[predicate(references="10.1")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]その前に、見てくれ。奴らが落としていった物の中に、指名手配書があったんだ。どうやら、ある考古学者を追っているらしい。
+[decision(option1="考古学者がこんなところに？", value1="11.1")]
+[predicate(references="11.1")]
+[decision(option1="もしや、宝の噂は本当なのか？", value1="12.1")]
+[predicate(references="12.1")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]あの兵士たちは、宝を探してこの土地を隅々まで掘り返していた。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]その宝……首長軍たちを追い払うにあたって、鍵になるかもしれないな。チャンスがあれば、この学者を探してみよう。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="FALSE"]待った、良い報せもあるぞ。奴ら、石材採掘用のガイドマップも置いていったようだ。これで採石ができるな。
+[additem(itemId="sandbox_1_craft_2", itemCount="1")]
+（アルサランの岩石分布図を手に入れたことで、石材の採取が可能になった。）
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[save]
+[end]

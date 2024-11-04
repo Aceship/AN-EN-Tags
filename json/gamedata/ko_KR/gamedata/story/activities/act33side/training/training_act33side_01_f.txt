@@ -1,0 +1,25 @@
+[HEADER(is_tutorial=true, is_skippable=true)] 活动33side教学关1_c
+[Battle.LockFunction(mask="SYSTEM_MENU")]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_kroos", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+앗, 그러고 보니 다른 수업이 남은 걸 깜빡했어. 나 이만 돌아간다~
+[Tutorial(protectTime=0.5, dialogHead="$avatar_jesica", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+크루스! 잠깐만요, 저희 안전 사슬……
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+크루스, 제시카, 일단 훈련에 집중해! 수시로 팀원의 상태에 유의해야 한다!
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+그런데…… 여긴 왜 이렇게 높아.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+후우…… 후우…… 5초만 더 버티자…… 수업 내용대로, 팀원이 위기에 빠졌을 때 어떻게 해야 하나?
+[Tutorial(protectTime=0.5, dialogHead="$avatar_fang")] \
+도베르만 교관님, 제가 알고 있습니다!
+[InputBlocker(blockInput=false)]
+[Tutorial(protectTime=0.5,waitForSignal="put_down", dialogHead="$avatar_fang", animStyle="Drag", \
+          startX=-86, startY=84, startAnchor="BottomRight", endX=360, endY=201)] \
+제가 관찰한 바로는 안전 사슬이 사라져도 바로 지형 밑으로 빠지는 게 아니라, 일시적으로 <@tu.kw>불안정 상태</>가 됩니다.
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_fang", animStyle="Drag", \
+          startX=360, startY=201, endX=360, endY=140)] \
+일정 시간 내에 저를 정상 지형에 배치하면, 제가 교관님께 안전 사슬을 연결할 수 있습니다.
+[InputBlocker(blockInput=true)]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+아주 훌륭해, 팽!

@@ -1,0 +1,603 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[focusout(type="bg", id="bg_corridor_2", from=0, to=1, duration=1, block=false)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="ドクター、私はもう怖くありません。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="みなさんに色々なことを聞かれました。ここまでの長い道のりで、立ち寄った場所、楽しかったこと、そうじゃなかったこと……私は全部答えました。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="でも、私では答えられないこともありました。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="ドクターは何を探しているのでしょうか？　どうしてみなさんは、ドクターが見たいと願うものは二度と見られないものばかりだと、こそこそ言うのでしょう？", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="……どうしてドクターは私を助けてくれて、私と一緒に旅をしてくれたんでしょう？", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[focusout(type="bg", id="46_g1_transporter", from=0, to=0, duration=0, block=false)]
+[Background(image="46_g1_transporter",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$radio")]
+[name="カーラジオ"]……以上、直近六時間の道路交通情報でした。では、長い耳もしくは短い耳をそばだてているドライバーの皆様――
+[name="カーラジオ"]天災予報をよく確認し、安全運転に気を配り、野生動物をむやみに追いかけたりせず、早めに仕事を終えてご帰宅ください……
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1", duration=1, isblock=true)]
+[name="アランナ"]いい調子じゃねぇか、相棒。
+[name="アランナ"]最後の旅をこのあたしと一緒に過ごせたことを幸運に思えよ。ほかの奴だったら、あんたをここまで持ち直させるのなんて無理だったろうな。
+[name="アランナ"]そしたらあんたは対装甲砲でぶち抜かれた穴たちを携えたまま、荒野の真ん中でエンジニア隊が解体に来るのを待って、有用なパーツだけ工場に持ってかれて再利用されてたはずさ。
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="アランナ"]そんであたしの方も車の返却失敗っていうヘマをやらかして、延々と同業者の間で笑い者にされてたに違いねぇ。
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1")]
+[name="アランナ"]……まあ、元々笑い者にされて当然なことはしてたけどさ。あの子が殺された時、あたしがこの車の底に隠れてたことを誰かに知られでもしたら……
+[name="アランナ"]チッ、あんなこと、もう二度とあってたまるか。
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="アランナ"]さて、これで残る問題は一つだけになったな。アイアンキャロットシティには知り合いが少ないから、事故報告書の書き方を教えてくれる人をどうにか探さねぇと……
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_transpthrn", volume=1)]
+[delay(time=1.5)]
+[PlaySound(key="$rungeneral", volume=1, loop=true, channel="r")]
+[StopSound(channel="r", fadetime=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", duration=1, isblock=true)]
+[name="アランナ"]ちょっと、ベル鳴らすのはよしな、この車は発車しねぇから。乗る車間違えて――
+[dialog]
+[PlaySound(key="$d_avg_steamburst", volume=1)]
+[PlaySound(key="$d_avg_gateopen", volume=1, loop=true, channel="g")]
+[StopSound(channel="g", fadetime=2.5)]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1")]
+[name="アランナ"]――ってあんた、ビビり野郎じゃないか？
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", name = "avg_npc_1184_1#1$1", posfrom="200,0", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "r", name = "avg_npc_1184_1#3$1", focus="r")]
+[name="ジェリー"]あっ……ははっ。見間違いじゃなかったみたいですね。
+[name="ジェリー"]あの個性的な装飾がなくなって、戦場の跡地みたいになってた車内も片付いてると、逆に違和感がありますが……
+[name="ジェリー"]とにかく、このトレーラーが無事みたいで何よりです！　それってつまり、レイさんやウォーミーちゃんも無事だってことですよね……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]ハッ、まあな。
+[charslot(slot = "r", name = "avg_npc_1184_1#1$1", focus="r")]
+[name="ジェリー"]で、では、一つお聞きしたいのですが……
+[name="ジェリー"]レイさんの探し物は、結局見つかったんですか？
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="アランナ"]ああ、普通に無理だったぜ。
+[charslot(slot = "r", name = "avg_npc_1184_1#4$1", focus="r")]
+[name="ジェリー"]なんと！　すみません、わざとではないんです！　悲しいことを思い出させてしまって申し訳ない……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]いいってことよ。てか別にあたしが悲しむことはないから。
+[name="アランナ"]まあ、カージャック女のやつも別に悲しんじゃいなかったけど。
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]そういや、マジで不思議なことが起きたな……小型の天災に遭遇しちまって、車を停めて避難する羽目になったんだけど、途中で急にいなくなったあいつが、これまた急にうちらの避難先に現れてさ。
+[name="アランナ"]あの時のあいつ、まるで天災の強風で何千キロも先に飛ばされて、頭真っ白になった間抜けな羽獣みたいな顔してた。
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="ジェリー"]えっ、そんな……もしやそれで何を探してたのかを忘れたなんてことは……僕、その場でぐるぐる回るっていう対決で目が回って、転んで頭をぶつけてそのままだめになった人を知ってるので……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]頭をやられたなんてもんじゃないよ。あいつ、巨獣に会ったなんて言うんだから。
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="ジェリー"]えっ……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]しかも、それが自分が探してたやつじゃないんだとさ。
+[charslot(slot = "r", name = "avg_npc_1184_1#2$1", focus="r")]
+[name="ジェリー"]ええっ？
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]しまいにゃ、あいつが探してたものは実際には存在しないって、その巨獣に言われたんだと。
+[charslot(slot = "r", name = "avg_npc_1184_1#1$1", focus="r")]
+[name="ジェリー"]そ……それは、本当に、ショックな結果でしたね……なんだか僕まで悲しくなってきました。
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]そうかい？　あたしは普通、そういう状態を「吹っ切れた」って呼んでるけどね。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]まあでも、あたしらはそのあと結局ニヤニヤ谷へは行ったぜ。せっかくはるばる足を運んだのに、あいつの一言でそのまま踵を返すのももったいねぇだろ？
+[name="アランナ"]……
+[charslot(slot = "r", name = "avg_npc_1184_1#3$1", focus="r")]
+[name="ジェリー"]……それで？　どうだったんですか？
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]そりゃもう――びっくりするくらいすごかったんだぜ！　けど危険が溢れてるのも噂通りで、あんたみたいなビビり野郎にゃ一生拝めないだろうな、あっはは！
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]けどマジの話、あそこに行くのは実際お勧めしないぞ。あたしの超絶テクニックと臨機応変な対応がなけりゃ、このオンボロ車で生還することなんてできなかっただろうし。
+[name="アランナ"]ここへ戻る道中も、一、二時間も走れば、こいつの放熱のために停車して休憩挟む必要があったしな……労組が「スタンダーダイズ」に乗り出すのも納得なもんだぜ。
+[dialog]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="アランナ"]ハァ……もう二十年か。
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="ジェリー"]アランナさんは……二十年も運転なさっているんですか？　全くそんな風には……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]あたしの技術を「認めて」くれてどうも。
+[name="アランナ"]けどそうじゃなくて……この車に出会ってから二十年って話さ。
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]そういやあんた――結婚式の招待状は？
+[charslot(slot = "r", name = "avg_npc_1184_1#4$1", focus="r")]
+[name="ジェリー"]え？　あー……
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="ジェリー"]その、間に合わなかったと言いますか……
+[name="ジェリー"]……ゴホン、実は今、ハネムーン中なんです。
+[name="ジェリー"]……というか、本当ならそのハネムーンも終わってたはずでして。つい十分前に。
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="ジェリー"]元々僕らの最終目的地はアイアンキャロットシティだったんです。だけど帰路に街の入り口でこのトレーラーを見かけて……ふと、もう少し旅行を続けたくなりました。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]ああ……さっきあそこに停まった軽量トラックってもしかしてあんたらの？　そそっかしい新人ドライバーが停まる場所を間違えて、物流通路に入り損ねたんだと思ってたぜ。
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="アランナ"]けど、妙だな……
+[charslot(slot = "r", name = "avg_npc_1184_1#3$1", focus="r")]
+[name="ジェリー"]あはは、そうです。輸送トラックで旅してたんですよ……
+[name="ジェリー"]実はあの日、移動区画から出てすぐ彼女のトラックを見つけて、それに乗ってやり損なった会の後始末にでも向かうつもりでしたが……なぜかそのまま役所まで車を走らせることになりまして……
+[name="ジェリー"]それから広場で簡素な式を挙げた後、すぐさまハネムーンに出発することに――
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="アランナ"]*レム・ビリトンスラング*、やっと思い出した！
+[charslot(slot = "r", name = "avg_npc_1184_1#2$1", focus="r")]
+[name="ジェリー"]ど、どどどどうされましたか……！
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="アランナ"]あんたと一緒に逃げてた子、どっかで見たことある顔だと思ったら……！　そのトラックに描いてあるロゴじゃねぇか！　ほら、そこにでかでかと載ってる顔！
+[name="アランナ"]やっぱりな！　だから、型落ちした旧式の安全弁を売ってる金物屋が絶対にあったはずだって覚えてたんだよ！
+[charslot(slot = "r", name = "avg_npc_1184_1#1$1", focus="r")]
+[name="ジェリー"]ああ、たしか言ってたような。家出しようと思ったとかで……
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="アランナ"]このトレーラーがなんで走っては停まるを繰り返さなきゃなんないのか、理由知りたい？
+[charslot(slot = "r", name = "avg_npc_1184_1#4$1", focus="r")]
+[name="ジェリー"]すすすみません！　つ、妻に代わって心から謝罪致します……
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]いや、ほんのジョークだって。元々改修する必要があったんだし、あんたらのせいにゃできないさ。
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]でもま、今からこの最後のパーツさえ付け替えれば、事故報告書を十数行は縮められるけどな。
+[name="アランナ"]ほら、あんたらのトラックの中に在庫があるか、さっさと見てきてくれよ。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="31_g2_luo_reception",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="サベージ"]ウォーミーちゃん、まだかかりそう？
+[dialog]
+[PlaySound(key="$d_avg_welding", volume=0.5, loop=true, channel="w")]
+[StopSound(channel="w", fadetime=2)]
+[Delay(time=1)]
+[charslot(slot = "m", focus="n")]
+[name="鍋蓋ちゃん"]はい……まだ火花が出ちゃって……
+[name="鍋蓋ちゃん"]……そんなにはかからないと思うので、もう少しだけ待ってもらえますか？　このアーツユニットをうまく制御できたら、すぐこの部屋から出ますから！
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="サベージ"]難しんならもう一度コツを教えてもらえば？　術師のおじさんもまだここで待ってるからさ、出ておいでよ。
+[charslot(slot = "m", focus="n")]
+[name="鍋蓋ちゃん"]けど、ランナお姉ちゃんに車の修理を教わったり、パパからお料理を教わった時には、すぐ身につけられたんです……！
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="サベージ"]そうなんだね。じゃあ頑張って。
+[name="サベージ"]……アランナが車を返却しに行くのに、あなたもついて行くものとばかり思ってたんだけど。
+[charslot(slot = "m", focus="n")]
+[name="鍋蓋ちゃん"]それじゃダメですよ、サベージお姉ちゃん。だって今日の正午までに用事をすべて終わらさなきゃ、お姉ちゃんたちのおっきな採掘船に乗るのに間に合わないんでしょ？
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="サベージ"]あー、いや、最悪わたしがバイクで次の停泊地点まで送って行くこともできるし。
+[charslot(slot = "m", focus="n")]
+[name="鍋蓋ちゃん"]サベージお姉ちゃん、お気持ちはありがたいんですが――
+[name="鍋蓋ちゃん"]どの道わたしは、あの車を降りなきゃいけなかったんですから。
+[charslot(slot = "m", name = "avg_230_savage_1#5$1")]
+[name="サベージ"]……
+[dialog]
+[PlaySound(key="$d_avg_glassdooropen", volume=1)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot = "m", name = "avg_230_savage_1#3$1", afrom=1 ,ato=1, posfrom="0,0", posto="10,-5", duration=0.2, isblock=true)]
+[charslot(slot = "m", name = "avg_230_savage_1#3$1", afrom=1 ,ato=1, posfrom="10,-5", posto="-100,0", duration=0.5, isblock=true)]
+[name="サベージ"]うわっ！
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$2", duration=2, isblock=true)]
+[name="鍋蓋ちゃん"]サ、サベージお姉ちゃん、どうして部屋のドアに寄りかかってるんですか？　びっくりしました。
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="サベージ"]ごめんごめん、あたし警備員やってたからさ、時々こうしてドアを塞いで圧をかけたりすることがあって、その時の癖で……
+[name="サベージ"]……ていうかすごい熱気ね。むわっと来たわ。
+[charslot(slot = "m", name = "avg_4081_warmy_1#4$2")]
+[name="鍋蓋ちゃん"]えへへ、アーツユニットの使い方、なんとなくわかりました！
+[charslot(slot = "m", name = "avg_230_savage_1#9$1")]
+[name="サベージ"]ほんとにマスターできちゃったの？　えらいじゃない！
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="サベージ"]……でも、練習はこれくらいにしてくれるとありがたいな。これ以上加熱したらわたしが燃えちゃう。
+[name="サベージ"]さあ、隣に座って。ここでアランナを待ちましょ。彼女が戻ってきたら、一緒にロドス本艦に案内するから、あなたの鉱石病の治療計画も立てなきゃね。
+[charslot(slot = "m", name = "avg_4081_warmy_1#11$2")]
+[name="鍋蓋ちゃん"]はい。
+[dialog]
+[charslot(slot = "m", posfrom="0,0", posto="200,0", duration=1.5, isblock=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=0.2, loop=true, channel="c")]
+[StopSound(channel="c", fadetime=1)]
+[charslot(slot = "m", posfrom="200,0", posto="200,-20", duration=1, isblock=true)]
+[Delay(time=0.8)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$2")]
+[name="鍋蓋ちゃん"]座って誰かを待つこの感覚、なんだか懐かしいです。
+[name="鍋蓋ちゃん"]駅の待合室も、こういう金属製の椅子を使っていました。ものすごく冷たくて、ずっと座っていてもあったかくならないんです。
+[name="鍋蓋ちゃん"]もしあの頃もアーツが使えたら、こっそり座るところを温めて、パパの足腰が痛まないようにしてあげられたのに。
+[charslot]
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="サベージ"]……次からしてあげればいいじゃない！　それにお父さんとまた会う日まで、アーツユニットの使い方を学ぶ時間もたっぷりあるし。
+[name="サベージ"]その時には、きっと完全にコントロールできるようになってるに違いないよ。
+[dialog]
+[charslot]
+[charslot(slot = "r", name = "avg_4081_warmy_1#12$2", posfrom="0,-20", posto="0,-20", duration=0, isblock=true)]
+[name="鍋蓋ちゃん"]そうでしょうか……
+[name="鍋蓋ちゃん"]今回は結局、レイお姉ちゃんは巨獣には会えなかったし、わたしたちもニヤニヤ谷へは行けませんでした。
+[name="鍋蓋ちゃん"]だからウォーミーがどれだけパパを待ち続けても、最後はたぶん……
+[charslot(slot = "r", name = "avg_4081_warmy_1#2$2")]
+[name="鍋蓋ちゃん"]……本当に、長い旅になりました。
+[dialog]
+[PlaySound(key="$rungeneral",volume=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", posfrom="-300,0", posto="0,0", duration=1, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="アランナ"]ふぅ、何とか間に合った。これもあいつのおかげだな。あのビビり野郎、報告書書かせたら右に出る者がいないぜ。
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]――ほうほう、イカしたアーツユニットじゃねぇか！　さすがあたしのチョイスだ！
+[name="アランナ"]鍋蓋ちゃん、準備はできた？
+[dialog]
+[PlaySound(key="$d_avg_clothmovement",volume=1)]
+[charslot(slot = "r", name = "avg_4081_warmy_1#1$2", posfrom="0,-20", posto="0,0", afrom=1, ato=1, duration=0.5, isblock=true)]
+[charslot(slot = "r", focus="r")]
+[name="鍋蓋ちゃん"]ランナお姉ちゃん！　今から実演してみせますね！
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]おう！
+[dialog]
+[charslot(slot = "r", focus="all")]
+[PlaySound(key="$firestorm", volume=0.5, loop=true, channel="f")]
+[StopSound(channel="f", fadetime=2)]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="アランナ"]……って、一気に暑くなりすぎだろ！？
+[name="アランナ"]ちょっとサベージ、こんな風にアーツを使わせて、ほんとに大丈夫なんだろうね？
+[charslot]
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="サベージ"]大丈夫大丈夫。
+[charslot]
+[charslot(slot = "r", name = "avg_4081_warmy_1#1$2", focus="n")]
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="アランナ"]ならいいけど……ふふん、にしてもこのアーツユニットにしといて正解だったな。鍋蓋ちゃんが使うなら、レム・ビリトンの工業美学が詰まったこいつが一番だろうって思ってたんだ。
+[name="アランナ"]見る目があるだろ？　何か言ってくれてもいいんだぞ？
+[charslot(slot = "r", name = "avg_4081_warmy_1#1$2", focus="r")]
+[name="鍋蓋ちゃん"]ランナお姉ちゃん、ありがとうございます！
+[charslot(slot = "r", name = "avg_4081_warmy_1#12$2", focus="r")]
+[name="鍋蓋ちゃん"]本当に……ありがとう……
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]本当はもっと前に買ってやりたかったけど、いかんせん教えられる人がいなかったからな。それに、配達先の住所に「トレーラー」って書くわけにもいかなかったし。
+[name="アランナ"]さあ、出発しようか。次はあんたの病気をどうにかしよう。
+[name="アランナ"]パパに会う時には、とびっきり元気で、アーツの扱いも完璧になっていような！
+[charslot(slot = "r", name = "avg_4081_warmy_1#8$2", focus="r")]
+[name="鍋蓋ちゃん"]……
+[name="鍋蓋ちゃん"]ランナお姉ちゃん、わ……
+[name="鍋蓋ちゃん"]わたし……
+[dialog]
+[charslot(slot = "r", posfrom="0,0", posto="-250,0", duration=0.5)]
+[delay(time=0.1)]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[PlaySound(key="$bodyfalldown2", volume=1)]
+[delay(time=0.2)]
+[charslot(slot = "l", posfrom="0,0", posto="-15,0", duration=0.2, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="アランナ"]おおっと、ちょっと、急にどうしたってんだい……
+[dialog]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="アランナ"]……まあ、いいか。泣いちゃえ泣いちゃえ。
+[name="アランナ"]この服をハンカチ代わりにでもしてくれ。
+[name="アランナ"]長い旅だったし、最後には胸もいっぱいになるか……いろんな出会いがあって、いろんなもんを得られて、よかったな。
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_bridge",screenadapt="coverall")]
+[Delay(time=1)]
+[PlayMusic(intro="$tech_intro", key="$tech_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_972_1#1$1")]
+[name="購買部オペレーター"]出発前に物資補充リストでもチェックしておくか……源石燃料、これはもういいか。燃料の備蓄は倉庫から溢れるくらいたくさんあるもんな。
+[name="購買部オペレーター"]オペレーターの個人発注のほうは……誰だ、トランスポーターにこんな大量のニンジンを依頼したのは？　最近は厨房にも甘い匂いがこびりついてて、もううんざりだってのに！
+[name="購買部オペレーター"]この箱はエンジニア部発注の精錬溶剤で、こっちはクロージャさんの新業務に必要な実験材料だな。あっ、アーミヤさん、ドクター、こんにちは。えーとこっちの箱は……
+[name="購買部オペレーター"]って、アーミヤさんにドクター？　どうしてこんなところに？
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="アーミヤ"]あっ、ごめんなさい。購買部のお仕事の邪魔でしたか……？
+[charslot(slot = "m", name = "avg_npc_972_1#1$1")]
+[name="購買部オペレーター"]いえ、そんなことは。ですが……景色が見たいんでしたら、甲板の方が眺めがいいですよ。物流通路の近辺は騒がしすぎますし。
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]大丈夫ですよ、この頃ずっと物音が絶えない環境にいましたから、むしろこれくらい賑やかな方が親しみが湧くと言いますか……
+[name="アーミヤ"]けど、そうですね。もう少し隅っこに行きましょうか、ドクター。
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5, isblock=true)]
+[Decision(options="検査結果はどうだった、アーミヤ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]大丈夫ですよ、ドクター。各指標に特に変化はありませんでした。
+[name="アーミヤ"]活性源石クラスターとは安全な距離を保ってましたし、十分な防護措置も施してましたからね。
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="アーミヤ"]そうだとしても、目の前で活性源石がどんどん成長し、大地の亀裂を押し広げていく光景には……確かに恐怖を覚えましたが。
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="「ニヤニヤ谷」、レム・ビリトンらしいネーミングだ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="アーミヤ"]今その名前を聞くと、もう全然笑えませんね……
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]まあ、「ニヤニヤ谷」と名付けられた頃は、あそこはただの自然にできた地溝で、まだ活性源石に覆われていなかった可能性もなくはありません。
+[name="アーミヤ"]レイさんは幼い頃、確かにあそこへ行ったことがあるとおっしゃってましたから。
+[name="アーミヤ"]この十数年の間に急速に成長した源石のせいで、彼女でも見間違うほどに変わり果ててしまったようですが。
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="残念に思ってるのか？;怖がっているのか？", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="アーミヤ"]はい。結局ニヤニヤ谷へは行けずじまいで、ただ遠くから一目見ただけで引き返さなくてはならなかったことが、なんだかその……
+[name="アーミヤ"]ピクニックに行く当日に、大雨に降られたような気分で……
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "char_002_amiya_1#5")]
+[name="アーミヤ"]……笑わないでくださいよ、ドクター！
+[dialog]
+[Predicate(references="2")]
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]はい……もしあの日、たまたま視界が開けた高地からニヤニヤ谷へ近づいていなかったなら……私たちは源石クラスターに追いつかれるか、誤って中に迷い込んでいたかもしれません。
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="アーミヤ"]時々思うんです……
+[name="アーミヤ"]源石は感染者の身体の中でも、ああやって絶えず増殖し続けているんですよね？　実際この大地の多くの感染者たちは、もうとっくに追いつかれてしまっているのかなって。
+[dialog]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]そうだ、ドクター。
+[name="アーミヤ"]レイさんの言っていた「巨獣」って……本当にいると思いますか？
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="自分の知る限り、巨獣は実在する。;彼女が天災から逃れられた理由があるはず。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]それならよかったです……
+[name="アーミヤ"]私たちは結局辿り着けませんでしたが、レイさんが見たものはただの夢じゃなかったってことですね。
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_972_1#1$1", duration=1, isblock=true)]
+[name="購買部オペレーター"]ドクター、あなた宛ての荷物です。
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="自分に？;最近ロドスで発注をかけた覚えはないが。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]あっ、それは私が内緒で用意したものです、ドクター。
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="重い……", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="アーミヤ"]ええと、小型のビバリウムなんですけど……
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]あの日、市場を通りかかった時にふと思い出したんです。あの頃のドクターは、レム・ビリトンに棲む様々な生命にものすごく興味を示してたなって。
+[name="アーミヤ"]ドクターが私を連れてこの船に乗った時、振り返って荒野を眺める目が……とても寂しそうでした。あの頃はまだまだ子供でしたが、孤独ってこういう気持ちなんだってことがよくわかりました。
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]だからこう思ったんです。レム・ビリトンのすべてをまるごと小さくして、ドクターにプレゼントできればいいのにって。
+[name="アーミヤ"]当時の私は、ドクターが孤独を感じているのは、この船が寂しいからなんだと思っていました。だから小さな生き物が増えれば、少しは楽しくなるかなって。
+[name="アーミヤ"]……もちろん、今のロドスには植物園もあるし、データベース内の生物図鑑も充実してます。ドクターからして見れば、こんな小さなビバリウムは何の役にも立たないかもしれません。
+[name="アーミヤ"]ですが……私はそれでも、子供の頃の自分の夢を叶えたくて。
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="ありがとう、アーミヤ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", focus="n")]
+[Decision(options="当時の自分は、今の君と似たような感じだった？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="アーミヤ"]え？
+[name="アーミヤ"]そ、そんなことはないかと……それに私は全然、孤独だなんて思っていませんよ、ドクター。
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]ただ帰ってきてから、心が一気に重くなったのは事実です。
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "char_002_amiya_1#7")]
+[name="アーミヤ"]引き続き、ヴィクトリアへ向かう準備をしなくてはなりません。
+[name="アーミヤ"]戦闘。治療。災厄の阻止。人命救助。
+[name="アーミヤ"]多くのエリートオペレーターさんたちの、決着をつけねばならない記憶。それに……私が自ら名乗らないようケルシー先生に禁じられている、あの肩書のことも。
+[name="アーミヤ"]……昔、ある人に言われたことがあるんです。
+[name="アーミヤ"]この道は、決して一人で歩み続けられるものじゃない。それにたった一つの結果、一つの答えのために歩むものでもないと。
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="自分がそばにいるよ。;……;そんな悲観的な考えは君らしくない。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]いえ、心配しないでください、ドクター。私は別に、自分のことで感傷的になってるわけじゃありませんから。
+[name="アーミヤ"]それに、私たちが誰かの手を取ったり、誰かに手を差し伸べたりするのは、その道に果てがないからこそなのかもしれません。
+[name="アーミヤ"]だからこそ、命には限りがあり、そして引き継がれていくんです。
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]さあドクター、もう行きましょうか。考えはもう十分整理できましたし、私が学ぶべきものもこの先まだまだたくさんありますから。ビバリウムを執務室まで運ぶのを手伝いますね。
+[name="アーミヤ"]それに、試験に受かったばかりの新しいオペレーターがいることですし、お祝いもしなくては。
+[name="アーミヤ"]ついでに彼女の質問にも答えないとですね……何せ、ロドスでは探査員をやってもらう必要はありませんから。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_pawfootstep_1", volume=1)]
+[charslot(slot = "m", name = "avg_npc_1188_1#1$1", posfrom="-200,0", posto="0,0", duration=0.5, isblock=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1188_1#2$1")]
+[name="サンドビースト"]（くんくん）
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="ビバリウムを見てる……レイのサンドビースト？", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]はい。あの天災の時以来、レイさんがずっと抱えてた子にそっくりです。
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="アーミヤ"]……まさか、ビバリウムの中にいる鼷獣が、サンドビーストの好物だなんてことはないですよね？
+[dialog]
+[charslot]
+[PlaySound(key="$rungeneral",volume=1)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_4117_ray_1#3$1", duration=1, isblock=true)]
+[name="レイ"]ほらこっち来て、サンドビースト。ドクターのものを食べちゃダメだよ……
+[charslot(slot = "m", name = "avg_4117_ray_1#4$1")]
+[name="レイ"]……こんにちは、アーミヤ、ドクター。
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]こんにちは、レイさん。入職試験はかなり順調だったようですね、おめでとうございます。
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="レイ"]ありがとう。
+[name="レイ"]ロドスのIDカードをもらったよ。
+[name="レイ"]コードが書いてある。
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]ですね。それについて何か心配事でもあるんですか？
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="レイ"]特にないけど。
+[name="レイ"]坑夫たちが坑道に入る時も、自分の番号札を身に着けてた。そうすれば、戻って来てない人がいれば、すぐわかるから。
+[name="レイ"]でも、日雇いの探査員には番号札は配られなかった。
+[charslot(slot = "m", name = "avg_4117_ray_1#8$1")]
+[name="レイ"]だから……このIDカード、すごく気に入った。ありがとう。
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]とんでもない、お礼なんて……
+[name="アーミヤ"]一企業として当然のことですから。
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="アーミヤ"]それに……
+[name="アーミヤ"]……レイさんが望むなら、これからはロドスを自分の家だと思っていただいて構いません。
+[charslot]
+レイは不意に顔を上げ、アーミヤをじっと見つめた。
+それは数日前、街中で彼女とすれ違った際に、アーミヤが感じたあの視線にそっくりだった。
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="アーミヤ"]そういえば、レイさんはどうして急に……ロドスで探査員をしようと思ったのですか？
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="レイ"]君たちは鍋蓋ちゃんを助けてくれた。
+[name="レイ"]うちも、何かしなきゃと思って。あの日のことがどうしても忘れられないから。
+[charslot(slot = "m", name = "avg_4117_ray_1#10$1")]
+[name="レイ"]それに……
+[charslot(slot = "m", name = "avg_4117_ray_1#6$1")]
+[name="レイ"]うちは、答えを探してる。
+[name="レイ"]何百年もの間暗闇に囚われていた巨獣が目覚めて、何を望んでいるのかと問いかけてきたとき、うちは……うちとサンドビーストたちを安全な地表まで運んでほしいという考えしか浮かばなかった。
+[name="レイ"]あの時、急に執着が消えたような気がしたんだ。あの巨獣に会えただけで満足したみたいで。
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="レイ"]でもやっぱり知りたい。どうしてあの時、うちはあの光に憧れを抱いたのかを。あれはうちにとって、一体何を意味するのかを。
+[stopmusic(fadetime=2)]
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="アーミヤ"]あの時？　レイさん、それって……
+[name="アーミヤ"]……私に質問しているんですか？　どうして？
+[charslot]
+あなたは気付いた。レイはどうやらアーミヤを見つめていたわけではなく、むしろ彼女を通して、何かを見ているようだった。
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[delay(time=1)]
+[PlayMusic(key="$monastery_sad_loop", volume=0.6)]
+[PlaySound(key="$d_avg_sandwnd", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=1, channel="a",fadetime=2)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[backgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.1, yScaleTo=1.1, duration=30,block=false)]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[name="レイ"]「巨獣」。うちが見た幻覚。十数年前、うちはニヤニヤ谷でそれに出会った。
+[name="レイ"]あの時、うちは狩人の隊の後について歩いていた。砂嵐が酷くて、空も真っ暗で、うちらは長い間方向を見失ってたの。
+[name="レイ"]まだ背が低かったうちの目には、周りにいた大人たちと、たくさんの狩猟用のクロスボウしか見えなかった。それからうちはだんだん動けなくなって、そして何も見えなくなった。
+[name="レイ"]記憶にあるのは、大きな影を見たってことだけ。
+[name="レイ"]それと……一筋の真っ白な光。繊細なのに、砂嵐を力強く貫く光。
+[dialog]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1)]
+[name="レイ"]吹き荒ぶ風を通り越して、優しいささやき声が聞こえてきたの。
+[dialog]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=1)]
+[name="レイ"]その時ふと、うちの中から恐怖が消えたんだ。
+[dialog]
+[Blocker(a=0.3, r=0, g=0, b=0, fadetime=1)]
+[name="レイ"]……ただの夢なのかもしれない。記憶がはっきりした頃には、もう見覚えのないテントの中にいたから。
+[dialog]
+[Blocker(a=0.2, r=0, g=0, b=0, fadetime=1)]
+[name="レイ"]だけど、別に夢でも構わない。今までずっとうちのそばにいたあの幻覚に、もう一度会いたかった……
+[dialog]
+[StopSound(channel="a", fadetime=1)]
+[musicvolume(volume=0.2, fadetime=2)]
+[PlaySound(key="$d_avg_tinnitus", volume=1)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=1, block=true)]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[Background(image="bg_light",screenadapt="coverall", duration=3, block=true)]
+[charslot(slot = "m", name = "char_002_amiya_1#6", duration=2)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=true)]
+[name="アーミヤ"]……
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="……アーミヤ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", focus="n")]
+[Decision(options="アーミヤ？", values="1")]
+[Predicate(references="1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="アーミヤ"]ドクター、私……
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="レイはもう行ってしまったよ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="アーミヤ"]すみません、私、さっき……
+[name="アーミヤ"]……見えたんです。
+[dialog]
+[charslot(duration=1.5, isblock=true)]
+[charslot(slot = "m", focus="n")]
+[Decision(options="見えたって？", values="1")]
+[Predicate(references="1")]
+[name="アーミヤ"]……発掘されたばかりの、帆布で覆われたロドスの本艦の姿です。
+[name="アーミヤ"]大きな影が、源石だらけのレム・ビリトンの荒野をゆっくりと移動する光景。
+[name="アーミヤ"]角と顔を隠して身分を偽るサルカズの建設隊。大砲を積んだ重機。都市建設用アーツで作られた刀剣。
+[name="アーミヤ"]砂嵐が吹き荒ぶ暗い道を、大部隊の列が、本艦が残した轍に続いてぞろぞろと行進していく。
+[name="アーミヤ"]それは本当に、本当に長い道のり。
+[name="アーミヤ"]ですが……人々を苦難から救い出し、残酷な未来を回避するには、その船が私たちにとって最大の希望なんです。
+[name="アーミヤ"]砂埃の中……建設隊がレム・ビリトンの狩人の隊とすれ違った時……
+[name="アーミヤ"]あの人が……遭難した見知らぬ狩人たちに、救いの手を差し伸べたんです……
+[dialog]
+[charslot]
+[charslot(slot = "m", focus="n")]
+[Decision(options="待った、アーミヤ……", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", focus="n")]
+[Decision(options="君は……誰の目を通してそれを見ている？", values="1")]
+[Predicate(references="1")]
+[name="アーミヤ"]「だってそうじゃない。誰しも帰るべき家に帰れたら、きっとそれが一番なのよ……」
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="そうよ、アーミヤ。この船には最初から自分の名前があるの。それに「ロドス」という名前の本来の意味を知る人も、この船に乗っているのよ。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="ドクターに聞いてみたけど、教えてくれなかったって？　いえ、それは違うわ。ドクターはあなたがまだ子供だから、説明してくれないわけじゃないの。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="ドクターはただ、今のロドスのあり方については、私たちや、後世の人たちに決めてほしいって思ってるだけなのよ。昔に決めた定義なんて、そのまま過去に葬られても構わないってね。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="……少なくとも私はそう信じてるわ。あの人の沈黙の中には、そういう思いが秘められてるってことを。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="なぜならあの人は、自分自身についても同じように考えてるから。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="知識では「ドクター」を定義できない。あの人は自分がまだ何一つ知らないと思っているから。記憶で「ドクター」を定義することもできない。あの人の記憶を紐解く術はもうこの大地にはないから。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="アーミヤ、あなたはドクターのことを信じてる？", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="ええ、私もよ。それにね、私がドクターを信じる理由の一つが、あの時ドクターがあなたに手を差し伸べたことにあるの。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="戦争、存続、文明、希望。長い時間、燃える星々、定められた未来……あの人の頭の中には、重たすぎて判別さえも難しい思考がたくさん秘められているわ。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="でもね、ドクターはほんの些細な願い事をしたの。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="それはドクターが果てしない孤独の中で、最初に選んだ座標。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="アーミヤ、ここがあなたの家よ。いつの日か「ロドス」の定義を、あなたが決める日が訪れるかもしれないわね。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="そうよね、やっぱり怖いわよね。難しいことかもしれないけど、それでも間違うことを恐れないでほしいの。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="怖がることはないわ。だって理想の道に果てなんてないんだもの。だからこそ、その道は誰も一人では歩み続けられないのよ。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="もしも怖くなった時は、どんな時でも、そして何のためだろうと、信じる人たちの元へ駆け寄って、その人たちの手を握りなさい。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="あら、もう怖くなっちゃったの？　じゃあ、私の手を握っていてもいいわよ。", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="いつの日か、その日が訪れるまで……", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1.5)]
+[name="アーミヤ"]……ドクター、私にできるでしょうか？
+[name="アーミヤ"]私のことを、信じてくれますか？
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Background]
+[Image]

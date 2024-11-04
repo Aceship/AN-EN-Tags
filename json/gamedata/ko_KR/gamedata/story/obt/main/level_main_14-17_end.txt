@@ -1,0 +1,704 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[focusout(duration=0.5, type="bg", from=0, to=1)]
+[curtain(direction = 0,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[curtain(direction = 4,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[Delay(time=1)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=0.5)]
+[focusout(duration=1.5, type="bg", from=1, to=0, block=true)]
+[delay(time=1)]
+이곳으로 돌아왔다.
+긴 시간을 떠나 있었던 것 같다. 이 함선에서 푹 자보는 것도 오랜만이다.
+박사님, 켈시 선생님, 시즈 씨……
+바깥의 전쟁은 멈춘 건가? 드디어 좀 쉴 수 있게 되었다.
+식당에 가서 따뜻한 야채수프 한 그릇 먹고, 숙소로 돌아와 침대에서 쉬어야겠다.
+테레시아 씨는? 지금쯤이면 아마……
+……
+아니…… 아니다……
+테레시아 씨는 이미 떠났다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="bg_room_2", screenadapt="coverall", block=true)]
+[curtain(direction = 0,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[curtain(direction = 4,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[delay(time=1)]
+[PlaySound(key="$dooropenquite", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+방은 텅 비었고, 내가 돌아오길 기다리는 사람은 아무도 없다.
+하지만 분명 수많은 밤 동안, 여기에 앉아 내게 많은 이야기를 들려주며 내가 잠들기를 기다렸던 사람이 있었던 것 같다.
+그러나 지금, 여긴 아무도 없다.
+잠깐…… 침대 위에 웬 옷이?
+하얀 드레스, 옷깃에는 예쁜 꽃도 달려 있다. 바느질을 세심하게 한 걸 보니 아주 익숙한 솜씨다.
+“아미야, 흰옷이 아주 잘 어울리네.”
+테레시아 씨……?
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[curtain]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[name="멀리서 들려오는 소리"]……박사!
+[name="가까워지는 소리"]내 목소리가 들리나?
+[name="켈시"]박사!
+[Dialog]
+[PlaySound(key="$d_gen_dooropen", volume=1)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=2, block=true)]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_003_kalts_1#1$1")]
+[focusout(duration=0.1, type="bg", from=0, to=1)]
+[focusout(duration=0.1, type="char", from=0, to=1)]
+[delay(time=0.5)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]박사……
+[name="켈시"]역시, 여기 있었군……
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="(괴로워.);(무슨 일이 있었던 거지?);(나 지금 어디에 있지?)", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]상태가 별로 안 좋은 것 같군.
+[name="켈시"]여기서는 신체검사를 해줄 방법이 없어. 박사, 정신을 차리고 나를 봐.
+[name="켈시"]혹시…… 뭐 떠오르는 게 있나?
+[Dialog]
+[charslot]
+여성의 엄격하면서도 걱정스러운 말에 당신은 눈을 크게 뜨려고 애썼다.
+[Dialog]
+[focusout(duration=1.5, type="char", from=1, to=0)]
+[focusout(duration=1.5, type="bg", from=1, to=0, block=true)]
+시야가 점차 뚜렷해지고 신체의 일부 기능도 조금씩 회복되었다.
+당신은 천천히 입을 열었다……
+[Dialog]
+[Decision(options="(미지의 언어) 켈시……;(미지의 언어) 여긴 어디야?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="켈시"]……!
+[Dialog]
+[charslot]
+부서진 의식이 서로 연결되고, 끊어진 생각이 다시 이어지자, 당신은 지금 튼튼한 땅에 서 있다는 게 실감 났다.
+주위를 둘러보았다. 당신은 이곳이 꽤 오랜 시간을 보내온 익숙한 곳이라는 확신이 들었다.
+하지만 눈앞의 여자가 당신을 바라보는 시선이 굉장히 낯설었고, 심지어 약간의 적의도 있었다.
+[Dialog]
+[Decision(options="(미지의 언어) 나는 누구지……;……;나는 누구지?", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[musicvolume(volume=0.3, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i11", screenadapt="coverall", fadetime=0)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i15",screenadapt="coverall",fadetime=0,block=true)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i16", screenadapt="coverall", fadetime=0)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[Background(image="bg_black",screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+나는 로도스 아일랜드의 {@nickname} 박사다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Delay(time=0.5)]
+[Dialog]
+[Decision(options="아미야!;켈시! 우리가 왜 로도스 아일랜드에 있지?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="켈시"]너……
+[name="켈시"]……그래도 자신이 누군지는 기억하는 것 같네.
+[name="켈시"]아미야는 여기 없었어. 확실한 건, 이곳이 로도스 아일랜드가 아니라는 거야.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="다른 사람들과 헤어졌어?;로고스랑 W는 어디에 있어?", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]여기 와서 너밖에 보지 못했어.
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="켈시"]왜 이렇게 됐는지 정말 짐작이 가는 게 없어?
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="도무지 모르겠어.", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]……
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="n")]
+[Decision(options="너 혹시……;……날 못 믿는 거야?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="켈시"]……지금 같은 상황에서 어느 정도의 경계는 필요해.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]조심해, 박사. 어찌 됐든 우리는 여기를 떠나야 해.
+[name="켈시"]여기는 우리가 익숙한 곳이 아니야. 어떤 예상치 못한 일이 발생해도 전혀 이상하지 않아.
+[name="켈시"]최대한 너를 지켜줄 테니, 너무 떨어져 있지 마.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_trainingcom",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlayMusic(key="$wasteland_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=0.6)]
+[PlaySound(key="$d_avg_metallicclick", volume=0.9,delay=0.2)]
+[PlaySound(key="$swordtsing1", volume=0.6,delay=0.4)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "char_124_kroos_1#3",focus="m")]
+[name="크루스"]더…… 더 이상은 무리야……
+[name="크루스"]이러다 다음 달 운동량까지 다 써버리겠다.
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="팽"]안 돼, 크루스!
+[name="팽"]지금은 실전 훈련이니 훈련실을 전쟁터라고 생각해야 돼!
+[charslot(slot = "m", name = "char_122_beagle_1",focus="m")]
+[name="비글"]대장은 역시 가차 없네요……
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="팽"]다들 정신 차려. 교관님이 주신 훈련 임무가 아직 많이 남았어.
+[charslot(slot = "m", name = "char_124_kroos_1#3",focus="m")]
+[name="크루스"]괜찮아…… 어차피 교관도 없는데……
+[charslot(slot = "m", name = "char_124_kroos_1#1",focus="m")]
+[name="크루스"]앗, 박사다!
+[Dialog]
+[charslot]
+[Decision(options="좋은 아침, 크루스.;다들…… 여기 있었네?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="팽"]크루스!
+[charslot(slot = "m", name = "char_124_kroos_1#1",focus="m")]
+[name="크루스"]괜찮아, 박사는 고자질하는 그런 사람이 아니야.
+[name="크루스"]우선은 편히 누워서 쉬어볼까……
+[Dialog]
+[charslot]
+[name="엄격한 목소리"]너희에게 내린 훈련 임무는 위장 잠입이 아니었나?
+[Dialog]
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="팽"]……망했다.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n", volume=0.6)]
+[charslot(slot = "m", name = "char_014_riope",duration=1)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="에이스"]예비작전팀 A1, 전원 차렷!
+[Dialog]
+[charslot]
+[name="팀원 일동"]넵!
+[Dialog]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="에이스"]전원, 운동장 100바퀴, 피지컬 트레이닝 세트 50회, 실시!
+[Dialog]
+[charslot]
+[name="팀원 일동"]예……
+[Dialog]
+[PlaySound(key="$d_avg_soldiersstep",channel="step1",loop=false, volume=0.7)]
+[stopsound(channel="step1",fadetime=4)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="에이스"]부끄러운 모습을 보였군, 박사.
+[name="에이스"]로도스 아일랜드에 평화가 오랫동안 지속되다 보니, 젊은이들이 조금 나태해진 모양이야.
+[name="에이스"]내가 책임지고 정신을 바짝 차리게 하지.
+[Dialog]
+[charslot(slot = "m", name = "char_014_riope",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[Decision(options="이런 평온함이 계속되는 것도 나쁘지 않아……", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="에이스"]물론. 그래도 일어날 수 있는 위험에는 대비해야지.
+[name="에이스"]괜찮아, 훈련은 박사가 신경 안 써도 돼. 나한테 맡겨.
+[name="에이스"]요즘 고생 많이 했잖아, 박사? 가서 쉬도록 해.
+[name="에이스"]걱정 마, 우리가 지켜줄 테니까.
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=2)]
+[Decision(options="켈시…… 방금 봤어?;지금 꿈꾸고 있는 건가?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="켈시"]나도 같은 광경을 봤어. 다들 확실히 여기에 존재하고 있어.
+[name="켈시"]이렇게 생생한 꿈이 있을 리가 없어. 그리고 이건 네 추억도 아니야.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="이 모든 게 현실이라면 얼마나 좋을까……;아니, 이건 현실이 아니야.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]정신 차려, 박사.
+[name="켈시"]우리는 계속 앞으로 나아가야 해.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_bar_1",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_crwddiscuss_inside", volume=0.4, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_coin", volume=1)]
+[Delay(time=1)]
+[StopSound(channel="a", fadetime=1.5)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="아웃캐스트"]이거이거 귀한 손님이 왔네, 박사.
+[name="아웃캐스트"]한 잔 걸칠 시간이 돼? 오늘 밤은 내가 살게.
+[Dialog]
+[charslot]
+[Decision(options="시끌벅적하네.;사람이 많네.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_npc_249_1$1",focus="m")]
+[name="터치"]잊으신 거예요, 박사님? 오늘 아웃캐스트 씨의 은퇴식이잖아요?
+[charslot(slot = "m", name = "avg_npc_252",focus="m")]
+[name="샤프"]우리 존경하는 선배를 위해 건배.
+[Dialog]
+[charslot]
+[PlaySound(key="$clink")]
+[PlaySound(key="$clink", loop=false, channel="1",delay=0.04)]
+[PlaySound(key="$clink", loop=false, channel="2",delay=0.06)]
+[PlaySound(key="$clink", loop=false, channel="3",delay=0.08)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="아웃캐스트"]그만해 샤프, 나보다 별로 어리지도 않으면서.
+[Dialog]
+[charslot]
+[Decision(options="로도스 아일랜드를 위해 애써줘서 고마워, 아웃캐스트.;은퇴 축하해.", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_095",focus="m")]
+[name="피스"]네 업적과 뛰어난 사격술은 잊지 않을게. 자, 건배.
+[charslot(slot = "m", name = "char_017_homura_3#10",focus="m")]
+[name="블레이즈"]아웃캐스트도 은퇴인가……
+[name="블레이즈"]앞으로 불금에 나랑 어울려 줄 사람은…… 딸꾹…… 아무도 없겠네……
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="아웃캐스트"]그냥 은퇴할 뿐이야. 라테라노의 추모식도 너처럼 슬프진 않을걸.
+[name="아웃캐스트"]그리고, 오늘 밤 취해서 내일 아침에 눈을 뜨지 못하더라도 나는 이번 생이 충분히 아름다웠어.
+[name="아웃캐스트"]여러분과 함께했던 시간은 내게 가장 소중한 보물이야. 이 추억은 내 수호총과 함께 무덤까지 갖고 간다.
+[name="아웃캐스트"]다만, 앞으로 젊은이들에게 사격을 가르치는 일은 레인저에게 맡겨야겠네.
+[charslot(slot = "m", name = "char_017_homura_3#7",focus="m")]
+[name="블레이즈"]아웃캐스트, 너 취했구나. 레인저는 총을 쓰는데…… 딸꾹…… 산크타의 석궁을 어떻게 가르쳐.
+[charslot(slot = "m", name = "avg_npc_095",focus="m")]
+[name="피스"]그만 마셔, 이미 맛이 갔어.
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="아웃캐스트"]괜찮아, 다들 적당히 눈 감아주면 되니까.
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="n")]
+[PlaySound(key="$bottlebroken", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#1",focus="m")]
+[name="아웃캐스트"]어, 그러고 보니 오늘 밤 손님은 우리뿐만이 아니네.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_bar_1",screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_155_tiger_1#9$1")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_155_tiger_1#9$1",focus="m")]
+[name="인드라"]진지하게, 다그다!
+[name="인드라"]탑의 기사로서 책봉 받은 녀석의 주먹이 얼마나 무거운지, 한번 보여주라고!
+[charslot(slot = "m", name = "avg_npc_396_1#3$1",focus="m")]
+[name="다그다"]……이건 네가 자초한 거야.
+[Dialog]
+[playsound(key="$d_avg_clnchfst")]
+[PlaySound(key="$d_avg_clothmovementsp",volume=0.8,delay=0.5)]
+[Delay(time=0.5)]
+[charslot(duration=0.5)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_863_1#3$1",focus="m")]
+[name="베어드"]야! 여긴 복싱장이 아니야. 우린 로도스 아일랜드에 손님으로 왔다고. 적당히 좀 해!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_punch")]
+[PlaySound(key="$fightgeneral",volume=0.8,delay=0.4)]
+[PlaySound(key="$d_avg_glassbroken", volume=0.6,delay=0.5)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="알레데일"]나도 저럴 때가 있었지.
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="비나"]오호, 정식으로 증기 기사가 되더니 이젠 우리 같은 길거리 출신들과 선을 그으시겠다?
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="알레데일"]놀리지 마…… 그나저나, 정말로 결정한 거야, 비나?
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="비나"]망설일 게 뭐 있어. 노포트 구에서 보낸 날들은 내 평생 가장 즐거운 시간이었어. 그 궁전으로 다시 돌아갈 필요는 없어.
+[name="비나"]알렉산드리나 비나 빅토리아는 왕실의 후계자이기도 하지만, 동시에 평범하고 영광스러운 빅토리아인이니까.
+[name="비나"]알레데일, 앞으로 너는 영광스러운 증기 기사고, 난 영광스러운 '시즈'야.
+[name="비나"]나는 이런 삶이 가장 좋다고 믿어.
+[charslot(slot="m",name="avg_npc_397_1#2$1",focus="m")]
+[name="알레데일"]평화로운 일상이 무척이나 소중하지.
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="비나"]자, 삶을 위하여.
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="알레데일"]빅토리아를 위하여.
+[Dialog]
+[charslot]
+[PlaySound(key="$clink")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="비나"]나중에 기분이 나면 여기저기 같이 놀러나 다닐까? 예를 들어, 공작가 창문에 돌을 던진다든가.
+[Dialog]
+[charslot]
+[Decision(options="정말 좋네.;……;이건 현실이 아니야.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]너는 저들 모두를 기억하고 있으며, 저들의 처지를 진심으로 아쉬워하고 있지.
+[name="켈시"]그렇지 않다면 이런 모습들을 볼 수 없었을 거야.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]박사, 지금의 기분이 어떻지?
+[name="켈시"]뿌듯한가? 아니면 곤혹스러운가? 그것도 아니면 화가 나는가?
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]이것들은 전부 네 잠재의식 속에서 네가 바라는 모습들이야.
+[name="켈시"]속으로는 너도 이 모든 게 사실이기를 바라고 있잖아?
+[Predicate(references="1;2;3")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="여기서 또 누굴 만날 수 있을까?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]그건 오직 너만이 알 수 있겠지.
+[name="켈시"]계속 가자, 박사.
+[name="켈시"]네가 뭘 보든, 그것을 마주하고 그것을 이겨내야 해.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_078#2",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="탈룰라"]박사, 오랜만이야. 나 다녀왔어.
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="……;……탈룰라?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="탈룰라"]얼마 지나지도 않았는데, 벌써 날 잊어버린 거야?
+[name="탈룰라"]이번에 우르수스 북쪽에 감염자 치료 센터를 세우러 갔는데, 꽤나 고생했어.
+[name="탈룰라"]다행히 마을 노동자들이 우리를 지지해줘서 현지 영주들도 어쩔 수 없이 타협했지. 덕분에 땅을 충분히 확보했어.
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="리유니온이 사라지지 않았나……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="탈룰라"]박사, 또 농담하는 거지? 아니면 잠이 덜 깼나?
+[name="탈룰라"]리유니온이 없다면 로도스 아일랜드와 협력해서, 우르수스에서 감염자 치료를 도운 건 또 누군데?
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="그럼 카셰이는?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="탈룰라"]갑자기 그 죽은 '검은 뱀' 얘기는 왜 꺼내?
+[name="탈룰라"]내가 다시 한번 고맙다고 해줬으면 좋겠어? 뭐, 좋아. 결국 나와 우르수스를 그놈으로부터 벗어나게 해준 건 로도스 아일랜드니까. 많은 사람에게 밝은 미래를 가져다준 것도 로도스 아일랜드고.
+[Dialog]
+[charslot(duration=0.5)]
+[musicvolume(volume=0, fadetime=1)]
+[Delay(time=1)]
+[name="차가운 목소리"]박사.
+[Dialog]
+[Decision(options="아니야……;(돌아보면 안 돼.)", values="1;2")]
+[Predicate(references="1;2")]
+[PlaySound(key="$d_avg_walk_stage", volume=1,loop="false", channel="fwalk")]
+[stopsound(fadetime=2, channel="fwalk")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",duration=1)]
+[Delay(time=2)]
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="프로스트노바"]박사?
+[Dialog]
+[charslot]
+[Decision(options="………………", values="1")]
+[Predicate(references="1")]
+[Decision(options="프로스트노바……", values="1")]
+[Predicate(references="1")]
+[Decision(options="너 여기 있으면 안 되는데.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="프로스트노바"]……어째서지?
+[name="프로스트노바"]임무가 끝나면 바로 보고하라고 한 건 박사였잖나?
+[Dialog]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="n")]
+[Decision(options="로도스 아일랜드의…… 임무?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="프로스트노바"]당연히 로도스 아일랜드의 임무지. 난 줄곧 로도스 아일랜드의 멤버였으니까.
+[Dialog]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="프로스트노바"]오늘따라 이상해 보이네. 내가 너무 가까이 있어서 추워진 건가?
+[stopmusic(fadetime=2)]
+[Dialog]
+[charslot]
+[Decision(options="아니야.;이게 아니야……;아니라고!!", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[PlaySound(key="$d_avg_dreambroken", volume=1)]
+[PlaySound(key="$d_avg_phntsmglsbrek", volume=1,delay=3)]
+[focusout(duration=3, type="bg", from=0, to=1, block=false)]
+[delay(time=3)]
+[CameraShake(duration=2, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Background(image="50_g14_rhodescorridor_ex",screenadapt="coverall", block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=3, block=true)]
+[focusout(duration=2, type="bg", from=1, to=0, block=true)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[delay(time=2)]
+그토록 생생했던 사람들이 저마다의 외모를 잃고 죄다 흐릿한 검은 그림자로 변해버렸다.
+하지만 그들은 위험해 보이지 않았다. 그저 당신의 주변을 천천히 맴돌 뿐.
+[Dialog]
+[Decision(options="켈시…… 이게 다 뭐야?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]이건 환각도, 꿈도 아니야. 어떤 의미에서 이 모든 게 또한 실재하는 것이라 말할 수 있지.
+[name="켈시"]네 상상 속에 존재했던, 네가 과거에 만났던 사람과 사건이 네가 가장 바라는 모습으로 발전한 환상이야.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="n")]
+[Decision(options="이건 우리가 겪은 모든 것들에 대한 모독이다.;넌 어떻게 이렇게 냉정할 수 있지?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]이 광경들이 내 감정에 주는 자극이 결코 너보다 약하지 않아, 박사.
+[name="켈시"]하지만 어쨌든, 이것들 역시 네 자신이 만들어낸 광경이야.
+[name="켈시"]오리지늄이 네 잠재의식 깊숙한 곳에 있는 기대와 아쉬움을 너의 바람대로 '복제'해낸 모습이니까.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]너는 로도스 아일랜드와 함께하면서 겪은 모든 일을 기억하고 있으며, 또한 아름다운 거짓말의 기만에서도 벗어났어.
+[name="켈시"]이제야 확신이 든다. 지금의 너는 여전히 로도스 아일랜드의 그 박사야.
+[Dialog]
+[charslot]
+[Decision(options="오리지늄? 오리지늄이 이런 걸 할 수 있다고?;왜 내가 바라는 모습으로 된 거지?", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=0.5)]
+[Subtitle(text="<color=#000000>당신의 모든 소원을 내가 이뤄줄 수 있어.</color>", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=0.5)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=1)]
+[Dialog]
+[Decision(options="프리…… 스티스……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="켈시"]역시, 넌 이미……
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]박사, 예전에도 얘기했지만, 너 자신에 대한 수수께끼는 다른 사람의 입을 통해 알 수 없어. 오직 너 스스로 풀어야 해.
+[name="켈시"]어쩌면 우리는 지금 그 종점에 매우 가까워진 것인지도 모르겠어.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="만약 이 모든 게 정말 내 바람이라면, 넌……;적어도 넌, 내가 바랐던 모습이 아닌 게 분명해.", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]그동안 함께했던 경험이, 너에게 정확한 판단을 내리도록 하기에 충분하다고 생각했는데.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]그 판단을 하게 한 것이 다른 어떤 것도 아닌, 너의 이성이기를 바랐어.
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="만약 이 광경들이 모두 아쉬움을 달래기 위한 거라면……", values="1")]
+[Predicate(references="1")]
+[Decision(options="여기서 테레시아를 만날 수 있을까?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="켈시"]테레시아가 어디에 있고, 뭘 하고 있는지 나는 몰라.
+[name="켈시"]하지만 우리가 있는 이 환경이 그녀와 어떠한 관련이 있다는 건 분명해.
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[name="상냥한 목소리"]박사님.
+[Dialog]
+[Decision(options="……!", values="1")]
+[Predicate(references="1")]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",duration=1)]
+[delay(time=1.5)]
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="아미야!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="아미야"]박사님, 켈시 선생님. 다행이네요, 두 분 다 계셨군요.
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="(망설인다);(거침없이 다가간다)", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="아미야"]안심하세요, 박사님. 전 진짜 아미야가 맞아요.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1037_amiya3_1#9$1",focus="m")]
+[name="아미야"]흑흑…… 박사님, 계속 찾아다녔어요.
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="어딘가 좀 달라 보이는데?;이 옷은……?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[name="아미야"]이건 테레시아 씨가 제게 남겨준 옷이에요.
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="n")]
+[Decision(options="역시 테레시아는 여기에 있었던 거구나?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[name="아미야"]그런데 만나진 못했어요. 이 '로도스 아일랜드'에서는 테레시아 씨가 느껴지지 않아요.
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="n")]
+[Decision(options="위험한 일을 겪지는 않았지?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="아미야"]저는 괜찮아요.
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[multiline(name="아미야")]그런데 제게 수많은 추억이 흘러들어왔어요……
+[charslot(slot="m",name="avg_1037_amiya3_1#7$1",focus="m")]
+[multiline(name="아미야")]음, 추억뿐만 아니라 다양한 감정도요.
+[name="아미야"]여기서 만났던 사람들은 분명 살아있을 거라고 생각해요.
+[charslot(slot="m",name="avg_1037_amiya3_1#2$1",focus="m")]
+[name="아미야"]하지만 그런 형태로 '살아있다'는 게, 저를…… 너무 슬프게 해요.
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="아미야"]이 복도를 빠져나와 박사님을 만나고서야 저는 깨달았어요.
+[name="아미야"]제가 닿을 수 있었던 감정들은 모두 근원이 같았다는 것을요.
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="……나였구나.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="아미야"]네.
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="아미야"]전…… 박사님에게 '닿았어요'. 예전에는 이런 적이 없었는데……
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+소녀가 당신의 손을 잡았다. 예전처럼, 혹은 조금 더 조심스럽지만 힘껏.
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="아미야"]알고 있어요. 박사님은 과거에 비해 많이 변했다는 걸요.
+[name="아미야"]하지만 저희는 많은 것을 경험해 왔죠. 그렇기 때문에 저는 지금 제 앞에 있는 박사님이 지금까지 계속 믿어왔던 박사님이라고 확신할 수 있어요.
+[charslot(slot="m",name="avg_1037_amiya3_1#9$1",focus="m")]
+[name="아미야"]추억은 사람을 속일 수 있지만, 감정은 꾸밀 수 없잖아요.
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="아미야"]지금도 여전히…… 확신할 수 없는 것들이 많아요. 나중에 테레시아 씨를 다시 만나야 답을 얻을 수 있는 의문도 있겠죠.
+[name="아미야"]앞으로 무슨 일이 일어나든, 아무리 슬픈 결말을 마주한다 해도……
+[name="아미야"]박사님은 저와 함께해 주실 거죠?
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="그래.", values="1")]
+[Predicate(references="1")]
+[Decision(options="나는 로도스 아일랜드의 {@nickname} 박사야.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#11$1",focus="m")]
+[name="아미야"]네…… 좋아요. 지금은 그걸로 충분해요.
+[name="아미야"]그럼 일단 테레시아 씨를 찾으러 가요.
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="켈시"]그보다 먼저 여기를 벗어날 방법을 찾아야 해.
+[name="켈시"]답은 여기에 없어.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="50_g11_rhodesdeck_ex",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4133_logos_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4133_logos_1#1$1",focus="m")]
+[name="로고스"]비록 환술 때문은 아니지만, 하늘과 땅, 삶과 죽음……
+[charslot(slot="m",name="avg_4133_logos_1#12$1",focus="m")]
+[name="로고스"]거짓이 아닌 건 하나도 없다.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$2",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$2",focus="m")]
+[name="W"]후훗, 그 숨 막히는 가짜 화랑을 벗어난다고 해도, 결국 더 큰 무대에서 빙글빙글 돌 수밖에 없다는 거야?
+[name="W"]이딴 걸 설치한 녀석이 누구야? 센스라곤 하나도 없네.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$2",focus="n")]
+[PlaySound(key="$d_avg_footstep_stonestep",volume=1,channel="step1",loop=false)]
+[PlaySound(key="$d_avg_walk_stage",volume=1,channel="step2",loop=false)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6,channel="step3",loop=false)]
+[stopsound(channel="step1",fadetime=2.5)]
+[stopsound(channel="step2",fadetime=2.5)]
+[stopsound(channel="step3",fadetime=2.5)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$2",focus="m")]
+[name="W"]어머, 드디어 우리 주역들이 등장했다.
+[name="W"]할망구, 빨리, 얼른 그 모르는 게 없는 머리 좀 굴려 가장 중요한 질문부터 대답해……
+[charslot(slot="m",name="avg_1035_wisdel_1#14$2",focus="m")]
+[name="W"]우리는 지금, 도대체, 어디에 있는 거야?
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[verticalbg(imagegroup="50_g22_1/50_g22_2", solidwidth=1280, solidheight="1512/1512",y=1905)]
+[largebgtween(duration =20,yFrom =560, yTo =860, block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=10)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[verticalbg(imagegroup="50_g22_1/50_g22_2", solidwidth=1280, solidheight="1512/1512",y=1905)]
+[largebgtween(duration =20,yFrom =1660, yTo =1890, block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=10)]
+끝없는 황금빛 바다 위에 배 한 척이 떠돌고 있었다.
+[name="켈시"]이곳은, '오리지늄'의 내부다.
+[name="켈시"]……'오리지늄'의 내부에는, '우주'가 존재해.
+[Dialog]
+[delay(time=2)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[largebg]
+[stopmusic(fadetime=2)]

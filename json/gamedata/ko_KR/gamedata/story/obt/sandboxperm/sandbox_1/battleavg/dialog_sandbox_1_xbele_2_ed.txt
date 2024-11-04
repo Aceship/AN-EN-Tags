@@ -1,0 +1,45 @@
+[header(actId="sandbox_1", npcId="trap_469_tpasngr")]
+[summontrap(charId="trap_467_ttuye", dir="LEFT", x="12", y="11", isChar="False")]
+[summonenemy(enemyId="enemy_7026_xbele", x="10", y="11", endX="19", endY="6")]
+[summonenemy(enemyId="enemy_7035_epasng", x="8", y="11", endX="19", endY="6")]
+[camerafocusto(offsetX="10", offsetY="11", time="1", scale="FAR")]
+[foginview(leftBottomX="5", leftBottomY="7", rightUpX="19", rightUpY="14", id="fog_1")]
+[delay(time="0.5")]
+[playanim(id="enemy_7026_xbele", anim="Special", looporidle="Special_Loop", dir="RIGHT")]
+[delay(time="1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]오랫동안 신전을 지켜 온 석상이 '생명'을 갖게 됐고, 모처럼 자유로운 여행을 떠나게 됐는데, 결국엔 우리한테 끝이 나 버리다니.
+[decision(option1="확실히 안타깝긴 해.", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="패신저, 검사 결과는 어때?", value1="2.1")]
+[predicate(references="2.1")]
+[camerafocusto(offsetX="9", offsetY="11", time="1", scale="MID")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]제 예상이 맞았습니다. 역시, 동력 구동 유닛의 프로토타입이 이 석상 몸에 있더군요.
+[decision(option1="이게 원인이었던 거야?", value1="3.1")]
+[predicate(references="3.1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]맞아.
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]도와주셔서 감사합니다. 감사의 표시로 저의 공구함을 드리죠. 웬만해선 빌려주지 않는데, 박사님에겐 쓸모가 있을 것 같군요.
+[decision(option1="고마워.", value1="4.1")]
+[predicate(references="4.1")]
+[additem(itemId="sandbox_1_craft_6", itemCount="1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]스승님의 작품은 당시 분쟁 때 전부 사라진 줄 알았는데, 오아시스의 고대 석상에서 우연히 발견할 줄은 몰랐습니다.
+[decision(option1="그걸 가져가게?", value1="5.1")]
+[predicate(references="5.1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]물론이죠, 제가 여기로 온 목적이었으니까요.
+[move(enemyId="enemy_7035_epasng", x="9", y="11")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]……스승님의 서명이 아직도 남아……
+[decision(option1="패신저?", value1="6.1")]
+[predicate(references="6.1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]아무것도 아닙니다. 단지, 저랑 이 석상이 별 차이가 없다는 생각이 문득 들어서요.
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]왜 계속 나아가야 하는진 모르면서, 어떤 이름이 남긴 흔적 때문에 계속 대지를 방랑하고 있는 게 말이죠.
+[playanim(id="enemy_7035_epasng", anim="Special_Begin", looporidle="Special_Loop", dir="RIGHT")]
+[delay(time="1")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]……
+[playanim(id="enemy_7035_epasng", anim="Special_End", looporidle="Idle", dir="RIGHT")]
+[name="패신저", avatarId="char_472_pasngr", isAvatarRight="FALSE"]일행들과 함께 먼저 가세요. 저는 이것과…… 조금 더 함께 있고 싶네요.
+[withdraw(id="trap_467_ttuye")]
+[fognotinview(id="fog_1")]
+[withdraw(id="enemy_7026_xbele")]
+[withdraw(id="enemy_7035_epasng")]
+[resetcamera(time="1")]
+[save]
+[end]

@@ -1,0 +1,764 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[delay(time=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="50_g3_mainbattlefield_ex",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[playMusic(intro="$darkness02_intro", key="$darkness02_loop", volume=0.6)]
+[delay(time=1)]
+作戦開始から六十五時間
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="ケルシー"]公爵連合軍とナハツェーラーは凄惨な戦いを繰り広げている。
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="m")]
+[name="ケルシー"]シルバーロックブラフスは目の前だ。源石反応が激しく、車両は動かなくなっている。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="none")]
+[Decision(options="ヴィーナたちも、前線につく頃だろう。;模範軍の任務は極めて困難だ。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]「諸王の息」が剣の台座に収まれば、この位置からでもそれは確認できるはずだ。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="none")]
+[Decision(options="「天災を両断する」、か。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]それはただの伝説に過ぎない。
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]人は理解不能な現象に遭遇した時、往々にしてそれを誇張したがるものだ。そして後世に語り継ぐ過程で、さらに多くの幻想的な要素を付け足していく。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="none")]
+[Decision(options="「諸王の息」とザ・シャード――;ヴィクトリア人の「盾」と「矛」。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="ザ・シャードは源石の応用であり、大型巫術装置と似たものだ。", values="1")]
+[Predicate(references="1")]
+[Decision(options="だが「諸王の息」は、源石反応を打ち消せる。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]気付いていたのか。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="源石はしばしば「不治の病」に喩えられる。;現在のテラで天災から逃れるなら回避が最善だ。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="源石の働きに直接介入するのは困難だ。;だがヴィクトリア人は道具による自救手段を早々に得た。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="「諸王の息」のルーツはヴィクトリアにはないだろう？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="m")]
+[name="ケルシー"]私が初めて「諸王の息」を目にしたのは、サルゴンにある諸王の王の宮殿奥でのことだ。
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="m")]
+[name="ケルシー"]人々はそれをアスラン王権の象徴として、集落や都市を守ってくれると信じていた。そして実際にそれは、源石反応をある程度打ち消すことのできる機能を有していた。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="none")]
+[Decision(options="「ある程度」だけか？;君はそこまで気にかけていないようだな。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]ああ。古代のサルゴン術師が懸命に発掘し、改造したとはいえ、あれは所詮かつての都市防衛装置の一つに過ぎない。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]あれが実際に使われていた時代において、源石はまだテラに置いて普遍的な存在ではなかった。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]諸王の息は「アナンナ」の活動を一時的に抑え、巨獣の脊椎が飛び立つためのチャンスを作り出すだろうが、あれは源石活動を止めることのできる抑制機にはならない。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="長い歳月の中、君は何度も失望してきたのか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="ケルシー"]……ドクター。君の目に源石はどう映っている？
+[name="ケルシー"]未知の塊である現象か、利用可能な資源か？　それとも、病と災害の元凶か？
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="none")]
+[Decision(options="……;選ぶことなどできない。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#2$1",focus="m")]
+[name="ケルシー"]君は選択することを拒んでいる。なぜなら君の答えは、「いずれもそう」だからだ。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]源石はとうに、我々の知るあらゆるものと一体化している。環境、科学技術、文化、そして我々の肉体ともだ。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]身体の一部が壊死したとしても、そこを切り離せば問題は解決できるかもしれない。だが仮に、頭からつま先に至るまで問題があったとしたら？
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="君は、一部の人の目に全知全能のように映る。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]……
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="なぜ自分の方を見る？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]失望したことはあるかと聞いたな、ドクター。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]……かつて、一度だけあった。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]私は一人の人間に依存し過ぎた結果、誤った判断を繰り返し、その代償を支払ったことがある。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="それは……;……;はぁ……", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]だからといって、二度と信じないと言いたいわけじゃない。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]我々のルーツと根底に抗うのは、元より困難を極める事柄だ。一つの技術に……あるいは一人の人間だけに希望を寄せるのは、現実的ではない。
+[charslot]
+[name="アーミヤ"]ドクター、ケルシー先生、こっちに来てください！
+[name="アーミヤ"]前方に洞窟が見えます。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="50_g18_originiumcave",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]……入口が人為的に隠されておった。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]粗雑で、歪である。聴罪師が弄ぶ幻術であろう。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]巫術祭壇は恐らく一番奥でしょう。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]源石反応が最も強い場所に向かわなくてはいけません。
+[dialog]
+[charslot]
+[Decision(options="そこら中、源石だらけだ。;これほど活性化した源石は見たことがない。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="アーミヤ、大丈夫か？;Logosも感染者なら、何か違和感は？;ケルシー、我々の薬は効くだろうか？", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#8$1",focus="m")]
+[name="アーミヤ"]大丈夫です、ドクター。
+[charslot(slot="m",name="avg_npc_394_1#8$1",focus="m")]
+[name="アーミヤ"]まだ、私たちにはやるべきことがありますから、持ちこたえてみせます。
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]影響が皆無であるとは言えぬ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]なれど、恐らく源石によるものだけではあるまい。
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]何の準備もないよりはマシだ。
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]「アナンナ」の影響下では、源石はより一層その本質に近づいていく。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]結晶があらゆる有機物、無機物と結びつき、同化という形で情報を封じ込める現象は、ますますその速度を増していくだろう。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]源石は情報を自らの構造によって保存する。ゆえに、同化した個体は元の生命の形を完全に失ってしまうのだ。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]傍目には、それは一瞬の「分解」のように映る。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="鉱石病の発作で亡くなった人のようにか……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]似たようなものだ。患者たちは意識が喪失してしばらく経つと、肉体が崩壊して高度に活性化した源石粉塵と化す。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]いわゆる同化とは、その過程を極限まで圧縮したものだ。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]ロドスの技術では、融合率が閾値に達するのを遅らせることしかできない。真の防壁を作り出し、源石を阻隔するのは、我々にはまだ不可能だ。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]ドクター、あまり心配しすぎるな。今の環境における源石被覆率はまだ極限状態には達していないからな。
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="これでまだ極限ではないのか？;心配せずにはいられない。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="m")]
+[name="ケルシー"]目下のところ我々はまだ自律的な行動が可能で、呼吸もできる。
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="m")]
+[name="ケルシー"]これ以上の拡散を阻止すれば、取り返しのつかない事態にまでは至らない。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]ケルシー先生、ドクター、敵の音が聞こえました。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]Logosさん、迎撃準備をお願いします。
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_soldiersrun",volume=0.5)]
+[charslot(slot="l",name="avg_npc_425_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_425_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[name="聴罪師直属衛兵"]侵入者か！？
+[multiline(name="聴罪師直属衛兵")]敵はバンシーと――
+[PlaySound(key="$b_char_defboost")]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[charslot(duration=0.5)]
+[multiline(name="聴罪師直属衛兵")]ぐはっ！
+[charslot]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]警備はなかなかの数だが、さしたる相手でもないな。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]暗がりにはさらなる危険が潜んでおろう。ドクター、くれぐれも我らから離れるな。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]聴罪師の巫術の妨害があるゆえに、精確な位置は割り出せぬが――「ティカズの血」は紛れもなくこの近くだ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+ティカズの血は、最初の源石を呼び覚ました。
+万年もの間、サルカズの運命はそうして源石と関わり合ってきた。
+今アーミヤもLogosも苦痛に苛まれている。あるいは、その苦痛を背負いながらここまでやってきたと言うべきだろうか。
+では、あなた自身はどうだろうか？　あなたはケルシーが何度も何かを言いかけては、口をつぐんでいたことを思い出した。
+あなたは単なる見届け人でも、同行者でもない。源石は、この戦争は、そして今起こっていることは、間違いなくあなたと深く結びついているのだ。
+[dialog]
+[delay(time=1)]
+[Background(image="50_g8_altarcoreandblood",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="アーミヤ"]これが……
+[dialog]
+[charslot]
+[Decision(options="「ティカズの血」。", values="1")]
+[Predicate(references="1")]
+[charslot]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]ドゥカレの執念。
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]「不純物」を含まぬ、いわゆる純粋な血というやつだ。
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]そのものには、いかなる力もありはせぬ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]アーミヤ、それと祭壇との繋がりを断つのだ。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]分かりました――
+[dialog]
+[charslot]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$p_skill_chimera", volume=1)]
+[Delay(time=1.5)]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="ケルシー"]待て。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]……ケルシー先生？
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]Mon3tr、あの衛兵の死体を攻撃しろ！
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$Mon3tr_n")]
+[name="Mon3tr"]（鋭い雄たけび）
+[dialog]
+[charslot]
+[charslot(slot="m",name="npc_10003_1",duration=1,focus="m")]
+[delay(time=2)]
+[PlayMusic(intro="$suspenseful_intro", key="$suspenseful_loop", volume=0.6)]
+[PlaySound(key="$Mon3tr_n")]
+[name="Mon3tr？"]――
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="アーミヤ"]もう一体のMon3tr？
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="アーミヤ"]いえ、一体だけじゃありません。倒れている聴罪師の衛兵は……どれも本物の衛兵じゃないみたいです！
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]大方、破綻のない「模倣」だ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]この洞窟を真の祭壇と瓜二つに見せかけることが叶うのは、あやつだけであろう。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]これは我らを狙って仕掛けた罠だ。
+[dialog]
+[charslot]
+[Decision(options="変形者。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]アーミヤ、退がれ！
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$Mon3tr_n")]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Mon3tr"]（怒ったような雄叫び）
+[charslot]
+Mon3trがあなたたちの前に立ちはだかる。
+あなたはアーミヤの手を固く握り締めた。
+「ティカズの血」と祭壇全体が崩壊する中で、周囲を取り囲む岩壁があなたたちを押しつぶそうと迫ってくる。
+[Dialog]
+[playsound(key="$smallearthquake", volume=1)]
+[playsound(key="$d_avg_statueshake", volume=1,delay=1.5)]
+[CameraShake(duration=4, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[delay(time=2)]
+[Background(image="50_g18_originiumcave",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+幻覚が消え失せても、地形の変化は紛れもなく現実のものだ。
+本物の祭壇は今も稼働中なのだろう。成長し続ける源石は、あなたたちの視界に映るあらゆるものを呑み込まんとしていた。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]ドクター！
+[dialog]
+[charslot]
+[Decision(options="ここは……;……聴罪師の洞窟か。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]どうやら先ほどの偽の祭壇の下に落ちてきたみたいですね。
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="アーミヤ"]源石の構造の変化が早すぎるせいで、ドクターを掴むのが精一杯でした。
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="アーミヤ"]ケルシー先生とLogosさんはどちらでしょうか……あちこち源石だらけで、情報が多すぎます。皆さんの気配が感じ取れません。
+[dialog]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="none")]
+[Decision(options="恐らくここからは離れた位置にいる。", values="1")]
+[Predicate(references="1")]
+[Decision(options="敵は我々を閉じ込めようとしている。;祭壇を壊されたくないようだ。", values="1;2")]
+[Predicate(references="1;2")]
+[Decision(options="だが聴罪師の最優先目標は、やはり君だろう。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]彼らの狙いは、「魔王」ですね。
+[dialog]
+[charslot]
+[playsound(key="$smallearthquake", volume=0.6)]
+[CameraShake(duration=3, xstrength=4, ystrength=4, vibrato=20, randomness=30, fadeout=true)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="アーミヤ"]地面が震えています……結晶が広がっているんでしょうか？
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="アーミヤ"]いえ、あれは……
+[stopmusic(fadetime=1)]
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_land_impact", volume=0.4)]
+[playsound(key="$d_avg_rockfall", volume=0.6,delay=0.2)]
+[PlaySound(key="$d_avg_land_impact", volume=0.6, loop=false, channel="cmr",delay=0.7)]
+[CameraShake(duration=2, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_1335_1#1$1",bstart=0.5,bend=0.9,focus="m",duration=2)]
+[delay(time=2)]
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_1335_1#1$1",bstart=0.5,bend=0.9,focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[delay(time=1)]
+[PlayMusic(key="$m_bat_act37d0d0_01_loop", volume=0.6)]
+[PlaySound(key="$d_avg_chimera", volume=0.8)]
+[CameraShake(duration=2.5, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l", name = "avg_npc_1335_1#1$1",posfrom = "0,0", posto = "200,0",focus="n")]
+[charslot(slot = "m", name = "avg_npc_1335_1#1$1",bstart=0,bend=0,duration=2,focus="m")]
+[delay(time=2)]
+[name="？？？"]――
+[Dialog]
+[charslot]
+源石の奥から、怪物が這い出した。
+ウェンディゴの角を持ち、アンズーリシックの身体に、炎魔の炎を纏っている。
+あなたは、かつて聴罪師の石像に、こうしたサルカズの各部族が持つ特徴を見たことがある。
+しかし今、それらが一つの肉体に現れていた。
+[dialog]
+[charslot(slot="m",name="avg_npc_394_1#2$1",focus="m")]
+[name="アーミヤ"]この感情は……とても混乱しています。
+[charslot(slot="m",name="avg_npc_394_1#2$1",focus="m")]
+[name="アーミヤ"]記憶だけで……雑然とした曖昧な記憶だけが、たくさん入り混じっていて……
+[dialog]
+[charslot]
+[Decision(options="アーミヤ、向こうだ！", values="1")]
+[Predicate(references="1")]
+[PlaySound(key="$d_avg_chimera2", volume=0.8)]
+[CameraShake(duration=2, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l", name = "avg_npc_1335_1#1$1",posfrom="-200,0",posto="-200,0",duration=1)]
+[charslot(slot = "r", name = "avg_npc_1335_1#1$1",posfrom="150,0",posto="150,0",duration=1)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]ドクター、まだまだたくさん出てきます。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]この洞窟は、彼らが生まれた場所なんです。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[multiline(name="アーミヤ")]聴罪師は、サルカズの血と源石で……
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[multiline(name="アーミヤ")]この生き物たちを生み出したんです。
+[dialog]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="none")]
+[Decision(options="君は……悲しんでいるのか？;アーミヤ……", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]ドクター、彼らは生きています。
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]石塊でも、巫術による単純な造物でもありません。彼らには、命があるんです。
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]ですが彼らは聴罪師の命令通り動くことしかできません。痛みを感じることもなければ、自らの運命に涙を流すこともない。
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="アーミヤ"]ただ自分を見た人々に……「怪物」と呼ばれるだけです。
+[dialog]
+[charslot]
+[name="？？？"]そう、「怪物」。
+[dialog]
+[PlaySound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_653_1#9$1",focus="m",duration=2)]
+[delay(time=2)]
+[name="サルース"]あるいは……「キメラ」。
+[charslot(slot="m",name="avg_npc_653_1#8$1",focus="m")]
+[name="サルース"]あなたは一体、誰のために嘆いているの？
+[charslot(slot="m",name="avg_npc_653_1#8$1",focus="m")]
+[name="サルース"]無知蒙昧な同類たちのために？　それとも――自分自身のためかしら？　無理やり王冠を被せられた、キメラさん。
+[dialog]
+[charslot(slot="m",name="avg_npc_1335_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_chimera", volume=0.8)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.5)]
+[name="聴罪師の「キメラ」"]（咆哮）
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]……
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]戦いが始まります。
+[dialog]
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_originiumcastshort", volume=0.8)]
+[delay(time=1)]
+[charslot]
+[Blocker(a=1, r=1, g=1, b=1, afrom=0, rfrom=0, gfrom=0, bfrom=0, fadetime=0.1, block=true)]
+[PlaySound(key="$p_imp_whip_h", volume=1)]
+[Blocker(a=0, fadetime=1.5, block=false)]
+[CameraShake(duration=1, xstrength=10, ystrength=12, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1.5)]
+[dialog]
+[Decision(options="アーミヤ、何も影響はないか？;また聴罪師の巫術か！", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]ドクター、私はもう二度と聴罪師に囚われたりはしません。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]たかが幻と悪夢なんかに、弱音を吐いていられませんから。「キメラ」の呼び名は、あの夢の中の問いかけと同じく、これまで何度も聞かされてきました。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]こんなことで動揺しているようでは、私にここまで皆さんを率いてくる資格はないです。
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]なにより、私の未熟さのせいでドクターが巻き込まれるのだけは、もう二度と嫌です。
+[dialog]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$p_skill_chimera", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[Delay(time=1)]
+[charslot]
+小さな小さな王冠がコータスの少女の頭上に現れた。
+黒い線が、華奢な指の間で形を織りなしていく。
+[dialog]
+[Decision(options="君と「魔王」の結びつきは強まりつつある。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#3$1",focus="m")]
+[name="アーミヤ"]いえ、もしかしたら……
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="アーミヤ"]まだ足りないのかもしれません。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Delay(time=1)]
+[Background(image="50_g18_originiumcave",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]……アーミヤ。
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]まあ、そう慌てないでよ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]これらの分身は我が呪術の前では意味を没却するぞ、変形者。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]かつてうぬが我に述べたように、「時間の無駄」だ。
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]僕たちはあの時の演劇も、あの散歩も、いまだに覚えてるよ。
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]君は僕たちの長話に付き合ってくれたね。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]その折のうぬは、顔は違えど己が王庭の主たる自覚を持っておったな。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]それが、今はどうだ？
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]僕たちは色々な身分で生きてみたんだ。
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]でもそれぞれの旅路は、僕たちに答えを与えてはくれなかった。
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]そして考えた末に、気づいたんだ。始まりも終わりもない道は、ただの循環に過ぎないってね。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]うぬはすでに死をもってそれを確かめたであろう。
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]死の果てにあるのは、ただの虚無だよ。
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]君たちの言うサルカズの魂とやらも僕たちには話かけてくれなかったしね。
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[name="聴罪師直属衛兵？"]ねえバンシー、君は僕たちのために骨笛を奏でてくれた時、どう感じたかな？
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]「砕けよ」。
+[dialog]
+[charslot(slot="m",name="avg_npc_425_1#1$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_avg_spelldfns_2", volume=0.6)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[name="聴罪師直属衛兵？"]――
+[dialog]
+[PlaySound(key="$d_avg_shdwblwvr", volume=1)]
+[charslot(duration=1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_npc_425_1#1$1",duration=1.5)]
+[charslot(slot="r",name="avg_npc_425_1#1$1",duration=1.5)]
+[Delay(time=2.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]際限なく湧いてくるか。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]これがうぬの力か？　一度の死ののち、うぬの実力は目に見えて弱まっておるはずなのだが。
+[dialog]
+[charslot]
+呪文に破壊された分身は前のように姿を消すことはなかった。
+倒れた一つ一つの死体は逆巻く源石潮の中へと沈み込むと、それから素早く消え去っていく。
+[dialog]
+[PlaySound(key="$d_avg_erthshkng",loop=true,channel="lc",volume=1)]
+[StopSound(channel="lc", fadetime=2.5)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_statuecollapse",volume=0.8)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1.5)]
+ほどなくして、枯枝のような一本の腕が結晶から突き出てきた。
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_magic_3", volume=1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]「霊骸布」。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m",duration=2)]
+[delay(time=2)]
+[name="「霊骸布」？"]バンシー……お前もかつて、私を殺したな。
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]戦場において、我とうぬらは立場を異にしていた。
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[name="「霊骸布」？"]私はカズデルで、王庭の反逆者を斬り捨てよと命を受けた。
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[name="「霊骸布」？"]お前は私の行く手を阻み、呪文で我が首と胴体とを切り離した。
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[name="「霊骸布」？"]当時のお前は、ただの声音の幼い童に過ぎなかった。
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]……覚えておるぞ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]うぬの言う反逆者とは、カズデルを去り平穏に暮らすことを望むだけの、一家三人であったろう。
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[name="「霊骸布」？"]奴らは本来、王庭に忠誠を誓うべきだったのだ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]王庭は決して民草の上に立つべきではない。たとえうぬがかつてはカズデルにおける戦の英雄であったとしても、民の虐殺を見過ごすわけにはいかぬ。
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[name="「霊骸布」？"]だからお前はバベルとテレジアについていくことを選んだ……お前の言う民草、サルカズの民ために。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]それが未来へと繋がる、より正しき道であった。
+[dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[PlaySound(key="$d_avg_spelldfns_2", volume=0.7,delay=0.6)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[PlaySound(key="$d_avg_shdwblwvr", volume=1)]
+[charslot(duration=0.7)]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_054",focus="m",duration=2)]
+[delay(time=2)]
+[name="バベルメンバー？"]だが彼女が死んだ後も、カズデルに戻らなかっただろ！
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[name="バベルメンバー？"]それどころか、異種族どもに力を貸して、一緒に「魔王」を盗み出したじゃないか。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]「魔王」の継承はテレジア殿下が決めたことだ。バベルの一員であり、彼女の部下である我に口を挟む資格はない。
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[name="バベルメンバー？"]あんたはその手で俺を殺したな。
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[name="バベルメンバー？"]呪文で心臓を締め付けられたあの瞬間……ハハッ、俺は信じられなかったぜ。
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[name="バベルメンバー？"]長年共に戦ってきたってのに、俺らの仲があのよそ者ども以下だったなんてよ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]……うぬが本艦に遺したあの黄金草は、今でもよく育っておる。
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[name="バベルメンバー？"]殿下の死後、バベル全体を巻き込んだ内乱で、あんたは一体何人の同僚を殺した？
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[name="バベルメンバー？"]あれだけ大勢の遺品となりゃあ……あんたの宿舎も埋め尽くされちまったんじゃねぇのか？　俺が手ずから鉢に植えたあの草を見るたび、あんたは悲しんだりするのか？
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="Logos"]我が悲しみを抱くとすれば……
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]うぬらが死してなお、然るべき安寧を得られぬことに対してであろう。
+[dialog]
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[PlaySound(key="$d_avg_spelldfns_2", volume=0.7,delay=0.6)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[PlaySound(key="$d_avg_shdwblwvr", volume=1)]
+[charslot(duration=0.7)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]変形者よ、かつてのうぬは左様に「死者」を演ずることに熱を上げてはおらなんだ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]議論によってうぬの求める答えは得られまい。我の感情を探ったところで、また無意味である。
+[dialog]
+[charslot]
+死者は答えを返さない。
+彼らは相変わらず漆黒のクラスターから絶え間なく湧き出てくる。
+多くの顔。見慣れたものも、そうでないものも、どれもがサルカズの顔をしていた。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]うぬの天与の能力が、源石内部に秘められし情報と共鳴を起こしておるな。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]うぬのその力の増幅が、源石によるものであるなら――
+[dialog]
+[PlaySound(key="$d_avg_clothmovementsp", volume=1)]
+[delay(time=1)]
+[dialog]
+[charslot]
+Logosは片手を上げた。
+[dialog]
+[PlaySound(key="$d_avg_erthshkng",loop=true,channel="sk",volume=1)]
+[PlaySound(key="$d_avg_shdwblwvr", volume=1,delay=1)]
+[CameraShake(duration=3, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[StopSound(channel="sk", fadetime=4)]
+[delay(time=2)]
+呪文を唱えるまでもなく、ただ岩壁が震える微かな音だけがする。
+全ての変形者の分身が、瞬く間に砕け散っていく。
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]やはりな。
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]残るは……最後の一人。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]……
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]うぬであったか。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_410_1#1$1",bstart=0.2,bend=0.7,focus="m",duration=1)]
+[delay(time=1)]
+[name="？？？"]……
+[Charslot]
+洞窟の奥には、巨獣の頭骨に立っていたあの時とほとんど変わらない佇まいで、ブラッドブルードが立ち尽くしている。
+しかし今、彼の周囲に逆巻いているのはかつてのように鮮血ではなく、源石のクラスターである。
+Logosは己の体内で血が躍動するのを感じた。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]ブラッドブルードの大君……ドゥカレ。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]うぬが他の分身とは異なることは分かっておる。
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]うぬは、変形者の化身ではあるまい。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="50_g3_mainbattlefield_ex",screenadapt="coverall")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]変形者殿、このあなたはクイサルトゥシュタに協力することを選びましたね。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]いや……僕たちは誰かへの協力を望んでるわけじゃない。ただ、答えを求めてるだけだよ。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]ケルシー、僕たちはサルカズがまだサルカズじゃなかった頃に、君に会ったことがあるよ。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]君は、僕たちの上を通り過ぎていったよね。
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]そのような対面の記憶はありません。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]あの頃、僕たちはまだ口を利くこともできなかったんだ。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]それから……
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]最初のティカズの魔王が源石と接触した。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]それが僕たちの最初の「目覚め」だったよ。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]一つ目の個体が、僕たちの中から立ち上がったんだ。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]僕たちは互いが互いを感じ合った。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]そのずっと以前から、数え切れないほど昔から、僕たちは存在していた。あの瞬間にようやく僕たちは、自己の存在をはっきりと自覚したんだ。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]なぜなら僕たちは、「思考」を始めたから。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]……源石は、それに触れたあらゆる生命と同化します。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]あなた方だけでなく、最初のブラッドブルード、バンシー、ウェンディゴ……あらゆるティカズに変化が起こりました。あなた方はかつてこの大地に存在した生物の形態に近付きつつあるのです。
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m")]
+[name="変形者"]じゃあ、君はどうなの？
+[dialog]
+[Charslot]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m",duration=2)]
+[delay(time=4)]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Mon3tr"]（苛立っているような雄たけび）
+[delay(time=2)]
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]この子はもう一つの自分を目にするのが嫌みたいだね。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]ケルシー……不滅の人。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]君は自分の最初の姿をまだ覚えてる？
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]「不滅の人」は、一部の者の私に対する想像と誤解に過ぎません。
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]時間は、私の身体にも等しく痕跡を残していきました。最初に「ケルシー」と名付けられた個体は、とうに黄砂の中に埋もれて消えています。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]それでも君が君であることに変わりはないよ。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]君がテレジアの傍で生まれ変わった時も、僕たちは君を見つめていた。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]今の君と前の君は、容姿から性格に至るまで何もかもが違うよね。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]僕たちはさ、生きるために絶えず変わり続けることに慣れている。
+[name="Mon3tr？"]変形者もサルカズの中では特別だ。僕たちと君は似た者同士だと考えてたこともあるくらいね。
+[name="Mon3tr？"]僕たちは多くの「ケルシー」を知ってる。ケルシーが多くの僕たちを知ってるように。
+[name="Mon3tr？"]だけど変形者は、ずっと群体であり続けてきた。どの変形者も、群体がこの世界を感じ取るための受信機だ。
+[name="Mon3tr？"]でも「ケルシー」は違うでしょう。ケルシーは皆が、君自身だからね。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]私もそう考えています。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]それはなぜ？
+[name="Mon3tr？"]君がそこまで頑ななのは、記憶の継承が理由かい？　記憶を改ざんしたり誰かに植え付けるのなんて簡単なことだよ。多くの長命者が似た手口を使っていたから、よく知ってるんだ。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]そのようなやり方で得られる「永遠の命」などは、虚言に等しいのです。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]だったら、ひょっとして何か果すべき責務があるとか……？
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]私が生まれた時から、この命が責務と結びついていることは否定しません。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]過去を振り返ってみても……私が本当の意味で「生きて」いたとは思いません。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]君の身体を構成する物質はもう全て入れ替わっているし、前の個体から受け継いだ記憶も当てにはならない。君が無理やり押し付けられた使命は、君自身のものとは限らないよ。
+[name="Mon3tr？"]ねえケルシー。この一万年以上もの間、君が自分が変わらずにいられると信じてきた理由は一体何なの？
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]名前です。
+[charslot(slot="m",name="npc_10003_1",bstart=0,bend=0.8,focus="m")]
+[name="Mon3tr？"]それは、何か特別な呼び名やコードネーム？　愛情不足のサルカズが気にするようなやつ。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]この名は、多くの意味を持ちます。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]私に名を与えてくれた人も、私が気にかけている人も、目下窮地の最中にあります。今は、会話に興じるタイミングとしては不適切だと認識します。
+[dialog]
+[Charslot]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[charslot(slot="m",name="avg_npc_426_1#1$1",focus="m",duration=2)]
+[delay(time=2)]
+[name="変形者"]君にそこまでの感情があるとは、意外だなぁ。
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]Mon3tr。
+[dialog]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[playsound(key="$char_Mon3tr",volume=0.5)]
+[delay(time=1)]
+[name="Mon3tr"]（興奮した雄たけび）
+[dialog]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.03, block=true)]
+[PlaySound(key="$p_skill_Mon3trburst", volume=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

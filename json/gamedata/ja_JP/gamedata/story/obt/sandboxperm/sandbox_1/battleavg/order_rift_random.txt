@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+この依頼の危険度は未知数です。謎の依頼を受けますか？
+[decision(option1="依頼を受ける", value1="1.1", option2="依頼を切り替える", value2="1.2", option3="依頼を受ける", value3="1.3", option4="離れる", value4="1.4")]
+[predicate(references="1.1", visibleCondition="c0&&!c1")]
+<color=#d8d769>依頼を受けました。</color>
+[orderrift(riftId="random_dungeon_1")]
+[end]
+[predicate(references="1.2", visibleCondition="c4&&c5")]
+<color=#d8d769>依頼を切り替えました。</color>
+[orderrift(riftId="random_dungeon_1")]
+[end]
+[predicate(references="1.3", visibleCondition="!c6")]
+<color=#d8d769>今は依頼を受けることができません。しばらく経ってからまた来てください。</color>
+[end]
+[predicate(references="1.4")]
+[end]
+[condition(references="c0", key="checkcanorderrandomrift")]
+[condition(references="c1", key="checkriftordered")]
+[condition(references="c4", key="checkcanorderrandomrift")]
+[condition(references="c5", key="checkriftordered")]
+[condition(references="c6", key="checkcanorderrandomrift")]

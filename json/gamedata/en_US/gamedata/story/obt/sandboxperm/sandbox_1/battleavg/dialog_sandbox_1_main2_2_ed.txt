@@ -1,0 +1,56 @@
+[header(actId="sandbox_1", npcId="trap_467_ttuye")]
+[summontrap(x="17", y="7", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summonenemy(enemyId="enemy_7035_epasng", x="17", y="6", endX="13", endY="6")]
+[move(enemyId="enemy_7035_epasng", x="16", y="6")]
+[summonenemy(enemyId="enemy_7023_gatbb", x="11", y="6", endX="14", endY="6")]
+[move(enemyId="enemy_7023_gatbb", x="12", y="6")]
+[camerafocusto(offsetX="14", offsetY="6", scale="FAR", time="0.8")]
+[delay(time="1")]
+[foginview(id="rect1", leftBottomX=12, leftBottomY=3, rightUpX=22, rightUpY=9)]
+[name="Temple Guard", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]You don't fight like the ameeri men...
+[decision(option1="We're not.", value1="1.1")]
+[predicate(references="1.1")]
+[summonenemy(enemyId="enemy_7022_gatgod", x="12", y="5", endX="14", endY="6")]
+[move(enemyId="enemy_7022_gatgod", x="13", y="5")]
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Our apologies. We should not have attacked so rashly.
+[decision(option1="It's okay. Let bygones be bygones.", value1="2.1")]
+[predicate(references="2.1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="TRUE"]What happened here? Why the hostility to outsiders?
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Our clan has lived here in peace for many years, until the ameeri army invaded the oasis and burned the trees. Now nothing grows from the earth.
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]We kept retreating towards the edge of the oasis, seeking to escape their harassment. We finally found refuge in our ancestral temple.
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Last month, however, the statue outside the temple vanished mysteriously.
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]The statue has guarded the doors of the temple for centuries. It is of great importance to us.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="TRUE"]Judging by the marks on the door, the statue must have been massive. It couldn't have been moved without alerting anyone.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="TRUE"]And what use would someone have for the statue?
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Who knows? Those treasure seekers go after anything ancient.
+[name="Temple Guard", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Yeah, the ameeri soldiers took my family's pickle pot. I didn't know what they were looking for.
+[name="Temple Guard", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Until that mysterious Feline told me that it dated back to the time of the Shah.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]The Shah...?
+[decision(option1="What did the statue look like?", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="We'll keep an eye out for it.", value1="4.1")]
+[predicate(references="4.1")]
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]If you will help us find the statue, we're willing to hear you out. For example, regarding the alliance you mentioned.
+[decision(option1="We're looking forward to working with you.", value1="5.1")]
+[predicate(references="5.1")]
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Please accept this little token of apology for our mistake.
+[decision(option1="Thank you.", value1="6.1")]
+[predicate(references="6.1")]
+[additem(itemId="sandbox_1_craft_5", itemCount="1")]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="TRUE"]Looks like the problem has been dealt with.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="TRUE"]Please excuse me, I have some personal matters to attend to.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="TRUE"]We part for now. I'll return before the next time you need me.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]We would like to ask some questions.
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Go ahead.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]What is the treasure the ameeri soldiers are looking for?
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]I don't know for certain, but I vaguely remember that when I was a child, I heard the elders mention that it could be priceless or worthless.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]What kind of a description is that?
+[name="Temple Priest", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Perhaps the archaeologist who came a few days ago can offer a better answer. To my knowledge, most rumors of the treasure come from further north in the jungle.
+[withdraw(id="enemy_7023_gatbb")]
+[withdraw(id="enemy_7022_gatgod")]
+[withdraw(id="enemy_7035_epasng")]
+[withdraw(id="trap_467_ttuye")]
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[save]
+[end]

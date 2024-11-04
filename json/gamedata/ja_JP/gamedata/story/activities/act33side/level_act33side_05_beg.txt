@@ -1,0 +1,670 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_victoria",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="カズデル摂政王、軍事委員会将校テレシス殿下へ", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="遠方を旅した学者が自らの見聞を公爵邸にて披露したことで、我々ははるか遠くの荒野で新興の移動都市が台頭しつつあることをようやく知りました。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="いにしえの炉は潰えることなく盛んに燃え、都市を囲う城壁は日増しに高くそびえ立っている。そして、かつて野放図だった傭兵たちは今や一つの旗のもとに集結しているそうではありませんか。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="貴公が示した非凡な実力と威厳は、キャヴェンディッシュ公爵が歩みを止め賛嘆するに足るほどであります。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="貴公一人で、我々のサルカズに対する認識を変えたのです。我々は過去の先入観に囚われるべきではないのかもしれません。誠実で率直な交流を図ることで、双方に利益がもたらされるでしょう。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="……", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="キャヴェンディッシュ公爵はぜひ貴公に領地まで足を運んでいただきたいとお考えです。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="貴公配下の勇敢なる戦士たちも、この古の帝国においては腕を振るう場がございます。", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+1091年冬
+[dialog]
+[charslot(slot = "m", name = "avg_npc_048",duration = 1)]
+[Delay(time=1.5)]
+[name="ドクター"]もう一度だ……必ず最後までやり遂げてみせる……
+[name="ドクター"]この程度のことすらできずに、何が鉱石病を治療するだ……
+[dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 1)]
+[Delay(time=1.5)]
+[charslot(slot = "m",posfrom = "0,-50", posto = "0,-30",duration = 0.5)]
+[charslot(slot ="m", action="shake", power=5, times=30, duration=0.5)]
+[name="ドクター"]うっ――
+[dialog]
+[charslot(slot = "m",posfrom = "0,-30", posto = "0,-50",duration = 0.3)]
+[PlaySound(key="$bodyfalldown3")]
+[CameraShake(duration=0.3, ystrength=30, vibrato=15, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[name="ドクター"]やはりダメだ……ハァ……ハァ……
+[dialog]
+[charslot]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1",duration = 0.5)]
+[Delay(time=0.8)]
+[name="外勤戦士"]あのー、その医療キットはこっちに任せてください。荷物運びは俺たちがやりますから。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]わ……わかった……
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1")]
+[Delay(time=0.5)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 0.5)]
+[Delay(time=0.8)]
+[PlaySound(key="$d_avg_clothmovement")]
+[charslot(slot = "m",posfrom = "0,-50", posto = "0,0",duration = 0.8)]
+[Delay(time=1)]
+[name="外勤戦士"]まあでも、元気になったらしっかり鍛えた方がいいかもしれませんね。
+[dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.7)]
+[charslot(slot = "m",posfrom = "0,0", posto = "200,0",duration = 1,afrom=1,ato=0)]
+[Delay(time=2.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1",duration = 1)]
+[Delay(time=1.1)]
+[name="ケルシー"]今のところ、「鍛えた」ところでテラ人の身体能力に並ぶことは不可能だ。
+[name="ケルシー"]肉体労働よりも、君の長所を発揮できる仕事はほかにある。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]わかっている。だが、たまに負けず嫌いが出てしまって……
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="ケルシー"]あの日以降、君は少し焦っているように見える。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]ああ……テレジアのことが心配で。
+[name="ドクター"]敵対勢力の支配下にある都市に少数で向かうのは、リーダーとして賢明な判断とは言えない。
+[name="ドクター"]同行した戦士の実力を侮っているわけではないが、軍規模の相手を前に彼女の安全を守るには心もとないだろう。
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="ケルシー"]サルカズの伝統における魔王の地位は想像をはるかに上回る。加えてテレジアの功績も衆目が認めるところだ。軍事委員会はむしろ矛を収めざるを得ないだろう。
+[charslot(slot = "m", name = "avg_003_kalts_1#5$1")]
+[name="ケルシー"]だが、ヴィクトリアがカズデルへ送った招待は、決して友好的なサインではない。テラ諸国の視野が再びカズデルを捉えたことを意味するものだ。
+[name="ケルシー"]ゆえにテレジアはカズデルに向かい、カズデルが再び戦争に巻き込まれることに決して同意しないという態度を表明する必要がある。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]軍事委員会とバベル設立の経緯については聞いているが……
+[name="ドクター"]すでに多くの苦境に直面しているサルカズは、もう同族同士で対立すべきではないと思う。それでは彼らの限られたリソースを消耗してしまうだけだ。
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="ケルシー"]サルカズの複雑な歴史が、サルカズ間での異族に対する態度の多様性を生んでいるんだ。
+[name="ケルシー"]テレシスとテレジアは二つの旗のようなもの。どちらの旗の下に集うかは、サルカズたちに選ぶ権利がある。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]鉱石病以外にも、まだまだ多くの面倒事が残されているということだな。
+[name="ドクター"]「知っている」と「理解している」ではやはり大きな差がある。今後もテラの歴史を学び、理解を深めていくしかないな。
+[name="ドクター"]……今回に関しては、ケルシーに導いてもらうとしよう。
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="ケルシー"]……もちろんだ。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]今我々にできるのは、ロドスの鉱石病患者のために安定した治療環境を最大限確保すること――
+[dialog]
+[stopmusic(fadetime=1)]
+[charslot]
+[PlaySound(key="$d_sp_ballista",volume=0.5)] 
+[CameraShake(duration=0.8, xstrength=35, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[CameraShake(duration=2, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n",volume=0.5)] 
+[delay(time=2)]
+[playsound(key="$rungeneral", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.7, channel="bgs",fadetime=1)]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1",duration=0.8,posfrom = "150,0", posto = "0,0")]
+[delay(time=1)]
+[StopSound(channel="bgs", fadetime=0.5)]
+[name="外勤戦士"]何事だ――
+[charslot(slot = "m", name = "avg_003_kalts_1#14$1")]
+[name="ケルシー"]敵襲？　このタイミングで？
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[charslot(slot = "left", name = "avg_npc_419_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_419_1#1$1")]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "l", focus = "l")]
+[name="冷酷な王庭軍"]受け取った情報によると、殿下はすでに出発したとのこと。
+[name="冷酷な王庭軍"]諸君！　我らが敬意を払うのは殿下のみである。バベルを滅ぼしさえすれば、殿下はカズデルへお戻りくださるのだ。
+[name="冷酷な王庭軍"]我らは裏切りの咎を背負わされても構わぬ。だが、この重要な局面において、摂政王が成さんとすることが妨げられてはならない。カズデルはまもなく、失ったすべてを奪還するのだ。
+[name="冷酷な王庭軍"]殿下がおっしゃった通り、サルカズが一つに団結できることを切に願う。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+カズデル地区　スカーモール
+[dialog]
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[charslot(slot = "right", name = "avg_npc_053",focus="l")]
+[name="冷淡な傭兵"]殿下のおいでだ……
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="興奮する傭兵"]どちらの殿下だ？　外で逃げ回ってる方か？
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[name="冷淡な傭兵"]無礼なこと言うんじゃねぇ。どちらの殿下だろうと、お前が軽口を叩ける相手じゃないだろ。
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="興奮する傭兵"]フンッ。ところで、お前はあの依頼を受けたのか？
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[name="冷淡な傭兵"]こんなチャンス誰が逃すってんだ？　ロンディニウムだぞ。あのカスどもの巣窟に行けるんだぜ。
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="興奮する傭兵"]フェリーンどもの宮殿は石柱にも金があしらわれてて、貴族が歩く場所にはわざわざ光る石が敷き詰められてるって噂だ。
+[name="興奮する傭兵"]*サルカズスラング*、あそこは大帝国の首都で、しかも大公爵の依頼ときた。どんだけ稼げるんだろうな！
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_bldwhoosh")]
+[PlaySound(key="$swordtsing3",delay=0.5,channel="2")]
+[PlaySound(key="$swordtsing4",delay=0.6,channel="3")]
+[Delay(time=1)]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",posfrom = "100,0", posto = "-100,0",duration = 0.5)]
+[charslot(slot = "r",name="avg_npc_1294_1#1$1",posfrom = "-100,0", posto = "100,0",duration = 0.5)]
+[Delay(time=1)]
+[charslot(slot = "r",focus="r")]
+[name="「スカーアイ」"]久しぶりだな、アスカロン。
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",focus="l")]
+[name="アスカロン"]……
+[charslot(slot = "r",focus="r")]
+[name="「スカーアイ」"]これだけスカーモールに帰ってなかったんだ。ゆっくり昔話でもしたいとは思わねぇのか？
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",focus="l")]
+[name="アスカロン"]傭兵を集め、ロンディニウム行きを命ずるとはな。
+[charslot(slot = "r",focus="r")]
+[name="「スカーアイ」"]おいおい、別に命じてるわけじゃねぇぞ。
+[name="「スカーアイ」"]摂政王が野郎どもにロンディニウムでの稼ぎ口を提供してくれたんだ。誰もが行きたがって当然だろ。
+[charslot(slot = "l",name="avg_4132_ascln_1#4$1",focus="l")]
+[name="アスカロン"]カズデルにまた新たな戦火を投じるつもりか。
+[charslot(slot = "r",focus="r")]
+[name="「スカーアイ」"]「戦火を投じる」か。バベルのお子ちゃまたちとままごとをしすぎて、サルカズの本来あるべき姿を忘れたのか？
+[name="「スカーアイ」"]サルカズが戦争から離れたことなんざないんだ！
+[dialog]
+[charslot]
+[Blocker(a=0.7, r=1, g=1, b=1, fadetime=0.3, block=false)]
+[CameraShake(duration=0.5, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch")]
+[delay(time=0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=false)]
+[delay(time=0.5)]
+サイクロプスが不意に殴り掛かる。アスカロンは拳を目で捉え、どうやってもそれが避けられないことに気づいて、少し驚いた。
+[charslot(slot = "m",name="avg_4132_ascln_1#8$1")]
+[name="アスカロン"]……チッ。
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="「スカーアイ」"]未来を見通すのは簡単じゃねぇ。だがお前が次にどう動くかを見抜くのはそう難しくないんだよ。
+[dialog]
+[charslot]
+[Effect(name="$e_fist_01",x=-100,layer = 2)]
+[CameraShake(duration=0.5, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch")]
+[PlaySound(key="$d_avg_daggerexsheath",delay=0.2,channel="3")]
+[delay(time=0.5)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing1",channel="4")]
+[Effect(name="$e_spark_01_mid",x=0,y=50,rox=-180,roy=50,roz=-40,layer = 2)]
+[PlaySound(key="$swordtsing6",delay=0.1,channel="5")]
+[Effect(name="$e_spark_01_mid",x=0,y=50,rox=-180,roy=50,roz=-40,layer = 3)]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="「スカーアイ」"]お前はよ、自分は運命に選ばれた特別な子で、ひいては両殿下のすれ違いを修復できる存在だなんて思ってんじゃねぇか？
+[name="「スカーアイ」"]思い出してみろ。お前が両殿下に会ったあの日を……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[delay(time=0.5)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[image(image="49_i03_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="「スカーアイ」"]小さな裂獣を狩り、血の痕に沿って荒野をさまよっていたお前は、嵐の中に踏み込んでカズデルの魔王に出会った……
+[name="アスカロン"]なぜそれを……
+[name="「スカーアイ」"]「なぜそれをお前が知っている？」、だろ。驚いたか？
+[name="「スカーアイ」"]予言だよ。例の予言を知った俺は、あの日獲物を餌に荒野の部族を嵐の中へと誘い込んだ。そしてお前は、その中で運良く生き延びただけのガキにすぎねぇってわけだ。
+[name="「スカーアイ」"]真に予言を解き明かせる奴はいねぇし、ましてや未来に干渉できる奴なんぞいるはずもねぇ。だが、俺なら運命の尻尾に手を伸ばすことはできる……俺はこの手で予言に形を与えてぇんだよ。
+[name="「スカーアイ」"]テレシスは予言を知りながらも、お前を殺さずにそばに置いて育てた。ひょっとしたら己の運命が予言に勝るかどうかを確かめたいのかもな。
+[name="「スカーアイ」"]だがお前は何年経っても変わらねぇな。今でも荒野で方角を見失った哀れなガキのままだ。
+[Dialog]
+[delay(time=1)]
+[PlaySound(key="$knifegore")]
+[Effect(name="$e_bladeline_01_large",layer = 1)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=50, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[image]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[name="「スカーアイ」"]フン、そう焦るな。
+[name="「スカーアイ」"]今のお前じゃあまだ俺を脅かすことはできねぇ。お前に対する期待だって、こんなもんじゃねぇよ。
+[charslot(slot = "m",name="avg_4132_ascln_1#4$1")]
+[name="アスカロン"]先生がこう言っていた。
+[name="アスカロン"]「お前の刃はすべてのサルカズの敵に向けられるだろう。」とな。
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="「スカーアイ」"]テレシスに育てられた処刑人のくせに、あの人に対する理解は俺みてぇな戦争屋にすら及んですらねぇな。
+[name="「スカーアイ」"]テレシスは公爵どもの手先になって安んじるタマか？　あの人の計画の全体像すら見えてねぇのに、俺たちに指図してんじゃねぇよ。
+[name="「スカーアイ」"]もしもテレシスが今、俺の後ろの部屋にいたら……お前はどんなツラを下げてあの人の前に立つんだろうな？
+[charslot(slot = "m",name="avg_4132_ascln_1#4$1")]
+[name="アスカロン"]……
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="「スカーアイ」"]結局お前は、後ろにいるその人の言葉を代弁してるだけだろ。
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_1296_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="テレジア"]この戦争について、あなたも多くの考えがあるようね。
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="ケルシー"]敵はどれだけいる？
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]正確な数は不明だが、運行ルートの前にも後ろにも敵の反応を確認している。少なくはないだろうな……
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="ケルシー"]テレシス本人の意思でなくとも、軍事委員会の他の将校たちは皆、テレジア不在のうちにバベルを一網打尽にしようと考えているのだろう。
+[name="ケルシー"]そうすれば、サルカズには「選択肢がなくなる」からな。
+[charslot(slot = "m",name="avg_npc_048")]
+[name="ドクター"]動員可能な戦力はどれくらいだ？
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]最も優秀な戦士は全員殿下の交渉に同行し、残ったいくつかの部隊には物資輸送車の護衛任務を優先的に割り振っている。今残っているのは普段の三分の一にも満たない程度だ。
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="ケルシー"]少なくとも前方の包囲を突破せねば……
+[charslot(slot = "m",name="avg_npc_048")]
+[name="ドクター"]……ケルシー。
+[name="ドクター"]指揮を任せてくれ。
+[charslot(slot = "m",name="avg_003_kalts_1#4$1")]
+[name="ケルシー"]ドクター？
+[charslot(slot = "m",name="avg_npc_048")]
+[name="ドクター"]君が言ったように、これがテレシスではなく軍事委員会の一部のメンバーが企てた奇襲であれば、彼らは策を弄せず一気呵成に押し切ろうとするだろう。
+[name="ドクター"]だからこそ、向こうのリズムに乗せられてはならない。
+[name="ドクター"]包囲網の脆弱な箇所を見つけて突破し、向こうのリズムを崩すことができれば、本艦の安全は確保できるはずだ。
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="ケルシー"]……
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]Dr.{@nickname}、あんたは戦争の経験があるのか？
+[charslot(slot = "m",name="avg_npc_048")]
+[name="ドクター"]経験と言っても血肉を見るようなものではなかったが……訓練を受けたことはある。
+[name="ドクター"]とにかく、戦場を計算可能なデータモデルに構築するくらいはできる。
+[name="ドクター"]ケルシー、前線の調整と攻防は君に任せた。君の力であれば、我々を守れると信じている。
+[charslot(slot = "m",name="avg_003_kalts_1#4$1")]
+[name="ケルシー"]……わかった。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1")]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="「スカーアイ」"]スカーモールはあんたを歓迎するぜ、殿下。
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="テレジア"]近頃のスカーモールはきっと賑わっているのでしょうね。
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="「スカーアイ」"]わざわざ大多数の声に反対する必要もないんでな。そうだろ？
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="テレジア"]少数の声だって同じく尊重に値するものよ、「スカーアイ」。
+[name="テレジア"]多くの人が外で起こっていることを何も知らない。このままだと彼らの生活は一夜にして一変し、再び故郷を失って、あてもなくさまようことになってしまうわ。
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="「スカーアイ」"]俺はただの商人だ。商いも手の届く範囲でやってる。
+[name="「スカーアイ」"]傭兵たちは命懸けで働く覚悟で、俺は金を稼ぎてぇ。そういうわけで、俺はいつも大口顧客の考えを尊重してやってきたんだよ。
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="テレジア"]なら、私はあなたの最大の顧客に相談すべきね。彼はあなたの後ろの部屋にいるんでしょう？
+[dialog]
+[charslot(slot = "r", posfrom = "0,0", posto = "-100,0",duration = 1)]
+[Delay(time=0.6)]
+[charslot(slot = "l", posfrom = "0,0", posto = "-100,0",duration = 0.6)]
+[Delay(time=0.8)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="「スカーアイ」"]殿下、それ以上進まないでもらえるか。
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="テレジア"]「スカーアイ」、あなたはいつカズデルの決議に干渉する資格を得たのかしら？
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="「スカーアイ」"]だからこそ進ませるわけにはいかねぇんだよ。
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="テレジア"]あなた……
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_654_1#1$1",duration=1.5,bstart=0.3,bend=0.7)]
+[delay(time=2)]
+[name="？？？"]「スカーアイ」を困らせないでください、殿下。
+[name="？？？"]おわかりでしょう。もし殿下が摂政王とここで相まみえれば、事態を鎮める方法はただ一つしか残りません。
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]……聴罪師。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_654_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="聴罪師"]お久しぶりでございます、テレジア殿下。
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]そう、そちらはもう決めたのね。
+[name="テレジア"]それがテレシスの意向なの？
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="聴罪師"]左様でございます。
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]つまり、私たちの都市を放棄すると決めたのね？
+[charslot(slot="m",name="avg_npc_654_1#9$1")]
+[name="聴罪師"]ただ一歩前へと踏み出し、家を離れて遠征するだけです。どうして放棄するなどと言えましょう。
+[name="聴罪師"]殿下は長きにわたり我々を古き殻に閉じ込めていましたが、我々は……一歩でも前に進むことを渇望しているのです。
+[charslot(slot = "m", name = "avg_npc_1296_1#3$1")]
+[name="テレジア"]……
+[charslot(slot="m",name="avg_npc_1294_1#1$1")]
+[name="「スカーアイ」"]聴罪師殿の言う通りだ。
+[name="「スカーアイ」"]六十数年前、あんたとテレシス将軍が一緒にスカーモールに来た時のことはまだ覚えてるぜ。あんたらが肩を並べてたら、運命でさえビビって迂回していきそうなもんだった。
+[name="「スカーアイ」"]だが今はどうだ。すでに分裂したカズデルに立って、ここの連中に目を向けてみろ。
+[name="「スカーアイ」"]あんたは依然「魔王」の身分でもってサルカズ全員に命令できる。俺たちを皆殺しにだってできるだろう。だが、あんたの理想に付いていきたいって奴がいるかどうか、まずは聞いてみたらどうだ？
+[charslot]
+[stopmusic(fadetime=2)]
+巨大なスカーモールに昔日の喧噪は少しも見られず、散漫とした傭兵たちは武器をしまい、うやうやしくこうべを垂れて立っている。
+彼らの目は何も語らないが、魔王には一人一人の心の声がはっきりと聞こえた。
+困惑、興奮、渇望、憤慨。
+[charslot(slot = "m", name = "avg_npc_1296_1#3$1")]
+[name="テレジア"]……ほとんどの人が、もう決めたのね。
+[charslot(slot = "m", name = "avg_npc_1296_1#2$1")]
+[name="テレジア"]なら私が止めても意味はないわ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "m", name = "avg_npc_053")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[name="サルカズ傭兵"]……！
+[dialog]
+[CameraShake(duration=0.3, xstrength=15, ystrength=15, vibrato=15, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 0.5)]
+[PlaySound(key="$bodyfalldown2", volume=0.6)]
+[delay(time=1.5)]
+[charslot]
+一人のサルカズが唐突にひざまずいた。
+彼は考えを変えるつもりも、テレシスの魅力的な計画を放棄するつもりもない。
+彼はただ……カズデルを築き上げたテレジアを、六英雄の一人を、彼らの魔王を裏切ることが……慚愧に堪えなかったのだ。
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="聴罪師"]構いませんよ、ひざまずきたければどうぞ。テレシス殿下も、「スカーアイ」殿も皆の振る舞いを咎めることはありません。
+[charslot(slot="m",name="avg_npc_654_1#5$1")]
+[name="聴罪師"]あぁ……その伝統的な仕草が示すものは、忠誠と服従だけには留まりません。私にとってより馴染み深いのは……
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="聴罪師"]「罪責」です。
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]……クイサルトゥシュタ。
+[name="テレジア"]自分の名前が示すものは見つけられたかしら？
+[charslot(slot="m",name="avg_npc_654_1#9$1")]
+[name="聴罪師"]まだでございます、殿下。
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="テレジア"]それなら彼らの罪を赦し、あなた自身の罪を赦しなさい。
+[name="テレジア"]罪を負う者は、私とテレシスだけよ。
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="聴罪師"]仰せのままに。
+[charslot(slot="m",name="avg_npc_654_1#2$1")]
+[name="聴罪師"]では、私も御前にひざまずきましょう、魔王殿下。
+[charslot(slot = "m", name = "avg_npc_1296_1#2$1")]
+[name="テレジア"]……
+[dialog]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 1)]
+[Delay(time=1)]
+[Dialog]
+[playMusic(key="$memory_loop", volume=0.6)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+サルカズの万年にも上る歴史において、魔王に付き従い遠征に赴くことは戦士の栄誉であった。
+彼らはもがき、輝き、血と泥に塗れた地から幾千回も立ち上がってきた……
+魔王が彼らの前に立ち、自らの民を見捨てなかったというただその一点を支えに。
+魔王が指し示す先に故郷があり、そこに都市が立ち上がった。
+[dialog]
+[image(image="49_i08",screenadapt="coverall",xScale=1.1,yScale=1.1)]
+[ImageTween(xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=60, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+しかし今、彼らは自らの魔王を見捨てたのだ。
+[name="テレジア"]私はかつて、あなたたちに安定した故郷を与え、サルカズを戦争から遠ざけると約束したわ。
+[name="テレジア"]再びここに足を踏み入れる前、私は一筋の希望を抱いていた……あるいは私に続いてくれる人がいるかもしれないという希望を。
+[name="テレジア"]けれど、あなたたちの目には炎が映っていた。
+[name="テレジア"]その炎の中では、まだ見ぬかの都市が燃えているわね。
+[name="テレジア"]そして目に映る古き都市の姿は、人によって異なっている。
+[name="テレジア"]欲望の都市、恨みの都市、富の都市、栄誉の都市……
+[name="テレジア"]いずれにせよ、あなたたちはその見知らぬ土地で、自分の望むものを奪い取れると固く信じている。
+[name="テレジア"]だから私は最初の考えを捨てることにしたの。私はここで、カズデルの最も勇敢なる戦士たちを見送りましょう。
+[name="テレジア"]長い歳月を経て、カズデルの隊列は今再び異族の土地を征服する旅に踏み出す。
+[name="テレジア"]その旅路は私とは違う道程となるでしょう。あなたたちは尊敬に値するわ。
+[name="テレジア"]あなたたちはテレシスの呼びかけに応え、憎しみへと沈みゆく新たな計画に身を投じようとしている。
+[name="テレジア"]死がはるか遠くの土地であなたたちを待ち受けているでしょう。
+[name="テレジア"]たとえそれでも、ためらうことなく私たちの故郷を去り、ロンディニウムへ向かう。そうでしょう？
+憂い悲しむ魔王は民の中を歩き、民は魔王の視線を受けて頭を低く下げた。
+しかし彼らの決心は変わらない。たとえそれが魔王の意志に背くことだとしても。
+「行きます。」「我々は行きます。」
+あちこちで声が上がる。テレジアの耳には、それが戦士たちが出発前に歌う己のための哀歌に聞こえた。
+[name="無名の傭兵"]殿下、我々は殿下を尊敬しております。ですがもう従うことはできません。
+[name="名高い傭兵"]摂政王殿下は約束してくださりました。ロンディニウムが我らの新たな始まりになると。
+[name="すすり泣く傭兵"]サルカズの未来はかの地にあるのです。
+[name="叫ぶ傭兵"]我らの未来はかの地にあるのです！
+[name="テレジア"]……
+[name="テレジア"]我が戦士たちよ、異国の地でも自愛なさい。
+[name="テレジア"]たとえあなたたちが、二度とカズデルに帰れなくとも。
+純白の姿が人々の間を抜ける。魔王の民たちは微動だにしない。
+かつて敬慕した君主に付き従う者はいなかった。
+彼女が懸命に開拓している花の咲き乱れる故郷……彼女の民たちが生き残るための別の可能性は、結局間に合わず、この場ですべてのサルカズに示すことは叶わなかった。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Delay(time=1)]
+[image]
+[charslot(slot = "left", name = "avg_npc_404_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1")]
+[Background(image="49_g9_cyclopsroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_404_1#10$1",focus="l")]
+[name="マンフレッド"]将軍……
+[charslot(slot = "right", name = "avg_npc_1297_1#3$1",focus="r")]
+[name="テレシス"]……
+[charslot(slot = "left", name = "avg_npc_404_1#10$1",focus="l")]
+[name="マンフレッド"]いずれこのような日を迎えることを想定されていたのですね。
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="テレシス"]ではお前の考えは？
+[charslot(slot = "left", name = "avg_npc_404_1#3$1",focus="l")]
+[name="マンフレッド"]……迷いは、我々のこれまでの犠牲を水泡に帰します。
+[charslot(slot = "left", name = "avg_npc_404_1#1$1",focus="l")]
+[name="マンフレッド"]殿下に迷いがないのなら、我々が迷うわけには参りません。
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="テレシス"]ならば準備を整えよ、マンフレッド。
+[name="テレシス"]しかし、今この瞬間お前の中に燃えている感情も忘れるな。
+[charslot(slot = "right", name = "avg_npc_1297_1#2$1",focus="r")]
+[name="テレシス"]たとえそれが――どんなものであれ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_labentrance",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+カズデル地区　スカーモールの裏出入口
+[dialog]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",focus="r")]
+[name="アスカロン"]……
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="テレジア"]アスカロン、気を落とさないで。
+[name="テレジア"]バベルがより多くの人の雨風を防げるくらい強固になれば、自ずとたくさんの人が私たちと共に歩んでくれるわ。
+[charslot(slot = "right", name = "avg_4132_ascln_1#4$1",focus="r")]
+[name="アスカロン"]誰かにつけられている。
+[charslot(slot = "m", focus = "n")]
+[name="？？？"]殿下――！
+[dialog]
+[charslot(slot = "right",posfrom = "0,0", posto = "200,0",duration = 0.3,afrom=1,ato=0)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",bstart=0.3,bend=0.7)]
+[Delay(time=0.3)]
+[charslot(slot = "l", name = "avg_4132_ascln_1#4$1", posfrom = "-200,0",posto = "100,0",duration = 0.3)]
+[Delay(time=0.1)]
+[playsound(key="$swordtsing3")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", posfrom = "0,0",posto = "200,0",duration = 0.4)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1296_1#7$1")]
+[name="テレジア"]アスカロンやめて。彼女に敵意はないわ。
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",bstart=0.3,bend=0.7)]
+[name="？？？"]うっ――容赦がないな。仕込み刀か？
+[name="？？？"]仰る通りです、殿下。私はただ殿下にご一緒したいだけです。
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]……ありがとう。あなたのお名前は？
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="？？？"]ジュリーです。
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]いい意味で傭兵らしくない、素敵な名前ね。自分で付けたの？
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="ジュリー"]いえ……あたしには元々名前がなくて、ある人が付けてくれたんです。名前は帰属意識を与えてくれるとか言って。
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]その人の言う通りだわ。
+[name="テレジア"]ところで、どうしてあなたは彼らとロンディニウムに行かないの？
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="ジュリー"]もう戦いにはうんざりなんです。名前を付けてくれた彼女が、殿下がいつか戦いをなくしてくれるだなんて言うものだから……それを代わりに確かめてやりたくて。
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="ジュリー"]元々は殿下に挑んで、それから一緒に行くかどうか決めようと思ってたんです。ですが殿下の前に立ったら、剣を振り上げる勇気さえ出ませんでした。
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]あなたは強い戦士よ、間違いないわ。
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="ジュリー"]殿下の御前ですから、大きな口は叩けませんが――
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="ジュリー"]ですが、彼女が言ってた、殿下が昔カズデルの英雄だったって話は本当だと確信しました。それで、ついていこうと……
+[charslot(slot = "m", name = "avg_4132_ascln_1#8$1")]
+[name="アスカロン"]信じられないほど単純な理由だな。
+[charslot]
+赤髪の傭兵は頭をかいた。
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="ジュリー"]強いて言うなら……殿下がさっき話してた姿に心を打たれたというか。まあ話の内容は大して理解できていませんが。
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]ふふっ。ところで、そのお友達は？　一緒でも構わないわよ。
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="ジュリー"]ああ、彼女もここにいますよ。彼女の剣と服です……服は少し大きくてサイズがあまり合いませんけどね。
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="ジュリー"]彼女本人は……生前は、とても強い戦士でした。人柄はそうですね……この人に似てるかも。
+[charslot(slot = "m", name = "avg_4132_ascln_1#3$1")]
+[name="アスカロン"]……
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]裁縫は得意だから、よかったら直しましょうか？
+[charslot(slot = "m", name = "avg_npc_1299_1#2$1")]
+[name="ジュリー"]いえ、大丈夫です。もう慣れましたから。
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]では行きましょう、ジュリー。
+[charslot(slot = "m", name = "avg_npc_1299_1#7$1")]
+[name="ジュリー"]殿下、少しお待ちいただけますか？
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="ジュリー"]殿下と共に行きたいという傭兵がまだいます。
+[charslot]
+テレジアはスカーモールの漆黒の出口を見つめた。彼女の視線は揺らめく火の光に吸い寄せられていく。
+炎が一つ、また一つ……さらに多くの光が暗闇の中から浮かび上がる。松明を持った先頭の傭兵が日差しの中に足を踏み入れると、山の斜面にいる白い姿が目に映った。
+彼は前方を指さし、振り返ることなくテレジアの方へと歩み寄る。その後ろには、漆黒の穴の中からテレジアの後を追う隊列が絶えず続いていく。
+彼らの持つ灯火の連なりは、まるで山の向こうから昇ってくる朝日のようだった。
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="ジュリー"]傭兵は戦場には慣れっこですが、皆が皆、果ての見えない遠征で自らを葬りたいわけではありません。私たちは皆、生き方を変えたいと思っているんです――それが可能であるのなら。
+[name="ジュリー"]ああそれと、カズデルの移動都市でもひそかに志願者を募ってる者がいるそうなので、都市内にも仲間に加わりたい者がいるかもしれません。ただ、えーっと、荒野の悪路を歩いて来させるのは……
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="テレジア"]大丈夫、私が手配しておくわ。
+[name="テレジア"]じゃあそろそろ行きましょう、ジュリー。これから忙しくなりそうね。
+[name="テレジア"]これだけたくさんの人が仲間に加わるんだもの。彼らの住む場所も用意してあげないとね。
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[PlaySound(key="$d_gen_dooropen",volume=0.5)] 
+[charslot(slot = "m", name = "avg_npc_048")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$storyendjp_intro", key="$storyendjp_loop", volume=0.6)]
+[Delay(time=1)]
+[name="ドクター"]戻ったか。
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="ケルシー"]奴らはすでに撤退した。素晴らしい指揮だった、ドクター。
+[charslot]
+[dialog]
+[PlaySound(key="$d_avg_crowdrun",volume=0.7)] 
+[Delay(time=3)]
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]あれは……
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1",focus="n")]
+医療チームのメンバーが数台の担架を持って廊下を駆けていった。ケルシーは体をずらし、ドクターの視線を故意に遮った。
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="ケルシー"]敵は自滅覚悟で襲撃を仕掛けてきたんだ。あれを突破するには、一部の死傷者は避けられなかった。
+[name="ケルシー"]それに、死傷者数は想定よりも少ない。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]我々はどれだけの戦士を失った……？
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="ケルシー"]ドクター、君の指揮にミスはなかった。これからの事後処理において、君が負う責任はない。
+[charslot(slot = "m", name = "avg_npc_1362_1#1$1")]
+[name="医療メンバー"]ケルシー先生、血漿のストックが残りわずかです……
+[charslot(slot = "m", name = "avg_003_kalts_1#5$1")]
+[name="ケルシー"]私が分配を調整しよう。手術の準備を。
+[dialog]
+[PlaySound(key="$d_avg_walkfast",volume=0.7)] 
+[charslot(duration=1)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]ケル……
+[charslot(slot = "m", focus="n")]
+医療メンバーたちが慌ただしく動いている。ドクターは自分がたった今見た恐ろしい光景が真実なのか確信が持てなかったが、鼻腔に広がる血生臭さはいつまで経っても拭えなかった。
+めまいを覚えた。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", focus="m")]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="ドクター"]とにかく、戦場を計算可能なデータモデルに構築するくらいはできる。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[name="ドクター"]だが戦場は……数字やデータではない。
+[name="ドクター"]生きた命が生存のために外敵に抗う様なんて、自分はもうどれだけの間……
+[charslot(slot = "m", focus="n")]
+[name="Scout"]ドクター。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1311_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Scout"]こんな惨状を目の当たりにするのは初めてだったか？
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]ああ……そんなところだ。
+[name="ドクター"]以前経験した戦いでは、これほど多くの命が投入されることなどなかった。
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]甘いものを飲めば少しは楽になるぞ。俺の経験談だ。
+[name="Scout"]それとな。今回少数で多数を打ち破ることができたのは、全部あんたの指揮のおかげだぞ。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]君たちが経験してきた戦いはどれもこうだったのか？
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]いや、今回は比較的楽な方だな。
+[name="Scout"]もしも今後の戦いがすべて今回のように勝利できるなら、俺も安心してあんたに命を預けることができる。
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="ドクター"]あるいは、戦争以外で目的を達成する方法も見つかるかもしれない……
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]ハハ、なんだか聞き覚えのある言葉だな。
+[name="Scout"]だが、今回の襲撃は恐らく何かが始まる合図にすぎないだろう。これから俺たちが何に直面するかなんて誰にもわからない。
+[name="Scout"]あんたの活躍に期待しているよ、天才指揮官殿。
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+後世において、此度の歴史はこう綴られるだろう――1091年の冬、サルカズの二人の殿下はついに公に敵対的態度を表明した。それにより軍事委員会とバベルの対立は戦争という形へと発展した。
+しかしサルカズにとって、1086年に局所的な衝突が激化の一途をたどった時点で――彼らの定義する「内戦」はすでに始まっていたのだ。
+ともあれ、カズデルが二百年近く維持してきた平和は今終わりを告げたのだった。
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

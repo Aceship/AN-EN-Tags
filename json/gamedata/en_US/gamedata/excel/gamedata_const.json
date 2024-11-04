@@ -877,7 +877,7 @@
   "reMax": 100.0,
   "diamondToShdRate": 180,
   "requestSameFriendCD": 14400,
-  "baseMaxFriendNum": 15,
+  "baseMaxFriendNum": 65,
   "hardDiamondDrop": 1,
   "instFinDmdShdCost": 80,
   "easyCrystalBonus": 0,
@@ -926,6 +926,8 @@
     "ro.get": "<color=#0098DC>{0}</color>",
     "ro.lose": "<color=#C82A36>{0}</color>",
     "rolv.rem": "<color=#FF4C22>{0}</color>",
+    "lv.description": "<color=#d8d769>{0}</color>",
+    "lv.extrades": "<color=#d8d769>{0}</color>",
     "lv.item": "<color=#FFFFFF>{0}</color>",
     "lv.rem": "<color=#FFFFFF>{0}</color>",
     "lv.fs": "<color=#FF0000>{0}</color>",
@@ -983,6 +985,18 @@
     "lv.mhtx": "<color=#1B1B1B>{0}</color>",
     "lv.mhfs": "<color=#A57F5B>{0}</color>",
     "cc.miu": "<color=#8F7156>{0}</color>",
+    "ping.low": "<color=#7fa826>{0}</color>",
+    "ping.medium": "<color=#ec7a00>{0}</color>",
+    "ping.high": "<color=#ff3d3d>{0}</color>",
+    "match.success": "<color=#36BBCC>{0}</color>",
+    "map.normal": "<color=#36BBCC>{0}</color>",
+    "map.football": "<color=#36BBCC>{0}</color>",
+    "map.defence": "<color=#36BBCC>{0}</color>",
+    "milestone": "<color=#D4133C>{0}</color>",
+    "dm.award": "<color=#36BBCC>{0}</color>",
+    "dm.condition": "<color=#C9C9C9>{0}</color>",
+    "tutor": "<color=#36BBCC>{0}</color>",
+    "lv.muitem": "<color=#D4133C>{0}</color>",
     "ba.grt": "<color=#FFAB27>{0}</color>",
     "ba.exl": "<color=#14F0AF>{0}</color>",
     "ba.hrd": "<color=#DA2536>{0}</color>",
@@ -1010,7 +1024,7 @@
   "commonPotentialLvlUpCount": 4,
   "weeklyOverrideDesc": "",
   "voucherDiv": 5,
-  "recruitPoolVersion": 15,
+  "recruitPoolVersion": 17,
   "v006RecruitTimeStep1Refresh": 1577226600,
   "v006RecruitTimeStep2Check": 1577208600,
   "v006RecruitTimeStep2Flush": 1577703600,
@@ -1084,6 +1098,7 @@
   "isDynIllustStartEnabled": true,
   "isClassicQCShopEnabled": true,
   "isRoguelikeTopicFuncEnabled": true,
+  "isSandboxPermFuncEnabled": true,
   "isRoguelikeAvgAchieveFuncEnabled": true,
   "isClassicPotentialItemFuncEnabled": true,
   "isClassicGachaPoolFuncEnabled": true,
@@ -1232,6 +1247,11 @@
       "termName": "Arts Fragility",
       "description": "Amplifies all Arts damage taken by the corresponding amount (only the strongest effect of this type applies)"
     },
+    "ba.elementfragile": {
+      "termId": "ba.elementfragile",
+      "termName": "Elemental Fragility",
+      "description": "Amplifies all Elemental damage taken by the corresponding amount (only the strongest effect of this type applies)"
+    },
     "ba.dying": {
       "termId": "ba.dying",
       "termName": "Critically Wounded",
@@ -1271,6 +1291,16 @@
       "termId": "ba.epbarrier",
       "termName": "Protective Barrier",
       "description": "Absorbs a certain amount of <$ba.dt.element>Elemental Damage</>."
+    },
+    "ba.tremble": {
+      "termId": "ba.tremble",
+      "termName": "Frighten",
+      "description": "Cannot perform normal attacks when blocked"
+    },
+    "ba.dt.burning2": {
+      "termId": "ba.dt.burning2",
+      "termName": "Burn damage - Ally",
+      "description": "Explodes when at max (1000 for Normal and Elite, 2000 for Leaders), dealing 7000 Elemental damage and temporarily inflicting -20 RES. 10s cooldown."
     },
     "cc.bd_A_1": {
       "termId": "cc.bd_A_1",
@@ -1405,12 +1435,27 @@
     "cc.g.ussg": {
       "termId": "cc.g.ussg",
       "termName": "Ursus Student Self-Governing Group",
-      "description": "Includes the following Operators:\nRosa, Zima, Istina, Gummy"
+      "description": "Includes the following Operators:\nRosa, Zima, Istina, Gummy, Leto"
+    },
+    "cc.g.A1": {
+      "termId": "cc.g.A1",
+      "termName": "A1 Detachment",
+      "description": "Includes the following Operators:\nHibiscus, Lava, Beagle, Fang, Kroos"
     },
     "cc.g.R6": {
       "termId": "cc.g.R6",
       "termName": "Team Rainbow",
-      "description": "Includes the following Operators:\nAsh, Tachanka, Blitz, Frost"
+      "description": "Includes the following Operators:\nAsh Tachanka Blitz Frost Ela Doc Iana Fuze"
+    },
+    "cc.g.Attack": {
+      "termId": "cc.g.Attack",
+      "termName": "Attacking team",
+      "description": "Includes the following Operators:\nAsh Blitz Iana Fuze"
+    },
+    "cc.g.Defence": {
+      "termId": "cc.g.Defence",
+      "termName": "Defending team",
+      "description": "Includes the following Operators:\nTachanka Frost Ela Doc"
     },
     "cc.g.sp": {
       "termId": "cc.g.sp",
@@ -1430,12 +1475,12 @@
     "cc.g.karlan": {
       "termId": "cc.g.karlan",
       "termName": "Karlan Trade",
-      "description": "Includes the following Operators\nSilverAsh, Gnosis, Pramanix, Cliffheart, Matterhorn, Courier, Kjera, Aurora"
+      "description": "Includes the following Operators\nSilverAsh, Gnosis, Pramanix, Cliffheart, Matterhorn, Courier, Kjera, Aurora, Degenbrecher"
     },
     "cc.g.sui": {
       "termId": "cc.g.sui",
       "termName": "Sui",
-      "description": "Includes the following Operators\nNian, Dusk, Ling, Chongyue"
+      "description": "Includes the following Operators:\nNian Dusk Ling Chongyue Shu"
     },
     "cc.g.glasgow": {
       "termId": "cc.g.glasgow",
@@ -1490,7 +1535,7 @@
     "cc.c.skill": {
       "termId": "cc.c.skill",
       "termName": "Certain Skills",
-      "description": "Includes the following skills: \nCapable Assistance, S.W.E.E.P., Snack Network, Cleaning Agreement, Substitute, Necessary Responsibility, Guarding, Tiny Leader, Self-Absorbed, Million Dollar Smile, Marigold Poetry Gathering"
+      "description": "Includes the following skills:\nCapable Assistance, S.W.E.E.P., Snack Network, Cleaning Agreement, Substitute, Necessary Responsibility, Guarding, Tiny Leader, Self-Absorbed Million Dollar Smile, Marigold Poetry Gathering, Art of Defense"
     },
     "cc.t.strong2": {
       "termId": "cc.t.strong2",
@@ -1500,7 +1545,7 @@
     "cc.c.sui2_1": {
       "termId": "cc.c.sui2_1",
       "termName": "Special comparison rules",
-      "description": "Compare hourly Morale recovery totals of <$cc.c.room2><@cc.kw>other buildings</></> provided by other Operator skills in the Control Center. The strongest effect applies."
+      "description": "The highest hourly Morale recovery of <$cc.c.room2><@cc.kw>other buildings</></> provided by <@cc.kw>Business Is Business</>, <@cc.kw>Solitary Light</>, or <@cc.kw>Banner of Babel</> will take effect"
     },
     "cc.m.pow1": {
       "termId": "cc.m.pow1",
@@ -1532,6 +1577,11 @@
       "termName": "Karma",
       "description": "Whenever a recipe that consumes <@cc.kw>8</> Morale fails to produce a byproduct, gain <@cc.kw>1</> point of <@cc.kw>Karma</> for every <@cc.kw>1</> Morale consumed"
     },
+    "cc.t.accmuguard1": {
+      "termId": "cc.t.accmuguard1",
+      "termName": "Martial Arts",
+      "description": "Accumulate <@cc.kw>1</> point when assisting with Specialization training to level 1, <@cc.kw>2</> points to level 2, and <@cc.kw>3</> points at level 3, with a maximum accumulation limit of <@cc.kw>3</> points (cannot be accumulated or consumed when the Trainer's Morale is 0)"
+    },
     "cc.sk.manu1": {
       "termId": "cc.sk.manu1",
       "termName": "Standardization Skills",
@@ -1555,7 +1605,7 @@
     "cc.tag.op": {
       "termId": "cc.tag.op",
       "termName": "Operation Platform",
-      "description": "Includes the following Operators:\nLancet-2, Castle-3, THRM-EX, Justice Knight, Friston-3"
+      "description": "Includes the following Operators:\nLancet-2, Castle-3, THRM-EX, 'Justice Knight', Friston-3, PhonoR-0"
     },
     "cc.tag.knight": {
       "termId": "cc.tag.knight",
@@ -1579,8 +1629,8 @@
     }
   },
   "storyReviewUnlockItemLackTip": "Insufficient Information Fragments. Acquire more from the Purchase Certificates Store or the Event Store.",
-  "dataVersion": "37.2.0",
-  "resPrefVersion": "44d0d0",
+  "dataVersion": "40.2.0",
+  "resPrefVersion": "50d0d0",
   "announceWebBusType": "ak_announcement",
   "defaultMinContinuousBattleTimes": 1,
   "defaultMaxContinuousBattleTimes": 6,
@@ -1650,6 +1700,13 @@
     "ritualist": "MAGICAL",
     "hunter": "PHYSICAL",
     "primcaster": "MAGICAL",
-    "loopshooter": "PHYSICAL"
-  }
+    "loopshooter": "PHYSICAL",
+    "hammer": "PHYSICAL"
+  },
+  "classicProtectChar": [
+    "char_252_bibeak",
+    "char_336_folivo",
+    "char_402_tuye",
+    "char_4043_erato"
+  ]
 }

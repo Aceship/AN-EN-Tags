@@ -1,0 +1,49 @@
+[header(actId="sandbox_1", npcId="trap_415_trademan")]
+[summontrap(x="3", y="4", charId="trap_415_trademan", isChar="FALSE", dir="RIGHT")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(id="trap_415_trademan", scale="CLOSE", time="1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]やあ友よ、ちょっと話そうよ。
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]君たちとはこれまで仲良くやらせてもらってきて、信頼に値するパートナーだと思っているんだ。そこで、どうしてもお願いしたいことがあるんだけど、聞いてもらえないかな？
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]力を貸してくれるなら、必ず手厚い報酬をお支払いするよ。
+[decision(option1="それは「報酬」で合っているのか？", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="「大幅値引き」ではなく？", value1="2.1")]
+[predicate(references="2.1")]
+[emoji(target="trap_415_trademan", emoji="common_bubble_happy")]
+[delay(time="1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]ちょ、ちょっと、どうして急にそんな厳しい言い方するのさ。なんだか落ち着かないじゃないか。
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]まあでも、安心してよ。今回は、超特価大バーゲンにお誘いするためのお願いじゃなくて、正真正銘大事な頼み事だからさ。
+[decision(option1="わかった、聞こう。", value1="3.1")]
+[predicate(references="3.1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]僕の友人に、他人が滅多に訪れないような場所を探検しては、地下に埋もれた宝物を熱心に探してる人がいてね。その子が、たまに情報をくれるんだけどさ。
+[decision(option1="あのフェリーンのことか？", value1="4.1")]
+[predicate(references="4.1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]……誰のこと？
+[decision(option1="なるほど、これまた宝探しの一員か。", value1="5.1")]
+[predicate(references="5.1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]えーっと……とにかく、先月急に彼女と連絡が取れなくなってね。何かあったんじゃないかと思って心配してるんだよ。
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]だから、彼女を探すのを手伝ってもらえたら嬉しいなあと思ってさ。
+[decision(option1="その人を最後に見かけたのは？", value1="6.1")]
+[predicate(references="6.1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]北だね。ずっと北のほうまで行くと、ほとんど誰も踏み入らないような土地があるんだ。
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]そこにはアルサランの財宝が隠されてるっていうんだけど、地形が険しいから誰もその伝説を確かめた人はいないんだよ。
+[decision(option1="……行き先は同じだな。", value1="7.1")]
+[predicate(references="7.1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]じゃあ、報酬はたっぷり用意しておくからね。
+[decision(option1="それは二の次でいい。", value1="8.1")]
+[predicate(references="8.1")]
+[playanim(id="trap_415_trademan", anim="Attack", dir="RIGHT")]
+[delay(time="1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]えっ、だってそれが一番モチベーション上がるものじゃない？
+[decision(option1="君は我々を友と呼んでくれただろう。", value1="9.1")]
+[predicate(references="9.1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]おお～……心がぽかぽかしてくるね。それじゃ、君たちの無事を祈ってるから。いい知らせを待ってるよ！
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]そうそう、これはお礼に用意した透珀石の分布図ね。
+[additem(itemId="sandbox_1_craft_4", itemCount="1")]
+（アルサランの琥珀石分布図を手に入れたことで、透珀石の採取が可能になった。）
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]僕を信じて。そこに行くなら、絶対役に立つから！
+[withdraw(id="trap_415_trademan")]
+[delay(time="3")]
+[resetcamera(time="1")]
+[save]
+[end]

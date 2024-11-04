@@ -1,0 +1,124 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="47_g31_temple",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="페페"]걱정 마, 그 녀석들이 전부 도망쳤으니 따라오진 않을 거야.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="하긴, 들어오기도 어렵겠네.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#11$1",focus="m")]
+[name="페페"]이 무한 성장하는 결정들이 입구를 막았지만, 덕분에 내부 시설이 파괴되지 않고 온전히 보존될 수 있었지.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1200_1#11$1",focus="r")]
+[Decision(options="이제 답을 알려줄 수 있나?", values="1")]
+[Predicate(references="1")]
+[Decision(options="이 원판의 용도가 뭐야?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="페페"]턱을 꼭 붙잡고 있어. 놀라서 빠지는 일이 없도록.
+[Dialog]
+[charslot]
+[PlaySound(key="$b_char_rock")]
+[delay(time=2)]
+[PlaySound(key="$b_char_rock")]
+[delay(time=3)]
+소녀는 두꺼운 원판을 고대 증언대의 중앙 제단에 끼워 넣었고, 원판의 각 돌출부와 받침대의 파인 곳이 완벽하게 들어맞았다.
+설치가 끝나자, 소녀는 반시계 방향으로 원판을 가볍게 돌렸다.
+아주 작은 힘이었지만, 원판은 빠르게 회전했고, 일행은 그 회전 때문에 일어난 진동을 발밑으로부터 느낄 수 있었다.
+[Dialog]
+[PlaySound(key="$d_avg_rockfall", volume=1)]
+[CameraShake(duration=2, xstrength=15, ystrength=15, vibrato=30, randomness=40, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[character]
+잠시 후, 오랫동안 침묵해 온 이 증언대는 다시 활력을 되찾았고, 연못에는 물이 차올랐으며, 수많은 빛줄기가 요동치는 가운데 발밑의 진동은 점점 커졌다.
+결국 진동이 멈추면서 모든 빛줄기는 연못 정중앙으로 모여들어 거대한 모습이 되었다.
+[dialog]
+[Image(image="pic_sandbox_1_5", fadetime=1, xScale=1.2, yScale=1.2,x=-50,screenadapt="coverall")]
+[ImageTween(image="pic_sandbox_1_5",xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, xTo=0, yTo=0,screenadapt="coverall",duration=20,block=false)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[delay(time=1.5)]
+[charslot]
+[name="빛무리 속의 목소리"]……왔…… 구나.
+[Dialog]
+[name="페페"]나의 주인이시여……
+[name="페페"]부디 이 깨끗한 땅을 더럽힌 것을 용서해 주시옵소서.
+[charslot]
+[name="빛무리 속의 목소리"]너는 약속을 지켰고, 이곳에 나를 찾으러 왔다.
+[charslot]
+[name="빛무리 속의 목소리"]나 또한 언약을 이행하여, 열쇠를 빛의 그늘 속에 숨겨두었다.
+[charslot]
+[name="빛무리 속의 목소리"]그것은 너를 '그 땅'으로 인도할 것이고, 그 중의 귀중한 것들은 모두 네 자손에게 하사하리라.
+[charslot]
+[name="빛무리 속의 목소리"]시간의 끝에서 종종 보이는 그들의 얼굴에서 너의 모습을 볼 수 있기를 바란다.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[character]
+[Image]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+남자의 모습이 희미해져 갔다. 그리고 빛무리는 변화하면서 다시 연못에 작은 골짜기를 그려냈다.
+불과 수십 초 사이, 산천의 형태가 변했고, 협곡의 식물들은 엄청난 속도로 자랐다가 다시 시들었으며, 결국 모든 것이 세월의 침식에 원래의 모습을 잃어갔다.
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="페페"]미안, 여행자. 너희들과의 여행은 여기까지야. 만나게 돼서 너무 반가웠어. 만약 기회가 된다면, 또 함께 여행하고 싶어.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="그 노트……", values="1")]
+[Predicate(references="1")]
+[Decision(options="일부러 신전에 두고 간 거야?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#8$1",focus="m")]
+[name="페페"]눈치챘어?
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="페페"]그 연락책에게 로도스 아일랜드가 아미르군을 물리칠 방법을 찾고 있다고 들었어. 그중에 아주 머리가 좋은 자가 있는데, 내게 도움이 될 수 있다고 했고.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="우리가 증언대를 찾도록 도와준 거네.", values="1")]
+[Predicate(references="1")]
+[Decision(options="그럼, 무엇으로 보답할 생각이야?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="페페"]이게 내 선물이야. 현지 전달자에게 갖다주면 너희에게 도움을 줄 거야.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="너는? 여기 남을 생각이야?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#2$1",focus="m")]
+[name="페페"]응, 내가 원하는 답에 거의 다가왔는데, 계속 남아서 찾아야지.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#2$1",focus="r")]
+[Decision(options="아까 그림이 너무 빠르게 변했어.", values="1")]
+[Predicate(references="1")]
+[Decision(options="거기서 정보를 찾기 쉽지 않을 텐데.", values="1")]
+[Predicate(references="1")]
+[Decision(options="현기증이 날지도 몰라.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="페페"]그래도 난 포기하지 않아.
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="페페"]이건 나의 집념, 우리 일족의 집념이야.
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="페페"]설령 시간을 낭비하더라도 상관없어.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="그럼 행운을 빌게.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#5$1",focus="m")]
+[name="페페"]다음에 또 보자.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

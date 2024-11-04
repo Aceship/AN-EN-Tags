@@ -1,0 +1,25 @@
+[header(actId="sandbox_1", npcId="")] 
+낯선 지역의 수배서 보관함.
+[decision(option1="이건?", value1="1.1", option2="해당 낯선 지역의 여정 미개방", value2="1.2", option3="다른 더 급한 일이 있다", value3="1.3")]
+[predicate(references="1.1", visibleCondition="!c0")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]낯선 지역은 각지에 분포해 있는 미탐사 지역이야. 우리가 평소 사용하는 지도에 표시되지도 않은 비밀스럽고 위험한 곳이면서, 보물이 가득한 곳이지.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]익명의 의뢰자가 수배서를 사서함에 넣고, 보수를 원하는 탐험가들이 의뢰를 받아서 수행하면 돼.
+[decision(option1="열어본다", value1="2.1", option2="아직 관심이 없다", value2="2.2")]
+[predicate(references="2.1")]
+【수배】 낯선 지역에서 스파인드 셸비스트 1마리 사냥! 이놈이 우리 동료들을 공격했다고!
+[decision(option1="의뢰를 수락한다", value1="3.1", option2="아직 준비되지 않았다", value2="3.2")]
+[predicate(references="3.1")]
+[orderrift(riftId="fixed_dungeon_1")]
+<color=#d8d769>의뢰 수락 완료!</color>
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]낯선 지역까지는 먼 길이 될 테니, 우선 주둔지로 돌아가서 준비부터 하자. 나중에 캠핑카를 타고 출발하면 돼.
+[end]
+[predicate(references="3.2")]
+[end]
+[predicate(references="2.2")]
+[end]
+[predicate(references="1.2", visibleCondition="c1")]
+[end]
+[predicate(references="1.3")]
+[end]
+[condition(references="c0", key="checkriftordered")]
+[condition(references="c1", key="checkriftordered")]

@@ -1,0 +1,58 @@
+[HEADER(is_tutorial=true, is_skippable=false)] xb1教学关2
+[Battle.lockFunction(mask="PAUSE_BUTTON_INTERACT")]
+[Battle.lockFunction(mask="BATTLE_STATUS")]
+[InputBlocker(blockInput=true)]
+[Delay(time=6)]
+[Battle.Pause]
+[Tutorial(dialogHead="$avatar_zumama")]벌목이 끝나면 주변의 오퍼레이터가 목재를 운반해야 채집이 완료돼.
+[Tutorial(dialogHead="$avatar_zumama")]오퍼레이터별로 짊어질 수 있는 자원의 양은 자신의 <@tu.kw>저지 가능 수</>와 같아.
+[InputBlocker(blockInput=true, cardIndex=5, validWidth=112, validHeight=116)]
+[Battle.EnsureMinCost(cost=17)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-611, startY=61, startAnchor="BottomRight", endAnchor="Center", endX=-110, endY=50)] \
+먼저 오퍼레이터를 나무 주변에 배치하고 벌목하는 동시에 목재를 운반할 준비를 해.
+[InputBlocker(blockInput=true)]
+[Delay(time=0.5)]
+[InputBlocker(blockInput=true, tileY=3, tileX=2, validWidth=169, validHeight=153)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-12, startY=47, endX=-14, endY=230)] \
+<@tu.kw>위</>로 배치하고!
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=9)]
+[Battle.Pause]
+[Tutorial(focusX=-46, focusY=136, focusWidth=94, focusHeight=82, anchor="Center",\
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+벌목이 완료되면 주변의 오퍼레이터가 자동으로 목재를 짊어져.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+자원을 짊어지기만 하면 오퍼레이터가 퇴각하든, 쓰러지든 자원 채집은 성공이야.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+또한, 작전이 끝나도 현장에 남아 있던 오퍼레이터가 짊어진 자원은 전부 획득한 것으로 간주돼.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+자, 그럼 목재를 짊어진 오퍼레이터를 퇴각시켜 봐.
+[SandboxBattle.LockCamera(enable=false)] 
+[InputBlocker(blockInput=true, tileY=3, tileX=2, validWidth=40, validHeight=40)]
+[Tutorial(protectTime=0.5, tileY=3, tileX=2, waitForSignal="char_info", \
+          animStyle="Click", focusStyle="HighlightCircle", black="$f_tut_black", focusWidth=100, focusHeight=100,)]
+[SandboxBattle.LockCamera(enable=true)] 
+[Delay(time=0.5)]
+[InputBlocker(blockInput=true, validX=-77, validY=142, validWidth=96, validHeight=73)]
+[Tutorial(focusX=-77, focusY=142, focusWidth=96, focusHeight=73, waitForSignal="withdraw", \
+          animStyle="Click", focusStyle="HighlightCircle", black="$f_tut_black")] 
+[InputBlocker(blockInput=true)]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]이렇게 하면 목재를 채집할 수 있어.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]각 자원 포인트의 자원 수량은 일정해, 그리고 전부 채집해야 자원 포인트가 사라져.
+[Tutorial(focusX=-14, focusY=-34, focusWidth=255, focusHeight=49, anchor="Top", \
+          animStyle="Highlight", focusStyle="HighlightRect", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+야외 작전은 길어질수록 불리할 수 있으니, 짧은 시간에 최대한 많은 목재를 채집해야 해.
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=4, offsetX=13, time=2)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+……간혹 예기치 못한 불청객이 방해할 수도 있으니까.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+적은 내게 맡기고, 너희들은 계속 목재를 채집해.
+[Battle.Pause(pause=false)]

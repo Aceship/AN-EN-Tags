@@ -1,0 +1,670 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_victoria",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="Your Highness Theresis, Regent of Kazdel, Commanding General of the Military Commission,", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Wandering scholars have brought back tales of a new nomadic city on the rise in the distant desert.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="The fires of the ancient furnace continue to burn, and the once-scattered mercenaries have flocked to one banner, to the city walls that grow taller by the day.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Your strength and reputation have caught the attention of the Duke of Cavendish.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="You have changed the way we view the Sarkaz tribes. Perhaps now is the time to set prejudices aside, and engage in sincere sharing and cooperation that would be beneficial to us both.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="......", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I, the Duke of Cavendish, hereby invite you to visit my demesne, where we may sit and parley.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Our venerable empire has use for you and your brave warriors.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+Winter 1091
+[dialog]
+[charslot(slot = "m", name = "avg_npc_048",duration = 1)]
+[Delay(time=1.5)]
+[name="Doctor"]One more time... I have to do this...
+[name="Doctor"]No point talking about curing Oripathy, if I can't do something so simple...
+[dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 1)]
+[Delay(time=1.5)]
+[charslot(slot = "m",posfrom = "0,-50", posto = "0,-30",duration = 0.5)]
+[charslot(slot ="m", action="shake", power=5, times=30, duration=0.5)]
+[name="Doctor"]Argh—
+[dialog]
+[charslot(slot = "m",posfrom = "0,-30", posto = "0,-50",duration = 0.3)]
+[PlaySound(key="$bodyfalldown3")]
+[CameraShake(duration=0.3, ystrength=30, vibrato=15, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[name="Doctor"]Still no good... *pant* *pant*
+[dialog]
+[charslot]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1",duration = 0.5)]
+[Delay(time=0.8)]
+[name="Field Soldier"]Excuse me, why don't you put that medkit down? Leave this stuff to us.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]A-Alright...
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1")]
+[Delay(time=0.5)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 0.5)]
+[Delay(time=0.8)]
+[PlaySound(key="$d_avg_clothmovement")]
+[charslot(slot = "m",posfrom = "0,-50", posto = "0,0",duration = 0.8)]
+[Delay(time=1)]
+[name="Field Soldier"]Some time in the gym would do you good, once you've recovered.
+[dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.7)]
+[charslot(slot = "m",posfrom = "0,0", posto = "200,0",duration = 1,afrom=1,ato=0)]
+[Delay(time=2.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1",duration = 1)]
+[Delay(time=1.1)]
+[name="Kal'tsit"]At present, there is no way for you to match the physical prowess of a Terran through training.
+[name="Kal'tsit"]Your talents are better employed outside of manual labor.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]I know. It's just that, you know, I have my pride too...
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="Kal'tsit"]You've looked on edge since that day.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]I'm thinking about... Theresa.
+[name="Doctor"]Traveling alone to a city under enemy control isn't the most logical course of action for a leader.
+[name="Doctor"]The warriors with her may be outstanding, but they're not enough to protect her in the face of an entire army.
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="Kal'tsit"]The King of Sarkaz enjoys unimaginable status in Sarkaz tradition, and Theresa's own achievements are well-recognized. The Military Commission would not act rashly.
+[charslot(slot = "m", name = "avg_003_kalts_1#5$1")]
+[name="Kal'tsit"]But Victoria's invitation to Kazdel cannot be taken as a sign of goodwill. It means that Terra's powers have once again set their sights on Kazdel.
+[name="Kal'tsit"]Theresa needs to go to Kazdel and make it clear that she will not permit Kazdel to become embroiled in another war.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Even if I know how the Military Commission and Babel came into being...
+[name="Doctor"]In my understanding, the Sarkaz can hardly afford an internal conflict that could drain them of what little resources they have left. They have enough to deal with as it is.
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="Kal'tsit"]They have a complicated history, and that brings different attitudes towards outsiders.
+[name="Kal'tsit"]The Sarkaz people have a right to choose the path they believe is correct: Theresis's, or Theresa's.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Looks like we've got a lot to deal with besides Oripathy.
+[name="Doctor"]There's a big difference between knowing and understanding, I guess. Looks like there's much I still need to learn about the history of Terra.
+[name="Doctor"]This time, you'll be the one to guide me, Kal'tsit.
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="Kal'tsit"]...Of course.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]All we can do right now is make sure that the Oripathy patients at Rhodes Island have access to proper treatment—
+[dialog]
+[stopmusic(fadetime=1)]
+[charslot]
+[PlaySound(key="$d_sp_ballista",volume=0.5)] 
+[CameraShake(duration=0.8, xstrength=35, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[CameraShake(duration=2, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n",volume=0.5)] 
+[delay(time=2)]
+[playsound(key="$rungeneral", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.7, channel="bgs",fadetime=1)]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1",duration=0.8,posfrom = "150,0", posto = "0,0")]
+[delay(time=1)]
+[StopSound(channel="bgs", fadetime=0.5)]
+[name="Field Soldier"]What's going on—
+[charslot(slot = "m", name = "avg_003_kalts_1#14$1")]
+[name="Kal'tsit"]An attack? Now?
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]......
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[charslot(slot = "left", name = "avg_npc_419_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_419_1#1$1")]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "l", focus = "l")]
+[name="Grim Royal Court Soldier"]Word is Her Highness has set out.
+[name="Grim Royal Court Soldier"]Listen up! We exalt only Her Highness. Destroy Babel, and she will return to the embrace of Kazdel.
+[name="Grim Royal Court Soldier"]If we're branded traitors, so be it. But the Regent must not be hindered at this crucial juncture. Kazdel will take back all that we have lost.
+[name="Grim Royal Court Soldier"]May the Sarkaz be united as Her Highness wills.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+Scar Market, Kazdel
+[dialog]
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[charslot(slot = "right", name = "avg_npc_053",focus="l")]
+[name="Cold Mercenary"]Her Highness is coming...
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="Excited Mercenary"]<i>Her</i> Highness? The one who's still on the run?
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[name="Cold Mercenary"]His or Her, it's not your place to talk shit.
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="Excited Mercenary"]Hah. Say, did you take that job?
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[name="Cold Mercenary"]Wouldn't pass up an opportunity like this if it's the last thing I did. Londinium, that den of scum.
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="Excited Mercenary"]They say the columns in the Feline palace are covered in gold, and the nobles walk on floors paved with glowing stones.
+[name="Excited Mercenary"]*Sarkaz expletive*, capital of a great empire! A commission from a grand duke! There's gonna be so much money!
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_bldwhoosh")]
+[PlaySound(key="$swordtsing3",delay=0.5,channel="2")]
+[PlaySound(key="$swordtsing4",delay=0.6,channel="3")]
+[Delay(time=1)]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",posfrom = "100,0", posto = "-100,0",duration = 0.5)]
+[charslot(slot = "r",name="avg_npc_1294_1#1$1",posfrom = "-100,0", posto = "100,0",duration = 0.5)]
+[Delay(time=1)]
+[charslot(slot = "r",focus="r")]
+[name="Scareye"]It's been a while, Ascalon.
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",focus="l")]
+[name="Ascalon"]......
+[charslot(slot = "r",focus="r")]
+[name="Scareye"]It's been so long since you last visited. Why not sit down and catch up for a bit?
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",focus="l")]
+[name="Ascalon"]You're sending mercenaries to Londinium.
+[charslot(slot = "r",focus="r")]
+[name="Scareye"]Now, now, I must object to that accusation.
+[name="Scareye"]People just follow the money, and it leads to what the Regent has provided in Londinium.
+[charslot(slot = "l",name="avg_4132_ascln_1#4$1",focus="l")]
+[name="Ascalon"]You're dragging Kazdel into another war.
+[charslot(slot = "r",focus="r")]
+[name="Scareye"]'Dragging Kazdel into another war.' Have you been fooling around with those dreamers at Babel for so long that you've forgotten what it means to be a Sarkaz?
+[name="Scareye"]Since when have the Sarkaz been apart from war?!
+[dialog]
+[charslot]
+[Blocker(a=0.7, r=1, g=1, b=1, fadetime=0.3, block=false)]
+[CameraShake(duration=0.5, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch")]
+[delay(time=0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=false)]
+[delay(time=0.5)]
+The giant's hand lunges forward. Ascalon is surprised to find that she cannot avoid his fist.
+[charslot(slot = "m",name="avg_4132_ascln_1#8$1")]
+[name="Ascalon"]...Grr.
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="Scareye"]Seeing the future is hard. Seeing through what you will do next, less so.
+[dialog]
+[charslot]
+[Effect(name="$e_fist_01",x=-100,layer = 2)]
+[CameraShake(duration=0.5, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch")]
+[PlaySound(key="$d_avg_daggerexsheath",delay=0.2,channel="3")]
+[delay(time=0.5)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing1",channel="4")]
+[Effect(name="$e_spark_01_mid",x=0,y=50,rox=-180,roy=50,roz=-40,layer = 2)]
+[PlaySound(key="$swordtsing6",delay=0.1,channel="5")]
+[Effect(name="$e_spark_01_mid",x=0,y=50,rox=-180,roy=50,roz=-40,layer = 3)]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="Scareye"]Did you think you were the child of destiny, so special that you could bridge the rift between the siblings?
+[name="Scareye"]Think back to the day when you saw them for the first time...
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[delay(time=0.5)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[image(image="49_i03_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="Scareye"]When you skinned that young mangler and followed the trail of blood through the wilderness, until you walked into a storm and met the King of Sarkaz...
+[name="Ascalon"]How did you...?
+[name="Scareye"]'How did I know?' Are you surprised, Ascalon?
+[name="Scareye"]I saw the prophecy and led the tribe on the wastes into the storm that day with game. You happened to be the one who lived.
+[name="Scareye"]No one truly understands prophecy. No one can interfere with the future. But I wanted to catch the tail of fate... I wanted to make prophecy.
+[name="Scareye"]Theresis didn't kill you. Instead, he kept you and raised you. Maybe he wanted to tempt fate.
+[name="Scareye"]But you never changed, in all these years. You're still that poor, lost child on the wastes.
+[Dialog]
+[delay(time=1)]
+[PlaySound(key="$knifegore")]
+[Effect(name="$e_bladeline_01_large",layer = 1)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=50, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[image]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[name="Scareye"]Have patience, Ascalon.
+[name="Scareye"]You're not a threat to me yet. And I have higher hopes for you than this.
+[charslot(slot = "m",name="avg_4132_ascln_1#4$1")]
+[name="Ascalon"]Master said—
+[name="Ascalon"]'Your blade points at all the enemies of the Sarkaz.'
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="Scareye"]Theresis raised you to be a deathmonger, yet you understand less about him than a warmonger like me.
+[name="Scareye"]Did you think Theresis would be content to be some puppet for those dukes? Spare your breath, if you don't know the full extent of his plan.
+[name="Scareye"]I'm curious, how would you stand before Theresis, if he was sitting in the room behind me right now?
+[charslot(slot = "m",name="avg_4132_ascln_1#4$1")]
+[name="Ascalon"]......
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="Scareye"]You're simply repeating the words of others, on behalf of the one behind you.
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_1296_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="Theresa"]You seem to have put a lot of thought into this war.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="Kal'tsit"]How many hostiles?
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]Exact numbers unclear. We've detected hostiles both in front of and behind us. A lot of them...
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="Kal'tsit"]Whether it was Theresis's intention or not, the other generals of the Military Commission seem intent to crush Babel while Theresa is absent.
+[name="Kal'tsit"]That way, the Sarkaz won't have a choice.
+[charslot(slot = "m",name="avg_npc_048")]
+[name="Doctor"]How many combat personnel do we have?
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]The best soldiers went into negotiations with Her Highness. A good part of the remaining ones have been assigned to the supply convoys. We only have less than one third of our normal force.
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="Kal'tsit"]At the very least, we need to break through the roadblock ahead...
+[charslot(slot = "m",name="avg_npc_048")]
+[name="Doctor"]...Kal'tsit.
+[name="Doctor"]I'll take command.
+[charslot(slot = "m",name="avg_003_kalts_1#4$1")]
+[name="Kal'tsit"]Doctor?
+[charslot(slot = "m",name="avg_npc_048")]
+[name="Doctor"]If, as you said, this attack was launched by only a few members of the Military Commission, then they're undoubtedly planning to get this done in one go.
+[name="Doctor"]We can't let them set the pace.
+[name="Doctor"]Find out where their lines are thin. Disrupt their rhythm, and we'll be safe.
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="Kal'tsit"]......
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]Have you fought a war before, Dr. {@nickname}?
+[charslot(slot = "m",name="avg_npc_048")]
+[name="Doctor"]Not the flesh and blood kind... but I've been trained.
+[name="Doctor"]I'm able to reconstruct a battlefield as a computable data model.
+[name="Doctor"]Take the front line, Kal'tsit. I know you'll be able to protect us.
+[charslot(slot = "m",name="avg_003_kalts_1#4$1")]
+[name="Kal'tsit"]Of course.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1")]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="Scareye"]Welcome to the Scar Market, Your Highness.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]Things must be busy here lately.
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="Scareye"]No need going against the will of the many. Am I right, Your Highness?
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="Theresa"]The voices of the few are worth respecting too.
+[name="Theresa"]Many know nothing of what's happening in the lands beyond. Their lives will be turned upside-down. They'll be without a home once again.
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="Scareye"]I'm just a humble merchant. My business only stretches so far.
+[name="Scareye"]Mercenaries seek to sell their lives. I seek to make money. That's why I always respect the positions of my big clients.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]Then I'll talk to your biggest client. The one in the room behind you.
+[dialog]
+[charslot(slot = "r", posfrom = "0,0", posto = "-100,0",duration = 1)]
+[Delay(time=0.6)]
+[charslot(slot = "l", posfrom = "0,0", posto = "-100,0",duration = 0.6)]
+[Delay(time=0.8)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="Scareye"]Your Highness should go no further.
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="Theresa"]Since when have you started meddling in the affairs of Kazdel, Scareye?
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="Scareye"]All the more reason I can't let you go further.
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="Theresa"]Well...
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_654_1#1$1",duration=1.5,bstart=0.3,bend=0.7)]
+[delay(time=2)]
+[name="???"]Please, don't make things difficult for Scareye, Your Highness.
+[name="???"]You understand that there's only one way this can go, if you and the Regent come face-to-face here.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]...Confessarius.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_654_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Confessarius"]I beg Your Highness's pardon.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]Looks like you've made a decision.
+[name="Theresa"]Is this Theresis's position?
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="Confessarius"]It is.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]He has decided to abandon our city?
+[charslot(slot="m",name="avg_npc_654_1#9$1")]
+[name="Confessarius"]Not abandon. Take a step forward, to go on a long expedition away from home, that's all.
+[name="Confessarius"]You have made us stagnant. We want to progress.
+[charslot(slot = "m", name = "avg_npc_1296_1#3$1")]
+[name="Theresa"]......
+[charslot(slot="m",name="avg_npc_1294_1#1$1")]
+[name="Scareye"]The Confessarius is right.
+[name="Scareye"]I still remember when you and General Theresis came here for the first time. Even fate itself stepped aside for the two of you, when you stood together.
+[name="Scareye"]But look at the people here now, when Kazdel is divided.
+[name="Scareye"]You can still command any Sarkaz to your will as their King. You could kill all of us who stand here right now. But why not ask them if they're still willing to follow your dream?
+[charslot]
+[stopmusic(fadetime=2)]
+The bustling Scar Market has lost its usual commotion. Scattered mercenaries stow their weapons and stand with heads bowed in reverence.
+In their eyes is silence, but the King of Sarkaz hears the voices of their hearts clearly.
+Uncertainty, excitement, desire, anger.
+[charslot(slot = "m", name = "avg_npc_1296_1#3$1")]
+[name="Theresa"]Most of you have made up your minds.
+[charslot(slot = "m", name = "avg_npc_1296_1#2$1")]
+[name="Theresa"]Then there is no point for me to try to stop you.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "m", name = "avg_npc_053")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[name="Sarkaz Mercenary"]...!
+[dialog]
+[CameraShake(duration=0.3, xstrength=15, ystrength=15, vibrato=15, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 0.5)]
+[PlaySound(key="$bodyfalldown2", volume=0.6)]
+[delay(time=1.5)]
+[charslot]
+One of the Sarkaz suddenly kneels.
+He has not changed his mind. He has not turned away from the temptation of Theresis's plan.
+He simply feels a sense of guilt towards Theresa, one of the Six Heroes, their King who rebuilt Kazdel.
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="Confessarius"]Kneel if you feel you should. Neither General Theresis nor Lord Scareye will fault you.
+[charslot(slot="m",name="avg_npc_654_1#5$1")]
+[name="Confessarius"]Ah... this ancient gesture signifies more than just fealty. I am more familiar with its other meaning...
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="Confessarius"]Penitence.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]...Qui'sartuštaj.
+[name="Theresa"]Have you found the meaning of your name?
+[charslot(slot="m",name="avg_npc_654_1#9$1")]
+[name="Confessarius"]Not yet, Your Highness.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]Then forgive their sins as you must forgive yours.
+[name="Theresa"]Theresis and I will carry all your sins.
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="Confessarius"]As you bid.
+[charslot(slot="m",name="avg_npc_654_1#2$1")]
+[name="Confessarius"]I bow to you, King of Sarkaz.
+[charslot(slot = "m", name = "avg_npc_1296_1#2$1")]
+[name="Theresa"]......
+[dialog]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 1)]
+[Delay(time=1)]
+[Dialog]
+[playMusic(key="$memory_loop", volume=0.6)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+In millennia of Sarkaz history, it has always been an honor for warriors to go to war with their Kings.
+They have tasted struggle and glory, picked themselves up from the bloodied soil...
+For the Kings of Sarkaz always stood in front of them, never abandoning their people.
+Where the Kings point, that is where home is, where cities will emerge from the earth.
+[dialog]
+[image(image="49_i08",screenadapt="coverall",xScale=1.1,yScale=1.1)]
+[ImageTween(xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=60, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+Now, though, they have abandoned their King.
+[name="Theresa"]I promised a home of peace and safety, where Sarkaz will be forever free from war.
+[name="Theresa"]Before I set foot here, I had a sliver of hope that perhaps someone would follow me.
+[name="Theresa"]But I saw fire in your eyes.
+[name="Theresa"]I saw the city that none of you had seen with your own eyes burn.
+[name="Theresa"]The ancient city comes in many shapes and forms in your eyes.
+[name="Theresa"]A city of desire, a city of hatred, a city of wealth, a city of glory...
+[name="Theresa"]You all believe you will plunder what you have longed for in that unfamiliar land.
+[name="Theresa"]That's why I changed my mind. I decided to see Kazdel's bravest warriors off.
+[name="Theresa"]Kazdel will embark on a path of conquest for the first time in many years.
+[name="Theresa"]I honor you, even though I never wanted you to take this step.
+[name="Theresa"]You answered Theresis's call and dove into yet another campaign of hatred.
+[name="Theresa"]Death awaits you far away from home.
+[name="Theresa"]Yet you still choose to leave our home and go to Londinium.
+The sorrowful King of Sarkaz walks among her people, who bow their heads to avoid her gaze.
+Yet their determination does not waver, even if it means defying the King.
+'We're going.' 'We're going.'
+Voices rise and fall, as though the warriors are singing an elegy for themselves as they go to death.
+[name="Unnamed Mercenary"]We exalt Your Highness, but we cannot follow you anymore.
+[name="Decorated Mercenary"]The Regent promises that Londinium will be a new start.
+[name="Sobbing Mercenary"]There lies the Sarkaz future.
+[name="Loud Mercenary"]There lies <i>our</i> future!
+[name="Theresa"]......
+[name="Theresa"]Take care of yourselves, my warriors.
+[name="Theresa"]Even if you will never return to Kazdel.
+The white figure passes through the parted crowd. The King's people are unmoved by her words.
+They no longer follow the King they once exalted.
+The other possibility for her people, the home full of flowers that she strived to build, did not come in time for the Sarkaz.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Delay(time=1)]
+[image]
+[charslot(slot = "left", name = "avg_npc_404_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1")]
+[Background(image="49_g9_cyclopsroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_404_1#10$1",focus="l")]
+[name="Manfred"]General...
+[charslot(slot = "right", name = "avg_npc_1297_1#3$1",focus="r")]
+[name="Theresis"]......
+[charslot(slot = "left", name = "avg_npc_404_1#10$1",focus="l")]
+[name="Manfred"]You knew this day would come.
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="Theresis"]What do you think?
+[charslot(slot = "left", name = "avg_npc_404_1#3$1",focus="l")]
+[name="Manfred"]Hesitate, and all we've worked for will be for naught.
+[charslot(slot = "left", name = "avg_npc_404_1#1$1",focus="l")]
+[name="Manfred"]Her Highness did not hesitate. Neither should we.
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="Theresis"]Make your preparations, then, Manfred.
+[name="Theresis"]Do not forget the feelings that burn within you, here and now.
+[charslot(slot = "right", name = "avg_npc_1297_1#2$1",focus="r")]
+[name="Theresis"]No matter what they are.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_labentrance",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+Secret Entrance of Scar Market, Kazdel
+[dialog]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",focus="r")]
+[name="Ascalon"]......
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="Theresa"]No need to be down, Ascalon.
+[name="Theresa"]More will join us when Babel grows strong enough to provide shelter for more people.
+[charslot(slot = "right", name = "avg_4132_ascln_1#4$1",focus="r")]
+[name="Ascalon"]We're being followed.
+[charslot(slot = "m", focus = "n")]
+[name="???"]Your Highness—!
+[dialog]
+[charslot(slot = "right",posfrom = "0,0", posto = "200,0",duration = 0.3,afrom=1,ato=0)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",bstart=0.3,bend=0.7)]
+[Delay(time=0.3)]
+[charslot(slot = "l", name = "avg_4132_ascln_1#4$1", posfrom = "-200,0",posto = "100,0",duration = 0.3)]
+[Delay(time=0.1)]
+[playsound(key="$swordtsing3")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", posfrom = "0,0",posto = "200,0",duration = 0.4)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1296_1#7$1")]
+[name="Theresa"]Wait, Ascalon. She's not hostile.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",bstart=0.3,bend=0.7)]
+[name="???"]Whoa, that was a hard hit. Is that a sleeve-blade?
+[name="???"]Anyway, Your Highness, I would like to leave with you, if that's okay with you.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]Thank you. What's your name?
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="???"]Julie.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]A nice name. One that's not often used by mercenaries. Did you make it up yourself?
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="Julie"]No... I don't have a name. Someone else gave it to me. She said having a name gives one a sense of belonging.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]She's right.
+[name="Theresa"]Why not follow the rest of them to Londinium?
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="Julie"]I've had enough of fighting. She says Your Highness will bring about a life where we don't have to fight anymore. That's why I came to check it out for her.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="Julie"]I wanted to challenge you before deciding whether to go with you, but I didn't even have the guts to raise my sword when you stood before me.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]You're a strong warrior, that's for sure.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="Julie"]I wouldn't say that about myself when I'm standing in front of you.
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="Julie"]At least I can be sure that she wasn't playing me for a fool when she said you were once a great hero of Kazdel.
+[charslot(slot = "m", name = "avg_4132_ascln_1#8$1")]
+[name="Ascalon"]A reason so simple it's hard to believe.
+[charslot]
+The red-haired mercenary scratches her head.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="Julie"]Well... I guess I liked the way you talked just now. Not sure I understood most of it, though.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]Where's your friend? She can come too.
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="Julie"]She's already here. Her sword and her clothes... may be a little loose-fitting, though.
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="Julie"]She was a strong warrior. Felt a little like this one over here.
+[charslot(slot = "m", name = "avg_4132_ascln_1#3$1")]
+[name="Ascalon"]......
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]I'm a little something of a tailor. I could hem it for you.
+[charslot(slot = "m", name = "avg_npc_1299_1#2$1")]
+[name="Julie"]There's no need. I'm used to it.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]Let's go, then, Julie.
+[charslot(slot = "m", name = "avg_npc_1299_1#7$1")]
+[name="Julie"]One moment, please, Your Highness.
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="Julie"]There are other mercenaries here who want to go with you.
+[charslot]
+Theresa looks toward the dark exit of the Scar Market, and sees a swaying speck of flame.
+One speck becomes two, two become three, and many more emerge from the darkness. The first torch-carrying mercenary steps into the sunlight and sees the white figure standing on top of the hill.
+He points forward and walks toward Theresa without looking back.
+More and more follow him, the line seemingly without end.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="Julie"]Just because we're used to battle doesn't mean we're willing to bury ourselves in a campaign with no end in sight. If there's another way to live, many of us are willing to take it.
+[name="Julie"]I heard some people are secretly recruiting the willing in Kazdel. There may be some there ready to join us, although the journey through the wilderness would be a tough one...
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="Theresa"]I'll make arrangements.
+[name="Theresa"]Let's go, Julie. We have a lot to do.
+[name="Theresa"]There are plenty of people for us to house, after all.
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[PlaySound(key="$d_gen_dooropen",volume=0.5)] 
+[charslot(slot = "m", name = "avg_npc_048")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$storyendjp_intro", key="$storyendjp_loop", volume=0.6)]
+[Delay(time=1)]
+[name="Doctor"]You're back.
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="Kal'tsit"]They've retreated. Outstanding work, Doctor.
+[charslot]
+[dialog]
+[PlaySound(key="$d_avg_crowdrun",volume=0.7)] 
+[Delay(time=3)]
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Who...?
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1",focus="n")]
+A group of medics hurry through the corridor, carrying several stretchers. Kal'tsit turns to block them from the Doctor's sight.
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="Kal'tsit"]The enemy was essentially making suicide attacks. It was inevitable that there would be casualties as we broke through.
+[name="Kal'tsit"]We lost fewer than we had any right to expect.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]How many did we lose?
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="Kal'tsit"]There was nothing wrong with how you commanded the operation. You don't need to be involved in the cleanup.
+[charslot(slot = "m", name = "avg_npc_1362_1#1$1")]
+[name="Medic"]Dr. Kal'tsit! We're running low on plasma.
+[charslot(slot = "m", name = "avg_003_kalts_1#5$1")]
+[name="Kal'tsit"]I'll deal with coordination and surgery.
+[dialog]
+[PlaySound(key="$d_avg_walkfast",volume=0.7)] 
+[charslot(duration=1)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Kal...
+[charslot(slot = "m", focus="n")]
+The medics have already gone. The Doctor is not sure whether the terrifying scene just now was a figment of the imagination, but the smell of blood simply would not got away.
+A sense of dizziness.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", focus="m")]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="Doctor"]I'm able to reconstruct a battlefield as a computable data model.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[name="Doctor"]But it's not numbers that fight a war.
+[name="Doctor"]Living, breathing people are fighting for their survival. How long as it been since I...?
+[charslot(slot = "m", focus="n")]
+[name="Scout"]Doctor.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1311_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Scout"]First time seeing the blood and gore?
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]...You could say that.
+[name="Doctor"]We didn't have so many lives to waste in the wars I fought in the past.
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]Treat yourself to a sweet drink. It will make you feel better. I speak from experience.
+[name="Scout"]It's all thanks to your command that we were able to triumph against overwhelming odds.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Are your battles always like this?
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]No, this was one of the easy ones.
+[name="Scout"]I'll gladly entrust my life to you, if it means our future battles will be so easy.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="Doctor"]Is war really the only way?
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="Scout"]You're not the first to ask that question.
+[name="Scout"]But this attack is only a sign of things to come. No one knows what the future holds.
+[name="Scout"]I have great expectations of you, our tactical genius.
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+The history books would record that the two Sarkaz rulers declared war on each other in the winter of 1091, causing open hostilities to break out between the Military Commission and Babel.
+For the Sarkaz themselves, however, the civil war had begun in 1086, when isolated conflicts started to escalate rapidly.
+The two centuries of peace that Kazdel had enjoyed have come to an end.
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

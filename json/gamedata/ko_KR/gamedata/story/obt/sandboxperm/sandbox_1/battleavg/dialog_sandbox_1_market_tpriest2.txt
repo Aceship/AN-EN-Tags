@@ -1,0 +1,13 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]뭐? 기묘한 정글맛 캔디를 더 달라고? 그건 <color=#d8d769>기묘한 혼합물 2</color>개가 더 필요하다네!
+[decision(option1="맞아, 그걸 원해!", value1="1.1", option2="아니야, 그냥 지나가던 길이었어!", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_0", itemCount="-2")]
+[additem(itemId="sandbox_1_food_44", itemCount="1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]이번엔 여기까지라네……
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_0", value="2")]

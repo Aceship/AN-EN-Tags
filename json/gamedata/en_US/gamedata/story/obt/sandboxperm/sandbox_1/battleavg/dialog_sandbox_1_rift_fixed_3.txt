@@ -1,0 +1,13 @@
+[header(actId="sandbox_1", npcId="")] 
+(Bounty) We were robbed while passing through this area. Deal with the thieves!
+[decision(option1="Accept commission", value1="1.1", option2="A trip to the Strange Territory is being prepared.", value2="1.2", option3="We have more urgent matters.", value3="1.3")]
+[predicate(references="1.1", visibleCondition="!c0")]
+[orderrift(riftId="fixed_dungeon_3")]
+<color=#d8d769>Commission accepted.</color>
+[end]
+[predicate(references="1.2", visibleCondition="c1")]
+[end]
+[predicate(references="1.3")]
+[end]
+[condition(references="c0", key="checkriftordered")]
+[condition(references="c1", key="checkriftordered")]

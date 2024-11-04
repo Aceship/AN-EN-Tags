@@ -1,0 +1,12 @@
+[HEADER(is_skippable=false, is_tutorial=true)] 能量饮料弹尽粮绝
+[SandboxV2.EnsureDungeonQuest(questId="trig_guide_no_energy")]
+[SandboxV2.EnsureDungeonStable]
+[Delay(time=0.5)]
+[SandboxV2.DungeonFocusNode(focusType="FOCUS_BY_NODE_ID", focusNodeId="nB32E")]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama")]The bad news is, our Headquarters is being raided, and the energy drinks we have on hand aren't enough to support launching a defensive op.
+[SandboxV2.OpenGainItemPage(itemId="sandbox_1_stamina",itemCount=4)]
+[Tutorial(waitForSignal="sandbox_v2_gain_item_page_routed", dialogHead="$avatar_zumama")]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] The good news is, I prepared plenty of spares beforehand, just in case something like this happened, so go ahead and grab 'em.
+[SandboxV2.CloseGainItemPage]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] Alright, there goes the last of my 'inventory.' We should try to stock up on energy drinks so this sort of thing doesn't happen again.
+[SandboxV2.EnsureDungeonStable]

@@ -1,0 +1,16 @@
+[HEADER(is_skippable=false, is_tutorial=true)] 事件
+[SandboxV2.EnsureDungeonQuest(questId="training_8", isForceTutorial=true)]
+[SandboxV2.EnsureDungeonStable]
+[Delay(time=0.5)]
+[SandboxV2.DungeonFocusNode(focusType="FOCUS_BY_NODE_ID", focusNodeId="nE1BC")]
+[Tutorial(target="btn_sandbox_dungeon_center_node", waitForSignal="sandbox_v2_dungeon_event_state_routed", animStyle="Click",            focusStyle="HighlightRect", black="$f_tut_black", protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] ここで何かが起きているようだ。確認してみよう。
+[Tutorial(target="btn_sandbox_event_left_desc_pnl", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] 「遭遇」を表すマークがあるエリアを訪れると、そこで何かしらの出来事に出くわすことになる。
+[Tutorial(target="btn_sandbox_event_right_desc_pnl", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama", focusHeight=250)] この時、我々は自由に対処することができる。
+[Tutorial(target="btn_sandbox_event_first_choice_btn", waitForSignal="sandbox_v2_dungeon_event_state_choice_selected", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] なお、選択には決断を消費するものもあるため、留意するように。
+[Tutorial(target="btn_sandbox_event_first_choice_confirm_btn", waitForSignal="sandbox_v2_gain_item_page_routed", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] 今回は、決断を消費して「粗悪な地金」を手に入れよう。
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] これで「粗悪な地金」が手に入ったな。
+[SandboxV2.CloseGainItemPage]
+[Tutorial(waitForSignal="sandbox_v2_dungeon_event_state_routed", dialogHead="$avatar_zumama")]
+[Tutorial(target="btn_sandbox_event_first_choice_btn", waitForSignal="sandbox_v2_dungeon_event_state_choice_selected", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] 選択を終えると、それに応じた結果が出る。ここをタップして終了だ。
+[Tutorial(target="btn_sandbox_event_first_choice_confirm_btn", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama", focusHeight=100)] 
+[SandboxV2.EnsureDungeonStable]

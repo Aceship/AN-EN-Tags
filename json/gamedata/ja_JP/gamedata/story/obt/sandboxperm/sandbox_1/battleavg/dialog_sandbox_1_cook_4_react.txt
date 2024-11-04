@@ -1,0 +1,27 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]あいつめ……なぜ、まだわしのところに来んのだ……
+[decision(option1="何をぶつぶつ言っているんだ？", value1="1.1")]
+[predicate(references="1.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]おわっ！　びっくりした！　一体何用じゃ？　ユーネクテスの奴がお主を寄こしたのか？
+[decision(option1="今度は、<color=#d8d769>ガンセキガニの刺身</color>を用意してみた。", value1="2.1", option2="いや、偶然通りかかっただけだ。", value2="2.2")]
+[predicate(references="2.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_4", itemCount="-1")]
+[decision(option1="気に入ってもらえるといいんだが。", value1="3.1")]
+[predicate(references="3.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]この肉……火は通してあるのか？
+[decision(option1="あえて素材の味を生かすことにしたんだ。", value1="4.1")]
+[predicate(references="4.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]ほう……どれどれ……ふうむ……
+[decision(option1="お味は？", value1="5.1")]
+[predicate(references="5.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]前回よりは良くなったが、やはりまだ満足はできんのう。
+[decision(option1="笑顔で食べてたくせに！", value1="6.1")]
+[predicate(references="6.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]笑顔であれば美味しいと感じているとは言い切れんじゃろう？
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]フンッ、とにかく満足できんと言ったらできんのじゃ！　妙案が浮かぶまでは話しかけてくるでないぞ！
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="2.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_4", value="1")]

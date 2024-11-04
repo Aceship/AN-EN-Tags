@@ -1,0 +1,670 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_victoria",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Subtitle(text="카즈델 섭정왕, 군사위원회 장군 테레시스 전하에게,", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="여행 중인 학자가 그의 견문을 공작 저택에 알린 뒤에야 머나먼 황무지에서 신흥 이동도시가 대두되고 있다는 걸 알게 되었다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="오래된 용광로의 불길은 꺼질 줄 모르고, 도시의 장벽은 나날이 높아져 가고 있으며, 과거 뿔뿔이 흩어졌던 용병들이 하나 된 깃발 아래 모이고 있다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="당신이 보여줬던 비범한 역량과 위신은 캐번디시 공작이 발걸음을 멈추고 감탄을 자아내게 만들기에 충분했다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="당신은 혼자의 힘으로 살카즈 부족에 대한 우리의 인식을 바꿨다. 어쩌면 더는 과거의 선입견에 얽매이지 말아야 하는 것일지도 모른다. 성실하고 솔직한 교류는 서로에게 유익할 것이다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="……", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="캐번디시 공작은 당신이 영지로 오길 바라고 계신다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="당신의 휘하에 있는 용감한 전사들도 이 오래된 제국에서 실력을 발휘할 자리가 있을 것이다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+1091년 겨울
+[dialog]
+[charslot(slot = "m", name = "avg_npc_048",duration = 1)]
+[Delay(time=1.5)]
+[name="박사"]다시 한번…… 반드시 성공해야 해……
+[name="박사"]이런 일도 못 해낸다면 광석병 치료는 꿈조차……
+[dialog]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 1)]
+[Delay(time=1.5)]
+[charslot(slot = "m",posfrom = "0,-50", posto = "0,-30",duration = 0.5)]
+[charslot(slot ="m", action="shake", power=5, times=30, duration=0.5)]
+[name="박사"]큭……
+[dialog]
+[charslot(slot = "m",posfrom = "0,-30", posto = "0,-50",duration = 0.3)]
+[PlaySound(key="$bodyfalldown3")]
+[CameraShake(duration=0.3, ystrength=30, vibrato=15, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[name="박사"]그래도 안 돼…… 하아…… 하아……
+[dialog]
+[charslot]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1",duration = 0.5)]
+[Delay(time=0.8)]
+[name="외근 중인 전사"]저기, 의료 박스를 내려 두는 게 좋겠습니다. 이런 일은 저희한테 맡기시죠.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]그래…… 알았어……
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1")]
+[Delay(time=0.5)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-50",duration = 0.5)]
+[Delay(time=0.8)]
+[PlaySound(key="$d_avg_clothmovement")]
+[charslot(slot = "m",posfrom = "0,-50", posto = "0,0",duration = 0.8)]
+[Delay(time=1)]
+[name="외근 중인 전사"]다 회복하셔도 더 훈련하셔야 합니다.
+[dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.7)]
+[charslot(slot = "m",posfrom = "0,0", posto = "200,0",duration = 1,afrom=1,ato=0)]
+[Delay(time=2.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1",duration = 1)]
+[Delay(time=1.1)]
+[name="켈시"]지금은 '훈련'을 해도 테라인들의 신체 능력은 따라잡을 수 없을 거야, 박사.
+[name="켈시"]몸을 쓰는 노동보단 다른 게 네 장점을 더 발휘할 수 있을 것 같은데.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]알아. 나도 가끔은 지기 싫을 때가 있어서……
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="켈시"]그날 이후로 계속 가만히 있질 못하네.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]그게, 하아…… 테레시아에 대해 생각했어.
+[name="박사"]홀몸으로 적이 장악하고 있는 도시에 가는 건 지도자로서 이성적인 행동이 아니야.
+[name="박사"]같이 간 전사들은 물론 강하겠지만, 군대 앞에서는 안전을 보장할 수 없어.
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="켈시"]마왕이 살카즈의 전통에서 갖고 있는 입지는 상상을 초월해. 게다가 테레시아의 업적은 모두가 알고 있어, 군사위원회는 오히려 함부로 움직이지 못할 거야.
+[charslot(slot = "m", name = "avg_003_kalts_1#5$1")]
+[name="켈시"]하지만 빅토리아가 카즈델을 초청한 건 결코 우호적인 신호라 할 순 없겠지. 카즈델이 다시 테라의 많은 나라들의 시야에 들어오기 시작했단 뜻이니까.
+[name="켈시"]테레시아는 카즈델로 가서 입장을 표명해야 해. 카즈델이 또다시 전쟁에 휘말리는 데 절대 동의하지 않는다고.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]군사위원회와 바벨의 설립 경위에 대해 알고는 있지만……
+[name="박사"]내가 알고 있는 게 맞다면, 이미 많은 어려움을 겪고 있는 살카즈는 더 이상 무언가와 대립해서는 안 돼. 그건 갖고 있는 몇 안 되는 자원을 낭비하는 꼴이야.
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="켈시"]살카즈가 갖고 있는 복잡한 역사는 이종족이 다른 태도를 갖게끔 만들었어.
+[name="켈시"]테레시스와 테레시아는 2개의 깃발과 같아. 살카즈들에겐 자신이 정답이라 여기는 길을 선택할 권리가 있지.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]아무래도 광석병 말고도 귀찮은 일이 많은 모양이네.
+[name="박사"]무언가를 '아는 것'과 '이해하는 것'에는 꽤 큰 차이가 있어. 테라의 역사를 더 공부해야겠네.
+[name="박사"]이번엔 네가 날 이끌어줘, 켈시.
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="켈시"]……물론이지.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]지금 당장은 최대한 로도스 아일랜드의 광석병 환자들을 돌봐 주는 수밖에 없어. 안정적인 치료 환경을 만들어 줄 수 있도록……
+[dialog]
+[stopmusic(fadetime=1)]
+[charslot]
+[PlaySound(key="$d_sp_ballista",volume=0.5)] 
+[CameraShake(duration=0.8, xstrength=35, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[CameraShake(duration=2, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n",volume=0.5)] 
+[delay(time=2)]
+[playsound(key="$rungeneral", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.7, channel="bgs",fadetime=1)]
+[charslot(slot = "m", name = "avg_npc_1361_1#1$1",duration=0.8,posfrom = "150,0", posto = "0,0")]
+[delay(time=1)]
+[StopSound(channel="bgs", fadetime=0.5)]
+[name="외근 중인 전사"]무슨 일이……
+[charslot(slot = "m", name = "avg_003_kalts_1#14$1")]
+[name="켈시"]적? 지금 같은 때?
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[playMusic(intro="$nervous_intro", key="$nervous_loop", volume=0.6)]
+[charslot(slot = "left", name = "avg_npc_419_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_419_1#1$1")]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "l", focus = "l")]
+[name="냉혹한 왕정군"]입수한 정보에 따르면, 전하는 이미 출발했다고 한다.
+[name="냉혹한 왕정군"]우리가 존경하는 건 오직 전하뿐이다. 바벨을 무너뜨리기만 한다면, 전하께선 카즈델의 품으로 다시 돌아오실 것이다.
+[name="냉혹한 왕정군"]배신이란 죄명은 감수할 수 있지만, 이 중요한 시점에 섭정왕이 벌이는 일이 방해를 받아선 안 된다. 카즈델은 잃어버린 모든 걸 되찾을 것이다.
+[name="냉혹한 왕정군"]전하께서 말씀하신 대로, 살카즈가 하나로 뭉칠 수 있도록.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+카즈델 지역, 흉터의 상점
+[dialog]
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[charslot(slot = "right", name = "avg_npc_053",focus="l")]
+[name="냉랭한 용병"]전하께서 오셨다……
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="흥분한 용병"]어느 전하? 아직까지 밖에서 도망 중인?
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[name="냉랭한 용병"]입조심해. 어느 전하라 해도 네가 함부로 입에 담을 분은 아니야.
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="흥분한 용병"]흥. 그건 그렇고, 그 의뢰는 받았나?
+[charslot(slot = "left", name = "avg_npc_053",focus="l")]
+[name="냉랭한 용병"]누가 그런 기회를 마다하겠어? 런디니움이야, 그 쓰레기 녀석들의 소굴이지.
+[charslot(slot = "right", name = "avg_npc_053",focus="r")]
+[name="흥분한 용병"]그 필라인의 궁전은 돌기둥에도 금을 박아뒀고, 귀족들이 지나다니는 길엔 빛나는 돌이 싹 다 깔려 있다고 하더군.
+[name="흥분한 용병"]*살카즈 욕설*. 그곳은 대제국의 수도인 데다가, 대공작이 준 의뢰잖아. 돈이 얼마나 많겠어!
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[PlaySound(key="$d_avg_bldwhoosh")]
+[PlaySound(key="$swordtsing3",delay=0.5,channel="2")]
+[PlaySound(key="$swordtsing4",delay=0.6,channel="3")]
+[Delay(time=1)]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=false)]
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",posfrom = "100,0", posto = "-100,0",duration = 0.5)]
+[charslot(slot = "r",name="avg_npc_1294_1#1$1",posfrom = "-100,0", posto = "100,0",duration = 0.5)]
+[Delay(time=1)]
+[charslot(slot = "r",focus="r")]
+[name="'스카 아이'"]오랜만이군, 아스카론.
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",focus="l")]
+[name="아스카론"]……
+[charslot(slot = "r",focus="r")]
+[name="'스카 아이'"]정말 오랜만에 흉터의 상점에 돌아왔는데, 앉아서 회포도 좀 풀고 그러지 그래?
+[charslot(slot = "l",name="avg_4132_ascln_1#1$1",focus="l")]
+[name="아스카론"]용병을 모집하고 있다 들었어, 런디니움으로 보낸다면서.
+[charslot(slot = "r",focus="r")]
+[name="'스카 아이'"]내가 보내는 게 아니야.
+[name="'스카 아이'"]섭정왕이 이 녀석들에게 런디니움에서 크게 돈을 벌 길을 만들어줬다. 모두 가고 싶어 하는 게 당연해.
+[charslot(slot = "l",name="avg_4132_ascln_1#4$1",focus="l")]
+[name="아스카론"]카즈델에 또 다른 전쟁을 불러올 셈인 거냐.
+[charslot(slot = "r",focus="r")]
+[name="'스카 아이'"]전쟁을 불러온다라, 그 바벨의 아이들과 소꿉장난을 오래 했더니 살카즈가 원래 어떤지도 잊어버린 건가?
+[name="'스카 아이'"]도대체 언제부터, 살카즈가 전쟁과 떨어져 살았다는 거냐!
+[dialog]
+[charslot]
+[Blocker(a=0.7, r=1, g=1, b=1, fadetime=0.3, block=false)]
+[CameraShake(duration=0.5, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch")]
+[delay(time=0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=false)]
+[delay(time=0.5)]
+거인은 갑자기 손을 뻗었다. 아스카론은 아무리 빨리 움직여도 거인의 주먹을 피할 수 없었다. 아스카론은 약간 당황했다.
+[charslot(slot = "m",name="avg_4132_ascln_1#8$1")]
+[name="아스카론"]……쳇.
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="'스카 아이'"]미래를 간파하는 건 쉽지 않지만, 네 다음 동작을 간파하는 건 어렵지 않아.
+[dialog]
+[charslot]
+[Effect(name="$e_fist_01",x=-100,layer = 2)]
+[CameraShake(duration=0.5, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_punch")]
+[PlaySound(key="$d_avg_daggerexsheath",delay=0.2,channel="3")]
+[delay(time=0.5)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=50, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing1",channel="4")]
+[Effect(name="$e_spark_01_mid",x=0,y=50,rox=-180,roy=50,roz=-40,layer = 2)]
+[PlaySound(key="$swordtsing6",delay=0.1,channel="5")]
+[Effect(name="$e_spark_01_mid",x=0,y=50,rox=-180,roy=50,roz=-40,layer = 3)]
+[delay(time=0.5)]
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="'스카 아이'"]넌 네가 운명의 선택을 받은 아이라고, 특별하다고 생각하는 모양이군. 두 전하 사이의 갈등을 해결할 정도로 말이야.
+[name="'스카 아이'"]잘 떠올려 봐, 네가 두 전하를 만났던 그날을……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[delay(time=0.5)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[image(image="49_i03_1",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="'스카 아이'"]넌 작은 맹글러 모피를 매곤 핏자국을 따라 황야를 누볐지. 그리고 그 폭풍 속으로 들어가 카즈델의 마왕과 만났고……
+[name="아스카론"]네가 어떻게……
+[name="'스카 아이'"]내가 어떻게 알았냐고? 많이 놀랐나, 아스카론?
+[name="'스카 아이'"]난 그 예언을 봤고, 사냥감을 이용해 황야에 있는 부족을 폭풍 속으로 끌어들였다. 넌 운 좋게 살아남았을 뿐이지.
+[name="'스카 아이'"]진짜로 예언을 깨달을 수 있는 사람은 없고, 미래를 간섭할 수 있는 사람은 더더욱 없지. 하지만 나라면 운명의 꼬리를 잡으려고 해볼 순 있어…… 난 예언을 만들어내고 싶거든.
+[name="'스카 아이'"]테레시스는 널 죽이지 않았어, 오히려 널 데려가 키워줬다. 어쩌면 자신의 운명을 시험해 보고 싶어서 그랬던 걸지도 모르지.
+[name="'스카 아이'"]하지만 오랜 시간이 지났는데도 넌 전혀 변하지 않았어. 여전히 황야에서 길 잃은 불쌍한 어린아이일 뿐이지.
+[Dialog]
+[delay(time=1)]
+[PlaySound(key="$knifegore")]
+[Effect(name="$e_bladeline_01_large",layer = 1)]
+[CameraShake(duration=0.3, xstrength=20, ystrength=20, vibrato=50, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[image]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[name="'스카 아이'"]훗, 조급해할 필요 없다. 아스카론.
+[name="'스카 아이'"]지금의 넌 내게 위협이 되지 않아, 네게 했던 기대도 이 정도뿐만은 아니고.
+[charslot(slot = "m",name="avg_4132_ascln_1#4$1")]
+[name="아스카론"]선생님이 그랬어……
+[name="아스카론"]“네 칼은 모든 살카즈의 적을 향해야 한다”라고.
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="'스카 아이'"]넌 테레시스가 키워낸 처형인인 주제에, 테레시스에 대해 아는 건 나 같은 전쟁꾼보다도 적은 것 같군.
+[name="'스카 아이'"]테레시스가 그 공작들의 앞잡이 노릇을 할 것 같나? 넌 아직 테레시스의 계획을 제대로 보지 못하는 것 같군, 그렇다면 적어도 이곳에선 조용히 있어라.
+[name="'스카 아이'"]오히려 궁금하군. 지금 테레시스가 내 뒤에 있는 방에 앉아 있다면, 넌 테레시스 앞에 어떻게 서게 될까?
+[charslot(slot = "m",name="avg_4132_ascln_1#4$1")]
+[name="아스카론"]……
+[charslot(slot = "m",name="avg_npc_1294_1#1$1")]
+[name="'스카 아이'"]바로 지금처럼, 넌 네 뒤에 있는 사람을 대신해 발언할 뿐이겠지.
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_1296_1#1$1",duration=1.5)]
+[delay(time=2)]
+[name="테레시아"]이번 전쟁에 의견이 많은 것 같네.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="켈시"]적은 얼마나 되지?
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="스카우트"]정확한 수는 알 수 없지만, 항로 앞뒤로 습격 반응이 탐지됐다. 수가 적진 않아……
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="켈시"]테레시스 본인의 뜻이든 아니든, 군사위원회의 다른 장교들은 모두 테레시아가 없는 틈을 타 바벨을 한 번에 무너뜨리려 하고 있어.
+[name="켈시"]이렇게 되면, 살카즈도 '다른 선택지'가 없어지겠지.
+[charslot(slot = "m",name="avg_npc_048")]
+[name="박사"]우리가 동원할 수 있는 전투 인원은 얼마나 있지?
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="스카우트"]가장 우수한 전사들은 모두 전하와 함께 협상을 하러 갔어, 나머지 부대도 물자 수송대에 우선 배치된 상태야. 남은 건 평소의 3분의 1도 안 돼.
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="켈시"]적어도 전방의 포위망은 뚫어야 할 텐데……
+[charslot(slot = "m",name="avg_npc_048")]
+[name="박사"]……켈시.
+[name="박사"]지휘는 내게 맡겨.
+[charslot(slot = "m",name="avg_003_kalts_1#4$1")]
+[name="켈시"]박사?
+[charslot(slot = "m",name="avg_npc_048")]
+[name="박사"]네 말대로 군사위원회의 일부 구성원들이 일으킨 기습이라면, 분명 단숨에 끝내려 할 거야.
+[name="박사"]그들에게 끌려다닐 순 없어.
+[name="박사"]취약한 곳을 찾아내 돌파해서 그들의 페이스를 흐트러뜨리면, 본함의 안전을 확보할 수 있을 거야.
+[charslot(slot = "m",name="avg_003_kalts_1#5$1")]
+[name="켈시"]……
+[charslot(slot = "m",name="avg_npc_1311_1#1$1")]
+[name="스카우트"]{@nickname} 박사, 전투를 해 본 적이 있나?
+[charslot(slot = "m",name="avg_npc_048")]
+[name="박사"]피 튀기는 전쟁은 아니었지만…… 훈련이라면 전에 받아본 적 있어.
+[name="박사"]전장을 계산 가능한 데이터 모델로 구축하는 것 정도는 가능해.
+[name="박사"]켈시, 전선 관리와 공격 임무는 네게 맡길게. 네 힘이라면 우리를 지켜줄 수 있을 거라 믿어.
+[charslot(slot = "m",name="avg_003_kalts_1#4$1")]
+[name="켈시"]……알았어.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1")]
+[Background(image="49_g8_scarmarketcamp",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="'스카 아이'"]흉터의 상점에 오신 걸 환영하지, 전하.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="테레시아"]요즘 같은 때라면 흉터의 상점도 상당히 바쁘겠네.
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="'스카 아이'"]대다수 사람들의 목소리에 반대할 필요는 없겠지. 그렇지 않나, 테레시아 전하?
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="테레시아"]하지만 소수의 목소리도 존중받아야 해, '스카 아이'.
+[name="테레시아"]많은 사람들은 밖에서 무슨 일이 벌어지고 있는지 전혀 몰라, 사람들의 삶은 하루아침에 바뀌게 되겠지. 그렇게 되면 또 한 번 집을 잃고 바깥을 떠돌게 될 거야.
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="'스카 아이'"]난 상인이야, 매우 제한적인 장사를 할 뿐이지.
+[name="'스카 아이'"]용병들은 자신들의 목숨을 팔고 싶어 하고, 난 돈을 벌고 싶어 하지. 그래서, 난 항상 큰 손들의 생각을 존중해 왔어.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="테레시아"]그럼, 당신의 가장 큰 손님을 찾아 얘기해 봐야겠어…… 뒤에 있는 방에 있는 거지?
+[dialog]
+[charslot(slot = "r", posfrom = "0,0", posto = "-100,0",duration = 1)]
+[Delay(time=0.6)]
+[charslot(slot = "l", posfrom = "0,0", posto = "-100,0",duration = 0.6)]
+[Delay(time=0.8)]
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="'스카 아이'"]전하, 그 앞으론 더 나아가면 안 돼.
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="테레시아"]스카 아이, 당신에게 언제부터 카즈델의 결의에 관여할 자격이 생겼지?
+[charslot(slot = "left", name = "avg_npc_1294_1#1$1",focus="l")]
+[name="'스카 아이'"]그러니까 더 앞으로 나아가게 둘 수 없다는 거야.
+[charslot(slot = "right", name = "avg_npc_1296_1#4$1",focus="r")]
+[name="테레시아"]당신……
+[dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_654_1#1$1",duration=1.5,bstart=0.3,bend=0.7)]
+[delay(time=2)]
+[name="???"]너무 '스카 아이'를 곤란하게 만들지 말아 주시죠, 전하.
+[name="???"]알고 계시잖습니까, 섭정왕과 여기서 만나게 된다면 사태를 수습할 방법은 하나뿐입니다.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="테레시아"]……고해신부.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_654_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="고해신부"]오랜만에 인사드립니다. 테레시아 전하.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="테레시아"]이미 결정을 내린 모양이네.
+[name="테레시아"]그게 테레시스의 입장이야?
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="고해신부"]그렇습니다.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="테레시아"]테레시스가 우리의 도시를 포기하기로 결정한 거야?
+[charslot(slot="m",name="avg_npc_654_1#9$1")]
+[name="고해신부"]단지 한 발짝 더 나아가 집 밖으로 원정을 떠나는 것뿐, 포기가 아닙니다.
+[name="고해신부"]전하께서는 저희를 너무 오랜 기간 가둬뒀습니다. 저희는…… 나아가는 것을 갈망하고 있었죠.
+[charslot(slot = "m", name = "avg_npc_1296_1#3$1")]
+[name="테레시아"]……
+[charslot(slot="m",name="avg_npc_1294_1#1$1")]
+[name="'스카 아이'"]고해신부의 말이 맞아.
+[name="'스카 아이'"]60여 년 전, 테레시스 장군과 함께 흉터의 상점에 왔던 그날이 아직도 생생해. 그때 어깨를 나란히 했던 두 사람은, 운명조차 거스르려고 했지.
+[name="'스카 아이'"]하지만 지금 분열되어 버린 카즈델을, 이곳 사람들을 봐.
+[name="'스카 아이'"]당신은 여전히 '마왕'의 신분으로 모든 살카즈를 호령할 수 있고, 심지어는 우리 모두를 죽일 수도 있어. 하지만 한 번 물어보지 그래? 저 녀석들이 아직 당신의 이상을 따라가길 원하는지.
+[charslot]
+[stopmusic(fadetime=2)]
+거대한 흉터의 상점에서 소란스러움을 사라졌다. 흩어져 있던 용병들은 무기를 거두곤, 공손히 머리를 숙인 상태로 서 있었다.
+그들의 눈빛에는 한결같은 침묵이 감돌았지만, 마왕은 그들의 마음의 소리를 똑똑히 들을 수 있었다.
+방황, 흥분, 갈망, 그리고 울분.
+[charslot(slot = "m", name = "avg_npc_1296_1#3$1")]
+[name="테레시아"]……대부분 결정을 한 모양이네.
+[charslot(slot = "m", name = "avg_npc_1296_1#2$1")]
+[name="테레시아"]그럼 내가 막아도 의미는 없겠지.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "m", name = "avg_npc_053")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[name="살카즈 용병"]……!
+[dialog]
+[CameraShake(duration=0.3, xstrength=15, ystrength=15, vibrato=15, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m",posfrom = "0,0", posto = "0,-30",duration = 0.5)]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 0.5)]
+[PlaySound(key="$bodyfalldown2", volume=0.6)]
+[delay(time=1.5)]
+[charslot]
+한 살카즈가 돌연 무릎을 꿇었다.
+그는 마음을 바꿀 생각도, 테레시스의 매력적인 계획을 포기할 생각도 없었다.
+단지…… 카즈델을 세운 테레시아를, 여섯 영웅 중의 한 명을, 자신들의 마왕을 배신했다는 점에 약간의…… 부끄러움을 느꼈을 뿐이었다.
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="고해신부"]괜찮습니다. 무릎을 꿇으세요. 테레시스 전하도 '스카 아이'님도 여러분의 행동을 탓하지 않을 겁니다.
+[charslot(slot="m",name="avg_npc_654_1#5$1")]
+[name="고해신부"]아…… 이 오래된 동작은 단지 충성과 복종만을 의미하는 게 아닙니다. 이 동작이 가진 또 다른 의미, 전 매우 익숙합니다……
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="고해신부"]죄책감.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="테레시아"]……키사르투슈타지.
+[name="테레시아"]당신은 당신의 이름이 뜻하는 의미가 무엇인지 찾아냈나?
+[charslot(slot="m",name="avg_npc_654_1#9$1")]
+[name="고해신부"]아직 못 알아냈습니다. 전하.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="테레시아"]그럼 그들의 죄를, 그리고 당신의 죄를 사하러 가도록 해.
+[name="테레시아"]죄를 짊어지는 건, 나와 테레시스 뿐이야.
+[charslot(slot="m",name="avg_npc_654_1#1$1")]
+[name="고해신부"]알겠습니다.
+[charslot(slot="m",name="avg_npc_654_1#2$1")]
+[name="고해신부"]저도 몸을 숙이죠. 마왕 전하.
+[charslot(slot = "m", name = "avg_npc_1296_1#2$1")]
+[name="테레시아"]……
+[dialog]
+[charslot(slot = "m",afrom = 1, ato = 0,duration = 1)]
+[Delay(time=1)]
+[Dialog]
+[playMusic(key="$memory_loop", volume=0.6)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+만 년이나 되는 살카즈의 역사 속, 마왕을 따르는 원정은 전사에겐 영광스러운 일이었다.
+그들은 몸부림치고, 빛났으며, 피와 진흙의 땅에서 수천 번을 다시 일어섰다.
+마왕이 앞에 있기 때문에, 마왕은 백성을 버린 적 없기 때문에.
+마왕이 가리키는 곳에는 집이 있었고, 도시가 생겼다.
+[dialog]
+[image(image="49_i08",screenadapt="coverall",xScale=1.1,yScale=1.1)]
+[ImageTween(xScaleFrom=1.1, yScaleFrom=1.1, xScaleTo=1, yScaleTo=1, duration=60, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+하지만 이제 그들은 마왕을 버렸다.
+[name="테레시아"]난 약속했어. 당신들에게 안정된 터전을 주고, 살카즈가 전란에서 벗어날 수 있게 하겠다고.
+[name="테레시아"]이곳에 다시 발을 들이기 전까진, 난 희망을 갖고 있었어…… 어쩌면 누군가 나를 따를지도 모른다고.
+[name="테레시아"]하지만 난 당신들의 눈동자 속에서 불꽃을 보았어.
+[name="테레시아"]당신들이 보지 못했던 도시가 불길 속에서 타오르는 걸 보았어.
+[name="테레시아"]그 오래된 도시가 당신들의 눈에는 다른 모습으로 비치고 있어.
+[name="테레시아"]욕망의 도시, 증오의 도시, 부의 도시, 영광의 도시……
+[name="테레시아"]당신들은 그 낯선 땅에서 자신이 원하는 것을 쉽게 손에 넣을 수 있다고 굳게 믿고 있지.
+[name="테레시아"]그렇기에 난 처음 했던 생각은 내려놓고, 카즈델에서 가장 용감한 전사들을 배웅하기로 결정했어.
+[name="테레시아"]오랜 세월이 흐른 뒤, 카즈델의 전사들은 다시 본격적으로 다른 종족을 정복하는 여정에 오르게 될 거야.
+[name="테레시아"]당신들은 존경받을 만한 사람이야. 설령 당신들이 그 여정에 오르는 것을 내가 바라지 않았다고 해도.
+[name="테레시아"]당신들은 테레시스의 부름에 응했고, 증오에 빠지게 될 또 다른 행동 속으로 자신의 몸을 던졌지.
+[name="테레시아"]머나먼 땅에서 당신들을 기다리고 있는 건 죽음이야.
+[name="테레시아"]그런데도 우리의 고향을 떠나 런디니움으로 향하려는 거야?
+슬픔에 잠긴 마왕은 백성들 사이를 걸었고, 백성들은 그런 마왕의 시선을 받으며 머리를 숙였다.
+하지만 그들의 결심은 변하지 않았다. 설령 그것이 마왕의 마음을 거역하는 일이 된다고 할지라도.
+“갈 겁니다.” “가겠습니다.”
+소리가 울렸다. 하지만 테레시아의 귀에는 전사들이 떠나기 전 자신들을 위해 부르는 엘레지처럼 들렸다.
+[name="이름 없는 용병"]전하, 저희는 당신을 존경합니다. 하지만 당신을 따르지 않으려 합니다.
+[name="유명한 용병"]섭정왕께서 약속하셨습니다. 런디니움이 저희의 새로운 시작이 될 것이라고요.
+[name="훌쩍이는 용병"]살카즈의 미래는 그곳에 있습니다.
+[name="목소리 큰 용병"]저희의 미래는 그곳에 있습니다!
+[name="테레시아"]……
+[name="테레시아"]이국의 땅에서 부디 몸조심하기를.
+[name="테레시아"]설령 그대들이 카즈델로 돌아올 수 없다 할지라도, 나의 전사들이여.
+순백의 그림자가 양옆으로 갈라진 군중을 뚫고 지나갔지만, 마왕의 백성들은 아무도 동요하지 않았다.
+한때 우러러보았던 그 군왕을 따르는 이는 아무도 없었다.
+그녀가 애써 일구었던 꽃이 만개한 터전, 그녀의 백성들이 생존할 수 있는 또 다른 가능성, 이 모든 것들을 모든 살카즈에게 보여주기엔 너무 늦어버렸다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Delay(time=1)]
+[image]
+[charslot(slot = "left", name = "avg_npc_404_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1")]
+[Background(image="49_g9_cyclopsroom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_404_1#10$1",focus="l")]
+[name="맨프레드"]장군님……
+[charslot(slot = "right", name = "avg_npc_1297_1#3$1",focus="r")]
+[name="테레시스"]……
+[charslot(slot = "left", name = "avg_npc_404_1#10$1",focus="l")]
+[name="맨프레드"]이런 날이 올 줄 알고 계셨군요.
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="테레시스"]네 생각은 어떻지?
+[charslot(slot = "left", name = "avg_npc_404_1#3$1",focus="l")]
+[name="맨프레드"]……망설임은 우리의 노력을 물거품으로 만들 수 있습니다.
+[charslot(slot = "left", name = "avg_npc_404_1#1$1",focus="l")]
+[name="맨프레드"]전하께서 망설임이 없다면, 저희 또한 망설이지 않습니다.
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="테레시스"]그럼 준비해라, 맨프레드.
+[name="테레시스"]그리고 마찬가지로, 지금 불타오르는 그 감정을 잊지 마라.
+[charslot(slot = "right", name = "avg_npc_1297_1#2$1",focus="r")]
+[name="테레시스"]그게 무엇이라 할지라도.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_labentrance",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+카즈델 지역, 흉터의 상점의 비밀 입구
+[dialog]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",focus="r")]
+[name="아스카론"]……
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="테레시아"]아스카론, 낙담할 필요 없어.
+[name="테레시아"]바벨이 충분히 견고해져 더 많은 사람들이 비바람을 피할 수 있게 될 때가 되면, 우리와 함께하는 사람도 더 많아질 테니까.
+[charslot(slot = "right", name = "avg_4132_ascln_1#4$1",focus="r")]
+[name="아스카론"]누가 우리를 쫓아오고 있어.
+[charslot(slot = "m", focus = "n")]
+[name="???"]전하……!
+[dialog]
+[charslot(slot = "right",posfrom = "0,0", posto = "200,0",duration = 0.3,afrom=1,ato=0)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",bstart=0.3,bend=0.7)]
+[Delay(time=0.3)]
+[charslot(slot = "l", name = "avg_4132_ascln_1#4$1", posfrom = "-200,0",posto = "100,0",duration = 0.3)]
+[Delay(time=0.1)]
+[playsound(key="$swordtsing3")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "m", posfrom = "0,0",posto = "200,0",duration = 0.4)]
+[Delay(time=0.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1296_1#7$1")]
+[name="테레시아"]기다려 아스카론, 저 여자에게 적의는 없어.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",bstart=0.3,bend=0.7)]
+[name="???"]윽…… 가차 없네. 소매에 감춘 암살검인가?
+[name="???"]맞습니다 전하, 저는 전하와 함께 떠나고 싶을 뿐입니다.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="테레시아"]……고마워, 당신의 이름은?
+[dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="???"]율리에.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="테레시아"]예쁜 이름이네. 용병들 중에선 드문 이름인데, 직접 지은 이름이야?
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="율리에"]아뇨…… 전 이름이 없어요. 이건 다른 사람이 지어준 거죠. 이름이 있으면 소속감이 생긴다고 해서요.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="테레시아"]맞는 말이네.
+[name="테레시아"]왜 다른 사람들과 함께 런디니움으로 가지 않는 거야?
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="율리에"]싸움이라면 이제 지긋지긋해요. 그 사람은 전하께서 언젠간 저희가 싸우지 않아도 되게끔 만들어 줄 거라고 말해줬죠. 그래서 대신 왔습니다.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="율리에"]원래는 전하께 도전해 보고 함께 갈지 정하려 했습니다만, 전하 앞에 있으면 칼을 들 용기조차 나지 않네요.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="테레시아"]당신은 강한 전사야, 그런 확신이 들어.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="율리에"]이건 전하의 앞에서 함부로 할 말이 아니겠죠.
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="율리에"]하지만 적어도 전하께서 과거 카즈델의 영웅이었다고 말한 그 사람의 이야기는 믿을 수 있다는 확신이 듭니다.
+[charslot(slot = "m", name = "avg_4132_ascln_1#8$1")]
+[name="아스카론"]믿을 수 없을 정도로 단순한 이유네.
+[charslot]
+붉은 머리 용병이 머리를 긁적였다.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="율리에"]굳이 말하자면…… 아까 전하께서 말하던 그 모습이 너무 좋았습니다. 잘 알아듣진 못했지만요.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="테레시아"]당신의 동료는 어디에 있어? 같이 와도 괜찮은데.
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="율리에"]여기 있습니다. 칼이랑 옷이랑…… 옷은 좀 커서 몸에 잘 안 맞긴 하지만요.
+[charslot(slot = "m", name = "avg_npc_1299_1#3$1")]
+[name="율리에"]그 사람을 말하는 거라면…… 생전엔 아주 강한 전사였습니다. 굳이 말하자면…… 음, 저 사람이랑 좀 닮은 느낌이었다 할 수 있겠네요.
+[charslot(slot = "m", name = "avg_4132_ascln_1#3$1")]
+[name="아스카론"]……
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="테레시아"]옷이 크다면 내가 수선해 줄 수 있어.
+[charslot(slot = "m", name = "avg_npc_1299_1#2$1")]
+[name="율리에"]괜찮습니다 전하, 이미 몸에 익어서요.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="테레시아"]그럼 갈까, 율리에.
+[charslot(slot = "m", name = "avg_npc_1299_1#7$1")]
+[name="율리에"]전하, 잠시만 기다려주시겠어요?
+[charslot(slot = "m", name = "avg_npc_1299_1#8$1")]
+[name="율리에"]이쪽에 전하와 함께 가고 싶어 하는 다른 용병들이 더 있습니다.
+[charslot]
+흉터의 상점의 컴컴한 출구를 바라보던 테레시아의 시선은 흔들리는 불빛에 사로잡혔다.
+한 무리, 두 무리…… 어둠 속에서 나타난 빛이 점점 더 많아졌다. 첫 번째로 횃불을 든 용병이 햇빛 속으로 발을 디뎠을 때, 그는 언덕 위에 있는 새하얀 모습을 보았다.
+그 사람은 앞을 가리키더니 고개도 돌리지 않고 테레시아를 향해 걸어갔다. 그 뒤로 캄캄한 동굴 속에서 테레시아를 따라가는 행렬이 끝없이 이어져 나왔다.
+그렇게 한 줄기 햇살이 되었다.
+[charslot(slot = "m", name = "avg_npc_1299_1#1$1")]
+[name="율리에"]용병이 전쟁터에 익숙하다고는 하지만, 모든 용병이 끝도 없는 원정 속에 죽어가길 바라진 않아요. 저희도 살 방법을 찾고 싶어요…… 가능하다면.
+[name="율리에"]카즈델에서 개인적으로 지원자를 모집하는 사람들이 있다고 들었어요. 도시 안에도 저희와 함께하고 싶어 하는 사람들이 있을지도 몰라요. 물론, 황무지로 나가는 게 쉬운 일은 아니니까요.
+[charslot(slot = "m", name = "avg_npc_1296_1#8$1")]
+[name="테레시아"]그 부분은 내게 맡겨줘.
+[name="테레시아"]같이 가자 율리에. 앞으로 바빠질 거야.
+[name="테레시아"]사람이 이렇게 많으니, 우리도 살 곳을 마련해 줘야겠지.
+[stopmusic(fadetime=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[PlaySound(key="$d_gen_dooropen",volume=0.5)] 
+[charslot(slot = "m", name = "avg_npc_048")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$storyendjp_intro", key="$storyendjp_loop", volume=0.6)]
+[Delay(time=1)]
+[name="박사"]돌아왔구나.
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="켈시"]놈들이 철수했어. 훌륭한 지휘였다, 박사.
+[charslot]
+[dialog]
+[PlaySound(key="$d_avg_crowdrun",volume=0.7)] 
+[Delay(time=3)]
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]저건……
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1",focus="n")]
+의료진이 들것 몇 대를 들고 복도를 황급히 지나갔고, 켈시는 몸을 옆으로 돌려 의도적으로 박사의 시야를 가렸다.
+[charslot(slot = "m", name = "avg_003_kalts_1#1$1")]
+[name="켈시"]적은 거의 자폭식으로 우릴 습격했어. 포위를 뚫는 과정에서 불가피하게 사상자가 생겨버렸지.
+[name="켈시"]하지만 사상자 수는 예상했던 것보다 훨씬 적었어.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]우린 몇 명의 전사를 잃은 거지……?
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="켈시"]박사. 네 지휘에는 실수가 없었어. 뒷수습은 책임지지 않아도 돼.
+[charslot(slot = "m", name = "avg_npc_1362_1#1$1")]
+[name="의료진"]켈시 선생님, 예비용 혈액이 좀 부족한데요……
+[charslot(slot = "m", name = "avg_003_kalts_1#5$1")]
+[name="켈시"]내가 조율해 보지. 수술 준비해.
+[dialog]
+[PlaySound(key="$d_avg_walkfast",volume=0.7)] 
+[charslot(duration=1)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]켈……
+[charslot(slot = "m", focus="n")]
+의료진은 분주하게 움직이기 시작했다. 박사는 자신이 본 끔찍한 광경이 진짜인지 확신할 순 없었지만, 콧속에 가득 찬 피비린내는 지워지지 않았다.
+현기증이 났다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", focus="m")]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="박사"]전장을 계산 가능한 데이터 모델로 구축하는 것 정도는 가능해.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[name="박사"]하지만 전장은…… 숫자가 아니야.
+[name="박사"]살아 있는 생명들이 자신의 생존을 위해 외적에 대항하는 것, 난 이미 얼마나……
+[charslot(slot = "m", focus="n")]
+[name="스카우트"]박사.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1311_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="스카우트"]이런 참상은 처음 본 건가?
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]……그런 셈이지.
+[name="박사"]전에 맞닥뜨렸던 전투에선 잃은 생명이 이렇게 많지 않았어.
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="스카우트"]달콤한 걸 마시면 한결 나아질 거야. 경험담이야.
+[name="스카우트"]이번에 우리가 이렇게 적은 수로 많은 적들을 이길 수 있었던 건, 전부 박사의 지휘 덕분이다.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]너희가 겪었던 전투는 모두 이런 식이야?
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="스카우트"]아니. 이번은 비교적 가벼운 전투였어.
+[name="스카우트"]앞으로 모든 전투를 이렇게 이길 수 있다면, 난 안심하고 당신에게 목숨을 맡길 수 있을 것 같아.
+[charslot(slot = "m", name = "avg_npc_048")]
+[name="박사"]어쩌면 전쟁 말고도 우리가 목적을 달성할 수 있을 만한 방법을……
+[charslot(slot="m",name="avg_npc_1311_1#1$1")]
+[name="스카우트"]하하, 그렇게 말하는 게 당신이 처음은 아니야.
+[name="스카우트"]하지만 이번 습격은 일종의 신호에 불과하겠지. 앞으로 우리에게 어떤 일이 생기게 될지는 아무도 몰라.
+[name="스카우트"]그럼 앞으로의 활약을 기대하겠어, 천재 지휘관님.
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+후세의 역사에는 이와 같이 적혀 있다. 1091년 겨울, 살카즈의 두 전하는 마침내 서로 적대 관계를 선언하게 되었다. 군사위원회와 바벨의 대립은 본격적인 전쟁으로 치달았다.
+하지만 살카즈의 입장에서 보면, 1086년부터 국소적인 충돌이 끊임없이 일어났으며, 그들이 말하는 '내전'은 이미 시작된 상태였다.
+그렇게 카즈델이 200년 가까이 유지했던 평화는 끝이 났다.
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

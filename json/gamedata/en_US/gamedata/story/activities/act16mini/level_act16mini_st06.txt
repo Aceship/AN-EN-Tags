@@ -1,0 +1,603 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[focusout(type="bg", id="bg_corridor_2", from=0, to=1, duration=1, block=false)]
+[Background(image="bg_corridor_2",screenadapt="coverall")]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="Doctor, I'm not afraid anymore.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="They asked me a lot of questions, and I told them everything... Our long journey, the places we've been, and whether we had fun or not...", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="But there were a few questions that I found no answers to.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Is the Doctor looking for something? Why did they all say behind our backs that the things that the Doctor wants to see can't ever be seen again?", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Why did the Doctor save me and travel with me?", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[focusout(type="bg", id="46_g1_transporter", from=0, to=0, duration=0, block=false)]
+[Background(image="46_g1_transporter",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$radio")]
+[name="PA Announcement"]All drivers, ears—both long and short—up, this is guidance for our departure in six hours.
+[name="PA Announcement"]Watch the Catastrophe forecasts and drive safe. Don't chase wildlife. Let's get the trucks in and get home early...
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1183_1#8$1", duration=1, isblock=true)]
+[name="Alanna"]Well, you don't look so bad, old bones.
+[name="Alanna"]You should be thankful your last trip is with me. Others probably wouldn't have what it takes to get you fixed.
+[name="Alanna"]You'd have to sit out there in the boonies in tatters with that hole the anti-armor blew open, and wait for the engineering team to come to take you apart and haul any usable modules back to the factory for reassembly.
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="Alanna"]And me? I wouldn't be able to hand in the truck. The whole thing would've been a bust. Everyone would be making fun of me for that the rest of my life.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1183_1#7$1")]
+[name="Alanna"]I should've been made fun of the rest of my life. If someone found I was hiding underneath the truck when she was killed...
+[name="Alanna"]Ugh, that kinda thing's not ever gonna happen again.
+[charslot(slot = "m", name = "avg_npc_1183_1#1$1")]
+[name="Alanna"]Alright, just one more problem, then. I don't have too many mates in Iron Carrot City. I need to find someone to teach me how to write the accident report...
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_transpthrn", volume=1)]
+[delay(time=1.5)]
+[PlaySound(key="$rungeneral", volume=1, loop=true, channel="r")]
+[StopSound(channel="r", fadetime=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", duration=1, isblock=true)]
+[name="Alanna"]Oi, stop ringing the bell. This truck's not going anywhere. You got the wrong—
+[dialog]
+[PlaySound(key="$d_avg_steamburst", volume=1)]
+[PlaySound(key="$d_avg_gateopen", volume=1, loop=true, channel="g")]
+[StopSound(channel="g", fadetime=2.5)]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1")]
+[name="Alanna"]—Coward?
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "r", name = "avg_npc_1184_1#1$1", posfrom="200,0", posto="0,0", duration=1.5, isblock=true)]
+[charslot(slot = "r", name = "avg_npc_1184_1#3$1", focus="r")]
+[name="Jerry"]Uh... Hehe. Looks like I got the right one.
+[name="Jerry"]The gaudy decorations are all gone, and it doesn't look like a war broke out in here anymore. Feels a bit strange, actually...
+[name="Jerry"]Anyway, it's good seeing this thing in one piece! This has to mean that Ray and Warmy are both fine, right?
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]Hah, suppose so.
+[charslot(slot = "r", name = "avg_npc_1184_1#1$1", focus="r")]
+[name="Jerry"]Th-Then, let me ask one other thing...
+[name="Jerry"]Did Ray find the thing she said she was looking for?
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="Alanna"]Of course not.
+[charslot(slot = "r", name = "avg_npc_1184_1#4$1", focus="r")]
+[name="Jerry"]I'm really sorry! I didn't mean to bring up painful memories like that!
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]Don't worry about it. It's not really painful for me at all.
+[name="Alanna"]That said, the hijacker doesn't think it's all that painful for her, either.
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="Alanna"]Come to think of it, this really doesn't make any bloody sense... She disappeared halfway through the trip for no reason, then she showed up where we pulled over to wait for a small Catastrophe to pass.
+[name="Alanna"]She's just like a dumb fowlbeast who finds herself disoriented after getting carried a thousand miles away by a Catastrophe wind.
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="Jerry"]Uh, then... she didn't possibly forget what she's looking for, right? I know there are folks who would run in circles as a kind of contest, and there was this lad who got so dizzy that he fell and knocked his brains out...
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]We might have a worse case on our hands. She told me she met a Feranmut.
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="Jerry"]Uhh...
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]And she said it's not the one she's looking for.
+[charslot(slot = "r", name = "avg_npc_1184_1#2$1", focus="r")]
+[name="Jerry"]Huh?
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="Alanna"]Finally, she even said the Feranmut has already told her the thing she's looking for doesn't exist.
+[charslot(slot = "r", name = "avg_npc_1184_1#1$1", focus="r")]
+[name="Jerry"]I... I feel kinda sorry for her.
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="Alanna"]Really now? I call that finally seeing things clearly.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="Alanna"]But after that, we did keep heading to the Grinning Valley. We went through all the trouble to make our way there. No way I was going to turn back on our hijacking.
+[name="Alanna"]......
+[charslot(slot = "r", name = "avg_npc_1184_1#3$1", focus="r")]
+[name="Jerry"]Then? How was it?
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="Alanna"]So cool...! Too bad it's pretty dangerous there. A coward like you? You won't be seeing it in your lifetime, haha!
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]Really, I don't suggest you go. If it wasn't for my technique and quick reflexes, the ute would still be stuck in that valley.
+[name="Alanna"]On our journey back, we had to stop every two hours for the old bones to cool down... The union says it's about time it gets 'standardized.' And well, they have a point.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#2$1", focus="l")]
+[name="Alanna"]*sigh*, it's been twenty years.
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="Jerry"]You... You've been driving for twenty years? I never would've guessed...
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]Well, thanks for the vote of confidence in my skills.
+[name="Alanna"]But I was going to say... I've known this old girl for twenty years.
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="Alanna"]Right, Coward—Where's my invitation to your wedding?
+[charslot(slot = "r", name = "avg_npc_1184_1#4$1", focus="r")]
+[name="Jerry"]Huh? Uh...
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="Jerry"]Um... You might've missed the wedding...
+[name="Jerry"]*cough*... Actually, I'm on my honeymoon.
+[name="Jerry"]And... well, that's over now. As of ten minutes ago.
+[charslot(slot = "r", name = "avg_npc_1184_1#6$1", focus="r")]
+[name="Jerry"]Iron Carrot City was going to be our final stop, but I saw your transport when we got to the gates, and all of a sudden, I started to think... I wanted the trip to last a little longer.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]Oh... Are you two driving that truckie parked not too far up ahead? Here I thought the driver got on the wrong level instead of the logistics channel for their delivery.
+[charslot(slot = "l", name = "avg_npc_1183_1#7$1", focus="l")]
+[name="Alanna"]Something's off, though...
+[charslot(slot = "r", name = "avg_npc_1184_1#3$1", focus="r")]
+[name="Jerry"]Haha, we're driving a delivery truck alright...
+[name="Jerry"]Actually, we found her truck when we left the gateway that day. We were thinking of turning back to our engagement ceremony... then somehow, we drove to the registration center instead...
+[name="Jerry"]Then, we drove to the open plaza, had our ceremony, and went on our honeymoon...
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="Alanna"]Bugger me dead, now I remember!
+[charslot(slot = "r", name = "avg_npc_1184_1#2$1", focus="r")]
+[name="Jerry"]Wh-Wh-What is it...?!
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="Alanna"]The girl that followed you everywhere. Now I remember where I saw her face! It's the logo on this truck! This face!
+[name="Alanna"]I knew there was a hardware store that sold old safety valves!
+[charslot(slot = "r", name = "avg_npc_1184_1#1$1", focus="r")]
+[name="Jerry"]Oh, right, she was trying to make herself disappear...
+[charslot(slot = "l", name = "avg_npc_1183_1#6$1", focus="l")]
+[name="Alanna"]Do you even know why we had to stop every now and then?
+[charslot(slot = "r", name = "avg_npc_1184_1#4$1", focus="r")]
+[name="Jerry"]I-I-I'm really sorry! Let me apologize sincerely on her behalf...
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="Alanna"]Uh, I'm just kidding. I can't really blame you for this one. This truck should've been upgraded a long time ago.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]That being said, if we get this last part installed right now, I can get away with a dozen fewer sentences on the report.
+[name="Alanna"]Quick, do you have any of the valves in stock on your transport?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="31_g2_luo_reception",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="Savage"]Warmy, is it ready yet?
+[dialog]
+[PlaySound(key="$d_avg_welding", volume=0.5, loop=true, channel="w")]
+[StopSound(channel="w", fadetime=2)]
+[Delay(time=1)]
+[charslot(slot = "m", focus="n")]
+[name="Potlid"]It... It's still sparking...
+[name="Potlid"]...I'll learn how to use it in a bit. Give me a little more time! Once I learn how to use this staff, I'll come out of the room!
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="Savage"]If you really can't figure out how to use it, you're free to ask that old Caster there again.
+[charslot(slot = "m", focus="n")]
+[name="Potlid"]But I learned so fast both when Lanns taught me how to fix cars and when Daddy taught me how to cook...!
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="Savage"]Alright.
+[name="Savage"]I thought you'd follow Alanna to get the truck returned.
+[charslot(slot = "m", focus="n")]
+[name="Potlid"]I couldn't. Didn't you say you had to finish some other work by noon today to get on that big mining ship of yours?
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="Savage"]Aww, I could've taken my bike, and I could've given you two a ride to the next stop, too.
+[charslot(slot = "m", focus="n")]
+[name="Potlid"]Thanks, Savage.
+[name="Potlid"]But I have to leave at some point.
+[charslot(slot = "m", name = "avg_230_savage_1#5$1")]
+[name="Savage"]......
+[dialog]
+[PlaySound(key="$d_avg_glassdooropen", volume=1)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[charslot(slot = "m", name = "avg_230_savage_1#3$1", afrom=1 ,ato=1, posfrom="0,0", posto="10,-5", duration=0.2, isblock=true)]
+[charslot(slot = "m", name = "avg_230_savage_1#3$1", afrom=1 ,ato=1, posfrom="10,-5", posto="-100,0", duration=0.5, isblock=true)]
+[name="Savage"]Whoa—
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#6$2", duration=2, isblock=true)]
+[name="Potlid"]Whoa, why did you lean on the door?
+[charslot(slot = "m", name = "avg_230_savage_1#1$1")]
+[name="Savage"]Well, simply put, as a security officer, you sometimes gotta block the door and scare people. I got used to doing it...
+[name="Savage"]Why is the breeze so warm...?
+[charslot(slot = "m", name = "avg_4081_warmy_1#4$2")]
+[name="Potlid"]Hehe, I'm starting to get a handle on how to use the staff!
+[charslot(slot = "m", name = "avg_230_savage_1#9$1")]
+[name="Savage"]You really figured it out? That's incredible!
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="Savage"]But let's put an end to your little show here. If you keep heating the air, I'm going to catch fire.
+[name="Savage"]Let's sit here and wait for Alanna. Once she's back, I'll take you two to the Rhodes Island landship and see what they can do about your Oripathy.
+[charslot(slot = "m", name = "avg_4081_warmy_1#11$2")]
+[name="Potlid"]Alright.
+[dialog]
+[charslot(slot = "m", posfrom="0,0", posto="200,0", duration=1.5, isblock=true)]
+[PlaySound(key="$d_avg_clothmovement", volume=0.2, loop=true, channel="c")]
+[StopSound(channel="c", fadetime=1)]
+[charslot(slot = "m", posfrom="200,0", posto="200,-20", duration=1, isblock=true)]
+[Delay(time=0.8)]
+[charslot(slot = "m", name = "avg_4081_warmy_1#12$2")]
+[name="Potlid"]It feels so familiar sitting on the seat, waiting for somebody.
+[name="Potlid"]The benches in the waiting area are made of steel. They're so cold, and I couldn't get them warm, no matter what.
+[name="Potlid"]If only I knew how to use Arts before, I could've warmed the benches without anyone knowing, and Daddy's bones wouldn't have hurt so much.
+[charslot]
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="Savage"]You'll get the chance, Warmy... You still have lots of time to learn how to use your staff before you find your daddy.
+[name="Savage"]By then, you'll be able to control your power how you want it.
+[dialog]
+[charslot]
+[charslot(slot = "r", name = "avg_4081_warmy_1#12$2", posfrom="0,-20", posto="0,-20", duration=0, isblock=true)]
+[name="Potlid"]Really...?
+[name="Potlid"]But Ray didn't find the Feranmut in the end, and we didn't really make it to the Grinning Valley.
+[name="Potlid"]But I've been waiting for Daddy for so long... After everything, I should...
+[charslot(slot = "r", name = "avg_4081_warmy_1#2$2")]
+[name="Potlid"]...This trip was so, so long.
+[dialog]
+[PlaySound(key="$rungeneral",volume=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", posfrom="-300,0", posto="0,0", duration=1, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_1183_1#9$1", focus="l")]
+[name="Alanna"]Phew, finally made it. I really gotta hand it to that coward. He's really got a knack for writing reports.
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="Alanna"]—My, that staff is so pretty. Really gotta hand it to me!
+[name="Alanna"]How is it, Potlid? You all ready?
+[dialog]
+[PlaySound(key="$d_avg_clothmovement",volume=1)]
+[charslot(slot = "r", name = "avg_4081_warmy_1#1$2", posfrom="0,-20", posto="0,0", afrom=1, ato=1, duration=0.5, isblock=true)]
+[charslot(slot = "r", focus="r")]
+[name="Potlid"]Lanns! Take a look at this! Here!
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="Alanna"]Okay—
+[dialog]
+[charslot(slot = "r", focus="all")]
+[PlaySound(key="$firestorm", volume=0.5, loop=true, channel="f")]
+[StopSound(channel="f", fadetime=2)]
+[delay(time=1.5)]
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="Alanna"]This is way too hot, all of a sudden!
+[name="Alanna"]Savage, is it really okay for her to use Arts like that?
+[charslot]
+[charslot(slot = "m", name = "avg_230_savage_1#8$1")]
+[name="Savage"]Hm? Yeah, it's fine.
+[charslot]
+[charslot(slot = "r", name = "avg_4081_warmy_1#1$2", focus="n")]
+[charslot(slot = "l", name = "avg_npc_1183_1#8$1", focus="l")]
+[name="Alanna"]Well, alright then. Heh, I've had my eyes on this staff for a long time, it just screams Billy industrial aesthetic. I knew it'd be a great fit for our Potlid!
+[name="Alanna"]How's that? Now bring on the praises.
+[charslot(slot = "r", name = "avg_4081_warmy_1#1$2", focus="r")]
+[name="Potlid"]You're so amazing, Lanns!
+[charslot(slot = "r", name = "avg_4081_warmy_1#12$2", focus="r")]
+[name="Potlid"]So... amazing.
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]It's just, even if I'd got it for you a long time ago, we didn't have anyone around to teach you how to use it. Besides, I couldn't just put 'the transport truck' down for our delivery address, right?
+[name="Alanna"]Now then, let's go get you treated.
+[name="Alanna"]When you see your old man again, we'll let him see a real healthy Potlid with incredible Arts!
+[charslot(slot = "r", name = "avg_4081_warmy_1#8$2", focus="r")]
+[name="Potlid"]......
+[name="Potlid"]Lanns, I...
+[name="Potlid"]I...
+[dialog]
+[charslot(slot = "r", posfrom="0,0", posto="-250,0", duration=0.5)]
+[delay(time=0.1)]
+[CameraShake(duration=0.5, xstrength=15, ystrength=15, vibrato=20, randomness=70, fadeout=true, block=false)]
+[PlaySound(key="$bodyfalldown2", volume=1)]
+[delay(time=0.2)]
+[charslot(slot = "l", posfrom="0,0", posto="-15,0", duration=0.2, isblock=true)]
+[charslot(slot = "l", name = "avg_npc_1183_1#4$1", focus="l")]
+[name="Alanna"]Huh? Why are you...?
+[dialog]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1183_1#1$1", focus="l")]
+[name="Alanna"]...Alright, let it out.
+[name="Alanna"]Just grab my clothes and cry. I don't mind.
+[name="Alanna"]At the very least, you didn't end this journey empty-handed.
+[dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_bridge",screenadapt="coverall")]
+[Delay(time=1)]
+[PlayMusic(intro="$tech_intro", key="$tech_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_972_1#1$1")]
+[name="Procurement Operator"]Verify the pre-departure supplies order. Get the Originium fuel item deleted. We have more than enough fuel reserves. Hell, we have so much, they could come spilling out the tank.
+[name="Procurement Operator"]What about these orders from individual operators...? Who commissioned a Messenger to send all these carrots, again?! I've had it with that sweet smell in the kitchen! I can't take it anymore!
+[name="Procurement Operator"]This crate's the refined solvent that Engineering ordered. This one is the materials for the experiment Closure is putting together for a new line of business. Hello, Amiya. Hello, Doctor. This one...
+[name="Procurement Operator"]Huh? Amiya? Doctor? What are you two doing here?
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="Amiya"]Oh, I'm sorry. Are we interrupting the Procurement Department's work...?
+[charslot(slot = "m", name = "avg_npc_972_1#1$1")]
+[name="Procurement Operator"]No, it's fine. It's just... If you're here for the view, I think you'll have a better time up on the deck. It's pretty noisy here at the logistics channel.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]Oh, actually, we've kind of got used to noisy environments lately. This noise here actually feels more comfortable...
+[name="Amiya"]Doctor, let's head further inside.
+[dialog]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(duration=1.5, isblock=true)]
+[Decision(options="How did your checkup go, Amiya?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]Don't worry. No changes in my vitals.
+[name="Amiya"]After all, we kept our distance from the Active Originium clusters, and we had effective protective measures.
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="Amiya"]But... I'd be lying to say I wasn't terrified to see... Active Originium growing and fragmenting the earth in front of me.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="It's very Rim Billiton to name that place the 'Grinning Valley'.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="Amiya"]But when I hear that name now, I don't think I can smile anymore...
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]But... maybe when everyone gave it the name 'Grinning Valley', it was just a natural valley that wasn't yet covered in Active Originium.
+[name="Amiya"]Ray was so sure that she had been there when she was young, after all.
+[name="Amiya"]But over those ten years, the Originium there rapidly proliferated and made the area unrecognizable. Not even Ray could identify it.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="Do you think it's a shame?;Are you scared?", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="Amiya"]Yeah, we didn't actually make it to the Grinning Valley. All we did was look at it from afar before we had to turn back. It feels...
+[name="Amiya"]It feels kinda like... getting ready for a picnic, only for it to rain that day.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "char_002_amiya_1#5")]
+[name="Amiya"]...Don't laugh, Doctor!
+[dialog]
+[Predicate(references="2")]
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]Yeah, if we hadn't by chance approached the Grinning Valley from higher ground and the visibility was any lower... perhaps the Originium clusters would've caught up to us, or maybe we would've fumbled our way into it.
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="Amiya"]Sometimes, I think that...
+[name="Amiya"]...perhaps they grow and proliferate in the bodies of the Infected just like that. All the Infected across the lands were actually caught by the Originium a long time ago..
+[dialog]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]Oh right, Doctor.
+[name="Amiya"]Do you think the Feranmut that Ray was looking for... really exists?
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="As far as I know, Feranmuts do exist.;There's a reason she managed to escape that minor Catastrophe.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]That's good, then...
+[name="Amiya"]Although we didn't make it to our destination, Ray wasn't just suffering a nightmare.
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n", volume=1)]
+[charslot(slot = "m", name = "avg_npc_972_1#1$1", duration=1, isblock=true)]
+[name="Procurement Operator"]Doctor, here's your order.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="My order?;I don't remember placing an order through Rhodes Island lately.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]Oh, it's a surprise I ordered for you, Doctor.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="So heavy...", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="Amiya"]Uh, it's a small vivarium...
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]When I walked by the market that day, it suddenly occurred to me that you seemed very interested in Billy fauna all those years ago.
+[name="Amiya"]When you brought me back to this landship and turned to look at the wilderness... You seemed very lonely. I was still small, but I could tell that it was loneliness.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]So I thought I wanted to miniaturize and save everything there is in Rim Billiton as a snapshot for you.
+[name="Amiya"]At the very least, back then, I thought you felt lonely because the landship was a bit empty. Perhaps having some living things around would make you happier.
+[name="Amiya"]Of course, Rhodes Island has a botanical garden now, and our databases have a sizable collection of ecological files, so this small vivarium might not be all that useful to you anymore.
+[name="Amiya"]But I still wanted to fulfill the wish I had as a kid.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="Thank you, Amiya.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", focus="n")]
+[Decision(options="The way I was then, is it more or less the way you are now?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="Amiya"]Huh?
+[name="Amiya"]P-Pretty different...? I'm not lonely at all.
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]It's just, after we got back here, I suddenly started to feel sad.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "char_002_amiya_1#7")]
+[name="Amiya"]We have to get back to preparing for our journey to Victoria.
+[name="Amiya"]Combat, healing, disaster prevention, and saving lives.
+[name="Amiya"]Many elite operators have matters to settle, and... Dr. Kal'tsit forbade me from using that title to refer to myself.
+[name="Amiya"]There's something someone once told me.
+[name="Amiya"]This path isn't one to reach the end by oneself, and it's not trodden for an outcome or an answer.
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="I am here.;......;It's not like you to be so pessimistic.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]Oh, please don't worry, Doctor. I'm fine. I'm not trying to act sentimental.
+[name="Amiya"]But maybe it's precisely because this path doesn't have an end that we sometimes want to take somebody's hand or reach our hand out to somebody else.
+[name="Amiya"]As such, life is finite, and life goes on.
+[dialog]
+[delay(time=1)]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]Come, Doctor. Let me help you get your vivarium to your office. I've had enough time to put my feelings in order. Right now, there are still a lot of things I need to figure out and learn.
+[name="Amiya"]Also, we just had a new operator pass her assessment. I want to go congratulate her.
+[name="Amiya"]Based on her question for me, though... Rhodes Island doesn't actually need a pitsinker.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_pawfootstep_1", volume=1)]
+[charslot(slot = "m", name = "avg_npc_1188_1#1$1", posfrom="-200,0", posto="0,0", duration=0.5, isblock=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1188_1#2$1")]
+[name="Sandbeast"](Sniffs)
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="The critter staring at the vivarium... Is that Ray's sandbeast?", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]Yep, the one she's been holding onto since that Catastrophe.
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="Amiya"]Hold on, the musbeast in the vivarium. Isn't that what sandbeasts like to eat?
+[dialog]
+[charslot]
+[PlaySound(key="$rungeneral",volume=1)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_4117_ray_1#3$1", duration=1, isblock=true)]
+[name="Ray"]Come back, Sandbeast. No eating the Doctor's things...
+[charslot(slot = "m", name = "avg_4117_ray_1#4$1")]
+[name="Ray"]...Hello, Amiya, Doctor.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]Hello, Ray. I heard your assessment went very well. Congratulations.
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="Ray"]Thank you.
+[name="Ray"]I have a Rhodes Island ID badge now.
+[name="Ray"]And there's a number on it.
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]Yes, Ray. Are you worried about something?
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="Ray"]No.
+[name="Ray"]When the miners went in the shafts, they'd all bring their ID badges. That way, if somebody didn't come back, it's easy to figure out who.
+[name="Ray"]But pitsinkers are temporary workers. We don't get ID numbers or badges.
+[charslot(slot = "m", name = "avg_4117_ray_1#8$1")]
+[name="Ray"]I like this badge very much. Thanks.
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]Uh, no need to thank us...
+[name="Amiya"]It's what a corporation should do.
+[charslot(slot = "m", name = "char_002_amiya_1#3")]
+[name="Amiya"]Besides...
+[name="Amiya"]...If it pleases you, Rhodes Island can be your home, from here on out.
+[charslot]
+You see Ray lift her head to stare at Amiya all of a sudden.
+Just like the stare that Amiya felt a few days ago, when you two walked by her on the street.
+[charslot(slot = "m", name = "char_002_amiya_1#1")]
+[name="Amiya"]Right, Ray, why did you suddenly want to come to Rhodes Island... to be a pitsinker?
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="Ray"]You helped Potlid.
+[name="Ray"]I thought... I should've helped her too. I can't forget what happened that day, no matter what.
+[charslot(slot = "m", name = "avg_4117_ray_1#10$1")]
+[name="Ray"]And also...
+[charslot(slot = "m", name = "avg_4117_ray_1#6$1")]
+[name="Ray"]I want an answer.
+[name="Ray"]When the Feranmut woke up from its centuries-long sleep and asked me what exactly I wanted... all I asked was for him to send me and the sandbeasts to a safe place.
+[name="Ray"]At that moment, I felt no regrets about anything. As if being able to see it was more than enough.
+[charslot(slot = "m", name = "avg_4117_ray_1#1$1")]
+[name="Ray"]But I still want to know why I so longed for that light at the time. What exactly is it to me?
+[stopmusic(fadetime=2)]
+[charslot(slot = "m", name = "char_002_amiya_1#6")]
+[name="Amiya"]'At the time'? Ray, you mean...
+[name="Amiya"]...Ray? Are you asking me? Why?
+[charslot]
+You quickly realize that Ray is not looking at Amiya. Not at all.
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[delay(time=1)]
+[PlayMusic(key="$monastery_sad_loop", volume=0.6)]
+[PlaySound(key="$d_avg_sandwnd", volume=0, loop=true, channel="a")]
+[SoundVolume(volume=1, channel="a",fadetime=2)]
+[Background(image="46_g4_rmbtwild_d",screenadapt="coverall")]
+[backgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.1, yScaleTo=1.1, duration=30,block=false)]
+[CameraEffect(effect="Grayscale", amount=0.8, keep=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[name="Ray"]The Feranmut. My hallucination. Over ten years ago, I saw it in the Grinning Valley.
+[name="Ray"]At the time, I was with a team of hunters. There was a sandstorm. It was dark, and we got lost.
+[name="Ray"]I was still pretty short, so I could only see the people around me and their hunting crossbows. After some time, I couldn't walk anymore, and I couldn't see anything clearly.
+[name="Ray"]In the end, all I remember seeing was a huge shadow.
+[name="Ray"]And... a ray of pure, white light. It was narrow, but it penetrated the sands.
+[dialog]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1)]
+[name="Ray"]I heard a gentle whisper that drowned the howling winds.
+[dialog]
+[Blocker(a=0.4, r=0, g=0, b=0, fadetime=1)]
+[name="Ray"]All of a sudden, I wasn't afraid anymore.
+[dialog]
+[Blocker(a=0.3, r=0, g=0, b=0, fadetime=1)]
+[name="Ray"]Maybe it was just a dream that I had. The only thing I remember after it was waking up in a tent I'd never seen before.
+[dialog]
+[Blocker(a=0.2, r=0, g=0, b=0, fadetime=1)]
+[name="Ray"]But even if it was just a dream, I want to see the hallucination that has been with me all this time...
+[dialog]
+[StopSound(channel="a", fadetime=1)]
+[musicvolume(volume=0.2, fadetime=2)]
+[PlaySound(key="$d_avg_tinnitus", volume=1)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=1, block=true)]
+[CameraEffect(effect="Grayscale", amount=0, keep=true)]
+[Background(image="bg_light",screenadapt="coverall", duration=3, block=true)]
+[charslot(slot = "m", name = "char_002_amiya_1#6", duration=2)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=true)]
+[name="Amiya"]......
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="...Amiya.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", focus="n")]
+[Decision(options="Amiya?", values="1")]
+[Predicate(references="1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[musicvolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="Amiya"]Doctor, I...
+[dialog]
+[charslot(slot = "m", focus="n")]
+[Decision(options="Ray is gone.", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_002_amiya_1#4")]
+[name="Amiya"]Sorry. Just now, I...
+[name="Amiya"]...I saw it.
+[dialog]
+[charslot(duration=1.5, isblock=true)]
+[charslot(slot = "m", focus="n")]
+[Decision(options="You saw what?", values="1")]
+[Predicate(references="1")]
+[name="Amiya"]...I saw a Rhodes Island that was freshly dug out and covered by a canvas.
+[name="Amiya"]Its large shadow moved slowly through an Originium-covered wilderness in Rim Billiton.
+[name="Amiya"]The Sarkaz engineering team all had their faces covered to conceal their identities. Their vehicle was loaded with cannons, while architectural Arts forged blades.
+[name="Amiya"]The sandstorm was fierce, and the road ahead was dark. A long convoy followed Rhodes Island's tracks and marched onwards.
+[name="Amiya"]This is going to be a long, long road.
+[name="Amiya"]But... to save everyone from their hardships and to prevent an even crueler future, this is our greatest hope.
+[name="Amiya"]In the sands... the engineering team and a local team of hunters walked past each other...
+[name="Amiya"]I saw... her helping the trapped hunters, even though they were complete strangers...
+[dialog]
+[charslot]
+[charslot(slot = "m", focus="n")]
+[Decision(options="Hold on, Amiya...", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", focus="n")]
+[Decision(options="Whose eyes... did you see all that through?", values="1")]
+[Predicate(references="1")]
+[name="Amiya"]'Because I think it would be so nice if everyone could make it back to their own home.'
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="Right, Amiya. This landship has its own name. What's more, there's someone here who knows the meaning that was bestowed upon this 'Rhodes Island' when it was given this name.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Have you asked the Doctor? No, it's not because you're young that the Doctor didn't explain it to you.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="The Doctor simply thought it should be us and those who come after us to define what kind of ship Rhodes Island is. It's fine if the old definition gets left behind in the past.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="...At the very least, I think that line of thinking can at least partially be found in the Doctor's silence.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Because that is also how the Doctor sees the Doctor.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Knowledge cannot define the 'Doctor.' The Doctor thinks that the Doctor knows nothing. Memories cannot define the 'Doctor' either. The Doctor's memories could never again be found across these lands.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Amiya, do you trust the Doctor?", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Right, I do too, and one of the reasons I chose to trust the Doctor is because the Doctor reached a hand out to you back then.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="War, perseverance, civilization, hope. The extraordinarily long stretch of time, the burning stars, and the fated future. There are many, many thoughts so heavy they are unrecognizable within the Doctor's mind.  ", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="But the Doctor made a very simple wish.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="The very first coordinates that the Doctor picked out of that vast loneliness.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Amiya, this is your home. Perhaps one day, it will be you who will decide what 'Rhodes Island' means.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Right, it's only natural to feel scared. Ah, this may be very hard, but I really do hope that you won't fear giving the wrong response.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Don't be afraid. The idealistic path is unending. That's why it can't be walked all the way to the end by any one person.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="No matter when, and no matter why, if you're scared, you just need to find the people you trust and take their hands.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Huh? You're scared already? In that case, you can take my hand right now.", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Until that day...", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1.5)]
+[name="Amiya"]...Doctor, can I do this?
+[name="Amiya"]Do you trust me?
+[dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=1, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Background]
+[Image]

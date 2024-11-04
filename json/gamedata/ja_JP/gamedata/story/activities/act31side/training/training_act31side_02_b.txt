@@ -1,0 +1,27 @@
+[HEADER(is_tutorial=true, is_skippable=true, is_autoable=false)] 活动25side教学关02_b
+[Battle.Pause]
+[InputBlocker(blockInput=true, black=0.2)]
+[Tutorial(focusX=-90, focusY=-45, focusWidth=100, focusHeight=100, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black="$f_tut_black", \
+          protectTime=0.5, dialogHead="$avatar_jesica")]ど、どうしましょう！　ポンプが汚染水を噴き始めました！
+[PopupDialog(dialogHead="$avatar_nian", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]はぁ、がり勉が作ったこいつは水をくみ上げるだけで浄化はできねーんだ！　ポンプの後ろが<@tu.kw>病害に汚染</>された水田だと、くみあげた水も汚染されてるから<@tu.kw>病害を広げ</>ちまう！
+[PopupDialog(dialogHead="$avatar_nian", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]もちろん、どう広がろうが、病害の汚染具合は水源になった水田<@tu.kw>超えることはねー</>けどな。
+[PopupDialog(dialogHead="$avatar_nian", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]あと覚えとかなきゃならねーのは、病害を浄化して汚染を軽減できるのは、汚染されてない<@tu.kw>清水だけ</>ってことだな！
+[Battle.Pause(pause=false)]
+[Delay(time=1)]
+[Battle.Pause(pause=true)]
+[PopupDialog(dialogHead="$avatar_jesica")]ニェンさん！　天師たちが新しいポンプを届けてくれました！
+[PopupDialog(dialogHead="$avatar_nian", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")]仕事は早ぇな。それじゃ、私の指示に従えよ。
+[InputBlocker(blockInput=false)]
+[Battle.LockFunction(mask="SYSTEM_MENU")]
+[Battle.EnsureMinCost(cost=10)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_nian", animStyle="Drag", \
+          startX=-60, startY=60, startAnchor="BottomRight", endX=230, endY=45)] \
+新しく届いたポンプを<@tu.kw>ここに置いて</>……
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_nian", animStyle="Drag", \
+          startX=230, startY=45, endX=230, endY=-100)] \
+<@tu.kw>下向きに配置</>するんだ。
+[Battle.UnlockFunction(mask="SYSTEM_MENU")]
+[InputBlocker(blockInput=true, black=0.2)]
+[PopupDialog(dialogHead="$avatar_nian")]こうすりゃ、私もここに立ってることだし、ここらの水田はもう心配いらねーな。
+[PopupDialog(dialogHead="$avatar_nian")]んじゃ、さっさと残りの敵を片づけるぞ！

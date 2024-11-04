@@ -1,0 +1,124 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="47_g31_temple",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="Pepe"]Don't worry, those guys are gone for good now. They won't be following us anymore.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="I imagine they'll have a hard time squirming out anyway.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#11$1",focus="m")]
+[name="Pepe"]These crystals never stop growing. They may block the entrance, but they also make sure nobody breaks the stuff inside. It's all really well-preserved.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1200_1#11$1",focus="r")]
+[Decision(options="Are you able to give me an answer now?", values="1")]
+[Predicate(references="1")]
+[Decision(options="What exactly are these things used for?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="Pepe"]You better hold on tight to your jaws. Don't let 'em drop.
+[Dialog]
+[charslot]
+[PlaySound(key="$b_char_rock")]
+[delay(time=2)]
+[PlaySound(key="$b_char_rock")]
+[delay(time=3)]
+The girl gingerly wedges the two halves of the thick, heavy disc into the altar in the middle of the ancient witnessing chamber, every protrusion on its surface corresponding to a depression in the chassis.
+After completing this placement, the girl gently pushes the disc counterclockwise in an almost effortless manner.
+Even this tiny amount of force is enough to make the disc spin rapidly, the shaking of the ground from the disc's rotations palpable beneath your feet.
+[Dialog]
+[PlaySound(key="$d_avg_rockfall", volume=1)]
+[CameraShake(duration=2, xstrength=15, ystrength=15, vibrato=30, randomness=40, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[character]
+After many years of silence, this witnessing chamber is re-energized once more. Clear water gradually fills the pool, rays of light flow through crystalline stone, and the tremors beneath your feet become ever more evident.
+Finally, the shaking stops, and the countless rays of light converge into the middle of the pool to sculpt a tall figure.
+[dialog]
+[Image(image="pic_sandbox_1_5", fadetime=1, xScale=1.2, yScale=1.2,x=-50,screenadapt="coverall")]
+[ImageTween(image="pic_sandbox_1_5",xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, xTo=0, yTo=0,screenadapt="coverall",duration=20,block=false)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[delay(time=1.5)]
+[charslot]
+[name="Voice Within the Light and Shadow"]You... have... come.
+[Dialog]
+[name="Pepe"]Padishah Efendim...
+[name="Pepe"]Please forgive me for defiling this sacred place.
+[charslot]
+[name="Voice Within the Light and Shadow"]You have sought me. You have fulfilled your promise.
+[charslot]
+[name="Voice Within the Light and Shadow"]And so I shall honor mine, and hide the key within the timestream.
+[charslot]
+[name="Voice Within the Light and Shadow"]It shall guide you to <i>that place,</i> to all the wonders I wish to bestow upon your progeny.
+[charslot]
+[name="Voice Within the Light and Shadow"]May I, until the end of time, glimpse your countenance through their faces.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[character]
+[Image]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+The man's figure fades away, the light and shadow shifting into a small canyon in the pool.
+In what feels like only a few dozen seconds, the land rises and reforms, rivers change course, trees in the canyon grow and then wither rapidly, and everything warps beyond recognition through the erosion of time's passage.
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="Pepe"]I'm sorry, travelers, but our journey together ends here. I'm glad we met, and I hope I can travel with you again. 
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="Those notes...", values="1")]
+[Predicate(references="1")]
+[Decision(options="Did you leave them at the temple on purpose?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#8$1",focus="m")]
+[name="Pepe"]You saw?
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="Pepe"]I heard from the liaison officer that Rhodes Island is searching for ways to defeat the armies of the lords ameer. With all the smart people there, I figured they could probably help me.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="We helped you find the witnessing chamber.", values="1")]
+[Predicate(references="1")]
+[Decision(options="Is this your way of saying thanks?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="Pepe"]This is my gift. Take it to a local Messenger, they'll be able to get you some help.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="What about you then? Are you going to stay here?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#2$1",focus="m")]
+[name="Pepe"]Yes. I am getting close to <i>the answer.</i> I have to stay here to continue my search.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#2$1",focus="r")]
+[Decision(options="The image is changing too quickly.", values="1")]
+[Predicate(references="1")]
+[Decision(options="You'll have a hard time getting any information out of it.", values="1")]
+[Predicate(references="1")]
+[Decision(options="All it'll do is make your head spin.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="Pepe"]I won't give up.
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="Pepe"]It's my obsession. Mine, and my entire line's.
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="m")]
+[name="Pepe"]I'm glad to spend time on it.
+[dialog]
+[charslot(slot="m",name="avg_npc_1200_1#1$1",focus="r")]
+[Decision(options="Best of luck, then.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1200_1#5$1",focus="m")]
+[name="Pepe"]May we meet again.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

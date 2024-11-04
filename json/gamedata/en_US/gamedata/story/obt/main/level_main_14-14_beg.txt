@@ -1,0 +1,534 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[image(image="49_i22",screenadapt="coverall")]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.7, fadetime=0)]
+[Delay(time=1)]
+[playMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[Delay(time=1)]
+[name="Theresa"]I've been wondering when you'd come to see me, Kal'tsit.
+[name="Theresa"]You came too late, and you missed the most beautiful moment.
+[name="Theresa"]The first flower that budded died last night, but look at it now.
+[name="Kal'tsit"]It's full of vigor still.
+[name="Kal'tsit"]I see no difference compared to before.
+[name="Theresa"]Exactly.
+[name="Theresa"]It was born from the withering, and in an instant it became so healthy and strong.
+[name="Theresa"]*sigh*, if only you were able to witness for yourself this miracle born on top of Originium.
+[Dialog]
+[Delay(time=1)]
+This garden, built on top of Originium, is the fruit of Theresa's painstaking labor.
+Aside from war, the other path that Theresa found for the Sarkaz is close at hand.
+But what kind of future does this path lead to?
+[name="Kal'tsit"]Ever since you brought the Doctor here, you've been spending more time in the garden.
+[name="Kal'tsit"]Babel still has a lot that needs you, our chairman, to handle, but on top of that, you were absent from today's general meeting.
+[name="Theresa"]Not only do we have you, we also have the Doctor here now to help us. It's not much of a problem if I take it easy once in a while, isn't it?
+[name="Kal'tsit"]I know you, Theresa. You were never one to joke around when it came to important business.
+[name="Theresa"]Kal'tsit...
+[name="Kal'tsit"]Hm?
+[name="Theresa"]Do you know what the Doctor thinks?
+[name="Kal'tsit"]...
+[name="Kal'tsit"]No, I'm not sure what you've heard, but my guess is you do not have our mutual friend's full support.
+[name="Theresa"]I won't give up, Kal'tsit.
+[name="Theresa"]If this is how we're supposed to resolve the predicament that the Sarkaz is facing now, I'll go talk to Theresis.
+[name="Theresa"]I will show this path to all the Sarkaz, so that they know we aren't fated to live a vicious cycle of hatred.
+[name="Kal'tsit"]Theresa—
+[name="Theresa"]Kal'tsit, please hear me out first.
+[name="Theresa"]I know very well that this could be risky, but I trust you.
+[name="Theresa"]If you find me walking toward an uncontrollable future while I'm on this path, please pull me back.
+[name="Theresa"]I know you can do this, even though you always keep your opinions to yourself on many things.
+[name="Kal'tsit"]If you want that future you're hoping for to actually come true, we'll still have to earn the Doctor's support.
+[name="Kal'tsit"]When it comes to Originium utilization, the Doctor is... irreplaceable.
+[name="Kal'tsit"]But regardless of what awaits us at the end...
+[name="Kal'tsit"]...I promise you: when the time comes, I will be there by your side.
+[Dialog]
+[stopmusic(fadetime=3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[image]
+[charslot]
+[Background(image="37_g9_airshipdockcorridor", screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[delay(time=1)]
+[CameraShake(duration=4, xstrength=35, ystrength=35, vibrato=90, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$e_skill_explodebris",volume=0.8)]
+[PlaySound(key="$glass", volume=0.6,delay=0.5)]
+[playsound(key="$d_avg_snowstormlp", loop=true, channel="bgs",volume=0.1)]
+[SoundVolume(channel="bgs",volume=0.5, fadetime=4)]
+[PlayMusic(intro="$corrosion_intro", key="$corrosion_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[charslot(slot="m",name="npc_10002",duration=1)]
+[delay(time=1)]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[name="Mon3tr"](Menacing growl)
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]I got the Doctor. Stop growling.
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]Heh, relax. I won't let go.
+[Dialog]
+[charslot]
+The wind roars in your ears. Through the shattered porthole, you can see The Shard and the devastated battlefield below.
+The ceaseless barrage of intense explosions could fling you outside at any moment, and right now, the one who is holding onto your hand... is W.
+[Dialog]
+[Decision(options="...;...", values="1;2")]
+[Predicate(references="1;2")]
+You don't often see W acting this serious.
+[Dialog]
+[PlaySound(key="$Mon3tr_n")]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[name="Mon3tr"](Anxious growl)
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]I'm trying to think through something actually important, Mon3tr, so quit bothering me.
+[charslot(slot="m",name="avg_1035_wisdel_1#10$1",focus="m")]
+[name="W"]...
+[name="W"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#15$1",focus="m")]
+[name="W"]...
+[name="W"]You never really know the old hag, but she'd never take her chances with you.
+[name="W"]Since she insisted on bringing you along on such a dangerous boarding mission—
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]We'll definitely need you if we want to see Her Highness and stop this stinking ship.
+[name="W"]*Sarkaz expletive*. I've got no choice but to save you now.
+[name="W"]Come on up.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_clothmovementsp", volume=1)]
+[CameraShake(duration=1, xstrength=20, ystrength=30, vibrato=90, randomness=90, fadeout=true, block=false)]
+[stopSound(channel="bgs", fadetime=2.5)]
+[delay(time=2.5)]
+[Dialog]
+[Decision(options="...Thank you.;Back then—", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#10$1",focus="m")]
+[name="W"]Nothing happened back then.
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]Where do we go now?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="n")]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[Decision(options="I can still hear the bombs ticking on my back.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]That's for positioning. You can think of the explosion as, like, a bonus function.
+[name="W"]If you got swept away, I would've had to find you—
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]Shit, that reminds me. I should've given the old hag one, too.
+[PlaySound(key="$Mon3tr_n")]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[name="Mon3tr"](Disapproving growl)
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]It'd be a waste on you, you little freak.
+[name="W"]Now figure out which way we gotta go, you empty tin can.
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]We don't have much time. This stinking ship's about to crash into that weird thing out there...
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]If I have to die, it's gotta be after I meet Her Highness.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="n")]
+[Decision(options="You've been pretty antsy ever since we got on this ship.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]Oh? I saved your ass. You don't think that's me being more emotionally stable than usual?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="n")]
+[Decision(options="Is it because you're about to meet Theresa?;Is it because you're worried about Hoederer and Ines?;Is it because this is our first date without a third wheel?", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#6$1",focus="m")]
+[name="W"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]I gotta babysit for that old hag <i>and</i> figure out how to bump off that core right now.
+[name="W"]I don't have time for a Q&A.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]Gah, why would I be worried about <i>those two?</i>
+[name="W"]Ines knows how to bring back the dead like it's doing laundry.
+[name="W"]She'll take care of it.
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]...Don't you even dare to try provoking me.
+[name="W"]If it wasn't a moment like this, I swear you wouldn't have had the chance to ask that question.
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]So stop trying to annoy me with your dumb, self-righteous interrogation—
+[Dialog]
+[charslot]
+[stopmusic(fadetime=3)]
+[PlaySound(key="$d_avg_erthshkng", volume=1, loop=true, channel="shake")]
+[CameraShake(duration=2, xstrength=30, ystrength=30, vibrato=90, randomness=90, fadeout=true, block=false)]
+[stopsound(channel="shake", fadetime=4)]
+[delay(time=2.5)]
+The shadows emerge from the metal. They are everywhere.
+The revenant is anywhere and everywhere.
+It has already made it in front of W.
+[Dialog]
+[playMusic(intro="$katzdale_intro", key="$katzdale_loop", volume=0.6)]
+[PlaySound(key="$d_avg_humanchange", volume=1)]
+[charslot(slot="m",name="avg_npc_1340_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1340_1#1$1",focus="m")]
+[name="Shadow"]You are a Sarkaz, too! Are you turning a deaf ear to the myriad souls' anger and squall?!
+[name="Shadow"]You shouldn't—
+[Dialog]
+[charslot]
+[PlaySound(key="$d_sp_ballista",volume=0.9)]
+[CameraShake(duration=1.5,xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]Oops, my hand slipped.
+[name="W"]Right, you were saying?
+[name="W"]Hold on, I bet you're here to tell me where Her Highness is, aren't you?
+[charslot(slot="m",name="avg_npc_1340_1#1$1",focus="m")]
+[multiline(name="Shadow")]...
+[multiline(name="Shadow")]...
+[multiline(name="Shadow")]...
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_planeshake", volume=0.7)]
+[PlaySound(key="$d_avg_erthshkng", volume=1, loop=true, channel="shake1")]
+[PlaySound(key="$d_avg_scratchmetalwall", volume=1,delay=2)]
+[CameraShake(duration=3, xstrength=25, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=2)]
+The sound of the metal being torn apart continues. The entire airship is howling.
+[Dialog]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[name="Mon3tr"](Nervously hooks onto your clothes)
+[Dialog]
+[charslot]
+[Decision(options="The airship... is angry?;The revenant... is angry?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#6$1",focus="m")]
+[name="W"]Hm, looks like it's not really all that rational of a fella...
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]It's a good chance. Can you find out what's the place with the most energy fluctuation on this ship right now?
+[name="W"]That should be where its core is.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="n")]
+[Decision(options="...;...I don't know how to.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]...
+[charslot(slot="m",name="npc_10002",focus="m")]
+[name="Mon3tr"](Looks at W with a mocking expression)
+[Dialog]
+[charslot]
+[Decision(options="Hold on. I still have an idea.", values="1")]
+[Predicate(references="1")]
+[Decision(options="Maybe I can figure out which spot shows the highest change in Originium concentration!", values="1")]
+[Predicate(references="1")]
+[PlaySound(key="$d_avg_sandstormimpact", volume=0.6)]
+[CameraShake(duration=3, xstrength=45, ystrength=45, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#4$1",focus="m")]
+[name="W"]Well, then get on it! This asshole's even more impatient than I expected!
+[multiline(name="W")]Doesn't look like it'll wait till you're done...
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[multiline(name="W")]Ergh...
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]Hey, shadow freak, you know how guests are supposed to bring their hosts a gift when they visit?
+[charslot(slot="m",name="avg_1035_wisdel_1#7$1",focus="m")]
+[name="W"]Catch!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_explosion", volume=0.9)]
+[CameraShake(duration=2, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=3)]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]Little freak, you better keep this dipshit safe, or you're gonna get yourself grounded by the old hag.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[playsound(key="$char_Mon3tr",volume=0.6)]
+[name="Mon3tr"](High-pitched howl)
+[Dialog]
+[charslot]
+[Decision(options="This way! But the wall's so thick, the bombs won't blow—", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]You forgot about this guy, huh?
+[name="W"]Based on my tests before, it's got more than just a thick skin.
+[name="W"]Hold on tight to it, Doctor! I'll give you two a huge fireworks show!
+[name="W"]The moment it goes off, let it shield you from the impact and take you to the other side!
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]You got that, little freak?
+[charslot(slot="m",name="npc_10002",focus="m")]
+[playsound(key="$char_Mon3tr",volume=0.6)]
+[name="Mon3tr"](Excited howling)
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]Get ready, then. Three, two, one!
+[charslot(slot="m",name="avg_1035_wisdel_1#7$1",focus="m")]
+[name="W"]Boom!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_explo_n" ,volume=0.9)]
+[CameraShake(duration=3.5, xstrength=50,ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.8, block=true)]
+[delay(time=1)]
+[Dialog]
+[Decision(options="I can't see very well—;I'm feeling kinda dizzy—", values="1;2")]
+[Predicate(references="1;2")]
+[name="W"]Hur... ry...
+[Dialog]
+[PlaySound(key="$d_avg_tinnitus",volume=1)]
+[Decision(options="My ears can't... hear very well...", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[stopmusic(fadetime=2)]
+[stopSound(channel="shake1", fadetime=2)]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="37_g9_airshipdockcorridor", screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1")]
+[delay(time=0.5)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]Hey, {@nickname}, how you feeling now?
+[name="W"]I just checked the wall. I guess you guys didn't have to crash into the blast point with such perfect accuracy?
+[charslot(slot="m",name="avg_1035_wisdel_1#2$1",focus="m")]
+[name="W"]Sorry for making you suffer all that for nothing.
+[Dialog]
+[charslot]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[playsound(key="$char_Mon3tr",volume=0.6)]
+[CameraShake(duration=2, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Mon3tr"](Angrily waves claws)
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]Watch your claws, little beast. This one here is no match for you.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="n")]
+[Decision(options="Mon3tr, I'm okay. Let me down.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$1",focus="m")]
+[name="W"]You 'look' terrible. Heh, you can drop the act in front of me.
+[name="W"]You want me to believe you can't take this much? I don't buy it.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$1",focus="n")]
+[Decision(options="I'm worried about Kal'tsit...;If Amiya's running into these things too...", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$1",focus="m")]
+[name="W"]I don't remember the cat lady being that fragile. She—
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#10$1",focus="m")]
+[name="W"](She doesn't gasp for air much anymore, but she hasn't completely recovered yet... and she sent this little freak here...)
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$Mon3tr_n")]
+[name="Mon3tr"](Dejected howl)
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Alright, stop whining. It pisses me off.
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]Look how peppy you are. That means the old hag is fine.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$1",focus="m")]
+[name="W"]Ines told me the little bunny's already run into this thing once in Norport.
+[name="W"]She's got more experience than any one of us when it comes to dealing with it.
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]Heh, I bet she's more worried about me offing you rather than the revenant.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[name="Mon3tr"](Threatening howl)
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]Shut up. The old hag isn't here to back you up now.
+[name="W"]The little bunny's gonna be fine. Take my word for it.
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]{@nickname}, stop dawdling. Let's go—
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#8$1",focus="m")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#8$1",focus="n")]
+Standing in the corridor, W subconsciously looks outside the window and freezes for a moment.
+[charslot(slot="m",name="avg_1035_wisdel_1#8$1",focus="m")]
+[name="W"]...
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]Let's get going. We ain't got time for sightseeing.
+[Dialog]
+[charslot]
+You come to the window and look at the battlefield beneath you.
+The sky is still lit up by the Sighs of Kings's golden glow. Victoria's counterattack must have started.
+[Dialog]
+[Decision(options="Victoria's counterattack has begun.;I hope Rhodes Island will be of help...", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]Down there is a real hell now. No need to look anymore.
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="n")]
+[Decision(options="Were you... saddened by the battlefield?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]...More than enough Sarkaz have died.
+[name="W"]Keep up.
+[name="W"]I have lots of questions for Her Highness.
+[stopmusic(fadetime=1)]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[name="Mon3tr"](Looks around in alarm)
+[Dialog]
+[charslot]
+[Decision(options="...Mon3tr?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[PlaySound(key="$d_avg_land_impact", volume=0.8,delay=0.2)]
+[PlaySound(key="$d_avg_scratchmetalwall", volume=1,delay=0.4)]
+[CameraShake(duration=2, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[name="Mon3tr"](Attacks the ground furiously)
+[playMusic(intro="$plot_intro", key="$plot_loop", volume=0.6)]
+[Dialog]
+[PlaySound(key="$d_avg_shdwspllshrt",volume=0.7)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=1.5, block=true)]
+[charslot]
+[Background(image="bg_black",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=0.5, block=true)]
+A dark current of shadows silently appears at your feet and drags you toward the end of the hallway at an incredible speed.
+You can feel the tip of a sharp blade at the back of your neck.
+[Dialog]
+[Decision(options="There's more than just the revenant here—!", values="1")]
+[Predicate(references="1")]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[name="Mon3tr"](Low-pitched growling)
+[Dialog]
+[charslot]
+The black tide engulfs the struggling Mon3tr and keeps it from moving.
+[name="W"]*Sarkaz expletive*, trying to snatch my mark from under my eyes?!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_sp_ballista")]
+[playsound(key="$d_avg_explosion_stone", volume=0.8,delay=0.4)]
+[PlaySound(key="$d_avg_explosion", volume=0.6,delay=0.7)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$p_skill_Mon3trburst", volume=0.4)]
+[name="Mon3tr"](Angry howling)
+[name="W"]Come back!
+[Dialog]
+[charslot]
+You see a flash of light within the darkness at the end of the corridor, followed by a loud boom.
+[Dialog]
+[PlaySound(key="$e_skill_explodebris",volume=0.8)]
+[CameraShake(duration=4, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Background(image="37_g9_airshipdockcorridor", screenadapt="coverall", block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=true)]
+[PlaySound(key="$bodyfalldown1", volume=1)]
+[delay(time=1)]
+The force coming from behind you is so strong that it propels you out of the darkness and straight into the ground.
+[Dialog]
+[Decision(options="Ouch!;The bomb on my back?!", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]How's that? The latest propulsion unit with tracking. Not bad, huh? And like I said, the explosions are just a bonus.
+[name="W"]It'll still make you suffer for two or three days, though.
+[charslot(slot="m",name="avg_1035_wisdel_1#2$1",focus="m")]
+[name="W"]Hah, we make a great team, don't we?
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#2$1",focus="n")]
+[Decision(options="I never agreed to this team-up!;You could've reminded me beforehand!", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$1",focus="m")]
+[name="W"]It was never your call if or how we were gonna team up.
+[charslot(slot="m",name="avg_1035_wisdel_1#13$1",focus="m")]
+[name="W"]Hey, you in there. Bet that gave you a start, too?
+[Dialog]
+[charslot]
+[delay(time=0.5)]
+[stopmusic(fadetime=1)]
+[charslot(slot="m",name="avg_npc_1307_1#1$1",bstart=0.2,bend=0.7,duration=1)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_1307_1#1$1",bstart=0.2,bend=0.7,focus="m")]
+[name="???"]...
+[name="???"]You haven't changed, W.
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="m")]
+[name="W"]—?
+[Dialog]
+[PlayMusic(intro="$sacrifice_intro", key="$sacrifice_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_1307_1#1$1",bstart=0.2,bend=0.7,focus="m")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=false)]
+[delay(time=1)]
+[charslot(slot = "l", name = "avg_npc_1307_1#1$1",posfrom = "0,0", posto = "200,0",focus="n")]
+[charslot(slot = "m", name = "avg_npc_1307_1#1$1",bstart=0,bend=0,duration=2,focus="m")]
+[delay(time=2)]
+[charslot(slot="m",name="avg_npc_1307_1#1$1",focus="m")]
+[name="Airship 'Apparition'"]You cannot go any further.
+[name="Airship 'Apparition'"]And you... <i>Doctor</i>.
+[Dialog]
+[charslot]
+[Decision(options="You... are alive.", values="1")]
+[Predicate(references="1")]
+[Decision(options="Have we met before?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1035_wisdel_1#5$1",focus="m")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#6$1",focus="m")]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#9$1",focus="m")]
+[name="W"]...
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+She remembers the day she returned to Babel.
+[Dialog]
+[Image(image="49_i16_1",screenadapt="coverall",block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.7, fadetime=0)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+She remembers that broken door and the blood-stained logo...
+And... those assassins hiding under their masks.
+They took Theresa's life.
+That Theresa.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2.5, block=true)]
+[charslot]
+[image]
+[Background(image="37_g9_airshipdockcorridor", screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="n")]
+W finds herself exceptionally calm right now.
+[charslot(slot="m",name="avg_1035_wisdel_1#12$1",focus="m")]
+[name="W"]You're gonna die.
+[name="W"]And it'll be a really horrible death.
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[image]

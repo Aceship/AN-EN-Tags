@@ -1,0 +1,21 @@
+[HEADER(is_skippable=false, is_tutorial=true)] 出击规则&天气&狩猎关
+[SandboxV2.EnsureDungeonQuest(questId="training_1", isForceTutorial=true)]
+[SandboxV2.EnsureDungeonStable]
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama")] 生息演算へようこそ。正式に演算を始める前に、この地でうまく生き残るための基本を私から伝えさせてもらおう。
+[SandboxV2.DungeonFocusNode(focusType="PURE_CAMERA_ZOOM", zoomType="FAR")]
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama")] この演算において、大地は様々な<@tu.kw>エリア</>で構成されている。ここで、よくあるエリアのタイプを事前に紹介しておこう。
+[Tutorial(target="sandbox_dungeon_left_slider", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 加えて、ここからマップを拡大、縮小して、周囲の環境をより明確に確認することもできるぞ。
+[SandboxV2.DungeonFocusNode(focusType="PURE_CAMERA_ZOOM", zoomType="NEAR", focusNodeId="nF6AB")]
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, target="btn_sandbox_dungeon_center_node", waitForSignal="sandbox_v2_dungeon_node_preview_routed", animStyle="Click",            focusStyle="HighlightRect", black="$f_tut_black", dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 最初の目的地は<@tu.kw>狩猟エリア</>だ。そこで、狩猟について教えるとしよう。
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, target="btn_sandbox_dungeon_node_preview_weather", waitForSignal="sandbox_v2_dungeon_weather_preview_panel_routed", animStyle="Click",            focusStyle="HighlightRect", black="$f_tut_black", dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] ここから、出発前に、目標エリアの天気を確認しておくことができるぞ。
+[Tutorial(target="btn_sandbox_dungeon_weather_preview_panel", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] 運が良いな。目的地の天気は良好だ。晴天と出ている。
+[Tutorial(target="btn_sandbox_dungeon_weather_preview_panel", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama",           dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] これが運の悪い時には、様々な悪天候に遭遇することになる。天候不順は戦闘中のオペレーターや、その地の生物、環境、資源に様々な影響を与えてくるぞ。
+[Tutorial(protectTime=0.8, target="btn_sandbox_dungeon_node_preview_start_battle", waitForSignal="sandbox_v2_squad_state_routed", animStyle="Click",            focusStyle="HighlightRect", black="$f_tut_black", dialogHead="$avatar_zumama")] では、行動準備を始めよう。
+[Delay(time=0.5)]
+[Tutorial(protectTime=0.8, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] ここでは、オペレーターや支援道具、拡張設備の配置確認、および変更ができる。
+[Tutorial(target="btn_sandbox_v2_squad_drink_display", animStyle="Highlight", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] 演算における注意すべきポイントとして、オペレーターたちは正常な行動を取るために、十分な量の<@tu.kw>エナジードリンク</>を飲まねばならない。
+[Tutorial(target="btn_sandbox_v2_squad_btn_battle", animStyle="Click", focusStyle="HighlightRect", black="$f_tut_black",           protectTime=0.8, dialogHead="$avatar_zumama")] よし、それでは行動開始だ。目的地で待っているぞ！

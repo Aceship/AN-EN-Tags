@@ -1,0 +1,66 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="8", y="7", charId="trap_471_tegmaus", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="10", y="7", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[foginview(leftBottomX="5", leftBottomY="5", rightUpX="11", rightUpY="12", id="fog_1")]
+[camerafocusto(id="trap_471_tegmaus", offsetX="1", scale="CLOSE", time="1")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]止まりたまえ！　それ以上近付けば、遠慮はしないよ。ずっと私の後を付けてくるとは、一体何のつもりなのだね！
+[decision(option1="この手記は君の物か？", value1="1.1")]
+[predicate(references="1.1")]
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]なんと、この手記を返すためだけに、私を追い続けてきたと？
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]数日前、霊殿に泊まった時にそれを落としていっただろう。肌身離さず持ち歩いていたから、多分お前にとって大切な物なんだろうってあそこの祭司が言ってたんでな。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]ちょうど、私たちの行き先もお前が向かった方向と同じだったから、ついでに手記を返そうと思って追いかけてきたんだ。
+[camerafocusto(id="trap_471_tegmaus", scale="CLOSE", time="1")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]ありがとう。報酬が必要かな？　いくら欲しいか言ってみたまえ。
+[decision(option1="古代遺跡について知りたい。", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="その手記は、例の宝と何か関係があるのか？", value1="3.1")]
+[predicate(references="3.1")]
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]好奇心は人を殺すこともあるのだよ。
+[decision(option1="君が指名手配されているのはそのせいか？", value1="4.1")]
+[predicate(references="4.1")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]君たちは、首長軍に目をつけられるのが怖くはないのかね？　奴らもそれを探しているのだよ。
+[decision(option1="すでに目をつけられているんだ。", value1="5.1")]
+[predicate(references="5.1")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]そうか。では、もしも知りたいと言うのなら、「円盤」の片割れを探すのを手伝ってはくれないか？
+[decision(option1="「円盤」というのは？", value1="6.1")]
+[predicate(references="6.1")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]私の手記を読んだかね？
+[decision(option1="ああ、もちろん！", value1="7.1", option2="めくりはしたが、細かくは見ていない。", value2="7.2")]
+[predicate(references="7.1")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]まあ、どちらでもいいか。とにかく、要するにそれは石でできた巨大な円盤なんだ。
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]伝説によると、かつて砂の島でそれを見た人物がいるらしい。
+[decision(option1="伝説……島……", value1="8.1")]
+[predicate(references="8.1")]
+[decision(option1="わかった、引き受けよう。", value1="9.1")]
+[predicate(references="9.1")]
+[decision(option1="君のことは何と呼べばいい？", value1="10.1")]
+[predicate(references="10.1")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]そうだな……
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]では、ペペと呼んでくれ。
+[withdraw(id="trap_471_tegmaus")]
+[withdraw(id="trap_467_ttuye")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]
+[predicate(references="7.2")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]まあ、どちらでもいいか。とにかく、要するにそれは石でできた巨大な円盤なんだ。
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]伝説によると、かつて砂の島でそれを見た人物がいるらしい。
+[decision(option1="伝説……島……", value1="11.1")]
+[predicate(references="11.1")]
+[decision(option1="わかった、引き受けよう。", value1="12.1")]
+[predicate(references="12.1")]
+[decision(option1="君のことは何と呼べばいい？", value1="13.1")]
+[predicate(references="13.1")]
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]そうだな……
+[name="？？？", avatarId="bavg_npc_001", isAvatarRight="FALSE"]では、ペペと呼んでくれ。
+[withdraw(id="trap_471_tegmaus")]
+[withdraw(id="trap_467_ttuye")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

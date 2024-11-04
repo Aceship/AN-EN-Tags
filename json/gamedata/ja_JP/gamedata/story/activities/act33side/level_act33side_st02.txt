@@ -1,0 +1,684 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[charslot(slot = "left", name = "avg_npc_1360_1#1$1",duration = 1.5,bstart=0.1,bend=0.4)]
+[charslot(slot = "right", name = "avg_npc_083",duration = 1.5)]
+[delay(time=2.5)]
+[charslot(slot = "right",focus="r")]
+[name="プリースティス"]あなたにプレゼントを用意したわ、{@nickname}。
+[name="プリースティス"]何が聞こえる？
+[charslot(slot = "l",focus="l")]
+[name="？？？"]これは……
+[charslot(slot = "right",focus="r")]
+[name="プリースティス"]まだ覚えてるかな。これは、AMa-10が誕生した時に生じた偏光よ。あなたはこの波形の中にメロディーを見つけたって言ってたでしょ。今のこれには私の「個人的創作」も加えてあるけどね。
+[name="プリースティス"]遠惑星の軌道アレイの方向を調整することで異なるエコーを捉え、ハーモニーは恒星消滅時のニュートリノの余韻から抽出、楽器編成は船がスターゲートを通過する時に残る重力のひだによるものよ。
+[name="プリースティス"]あぁ……{@nickname}なら気に入ってくれると思っていたわ。
+[charslot(slot = "l",focus="l")]
+[name="？？？"]宇宙の歌声は……今この瞬間であってもこの上なく感動的だ。
+[name="？？？"]しかしこれでは、我々が自ら定めた原則を破ることになるぞ。これらの施設は本来、定められた軌跡を永遠に辿るだけのはずだった。
+[charslot(slot = "right",focus="r")]
+[name="プリースティス"]星々は今まさに色あせているところじゃない。この世界にはもう原則なんてないわよ。違う？
+[name="プリースティス"]ここもすぐに静かになるわ。私たちが来たことなんて忘れちゃったみたいに。
+[charslot(slot = "l",focus="l")]
+[name="？？？"]……
+[charslot(slot = "right",focus="r")]
+[name="プリースティス"]静寂に帰す前に、少し歩きましょう。
+[name="プリースティス"]願わくば……この世界の未来を{@nickname}と共に見られますように。
+[PlaySound(key="$d_avg_signlntrfrnc", volume=0.8)]
+[bgeffect(name="$eb_signalInterference",layer=1)]
+[charslot]
+[dialog]
+[Delay(time=3)]
+[Sticker(id="st1", text="「そうなるさ……あの世界で君を待っている。」", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=1)]
+[Sticker(id="st1",duration=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$tech_intro", key="$tech_loop", volume=0.6)]
+[Delay(time=1)]
+[interlude(maskid = "ui_cutin_mask_horizon", style = 1, size = "1280, 100",offset = "0,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_black", afrom = 0, ato = 1, aduration = 0.3,sfrom = "1.3,1.3", sto = "1.3,1.3", sduration = 0, block = false)]
+[Sticker(id="st1",  text="四年前", duration=1,x=300,y=325, alignment="center", size=24, delay=0, width=700,block="false")]
+[Sticker(id="st2", text="1090年夏" ,duration=1,x=300,y=365, alignment="center",size=24, delay=0, width=700)]
+[Sticker(id="st1", duration=1)]
+[Sticker(id="st2", duration=1)]
+[interlude(channel = 2, clear = true)]
+[Delay(time=1.5)]
+カズデル地区　バベルロドス本艦
+[dialog]
+[charslot(slot="m",name="avg_npc_050",duration=1)]
+[delay(time=2)]
+[name="クロージャ"]ふぅ！　電路の改造がようやく終わった。これでそこそこの衝撃に耐えられるはず……だよね？
+[name="クロージャ"]ケルシーったら四十八時間ぶっ続けで働かせるんだから……あとで絶対殿下に言いつけてやる！
+[dialog]
+[playsound(key="$d_gen_transmissionget")]
+[CharacterCutin(widgetID="1", name="avg_npc_1311_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=-400, width=300, block=true)]
+[Delay(time=0.5)]
+[charslot(slot = "m", focus = "n")]
+[name="Scout"]本艦の通信範囲に入ったことを確認、信号はクリア。あんたがこっそり仕込んだ小基地局は随分役に立ちそうだな、クロージャ。
+[charslot(slot = "m", focus = "m")]
+[name="クロージャ"]あったりまえでしょ！　殿下ですら見たことないとっておきなんだからね！
+[charslot(slot = "m", focus = "n")]
+[name="Scout"]それで、殿下たちの「研究」は終わったのか？
+[charslot(slot = "m", focus = "m")]
+[name="クロージャ"]何回か強めのエネルギー負荷を掛けてみたけどそれでエンストしかけてたから、次の衝撃にも耐えられるようロドスの補強をしてるとこだよ。
+[name="クロージャ"]船の駆動音を誤魔化すのはだいぶ苦労したんだから。軍事委員会の偵察者に尻尾をつかまれでもしたら――
+[dialog]
+[playsound(key="$d_gen_transmissionget")]
+[CharacterCutin(widgetID="2", name="avg_4132_ascln_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=400, width=300, block=true)]
+[Delay(time=0.5)]
+[charslot(slot = "m", focus = "n")]
+[name="アスカロン"]安心しろ。周囲のターゲットはすべて片づけた。準備に集中するといい。
+[name="アスカロン"]Scout、報告を。
+[name="Scout"]潜入任務は完了した。今バベルに情報を送信しているところだ。
+[name="アスカロン"]都市内の状況は？
+[name="Scout"]ここ数年の変化はほとんどないようだ。天災は少なく、大して移動もしていない。
+[name="Scout"]だが正直、俺たちの現状は芳しくない。軍事委員会がこのまま俺たちの戦略的余白を削り続けたなら――
+[name="アスカロン"]殿下とケルシーを信じろ。
+[name="Scout"]……そうだな。彼女たちがこれほどの間、今日の実験の準備を進めてきたのは、この不利な状況を逆転させるためだものな。
+[charslot(slot = "m", focus = "m")]
+[name="クロージャ"]そうだ、Scout。あたしの家に保管してた装置は手に入れてくれたよね！？
+[charslot(slot = "m", focus = "n")]
+[name="Scout"]バベルへ届けるよう、トランスポーターに依頼済みだ。
+[charslot(slot = "m", focus = "m")]
+[name="クロージャ"]よかったー！　ケルシーとあたしで作った秘密兵器があれば、この船のあのへんてこな制御システムを絶対ものにできるよ。
+[charslot(slot = "m", focus = "n")]
+[name="アスカロン"]トランスポーターは私が迎えに行こう。荷物の無事が確認でき次第本艦に送る。
+[name="アスカロン"]失踪したエンジニアに手を下したスパイの捜索はまだ続いている。現状、本艦の脅威が完全に取り除かれたとは言えないのでな。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[CharacterCutin(widgetID="2",fadetime=0)]
+[CharacterCutin(widgetID="1",fadetime=0)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot="m",name="avg_4131_odda_1#10$1",duration=1)]
+[delay(time=1.5)]
+[name="オッダ"]クロージャさん！　言われた通り追加の材料を運んできたよ。これすっげー重いな！
+[charslot(slot="m",name="avg_npc_050")]
+[name="クロージャ"]ありがとう、オッダちゃん！　よし、殿下とケルシーのために、もうちょっと手厚い安全措置がしてあげられそう。
+[name="クロージャ"]予備の電路も追加で組み込んどこう。今回こそ、万が一があっちゃいけないから……
+[charslot(slot="m",name="avg_4131_odda_1#1$1")]
+[name="オッダ"]ほかに手伝えることはある？
+[charslot(slot="m",name="avg_npc_050")]
+[name="クロージャ"]ううん、オッダちゃんも早くほかの人と一緒に安全エリアまで避難しちゃって。次に衝撃が起こるのは……約三十分後の予定だから。
+[dialog]
+[charslot(slot="m",name="avg_4131_odda_1#1$1")]
+[delay(time=0.5)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1.5)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_050")]
+[name="クロージャ"]これで全部オッケーっと。
+[name="クロージャ"]うーん、気になるなぁ……ケルシーと殿下がやってるエネルギーモジュールと防御モジュールに対する秘密の改造に、ヘンテコな調査研究は……一体どんな実験をやるためなんだろ？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="ケルシー"]あの者は源石を最も理解する人物だ。
+[charslot(slot = "right", name = "avg_npc_1296_1#8$1",focus="r")]
+[name="テレジア"]……
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="ケルシー"]源石により生まれる苦難を解決しようというのなら……
+[name="ケルシー"]あの者が最も相応しい人選だろう。
+[charslot(slot = "right", name = "avg_npc_1296_1#8$1",focus="r")]
+[name="テレジア"]あなたはいつも、魔王の私ですらにわかには信じがたい話を届けてくれるわね。感心するわ……
+[charslot(slot = "right", name = "avg_npc_1296_1#10$1",focus="r")]
+[name="テレジア"]あの装置は本当にまだ機能するのかしら……あなたは今も、その人が変わりなく目覚めることを信じているの？
+[name="テレジア"]テラのほとんどの生命体は、これほど長きに渡る時間の浸食に抗うことはできないわ。
+[charslot(slot = "left", name = "avg_003_kalts_1#3$1",focus="l")]
+[name="ケルシー"]……
+[charslot(slot = "left", name = "avg_003_kalts_1#1$1",focus="l")]
+[name="ケルシー"]現在のテラは間違いなく奇跡の賜物だ。君もな、テレジア。
+[name="ケルシー"]しかし過去の彼らにとっては、太陽を取り巻いて運行する星系全体ですら、この上なくちっぽけなものに過ぎなかった。
+[charslot(slot = "right", name = "avg_npc_1296_1#8$1",focus="r")]
+[name="テレジア"]……少し緊張しているわね。それから焦りと不安も感じる。
+[name="テレジア"]ほかにまだ何か心配事でもあるの？
+[charslot(slot = "left", name = "avg_003_kalts_1#14$1",focus="l")]
+[name="ケルシー"]……ある。
+[name="ケルシー"]だが……言えない。
+[charslot(slot = "right", name = "avg_npc_1296_1#7$1",focus="r")]
+[name="テレジア"]ああ、気にしないで！　気を散らせてしまってごめんなさい。集中してちょうだい。何も言わなくても私は感じられるから。
+[charslot(slot = "right", name = "avg_npc_1296_1#8$1",focus="r")]
+[name="テレジア"]……
+[name="テレジア"]「ケルシー」……あなたはこの名前を愛しているのね。
+[charslot(slot = "left", name = "avg_003_kalts_1#3$1",focus="l")]
+[name="ケルシー"]……
+[charslot(slot = "left", name = "avg_003_kalts_1#2$1",focus="l")]
+[name="ケルシー"]私は……あの歳月における他の記憶を忘れてしまった。およそすべてと言っていい。
+[charslot(slot = "left", name = "avg_003_kalts_1#1$1",focus="l")]
+[name="ケルシー"]だが唯一、はるか遠くの過去において、ある人がこの名をくれたことだけは覚えている。
+[name="ケルシー"]「ケルシー」と。
+[name="ケルシー"]あれが、私たちが顔を合わせた最後の時だった。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[image(image="49_i06_1",screenadapt="coverall")]
+[Sticker(id="st1", text="「ケルシー……この身に残された時間はもう多くない。」", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=0.5)]
+[Sticker(id="st1",duration=0.5)]
+[Delay(time=0.6)]
+[Sticker(id="st1", text="「君は生命の痕跡を、希望と未来を探しに行くんだ。」", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=0.5)]
+[Sticker(id="st1",duration=0.5)]
+[Delay(time=0.6)]
+[Sticker(id="st1", text="「ケルシー……君自身で答えを導き出すんだ。」", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=0.5)]
+[Sticker(id="st1",duration=0.5)]
+[Delay(time=0.6)]
+[Sticker(id="st1", text="「君自身を、見つけるんだ。」", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=0.5)]
+[Sticker(id="st1",duration=0.5)]
+[Delay(time=1.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="テレジア"]なら、ためらう必要なんてないわ、ケルシー。
+[name="ケルシー"]わかっている、ただ……
+[name="ケルシー"]……常にある予感が……懸念、あるいは推測が頭から離れない。
+[name="ケルシー"]大地の始まり、生命が芽生えたばかりのある時点において、永遠に覆すことのできない出来事がこの地で発生したのではないか、と。
+[name="ケルシー"]だが、私には知る由もない。
+[name="テレジア"]ケルシーが信頼を置けるような人なら、私は何も心配しないわ。
+[name="テレジア"]それに、ケルシーの慎重さなら、とうに用意してあるであろう対応策のことまで私が気にかける必要なんてないはずだから。
+[name="ケルシー"]いや……すまない、テレジア。
+[name="ケルシー"]この件に関してだけは、どれだけ予備の対応策を用意していようとも確固たる自信を持つことはできない。
+[name="ケルシー"]……テレジア、私には自分が常に最も理性的な選択を下せるという保証はできない。
+[name="ケルシー"]そして、今回私は……信じることを選ぶ。
+[name="テレジア"]大丈夫よ、自分の選択を信じて。私はここにいる、あなたのそばにいるから。
+[stopmusic(fadetime=2)]
+ケルシーの手は、どれほどの歳月沈黙していたかもわからぬ扉にすでに触れていた。
+ロドスは再び衝撃による震動を迎えた。
+[CameraShake(duration=2, xstrength=3, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+扉が、動く。
+[dialog]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="「源石は我々の文明が凝縮してできたビーコンとなる……」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「いつの日か、死した故郷に広い宇宙のどこからか他の生命体が訪れ、現状を打破する方法を探し求めたとき――」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「彼らは目の当たりにするでしょう……」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「我々が輝いたことを。」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「我々が抗ったことを。」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「我々がここに眠ることを。」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「我々が破滅を目前にして、後に続く者へと贈ったもの――」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="「――希望を。」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[image(image="49_i06_1",screenadapt="coverall")]
+[imgeffect(name="$ib_gateopen", image="49_i06_2")]
+[Dialog]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_gateopen", volume=1)]
+[Delay(time=2)]
+[image(image="49_i06_2",screenadapt="coverall",fadetime=5)]
+[Delay(time=2)]
+[PlayMusic(intro="$lab_intro", key="$lab_loop", volume=0.6)]
+[Delay(time=2)]
+[name="？？？"]（未知の言語）ここは……
+[name="？？？"]（未知の言語）もう……その時が……訪れたのか？
+[playsound(key="$d_avg_labamb", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.6, channel="bgs",fadetime=2)]
+[dialog]
+[Delay(time=2)]
+[PlaySound(key="$alarmenter", volume=0.8)]
+[Blocker(a=0.3, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+[Blocker(a=0, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+警告：未知なるエネルギーのアクティベートが検知されました。
+[dialog]
+[PlaySound(key="$alarmenter", volume=0.8)]
+[Blocker(a=0.3, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+[Blocker(a=0, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+警告：PRTSシステム権限への干渉を確認……
+[dialog]
+[PlaySound(key="$alarmenter", volume=0.8)]
+[Blocker(a=0.3, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+[Blocker(a=0, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+警告：PRTSシステム権限が操作されてい――
+PRTSシステム権限を再設定しました。管理者権限を確認しました。
+通信モジュール全周波数開放、通信受信モジュールオーバークロック完了。
+[PlaySound(key="$d_avg_scan")] 
+検索：保存者……信号なし。
+検索：紺碧の樹……信号なし。
+検索：天国の支点……信号なし。
+検索：（未知の雑音）……信号なし。
+……
+検索完了、全周波数に信号なし。
+再試行しますか――
+[name="？？？"]（未知の言語）反応が……ない……
+[name="？？？"]（未知の言語）自分……だけ……
+[name="？？？"]（未知の言語）時間は……どれだけ経った？
+[PlaySound(key="$d_avg_scan")] 
+プロセスログファイルを検索中……
+最新更新日：四百七十五万五千九百五十四日前。
+[name="？？？"]……
+バイタルサインデータに大きな異常を検知しました。修復モジュールを自動ロードします。
+修復中――
+[name="？？？"]（未知の言語）目覚めるのが……早すぎたのか……それとも……遅すぎたのか？
+[name="？？？"]（未知の言語）源石は……どの段階にある？
+[PlaySound(key="$d_avg_scan")] 
+源石検出履歴データを検索……反応なし。
+[StopSound(channel="bgs", fadetime=2)]
+源石検出モジュールはオフラインです。
+[name="？？？"]……
+[name="？？？"]（未知の言語）「テラ」……
+[name="？？？"]（未知の言語）なぜこんなにも……余計な情報が……保存されている……
+[name="？？？"]（未知の言語）これは……データベースに記録されていない……新たな言語？
+[name="？？？"]（未知の言語）文明は……すでに……誕生した……？
+[name="？？？"]（未知の言語）残ったのは……自分……だけ……プリースティス、彼女はどうした……
+[name="ケルシー"]（未知の言語）私が君の疑問に答えよう。それらの資料は以前私がPRTSに保存したものだ。
+[name="？？？"]（未知の言語）……君が？
+過去に留まる者の目に浮かんだのは、眼前のものに対する見慣れぬ感覚、疑問、そして……警戒だった。
+ケルシーは石棺の中の人物と鋭い視線を交わした。
+そして、テレジアはケルシーの緊張を感知した。
+[name="？？？"]（未知の言語）いや、待て……
+[name="？？？"]……
+[name="？？？"]……
+[name="？？？"]（未知の言語）君は随分と変わったが……
+[name="ケルシー"]……
+目覚めたばかりの人物は、石棺の中でごく短い夢を見ていただけであるかのような感覚を抱いた。
+眠りにつく前に別れを告げた生命が、目覚めの瞬間もまた自分のそばで見守っていたのだから。
+[name="？？？"]（未知の言語）……そばを離れなかったのか。
+[name="ケルシー"]（未知の言語）いいや……離れていた。今こうして君の前に立つまでに――
+[name="ケルシー"]（未知の言語）私はすでに万を超える年月を歩いた。
+[name="ケルシー"]（未知の言語）しかし、君が私に残した課題を忘れたことはない――
+ケルシーは不安げに時を待った。彼女には確かめるべきものがあるのだ……
+今しがた目覚めた彼女の希望に、恐ろしい変化が起こっていないかを。
+[name="？？？"]……
+[name="？？？"]（未知の言語）あれは……課題ではない。あれは……ある種の期待だ……
+[name="？？？"]（未知の言語）ならば君は……すでに自らの生命の意味を見つけたのか？
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="「ケルシー……」", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[imgeffect]
+[Delay(time=1)]
+[image]
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Delay(time=1)]
+[name="ケルシー"]（未知の言語）生命存続の意味を探す――それは私がこの先も歩み続けなければならない道だ。
+[name="ケルシー"]（未知の言語）覚えているんだな……
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1360_1#1$1",duration=1)]
+[delay(time=2)]
+[name="？？？"]（未知の言語）ああ、覚えている……君との別れはまるで昨日のことのようであり、現実離れしたはるか遠くの出来事のようでもある……
+[name="？？？"]（未知の言語）しかし君にとっては……
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="ケルシー"]（未知の言語）これまで一瞬たりとも、君が私のためにした努力を忘れたことはない。
+[name="ケルシー"]（未知の言語）Dr.{@nickname}、生命以外に、君はもう一つ最も大切なものを与えてくれた――自由というものを。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="？？？"]（未知の言語）やはり……ドクターと呼んでくれ、ケルシー。
+[name="ドクター"]（未知の言語）とにかく……まずはここから出よう……
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="ケルシー"]（未知の言語）まだ完全には回復していないだろう。私が支え――
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]（未知の言語）いや、大丈夫だ……
+[name="ドクター"]（未知の言語）それよりも、ケルシー……あまりにも多くの疑問がある。
+[name="ドクター"]（未知の言語）源石はどうなった……関連の記録が見つからない。
+[charslot(slot = "m", name = "avg_003_kalts_1#5$1")]
+[name="ケルシー"]……
+[name="ケルシー"]（未知の言語）源石は変わらず外の大地で成長している。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]（未知の言語）つまり、目覚めるのが早すぎたということか。
+[charslot(slot = "m", name = "avg_003_kalts_1#9$1")]
+[name="ケルシー"]……
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]（未知の言語）君は随分と苦労をしたようだ、ケルシー。
+[name="ドクター"]（未知の言語）目を見ればわかる。何か助けが必要になったから起こしたのだろう？
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="ケルシー"]（未知の言語）私ではなく、私たちが君の手助けを必要としているんだ。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]（未知の言語）あぁ。そちらの「悪魔」もかな？
+[name="ドクター"]（未知の言語）そちらの友人の体には、源石が予期せぬ形で存在しているだけでなく……
+[name="ドクター"]（未知の言語）彼女は……ああ、「文明の存続」も有している。
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="ケルシー"]（未知の言語）現在の文明に至るまでの発展の軌跡は……とても複雑なんだ。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]（未知の言語）では名前……この者たちの文明においても、その存在を指し示す類いの呼称はあるのか？
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="ケルシー"]テレジア。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]テ……レ……ジ……ア……
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1)]
+目覚めた者はテレジアの前まで歩み寄り、両手を差し伸べると、手の平を見せた。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[image(image="49_i21_1",screenadapt="coverall")]
+[ImageTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.1, yScaleTo=1.1, duration=30, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+テレジアも手を伸ばし、過去から来た人物の両手を支えるように持つ。
+ドクターは温かさを感じた。
+[name="テレジア"]ええ、テレジアよ。
+二つの文明の接触。しかし、テレジアはこの過去から来た者の目に悲しみを見た。
+テレジアは目の前の者の手から温度を感じられなかった。
+[name="ドクター"]源石が……君……と……一体化している。
+[name="テレジア"]……私たちの言語がわかるの？
+[name="ドクター"]記録の……中……から……学んだ。難しくは……ない。
+[name="テレジア"]信じられない！　私もあなたたちの言語を学びたいわ。ケルシーが――
+[name="ドクター"]我らの世界は……すでに失われた。過去の言語は……過去に留まるべきだ。
+[name="ドクター"]それよりも……君たちにとても興味がある。君は「文明の存続」に気づき……ひいてはそこに入り込んでいる。
+[name="ドクター"]教えて……ほしい――
+[name="ドクター"]君たちの文明に関する、すべてを。
+[name="ドクター"]そうすれば、ようやく自分の……過去の世界の手がかりを見つけられるかもしれない。
+[name="テレジア"]……わかったわ。
+[name="テレジア"]えーっと、「ドクター」、そう呼べばいいのよね。じゃあ失礼するわね、私の手を離さないで。
+[name="テレジア"]あなたに見せてあげるわ――
+ドクターは思わず、この「悪魔」のような見た目の生き物の両目に引き込まれた。
+そこに――自らの世界を失った人物は、「悪魔」の目の中に――
+[stopmusic(fadetime=2)]
+――生命を見た。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[image]
+[Background(image="45_g10_iceonlake",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1296_1#1$1",duration=1)]
+[delay(time=2)]
+[name="テレジア"]文明は生物の本能から生まれ、優れしものは栄え、劣りしものは淘汰されていく。
+[name="テレジア"]強者は弱者を捕食し、生存の循環はこうして起こる。
+[dialog]
+[charslot]
+[playsound(key="$d_avg_pcknmgrwl")]
+[delay(time=1)]
+[name="駄獣"]（弱々しい悲しげな鳴き声）
+[CameraShake(duration=0.5,xstrength=10, ystrength=5, vibrato=10, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_watersubcreate")]
+割れた氷面から落ちた駄獣は、頭を使って子供を水中から支え、氷上へと押し上げた。
+小さな駄獣は氷上でよろめきながら、餌を用意し遠くで待ち構えている狩人の方へと向かう。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_284_1#1$1",duration=0.5)]
+[delay(time=0.7)]
+[name="イェラグの狩人"]来たぞ、用意しろ。
+[charslot]
+[dialog]
+[CameraShake(duration=0.5,xstrength=20, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_clothmovement")]
+[delay(time=1)]
+狩人は氷面が割れる前に、飢えた小さな駄獣を捕まえた。
+[charslot(slot="m",name="avg_npc_284_1#1$1")]
+[name="イェラグの狩人"]よかった、一匹だけでも助けられたな。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1296_1#8$1",duration=1)]
+[delay(time=2)]
+[name="テレジア"]背反。生存本能にもとる背反こそ私たちの文明が進化する契機よ。
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="bg_desert_3",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="テレジア"]そして好奇心。命を燃やすことを代償とする好奇心こそ、私たちの文明が高みに登るための階段なの。
+[dialog]
+[charslot]
+流星を追う開拓者は、仲間の死体を背負って前へゆっくりと進み続ける。
+[dialog]
+[charslot(slot="m",name="avg_npc_534_1#1$1",duration=1)]
+[delay(time=2)]
+[name="疲弊した開拓者"]はぁ……はぁ……*クルビアスラング*、お前って奴は、どうしてあと一日持ちこたえなかったんだ！
+[name="疲弊した開拓者"]あれは流れ星なんかじゃなくて、ライト夫妻の墜落した飛行ユニットだって新聞に書いてあっただろ。その目で真偽を確かめなきゃ諦められないなんてどうかしてるだろ！
+[name="疲弊した開拓者"]空から墜落した落伍者のどこに命を懸ける価値があるんだよ？
+[name="疲弊した開拓者"]大地に落っこちた石がそんな見たかったのか？　お前は一体俺に何を証明したかったんだ？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="テレジア"]太陽が呑み込まれ、暗黒が大地全体を覆い尽くす光景も、かつて黒い王冠の中で見たことがあるわ。
+[name="テレジア"]でも、たとえ最も絶望的な瞬間にあっても、光を灯そうとする人たちがいたの。
+[dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_071",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_070",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_npc_071",focus="l")]
+[name="好奇心旺盛なアダクリス"]まだ暗いままだぞ！　マジで太陽が死んじまった！
+[charslot(slot = "right", name = "avg_npc_070",focus="r")]
+[name="大胆なアダクリス"]はぁ、かなり時間が経っちまったな……こうなったらオレたちで救うしかねぇ！　太陽が死んだままじゃ、オレたちの尻尾の太さ比べも勝負がつかねぇもんな？
+[charslot(slot = "left", name = "avg_npc_071",focus="l")]
+[name="好奇心旺盛なアダクリス"]救うったって、何をどうやるつもりなんだよ？
+[charslot(slot = "right", name = "avg_npc_070",focus="r")]
+[name="大胆なアダクリス"]一番高ぇ山に登って、松明を掲げて火をつけるんだよ。
+[charslot(slot = "left", name = "avg_npc_071",focus="l")]
+[name="好奇心旺盛なアダクリス"]それ、手が疲れちまわないか？
+[charslot(slot = "right", name = "avg_npc_070",focus="r")]
+[name="大胆なアダクリス"]そうだな……じゃあオレの像を建てて、代わりに松明を持ってもらうってのはどうだ。
+[charslot(slot = "left", name = "avg_npc_071",focus="l")]
+[name="好奇心旺盛なアダクリス"]ナイスアイディアじゃねぇか！　隣にオレの像を建ててもう一本松明を持たせようぜ。オマエの松明が消えたら、オレのでまた灯してやるよ！
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[Background(image="49_g5_furnaceplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$newhope01_intro", key="$newhope01_loop", volume=0.6)]
+[Delay(time=1)]
+[name="テレジア"]燃焼は光をもたらし、光は私たちを希望へと導いてくれる。
+[name="テレジア"]そして私の同胞は、死もまた希望の別の解釈であると見なしているわ。
+[name="テレジア"]寂滅に向かう身体は、魂の溶炉に燃える火の中で、都市と一つになる。これは尊敬に値する人のみが享受できる栄誉よ。
+[name="テレジア"]彼らは源石結晶となって成長し、カズデルと一体化するの。
+[name="テレジア"]新たに誕生した幼子は、舞い落ちる粉塵の中で成長し、サルカズの魂の声を聞きながら苦難を背負って前進する。
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1360_1#1$1",duration=1)]
+[delay(time=2)]
+[name="ドクター"]愚鈍と進歩が入り混じり……幾重にも循環し、幾度となく曲折する……
+[name="ドクター"]なんと……美しいのだろうか。
+[name="ドクター"]……なんと、懐かしいのだろうか。
+[name="ドクター"]君たちは……テラは再び正常な軌道に戻り……啓蒙の域に踏み込んだようだ。
+[charslot(slot="m",name="avg_npc_1296_1#1$1")]
+[name="テレジア"]何をもって「愚鈍」を定義するの？　そして「啓蒙」による進歩をどうやって証明するの？
+[name="テレジア"]私からしたら、これらすべてが私たちの文明の一部よ。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]だが、君が見せてくれたもの……彼らのほとんどが君たちの種族とは……大きく異なっている。
+[charslot(slot="m",name="avg_npc_1296_1#3$1")]
+[name="テレジア"]そうね。文明が変遷する中で、大地によって征服する側とされる側――その消えない刻印が人々に刻まれてしまっている……
+[charslot(slot="m",name="avg_npc_1296_1#1$1")]
+[name="テレジア"]けれど生存するためには、最終的にすべての相違点が統一され、すべての種族が一つになると固く信じているの。
+[name="テレジア"]私が目を向けている未来では、この大地のすべてがいずれ一つになるわ。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]……なんとも人の心を奮い立たせる信念だ……素晴らしい。
+[name="ドクター"]伝わってきたよ。君は……この大地を心から愛していると。
+[name="ドクター"]差別、戦争、あるいは災難があろうと……君の愛はとうに単一の個体や種族の枠を超越したものに注がれている。
+[name="ドクター"]しかし君が……自身の身を置く文明の許容限界を越えてしまえば……誰も君の愛を理解できなくなる。
+[name="ドクター"]むしろ彼らは……君を憎むだろう。
+[charslot(slot="m",name="avg_npc_1296_1#2$1")]
+[name="テレジア"]……
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]では問うが、君の期待する未来に至るには……何を乗り越えねばならないのか、理解しているか？
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[name="テレジア"]もしも、それが避けては通れない道なら……喜んで受け入れるわ。
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]……テレジア。一人のテラ人。
+[name="ドクター"]道理でケルシーが君を信頼するわけだ。彼女がリスクを厭わずこうして扉を開いたのは、君を助けたいと思っているからだろう。
+[name="ドクター"]……たしかに、一つ一つの時代が終点を迎える間際、君のように挽回を試みる者が常に現れる。
+[name="ドクター"]しかしほとんどの場合において、物語の結末は決して良いものにはならない。
+[charslot(slot="m",name="avg_npc_1296_1#3$1")]
+[name="テレジア"]……
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="ドクター"]だが君に敬服する気持ちは本物だ。
+[name="ドクター"]ある意味において、君はかつての知り合いたちと極めて似たところがあるように思う。
+[name="ドクター"]もう彼らとの再会は叶わないが……
+[name="ドクター"]……
+[name="ドクター"]……すまない、もう少し考えを整理する時間が必要なのかもしれない。
+[name="ドクター"]しかしそれよりも、まずは……君たちの考えを聞こう。
+[name="ドクター"]自分に何をしてほしい？
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[PlayMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[charslot(slot = "left", name = "avg_003_kalts_1#4$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1360_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_003_kalts_1#4$1",focus="l")]
+[name="ケルシー"]ドクター。君はまず少し休んだ方がいい。
+[charslot(slot = "right",focus="r")]
+[name="ドクター"]大丈夫だ。
+[name="ドクター"]ケルシー、彼女は多くの驚きをもたらし、そしてより多くの困難を与えた――
+[name="ドクター"]いや、すまない……「困惑」と言う方が正しいな。
+[name="ドクター"]まだサルカズの言葉にはいささか不慣れなようだ。
+[name="ドクター"]……彼女は予期せぬものを見せてくれた。君も……彼女から多くを見てきたのだろう。
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="ケルシー"]ああ。はじめは敵対し、のちに対話し、彼女の願いを理解して――今や彼女の責任に畏敬の念すら覚えている……
+[name="ケルシー"]あの黒い王冠は、それが背負う悠久の歴史と見聞をテレジアに共有した。そうして彼女も、次第に他の誰もが及ばぬ展望を抱くようになった。
+[name="ケルシー"]私はそれを知り、これは私が彼女と、バベルと、そしてテラと共にあるための絶好の機会かもしれないと思ったんだ。
+[charslot(slot = "right",focus="r")]
+[name="ドクター"]「テラと共に」。
+[name="ドクター"]君は今、「この大地」のケルシーなのだな。
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="ケルシー"]そうだ。同時に君が私たちと共に歩んでくれることも願っている。
+[charslot(slot = "right",focus="r")]
+[name="ドクター"]なるほど……
+[name="ドクター"]君が羨ましいよ、ケルシー。君のことは信じているが……
+[name="ドクター"]しかし、自分はただの研究者だ。力になれることなんて、君たちが期待するほど多くはないかもしれない。
+[charslot]
+[charslot(slot="m",name="avg_npc_1296_1#1$1")]
+[name="テレジア"]鉱石病や天災、私たちには為すすべもないそれらの災いが、大地に多くの苦難をもたらした……けれど、テラの科学技術のほとんどは源石の上に成り立っているわ。
+[name="テレジア"]エネルギーの奪い合い、感染者への差別、そして戦争と種族間の隔たりが、この地をバラバラにしていく……
+[charslot(slot="m",name="avg_npc_1296_1#6$1")]
+[name="テレジア"]私たちはそれに抗う努力をした。けれど、結果は微々たるものだった……何故ならば、私たちが源石に対してあまりにも無知だから。私たちはこの大地に対してあまりにも知らないことが多すぎる。
+[name="テレジア"]空と海で何が起きたのか――古代遺跡はどこからやってきたのか。そして私たちは……どうやって生まれたのか。私たちは何も知らない。
+[charslot(slot="m",name="avg_npc_1296_1#1$1")]
+[name="テレジア"]だから、あなたにその答えを見つけ出してほしいの。
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[name="ドクター"]……そのうちの一部は、すでにケルシーから聞いていると思うが。
+[name="ドクター"]そして源石に関しては――残念ながら、今の自分では完全な答えを導き出すことはできない。
+[name="ドクター"]目覚めた時に源石の進捗のログを読み取ろうとしたが、奇妙なことに何も得られなかったんだ。
+[name="ドクター"]そして君がテラの有様を垣間見せてくれたことで、より多くの困惑も生まれた。
+[name="ドクター"]源石の現状は……完全に予想通りとはいえない。少し、時間がほしい。
+[name="ドクター"]まずはこの大地を自ら探索し、現時点において源石が文化や生命、そして環境に具体的にどのような影響を与えているか理解する必要がある。
+[name="ドクター"]これには数年、あるいはそれ以上の時間がかかる可能性さえある……さらに言うと、莫大な労力を費やした後に得られるものは、絶望的な答えの可能性だってある。
+[name="ドクター"]自分はかつてある人に約束をしたが、現状を鑑みるに、自分に、あるいは彼女に残ったのは……遺憾の念だけなのかもしれない。
+[name="ドクター"]だから今回、軽々しく約束はできない。ケルシー、すまない……
+[charslot(slot = "m", name = "avg_003_kalts_1#13$1")]
+[name="ケルシー"]では、君を待つとしよう。
+[name="ケルシー"]君の見つける答えがどんなものであれ、バベルは君が戻ってくるその日まで持ちこたえてみせよう、ドクター。
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[name="ドクター"]……ありがとう。
+[name="ドクター"]それと……申し訳ないが……少し……お腹が空いた。
+[name="ドクター"]PRTSを通して、この船には仮設の食堂があるのを見たのだが……
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[name="テレジア"]確かにあるけれど、ごちゃついているから私が案内を――
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[name="ドクター"]大丈夫だ。ありがとう、テレジア。
+[name="ドクター"]この場所は自分にとっても特別な意味を持っているんだ。一人で……ゆっくりと歩いて行ってみるよ。
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[name="テレジア"]……わかったわ。じゃあ気をつけてね、ドクター。
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[charslot(duration=1)]
+[playsound(key="$d_gen_walk_n")]
+[delay(time=3)]
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",duration = 0.5)]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="テレジア"]……
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="ケルシー"]目覚めによる負担は大きく、ドクターの体はまだ完全には回復していない。しかし私の想像よりもずっと早く適応しているようだ。
+[name="ケルシー"]テラに関するすべてを学びたい、か。
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="テレジア"]学習の速さにも目を見張るものがあったわ。
+[name="テレジア"]もし子供たちもドクターみたいだったら、たくさんの国の言語を習得して、この大地の色んな場所へと旅に行く機会が得られるでしょうね。
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="ケルシー"]テレジア、君は先に皆のところに戻るといい。バベルにはまだ議長の決定が必要な事項が多く残されている……
+[charslot(slot = "right", name = "avg_npc_1296_1#3$1",focus="r")]
+[name="テレジア"]……
+[charslot(slot = "left", name = "avg_003_kalts_1#14$1",focus="l")]
+[name="ケルシー"]テレジア？
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="テレジア"]……ケルシー、ひとつ思うことがあるの。考え過ぎかもしれないけど、あなたには伝えておくわね。
+[name="テレジア"]ドクターはテラが今の姿になっていることをとても意外に思っていたようだわ。
+[charslot(slot = "left", name = "avg_003_kalts_1#14$1",focus="l")]
+[name="ケルシー"]……
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="テレジア"]あなたは、あの人が「源石を最も理解する人物」だと言っていたわね。その上で、ドクターは源石の現状が……「完全に予想通りとはいえない」と言っていた。
+[charslot(slot = "right", name = "avg_npc_1296_1#10$1",focus="r")]
+[name="テレジア"]なら源石は本来どんな姿であるべきなのかしら？　この大地は今どうなっているはずだったの？
+[name="テレジア"]サルカズは本来……一体どうあるべきだったの？
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_4132_ascln_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="テレジア"]ドクターの出発準備はもうできているかしら？
+[charslot(slot = "right", name = "avg_4132_ascln_1#1$1",focus="r")]
+[name="アスカロン"]ああ。乗り物と護身用の武器だけ申請して、ほかには何も持っていかないようだ。
+[name="アスカロン"]戦闘区域は自分で避けられると言っていた。
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="テレジア"]そう。じゃあドクターの言うとおりにしてもらっていいわ。
+[charslot(slot = "right", name = "avg_4132_ascln_1#3$1",focus="r")]
+[name="アスカロン"]殿下、私もついて行って構わないだろうか。奴の出自は……あまり信用できない。
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="テレジア"]……アスカロン、あなたはカズデルの土地を離れたことがあったかしら？
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",focus="r")]
+[name="アスカロン"]カズデルを？　幼い頃に獲物を追って私たちの活動範囲を離れたことも含まれるのであれば、ある。
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="テレジア"]それは含まないわ。
+[name="テレジア"]それなら行ってきなさい。ドクターをしっかり守って、でも邪魔はしないようにね。
+[charslot(slot = "right", name = "avg_4132_ascln_1#4$1",focus="r")]
+[name="アスカロン"]ああ。監視の目を光らせておこう――
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="テレジア"]違うわ、アスカロン。もっと肩の力を抜いて。あなたに監視をしてほしいわけじゃないの。
+[name="テレジア"]ただ故郷の外の人がどのように生活をしているか、あなた自身に見てほしいのよ。これはとてもいい機会だから。
+[charslot(slot = "right", name = "avg_4132_ascln_1#8$1",focus="r")]
+[name="アスカロン"]生活？
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="テレジア"]私たちの故郷の外では、戦争や苦難が生活の大部分を占めているわけではないの。グルメやファッション、芸術や文化……私たち人間は、ほかに多くのものを持つことができるんだから。
+[charslot(slot = "right", name = "avg_4132_ascln_1#3$1",focus="r")]
+[name="アスカロン"]……
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="テレジア"]私たちの中では、多くの人がこのことを知っている。でも、さらに多くの人がこの事実を無視することを選んでいるの。ほとんどの場合、私たちに選択の余地なんてないから。
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",focus="r")]
+[name="アスカロン"]……
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="テレジア"]アスカロン、そんな顔をしないで、まだ話は終わってないわ。
+[name="テレジア"]あなたは元々テレシスのやり方に反対したから私についてきたのよね。なら、この分裂が元に戻った後のことは考えた？
+[name="テレジア"]あなたはその後、何をすべきだと思う？　あなたと同じ考えを持つ無数のサルカズの次の目的地はどこになるの？
+[name="テレジア"]急に言われてもなかなか難しいわよね。だから一旦戦争から、私たちの故郷から離れて、外の景色を見に行きなさい、アスカロン。
+[name="テレジア"]私たちが本来送るべき生活を見に行くの。
+[charslot(slot = "right", name = "avg_4132_ascln_1#2$1",focus="r")]
+[name="アスカロン"]……それが殿下の望みなら。
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="テレジア"]ええ！
+[name="テレジア"]気をつけて行ってらっしゃい。
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

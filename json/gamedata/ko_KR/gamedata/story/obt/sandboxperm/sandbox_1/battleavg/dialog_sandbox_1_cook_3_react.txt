@@ -1,0 +1,22 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]뭐냐, 또 유넥티스 그 녀석이 시켜서 온 게냐?
+[decision(option1="이번엔 <color=#d8d769>고압 수프</color>를 가져왔어.", value1="1.1", option2="아니, 그냥 지나가던 길인데.", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_16", itemCount="-1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]정말인 게냐? 그럼 어디 한번…… 으음……
+[decision(option1="맛은 어때?", value1="2.1")]
+[predicate(references="2.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]자네가 만들었나?
+[decision(option1="맞아.", value1="3.1")]
+[predicate(references="3.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]평범하군, 솔직히 만족할 만한 수준은 아니야.
+[decision(option1="그릇까지 싹싹 핥았으면서……", value1="4.1")]
+[predicate(references="4.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]만족 못했다면 그런 줄 알아. 요즘 젊은것들은 말이야! 늙은이의 마음을 이렇게나 몰라줘서야, 쯧쯧!
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]새로운 것을 가져와라!
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_16", value="1")]

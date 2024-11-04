@@ -1,0 +1,671 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="47_g7_fieldhouse",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[PlaySound(key="$d_avg_brdchrp")]
+새벽녘, 평온함을 깨는 듯한 파울비스트소리가 들렸다. 어머니 품에 안긴 아이는 불안한 듯 옷자락을 꽉 붙잡고 있었다.
+어머니는 한숨을 쉬며 몸을 일으켰다. 어젯밤에 일어난 일, 아이가 놀라 밤새도록 울며 보챘던 일이 생각났다.
+아이는 어머니가 떠난 것을 알아채고 놀라 눈을 떴다. 이윽고 코를 훌쩍이며 눈물을 흘렸다. 아버지는 능숙하게 아이를 안고 창가로 걸어가 등을 토닥이며 자장가를 불렀다.
+[PlaySound(key="$d_avg_reedmarshes", volume=0, loop=true, channel="reed")]
+[SoundVolume(volume=1, fadetime=1,channel="reed")]
+“착하지, 우리 아가. 울지 말렴, 저기를 봐. 아무것도 없어.”
+“우리 논도 그대로고, 저기에 꽃도 피어 있어, 다 잘 있으니까 울지 말렴…”
+하지만 아이의 울음은 점점 커졌고, 손을 뻗어 창밖을 가리켰다. 부부는 아이의 손끝을 따라 시선을 옮겼고, 그곳에는 창백하고 괴이한 짐승이 있었다.
+[dialog]
+[backgroundTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.05, yScaleTo=1.05, duration=3)]
+[playMusic(intro="$plot_intro",key="$plot_loop", volume=0.6)]
+[curtain(direction = 0,fillfrom = 0.01,fillto = 0.1,fadetime=3)]
+[curtain(direction = 4,fillfrom = 0.01,fillto = 0.1,fadetime=3)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=0.01,afrom=0,ato=0,block=true)]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.5", scale=0.9,duration = 0.01,block=true)]
+[charslot(slot="m",duration=3,afrom=0,ato=1)]
+[Delay(time=4)]
+짐승은 몸을 돌려 가족을 바라보았다.
+[Dialog]
+[stopsound(channel="reed",fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[curtain]
+[Background(image="47_g8_crestofweir",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1243_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="과묵한 나무꾼"]……
+[charslot]
+과묵한 나무꾼이 도끼를 집어 들었다. 붉은 매듭이 찢어져 펄럭였다. 농부는 그것을 어루만지며 마치 무언가를 떠올리는 듯했다.
+굳은살이 박혀있는 강력해 보이는 손, 하얗진 않았지만 가늘고 길었다. 손에는 피와 진흙이 엉겨 있었다. 붉은 천이 팔에 묶여있었지만, 생기를 잃고 땅바닥에 떨어졌다.
+그 손은 한때 무거운 무기를 들어 올렸던 적도, 얼굴을 어루만졌던 적도, 울고 있는 아이를 안아주었던 적도 있었다.
+손의 주인은 피부가 까무잡잡했지만, 웃을 때는 보조개와 반짝이는 하얀 이가 드러났다.
+그는 강가의 숲 앞에 서 있었고, 숲속에는 빨간 비단 줄이 여러 겹으로 묶여 있었다. 아래에는 이름이 흐릿하게 새겨진 나무 표지판이 걸려 있었다.
+[PlaySound(key="$d_avg_woodensign", volume=1)]
+바람이 불었고, 나뭇가지가 흔들리며 나무 표지판이 딸랑거리는 소리를 냈다.
+[charslot(slot="m",name="avg_npc_1243_1#1$1")]
+[name="과묵한 나무꾼"]음……
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+괴이한 울음소리가 들려왔고, 나무꾼은 흐린 눈을 반쯤 떴다.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_hgmlgscrm")]
+[name="기괴한 직물"](짐승의 날카로운 울음소리)
+[dialog]
+[charslot(slot = "l",name="avg_npc_1243_1#3$1",posfrom = "-150,0", posto = "0,0",duration = 0.4)]
+[PlaySound(key="$d_avg_singleblunt")]
+[PlaySound(key="$d_avg_hammer", volume=0.8)]
+[delay(time=0.2)]
+[charslot(slot="m",duration=0.3,posfrom = "0,0", posto = "200,0")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.7)]
+[PlaySound(key="$d_avg_hgmdspr")]
+[charslot(slot="m",afrom=1,ato=0,duration=1)]
+[delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_1243_1#3$1")]
+[name="과묵한 나무꾼"]……
+[charslot(slot = "m", focus = "n")]
+그것들이 돌아왔다.
+그것들은 돌아오지 말았어야 했다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="47_g1_desertedcityfield_d",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$smallearthquake")]
+[CameraShake(duration=2.5, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",duration=1)]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",duration=1)]
+[delay(time=1.5)]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",focus="l")]
+[name="당황한 농부"]뭐야? 지진인가?
+[name="당황한 농부"]이동 섹터 건설은 아직 끝나지 않은 거 아니었나?
+[name="당황한 농부"]그, 그렇다면 방금은 도대체?!
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot(slot = "left", name = "avg_npc_1251_1#3$1",duration = 1,posfrom = "0,-200", posto = "0,-200")]
+[charslot(slot = "right", name = "avg_npc_1251_1#3$1",duration = 1,posfrom = "0,-200", posto = "0,-200")]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_drone")]
+[charslot(slot ="l", action="shake", power=10, times=100, duration=1)]
+[charslot(slot ="r", action="shake", power=10, times=100, duration=1)]
+[delay(time=1.1)]
+[charslot(slot = "left", name = "avg_npc_1251_1#4$1",duration = 1,posfrom = "0,-200", posto = "0,-100")]
+[delay(time=0.5)]
+[charslot(slot = "right", name = "avg_npc_1251_1#4$1",duration = 1,posfrom = "0,-200", posto = "0,-100")]
+[delay(time=2)]
+[charslot(slot = "right", name = "avg_npc_1251_1#5$1",duration = 0.3)]
+[PlaySound(key="$d_avg_drone")]
+[delay(time=0.3)]
+[charslot(slot = "right",duration = 0.5,posfrom = "0,-100", posto = "300,200")]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[charslot(slot = "m",posfrom = "0,0", posto = "-200,0")]
+[charslot(slot="m",name="avg_npc_1249_1#1$1")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "l", name = "avg_npc_1251_1#5$1",duration = 0.1)]
+[charslot(slot = "l",duration = 0.5,posfrom = "-500,-200", posto = "-100,200")]
+[delay(time=0.1)]
+[charslot(slot = "l",duration = 0.3,afrom=1,ato=0)]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0",duration = 0.3)]
+[delay(time=0.3)]
+[CameraShake(duration=0.5, xstrength=28, ystrength=26, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "r",posfrom = "-100,0", posto = "100,0",duration = 0.5)]
+[charslot(slot = "m",posfrom = "-200,0", posto = "0,0",duration = 0.5)]
+[delay(time=0.51)]
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="걱정하는 농부"]조심해!
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="m")]
+[name="당황한 농부"]하마터면…… 머리가……
+[name="당황한 농부"]무슨 일이지……? 모든 천주가 제어를 벗어나 버렸어!
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_drone")]
+[PlaySound(key="$d_avg_drone",channel="1",delay=0.1)]
+[PlaySound(key="$d_avg_drone",channel="2",delay=0.2)]
+[PlaySound(key="$d_avg_drone",channel="3",delay=0.3)]
+천주는 무언가에 놀란 듯, 무리 지어 사람들의 머리 위를 지나갔다. 그 모습은 한동안 잊고 있었던 충해를 다시 떠올리게 했다.
+[charslot(slot="m",name="avg_npc_1249_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="걱정하는 농부"]저기를 봐!
+[name="걱정하는 농부"]태양의 색이 왜 저렇게……
+[charslot]
+[dialog]
+[Effect(name="$e_demoninfect",layer = 1)]
+[delay(time=3)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="47_i08",screenadapt="coverall",xScale=1.2,yScale=1.2)]
+[imagetween(xScaleTo=1,yScaleTo=1,duration=30)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=3)]
+사람들은 고개를 들어 위를 보았다. 해는 마치 갑자기 서쪽 하늘로 기울어진 것처럼 보였고, 반쪽은 피처럼 붉게 물들였다.
+모두가 불안과 공포를 느꼈다.
+이건 오래전부터 사람의 마음속에 있던 두려움이었다.
+재앙, 짐승으로 인한 피해, 질병, 기근……
+이 땅은 이미 그들이 알고 있던 집이 아니었다.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]
+[delay(time=1)]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1",duration=1)]
+[delay(time=1.5)]
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+[name="기괴한 직물"](사람을 불안하게 하는 울음소리)
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_1249_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="l")]
+[name="당황한 농부"]이것들은 대체 뭐야? 짐승인가?
+[charslot(slot="r",name="avg_npc_1250_1#1$1",focus="r")]
+[name="초조한 농부"]그럴 리가! 도대체 어디서 나타난 거지? 땅에서도…… 사방에서 나오고 있어!
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_4122_grabds_1#5$1",duration=0.5)]
+[delay(time=0.5)]
+[playsound(key="$p_skill_ctefltpn")]
+[delay(time=2)]
+[charslot(slot="m",name="avg_4122_grabds_1#6$1")]
+[name="소만"]뭐야……? 왜 동물들이 말을 듣지 않지?
+[PlaySound(key="$d_avg_hgmgrssvcm")]
+[charslot(slot="m",name="avg_npc_1244_1#3$1")]
+[name="기괴한 직물"](괴상한 울음소리)
+[dialog]
+[charslot(slot = "r",name="avg_4119_wanqin_1#6$1",posfrom = "250,0", posto = "0,0",duration = 0.5)]
+[PlaySound(key="$d_avg_singleblunt")]
+[delay(time=0.3)]
+[charslot(slot="m",duration=0.4,posfrom = "0,0", posto = "-200,0")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_hgmdspr")]
+[charslot(slot="m",duration=0.7,afrom=1,ato=0)]
+[delay(time=1)]
+[charslot]
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#2$1",focus="l")]
+[name="화생"]괜찮아?!
+[charslot(slot="r",name="avg_4122_grabds_1#4$1",focus="r")]
+[name="소만"]난……
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="소만"]저런 동물은 본 적이 없어, 저건…… '동물'이라고 부를 수 없는 것 같아.
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="화생"]나쁜 짐승이라기보다는, 연극에서 나온 괴물 같아…… 전부 땅속에서 나온 거야?
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="화생"]해보자……
+[charslot]
+[playsound(key="$d_avg_windmagic")]
+갑작스레 돌풍이 불었고, 괴물의 모습이 천 조각처럼 찢어졌으나, 곧 원상태로 돌아와 앞을 향애 나아갔다.
+더 많은 괴물이 땅에서 올라왔고, 지나가는 곳마다 모든 작물이 시들고 땅은 모조리 메말라 버렸다.
+[charslot(slot="l",name="avg_4119_wanqin_1#7$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="l")]
+[name="화생"]효과가 없다고?
+[charslot]
+[PlaySound(key="$d_avg_hgmlgscrm")]
+[CameraShake(duration=1, xstrength=10, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_1244_1#3$1")]
+[name="기괴한 직물"](날카로운 울음소리)
+[charslot(slot = "m", focus = "n")]
+[name="좌락"]위험해요!!
+[dialog]
+[charslot(slot = "l",name="avg_4121_zuole_1#4$1",posfrom = "200,0", posto = "200,0",duration = 0.3)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=50, randomness=90, fadeout=false, block=false)]
+[playsound(key="$d_avg_spear")]
+[delay(time=0.5)]
+[charslot(slot="m",duration=0.7,afrom=1,ato=0)]
+[delay(time=1.5)]
+[charslot]
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="화생"]좌락! 이것들은 대체 뭐야?
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="좌락"]모두 물러서세요…… 간단하게 설명할 수 있는 게 아닙니다.
+[charslot(slot = "m", focus = "n")]
+[PlaySound(key="$d_avg_hgmdspr")]
+좌락이 장검으로 실을 걸어 올렸다. 하지만 그것은 눈앞까지 오기도 전에 바람에 흩어져 사라졌다.
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="화생"]이건……?
+[charslot(slot="m",name="avg_4121_zuole_1#2$1")]
+[name="좌락"]그런 건가.
+[charslot]
+지촉인은 도시의 중심을 바라보았다. 거기에는 백옥과도 같은 탑이 우뚝 서 있었고, 불길한 빛을 내뿜고 있었다.
+“천상의 백옥경, 오성 십이루.”
+옛날 사람들이 상상했던 하늘에 닿을 듯한 도시가 이제는 재난의 근원이 되어 있었다.
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="좌락"]결국 그 사람의 계획대로 된 건가……
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="화생"]대체 뭘 알고 있는 거야?
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="좌락"]설명할 시간이 없습니다…… 화생, 도와주세요. 이곳 사람들을 구하는 것이기도 합니다.
+[name="좌락"]모든 농부를 불러서, 되도록이면 모두 함께 있으라고 하세요…… 아니, 절대 혼자 있게 하지 마세요.
+[name="좌락"]기억하세요. 절대 저것들을 두려워해선 안 됩니다. 억지로라도 두려워하지 않아야 합니다.
+[charslot(slot="m",name="avg_4119_wanqin_1#7$1")]
+[name="화생"]그럼 너는? 너는 뭐 할 거야?
+[charslot(slot="m",name="avg_4121_zuole_1#4$1")]
+[name="좌락"]저 장치를 멈춰야 합니다……
+[charslot(slot="m",name="avg_4119_wanqin_1#5$1")]
+[name="화생"]또 혼자서 할 생각이야?
+[charslot(slot="m",name="avg_4121_zuole_1#7$1")]
+[name="좌락"]이것은 저의 책임…… 설령 목숨을 걸어야 하더라도……
+[charslot(slot="m",name="avg_4119_wanqin_1#5$1")]
+[name="화생"]무슨 말도 안 되는 소리야……
+[charslot(slot="m",name="avg_4119_wanqin_1#6$1")]
+[name="화생"]누가 네 목숨을 원한다는 거야? 왜 네가 계속해서 지도자인 것처럼, 모두가 네게 의지하고 있다고 생각하는 거야?!
+[charslot(slot="m",name="avg_4121_zuole_1#6$1")]
+[name="좌락"]저는……
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=0.7)] 
+[charslot(slot="m",name="avg_npc_1240_1#4$1",duration=1)]
+[delay(time=1.5)]
+[name="촌장"]화생 말이 맞아. 이건 누군가 혼자서 해결할 문제가 아니야.
+[charslot(slot="m",name="avg_4121_zuole_1#6$1")]
+[name="좌락"]당신은……
+[charslot(slot="m",name="avg_4119_wanqin_1#8$1")]
+[name="화생"]저흰 이제 어떻게 해야 하나요?
+[charslot(slot="m",name="avg_npc_1240_1#4$1")]
+[name="촌장"]이건 북쪽에서 시작된 오염, 최근에 있었던 홍수가 대황성의 방어선을 무너트렸어.
+[name="촌장"]당황할 필요 없어, 천기각에서 천사들이 오고 있으니까. 천사들이 도착할 때까지 최대한 사람을 많이 모아서 힘을 합쳐야 해, 사람이 많으면 서로 도울 수 있으니까.
+[name="촌장"]너희도 함께 가서, 도움이 필요한 사람을 보호하도록 해.
+[charslot]
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="l")]
+[name="화생"]소만, 가자.
+[dialog]
+[charslot(slot = "m", focus = "all")]
+[playsound(key="$rungeneral")]
+[charslot(slot = "r",posfrom = "0,0", posto = "300,0",duration = 1,afrom=1,ato=0)]
+[delay(time=0.3)]
+[charslot(slot = "l",posfrom = "0,0", posto = "400,0",duration = 1,afrom=1,ato=0)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "left", name = "avg_4121_zuole_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_4121_zuole_1#1$1",focus="l")]
+[name="좌락"]영만청…… 선배님
+[name="좌락"]사세대 명부에서 선배님의 이름을 봤습니다.
+[charslot(slot = "right", name = "avg_npc_1240_1#3$1",focus="r")]
+[name="영만청"]그 옷은 벗은 지 오래야.
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="좌락"]산해중을 정리하고 죄인의 계략을 간파했던, 사세대의 전설과도 같은 분이잖습니까……
+[name="좌락"]40년 전에 사세대를 떠나 대황성에 가셨다고 들었는데…… 그 이유가 뭔가요?
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="영만청"]내 임무는 염국에 위협이 되는 존재를 감시하는 것이었어. 하지만 슈는 그런 위협이 아니었지.
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="좌락"]슈…… 설마 그분은 자신의 생명을 바쳐 대황성의 땅속 데몬을 정화했던 건가요?
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="영만청"]맞아.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="영만청"]어떻게 했는진 모르겠지만, 지가 데몬의 조각을 이용해 코어의 에너지를 강제로 작동시켰어. 그것 때문에 이런 괴상한 괴물이 생겨났지.
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="좌락"]그 죄인의 계략을 사전에 간파해 내지 못한 제 불찰입니다……
+[name="좌락"]북쪽 천기각의 방어선도 위험하다는 소식을 들었습니다. 하지만 그쪽에서 인력을 차출해 대황성을 지킬 수는 없잖습니까?
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="영만청"]맞아. 지금은 정말 우리 자신을 믿는 수밖에 없어.
+[name="영만청"]이 괴생명체는 대리인의 능력으로 발현된 것이기도 하고, 데몬의 그림자이기도 해. 두려움은 이 녀석들을 강하게 만드니까…… 이건 사람의 마음과 용기로 하는 싸움이기도 해.
+[charslot(slot = "left", name = "avg_4121_zuole_1#10$1",focus="l")]
+[name="좌락"]하지만 어떻게 해야 이 괴물들을 막을 수 있을지……
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="영만청"]심장이 없다면 몸을 움직일 수 없지. 토목천사가 이미 각 섹터와 코어의 연결을 끊으러 갔어. 우리가 할 수 있는 건 이곳 사람을 보호하는 것뿐이야.
+[charslot(slot = "left", name = "avg_4121_zuole_1#4$1",focus="l")]
+[name="좌락"]……최선을 다하겠습니다.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="영만청"]지촉인의 직책은 빛으로 베헤모스의 그림자를 몰아내는 것, 하지만 사람들의 머리 위에 있는 그림자는 베헤모스에게서만 온 게 아냐.
+[name="영만청"]등불을 밝혀 자그마한 빛이라도 남겨둬. 잊지 마.
+[charslot(slot = "left", name = "avg_4121_zuole_1#4$1",focus="l")]
+[name="좌락"]반드시 막겠습니다.
+[dialog]
+[playsound(key="$rungeneral")]
+[charslot(slot = "left",posfrom = "0,0", posto = "500,0",duration = 1.5,afrom=1,ato=0)]
+[delay(time=2.5)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[playsound(key="$d_avg_hgmgrssvcm")]
+[playsound(key="$d_avg_hgmgrssvcm",channel="a",delay=0.1)]
+[charslot(slot = "r", name = "avg_npc_1244_1#3$1",duration = 1,posfrom = "0,0", posto = "0,0")]
+[charslot(slot = "left", name = "avg_npc_1244_1#3$1",duration = 1,posfrom = "0,0", posto = "0,0")]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot = "m", name = "avg_npc_1240_1#2$1")]
+[name="영만청"]이것이 네가 받아야 할 대가인가……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g11_shuresearchoffice",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="지"]오랜만이라고 인사해야 하려나요?
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="영만청"]넌 돌아오면 안됐어.
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="지"]그래도 저를 잡으라는 명을 내리진 않으셨군요.
+[charslot(slot = "right", name = "avg_npc_1240_1#1$1",focus="r")]
+[name="영만청"]슈의 얼굴을 봐서 그런 거야.
+[name="영만청"]만나는 건 허락해 주지, 하지만 그 후에 즉시 떠나.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="영만청"]그 이상 규정에 어긋나는 짓을 한다면, 내가 옛정을 잊어버려도 날 탓하진 마.
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="지"]옛정이라, 말은 잘하시는군요.
+[name="지"]그 옛정이라는 것이, 수천 년간 그녀를 가둬 두고 마음대로 조종한 것을 말씀하시는 거라면……
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="영만청"]네 얘기는, 옛날처럼 염국이 당신네를 사냥할 때로 돌아가기를 바란다는 건가?
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="지"]아니요…… 삶이란 본능적으로 이익을 추구하기 마련입니다. 인간이나 동물이나 똑같지요. 전 거래를 제안하고 싶습니다.
+[name="지"]데몬이나 재앙의 위협에서 벗어날 수 있도록, 오성 십이루가 제대로 완성될 수 있도록 돕겠습니다. 그리고 앞으로 3년간은 날씨도 좋게 하여 충분히 식량도 보충할 수 있게 하고, 휴식할 수 있는 시간을 보장하겠습니다.
+[name="지"]조건은 누님이 이곳을 떠나는 것입니다.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="영만청"]마치 네가 없으면 대황성이 이 위기를 넘기지 못할 거라는 것처럼 들리는데?
+[charslot(slot = "left", name = "avg_npc_1236_1#1$1",focus="l")]
+[name="지"]데몬의 장난이나 재앙은 예측할 수 없는 일이죠. 대황성의 현재 상황을 잘 아시잖습니까.
+[charslot(slot = "right", name = "avg_npc_1240_1#4$1",focus="r")]
+[name="영만청"]……네 말을 어떻게 믿지?
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="지"]사세대는 저희의 능력을 잘 알고 계시지 않나요?
+[name="지"]제가 한 말은 지킵니다. 거래하기로 했다면, 마음을 바꾸는 것에 관해 다른 것으로 담보를 받아야겠지요.
+[charslot(slot = "right", name = "avg_npc_1240_1#3$1",focus="r")]
+[name="영만청"]……
+[charslot(slot = "left", name = "avg_npc_1236_1#9$1",focus="l")]
+[name="지"]믿어주시죠. 전 이 땅에 애정을 갖고 있습니다.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[name="영만청"]슈…… 난 분명 네가 떠나는 걸 약속했었어.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1240_1#2$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "m", name = "avg_npc_1240_1#1$1")]
+[name="영만청"]한 말은 지킨다라, 말은 잘하네……
+[charslot(slot = "m", name = "avg_npc_1240_1#4$1")]
+[name="영만청"]하지만 내 목숨을 노리는 것이라면 이 녀석들의 실력을 한번 확인해 봐야겠는데.
+[dialog]
+[charslot]
+[charslot(slot = "m",name = "avg_npc_1244_1#3$1",posfrom = "150,0", posto = "0,0",duration = 1)]
+[delay(time=1.5)]
+[playsound(key="$d_avg_hgmlgscrm")]
+[name="기괴한 직물"](날카로운 울음소리)
+[dialog]
+[charslot(slot = "m",action="zoom", poszoom = "0.5,0.5", scale=1.05,duration = 0.6)]
+[CameraShake(duration=0.8, xstrength=50, ystrength=50, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[playsound(key="$b_char_defboost")]
+[delay(time=0.5)]
+[playsound(key="$fightgeneral",volume=0.6)]
+[delay(time=1)]
+[playsound(key="$d_avg_blddpgrn")]
+[charslot]
+[delay(time=2)]
+[Background(image="47_g5_factory_inside",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1245_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_1246_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$loading_intro",key="$loading_loop", volume=0.6)]
+[delay(time=1)]
+[PlaySound(key="$alarmenter",channel="bgs", volume=1,block=false,loop=true)]
+[Blocker(a=0.4, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[Blocker(a=0, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[Blocker(a=0.4, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[StopSound(channel="bgs", fadetime=0)]
+[Blocker(a=0, r=255,g=0,b=0, fadetime=0.7, block=true)]
+[charslot(slot = "left", name = "avg_npc_1245_1#1$1",focus="l")]
+[name="토목천사"]코어 에너지 모듈이 스스로 가동되다니, 아직 완성되지 않았잖아!
+[charslot(slot = "right", name = "avg_npc_1246_1#1$1",focus="r")]
+[name="토목천사"]이 에너지…… 도대체 뭐지? 이 정도의 에너지라면 대형 이동도시 하나를 단독으로 300년간 운영할 수 있어.
+[charslot(slot = "m", focus = "n")]
+[name="만 시랑"]비켜주세요. 제가 해보겠습니다.
+[dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "200,0",duration = 1)]
+[charslot(slot = "l",posfrom = "0,0", posto = "-200,0",duration = 1)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[charslot]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="l",name="avg_npc_1241_1#4$1",duration=1.5)]
+[delay(time=0.5)]
+[charslot(slot="r",name="avg_npc_298_1#1$1",duration=1.5)]
+[delay(time=2)]
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="영사추"]코어 에너지를 통제할 수 없습니다…… 누군가 그 에너지를 이용해 괴물을 만들어 내고 있죠.
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="만 시랑"]설명하지 않아도 돼요. 이 장치의 상태는 제가 제일 잘 알고 있으니까요.
+[name="만 시랑"]영 시랑, 이제 와서 다시 설명해 드릴 필요는 없겠죠. 이 문제에 관한 예부와 사세대의 실수 말이에요.
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="영사추"]……
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="만 시랑"]“통제 불능”.… 천사부에 들어와서 공부를 시작한 날부터 가장 싫어했던 말이 바로 '제어를 벗어나다'예요.
+[name="만 시랑"]그래서 전 태부가 말씀하신 '능력과 인품에 따라 임용한다'보다 태위의 '나와 같은 부류만 임용한다'가 더 와닿아요.
+[charslot(slot="r",name="avg_npc_298_1#1$1",focus="r")]
+[name="영사추"]위기를 해결하면, 만 시랑께서 예부를 탄핵할 시간은 충분히 있을 겁니다.
+[name="영사추"]우선은 코어와 모든 섹터의 연결을 끊어야 해요. 그래도 통제가 안 된다면, 코어를 파괴할 수밖에 없습니다.
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="만 시랑"]권력 있는 자들에게 아첨한다며 영 시랑이 저를 경멸하는 것을 알고 있습니다. 하지만 저도 이런 상황에서 대의를 저버리는 소인은 아닙니다.
+[name="만 시랑"]가세요. 제가 이 에너지 장치를 멈춰 보겠습니다.
+[charslot(slot="r",name="avg_npc_298_1#4$1",focus="r")]
+[name="영사추"]혼자서요……?
+[charslot(slot="l",name="avg_npc_1241_1#4$1",focus="l")]
+[name="만 시랑"]이건 제 일입니다. 제가 했던 일은 단 한 번도 통제되지 않았던 적이 없죠. 그리고 통제를 벗어나서도 안 됩니다.
+[charslot(slot="l",name="avg_npc_1241_1#2$1",focus="l")]
+[name="만 시랑"]만약 실패한다면, 직접 파괴하는 것도 제가 책임질 것입니다. 그로 인해 감당해야 할 대가도요.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g6_civilengineermasteroffice",screenadapt="coverall")]
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1")]
+[charslot(slot = "right", name = "avg_npc_1236_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1",focus="l")]
+[name="만 시랑"]이 공사를 돕는다고요? 왜죠?
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="지"]만 시랑은 똑똑한 파트너라고 생각하니까요. 저희 둘의 거래는 분명 잘 풀릴 겁니다.
+[name="지"]이 공사를 매우 중요하게 생각하는 것도 알고 있습니다. 그 전에 보냈던 물자는 제 성의였죠.
+[charslot(slot = "left", name = "avg_npc_1241_1#10$1",focus="l")]
+[name="만 시랑"]그 물자에 대한 대가를 받고 싶은 건가요? 그럼, 가격을 말해보시죠.
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="지"]만 시랑, 오해하지 마세요. 이런 하찮은 물건을 어찌 저희의 거래에 쓰겠습니까?
+[name="지"]잠시 잊었군요…… 공부 상서의 1년 치 봉급이 얼마였죠? 만 시랑은 그 자리에 얼마나 계실 생각인가요?
+[charslot(slot = "left", name = "avg_npc_1241_1#6$1",focus="l")]
+[name="만 시랑"]……
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="지"]놀라실 필요 없습니다. 전 만 시랑이 일개 서생에서 2품까지 올라갔다는 것을 알고 있습니다. 이런 고속 승진의 뒤에 있었던 고생도 알고 있죠.
+[name="지"]조정에서 분주히 노력하는 건, 결국 '이익'을 위한 것 아닌가요? 아니면 굳이 그렇게 큰 위험을 감수하며 옥문에 계신 그 분의 일을 돕지 않았겠죠.
+[charslot(slot = "left", name = "avg_npc_1241_1#4$1",focus="l")]
+[name="만 시랑"]……저를 협박하는 건가요?
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="지"]거래를 제안할 뿐입니다. 이 도시를 완성해서 저희 둘에게 유리한 거래를 만들고 싶거든요.
+[charslot(slot = "left", name = "avg_npc_1241_1#3$1",focus="l")]
+[name="만 시랑"]……좋아요. 승낙하죠.
+[charslot(slot = "right", name = "avg_npc_1236_1#9$1",focus="r")]
+[name="지"]흔쾌히 응하시는군요. 하지만 신중히 생각해 주세요. 일단 계약이 성립되면, 대가는 피할 수 없어요.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[Background(image="47_g5_factory_inside",screenadapt="coverall")]
+[charslot(slot = "m", name = "avg_npc_1241_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1241_1#4$1")]
+[name="만 시랑"]이익을 위해 몰려들고, 이익을 위해 움직인다…… 흠, 제가 원하는 게 고작 이 관직이라고 생각하시나요?
+[name="만 시랑"]당신들은 이 만근성을 너무 얕봤어!
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1241_1#5$1")]
+[PlaySound(key="$d_avg_magic_5", volume=1)]
+[PlaySound(key="$d_avg_magic_5", channel="2",delay=0.1)]
+[PlaySound(key="$d_avg_magic_5", channel="3",delay=0.2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_blddpgrn")]
+[name="만 시랑"](각혈하는 소리)
+[dialog]
+[stopmusic(fadetime=2)]
+[charslot]
+[delay(time=1)]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[playsound(key="$rungeneral", loop=true, channel="a")]
+[charslot(slot="l",name="avg_4119_wanqin_1#2$1",duration=1)]
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",duration=1)]
+[StopSound(channel="a", fadetime=2)]
+[delay(time=2)]
+[playMusic(key="$wasteland_loop", volume=0.6)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="화생"]뭐지……? 왜 갑자기 멈췄지?
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="소만"]화생……
+[name="소만"]나 사실…… 좀 겁이 나……
+[charslot(slot="r",name="avg_4122_grabds_1#3$1",focus="r")]
+[name="소만"]농지는 왜 이렇게 변했고, 연극에서나 나올 법한 괴물은 왜 나온 거고……
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="화생"]사실 나도 겁이 나.
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="화생"]그런데 나보다 더 무서워하고, 더 당황한 사람이 많을 거야.
+[name="화생"]아직 내겐 할 수 있는 일이 있고, 다른 사람을 지켜줄 수도 있어……
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="소만"]평소엔 널 멍청한 물소라고 놀렸지만, 사실 넌 내가 만난 사람 중에 가장 똑똑해. 넌 농사에 대해서 아는 게 정말 많아.
+[name="소만"]그러니까, 무슨 일이 생겨도 네 몸을 지켜. 네 꿈은 꼭 이뤄질 거야.
+[name="소만"]가족이 없어서 아무도 널 신경 쓰지 않는다는 생각은 절대 하지 마. 그리고…… 그리고 또……
+[charslot(slot="l",name="avg_4119_wanqin_1#7$1",focus="l")]
+[name="화생"]갑자기 왜 그런 말을 하는 거야……
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="소만"]몰라, 너무 겁이 나서 평소 마음속에 담아 뒀던 말이 튀어나온 거 같아.
+[name="소만"]아, 슈 언니가 여기 있었다면, 분명히 왜 이런 건지 알았을 텐데.
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="화생"]누구…… 라고?
+[charslot(slot="r",name="avg_4122_grabds_1#7$1",focus="r")]
+[name="소만"]나 방금…… 뭐라고 했어?
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="화생"]슈 언니라니…… 그 사람이 누구지??
+[charslot(slot="r",name="avg_4122_grabds_1#11$1",focus="r")]
+[name="소만"]분명히 기억나. 누군가 우리의 곁에 있었고, 그 사람은 모든 것을 알고 있었어.
+[Dialog]
+[PlaySound(key="$flashback")] 
+[MusicVolume(volume=0.3, fadetime=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[charslot(slot="m",name="avg_2025_shu_1#9$1")]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g7_fieldhouse",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot = "m", bstart=0.2,bend=1,fadetime=2)]
+[delay(time=1.5)]
+[charslot(duration=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1")]
+[charslot(slot="r",name="avg_4122_grabds_1#11$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[MusicVolume(volume=0.6, fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1",focus="l")]
+[name="화생"]무슨 소리를……
+[charslot(slot="r",name="avg_4122_grabds_1#8$1",focus="r")]
+[name="소만"]모르겠어……
+[name="소만"]며칠 전에 강가에서 누군가 날 붙잡고 이야기를 해줬어……
+[charslot(slot="r",name="avg_4122_grabds_1#7$1",focus="r")]
+[name="소만"]맞아, 강가에서……
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[MusicVolume(volume=0.3, fadetime=2)]
+[CameraEffect(effect="Grayscale", fadetime=0, keep=true, initamount=0, amount=0.7, block=true)]
+[Background(image="47_g8_crestofweir",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_npc_1243_1#1$1",duration=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#9$1",duration=1)]
+[delay(time=2)]
+[charslot(slot="l",name="avg_4122_grabds_1#1$1",focus="l")]
+[name="소만"]아저씨! 이 노래 어때?
+[charslot(slot="r",name="avg_npc_1243_1#2$1",focus="r")]
+[name="과묵한 나무꾼"]……
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="소만"]마음에 안 들어?
+[name="소만"]아저씨는 《집에 가자, 꽃들아》 노래만 좋은 거야?
+[charslot(slot="r",name="avg_npc_1243_1#1$1",focus="r")]
+[name="과묵한 나무꾼"]……
+[charslot(slot="l",name="avg_4122_grabds_1#11$1",focus="l")]
+[name="소만"]아저씨, 내가 화생이랑 싸웠다는 얘기 했었던가?
+[name="소만"]화생이 나더러 학교를 잘 다니지 않는다고 했어. 성실한 학생들은 백조로 가는데, 난 못 간다면서. 솔직히 너무 생트집 잡는다고 생각하지 않아?
+[charslot(slot="r",name="avg_npc_1243_1#7$1",focus="r")]
+[name="과묵한 나무꾼"]……
+[charslot(slot="l",name="avg_4122_grabds_1#8$1",focus="l")]
+[name="소만"]내가 뭐 어쩄다는 건지, 난 여기서 부모님이 돌아오기만을 기다리고 싶어.
+[dialog]
+[charslot(slot = "r",posfrom = "0,0", posto = "-100,0",duration = 0.8)]
+[delay(time=0.5)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=0, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l",posfrom = "0,0", posto = "-70,0",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="소만"]으아아! 왜 또 나를 쫓아내려고 해?!
+[dialog]
+[charslot(slot = "r",posfrom = "-100,0", posto = "-200,0",duration = 0.8)]
+[delay(time=0.3)]
+[PlaySound(key="$d_avg_clothmovement", volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=0, vibrato=10, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l",posfrom = "-70,0", posto = "-170,0",duration = 0.6)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_4122_grabds_1#7$1",focus="l")]
+[name="소만"]알았어, 갈게! 으악! 도끼에 맞는다!
+[stopmusic(fadetime=3)]
+[dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[CameraEffect(effect="Grayscale", fadetime=0, amount=0, block=true)]
+[charslot(slot="l",name="avg_4119_wanqin_1#8$1")]
+[charslot(slot="r",name="avg_4122_grabds_1#4$1")]
+[Background(image="47_g13_pollutedfield",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=1)]
+[charslot(slot="r",name="avg_4122_grabds_1#4$1",focus="r")]
+[name="소만"]화생…… 나……
+[playMusic(key="$formal_loop", volume=0.6)]
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="소만"]……아직 강변에 남아 있는 사람이 있을 거야!
+[charslot(slot="l",name="avg_4119_wanqin_1#5$1",focus="l")]
+[name="화생"]소만! 아무 데나 돌아다니지 마!
+[charslot(slot="r",name="avg_4122_grabds_1#5$1",focus="r")]
+[name="소만"]걱정 마! 그 벙어리 아저씨는 내 말만 듣거든. 가서 데려올게! 대황성 사람들 모두 안전할 거야!
+[dialog]
+[PlaySound(key="$rungeneral", volume=0.7)]
+[charslot(slot = "r",posfrom = "0,0", posto = "300,0",duration = 1,afrom=1,ato=0)]
+[delay(time=1.5)]
+[charslot(slot = "m", focus = "n")]
+[name="소만"]그러니까, 중앙 구역에서 다시 만나!
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

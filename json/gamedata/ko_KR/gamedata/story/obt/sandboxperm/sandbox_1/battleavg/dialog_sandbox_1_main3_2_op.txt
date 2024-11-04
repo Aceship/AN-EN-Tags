@@ -1,0 +1,49 @@
+[header(actId="sandbox_1", npcId="trap_415_trademan")]
+[summontrap(x="3", y="4", charId="trap_415_trademan", isChar="FALSE", dir="RIGHT")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(id="trap_415_trademan", scale="CLOSE", time="1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]저기요, 잠시만요.
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]요 며칠간 함께하면서 여러분이 정말 믿음직한 파트너라는 걸 절실하게 느꼈습니다. 그래서 여러분께 부탁할 일이 있는데, 거절하지 않았으면 좋겠군요.
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]저를 도와주신다면, 맹세코 보수를 두둑이 챙겨드리겠습니다.
+[decision(option1="진짜로 두둑한 거 맞아?", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="보수를 두둑이 할인해 주는 건 아니고?", value1="2.1")]
+[predicate(references="2.1")]
+[emoji(target="trap_415_trademan", emoji="common_bubble_happy")]
+[delay(time="1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]컥…… 크흠, 갑자기 그런 예리한 질문을 하시니까 적응이 안 되는군요.
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]아무튼, 걱정하지 마시죠. 이 부탁은 절대 상술이 아니니까요. 정말로 부탁할 일이 있어서 그런 겁니다.
+[decision(option1="얘기해 봐.", value1="3.1")]
+[predicate(references="3.1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]친구 하나가 있습니다. 그 친구는 인적이 드문 곳을 탐험하기 좋아하죠. 특히 땅속에 파묻힌 보물을 자주 찾아다닙니다.
+[decision(option1="설마 그 친구가 필라인이야?", value1="4.1")]
+[predicate(references="4.1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]그게 무슨 말씀인지……
+[decision(option1="알았어, 보물을 찾는 또 다른 사람이구나.", value1="5.1")]
+[predicate(references="5.1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]크흠, 아무튼 그 친구가 정기적으로 안부를 전해왔는데, 지난달부터 갑자기 연락이 끊겨서 아무래도 무슨 일이 생긴 게 아닐까 싶습니다.
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]부디 그 친구를 찾아주셨으면 합니다.
+[decision(option1="마지막으로 간 곳이 어디야?", value1="6.1")]
+[predicate(references="6.1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]북쪽입니다. 북쪽으로 쭉 가시면 사람의 발길이 거의 닿지 않은 곳이 있습니다.
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]소문에는 그곳에 아르살란의 보물이 숨겨져 있다고 하던데, 워낙 지형이 험준한 곳이라 아무도 그 소문을 검증하지 못했다죠.
+[decision(option1="……마침 가는 길이네.", value1="7.1")]
+[predicate(references="7.1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]보수는 미리 준비해 놓겠습니다.
+[decision(option1="그건 그다음이고.", value1="8.1")]
+[predicate(references="8.1")]
+[playanim(id="trap_415_trademan", anim="Attack", dir="RIGHT")]
+[delay(time="1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]네? 이게 가장 큰 원동력이 아니었나요?
+[decision(option1="우린 친구잖아.", value1="9.1")]
+[predicate(references="9.1")]
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]아아…… 이 마음이 따뜻해지는 기분은 뭘까요. 그럼 저는 좋은 소식을 기다리며, 여러분의 행운을 빌겠습니다.
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]아, 그리고 이 명징석 분포도는 여러분을 위한 사례입니다.
+[additem(itemId="sandbox_1_craft_4", itemCount="1")]
+(아르살란 명징석 분포도 획득. 이제 명징석을 채집할 수 있습니다.)
+[name="연락책", avatarId="trap_415_trademan", isAvatarRight="FALSE"]믿어주세요. 그곳에 가면 분명 쓸모가 있을 겁니다.
+[withdraw(id="trap_415_trademan")]
+[delay(time="3")]
+[resetcamera(time="1")]
+[save]
+[end]

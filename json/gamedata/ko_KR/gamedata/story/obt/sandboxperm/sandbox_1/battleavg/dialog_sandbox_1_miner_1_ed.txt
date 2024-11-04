@@ -1,0 +1,33 @@
+[header(actId="sandbox_1", npcId="trap_472_tfalco")]
+[summontrap(x="2", y="6", charId="trap_472_tfalco", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="4", y="8", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summontrap(x="5", y="6", charId="trap_470_tmantic", isChar="FALSE", dir="LEFT")]
+[camerafocusto(offsetX="3", offsetY="7", time="1", scale="MID")]
+[foginview(id="rect1", leftBottomX="1", leftBottomY="4", rightUpX="7", rightUpY="10")]
+[name="케스트럴", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]너희들 정말 강하구나, 고마워.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]마땅히 해야 할 일일 뿐이야.
+[name="케스트럴", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]약속을 지키는 사람이라면 적어도 이 아르살란에선 상당히 괜찮은 사람이지. 최근 들어 아미르 때문에, 우리는 약속을 믿을 수 없게 됐어.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]너희 리더는?
+[name="케스트럴", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]전투 중에 희생했어. 우리는 한때 강 옆에 살고 있었는데, 나루타바팀 강이 끊겨버린 후 일부는 북쪽의 정글 부족에 들어갔어.
+[name="맨티코어", avatarId="char_215_mantic", isAvatarRight="TRUE"]사르곤에서 드문 일은 아니지.
+[name="케스트럴", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]아미르는 내가 어린 시절 이곳에 왔어, 많은 걸 약속했지만 하나도 지킨 게 없지.
+[name="케스트럴", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]그 뒤로 나와 형제자매들은 여기로 끌려와서 노역하게 됐어. 저항해 보려고는 했지만…… 전부 실패했지.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="TRUE"]다 지난 일이야. 너의 형제자매들은 북쪽 부족에 합류하도록 조치해 뒀어.
+[name="케스트럴", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]안타깝게도 지금은 보답할 만한 물건이 없네. 선배들이 남긴 이 채굴 기술 요령밖에 없어.
+[playanim(id="trap_472_tfalco", anim="Attack", dir="RIGHT")]
+[delay(time="1")]
+[name="케스트럴", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]이거라도 줄게.
+[additem(itemId="sandbox_1_craft_13", itemCount="1")]
+[decision(option1="이제 어디로 갈 거야?", value1="1.1")]
+[predicate(references="1.1")]
+[name="케스트럴", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]모르겠어. 하지만 너희들이 괜찮다면 나도 너희 캠프에 가서 힘을 보태고 싶어.
+[decision(option1="우리는 언제든지 환영이야.", value1="2.1")]
+[predicate(references="2.1")]
+[fognotinview(id="rect1")]
+[withdraw(id="trap_472_tfalco")]
+[withdraw(id="trap_467_ttuye")]
+[withdraw(id="trap_470_tmantic")]
+[delay(time="2")]
+[resetcamera(time="1")]
+[save]
+[end]

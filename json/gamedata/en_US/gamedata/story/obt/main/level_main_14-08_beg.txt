@@ -1,0 +1,668 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[charslot(slot="m",name="avg_npc_1335_1#1$1",focus="m")]
+[Background(image="50_g18_originiumcave",screenadapt="coverall")]
+[playMusic(intro="$frontline_intro", key="$frontline_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlaySound(key="$d_avg_chimera", volume=0.8)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1.5)]
+[name="Confessarius 'Chimera'"](Howls)
+[dialog]
+[CameraShake(duration=2, xstrength=10, ystrength=8, vibrato=20, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$p_imp_amiyamag_h", volume=1)]
+[Effect(name="$e_amiya_atk_01", layer = 1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=1, g=1, b=1, fadetime=0.4, block=true)]
+[PlaySound(key="$d_avg_land_impact", volume=0.5)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]*huff*... *pant*...
+[charslot(slot="m",name="avg_npc_394_1#12$1",focus="m")]
+[name="Amiya"]There's one more.
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_chimera2", volume=0.8)]
+[CameraShake(duration=2, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot = "l", name = "avg_npc_1335_1#1$1",posfrom="-200,0",posto="-200,0",duration=1)]
+[charslot(slot = "r", name = "avg_npc_1335_1#1$1",posfrom="150,0",posto="150,0",duration=1)]
+[delay(time=2.5)]
+[charslot]
+[charslot(slot="m",name="avg_npc_653_1#8$1",focus="m")]
+[name="Salus"]I'm afraid it won't be that easy.
+[charslot(slot="m",name="avg_npc_653_1#8$1",focus="m")]
+[name="Salus"]My cute little King of Sarkaz, you've already broken five of my pets – Shall I take a guess at how long you will hold out yet?
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]You gave life to those beings of witchcraft just to use them as expendable tools to hold me back?
+[charslot(slot="m",name="avg_npc_653_1#2$1",focus="m")]
+[name="Salus"]It did take me a bit of time to create these chimeras.
+[dialog]
+[charslot]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$p_skill_chimera", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]You're so cruel.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]You go around spreading that rash of empathy everywhere, just like Theresa.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]When she lost to Theresis, the regent thought it would be a good opportunity to retake the Crown, but to our surprise, she had already passed it on to you before she died.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Quite the well-conceived plot. Even with our eyes and ears everywhere, we were unable to detect it before it happened.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Were you also fooled by her lies – 'Doctor'?
+[dialog]
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="none")]
+[Decision(options="...;I have no idea what you're talking about.;I know nothing about any of this.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Poor soul. You don't even remember a thing.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]You desperately 'serve' this King of Sarkaz. Is it the former King's manipulation, or is it because you truly love her from the bottom of your heart?
+[dialog]
+[charslot]
+[Decision(options="That, I'm actually able to answer.;Enough of your sophistry.;My bond with Amiya is nothing you can tamper with.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]Qui'sartuštaj's ambition will bring even greater harm to the Sarkaz. Theresa would never allow him to usurp the crown.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Such meaningless prattle, my dear little rabbit.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Just ask anyone on the streets of Kazdel and they will tell you – for us, the departure of the King of Sarkaz is the gravest disaster.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Oh, right, spare me whatever you might say about fairness.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]The inheritance of the King of Sarkaz has always been filled with 'accidents', and Theresa's actions were no different from what we did. We all sought to make this power easier to control.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Our regent believes more deeply in the connection between blood and soul.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1335_1#1$1")]
+[PlaySound(key="$d_avg_chimera2", volume=0.8)]
+[CameraShake(duration=2, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1.5)]
+[name="Confessarius 'Chimera'"](Hiss)
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#2$1",focus="m")]
+[name="Amiya"]The pain they're enduring...
+[charslot(slot="m",name="avg_npc_394_1#2$1",focus="m")]
+[name="Amiya"]Are these emotions... also instilled and manipulated by witchcraft?
+[dialog]
+[charslot]
+[PlaySound(key="$d_avg_statuecollapse", volume=1)]
+[PlaySound(key="$d_avg_land_impact", volume=0.8,delay=0.5)]
+[CameraShake(duration=2, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+[Decision(options="The Chimera lashes out at the crystals around it.;Originium activation levels are increasing!", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]Argh—!
+[dialog]
+[charslot]
+[PlaySound(key="$p_skill_explocar_cast", volume=0.6)]
+[PlaySound(key="$p_imp_amiyamag_h", volume=1,delay=2)]
+[CameraShake(duration=3.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=2)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=1, g=1, b=1, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[Decision(options="Amiya, the Originium activation levels are changing extremely quickly!", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]Doctor, you... don't need to worry...
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]I can get accustomed to... this Confessarius witchcraft.
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]Over the last few years, I've been learning. I remember all the treatment methods Theresa taught me, as well as all the instruction I've received from Dr. Kal'tsit.
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]I can feel the connection between me and the King of Sarkaz. It has not left me.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Amiya"]*cough*... *cough* *cough*...
+[dialog]
+[charslot]
+[PlaySound(key="$p_skill_chimera", volume=1)]
+[Effect(name="$e_amiya_atk_01", layer = 1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=1, g=1, b=1, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="Amiya"]It just... hurts a little bit, that's all.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Utterly meaningless. Go now – that one is of no value anymore.
+[dialog]
+[charslot(slot="m",name="avg_npc_1335_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_chimera", volume=0.8)]
+[CameraShake(duration=2, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+[name="Confessarius 'Chimera'"](Howls)
+[dialog]
+[playsound(key="$d_avg_chimerawings",volume=1)]
+[charslot(duration=0.3)]
+[Delay(time=0.5)]
+The crazed Chimera rushes towards you.
+From Chernobog to Londinium, you've encountered all forms of foes, some of which defied your wildest imagination.
+But the enemy before you looks like the most formidable of all.
+It is the product of the Confessarii's manipulation of 'blood', combined with the ultimate embodiment of Sarkaz physical strength.
+Salus said that Sarkaz are much stronger than Cautuses, but you know that even Amiya's body is vastly stronger than yours.
+And yet, you still have an advantage. Something sets you aside from others, something that makes you one of a kind.
+[dialog]
+[charslot(slot="m",name="avg_npc_1335_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_chimera", volume=0.8)]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="Confessarius 'Chimera'"](Howls)
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]––I won't let you!
+[dialog]
+[charslot(slot="m",name="avg_npc_1335_1#1$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$p_skill_spiritexplo", volume=1)]
+[CameraShake(duration=2, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=1, g=1, b=1, fadetime=0.4, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[charslot(duration=0.5)]
+[PlaySound(key="$d_avg_land_impact", volume=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+The black lines of the Sarkaz King run through the Chimera in front of you.
+But the claws of another Chimera are about to reach your head–
+[dialog]
+[stopmusic(fadetime=1.5)]
+[Decision(options="It's almost time.", values="1")]
+[Predicate(references="1")]
+[Decision(options="(Take a small step back)", values="1")]
+[Predicate(references="1")]
+[dialog]
+[playmusic(intro="$m_bat_essenceofevolution_intro", key="$m_bat_essenceofevolution_loop", volume=0.6)]
+[PlaySound(key="$b_char_rockexplo",volume=0.6)]
+[PlaySound(key="$b_char_rockexplo", volume=1, loop=false, channel="roc1",delay=0.4)]
+[PlaySound(key="$b_char_rockexplo", volume=1, loop=false, channel="roc2",delay=0.8)]
+[PlaySound(key="$b_char_rockexplo", volume=0.9, loop=false, channel="roc3",delay=1)]
+[PlaySound(key="$d_avg_scrystalroad", volume=1,delay=1.2)]
+[CameraShake(duration=2, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true,block=false)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1335_1#1$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_explosion_stone", volume=1)]
+[CameraShake(duration=1.5, xstrength=40, ystrength=40, vibrato=90, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[charslot(duration=1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=1)]
+Crystal clusters are violently multiplying at the position you stood just a moment ago.
+One after another, like flowers brought into full bloom through Arts, sharp stones tear the ground and rock wall.
+The same is also true for the Chimera closest to you – its massive body crashes to the ground, Originium dust kicked up in every direction, rubbing and colliding, exploding in a dazzling gold.
+Just as calculated, the surrounding Originium rocks have reached a critical point of collapse, overcharged by witchcraft energies.
+[dialog]
+[Decision(options="...", values="1")]
+[Predicate(references="1")] 
+A mist of fine crystals rains down onto your mask.
+You gaze upon them, harboring no ill sentiment whatsoever.
+Originium will never harm you, and deep down, you realize this once again.
+But the same is not true for others.
+An instinctive fear swirls in the eyes of both Amiya and Salus. Amiya approaches you steadfastly, while Salus shows a hint of hesitation.
+And it was in that moment. Just one brief moment–
+[dialog]
+[name="???"]'Bind'.
+[dialog]
+[charslot(slot="m",name="avg_npc_653_1#3$1",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_darkmagic",volume=1)]
+[CameraShake(duration=1, xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true,block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.2, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[name="Salus"]—!
+[charslot(slot="m",name="avg_npc_653_1#3$1",focus="m")]
+[name="Salus"]My hands and feet...
+[charslot(slot="m",name="avg_npc_653_1#5$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=12, ystrength=10, vibrato=30, randomness=90, fadeout=true,block=false)]
+[name="Salus"]Banshee!
+[dialog]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Delay(time=0.2)]
+[charslot]
+Salus is about to let out a scream.
+But the ensuing incantation preemptively seals her power.
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="Logos"]Your voice is grating to the ears.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]You spend too much time playing with pelts, while knowing nothing about weaving a stanza.
+[charslot(slot="m",name="avg_npc_653_1#6$1",focus="m")]
+[name="Salus"]...
+[dialog]
+[charslot]
+[Decision(options="Amiya.;It's time.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]Right.
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]Salus––
+[dialog]
+[charslot]
+[PlaySound(key="$e_atk_circleatk_n")]
+[CameraShake(duration=1, xstrength=25, ystrength=30, vibrato=30, randomness=90, fadeout=true,block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=1, g=1, b=1, fadetime=0.2, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=0, g=0, b=0, fadetime=0.1, block=true)]
+[Blocker(a=0.8, r=1, g=1, b=1, fadetime=0.1, block=true)]
+[Blocker(a=0, r=1, g=1, b=1, fadetime=0.7, block=true)]
+[delay(time=0.2)]
+The black particles no longer revolve around you, but instead form into a sharp sword.
+You cannot help but to look into the face of the blue-haired Confessarius.
+Her emotions have almost faded away, as if already having made peace with the imminent fatal blow.
+[charslot(slot="m",name="avg_npc_653_1#2$1",focus="m")]
+[name="Salus"]So... this is it...
+[charslot(slot="m",name="avg_npc_653_1#2$1",focus="m")]
+[name="Salus"]The King of Sarkaz's verdict.
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]You...
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]Don't misunderstand. I did everything I could to try to survive.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]I failed to recapture the King of Sarkaz for the leader, and made a grave mistake. Which is why I was deceived by the cunning pest beside you.
+[charslot(slot="m",name="avg_npc_653_1#2$1",focus="m")]
+[name="Salus"]For the sake of this life, I should try to atone for my sins, is that it?
+[charslot(slot="m",name="avg_npc_394_1#7$1",focus="m")]
+[name="Amiya"]You were willing to sacrifice yourself for Qui'sartuštaj's plot.
+[charslot(slot="m",name="avg_npc_653_1#1$1",focus="m")]
+[name="Salus"]He is... our father. Our progenitor. Disobedience is not an option.
+[charslot(slot="m",name="avg_npc_653_1#10$1",focus="m")]
+[name="Salus"]I truly hate Qui'saršinnag. And I hate you too.
+[charslot(slot="m",name="avg_npc_653_1#10$1",focus="m")]
+[name="Salus"]Why, do you choose to resist?
+[charslot(slot="m",name="avg_npc_653_1#5$1",focus="m")]
+[name="Salus"]Amiya––
+[charslot(slot="m",name="avg_npc_653_1#5$1",focus="m")]
+[name="Salus"]Are we not just... Chimeras implanted with hope?
+[stopmusic(fadetime=1.5)]
+[dialog]
+[charslot(duration=0.7)]
+[PlaySound(key="$d_avg_waterpipeburst", volume=1)]
+[PlaySound(key="$d_avg_spiritwhoosh", volume=0.6,delay=0.6)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0, block=true)]
+[Blocker(a=0.2, r=1,g=0.2, b=0.2, fadetime=0.05, block=true)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0.05, block=true)]
+[Blocker(a=0.2, r=1,g=0.2, b=0.2, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_394_1#12$1",focus="m")]
+[name="Amiya"]...
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]'Obstruct'.
+[dialog]
+[charslot]
+[PlaySound(key="$e_skill_ignite_cast", volume=0.6)]
+[PlaySound(key="$b_char_defboost", volume=0.8, delay=0.5)]
+[Delay(time=0.5)]
+[effect(name="$e_anti_originiumarts",layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=false)]
+[delay(time=2.5)]
+The exploding blood mist is blocked by an invisible force.
+Shortly afterwards, the blood mist that obscured your view gradually dissipates, and silence falls over the entire cave.
+[dialog]
+[playMusic(key="$formal_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]She got away.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]She galvanized the blood dripping from her wounds.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]She would have no means to fully resist my incantations. Such an action would only tear her further apart.
+[dialog]
+[charslot]
+[Decision(options="As long as Salus is not killed completely, she will find a way to escape,;You heard her say it herself – she sees 'this life' as precious.", values="1;2")]
+[Predicate(references="1;2")]
+[dialog]
+[Decision(options="And where do you think she'll escape to?", values="1")]
+[Predicate(references="1")] 
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]Her mission is probably to safeguard the Blood of Teekaz, right?
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]Since she could not stop us at the fake altar, she would definitely return to the real one.
+[dialog]
+[charslot]
+[Decision(options="The way forward is clear now.;Logos, I assume you've already left a tracker?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]I have met your expectations.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]I understand your plan, Doctor, but it's far too risky.
+[charslot(slot="m",name="avg_npc_394_1#6$1",focus="m")]
+[name="Amiya"]I can't approve of what you did then. If you try pulling a stunt like that again, I... Umm, I'll get angry!
+[dialog]
+[charslot]
+[Decision(options="I'll keep that in mind.", values="1")]
+[Predicate(references="1")] 
+[Decision(options="But, we don't have the luxury of time.", values="1")]
+[Predicate(references="1")] 
+[charslot(slot="m",name="avg_003_kalts_1#3$1",duration=0.7)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="m")]
+[name="Kal'tsit"]That's right. We need to pick up the pace.
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="none")]
+Kal'tsit stares at an object on the ground.
+You recognize it as the Confessarius mask left behind by Salus as she fled.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]We underestimated Qui'sartuštaj.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Previously, he suddenly appeared before me and Shining, kidnapped Nightingale, and revealed his intent to usurp the 'King of Sarkaz'.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]He has been lurking in the shadows for thousands of years for this moment. He would certainly not make any rash moves until goal is accomplished.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]He wanted others to think that he was solely after the Black Crown.
+[dialog]
+[charslot]
+[Decision(options="Snatching the Crown is not the end?;What does he plan to do with it?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]The 'King of Sarkaz' is a neutral force. Whether it heralds the arrival of calamity or averts it depends on the wielder.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Which is most likely why Qui'sartuštaj seeks the crown. He wants that authority to be vested within his own hands, to touch those secrets passed down for eons, to seek even greater power from the point of origination.
+[dialog]
+[charslot]
+[Decision(options="Amnannam.;The first Originium.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#3$1",focus="m")]
+[name="Kal'tsit"]Qui'sartuštaj, Duq'arael, and Theresis – while their ultimate goals may be different, they all converge upon the same destination.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[multiline(name="Kal'tsit")]The Sarkaz have always been deeply influenced by Originium. I fear, however, that this influence is being directed on purpose...
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[multiline(name="Kal'tsit")]Or that it is uncontrollably penetrating into a deeper level.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="50_g18_originiumcave",screenadapt="coverall")]
+[delay(time=2)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#8$1",focus="m")]
+[name="Amiya"]Oww... Umm, I think I'll be fine.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]Your physical condition has stabilized. Logos says that the lingering traces of Confessarius witchcraft have already dissipated.
+[charslot(slot="m",name="avg_npc_394_1#8$1",focus="m")]
+[name="Amiya"]Thank you.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]You have cracks in at least three rings.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]It's nothing serious. Just some battle damage, that's all.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]The rings aren't the problem, Amiya.
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="Kal'tsit"]Since the battle for the command tower started, don't you think you've been taking on too many memories and emotions?
+[charslot(slot="m",name="avg_npc_394_1#3$1",focus="m")]
+[name="Amiya"]Hmm...
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Those aren't going away. It's your own psyche that is tearing these rings apart, and no instrument is enough to contain such a torrent of emotions.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]The rings can't, but I can. I'm not just an instrument.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]Those emotions were forced on me by someone else, yes. But I chose to reach out to them. To experience them, to feel them.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]If I said it wasn't painful... that'd be a lie. I don't want to deceive anyone else, or myself, by acting as if that pain doesn't exist.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]But, I've pretty much gotten used to it.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]It's like wading through a swamp with a heavy load on your back.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Amiya, I'd recommend reinforcing those rings.
+[charslot(slot="m",name="avg_npc_394_1#10$1",focus="m")]
+[name="Amiya"]...No.
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]To save even more people, I need even more power. I've told you again and again that this is what I wish for.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Character(fadetime=0)]
+[Background(image="50_g18_originiumcave",screenadapt="coverall")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]Doctor, how's Amiya doing?
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="none")]
+[Decision(options="Not ideal.;But she's managing to stay in control.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]The solutions we have for all these problems are only stopgaps at best.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]That feeling of seeing yourself and everything around you sliding into the abyss... is no less harrowing than physical illness or pain.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[dialog]
+[Decision(options="I can't change the fact that she's Infected.;If only I could cure her.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Amiya's is unwavering.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]When Her Highness Theresa brought her before us for the very first time, she was but a child. I still remember her gaze lingering on the feathers on my horns––
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[dialog]
+[Decision(options="How did she react?;How did you react?", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1072_1#3$1",focus="m")]
+[name="Logos"]Without any fear. Only a friendly curiosity. Even I found myself somewhat shocked.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_1072_1#3$1",focus="m")]
+[name="Logos"]Even I found myself somewhat shocked. There was no fear in that child's eyes, only a friendly curiosity.
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]I was planning to take a step back like Scout and the others, but Amiya actually came up to approach us herself.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]That was a time when a good chunk of Babel's core members were Sarkaz. We had horns of all shapes on our heads, some more imposing than others, and there were crystals all over our bodies.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]I'd seen my fair share of Rim Billiton's Cautus caravans, so I knew that those timid, mild-mannered Cautuses often found it difficult to suppress their instinctive fear when they came face-to-face with a Sarkaz.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Maybe that was just her nature, or she had... an exceptional upbringing. Amiya showed no sign of distinguishing between the Sarkaz and any other race. She naturally treated everyone with kindness.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Which is why I was not surprised at all when I learned that Theresa chose Amiya to be her successor.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[dialog]
+[Decision(options="Even though you were a lord of the Royal Court...;You were in support of Amiya inheriting the title of the 'King of Sarkaz'.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]For me, that wasn't even the most difficult part of the decision.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Doctor, I just ran into some old friends.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Among them was one of my former Babel comrades, whom I killed with my own hands.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="What?;Why?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]After Her Highness Theresa's death, a rebellion broke out on Rhodes Island.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]A number of Babel members refused to give up on the war. They and a number of Sarkaz warriors decided that we ought to take revenge, and return to Kazdel to reclaim power.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]But, the more extreme among them...
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="They proposed to kill Amiya.;They wanted to lash out against Kal'tsit.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]The team that once belonged to the King of Sarkaz turned completely away from Kazdel.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]They saw this as a despicable theft, an unforgivable betrayal.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]And Dr. Kal'tsit, along with the non-Sarkaz members of Babel, were seen as the culprits.
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="...;All of them were warriors who followed Theresa.;All of them used to belong to Babel.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Many of them truly believed in Theresa, and were willing to lay down their lives for her and Babel's ideals.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]The man I killed almost lost his life at the hands of a Military Commission caster. I saved him, only to take his life later on.
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="That must've taken a heavy toll on you.;You must still be suffering.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]Logos, the Babel member, already made his choice.
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]After the rebellion, the mercenaries and the Sarkaz warriors pretty much all chose to leave. Among Babel's official rank and file, only a few decided to remain.
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]Babel was no more, an Dr. Kal'tsit... forbade anyone from mentioning the 'King of Sarkaz'.
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="none")]
+[Decision(options="What about you?;Why did you stay with Rhodes Island?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]It's true that I did plan to return to the Valley following Her Highness's death.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Kazdel had lost its King, and nobody could predict its future. As the master of the Elegiac Court, I could not run away from my duty to my home.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]But before I left, Scout pulled me aside and said that he and Misery were throwing a farewell party for me.
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]I said that drinking was out of the question, and that I didn't want to ruin my new change of clothes. But turns out, they wanted me... to help paint.
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="none")]
+[Decision(options="Paint?;Interesting time to do a renovation.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]They were preparing to change the landship's markings.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Outcast was the one who convinced me to take the job. No idea what kind of messed-up rumors Closure had poured into her head.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]She said Banshee incantations are magical, and if I were to make the new sign, Rhodes Island would surely have smooth future voyages. And that came from a Sankta.
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="So did you end up making the sign?;There's not any actual magic involved, right?", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]That was Closure's job, actually. I warned my colleagues not to let her slack off.
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_npc_1072_1#3$1",focus="m")]
+[name="Logos"]But since they insisted, I did weave some incantations into the paint to make the whole process a bit more fun.
+[Predicate(references="1;2")]
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#3$1",focus="none")]
+[Decision(options="That sounds scary.;Pretty cool of you.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]The work was done in no time.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]After finishing, we all looked up at the sign together. Ace asked when I was leaving, so I gave them two dates–
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]The first was when I'd be leaving the landship, that very same day; the next was three days later. Seventy-two hours is the shortest time needed to make a round trip from the place the landship was docked at and the Valley of the Banshees.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]When Ace heard that, he immediately told Scout to give him five days' worth of booze money. Scout wagered that I'd be back in the Valley for more than a week.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]As for Misery... He pulled a 'welcome back' ribbon out of his pocket and replaced the 'farewell' banner that he had originally put up as a joke.
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="Sounds like everyone was having fun.;You were all such good friends.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]I carry a lot of responsibility on my shoulders, and even if I don't want to set any of them down altogether, I still have to pick and choose what I prioritize.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]But, I knew from the very beginning that I made the right call.
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]...Doctor.
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]I've not questioned you since you returned from Chernobog.
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]You have no memories of the past, so why do you choose to remain with Rhodes Island even now? Why are you willing to take immense risks and dive deep into the dangers ahead?
+[dialog]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="none")]
+[Decision(options="...", values="1")]
+[Predicate(references="1")]
+[stopmusic(fadetime=1.5)]
+[charslot]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m",duration=2)]
+[delay(time=1)]
+[name="'Shopkeep'"]Lord Banshee... Mr. Logos! Th-The road ahead has been blocked!
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]The Doctor and the King of Sarkaz would like you to hurry up–
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Character(fadetime=0)]
+[Background(image="50_g1_originiumcanyon",screenadapt="coverall")]
+[delay(time=1)]
+[PlayMusic(key="$darkness_03_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]A newly-formed rift.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]This huge rift suddenly appeared out of nowhere. The blue-haired Confessarius went through it, so we're definitely on the right track. But, right now...
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]The Originium is reshaping the terrain with increased frequency and severity.
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="Logos"]I can feel it.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]I trust that you can as well, Amiya.
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]The ground... is trembling.
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]The Sarkaz's emotions are resonating violently with the Originium. Their rage is gathering, and it shakes this land like a storm.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]When the Blood of Teekaz is used in tandem with Amnannam, the battlefield itself becomes an Arts Circle of colossal proportions.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]The Originium Arts of the rampaging Sarkaz are amplified, and in turn, that increased power promotes the spread of Originium.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]A similar situation took place thousands of years ago.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]The Sarkaz acquired witchcraft through Originium, and through witchcraft, Amnannam was awakened.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]In the centuries to follow, violent storms flayed the land, and great fissures cut deep into the earth. The Originium had almost completed its mission of devouring everything.
+[dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="none")]
+[Decision(options="You were able to stave off the end of days?;Did you manage to stop things from getting worse?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#2$1",focus="m")]
+[name="Kal'tsit"]That is not something I can do. Or should.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]The war ended before Originium could completely engulf the land. The Elders, the Ancients, and the Sarkaz all suffered losses so grievous that they were unable to carry out any more large-scale conquests.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]At least, for the time being.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]War knows no end.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+[uioperation(target="", item="sandbox_1_dimensioncoin", enable="TRUE")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]「アルサラン大抽選会」に参加していかない？　新しい景品もあるよ、じゃーん！　一回回すなら「<color=#d8d769>輝く結晶片</color>」一個、十回なら十個だよ！
+[decision(option1="十回回す", value1="1.1", option2="最近の調子を尋ねに来ただけだ。", value2="1.2", option3="ほかにやるべきことがあるから、やめておく。", value3="1.3")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_dimensioncoin", itemCount="-10")]
+[gacha(gachaPool="pool_npc1", cnt="10", all="FALSE")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]いやあ、君ってば豪運だね！　また来てよ！
+[withdraw(id="trap_415_trademan", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2", visibleCondition="!c1")]
+[name="連絡員", avatarId="trap_415_trademan", isAvatarRight="FALSE"]すごく快適だよ。この辺にこんなに楽しい場所があるなんて思いもしなかった！　感謝の気持ちを込めて、ささやかなプレゼントを贈らせてね。
+[additem(itemId="sandbox_1_craft_7", itemCount="1")]
+[decision(option1="ありがとう。", value1="2.1")]
+[predicate(references="2.1")]
+[end]
+[predicate(references="1.3")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_dimensioncoin", value="10")]
+[condition(references="c1", key="itemGE", itemId="sandbox_1_craft_7", value="1")]

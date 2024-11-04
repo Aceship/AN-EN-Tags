@@ -1,0 +1,704 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[focusout(duration=0.5, type="bg", from=0, to=1)]
+[curtain(direction = 0,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[curtain(direction = 4,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[Delay(time=1)]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=0.5)]
+[focusout(duration=1.5, type="bg", from=1, to=0, block=true)]
+[delay(time=1)]
+この場所に戻ってきた。
+まるでここを長く離れたかのようで、この船で寝るのが久しく感じた。
+ドクター、ケルシー先生、シージさん……
+外の戦争は終わったのだろうか？　これでやっと休めそうだ。
+食堂に行って温かい野菜スープを飲んで、宿舎にある自分のベッドに横たわることができる。
+テレジアさんは？　今頃、彼女は多分――
+……
+いや……違う……
+テレジアさんは、もうここにはいない。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="bg_room_2", screenadapt="coverall", block=true)]
+[curtain(direction = 0,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[curtain(direction = 4,fillfrom = 0.15,fillto = 0.15,fadetime=0.01,grad=true)]
+[delay(time=1)]
+[PlaySound(key="$dooropenquite", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=0.5)]
+部屋は空っぽで、自分の帰りを待つ人は誰もいない。
+しかしかつて数えきれないほどたくさんの夜、ここに座り、自分を寝付かせるためにお話をしてくれる人がいたことは、はっきり覚えている。
+でも今、ここには何も残っていない。
+待って……なぜベッドの上に服が？
+それは真っ白なドレスで、襟には美しい花の飾りが縫い付けられている。縫い目はきめ細かく、自分には馴染みのある仕立て方だ。
+「アーミヤ、白いお洋服がよく似合うわね。」
+テレジアさん……？
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[curtain]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[name="遠くの声"]……ドクター！
+[name="近づく声"]私の声が聞こえるか？
+[name="ケルシー"]ドクター！
+[Dialog]
+[PlaySound(key="$d_gen_dooropen", volume=1)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=2, block=true)]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_003_kalts_1#1$1")]
+[focusout(duration=0.1, type="bg", from=0, to=1)]
+[focusout(duration=0.1, type="char", from=0, to=1)]
+[delay(time=0.5)]
+[playMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]ドクター……
+[name="ケルシー"]やはり、ここにいたか……
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="（なんか気分が悪い。）;（さっきの何なんだ？）;（今度はどこにいるんだ？）", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]見る限り、調子が悪そうだ。
+[name="ケルシー"]この場で君に身体検査をすることは多分無理だ。ドクター、私を見て、正気を保つんだ。
+[name="ケルシー"]なにか思い出さないか？
+[Dialog]
+[charslot]
+あなたは女性の厳しくも心配のこもった言葉を聞いて、目を大きく見開こうとすると……
+[Dialog]
+[focusout(duration=1.5, type="char", from=1, to=0)]
+[focusout(duration=1.5, type="bg", from=1, to=0, block=true)]
+視界は次第にはっきりし、身体の一部の機能も徐々に回復してきていた。
+そしてゆっくり口を開く――
+[Dialog]
+[Decision(options="（未知の言語）ケルシー……;（未知の言語）ここはどこだ？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="ケルシー"]――！
+[Dialog]
+[charslot]
+砕けた意識が繋ぎ合わされ、途切れた思考が論理を取り戻し、今この瞬間に自分がしっかりとした地面に立っていると確信できた。
+辺りを見渡すと、ここが自分がかつて長い時間を過ごしてきた、馴染みのある場所だとはっきりと認識できた。
+しかし目の前の女性があなたを見る目は見知らぬ人を見るかのようで、あまつさえ、敵意さえ帯びていた。
+[Dialog]
+[Decision(options="（未知の言語）自分は誰だ……;……;自分は誰だ？", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[musicvolume(volume=0.3, fadetime=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i11", screenadapt="coverall", fadetime=0)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i15",screenadapt="coverall",fadetime=0,block=true)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.8, fadetime=0)]
+[Image(image="50_i16", screenadapt="coverall", fadetime=0)]
+[Delay(time=0.2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[image]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[Background(image="bg_black",screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+ロドスのDr.{@nickname}だ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[charslot]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.6, fadetime=1)]
+[Delay(time=0.5)]
+[Dialog]
+[Decision(options="アーミヤ！;ケルシー！　我々はなぜロドスにいる？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="ケルシー"]君は……
+[name="ケルシー"]……どうやら、自分が誰なのかはまだ覚えているようだな。
+[name="ケルシー"]アーミヤはここにいない。一つ確かなのは、ここは決して本来のロドスではないということだ。
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="ほかの者とはぐれてしまったのか？;LogosとWはどこだ？", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]ここに来てから君としか会っていない。
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="ケルシー"]なんでこうなったのか、本当に心当たりはないのか？
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="さっぱり分からない。", values="1")]
+[Predicate(references="1")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]……
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="n")]
+[Decision(options="君は……;……自分を信じていないのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="ケルシー"]……こういう場合は、ある程度の警戒をしないといけない。
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]気を付けるんだ、ドクター。我々は何があってもここを離れねばならない。
+[name="ケルシー"]我々はこの場に不案内であるし、どんな予想外のことが起きてもおかしくない。
+[name="ケルシー"]できるだけ君を守る。だから、あまり離れるな。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_trainingcom",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlayMusic(key="$wasteland_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_arrow_rain", volume=0.6)]
+[PlaySound(key="$d_avg_metallicclick", volume=0.9,delay=0.2)]
+[PlaySound(key="$swordtsing1", volume=0.6,delay=0.4)]
+[Delay(time=1.5)]
+[charslot(slot = "m", name = "char_124_kroos_1#3",focus="m")]
+[name="クルース"]も……もう無理だよぉ……
+[name="クルース"]来月分の運動量まで使い切っちゃったぁ。
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="フェン"]ダメだ、クルース！
+[name="フェン"]今は実戦演習中だ。訓練室を戦場だと思わないと！
+[charslot(slot = "m", name = "char_122_beagle_1",focus="m")]
+[name="ビーグル"]隊長は容赦ないなぁ……
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="フェン"]みんなやる気を出して。教官から割り当てられた訓練任務はまだまだ残っているんだから。
+[charslot(slot = "m", name = "char_124_kroos_1#3",focus="m")]
+[name="クルース"]別にいいじゃ～ん……どうせ教官いないんだしぃ――
+[charslot(slot = "m", name = "char_124_kroos_1#1",focus="m")]
+[name="クルース"]あっ、ドクターだぁ！
+[Dialog]
+[charslot]
+[Decision(options="おはよう、クルース。;みんな……ここにいるのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="フェン"]クルース！
+[charslot(slot = "m", name = "char_124_kroos_1#1",focus="m")]
+[name="クルース"]へーきだって～、ドクターならきっと教官に告げ口しないよ～。
+[name="クルース"]とりあえずここで～、心ゆくまで横になっちゃおーっと――
+[Dialog]
+[charslot]
+[name="厳格な声"]お前たちに与えた訓練任務は、偽装潜入ではなかったはずだが？
+[Dialog]
+[charslot(slot = "m", name = "char_123_fang_1",focus="m")]
+[name="フェン"]……終わった。
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n", volume=0.6)]
+[charslot(slot = "m", name = "char_014_riope",duration=1)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="Ace"]A1小隊全員、気をつけ！
+[Dialog]
+[charslot]
+[name="小隊全員"]はい！
+[Dialog]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="Ace"]全員、訓練場を百周、その後フィジカルトレーニング五十セット、始め！
+[Dialog]
+[charslot]
+[name="小隊全員"]はい……
+[Dialog]
+[PlaySound(key="$d_avg_soldiersstep",channel="step1",loop=false, volume=0.7)]
+[stopsound(channel="step1",fadetime=4)]
+[Delay(time=2)]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="Ace"]恥ずかしいところを見せたな、ドクター。
+[name="Ace"]ロドスでは長い間平和が続いているせいか、若い戦士たちは少したるんでいるんだ。
+[name="Ace"]俺がビシッとしごいてやるさ。
+[Dialog]
+[charslot(slot = "m", name = "char_014_riope",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[Decision(options="このような穏やかさが続くのも、いいことだ……", values="1")]
+[Predicate(references="1")]
+[charslot(slot = "m", name = "char_014_riope",focus="m")]
+[name="Ace"]ああ。だが起こり得る危険に備えることも必要だ。
+[name="Ace"]大丈夫だ、ここの訓練については心配しなくていい。俺に任せろ。
+[name="Ace"]ドクター、ここ最近疲れただろう？　ゆっくりと休んでくれ。
+[name="Ace"]安心しろ、俺たちがここを守る。
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[delay(time=2)]
+[Decision(options="ケルシー……今の見たか？;夢でも見ているのか？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="ケルシー"]私も同じ光景を見たのだ。彼らは確かにここに存在している。
+[name="ケルシー"]このようなはっきりとした夢などない、それにこれは君の記憶でもない。
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="n")]
+[Decision(options="この全てが現実ならよかった……;いや、これはきっと現実ではない。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]正気を保て、ドクター。
+[name="ケルシー"]まだ進み続けなければならない。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_bar_1",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_crwddiscuss_inside", volume=0.4, loop=true, channel="a")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[PlaySound(key="$d_avg_coin", volume=1)]
+[Delay(time=1)]
+[StopSound(channel="a", fadetime=1.5)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="Outcast"]おや。これは珍しい客人が来たな、ドクター。
+[name="Outcast"]座って一杯ひっかける時間はあるかい？　今夜は、全部私のおごりだ。
+[Dialog]
+[charslot]
+[Decision(options="ここは賑やかだ。;人が多いね。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot = "m", name = "avg_npc_249_1$1",focus="m")]
+[name="Touch"]忘れたのですかドクター、今日はOutcastさんの引退送別会ですよ。
+[charslot(slot = "m", name = "avg_npc_252",focus="m")]
+[name="Sharp"]俺たちの尊敬する大先輩に乾杯だ。
+[Dialog]
+[charslot]
+[PlaySound(key="$clink")]
+[PlaySound(key="$clink", loop=false, channel="1",delay=0.04)]
+[PlaySound(key="$clink", loop=false, channel="2",delay=0.06)]
+[PlaySound(key="$clink", loop=false, channel="3",delay=0.08)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="Outcast"]おっと、Sharp。それはいただけないな。君に大先輩と言われるほどの年の差はないだろう。
+[Dialog]
+[charslot]
+[Decision(options="ロドスへの貢献に感謝する、Outcast。;今までお疲れ様。", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_095",focus="m")]
+[name="Pith"]お前が成したこととその射撃の腕は忘れない、乾杯だ。
+[charslot(slot = "m", name = "char_017_homura_3#10",focus="m")]
+[name="ブレイズ"]Outcastもこれで引退かぁ……
+[name="ブレイズ"]これから週末の夜に……げぷ……お酒に付き合ってくれる人がいなくなっちゃうじゃん……
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="Outcast"]まったく、私はただ引退するだけだっていうのに。ラテラーノの追悼会でもここまで辛気臭くはならないよ。
+[name="Outcast"]それに、たとえ今夜酔いつぶれて、明日の朝に目を覚ますことはなかったとしても、この一生はもう十分素晴らしいものだったさ。
+[name="Outcast"]皆と連れ立った時間は私の一番の宝物だ。この記憶は、私の守護銃と共に墓場まで持っていかせてもらうよ。
+[name="Outcast"]ただし今後、若者に射撃を教える仕事はレンジャーに任せることになるだろうね。
+[charslot(slot = "m", name = "char_017_homura_3#7",focus="m")]
+[name="ブレイズ"]Outcastったら酔っ払っちゃって～、レンジャーは銃を使うんだよ、どうやって――げぷ――サンクタのクロスボウを教えるのさ。
+[charslot(slot = "m", name = "avg_npc_095",focus="m")]
+[name="Pith"]飲み過ぎだ、話があべこべになっているぞ。
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="m")]
+[name="Outcast"]撃つとき片目を閉じるところは同じだ、それほど違いはないさ。
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_245_1#6",focus="n")]
+[PlaySound(key="$bottlebroken", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_245_1#1",focus="m")]
+[name="Outcast"]ああ、今夜のバーのお客さんは私たちだけじゃなかったね。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_bar_1",screenadapt="coverall", block=true)]
+[charslot(slot="m",name="avg_155_tiger_1#9$1")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_155_tiger_1#9$1",focus="m")]
+[name="インドラ"]マジで来いよダグザ！
+[name="インドラ"]塔楼騎士に叙任されたやつの拳がどれだけ重いか見せてみやがれ！
+[charslot(slot = "m", name = "avg_npc_396_1#3$1",focus="m")]
+[name="ダグザ"]……いいだろう。あんたが言ったんだからな。
+[Dialog]
+[playsound(key="$d_avg_clnchfst")]
+[PlaySound(key="$d_avg_clothmovementsp",volume=0.8,delay=0.5)]
+[Delay(time=0.5)]
+[charslot(duration=0.5)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_863_1#3$1",focus="m")]
+[name="ベアード"]ちょっと！　ここはボクシングジムじゃない。私たちはお客さんとしてロドスに来たんだから、いい加減にして！
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_punch")]
+[PlaySound(key="$fightgeneral",volume=0.8,delay=0.4)]
+[PlaySound(key="$d_avg_glassbroken", volume=0.6,delay=0.5)]
+[CameraShake(duration=1, xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="アラデル"]私にもこういう時期があったわね。
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="ヴィーナ"]なんだ？　蒸気騎士になったから、私たちストリートギャングと絶縁したくなったか？
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="アラデル"]からかわないで……というか、本当に決めたの、ヴィーナ？
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="ヴィーナ"]何もためらうことなどないな。ノーポート区で過ごした日々は私にとって人生で最も楽しい時間だった、もうあの宮殿に戻る必要はない。
+[name="ヴィーナ"]アレクサンドリナ・ヴィーナ・ヴィクトリアは王室の末裔であり、同時に栄誉あるごく普通のヴィクトリア人でもある。
+[name="ヴィーナ"]アラデル、今後貴様は栄誉ある蒸気騎士だ。そして私は、栄誉ある「シージ」だ。
+[name="ヴィーナ"]このような生活が、最良であると信じている。
+[charslot(slot="m",name="avg_npc_397_1#2$1",focus="m")]
+[name="アラデル"]平和な生活は、とても貴重なものよ。
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="ヴィーナ"]ありふれた暮らしに乾杯。
+[charslot(slot="m",name="avg_npc_397_1#8$1",focus="m")]
+[name="アラデル"]ヴィクトリアに乾杯。
+[Dialog]
+[charslot]
+[PlaySound(key="$clink")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_407_1#3$1",focus="m")]
+[name="ヴィーナ"]貴様の気が向いたら、散歩にでも行かないか。例えば、公爵家の窓に石を投げつけるのなんてどうだ？
+[Dialog]
+[charslot]
+[Decision(options="いいね。;……;これは現実ではない。", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]君はまだ彼女たちの一人一人を覚えており、彼女たちの境遇を心から残念だと思っている。
+[name="ケルシー"]でなければ、このような光景を見るはずがない。
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]今の気分はどうだ、ドクター？
+[name="ケルシー"]喜び、困惑、それとも憤怒か？
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]これは全て君が潜在意識の中で期待している光景だ。
+[name="ケルシー"]この全てが現実であることを望んでいるだろう？
+[Predicate(references="1;2;3")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="ほかにここで誰と会うのだろうか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]それを知るのは君自身しかいない。
+[name="ケルシー"]前に進もう、ドクター。
+[name="ケルシー"]何を見ようと、それに向き合い、乗り越えるんだ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="bg_corridor",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_078#2",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="タルラ"]ドクター、久しぶりだな、戻ったぞ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="……;……タルラ？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="タルラ"]ふっ、しばらく会わなかっただけで、私が分からなくなったのか？
+[name="タルラ"]今回は感染者治療センター建設のためにウルサス北部へと赴いたが結局苦労した。
+[name="タルラ"]町の労働者が我々を支持してくれたおかげで、現地の領主も妥協せざるを得なくなった。それで我々は十分な土地を勝ち取れたぞ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="レユニオンはなくなった……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="タルラ"]ドクター、また冗談を言っているのか、それともまだ寝ぼけているのかどっちだ？
+[name="タルラ"]レユニオンがないなら、ロドスと協力して、ウルサスで感染者治療を手伝っているのは誰なんだ？
+[Dialog]
+[charslot(slot="m",name="avg_npc_078#2",focus="n")]
+[Decision(options="じゃコシチェイは？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_078#2",focus="m")]
+[name="タルラ"]なぜ急に死んだ「黒蛇」の話を持ち出す？
+[name="タルラ"]もう一度礼を言ってほしいのか？　まあいい。結局のところ、私とウルサスをあの元凶から解放し、人々の未来に良い切っ掛けをもたらしたのはロドスだからな。
+[Dialog]
+[charslot(duration=0.5)]
+[musicvolume(volume=0, fadetime=1)]
+[Delay(time=1)]
+[name="冷たい声"]ドクター。
+[Dialog]
+[Decision(options="やめろ……;（振り返るな。）", values="1;2")]
+[Predicate(references="1;2")]
+[PlaySound(key="$d_avg_walk_stage", volume=1,loop="false", channel="fwalk")]
+[stopsound(fadetime=2, channel="fwalk")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",duration=1)]
+[Delay(time=2)]
+[musicvolume(volume=0.6, fadetime=1)]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="フロストノヴァ"]ドクター？
+[Dialog]
+[charslot]
+[Decision(options="………………", values="1")]
+[Predicate(references="1")]
+[Decision(options="フロストノヴァ……", values="1")]
+[Predicate(references="1")]
+[Decision(options="君はここにいるはずがない｡", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="フロストノヴァ"]……なぜだ？
+[name="フロストノヴァ"]任務が終わったらすぐに報告するように言ったのはお前ではなかったか？
+[Dialog]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="n")]
+[Decision(options="ロドスの……任務か？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="フロストノヴァ"]他に何がある。私はずっとロドスの一員だからな。
+[Dialog]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="n")]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1505_frstar_1#1$1",focus="m")]
+[name="フロストノヴァ"]なんだか様子が変だ。私が近すぎて、凍えさせてしまったか？
+[stopmusic(fadetime=2)]
+[Dialog]
+[charslot]
+[Decision(options="違う。;違う……;違う！！", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[Dialog]
+[PlaySound(key="$d_avg_dreambroken", volume=1)]
+[PlaySound(key="$d_avg_phntsmglsbrek", volume=1,delay=3)]
+[focusout(duration=3, type="bg", from=0, to=1, block=false)]
+[delay(time=3)]
+[CameraShake(duration=2, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Background(image="50_g14_rhodescorridor_ex",screenadapt="coverall", block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=3, block=true)]
+[focusout(duration=2, type="bg", from=1, to=0, block=true)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[delay(time=2)]
+その場にいた一人一人の人間が自分の外見を失い、曖昧な黒い影と化した。
+その影たちはただあなたを囲み、ゆっくりと漂っている。まるで危険そうには見えないのだ。
+[Dialog]
+[Decision(options="ケルシー……これは何だ？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]これは幻でも、夢でもない。ある意味、これは本当に実在しているものと言える。
+[name="ケルシー"]君の想像の中に存在して過去に遭遇した人や物事で、君の最も期待している光景を描いてくれたものだ。
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="n")]
+[Decision(options="これは我々が経験してきた全てに対する冒涜だ。;なぜこんなにも冷静でいられる？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="ケルシー"]これらの光景が私の感情に与える刺激は、君に勝るとも劣っていないと思う。
+[name="ケルシー"]しかしつまるところ、これらはやはり君自身が作り上げた光景だ。
+[name="ケルシー"]源石が君の潜在意識の奥深くにある期待と、心残りを埋めたいという考えを参考に「複製」した光景にすぎない。
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]君はまだロドスと共に経験した全てをその記憶に刻んでおり、そして美しい嘘の欺瞞からも逃れた。
+[name="ケルシー"]今ようやく確信した。今の君は、変わらずロドスのドクターだ。
+[Dialog]
+[charslot]
+[Decision(options="源石？　源石はこんなことまでできるのか？;どうして自分が期待するものを参考するの？", values="1;2")]
+[Predicate(references="1;2")]
+[Dialog]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=0.5)]
+[Subtitle(text="<color=#000000>あなたの願いは、私が全部叶えてあげられるわ</color>", x=300, y=350, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=0.5)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=1)]
+[Dialog]
+[Decision(options="プリー……スティス……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#6$1",focus="m")]
+[name="ケルシー"]やはり……
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]ドクター、私はかつて君にこう言った。君自身に関する謎は、他人の口から語ることはできず、君自身で解くしかないと。
+[name="ケルシー"]今の私たちはその終着点に近づいているかもしれない。
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="もしこの全てが自分の期待ならば、君は……;少なくとも、君は自分の幻想ではないことは確かだ。", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]これまで我々が共に過ごしてきた経験を踏まえれば、君が正確な判断を下すには十分だと思っていたが。
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="ケルシー"]その判断をさせたものが、ほかの何でもなく、君の理性であることを願っている。
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="n")]
+[Decision(options="もしこの光景が全て心残りを埋めるためのものだとしたら……", values="1")]
+[Predicate(references="1")]
+[Decision(options="ここでテレジアに会えるだろうか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="ケルシー"]テレジアがどこにいて、何をしているかは分からない。
+[name="ケルシー"]しかし今我々がいるこの環境は、きっと彼女と何かしらの関係があるに違いない。
+[Dialog]
+[charslot]
+[stopmusic(fadetime=1.5)]
+[name="優しい声"]ドクター。
+[Dialog]
+[Decision(options="――！", values="1")]
+[Predicate(references="1")]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",duration=1)]
+[delay(time=1.5)]
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="アーミヤ！", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="アーミヤ"]ドクター、ケルシー先生。よかった、お二人ともいたんですね。
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="（躊躇う）;（躊躇うことなく歩み寄る）", values="1;2")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="アーミヤ"]安心してください。私は正真正銘、本当のアーミヤです。
+[Predicate(references="2")]
+[charslot(slot="m",name="avg_1037_amiya3_1#9$1",focus="m")]
+[name="アーミヤ"]うぅ……ドクター、ずっと探してました。
+[Predicate(references="1;2")]
+[Dialog]
+[charslot(slot="m",focus="n")]
+[Decision(options="少し変わったように見える。;この服は……？", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[name="アーミヤ"]これはテレジアさんが私に残してくれた服です。
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="n")]
+[Decision(options="彼女はやはりここにいるのか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[name="アーミヤ"]彼女には会っていません。この「ロドス」にも彼女の気配はありません。
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="n")]
+[Decision(options="危険な目には遭わなかったか？", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="アーミヤ"]私は大丈夫です。
+[charslot(slot="m",name="avg_1037_amiya3_1#1$1",focus="m")]
+[multiline(name="アーミヤ")]たくさんの記憶が脳内に流れてきました……
+[charslot(slot="m",name="avg_1037_amiya3_1#7$1",focus="m")]
+[multiline(name="アーミヤ")]その、記憶だけではありません。様々で、豊かな感情も。
+[name="アーミヤ"]ここで会った人たちは、きっと生きていると思います。
+[charslot(slot="m",name="avg_1037_amiya3_1#2$1",focus="m")]
+[name="アーミヤ"]ですがこのような形で「生きている」ことを私は……哀しく思います。
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="アーミヤ"]この廊下を抜け、ドクターに会って、ようやく分かりました。
+[name="アーミヤ"]ドクター、私が触れた感情は、どれも同じ根源を持っています。
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="……自分か。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="アーミヤ"]はい。
+[Dialog]
+[PlaySound(key="$d_avg_cloakmovement", volume=1)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="アーミヤ"]私は……あなたに「触れ」ました、ドクター。今までにはなかったことです……
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+目の前の少女はいつものように手を握ってくれた。いや、いつも以上に慎重で力強く握ってくれたというべきか。
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="アーミヤ"]ドクターが昔と比べてかなり変わっていることは分かっています。
+[name="アーミヤ"]ですが、私たちは様々な経験をしてきました。それに、私は今、目の前にいるドクターが私が信じ続けてきたあのドクターだと信じています。
+[charslot(slot="m",name="avg_1037_amiya3_1#9$1",focus="m")]
+[name="アーミヤ"]記憶は嘘をつくかもしれません。でも、感情を偽ることはできません。
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="m")]
+[name="アーミヤ"]今の私でははっきりさせられないことはまだたくさんあります。テレジアさんに会わないと答えが得られない疑問もあります。
+[name="アーミヤ"]ですが、これから何が起きようと、私たちがどんなに悲しい結末に遭遇しようと……
+[name="アーミヤ"]ドクターは私と共に立ってくれますよね？
+[Dialog]
+[charslot(slot="m",name="avg_1037_amiya3_1#8$1",focus="n")]
+[Decision(options="そうだ。", values="1")]
+[Predicate(references="1")]
+[Decision(options="自分はロドスのDr.{@nickname}だ。", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_1037_amiya3_1#11$1",focus="m")]
+[name="アーミヤ"]はい……今はこれで大丈夫です。
+[name="アーミヤ"]ではまずはテレジアさんを探しに行きましょう。
+[charslot(slot="m",name="avg_003_kalts_1#14$1",focus="m")]
+[name="ケルシー"]今はどうにかしてここを離れよう。
+[name="ケルシー"]答えはここにはない。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="50_g11_rhodesdeck_ex",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4133_logos_1#1$1",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4133_logos_1#1$1",focus="m")]
+[name="Logos"]幻術の致すところではないが、天と地、生と死は……
+[charslot(slot="m",name="avg_4133_logos_1#12$1",focus="m")]
+[name="Logos"]すべからく偽りである。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$2",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$2",focus="m")]
+[name="W"]フフッ、あの息の詰まる偽の画廊から出たところで、もっと大きな舞台でグルグル回るしかないってわけ？
+[name="W"]この幕をしつらえてくれたのは一体誰なの？　センスの欠片もないわね。
+[Dialog]
+[charslot(slot="m",name="avg_1035_wisdel_1#11$2",focus="n")]
+[PlaySound(key="$d_avg_footstep_stonestep",volume=1,channel="step1",loop=false)]
+[PlaySound(key="$d_avg_walk_stage",volume=1,channel="step2",loop=false)]
+[PlaySound(key="$d_gen_walk_n",volume=0.6,channel="step3",loop=false)]
+[stopsound(channel="step1",fadetime=2.5)]
+[stopsound(channel="step2",fadetime=2.5)]
+[stopsound(channel="step3",fadetime=2.5)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_1035_wisdel_1#1$2",focus="m")]
+[name="W"]あら、ようやく主役たちのお出ましね。
+[name="W"]ババア、早くしてちょうだい、あんたのその何でも知ってる頭を働かせて、一番肝心の質問に答えて――
+[charslot(slot="m",name="avg_1035_wisdel_1#14$2",focus="m")]
+[name="W"]あたしたちは、今、一体、どこにいるの？
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[verticalbg(imagegroup="50_g22_1/50_g22_2", solidwidth=1280, solidheight="1512/1512",y=1905)]
+[largebgtween(duration =20,yFrom =560, yTo =860, block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=10)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[verticalbg(imagegroup="50_g22_1/50_g22_2", solidwidth=1280, solidheight="1512/1512",y=1905)]
+[largebgtween(duration =20,yFrom =1660, yTo =1890, block = false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=4, block=true)]
+[Delay(time=10)]
+果てしのない金色の海の上を一艘の小舟が漂っている。
+[name="ケルシー"]ここは、「源石」の内部だ。
+[name="ケルシー"]「源石」の内部には、「宇宙」が存在している。
+[Dialog]
+[delay(time=2)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[largebg]
+[stopmusic(fadetime=2)]

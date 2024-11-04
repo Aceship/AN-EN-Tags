@@ -1,0 +1,13 @@
+[header(actId="sandbox_1", npcId="")] 
+【懸賞】我々鉱夫団を、次の仕事場まで護衛してほしい。
+[decision(option1="依頼を受ける", value1="1.1", option2="この秘境への旅は現在準備中です。", value2="1.2", option3="ほかにやるべきことがある。", value3="1.3")]
+[predicate(references="1.1", visibleCondition="!c0")]
+[orderrift(riftId="fixed_dungeon_4")]
+<color=#d8d769>依頼を受けました。</color>
+[end]
+[predicate(references="1.2", visibleCondition="c1")]
+[end]
+[predicate(references="1.3")]
+[end]
+[condition(references="c0", key="checkriftordered")]
+[condition(references="c1", key="checkriftordered")]

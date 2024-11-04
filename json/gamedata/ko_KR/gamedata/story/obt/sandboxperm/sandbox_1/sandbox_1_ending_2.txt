@@ -1,0 +1,88 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="47_g30_oasis2",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot]
+[name="연로한 족장"]두 번째 승리군. 사람도 더 많아졌고. 최근 들어 이 땅이 이렇게 희망찼던 적은 없었소.
+[charslot(slot="m",name="avg_402_tuye_1#1$1",focus="m")]
+[name="투예"]이번 전투는 아주 멋지게 이겼어. 놈들도 부디 교훈을 얻고 다시는 귀찮게 굴지 않으면 좋겠는데.
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="유넥티스"]흥, 탐욕스러운 아미르 녀석들, 원하는 걸 얻기 전까진 절대 그만두지 않을걸.
+[playMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[charslot]
+[name="연로한 족장"]돈이 부족한 것도 아닐 텐데, 이토록 끈질기게 습격을 가하는 걸 보면 분명 무언가 특별한 물건인 게 틀림없을 것이오.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="유넥티스"]그래서, 아르살란에 정말로 '유적지'와 '보물'이 있다는 거야?
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="패신저"]이곳이 스바트 아르살란이라고 불리는 데에는 그럴만한 이유가 있습니다. 한때는 아슬란이 병사를 일으킨 여러 곳 중의 하나였으니까요.
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="패신저"]천 년이 넘은 유적들이 수없이 남아 있더라도 이상하지 않습니다.
+[Dialog]
+[charslot]
+[Decision(options="그 서찰에도 이런 내용이 있었어.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#7$1",focus="m")]
+[name="투예"]내 생각엔…… 아미르군이 뭘 찾고 있든, 분명 다시 찾아올 거야.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_215_mantic_1#1$1",focus="m",duration=1)]
+[delay(time=1)]
+[name="맨티코어"]응…… 나, 나도 동의해…… 분명 다시 공격할 거야…… 더 은밀하고, 더 치명적으로.
+[charslot(slot="m",name="avg_402_tuye_1#5$1",focus="m")]
+[name="투예"]앗! 맨티코어 씨, 여긴 어쩐 일이야?
+[charslot(slot="m",name="avg_215_mantic_1#2$1",focus="m")]
+[name="맨티코어"]나…… 계속 여기 있었는데……
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="패신저"]궁전에서 훈련받은 비밀의 암살자들, 저도 들어 본 적이 있습니다……
+[charslot(slot="m",name="avg_215_mantic_1#1$1",focus="m")]
+[name="맨티코어"]응…… 아미르군이 무너뜨릴 수 없는 곳은 암살자들이 찾아간대.
+[charslot(slot="m",name="char_472_pasngr_n_1",focus="m")]
+[name="패신저"]그들이 어딜 가든 살육과 피바람을 몰고 다닌다고 들었습니다.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]그럼 이제 어떻게 해?
+[Dialog]
+[charslot]
+[Decision(options="우선 보물에 관한 진실부터 확인해 보자.", values="1")]
+[Predicate(references="1")]
+[Decision(options="진실을 알아야만……", values="1")]
+[Predicate(references="1")]
+[Decision(options="아미르도 제대로 상대할 수 있어.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#7$1",focus="m")]
+[name="투예"]동의해. 아미르군이 계속 들쑤시게 놔둘 순 없어.
+[charslot(slot="m",name="avg_402_tuye_1#7$1",focus="m")]
+[name="투예"]만약 우리가 먼저 보물을 찾아낸다면, 그들과 협상해서 평화를 얻을 수 있을지도 몰라.
+[Dialog]
+[charslot]
+[Decision(options="맞아, 평화가 없으면 우리 임무도 계속할 수 없어.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="투예"]일단 그 페페 씨랑 연락을 취해보자. 지금으로선 그녀가 가장 진실에 접근한 사람이니까.
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="유넥티스"]그래도 최악의 상황은 대비해야 돼. 만약 아미르군과 끝장을 봐야 한다면…… 우리에겐 더 많은 자원이 필요해.
+[charslot(slot="m",name="char_416_zumama_1#2",focus="m")]
+[name="유넥티스"]어르신, 정글 북쪽에는 뭐가 있어?
+[charslot]
+[name="연로한 족장"]북쪽은 금지된 찰리마슈투라는 곳인데…… 하아, 그쪽에도 아미르군이 주둔해 있어 우리도 여태 북쪽으로 나아가진 못했소.
+[Dialog]
+[charslot]
+[Decision(options="거기는 어떤 곳인데?", values="1")]
+[Predicate(references="1")]
+[charslot]
+[name="연로한 족장"]선조들의 말에 따르면, 그곳은 한때 사하의 '하인'들이 정착해 살았던 신성한 곳이라고 했소.
+[Dialog]
+[charslot]
+[Decision(options="보물이 거기 있을지도 모르겠네.", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="투예"]하지만 놈들이 거기서 이미 '유적지'를 찾았다면, 왜 굳이 다른 곳을 휘젓고 다니는 거지?
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

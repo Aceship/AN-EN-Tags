@@ -1,0 +1,28 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]今度は何を持ってきたんじゃ？
+[decision(option1="美味しさは保証する。", value1="1.1", option2="いや、偶然通りかかっただけだ。", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_craft_17", itemCount="-1")]
+（ユーネクテス特製固形ポタージュを渡す）
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]フンッ、誰が信じるか……
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]ん……？
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]むむ……？
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]むむむ……
+[decision(option1="それはどういう表情なんだ？", value1="2.1")]
+[predicate(references="2.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]これはお主が作った物ではないな？　前回とは一味違うぞ！
+[decision(option1="ああ。ユーネクテスに感謝しなくては。", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="彼女が一番重要な工程を担当してくれたから。", value1="4.1")]
+[predicate(references="4.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]うむ……悪くない。てっきりあの子は、わしのことなど忘れてしまったものと思っておったが。
+[decision(option1="それで、満足してもらえたか？", value1="5.1")]
+[predicate(references="5.1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]お主には言わん。ユーネクテスに直接言うてやろう。
+[additem(itemId="sandbox_1_condiment", itemCount="3")]
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_craft_17", value="1")]

@@ -1,0 +1,487 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[Background(image="50_g16_scourgeswamp",screenadapt="showall")]
+[Delay(time=1)]
+[playMusic(intro="$escape_intro", key="$escape_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_053", duration=0.7)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_053",focus="m")]
+[name="Timid Mercenary"]Paprika, Paprika!
+[charslot(slot = "m", name = "avg_4071_peper_1#5$1",focus="m")]
+[name="Paprika"]Hey, stay still!
+[charslot(slot = "m", name = "avg_npc_053",focus="m")]
+[name="Timid Mercenary"]Let's run for it!
+[charslot(slot = "m", name = "avg_4071_peper_1#10$1",focus="m")]
+[name="Paprika"]What are you talking about?
+[charslot(slot = "m", name = "avg_npc_053",focus="m")]
+[name="Timid Mercenary"]Haven't you noticed? The mercenaries under that W are all gone. The Military Commission's troops must have arrived.
+[charslot(slot = "m", name = "avg_4071_peper_1#10$1",focus="m")]
+[name="Paprika"]All the more reason to not run around and get caught in the crossfire.
+[charslot(slot = "m", name = "avg_npc_053",focus="m")]
+[name="Timid Mercenary"]Don't forget it was the Military Commission that hired us!
+[name="Timid Mercenary"]If they've come, it's curtains for the guys here!
+[name="Timid Mercenary"]If we make a run for it now, we could still explain things to General Manfred!
+[charslot(slot = "m", name = "avg_4071_peper_1#11$1",focus="m")]
+[name="Paprika"]You want to go back to him?! He'll just send you back to Victoria to kill more people. Is that what you want?
+[charslot(slot = "m", name = "avg_npc_053",focus="m")]
+[name="Timid Mercenary"]You think we have a choice? What do you think the General will do to us when he finds out that we surrendered?
+[name="Timid Mercenary"]I'll run errands if they tell me to run errands, and I'll kill if they tell me to kill. Whatever it takes to survive.
+[name="Timid Mercenary"]You want to stay, that's your choice. I'm going. Goodbye.
+[Dialog]
+[PlaySound(key="$rungeneral", volume=0.9)]
+[charslot(duration=1)]
+[Delay(time=2)]
+[playsound(key="$d_avg_grenadethrow")]
+[playsound(key="$d_gen_explo_n",delay=1)]
+[delay(time=1)]
+[CameraShake(duration=0.8,xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=0.3)]
+[PlaySound(key="$grenade_explosion",volume=0.7)]
+[CameraShake(duration=2,xstrength=40, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_explosion", volume=0.7, loop=false, channel="explo",delay=1)]
+[delay(time=2)]
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[playMusic(intro="$frontline_intro", key="$frontline_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+Fifty hours into the operation...
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="50_g1_originiumcanyon", screenadapt="coverall", block=true)]
+[charslot(slot = "m", name = "avg_npc_1333_1#6$1",focus="m")]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1333_1#6$1",focus="m")]
+[name="Nadine"]Aren't you the lucky one, Major Ulšulah.
+[name="Nadine"]It's not every day that you get to lose a critical objective, be captured by the enemy, and still make it back in one piece.
+[name="Nadine"]Looks like you got along well with your old Scar Market buddies.
+[charslot(slot = "m", name = "avg_npc_1067_1#5$1",focus="m")]
+[name="Ulšulah"]Watch your tone, Nachzehrer. It's not your place to judge my failure.
+[charslot(slot = "m", name = "avg_npc_404_1#6$1",focus="m")]
+[name="Manfred"]Regardless of the circumstances, Major Ulšulah's survival is good news for the Military Commission.
+[charslot(slot = "m", name = "avg_npc_1067_1#10$1",focus="m")]
+[name="Ulšulah"]General Manfred, I—
+[charslot(slot = "m", name = "avg_npc_404_1#1$1",focus="m")]
+[name="Manfred"]I know about the Sanguinarch's death. You can explain later.
+[name="Manfred"]As for now, I hope you've returned with something of value.
+[charslot(slot = "m", name = "avg_npc_1067_1#1$1",focus="m")]
+[name="Ulšulah"]I have the skeleton's location... and details about the mercenaries guarding it.
+[charslot(slot = "m", name = "avg_npc_1333_1#7$1",focus="m")]
+[name="Nadine"]That's all? Sounds like it would've been more worth it if you had stayed in the hands of those mercenaries.
+[charslot(slot = "m", name = "avg_npc_404_1#1$1",focus="m")]
+[name="Manfred"]I want to hear what you think.
+[charslot(slot = "m", name = "avg_npc_1067_1#7$1",focus="m")]
+[name="Ulšulah"]The mercenaries are trying to reawaken the Feranmut skeleton. Whatever their plans are, it has something to do with them.
+[charslot(slot = "m", name = "avg_npc_1067_1#1$1",focus="m")]
+[name="Ulšulah"]I don't know what they're plotting, but they don't have a lot of people guarding the skeleton, for some reason.
+[charslot(slot = "m", name = "avg_npc_404_1#6$1",focus="m")]
+[name="Manfred"]Is Hoederer among them?
+[charslot(slot = "m", name = "avg_npc_1067_1#10$1",focus="m")]
+[name="Ulšulah"]...Yes.
+[charslot(slot = "m", name = "avg_npc_404_1#3$1",focus="m")]
+[name="Manfred"]...
+[charslot(slot = "m", name = "avg_npc_404_1#1$1",focus="m")]
+[name="Manfred"]Surround the canyon.
+[name="Manfred"]Take back the spine, no matter the cost.
+[charslot(slot = "m", name = "avg_npc_1333_1#6$1",focus="m")]
+[name="Nadine"]Yes, sir!
+[charslot(slot = "m", name = "avg_npc_1067_1#1$1",focus="m")]
+[name="Ulšulah"]General Manfred, for the upcoming battle—
+[charslot(slot = "m", name = "avg_npc_404_1#1$1",focus="m")]
+[name="Manfred"]You won't be needed. Stay in the rear.
+[charslot(slot = "m", name = "avg_npc_1067_1#1$1",focus="m")]
+[name="Ulšulah"]...Yes, sir.
+[charslot(slot = "m", name = "avg_npc_1067_1#10$1",focus="m")]
+[name="Ulšulah"]As a precaution, may I ask...
+[name="Ulšulah"]What are your plans if we're unable to take back the skeleton quickly?
+[charslot(slot = "m", name = "avg_npc_404_1#1$1",focus="m")]
+[name="Manfred"]...
+[name="Manfred"]I don't enjoy such hypotheticals, Ulšulah.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[Background(image="43_g1_giantmonstercockpit", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[PlaySound(key="$e_skill_explodebris",volume=0.6)]
+[CameraShake(duration=2,xstrength=25, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_4088_hodrer_1#7$1",focus="m")]
+[name="Hoederer"]Manfred's troops are here. They're a little earlier than expected.
+[charslot(slot = "m", name = "avg_4087_ines_1#9$1",focus="m")]
+[name="Ines"]What about the Royal Court's men? Nothing from Ulšulah?
+[charslot(slot = "m", name = "avg_4088_hodrer_1#7$1",focus="m")]
+[name="Hoederer"]She got away.
+[charslot(slot = "m", name = "avg_4088_hodrer_1#1$1",focus="m")]
+[name="Hoederer"]It's my fault...
+[charslot(slot = "m", name = "avg_4087_ines_1#9$1",focus="m")]
+[name="Ines"]...
+[charslot(slot = "m", name = "avg_4087_ines_1#1$1",focus="m")]
+[name="Ines"]We'll talk about this later.
+[charslot(slot = "m", name = "avg_4088_hodrer_1#1$1",focus="m")]
+[name="Hoederer"]Where's W?
+[charslot(slot = "m", name = "avg_4087_ines_1#9$1",focus="m")]
+[name="Ines"]She went out to scout the battlefield. Worst case scenario, she'll run into the enemy before we do.
+[charslot(slot = "m", name = "avg_4132_ascln_1#4$1",focus="m")]
+[name="Ascalon"]If Ulšulah got back to Manfred, they may have information on our current location and defenses.
+[name="Ascalon"]We're significantly outnumbered. A prolonged fight doesn't favor us.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_explosion", volume=0.3)]
+[CameraShake(duration=1,xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[charslot(slot = "m", name = "avg_4088_hodrer_1#7$1",focus="m")]
+[name="Hoederer"]It's been fifty hours since the Doctor's team set out. Any news?
+[charslot(slot = "m", name = "avg_4087_ines_1#9$1",focus="m")]
+[name="Ines"]Nothing.
+[charslot(slot = "m", name = "avg_4088_hodrer_1#7$1",focus="m")]
+[name="Hoederer"]We have to hold out until the agreed time.
+[charslot(slot = "m", name = "avg_4087_ines_1#9$1",focus="m")]
+[name="Ines"]Given our odds, the only way to hold off the Military Commission for a day is if they were struck by a Catastrophe. But as things stand, even Catastrophes are at their command.
+[name="Ines"]The Military Commission won't let this weapon fall into our hands and threaten their aerial supremacy. They'll come at us with everything they have.
+[charslot(slot = "m", name = "avg_4088_hodrer_1#2$1",focus="m")]
+[name="Hoederer"]We'll have to take the chance.
+[charslot(slot = "m", name = "avg_4132_ascln_1#8$1",focus="m")]
+[name="Ascalon"]What do you mean?
+[charslot(slot = "m", name = "avg_4088_hodrer_1#1$1",focus="m")]
+[name="Hoederer"]The chance that Manfred doesn't want to destroy the skeleton either.
+[charslot(slot = "m", name = "avg_4087_ines_1#13$1",focus="m")]
+[name="Ines"]I hope you really know Manfred as well as you think you do.
+[charslot(slot = "m", name = "avg_4087_ines_1#1$1",focus="m")]
+[name="Ines"]One last question. What happens if we don't get word from the Doctor when the agreed time has passed?
+[charslot(slot = "m", name = "avg_4088_hodrer_1#1$1",focus="m")]
+[name="Hoederer"]Then we abandon the skeleton.
+[name="Hoederer"]There's no point fighting to the death. Evacuation comes first. Our main priority is always to keep as many people alive as we can.
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1",focus="m")]
+[name="Ascalon"]Reasonable. No objections.
+[charslot(slot = "m", name = "avg_4088_hodrer_1#8$1",focus="m")]
+[multiline(name="Hoederer")]There's another way that might delay the Royal Court's attack...
+[charslot(slot = "m", name = "avg_4088_hodrer_1#7$1",focus="m")]
+[multiline(name="Hoederer")]Killing their commander.
+[name="Hoederer"]Ascalon.
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1",focus="m")]
+[name="Ascalon"]Agreed.
+[charslot(slot = "m", name = "avg_4132_ascln_1#4$1",focus="m")]
+[name="Ascalon"]I'll kill him.
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="50_g6_sarkazancientruins", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="It's freezing.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I don't want to admit it, but I can feel my heart race. Damn, stop trembling!", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="It's just like that time when I had to face Talulah alone—no, even worse.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="This strange figure must be the master of those monsters and this realm. Yet, I sense no hostility from him—it's as if my presence is not worth his attention.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="He just keeps hacking at the crystallized bones with his axe without even looking my way. Did he kill all these people?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I have my finger on my trigger, but I can't move an inch.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Pull yourself together, W! Haven't you seen your fair share of monsters by now?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Find out who he is, and what this cavern has to do with Theresa. Pry it out of his mouth, if that's what it takes.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_npc_412_1#5$1",focus="m")]
+[name="W"]Alright, I don't have time to waste on you, you sorry piece of wood. I have a few questions, and your answers will decide whether my next move is to throw bombs at your face or not.
+[name="W"]This is a Confessarius altar. Are you a Confessarius?
+[Dialog]
+[charslot]
+[PlaySound(key="$p_imp_axe_h", volume=0.9)]
+[PlaySound(key="$p_imp_axe_h", loop=false,channel="axe",volume=1,delay=1.2)]
+[CameraShake(duration=0.8,xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[CameraShake(duration=1,xstrength=20, ystrength=20, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=1)]
+Clank. Clank.
+The relentless and haunting sound of axe striking bone echoes through the cavern, as if carrying the weight of eras forgotten.
+He slowly opens his mouth to speak.
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[name="???"]I am a servant of Qui'sartuštaj, the King of Sarkaz.
+[name="???"]The bloodline of the King perseveres through life and death.
+[name="???"]If he who serves the King of Sarkaz is a Confessarius, then a Confessarius, I am.
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_412_1#5$1",focus="m")]
+[delay(time=0.2)]
+[playsound(key="$d_avg_gunequip",volume=0.7)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_412_1#5$1",focus="m")]
+[name="W"]So you can talk.
+[name="W"]I'll give you a chance to introduce yourself before I shoot. What is this place? What does it have to do with the Confessarii?
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[name="???"]Qa... lid'čoa... 'The Key'.
+[name="Qalid'čoa"]But this key opens no door, not anymore. Now, I am merely the warden of this deep, dark tomb.
+[charslot(slot = "m", name = "avg_npc_412_1#13$1",focus="m")]
+[name="W"]What are you talking about? A tomb? For who?
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[name="Qalid'čoa"]The countless heroes of Kazdel, and the foes who died at their hands.
+[name="Qalid'čoa"]The Gravebearer, the Magnificent Eight, the Brave Eleven... all have fallen in the course of history, and I have buried many of them.
+[name="Qalid'čoa"]Here lies their weapons and armor, remnants of the past.
+[charslot(slot = "m", name = "avg_npc_412_1#13$1",focus="m")]
+[name="W"]You must be joking. You knew all those people? Don't tell me, you're as ancient as that old hag?
+[charslot(slot = "m", name = "avg_npc_412_1#12$1",focus="m")]
+[name="W"]I don't know why you old freaks keep clinging to the past. Are you going to let yesterday's bad jam stop you from eating today? Okay... I need to workshop that.
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[name="Qalid'čoa"]Many emerged from that epoch of heroes, becoming the new hope of the Sarkaz, time and again...
+[name="Qalid'čoa"]But all of them failed, joining the ashes and dust in this tomb.
+[name="Qalid'čoa"]You stand upon the sword of Qui'lon, the Wrathful Cerulean Flame.
+[name="Qalid'čoa"]Theresis left it here, because he refused to use it. Still, it is not proper to step upon it.
+[charslot(slot = "m", name = "avg_npc_412_1#12$1",focus="m")]
+[multiline(name="W")]Qui'lon? Isn't he a character in myths and legends—
+[charslot(slot = "m", name = "avg_npc_412_1#12$1",focus="m")]
+[multiline(name="W")]You're not playing me for a fool, are you?
+[Dialog]
+[charslot(duration=0.5)]
+[PlaySound(key="$d_avg_kneelsnow_s", volume=1)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="Damn, I took a step back without even realizing it.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Why should I believe him? And why shouldn't I step on Qui'lon's sword, even if it was real?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[name="Qalid'čoa"]I have answered your questions. Now you shall answer, mine.
+[name="Qalid'čoa"]Why do you trespass upon this place?
+[Dialog]
+[charslot]
+[PlaySound(key="$p_imp_axe_h", volume=1)]
+[CameraShake(duration=1,xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+Clank.
+The axe swings again. The shockwave almost makes W take another step back.
+[charslot(slot = "m", name = "avg_npc_412_1#11$1",focus="m")]
+[name="W"]I'm here to pick a fight with the Confessarii. What's that altar used for? Tell me, or else!
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[name="Qalid'čoa"]...
+[name="Qalid'čoa"]The mission of this altar has ended. No one visits this place anymore, except fools who stumble upon it.
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="That strange fellow answered all my questions with flat interest. Clearly, he'd rather return to this work with the axe than engage with me.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I've lashed out at him, but my anger was met with no response. It's like throwing stones into a bottomless pit.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="What did he mean? He's not with the Confessarii? Shouldn't he have come after me with his axe the moment the words left my mouth?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_412_1#11$1",focus="m")]
+[name="W"]Hey, I'm talking to you—
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[delay(time=0.2)]
+[PlaySound(key="$d_sp_ballista", volume=1)]
+[CameraShake(duration=1,xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=1)]
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="The smoke clears, but the gaunt figure remains upright.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I didn't think I could take him out with a single bomb, but seriously, not even a scratch?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[name="Qalid'čoa"]Futile. This vessel will never change again.
+[name="Qalid'čoa"]A failed vessel that has been denied both eternal life as the instrument of the Crown's coming, and the sweet release of death.
+[charslot(slot = "m", name = "avg_npc_412_1#13$1",focus="m")]
+[name="W"]So you're one of the Confessarii's failed experiments too?
+[charslot(slot = "m", name = "avg_npc_412_1#12$1",focus="m")]
+[name="W"]You feel bad for yourself? I could free you from your suffering.
+[Dialog]
+[charslot]
+[PlaySound(key="$grenade_launcher_shot", volume=0.5)]
+[PlaySound(key="$grenade_launcher_shot", volume=0.6, loop=false, channel="lr",delay=0.6)]
+[PlaySound(key="$grenade_launcher_shot", volume=0.6, loop=false, channel="lr1",delay=0.9)]
+[CameraShake(duration=2.5,xstrength=25, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[delay(time=2.5)]
+[charslot(slot = "m", name = "avg_npc_1332_1#1$2",focus="m")]
+[name="Qalid'čoa"]It is but futile.
+[Dialog]
+[PlaySound(key="$d_avg_singleblunt",volume=1)]
+[PlaySound(key="$d_avg_axeimp", volume=0.8,delay=0.3)]
+[CameraShake(duration=1.5,xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[Dialog]
+[charslot]
+The man swings his stone axe and bats away W's bomb, as though swatting away a fly.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="Good, I got a response from him.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="That means there's a chance!", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Three, two—", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[stopmusic(fadetime=3)]
+[Dialog]
+[CameraShake(duration=4, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_sp_ballista")]
+[playsound(key="$d_avg_explosion", volume=0.8,delay=0.3)]
+[PlaySound(key="$d_avg_statuecollapse",volume=0.7,delay=1.2)]
+[bgeffect(name="$eb_dust_01",layer=1)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.1, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.7, block=true)]
+[delay(time=3)]
+[bgeffect]
+[delay(time=1)]
+[Dialog]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="The bomb falls exactly where I expected it to. A section of the cavern collapses, trapping him beneath, but not enough to kill him.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I point my gun at his head.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_412_1#5$1",focus="m")]
+[name="W"]You said the Confessarii made you indestructible? Let's see if I can't blow a hole in your brain at this range.
+[name="W"]The Confessarii like their experiments, don't they? Did you guys make those bighead moths? Disgusting den of monsters.
+[name="W"]Cut the poetry and answer my questions. Did you know Theresa?
+[Dialog]
+[charslot]
+[name="Qalid'čoa"]The exiled one has had the honor of seeing that King of Sarkaz...
+[name="Qalid'čoa"]This, is where the tragic King was reborn.
+[Dialog]
+[playMusic(key="$darkness_03_loop", volume=0.6)]
+[charslot(slot = "m", name = "avg_npc_412_1#13$1",focus="m")]
+[name="W"]—!
+[name="W"]This is the place... they... how did they do it?
+[Dialog]
+[charslot]
+[name="Qalid'čoa"]The Confessarii brought the King's bloodied body back, and cut her soul from the myriad. But she was already entwined within the myriad, and could no longer exist as herself.
+W turns around, toward the altar in the center of the cavern.
+The menacing building looks unnerving and smells faintly of blood.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[Subtitle(text="What had happened here?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I dare not think about it, but I can't stop myself.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avg_npc_412_1#3$1",focus="m")]
+[name="W"]Why...?
+[Dialog]
+[charslot]
+[name="Qalid'čoa"]The present of Sarkaz needed her to die. The future of Sarkaz needed her to live.
+[name="Qalid'čoa"]As the King of Sarkaz, she gave her all, her spirit and her wisdom, her blood and her bone.
+[name="Qalid'čoa"]You followed the King's path as her former subject, but she is no longer the one you knew.
+[name="Qalid'čoa"]I saw her awakening, the sorrow on her face. I saw the weight on her soul, her eternal torment.
+[charslot(slot = "m", name = "avg_npc_412_1#5$1",focus="m")]
+[name="W"]Enough... shut up.
+[Dialog]
+[charslot]
+[name="Qalid'čoa"]She was a sacrifice to the myriad souls, to Kazdel, to all the past and future Sarkaz.
+[Dialog]
+[charslot(slot = "m", name = "avg_npc_412_1#11$1",focus="m")]
+[CameraShake(duration=0.5, xstrength=25, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="W"]I said SHUT UP!
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_explosion_stone", volume=1)]
+[PlaySound(key="$grenade_explosion", volume=1,delay=0.5)]
+[PlaySound(key="$d_sp_ballista", volume=1,delay=1)]
+[CameraShake(duration=4,xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.3, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.6, block=true)]
+[Dialog]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=0.5)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2.5, block=true)]
+[Delay(time=1)]
+[Subtitle(text="I've had enough...", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Kal'tsit, Doctor, Theresis... all of you.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="All of you have your big dreams and ambitions. You talk about doing great things.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="But did it change anything in the end? People keep dying, the people who should die, the people who shouldn't, and the people who really shouldn't. And you won't even let her have her final rest!", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="To hell with the myriad souls and the suffering of the Sarkaz. Why should a person have to bear all this burden?", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="All of you can go to hell!", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="I'll blow this place... the place of her desecration to oblivion.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[delay(time=1)]
+[Dialog]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$e_skill_explodebris",volume=0.7)]
+[CameraShake(duration=2.5, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Background(image="50_g6_sarkazancientruins", fadetime=0,screenadapt="coverall", block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=3, block=true)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avg_npc_412_1#5$1",focus="m")]
+[name="W"]*pant*... *pant*...
+[Dialog]
+[charslot]
+Dust fills the entire cavern. The decrepit ornaments lie in ruins. Yet, the explosions are not enough to quench her anger.
+In the deepest reaches of the cavern, a lone altar resembling a door remains.
+[Dialog]
+[PlaySound(key="$d_avg_deathmumble", volume=0, loop=true, channel="det")]
+[SoundVolume(volume=0.7, channel="det",fadetime=3)]
+[delay(time=2)]
+[name="Empty Whispers"]...
+[charslot(slot = "m", name = "avg_npc_412_1#3$1",focus="m")]
+[name="W"]What is this?
+[Dialog]
+[charslot]
+[name="Empty Whispers"]I...
+[charslot(slot = "m", name = "avg_npc_412_1#3$1",focus="m")]
+[name="W"]Your Highness?
+[Dialog]
+[PlaySound(key="$d_avg_open_door", volume=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=3, block=true)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+W pushes the door open.
+[Dialog]
+[stopSound(channel="det", fadetime=3.5)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image]

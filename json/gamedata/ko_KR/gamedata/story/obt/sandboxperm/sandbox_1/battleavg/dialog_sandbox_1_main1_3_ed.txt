@@ -1,0 +1,68 @@
+[header(actId="sandbox_1", npcId="trap_467_ttuye")]
+[summontrap(x="3", y="8", charId="trap_467_ttuye", isChar="FALSE", dir="RIGHT")]
+[summonenemy(enemyId="enemy_7001_blwzad_2", x="7", y="8", endX="1", endY="4")]
+[move(enemyId="enemy_7001_blwzad_2", x="6", y="8")]
+[summonenemy(enemyId="enemy_7001_blwzad", x="7", y="9", endX="1", endY="4")]
+[move(enemyId="enemy_7001_blwzad", x="6", y="9")]
+[camerafocusto(offsetX="5", offsetY="8", scale="FAR", time="1")]
+[foginview(id="rect1", leftBottomX=1, leftBottomY=6, rightUpX=7, rightUpY=11)]
+[name="아미르군 병사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]난 경고했어, 너희의 상대가 누구인지 가늠도 못하는 모양이군!
+[decision(option1="하늘엔 별, 땅에는 아미르.", value1="1.1", option2="어떤 별을 말하는 거야?", value2="1.2")]
+[predicate(references="1.1")]
+[name="아미르군 병사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]……네놈들은 아미르께 범한 죗값을 치르게 될 것이고, 우리 군대는 네놈들의 터전을 쑥대밭으로 만들어버릴 것이다.
+[name="아미르군 병사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]두고 봐, 네놈들은 우리의 노예가 되어 죽을 때까지 채굴장에서 일하게 될 거다.
+[withdraw(id="enemy_7001_blwzad_2")]
+[withdraw(id="enemy_7001_blwzad")]
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]채굴장이라……
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]어떻게든 막아야 해. 안 그러면 놈들이 더 많은 병력을 채굴장에 파견할 거야.
+[decision(option1="이미 원수가 돼버렸네.", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="일단 캠프에 돌아가 소식부터 전하자.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="미리 대비해 둬야겠어.", value1="4.1")]
+[predicate(references="4.1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]녀석들이 남긴 물건에서 내가 뭘 찾았게? 지명 수배령이야. 놈들이 어떤 고고학자를 수배하고 있는 것 같아.
+[decision(option1="고고학자? 여기에 왔다고?", value1="5.1")]
+[predicate(references="5.1")]
+[decision(option1="설마 보물에 대한 소문이 진짜였나?", value1="6.1")]
+[predicate(references="6.1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]아미르군이 보물을 찾기 위해 일대를 전부 뒤집어 놓은 모양인데.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]보물이라…… 아미르군을 쫓아내려면 그게 관건일 수도 있겠네. 우리가 먼저 그 고고학자를 찾아야 해.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]그리고, 좋은 소식이 있어. 놈들이 석재 채굴에 쓰는 지도를 두고 갔네. 이제 우리도 석재를 캘 수 있게 됐어.
+[additem(itemId="sandbox_1_craft_2", itemCount="1")]
+(아르살란 석광 분포도 획득. 이제 석재를 채집할 수 있습니다.)
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[save]
+[end]
+[predicate(references="1.2")]
+[name="아미르군 병사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]……네놈들은 아미르께 범한 죗값을 치르게 될 것이고, 우리 군대는 네놈들의 터전을 쑥대밭으로 만들어버릴 것이다.
+[name="아미르군 병사", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]두고 봐, 네놈들은 우리의 노예가 되어 죽을 때까지 채굴장에서 일하게 될 거다.
+[withdraw(id="enemy_7001_blwzad_2")]
+[withdraw(id="enemy_7001_blwzad")]
+[camerafocusto(id="trap_467_ttuye", scale="MID", time="1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]채굴장이라……
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]어떻게든 막아야 해. 안 그러면 놈들이 더 많은 병력을 채굴장에 파견할 거야.
+[decision(option1="이미 원수가 돼버렸네.", value1="8.1")]
+[predicate(references="8.1")]
+[decision(option1="일단 캠프에 돌아가 소식부터 전하자.", value1="9.1")]
+[predicate(references="9.1")]
+[decision(option1="미리 대비해 둬야겠어.", value1="10.1")]
+[predicate(references="10.1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]녀석들이 남긴 물건에서 내가 뭘 찾았게? 지명 수배령이야. 놈들이 어떤 고고학자를 수배하고 있는 것 같아.
+[decision(option1="고고학자? 여기에 왔다고?", value1="11.1")]
+[predicate(references="11.1")]
+[decision(option1="설마 보물에 대한 소문이 진짜였나?", value1="12.1")]
+[predicate(references="12.1")]
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]아미르군이 보물을 찾기 위해 일대를 전부 뒤집어 놓은 모양인데.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]보물이라…… 아미르군을 쫓아내려면 그게 관건일 수도 있겠네. 우리가 먼저 그 고고학자를 찾아야 해.
+[name="투예", avatarId="char_402_tuye", isAvatarRight="FALSE"]그리고, 좋은 소식이 있어. 놈들이 석재 채굴에 쓰는 지도를 두고 갔네. 이제 우리도 석재를 캘 수 있게 됐어.
+[additem(itemId="sandbox_1_craft_2", itemCount="1")]
+(아르살란 석광 분포도 획득. 이제 석재를 채집할 수 있습니다.)
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[save]
+[end]

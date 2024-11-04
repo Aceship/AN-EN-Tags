@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+이건 미지의 위험이 존재하는 초대입니다. 이 수수께끼의 의뢰를 수락하시겠습니까?
+[decision(option1="의뢰를 수락한다", value1="1.1", option2="의뢰 변경", value2="1.2", option3="의뢰를 수락한다", value3="1.3", option4="떠난다", value4="1.4")]
+[predicate(references="1.1", visibleCondition="c0&&!c1")]
+<color=#d8d769>의뢰 수락 완료!</color>
+[orderrift(riftId="random_dungeon_1")]
+[end]
+[predicate(references="1.2", visibleCondition="c4&&c5")]
+<color=#d8d769>의뢰 변경 완료!</color>
+[orderrift(riftId="random_dungeon_1")]
+[end]
+[predicate(references="1.3", visibleCondition="!c6")]
+<color=#d8d769>현재 의뢰를 수락할 수 없습니다. 나중에 다시 방문해 주십시오.</color>
+[end]
+[predicate(references="1.4")]
+[end]
+[condition(references="c0", key="checkcanorderrandomrift")]
+[condition(references="c1", key="checkriftordered")]
+[condition(references="c4", key="checkcanorderrandomrift")]
+[condition(references="c5", key="checkriftordered")]
+[condition(references="c6", key="checkcanorderrandomrift")]

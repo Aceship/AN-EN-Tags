@@ -1,0 +1,123 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[PlaySound(key="$d_avg_sandwnd", volume=0.6, loop=true, channel="wind")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Decision(options="はぁ……はぁ……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]大丈夫か？　全身汗だくだぞ。
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="トゥイエ"]その勢いで汗をかいてたら、足元にオアシスができそうだな。
+[dialog]
+[charslot]
+[Decision(options="どこまでも砂続きだな。;ずっとタイヤに砂が当たる音がしている。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]まあ、運が良ければ、夜にはエクルムイのオアシス付近にあるという噂の空き地にたどり着くことができるだろう。
+[charslot(slot="m",name="avg_402_tuye_1#11$1",focus="m")]
+[name="トゥイエ"]だが、運が悪ければ、その場所はもう砂嵐に飲み込まれ、見つけようがなくなってるかもな。
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]不吉なことを言うんじゃない。くだんの空き地は、ロドスの事務所とフェーンホットランドの観測ステーションを置くなら、アルサラン地区全体で最も適した場所なんだぞ。
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="ユーネクテス"]そこが見つからないとなれば、場所探しにさらに時間を費やすことになる。情報が正しければ、我々に残された時間は多くないというのに。
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="トゥイエ"]はぁ……それにしても、この辺りには源石工業施設なんてないのに、どうして鉱石病の感染者数が年々増加してるんだ？
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]さてな。この地の暴風と砂とが答えをくれるかもしれない。
+[Dialog]
+[charslot]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="ユーネクテス"]ん？　さっきから窓の外ばかり見つめて、どうしたんだ？
+[Dialog]
+[charslot]
+[Decision(options="あ、あれは……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_416_zumama_1#6",focus="m")]
+[name="ユーネクテス"]トゥイエ、車を止めてくれ！
+[Dialog]
+[charslot]
+そこには、砂嵐の中、数匹の狂暴なハリノミがよろめく男を攻撃しているのがぼんやりと見て取れた。
+[Dialog]
+[charslot]
+[PlaySound(key="$drift", volume=0.6)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="トゥイエ"]あんた、どうして一人でこんな場所をうろついてたんだ？　この辺りはハリノミがあちこちに巣を作ってて危ないぞ。
+[charslot]
+[name="ケガをした旅人"]た、助けてくれてありがとう。実は狩りに出たところで砂嵐に遭ってな……道に迷ってしまったんだ。
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]では、住んでいる場所は？　我々がそこまで送ろう。
+[charslot]
+[name="ケガをした旅人"]私たちの部族は避難民で、遠くから逃げてきたものだから、この砂漠のことはよく知らないんだ。今の家があるのは、ジャングルの近くだということくらいしか……
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]ラブ＝アラケシュのジャングルか？
+[charslot]
+[name="ケガをした旅人"]ええと、ラブアラ……？　悪いが、この辺りはジャングルが多いものだから、今言われたのがどれのことだか……
+[charslot(slot="m",name="avg_402_tuye_1#1$1",focus="m")]
+[name="トゥイエ"]実際そこかどうかはともかく、次の砂嵐が来る前にさっさと移動しよう。
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="47_g30_oasis2",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[name="年老いた族長"]若人たちよ、あのバカ者を送り届けてくれたことに感謝しようぞ。そなたらに出会えなければ、あやつは二度とここには戻れなかったことだろう。
+[name="年老いた族長"]しかし、とてもではないが良いとは言えないこの土地に、一体如何なる用向きで？
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]我々は、シュバト＝アルサランの地に自社の事務所と、フェーンホットランドの観測ステーションを建てるべく訪れたんだ。
+[charslot]
+[name="年老いた族長"]シュバト＝アルサラン？　随分と昔の名を口にするものだ。まさにこの土地こそが、そなたらの言うアルサランだが……
+[name="年老いた族長"]もはや、「獅子たちの古き王座」を意味する輝かしき名ではほとんど呼ばれておらぬぞ。
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="ユーネクテス"]では今はどうなっている？
+[charslot]
+[name="年老いた族長"]現状という意味であれば、そなたらの目にした通りだ。
+[charslot]
+[name="年老いた族長"]我らは元々、南のナルタバティム川流域に暮らしていた。しかし、かのフェーンホットランドによって川は次第に干上がり、沿岸はすべて塩の大地となってしまった。
+[charslot]
+[name="年老いた族長"]そうして故郷は風砂に埋もれ、前族長は首長の肩書を失い、征戦の合間に領地も縮小していった……
+[charslot]
+[name="年老いた族長"]本来、かの地は我らに自治権が残っているのだが、近年、アルサランには特別な宝が眠っているという噂があってな。それを聞きつけた近隣の首長たちが、軍を連れてやってきたのだ。
+[charslot]
+[name="年老いた族長"]奴らはあらゆる場所で略奪を行っていった。さらに、わが同胞たちは南の採掘場へと連行されて、多くの者がそこで命に関わる病に感染してしまい……
+[name="年老いた族長"]北上を迫られた我らは、ここへ移ってきた。
+[charslot]
+[name="年老いた族長"]そうして、今や「獅子たちの古き王座」の名残などなく、ここはただ難民たちが集うばかりの地となったのだ。
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="ユーネクテス"]なるほど……この近辺で急激に鉱石病患者が増えたのはそのせいか。
+[charslot(slot="m",name="avg_402_tuye_1#3$1",focus="m")]
+[name="トゥイエ"]今回の任務では、環境の厳しさに加えて、首長たちも大きな障害になりそうだな……
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="ユーネクテス"]……解決策は必ずあるはずだ。
+[charslot]
+[name="年老いた族長"]この話はもうよそう。それより、そなたらが地図に記したこの位置だが、ここからそう遠くはない。このジャングルとオアシスの近くにある土地だ。
+[name="年老いた族長"]我らはそなたらの仕事の邪魔などしない。何か入用とあれば、ぜひ訪ねて来てくれ。
+[Dialog]
+[Decision(options="こちらからも力を貸そう。;我々も、首長軍に対処することはできる。", values="1;2")]
+[Predicate(references="1;2")]
+[charslot]
+[name="年老いた族長"]申し出は有難いのだが、我らには礼として返せるものなどもう何もないぞ。
+[charslot(slot="m",name="avg_402_tuye_1#9$1",focus="m")]
+[name="トゥイエ"]この地域の情報を共有してもらえたら、報酬としては十分だ。
+[charslot]
+[name="年老いた族長"]……ならば、そなたらは長くこの地へ留まることになるのやもしれぬな、若人たちよ。
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

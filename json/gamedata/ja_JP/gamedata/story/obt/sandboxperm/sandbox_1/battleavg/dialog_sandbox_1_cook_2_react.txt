@@ -1,0 +1,15 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]ユーネクテスの奴に言われて来たのか？
+[decision(option1="ああ。<color=#d8d769>カニ肉混ぜご飯</color>を持って来た。", value1="1.1", option2="そう慌てないでくれ……", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_1", itemCount="-1")]
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]お主の持って来た料理が満足のいくものでなければ、簡単には許してやらんからな。
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]どれどれ……
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]何！？　あの小娘、こんなものでわしをあしらうつもりか？　甘く見よって！
+[name="大祭司", avatarId="bavg_npc_002", isAvatarRight="FALSE"]もっときちんと考えて出直してくるんじゃな！
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_1", value="1")]

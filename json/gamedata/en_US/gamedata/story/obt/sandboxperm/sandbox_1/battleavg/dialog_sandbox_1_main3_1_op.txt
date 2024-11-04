@@ -1,0 +1,41 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="8", y="7", charId="trap_471_tegmaus", isChar="FALSE", dir="RIGHT")]
+[foginview(leftBottomX="5", leftBottomY="5", rightUpX="11", rightUpY="12", id="fog_1")]
+[camerafocusto(id="trap_471_tegmaus", scale="CLOSE", time="1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]You found the other half of the disc. Quicker than I expected. Were you attacked?
+[decision(option1="We encountered the ameeri troops.", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="Not many, though.", value1="2.1")]
+[predicate(references="2.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Ah, I thought I could occupy their full attention.
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]My bad. My plan wasn't as foolproof as it could have been. I'll make it up to you.
+[decision(option1="You haven't answered our question yet.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="What's this half of the disc for?", value1="4.1")]
+[predicate(references="4.1")]
+[playanim(id="trap_471_tegmaus", anim="Special_Begin", looporidle="Special_Loop", dir="RIGHT")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]If you want to get to the bottom of it, you'll have to embark on an even more dangerous journey with me.
+[decision(option1="It's the source of the 'wail'?", value1="5.1")]
+[predicate(references="5.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]This is your last chance to turn back. It'll be a lot more ameeri troops next time.
+[decision(option1="We won't give up so easily.", value1="6.1")]
+[predicate(references="6.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Well, suit yourself. Come if you want. Just don't regret it.
+[playanim(id="trap_471_tegmaus", anim="Special_End", looporidle="Idle", dir="RIGHT")]
+[delay(time="2")]
+[decision(option1="What's the plan?", value1="7.1")]
+[predicate(references="7.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]We'll go to the Forbidden Tsalimashtu in the north. The two halves of the disc will grant us access.
+[decision(option1="Is that where the treasure is hidden?", value1="8.1")]
+[predicate(references="8.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Yes, something of great value awaits.
+[decision(option1="The ameeri army will be looking for to it too.", value1="9.1")]
+[predicate(references="9.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]Yes, we should head out soon, before the ameeri troops find us.
+[withdraw(id="trap_471_tegmaus")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

@@ -1,0 +1,25 @@
+[HEADER(is_tutorial=true, is_skippable=true)] 活动33side教学关1_c
+[Battle.LockFunction(mask="SYSTEM_MENU")]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_kroos", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+あ～、そういえば次の訓練内容は臨機応変な対応だったよね～。それじゃあ私は、予定通り先に撤退しちゃうね～！
+[Tutorial(protectTime=0.5, dialogHead="$avatar_jesica", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+クルースさん！　待ってください、チェーンが外れてしまいます！
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+クルース、ジェシカ、あまり持ち場から離れるな。訓練内容を忘れるな！　仲間の状態には常に気を配れ！
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+……なんでこんなに高いんだ。
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+ふぅ……ふぅ……あと五秒耐えろ――仲間が今のような危険な状況に陥った時、どう対処すべきだと授業で教えた？
+[Tutorial(protectTime=0.5, dialogHead="$avatar_fang")] \
+ドーベルマン教官、私がわかります！
+[InputBlocker(blockInput=false)]
+[Tutorial(protectTime=0.5,waitForSignal="put_down", dialogHead="$avatar_fang", animStyle="Drag", \
+          startX=-86, startY=84, startAnchor="BottomRight", endX=360, endY=201)] \
+見たところ、ドーベルマン教官はチェーンを失った後、<@tu.kw>転倒状態</>となりましたが、まだ滑落はしていないようです。
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_fang", animStyle="Drag", \
+          startX=360, startY=201, endX=360, endY=140)] \
+一定時間内に私が周囲の安定したマスに配置につけば、再びチェーンを結べるはずです。
+[InputBlocker(blockInput=true)]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_doberm", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+よくやった、フェン！

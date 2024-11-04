@@ -1,0 +1,37 @@
+[HEADER(is_tutorial=true, is_skippable=false)] xb1教学关3_2
+[InputBlocker(blockInput=true)]
+[Battle.SwitchToDefaultUIState]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_aguard")]Tools can indeed increase our gathering efficiency. Let's pitch in, everyone.
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=9.2, offsetX=4, time=1)]
+[Delay(time=5)]
+[InputBlocker(blockInput=true)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]That must have been tiring. I'm sure everyone's thirsty now, so let's figure out a way to gather some <@tu.kw>Fresh Water</>.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]Fresh Water is an extremely important resource out here in the wilds, but there's no way we can collect it with just pure manpower.
+[Tutorial(focusX=-139, focusY=61, focusWidth=118, focusHeight=122, anchor="BottomRight", \
+          animStyle="Highlight", focusStyle="HighlightRect", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama")] \
+We'll need to deploy a <@tu.kw>Crabbie Pumpie</>.
+[InputBlocker(blockInput=true, rightStart=true, cardIndex=0, validWidth=112, validHeight=116)]
+[Battle.EnsureMinCost(cost=5)]
+[Tutorial(waitForSignal="put_down", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-140, startY=61, startAnchor="BottomRight", endAnchor="Center", endX=-240, endY=-172)] \
+Right here!
+[InputBlocker(blockInput=true)]
+[Delay(time=1)]
+[InputBlocker(blockInput=true, validX=175, validY=-17, validWidth=703, validHeight=425)]
+[Tutorial(waitForSignal="select_direction", dialogHead="$avatar_zumama", animStyle="Drag", \
+          startX=-12, startY=-22, endX=-5, endY=163)] \
+Don't worry, the pump will work no matter what direction it's facing.
+[InputBlocker(blockInput=true)]
+[Battle.Pause(pause=false)]
+[Delay(time=3)]
+[Battle.Pause]
+[Tutorial(tileY=7, tileX=2, focusWidth=125, focusHeight=125, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama")] \
+After deployment, the Crabbie Pumpie will periodically gather Fresh Water. But it only lasts for a period of time, and will disappear once that time's up.
+[Tutorial(dialogHead="$avatar_zumama")]Let's continue.
+[Battle.Pause(pause=false)]

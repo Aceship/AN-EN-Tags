@@ -1,0 +1,835 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="50_g16_scourgeswamp",screenadapt="coverall")]
+[Delay(time=1)]
+[PlayMusic(key="$darkness_03_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+작전 시작 13시간 후
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]상황은 점점 나빠질 거다.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]새로 생겨난 협곡, 흐름이 바뀐 강물…… 한 때 거대 도시가 다니던 항로는 완전히 파괴되고 재조립되어 그 누구도 알지 못하는 모습으로 바뀌어 버렸어.
+[name="켈시"]기존의 지도는 휴짓조각이 되어버렸군. 길을 다시 찾아야 하겠어.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]하지만 '티카즈의 피'가 이 방향에 있는 건 확실하다. 나와 피 사이의 연결이 진동하고 있으니.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]전장의 중심에 가까워질수록 모든 '정보'와 오리지늄의 결합률은 높아질 거다.
+[name="켈시"]암석, 진흙, 수원과 생명들…… 테라에서 오리지늄의 영향을 받지 않은 존재란 없어. 하지만 그럼에도 오리지늄의 작용에 대한 근본적인 메커니즘에 대해 기억하고 있는 사람은 아무도 없을 거다.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="none")]
+[Decision(options="켈시, 방금 '정보'라고 했어?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]……
+[name="켈시"]너도 곧 알게 될 거다. 박사.
+[charslot(slot="m",name="avg_003_kalts_1#4$1",focus="m")]
+[name="켈시"]어쩌면…… 아니, 아무것도 아니야.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]오리지늄으로 인한 침식이 만연한 이 대지는, 객관적으로 테레시스의 군사 작전에 유리했으며 빅토리아인의 전선을 대부분 괴멸시켰지.
+[name="켈시"]하지만 지금 이 오리지늄의 활성화 정도는 '재앙 공격'과는 비교할 수 없을 정도야.
+[name="켈시"]테레시스는 약간의 전술적 우세를 점하기 위해서 이렇게나 무모하게 오리지늄을 이용하지는 않았을 거야. 자신의 선택이 가져올 결과를 알고 있었을 테니까 말이야.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="none")]
+[Decision(options="힘든 여정이 될 거라는 말처럼 들리네.", values="1")]
+[Predicate(references="1")]
+[charslot]
+[PlaySound(key="$d_avg_mudtire_loop",channel="1")]
+[Delay(time=2.5)]
+[stopSound(channel="1")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="아미야"]저기에서 차량이 오는데요?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]“멈춰라”.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_magic_5")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[PlaySound(key="$drift")]
+[Delay(time=1.5)]
+털털거리는 소리를 내며 멈춰 선 화물차에서 익숙한 얼굴의 사람들이 내렸다.
+[Dialog]
+[PlaySound(key="$d_avg_cardoorc")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",duration="1.5")]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",duration="1.5")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",duration="1.5")]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'가게 주인'"]밴시님과…… '마왕'님이 계시는군.
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="l")]
+[name="'광부'"]내가 이 길로 가지 말자고 했지! 이러면 못 도망치잖아!
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]하지만 나쁜 사람들은 아니니까……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="아미야"]당신들…… '라이프 스파인'에 남아있어야 하는 게 아닌가요?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="r")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'가게 주인'"]으…… 전부 다 솔직하게 말씀드리겠습니다……
+[name="'가게 주인'"]밴시님, 마왕 전하…… 저희는 너무나도 무서웠습니다. 그 뼈다귀에 남아있었다가는 또 무슨 일이 일어날지 몰라서 도망쳐 나오고 말았습니다……
+[name="'가게 주인'"]물론 이게 큰 죄라는 것은 잘 알고 있습니다! 하지만…… 저희가 거기에 있어봤자 무슨 쓸모가 있었겠습니까. 안 그렇습니까?
+[name="'가게 주인'"]부탁드리겠습니다. 부디…… 부디 저희를 처분하지 말아 주시길 바랍니다…… 채찍을 맞으라고 하신다면 얼마든지 맞겠습니다!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]……당신들을 처분하는 일도, 저를 위해 싸우라고 하는 일도 없을 겁니다.
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="아미야"]떠나시길 원하신다면 떠나세요.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="r")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'가게 주인'"]감사합니다! 감사합니다! 역시 마왕 전하께서는 지혜롭고 자비로우십니다……
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]우리도 동행해도 괜찮을까?
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'가게 주인'"]쉿…… 뭐라는 거야?! 마왕 전하께서 우리를 살려주신 것만으로도 이미 큰 은혜를 입은 거나 마찬가지인데, 또 뭘 하려고?
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]바보 같은 소리 좀 하지 마. 우리 셋이서 이 똥차를 타고 가다가 눈먼 폭탄에 맞아 죽지나 않으면 다행이지.
+[name="'운전기사'"]마왕 전하, 제발 우리를 이 전장에서 빠져나가게 해 줘. 뭐든 다 바칠 테니, 이 두 녀석을 살려만 준다면…… 당신에게 충성을 바칠게.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]당신들…… 아니, 그게 문제가 아니에요. 저희를 따라온다고 해도 위험한 건 똑같을 거예요.
+[name="아미야"]박사님, 어떻게 할까요?
+[Dialog]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="none")]
+[Decision(options="저 사람들만으로 전장을 벗어나기는 힘들 거야.;군사위원회에 우리의 종적을 알릴지도 몰라.;괜찮은 차네. 우리가 접수할까?", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]음……
+[Dialog]
+[Predicate(references="2")]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="r")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'가게 주인'"]아니! 저희가 어떻게 그러겠습니까!
+[name="'가게 주인'"]맹세컨데, 다시는 용병 일을 하지 않을 겁니다! 절대로요!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]그렇다면 우리와 같이 가는 게 안전한 거겠죠.
+[Dialog]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="아미야"]박사님…… 정말로 빼앗으시게요……?
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="아미야"]아니…… 박사님, 또 농담하시는 거죠?
+[Dialog]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="아미야"]그럼 당분간 같이 다니도록 하죠.
+[name="아미야"]이 구역을 벗어나면 빅토리아를 완전히 떠나도록 하세요.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="l")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="l")]
+[name="'광부'"]고마워.
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]고마워…… 이 차라면, 당신들을 태우고 갈 수 있을 거야.
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'가게 주인'"]이야, 마왕님께서 이렇게나 자애로우시니, 이 은혜를 어떻게 보답해야 될지 참으로……
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="로고스"]동전.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]네?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]네게 준 동전이 있었을 텐데.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]아아, 까먹고 있었네요! 하하, 다행히도 잊어버리지는 않았네요. 네, 여기 있습니다!
+[name="'가게 주인'"]제 잘못입니다! 밴시님을 위해 일하는 것이 제 영광이거늘, 어찌 감히 밴시님의 은혜를 더 받을 수 있겠습니까?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]……
+[Dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="아무래도 놀라게 한 것 같네.;그렇게나 동전을 돌려받고 싶었어?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="로고스"]네 마음속에서 내가 인색한 이미지가 아니기를 바라지.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]나는 그들이 '본인'이 맞는지 확인할 필요가 있었다.
+[name="로고스"]긴장할 필요 없다. 악의가 있어서 그런 것이 아니니.
+[Dialog]
+[charslot]
+로고스가 손가락을 움직이자 손바닥에 놓인 동전이 순식간에 사라졌다. 그리고 눈 깜짝할 새에 사라졌던 동전이 다시 '가게 주인'의 손에 나타났다.
+그는 들기만 하면 땅을 뒤흔들던 로고스의 손을 잠시 바라봤다. 그리고 손바닥 위에 놓인 동전을 바라본 후, 진지한 밴시의 얼굴을 보며 매우 당황스러워했다.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]이, 이건 마술인가요?
+[name="'가게 주인'"]……하하, 정말 멋있습니다. 밴시님은 정말로 뭐든지 다 하실 수 있군요!
+[name="'가게 주인'"]그럼…… 저는 시동 거는 거나 도와주러 가보겠습니다!
+[Dialog]
+[playsound(key="$rungeneral",volume=1,channel=1)]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]……
+[Dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="정말 재미있는 공연이었어.;공연이 딱히 효과는 없었나 보네.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]그렇군. 스카우트와 아웃캐스트가 시범을 보여주는 걸 몇 번 보기는 했는데, 동작이 익숙하지 않아서 효과가 그다지 좋지는 않았던 것 같다.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="너한테 그런 면이 있을 줄은 몰랐는데.;사실은 장난치는 걸 좋아하는 거 아니야?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#3$1",focus="m")]
+[name="로고스"]박사, 가끔 우리 사이에 있었던 수많은 기억들이 사라진 것에 대해 아쉬움이 느껴질 때가 있다.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1072_1#3$1",focus="none")]
+[Decision(options="옛이야기를 나눈 적이 거의 없긴 했지……;좀처럼 적절한 타이밍이 오지 않더라고.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#4$1",focus="m")]
+[name="로고스"]우리가 옛이야기를 나누게 된다면, 너도 아마 자신의 과거에 깜짝 놀랄 것이다.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]그럼 이제 출발하지.
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_394_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="아미야"]이 주변은…… 아무런 소리도 들리지 않네요.
+[name="아미야"]이상할 정도로 조용해요. 저희가 내는 숨소리와 타고 있는 차량의 소리도 들리지 않아요…… 심지어 제 심장 소리까지 말이죠.
+[name="아미야"]모종의 오리지늄 아츠일까요? 스스로를 숨기고 싶은 누군가가 이곳에서 나는 모든 소리를 조심스럽게 은폐하고 있는 걸까요?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]아니. 아미야, 자세히 들어 봐라.
+[name="로고스"]소리가 이곳을 떠난 것이 아니라, 다른 굉음이 너무나도 크기에 그 어떤 존재도 감히 필적할 수 없을 뿐이다.
+[name="로고스"]이곳의 죽음은…… 귀청이 터질 정도로 울려 퍼지는군.
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="아미야"]저기 좀 보세요……
+[name="아미야"]저쪽의 잎사귀가……
+[Dialog]
+[charslot]
+땅과 가까운 곳에 기묘할 정도로 윤기나는 잎사귀가 있었다. 그 색깔은 마치 아무렇게나 칠한 캔버스 같기도, 태양에 비춰 기괴하게 반짝이는 기름 같기도 했다.
+[Dialog]
+[Decision(options="마치 어떠한 아츠 흔적처럼 보이네.;……;마치 진균에 감염된 것처럼 보이네.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]……
+[name="로고스"]부패하고 있군.
+[name="로고스"]쇠락이 거대한 입을 벌리고, 눈에 보이는 모든 것을 갉아먹으니, 그 자리에 남은 것은 찬란하게 빛나는 이빨 자국일지어다.
+[Dialog]
+[charslot]
+[PlayMusic(intro="$plot_intro", key="$plot_loop", volume=0.6,crossfade=1)]
+단지 몇 마디 말을 내뱉었을 뿐인데, 발랄하면서도 기이한 색채가 식물 사이로, 숲 전체로 퍼져나갔다.
+두툼했던 잎사귀는 하얀 거품을 내는 액체가 되어 떨어졌으며, 교차하는 잎맥만이 미미하게 떨고 있을 뿐이었다.
+마치 고기를 전부 먹고 남은 뼈를 그대로 방치해 둔 것처럼.
+바람은 살갗을 찢으려는 듯 더욱더 강하게 불기 시작했다.
+그것은 아직 만족하지 못한 식객들이 내는 탄식이었다.
+[charslot(slot="m",name="avg_npc_394_1#20$1",focus="m")]
+[name="아미야"]로고스 씨, 늪 안에!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",posfrom="100,0",posto="0,0",duration=0.8)]
+[charslot(slot="m",afrom=0,ato=1,duration=0.5)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_magic_2",channel="1")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[charslot]
+은백색의 주문이 늪 안으로 흘러들어 갔다.
+[Dialog]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=2.5)]
+[Decision(options="처리했나?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]……아니.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_walk_water",channel="1")]
+[Delay(time=3)]
+막혀있던 물소리가 울려 퍼지며 쥐 죽은 듯 적막한 공간을 맴돌고 있었다.
+누군가가 진흙 속에서 발을 들어 올렸다가 다시 발을 밟자, 탁한 물결이 요동쳤다.
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="아미야"]전투 준비를 하세요. 박사님, 제 시선에서 떨어지지 마세요!
+[Dialog]
+[charslot]
+[PlaySound(key="$e_atk_magic_m",channel="1")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.8)]
+[charslot]
+[PlaySound(key="$d_gen_explo_n",channel="2")]
+[CameraShake(duration=1,xstrength=40 ,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.8)]
+검은색 아츠가 늪 깊숙한 곳으로 빨려 들어가면서 낸 굉음은 누가 삼켜버린 것처럼 순식간에 사라졌다.
+[Dialog]
+[PlaySound(key="$d_avg_walk_water",channel="1")]
+[Delay(time=3)]
+그 발을 들어 올리고 내리는 동작은 여전히 전과 같은 리듬이었으며, 여전히 전과 같은 파문이 퍼져나갔다.
+망가진 옷자락이 탁한 물 위를 떠다니고 있었고, 파문과 파문이 부딪혀 물 위에 난잡한 무늬를 새겼다.
+[Dialog]
+[PlaySound(key="$d_avg_ghostscream",channel="1")]
+[CameraShake(duration=1.5,xstrength=40 ,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=true)]
+[name="???"]……
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]Mon3tr.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"](조심스럽게) 그르르르……
+[Dialog]
+[charslot]
+[PlaySound(key="$p_skill_Mon3trburst",channel="4")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_spellattack_1",channel="1")]
+[CameraShake(duration=0.5,xstrength=40 ,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.51)]
+[stopmusic(fadetime=1.5)]
+Mon3tr의 입에서 눈부신 빛이 뿜어져 나왔고, 마치 창과 같았던 빛줄기는 늪을 빠져나가지 못하고 사라지고 말았다.
+마침내 물소리에 변화가 생겼다.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",bstart=0.3,bend=0.5,duration=1)]
+[Delay(time=1.3)]
+[name="???"]하……
+[Dialog]
+[charslot]
+[PlayMusic(intro="$warchaos_intro", key="$warchaos_loop",volume=0.6)]
+[PlaySound(key="$rungeneral",channel="1")]
+[CameraShake(duration=3,xstrength=20 ,ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+다급한 발소리가 들려옴과 동시에, 아주 오랫동안 잃어버린 소리가 갑자기 다시 이 땅으로 돌아왔다. 이렇게나 선명하고, 이렇게나 귀를 거슬리는 소리가.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1331_1#1$1",posfrom="-150,0",posto="0,0",bstart=0.3,bend=0.5,duration=0.5)]
+[charslot(slot="r",name="npc_10002",posfrom="150,0",posto="0,0",duration=0.5)]
+[charslot(slot="l",afrom=0,ato=1,bstart=0.3,bend=0.5,duration=0.3)]
+[charslot(slot="r",afrom=0,ato=1,duration=0.3)]
+[delay(time=0.25)]
+[CameraShake(duration=-1,xstrength=40 ,ystrength=40, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$p_skill_Mon3trburst",channel="1")]
+[PlaySound(key="$swordtsing3")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.25, block=true)]
+[delay(time=1)]
+[CameraShake(duration=1,xstrength=40 ,ystrength=40,  vibrato=40, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing2")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[charslot(slot="l",name="avg_npc_1331_1#1$1",posfrom="0,0",posto="-150,0",bstart=0.3,bend=0.5,duration=0.5)]
+[charslot(slot="r",name="npc_10002",posfrom="0,0",posto="150,0",duration=0.5)]
+[charslot(slot="l",afrom=1,ato=0,bstart=0.3,bend=0.5,duration=0.3)]
+[charslot(slot="r",afrom=1,ato=0,duration=0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.25, block=true)]
+[delay(time=1)]
+[charslot]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",posfrom="150,0",posto="0,0",bstart=0.3,bend=0.5,duration=0.5)]
+[charslot(slot="m",afrom=0,ato=1,duration=0.3)]
+[delay(time=1)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[name="???"]……
+[name="???"]죽음이…… 너희들을 쫓으리라.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]으아아악! 오지 마!
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]조심해!
+[Dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_darkwhisper",channel="LZ")]
+[CameraShake(duration=1,xstrength=20 ,ystrength=20,  vibrato=40, randomness=90, fadeout=true, block=false)]
+[delay(time=1.5)]
+[stopsound(channel="LZ")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]“족쇄”.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[PlaySound(key="$e_atk_magic_m",channel="1")]
+[CameraShake(duration=1,xstrength=30 ,ystrength=30,  vibrato=40, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="로고스"]Sudaram…… “영장”.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]유해를 감싸는 옷.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]녀석의 몸은 이미 오래전에 썩어 문드러졌기에, 평범한 공격으로는 결코 결정적인 타격을 입힐 수 없어.
+[charslot(slot="m",name="avg_003_kalts_1#7$1",focus="m")]
+[name="켈시"]이건 나흐체러르가 천성적으로 타고난 주술이거나, 혹은…… 일종의 오래된 전통이라고 할 수 있지.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]나흐체러르들은 생명을 삼켜 육체에 영양을 보급하지만, 평범한 육체의 성장에는 한계가 있기 마련이다.
+[name="켈시"]임계점에 도달한 후에는 강력해진 나흐체러르가 자신의 육체를 나약한 동포들에게 먹여, 극한의 속도와 두려울 만큼 강력한 힘, 그리고 평범한 몸으로는 감당해 낼 수 없는 강력한 주술 에너지를 부여해 주지.
+[name="켈시"]더 강력한 생물이 된 그것들은 나흐체러르의 사회를 발전시켜. 낙엽이 대지에 영양분을 공급하고, 영양분을 받은 대지가 새로운 생명을 잉태하듯, 죽음과 생명이 순환을 형성하듯이 말이야.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]“밀물”.
+[Dialog]
+[PlaySound(key="$e_atk_magic_m",channel="1")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[PlaySound(key="$watercannon_cast",channel="2")]
+[CameraShake(duration=1, ystrength=40, vibrato=40, randomness=90, fadeout=true, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+빠르게 솟아오른 늪 속의 진흙들이 나흐체러르의 몸을 뒤덮었다.
+그와 동시에, 사람들의 몸을 휘감은 주문이 닥쳐 들어오는 부패를 막아냈다.
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="아미야"]여기에요! 서둘러 숲 속으로 들어가세요!
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$rungeneral",volume=1,channel=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]진흙에 발을 들여놓지 않게 조심하도록.
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_darkwhisper",volume=1,channel=1)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1.5)]
+새까만 지면은 마치 크게 벌린 입처럼 늪을 상승시키거나, 공기 중에 퍼진 안개를 지면으로 가라앉게 만들었다. 사람들의 움직임은 느려졌으며, 숨쉬기조차 힘들어했다.
+모두의 머릿속에 한 생각이 스쳐갔다. '삶'이란 참으로 괴로운 것이며, '죽음'을 받아들인다면 편히 잠들 수 있을 것이라고.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]Mon3tr, 박사를 지켜.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"](다급하게) 그르르르……
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="아미야"]접근하고 있어요!
+[Dialog]
+[charslot]
+이곳에서 유일하게 난 소리는 녹슨 대검이 갑작스레 떨어지는 소리뿐이었다.
+죽음과 함께, 나흐체러르가 다가왔다.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",duration=0.5)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[name="'영장'"]……
+[Dialog]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[Delay(time=0.3)]
+[Effect(name="$e_slash_02_l",x = -11.1, y = 83.6, rox =68.25, roy = -6.93, roz = 77.87,layer = 2)]
+[Delay(time=0.2)]
+[CameraShake(duration=1, ystrength=20, vibrato=20, randomness=90, fadeout=true, block=false)]
+[Effect(name="$e_spark_02_large",x = 0, y = 0, layer = 3)]
+[PlaySound(key="$e_skill_skulsrsword")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"](날카롭게) 그르르릉……
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="아미야"]Mon3tr도.…… 고통을 느끼는 건가요?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]생명이 있는 것들은 모두 시들기 마련이지.
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="로고스"]나흐체러르의 주술에 붙잡히면, 우리의 생명력은 영양분이 되어 끊임없이 사라지게 되겠지.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1331_1#1$1")]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[charslot(duration=0.3)]
+[Blocker(a=0.5, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="아미야"]빨라……!
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="아미야"]진흙 속에서 튀어나오는 건가요? 아니면 나무에 열리는 건가요?
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="켈시"]전부 가능성이 있어.
+[name="켈시"]태어나서 죽고 피어나고 시드는 이 모든 순환은 나흐체러르에게 흡수되어 나흐체러르를 잉태하는 씨앗이 될 수 있어.
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]끊임없이 이어지는 주술의 힘이 우리를 향해 다가오는 게 느껴져요.
+[name="아미야"]적은 한 명뿐만이 아니에요…… 늪에서, 숲에서, 모든 곳에서 느껴지고 있어요.
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="로고스"]우리는 이미 나흐체러르의 만장 속에 들어와 있다.
+[name="로고스"]나흐체러르가 우리의 머리 위에 죽음을 걸어두었으니.
+[name="로고스"]주술의 장막을 찢어야만 나흐체러르를 물리칠 수 있을 터.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]하…… 하아…… 광부, 난 여기서 죽는 걸까?
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[name="'광부'"]……
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]지금 너무 힘들어서 그래. 가게 주인, 나 좀 잡아줘. 떨어지면 안 된다고. 나는……
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="아미야"]운전기사 씨! 제 손을 붙잡으세요! 여기서 쓰러지시면 안 돼요!
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]나는……
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="아미야"]운전기사 씨의 의식이 가라앉고 있어요! 이대로면 곧 놓치고 말 거예요!
+[charslot(slot="m",name="avg_003_kalts_1#7$1",focus="m")]
+[name="켈시"]일반적인 치료는 의미가 없어. 나흐체러르의 주술이 사람들을 집어삼키고 있어.
+[Dialog]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[name="'운전기사'"]알았으니까…… 좀 놔줘.
+[name="'운전기사'"]당신을…… 다치게 할 수……
+[name="'운전기사'"]하아…… 그냥 두고 가.
+[name="'운전기사'"]알고 있어. 우리가 없었다면 당신과 밴시님이 더 수월하게 싸울 수 있었겠지……
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="아미야"]아니요.
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="아미야"]당신들을 전장에서 데리고 나가겠다 약속한 이상, 우린 동료니까요.
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]그런…… 가?
+[name="'운전기사'"]그것도 좋지.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]피 냄새가 짙군.
+[charslot(slot="m", name = "avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]운전기사 씨 일행이 다쳐서……
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]아니. 이 피는…… 주술이다.
+[charslot(slot="m", name = "avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]네?
+[charslot(slot="m", name = "avg_npc_394_1#15$1",focus="m")]
+[name="아미야"]뱀파이어…… 인가요? 숲 속에 나흐체러르 말고 뱀파이어도 있나요?
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_blood")]
+[delay(time=0.5)]
+[Blocker(a=0.1, r=1, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1.2)]
+옅은 피안개가 주변을 가득 채우고 있었다.
+예전에 보았던 선혈의 주인의 아츠와는 완전히 다른 모습이었다. 그것은 하늘과 땅을 뒤덮은 부패의 안개에서 억지로 뽑아낸 실처럼 희미했다.
+하지만 이 희미한 실들은 부드럽게 정체된 공기를 밀어냈다.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]아미야, 바람의 흐름을 느끼도록.
+[Dialog]
+[PlaySound(key="$d_avg_magic_2",channel="1")]
+[Blocker(a=0.1, r=1,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0.1, r=1,g=0, b=0, fadetime=1, block=true)]
+[name="로고스"]나는 이 '만장'의 모습을 드러내고 가장 취약한 부분을 찾겠다.
+[charslot(slot="m", name = "avg_npc_394_1#15$1",focus="m")]
+[name="아미야"]……알겠어요.
+[Dialog]
+[charslot]
+아미야의 앞으로 검은 아츠가 창의 모습으로 맺혔다.
+로고스는 손을 들어 짙은 안갯속을 가리켰다.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]“관통하라”.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[Delay(time=0.3)]
+[PlaySound(key="$d_avg_magic_4",channel="1")]
+[Effect(name="$e_lance_hit_01",x = 0, y = 0, layer = 2)]
+[CameraShake(duration=1, xstrength=40,  ystrength=40, vibrato=40, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.1, r=1,g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$e_skill_skulsrsword",channel="2")]
+[Blocker(a=0.5, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1.5)]
+[name="'영장'"](음울한 낮은 소리)
+[name="'영장'"]죽음을 알리는 자여.
+[name="'영장'"]너는…… 부패의 확산을 저지하는구나.
+[name="'영장'"]하지만, 역전할 수 없으리라.
+[name="'영장'"]죽음이……
+[name="'영장'"]너를 입관시킬 테니.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]그걸 의심한 적은 없다.
+[name="로고스"]“흩어져라”.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_magic_3",channel="1")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[charslot(duration=0.5)]
+[Blocker(a=0.5, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[PlaySound(key="$d_avg_clothmovement",channel="2")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1.5)]
+대검이, 마치 묘비처럼 진흙 속에 꽂혔다.
+나흐체러르의 몸을 감싸고 있는 옷이 펄럭였다.
+거의 한순간에 거대한 몸뚱이가 산산조각이 났으며, 수십 갈래로 찢긴 천 조각만이 남아 천천히 지면으로 떨어졌다.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]주, 죽은 건가?
+[name="'가게 주인'"]이제야 숨 좀 돌릴 수 있겠네……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_cnstrctnck",channel="1")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_clnchfst",channel="2")]
+[Delay(time=0.5)]
+까득.
+뼈와 뼈가 마찰하는 소리가 들려왔다.
+[Dialog]
+[PlaySound(key="$d_avg_cnstrctnck",channel="1")]
+[CameraShake(duration=1, xstrength=30,  ystrength=30, vibrato=40, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+메마른 손이 진흙 속에서 튀어나왔다.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]아? 으아아악!!
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]조심해.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_magic_3")]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.51)]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]썩었어……?
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]적어도 보기에는 그런 것 같네.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]휴우…… 너, 언제부터 이렇게 강해진 거야?
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'운전기사'"]마왕 전하, 이제 슬슬 출발해야 하지 않겠습니까?
+[charslot(slot="m", name = "avg_npc_394_1#2$1",focus="m")]
+[name="아미야"]네. 나흐체러르가 깨어나 다시 우리를 쫓아오기 전에…… 최대한 멀어져야겠어요.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="50_g24_wildernesswarcircle_ex",screenadapt="coverall")]
+[Delay(time=2)]
+[PlayMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_394_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="아미야"]이곳에 뱀파이어의 마법진이 있는 게 확실해요.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]아직도 활성화되어 있군.
+[charslot(slot="m",name="avg_npc_394_1#2$1",focus="m")]
+[name="아미야"]우리가 '영장'과 싸우고 있었을 때 허공에서 뱀파이어의 아츠가 나타났죠…… 그게 이것 때문이었을까요?
+[charslot(slot="m",name="avg_003_kalts_1#2$1",focus="m")]
+[name="켈시"]그렇게 간단한 문제는 아닐 거야.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]아미야, 너도 잘 알고 있겠지. 방금 전의 아츠가 뱀파이어의 것이라는 걸 말이야.
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_clothmovement",volume=1,channel="1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_cnstrctnck",channel="1")]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="아미야"]……뱀파이어의 후예인가요?
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="아미야"]뱀파이어 생귀나르는 이 전장을 떠났지만, 그의 은총은 쉽게 사라지지는 않을 것이라고 생각했어요.
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="아미야"]그래도 상관없습니다. 전과 마찬가지로 최선을 다해 왜곡된 생명에게 안식을 안겨줄 뿐이에요.
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="아미야"]로고스 씨, 부디 저와 함께……
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="로고스"]……아미야.
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_clothmovement",volume=1,channel="1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_cnstrctnck",channel="1")]
+[Delay(time=1.5)]
+핏자국으로 가득한 돌 뒤에서 들려오는 소리가 점점 더 선명해지기 시작했다. 사지와 땅이 마찰하는 소리는 이전의 전투에서 수도 없이 들었던 소리였다.
+아미야는 로고스의 눈빛이 어디를 향하고 있는지 알아차렸다.
+돌기둥이 아니라 아미야를 보고 있었다. 그녀의 눈 밑으로 한 줄기 감정이 빠르게 지나갔다.
+그것은 슬픔이었다. 아미야는 금방 알아볼 수 있었다.
+이 전쟁이 시작된 이후로, 그녀는 너무 많은 슬픔을 느껴왔다. 어떤 때는 적에게서, 그리고 그보다 더 많이…… 주변의 동료에게서 슬픔을 느꼈다.
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="아미야"]……운전기사 씨.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_1338_1#1$2",duration=1.5)]
+[Delay(time=2)]
+[PlayMusic(intro="$drift_intro", key="$drift_loop", volume=0.6)]
+[name="'운전기사'"]……
+[name="'운전기사'"]마왕 전하.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="아미야"]언제였죠? 저희가…… 나흐체러르와 싸웠던 때였나요?
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]맞아.
+[name="'운전기사'"]그 해골을 떠날 때…… 군사위원회에서 전에 우리에게 옮기라고 했던 돌을 하나 가져왔어.
+[name="'운전기사'"]그 돌은 예전에 우리 힘을 증폭시켜 줬어. 혹시 싸울 때 도움이 되지 않을까 싶었지.
+[name="'운전기사'"]봐 봐, 확실히 조금 효과가 있었지?
+[name="'운전기사'"]당신과 함께 싸워 그 이상한 적을 물리치다니, 이전이라면 감히 상상조차 못 했을걸.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="켈시"]뱀파이어가 남긴 핏빛 결정을 사용했나.
+[name="켈시"]핏빛 결정으로 네 몸을 찌른 건가? 아니, 그걸로는 이렇게 격렬한 변화를 일으키지는 못 해.
+[name="켈시"]조각을 삼킨 거군.
+[charslot(slot="m",name="avg_003_kalts_1#2$1",focus="m")]
+[name="켈시"]너는 자발적으로 두카렐의 피와 아츠를 받아들인 거야.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]나도 뱀파이어의 혈통을 가지고 있어. 엄청 옅지만 말이지…… 하지만, 그럼에도 불구하고 나는 생귀나르의 부름을 느낄 수 있었어. 아주 미약한 부름이었지만.
+[name="'운전기사'"]그 벌레들이 죽은 살카즈 용병의 몸속에서 기어 나오는 것은 이미 본 적 있어. 그러니 내가 어떤 결과를 맞이할지 모를까 봐 걱정할 필요는 없다고.
+[name="'운전기사'"]그저 나는, 벌레처럼 발버둥조차 치지 못하고 진흙 속에 빠져 죽을 바에야, 강력한 힘을 받아들여서 살카즈로서 부끄럽지 않게 전장에서 죽고 싶을 뿐이야.
+[name="'운전기사'"]그때도 그렇게 생각했어. 몇 달 전, 아무런 목적 없이 황야에서 차를 몰면서 라디오에서 흘러나오는 런디니움에 관한 이야기를 들었을 때……
+[name="'운전기사'"]나도 모르는 사이에, 어째선지 이쪽으로 향하고 있었지.
+[name="'운전기사'"]가게 주인은 내가 기사 이야기를 너무 많이 읽었다고 했지만…… 헛소리야. 카즈델에 기사가 필요 없다는 것은 누구나 다 아는 사실이니까.
+[name="'운전기사'"]나는 그저 내 삶이 낭비되는 게 아니라, 종착점이 있는 길 위를 걷고 있다는 것을 확인하고 싶었을 뿐이야.
+[name="'운전기사'"]그러다 당신을 만났지. “마왕이 가는 곳이 곧 길이다.”…… 우리는 이 길에서…… 함께 싸웠지.
+[name="'운전기사'"]지금, 싸움이 잠시 끝을 맞이했어. 동료들도 대부분 살아남았지.
+[name="'운전기사'"]마왕 전하, 날 처분해도 돼.
+[Dialog]
+[charslot]
+[playsound(key="$rungeneral",volume=1,channel=1)]
+[charslot(slot="m",name="avg_npc_932_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="'가게 주인'"]처, 처분이라니? 그게 무슨 소리야?
+[name="'가게 주인'"]운전기사, 왜 이렇게 변한 거야? 이건…… 이건……
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]무섭지?
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]……
+[name="'가게 주인'"]마왕 전하, 제발 부탁드립니다! 운전기사를 도와주세요! 밴시님! 동전을 돌려드리겠습니다. 제가 가진 유일한 재산이에요!
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="로고스"]운전기사의 상태는 주술적인 효과이지만, 주술로 인해 일어난 것이 아니기도 하지.
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="로고스"]나와 아미야, 심지어 켈시 선생마저도 이 결과를 역전시킬 수는 없다.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'가게 주인'"]그럼 어떻게 하실 겁니까? 설마 운전기사를 그 붉은색 벌레를 죽이듯이 죽이실 건 아니시죠?
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]가게 주인, 비켜. 이건 내가 원한 거야.
+[name="'운전기사'"]마왕 전하…… 살카즈의 가장 용맹한 전사들은 죽기 전에 마왕이 내려주는 '꿈'을 볼 자격이 주어진다고 들은 적이 있어.
+[name="'운전기사'"]음, 내게 그런 자격이 있는지는 잘 모르겠지만……
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]……
+[Dialog]
+[charslot]
+아미야가 손을 들어 올렸다.
+검은 아츠가 아미야의 손가락에 모여들었다.
+절망하며 웃음을 터트린 운전기사는 전설 속에 내려오는 검은색 왕관을 찾기 위해 무의식적으로 카우투스의 머리 위를 쳐다보았다.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]나의…… 마왕이여……
+[name="'운전기사'"]난 무엇을 보게 될까? 부디…… 카즈델에서도 저 똥차를 타고 다니는 것만 아니었으면 좋겠네. 하하핫.
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="아미야"]운전기사 씨, 제게 당신의 이름을 알려주실 수 있나요?
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]이것도 의식의 일부분인가?
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="아미야"]음…… 이름을 알면 많이 쉬워지죠.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]……마릴라. 아주 평범한 이름이지.
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="아미야"](카시미어어) 마릴라.
+[name="아미야"]카시미어에 오래 있어 본 적이 없다 보니 발음이 나쁠 수도 있어요.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]아니, 아주 훌륭해. 어머니께서 돌아가시고, 나를 이렇게 상냥하게 불러주는 사람은 아무도 없었어.
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="아미야"]네, 마릴라 씨. 저는 당신의 부탁을 거절하겠습니다.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]내게 위로를 하사하는 것을 거절하겠다고? 하긴, 나는 애초부터 전사 같은 것도 아니었으니……
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="아미야"]그런 게 아닙니다, 마릴라 씨. 저는 당신이 이곳에서 죽는 것을, 그리고 제 손에 죽는 것을 거절하겠습니다.
+[name="아미야"]당신은 뱀파이어의 피조물이 되지 않을 테니까요.
+[name="아미야"]그저 외모가 조금 변했을 뿐입니다. 당신에게서 사악함이나 광기는 느껴지지 않아요.
+[name="아미야"]아주 약간…… 먼 옛날의 핏줄이 남긴 흔적이 있다 해도, 당신은 여전히 당신이에요.
+[name="아미야"]당신은 징벌도, 포상도 받을 필요는 없다고 생각해요.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'운전기사'"]당신은 마왕인데……
+[charslot(slot="m",name="avg_npc_394_1#21$1",focus="m")]
+[name="아미야"]부디 절 아미야라고 불러주세요.
+[name="아미야"]마릴라 씨, 저는 당신들 때문에 고민하고 있었어요. 당신들이…… 로도스 아일랜드의 오퍼레이터가 아니기 때문이었죠.
+[name="아미야"]방금까지 여러분들과 어떻게 지내야 할지 고민하고 있었습니다만, 애초부터 딱히 고민할 게 아니었어요.
+[charslot(slot="m",name="avg_npc_394_1#16$1",focus="m")]
+[name="아미야"]여러분들께서 저희와 같은 목표를 향해 싸우시기를 원한다면, 저는 두 팔 벌려 여러분을 환영하겠습니다.
+[Dialog]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="젊은 카우투스는 손을 뻗으며 자신의 파란 눈을 깜빡였다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="살카즈 여성은 아미야의 가느다란 손가락을 붙잡았다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="딱히 슬픔을 느끼지 않았음에도, 두 줄기의 새빨간 눈물이 그녀의 뺨을 타고 흘러내렸다.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_003_kalts_1#13$1")]
+[charslot(slot="r",name="avg_npc_1072_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_003_kalts_1#13$1",focus="l")]
+[name="켈시"]……
+[Dialog]
+[charslot(slot="l",name="avg_003_kalts_1#13$1",focus="none")]
+[Decision(options="아미야를 보고 있는 거야?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_003_kalts_1#11$1",focus="l")]
+[name="켈시"]최근 몇 년간, 아미야에게 많은 변화가 있었어.
+[Dialog]
+[charslot(slot="l",name="avg_003_kalts_1#11$1",focus="none")]
+[Decision(options="아미야가 더 성숙해졌지.;아미야는 처음부터 자격을 갖춘 리더였어.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="r",name="avg_npc_1072_1#1$1",focus="r")]
+[name="로고스"]뱀파이어 의식의 핵심에 변화가 발생했군.
+[name="로고스"]살카즈의 힘을 증폭시키는 것도, 그리고 단순한 에너지 수집기 역할도 뛰어넘을 거다.
+[charslot(slot="l",name="avg_003_kalts_1#1$1",focus="l")]
+[name="켈시"]저 의식은 살카즈의 핏줄과 오리지늄…… 그리고 '암나남'과의 연결을 더욱 강하게 만들 거야.
+[name="켈시"]어떤 형태로든 '티카즈의 피'가 작용하고 있는 게 분명해.
+[charslot(slot="l",name="avg_003_kalts_1#3$1",focus="l")]
+[name="켈시"]살카즈 핏줄의 힘은 직접적으로 오리지늄 확산을 촉진하고, 오리지늄에 깃들어있는 '정보'역시 핏줄을 강화해주고 있어…… 힘뿐만이 아니라, 특징까지 함께 말이야.
+[Dialog]
+[charslot(slot="l",name="avg_003_kalts_1#3$1",focus="none")]
+[Decision(options="익숙한 아츠 효과네.", values="1")]
+[Predicate(references="1")]
+[Decision(options="그 살루스가 핏줄을 좀 많이 섞었나 본데.;핏줄의 힘을 촉진하는 건 고해신부의 특기지.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="l",name="avg_003_kalts_1#1$1",focus="l")]
+[name="켈시"]준비를 단단히 할 필요가 있겠어.
+[charslot(slot="l",name="avg_003_kalts_1#7$1",focus="l")]
+[name="켈시"]그 '암나남'이 몰고 올 위협은…… 모든 인간의 예상을 훨씬 뛰어넘을 거야.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

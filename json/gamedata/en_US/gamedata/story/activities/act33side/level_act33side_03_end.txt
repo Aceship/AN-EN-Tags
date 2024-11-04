@@ -1,0 +1,534 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="49_g2_kazdelstreet_d",screenadapt="coverall")]
+[PlayMusic(intro="$loneliness_intro", key="$loneliness_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+The nomadic city of Kazdel, Kazdel
+[dialog]
+[charslot(slot="m",name="avg_4131_odda_1#2$1",duration=0.5)]
+[Delay(time=1)]
+[name="Odda"]Let me through!
+[dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_419_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_419_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[name="Sarkaz Royal Court Soldier"]This area is off-limits.
+[charslot]
+[charslot(slot="m",name="avg_4131_odda_1#2$1")]
+[name="Odda"]What happened?
+[charslot]
+[charslot(slot = "left", name = "avg_npc_419_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_419_1#1$1")]
+[name="Sarkaz Royal Court Soldier"]Are you with Babel?
+[charslot]
+[charslot(slot="m",name="avg_4131_odda_1#4$1")]
+[name="Odda"]N-No.
+[charslot]
+[charslot(slot = "left", name = "avg_npc_419_1#1$1")]
+[charslot(slot = "right", name = "avg_npc_419_1#1$1")]
+[name="Sarkaz Royal Court Soldier"]Then it's none of your business.
+[charslot]
+The wall of Royal Court soldiers prevents Odda from passing.
+But he sees several familiar, crying faces in the scattering crowd.
+[charslot(slot="m",name="avg_4131_odda_1#8$1")]
+[name="Odda"]Those students? Hm... I think I can take this alley here...
+[Dialog]
+[playsound(key="$rungeneral")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[playsound(key="$d_avg_crwddiscuss_outside", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.4, channel="bgs",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_4131_odda_1#2$1")]
+[name="Odda"]Excuse me, do you know what happened?
+[dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_932_1#1$1",duration = 1,bstart=0.15,bend=0.5,posfrom = "50,0", posto = "50,0")]
+[charslot(slot = "right", name = "avg_npc_934_1#1$1",duration = 1,bstart=0.15,bend=0.5,posfrom = "-50,0", posto = "-50,0")]
+[delay(time=2)]
+[charslot(slot = "left", focus="l")]
+[name="Indifferent Civilian"]Someone beat another guy to death. He's dead, too. Are you trying to join the racket?
+[charslot(slot = "r", focus="r")]
+[name="Angry Civilian"]Babel again. What is Her Highness thinking?
+[charslot(slot = "left", focus="l")]
+[name="Indifferent Civilian"]Shut your trap. You owe everything you eat, everything you wear, and the roof over your head to Her Highness.
+[dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_933_1#1$1",bstart=0.15,bend=0.5,duration = 1)]
+[delay(time=1.3)]
+[name="Cautious Civilian"]Shh...
+[charslot]
+[charslot(slot="m",name="avg_4131_odda_1#2$1")]
+[name="Odda"]...
+[charslot]
+[charslot(slot = "right", name = "avg_npc_934_1#1$1",posfrom = "-50,0", posto = "-50,0",bstart=0.15,bend=0.5)]
+[name="Angry Civilian"]Well, it's simple enough alright! A teacher beat the father of his student to death!
+[charslot]
+[charslot(slot="m",name="avg_4131_odda_1#7$1")]
+[name="Odda"]A Teacher? How could...?
+[charslot]
+[charslot(slot = "right", name = "avg_npc_934_1#1$1",posfrom = "-50,0", posto = "-50,0",bstart=0.15,bend=0.5)]
+[name="Angry Civilian"]All the man did was scold him a little! And it was the teacher who was telling the kids all sorts of awful things!
+[charslot]
+[charslot(slot="m",name="avg_4131_odda_1#8$1")]
+[name="Odda"]That's not true...
+[dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_935_1#1$1",duration = 0.5,bstart=0.15,bend=0.5)]
+[delay(time=0.7)]
+[name="Scornful Civilian"]You're a Babel shill too? Kids these days...
+[charslot]
+[charslot(slot="m",name="avg_4131_odda_1#9$1")]
+[name="Odda"]...
+[charslot]
+[charslot(slot = "left", name = "avg_npc_935_1#1$1",bstart=0.15,bend=0.5)]
+[name="Scornful Civilian"]Hey, what are you doing?
+[charslot]
+Odda squeezes through the crowd and sees some familiar faces lying on the ground.
+He finally finds the source of the commotion, the 'Teacher' lying in a cloud of dust.
+[stopmusic(fadetime=2)]
+[dialog]
+[StopSound(channel="bgs", fadetime=2)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_4131_odda_1#2$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_4131_odda_1#7$1")]
+[name="Odda"]Teacher! What's going on?
+[dialog]
+[PlayMusic(intro="$dignified_intro", key="$dignified_loop", volume=0.6)]
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]I... I didn't mean to hurt... his father...
+[charslot(slot="m",name="avg_4131_odda_1#9$1")]
+[name="Odda"]Hang in there! I'll find a doctor!
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]No... over there... him...
+Odda looks in the direction that the dying man is pointing, and sees an injured child crying by the lifeless body of his father.
+[charslot(slot="m",name="avg_4131_odda_1#9$1")]
+[name="Odda"]...
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="49_g2_kazdelstreet_d",screenadapt="coverall")]
+Odda runs through the burning streets, carrying the injured child in his arms, and pieces together the whole picture from what he sees and hears.
+It began when an agitated teacher accidentally killed an agitated father, before he was set upon by the angry crowd and fell in the dust of the streets.
+The turmoil dragged everyone in: Civilians, Babel, mercenaries, even the Military Commission.
+Like a chain reaction, clouds of dust were stirred up in various corners of the city.
+It wasn't until artillery from an unknown source blasted through a wall of Babel's office building that the Royal Court troops finally quelled the riot.
+It began with an accident and ended with a shell that caused more damage to Babel than anything in the past eighteen years, since the end of the war.
+[dialog]
+[Delay(time=2)]
+[playsound(key="$d_avg_riot", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.4, channel="bgs",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[dialog]
+[charslot(slot="m",name="avg_4131_odda_1#5$1",duration=0.5)]
+[Delay(time=0.6)]
+[name="Odda"]The kid is hurt and needs a doctor. Don't make me do this the hard way.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_053",duration=1)]
+[Delay(time=1.5)]
+[name="Dour Mercenary"]Whose side are you on? Babel? The Military Commission?
+[charslot(slot="m",name="avg_4131_odda_1#8$1")]
+[name="Odda"]Neither! I just need to get him to a doctor. Now get out of my way!
+[charslot(slot = "m", focus = "n")]
+[name="Weakened Child"]My dad...
+[charslot(slot="m",name="avg_4131_odda_1#9$1")]
+[name="Odda"]It's too late for him... I'm sorry.
+[charslot(slot="m",name="avg_npc_053")]
+[name="Dour Mercenary"]...
+[name="Dour Mercenary"]Go. But don't trust outsiders so easily... Sarkaz. Not in this chaos.
+[charslot(slot="m",name="avg_4131_odda_1#9$1")]
+[name="Odda"]Thank you...
+[charslot]
+[StopSound(channel="bgs", fadetime=2)]
+Odda can feel the child's breathing grow weaker as he continues on his way.
+Running through the streets, he seems to feel someone brush past his shoulder, but sees no one.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot="m",name="avg_npc_1304_1#1$1",afrom=0.5,ato=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=0.5)]
+[charslot(duration=1)]
+[delay(time=1.5)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot="m",name="avg_4131_odda_1#4$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[name="Odda"]Was I imagining things?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="m",name="avg_npc_496_1#1$1")]
+[name="Babel Member"]Stop right there! Not one step closer. There are patients inside.
+[charslot(slot="m",name="avg_4131_odda_1#5$1")]
+[name="Odda"]This kid needs medical attention, now!
+[charslot(slot="m",name="avg_npc_496_1#1$1")]
+[name="Babel Member"]But... oh... I didn't think there was anyone still willing to bring patients here.
+[name="Babel Member"]Alright, I'll take it from here. I'll try to give you some extra medicine before we leave.
+[charslot(slot="m",name="avg_4131_odda_1#8$1")]
+[name="Odda"]Leave?
+[charslot(slot="m",name="avg_npc_496_1#1$1")]
+[name="Babel Member"]Her Highness made the decision, but we all know what's happening. We're not welcome in Kazdel anymore.
+[charslot(slot="m",name="avg_4131_odda_1#9$1")]
+[name="Odda"]Where are you going? Outside the city? Aren't you afraid of the dangers in the wastes?
+[charslot(slot="m",name="avg_npc_496_1#1$1")]
+[name="Babel Member"]...Yes, I am.
+[name="Babel Member"]But if this city no longer welcomes us, then we respect its choice.
+[charslot(slot="m",name="avg_4131_odda_1#9$1")]
+[name="Odda"]...
+[charslot(slot="m",name="avg_4131_odda_1#2$1")]
+[name="Odda"]I want to join Babel. I can help care for the patients, or protect you.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot(slot = "left", name = "avg_npc_419_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_419_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", focus="l")]
+[name="Indifferent Royal Court Soldier"]Is this the one who started the whole mess? Will he live?
+[charslot(slot = "r", focus="r")]
+[name="Tired Royal Court Soldier"]Don't think so. Lost too much blood.
+[charslot(slot = "left", focus="l")]
+[name="Indifferent Royal Court Soldier"]Then what are we even doing here?
+[charslot(slot = "r", focus="r")]
+[name="Tired Royal Court Soldier"]Just follow the General's orders and don't ask questions. Who'd have thought something so minor would need Their Highnesses' statement?
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]Ugh...
+[charslot(slot = "r", focus="r")]
+[name="Tired Royal Court Soldier"]Is he trying to talk to us? There's nobody else around.
+[charslot(slot = "left", focus="l")]
+[name="Indifferent Royal Court Soldier"]Probably just seeing things before he dies. No Banshee would sing an elegy for such a sinner.
+[dialog]
+[charslot(duration=0.5)]
+[delay(time=1.5)]
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]It's... dangerous...
+[name="'Teacher'"]Go...
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1304_1#1$1",duration=1)]
+[delay(time=1.5)]
+[name="Young Banshee"]They can't see me. My Arts hide my presence.
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]Who... are... you...?
+[charslot(slot="m",name="avg_npc_1304_1#1$1")]
+[name="Young Banshee"]A student.
+[name="Young Banshee"]I came from far away, following in the footsteps of my mother, to find answers in this wandering city, and her two rulers.
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]Did you... find...?
+[charslot(slot="m",name="avg_npc_1304_1#1$1")]
+[name="Young Banshee"]I'm afraid the city doesn't have the answers ready yet.
+[name="Young Banshee"]But I found you. The ideas that you advocated were very interesting.
+[name="Young Banshee"]I was with you when you taught those children in that basement, learning about the city and Babel.
+[name="Young Banshee"]Of course, no one noticed... except Ascalon.
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]The... boy...
+[charslot(slot="m",name="avg_npc_1304_1#1$1")]
+[name="Young Banshee"]Has been brought to Babel where his injuries will be treated.
+[name="Young Banshee"]Do you regret your end?
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]No... the boy defended me...
+[name="'Teacher'"]He understood... what I tried to change...
+[name="'Teacher'"]I'm sorry... about his father...
+[charslot(slot="m",name="avg_npc_1304_1#1$1")]
+[name="Young Banshee"]I sympathize. It was not your intention to cause this tragedy, but fate has played a cruel joke on you.
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]I hear... crying...
+[charslot(slot="m",name="avg_npc_1304_1#1$1")]
+[name="Young Banshee"]It is your elegy, calling your fading soul to the other side.
+[name="Young Banshee"]Fear not, hesitate not. The myriad souls welcome you with open arms. Let my song take you beyond.
+[charslot(slot = "m", focus = "n")]
+[name="'Teacher'"]Thank you...
+[dialog]
+[charslot(slot = "m", focus = "m")]
+[delay(time=1)]
+[charslot(duration=1)]
+The young Banshee's song soothes the mind of the dying man.
+The gentle song echoes through the crowded streets of the city. Banshees respond to the song of their young kin, adding their voices to the harmony.
+It is an elegy that commemorates the passing of an ordinary Sarkaz.
+[dialog]
+[delay(time=1.5)]
+'You were talking about the future of Babel in the lesson, but you didn't get to the end. What were you going to say?'
+'I believe... that Babel will die someday. I hope I'm wrong.'
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="49_g5_furnaceplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1071_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]A song. Another Sarkaz has passed on in the turmoil.
+[name="Theresa"]There is no longer any place for Babel here. I will lead them and leave this city.
+[charslot(slot = "left", name = "avg_npc_1071_1#3$1",focus="l")]
+[name="Laqeramaline"]Theresa... we love you, all of us...
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]I know. But Babel has no choice.
+[charslot(slot = "left", name = "avg_npc_1071_1#3$1",focus="l")]
+[name="Laqeramaline"]But if you leave...
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]My people have made their choice. Neither I nor Theresis can change it.
+[name="Theresa"]We cannot abandon hope. But the best course of action, right now, is to avoid conflict.
+[charslot(slot = "left", name = "avg_npc_1071_1#2$1",focus="l")]
+[name="Laqeramaline"]...Hatred will swallow us like a flood.
+[charslot(slot = "left", name = "avg_npc_1071_1#1$1",focus="l")]
+[name="Laqeramaline"]You've always known... Theresa, our hero, our King.
+[name="Laqeramaline"]Gentle requests and gradual changes will not sway the minds of the Sarkaz drawn here by Kazdel's rise.
+[charslot(slot = "right", name = "avg_npc_1296_1#6$1",focus="r")]
+[name="Theresa"]Laqeramaline, I...
+[charslot(slot = "left", name = "avg_npc_1071_1#1$1",focus="l")]
+[name="Laqeramaline"]Perhaps what I say will disappoint, even hurt you, Theresa.
+[name="Laqeramaline"]Rim Billiton, Sargon, even Columbia... you have opened their doors, and allowed the Sarkaz to negotiate with some as equals.
+[name="Laqeramaline"]Terra has seen more technological progress in fifty years than it has for millennia.
+[charslot(slot = "right", name = "avg_npc_1296_1#3$1",focus="r")]
+[name="Theresa"]...
+[charslot(slot = "left", name = "avg_npc_1071_1#7$1",focus="l")]
+[name="Laqeramaline"]...But we were too slow. Despite the incredible changes you've brought to Kazdel, they haven't been enough to bear the fruits of true transformation.
+[name="Laqeramaline"]Even if I, too, believe that the fruits of spring are near.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]Is this the stance of the Banshee Court, Laqeramaline?
+[charslot(slot = "left", name = "avg_npc_1071_1#1$1",focus="l")]
+[name="Laqeramaline"]I'm just a mother who came to see her boy off, Theresa.
+[name="Laqeramaline"]I respect his choice, and there will come a day when he will speak for our Royal Court.
+[charslot(slot = "left", name = "avg_npc_1071_1#5$1",focus="l")]
+[name="Laqeramaline"]But that day is not today.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]I know you love him... you haven't allowed yourself to age since he was born.
+[charslot(slot = "left", name = "avg_npc_1071_1#2$1",focus="l")]
+[name="Laqeramaline"]Aefanyl was a miracle to me, and to all Banshees.
+[charslot(slot = "left", name = "avg_npc_1071_1#1$1",focus="l")]
+[name="Laqeramaline"]The day he was born, I became loath to age with time.
+[name="Laqeramaline"]I have preserved my appearance at the peak of my beauty... I wish to remain eternal in his memory.
+[name="Laqeramaline"]My life is finite, of course. It's only the facade that never changes.
+[name="Laqeramaline"]I know what Your Highness is thinking.
+[name="Laqeramaline"]You never expected your dream to come true in this generation. You see yourself as the soil, and it's not the soil's due to witness the flowers bloom.
+[name="Laqeramaline"]Even if the two of you have to give everything to nourish this soil...
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]...
+[charslot(slot = "left", name = "avg_npc_1071_1#1$1",focus="l")]
+[name="Laqeramaline"]Humor my little self-indulgence, Your Highness.
+[name="Laqeramaline"]Until he finds the answer he is seeking, allow him to travel between the two of you, to learn from both of you.
+[name="Laqeramaline"]He will be the first sprout to emerge from the soil.
+[name="Laqeramaline"]Bring Aefanyl. Take care of him. Protect him in my place.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]I will, Laqeramaline, my friend.
+[charslot(slot = "left", name = "avg_npc_1071_1#8$1",focus="l")]
+[name="Laqeramaline"]Thank you.
+[name="Laqeramaline"]No matter where you go, no matter what fate awaits either of you, the Banshee Court will sing both your elegies, and announce to all...
+[name="Laqeramaline"]This is my promise. It is the most ancient and powerful of witchcrafts, my final parting gift to you.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]Laqeramaline.
+[name="Theresa"]Will we meet again?
+[charslot(slot = "left", name = "avg_npc_1071_1#5$1",focus="l")]
+[name="Laqeramaline"]I hope so.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]Until next time, then. I look forward to the day that I can hear you sing in the mists of the Convallis.
+[charslot(slot = "left", name = "avg_npc_1071_1#5$1",focus="l")]
+[name="Laqeramaline"]Farewell, Your Highness. I'm afraid I must stay here and go no further.
+[name="Laqeramaline"]Aefanyl will be part of your procession, after all... and I'm not ready to say goodbye to him yet.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="49_g6_babeloffice",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Delay(time=1)]
+Two days later
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[name="Theresis"]How long do you plan on standing there?
+[name="Theresis"]You came a little too early, if it's Theresa you're looking for.
+[Dialog]
+[charslot]
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[name="Ascalon"]...
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]I didn't think you would have the courage to come to me, Ascalon.
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]Why?
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]Do you mean why wouldn't you have the courage to see me, or why I banished Babel?
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]...
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]You've seen Manfred?
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]Yes.
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]Did you do it?
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]Not all the way.
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]Good.
+[name="Theresis"]Now, remove yourself before you say something childish and naive. Not even Theresa would agree with you.
+[name="Theresis"]Or you could choose to stay. You don't have to explain yourself. Afterall, you never formally joined Babel.
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]Her Highness needs someone to protect her.
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]She is more powerful than you think.
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]And I agree with you even less, Master.
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]I suppose I should take that as a no.
+[charslot(slot = "m", name = "avg_4132_ascln_1#1$1")]
+[name="Ascalon"]...
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]You and Manfred are my best students, yet both of you have your fatal flaws.
+[name="Theresis"]Your talents in combat are peerless. But what do you truly believe in?
+[charslot(slot = "m", name = "avg_4132_ascln_1#4$1")]
+[name="Ascalon"]Your Highness—
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]Impatience.
+[name="Theresis"]I said, what <i>you</i> truly believe in. Not me nor Theresa.
+[charslot(slot = "m", name = "avg_4132_ascln_1#8$1")]
+[name="Ascalon"]...
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]You still don't know what you seek, do you?
+[name="Theresis"]To protect? That's just empty, self-deceptive sentimentality. When you're unsure of your path, you merely project your motivations onto vague ideals.
+[charslot(slot = "m", name = "avg_4132_ascln_1#3$1")]
+[name="Ascalon"]I-I've thought about it carefully.
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]Perhaps.
+[name="Theresis"]Then follow Theresa and protect her, but don't blindly adopt her ways. Think for yourself. Manfred found his answer long before you did.
+[charslot(slot = "m", name = "avg_npc_1297_1#3$1")]
+[name="Theresis"]The next time we see each other...
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]...Nevermind.
+[name="Theresis"]Go, Ascalon.
+[name="Theresis"]There is nothing else for us to talk about now.
+[charslot]
+Ascalon falls to one knee, then turns to a mist that closes around Theresis.
+The mist trembles and disperses, leaving behind only a stone knife in Theresis's hand.
+He recalls the day that he snatched the blade from the child in the Catastrophe.
+[dialog]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",duration = 1.5,posfrom = "-100,0", posto = "0,0")]
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1")]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]You were too cold to her, Theresis.
+[name="Theresa"]It's a time of parting. You could have shared your mind with her. She has never been adept at expressing emotion.
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="Theresis"]As her teacher, you're better than me at reaching the teenager side of her.
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]Do you really have no faith in her choice?
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="Theresis"]She is welcome back at any time. Manfred remains too complacent in his training. He needs someone to challenge him, a goal to work towards.
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]I'll tell her.
+[charslot(slot = "right", name = "avg_npc_1297_1#2$1",focus="r")]
+[name="Theresis"]I wish you would come back, too.
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]I know.
+[charslot(slot = "right", name = "avg_npc_1297_1#4$1",focus="r")]
+[name="Theresis"]If we cannot resolve a minor conflict like this, the next one could escalate into a full-fledged civil war.
+[name="Theresis"]If it comes to that, all we have dreamed of for a century will be for naught.
+[name="Theresis"]If that day comes and if I have to... I'll kill you.
+[charslot(slot = "left", name = "avg_npc_1296_1#3$1",focus="l")]
+[name="Theresa"]...
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]Babel is ready. We will leave with those who are willing to follow.
+[charslot(slot = "right", name = "avg_npc_1297_1#3$1",focus="r")]
+[name="Theresis"]You've always kept them close.
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]Yes. Because they need me.
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="Theresis"]I need you, too. Kazdel needs its King.
+[charslot(slot = "left", name = "avg_npc_1296_1#6$1",focus="l")]
+[name="Theresa"]...Theresis.
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]Our people have made their choice. The best course of action, for now at least, is for Babel to back down.
+[name="Theresa"]I will continue to call the nourishing rain upon Kazdel, change the city's circumstances, and wait for hatred to subside.
+[charslot(slot = "left", name = "avg_npc_1296_1#2$1",focus="l")]
+[name="Theresa"]But...
+[charslot(slot = "left", name = "avg_npc_1296_1#4$1",focus="l")]
+[name="Theresa"]If you become the greatest threat to the searching dreamers in this long and painstaking process, I will destroy you.
+[charslot(slot = "right", name = "avg_npc_1297_1#1$1",focus="r")]
+[name="Theresis"]So be it.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[delay(time=1)]
+[Background(image="49_g2_kazdelstreet_d",screenadapt="coverall")]
+[playsound(key="$d_avg_crwddiscuss_outside", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.4, channel="bgs",fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+Mercenaries and Royal Court soldiers line the streets, holding back the restless crowd.
+[StopSound(channel="bgs", fadetime=1.5)]
+[dialog]
+[PlayMusic(intro="$storyendjp_intro", key="$storyendjp_loop", volume=0.6)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[Sticker(id="st1", multi = true, text="It was the King of Sarkaz who brought food and shelter.", x=320,y=300, alignment="left", size=24, delay=0.04, width=640,block = true)]
+[Sticker(id="st1", multi = true, text="\nIt was also the King of Sarkaz who allowed oppression and hatred to fester.",block = true)]
+[Sticker(id="st1",duration=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+The Babel procession stretches as far as the eye can see, past the barricades formed by lines of Royal Court soldiers, past the disdainful crowd.
+Theresis walks toward the crowd and stands with them.
+He has left Theresa's side for the first time in two centuries.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[name="Theresa"]We all know what we must face.
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]I hope this will not be the last time we stand together.
+[charslot(slot = "m", name = "avg_npc_1296_1#1$1")]
+[name="Theresa"]...Will that day be far?
+[charslot(slot = "m", name = "avg_npc_1297_1#1$1")]
+[name="Theresis"]Not too far.
+[charslot]
+Theresa joins the silent procession. Their farewell to the city is soundless. Their path is one of hope.
+Then, something occurs, enough to silence the restless onlookers and momentarily halt the procession.
+The cursing and crying cease. Every eye turns to a single, poignant scene.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[image(image="49_i05",screenadapt="coverall",xScale=1.2, yScale=1.2)]
+[ImageTween( xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, duration=60)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+A mercenary steps out of the line to embrace his best friend in the procession.
+No one can hear the whispers exchanged between the two friends by the ruins of Babel, but all are willing to wait and give them their moment of farewell.
+A farewell between the people and their city, and between two peoples of the same blood.
+A young Sarkaz, who has lost everyone he holds dear, walks in the procession without regret.
+He remembers walking the same path, leaving the city in search of his parents with his older companion many years ago.
+[name="Odda"]Dad, I believe that there has to be another way than war.
+[name="Odda"]Mom, I know you believed in Babel because you hoped for a different way to live.
+[name="Odda"]Goodbye, Mom, Dad.
+[name="Odda"]Goodbye, home.
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[PlaySound(key="$d_avg_paper1", volume=1)]
+[Delay(time=1)]
+For Theresa's eyes only,
+I have heard of what happened in Kazdel and share your sense of loss. The city holds special meaning to us all.
+But Babel need not drift on the wastelands, for I have located the ship I previously mentioned in Rim Billiton.
+The excavation went smoothly, and the ship's basic functions have been restored after two years of work.
+It will carry the hopes of Babel into the future. Please wait for me, Theresa.
+P.S.: I did find it on the ship.
+A legacy that could bring upheaval to this land.
+Given its importance, I feel it is crucial to discuss this matter with you in person.
+With hope, Kal'tsit
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[Image]
+[charslot]

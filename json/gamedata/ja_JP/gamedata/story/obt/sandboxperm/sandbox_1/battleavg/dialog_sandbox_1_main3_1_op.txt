@@ -1,0 +1,41 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="8", y="7", charId="trap_471_tegmaus", isChar="FALSE", dir="RIGHT")]
+[foginview(leftBottomX="5", leftBottomY="5", rightUpX="11", rightUpY="12", id="fog_1")]
+[camerafocusto(id="trap_471_tegmaus", scale="CLOSE", time="1")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]もう「円盤」の片割れを見つけてきてくれたのか。思ったよりも早かったな、やるじゃないか。途中で襲われはしなかったかね？
+[decision(option1="首長軍に遭いはした。", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="だが、そう多くもなかった。", value1="2.1")]
+[predicate(references="2.1")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]おや、奴らの注意はすべてこちらに引き付けられたと思っていたんだが。
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]これは私のせいだな。こちらの計画は、想定していたほど完璧ではなかったようだ。すまない、今度何かしらの埋め合わせをしよう。
+[decision(option1="ところで、まだ質問に答えてもらっていないな。", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="この円盤は何に使う物なんだ？", value1="4.1")]
+[predicate(references="4.1")]
+[playanim(id="trap_471_tegmaus", anim="Special_Begin", looporidle="Special_Loop", dir="RIGHT")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]ううむ……これ以上知ろうと言うのなら、私と共にもっと危険な旅に出ることになるかもしれないのだが。
+[decision(option1="この円盤が「嘆き」の源なのか？", value1="5.1")]
+[predicate(references="5.1")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]もう一度言っておこう、今ならまだ間に合うぞ。なおも首長軍に追われることになれば、次は今回の比にならない人数になるのだから。
+[decision(option1="我々は簡単には諦めない。", value1="6.1")]
+[predicate(references="6.1")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]はぁ、まったく仕方がないな。そんなに一緒に来たいと言うなら良いだろう。だが、後悔はしないでくれよ。
+[playanim(id="trap_471_tegmaus", anim="Special_End", looporidle="Idle", dir="RIGHT")]
+[delay(time="2")]
+[decision(option1="それで、計画というのはまだあるのか？", value1="7.1")]
+[predicate(references="7.1")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]共に、北にある禁断の地、サリマへ向かおう。この「円盤」の片割れが両方揃っている今なら、あの場所に入ることができるだろう。
+[decision(option1="宝のある場所か？", value1="8.1")]
+[predicate(references="8.1")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]確かに、非常に貴重なものが眠っているが。
+[decision(option1="首長軍もさぞ心躍らせるだろうな。", value1="9.1")]
+[predicate(references="9.1")]
+[name="ペペ", avatarId="bavg_npc_001", isAvatarRight="FALSE"]ああ。だから急いで出発してしまおう。首長軍に気付かれずに済むようにね。
+[withdraw(id="trap_471_tegmaus")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

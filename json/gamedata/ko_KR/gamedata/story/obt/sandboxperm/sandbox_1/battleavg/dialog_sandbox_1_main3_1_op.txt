@@ -1,0 +1,41 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="8", y="7", charId="trap_471_tegmaus", isChar="FALSE", dir="RIGHT")]
+[foginview(leftBottomX="5", leftBottomY="5", rightUpX="11", rightUpY="12", id="fog_1")]
+[camerafocusto(id="trap_471_tegmaus", scale="CLOSE", time="1")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]아무래도 나머지 반쪽 '원판'을 찾은 모양이네, 제법인걸! 내 예상보다 빨랐어. 그런데 도중에 습격받지는 않았어?
+[decision(option1="아미르군을 마주치긴 했어.", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="많지는 않았지만.", value1="2.1")]
+[predicate(references="2.1")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]하아, 아미르군의 주의를 다 끌었을 거라고 생각했는데.
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]내 계획이 완벽하지 않았던 탓이야. 이건 나중에 따로 보상할게.
+[decision(option1="아직 답을 들려주지 않았어.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="이 원판의 용도가 대체 뭐야?", value1="4.1")]
+[predicate(references="4.1")]
+[playanim(id="trap_471_tegmaus", anim="Special_Begin", looporidle="Special_Loop", dir="RIGHT")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]음…… 더 깊게 파고든다면, 아마 너희들도 나처럼 위험에 빠질 수 있을 텐데.
+[decision(option1="이게 그 '통곡'의 출처인가?", value1="5.1")]
+[predicate(references="5.1")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]미리 경고하는데, 지금 돌아가도 늦지 않아. 다음에 마주칠 아미르군은 그 정도 수가 아닐 테니까.
+[decision(option1="이대로 포기할 순 없어.", value1="6.1")]
+[predicate(references="6.1")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]하아, 방법이 없네. 따라올 테면 따라와 봐. 나중에 후회하지나 말고.
+[playanim(id="trap_471_tegmaus", anim="Special_End", looporidle="Idle", dir="RIGHT")]
+[delay(time="2")]
+[decision(option1="그래서, 다음 계획이 뭔데?", value1="7.1")]
+[predicate(references="7.1")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]너희들과 함께 북쪽의 금지된 찰리마슈투로 갈 거야. 이 반쪽짜리 원판 두 개를 합치면 그곳을 열 수 있거든.
+[decision(option1="보물이 숨겨진 곳?", value1="8.1")]
+[predicate(references="8.1")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]뭐, 안에 있는 물건이 확실히 귀중하긴 하지.
+[decision(option1="그럼 아미르군도 눈이 뒤집히겠네.", value1="9.1")]
+[predicate(references="9.1")]
+[name="페페", avatarId="bavg_npc_001", isAvatarRight="FALSE"]아마도? 그러니까 아미르군에게 들키기 전에 빨리 출발해야 돼.
+[withdraw(id="trap_471_tegmaus")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]

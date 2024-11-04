@@ -1,0 +1,42 @@
+[header(actId="sandbox_1", npcId="trap_466_tzumama")]
+[summontrap(x="7", y="4", charId="trap_466_tzumama", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="9", y="4", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[camerafocusto(offsetX="8", offsetY="4", time="0.2", scale="MID")]
+[uioperation(target="main", item="", enable="False")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]さて、噂の「理想的な土地」に到着したわけだが。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]メイン業務の特殊性を考慮し、正式な拠点以外にも、この集会用のスペースを確保しておいたんだ。今後は来客への対応以外にも……
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]物資の配分や、設備の改造、倉庫管理業務もここで行うことになるだろう。今後は必要に応じて、いつでも訪ねて来てくれ。
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1.5")]
+[playanim(id="trap_467_ttuye", anim="Special_Begin", looporidle="Special_Loop", dir="LEFT")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]ズゥママがここで拠点の運営を執り行っていくのであれば、周囲の探索や資源の採取は私に任せてもらおう。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]キャンピングカーの修理は終わった。これで、より複雑な地形にも対応できるだろう。燃料の準備さえ良ければ、明日の朝には出発できるぞ。
+[decision(option1="そんなに早く発つのか？", value1="1.1")]
+[predicate(references="1.1")]
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1.5")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]仕方がないさ。ここまで来るのに時間がかかった分、備蓄も尽きてきているからな。
+[camerafocusto(id="trap_467_ttuye", scale="CLOSE", time="1.5")]
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]この前、拠点の西側にあるラブ＝アラケシュのジャングルを軽く探索してみたんだが、情報によると、あそこには多くの資源があるらしい。
+[name="トゥイエ", avatarId="char_402_tuye", isAvatarRight="TRUE"]だから今回はもっと奥まで探索して、必要な物資を持ち帰れないか見てみよう。
+[camerafocusto(id="trap_466_tzumama", scale="CLOSE", time="1.5")]
+[playanim(id="trap_466_tzumama", anim="Attack", dir="RIGHT", looporidle="Idle")]
+[delay(time="1")]
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]では、この地図を持っていけ。建築基準を満たす木材を採取するなら必要になるだろう。
+[name="ユーネクテス", avatarId="char_416_zumama", isAvatarRight="FALSE"]苦労して手に入れたものだから、なくさないようにな。
+[decision(option1="ありがとう。", value1="2.1")]
+[predicate(references="2.1")]
+[additem(itemId="sandbox_1_craft_1", itemCount="1")]
+（アルサランの森林分布図を手に入れたことで、木材の採取が可能になった。）
+[camerafocusto(id="trap_467_ttuye", offsetX="-1", scale="MID", time="1")]
+[decision(option1="今日は全員、早めに休もう。", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="明日もやることは山積みだからな。", value1="4.1")]
+[predicate(references="4.1")]
+[playanim(id="trap_467_ttuye", anim="Special_End", looporidle="Idle", dir="LEFT")]
+[delay(time="1")]
+[withdraw(id="trap_467_ttuye")]
+[withdraw(id="trap_466_tzumama")]
+[delay(time="1")]
+[resetcamera(time="1")]
+[save]
+[end]

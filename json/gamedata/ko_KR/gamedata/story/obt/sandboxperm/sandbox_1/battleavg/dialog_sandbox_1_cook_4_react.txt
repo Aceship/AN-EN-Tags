@@ -1,0 +1,27 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]도대체…… 그 녀석은…… 왜 아직도…… 안 찾아오는 건지……
+[decision(option1="할아범, 뭘 그렇게 중얼거려?", value1="1.1")]
+[predicate(references="1.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]으악, 깜짝이야! 왜 또 온 게냐? 또 유넥티스가 보내더냐?
+[decision(option1="이번엔 <color=#d8d769>크랩 모둠회</color>야.", value1="2.1", option2="아니, 그냥 지나가던 길인데.", value2="2.2")]
+[predicate(references="2.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_food_4", itemCount="-1")]
+[decision(option1="마음에 들었으면 좋겠네.", value1="3.1")]
+[predicate(references="3.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]이 고기…… 제대로 익은 건 맞느냐?
+[decision(option1="재료 본연의 맛을 최대한 남겼어.", value1="4.1")]
+[predicate(references="4.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]어…… 그럼 어디 한번…… 으음……
+[decision(option1="어때?", value1="5.1")]
+[predicate(references="5.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]저번보단 좋지만, 그래도 만족은 안 되는군.
+[decision(option1="먹을 때 입꼬리가 잔뜩 올라갔던데?", value1="6.1")]
+[predicate(references="6.1")]
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]그게 꼭 내가 만족했다는 의미는 아닐세.
+[name="대제사장", avatarId="bavg_npc_002", isAvatarRight="FALSE"]내가 아니라면 아닌 거다! 더 이상 귀찮게 굴지 마라!
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="2.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_food_4", value="1")]

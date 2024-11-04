@@ -1,0 +1,28 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]What did you bring this time?
+[decision(option1="I guarantee it's delicious.", value1="1.1", option2="I was just passing by.", value2="1.2")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_craft_17", itemCount="-1")]
+(You handed over 'Eunectes' style Pressure-Cooked Soup)
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Hmph, I don't believe it...
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Hmm...?
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Huh...?
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Uff...
+[decision(option1="What's that look on your face?", value1="2.1")]
+[predicate(references="2.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Did you make this yourself? It's different from the last one I had!
+[decision(option1="Yep, all thanks to Eunectes.", value1="3.1")]
+[predicate(references="3.1")]
+[decision(option1="She took over during the crucial steps.", value1="4.1")]
+[predicate(references="4.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]Hmm... Not bad. I thought the brat already forgot I existed.
+[decision(option1="So, is this dish to your liking?", value1="5.1")]
+[predicate(references="5.1")]
+[name="High Priest", avatarId="bavg_npc_002", isAvatarRight="FALSE"]I'm not telling <i>you.</i> Get her to ask me herself.
+[additem(itemId="sandbox_1_condiment", itemCount="3")]
+[withdraw(id="trap_468_tpriest", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_craft_17", value="1")]

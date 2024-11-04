@@ -1,0 +1,30 @@
+[header(actId="sandbox_1", npcId="")] 
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]We've established preliminary reconnaissance. I have a good grasp of the basic information and the ameeri army's movement. If you have any questions, ask away.
+[decision(option1="I want to know more about the regional divisions here.", value1="1.1", option2="We're here to thank you for all you've done.", value2="1.2", option3="This place has changed.", value3="1.3", option4="Thanks, but we got other things to do.", value4="1.4")]
+[predicate(references="1.1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Szubat-Arsalan is roughly divided into five regions. To the west is the Rabum-Arakeeshtu Jungle, otherwise known as the Yellow-green Forest. It's rich in basic resources and has suitable ecological environments. It's a great place to start an exploration.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]To the south is the Barren Salt Riverbank. From what I've heard, it has an abundance of stones, and it is connected to the jungle.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]There seems to be an oasis to the east, and supposedly there are large iron deposits, but getting there is a problem.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]As for the northwest, rumors say that the place is full of danger. Further investigation is needed before we know anything more.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]We haven't started surveying the Circle of Gitmalutu to the north yet. The moment we learn anything new about it, I will share it with you.
+[end]
+[predicate(references="1.2", visibleCondition="c0&&!c5")]
+[decision(option1="Here are some <color=#d8d769>Woodchip Fungi</color> that we gathered.", value1="2.1")]
+[predicate(references="2.1")]
+[additem(itemId="sandbox_1_mushroom", itemCount="-1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Thanks for your gifts, but I need to get back to work now.
+[addfavor(trapId="trap_466_tzumama", val="10")]
+[end]
+[predicate(references="1.3", visibleCondition="c1&&!c4")]
+[decision(option1="Seems like there's something else?", value1="3.1")]
+[predicate(references="3.1")]
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]Guilty as charged. It's my turn to give you a gift.
+[name="Eunectes", avatarId="char_416_zumama", isAvatarRight="FALSE"]This is my <color=#d8d769>Jungle Battleaxe.</color> Hope it'll be of help to you.
+[additem(itemId="sandbox_1_craft_14", itemCount="1")]
+[end]
+[predicate(references="1.4")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_mushroom", value="1")]
+[condition(references="c5", key="checkfavor", trapId="trap_466_tzumama", val="50", containsEq=1)]
+[condition(references="c1", key="checkfavor", trapId="trap_466_tzumama", val="50", containsEq=1)]
+[condition(references="c4", key="itemGE", itemId="sandbox_1_craft_14", value="1")]

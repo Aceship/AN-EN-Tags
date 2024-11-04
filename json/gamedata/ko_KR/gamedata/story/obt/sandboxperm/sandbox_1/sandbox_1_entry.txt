@@ -1,0 +1,123 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[Delay(time=1)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[PlaySound(key="$d_avg_sandwnd", volume=0.6, loop=true, channel="wind")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=3, block=true)]
+[delay(time=1)]
+[Decision(options="하아…… 하아……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]괜찮아? 온몸이 땀 범벅이네.
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="투예"]그렇게 계속 땀만 흘렸다간 발밑에 오아시스가 생기겠는데.
+[dialog]
+[charslot]
+[Decision(options="이 사막은 끝이 안 보이네.;모래알이 자꾸 바퀴를 때려.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]만약 운이 따라준다면, 밤이면 그 말로만 듣던 에클루무 오아시스 근처 공터에 도착할 수 있을 거야. 만약……
+[charslot(slot="m",name="avg_402_tuye_1#11$1",focus="m")]
+[name="투예"]만약에 운이 나쁘다면 오아시스는 이미 모래에 파묻혀 있겠고, 영원히 찾을 수 없겠지.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]재수 없는 얘기는 하지 마. 그 공터는 아르살란에서 로도스 아일랜드 사무소에 가장 적합한 곳이란 말이야. 푄 고온지대 관측에도 유리하고.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="유넥티스"]그곳을 못 찾는다면 수고를 들여서라도 적당한 곳을 다시 찾아보는 수밖에 없어. 보고받은 정보가 맞다면, 우리한테 남은 시간은 얼마 없어.
+[charslot(slot="m",name="avg_402_tuye_1#8$1",focus="m")]
+[name="투예"]하아, 이 지역엔 오리지늄 공업 시설 같은 것도 없는데, 왜 광석병 감염자는 갈수록 늘어만 날까?
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]어쩌면 광풍과 황사에서 답을 찾을 수 있을지도.
+[Dialog]
+[charslot]
+[Decision(options="……", values="1")]
+[Predicate(references="1")]
+[stopmusic(fadetime=2)]
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="유넥티스"]음? 뭘 그렇게 뚫어져라 쳐다봐?
+[Dialog]
+[charslot]
+[Decision(options="저, 저건……", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="char_416_zumama_1#6",focus="m")]
+[name="유넥티스"]투예, 브레이크!
+[Dialog]
+[charslot]
+모래바람 속에서 당신들은 폭주하는 니들플라이들이 비틀거리고 있는 한 사람을 공격하는 광경을 목격했다.
+[Dialog]
+[charslot]
+[PlaySound(key="$drift", volume=0.6)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="bg_desert_1",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[playMusic(intro="$path_intro", key="$path_loop", volume=0.6)]
+[charslot(slot="m",name="avg_402_tuye_1#6$1",focus="m")]
+[name="투예"]여기 사막은 니들플라이 둥지가 많아서 엄청 위험한데, 왜 혼자 이러고 있어?
+[charslot]
+[name="상처 입은 여행자"]가, 감사합니다…… 사, 사냥하다가 모래 폭풍을 마주치는 바람에…… 길을 잃었습니다.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]어디 사는데? 우리가 태워 줄게.
+[charslot]
+[name="상처 입은 여행자"]저랑 부족 사람들은 모두 피난민들이라, 이 사막에 대해 전혀 아는 바가 없습니다. 그저 정글 근처에 집이 있다는 것만 알아요.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]라브 아라키슈투 정글?
+[charslot]
+[name="상처 입은 여행자"]그게…… 이곳에 정글이 워낙 많은지라, 어느 정글을 얘기하는지 저도 잘……
+[charslot(slot="m",name="avg_402_tuye_1#1$1",focus="m")]
+[name="투예"]같은 정글이든 아니든, 다음 모래바람이 불기 전에 얼른 떠나자.
+[Dialog]
+[charslot]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Background(image="47_g30_oasis2",screenadapt="coverall")]
+[delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[name="연로한 족장"]젊은이들, 저 얼간이를 데려다줘서 정말 고맙소이다. 그대들이 아니었다면 아마 평생 저놈을 찾지 못했을 것이오.
+[name="연로한 족장"]하지만 여긴 별로 좋은 곳도 아닌데, 어쩐 일로 여기까지 오셨소?
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]스바트 아르살란에 사무소를 세우고 푄 고온지대를 관측하려고.
+[charslot]
+[name="연로한 족장"]스바트 아르살란? 이 얼마나 오래된 이름인가. 그렇지, 이곳이 바로 그대들이 말하는 아르살란이지.
+[name="연로한 족장"]하지만 그 '사자들의 옛 왕좌'라는 찬란한 이름은 이미 많은 이들에게 잊혔소.
+[charslot(slot="m",name="char_416_zumama_1",focus="m")]
+[name="유넥티스"]그럼, 지금은?
+[charslot]
+[name="연로한 족장"]그대들도 보았을 것이오.
+[charslot]
+[name="연로한 족장"]우리는 원래 남부의 나루타바팀 강 유역에 살고 있었지만, 푄 고온지대가 강줄기를 점차 막기 시작하더니, 강기슭마저도 전부 알칼리 지대가 되어 버렸소.
+[charslot]
+[name="연로한 족장"]덕분에 우리 고향은 모래에 파묻혔고, 전대 족장도 아미르 자리를 잃은 바람에 우리의 땅 또한 분쟁 속에서 점차 줄어들고 말았소.
+[charslot]
+[name="연로한 족장"]원래는 얼마 남지 않은 땅에서 자급자족하며 살고 있었는데, 최근 들어 아르살란에 특별한 보물이 묻혀 있다는 소문이 돌더니, 급기야 근처의 아미르가 군대를 파견해 왔더군.
+[charslot]
+[name="연로한 족장"]그들은 마을을 쑥대밭으로 만들었고, 우리 동포들을 남쪽의 채굴장에 끌고 가 노역을 시키기까지 했소. 많은 이들이 그곳에서 무서운 병에 걸리는 바람에, 하아……
+[name="연로한 족장"]그리하여 우리는 어쩔 수 없이 북쪽으로 이주했고, 이곳까지 오게 되었소.
+[charslot]
+[name="연로한 족장"]이제 '사자들의 옛 왕좌' 같은 건 없고, 그저 유랑민들이 모인 곳일 뿐이오.
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="유넥티스"]어쩐지…… 갑자기 그렇게 많은 광석병 감염자가 보이더라니.
+[charslot(slot="m",name="avg_402_tuye_1#3$1",focus="m")]
+[name="투예"]아무래도 열악한 생존 환경 외에도, 아미르가 이번 임무의 가장 큰 골칫거리가 되겠네……
+[charslot(slot="m",name="char_416_zumama_1#4",focus="m")]
+[name="유넥티스"]……분명 방법이 있을 거야.
+[charslot]
+[name="연로한 족장"]그것보다, 그대들이 표기한 그 좌표는 여기서 멀지 않소. 이 정글과 오아시스 근처의 공터가 바로 그곳이오.
+[name="연로한 족장"]그대들의 일을 방해하진 않을 터이니, 도움이 필요하다면 언제든지 찾아오시오.
+[Dialog]
+[Decision(options="우리도 그쪽을 도와줄 수 있어.;우리도 아미르군을 막을 수 있어.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot]
+[name="연로한 족장"]만약 그리 해 준다면 더할 나위 없겠지만, 문제는 우리에겐 보답으로 줄 만한 게 남아 있지 않소.
+[charslot(slot="m",name="avg_402_tuye_1#9$1",focus="m")]
+[name="투예"]현지의 소문을 들려주는 걸로도 충분해.
+[charslot]
+[name="연로한 족장"]……그렇다면 이곳에 오래 머물러야 할 것이오, 젊은이.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

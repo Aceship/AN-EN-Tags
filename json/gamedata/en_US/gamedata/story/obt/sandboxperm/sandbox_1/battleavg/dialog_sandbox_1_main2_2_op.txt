@@ -1,0 +1,39 @@
+[header(actId="sandbox_1", npcId="trap_467_ttuye")]
+[summontrap(x="18", y="7", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summonenemy(enemyId="enemy_7035_epasng", x="18", y="5", endX="15", endY="6")]
+[move(enemyId="enemy_7035_epasng", x="17", y="5")]
+[camerafocusto(offsetX="17", offsetY="6", scale="FAR", time="5")]
+[delay(time="2")]
+[foginview(id="rect1", leftBottomX=12, leftBottomY=3, rightUpX=22, rightUpY=9)]
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]I believe this is what you're looking for. Lush vegetation and an ancient temple.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]The good news is that I saw a settlement with Archosauria symbols. The bad news is that it was empty.
+[decision(option1="Maybe we should get closer.", value1="1.1")]
+[predicate(references="1.1")]
+[camerafocusto(offsetX="14", offsetY="6", scale="FAR", time="5")]
+[move(enemyId="enemy_7035_epasng", x="15", y="6")]
+[delay(time="2")]
+[summonenemy(enemyId="enemy_1096_ccwitch_2", x="12", y="5", endX="14", endY="5")]
+[move(enemyId="enemy_1096_ccwitch_2", x="13", y="5")]
+[summonenemy(enemyId="enemy_7023_gatbb", x="12", y="6", endX="14", endY="6")]
+[move(enemyId="enemy_7023_gatbb", x="13", y="6")]
+[summonenemy(enemyId="enemy_1096_ccwitch", x="12", y="7", endX="14", endY="7")]
+[move(enemyId="enemy_1096_ccwitch", x="13", y="7")]
+[name="Temple Guard", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Thieves! You dare return after you defiling our goddess?
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="FALSE"]Looks like an <color=#d8d769>ambush</color>.
+[decision(option1="More like a misunderstanding.", value1="2.1")]
+[predicate(references="2.1")]
+[decision(option1="We're just here to seek help!", value1="3.1")]
+[predicate(references="3.1")]
+[name="Temple Guard", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]I've had enough of these lies. First the ameeri army, then the strange Feline. This is sacred ground.
+[name="Temple Guard", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Draw your weapons.
+[name="Passenger", avatarId="char_472_pasngr", isAvatarRight="TRUE"]Stay back. Tuye and I will take of this.
+[playanim(id="trap_467_ttuye", anim="Idle", dir="RIGHT")]
+[withdraw(id="enemy_1096_ccwitch")]
+[withdraw(id="enemy_1096_ccwitch_2")]
+[withdraw(id="enemy_7023_gatbb")]
+[withdraw(id="enemy_7035_epasng")]
+[withdraw(id="trap_467_ttuye")]
+[fognotinview(id="rect1")]
+[resetcamera(time="1")]
+[save]
+[end]

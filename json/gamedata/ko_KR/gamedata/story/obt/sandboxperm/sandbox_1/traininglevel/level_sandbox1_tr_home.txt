@@ -1,0 +1,36 @@
+[HEADER(is_tutorial=true, is_skippable=false)] 新手局基地敌袭
+[Battle.lockFunction(mask="PAUSE_BUTTON_INTERACT")]
+[Battle.lockFunction(mask="BATTLE_STATUS")]
+[InputBlocker(blockInput=true)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]이게 우리의 첫 번째 적습이야. 그렇다고 긴장할 필요 없어.
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=3, offsetX=24, time=3)]
+[Delay(time=2)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]적들은 주둔지 가장자리의 입구를 통해 침입할 거야.
+[Delay(time=0.5)]
+[Battle.Pause(pause=false)]
+[SandboxBattle.CameraFocusTo(offsetY=20, offsetX=24, time=2.5)]
+[Delay(time=3)]
+[SandboxBattle.CameraFocusTo(offsetY=20, offsetX=4, time=2)]
+[Delay(time=2.5)]
+[SandboxBattle.CameraFocusTo(offsetY=3, offsetX=4, time=2.5)]
+[Delay(time=3)]
+[Battle.Pause]
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama")]그리고 <@tu.kw>샌드뱅크</>가 있는 곳을 향해 진격해.
+[SandboxBattle.CameraFocusTo(offsetY=11, offsetX=14, time=2)]
+[Delay(time=2)]
+[Tutorial(tileY=12, tileX=14, focusWidth=200, focusHeight=200, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+명심해, 샌드뱅크가 파괴되면 주둔지가 함락되고 이번 연산도 바로 끝나.
+[SandboxBattle.CameraFocusTo(offsetY=6, offsetX=14, time=1)]
+[Delay(time=1)]
+[Tutorial(tileY=6, tileX=14, focusWidth=125, focusHeight=125, \
+          animStyle="Highlight", focusStyle="HighlightCircle", black=0.5, \
+          protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+이 시설들은 적의 공격을 일시적으로 막아줄 수 있으니, 시설을 잘 활용하고 오퍼레이터를 적절하게 배치해 적습을 방어해 봐.
+[Tutorial(protectTime=0.5, dialogHead="$avatar_zumama", dialogX="$f_lower_dialog_pos_x", dialogY="$f_lower_dialog_pos_y")] \
+나는 상시 대기하고 있을 테니, 필요하면 언제든지 지시를 내려. 그럼, 작전 개시!

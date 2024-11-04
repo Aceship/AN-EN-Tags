@@ -1,0 +1,21 @@
+[header(actId="sandbox_1", npcId="")] 
+[uioperation(target="", item="sandbox_1_dimensioncoin", enable="TRUE")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]Ready to play Arsalan Quiz? We have some new prizes here! Take a gander! Every roll costs one <color=#d8d769>Crystalline Shard</color>. Ten for ten times!
+[decision(option1="Roll ten times", value1="1.1", option2="I'm just here to ask how you're feeling.", value2="1.2", option3="I'll pass. Still got stuff to do.", value3="1.3")]
+[predicate(references="1.1", selectableCondition="c0")]
+[additem(itemId="sandbox_1_dimensioncoin", itemCount="-10")]
+[gacha(gachaPool="pool_npc1", cnt="10", all="FALSE")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]Man, pretty good luck there! Be sure to come back!
+[withdraw(id="trap_415_trademan", withoutAnim="FALSE")]
+[save]
+[end]
+[predicate(references="1.2", visibleCondition="!c1")]
+[name="Liaison", avatarId="trap_415_trademan", isAvatarRight="FALSE"]I never imagined I would find such an enjoyable place around here. Please, accept this token of my gratitude.
+[additem(itemId="sandbox_1_craft_7", itemCount="1")]
+[decision(option1="Thank you for the gift.", value1="2.1")]
+[predicate(references="2.1")]
+[end]
+[predicate(references="1.3")]
+[end]
+[condition(references="c0", key="itemGE", itemId="sandbox_1_dimensioncoin", value="10")]
+[condition(references="c1", key="itemGE", itemId="sandbox_1_craft_7", value="1")]

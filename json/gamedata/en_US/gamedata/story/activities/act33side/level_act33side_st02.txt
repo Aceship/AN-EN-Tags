@@ -1,0 +1,684 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Delay(time=1)]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=2)]
+[charslot(slot = "left", name = "avg_npc_1360_1#1$1",duration = 1.5,bstart=0.1,bend=0.4)]
+[charslot(slot = "right", name = "avg_npc_083",duration = 1.5)]
+[delay(time=2.5)]
+[charslot(slot = "right",focus="r")]
+[name="Priestess"]I prepared a gift for you, {@nickname}.
+[name="Priestess"]What do you hear?
+[charslot(slot = "l",focus="l")]
+[name="???"]This is...
+[charslot(slot = "right",focus="r")]
+[name="Priestess"]Do you remember? This is the polarization formed when AMa-10 was born. You said you found a rhythm within its waveform. Of course, I added a little personal touch.
+[name="Priestess"]I adjusted the direction of the planetary track's array to capture different echoes. The harmony is derived from the lingering neutrinos of extinguishing stars. As for the orchestrator, I used the gravitational folds left behind when the ship sailed through the stargate.
+[name="Priestess"]Oh... I knew you'd like it, {@nickname}.
+[charslot(slot = "l",focus="l")]
+[name="???"]The universe's singing... Even at this moment, it's still as touching as ever.
+[name="???"]But this violates the norms we set ourselves, Priestess. These facilities should've kept operating on the preset path.
+[charslot(slot = "right",focus="r")]
+[name="Priestess"]The stars are losing their color. This world no longer has norms, doesn't it?
+[name="Priestess"]This place will fall silent soon, almost like we've never been here.
+[charslot(slot = "l",focus="l")]
+[name="???"]......
+[charslot(slot = "right",focus="r")]
+[name="Priestess"]Come walk with me, before the silence comes.
+[name="Priestess"]I hope... we'll get to see this world's future with our own eyes together, {@nickname}.
+[PlaySound(key="$d_avg_signlntrfrnc", volume=0.8)]
+[bgeffect(name="$eb_signalInterference",layer=1)]
+[charslot]
+[dialog]
+[Delay(time=3)]
+[Sticker(id="st1", text="'We will... I will wait for you in that world.'", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=1)]
+[Sticker(id="st1",duration=1)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$tech_intro", key="$tech_loop", volume=0.6)]
+[Delay(time=1)]
+[interlude(maskid = "ui_cutin_mask_horizon", style = 1, size = "1280, 100",offset = "0,0", channel = 2)]
+[interlude(channel = 2, type = 2, name = "bg_black", afrom = 0, ato = 1, aduration = 0.3,sfrom = "1.3,1.3", sto = "1.3,1.3", sduration = 0, block = false)]
+[Sticker(id="st1",  text="Four Years Ago...", duration=1,x=300,y=325, alignment="center", size=24, delay=0, width=700,block="false")]
+[Sticker(id="st2", text="Summer, 1090" ,duration=1,x=300,y=365, alignment="center",size=24, delay=0, width=700)]
+[Sticker(id="st1", duration=1)]
+[Sticker(id="st2", duration=1)]
+[interlude(channel = 2, clear = true)]
+[Delay(time=1.5)]
+Rhodes Island of Babel, Kazdel
+[dialog]
+[charslot(slot="m",name="avg_npc_050",duration=1)]
+[delay(time=2)]
+[name="Closure"]Phew! Finally done retrofitting the electrical wiring. Now we're gonna be able to withstand any impact... I think.
+[name="Closure"]How dare Kal'tsit make me work forty-eight hours nonstop... Once all this is over, I'm gonna tell Her Highness on her!
+[dialog]
+[playsound(key="$d_gen_transmissionget")]
+[CharacterCutin(widgetID="1", name="avg_npc_1311_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=-400, width=300, block=true)]
+[Delay(time=0.5)]
+[charslot(slot = "m", focus = "n")]
+[name="Scout"]Confirmed within the landship's communications range. Signal's clear. The mini bases you hid around are great, Closure.
+[charslot(slot = "m", focus = "m")]
+[name="Closure"]Of course! Not even Her Highness has seen anything this handy!
+[charslot(slot = "m", focus = "n")]
+[name="Scout"]Is their so-called research finished?
+[charslot(slot = "m", focus = "m")]
+[name="Closure"]The energy surge caused by the last couple rounds almost got Rhodes Island to stall. I'm still reinforcing the landship for the next impact.
+[name="Closure"]You know how much I racked my brains to cover up the landship's movement? Like, what if the Military Commission's spies caught wind—
+[dialog]
+[playsound(key="$d_gen_transmissionget")]
+[CharacterCutin(widgetID="2", name="avg_4132_ascln_1#1$1", style="cutin", fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=400, width=300, block=true)]
+[Delay(time=0.5)]
+[charslot(slot = "m", focus = "n")]
+[name="Ascalon"]Relax. I've already eliminated all our targets nearby. Just focus on your preparations.
+[name="Ascalon"]Scout, report.
+[name="Scout"]The infiltration mission is complete. I'm sending the intel back to Babel.
+[name="Ascalon"]What's the situation inside the city?
+[name="Scout"]Not much has changed over the past few years. Not many Catastrophes. Very little movement.
+[name="Scout"]Our situation's not very optimistic, actually. If the Military Commission continues to shrink our strategic space—
+[name="Ascalon"]Let's trust Her Highness and Dr. Kal'tsit.
+[name="Scout"]You're right... They've spent so much time preparing for today's experiment just to turn the tide.
+[charslot(slot = "m", focus = "m")]
+[name="Closure"]Right, Scout, have you gotten your hands on the equipment I was keeping at my place?
+[charslot(slot = "m", focus = "n")]
+[name="Scout"]I've already entrusted it to a Messenger to take to Babel.
+[charslot(slot = "m", focus = "m")]
+[name="Closure"]Awesome. With the secret weapon Kal'tsit and I knocked out together, we'll definitely crack that weird control system on the ship.
+[charslot(slot = "m", focus = "n")]
+[name="Ascalon"]I'll rendezvous with the Messenger and confirm the package's risk level before bringing it to the landship.
+[name="Ascalon"]We have been investigating the agent behind our missing engineer too. The threat against the landship hasn't been fully eliminated yet.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[CharacterCutin(widgetID="2",fadetime=0)]
+[CharacterCutin(widgetID="1",fadetime=0)]
+[charslot]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot(slot="m",name="avg_4131_odda_1#10$1",duration=1)]
+[delay(time=1.5)]
+[name="Odda"]Closure, I brought you even more materials, just as you asked. They're so heavy!
+[charslot(slot="m",name="avg_npc_050")]
+[name="Closure"]Thanks, Odda! Hm... Looks like now I can make more safety equipment for Her Highness and Kal'tsit.
+[name="Closure"]And I should install an extra line for backup. Hope there won't be any unexpected surprises this time...
+[charslot(slot="m",name="avg_4131_odda_1#1$1")]
+[name="Odda"]Do you need any help, Closure?
+[charslot(slot="m",name="avg_npc_050")]
+[name="Closure"]Oh. You should hurry and evacuate to a safe zone with everybody else. The next wave of impacts... is probably gonna be in thirty minutes.
+[dialog]
+[charslot(slot="m",name="avg_4131_odda_1#1$1")]
+[delay(time=0.5)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1.5)]
+[delay(time=2.5)]
+[charslot(slot="m",name="avg_npc_050")]
+[name="Closure"]Now everything's all ready.
+[name="Closure"]Hm... I'm kinda curious... Just what kind of secret experiments are Kal'tsit and Her Highness running? They even need to mod the energy and defense modules, not to mention those weird tests...
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="Kal'tsit"]There is no one with a better understanding of Originium.
+[charslot(slot = "right", name = "avg_npc_1296_1#8$1",focus="r")]
+[name="Theresa"]......
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="Kal'tsit"]If you want to solve the suffering caused by Originium...
+[name="Kal'tsit"]There is no better candidate for the job.
+[charslot(slot = "right", name = "avg_npc_1296_1#8$1",focus="r")]
+[name="Theresa"]The news you bring is always so... surprising. Even for the King of Sarkaz...
+[charslot(slot = "right", name = "avg_npc_1296_1#10$1",focus="r")]
+[name="Theresa"]Are those devices really still working...? Are you confident about the resurrection?
+[name="Theresa"]The vast majority of lifeforms on Terra can't resist corrosion that spans such a long stretch of time.
+[charslot(slot = "left", name = "avg_003_kalts_1#3$1",focus="l")]
+[name="Kal'tsit"]......
+[charslot(slot = "left", name = "avg_003_kalts_1#1$1",focus="l")]
+[name="Kal'tsit"]The Terra we see today is no doubt a miracle, and so are you, Theresa.
+[name="Kal'tsit"]But in the past, the whole solar system revolving around the sun was insignificant in their eyes.
+[charslot(slot = "right", name = "avg_npc_1296_1#8$1",focus="r")]
+[name="Theresa"]You seem a little tense... and also a little anxious and nervous.
+[name="Theresa"]Is there anything else that worries you?
+[charslot(slot = "left", name = "avg_003_kalts_1#14$1",focus="l")]
+[name="Kal'tsit"]...Yes.
+[name="Kal'tsit"]But... I can't tell you.
+[charslot(slot = "right", name = "avg_npc_1296_1#7$1",focus="r")]
+[name="Theresa"]It's okay! Sorry, I shouldn't have distracted you. Focus. I can feel it.
+[charslot(slot = "right", name = "avg_npc_1296_1#8$1",focus="r")]
+[name="Theresa"]......
+[name="Theresa"]'Kal'tsit...' You love this name, don't you?
+[charslot(slot = "left", name = "avg_003_kalts_1#3$1",focus="l")]
+[name="Kal'tsit"]......
+[charslot(slot = "left", name = "avg_003_kalts_1#2$1",focus="l")]
+[name="Kal'tsit"]I... I've forgotten almost everything else about those days.
+[charslot(slot = "left", name = "avg_003_kalts_1#1$1",focus="l")]
+[name="Kal'tsit"]But I still remember how, in that distant, distant past, somebody gave me this name—
+[name="Kal'tsit"]'Kal'tsit.'
+[name="Kal'tsit"]That was the last time we ever met.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[image(image="49_i06_1",screenadapt="coverall")]
+[Sticker(id="st1", text="'Kal'tsit. I do not have much time left.", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=0.5)]
+[Sticker(id="st1",duration=0.5)]
+[Delay(time=0.6)]
+[Sticker(id="st1", text="'Search for traces of life. Search for hope and a future.", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=0.5)]
+[Sticker(id="st1",duration=0.5)]
+[Delay(time=0.6)]
+[Sticker(id="st1", text="'Kal'tsit... Go find your own answer.", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=0.5)]
+[Sticker(id="st1",duration=0.5)]
+[Delay(time=0.6)]
+[Sticker(id="st1", text="'Find yourself.'", x=320,y=340, alignment="center", size=22, delay=0.001, width=700,block = true,duration=0.5)]
+[Sticker(id="st1",duration=0.5)]
+[Delay(time=1.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[name="Theresa"]Then why hesitate?
+[name="Kal'tsit"]I know what you mean. It's just...
+[name="Kal'tsit"]...I've had a premonition... worry... or perhaps, a conjecture.
+[name="Kal'tsit"]At the starting point of this land, at a certain point in time when life had only started budding, something that can never be reversed happened here.
+[name="Kal'tsit"]And I don't know what it is.
+[name="Theresa"]If it's someone that even Dr. Kal'tsit can put her full faith in, then I'm not one bit worried.
+[name="Theresa"]Besides, considering how cautious you are, the safety measures that you prepared well ahead of time have never allowed me to worry.
+[name="Kal'tsit"]I'm sorry to say this, Theresa.
+[name="Kal'tsit"]This alone, no matter how many contingency measures I prepare, I still can't confidently say anything is conclusive.
+[name="Kal'tsit"]Theresa, I can't guarantee that I will always make the most rational decision.
+[name="Kal'tsit"]And this time... I want to believe.
+[name="Theresa"]Then do what you want to. I'll be here, with you.
+[stopmusic(fadetime=2)]
+Kal'tsit's hand touches the door that has stood silently still for a cryptically long stretch of time.
+A new wave of tremors reaches Rhodes Island.
+[CameraShake(duration=2, xstrength=3, ystrength=5, vibrato=50, randomness=90, fadeout=true, block=false)]
+The door loosens.
+[dialog]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="'Originium will become the beacon, condensed by our civilization...", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="'If one day, other lifeforms in the universe lose their homeland and seek a way to resolve their plight,", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="'they will witness...", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="'...that we once shined,", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="'we once resisted,", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="'and this is where we rest.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="'We once delivered a gift to those who came after us, before our annihilation—", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="'—Hope.'", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[image(image="49_i06_1",screenadapt="coverall")]
+[imgeffect(name="$ib_gateopen", image="49_i06_2")]
+[Dialog]
+[Delay(time=2)]
+[PlaySound(key="$d_avg_gateopen", volume=1)]
+[Delay(time=2)]
+[image(image="49_i06_2",screenadapt="coverall",fadetime=5)]
+[Delay(time=2)]
+[PlayMusic(intro="$lab_intro", key="$lab_loop", volume=0.6)]
+[Delay(time=2)]
+[name="???"](Unknown language) This place...
+[name="???"](Unknown language) Is... it... time already?
+[playsound(key="$d_avg_labamb", loop=true, channel="bgs",volume=0)]
+[SoundVolume(volume=0.6, channel="bgs",fadetime=2)]
+[dialog]
+[Delay(time=2)]
+[PlaySound(key="$alarmenter", volume=0.8)]
+[Blocker(a=0.3, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+[Blocker(a=0, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+Warning: Unknown power activated.
+[dialog]
+[PlaySound(key="$alarmenter", volume=0.8)]
+[Blocker(a=0.3, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+[Blocker(a=0, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+Warning: PRTS access detected...
+[dialog]
+[PlaySound(key="$alarmenter", volume=0.8)]
+[Blocker(a=0.3, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+[Blocker(a=0, r=1,g=0.2,b=0.2, fadetime=0.7, block=true)]
+Warning: PRTS access detect—
+PRTS access reset complete. Administrator permissions confirmed.
+All communication module channels open. Communications receiver module overclocking procedure completed.
+[PlaySound(key="$d_avg_scan")] 
+Search: Preserver... No signal.
+Search: Caerula Arbor... No signal.
+Search: Celestial Fulcrum... No signal.
+Search: (Unknown static noise)... No signal.
+......
+Search complete. No signal detected on any channel.
+Would you like to retry—
+[name="???"](Unknown language) No... answer...
+[name="???"](Unknown language) Just... me...
+[name="???"](Unknown language) How long... has it been?
+[PlaySound(key="$d_avg_scan")] 
+Searching progress logs...
+Latest update: Four million, seven hundred fifty-five thousand, nine hundred and fifty-four days ago.
+[name="???"]......
+Abnormal vital signs detected. Loading restoration module.
+Restoring—
+[name="???"](Unknown language) Did I... wake up too early... or... too late?
+[name="???"](Unknown language) What stage... has Originium reached?
+[PlaySound(key="$d_avg_scan")] 
+Searching Originium inspection history data... No response.
+[StopSound(channel="bgs", fadetime=2)]
+Originium inspection module is disconnected.
+[name="???"]......
+[name="???"](Unknown language) 'Terra...'
+[name="???"](Unknown language) Why save... all these... redundant information...
+[name="???"](Unknown language) This... isn't recorded in the database... A new language?
+[name="???"](Unknown language) A new civilization... is born...?
+[name="???"](Unknown language) It's... just... me... What about her...? Priestess? My...
+[name="Kal'tsit"](Unknown language) I can answer your question. I saved those data in PRTS in advance.
+[name="???"](Unknown language) You...?
+A hint of unfamiliarity, perplexity, and... vigilance flashed in the eyes of the person stuck in the past.
+Kal'tsit senses it from the glare of the person in the sarcophagus.
+Likewise, Theresa senses Kal'tsit's nervousness.
+[name="???"](Unknown language) Wait...
+[name="???"]......
+[name="???"]......
+[name="???"](Unknown language) You've changed a fair bit...
+[name="Kal'tsit"]......
+The person inside the sarcophagus feels like they have just woken up from a short dream.
+The lifeform that bid them farewell prior to sleep is still here by their side.
+[name="???"](Unknown language) ...but you've never left.
+[name="Kal'tsit"](Unknown language) No... From the moment I left this place until now, when I am standing here before you again—
+[name="Kal'tsit"](Unknown language) I have wandered for thousands of years.
+[name="Kal'tsit"](Unknown language) However, I have never forgotten the question you left me—
+Kal'tsit waits uneasily. She needs to make sure...
+She needs to make sure that her hope has not gone through some kind of horrible change.
+[name="???"]......
+[name="???"](Unknown language) That... was not... a question. That was... what I looked forward to...
+[name="???"](Unknown language) Then... Have you found the meaning of your life yet?
+[dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.6, r=0, g=0, b=0, fadetime=2, block=true)]
+[Subtitle(text="'Kal'tsit...'", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[imgeffect]
+[Delay(time=1)]
+[image]
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[Delay(time=1)]
+[name="Kal'tsit"](Unknown language) Discovering the meaning in the continuation of life... It's a path that I will have to keep walking.
+[name="Kal'tsit"](Unknown language) You still remember...
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1360_1#1$1",duration=1)]
+[delay(time=2)]
+[name="???"](Unknown language) I still remember... To me, it was like yesterday when we said goodbye to each other, but it also seemed like an eternity...
+[name="???"](Unknown language) But to you...
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="Kal'tsit"](Unknown language) There was never a moment when I forgot all you have done for me.
+[name="Kal'tsit"](Unknown language) Aside from my life, you granted me one other thing that I found most precious—Freedom, Dr. {@nickname}.
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="???"](Unknown language) Please... just Doctor will do, Kal'tsit.
+[name="Doctor"](Unknown language) Let me... get out first...
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="Kal'tsit"](Unknown language) You are still very weak. I can help—
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"](Unknown language) No need...
+[name="Doctor"](Unknown language) Kal'tsit, I still... have many questions.
+[name="Doctor"](Unknown language) What has become of Originium...? I couldn't find any records.
+[charslot(slot = "m", name = "avg_003_kalts_1#5$1")]
+[name="Kal'tsit"]......
+[name="Kal'tsit"](Unknown language) It still grows on the continent outside.
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"](Unknown language) So I woke up too early.
+[charslot(slot = "m", name = "avg_003_kalts_1#9$1")]
+[name="Kal'tsit"]......
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"](Unknown language) You've suffered, Kal'tsit.
+[name="Doctor"](Unknown language) I can tell from your eyes. You woke me up because you need my help?
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="Kal'tsit"](Unknown language) Yes, <i>we</i> need your help.
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"](Unknown language) I see. That 'devil'?
+[name="Doctor"](Unknown language) I can see from your friend behind you that not only has Originium found an unexpected way to exist...
+[name="Doctor"](Unknown language) She also possesses... yes, <i>Civilight Eterna.</i>
+[charslot(slot = "m", name = "avg_003_kalts_1#4$1")]
+[name="Kal'tsit"](Unknown language) The course of this civilization is... very complicated.
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"](Unknown language) What's her name...? Does their civilization have anything like that used to refer to individuals?
+[charslot(slot = "m", name = "avg_003_kalts_1#11$1")]
+[name="Kal'tsit"]Theresa.
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"]The... re... sa...
+[playsound(key="$d_gen_walk_n")]
+[charslot(duration=1)]
+The awakened one walks up to Theresa and holds out two arms, showing the palms of those hands.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[image(image="49_i21_1",screenadapt="coverall")]
+[ImageTween(xScaleFrom=1, yScaleFrom=1, xScaleTo=1.1, yScaleTo=1.1, duration=30, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+Theresa extends her hands to lightly hold the hands of the one from the past.
+The Doctor feels warmth.
+[name="Theresa"]Yes, Theresa.
+This is the moment two civilizations make contact with one another, yet Theresa can see sadness in the eyes of this Doctor from eras long gone.
+And she feels no warmth from the hands she is holding.
+[name="Doctor"]Originium... and you... together.
+[name="Theresa"]You speak our language?
+[name="Doctor"]I... learned... from... records. Not... hard.
+[name="Theresa"]Unbelievable! I was thinking about learning your language. Kal'tsit said—
+[name="Doctor"]My world... is lost. Languages of the past... should stay in the past.
+[name="Doctor"]I... am curious about your kind. You found... and even entered... <i>Civilight Eterna.</i>
+[name="Doctor"]I... want to... ask—
+[name="Doctor"]Ask you everything about your... civilization.
+[name="Doctor"]That's the only way... I can find traces of my world... the world of the past.
+[name="Theresa"]...I understand.
+[name="Theresa"]Hm, <i>Doctor</i>, Is that how you say it? Please forgive me. Keep holding my hands.
+[name="Theresa"]I will show you—
+The Doctor cannot help but be attracted to the eyes of this creature that looks like a devil.
+Through her eyes, the one who lost a world sees—
+[stopmusic(fadetime=2)]
+Life.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[image]
+[Background(image="45_g10_iceonlake",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(key="$calm_loop", volume=0.6)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1296_1#1$1",duration=1)]
+[delay(time=2)]
+[name="Theresa"]Civilization is born from the instinct of living beings. It's survival of the fittest.
+[name="Theresa"]Natural selection. This is how the cycle of life is formed.
+[dialog]
+[charslot]
+[playsound(key="$d_avg_pcknmgrwl")]
+[delay(time=1)]
+[name="Burdenbeast"](Feeble wailing)
+[CameraShake(duration=0.5,xstrength=10, ystrength=5, vibrato=10, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_watersubcreate")]
+A burdenbeast accidentally fell beneath the ice pushes a small cub up from the water with its head.
+The small burdenbeast staggers on the ice and walks toward the hunters who are waiting afar with their bait.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_284_1#1$1",duration=0.5)]
+[delay(time=0.7)]
+[name="Kjerag Hunter"]It's coming this way. Get ready.
+[charslot]
+[dialog]
+[CameraShake(duration=0.5,xstrength=20, ystrength=25, vibrato=30, randomness=90, fadeout=true, block=false)]
+[playsound(key="$d_avg_clothmovement")]
+[delay(time=1)]
+The hunter grabs the starving burdenbeast cub before the ice cracks underneath them.
+[charslot(slot="m",name="avg_npc_284_1#1$1")]
+[name="Kjerag Hunter"]Good. At least we managed to save one.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1296_1#8$1",duration=1)]
+[delay(time=2)]
+[name="Theresa"]Rebellion. Going against our survival instinct is the catalyst of our civilization's evolution.
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[Background(image="bg_desert_3",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="Theresa"]And curiosity... curiosity is what we burn our lives away for, the staircase that allow our civilization to proceed forward.
+[dialog]
+[charslot]
+A pioneer chasing the stars is pushing forward with his fallen ally on his back.
+[dialog]
+[charslot(slot="m",name="avg_npc_534_1#1$1",duration=1)]
+[delay(time=2)]
+[name="Weary Pioneer"]*pant*... *pant*... You dipshit... Why can't you keep at it for just one more day?!
+[name="Weary Pioneer"]The newspapers already said that it was the crashed aircraft of the Wrights, not a shooting star! But you just had to get to the bottom of it!
+[name="Weary Pioneer"]They were failures who crashed from the sky! What was there to risk your life for?
+[name="Weary Pioneer"]Those rocks that fell onto the land? What did you want to prove to me?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[Background(image="bg_black",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[name="Theresa"]I, too, once saw within the Black Crown the sun getting engulfed, with darkness shrouding the whole continent.
+[name="Theresa"]But even in its darkest hour, there were still those who tried to light up the night.
+[dialog]
+[charslot]
+[charslot(slot = "left", name = "avg_npc_071",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_070",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_npc_071",focus="l")]
+[name="Curious Archosauria"]It's still black! The sun really is dead!
+[charslot(slot = "right", name = "avg_npc_070",focus="r")]
+[name="Courageous Archosauria"]*sigh*... The sun's been dead for too long... We gotta save it! If the sun doesn't live, how are we going to hold our tail thickness contests?
+[charslot(slot = "left", name = "avg_npc_071",focus="l")]
+[name="Curious Archosauria"]But how?
+[charslot(slot = "right", name = "avg_npc_070",focus="r")]
+[name="Courageous Archosauria"]We climb the tallest mountain, and raise a torch up high to light it back up.
+[charslot(slot = "left", name = "avg_npc_071",focus="l")]
+[name="Curious Archosauria"]What if our arms get tired?
+[charslot(slot = "right", name = "avg_npc_070",focus="r")]
+[name="Courageous Archosauria"]Hm... then we'll build a statue of me, and my statue will hold the torch up instead.
+[charslot(slot = "left", name = "avg_npc_071",focus="l")]
+[name="Curious Archosauria"]Good idea! We can build my statue next to yours to hold up another torch, too! Then, if your torch goes out, my torch can light yours!
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[Background(image="49_g5_furnaceplatform",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[PlayMusic(intro="$newhope01_intro", key="$newhope01_loop", volume=0.6)]
+[Delay(time=1)]
+[name="Theresa"]With fire comes light, and it is light that guides us toward hope.
+[name="Theresa"]And my kin see death as a different interpretation of hope.
+[name="Theresa"]After your body's destruction, to become one with the city within the Soul Furnace's flames is an honor bestowed only on those who are most respected.
+[name="Theresa"]They will grow as Originium crystals and become one with Kazdel.
+[name="Theresa"]The newborn will grow among the fluttering dust, and continue their march forward with hardships in tow amid the chorus of the myriad souls.
+[dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1360_1#1$1",duration=1)]
+[delay(time=2)]
+[name="Doctor"]Progress mixed with ignorance... The cycle continues and repeats over and over.
+[name="Doctor"]So... beautiful.
+[name="Doctor"]So... nostalgic.
+[name="Doctor"]Your kind... Terra seems to have gotten back on the right track... and achieving enlightenment.
+[charslot(slot="m",name="avg_npc_1296_1#1$1")]
+[name="Theresa"]How is 'ignorance' defined, and how do we prove the progress of 'enlightenment?'
+[name="Theresa"]The way I see it, all of this is part of our civilization.
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"]But the things you showed me... Most of them are... extremely different compared to your race.
+[charslot(slot="m",name="avg_npc_1296_1#3$1")]
+[name="Theresa"]Conquerors and the conquered, both have been branded with inerasable marks by this land throughout the evolution of civilization...
+[charslot(slot="m",name="avg_npc_1296_1#1$1")]
+[name="Theresa"]For the sake of survival, I believe that all discrepancies will be unified, and all clans will become one.
+[name="Theresa"]In the future that I envision, all the many lands will become one.
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"]That's a stirring belief... It's admirable.
+[name="Doctor"]I can feel that... you truly love this great land.
+[name="Doctor"]Be it discrimination, war, or disaster... The object of your love has long surpassed an individual or a clan.
+[name="Doctor"]But if you... surpass the extremes of the civilization you belong to... no one will be able to comprehend your love.
+[name="Doctor"]On the contrary... they will loathe you.
+[charslot(slot="m",name="avg_npc_1296_1#2$1")]
+[name="Theresa"]......
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"]Do you understand what you will have to go through... to reach the future you strive for?
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[name="Theresa"]If there is no choice but to walk that path, I will gladly do so.
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"]Theresa. A Terran.
+[name="Doctor"]No wonder Kal'tsit trusts you. She willingly took the risk to wake me in order to help you.
+[name="Doctor"]Right. When every era comes to an end, there are always those who try their hardest to change the tide in the final moments.
+[name="Doctor"]But most of the time, their stories don't end well.
+[charslot(slot="m",name="avg_npc_1296_1#3$1")]
+[name="Theresa"]......
+[charslot(slot="m",name="avg_npc_1360_1#1$1")]
+[name="Doctor"]Nevertheless, there is no doubt that you have my admiration.
+[name="Doctor"]After all, on a certain level, you are very similar to some people that I knew.
+[name="Doctor"]I will never get to see them again...
+[name="Doctor"]......
+[name="Doctor"]...Perhaps I'll need some more time to get my thoughts in order.
+[name="Doctor"]But no matter. I think I should... listen to what you two have to say first.
+[name="Doctor"]What do you need me to do?
+[stopmusic(fadetime=2)]
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[charslot]
+[Background(image="bg_abyss_1",screenadapt="coverall", xScale=1.08, yScale=1.08)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1.5, block=true)]
+[PlayMusic(intro="$warm_intro", key="$warm_loop", volume=0.6)]
+[charslot(slot = "left", name = "avg_003_kalts_1#4$1",duration = 1)]
+[charslot(slot = "right", name = "avg_npc_1360_1#1$1",duration = 1)]
+[delay(time=1.5)]
+[charslot(slot = "left", name = "avg_003_kalts_1#4$1",focus="l")]
+[name="Kal'tsit"]Doctor, you need rest.
+[charslot(slot = "right",focus="r")]
+[name="Doctor"]I'm fine.
+[name="Doctor"]Kal'tsit. She's given me lots of surprises, but on top of that, she's given me even more challenges.
+[name="Doctor"]Sorry... I mean 'confusion'.
+[name="Doctor"]I still don't have a very good grasp of the Sarkaz language.
+[name="Doctor"]I saw a lot of unexpected things in her. Surely you did too.
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="Kal'tsit"]I made enemies with her, came to know her, began to understand her wish, and finally admired her responsibility...
+[name="Kal'tsit"]That Black Crown shared with Theresa the long history and experience it bears, and she too slowly gained foresight that no other can attain.
+[name="Kal'tsit"]I felt... perhaps this would be our best chance. With her, with Babel, and with Terra.
+[charslot(slot = "right",focus="r")]
+[name="Doctor"]'With Terra.'
+[name="Doctor"]You, too, are part of 'this great land' now, Kal'tsit.
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="Kal'tsit"]I hope you will take this journey with us, too.
+[charslot(slot = "right",focus="r")]
+[name="Doctor"]Right...
+[name="Doctor"]I envy you, and I trust you, Kal'tsit.
+[name="Doctor"]But I am just a researcher. Perhaps the help I can offer won't be as significant as you hoped.
+[charslot]
+[charslot(slot="m",name="avg_npc_1296_1#1$1")]
+[name="Theresa"]Oripathy, Catastrophe... Disasters that we have no methods to resist have been bringing many hardships to these lands... yet Terra's technology is almost entirely built atop the foundation that is Originium.
+[name="Theresa"]Fighting over energy, the discrimination against the Infected, and the estrangement between war and races are all further tearing these lands apart...
+[charslot(slot="m",name="avg_npc_1296_1#6$1")]
+[name="Theresa"]We tried, but our efforts yielded very little... That's because we know practically nothing about Originium. We know nothing about this great land.
+[name="Theresa"]What happened to the sky and the ocean? Where did the ancient ruins come from? How exactly... were we born?
+[charslot(slot="m",name="avg_npc_1296_1#1$1")]
+[name="Theresa"]We hope you'll be able to find answers for us.
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[name="Doctor"]Surely, Kal'tsit must already have shared some of those with you.
+[name="Doctor"]As for Originium, I'm sorry to say that the person I am now can't give you a good answer. At the very least, not an answer to everything.
+[name="Doctor"]When I woke up, I tried to access the logs tracking Originium's progress, but strangely, there was nothing.
+[name="Doctor"]And this glimpse of Terra that you showed me has made me even more confused.
+[name="Doctor"]The development of Originium... has taken a completely different turn from what I expected. I need some time.
+[name="Doctor"]I need to explore and see this great land for myself, to understand how exactly Originium has influenced culture, life, and environment.
+[name="Doctor"]This could take years, perhaps longer... And maybe, after an enormous amount of energy is expended, you will receive only a most disappointing answer.
+[name="Doctor"]I once made a promise to somebody. Thinking about it now, perhaps all I ever left myself or her... was regret.
+[name="Doctor"]That's why I won't make a promise lightly, Kal'tsit. Forgive me...
+[charslot(slot = "m", name = "avg_003_kalts_1#13$1")]
+[name="Kal'tsit"]In that case, we will wait.
+[name="Kal'tsit"]No matter what your answer will be, Babel will last until the day of your return, Doctor.
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[name="Doctor"]...Thank you.
+[name="Doctor"]Well... sorry... but I'm a little hungry.
+[name="Doctor"]PRTS showed me that the landship has a temporary cafeteria...
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[name="Theresa"]That it does, but it might be a little messy there. How about I take you—
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[name="Doctor"]Thank you, Theresa, but no.
+[name="Doctor"]This place has a special meaning to me, too. Let me walk there, slowly, by myself...
+[charslot(slot="m",name="avg_npc_1296_1#8$1")]
+[name="Theresa"]Okay... Be careful, Doctor.
+[dialog]
+[charslot(slot = "m", name = "avg_npc_1360_1#1$1")]
+[charslot(duration=1)]
+[playsound(key="$d_gen_walk_n")]
+[delay(time=3)]
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",duration = 0.5)]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",duration = 0.5)]
+[delay(time=1)]
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]......
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="Kal'tsit"]The awakening has given the Doctor a lot of pressure, but it would seem this one is quick to adapt, and much quicker than I expected.
+[name="Kal'tsit"]The Doctor wants to learn all there is to learn about Terra.
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]A quick learner too, it seems.
+[name="Theresa"]If the children were like the Doctor, perhaps they would have the chance to master even more languages and travel to so many places across Terra.
+[charslot(slot = "left", name = "avg_003_kalts_1#11$1",focus="l")]
+[name="Kal'tsit"]Theresa, you should go back and look for the others. There should be plenty of Babel affairs that need the Chairman herself to...
+[charslot(slot = "right", name = "avg_npc_1296_1#3$1",focus="r")]
+[name="Theresa"]......
+[charslot(slot = "left", name = "avg_003_kalts_1#14$1",focus="l")]
+[name="Kal'tsit"]Theresa?
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]Kal'tsit... there's something bothering me. Maybe I'm overthinking it, but I want to tell you.
+[name="Theresa"]The Doctor seems to be very surprised by the look of Terra as it is today.
+[charslot(slot = "left", name = "avg_003_kalts_1#14$1",focus="l")]
+[name="Kal'tsit"]......
+[charslot(slot = "right", name = "avg_npc_1296_1#1$1",focus="r")]
+[name="Theresa"]You once told me that nobody has a better understanding of Originium than the Doctor. The same Doctor who said that the development of Originium... took a completely different turn from the expected.
+[charslot(slot = "right", name = "avg_npc_1296_1#10$1",focus="r")]
+[name="Theresa"]Then what should Originium have been like? What should these lands have been like?
+[name="Theresa"]...What should the Sarkaz have been like?
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Background(image="bg_rhodescom",screenadapt="coverall")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",duration = 1)]
+[charslot(slot = "right", name = "avg_4132_ascln_1#1$1",duration = 1)]
+[delay(time=2)]
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]Is the Doctor ready to depart?
+[charslot(slot = "right", name = "avg_4132_ascln_1#1$1",focus="r")]
+[name="Ascalon"]Right. The Doctor applied for a transport, some defensive weapons, and nothing else.
+[name="Ascalon"]The Doctor stated an intent to avoid combat zones.
+[charslot(slot = "left", name = "avg_npc_1296_1#1$1",focus="l")]
+[name="Theresa"]Alright. We'll just abide the Doctor's wishes.
+[charslot(slot = "right", name = "avg_4132_ascln_1#3$1",focus="r")]
+[name="Ascalon"]Your Highness, I would like to follow this Doctor of ours. Considering the background involved... I am worried.
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="Theresa"]Ascalon... have you ever left Kazdel?
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",focus="r")]
+[name="Ascalon"]Left? If we count how I once chased a quarry and left the area when I was small, then I most certainly have.
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="Theresa"]That doesn't count.
+[name="Theresa"]Go, follow and protect the Doctor, but do not interfere.
+[charslot(slot = "right", name = "avg_4132_ascln_1#4$1",focus="r")]
+[name="Ascalon"]I will keep a close eye—
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="Theresa"]No, Ascalon, calm down. I don't want you to keep an eye on anyone.
+[name="Theresa"]I want you to go out there and see how the people in other lands live. This is a great opportunity.
+[charslot(slot = "right", name = "avg_4132_ascln_1#8$1",focus="r")]
+[name="Ascalon"]How they live?
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="Theresa"]Outside our homeland, neither war nor suffering is part of people's daily lives. Food, fashion, arts, culture... We could have so much.
+[charslot(slot = "right", name = "avg_4132_ascln_1#3$1",focus="r")]
+[name="Ascalon"]......
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="Theresa"]Many of us know this fact, but even more of us choose to ignore this fact, because most of the time we don't have the freedom to choose.
+[charslot(slot = "right", name = "avg_4132_ascln_1#7$1",focus="r")]
+[name="Ascalon"]......
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="Theresa"]Don't give me that look, Ascalon. Listen to me.
+[name="Theresa"]At first, you followed me because you opposed Theresis's measures, but what about after this division is over?
+[name="Theresa"]What will you do then? What will be the next stop for the countless Sarkaz who share the same idea as you?
+[name="Theresa"]That's why you need to take a break from the war, and see the sights beyond our homeland.
+[name="Theresa"]See the life that we should have lived.
+[charslot(slot = "right", name = "avg_4132_ascln_1#2$1",focus="r")]
+[name="Ascalon"]If that is your wish.
+[charslot(slot = "left", name = "avg_npc_1296_1#8$1",focus="l")]
+[name="Theresa"]It is!
+[name="Theresa"]Have a safe trip.
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=2)]
+[Image]
+[charslot]

@@ -1,0 +1,583 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="50_g16_scourgeswamp",screenadapt="coverall", block=true)]
+[Delay(time=1)]
+[playMusic(intro="$darkness01_intro",key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_gen_transmissionget",volume=0.6)]
+[Delay(time=1)]
+「……七陣目の通信ポイントが新たに設立完了しました。現在、通信回線の三分の一が復旧済みです。」
+「仮設天災観測所からのデータによれば、空気中の源石粉塵濃度は安定しつつあり、地下源石活性化反応指数は依然として上昇中とのことです。」
+「新たに配備した二チームの工兵部隊が規定のポイントに到着しました。障害物除去作業をペースアップし、主力艦隊の進軍のため、安全確保に努めてください。」
+「ゴドズィン公爵旗下の『フェリシス』号など、計四隻の戦艦が十五分後に合流座標に到着予定です。補給完了後、共同で護送任務に就くことになります。」
+「連合司令部が再度確認します。ウェリントンの増援部隊は――」
+[dialog]
+[PlaySound(key="$transmission",volume=0.6)]
+[delay(time=1.5)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",duration=0.7)]
+[delay(time=1)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",focus="m")]
+[name="シージ"]放送は聞いたか？　公爵連合軍の前線基地はすぐそこだ。
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1",focus="m")]
+[name="デルフィーン"]ここまでの道中はすこぶる順調でしたよね。
+[name="デルフィーン"]ロドスが分析して導き出してくれた安全ルートのおかげです。彼らの誘導に助けられたのは我々だけではありません。
+[charslot(slot = "m", name = "avg_155_tiger_1#6$1",focus="m")]
+[name="インドラ"]つーかよぉ、このまま戦車を突っ込ませていいのか？　前に出くわした時は小規模だったが、この先は公爵連合軍の拠点の一つだぜ。「模範軍」の識別コードなんてほんとに通用できんのかよ？
+[dialog]
+[charslot]
+[PlaySound(key="$d_gen_transmissionget",volume=1)]
+[CharacterCutin(widgetID="1", name="avg_npc_867_1#1$1", style="cutin",fadestyle= "horiz_expand_center", fadetime=0.5, offsetx=0, width=200, block=true)]
+[name="「グレーシルクハット」"]心配は無用だ。その程度であれば私の方から各方面に話をつけておこう。君たちはそのまま進んでくれればいい。
+[Dialog]
+[CharacterCutin(widgetID="1",fadetime=0,block=false)]
+[delay(time=0)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$2",focus="m")]
+[name="シージ"]相変わらず唐突な登場だな、「グレーシルクハット」。多忙の中にあっても、我々の行軍状況の把握には余念がないと見える。
+[charslot(slot = "m", name = "avg_155_tiger_1#5$1",focus="m")]
+[name="インドラ"]ヴィーナ、前方に兵士が大勢控えてるぜ！　しかもトラックが何台も……きっと弾薬に、装備、食糧だ！
+[charslot(slot = "m", name = "avg_155_tiger_1#6$1",focus="m")]
+[name="インドラ"]どうする？　黙って受け取るのか？　またこいつの小細工だったりしねぇか？
+[charslot(slot = "m", name = "avgnew_112_siege_1#6$2",focus="m")]
+[name="シージ"]……受け取ろう。
+[charslot(slot = "m", name = "avgnew_112_siege_1#3$2",focus="m")]
+[name="シージ"]信念だけでは、敵は倒せない。
+[name="シージ"]感謝する、ベリンガムさん。これは本心だ。貴様は我々を何度も助けてくれたからな。
+[Dialog]
+[charslot]
+[CharacterCutin(widgetID="1", name="avg_npc_867_1#1$1", style="cutin",fadestyle= "horiz_expand_center", fadetime=0, offsetx=0, width=200, block=true)]
+[name="「グレーシルクハット」"]その呼び方はよしてくれないか。私はこのまま「奇妙な帽子の男」として、悪者を続けていたいものでね。私のあらゆる行動には、何か企みがあると警戒しておいた方が身のためだ。
+[name="「グレーシルクハット」"]この「謝礼」はギブソンンハムの件だけじゃなく、ロドスの者たちの行動に対するお礼さ。我々は民間人を例の安全エリアへ避難させるため、役人を派遣したところでね。
+[Dialog]
+[CharacterCutin(widgetID="1",fadetime=0,block=false)]
+[delay(time=0)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",focus="m")]
+[name="シージ"]「謝礼」か。貴様らにそのような礼儀があったとは、とんと覚えがないな。
+[Dialog]
+[charslot]
+[CharacterCutin(widgetID="1", name="avg_npc_867_1#1$1", style="cutin",fadestyle= "horiz_expand_center", fadetime=0, offsetx=0, width=200, block=true)]
+[name="「グレーシルクハット」"]何もしないよりはマシだろう？　ヴィクトリアの在り方についてはあなたも承知しているはずだ。これらロンディニウム周辺の町は、本来カスター公爵様の管轄ではない。
+[name="「グレーシルクハット」"]現在のような特殊な状況下で、より多くの人々を適切に避難させようと思えば、公爵様も今後物議を醸すかもしれないような行動を取らざるを――
+[Dialog]
+[CharacterCutin(widgetID="1",fadetime=0,block=false)]
+[delay(time=0)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",focus="m")]
+[name="シージ"]そのくらいにしておけ。カスター公爵の人心掌握術に興味はない。
+[name="シージ"]「剣の台座」の位置を教えてくれ。それと戦場の状況も把握する必要がある。
+[Dialog]
+[charslot]
+[CharacterCutin(widgetID="1", name="avg_npc_867_1#1$1", style="cutin",fadestyle= "horiz_expand_center", fadetime=0, offsetx=0, width=200, block=true)]
+[name="「グレーシルクハット」"]焦る必要はない、アレクサンドリナ殿下。剣の台座は、なかなかにややこしい昔の歴史と色々に関わりがあってね……
+[name="「グレーシルクハット」"]理想を言わせてもらうなら、数十枚の写真と大量の文献を用意し、その上であなたのために最高レベルの権限を申請したかったところだ。そうでなければ、この話は落ち着いて語れないからね。
+[name="「グレーシルクハット」"]いずれにしろ後で私自らあなた方を前線に連れていくことになる。まだ部隊を休ませることができる内に、拠点での時間を余すことなく満喫してほしい。
+[name="「グレーシルクハット」"]戦場の状況については、拠点に着けば自ずと理解するだろう。私が口で説明するより、直接目にした方が切実さが伝わると思う。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[CharacterCutin(widgetID="1",fadetime=0,block=false)]
+[charslot]
+[Background(image="34_g10_tent_inside", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_222_bpipe_1#1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_222_bpipe_1#1",focus="m")]
+[name="バグパイプ"]うちも手伝うよ！
+[charslot(slot="m",name="avg_npc_241",focus="m")]
+[name="ヴィクトリア兵士"]よいしょっと――
+[Dialog]
+[PlaySound(key="$d_avg_aircraftimpact")]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_241",focus="m")]
+[name="ヴィクトリア兵士"]これが最後の一箱だ。
+[charslot(slot="m",name="avg_npc_229_1#6",focus="m")]
+[name="ホルン"]本当に助かったわ。弾薬が足りなくなっていたところなの。
+[charslot(slot="m",name="avg_222_bpipe_1#1",focus="m")]
+[name="バグパイプ"]食糧の補給も後方支援部隊に届けといたよ。行軍開始前に、美味しいご飯作ってくれるって！　このあと、一緒にどう？
+[charslot(slot="m",name="avg_npc_241",focus="m")]
+[name="ヴィクトリア兵士"]いえ大丈夫です。さっさとサルカズどもをぶっ殺さなくちゃいけませんから。
+[name="ヴィクトリア兵士"]物資の引渡しが終わったら、すぐにシルバーロックブラフスの要害に向かって、サルカズ軍進攻作戦に参加しろって、司令部からも通達があったところです。
+[name="ヴィクトリア兵士"]あのバケモンども……ナハツェーラーでしたっけ？　あいつらに灸をすえてやりたいのをずっと我慢していたんですよ！
+[name="ヴィクトリア兵士"]見てくださいよ、新たに届いたこの装備を。最新モデルの大型クロスボウに、徹甲弾に精密加工のアーツユニット。普段なら、最前線の部隊でもめったに見られない代物ばかりです。
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",duration=0.5)]
+[Delay(time=0.7)]
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]源石防護用品はどうした？　サルカズとの戦いは、火力の勝負ほどに単純な話じゃないぞ。
+[charslot(slot="m",name="avg_npc_241",focus="m")]
+[name="ヴィクトリア兵士"]安心してください。上官たちからとっくに一式配布されてます。ほら、薬もありますよ。
+[Dialog]
+[PlaySound(key="$d_avg_decap", volume=0.6)]
+[delay(time=1)]
+[charslot(slot="m",name="avg_npc_1070_1#3$1",focus="m")]
+[name="シアラー少尉"]それは……
+[Dialog]
+[charslot]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(slot="m",name="avg_npc_408_1#1$1",duration=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]ブラウン一等兵、休憩は終了だ。我らの部隊は間もなく発つ。
+[name="ヴィクトリア士官"]クロスボウにオイルは塗ってあるだろうな？
+[charslot(slot="m",name="avg_npc_241",focus="m")]
+[name="ヴィクトリア士官"]サルカズどもの血をオイル代わりにしてやりますよ。あのバケモンどもの血が臭くなきゃいいんですが。
+[charslot(slot="m",name="avg_npc_408_1#1$1",focus="m")]
+[name="ヴィクトリア士官"]威勢がいいな。ほら、部隊に戻れ。
+[Dialog]
+[charslot(slot="m",name="avg_npc_241",focus="m")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_walkfast",volume=0.7)]
+[charslot(duration=0.5)]
+[Delay(time=1)]
+[Dialog]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="l",name="avg_npc_408_1#1$1")]
+[charslot(slot="r",name="avg_npc_1070_1#1$1",posfrom = "100,0", posto = "0,0",duration=0.7)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_1070_1#1$1",focus="r")]
+[name="シアラー少尉"]少佐、あなたがこの部隊の指揮官ですか？　私は以前ウィンダミア公爵様の旗艦で従軍医を務めておりました、シアラーと申します。
+[name="シアラー少尉"]あなたのところの兵士は、十分な源石防護用品を配布されたと言っていましたが――
+[charslot(slot="l",name="avg_npc_408_1#1$1",focus="l")]
+[name="ヴィクトリア士官"]何が言いたい？　私の知る限り、ウィンダミア公爵の軍はこの戦争から退いたはずだ。今の君に、私に疑義を唱える資格はない。
+[name="ヴィクトリア士官"]自分のすべきことに集中したまえ。
+[Dialog]
+[PlaySound(key="$d_avg_runstop", volume=1)]
+[charslot(slot="r",posfrom="0,0",posto="-150,0",duration=0.4)]
+[Delay(time=0.4)]
+[PlaySound(key="$d_avg_clothmovementsp",volume=1)]
+[CameraShake(duration=0.5, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Delay(time=1)]
+[charslot(slot="r",name="avg_npc_1070_1#4$1",focus="r")]
+[name="シアラー少尉"]あなた方なら、よくご存知でしょう？
+[name="シアラー少尉"]そのモデルの防護用品では、せいぜい工業汚染程度の軽い源石汚染を防ぐのが関の山。だがあなた方は、そんなものを兵士に配り……
+[name="シアラー少尉"]高度に活性化した源石粉塵の中を突っ切らせ、全員が感染者であるサルカズと天災の下で戦わせようとしている！
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="シアラー少尉"]全員感染し、急性症状を起こして前線で散るだけです！
+[charslot(slot="l",name="avg_npc_408_1#1$1",focus="l")]
+[name="ヴィクトリア士官"]君は今、どの立場から私に物申しているのかね？　「模範軍」とやらの少尉としてか？
+[charslot(slot="r",name="avg_npc_1070_1#4$1",focus="r")]
+[name="シアラー少尉"]医学知識を持ったヴィクトリア公民としての立場から、あなたに問いています。
+[charslot(slot="l",name="avg_npc_408_1#1$1",focus="l")]
+[name="ヴィクトリア士官"]ふん、ヴィクトリア公民か……
+[name="ヴィクトリア士官"]ならば君も分かっているはずだ。ヴィクトリアの工業レベルでは短期間で十数万人規模の軍隊に配備できるような、特殊源石防護具を作り出すのは、不可能だということを。
+[charslot(slot="r",name="avg_npc_1070_1#4$1",focus="r")]
+[name="シアラー少尉"]ですが、彼らに嘘をつくべきではありません！
+[name="シアラー少尉"]兵士たちが高活性化した源石エリアでの行動規則を身につければ、感染の確率を抑えることだって――
+[charslot(slot="l",name="avg_npc_408_1#1$1",focus="l")]
+[name="ヴィクトリア士官"]いい加減にしたまえ！　我らは戦いに赴くのだ！　そこで、散る定めなのだ！
+[name="ヴィクトリア士官"]だが我らの死によって、より多くのサルカズどもが残酷な死を迎えるだろう！　ヴィクトリアが最後に勝利の栄光をいただくまでな！
+[name="ヴィクトリア士官"]感染者？　鉱石病？　戦争が終結するまでは、ヴィクトリア軍に感染者の存在が確認されることなどあり得ないさ。
+[charslot(slot="r",name="avg_npc_1070_1#4$1",focus="r")]
+[name="シアラー少尉"]バカげたことを！　あなた方は――
+[charslot(slot="l",name="avg_npc_408_1#1$1",focus="l")]
+[name="ヴィクトリア士官"]私自身も、私の上官も、そのまた上官も、配られた源石防護用品は兵士たちと何一つ変わらん。戦いが始まれば、我らも同じく敵に向かって突撃する。
+[charslot(slot="l",name="avg_npc_408_1#1$1",focus="l")]
+[name="ヴィクトリア士官"]分かったら、その手を放せ。
+[Dialog]
+[PlaySound(key="$d_avg_clothmovement",volume=1)]
+[CameraShake(duration=0.3, xstrength=15, ystrength=15, vibrato=30, randomness=90, fadeout=true, block=false)]
+[charslot(slot="l",posfrom="0,0",posto="-40,0",duration=0.3)]
+[charslot(slot="r",posfrom="-150,0",posto="-120,0",duration=0.6)]
+[Delay(time=0.7)]
+[charslot(slot="l",name="avg_npc_408_1#1$1",focus="l")]
+[name="ヴィクトリア士官"]何かを成し遂げたいというのなら、戦場の最前線で会おうではないか「模範軍」。
+[Dialog]
+[PlaySound(key="$d_avg_walkfast",volume=0.7)]
+[charslot(slot="l",afrom=1,ato=0,duration=0.5)]
+[Delay(time=1)]
+[charslot]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_229_1#5",focus="m")]
+[name="ホルン"]……シアラー少尉。
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]君も聞いていたか……
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]出発前にロドスの皆さんから警告をもらったおかげで、我々には十分な数の源石防護具があります。中には余りも――
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]そんなことを考えるのはやめなさい。
+[name="シアラー少尉"]我々の物資など十数万の大軍にとっては焼け石に水すらならない。
+[name="シアラー少尉"]我々にできるのは、自分たちの面倒を見ることだけだ。こちらにも果たすべき使命があるのだから。
+[name="シアラー少尉"]一刻も早く、全てを終わらせることさえできれば……
+[Dialog]
+[PlaySound(key="$d_gen_walk_n",volume=0.6)]
+[charslot(duration=1)]
+[Delay(time=2.5)]
+[stopmusic(fadetime=1)]
+[PlaySound(key="$d_avg_runstop", volume=0.8)]
+[delay(time=0.8)]
+[charslot(slot="m",name="avg_npc_229_1#4",focus="m")]
+[name="ホルン"]……！　外にいるあの人は！？
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_footstep_stonestep", volume=0.6)]
+[delay(time=1.5)]
+[PlayMusic(intro="$ponder_intro", key="$ponder_loop", volume=0.6)]
+[charslot(slot="m",name="avg_222_bpipe_1#7",focus="m")]
+[name="バグパイプ"]どうしたの、隊長？
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]やっぱり、彼だわ。
+[Dialog]
+[playsound(key="$shotgunreload", volume=1)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]――
+[Dialog]
+[PlaySound(key="$d_avg_walkfast",volume=0.7)]
+[charslot(duration=0.5)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_222_bpipe_1#2",focus="m")]
+[name="バグパイプ"]ちょっと隊長……盾に弾なんて込めてどうしたんだべ？　それでどうするつもり？
+[name="バグパイプ"]待ってってば！
+[Dialog]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0.5, block=true)] 
+[charslot]
+[Background(image="34_g9_tent",screenadapt="coverall")]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, style = "slider", inverse = true, fadetime=2, block=true)]
+[charslot(slot="m",name="avg_222_bpipe_1#7",focus="m")]
+[name="バグパイプ"]隊長、さっき誰が見えたの？
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]……とっくに死んだはずの男よ。
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[musicvolume(volume=0.3, fadetime=2)]
+[charslot]
+[Background(image="21_G3_victoria_street_d", screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0.7, fadetime=0)]
+[delay(time=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_walk_n")]
+[charslot(slot="m",name="avg_npc_248",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_248",focus="m")]
+[name="副官ヒル"]中尉。
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]私の部下はどうなったの？
+[charslot(slot="m",name="avg_npc_248",focus="m")]
+[name="副官ヒル"]ここにいますよ。ご安心ください、気を失っているだけですから。
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]私が言ったのは、チェロたちのことじゃないわ。
+[name="ホルン"]……誰のことか、分かっているでしょう。
+[charslot(slot="m",name="avg_npc_248",focus="m")]
+[name="副官ヒル"]――
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_229_1#1",focus="l")]
+[charslot(slot="r",name="avg_npc_248",focus="l")]
+[delay(time=0.2)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.03, block=true)]
+[PlaySound(key="$sheildimpact")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[charslot(slot="l",name="avg_npc_229_1#1",focus="l")]
+[name="ホルン"]早く言いなさい。でないと、あなたの首に突きつける武器が盾じゃなくなるわよ。
+[charslot(slot="r",name="avg_npc_248",focus="r")]
+[name="副官ヒル"]うっ、ぐっ……もし、この場で剣を抜くおつもりなら、友軍への攻撃……謀反と見なされますが……
+[charslot(slot="l",name="avg_npc_229_1#1",focus="l")]
+[name="ホルン"]ハッ……友軍ですって？
+[charslot(slot="l",name="avg_npc_229_1#7",focus="l")]
+[name="ホルン"]私たちがヒロック郡に入ったあの時から今まで、あなたたちが私たちを友軍だと思ったことなんてあるかしら！？
+[charslot(slot="l",name="avg_npc_229_1#7",focus="l")]
+[CameraShake(duration=0.3, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[name="ホルン"]答えなさい！！
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="34_g9_tent", screenadapt="coverall", block=true)]
+[cameraEffect(effect="Grayscale", keep=true, amount=0, fadetime=0)]
+[charslot(slot="m",name="avg_npc_229_1#1")]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]――見失ったか。
+[playMusic(intro="$loneliness_intro",key="$loneliness_loop", volume=0.6)]
+[charslot(slot="m",name="avg_npc_229_1#2",focus="m")]
+[name="ホルン"]ヒル……ハミルトン大佐の副官。
+[name="ホルン"]彼も大佐と一緒に、ダブリンの火の中に沈んだと思っていたけど。
+[name="ホルン"]彼だけじゃないわ。ウェリントンの戦車には、見覚えのある顔ぶれがいた。服装が変わってるけど、絶対に見間違えたりはしない。
+[charslot(slot="m",name="avg_222_bpipe_1#7",focus="m")]
+[name="バグパイプ"]ヒロック郡……
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]私は自分の隊員を忘れたことはないわ。そして、彼ら一人ひとりがどうやって死んでいったかも。
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="ホルン"]チェロとオーボエはダブリンの手にかかって死んだ。そしてトライアングル、ドラム、ベース、マンドリンは、まさにあの「友軍」たちに殺されたのよ！
+[name="ホルン"]亡くなる前にトライアングルは私にこう訊いてきたわ――「我々が戦っているのは、一体誰なんでしょうか」と。
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]今でも毎晩、目を閉じるだけでその問いが頭に浮かんでくるの。
+[name="ホルン"]バグパイプ、私たちが戦っているのは一体誰なのかしら？
+[charslot(slot="m",name="avg_222_bpipe_1#5",focus="m")]
+[name="バグパイプ"]それは……ダブリンだよ。
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]ダブリン。そうね、私たちはターラー人を恨んでもいいのでしょうね。
+[name="ホルン"]あなたは、かつてのダブリンの「リーダー」に会い、彼女を見逃したことがあると言っていたわね。
+[charslot(slot="m",name="avg_222_bpipe_1#7",focus="m")]
+[name="バグパイプ"]うん。
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]私も、私たちの敵……チェロを殺したダブリンの幹部と会ったことがあるの。彼女の死を見届け……その上で、この手で彼女の亡骸をロンディニウムの城壁近くに葬ったわ。
+[name="ホルン"]彼女を恨まずにはいられないけど、前にも増して、はっきりと理解しているの。あの悲劇の責任を取るべき人間は、他にも数多くいるわ。
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="ホルン"]どうして私たちの仲間が、ヴィクトリアの誰よりも忠実な戦士がヒロック郡で命を落としたというのに、ヒルたちみたいな卑劣な裏切者たちの方が生き延びているの？
+[charslot(slot="m",name="avg_222_bpipe_1#5",focus="m")]
+[name="バグパイプ"]隊長、うちらは……
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]自分が何をしているのかは、承知の上よ。
+[name="ホルン"]ここで公爵連合軍の天幕に砲を放てば、公爵間の団結と……それに「模範軍」の理想は崩れ去ってしまうかもしれないわ。
+[name="ホルン"]それこそ一番の悲劇でしょう？
+[name="ホルン"]私たちは、皆の仇を取ってやることさえできないのよ。
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="ホルン"]なぜなら仇は、ヴィクトリア人の服に身を包み、またもや私たちの……「友軍」となったから。
+[charslot(slot="m",name="avg_222_bpipe_1#4",focus="m")]
+[name="バグパイプ"]隊長、正直に言っていい……？
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]ええ。
+[charslot(slot="m",name="avg_222_bpipe_1#7",focus="m")]
+[name="バグパイプ"]……うち、あんな奴らは信用できないよ。
+[name="バグパイプ"]うちらの仲間を殺して、民間人に砲口まで向けたような奴らが、サルカズを前にした時にうちらと一緒に突撃なんてしてくれるかな？
+[name="バグパイプ"]憎しみを手放して、かつての敵に何の躊躇いもなく自分の命を預けるなんてこと、うちらでさえできやしないのに――
+[charslot(slot="m",name="avg_222_bpipe_1#5",focus="m")]
+[name="バグパイプ"]あいつらに、そんなことできるのかな？
+[Dialog]
+[charslot]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_footstep_stonestep",volume=0.6,channel="step1",loop=false)]
+[PlaySound(key="$d_avg_walk_stage",volume=1,channel="step2",loop=false)]
+[stopsound(channel="step1",fadetime=3)]
+[stopsound(channel="step2",fadetime=3)]
+[charslot(slot="l",name="avgnew_112_siege_1#12$2",duration=1)]
+[charslot(slot="r",name="avg_4110_delphn_1#1$1",duration=1)]
+[Delay(time=2.5)]
+[charslot]
+[charslot(slot = "m", name = "avgnew_112_siege_1#12$2",focus="m")]
+[name="シージ"]ここにいたか。
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1",focus="m")]
+[name="デルフィーン"]今、私とヴィーナさんで前線基地内の状況を見てきたところです。
+[name="デルフィーン"]うまく組織化されていて、士気も高まっています。公爵たちが本気で事を構え出したようですね。
+[name="デルフィーン"]どうやらきちんと協力をし始めたみたいです。大切なのは自分らが所属する陣営じゃなく、各兵種間の協調であることをよく理解した上で、基地内に駐屯しています。
+[charslot(slot = "m", name = "avg_4110_delphn_1#2$1",focus="m")]
+[name="デルフィーン"]まあ……それも単にそう見せているだけかもしれませんけどね。
+[charslot(slot = "m", name = "avg_4110_delphn_1#1$1",focus="m")]
+[name="デルフィーン"]ウェリントン公爵所属部隊のテントをよく見てみれば分かります。傍で哨戒に就いているのは、間違いなくカスター公爵旗下の精鋭ですから。
+[name="デルフィーン"]そしてそのテントのさらに離れたところには、必ずカスター部隊の駐屯拠点が二つか三つほどあるんです。
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",focus="m")]
+[name="シージ"]……偽りの団結とはいえ、団結には違いないと言うほかない。
+[name="シージ"]敵が目前に迫った今、公爵たちとて、真に立ち向かうべき相手が誰なのかは分かっているさ。
+[charslot(slot="m",name="avg_npc_1070_1#1$1",focus="m")]
+[name="シアラー少尉"]もう一つ悪い知らせがある。前線の病院を確かめてきたが、中は建てたばかりかのように綺麗で、負傷者は一人もいなかった。
+[charslot(slot="m",name="avg_npc_229_1#5",focus="m")]
+[name="ホルン"]負傷者の救援を放棄したというの？　あり得ません。そんなことをしたら部隊内の士気を保つのは不可能です。
+[charslot(slot="m",name="avg_npc_1070_1#2$1",focus="m")]
+[name="シアラー少尉"]単に、前線で負傷者が出ていないだけかもしれんな。
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="ホルン"]そんなことはあり得ません。模範軍としてここに来るまでの道中、戦いの苛烈さはこの目で見てきました。それにシルバーロックブラフスの前線は、今までよりもさらに危険なはず――
+[charslot(slot="m",name="avg_npc_229_1#5",focus="m")]
+[name="ホルン"]いえ、まさかあなたが言っているのは……
+[charslot(slot="m",name="avg_npc_1070_1#2$1",focus="m")]
+[name="シアラー少尉"]救助されて、後方に引き揚げられるような負傷者がいなかったということだ。
+[charslot(slot = "m", name = "avgnew_112_siege_1#9$2",focus="m")]
+[name="シージ"]……
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",focus="m")]
+[name="シージ"]さっさとこの惨劇を終わらせねば。
+[name="シージ"]この人を呑み込む戦場全体と比べれば、模範軍の力量など確かにたかが知れている。だが我々の任務は、その「奇跡を創り出す」ことだ。
+[stopmusic(fadetime=1.5)]
+[Dialog]
+[charslot]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_strangeclap", volume=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",duration=1)]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]素晴らしい開戦前演説だな。お話中失礼するが、あなた方の戦車は一通り整備しておいたよ。
+[playMusic(intro="$mist_intro", key="$mist_loop", volume=0.6)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",focus="m")]
+[name="シージ"]ようやく姿を現したか。
+[charslot(slot = "m", name = "avg_npc_396_1#9$1",focus="m")]
+[name="ダグザ"]待て、どうして地面が血まみれなんだ……あんたの血か？　それとも……
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]取るに足らないことだ、お嬢さん。
+[name="「グレーシルクハット」"]私が受けた命令は「諸王の息」を剣の台座まで持っていくことだ。万一私が死のうとも、あなた方の前には私の帽子を被った別の人間が現れることだろう。
+[name="「グレーシルクハット」"]殿下、公爵様があなたに伝えたいことは一つだ。「カスターは必ず約束を果たす」。
+[charslot(slot = "m", name = "avgnew_112_siege_1#10$2",focus="m")]
+[name="シージ"]御託はいい。剣の台座は一体どこにある？
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]すでに拠点は見てきたようだから、戦局についてはあなた方もおおむね把握していると思うが。
+[name="「グレーシルクハット」"]こんな時にあなた方に真実を告げるのは、タイミングとしては最悪だが、とはいえ他にどうしようもないな。
+[name="「グレーシルクハット」"]「諸王の息」の台座は、カスター公爵様の旗艦「グロリアーナ」号の上にある。
+[charslot(slot = "m", name = "avg_4110_delphn_1#7$1",focus="m")]
+[name="デルフィーン"]何ですって……？
+[charslot(slot = "m", name = "avgnew_112_siege_1#10$2",focus="m")]
+[name="シージ"]……全ては貴様らの計画通りか。
+[name="シージ"]親切にも我々をここまで案内し、拠点で休憩させてから、貴様らのホームに引きつけようというわけだ。
+[name="シージ"]次は何だ？　我々が首を横に振ろうものなら、カスターの軍隊が即刻我々を制圧でもするつもりか？
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]どうか落ち着いてほしい。あなた方が我々の中にどのような悪意を見出そうとも、事実が変わることはないのだから。
+[name="「グレーシルクハット」"]私が一番最初に受けた命令は、「国剣を台座の元まで運べ」であって「模範軍を国剣と共に台座の元へ連れてこい」ではなかった。
+[name="「グレーシルクハット」"]そして私は、さらなる苦難を目前に控えたあなた方に追い打ちをかけることなく、誠実さをもって真実を話すことを選んだ。その点に関しては、善意として受け止めてほしい。
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$2",focus="m")]
+[name="シージ"]……続けろ。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]以前話した通り、これはややこしい歴史と関わりのある問題でね。本来なら、ごく少数の王侯貴族のみが知り得る話だ。
+[name="「グレーシルクハット」"]かの「過去と未来の王」が歴史の舞台に登場するよりも昔の時代にとある探検家が、サルゴン南方の黄砂の奥から秘宝を持ち出した。
+[name="「グレーシルクハット」"]断っておくが剣ではない。剣の形さえ取っていなかったが、一定の空間内において源石結晶の拡散を抑えるような機能を有していた。
+[name="「グレーシルクハット」"]探検家はその秘宝の力で、本来なら探検チームを丸ごと呑み込むような天災から生還した。
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$2",focus="m")]
+[name="シージ"]「天災両断」の伝説か……
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]天災から生き延びた人物は、秘宝を剣の形に鋳造し、勇気の象徴として当時の諸王の王に献上したんだ。
+[name="「グレーシルクハット」"]そして737年にアスランのパーディシャー・ルガルシャムシが、「諸王の息」をヴィクトリアに持ち込んだ。
+[charslot(slot = "m", name = "avgnew_112_siege_1#5$2",focus="m")]
+[name="シージ"]……それから数十年後、ルガルシャムシの孫は、ヴィクトリアの初代獅子王となった。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]その剣によって赤き龍の首が斬り落とされたこともあれば、アスランとドラコが和平を結ぶためにこの剣を握ったこともあった……その後、「諸王の息」はヴィクトリア王権の象徴となった。
+[name="「グレーシルクハット」"]それから「諸王の息」は、幾度もの損壊と鋳直しを経てきた。そんな中、その剣がなぜ天災を防げるのか、その秘密を探ろうとする者も現れた。
+[name="「グレーシルクハット」"]学者たちが力の原理を解き明かすことはなかったが、それを最大限利用するための方法は編み出された。
+[name="「グレーシルクハット」"]諸王の眠る地に置かれた剣の台座こそ、カスター家の科学者による研究の産物だ。
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",focus="m")]
+[name="シージ"]当時のカスター公爵は、台座を作り出した時点で自分のために技術的なバックアップを残しておいたんだろうな。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]諸王の眠る地の台座があの戦いによって破壊し尽くされた後に、唯一起動可能なまま残った剣の台座は、「グロリアーナ」号に保管された。
+[charslot(slot = "m", name = "avg_4110_delphn_1#7$1",focus="m")]
+[name="デルフィーン"]百年にも渡って国剣を奪おうと企ててきたカスターに、ついにチャンスが訪れたわけですか。
+[name="デルフィーン"]数多の兵士と民間人の屍を踏みつけて、最後にはカスターが勝利の果実を手にし、ヴィクトリアを救う英雄になると？
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]もちろん、あなた方には判断をする権利がある。だが目下の状況においては、これがヴィクトリアに残された最後の勝機であることも確かだ。
+[name="「グレーシルクハット」"]そしてこれは、この危険な博打における、我々の最後の切り札でもある。
+[charslot(slot="m",name="avg_npc_229_1#7",focus="m")]
+[name="ホルン"]どれだけ言い繕ったところで、卑劣な陰謀があった事実をなかったことにはできません。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]殿下、決断を下すのはあなただ。
+[charslot(slot = "m", name = "avgnew_112_siege_1#6$2",focus="m")]
+[name="シージ"]……もうたくさんだ。
+[charslot(slot = "m", name = "avgnew_112_siege_1#1$2",focus="m")]
+[name="シージ"]私は策略に溺れる公爵たちを非難する傍ら、利権を計算するような輩になりたくはない。
+[name="シージ"]ここにいるのは、王位継承者アレクサンドリナではなく、模範軍のリーダー、シージだ。
+[name="シージ"]王権の象徴とやらもここには存在しない。今の「諸王の息」はヴィクトリアを勝利に導くための単なる武器に過ぎない。
+[charslot(slot = "m", name = "avgnew_112_siege_1#10$2",focus="m")]
+[name="シージ"]我々は戦場に向かう。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]ヴィクトリアを代表して、あなたに感謝する。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="n")]
+諜報員は半歩後ろに下がると、わずかに身をかがめて会釈した。
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]私が皆さんの案内を務めさせていただく。だが……
+[name="「グレーシルクハット」"]これから先は恐らく、覚悟が必要になるだろう。
+[Dialog]
+[stopmusic(fadetime=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="50_g2_mainbattlefield", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[PlaySound(key="$d_avg_battlefield_environment", volume=0.4, loop=true, channel="bgs")]
+[playMusic(intro="$stranger_intro", key="$stranger_loop", volume=0.6)]
+[bgeffect(name="$eb_smoke_l",layer=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+「東側先鋒部隊の報告によれば、ダスクグロー川沿岸の三つの村を奪還したとのことです。現在、全サルカズ軍はなおもシルバーロックブラフスの要害を固めています。」
+「レッドメイン山脈南戦線の掃討は完了しました。ですが司令部からは山脈を越えてサルカズ軍への側面攻撃を試みてはならないと、通達が下っています。」
+「前線に必要な砲艦及び弩級戦艦は全艦配置につきました。後方の砲艦も指定位置に到着済みです。」
+……
+[Dialog]
+[PlaySound(key="$grenade_explosion",volume=0.7)]
+[CameraShake(duration=3, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_avg_explosion", volume=0.7, loop=false, channel="explo",delay=1)]
+[PlaySound(key="$d_avg_autocannon", volume=1,delay=1.5)]
+[PlaySound(key="$d_gen_explo_n", volume=0.8, loop=false, channel="explo1",delay=2)]
+[delay(time=2)]
+大地が震えている。これが砲撃による震動なのか、それとも源石クラスターが地面を突き破る際にもたらされる地震なのか、行軍する人々はとっくに判別がつかなくなっていた。
+見渡す限り、深々と刻まれた高速軍艦の轍が縦横に交錯している。泥と血が混じり合い、鼻を突く臭いを放っていた。
+模範軍の戦車が、辛うじてその溝の上を前へと進んでいく。
+[Dialog]
+[delay(time=0.5)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#10$2",focus="m")]
+[name="シージ"]もうじき、交戦エリアに突入する。
+[name="シージ"]カスター公爵の旗艦まではあとどれくらいだ？
+[charslot(slot="m",name="avg_npc_867_1#1$1",focus="m")]
+[name="「グレーシルクハット」"]少し待ってくれ。いま向こうからの信号を探っているところだ。
+[name="「グレーシルクハット」"]このまま北へ進めば、すぐに着くはず――
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_energycannon", volume=0.7)]
+[PlaySound(key="$e_skill_explodebris",volume=1,delay=0.5)]
+[delay(time=0.5)]
+[CameraShake(duration=2.5,xstrength=35, ystrength=35, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0, block=true)]
+[Blocker(a=0.3, r=1,g=0.2, b=0.2, fadetime=0.05, block=true)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0.05, block=true)]
+[Blocker(a=0.3, r=1,g=0.2, b=0.2, fadetime=0.05, block=true)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=0.05, block=true)]
+[Blocker(a=0.3, r=1,g=0.2, b=0.2, fadetime=0.05, block=true)]
+[Blocker(a=0, r=1,g=0.2, b=0.2, fadetime=1, block=true)]
+[delay(time=0.5)]
+[PlaySound(key="$d_gen_explo_n")]
+[PlaySound(key="$d_sp_ballista",volume=1.0)]
+[PlaySound(key="$e_skill_explodebris", volume=0.5)]
+[CameraShake(duration=3, xstrength=40,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=2, block=false)]
+[delay(time=2)]
+[charslot(slot = "m", name = "avgnew_112_siege_1#7$2",focus="m")]
+[name="シージ"]巫術砲だ！
+[name="シージ"]前方の戦車が破壊された！　我々にも被害が及んでいるぞ！
+[charslot(slot = "m", name = "avg_155_tiger_1#7$1",focus="m")]
+[name="インドラ"]クソッ、動かねぇ。動力システムの故障か、それともタイヤがどっかハマったか？
+[charslot(slot = "m", name = "avg_npc_396_1#7$1",focus="m")]
+[name="ダグザ"]あるいは、その両方。
+[charslot(slot = "m", name = "avgnew_112_siege_1#10$2",focus="m")]
+[name="シージ"]……なるべく急いで直そう。
+[name="シージ"]ここで足止めを食うわけにはいかない。必ず「諸王の息」を剣の台座まで運ぶんだ。
+[charslot(slot = "m", name = "avg_155_tiger_1#5$1",focus="m")]
+[name="インドラ"]ちょっと待て、前の方のあの山、ありゃ何だ？　ロンディニウムの外にあんな妙な形した山なんてあったか？
+[charslot(slot="m",name="avg_npc_229_1#1",focus="m")]
+[name="ホルン"]いえ……あれは山ではありません……
+[name="ホルン"]……源石です。
+[Dialog]
+[bgeffect]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[StopSound(channel="bgs", fadetime=1.5)]
+[charslot]
+[Background(image="bg_black", screenadapt="coverall", block=true)]
+[delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.5)]
+天を覆う源石潮（オリジニウムタイド）が凝固して、色褪せぬ景色を戦場に作り出していた。高速戦艦ですら、その山の前ではかくもちっぽけに見える。
+その源石潮の上には――
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=1, block=true)]
+[charslot]
+[image(image="50_i29",screenadapt="coverall")]
+[delay(time=1)]
+[ImageTween(xFrom=120, yFrom=-50, xTo=0, yTo=0, xScaleFrom=1.2, yScaleFrom=1.2, xScaleTo=1, yScaleTo=1, duration=25, block=false)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+枯れた王座が浮かんでいた。
+ナハツェーラーの王が、戦場全体を見下ろしている。
+全ての種が一瞬の内に芽を出し、死に覆われた隅々に至るまで枯枝が這い上っていく。
+[Dialog]
+[delay(time=1)]
+[name="ネツァレム"]行け、最も勇敢なる戦士たちよ。
+[name="ネツァレム"]あの最も大きい骨に喰らいつき、鋼鉄をも脆き血肉と見なせ。引き裂き、呑み込むのだ。
+[name="ネツァレム"]ヴィクトリア人どもにしかと知らしめよ。戦争の支配者は――
+[name="ネツァレム"]必ずや、この戦場をも支配すると。
+[Dialog]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=3, block=true)]
+[stopmusic(fadetime=2)]
+[charslot]
+[Image]

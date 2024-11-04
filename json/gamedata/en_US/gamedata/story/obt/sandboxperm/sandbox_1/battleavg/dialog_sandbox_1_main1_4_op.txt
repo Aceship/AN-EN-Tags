@@ -1,0 +1,80 @@
+[header(actId="sandbox_1", npcId="")] 
+[summontrap(x="5", y="8", charId="trap_472_tfalco", isChar="FALSE", dir="RIGHT")]
+[summontrap(x="8", y="9", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[camerafocusto(offsetX="7", offsetY="9", time="1", scale="MID")]
+[delay(time="0.5")]
+[foginview(id="rect1", leftBottomX="1", leftBottomY="7", rightUpX="12", rightUpY="12")]
+[name="???", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]...
+[decision(option1="Are you okay?", value1="1.1")]
+[predicate(references="1.1")]
+[decision(option1="(Give her some food)", value1="2.1", option2="(Give her some water)", value2="2.2")]
+[predicate(references="2.1")]
+[name="???", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]Thank you. I was trapped here for days. Hungry and tired.
+[decision(option1="What's your name?", value1="3.1")]
+[predicate(references="3.1")]
+[name="???", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]It's been a long time since I last used it... you can call me Kestrel.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]You should leave. Don't get yourself dragged into my troubles.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]I ran away from the quarries in the south. I'm being pursued.
+[summonenemy(x="4", y="10", endX="9", endY="8", enemyId="enemy_1341_bthtms")]
+[camerafocusto(offsetX="6", offsetY="9", time="1", scale="FAR")]
+[delay(time="0.5")]
+[playanim(charId="trap_472_tfalco", looporidle="Idle", anim="Idle", dir="LEFT")]
+[name="Quarry Overseer", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Found you at last. Don't even think about leaving here alive, after all the men we lost on account of you.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]And how many workers died under your whips in the quarries? I'll take a few more with me if it's the last thing I do.
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Are we helping?
+[decision(option1="Of course we are.", value1="4.1", option2="Her safety is our priority.", value2="4.2")]
+[predicate(references="4.1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Let's do it.
+[fognotinview(id="rect1")]
+[withdraw(id="trap_472_tfalco", withoutAnim="FALSE")]
+[withdraw(id="trap_467_ttuye", withoutAnim="FALSE")]
+[withdraw(id="enemy_1341_bthtms", withoutAnim="FALSE")]
+[delay(time="3")]
+[resetcamera(time="1")]
+[save]
+[end]
+[predicate(references="4.2")]
+[name="Quarry Overseer", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Help this woman and you can join her in hell.
+[fognotinview(id="rect1")]
+[withdraw(id="trap_472_tfalco", withoutAnim="FALSE")]
+[withdraw(id="enemy_1341_bthtms", withoutAnim="FALSE")]
+[withdraw(id="trap_467_ttuye", withoutAnim="FALSE")]
+[delay(time="3")]
+[resetcamera(time="1")]
+[save]
+[end]
+[predicate(references="2.2")]
+[name="???", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]Thank you. I was trapped here for days. Hungry and tired.
+[decision(option1="What's your name?", value1="5.1")]
+[predicate(references="5.1")]
+[name="???", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]It's been a long time since I last used it... you can call me Kestrel.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]You should leave. Don't get yourself dragged into my troubles.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]I ran away from the quarries in the south. I'm being pursued.
+[summonenemy(x="4", y="10", endX="9", endY="8", enemyId="enemy_1341_bthtms")]
+[camerafocusto(offsetX="6", offsetY="9", time="1", scale="FAR")]
+[delay(time="0.5")]
+[playanim(charId="trap_472_tfalco", looporidle="Idle", anim="Idle", dir="LEFT")]
+[name="Quarry Overseer", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Found you at last. Don't even think about leaving here alive, after all the men we lost on account of you.
+[name="Kestrel", avatarId="char_4023_rfalcn", isAvatarRight="FALSE"]And how many workers died under your whips in the quarries? I'll take a few more with me if it's the last thing I do.
+[name="Tuye", avatarId="char_402_tuye", offsetX="1", isAvatarRight="FALSE"]Are we helping?
+[decision(option1="Of course we are.", value1="6.1", option2="Her safety is our priority.", value2="6.2")]
+[predicate(references="6.1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]Let's do it.
+[fognotinview(id="rect1")]
+[withdraw(id="trap_472_tfalco", withoutAnim="FALSE")]
+[withdraw(id="trap_467_ttuye", withoutAnim="FALSE")]
+[withdraw(id="enemy_1341_bthtms", withoutAnim="FALSE")]
+[delay(time="3")]
+[resetcamera(time="1")]
+[save]
+[end]
+[predicate(references="6.2")]
+[name="Quarry Overseer", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Help this woman and you can join her in hell.
+[fognotinview(id="rect1")]
+[withdraw(id="trap_472_tfalco", withoutAnim="FALSE")]
+[withdraw(id="trap_467_ttuye", withoutAnim="FALSE")]
+[withdraw(id="enemy_1341_bthtms", withoutAnim="FALSE")]
+[delay(time="3")]
+[resetcamera(time="1")]
+[save]
+[end]

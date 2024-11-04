@@ -1,0 +1,835 @@
+[HEADER(key="title_test", is_skippable=true, fit_mode="BLACK_MASK")]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=0, block=true)]
+[stopmusic]
+[Dialog]
+[Background(image="50_g16_scourgeswamp",screenadapt="coverall")]
+[Delay(time=1)]
+[PlayMusic(key="$darkness_03_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=2)]
+Thirteen hours into the operation...
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]The further we go, the more dire the situation becomes.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Freshly-rent canyons, diverted rivers... pathways that withstood the weight of great normadic cities, now torn, distorted, warped beyond recognition.
+[name="Kal'tsit"]The maps of the past are now no more than scrap paper. Every trail must be charted anew.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]There is no doubt that the Blood of Teekaz lies this way, though. Our bond yet hums.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]The closer we get to the heart of the battlefield, the higher the rate that Originium integrates with all information.
+[name="Kal'tsit"]The rocks, the soil, the waters, the peoples... Originium's influence has its clutch around virtually everything on Terra, yet perhaps we have long forgotten the fundamental principles of how it works.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="none")]
+[Decision(options="What did you mean by 'information' just now, Kal'tsit?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]...
+[name="Kal'tsit"]Perhaps you shall find out rather soon, Doctor.
+[charslot(slot="m",name="avg_003_kalts_1#4$1",focus="m")]
+[name="Kal'tsit"]Or maybe... No, never mind.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Objectively speaking, this Originium contaminated terrain does give a tactical advantage to Theresis's military operations. In contrast, the Victorian front is all but shattered.
+[name="Kal'tsit"]But this level of Originium activity still pales in comparison to the Catastrophe strike earlier.
+[name="Kal'tsit"]Theresis will never use Originium so recklessly just to gain a slight tactical advantage, this much I know of him. He knows the consequences.
+[Dialog]
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="none")]
+[Decision(options="Sounds like we're in for a difficult journey.", values="1")]
+[Predicate(references="1")]
+[charslot]
+[PlaySound(key="$d_avg_mudtire_loop",channel="1")]
+[Delay(time=2.5)]
+[stopSound(channel="1")]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]There's a vehicle heading this way!
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]'HALT'.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_magic_5")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.5, block=true)]
+[delay(time=1)]
+[PlaySound(key="$drift")]
+[Delay(time=1.5)]
+The truck shudders to a STOP as several familiar faces hop off.
+[Dialog]
+[PlaySound(key="$d_avg_cardoorc")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",duration="1.5")]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",duration="1.5")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",duration="1.5")]
+[Delay(time=2)]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'Shopkeep'"]Master Banshee, and... and the <i>King of Sarkaz</i>.
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="l")]
+[name="'Miner'"]I told you we shouldn't have taken this road! We can't run away now!
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]Well, it's not like they're bad guys...
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#1$1",focus="m")]
+[name="Amiya"]You... Weren't you supposed to stay at the Lifebone?
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="r")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'Shopkeep'"]Ah, well, I... I-I'll be honest, here...
+[name="'Shopkeep'"]Master Banshee, Your Highness, we were scared. Terrified. Having to stay inside that skeleton, not knowing who or what might come running over the hills to attack us. So we ran...
+[name="'Shopkeep'"]I-I know that desertion is a crime! But... we were never going to be any use, were we?
+[name="'Shopkeep'"]So I beseech you, milord, Your Highness, p-please don't execute us! We'll happily take the whip instead! However many lashings you wish!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]I'm not going to execute you, and I never demanded that you fight for me.
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="Amiya"]If you want to go, then you may go.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="r")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'Shopkeep'"]Oh, thank you, thank you so much, Your Highness! You are wise and merciful and—
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]Can we three go along with you?
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'Shopkeep'"]Shh! Say no more! Her Highness has already done us an incredible kindness by sparing our lives, and you would still demand more of her?
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]Don't be a fool, Shopkeep. How much of a chance do you think the three of us and that broken truck's got? We'd probably get blown up by a bomb, or worse.
+[name="'Driver'"]Your Highness, this is just my humble request, but please get us off this battlefield. I'll give you everything I have. As long as these two live. I... I'll swear my undying fealty to you.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]You... No, that's not the issue here. If you were to follow us, I'm sorry to say that it would be just as dangerous.
+[name="Amiya"]What do you think we should do, Doctor?
+[Dialog]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="none")]
+[Decision(options="I can't imagine they'll survive the battlefield on their own.;They might expose our whereabouts to the Military Commission.;Their ride's not bad, we could commandeer it.", values="1;2;3")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]Hmm...
+[Dialog]
+[Predicate(references="2")]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="r")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="r")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'Shopkeep'"]No, no! We would never! 
+[name="'Shopkeep'"]I swear, we will never be mercenaries ever again! On our lives!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]Now that you've mentioned it, Doctor, I think it would be more prudent if they came with us.
+[Dialog]
+[Predicate(references="3")]
+[charslot(slot="m",name="avg_npc_394_1#14$1",focus="m")]
+[name="Amiya"]Doctor... Do you really want to do that...?
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]I see... you're just trying to liven the mood.
+[Dialog]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="Amiya"]Very well then, Driver. We can travel together for a while.
+[name="Amiya"]After we pass through the warzone, you should leave Victoria once and for all.
+[Dialog]
+[charslot]
+[charslot(slot="l",name="avg_npc_054",posfrom="-200,0",posto="-200,0",focus="l")]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="l")]
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="l")]
+[name="'Miner'"]Thank you.
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]My deepest gratitude. And please use our transport, it should carry us far enough.
+[charslot(slot="r",name="avg_npc_932_1#1$1",posfrom="200,0",posto="200,0",focus="r")]
+[name="'Shopkeep'"]O K-K-King of Sarkaz, you are a most magnanimous soul, and I truly do not know how I could repay this kindness of yours—
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="Logos"]The coin.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]Huh?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]The coin I gave you.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]Ah, I completely forgot about that, haha, good thing I didn't drop it. Here, for you, milord!
+[name="'Shopkeep'"]I was wrong to beg it of you! It was my honor to serve, Banshee Lord. How could I have expected payment for such a privilege?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]...
+[Dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="I think they're scared of you.;You really wanted your coin back.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="Logos"]I hope you don't think me a miser.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]I need to ensure that they are not imposters.
+[name="Logos"]You need not fear, I hold no malice against you.
+[Dialog]
+[charslot]
+Logos moves his finger, and the coin in his palm vanishes, only to reappear in the Shopkeep's hand in a heartbeat.
+The shopkeep stares, first at the hand capable of quaking the earth and shaking mountains with a single pen stroke, then at the coin in his own hand, and finally back at the deadpan Banshee, unsure of how to react.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]Was that... a magic trick?
+[name="'Shopkeep'"]Haha, how delightful! You are a man of many talents, sire!
+[name="'Shopkeep'"]I... Well, I better go help Driver start the car!
+[Dialog]
+[playsound(key="$rungeneral",volume=1,channel=1)]
+[charslot(duration=1.5)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]...
+[Dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="A most interesting performance.;Tough crowd, huh?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]I saw Scout and Outcast demonstrate it several times, but I could never quite get the movements right. It is my lack of skill that made for a lackluster effect.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="none")]
+[Decision(options="I've never seen that side of you.;Are you a bit of a jokester?", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#3$1",focus="m")]
+[name="Logos"]Doctor, there are times when I also regret the fact that many of our shared memories have disappeared into the ether.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1072_1#3$1",focus="none")]
+[Decision(options="We never did talk about the past much...;I suppose the right time never came up.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="m",name="avg_npc_1072_1#4$1",focus="m")]
+[name="Logos"]If we ever find ourselves time to reminisce after this ordeal, perhaps you will be pleasantly surprised by the anecdotes of your past.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]But for now, we must go.
+[Dialog]
+[stopmusic(fadetime=1.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_394_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="Amiya"]There's... no sound here.
+[name="Amiya"]This stillness is... strange. I can't hear the sound of our breathing or the vehicle's engine. I can't even hear my own heartbeat.
+[name="Amiya"]Is this some kind of Originium Arts? Could someone have blocked all sounds in the vicinity to conceal themselves?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]No, Amiya. Listen carefully.
+[name="Logos"]It is not that sound has forsaken this place. Instead, there is a great, tremendous roar, so great that it drowns out its lessers.
+[name="Logos"]It is the deafening cry of death itself.
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]Look, over there!
+[name="Amiya"]That leaf...
+[Dialog]
+[charslot]
+A leaf hangs from the lowest branch, its surface tinted with vibrant yet bizarre colors, like the work of a haphazard artist or sunlight reflecting off a puddle of grease.
+[Dialog]
+[Decision(options="Like the vestiges of some sort of Arts.;...;Like some kind of fungal infection.", values="1;2;3")]
+[Predicate(references="1;2;3")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]...
+[name="Logos"]It is rotting.
+[name="Logos"]Decay unhinges its maw, gnawing at all in its sight, leaving behind only iridescent bite marks.
+[Dialog]
+[charslot]
+[PlayMusic(intro="$plot_intro", key="$plot_loop", volume=0.6,crossfade=1)]
+Within a few seconds, the sprightly yet strange coloration spreads across the entire plant and even onto other bushes.
+The once succulent leaves become drips of foaming liquid, leaving behind only bare vein networks quivering in the wind.
+Just like a finbeast's skeleton after its flesh has been picked clean, unceremoniously discarded.
+The wind rises, as if wanting to tear at their skin.
+It is the sigh of an unsatiated beast.
+[charslot(slot="m",name="avg_npc_394_1#20$1",focus="m")]
+[name="Amiya"]Logos, the marsh!
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",posfrom="100,0",posto="0,0",duration=0.8)]
+[charslot(slot="m",afrom=0,ato=1,duration=0.5)]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_magic_2",channel="1")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[charslot]
+Silver incantations flow forth, plunging into the depths of the marsh.
+[Dialog]
+[CameraShake(duration=1, ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$d_gen_explo_n")]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=1, r=255, g=255, b=255, fadetime=0.05, block=true)]
+[Blocker(a=0, r=255, g=255, b=255, fadetime=1, block=true)]
+[delay(time=2.5)]
+[Decision(options="Did you manage to stop it?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]...No.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_walk_water",channel="1")]
+[Delay(time=3)]
+The muffled sound of water sloshing ripples from the marsh, echoing about in the deathly silence.
+The sound of a foot pulling from the ooze, then stepping down again. Steady, unseen steps churn the muddy water, slopping it to the shore.
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]Prepare for battle. Stay where I can see you, Doctor!
+[Dialog]
+[charslot]
+[PlaySound(key="$e_atk_magic_m",channel="1")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.8, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.8)]
+[charslot]
+[PlaySound(key="$d_gen_explo_n",channel="2")]
+[CameraShake(duration=1,xstrength=40 ,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.8)]
+Black Arts shoot into the marsh, but the burst of sound quickly dies down, as though swallowed up.
+[Dialog]
+[PlaySound(key="$d_avg_walk_water",channel="1")]
+[Delay(time=3)]
+The steps begin again, their rhythm unchanging, their resolve unyielding.
+A tattered hem floats above the surface of the water as ripples crash into ripples, becoming a chaotic jumble of lines and shapes.
+[Dialog]
+[PlaySound(key="$d_avg_ghostscream",channel="1")]
+[CameraShake(duration=1.5,xstrength=40 ,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=true)]
+[name="???"]...
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Mon3tr.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"](Cautious growl)
+[Dialog]
+[charslot]
+[PlaySound(key="$p_skill_Mon3trburst",channel="4")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_spellattack_1",channel="1")]
+[CameraShake(duration=0.5,xstrength=40 ,ystrength=40, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.51)]
+[stopmusic(fadetime=1.5)]
+A dazzling beam of light spews forth from Mon3tr's mouth, but the shining lance is lost amidst the dark swamp.
+The slow sloshing changes.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",bstart=0.3,bend=0.5,duration=1)]
+[Delay(time=1.3)]
+[name="???"]Hah—
+[Dialog]
+[charslot]
+[PlayMusic(intro="$warchaos_intro", key="$warchaos_loop",volume=0.6)]
+[PlaySound(key="$rungeneral",channel="1")]
+[CameraShake(duration=3,xstrength=20 ,ystrength=20, vibrato=30, randomness=90, fadeout=true, block=true)]
+A series of hurried footsteps erupt in the silence, and all lost sounds return once more. A brilliant cacophony, an ear-splitting din.
+[Dialog]
+[charslot(slot="l",name="avg_npc_1331_1#1$1",posfrom="-150,0",posto="0,0",bstart=0.3,bend=0.5,duration=0.5)]
+[charslot(slot="r",name="npc_10002",posfrom="150,0",posto="0,0",duration=0.5)]
+[charslot(slot="l",afrom=0,ato=1,bstart=0.3,bend=0.5,duration=0.3)]
+[charslot(slot="r",afrom=0,ato=1,duration=0.3)]
+[delay(time=0.25)]
+[CameraShake(duration=-1,xstrength=40 ,ystrength=40, vibrato=30, randomness=90, fadeout=false, block=false)]
+[PlaySound(key="$p_skill_Mon3trburst",channel="1")]
+[PlaySound(key="$swordtsing3")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.25, block=true)]
+[delay(time=1)]
+[CameraShake(duration=1,xstrength=40 ,ystrength=40,  vibrato=40, randomness=90, fadeout=true, block=false)]
+[PlaySound(key="$swordtsing2")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[charslot(slot="l",name="avg_npc_1331_1#1$1",posfrom="0,0",posto="-150,0",bstart=0.3,bend=0.5,duration=0.5)]
+[charslot(slot="r",name="npc_10002",posfrom="0,0",posto="150,0",duration=0.5)]
+[charslot(slot="l",afrom=1,ato=0,bstart=0.3,bend=0.5,duration=0.3)]
+[charslot(slot="r",afrom=1,ato=0,duration=0.3)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.25, block=true)]
+[delay(time=1)]
+[charslot]
+[delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",posfrom="150,0",posto="0,0",bstart=0.3,bend=0.5,duration=0.5)]
+[charslot(slot="m",afrom=0,ato=1,duration=0.3)]
+[delay(time=1)]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=0.05, block=true)]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",duration=0.5)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1)]
+[name="???"]...
+[name="???"]Death... has come for you all.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]Stay back, you... whatever you are!
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]Look out!
+[Dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[PlaySound(key="$d_avg_darkwhisper",channel="LZ")]
+[CameraShake(duration=1,xstrength=20 ,ystrength=20,  vibrato=40, randomness=90, fadeout=true, block=false)]
+[delay(time=1.5)]
+[stopsound(channel="LZ")]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]'CAGE'.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[PlaySound(key="$e_atk_magic_m",channel="1")]
+[CameraShake(duration=1,xstrength=30 ,ystrength=30,  vibrato=40, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+[charslot(slot="m",name="avg_npc_1072_1#5$1",focus="m")]
+[name="Logos"]A Sudaram...
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]A burial shroud, still wrapped around a corpse.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]His body has already rotten away. Conventional attacks will have no real effect.
+[charslot(slot="m",name="avg_003_kalts_1#7$1",focus="m")]
+[name="Kal'tsit"]This is a form of witchcraft innate to the Nachzehrer, or possibly... an ancient tradition.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Nachzehrers devour life to nourish their bodies, but all bodies have an end.
+[name="Kal'tsit"]Once at the cusp of that end, powerful Nachzehrers will nourish weaker ones with their flesh, gaining unfathomable speed and strength in return, alongside witchcraft energy that no ordinary body could bear.
+[name="Kal'tsit"]In so doing, they become even more powerful creatures, while their nourishment allows the Nachzehrer society to sustain and grow. Just as fallen leaves nourish the land, and the land supports new lives. An eternal cycle.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]'FLOOD'.
+[Dialog]
+[PlaySound(key="$e_atk_magic_m",channel="1")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot]
+[PlaySound(key="$watercannon_cast",channel="2")]
+[CameraShake(duration=1, ystrength=40, vibrato=40, randomness=90, fadeout=true, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=1)]
+The muddy waters of the swamp rise swiftly, like a curtain, immersing the Nachzehrer up to his torso.
+At the same time, incantations wend and weave their way around the group, holding back the rot's incessant bite.
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]Over there! Quick! We'll head into the forest!
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="bg_coldforest",screenadapt="coverall")]
+[Delay(time=2)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$rungeneral",volume=1,channel=1)]
+[Delay(time=2)]
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Don't step on the mud.
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_darkwhisper",volume=1,channel=1)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1.5)]
+With the swamp rising, or perhaps the mist sinking, the dark ground becomes a gaping mouth, trying to engulf all. The group struggles through the mire, each breath growing more labored.
+A singular thought seizes the collective mind: living is a tedious and futile effort compared to the peaceful, eternal slumber that awaits if they simply turned around and embraced death.
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Mon3tr, protect the Doctor.
+[charslot(slot="m",name="npc_10002",focus="m")]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"](Urgent growl)
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]He's here!
+[Dialog]
+[charslot]
+The only sound they can hear is the whistling of the corroded blade as it swings down.
+The Nachzehrer, the one who walks alongside death, has arrived before them.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",duration=0.5)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[name="Sudaram"]—
+[Dialog]
+[charslot(slot="m",name="npc_10002",focus="m")]
+[Delay(time=0.3)]
+[Effect(name="$e_slash_02_l",x = -11.1, y = 83.6, rox =68.25, roy = -6.93, roz = 77.87,layer = 2)]
+[Delay(time=0.2)]
+[CameraShake(duration=1, ystrength=20, vibrato=20, randomness=90, fadeout=true, block=false)]
+[Effect(name="$e_spark_02_large",x = 0, y = 0, layer = 3)]
+[PlaySound(key="$e_skill_skulsrsword")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1, g=1, b=1, fadetime=0.02, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0.5, block=true)]
+[delay(time=1)]
+[PlaySound(key="$char_Mon3tr")]
+[name="Mon3tr"](Piercing cry)
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]Did Mon3tr... also feel the pain?
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]All life withers before his Arts.
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="Logos"]If we are caught in the Nachzehrer's witchcraft, our life force will be sapped to become its nourishment.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1331_1#1$1")]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[charslot(duration=0.3)]
+[Blocker(a=0.5, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0.5, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]He's fast!
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]Did he come from the mud or drop from a tree?
+[charslot(slot="m",name="avg_003_kalts_1#5$1",focus="m")]
+[name="Kal'tsit"]Either is possible.
+[name="Kal'tsit"]From life to death, from blossom to wither, they draw upon the entire life cycle, turning it into seeds that produce new Nachzehrers.
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]I can feel it, the unending flow of witchcraft energy flooding towards us.
+[name="Amiya"]And not just from the enemy before us... From the marsh, amidst the trees. It's everywhere.
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="Logos"]We have been wrapped in the Nachzehrer's shroud.
+[name="Logos"]By his hands, death hangs above our very heads.
+[name="Logos"]Only by tearing apart this barrier of witchcraft can we defeat him.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]*whimpers* ...Miner, am I about to die?
+[charslot(slot="m",name="avg_npc_054",focus="m")]
+[name="'Miner'"]...
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]He's tired, Shopkeep. Here, hold on to me so we don't get separated. I...
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]Driver! Hold my hand! Whatever you do, don't fall!
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]I...
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]She's fading out of consciousness! I can't hold her up much longer!
+[charslot(slot="m",name="avg_003_kalts_1#7$1",focus="m")]
+[name="Kal'tsit"]Ordinary healing techniques won't help. Nachzehrer witchcraft is devouring us all.
+[Dialog]
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[Delay(time=0.5)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=0,g=0, b=0, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[name="'Driver'"]Lea... Leave me.
+[name="'Driver'"]I'll only... hold you back...
+[name="'Driver'"]*gasp* You can let go of us.
+[name="'Driver'"]I know that if it wasn't for us... you and Sir Banshee could fight... more easily...
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]No.
+[charslot(slot="m",name="avg_npc_394_1#13$1",focus="m")]
+[name="Amiya"]I promised that I would get you out of the battlefield. We're in this together.
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]Is that... so?
+[name="'Driver'"]Good.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]The scent of blood. It pervades the air.
+[charslot(slot="m", name = "avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]It's Driver and the others' wounds...
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]No. This blood is... witchcraft.
+[charslot(slot="m", name = "avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]Huh?
+[charslot(slot="m", name = "avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]As in... a Vampire? This forest has Nachzehrers <i>and</i> Vampires?
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_blood")]
+[delay(time=0.5)]
+[Blocker(a=0.1, r=1, g=0, b=0, fadetime=1, block=true)]
+[delay(time=1.2)]
+A thin fog of blood floats all around them.
+This is entirely different from the Prince of Blood's Arts they witnessed before. It is subtle, like delicate strands of silk nearly smothered by the all-encompassing mist of decay around them.
+But it is these silken strands that slightly stir the stagnant air.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]Amiya, feel the flow of wind.
+[Dialog]
+[PlaySound(key="$d_avg_magic_2",channel="1")]
+[Blocker(a=0.1, r=1,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=0.5, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0.1, r=1,g=0, b=0, fadetime=1, block=true)]
+[name="Logos"]I will expose the weave of this shroud and locate its weakest point.
+[charslot(slot="m", name = "avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]Got it.
+[Dialog]
+[charslot]
+Black Arts gather before Amiya's body, condensing into a spear.
+Logos raises his hand, pointing at the depths of the thick fog.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]'PIERCE'.
+[Dialog]
+[charslot]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[Delay(time=0.3)]
+[PlaySound(key="$d_avg_magic_4",channel="1")]
+[Effect(name="$e_lance_hit_01",x = 0, y = 0, layer = 2)]
+[CameraShake(duration=1, xstrength=40,  ystrength=40, vibrato=40, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0.1, r=1,g=0, b=0, fadetime=0, block=true)]
+[PlaySound(key="$e_skill_skulsrsword",channel="2")]
+[Blocker(a=0.5, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1.5)]
+[name="Sudaram"](Dull growl)
+[name="Sudaram"]Herald of death.
+[name="Sudaram"]You... resist the spread of the rot.
+[name="Sudaram"]But... to no avail.
+[name="Sudaram"]In the end, death...
+[name="Sudaram"]Will claim your corpse.
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]I have never once doubted that.
+[name="Logos"]'DISPERSE'.
+[Dialog]
+[charslot(slot="m",name="avg_npc_1331_1#1$1",focus="m")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_magic_3",channel="1")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[charslot(duration=0.5)]
+[Blocker(a=0.5, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[PlaySound(key="$d_avg_clothmovement",channel="2")]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[Delay(time=1.5)]
+His giant blade falls, sticking into the soil like a gravestone.
+The Nachzehrer's shroud flutters and billows.
+In an instant, his imposing figure disintegrates, leaving behind only several tattered strips of cloth gently falling to the ground.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]Is-Is he dead?
+[name="'Shopkeep'"]I can finally breathe—
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_cnstrctnck",channel="1")]
+[Delay(time=0.2)]
+[PlaySound(key="$d_avg_clnchfst",channel="2")]
+[Delay(time=0.5)]
+Clack clack.
+It's the sound of bone scraping against bone.
+[Dialog]
+[PlaySound(key="$d_avg_cnstrctnck",channel="1")]
+[CameraShake(duration=1, xstrength=30,  ystrength=30, vibrato=40, randomness=90, fadeout=true, block=false)]
+[Delay(time=1.5)]
+A withered hand stretches out of the mud.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]Eh? Ahh—!
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]Watch out.
+[Dialog]
+[charslot]
+[PlaySound(key="$d_avg_magic_3")]
+[CameraShake(duration=1, xstrength=30, ystrength=30, vibrato=30, randomness=90, fadeout=true, block=false)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=1,g=1, b=1, fadetime=0.05, block=true)]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=1, block=true)]
+[Delay(time=0.51)]
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]It fell apart...?
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]Looks like it to me.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]*phew* When'd you become such a badass, Driver?
+[charslot(slot="m", name = "avg_npc_1338_1#1$1",focus="m")]
+[name="'Driver'"]Shouldn't we keep going, Your Highness?
+[charslot(slot="m", name = "avg_npc_394_1#2$1",focus="m")]
+[name="Amiya"]Yes. It's best we leave at once, before the Nachzehrer reawakens and catches up to us again.
+[Dialog]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Background(image="50_g24_wildernesswarcircle_ex",screenadapt="coverall")]
+[Delay(time=2)]
+[PlayMusic(intro="$darkness01_intro", key="$darkness01_loop", volume=0.6)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=1)]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_394_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="Amiya"]I wasn't expecting a vampiric Arts Circle here.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]It is still working.
+[charslot(slot="m",name="avg_npc_394_1#2$1",focus="m")]
+[name="Amiya"]Those vampiric Arts that suddenly appeared as we were fighting the Sudaram... Was it because of this Circle?
+[charslot(slot="m",name="avg_003_kalts_1#2$1",focus="m")]
+[name="Kal'tsit"]I'm afraid it's not that simple.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]I'm sure you're well aware, Amiya, that those Arts were cast by a Vampire.
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_clothmovement",volume=1,channel="1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_cnstrctnck",channel="1")]
+[Delay(time=1.5)]
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]Perhaps... a descendent of a Vampire?
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]I assume that while the Sanguinarch has been taken off the battlefield, the gifts he bestowed will not so easily fade away.
+[charslot(slot="m",name="avg_npc_394_1#15$1",focus="m")]
+[name="Amiya"]It doesn't matter. I'll do my best to put these corrupted lives to rest, as I've done before.
+[charslot(slot="m",name="avg_npc_394_1#5$1",focus="m")]
+[name="Amiya"]Logos, could you please assist me—
+[charslot(slot="m",name="avg_npc_1072_1#1$1",focus="m")]
+[name="Logos"]...Amiya.
+[Dialog]
+[charslot]
+[playsound(key="$d_avg_clothmovement",volume=1,channel="1")]
+[Delay(time=0.5)]
+[PlaySound(key="$d_avg_cnstrctnck",channel="1")]
+[Delay(time=1.5)]
+The sound becomes ever clearer, coming from behind the bloodstained boulders. It is the sound of limbs dragging across the ground, a sound that they've heard countless times in previous battles.
+Amiya notices the expression on Logos's face.
+He looks not at the stone columns, but at Amiya, a trace of emotion flitting across his eyes.
+It is sorrow. Amiya recognizes it instantly.
+She has felt sorrow countless times since the war began, sometimes from an enemy, but mostly... from her companions.
+[stopmusic(fadetime=1.5)]
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]Driver.
+[Dialog]
+[charslot]
+[playsound(key="$d_gen_walk_n",volume=1)]
+[charslot(slot="m",name="avg_npc_1338_1#1$2",duration=1.5)]
+[Delay(time=2)]
+[PlayMusic(intro="$drift_intro", key="$drift_loop", volume=0.6)]
+[name="'Driver'"]...
+[name="'Driver'"]Your Highness.
+[charslot(slot="m",name="avg_npc_394_1#18$1",focus="m")]
+[name="Amiya"]When did it happen? Was it while we were fighting the Nachzehrer?
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]Yes.
+[name="'Driver'"]When we left the skeleton, I brought along a rock that the Military Commission had ordered us to transport.
+[name="'Driver'"]I thought since it made us stronger before, it might come in handy in a battle.
+[name="'Driver'"]It really did help, right?
+[name="'Driver'"]I never dared to imagine that I could fight alongside you and defeat that strange enemy.
+[charslot(slot="m",name="avg_003_kalts_1#1$1",focus="m")]
+[name="Kal'tsit"]You used a blood crystal left behind by a Vampire.
+[name="Kal'tsit"]Did you pierce your body with it? No, that wouldn't have induced such a drastic change.
+[name="Kal'tsit"]You swallowed some fragments.
+[charslot(slot="m",name="avg_003_kalts_1#2$1",focus="m")]
+[name="Kal'tsit"]You willingly accepted Duq'arael's blood and Arts.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]I've always had the Vampire bloodline, even though it's pretty faint by now... But I could still sense the Sanguinarch's call, even if it felt nothing more like a whisper.
+[name="'Driver'"]I've seen those worms crawl out of Sarkaz corpses before, so there's no need to pity me for not knowing the consequences.
+[name="'Driver'"]Instead of dying in the gutter like a real worm without so much as a yelp, I rather accept this power and die on the battlefield. Like a real Sarkaz.
+[name="'Driver'"]This isn't a spur-of-the-moment decision. A few months ago, while driving aimlessly through the wilderness, I heard a broadcast about what was happening in Londinium...
+[name="'Driver'"]And somehow, I just drove all the way here.、.
+[name="'Driver'"]Shopkeep says I read too many stories about knights... That's rubbish. Everyone knows that Kazdel doesn't need knights.
+[name="'Driver'"]I just wanted to know if there was a real path in life that I could follow, one with a proper end. If I could give some meaning to my life without just wasting it.
+[name="'Driver'"]And then I met you. 'The path of the King of Sarkaz is the path for me.' We—gah—We fought alongside each other on this path. Like you said, we're in this together.
+[name="'Driver'"]And now, the fighting's stopped. At least, for now. My buddies are still alive.
+[name="'Driver'"]Your Highness, you can deal with me as you see fit.
+[Dialog]
+[charslot]
+[playsound(key="$rungeneral",volume=1,channel=1)]
+[charslot(slot="m",name="avg_npc_932_1#1$1",duration=1.5)]
+[Delay(time=2)]
+[name="'Shopkeep'"]D-Deal with you? What are you all talking about?
+[name="'Shopkeep'"]Driver, why've you become like... like...?
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]Real scary, aren't I?
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]...
+[name="'Shopkeep'"]Your Highness, please, I beg of you, help her! A-And, Lord Banshee, sire, I humbly return this coin to you. It is the only thing of worth I have.
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="Logos"]Witchcraft is the trigger to her condition, not the cause.
+[charslot(slot="m",name="avg_npc_1072_1#2$1",focus="m")]
+[name="Logos"]There is nothing I, Amiya, and even Dr. Kal'tsit could do to reverse the changes.
+[charslot(slot="m",name="avg_npc_932_1#1$1",focus="m")]
+[name="'Shopkeep'"]Then what are you going to do? Don't tell me you're going to kill her like you killed those red worms?
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]Stand aside, Shopkeep. This was my decision.
+[name="'Driver'"]Your Highness, I heard that... in the past, the greatest warriors of the Sarkaz, right before they died, could request that the King grant them a vision.
+[name="'Driver'"]I don't know if *cough* if I count or not.
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]...
+[Dialog]
+[charslot]
+Amiya raises her hand.
+Black Arts coalesce at her fingertips.
+A desperate smile emerges on the Driver's face as she unconsciously looks at the top of the Cautus's head, searching for the legendary Black Crown.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]My... King...
+[name="'Driver'"]What will I see? I just hope... it won't be me driving that piece of junk around Kazdel, haha.
+[charslot(slot="m",name="avg_npc_394_1#11$1",focus="m")]
+[name="Amiya"]Driver, can you tell me your name? Your real one.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]Is this part of the ceremony too?
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="Amiya"]Well... If I knew your name, it would be a lot easier.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]...Maryla. A common name.
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="Amiya"](Kazimierzian) Maryla.
+[name="Amiya"]Sorry, I never stayed in Kazimierz for long, so my pronunciation might be off.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]No, it's good. It's been so long since anyone called my name so gently, ever since my mother died.
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="Amiya"]Maryla, I refuse your request.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]You won't grant me a vision? I suppose... I was never a warrior to begin with.
+[charslot(slot="m",name="avg_npc_394_1#17$1",focus="m")]
+[name="Amiya"]No, that's not it. I refuse to let you die here, by my hand, Maryla.
+[name="Amiya"]You have not become the Vampire's creation.
+[name="Amiya"]Your looks have changed, but I don't sense you becoming any more evil or bloodthirsty.
+[name="Amiya"]And even if you are showing a bit more of your ancient bloodline, you're still you.
+[name="Amiya"]You do not deserve punishment, nor should I be the one to give you your honor.
+[charslot(slot="m",name="avg_npc_1338_1#1$2",focus="m")]
+[name="'Driver'"]But you are the King of Sarkaz...
+[charslot(slot="m",name="avg_npc_394_1#21$1",focus="m")]
+[name="Amiya"]Please, call me Amiya.
+[name="Amiya"]Miss Maryla, I've had my share of worries because your team, er, isn't comprised of Rhodes Island operators.
+[name="Amiya"]I was thinking earlier about how we could get along with you three. But in truth, it wasn't a problem at all.
+[charslot(slot="m",name="avg_npc_394_1#16$1",focus="m")]
+[name="Amiya"]If you wish to fight alongside us for our common goal, then I welcome you with open arms.
+[Dialog]
+[Blocker(a=0.5, r=0, g=0, b=0, fadetime=1, block=true)]
+[Subtitle(text="The young Cautus keeps her arms outstretched, her blue eyes blinking.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="The Sarkaz woman grasps her slender fingers.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[Subtitle(text="Despite not feeling much sorrow, two rows of scarlet tears still flow down her cheeks.", x=300, y=370, alignment="center", size=24, delay=0.04, width=700)]
+[subtitle]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=1, block=true)]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0, g=0, b=0, fadetime=2, block=true)]
+[charslot]
+[Delay(time=1)]
+[charslot(slot="l",name="avg_003_kalts_1#13$1")]
+[charslot(slot="r",name="avg_npc_1072_1#1$1")]
+[Blocker(a=0, r=0, g=0, b=0, fadetime=2, block=true)]
+[Delay(time=0.5)]
+[charslot(slot="l",name="avg_003_kalts_1#13$1",focus="l")]
+[name="Kal'tsit"]...
+[Dialog]
+[charslot(slot="l",name="avg_003_kalts_1#13$1",focus="none")]
+[Decision(options="Were you watching Amiya?", values="1")]
+[Predicate(references="1")]
+[charslot(slot="l",name="avg_003_kalts_1#11$1",focus="l")]
+[name="Kal'tsit"]She's changed a lot these past few years.
+[Dialog]
+[charslot(slot="l",name="avg_003_kalts_1#11$1",focus="none")]
+[Decision(options="She's become more mature.;She's always been a good leader.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="r",name="avg_npc_1072_1#1$1",focus="r")]
+[name="Logos"]The core of the Vampire's ritual has changed.
+[name="Logos"]It is no longer just a tool to amplify the strength of the Sarkaz, nor a simple collector of energy. 
+[charslot(slot="l",name="avg_003_kalts_1#1$1",focus="l")]
+[name="Kal'tsit"]It is deepening the Sarkaz bloodlines' bond with Originium... with Amnannam.
+[name="Kal'tsit"]The Blood of Teekaz is playing a role in this somehow.
+[charslot(slot="l",name="avg_003_kalts_1#3$1",focus="l")]
+[name="Kal'tsit"]The strength of the Sarkaz bloodlines acts as a direct catalyst to the Originium’s spread. In turn, the information within Originium empowers the bloodlines, changing their powers and other traits.
+[Dialog]
+[charslot(slot="l",name="avg_003_kalts_1#3$1",focus="none")]
+[Decision(options="The effect of these Arts seems familiar.", values="1")]
+[Predicate(references="1")]
+[Decision(options="Didn't Salus merge a lot of bloodlines?;Confessarii are skilled at bringing out the power in bloodlines.", values="1;2")]
+[Predicate(references="1;2")]
+[charslot(slot="l",name="avg_003_kalts_1#1$1",focus="l")]
+[name="Kal'tsit"]We must be ready.
+[charslot(slot="l",name="avg_003_kalts_1#7$1",focus="l")]
+[name="Kal'tsit"]The threat that Amnannam represents... may very well be far greater than anything we expected.
+[Dialog]
+[Blocker(a=0, r=0,g=0, b=0, fadetime=0, block=true)]
+[Blocker(a=1, r=0,g=0, b=0, fadetime=2, block=true)]
+[stopmusic(fadetime=1)]
+[charslot]
+[Image]

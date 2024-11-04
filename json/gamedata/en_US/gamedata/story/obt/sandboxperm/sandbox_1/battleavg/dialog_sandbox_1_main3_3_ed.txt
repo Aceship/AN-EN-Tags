@@ -1,0 +1,35 @@
+[header(actId="sandbox_1", npcId="trap_471_tegmaus")]
+[summontrap(x="13", y="3", charId="trap_471_tegmaus", isChar="FALSE", dir="LEFT")]
+[summontrap(x="14", y="4", charId="trap_467_ttuye", isChar="FALSE", dir="LEFT")]
+[summonenemy(enemyId="enemy_7024_clking", x="10", y="4", endX="15", endY="3")]
+[move(enemyId="enemy_7024_clking", x="11", y="4")]
+[summonenemy(enemyId="enemy_7025_clbb", x="9", y="3", endX="15", endY="3")]
+[move(enemyId="enemy_7025_clbb", x="10", y="3")]
+[camerafocusto(offsetX="12", offsetY="4", time="2", scale="FAR")]
+[delay(time="1")]
+[foginview(leftBottomX="8", leftBottomY="2", rightUpX="15", rightUpY="7", id="fog_1")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="TRUE"]I hear you've toured a lot of places. Judging by how well-rehearsed you seem on and off the stage, you must have pulled off more than a few heists.
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Get lost, busybody. Didn't your mother ever teach you to be careful with your words on another people's land?
+[playanim(id="trap_471_tegmaus", anim="Attack", dir="LEFT")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="TRUE"]I'd be careful with <i>my</i> words if half my minions just got their faces punched in.
+[name="Acrobat Assistant", avatarId="bavg_enemy_common", isAvatarRight="FALSE"](Whisper) These guys are tough, boss. We should run.
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Hmph. You'd be wise not to go further. There was this nosy woman who came in here a few days ago.
+[decision(option1="Another treasure seeker?", value1="1.1")]
+[predicate(references="1.1")]
+[name="Acrobat", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]What happens to guests who don't behave? Take a guess.
+[withdraw(id="enemy_7024_clking")]
+[name="Acrobat Assistant", avatarId="bavg_enemy_common", isAvatarRight="FALSE"]Hey, boss! Wait for me!
+[withdraw(id="enemy_7025_clbb")]
+[name="Tuye", avatarId="char_402_tuye", isAvatarRight="FALSE"]A nosy woman? Could it be the friend that the Liaison wanted us to look for?
+[playanim(id="trap_471_tegmaus", anim="Idle", dir="RIGHT")]
+[decision(option1="Sounds like it.", value1="2.1")]
+[predicate(references="2.1")]
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]No rush. They're running in the direction that we're going.
+[name="Pepe", avatarId="bavg_npc_001", isAvatarRight="FALSE"]We'll meet again.
+[withdraw(id="trap_471_tegmaus")]
+[withdraw(id="trap_467_ttuye")]
+[delay(time="3")]
+[fognotinview(id="fog_1")]
+[resetcamera(time="1")]
+[save]
+[end]
