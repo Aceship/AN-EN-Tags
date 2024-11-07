@@ -2488,21 +2488,32 @@
             case "EquipmentSkillCastStage":
                 var stage = db.stage.stages[mission.paramList[1]].code
                 var skillId = mission.paramList[2]
-                var currSkill = db.skills[skillId]
-                var skillname = db.skillsTL[skillId]?db.skillsTL[skillId].name:currSkill.name;
-                var skillnum = opdataFull.skills.findIndex(skill => skill.skillId==skillId)
+                // if(skillId.includes(";")){
+                    
+                // }
 
-                if(skillnum>=0){
-                    skillnum = `(Skill ${skillnum+1})`
-                }else{
-                    skillnum = ''
-                }
-                console.log(opdataFull.skills)
-                console.log(skillnum)
-                
+                var skillIdList = skillId.split(";")
+
+                var skillList=[]
+                for(i=0; i< skillIdList.length;i++){
+                    var currskillId = skillIdList[i]
+                    var currSkill = db.skills[currskillId]
+                    var skillname = db.skillsTL[currskillId]?db.skillsTL[currskillId].name:currSkill.name;
+                    var skillnum = opdataFull.skills.findIndex(skill => skill.currskillId==currskillId)
+
+                    if(skillnum>=0){
+                        skillnum = `(Skill ${skillnum+1})`
+                    }else{
+                        skillnum = ''
+                    }
+                    console.log(opdataFull.skills)
+                    console.log(skillnum)
+                    skillList.push(`<@ba.kw><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${currskillId}.png" style="max-width:20px;margin:2px">${skillname} ${skillnum}</> `)
+                }  
+
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star </br>
-                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[4]].appellation}</>, Cast <@ba.kw><img src="https://raw.githubusercontent.com/Aceship/Arknight-Images/main/skills/skill_icon_${skillId}.png" style="max-width:20px;margin:2px">${skillname} ${skillnum}</> skill <@ba.kw>${mission.paramList[3]}</> times
+                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[4]].appellation}</>, Cast ${skillList.join(" / ")} <@ba.kw>${mission.paramList[3]}</> times
                     `
                 break;
             case "EquipmentSkillCast":
@@ -2531,10 +2542,16 @@
                 break;
             case "EquipmentCharKilledStage":
                 var stage = db.stage.stages[mission.paramList[1]].code
+                var charalist = mission.paramList[2].split(";")
+                var charaNameList = []
+                for(i=0; i<charalist.length; i++){
+                    var currchara = charalist[i]
+                    charaNameList.push(`<@ba.kw> ${db.chars[currchara].appellation}</>`)
+                }
                 tl=`
                     Clear <@ba.kw>${stage}</> with <@ba.kw>${mission.paramList[0]}</> Star
                     </br>Kill <@ba.kw>${mission.paramList[3]}</> enemies 
-                    Using Non-Borrowed <@ba.kw>${db.chars[mission.paramList[2]].appellation}</>
+                    Using Non-Borrowed ${charaNameList.join(" / ")}</>
                     `
                 break;
             case "EquipmentEventTotal":
@@ -3996,6 +4013,7 @@
         var activeElite = 0
         var activePotential = 0
         opdataFull.talents.forEach(currTalent => {
+            console.log(currTalent)
             currTalent.candidates.forEach(currCandidate => {
                 var currlevel = parseInt(currCandidate.unlockCondition.level)
                 var currphase = PhaseConvert(currCandidate.unlockCondition.phase)
@@ -4092,6 +4110,7 @@
         // console.log(talentObject.req2)
         for(i=0;i<opdataFull.talents.length;i++){
             var currTalent = opdataFull.talents[i]
+            if(currTalent.candidates[0].isHideTalent) break;
             // if(!db.talentsTL[id])break;
             var currTalentTL = db.talentsTL[id]?db.talentsTL[id][i]:undefined
             // var talentGroup = []
