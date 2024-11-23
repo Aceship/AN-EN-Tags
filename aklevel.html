@@ -81,7 +81,8 @@
                         <div class="col">
 		                    <label for="lslevel">EXP Card Map</label>
 		                    <select id="lslevel" class="form-control form-control-sm">
-		                        <option selected>LS-5</option>
+		                        <option value="6" selected>LS-6</option>
+					            <option value="5">LS-5</option>
 		                        <!--<option>LS-4</option>
 		                        <option>LS-3</option>
 		                        <option>LS-2</option>
@@ -89,9 +90,10 @@
 		                    </select>
 		                </div>
                         <div class="col">
-		                    <label for="lslevel">Lungmen Coin Map</label>
-		                    <select id="lslevel" class="form-control form-control-sm">
-		                        <option selected>CE-5</option>
+		                    <label for="celevel">Lungmen Coin Map</label>
+		                    <select id="celevel" class="form-control form-control-sm">
+		                        <option value=6 selected>CE-6</option>
+		                        <option value=5>CE-5</option>
 		                        <!--<option>CE-4</option>
 		                        <option>CE-3</option>
 		                        <option>CE-2</option>
@@ -289,7 +291,7 @@
                     return;
                 }
                 let es = cl === maxLevel[star - 1][cev] ? 0 : charExpMap[cev][cl - 1] - ce;
-                let cs = cl === maxLevel[star - 1][cev] ? 0 : charUpCostMap[cev][cl - 1] * es / (charExpMap[cev][cl - 1]);
+                let cs = cl === maxLevel[star - 1][cev] ? 0 : Math.round(charUpCostMap[cev][cl - 1] * es / (charExpMap[cev][cl - 1]));
                 cl++;
                 for (let i = cev, j = cl; i <= te; i++) {
                     while (i < te && j < maxLevel[star - 1][i]) {
@@ -308,21 +310,35 @@
                 for (let i = cev; i < te; i++) {
                     ea += evolveGoldCost[star - 1][i];
                 }
+                let lsl = document.getElementById("lslevel").value;
+                let cel = document.getElementById("celevel").value;
+                if (lsl == 6) {
+                    var lsr = 10000;
+                } else {
+                    var lsr = 7400;
+                }
+                if (cel == 6) {
+                    var cer = 10000;
+                } else {
+                    var cer = 7500;
+                }
+                let lsc = lsl * 6;
+                let cec = cel * 6;
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
                 let eb = es - bs;
                 if (eb < 0) eb = 0;
-                let gs = (cs + ea).toFixed(1);
+                let gs = (cs + ea);
                 let gn = gs - ga;
                 if (gn < 0) gn = 0;
-                let lsn = Math.ceil((eb / 7500).toFixed(1));
-                let cen = Math.ceil((gn / 7500).toFixed(1));
+                let lsn = Math.ceil(eb / lsr);
+                let cen = Math.ceil(gn / cer);
                 $.each([
-                    ['Total Sanity Cost', "<b>" + (lsn + cen) * 30 + "</b> <sub>= " + lsn * 30 + " + " + cen * 30 + "</sub>"],
+                    ['Total Sanity Cost', "<b>" + ((lsn * lsc) + (cen * cec)) + "</b> <sub>= " + lsn * lsc + " + " + cen * cec + "</sub>"],
                     ['Exp', "<b>" + eb + "</b> <sub>= " + es + " - " + bs + "</sub>"],
-                    ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * 30 + "</b> <sub>= 30 * " + lsn + "</sub>"],
+                    ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * lsc + "</b> <sub>= " + lsc + " * " + lsn + "</sub>"],
                     ['Coins', "<b>" + gn + "</b> <sub>= " + gs + " - " + ga + "</sub>"],
-                    ['CE Sanity <sub>Cost</sub>', "<b>" + cen * 30 + "</b> <sub>= 30 * " + cen + "</sub>"],
-                    ['Coins for Leveling', cs.toFixed(1)],
+                    ['CE Sanity <sub>Cost</sub>', "<b>" + cen * cec + "</b> <sub>= " + cec + " * " + cen + "</sub>"],
+                    ['Coins for Leveling', cs],
                     ['Coins for Elite', ea],
                 ], function (_, v) {
                     $("#tbody-result").append('<tr><th scope="row" class="text-right">' + v[0] + '</th><td>' + v[1] + '</td></tr>');
