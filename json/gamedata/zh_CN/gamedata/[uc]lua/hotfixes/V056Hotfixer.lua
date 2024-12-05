@@ -105,6 +105,61 @@ local function Fix_BuildingWorkShop_OnIngredientJumpBtnPressed(self, index)
   self:OnIngredientJumpBtnPressed(index)
 end
 
+local function Fix_StationManage_GetPreQueueStatus(buildingModel, slotId, queue)
+  local queueInfoModel = TorappuBuildingUI.SM.StationManageUtil.GetPreQueueStatus(buildingModel, slotId, queue)
+  local curStatus = queueInfoModel.status:GetHashCode() & (~(1 << 2))
+  for i = 0, queue.Count - 1 do
+    local instId = queue[i]
+    if instId >= 0 then
+      local charModel = buildingModel:GetBuildingCharByInstId(instId)
+      if charModel.isEmpty then
+        local playerChar
+        _, playerChar = buildingModel.playerChars:TryGetValue(tostring(instId))
+        if playerChar ~= nil then
+          charModel = CS.Torappu.Building.BuildingCharModel.CreateModel(instId, playerChar)
+        end
+      end
+      local slotModelCurCharIn = buildingModel:GetSlotById(charModel.slotId)
+      if charModel.slotId ~= slotId and slotModelCurCharIn ~= nil and slotModelCurCharIn.roomId ~= CS.Torappu.BuildingData.RoomType.DORMITORY then
+        curStatus = curStatus | (1 << 2)
+      end
+    end
+  end
+  queueInfoModel.status = TorappuBuildingUI.SM.PreQueueStatus.__CastFrom(curStatus)
+
+  return queueInfoModel
+end
+
+local function Fix_FireworkCraftModel_LoadData(self, input)
+  if input.source == CS.Torappu.UI.Firework.FireworkCraft.FireworkCraftModel.OpenSource.STAGE then
+    local curTs = CS.Torappu.DateTimeUtil.timeStampNow;
+    local inputStageId = input.defaultStageId;
+    local inputStageData = CS.Torappu.StageDataUtil.GetStageOrNull(inputStageId, curTs);
+    if inputStageData == nil then
+      return
+    end
+    if inputStageData.difficulty == CS.Torappu.LevelData.Difficulty.FOUR_STAR then
+      local normalStageId = CS.Torappu.StageDB.instance:GetNormalStageId(inputStageId);
+      input.defaultStageId = normalStageId;
+    end
+  end
+  self:LoadData(input)
+end
+
+local function Fix_Act1VAutoChessShopQuickAssist_TryRefreshNormalItemView(self, arg1)
+  if self.view == nil then
+    return;
+  end
+  self.view:Render(arg1);
+end
+
+local function Fix_Act1VAutoChessShopQuickAssist_TryRefreshTitleItemView(self, arg1)
+  if self.view == nil then
+    return;
+  end
+  self.view:Render(arg1);
+end
+
 function V056Hotfixer:OnInit()
   xlua.private_accessible(ClsHotUpdater);
   self:Fix_ex(ClsHotUpdater, "_CalcUpdateResParams", function(newUpdateInfo, persistentResInfo, downloadPart)
@@ -136,6 +191,37 @@ function V056Hotfixer:OnInit()
     if not ok then
       LogError("[BuildingStationManageEditQueueStateHotfixer] fix OnIngredientJumpBtnPressed error:" .. errorInfo)
     end
+  end)
+  xlua.private_accessible(TorappuBuildingUI.SM.StationManageUtil)
+  self:Fix_ex(TorappuBuildingUI.SM.StationManageUtil, "GetPreQueueStatus", function(buildingModel, slotId, queue)
+    local ok, value = xpcall(Fix_StationManage_GetPreQueueStatus, debug.traceback, buildingModel, slotId, queue)
+    if not ok then
+      LogError("fix StationManage GetPreQueueStatus error:" .. value)
+      return TorappuBuildingUI.SM.StationManageUtil.GetPreQueueStatus(buildingModel, slotId, queue)
+    end
+    return value
+  end)
+  xlua.private_accessible(CS.Torappu.UI.Firework.FireworkCraft.FireworkCraftModel)
+  self:Fix_ex(CS.Torappu.UI.Firework.FireworkCraft.FireworkCraftModel, "LoadData", function(self, input)
+    local ok, value = xpcall(Fix_FireworkCraftModel_LoadData, debug.traceback, self, input)
+    if not ok then
+      LogError("fix FireworkCraftModel error:" .. value)
+      self:LoadData(input)
+    end
+  end)
+  xlua.private_accessible(CS.Torappu.Activity.Act1VAutoChess.Act1VAutoChessChessShopQuickAssistOnlyItemView.VirtualView)
+  self:Fix_ex(CS.Torappu.Activity.Act1VAutoChess.Act1VAutoChessChessShopQuickAssistOnlyItemView.VirtualView, "TryRefreshAssistItemView", function(self, arg1)
+    local ok, errorInfo = xpcall(Fix_Act1VAutoChessShopQuickAssist_TryRefreshNormalItemView, debug.traceback, self, arg1)
+      if not ok then
+         LogError("fix Act1VAutoChessChessShopQuickAssistOnlyItemView virtualView error" .. errorInfo)
+      end
+  end)
+  xlua.private_accessible(CS.Torappu.Activity.Act1VAutoChess.Act1VAutoChessChessShopQuickAssistTitleWithItemView.VirtualView)
+  self:Fix_ex(CS.Torappu.Activity.Act1VAutoChess.Act1VAutoChessChessShopQuickAssistTitleWithItemView.VirtualView, "TryRefreshAssistItemView", function(self, arg1)
+    local ok, errorInfo = xpcall(Fix_Act1VAutoChessShopQuickAssist_TryRefreshTitleItemView, debug.traceback, self, arg1)
+      if not ok then
+         LogError("fix Act1VAutoChessChessShopQuickAssistTitleWithItemView virtualView error" .. errorInfo)
+      end
   end)
 end
 
