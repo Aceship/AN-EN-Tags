@@ -1493,7 +1493,7 @@
                     `:""}
                     
                     <button class='btn tabbing-btns tabbing-btns-middle ${l==0?"active":""}' data-toggle='pill' style='${dynextra?"width:62px;":""}height:30px' href='#opCG_${i}_tab' onClick='ChangeSkin("${i}")'>
-                        <img style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'>
+                        <img alt='button_elite${i}_selector' style='max-height:30px' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/ui/elite/${i}-s.png'>
                     </button>
                 </li>`);
 
@@ -1541,11 +1541,11 @@
                         $('#charazoom').modal('handleUpdate')
                         
                         tabcontent.push($("<div class='tab-pane container active' id='opCG_0_tab'>"
-                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png'>"
+                            +"<img alt='chara-"+skindata.portraitId+"-E0' class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png'>"
                             +"</div>"));
                     } else {
                         tabcontent.push($("<div class='tab-pane container' id='opCG_"+i+"_tab'>"
-                            +"<img class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png'>"
+                            +"<img alt='chara-"+skindata.portraitId+"-E"+i+"' class='chara-image' src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/characters/"+skindata.portraitId+".png'>"
                             +"</div>"));
                     }
                 }
@@ -1620,7 +1620,7 @@
                         
                         <a class="btn tabbing-btns tabbing-btns-middle" style="${extraSkin[i].dynIllustId?"width:62px":""}" data-toggle='pill' href='#opCG_S${i}_tab' onClick='ChangeSkin("${extraSkin[i].portraitId.replace("#","_")}","","${extraSkin[i].skinId}")'> 
                             <div style="display:inline-block;height:100%;vertical-align:middle;"></div>
-                            <img class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
+                            <img alt='characters_skin${i}' class='skinimage' style="max-width: 48px;max-height: 48px;margin-left:-5px;margin-top:1px" src='https://raw.githubusercontent.com/Aceship/Arknight-Images/main/avatars/${encodeURIComponent(extraSkin[i].avatarId)}.png'>
                         </a></li>
                         `)
                 }
