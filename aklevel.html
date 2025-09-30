@@ -289,7 +289,7 @@
                     return;
                 }
                 let es = cl === maxLevel[star - 1][cev] ? 0 : charExpMap[cev][cl - 1] - ce;
-                let cs = cl === maxLevel[star - 1][cev] ? 0 : charUpCostMap[cev][cl - 1] * es / (charExpMap[cev][cl - 1]);
+                let cs = cl === maxLevel[star - 1][cev] ? 0 : Math.round(charUpCostMap[cev][cl - 1] * es / charExpMap[cev][cl - 1]);
                 cl++;
                 for (let i = cev, j = cl; i <= te; i++) {
                     while (i < te && j < maxLevel[star - 1][i]) {
@@ -311,18 +311,18 @@
                 let bs = bb * 200 + bp * 400 + bm * 1000 + ba * 2000;
                 let eb = es - bs;
                 if (eb < 0) eb = 0;
-                let gs = (cs + ea).toFixed(1);
+                let gs = cs + ea;
                 let gn = gs - ga;
                 if (gn < 0) gn = 0;
-                let lsn = Math.ceil((eb / 7500).toFixed(1));
-                let cen = Math.ceil((gn / 7500).toFixed(1));
+                let lsn = Math.ceil(eb / 7500);
+                let cen = Math.ceil(gn / 7500);
                 $.each([
                     ['Total Sanity Cost', "<b>" + (lsn + cen) * 30 + "</b> <sub>= " + lsn * 30 + " + " + cen * 30 + "</sub>"],
                     ['Exp', "<b>" + eb + "</b> <sub>= " + es + " - " + bs + "</sub>"],
                     ['LS Sanity <sub>Cost</sub>', "<b>" + lsn * 30 + "</b> <sub>= 30 * " + lsn + "</sub>"],
                     ['Coins', "<b>" + gn + "</b> <sub>= " + gs + " - " + ga + "</sub>"],
                     ['CE Sanity <sub>Cost</sub>', "<b>" + cen * 30 + "</b> <sub>= 30 * " + cen + "</sub>"],
-                    ['Coins for Leveling', cs.toFixed(1)],
+                    ['Coins for Leveling', cs],
                     ['Coins for Elite', ea],
                 ], function (_, v) {
                     $("#tbody-result").append('<tr><th scope="row" class="text-right">' + v[0] + '</th><td>' + v[1] + '</td></tr>');
