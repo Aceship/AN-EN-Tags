@@ -199,6 +199,157 @@
     "stripBlackboardParamsWithBuffKey": false,
     "blackboard": null
   },
+  "palsy[stack]": {
+    "attributes": {
+      "abnormalFlags": [
+        "PALSY"
+      ],
+      "abnormalImmunes": null,
+      "abnormalAntis": null,
+      "abnormalCombos": null,
+      "abnormalComboImmunes": null,
+      "attributeModifiers": null
+    },
+    "buffKey": "palsy[stack]",
+    "loadFromDB": false,
+    "isDurableBuff": false,
+    "isDamageMissable": true,
+    "isSilenceable": false,
+    "isStunnable": false,
+    "isFreezable": false,
+    "isLevitatable": false,
+    "statusResistable": "AUTOMATIC",
+    "templateKey": "palsy[stack]",
+    "disableOverride": false,
+    "overrideKey": "palsy[stack]",
+    "overrideType": "STACK",
+    "maxStackCnt": 3,
+    "refreshRemainingTimeWhenStackMax": false,
+    "clearAllStackCntWhenTimeUp": false,
+    "maxValidStackCnt": -1,
+    "independentCharacterSource": false,
+    "overrideEffectKey": "common_061_numb_01",
+    "overrideOnEventPriority": false,
+    "onEventPriority": "DEFAULT",
+    "audioSignal": null,
+    "lifeTimeType": "INFINITY",
+    "takeSnapshotWhenExtend": false,
+    "durationKey": null,
+    "lifeTime": 0.0,
+    "triggerLifeType": "IMMEDIATELY",
+    "triggerCnt": 0,
+    "triggerInterval": -1.0,
+    "waitFirstTriggerInterval": true,
+    "firstTriggerInterval": -1.0,
+    "priority": -1,
+    "priorityBBKeys": null,
+    "stripBlackboardParamsWithBuffKey": false,
+    "blackboard": [
+      {
+        "key": "palsy_resistance_timer.interval",
+        "value": 5.0,
+        "valueStr": null
+      }
+    ]
+  },
+  "palsying": {
+    "attributes": {
+      "abnormalFlags": [
+        "PALSYING"
+      ],
+      "abnormalImmunes": null,
+      "abnormalAntis": null,
+      "abnormalCombos": null,
+      "abnormalComboImmunes": null,
+      "attributeModifiers": null
+    },
+    "buffKey": "palsying",
+    "loadFromDB": false,
+    "isDurableBuff": false,
+    "isDamageMissable": true,
+    "isSilenceable": false,
+    "isStunnable": false,
+    "isFreezable": false,
+    "isLevitatable": false,
+    "statusResistable": "AUTOMATIC",
+    "templateKey": "empty",
+    "disableOverride": false,
+    "overrideKey": null,
+    "overrideType": "DEFAULT",
+    "maxStackCnt": 1,
+    "refreshRemainingTimeWhenStackMax": false,
+    "clearAllStackCntWhenTimeUp": false,
+    "maxValidStackCnt": -1,
+    "independentCharacterSource": false,
+    "overrideEffectKey": "common_061_numb_hit_01",
+    "overrideOnEventPriority": false,
+    "onEventPriority": "DEFAULT",
+    "audioSignal": "palsy_break_audio",
+    "lifeTimeType": "LIMITED",
+    "takeSnapshotWhenExtend": false,
+    "durationKey": "duration",
+    "lifeTime": 0.0,
+    "triggerLifeType": "IMMEDIATELY",
+    "triggerCnt": 0,
+    "triggerInterval": -1.0,
+    "waitFirstTriggerInterval": true,
+    "firstTriggerInterval": -1.0,
+    "priority": -1,
+    "priorityBBKeys": null,
+    "stripBlackboardParamsWithBuffKey": false,
+    "blackboard": [
+      {
+        "key": "duration",
+        "value": 0.5,
+        "valueStr": null
+      }
+    ]
+  },
+  "palsy_trigger": {
+    "attributes": {
+      "abnormalFlags": null,
+      "abnormalImmunes": null,
+      "abnormalAntis": null,
+      "abnormalCombos": null,
+      "abnormalComboImmunes": null,
+      "attributeModifiers": null
+    },
+    "buffKey": "palsy_trigger",
+    "loadFromDB": false,
+    "isDurableBuff": false,
+    "isDamageMissable": false,
+    "isSilenceable": false,
+    "isStunnable": false,
+    "isFreezable": false,
+    "isLevitatable": false,
+    "statusResistable": "AUTOMATIC",
+    "templateKey": "palsy_delay_trigger",
+    "disableOverride": false,
+    "overrideKey": null,
+    "overrideType": "DEFAULT",
+    "maxStackCnt": 1,
+    "refreshRemainingTimeWhenStackMax": false,
+    "clearAllStackCntWhenTimeUp": false,
+    "maxValidStackCnt": -1,
+    "independentCharacterSource": false,
+    "overrideEffectKey": null,
+    "overrideOnEventPriority": false,
+    "onEventPriority": "DEFAULT",
+    "audioSignal": null,
+    "lifeTimeType": "INFINITY",
+    "takeSnapshotWhenExtend": false,
+    "durationKey": "duration",
+    "lifeTime": 0.0,
+    "triggerLifeType": "LIMITED",
+    "triggerCnt": 1,
+    "triggerInterval": 2.0,
+    "waitFirstTriggerInterval": true,
+    "firstTriggerInterval": -1.0,
+    "priority": -1,
+    "priorityBBKeys": null,
+    "stripBlackboardParamsWithBuffKey": false,
+    "blackboard": null
+  },
   "weak[inf]": {
     "attributes": {
       "abnormalFlags": null,
@@ -1974,9 +2125,9 @@
     "overrideOnEventPriority": false,
     "onEventPriority": "DEFAULT",
     "audioSignal": null,
-    "lifeTimeType": "LIMITED",
+    "lifeTimeType": "INFINITY",
     "takeSnapshotWhenExtend": false,
-    "durationKey": "ep_break_duration",
+    "durationKey": null,
     "lifeTime": 0.0,
     "triggerLifeType": "IMMEDIATELY",
     "triggerCnt": 0,
@@ -1987,11 +2138,6 @@
     "priorityBBKeys": null,
     "stripBlackboardParamsWithBuffKey": false,
     "blackboard": [
-      {
-        "key": "duration",
-        "value": 10.0,
-        "valueStr": null
-      },
       {
         "key": "magic_resistance",
         "value": -20.0,
@@ -2043,9 +2189,9 @@
     "overrideOnEventPriority": false,
     "onEventPriority": "DEFAULT",
     "audioSignal": "ep_break_fire_audio",
-    "lifeTimeType": "LIMITED",
+    "lifeTimeType": "INFINITY",
     "takeSnapshotWhenExtend": false,
-    "durationKey": "ep_break_duration",
+    "durationKey": null,
     "lifeTime": 0.0,
     "triggerLifeType": "IMMEDIATELY",
     "triggerCnt": 0,
@@ -2056,11 +2202,6 @@
     "priorityBBKeys": null,
     "stripBlackboardParamsWithBuffKey": false,
     "blackboard": [
-      {
-        "key": "duration",
-        "value": 10.0,
-        "valueStr": null
-      },
       {
         "key": "ep_fire_damage",
         "value": 7000.0,
@@ -2147,9 +2288,9 @@
     "overrideOnEventPriority": false,
     "onEventPriority": "DEFAULT",
     "audioSignal": null,
-    "lifeTimeType": "LIMITED",
+    "lifeTimeType": "INFINITY",
     "takeSnapshotWhenExtend": false,
-    "durationKey": "ep_break_duration",
+    "durationKey": null,
     "lifeTime": 0.0,
     "triggerLifeType": "IMMEDIATELY",
     "triggerCnt": 0,
@@ -2161,16 +2302,6 @@
     "stripBlackboardParamsWithBuffKey": false,
     "blackboard": [
       {
-        "key": "sp_loss",
-        "value": 15.0,
-        "valueStr": null
-      },
-      {
-        "key": "damage_duration",
-        "value": 15.0,
-        "valueStr": null
-      },
-      {
         "key": "damage",
         "value": 100.0,
         "valueStr": null
@@ -2178,6 +2309,11 @@
       {
         "key": "interval",
         "value": 1.0,
+        "valueStr": null
+      },
+      {
+        "key": "sp",
+        "value": -1.0,
         "valueStr": null
       }
     ]
@@ -2399,6 +2535,62 @@
       },
       {
         "key": "max_atk",
+        "value": 0.0,
+        "valueStr": null
+      }
+    ]
+  },
+  "limit_bonus[magic_resistance]": {
+    "attributes": {
+      "abnormalFlags": null,
+      "abnormalImmunes": null,
+      "abnormalAntis": null,
+      "abnormalCombos": null,
+      "abnormalComboImmunes": null,
+      "attributeModifiers": null
+    },
+    "buffKey": "limit_bonus[magic_resistance]",
+    "loadFromDB": false,
+    "isDurableBuff": false,
+    "isDamageMissable": false,
+    "isSilenceable": false,
+    "isStunnable": false,
+    "isFreezable": false,
+    "isLevitatable": false,
+    "statusResistable": "AUTOMATIC",
+    "templateKey": "limit_bonus[magic_resistance]",
+    "disableOverride": false,
+    "overrideKey": null,
+    "overrideType": "DEFAULT",
+    "maxStackCnt": 1,
+    "refreshRemainingTimeWhenStackMax": false,
+    "clearAllStackCntWhenTimeUp": false,
+    "maxValidStackCnt": -1,
+    "independentCharacterSource": false,
+    "overrideEffectKey": null,
+    "overrideOnEventPriority": false,
+    "onEventPriority": "DEFAULT",
+    "audioSignal": null,
+    "lifeTimeType": "INFINITY",
+    "takeSnapshotWhenExtend": false,
+    "durationKey": null,
+    "lifeTime": 0.0,
+    "triggerLifeType": "INFINITY",
+    "triggerCnt": 0,
+    "triggerInterval": 0.25,
+    "waitFirstTriggerInterval": true,
+    "firstTriggerInterval": -1.0,
+    "priority": -1,
+    "priorityBBKeys": null,
+    "stripBlackboardParamsWithBuffKey": false,
+    "blackboard": [
+      {
+        "key": "max_hp_ratio",
+        "value": 1.0,
+        "valueStr": null
+      },
+      {
+        "key": "max_magic_resistance",
         "value": 0.0,
         "valueStr": null
       }
@@ -3339,9 +3531,9 @@
     "overrideOnEventPriority": false,
     "onEventPriority": "DEFAULT",
     "audioSignal": null,
-    "lifeTimeType": "LIMITED",
+    "lifeTimeType": "INFINITY",
     "takeSnapshotWhenExtend": false,
-    "durationKey": "ep_break_duration",
+    "durationKey": null,
     "lifeTime": 0.0,
     "triggerLifeType": "IMMEDIATELY",
     "triggerCnt": 0,
@@ -3370,6 +3562,62 @@
       {
         "key": "interval",
         "value": 1.0,
+        "valueStr": null
+      }
+    ]
+  },
+  "ep_break_sanity_enemy": {
+    "attributes": {
+      "abnormalFlags": null,
+      "abnormalImmunes": null,
+      "abnormalAntis": null,
+      "abnormalCombos": null,
+      "abnormalComboImmunes": null,
+      "attributeModifiers": null
+    },
+    "buffKey": "ep_break_sanity_enemy",
+    "loadFromDB": false,
+    "isDurableBuff": false,
+    "isDamageMissable": false,
+    "isSilenceable": false,
+    "isStunnable": false,
+    "isFreezable": false,
+    "isLevitatable": false,
+    "statusResistable": "AUTOMATIC",
+    "templateKey": "ep_break_sanity_enemy",
+    "disableOverride": false,
+    "overrideKey": null,
+    "overrideType": "DEFAULT",
+    "maxStackCnt": 1,
+    "refreshRemainingTimeWhenStackMax": false,
+    "clearAllStackCntWhenTimeUp": false,
+    "maxValidStackCnt": -1,
+    "independentCharacterSource": false,
+    "overrideEffectKey": "common_nerve_injury_01_hit",
+    "overrideOnEventPriority": false,
+    "onEventPriority": "DEFAULT",
+    "audioSignal": "ep_break_sanity_audio",
+    "lifeTimeType": "IMMEDIATELY",
+    "takeSnapshotWhenExtend": false,
+    "durationKey": null,
+    "lifeTime": 0.0,
+    "triggerLifeType": "IMMEDIATELY",
+    "triggerCnt": 0,
+    "triggerInterval": -1.0,
+    "waitFirstTriggerInterval": true,
+    "firstTriggerInterval": -1.0,
+    "priority": -1,
+    "priorityBBKeys": null,
+    "stripBlackboardParamsWithBuffKey": false,
+    "blackboard": [
+      {
+        "key": "palsy_stack_cnt",
+        "value": 3.0,
+        "valueStr": null
+      },
+      {
+        "key": "ep_sanity_damage",
+        "value": 6000.0,
         "valueStr": null
       }
     ]
@@ -3405,9 +3653,9 @@
     "overrideOnEventPriority": false,
     "onEventPriority": "DEFAULT",
     "audioSignal": null,
-    "lifeTimeType": "IMMEDIATELY",
+    "lifeTimeType": "LIMITED",
     "takeSnapshotWhenExtend": false,
-    "durationKey": null,
+    "durationKey": "ep_break_duration",
     "lifeTime": 0.0,
     "triggerLifeType": "IMMEDIATELY",
     "triggerCnt": 0,
@@ -3450,9 +3698,9 @@
     "overrideOnEventPriority": false,
     "onEventPriority": "DEFAULT",
     "audioSignal": null,
-    "lifeTimeType": "IMMEDIATELY",
+    "lifeTimeType": "LIMITED",
     "takeSnapshotWhenExtend": false,
-    "durationKey": null,
+    "durationKey": "ep_break_duration",
     "lifeTime": 0.0,
     "triggerLifeType": "IMMEDIATELY",
     "triggerCnt": 0,
@@ -3495,9 +3743,9 @@
     "overrideOnEventPriority": false,
     "onEventPriority": "DEFAULT",
     "audioSignal": null,
-    "lifeTimeType": "IMMEDIATELY",
+    "lifeTimeType": "LIMITED",
     "takeSnapshotWhenExtend": false,
-    "durationKey": null,
+    "durationKey": "ep_break_duration",
     "lifeTime": 0.0,
     "triggerLifeType": "IMMEDIATELY",
     "triggerCnt": 0,
@@ -3540,9 +3788,9 @@
     "overrideOnEventPriority": false,
     "onEventPriority": "DEFAULT",
     "audioSignal": null,
-    "lifeTimeType": "IMMEDIATELY",
+    "lifeTimeType": "LIMITED",
     "takeSnapshotWhenExtend": false,
-    "durationKey": null,
+    "durationKey": "ep_break_duration",
     "lifeTime": 0.0,
     "triggerLifeType": "IMMEDIATELY",
     "triggerCnt": 0,

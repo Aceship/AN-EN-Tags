@@ -46,7 +46,6 @@ local function _SetActive(gameObj, isActive)
   luaUtils.SetActiveIfNecessary(gameObj, isActive)
 end
 
-
 function ActFun2MainDlg:OnInit()
   local realActId = self.m_parent:GetData("actId")
   self.m_realActId = realActId 
@@ -238,7 +237,8 @@ function ActFun2MainDlg:EventOnStartBattleClick()
   param.sysMenuStyle = CS.Torappu.Battle.UI.BattleSysMenuStyle.NO_REWARD
   param.bundleToJumpBack = nil
 
-  local stageIdStruct = CS.Torappu.UI.StageId(self._stageId, nil, false)
+  local stageType = CS.Torappu.UI.Stage.SpecialStageType.NORMAL;
+  local stageIdStruct = CS.Torappu.UI.StageId(self._stageId, nil, stageType)
   param.overrideStageIdStruct = stageIdStruct
 
   local illust = CS.Torappu.Battle.BattleFinishIllust()
