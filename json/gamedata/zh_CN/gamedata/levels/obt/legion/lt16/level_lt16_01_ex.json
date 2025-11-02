@@ -10,6 +10,7 @@
     "isTrainingLevel": false,
     "isHardTrainingLevel": false,
     "isPredefinedCardsSelectable": false,
+    "displayRestTime": false,
     "maxPlayTime": -1.0,
     "functionDisableMask": "NONE",
     "configBlackBoard": null
@@ -998,6 +999,7 @@
       ]
     }
   ],
+  "optionalRunes": null,
   "globalBuffs": [
     {
       "prefabKey": "legion_mode_enemy_boost",
@@ -1015,7 +1017,8 @@
       ],
       "overrideCameraEffect": null,
       "passProfessionMaskFlag": false,
-      "professionMask": "NONE"
+      "professionMask": "NONE",
+      "playerSideMask": "ALL"
     }
   ],
   "routes": [
@@ -2297,6 +2300,10 @@
             "m_defined": false,
             "m_value": 0.0
           },
+          "epBreakRecoverSpeed": {
+            "m_defined": false,
+            "m_value": 0.0
+          },
           "stunImmune": {
             "m_defined": false,
             "m_value": false
@@ -2322,6 +2329,14 @@
             "m_value": false
           },
           "fearedImmune": {
+            "m_defined": false,
+            "m_value": false
+          },
+          "palsyImmune": {
+            "m_defined": false,
+            "m_value": false
+          },
+          "attractImmune": {
             "m_defined": false,
             "m_value": false
           }
@@ -2465,6 +2480,10 @@
             "m_defined": false,
             "m_value": 0.0
           },
+          "epBreakRecoverSpeed": {
+            "m_defined": false,
+            "m_value": 0.0
+          },
           "stunImmune": {
             "m_defined": false,
             "m_value": false
@@ -2490,6 +2509,14 @@
             "m_value": false
           },
           "fearedImmune": {
+            "m_defined": false,
+            "m_value": false
+          },
+          "palsyImmune": {
+            "m_defined": false,
+            "m_value": false
+          },
+          "attractImmune": {
             "m_defined": false,
             "m_value": false
           }
@@ -2639,7 +2666,7 @@
               "routeIndex": 4,
               "blockFragment": false,
               "autoPreviewRoute": true,
-              "autoDisplayEnemyInfo": false,
+              "autoDisplayEnemyInfo": true,
               "isUnharmfulAndAlwaysCountAsKilled": false,
               "hiddenGroup": null,
               "randomSpawnGroupKey": null,
@@ -2833,7 +2860,7 @@
               "routeIndex": 12,
               "blockFragment": false,
               "autoPreviewRoute": false,
-              "autoDisplayEnemyInfo": true,
+              "autoDisplayEnemyInfo": false,
               "isUnharmfulAndAlwaysCountAsKilled": false,
               "hiddenGroup": null,
               "randomSpawnGroupKey": null,
@@ -2854,7 +2881,7 @@
               "routeIndex": 13,
               "blockFragment": false,
               "autoPreviewRoute": false,
-              "autoDisplayEnemyInfo": true,
+              "autoDisplayEnemyInfo": false,
               "isUnharmfulAndAlwaysCountAsKilled": false,
               "hiddenGroup": null,
               "randomSpawnGroupKey": null,
@@ -2884,6 +2911,8 @@
         "hidden": false,
         "alias": null,
         "uniEquipIds": null,
+        "showSpIllust": false,
+        "masterInfos": null,
         "inst": {
           "characterKey": "trap_103_ymdgct",
           "level": 1,
@@ -2917,6 +2946,8 @@
         "hidden": false,
         "alias": "trap_097_hstone#1",
         "uniEquipIds": null,
+        "showSpIllust": false,
+        "masterInfos": null,
         "inst": {
           "characterKey": "trap_097_hstone",
           "level": 1,

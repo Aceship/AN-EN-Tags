@@ -852,7 +852,7 @@
   ],
   "completeGainBonus": 1.2,
   "playerApRegenSpeed": 6,
-  "maxPracticeTicket": 30,
+  "maxPracticeTicket": 999,
   "advancedGachaCrystalCost": 600,
   "completeCrystalBonus": 1,
   "initPlayerGold": 10000,
@@ -877,7 +877,10 @@
   "reMax": 100.0,
   "diamondToShdRate": 180,
   "requestSameFriendCD": 14400,
-  "baseMaxFriendNum": 65,
+  "baseMaxFriendNum": 90,
+  "maxStarFriendNum": 5,
+  "maxSquadAssistDisplayNum": 9,
+  "friendStarEditTrackTs": 1756958400,
   "hardDiamondDrop": 1,
   "instFinDmdShdCost": 80,
   "easyCrystalBonus": 0,
@@ -909,6 +912,7 @@
   "charRotationPresetTrackTs": 1733371200,
   "uniequipArchiveSysTrackTs": 1705896000,
   "manufactPromptTime": 3,
+  "mainGuideActivedStageId": "main_15-02",
   "richTextStyles": {
     "mission.levelname": "<color=#FFDE00>{0}</color>",
     "mission.number": "<color=#FFDE00>{0}</color>",
@@ -933,6 +937,9 @@
     "ba.xe": "<color=#00FFFF>{0}</color>",
     "ba.xf": "<color=#0291FF>{0}</color>",
     "ba.xg": "<color=#FF00FF>{0}</color>",
+    "ba.gild": "<color=#2FAC78>{0}</color>",
+    "ba.enemy": "<color=#D83C3C>{0}</color>",
+    "ba.drop": "<color=#36ACFF>{0}</color>",
     "eb.key": "<color=#00FFFF>{0}</color>",
     "eb.danger": "<color=#FF0000>{0}</color>",
     "ro.get": "<color=#0098DC>{0}</color>",
@@ -945,6 +952,8 @@
     "lv.fs": "<color=#FF0000>{0}</color>",
     "lv.sp": "<color=#fd4600>{0}</color>",
     "lv.ez": "<color=#0098dc>{0}</color>",
+    "recalrune.nag": "<color=#c9001c>{0}</color>",
+    "recalrune.pos": "<color=#0098dc>{0}</color>",
     "crisisv2.nag": "<color=#ea9818>{0}</color>",
     "crisisv2.pos": "<color=#16acaa>{0}</color>",
     "crisisv2.cra": "<color=#d7181c>{0}</color>",
@@ -962,6 +971,8 @@
     "ro3.bosst": "<color=#ffffff>{0}</color>",
     "ro4.lose": "<color=#FF6E6E>{0}</color>",
     "ro4.get": "<color=#28bfe5>{0}</color>",
+    "ro5.lose": "<color=#FF6E6E>{0}</color>",
+    "ro5.get": "<color=#28bfe5>{0}</color>",
     "rc.title": "<color=#FFFFFF>{0}</color>",
     "rc.subtitle": "<color=#FFC90E>{0}</color>",
     "rc.em": "<color=#FF7F27>{0}</color>",
@@ -993,12 +1004,34 @@
     "vc.attention": "<color=#FFD800>{0}</color>",
     "act.missiontips": "<color=#d9bd6a>{0}</color>",
     "lv.hdbg": "<color=#7ba61f>{0}</color>",
+    "vecbreakv2.highlight": "<color=#d8741a>{0}</color>",
+    "duel.ping.low": "<color=#7fa826>{0}</color>",
+    "duel.ping.medium": "<color=#ec7a00>{0}</color>",
+    "duel.ping.high": "<color=#ff3d3d>{0}</color>",
+    "duel.milestone": "<color=#D4133C>{0}</color>",
+    "duel.dm.award": "<color=#36BBCC>{0}</color>",
+    "duel.dm.condition": "<color=#C9C9C9>{0}</color>",
     "tu.ht": "<color=#ff8d00>{0}</color>",
+    "multiv3.teambuff": "<color=#d0294c>{0}</color>",
+    "multiv3.matchdesc": "<color=#2ea0af>{0}</color>",
+    "multiv3.unlocktoast": "<color=#ff3a64>{0}</color>",
+    "multiv3.photodesc": "<color=#31acbc>{0}</color>",
     "acdm.award": "<color=#04d3a3>{0}</color>",
     "acdm.milestone": "<color=#2da186>{0}</color>",
     "acdm.hudtip": "<color=#04d3a3>{0}</color>",
     "acdm.buff": "<color=#2da186>{0}</color>",
     "acdm.tracker": "<color=#2da186>{0}</color>",
+    "trap.number": "<color=#018FCE>{0}</color>",
+    "trap.debuff": "<color=#d83c3c>{0}</color>",
+    "trap.monster": "<color=#d83c3c>{0}</color>",
+    "trap.combine": "<color=#018FCE>{0}</color>",
+    "trap.drop": "<color=#018FCE>{0}</color>",
+    "strategy.number": "<color=#018FCE>{0}</color>",
+    "strategy.text": "<color=#018FCE>{0}</color>",
+    "strategy.text2": "<color=#767676>{0}</color>",
+    "gacha.text": "<color=#f3e468>{0}</color>",
+    "buff.number": "<color=#ede160>{0}</color>",
+    "level.highlight": "<color=#ede161>{0}</color>",
     "lv.act20side": "<color=#F7BC44>{0}</color>",
     "lv.act20sre": "<color=#F7BC44>{0}</color>",
     "lv.mhitem": "<color=#A57F5B>{0}</color>",
@@ -1023,6 +1056,11 @@
     "ba.hrd": "<color=#DA2536>{0}</color>",
     "firework.npc": "<color=#810d17>{0}</color>",
     "act.spreward": "<color=#FF5001>{0}</color>",
+    "char.oblv": "<color=#7799cc>{0}</color>",
+    "char.mort": "<color=#779977>{0}</color>",
+    "char.dolr": "<color=#bb9955>{0}</color>",
+    "char.amor": "<color=#aa4477>{0}</color>",
+    "char.tmor": "<color=#335566>{0}</color>",
     "act.timelimit": "<color=#ffe300>{0}</color>",
     "vc.text": "<color=#898989>{0}</color>",
     "vc.endtime": "<color=#ff0327>{0}</color>",
@@ -1052,7 +1090,7 @@
   "commonPotentialLvlUpCount": 4,
   "weeklyOverrideDesc": "",
   "voucherDiv": 5,
-  "recruitPoolVersion": 18,
+  "recruitPoolVersion": 19,
   "v006RecruitTimeStep1Refresh": 1577172600,
   "v006RecruitTimeStep2Check": 1577154600,
   "v006RecruitTimeStep2Flush": 1577649600,
@@ -1131,8 +1169,9 @@
   "isClassicGachaPoolFuncEnabled": true,
   "isSpecialGachaPoolFuncEnabled": true,
   "isVoucherClassicItemDistinguishable": true,
+  "isRecalRuneFuncEnabled": true,
   "voucherSkinRedeem": 1,
-  "voucherSkinDesc": "【时装自选凭证】仅可以兑换当期时装商店中售卖的时装，且<color=#ffa633>不可兑换</color>含有动态形象的时装。若已购买了时装商店中所有的服装或时装商店中无时装售卖时，则【时装自选凭证】<color=#ffa633>无法使用</color>。\n\n此外，若今后有其他<color=#ffa633>不可使用</color>【时装自选凭证】兑换的时装出现时，届时会告知博士，敬请注意。",
+  "voucherSkinDesc": "【时装自选凭证】仅可以兑换当期时装商店中售卖的时装，且<color=#ffa633>不可兑换</color>含有动态形象的时装、不可兑换品牌合作时装；\n\n若已购买了时装商店中所有的时装或时装商店中无时装售卖时，则【时装自选凭证】暂时无法使用，博士可以等待时装商店上架新时装；【时装自选凭证】不会过期。",
   "charmEquipCount": 5,
   "termDescriptionDict": {
     "ba.sluggish": {
@@ -1153,7 +1192,7 @@
     "ba.buffres": {
       "termId": "ba.buffres",
       "termName": "抵抗",
-      "description": "<$ba.stun>晕眩</>、<$ba.cold>寒冷</>、<$ba.frozen>冻结</>等异常状态的持续时间减半（同名效果不叠加）"
+      "description": "<$ba.stun>晕眩</>、<$ba.cold>寒冷</>、<$ba.frozen>冻结</>等异常状态的持续时间减半，<$ba.palsy>麻痹</>等效果每5秒流失1层（同名效果不叠加）"
     },
     "ba.invisible": {
       "termId": "ba.invisible",
@@ -1365,6 +1404,41 @@
       "termName": "物理脆弱",
       "description": "受到的物理伤害提升相应比例（同名效果取最高）"
     },
+    "ba.dt.neural2": {
+      "termId": "ba.dt.neural2",
+      "termName": "神经损伤·我方",
+      "description": "累计满时爆发（普通、精英敌人1000点、领袖2000点累计值），敌人立即受到6000点元素伤害且获得3层<$ba.palsy>麻痹</>。10秒冷却"
+    },
+    "ba.palsy": {
+      "termId": "ba.palsy",
+      "termName": "麻痹",
+      "description": "每层麻痹可以使敌人在普通攻击时打断本次攻击，上限3层；麻痹未被消耗时持续时间无限，拥有抵抗的单位每5秒流失1层"
+    },
+    "ba.addbullet": {
+      "termId": "ba.addbullet",
+      "termName": "补弹",
+      "description": "为其他人的弹药类技能补充弹药。单次弹药类技能的持续时间内，最多被补充该次技能所装有弹药数量上限的弹药"
+    },
+    "ba.attract": {
+      "termId": "ba.attract",
+      "termName": "诱导",
+      "description": "无法被阻挡并向目标位置移动"
+    },
+    "ba.permanentatk": {
+      "termId": "ba.permanentatk",
+      "termName": "持续攻击",
+      "description": "无论攻击范围内是否有攻击目标，都会持续进行攻击"
+    },
+    "ba.fever": {
+      "termId": "ba.fever",
+      "termName": "Fever",
+      "description": "Fever累计至450点时，任意一位<$ba.mujica>Ave Mujica</>成员手动触发技能后，在场所有<$ba.mujica>Ave Mujica</>成员20秒内会持续释放当前技能"
+    },
+    "ba.mujica": {
+      "termId": "ba.mujica",
+      "termName": "Ave Mujica",
+      "description": "包括丰川祥子、八幡海铃、三角初华、祐天寺若麦、若叶睦"
+    },
     "cc.bd_A_1": {
       "termId": "cc.bd_A_1",
       "termName": "念力",
@@ -1575,6 +1649,16 @@
       "termName": "叙拉古",
       "description": "包含以下干员\n安洁莉娜、拉普兰德、普罗旺斯、红云、布洛卡、巫恋、铃兰、贾维、奥斯塔、斥罪、子月、伺夜、阿罗玛、忍冬、裁度、荒芜拉普兰德"
     },
+    "cc.g.laterano": {
+      "termId": "cc.g.laterano",
+      "termName": "拉特兰",
+      "description": "包含以下干员\n翎羽、安德切尔、送葬人、莫斯提马、安比尔、芳汀、空弦、菲亚梅塔、见行者、空构、隐现、塑心、蕾缪安、信仰搅拌机、CONFESS-47"
+    },
+    "cc.g.elite": {
+      "termId": "cc.g.elite",
+      "termName": "精英干员",
+      "description": "包含以下干员\n迷迭香、煌、逻各斯、烛煌、电弧、真言"
+    },
     "cc.c.abyssal2_1": {
       "termId": "cc.c.abyssal2_1",
       "termName": "特殊加成",
@@ -1608,7 +1692,7 @@
     "cc.c.skill": {
       "termId": "cc.c.skill",
       "termName": "部分技能",
-      "description": "包含以下技能\n左膀右臂、S.W.E.E.P.、零食网络、清理协议、替身、必要责任、护卫、小小的领袖、独善其身、笑靥如春、金盏花诗会、捍卫之道"
+      "description": "包含以下技能\r\n左膀右臂、S.W.E.E.P.、零食网络、清理协议、替身、必要责任、护卫、小小的领袖、独善其身、笑靥如春、金盏花诗会、捍卫之道、博识生手、点滴关照"
     },
     "cc.t.strong2": {
       "termId": "cc.t.strong2",
@@ -1678,7 +1762,7 @@
     "cc.tag.op": {
       "termId": "cc.tag.op",
       "termName": "作业平台",
-      "description": "包含以下干员\nLancet-2、Castle-3、THRM-EX、正义骑士号、Friston-3、PhonoR-0"
+      "description": "包含以下干员\nLancet-2、Castle-3、THRM-EX、正义骑士号、Friston-3、PhonoR-0、CONFESS-47"
     },
     "cc.tag.knight": {
       "termId": "cc.tag.knight",
@@ -1705,21 +1789,41 @@
       "termName": "嘉维尔",
       "description": "包含以下干员\n百炼嘉维尔、嘉维尔"
     },
+    "cc.angel": {
+      "termId": "cc.angel",
+      "termName": "能天使",
+      "description": "包含以下干员\n新约能天使、能天使"
+    },
     "cc.tra.pepe": {
       "termId": "cc.tra.pepe",
       "termName": "特别独占订单",
       "description": "由佩佩提供的特殊贵金属订单，该订单的获取时长固定，收益恒定，所需赤金交付数为0"
+    },
+    "cc.bd_mujica": {
+      "termId": "cc.bd_mujica",
+      "termName": "热情值",
+      "description": "可影响<$cc.bd_mujica_1><@cc.rem>丰富工作经验</></>、<$cc.bd_mujica_2><@cc.rem>演技的怪物</></>相关技能\n由以下干员的基建技能提供\n八幡海铃、三角初华、祐天寺若麦、若叶睦"
+    },
+    "cc.bd_mujica_1": {
+      "termId": "cc.bd_mujica_1",
+      "termName": "丰富工作经验",
+      "description": "拥有该基建技能的干员\n丰川祥子"
+    },
+    "cc.bd_mujica_2": {
+      "termId": "cc.bd_mujica_2",
+      "termName": "演技的怪物",
+      "description": "拥有该基建技能的干员\n若叶睦"
     }
   },
   "storyReviewUnlockItemLackTip": "事相碎片数量不足，请前往采购凭证区或活动期间商店获取",
-  "dataVersion": "58.0.0",
-  "resPrefVersion": "58d0d0",
+  "dataVersion": "66.4.0",
+  "resPrefVersion": "66d0d0",
   "announceWebBusType": "ak_announcement",
   "videoPlayerWebBusType": "ak_video_player",
   "gachaLogBusType": "ak_gacha_log",
-  "defaultMinContinuousBattleTimes": 1,
-  "defaultMaxContinuousBattleTimes": 6,
-  "continuousActionOpen": true,
+  "defaultMinMultipleBattleTimes": 1,
+  "defaultMaxMultipleBattleTimes": 6,
+  "multipleActionOpen": true,
   "subProfessionDamageTypePairs": {
     "notchar1": "NONE",
     "notchar2": "NONE",
@@ -1790,7 +1894,9 @@
     "alchemist": "PHYSICAL",
     "primprotector": "PHYSICAL",
     "skywalker": "PHYSICAL",
-    "soulcaster": "MAGICAL"
+    "soulcaster": "MAGICAL",
+    "primguard": "PHYSICAL",
+    "counsellor": "PHYSICAL"
   },
   "classicProtectChar": [
     "char_252_bibeak",
@@ -1798,11 +1904,16 @@
     "char_402_tuye",
     "char_4043_erato"
   ],
+  "feverGameData": {
+    "feverDuration": 20.0,
+    "feverNeed": 450.0
+  },
   "birthdaySettingDesc": "检测到信息缺失，请补全你的出生日期。\n<size=21><color=#0075a9>罗德岛将在生日当天通过邮件为你配发额外物资。</color></size>",
   "birthdaySettingConfirmDesc": "Dr.{0}，你的出生日期是{1}月{2}日，是否立即提交？\n\n<color=#b84040>生日确定后将无法更改</color>",
   "birthdaySettingLeapConfirmDesc": "Dr.{0}，你的出生日期是{1}月{2}日，是否立即提交？\n\n<color=#b84040>生日确定后将无法更改，在非闰年，你的物资将在{3}月{4}日通过邮件配发</color>",
   "leapBirthdayRewardMonth": 2,
   "leapBirthdayRewardDay": 28,
   "birthdaySettingShowStageId": "tr_05",
-  "isBirthdayFuncEnabled": true
+  "isBirthdayFuncEnabled": true,
+  "isSoCharEnabled": true
 }

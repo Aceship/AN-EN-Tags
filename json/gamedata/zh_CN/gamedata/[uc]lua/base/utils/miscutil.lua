@@ -6,7 +6,7 @@ end
 
 
 function Checkint(value)
-  return math.round(checknumber(value))
+  return math.round(CheckNumber(value, 10))
 end
 
 
@@ -67,6 +67,21 @@ function ToLuaArray(list)
     table.insert(array, v);
   end
   return array;
+end
+
+
+
+
+
+function ToCSArray(table, CSType)
+  if table == nil or CSType == nil then
+    return nil
+  end
+  local csArray = CS.System.Array.CreateInstance(CSType, #table);
+  for i, v in ipairs(table) do
+    csArray[i - 1] = v;
+  end
+  return csArray;
 end
 
 function CheckTimeAvailWithTimeStamp(startTime, endTime)
@@ -136,3 +151,53 @@ function AsignItemCardClickDelegate(uibase, itemCard)
     LogError("input gameobject should have UIItemCard Component")
   end
 end
+
+function IsFieldNotNil(obj, fieldName)
+  local ok, result = xpcall(_IsFieldNotNilImpl, debug.traceback, obj, fieldName);
+  if ok then
+    return result;
+  end
+  return false;
+end
+function _IsFieldNotNilImpl(obj, fieldName)
+  return obj[fieldName] ~= nil;
+end
+
+
+
+
+
+
+
+
+
+
+KeepWaiting = Class("KeepWaiting")
+
+
+
+function KeepWaiting:ctor()
+  self.m_keepWaiting = true
+end
+
+
+
+function KeepWaiting:Finish()
+  self.m_keepWaiting = false
+end
+
+
+
+
+function KeepWaiting:KeepWaiting()
+  return self.m_keepWaiting
+end
+
+
+
+
+
+
+
+
+
