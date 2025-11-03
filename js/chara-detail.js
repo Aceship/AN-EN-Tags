@@ -1044,9 +1044,8 @@
     function getTags(char) {
         return char.tagList.concat(char.position == "MELEE" || char.position == "ALL" ? ["近战位"] : [],    // Melee
                                    char.position == "RANGED" || char.position == "ALL" ? ["远程位"] : [],   // Ranged
-                                   char.rarity == 1 ? ["新手"] : [],                                        // Starter
-                                   char.rarity == 0 ? ["支援机械"] : []);                                    // Robot
-    }
+                                   char.rarity == 1 ? ["新手"] : []                                        // Starter
+    )}
     
     function getBranchClass(char){
         return char.subProfessionId
