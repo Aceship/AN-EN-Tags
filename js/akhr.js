@@ -258,7 +258,7 @@
             $(".tr-recommd").show();
             $(".tr-chartag").remove();
             if (localStorage.getItem('lastChar') != char_name) {
-                $(".tr-recommd:not(:contains('" + $(el).text() + "'))").hide();
+                $(".tr-recommd:not(:has(button[data-original-title$='" + $(el).data("originalTitle").replace(/'/i, '\\\'') + "']))").hide();
                 let char = all_chars[char_name];
                 let colors = { 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6" };
                 //console.log(char)
