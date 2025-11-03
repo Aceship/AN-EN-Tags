@@ -194,6 +194,16 @@
                     console.log("Show Image: ", showImage);
                 });
                 changeUILanguage(true);
+
+                if(location.hash.length > 0)
+                {
+                    clickBtnClear();
+                    let decodedTags = decodeURIComponent(location.hash.substring(1)).replace(/\+/g, " ");
+                    decodedTags.split(',').forEach(tag => {
+                        $('#fastInput').val(tag);
+                        CheckTag($('#fastInput'),true);
+                    });
+                }
             });
         });
 
